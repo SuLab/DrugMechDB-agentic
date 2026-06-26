@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB01401_MESH_D005334_1
+  disease: Fever
+  disease_mesh: MESH:D005334
+  drug: Choline magnesium trisalicylate
+  drug_mesh: MESH:C017959
+  drugbank: DB:DB01401
+links:
+  - key: decreases activity of
+    source: MESH:C017959
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:C017959
+    target: UniProt:P35354
+  - key: increases abundance of
+    source: UniProt:P23219
+    target: MESH:D011453
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: MESH:D005334
+multigraph: true
+nodes:
+  - id: MESH:C017959
+    label: Drug
+    name: Choline magnesium trisalicylate
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: MESH:D005334
+    label: Disease
+    name: Fever
+references:
+  - https://go.drugbank.com/drugs/DB01401

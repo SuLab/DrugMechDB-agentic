@@ -1,0 +1,55 @@
+comment: Ciprofloxacin is a second generation fluoroquinolone that is used to treat
+  a wide variety of bacterial susceptible infections.
+directed: true
+graph:
+  _id: DB00537_MESH_D004756_1
+  disease: Enterobacteriaceae Infections
+  disease_mesh: MESH:D004756
+  drug: ciprofloxacin
+  drug_mesh: MESH:D002939
+  drugbank: DB:DB00537
+links:
+  - key: decreases activity of
+    source: MESH:D002939
+    target: UniProt:A0A156YKX6
+  - key: decreases activity of
+    source: MESH:D002939
+    target: UniProt:A0A156J405
+  - key: positively regulates
+    source: UniProt:A0A156YKX6
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:A0A156J405
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:550
+  - key: causes
+    source: taxonomy:550
+    target: MESH:D004756
+multigraph: true
+nodes:
+  - id: MESH:D002939
+    label: Drug
+    name: ciprofloxacin
+  - id: UniProt:A0A156YKX6
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:A0A156J405
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:550
+    label: OrganismTaxon
+    name: Enterobacter cloacae
+  - id: MESH:D004756
+    label: Disease
+    name: Enterobacteriaceae Infections
+references:
+  - https://go.drugbank.com/drugs/DB00537#mechanism-of-action
+  - https://www.uniprot.org/uniprot/A0A156YKX6#function
+  - https://www.uniprot.org/uniprot/A0A156J405#function
+  - https://www.sciencedirect.com/topics/medicine-and-dentistry/enterobacteriaceae-infection
+  - https://en.wikipedia.org/wiki/Enterobacter

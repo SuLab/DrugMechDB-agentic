@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB00545_MESH_D009157_1
+  disease: Myasthenia gravis
+  disease_mesh: MESH:D009157
+  drug: pyridostigmine
+  drug_mesh: MESH:D011729
+  drugbank: DB:DB00545
+links:
+  - key: negatively regulates
+    source: MESH:D011729
+    target: UniProt:P22303
+  - key: positively regulates
+    source: UniProt:P22303
+    target: GO:0001507
+  - key: affects risk for
+    source: GO:0001507
+    target: HP:0011804
+  - key: manifestation of
+    source: HP:0011804
+    target: MESH:D009157
+multigraph: true
+nodes:
+  - id: MESH:D011729
+    label: Drug
+    name: pyridostigmine
+  - id: UniProt:P22303
+    label: Protein
+    name: Acetylcholinesterase
+  - id: GO:0001507
+    label: BiologicalProcess
+    name: acetylcholine catabolic process in synaptic cleft
+  - id: HP:0011804
+    label: PhenotypicFeature
+    name: Abnormal muscle physiology
+  - id: MESH:D009157
+    label: Disease
+    name: Myasthenia gravis
+references:
+  - https://go.drugbank.com/drugs/DB00545#BE0000426
+  - https://en.wikipedia.org/wiki/Pyridostigmine#Mechanism_of_action
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1115/

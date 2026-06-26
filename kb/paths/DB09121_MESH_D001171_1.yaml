@@ -1,0 +1,30 @@
+comment: Withdrawn. The mechanism of action of aurothioglucose is not well elucidated.
+directed: true
+graph:
+  _id: DB09121_MESH_D001171_1
+  disease: Juvenile rheumatoid arthritis
+  disease_mesh: MESH:D001171
+  drug: Aurothioglucose
+  drug_mesh: MESH:D006051
+  drugbank: DB:DB09121
+links:
+  - key: negatively regulates
+    source: MESH:D006051
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D001171
+multigraph: true
+nodes:
+  - id: MESH:D006051
+    label: Drug
+    name: Aurothioglucose
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D001171
+    label: Disease
+    name: Juvenile rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB09121
+  - https://en.wikipedia.org/wiki/Gold_salts#Mechanism_in_arthritis

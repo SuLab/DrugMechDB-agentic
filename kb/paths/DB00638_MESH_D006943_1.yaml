@@ -1,0 +1,26 @@
+directed: true
+graph:
+  _id: DB00638_MESH_D006943_1
+  disease: Hyperglycemia
+  disease_mesh: MESH:D006943
+  drug: inulin
+  drug_mesh: MESH:D007444
+  drugbank: DB:DB00638
+links:
+  - key: positively regulates
+    source: MESH:D007444
+    target: GO:0032099
+  - key: prevents
+    source: GO:0032099
+    target: MESH:D006943
+multigraph: true
+nodes:
+  - id: MESH:D007444
+    label: Drug
+    name: inulin
+  - id: GO:0032099
+    label: BiologicalProcess
+    name: negative regulation of appetite
+  - id: MESH:D006943
+    label: Disease
+    name: Hyperglycemia

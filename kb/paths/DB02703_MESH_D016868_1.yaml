@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB02703_MESH_D016868_1
+  disease: Serratia Infections
+  disease_mesh: MESH:D016868
+  drug: fusidic acid
+  drug_mesh: MESH:D005672
+  drugbank: DB:DB02703
+links:
+  - key: decreases activity of
+    source: MESH:D005672
+    target: UniProt:A0A8A6J2U1
+  - key: positively regulates
+    source: UniProt:A0A8A6J2U1
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:613
+  - key: causes
+    source: taxonomy:613
+    target: MESH:D016868
+multigraph: true
+nodes:
+  - id: MESH:D005672
+    label: Drug
+    name: fusidic acid
+  - id: UniProt:A0A8A6J2U1
+    label: Protein
+    name: Elongation factor G
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:613
+    label: OrganismTaxon
+    name: Serratia
+  - id: MESH:D016868
+    label: Disease
+    name: Serratia Infections
+references:
+  - https://go.drugbank.com/drugs/DB02703#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Fusidic_acid
+  - https://www.uniprot.org/uniprot/A0A8A6J2U1#function
+  - https://en.wikipedia.org/wiki/Serratia#Pathology

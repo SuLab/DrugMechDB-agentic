@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00845_MESH_D056006_1
+  disease: Multibacillary leprosy
+  disease_mesh: MESH:D056006
+  drug: clofazimine
+  drug_mesh: MESH:D002991
+  drugbank: DB:DB00845
+links:
+  - key: disrupts
+    source: MESH:D002991
+    target: CHEBI:16991
+  - key: in taxon
+    source: CHEBI:16991
+    target: taxonomy:1769
+  - key: causes
+    source: taxonomy:1769
+    target: MESH:D056006
+multigraph: true
+nodes:
+  - id: MESH:D002991
+    label: Drug
+    name: clofazimine
+  - id: CHEBI:16991
+    label: ChemicalSubstance
+    name: deoxyribonucleic acid
+  - id: taxonomy:1769
+    label: OrganismTaxon
+    name: Mycobacterium leprae
+  - id: MESH:D056006
+    label: Disease
+    name: Multibacillary leprosy
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1292/
+  - https://en.wikipedia.org/wiki/Clofazimine#Mechanism

@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00360_MESH_D010661_1
+  disease: Classical phenylketonuria
+  disease_mesh: MESH:D010661
+  drug: sapropterin
+  drug_mesh: MESH:C003402
+  drugbank: DB:DB00360
+links:
+  - key: increases activity of
+    source: MESH:C003402
+    target: UniProt:P00439
+  - key: positively regulates
+    source: UniProt:P00439
+    target: GO:0004505
+  - key: decreases abundance of
+    source: GO:0004505
+    target: CHEBI:28044
+  - key: positively correlated with
+    source: CHEBI:28044
+    target: MESH:D010661
+multigraph: true
+nodes:
+  - id: MESH:C003402
+    label: Drug
+    name: sapropterin
+  - id: UniProt:P00439
+    label: Protein
+    name: Phenylalanine-4-hydroxylase
+  - id: GO:0004505
+    label: MolecularActivity
+    name: phenylalanine 4-monooxygenase activity
+  - id: CHEBI:28044
+    label: ChemicalSubstance
+    name: phenylalanine
+  - id: MESH:D010661
+    label: Disease
+    name: Classical phenylketonuria
+references:
+  - https://go.drugbank.com/drugs/DB00360#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Tetrahydrobiopterin#Cofactor_for_phenylalanine_hydroxylase

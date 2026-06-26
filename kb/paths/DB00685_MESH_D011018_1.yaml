@@ -1,0 +1,50 @@
+comment: Due to its hepatotoxic potential, trovafloxacin was withdrawn from the market.
+directed: true
+graph:
+  _id: DB00685_MESH_D011018_1
+  disease: Pneumonia due to Streptococcus
+  disease_mesh: MESH:D011018
+  drug: Trovafloxacin
+  drug_mesh: MESH:C080163
+  drugbank: DB:DB00685
+links:
+  - key: negatively regulates
+    source: MESH:C080163
+    target: InterPro:IPR035516
+  - key: negatively regulates
+    source: MESH:C080163
+    target: InterPro:IPR013760
+  - key: positively regulates
+    source: InterPro:IPR035516
+    target: GO:0006260
+  - key: positively regulates
+    source: InterPro:IPR013760
+    target: GO:0006260
+  - key: in taxon
+    source: GO:0006260
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D011018
+multigraph: true
+nodes:
+  - id: MESH:C080163
+    label: Drug
+    name: Trovafloxacin
+  - id: InterPro:IPR035516
+    label: GeneFamily
+    name: DNA gyrase/topoisomerase IV, subunit A, C-terminal
+  - id: InterPro:IPR013760
+    label: GeneFamily
+    name: DNA topoisomerase, type IIA-like domain superfamily
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D011018
+    label: Disease
+    name: Pneumonia due to Streptococcus
+references:
+  - https://go.drugbank.com/drugs/DB00685

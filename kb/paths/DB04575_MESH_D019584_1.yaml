@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB04575_MESH_D019584_1
+  disease: Menopausal flushing
+  disease_mesh: MESH:D019584
+  drug: quinestrol
+  drug_mesh: MESH:D011800
+  drugbank: DB:DB04575
+links:
+  - key: increases activity of
+    source: MESH:D011800
+    target: UniProt:P03372
+  - key: positively regulates
+    source: UniProt:P03372
+    target: GO:0006874
+  - key: regulates
+    source: GO:0006874
+    target: MESH:D014666
+  - key: positively regulates
+    source: MESH:D014666
+    target: GO:0001659
+  - key: negatively correlated with
+    source: GO:0001659
+    target: HP:0005968
+  - key: positively correlated with
+    source: HP:0005968
+    target: MESH:D019584
+multigraph: true
+nodes:
+  - id: MESH:D011800
+    label: Drug
+    name: quinestrol
+  - id: UniProt:P03372
+    label: Protein
+    name: Estrogen receptor
+  - id: GO:0006874
+    label: BiologicalProcess
+    name: cellular calcium ion homeostasis
+  - id: MESH:D014666
+    label: GrossAnatomicalStructure
+    name: Vasomotor System
+  - id: GO:0001659
+    label: BiologicalProcess
+    name: temperature homeostasis
+  - id: HP:0005968
+    label: PhenotypicFeature
+    name: Temperature instability
+  - id: MESH:D019584
+    label: Disease
+    name: Menopausal flushing
+references:
+  - https://go.drugbank.com/drugs/DB04575

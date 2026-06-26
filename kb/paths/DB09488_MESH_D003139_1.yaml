@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB09488_MESH_D003139_1
+  disease: Common cold
+  disease_mesh: MESH:D003139
+  drug: acrivastine
+  drug_mesh: MESH:C043648
+  drugbank: DB:DB09488
+links:
+  - key: decreases activity of
+    source: MESH:C043648
+    target: UniProt:P35367
+  - key: participates in
+    source: UniProt:P35367
+    target: GO:0034776
+  - key: increases activity of
+    source: GO:0034776
+    target: GO:0007186
+  - key: increases activity of
+    source: GO:0007186
+    target: UniProt:P19838
+  - key: positively regulates
+    source: UniProt:P19838
+    target: GO:0006954
+  - key: caused by
+    source: GO:0006954
+    target: taxonomy:10239
+  - key: causes
+    source: taxonomy:10239
+    target: MESH:D003139
+multigraph: true
+nodes:
+  - id: MESH:C043648
+    label: Drug
+    name: acrivastine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: GO:0034776
+    label: BiologicalProcess
+    name: response to histamine
+  - id: GO:0007186
+    label: BiologicalProcess
+    name: G protein-coupled receptor signaling pathway
+  - id: UniProt:P19838
+    label: Protein
+    name: Nuclear factor NF-kappa-B p105 subunit
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: taxonomy:10239
+    label: OrganismTaxon
+    name: Viruses
+  - id: MESH:D003139
+    label: Disease
+    name: Common cold
+references:
+  - https://go.drugbank.com/drugs/DB09488#BE0000442
+  - https://en.wikipedia.org/wiki/Common_cold#cite_note-13

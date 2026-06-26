@@ -1,0 +1,20 @@
+directed: true
+graph:
+  _id: DB02362_MESH_D010392_1
+  disease: Pemphigus
+  disease_mesh: MESH:D010392
+  drug: aminobenzoic acid
+  drug_mesh: MESH:D010129
+  drugbank: DB:DB02362
+links:
+  - key: treats
+    source: MESH:D010129
+    target: MESH:D010392
+multigraph: true
+nodes:
+  - id: MESH:D010129
+    label: Drug
+    name: aminobenzoic acid
+  - id: MESH:D010392
+    label: Disease
+    name: Pemphigus

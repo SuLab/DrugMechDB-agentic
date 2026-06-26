@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00186_MESH_D016584_1
+  disease: Panic disorder
+  disease_mesh: MESH:D016584
+  drug: lorazepam
+  drug_mesh: MESH:D008140
+  drugbank: DB:DB00186
+links:
+  - key: increases activity of
+    source: MESH:D008140
+    target: InterPro:IPR006028
+  - key: positively regulates
+    source: InterPro:IPR006028
+    target: GO:0007214
+  - key: negatively regulates
+    source: GO:0007214
+    target: HP:0100852
+  - key: positively correlated with
+    source: HP:0100852
+    target: MESH:D016584
+multigraph: true
+nodes:
+  - id: MESH:D008140
+    label: Drug
+    name: Lorazepam
+  - id: InterPro:IPR006028
+    label: GeneFamily
+    name: Gamma-aminobutyric acid A receptor/Glycine receptor alpha
+  - id: GO:0007214
+    label: BiologicalProcess
+    name: Gamma-aminobutyric acid signaling pathway
+  - id: HP:0100852
+    label: PhenotypicFeature
+    name: Abnormal fear/anxiety-related behavior
+  - id: MESH:D016584
+    label: Disease
+    name: Panic disorder
+references:
+  - https://go.drugbank.com/drugs/DB00186#BE0004797

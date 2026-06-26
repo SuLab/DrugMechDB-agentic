@@ -1,0 +1,64 @@
+directed: true
+graph:
+  _id: DB00586_MESH_D001172_1
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: diclofenac
+  drug_mesh: MESH:C064142,MESH:D004008,MESH:C000614065
+  drugbank: DB:DB00586
+links:
+  - key: decreases activity of
+    source: DB:DB00586
+    target: UniProt:P35354
+  - key: decreases activity of
+    source: DB:DB00586
+    target: UniProt:P23219
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: MESH:D011453
+  - key: increases abundance of
+    source: UniProt:P23219
+    target: MESH:D011453
+  - key: participates in
+    source: MESH:D011453
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0002829
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0001386
+  - key: positively correlated with
+    source: HP:0001386
+    target: MESH:D001172
+  - key: positively correlated with
+    source: HP:0002829
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: DB:DB00586
+    label: Drug
+    name: Diclofenac
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Joint pain
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB00586

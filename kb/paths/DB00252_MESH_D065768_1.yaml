@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB00252_MESH_D065768_1
+  disease: Lennox Gastaut Syndrome
+  disease_mesh: MESH:D065768
+  drug: Phenytoin
+  drug_mesh: MESH:D010672
+  drugbank: DB:DB00252
+links:
+  - key: decreases activity of
+    source: MESH:D010672
+    target: InterPro:IPR001696
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0098870
+  - key: contributes to
+    source: GO:0098870
+    target: HP:0001250
+  - key: manifestation of
+    source: HP:0001250
+    target: MESH:D065768
+multigraph: true
+nodes:
+  - id: MESH:D010672
+    label: Drug
+    name: Phenytoin
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: GO:0098870
+    label: BiologicalProcess
+    name: action potential propagation
+  - id: HP:0001250
+    label: PhenotypicFeature
+    name: Seizure
+  - id: MESH:D065768
+    label: Disease
+    name: Lennox Gastaut Syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00252#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Phenytoin#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Lennox%E2%80%93Gastaut_syndrome

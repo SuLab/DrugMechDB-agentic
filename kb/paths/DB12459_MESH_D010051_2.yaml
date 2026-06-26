@@ -1,0 +1,77 @@
+directed: true
+graph:
+  _id: DB12459_MESH_D010051_2
+  disease: Malignant tumor of ovary
+  disease_mesh: MESH:D010051
+  drug: gemcitabine
+  drug_mesh: MESH:C056507
+  drugbank: DB:DB12459
+links:
+  - key: negatively regulates
+    source: MESH:C056507
+    target: UniProt:P04818
+  - key: negatively regulates
+    source: MESH:C056507
+    target: UniProt:P30085
+  - key: negatively regulates
+    source: MESH:C056507
+    target: UniProt:P23921
+  - key: positively regulates
+    source: UniProt:P04818
+    target: GO:0006235
+  - key: positively regulates
+    source: UniProt:P30085
+    target: GO:0006225
+  - key: positively regulates
+    source: UniProt:P23921
+    target: GO:0061731
+  - key: positively correlated with
+    source: GO:0006235
+    target: GO:1904860
+  - key: positively correlated with
+    source: GO:0006225
+    target: GO:1904860
+  - key: positively correlated with
+    source: GO:0061731
+    target: GO:1904860
+  - key: correlated with
+    source: GO:1904860
+    target: HP:0031377
+  - key: positively correlated with
+    source: HP:0031377
+    target: MESH:D010051
+multigraph: true
+nodes:
+  - id: MESH:C056507
+    label: Drug
+    name: gemcitabine
+  - id: UniProt:P04818
+    label: Protein
+    name: Thymidylate synthase
+  - id: UniProt:P30085
+    label: Protein
+    name: UMP-CMP kinase
+  - id: UniProt:P23921
+    label: Protein
+    name: Ribonucleoside-diphosphate reductase large subunit
+  - id: GO:0006235
+    label: BiologicalProcess
+    name: dTTP biosynthetic process
+  - id: GO:0006225
+    label: BiologicalProcess
+    name: UDP biosynthetic process
+  - id: GO:0061731
+    label: MolecularActivity
+    name: ribonucleoside-diphosphate reductase activity
+  - id: GO:1904860
+    label: BiologicalProcess
+    name: DNA synthesis involved in mitotic DNA replication
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D010051
+    label: Disease
+    name: Malignant tumor of ovary
+references:
+  - https://go.drugbank.com/drugs/DB00441#mechanism-of-action
+  - https://europepmc.org/article/med/7481842

@@ -1,0 +1,40 @@
+comment: MESH:D016780 was initially denoted as Falciparum malaria in the original
+  xls file but the name on the MESH website is Malaria, Falciparum, which is the name
+  used here.
+directed: true
+graph:
+  _id: DB09274_MESH_D016778_1
+  disease: Malaria, Falciparum
+  disease_mesh: MESH:D016778
+  drug: Artesunate
+  drug_mesh: MESH:D000077332
+  drugbank: DB:DB09274
+links:
+  - key: negatively regulates
+    source: MESH:D000077332
+    target: UniProt:P04926
+  - key: in taxon
+    source: UniProt:P04926
+    target: taxonomy:5833
+  - key: causes
+    source: taxonomy:5833
+    target: MESH:D016778
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C111789
+    id: MESH:D000077332
+    label: Drug
+    name: Artesunate
+  - id: UniProt:P04926
+    label: Protein
+    name: Malaria protein EXP-1
+  - id: taxonomy:5833
+    label: OrganismTaxon
+    name: Plasmodium falciparum
+  - id: MESH:D016778
+    label: Disease
+    name: Malaria, Falciparum
+references:
+  - https://go.drugbank.com/drugs/DB09274#mechanism-of-action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/6917864#section=Pharmacology-and-Biochemistry

@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB03904_MESH_D003877_1
+  disease: Contact dermatitis
+  disease_mesh: MESH:D003877
+  drug: Carbamide
+  drug_mesh: MESH:D014508
+  drugbank: DB:DB03904
+links:
+  - key: subclass of
+    source: MESH:D014508
+    target: MESH:D058427
+  - key: positively regulates
+    source: MESH:D058427
+    target: GO:0061436
+  - key: treats
+    source: GO:0061436
+    target: MESH:D003877
+multigraph: true
+nodes:
+  - id: MESH:D014508
+    label: Drug
+    name: Carbamide
+  - id: MESH:D058427
+    label: ChemicalSubstance
+    name: Humectant
+  - id: GO:0061436
+    label: BiologicalProcess
+    name: Establishment of skin barrier
+  - id: MESH:D003877
+    label: Disease
+    name: Contact dermatitis
+references:
+  - https://go.drugbank.com/drugs/DB03904

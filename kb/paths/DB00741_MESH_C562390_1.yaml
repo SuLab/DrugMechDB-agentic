@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00741_MESH_C562390_1
+  disease: Humoral Hypercalcemia Of Malignancy
+  disease_mesh: MESH:C562390
+  drug: hydrocortisone
+  drug_mesh: MESH:D006854
+  drugbank: DB:DB00741
+links:
+  - key: produces
+    source: MESH:D006854
+    target: MESH:C007133
+  - key: decreases activity of
+    source: MESH:C007133
+    target: UniProt:O15528
+  - key: participates in
+    source: UniProt:O15528
+    target: GO:0006816
+  - key: positively correlated with
+    source: GO:0006816
+    target: HP:0003072
+  - key: caused by
+    source: HP:0003072
+    target: MESH:D044162
+  - key: contributes to
+    source: MESH:D044162
+    target: MESH:C562390
+multigraph: true
+nodes:
+  - id: MESH:D006854
+    label: Drug
+    name: hydrocortisone
+  - id: MESH:C007133
+    label: ChemicalSubstance
+    name: hydrocortisone hemisuccinate
+  - id: UniProt:O15528
+    label: Protein
+    name: 25-hydroxyvitamin D-1 alpha hydroxylase, mitochondrial
+  - id: GO:0006816
+    label: BiologicalProcess
+    name: calcium ion transport
+  - id: HP:0003072
+    label: PhenotypicFeature
+    name: Hypercalcemia
+  - id: MESH:D044162
+    label: ChemicalSubstance
+    name: Parathyroid Hormone-Related Protein
+  - id: MESH:C562390
+    label: Disease
+    name: Humoral Hypercalcemia Of Malignancy
+references:
+  - https://go.drugbank.com/drugs/DB00741#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22HYDROCORTISONE%22
+  - https://www.uniprot.org/uniprot/O15528#function
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4675637/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5442343/
+  - https://en.wikipedia.org/wiki/Parathyroid_hormone-related_protein
+  - https://en.wikipedia.org/wiki/Parathyroid_hormone-related_protein#Humoral_hypercalcemia_of_malignancy

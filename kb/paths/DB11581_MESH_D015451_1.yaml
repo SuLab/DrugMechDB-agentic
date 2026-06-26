@@ -1,0 +1,42 @@
+comment: MESH:D015451 can also be denoted as Chronic lymphoid leukemia.
+directed: true
+graph:
+  _id: DB11581_MESH_D015451_1
+  disease: Leukemia, Lymphocytic, Chronic, B-Cell
+  disease_mesh: MESH:D015451
+  drug: venetoclax
+  drug_mesh: MESH:C579720
+  drugbank: DB:DB11581
+links:
+  - key: negatively regulates
+    source: MESH:C579720
+    target: UniProt:P10415
+  - key: positively regulates
+    source: UniProt:P10415
+    target: GO:0006915
+  - key: located in
+    source: GO:0006915
+    target: CL:0000542
+  - key: location of
+    source: CL:0000542
+    target: MESH:D015451
+multigraph: true
+nodes:
+  - id: MESH:C579720
+    label: Drug
+    name: venetoclax
+  - id: UniProt:P10415
+    label: Protein
+    name: Apoptosis regulator Bcl-2
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: CL:0000542
+    label: Cell
+    name: lymphocyte
+  - id: MESH:D015451
+    label: Disease
+    name: Leukemia, Lymphocytic, Chronic, B-Cell
+references:
+  - https://go.drugbank.com/drugs/DB11581#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Bcl-2#Venetoclax_(ABT-199)

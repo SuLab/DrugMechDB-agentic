@@ -1,0 +1,52 @@
+comment: The disease is also known as Pulmonary thromboembolism as per DrugCentral.
+  Note that among the original MESH IDs for this drug one of them seems to have been
+  deprecated (MESH:C438268) whereas the other (MESH:C049714) is for a compound where
+  no evidence has been found to be related to fondaparinux.
+directed: true
+graph:
+  _id: DB00569_MESH_D011655_1
+  disease: Pulmonary Embolism
+  disease_mesh: MESH:D011655
+  drug: fondaparinux
+  drug_mesh: MESH:D000077425
+  drugbank: DB:DB00569
+links:
+  - key: positively regulates
+    source: MESH:D000077425
+    target: UniProt:P01008
+  - key: decreases activity of
+    source: UniProt:P01008
+    target: UniProt:P00742
+  - key: positively correlated with
+    source: UniProt:P00742
+    target: GO:0007596
+  - key: positively correlated with
+    source: GO:0007596
+    target: HP:0001907
+  - key: positively correlated with
+    source: HP:0001907
+    target: MESH:D011655
+multigraph: true
+nodes:
+  - id: MESH:D000077425
+    label: Drug
+    name: fondaparinux
+  - id: UniProt:P01008
+    label: Protein
+    name: Antithrombin-III
+  - id: UniProt:P00742
+    label: Protein
+    name: Coagulation factor X
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: blood coagulation
+  - id: HP:0001907
+    label: PhenotypicFeature
+    name: Thromboembolism
+  - id: MESH:D011655
+    label: Disease
+    name: Pulmonary Embolism
+references:
+  - https://go.drugbank.com/drugs/DB00569#BE0000280
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201202/
+  - https://en.wikipedia.org/wiki/Fondaparinux#Mechanism_of_action

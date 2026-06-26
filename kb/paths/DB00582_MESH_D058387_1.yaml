@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00582_MESH_D058387_1
+  disease: Candidemia
+  disease_mesh: MESH:D058387
+  drug: voriconazole
+  drug_mesh: MESH:D065819
+  drugbank: DB:DB00582
+links:
+  - key: negatively regulates
+    source: MESH:D065819
+    target: UniProt:P10613
+  - key: positively regulates
+    source: UniProt:P10613
+    target: GO:0006696
+  - key: positively correlated with
+    source: GO:0006696
+    target: GO:0030445
+  - key: in taxon
+    source: GO:0030445
+    target: taxonomy:237561
+  - key: causes
+    source: taxonomy:237561
+    target: MESH:D058387
+multigraph: true
+nodes:
+  - id: MESH:D065819
+    label: Drug
+    name: voriconazole
+  - id: UniProt:P10613
+    label: Protein
+    name: Lanosterol 14-alpha demethylase
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: ergosterol biosynthetic process
+  - id: GO:0030445
+    label: CellularComponent
+    name: yeast-form cell wall
+  - id: taxonomy:237561
+    label: OrganismTaxon
+    name: Candida albicans SC5314
+  - id: MESH:D058387
+    label: Disease
+    name: Candidemia
+references:
+  - https://go.drugbank.com/drugs/DB00582#mechanism-of-action

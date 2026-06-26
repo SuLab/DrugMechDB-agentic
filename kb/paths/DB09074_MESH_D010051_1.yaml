@@ -1,0 +1,66 @@
+comment: Commonly recommended for a treatment of ovarian cancer patients with deleterious
+  or suspected deleterious germline BRCA-mutations
+directed: true
+graph:
+  _id: DB09074_MESH_D010051_1
+  disease: Malignant tumor of ovary
+  disease_mesh: MESH:D010051
+  drug: Olaparib
+  drug_mesh: MESH:C531550
+  drugbank: DB:DB09074
+links:
+  - key: decreases activity of
+    source: MESH:C531550
+    target: UniProt:P09874
+  - key: decreases activity of
+    source: MESH:C531550
+    target: UniProt:Q9UGN5
+  - key: decreases activity of
+    source: MESH:C531550
+    target: UniProt:Q9Y6F1
+  - key: positively regulates
+    source: UniProt:P09874
+    target: GO:0006281
+  - key: positively regulates
+    source: UniProt:Q9UGN5
+    target: GO:0006281
+  - key: positively regulates
+    source: UniProt:Q9Y6F1
+    target: GO:0006281
+  - key: prevents
+    source: GO:0006281
+    target: GO:0008219
+  - key: negatively correlated with
+    source: GO:0008219
+    target: GO:0007048
+  - key: positively correlated with
+    source: GO:0007048
+    target: MESH:D010051
+multigraph: true
+nodes:
+  - id: MESH:C531550
+    label: Drug
+    name: Olaparib
+  - id: UniProt:P09874
+    label: Protein
+    name: Poly [ADP-ribose] polymerase 1
+  - id: UniProt:Q9UGN5
+    label: Protein
+    name: Poly [ADP-ribose] polymerase 2
+  - id: UniProt:Q9Y6F1
+    label: Protein
+    name: Poly [ADP-ribose] polymerase 3
+  - id: GO:0006281
+    label: BiologicalProcess
+    name: DNA repair
+  - id: GO:0008219
+    label: BiologicalProcess
+    name: Cell death
+  - id: GO:0007048
+    label: BiologicalProcess
+    name: Obsolete oncogenesis
+  - id: MESH:D010051
+    label: Disease
+    name: Malignant tumor of ovary
+references:
+  - https://go.drugbank.com/drugs/DB09074#BE0001717

@@ -1,0 +1,54 @@
+comment: Cefditoren pivoxil is the pivaloyloxymethyl ester prodrug of cefditoren
+directed: true
+graph:
+  _id: DB01066_MESH_D013290_3
+  disease: Streptococcal infections
+  disease_mesh: MESH:D013290
+  drug: Cefditoren pivoxil
+  drug_mesh: MESH:C057710
+  drugbank: DB:DB01066
+links:
+  - key: has metabolite
+    source: MESH:C057710
+    target: MESH:C073460
+  - key: decreases activity of
+    source: MESH:C073460
+    target: InterPro:IPR001460
+  - key: positively correlated with
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: contributes to
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:1314
+  - key: causes
+    source: taxonomy:1314
+    target: MESH:D013290
+multigraph: true
+nodes:
+  - id: MESH:C057710
+    label: Drug
+    name: Cefditoren pivoxil
+  - id: MESH:C073460
+    label: ChemicalSubstance
+    name: Cefditoren
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: Peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: Peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:1314
+    label: OrganismTaxon
+    name: Streptococcus pyogenes
+  - id: MESH:D013290
+    label: Disease
+    name: Streptococcal Infections
+references:
+  - https://go.drugbank.com/drugs/DB01066
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Cefditoren-pivoxil#section=Pharmacology-and-Biochemistry

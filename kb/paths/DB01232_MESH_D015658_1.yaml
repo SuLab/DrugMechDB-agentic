@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01232_MESH_D015658_1
+  disease: Human immunodeficiency virus infection
+  disease_mesh: MESH:D015658
+  drug: saquinavir
+  drug_mesh: MESH:D019258
+  drugbank: DB:DB01232
+links:
+  - key: decreases activity of
+    source: MESH:D019258
+    target: UniProt:Q72874
+  - key: increases activity of
+    source: UniProt:Q72874
+    target: UniProt:P04591
+  - key: participates in
+    source: UniProt:P04591
+    target: GO:0019068
+  - key: in taxon
+    source: GO:0019068
+    target: taxonomy:11676
+  - key: causes
+    source: taxonomy:11676
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:D019258
+    label: Drug
+    name: saquinavir
+  - id: UniProt:Q72874
+    label: Protein
+    name: HIV-1 protease
+  - id: UniProt:P04591
+    label: Protein
+    name: Gag polyprotein
+  - id: GO:0019068
+    label: BiologicalProcess
+    name: virion assembly
+  - id: taxonomy:11676
+    label: OrganismTaxon
+    name: Human immunodeficiency virus 1
+  - id: MESH:D015658
+    label: Disease
+    name: Human immunodeficiency virus infection
+references:
+  - https://go.drugbank.com/drugs/DB01232#mechanism-of-action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/441243
+  - https://en.wikipedia.org/wiki/Saquinavir
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL114/

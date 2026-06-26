@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00623_MESH_D012559_2
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: fluphenazine enanthate
+  drug_mesh: MESH:C017610
+  drugbank: DB:DB00623
+links:
+  - key: decreases activity of
+    source: MESH:C017610
+    target: UniProt:P14416
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: GO:0061527
+  - key: located in
+    source: GO:0061527
+    target: UBERON:0001017
+  - key: correlated with
+    source: UBERON:0001017
+    target: InterPro:IPR022423
+  - key: correlated with
+    source: InterPro:IPR022423
+    target: HP:0000708
+  - key: positively correlated with
+    source: HP:0000708
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:C017610
+    label: Drug
+    name: fluphenazine enanthate
+  - id: UniProt:P14416
+    label: Protein
+    name: dopamine D2 receptor
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: dopamine secretion, neurotransmission
+  - id: UBERON:0001017
+    label: GrossAnatomicalStructure
+    name: central nervous system
+  - id: InterPro:IPR022423
+    label: GeneFamily
+    name: Neurohypophysial hormone
+  - id: HP:0000708
+    label: PhenotypicFeature
+    name: Behavioral abnormality
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB00623
+  - https://pubchem.ncbi.nlm.nih.gov/compound/3372
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL726/
+  - https://en.wikipedia.org/wiki/Fluphenazine

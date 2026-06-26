@@ -1,0 +1,39 @@
+comment: Norgestrel is composed of a racemic mixture of two stereoisomers, dextronorgestrel
+  and levonorgestrel. However, only the levorotary enantiomer (levonorgestrel) is
+  biologically active. There is an evidence indicating that levonorgestrel activates
+  progesteron receptor https://pubmed.ncbi.nlm.nih.gov/16112947/
+directed: true
+graph:
+  _id: DB09389_MESH_D008595_1
+  disease: Menorrhagia
+  disease_mesh: MESH:D008595
+  drug: Norgestrel
+  drug_mesh: MESH:D009644
+  drugbank: DB:DB09389
+links:
+  - key: increases activity of
+    source: MESH:D009644
+    target: UniProt:P06401
+  - key: negatively regulates
+    source: UniProt:P06401
+    target: GO:0050673
+  - key: positively correlated with
+    source: GO:0050673
+    target: MESH:D008595
+multigraph: true
+nodes:
+  - id: MESH:D009644
+    label: Drug
+    name: Norgestrel
+  - id: UniProt:P06401
+    label: Protein
+    name: Progesterone receptor
+  - id: GO:0050673
+    label: BiologicalProcess
+    name: Epithelial cell proliferation
+  - id: MESH:D008595
+    label: Disease
+    name: Menorrhagia
+references:
+  - https://go.drugbank.com/drugs/DB00367#BE0000557
+  - https://pubmed.ncbi.nlm.nih.gov/8671392/

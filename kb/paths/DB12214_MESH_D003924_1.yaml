@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB12214_MESH_D003924_1
+  disease: Diabetes mellitus type 2
+  disease_mesh: MESH:D003924
+  drug: luseogliflozin
+  drug_mesh: MESH:C549343
+  drugbank: DB:DB12214
+links:
+  - key: negatively regulates
+    source: MESH:C549343
+    target: UniProt:P13866
+  - key: negatively regulates
+    source: MESH:C549343
+    target: UniProt:Q8WWX8
+  - key: positively regulates
+    source: UniProt:P13866
+    target: GO:0098708
+  - key: positively regulates
+    source: UniProt:Q8WWX8
+    target: GO:1904659
+  - key: positively correlated with
+    source: GO:0098708
+    target: GO:0035623
+  - key: positively correlated with
+    source: GO:1904659
+    target: GO:0035623
+  - key: positively correlated with
+    source: GO:0035623
+    target: HP:0003074
+  - key: manifestation of
+    source: HP:0003074
+    target: MESH:D003924
+multigraph: true
+nodes:
+  - id: MESH:C549343
+    label: Drug
+    name: luseogliflozin
+  - id: UniProt:P13866
+    label: Protein
+    name: Sodium/glucose cotransporter 1
+  - id: UniProt:Q8WWX8
+    label: Protein
+    name: Sodium/myo-inositol cotransporter 2
+  - id: GO:0098708
+    label: BiologicalProcess
+    name: glucose import across plasma membrane
+  - id: GO:1904659
+    label: BiologicalProcess
+    name: glucose transmembrane transport
+  - id: GO:0035623
+    label: BiologicalProcess
+    name: renal glucose absorption
+  - id: HP:0003074
+    label: PhenotypicFeature
+    name: Hyperglycemia
+  - id: MESH:D003924
+    label: Disease
+    name: Diabetes mellitus type 2
+references:
+  - https://en.wikipedia.org/wiki/Luseogliflozin
+  - https://en.wikipedia.org/wiki/SGLT2_inhibitor

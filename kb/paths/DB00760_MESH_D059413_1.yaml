@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00760_MESH_D059413_1
+  disease: Infectious disease of abdomen
+  disease_mesh: MESH:D059413
+  drug: meropenem
+  drug_mesh: MESH:C059500
+  drugbank: DB:DB00760
+links:
+  - key: negatively regulates
+    source: MESH:C059500
+    target: UniProt:P24228
+  - key: positively regulates
+    source: UniProt:P24228
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: positively correlated with
+    source: GO:0009273
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:562
+  - key: positively correlated with
+    source: taxonomy:562
+    target: MESH:D059413
+multigraph: true
+nodes:
+  - id: MESH:C059500
+    label: Drug
+    name: meropenem
+  - id: UniProt:P24228
+    label: Protein
+    name: D-alanyl-D-alanine carboxypeptidase DacB (Escherichia coli)
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D059413
+    label: Disease
+    name: Infectious disease of abdomen
+references:
+  - https://go.drugbank.com/drugs/DB00760#BE0000744
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3049134/

@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00722_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: lisinopril
+  drug_mesh: MESH:D017706
+  drugbank: DB:DB00722
+links:
+  - key: negatively regulates
+    source: MESH:D017706
+    target: UniProt:P12821
+  - key: positively regulates
+    source: UniProt:P12821
+    target: GO:0002003
+  - key: decreases abundance of
+    source: UniProt:P12821
+    target: CHEBI:3165
+  - key: negatively correlated with
+    source: CHEBI:3165
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0002003
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: affects risk for
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D017706
+    label: Drug
+    name: lisinopril
+  - id: UniProt:P12821
+    label: Protein
+    name: Angiotensin-converting enzyme
+  - id: CHEBI:3165
+    label: ChemicalSubstance
+    name: bradykinin
+  - id: GO:0002003
+    label: BiologicalProcess
+    name: angiotensin maturation
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00722#BE0000221

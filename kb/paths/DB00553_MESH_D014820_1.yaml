@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00553_MESH_D014820_1
+  disease: Vitiligo
+  disease_mesh: MESH:D014820
+  drug: methoxsalen
+  drug_mesh: MESH:D008730
+  drugbank: DB:DB00553
+links:
+  - key: positively regulates
+    source: MESH:D008730
+    target: CL:0000148
+  - key: positively regulates
+    source: CL:0000148
+    target: GO:0043473
+  - key: negatively correlated with
+    source: GO:0043473
+    target: MESH:D014820
+multigraph: true
+nodes:
+  - id: MESH:D008730
+    label: Drug
+    name: Methoxsalen
+  - id: CL:0000148
+    label: Cell
+    name: Melanocyte
+  - id: GO:0043473
+    label: BiologicalProcess
+    name: Pigmentation
+  - id: MESH:D014820
+    label: Disease
+    name: Vitiligo
+references:
+  - https://go.drugbank.com/drugs/DB00553
+  - https://www.sciencedirect.com/topics/neuroscience/methoxsalen

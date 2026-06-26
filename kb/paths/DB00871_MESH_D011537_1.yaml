@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00871_MESH_D011537_1
+  disease: Itching of skin
+  disease_mesh: MESH:D011537
+  drug: terbutaline
+  drug_mesh: MESH:D013726
+  drugbank: DB:DB00871
+links:
+  - key: positively regulates
+    source: MESH:D013726
+    target: UniProt:P07550
+  - key: participates in
+    source: UniProt:P07550
+    target: GO:0007190
+  - key: positively regulates
+    source: GO:0007190
+    target: GO:0006171
+  - key: prevents
+    source: GO:0006171
+    target: GO:0097279
+  - key: causes
+    source: GO:0097279
+    target: MESH:D011537
+multigraph: true
+nodes:
+  - id: MESH:D013726
+    label: Drug
+    name: terbutaline
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: GO:0007190
+    label: BiologicalProcess
+    name: activation of adenylate cyclase activity
+  - id: GO:0006171
+    label: BiologicalProcess
+    name: cAMP biosynthetic process
+  - id: GO:0097279
+    label: BiologicalProcess
+    name: histamine secretion mediated by IgE immunoglobulin
+  - id: MESH:D011537
+    label: Disease
+    name: Itching of skin
+references:
+  - https://go.drugbank.com/drugs/DB00871#mechanism-of-action

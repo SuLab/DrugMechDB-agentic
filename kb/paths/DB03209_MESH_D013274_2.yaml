@@ -1,0 +1,49 @@
+comment: Oteracil is is a chemotherapy agent used in combination with tegafur, cisplatin
+  and gimeracil, used to reduce the toxic side effects associated with chemotherapy.
+directed: true
+graph:
+  _id: DB03209_MESH_D013274_2
+  disease: Stomach neoplasms
+  disease_mesh: MESH:D013274
+  drug: Oteracil
+  drug_mesh: MESH:D010094
+  drugbank: DB:DB03209
+links:
+  - key: decreases activity of
+    source: MESH:D010094
+    target: InterPro:IPR023031
+  - key: increases abundance of
+    source: InterPro:IPR023031
+    target: MESH:D005472
+  - key: positively correlated with
+    source: MESH:D005472
+    target: GO:0097237
+  - key: located in
+    source: GO:0097237
+    target: UBERON:0001199
+  - key: location of
+    source: UBERON:0001199
+    target: MESH:D013274
+multigraph: true
+nodes:
+  - id: MESH:D010094
+    label: Drug
+    name: Oteracil
+  - id: InterPro:IPR023031
+    label: GeneFamily
+    name: Orotate phosphoribosyltransferase
+  - id: MESH:D005472
+    label: ChemicalSubstance
+    name: Fluorouracil
+  - id: GO:0097237
+    label: BiologicalProcess
+    name: Cellular response to toxic substance
+  - id: UBERON:0001199
+    label: GrossAnatomicalStructure
+    name: Mucosa of stomach
+  - id: MESH:D013274
+    label: Disease
+    name: Stomach neoplasms
+references:
+  - https://go.drugbank.com/drugs/DB03209
+  - https://en.wikipedia.org/wiki/Tegafur/gimeracil/oteracil

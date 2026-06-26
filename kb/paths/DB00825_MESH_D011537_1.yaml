@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00825_MESH_D011537_1
+  disease: Itching of skin
+  disease_mesh: MESH:D011537
+  drug: levomenthol
+  drug_mesh: MESH:D008610
+  drugbank: DB:DB00825
+links:
+  - key: increases activity of
+    source: MESH:D008610
+    target: UniProt:Q7Z2W7
+  - key: increases activity of
+    source: MESH:D008610
+    target: UniProt:O75762
+  - key: increases activity of
+    source: MESH:D008610
+    target: UniProt:Q8NET8
+  - key: positively correlated with
+    source: UniProt:Q7Z2W7
+    target: GO:0062035
+  - key: positively correlated with
+    source: UniProt:O75762
+    target: GO:0062035
+  - key: positively correlated with
+    source: UniProt:Q8NET8
+    target: GO:0062035
+  - key: negatively correlated with
+    source: GO:0062035
+    target: HP:0000989
+  - key: positively correlated with
+    source: HP:0000989
+    target: MESH:D011537
+multigraph: true
+nodes:
+  - id: MESH:D008610
+    label: Drug
+    name: Levomenthol
+  - id: UniProt:Q7Z2W7
+    label: Protein
+    name: Transient receptor potential cation channel subfamily M member 8
+  - id: UniProt:O75762
+    label: Protein
+    name: Transient receptor potential cation channel subfamily A member 1
+  - id: UniProt:Q8NET8
+    label: Protein
+    name: Transient receptor potential cation channel subfamily V member 3
+  - id: GO:0062035
+    label: BiologicalProcess
+    name: Sensory perception of cold stimulus
+  - id: HP:0000989
+    label: PhenotypicFeature
+    name: Pruritus
+  - id: MESH:D011537
+    label: Disease
+    name: Itching of skin
+references:
+  - https://go.drugbank.com/drugs/DB00825

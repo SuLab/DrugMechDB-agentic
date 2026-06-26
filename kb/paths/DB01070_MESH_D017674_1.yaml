@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB01070_MESH_D017674_1
+  disease: Hypophosphatemia
+  disease_mesh: MESH:D017674
+  drug: dihydrotachysterol
+  drug_mesh: MESH:D004097
+  drugbank: DB:DB01070
+links:
+  - key: increases activity of
+    source: MESH:D004097
+    target: UniProt:P11473
+  - key: participates in
+    source: UniProt:P11473
+    target: GO:0070561
+  - key: positively regulates
+    source: GO:0070561
+    target: GO:0097291
+  - key: positively regulates
+    source: GO:0070561
+    target: GO:0055062
+  - key: increases abundance of
+    source: GO:0097291
+    target: MESH:D010710
+  - key: negatively correlated with
+    source: GO:0055062
+    target: MESH:D017674
+  - key: negatively correlated with
+    source: MESH:D010710
+    target: MESH:D017674
+multigraph: true
+nodes:
+  - id: MESH:D004097
+    label: Drug
+    name: Dihydrotachysterol
+  - id: UniProt:P11473
+    label: Protein
+    name: Vitamin D3 receptor
+  - id: GO:0070561
+    label: BiologicalProcess
+    name: Vitamin D receptor signaling pathway
+  - id: GO:0097291
+    label: BiologicalProcess
+    name: Renal phosphate ion absorption
+  - id: GO:0055062
+    label: BiologicalProcess
+    name: Phosphate ion homeostasis
+  - id: MESH:D010710
+    label: ChemicalSubstance
+    name: Phosphates
+  - id: MESH:D017674
+    label: Disease
+    name: Hypophosphatemia
+references:
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3944128/
+  - https://go.drugbank.com/drugs/DB01070

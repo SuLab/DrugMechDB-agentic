@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00158_MESH_D005494_1
+  disease: Folic Acid Deficiency
+  disease_mesh: MESH:D005494
+  drug: Folic Acid
+  drug_mesh: MESH:D005492
+  drugbank: DB:DB00158
+links:
+  - key: has metabolite
+    source: MESH:D005492
+    target: MESH:D013763
+  - key: negatively correlated with
+    source: MESH:D013763
+    target: HP:0001889
+  - key: manifestation of
+    source: HP:0001889
+    target: MESH:D005494
+multigraph: true
+nodes:
+  - id: MESH:D005492
+    label: Drug
+    name: Folic Acid
+  - id: MESH:D013763
+    label: ChemicalSubstance
+    name: Tetrahydrofolates
+  - id: HP:0001889
+    label: PhenotypicFeature
+    name: Megaloblastic anemia
+  - id: MESH:D005494
+    label: Disease
+    name: Folic Acid Deficiency
+references:
+  - https://go.drugbank.com/drugs/DB00158#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Folate_deficiency

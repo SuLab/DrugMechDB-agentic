@@ -1,0 +1,43 @@
+comment: Pipotiazine is under investigational in USA but approved in UK and other
+  countries for schizophrenia.
+directed: true
+graph:
+  _id: DB01621_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: Pipotiazine
+  drugbank: DB:DB01621
+links:
+  - key: decreases activity of
+    source: DB:DB01621
+    target: InterPro:IPR000929
+  - key: correlated with
+    source: InterPro:IPR000929
+    target: MESH:D004298
+  - key: positively correlated with
+    source: MESH:D004298
+    target: HP:0000738
+  - key: manifestation of
+    source: HP:0000738
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: DB:DB01621
+    label: Drug
+    name: Pipotiazine
+  - id: InterPro:IPR000929
+    label: GeneFamily
+    name: Dopamine receptor family
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: HP:0000738
+    label: PhenotypicFeature
+    name: Hallucinations
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB01621#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22PIPOTIAZINE%22
+  - https://en.wikipedia.org/wiki/Schizophrenia

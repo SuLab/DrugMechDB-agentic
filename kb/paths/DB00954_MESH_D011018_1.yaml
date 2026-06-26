@@ -1,0 +1,70 @@
+directed: true
+graph:
+  _id: DB00954_MESH_D011018_1
+  disease: Pneumonia due to Streptococcus
+  disease_mesh: MESH:D011018
+  drug: dirithromycin
+  drug_mesh: MESH:C053853
+  drugbank: DB:DB00954
+links:
+  - key: has metabolite
+    source: MESH:C053853
+    target: MESH:C007626
+  - key: negatively regulates
+    source: MESH:C007626
+    target: UniProt:P0C0D5
+  - key: negatively regulates
+    source: MESH:C007626
+    target: MESH:D012338
+  - key: located in
+    source: UniProt:P0C0D5
+    target: GO:0005840
+  - key: located in
+    source: MESH:D012338
+    target: GO:0005840
+  - key: positively regulates
+    source: GO:0005840
+    target: GO:0006412
+  - key: positively correlated with
+    source: GO:0006412
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D011018
+multigraph: true
+nodes:
+  - id: MESH:C053853
+    label: Drug
+    name: dirithromycin
+  - id: MESH:C007626
+    label: ChemicalSubstance
+    name: erythromyclamine
+  - id: UniProt:P0C0D5
+    label: Protein
+    name: 50S ribosomal protein L4 (Streptococcus sp)
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: GO:0005840
+    label: CellularComponent
+    name: Ribosome
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D011018
+    label: Disease
+    name: Pneumonia due to Streptococcus
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237072/
+  - https://go.drugbank.com/drugs/DB00954
+  - https://pubchem.ncbi.nlm.nih.gov/compound/6473883
+  - https://en.wikipedia.org/wiki/Dirithromycin

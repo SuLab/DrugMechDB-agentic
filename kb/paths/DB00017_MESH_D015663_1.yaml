@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB00017_MESH_D015663_1
+  disease: Postmenopausal osteoporosis
+  disease_mesh: MESH:D015663
+  drug: calcitonin (salmon synthetic)
+  drug_mesh: MESH:C028815
+  drugbank: DB:DB00017
+links:
+  - key: increases activity of
+    source: MESH:C028815
+    target: UniProt:P30988
+  - key: positively regulates
+    source: UniProt:P30988
+    target: GO:0004948
+  - key: negatively regulates
+    source: GO:0004948
+    target: CL:0000092
+  - key: positively regulates
+    source: GO:0004948
+    target: CL:0000062
+  - key: positively regulates
+    source: CL:0000092
+    target: GO:0046849
+  - key: positively regulates
+    source: CL:0000062
+    target: GO:0001503
+  - key: positively correlated with
+    source: GO:0046849
+    target: MESH:D015663
+  - key: negatively correlated with
+    source: GO:0001503
+    target: MESH:D015663
+multigraph: true
+nodes:
+  - id: MESH:C028815
+    label: Drug
+    name: Calcitonin (salmon synthetic)
+  - id: UniProt:P30988
+    label: Protein
+    name: Calcitonin receptor
+  - id: GO:0004948
+    label: MolecularActivity
+    name: Calcitonin receptor activity
+  - id: CL:0000092
+    label: Cell
+    name: Osteoclast
+  - id: CL:0000062
+    label: Cell
+    name: Osteoblast
+  - id: GO:0046849
+    label: BiologicalProcess
+    name: Bone remodeling
+  - id: GO:0001503
+    label: BiologicalProcess
+    name: Ossification
+  - id: MESH:D015663
+    label: Disease
+    name: Postmenopausal osteoporosis
+references:
+  - https://go.drugbank.com/drugs/DB00017
+  - https://en.wikipedia.org/wiki/Osteoporosis

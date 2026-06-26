@@ -1,0 +1,51 @@
+comment: Other commonly used names for this drug are inositol nicotinate (CHEBI:50134),
+  myo-inositol hexanicotinate (CHEBI:31699) and inositol hexanicotinate (CHEBI:33064)(https://en.wikipedia.org/wiki/Inositol_nicotinate).
+  This drug is made of niacin (vitamin B3, MESH:D009525) and inositol (MESH:D007294.
+  Note the original drug to curate for this disease was inositol but there is no evidence
+  for it to be used as treatment unless it's bound to nicotinic acid to form inositol
+  hexanicotinate.
+directed: true
+graph:
+  _id: DB08949_MESH_D010383_1
+  disease: Pellagra
+  disease_mesh: MESH:D010383
+  drug: Inositol Niacinate
+  drug_mesh: MESH:C005193
+  drugbank: DB:DB08949
+links:
+  - key: increases abundance of
+    source: MESH:C005193
+    target: CHEBI:15940
+  - key: increases abundance of
+    source: CHEBI:15940
+    target: CHEBI:17154
+  - key: negatively correlated with
+    source: CHEBI:17154
+    target: HP:0100497
+  - key: positively correlated with
+    source: HP:0100497
+    target: MESH:D010383
+multigraph: true
+nodes:
+  - id: MESH:C005193
+    label: Drug
+    name: Inositol Niacinate
+  - id: CHEBI:15940
+    label: ChemicalSubstance
+    name: nicotinic acid
+  - id: CHEBI:17154
+    label: ChemicalSubstance
+    name: nicotinamide
+  - id: HP:0100497
+    label: PhenotypicFeature
+    name: Vitamin B3 deficiency
+  - id: MESH:D010383
+    label: Disease
+    name: Pellagra
+references:
+  - https://go.drugbank.com/drugs/DB08949#mechanism-of-action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/3720#section=Drug-and-Medication-Information
+  - https://en.wikipedia.org/wiki/Pellagra#Treatment
+  - https://en.wikipedia.org/wiki/Nicotinamide
+  - https://en.wikipedia.org/wiki/Nicotinamide#Niacin_deficiency
+  - https://onlinelibrary.wiley.com/doi/epdf/10.1002/jppr.1250

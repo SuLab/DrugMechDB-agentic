@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00700_MESH_D006973_1
+  disease: Hypertension
+  disease_mesh: MESH:D006973
+  drug: Eplerenone
+  drug_mesh: MESH:D000077545
+  drugbank: DB:DB00700
+links:
+  - key: decreases activity of
+    source: MESH:D000077545
+    target: UniProt:P08235
+  - key: positively correlated with
+    source: UniProt:P08235
+    target: MESH:D000450
+  - key: participates in
+    source: MESH:D000450
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D000077545
+    label: Drug
+    name: Eplerenone
+  - id: UniProt:P08235
+    label: Protein
+    name: Mineralocorticoid receptor
+  - id: MESH:D000450
+    label: ChemicalSubstance
+    name: Aldosterone
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertension
+references:
+  - https://go.drugbank.com/drugs/DB00700#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Eplerenone#Pharmacology
+  - https://www.uniprot.org/uniprot/P08235#function
+  - https://en.wikipedia.org/wiki/Hypertension

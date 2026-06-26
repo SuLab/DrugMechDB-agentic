@@ -1,0 +1,54 @@
+comment: Ciprofloxacin is a second generation fluoroquinolone that is used to treat
+  a wide variety of bacterial susceptible infections.
+directed: true
+graph:
+  _id: DB00537_MESH_D004403_1
+  disease: Dysentery
+  disease_mesh: MESH:D004403
+  drug: ciprofloxacin
+  drug_mesh: MESH:D002939
+  drugbank: DB:DB00537
+links:
+  - key: decreases activity of
+    source: MESH:D002939
+    target: UniProt:P0AES5
+  - key: decreases activity of
+    source: MESH:D002939
+    target: UniProt:P0AFI4
+  - key: positively regulates
+    source: UniProt:P0AES5
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:P0AFI4
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:623
+  - key: causes
+    source: taxonomy:623
+    target: MESH:D004403
+multigraph: true
+nodes:
+  - id: MESH:D002939
+    label: Drug
+    name: ciprofloxacin
+  - id: UniProt:P0AES5
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:P0AFI4
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:623
+    label: OrganismTaxon
+    name: Shigella flexneri
+  - id: MESH:D004403
+    label: Disease
+    name: Dysentery
+references:
+  - https://go.drugbank.com/drugs/DB00537#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P0AES5#function
+  - https://www.uniprot.org/uniprot/P0AFI4#function
+  - https://en.wikipedia.org/wiki/Dysentery

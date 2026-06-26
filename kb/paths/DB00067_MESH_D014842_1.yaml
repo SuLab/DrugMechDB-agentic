@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB00067_MESH_D014842_1
+  disease: Von Willebrand disorder
+  disease_mesh: MESH:D014842
+  drug: Vasopressin
+  drug_mesh: MESH:C016671
+  drugbank: DB:DB00067
+links:
+  - key: increases abundance of
+    source: MESH:C016671
+    target: UniProt:P04275
+  - key: disrupted by
+    source: UniProt:P04275
+    target: MESH:D014842
+multigraph: true
+nodes:
+  - id: MESH:C016671
+    label: Drug
+    name: Vasopressin
+  - id: UniProt:P04275
+    label: Protein
+    name: Von Willebrand factor
+  - id: MESH:D014842
+    label: Disease
+    name: Von Willebrand disorder
+references:
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2599976/
+  - https://go.drugbank.com/drugs/DB00067

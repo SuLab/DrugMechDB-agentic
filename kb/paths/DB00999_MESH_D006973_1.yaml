@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00999_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: hydrochlorothiazide
+  drug_mesh: MESH:D006852
+  drugbank: DB:DB00999
+links:
+  - key: decreases activity of
+    source: MESH:D006852
+    target: UniProt:P55017
+  - key: participates in
+    source: UniProt:P55017
+    target: GO:0070294
+  - key: positively correlated with
+    source: GO:0070294
+    target: GO:0003092
+  - key: contributes to
+    source: GO:0003092
+    target: HP:0011104
+  - key: contributes to
+    source: HP:0011104
+    target: GO:0045777
+  - key: affects risk for
+    source: GO:0045777
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D006852
+    label: Drug
+    name: Hydrochlorothiazide
+  - id: UniProt:P55017
+    label: Protein
+    name: Solute carrier family 12 member 3
+  - id: GO:0070294
+    label: BiologicalProcess
+    name: Renal sodium ion absorption
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: Renal water retention
+  - id: HP:0011104
+    label: PhenotypicFeature
+    name: Abnormality of blood volume homeostasis
+  - id: GO:0045777
+    label: BiologicalProcess
+    name: Up regulation of blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00999

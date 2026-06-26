@@ -1,0 +1,36 @@
+comment: Diagnostic aid
+directed: true
+graph:
+  _id: DB09352_MESH_D015878_1
+  disease: Mydriasis
+  disease_mesh: MESH:D015878
+  drug: Hydroxyamfetamine
+  drug_mesh: MESH:D010136
+  drugbank: DB:DB09352
+links:
+  - key: positively regulates
+    source: MESH:D010136
+    target: GO:0061533
+  - key: positively regulates
+    source: GO:0061533
+    target: UniProt:P35348
+  - key: positively regulates
+    source: UniProt:P35348
+    target: MESH:D015878
+multigraph: true
+nodes:
+  - id: MESH:D010136
+    label: Drug
+    name: Hydroxyamfetamine
+  - id: GO:0061533
+    label: BiologicalProcess
+    name: Norepinephrine secretion, neurotransmissions
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: MESH:D015878
+    label: Disease
+    name: Mydriasis
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/3651
+  - https://go.drugbank.com/drugs/DB09352

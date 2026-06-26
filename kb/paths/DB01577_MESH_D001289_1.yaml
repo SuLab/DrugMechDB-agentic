@@ -1,0 +1,98 @@
+directed: true
+graph:
+  _id: DB01577_MESH_D001289_1
+  disease: Attention deficit hyperactivity disorder
+  disease_mesh: MESH:D001289
+  drug: methamphetamine
+  drug_mesh: MESH:D008694
+  drugbank: DB:DB01577
+links:
+  - key: decreases activity of
+    source: MESH:D008694
+    target: UniProt:P23975
+  - key: decreases activity of
+    source: MESH:D008694
+    target: UniProt:Q01959
+  - key: decreases activity of
+    source: MESH:D008694
+    target: UniProt:P27338
+  - key: decreases activity of
+    source: MESH:D008694
+    target: UniProt:P21397
+  - key: participates in
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: participates in
+    source: UniProt:Q01959
+    target: GO:0051583
+  - key: decreases abundance of
+    source: UniProt:P27338
+    target: MESH:D009638
+  - key: decreases abundance of
+    source: UniProt:P27338
+    target: MESH:D004298
+  - key: decreases abundance of
+    source: UniProt:P21397
+    target: MESH:D004298
+  - key: decreases abundance of
+    source: UniProt:P21397
+    target: MESH:D009638
+  - key: decreases abundance of
+    source: GO:0051620
+    target: MESH:D009638
+  - key: decreases abundance of
+    source: GO:0051583
+    target: MESH:D004298
+  - key: participates in
+    source: MESH:D009638
+    target: GO:0061533
+  - key: participates in
+    source: MESH:D004298
+    target: GO:0061527
+  - key: disrupted by
+    source: GO:0061533
+    target: MESH:D001289
+  - key: disrupted by
+    source: GO:0061527
+    target: MESH:D001289
+multigraph: true
+nodes:
+  - id: MESH:D008694
+    label: Drug
+    name: Methamphetamine
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: UniProt:Q01959
+    label: Protein
+    name: Sodium-dependent dopamine transporter
+  - id: UniProt:P27338
+    label: Protein
+    name: Amine oxidase B
+  - id: UniProt:P21397
+    label: Protein
+    name: Amine oxidase A
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: Noradrenaline uptake
+  - id: GO:0051583
+    label: BiologicalProcess
+    name: Dopamine uptake involved in synaptic transmission
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Noradrenaline
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0061533
+    label: BiologicalProcess
+    name: Norepinephrine secretion, neurotransmission
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D001289
+    label: ChemicalSubstance
+    name: Attention deficit hyperactivity disorder
+references:
+  - https://go.drugbank.com/drugs/DB01577#BE0001044
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2626918/

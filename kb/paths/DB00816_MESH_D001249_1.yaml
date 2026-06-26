@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00816_MESH_D001249_1
+  disease: Asthma
+  disease_mesh: MESH:D001249
+  drug: orciprenaline
+  drug_mesh: MESH:D009921
+  drugbank: DB:DB00816
+links:
+  - key: increases activity of
+    source: MESH:D009921
+    target: UniProt:P07550
+  - key: positively regulates
+    source: UniProt:P07550
+    target: InterPro:IPR030672
+  - key: increases abundance of
+    source: InterPro:IPR030672
+    target: MESH:D000242
+  - key: causes
+    source: MESH:D000242
+    target: GO:0044557
+  - key: precedes
+    source: GO:0044557
+    target: GO:0097366
+  - key: negatively correlated with
+    source: GO:0097366
+    target: MESH:D001249
+multigraph: true
+nodes:
+  - id: MESH:D009921
+    label: Drug
+    name: Orciprenaline
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: InterPro:IPR030672
+    label: GeneFamily
+    name: Adenylate cyclase
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: Cyclic adenosine monophosphate (cAMP)
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: Relaxation of smooth muscle
+  - id: GO:0097366
+    label: BiologicalProcess
+    name: Bronchodilation
+  - id: MESH:D001249
+    label: Disease
+    name: Asthma
+references:
+  - https://go.drugbank.com/drugs/DB00816

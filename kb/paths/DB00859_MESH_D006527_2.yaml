@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00859_MESH_D006527_2
+  disease: Wilson's disease
+  disease_mesh: MESH:D006527
+  drug: penicillamine
+  drug_mesh: MESH:D010396
+  drugbank: DB:DB00859
+links:
+  - key: capable of
+    source: MESH:D010396
+    target: GO:0046911
+  - key: decreases abundance of
+    source: GO:0046911
+    target: MESH:D003300
+  - key: regulates
+    source: MESH:D003300
+    target: GO:0055070
+  - key: treats
+    source: GO:0055070
+    target: MESH:D006527
+multigraph: true
+nodes:
+  - id: MESH:D010396
+    label: Drug
+    name: penicillamine
+  - id: GO:0046911
+    label: MolecularActivity
+    name: metal chelating activity
+  - id: MESH:D003300
+    label: ChemicalSubstance
+    name: Copper
+  - id: GO:0055070
+    label: BiologicalProcess
+    name: Copper ion homeostasis
+  - id: MESH:D006527
+    label: Disease
+    name: Wilson's disease
+references:
+  - https://go.drugbank.com/drugs/DB00859
+  - https://pubmed.ncbi.nlm.nih.gov/22802922/

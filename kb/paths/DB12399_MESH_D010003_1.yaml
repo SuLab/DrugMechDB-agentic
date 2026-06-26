@@ -1,0 +1,72 @@
+directed: true
+graph:
+  _id: DB12399_MESH_D010003_1
+  disease: Osteoarthritis
+  disease_mesh: MESH:D010003
+  drug: polmacoxib
+  drug_mesh: MESH:C000599293
+  drugbank: DB:DB12399
+links:
+  - key: decreases activity of
+    source: MESH:C000599293
+    target: UniProt:P35354
+  - key: decreases activity of
+    source: MESH:C000599293
+    target: InterPro:IPR001148
+  - key: positively regulates
+    source: InterPro:IPR001148
+    target: GO:0045453
+  - key: positively correlated with
+    source: GO:0045453
+    target: MESH:D010003
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0002829
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0001386
+  - key: manifestation of
+    source: HP:0001386
+    target: MESH:D010003
+  - key: manifestation of
+    source: HP:0002829
+    target: MESH:D010003
+multigraph: true
+nodes:
+  - id: MESH:C000599293
+    label: Drug
+    name: polmacoxib
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: InterPro:IPR001148
+    label: GeneFamily
+    name: Alpha carbonic anhydrase domain
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: bone resorption
+  - id: reactome:R-HSA-2162123
+    label: BiologicalProcess
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Arthralgia
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: MESH:D010003
+    label: Disease
+    name: Osteoarthritis
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL166863/
+  - https://en.wikipedia.org/wiki/Polmacoxib
+  - https://pubmed.ncbi.nlm.nih.gov/18662512/

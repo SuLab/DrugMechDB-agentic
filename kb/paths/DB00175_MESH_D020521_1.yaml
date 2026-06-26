@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DB00175_MESH_D020521_1
+  disease: Cerebrovascular accident
+  disease_mesh: MESH:D020521
+  drug: pravastatin
+  drug_mesh: MESH:D017035
+  drugbank: DB:DB00175
+links:
+  - key: decreases activity of
+    source: MESH:D017035
+    target: UniProt:P04035
+  - key: positively regulates
+    source: UniProt:P04035
+    target: GO:0006695
+  - key: increases abundance of
+    source: GO:0006695
+    target: MESH:D002784
+  - key: affects risk for
+    source: MESH:D002784
+    target: MESH:D020521
+  - key: increases activity of
+    source: MESH:D017035
+    target: UniProt:P01130
+  - key: positively regulates
+    source: UniProt:P01130
+    target: GO:0034383
+  - key: decreases abundance of
+    source: GO:0034383
+    target: MESH:D008077
+  - key: affects risk for
+    source: MESH:D008077
+    target: MESH:D020521
+multigraph: true
+nodes:
+  - id: MESH:D017035
+    label: Drug
+    name: Pravastatin
+  - id: UniProt:P04035
+    label: Protein
+    name: 3-hydroxy-3-methylglutaryl-coenzyme A reductase
+  - id: GO:0006695
+    label: BiologicalProcess
+    name: Cholesterol biosynthetic process
+  - id: MESH:D002784
+    label: ChemicalSubstance
+    name: Cholesterol
+  - id: UniProt:P01130
+    label: Protein
+    name: Low-density lipoprotein receptor
+  - id: GO:0034383
+    label: BiologicalProcess
+    name: Low-density lipoprotein particle clearance
+  - id: MESH:D008077
+    label: ChemicalSubstance
+    name: Lipoproteins, LDL
+  - id: MESH:D020521
+    label: Disease
+    name: Cerebrovascular accident
+references:
+  - https://go.drugbank.com/drugs/DB00175

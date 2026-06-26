@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB01026_MESH_D000308_1
+  disease: Adrenocortical Hyperfunction
+  disease_mesh: MESH:D000308
+  drug: ketoconazole
+  drug_mesh: MESH:D007654
+  drugbank: DB:DB01026
+links:
+  - key: decreases activity of
+    source: MESH:D007654
+    target: UniProt:P05093
+  - key: positively regulates
+    source: UniProt:P05093
+    target: GO:0006704
+  - key: increases abundance of
+    source: GO:0006704
+    target: MESH:D005938
+  - key: positively correlated with
+    source: MESH:D005938
+    target: MESH:D000308
+multigraph: true
+nodes:
+  - id: MESH:D007654
+    label: Drug
+    name: ketoconazole
+  - id: UniProt:P05093
+    label: Protein
+    name: Steroid 17-alpha-hydroxylase/17,20 lyase
+  - id: GO:0006704
+    label: BiologicalProcess
+    name: glucocorticoid biosynthetic process
+  - id: MESH:D005938
+    label: ChemicalSubstance
+    name: Glucocorticoids
+  - id: MESH:D000308
+    label: Disease
+    name: Adrenocortical Hyperfunction
+references:
+  - https://go.drugbank.com/drugs/DB01026#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22KETOCONAZOLE%22
+  - https://www.uniprot.org/uniprot/P05093#function
+  - https://link.springer.com/article/10.1007/s40267-020-00799-7
+  - https://en.wikipedia.org/wiki/Adrenocortical_hyperfunction

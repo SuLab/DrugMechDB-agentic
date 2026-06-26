@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB00130_MESH_D012778_1
+  disease: Short bowel syndrome
+  disease_mesh: MESH:D012778
+  drug: glutamine
+  drug_mesh: MESH:D005973
+  drugbank: DB:DB00130
+links:
+  - key: produces
+    source: MESH:D005973
+    target: CL:0000584
+  - key: capable of
+    source: CL:0000584
+    target: GO:0050892
+  - key: negatively correlated with
+    source: GO:0050892
+    target: MESH:D012778
+multigraph: true
+nodes:
+  - id: MESH:D005973
+    label: Drug
+    name: glutamine
+  - id: CL:0000584
+    label: Cell
+    name: enterocytes
+  - id: GO:0050892
+    label: BiologicalProcess
+    name: intestinal nutrient absorption
+  - id: MESH:D012778
+    label: Disease
+    name: Short bowel syndrome

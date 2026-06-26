@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB09109_MESH_D006467_1
+  disease: Hemophilia A
+  disease_mesh: MESH:D006467
+  drug: Turoctocog alfa
+  drug_mesh: MESH:C577506
+  drugbank: DB:DB09109
+links:
+  - key: chemically similar to
+    source: MESH:C577506
+    target: UniProt:P00451
+  - key: increases activity of
+    source: UniProt:P00451
+    target: UniProt:P00742
+  - key: increases activity of
+    source: UniProt:P00742
+    target: UniProt:P00734
+  - key: increases abundance of
+    source: UniProt:P00734
+    target: MESH:D005337
+  - key: participates in
+    source: MESH:D005337
+    target: GO:0072378
+  - key: negatively correlated with
+    source: GO:0072378
+    target: MESH:D006467
+multigraph: true
+nodes:
+  - id: MESH:C577506
+    label: Drug
+    name: Turoctocog alfa
+  - id: UniProt:P00451
+    label: Protein
+    name: Factor VIII
+  - id: UniProt:P00742
+    label: Protein
+    name: Factor X
+  - id: UniProt:P00734
+    label: Protein
+    name: Thrombin
+  - id: MESH:D005337
+    label: ChemicalSubstance
+    name: Fibrin
+  - id: GO:0072378
+    label: BiologicalProcess
+    name: Blood coagulation, fibrin clot formation
+  - id: MESH:D006467
+    label: Disease
+    name: Hemophilia A
+references:
+  - https://go.drugbank.com/drugs/DB09109
+  - https://en.wikipedia.org/wiki/Factor_VIII
+  - https://en.wikipedia.org/wiki/Coagulation

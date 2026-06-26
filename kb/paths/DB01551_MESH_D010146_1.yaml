@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB01551_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: dihydrocodeine
+  drug_mesh: MESH:C014481
+  drugbank: DB:DB01551
+links:
+  - key: has metabolite
+    source: MESH:C014481
+    target: CHEBI:4575
+  - key: increases activity of
+    source: CHEBI:4575
+    target: UniProt:P35372
+  - key: participates in
+    source: UniProt:P35372
+    target: reactome:R-HSA-418594
+  - key: decreases abundance of
+    source: reactome:R-HSA-418594
+    target: MESH:D013373
+  - key: positively correlated with
+    source: MESH:D013373
+    target: GO:0019233
+  - key: positively correlated with
+    source: GO:0019233
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:C014481
+    label: Drug
+    name: dihydrocodeine
+  - id: CHEBI:4575
+    label: ChemicalSubstance
+    name: Dihydromorphine
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu opioid receptor
+  - id: reactome:R-HSA-418594
+    label: Pathway
+    name: G alpha (i) signalling events
+  - id: MESH:D013373
+    label: ChemicalSubstance
+    name: Substance P
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: sensory perception of pain
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+references:
+  - https://go.drugbank.com/drugs/DB01551
+  - https://en.wikipedia.org/wiki/Dihydrocodeine
+  - https://pubmed.ncbi.nlm.nih.gov/25801029/

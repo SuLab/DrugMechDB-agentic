@@ -1,0 +1,51 @@
+comment: Ceftizoxime is a semisynthetic, third-generation cephalosporin antibiotic
+  which can be administered intravenously or by suppository for the treatment of various
+  bacterial infections.
+directed: true
+graph:
+  _id: DB01332_MESH_D013290_1
+  disease: Streptococcal Infections
+  disease_mesh: MESH:D013290
+  drug: ceftizoxime
+  drug_mesh: MESH:D015296
+  drugbank: DB:DB01332
+links:
+  - key: decreases activity of
+    source: MESH:D015296
+    target: InterPro:IPR001460
+  - key: participates in
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:1314
+  - key: causes
+    source: taxonomy:1314
+    target: MESH:D013290
+multigraph: true
+nodes:
+  - id: MESH:D015296
+    label: Drug
+    name: ceftizoxime
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:1314
+    label: OrganismTaxon
+    name: Streptococcus pyogenes
+  - id: MESH:D013290
+    label: Disease
+    name: Streptococcal Infections
+references:
+  - https://go.drugbank.com/drugs/DB01332#mechanism-of-action
+  - https://drugs.ncats.io/drug/C43C467DPE
+  - https://en.wikipedia.org/wiki/Group_A_streptococcal_infection

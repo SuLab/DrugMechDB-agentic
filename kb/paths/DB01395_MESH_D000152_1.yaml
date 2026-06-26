@@ -1,0 +1,57 @@
+comment: Drospirenone seems to have much lower affinity to androgen receptor than
+  to the progesterone counterpart (https://en.wikipedia.org/wiki/Drospirenone#Pharmacology).
+directed: true
+graph:
+  _id: DB01395_MESH_D000152_1
+  disease: Acne vulgaris
+  disease_mesh: MESH:D000152
+  drug: drospirenone
+  drug_mesh: MESH:C035144
+  drugbank: DB:DB01395
+links:
+  - key: negatively regulates
+    source: MESH:C035144
+    target: UniProt:P10275
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0006702
+  - key: positively regulates
+    source: MESH:C035144
+    target: UniProt:P06401
+  - key: negatively correlated with
+    source: UniProt:P06401
+    target: GO:0006702
+  - key: increases abundance of
+    source: GO:0006702
+    target: UBERON:0001866
+  - key: produced by
+    source: UBERON:0001866
+    target: HP:0025249
+  - key: positively correlated with
+    source: HP:0025249
+    target: MESH:D000152
+multigraph: true
+nodes:
+  - id: MESH:C035144
+    label: Drug
+    name: drospirenone
+  - id: UniProt:P06401
+    label: Protein
+    name: Progesterone receptor
+  - id: UniProt:P10275
+    label: Protein
+    name: Androgen receptor
+  - id: GO:0006702
+    label: BiologicalProcess
+    name: androgen biosynthetic process
+  - id: UBERON:0001866
+    label: GrossAnatomicalStructure
+    name: sebum
+  - id: HP:0025249
+    label: PhenotypicFeature
+    name: Comedo
+  - id: MESH:D000152
+    label: Disease
+    name: Acne vulgaris
+references:
+  - https://go.drugbank.com/drugs/DB01395#mechanism-of-action

@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB06650_MESH_D015451_1
+  disease: Chronic lymphoid leukemia
+  disease_mesh: MESH:D015451
+  drug: ofatumumab
+  drug_mesh: MESH:C527517
+  drugbank: DB:DB06650
+links:
+  - key: decreases activity of
+    source: MESH:C527517
+    target: UniProt:P11836
+  - key: positively regulates
+    source: UniProt:P11836
+    target: GO:0042100
+  - key: positively correlated with
+    source: GO:0042100
+    target: MESH:D015451
+multigraph: true
+nodes:
+  - id: MESH:C527517
+    label: Drug
+    name: Ofatumumab
+  - id: UniProt:P11836
+    label: Protein
+    name: B-lymphocyte antigen CD20
+  - id: GO:0042100
+    label: BiologicalProcess
+    name: B cell proliferation
+  - id: MESH:D015451
+    label: Disease
+    name: Chronic lymphoid leukemia, disease
+references:
+  - https://go.drugbank.com/drugs/DB06650#BE0000066

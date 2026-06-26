@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00385_MESH_D001749_1
+  disease: Urinary Bladder Neoplasms
+  disease_mesh: MESH:D001749
+  drug: valrubicin
+  drug_mesh: MESH:C016163
+  drugbank: DB:DB00385
+links:
+  - key: decreases activity of
+    source: MESH:C016163
+    target: UniProt:P11388
+  - key: positively regulates
+    source: UniProt:P11388
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: CL:0001063
+  - key: positively correlated with
+    source: CL:0001063
+    target: MESH:D001749
+multigraph: true
+nodes:
+  - id: MESH:C016163
+    label: Drug
+    name: valrubicin
+  - id: UniProt:P11388
+    label: Protein
+    name: DNA topoisomerase 2-alpha
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: CL:0001063
+    label: Cell
+    name: neoplastic cell
+  - id: MESH:D001749
+    label: Disease
+    name: Urinary Bladder Neoplasms
+references:
+  - https://go.drugbank.com/drugs/DB00385#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P11388#function
+  - https://en.wikipedia.org/wiki/Type_II_topoisomerase
+  - https://en.wikipedia.org/wiki/Bladder_cancer

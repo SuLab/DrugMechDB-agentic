@@ -1,0 +1,98 @@
+directed: true
+graph:
+  _id: DB01266_MESH_D003218_1
+  disease: Condylomata Acuminata
+  disease_mesh: MESH:D003218
+  drug: Sinecatechins
+  drugbank: DB:DB01266
+links:
+  - key: decreases activity of
+    source: DB:DB01266
+    target: InterPro:IPR047096
+  - key: decreases activity of
+    source: DB:DB01266
+    target: InterPro:IPR000837
+  - key: decreases activity of
+    source: DB:DB01266
+    target: InterPro:IPR001245
+  - key: decreases activity of
+    source: DB:DB01266
+    target: InterPro:IPR003545
+  - key: decreases activity of
+    source: DB:DB01266
+    target: UniProt:P03129
+  - key: increases activity of
+    source: DB:DB01266
+    target: InterPro:IPR002117
+  - key: increases activity of
+    source: DB:DB01266
+    target: InterPro:IPR028309
+  - key: positively regulates
+    source: InterPro:IPR047096
+    target: GO:0051301
+  - key: positively regulates
+    source: InterPro:IPR000837
+    target: GO:0051301
+  - key: positively regulates
+    source: InterPro:IPR001245
+    target: GO:0051301
+  - key: positively regulates
+    source: InterPro:IPR003545
+    target: GO:0051301
+  - key: positively regulates
+    source: UniProt:P03129
+    target: GO:0051301
+  - key: negatively regulates
+    source: InterPro:IPR002117
+    target: GO:0051301
+  - key: negatively regulates
+    source: InterPro:IPR028309
+    target: GO:0051301
+  - key: in taxon
+    source: GO:0051301
+    target: taxonomy:10566
+  - key: causes
+    source: taxonomy:10566
+    target: MESH:D003218
+multigraph: true
+nodes:
+  - id: DB:DB01266
+    label: Drug
+    name: Sinecatechins
+  - id: InterPro:IPR047096
+    label: GeneFamily
+    name: Nuclear factor NF-kappa-B p105 subunit, death domain
+  - id: InterPro:IPR000837
+    label: GeneFamily
+    name: AP-1 transcription factor
+  - id: InterPro:IPR001245
+    label: GeneFamily
+    name: Serine-threonine/tyrosine-protein kinase, catalytic domain
+  - id: InterPro:IPR003545
+    label: GeneFamily
+    name: Telomerase reverse transcriptase
+  - id: UniProt:P03129
+    label: Protein
+    name: Protein E7
+  - id: InterPro:IPR002117
+    label: GeneFamily
+    name: p53 tumour suppressor family
+  - id: InterPro:IPR028309
+    label: GeneFamily
+    name: Retinoblastoma protein family
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: taxonomy:10566
+    label: OrganismTaxon
+    name: Human papillomavirus
+  - id: MESH:D003218
+    label: Disease
+    name: Condylomata Acuminata
+references:
+  - https://go.drugbank.com/drugs/DB01266#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Sinecatechins
+  - https://www.uniprot.org/uniprot/P03129#function
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3277090/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4066610/
+  - https://en.wikipedia.org/wiki/Genital_wart

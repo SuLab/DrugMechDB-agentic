@@ -1,0 +1,47 @@
+comment: dienestrol treatment is mainly recommended for post-menopausal dyspareunia.
+directed: true
+graph:
+  _id: DB00890_MESH_D004414_1
+  disease: Dyspareunia
+  disease_mesh: MESH:D004414
+  drug: dienestrol
+  drug_mesh: MESH:D004028
+  drugbank: DB:DB00890
+links:
+  - key: chemically similar to
+    source: MESH:D004028
+    target: MESH:D004967
+  - key: increases activity of
+    source: MESH:D004967
+    target: UniProt:P03372
+  - key: positively regulates
+    source: UniProt:P03372
+    target: reactome:R-HSA-9018519
+  - key: negatively correlated with
+    source: reactome:R-HSA-9018519
+    target: HP:0030016
+  - key: manifestation of
+    source: HP:0030016
+    target: MESH:D004414
+multigraph: true
+nodes:
+  - id: MESH:D004028
+    label: Drug
+    name: dienestrol
+  - id: UniProt:P03372
+    label: Protein
+    name: Estrogen receptor alpha
+  - id: MESH:D004967
+    label: ChemicalSubstance
+    name: Estrogen
+  - id: reactome:R-HSA-9018519
+    label: Pathway
+    name: Estrogen-dependent gene expression
+  - id: HP:0030016
+    label: PhenotypicFeature
+    name: Dyspareunia
+  - id: MESH:D004414
+    label: Disease
+    name: Dyspareunia
+references:
+  - https://go.drugbank.com/drugs/DB00890

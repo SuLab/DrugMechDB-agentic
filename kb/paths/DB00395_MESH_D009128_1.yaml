@@ -1,0 +1,36 @@
+comment: Drug has been withdrawn in Europe due to increased risk of abuse or addiction,
+  intoxication and events related to psychomotor impairment (https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1233/).
+directed: true
+graph:
+  _id: DB00395_MESH_D009128_1
+  disease: Spasticity
+  disease_mesh: MESH:D009128
+  drug: carisoprodol
+  drug_mesh: MESH:D002328
+  drugbank: DB:DB00395
+links:
+  - key: negatively correlated with
+    source: MESH:D002328
+    target: HP:0001276
+  - key: located in
+    source: HP:0001276
+    target: UBERON:0014892
+  - key: location of
+    source: UBERON:0014892
+    target: MESH:D009128
+multigraph: true
+nodes:
+  - id: MESH:D002328
+    label: Drug
+    name: carisoprodol
+  - id: HP:0001276
+    label: PhenotypicFeature
+    name: Hypertonia
+  - id: UBERON:0014892
+    label: GrossAnatomicalStructure
+    name: skeletal muscle organ
+  - id: MESH:D009128
+    label: Disease
+    name: Spasticity
+references:
+  - https://go.drugbank.com/drugs/DB00395#mechanism-of-action

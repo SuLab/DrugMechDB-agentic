@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB05768_MESH_D007014_1
+  disease: Hypophosphatasia
+  disease_mesh: MESH:D007014
+  drug: asfotase alfa
+  drug_mesh: MESH:C570710,MESH:D000469
+  drugbank: DB:DB05768
+links:
+  - key: similar to
+    source: DB:DB05768
+    target: UniProt:P05186
+  - key: decreases abundance of
+    source: UniProt:P05186
+    target: CHEBI:18361
+  - key: negatively regulates
+    source: CHEBI:18361
+    target: CHEBI:52255
+  - key: participates in
+    source: CHEBI:52255
+    target: GO:0030282
+  - key: negatively correlated with
+    source: GO:0030282
+    target: MESH:D007014
+multigraph: true
+nodes:
+  - id: DB:DB05768
+    label: Drug
+    name: Asfotase alfa
+  - id: UniProt:P05186
+    label: Protein
+    name: Alkaline phosphatase, tissue-nonspecific isozyme
+  - id: CHEBI:18361
+    label: ChemicalSubstance
+    name: Diphosphate(4−)
+  - id: CHEBI:52255
+    label: ChemicalSubstance
+    name: Hydroxylapatite
+  - id: GO:0030282
+    label: BiologicalProcess
+    name: Bone mineralization
+  - id: MESH:D007014
+    label: Disease
+    name: Hypophosphatasia
+references:
+  - https://go.drugbank.com/drugs/DB09105
+  - https://en.wikipedia.org/wiki/Hypophosphatasia#Symptoms_and_signs

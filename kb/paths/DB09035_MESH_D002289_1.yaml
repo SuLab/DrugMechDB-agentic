@@ -1,0 +1,39 @@
+comment: This drug is an example of immune checkpoint blockade. Programmed death 1
+  (PD-1) is a key immune-checkpoint receptor expressed by activated T cells, and it
+  mediates immunosuppression. Inhibition of the PD-1 protein can enhance T-cell responses
+  and mediate preclinical antitumor activity (https://pubmed.ncbi.nlm.nih.gov/22658127/).
+directed: true
+graph:
+  _id: DB09035_MESH_D002289_1
+  disease: Non-small cell lung cancer
+  disease_mesh: MESH:D002289
+  drug: nivolumab
+  drug_mesh: MESH:C581771
+  drugbank: DB:DB09035
+links:
+  - key: decreases activity of
+    source: MESH:C581771
+    target: UniProt:Q15116
+  - key: negatively regulates
+    source: UniProt:Q15116
+    target: GO:0002418
+  - key: negatively correlated with
+    source: GO:0002418
+    target: MESH:D002289
+multigraph: true
+nodes:
+  - id: MESH:C581771
+    label: Drug
+    name: nivolumab
+  - id: UniProt:Q15116
+    label: Protein
+    name: Programmed cell death protein 1
+  - id: GO:0002418
+    label: BiologicalProcess
+    name: immune response to tumor cell
+  - id: MESH:D002289
+    label: Disease
+    name: Non-small cell lung cancer
+references:
+  - https://go.drugbank.com/drugs/DB09035
+  - https://en.wikipedia.org/wiki/Nivolumab#Mechanism_of_action

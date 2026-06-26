@@ -1,0 +1,98 @@
+directed: true
+graph:
+  _id: DB06589_MESH_D012509_1
+  disease: Sarcoma of soft tissue
+  disease_mesh: MESH:D012509
+  drug: pazopanib
+  drug_mesh: MESH:C516667
+  drugbank: DB:DB06589
+links:
+  - key: decreases activity of
+    source: MESH:C516667
+    target: UniProt:P09619
+  - key: decreases activity of
+    source: MESH:C516667
+    target: UniProt:P17948
+  - key: decreases activity of
+    source: MESH:C516667
+    target: UniProt:P10721
+  - key: decreases activity of
+    source: MESH:C516667
+    target: UniProt:P35968
+  - key: decreases activity of
+    source: MESH:C516667
+    target: UniProt:P35916
+  - key: decreases activity of
+    source: MESH:C516667
+    target: UniProt:P36888
+  - key: decreases activity of
+    source: MESH:C516667
+    target: UniProt:P07333
+  - key: decreases activity of
+    source: MESH:C516667
+    target: UniProt:P16234
+  - key: positively regulates
+    source: UniProt:P09619
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P17948
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P10721
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P35968
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P35916
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P36888
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P07333
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P16234
+    target: GO:0045766
+  - key: positively correlated with
+    source: GO:0045766
+    target: MESH:D012509
+multigraph: true
+nodes:
+  - id: MESH:C516667
+    label: Drug
+    name: pazopanib
+  - id: UniProt:P09619
+    label: Protein
+    name: Platelet-derived growth factor receptor beta
+  - id: UniProt:P17948
+    label: Protein
+    name: Vascular endothelial growth factor receptor 1
+  - id: UniProt:P10721
+    label: Protein
+    name: Mast/stem cell growth factor receptor Kit
+  - id: UniProt:P35968
+    label: Protein
+    name: Vascular endothelial growth factor receptor 2
+  - id: UniProt:P35916
+    label: Protein
+    name: Vascular endothelial growth factor receptor 3
+  - id: UniProt:P36888
+    label: Protein
+    name: Receptor-type tyrosine-protein kinase FLT3
+  - id: UniProt:P07333
+    label: Protein
+    name: Macrophage colony-stimulating factor 1 receptor
+  - id: UniProt:P16234
+    label: Protein
+    name: Platelet-derived growth factor receptor alpha
+  - id: GO:0045766
+    label: BiologicalProcess
+    name: Positive regulation of angiogenesis
+  - id: MESH:D012509
+    label: Disease
+    name: Sarcoma of soft tissue
+references:
+  - https://go.drugbank.com/drugs/DB06589
+  - https://en.wikipedia.org/wiki/Pazopanib

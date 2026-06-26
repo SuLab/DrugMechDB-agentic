@@ -1,0 +1,43 @@
+comment: the exact mechanism by which anagrelide lowers platelet count is unclear
+directed: true
+graph:
+  _id: DB00261_MESH_D013920_1
+  disease: Essential thrombocythemia
+  disease_mesh: MESH:D013920
+  drug: Anagrelide
+  drug_mesh: MESH:C021139
+  drugbank: DB:DB00261
+links:
+  - key: negatively regulates
+    source: MESH:C021139
+    target: GO:0035855
+  - key: positively correlated with
+    source: GO:0035855
+    target: GO:0030220
+  - key: positively correlated with
+    source: GO:0030220
+    target: HP:0001894
+  - key: manifestation of
+    source: HP:0001894
+    target: MESH:D013920
+multigraph: true
+nodes:
+  - id: MESH:C021139
+    label: Drug
+    name: Anagrelid
+  - id: GO:0035855
+    label: BiologicalProcess
+    name: Megakaryocyte development
+  - id: GO:0030220
+    label: BiologicalProcess
+    name: Platelet formation
+  - id: HP:0001894
+    label: PhenotypicFeature
+    name: Thrombocytosis
+  - id: MESH:D013920
+    label: Disease
+    name: Essential thrombocythemia
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/12487784/
+  - https://go.drugbank.com/drugs/DB00261#BE0000436
+  - https://en.wikipedia.org/wiki/Essential_thrombocythemia

@@ -1,0 +1,94 @@
+directed: true
+graph:
+  _id: DB01576_MESH_D009290_1
+  disease: Narcolepsy
+  disease_mesh: MESH:D009290
+  drug: dexamfetamine
+  drug_mesh: MESH:D003913
+  drugbank: DB:DB01576
+links:
+  - key: decreases activity of
+    source: MESH:D003913
+    target: UniProt:P23975
+  - key: decreases activity of
+    source: MESH:D003913
+    target: UniProt:Q01959
+  - key: decreases activity of
+    source: MESH:D003913
+    target: UniProt:Q05940
+  - key: positively regulates
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: decreases abundance of
+    source: GO:0051620
+    target: MESH:D009638
+  - key: positively regulates
+    source: UniProt:Q01959
+    target: GO:0051583
+  - key: decreases abundance of
+    source: GO:0051583
+    target: MESH:D004298
+  - key: positively correlated with
+    source: MESH:D004298
+    target: GO:0061527
+  - key: positively regulates
+    source: UniProt:Q05940
+    target: GO:0015842
+  - key: decreases abundance of
+    source: GO:0015842
+    target: MESH:D004298
+  - key: decreases abundance of
+    source: GO:0015842
+    target: MESH:D009638
+  - key: positively correlated with
+    source: MESH:D009638
+    target: GO:0061533
+  - key: positively correlated with
+    source: MESH:D004298
+    target: GO:0061527
+  - key: treats
+    source: GO:0061533
+    target: MESH:D009290
+  - key: treats
+    source: GO:0061527
+    target: MESH:D009290
+multigraph: true
+nodes:
+  - id: MESH:D003913
+    label: Drug
+    name: Dexamfetamine
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: Norepinephrine uptake
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: UniProt:Q01959
+    label: Protein
+    name: Sodium-dependent dopamine transporter
+  - id: GO:0051583
+    label: BiologicalProcess
+    name: Dopamine uptake involved in synaptic transmission
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: UniProt:Q05940
+    label: Protein
+    name: Synaptic vesicular amine transporter
+  - id: GO:0015842
+    label: BiologicalProcess
+    name: Aminergic neurotransmitter loading into synaptic vesicle
+  - id: GO:0061533
+    label: BiologicalProcess
+    name: Norepinephrine secretion, neurotransmission
+  - id: MESH:D009290
+    label: Disease
+    name: Narcolepsy
+references:
+  - https://go.drugbank.com/drugs/DB01576

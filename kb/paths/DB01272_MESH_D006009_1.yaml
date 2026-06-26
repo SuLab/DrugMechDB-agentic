@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01272_MESH_D006009_1
+  disease: Lysosomal alpha-1,4-glucosidase deficiency - infantile onset
+  disease_mesh: MESH:D006009
+  drug: alglucosidase alfa
+  drug_mesh: MESH:C509951
+  drugbank: DB:DB01272
+links:
+  - key: molecularly interacts with
+    source: MESH:C509951
+    target: UniProt:P20645
+  - key: participates in
+    source: UniProt:P20645
+    target: GO:0007041
+  - key: occurs in
+    source: GO:0007041
+    target: GO:0005764
+  - key: participates in
+    source: GO:0005764
+    target: GO:0004558
+  - key: decreases abundance of
+    source: GO:0004558
+    target: MESH:D006003
+  - key: positively correlated with
+    source: MESH:D006003
+    target: MESH:D006009
+multigraph: true
+nodes:
+  - id: MESH:C509951
+    label: Drug
+    name: alglucosidase alfa
+  - id: UniProt:P20645
+    label: Protein
+    name: Cation-dependent mannose-6-phosphate receptor
+  - id: GO:0007041
+    label: BiologicalProcess
+    name: lysosomal transport
+  - id: GO:0005764
+    label: CellularComponent
+    name: lysosome
+  - id: GO:0004558
+    label: MolecularActivity
+    name: alpha-1,4-glucosidase activity
+  - id: MESH:D006003
+    label: ChemicalSubstance
+    name: glycogen
+  - id: MESH:D006009
+    label: Disease
+    name: Lysosomal alpha-1,4-glucosidase deficiency - infantile onset
+references:
+  - https://go.drugbank.com/drugs/DB01272

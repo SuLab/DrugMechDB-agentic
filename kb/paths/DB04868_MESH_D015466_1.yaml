@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB04868_MESH_D015466_1
+  disease: Chronic phase chronic myeloid leukemia
+  disease_mesh: MESH:D015466
+  drug: nilotinib
+  drug_mesh: MESH:C498826
+  drugbank: DB:DB04868
+links:
+  - key: decreases activity of
+    source: MESH:C498826
+    target: UniProt:P00519
+  - key: participates in
+    source: UniProt:P00519
+    target: MESH:D016044
+  - key: positively regulates
+    source: MESH:D016044
+    target: GO:0004674
+  - key: positively correlated with
+    source: GO:0004674
+    target: GO:0007266
+  - key: positively correlated with
+    source: GO:0007266
+    target: GO:0008283
+  - key: negatively correlated with
+    source: GO:0007266
+    target: GO:0006915
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D015466
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D015466
+multigraph: true
+nodes:
+  - id: MESH:C498826
+    label: Drug
+    name: nilotinib
+  - id: UniProt:P00519
+    label: Protein
+    name: Tyrosine-protein kinase ABL1
+  - id: MESH:D016044
+    label: Protein
+    name: Fusion Proteins, bcr-abl
+  - id: GO:0004674
+    label: MolecularActivity
+    name: protein serine/threonine kinase activity
+  - id: GO:0007266
+    label: BiologicalProcess
+    name: Rho protein signal transduction
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: MESH:D015466
+    label: Disease
+    name: Chronic phase chronic myeloid leukemia
+references:
+  - https://go.drugbank.com/drugs/DB04868#BE0000014
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4004101/

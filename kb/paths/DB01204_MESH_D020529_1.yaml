@@ -1,0 +1,80 @@
+directed: true
+graph:
+  _id: DB01204_MESH_D020529_1
+  disease: Relapsing remitting multiple sclerosis
+  disease_mesh: MESH:D020529
+  drug: mitoxantrone
+  drug_mesh: MESH:D008942
+  drugbank: DB:DB01204
+links:
+  - key: disrupts
+    source: MESH:D008942
+    target: MESH:D004247
+  - key: negatively regulates
+    source: MESH:D008942
+    target: UniProt:P11388
+  - key: occurs in
+    source: MESH:D004247
+    target: CL:0000084
+  - key: occurs in
+    source: UniProt:P11388
+    target: CL:0000084
+  - key: occurs in
+    source: MESH:D004247
+    target: CL:0000236
+  - key: occurs in
+    source: UniProt:P11388
+    target: CL:0000236
+  - key: occurs in
+    source: MESH:D004247
+    target: CL:0000145
+  - key: occurs in
+    source: UniProt:P11388
+    target: CL:0000145
+  - key: occurs in
+    source: MESH:D004247
+    target: CL:0000235
+  - key: occurs in
+    source: UniProt:P11388
+    target: CL:0000235
+  - key: positively correlated with
+    source: CL:0000084
+    target: MESH:D020529
+  - key: positively correlated with
+    source: CL:0000236
+    target: MESH:D020529
+  - key: positively correlated with
+    source: CL:0000145
+    target: MESH:D020529
+  - key: positively correlated with
+    source: CL:0000235
+    target: MESH:D020529
+multigraph: true
+nodes:
+  - id: MESH:D008942
+    label: Drug
+    name: Mitoxantrone
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: UniProt:P11388
+    label: Protein
+    name: DNA topoisomerase 2-alpha
+  - id: CL:0000084
+    label: Cell
+    name: T cell
+  - id: CL:0000236
+    label: Cell
+    name: B cell
+  - id: CL:0000145
+    label: Cell
+    name: Professional antigen presenting cell
+  - id: CL:0000235
+    label: Cell
+    name: Macrophage
+  - id: MESH:D020529
+    label: Disease
+    name: Relapsing remitting multiple sclerosis
+references:
+  - https://go.drugbank.com/drugs/DB01204#BE0004796
+  - https://www.sciencedirect.com/science/article/abs/pii/S0022510X04001157

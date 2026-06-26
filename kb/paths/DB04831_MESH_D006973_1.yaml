@@ -1,0 +1,35 @@
+comment: Withdrawn. The target on the protein is not known (https://en.wikipedia.org/wiki/Tienilic_acid).
+directed: true
+graph:
+  _id: DB04831_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: tienilic acid
+  drug_mesh: MESH:D013989
+  drugbank: DB:DB04831
+links:
+  - key: negatively regulates
+    source: MESH:D013989
+    target: GO:0003092
+  - key: positively correlated with
+    source: GO:0003092
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D013989
+    label: Drug
+    name: tienilic acid
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: renal water retention
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB04831

@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB01001_MESH_D001986_1
+  disease: Bronchospasm
+  disease_mesh: MESH:D001986
+  drug: salbutamol
+  drug_mesh: MESH:D000420
+  drugbank: DB:DB01001
+links:
+  - key: positively regulates
+    source: MESH:D000420
+    target: UniProt:P07550
+  - key: positively regulates
+    source: UniProt:P07550
+    target: UniProt:B7Z2C7
+  - key: increases abundance of
+    source: UniProt:B7Z2C7
+    target: CHEBI:17489
+  - key: negatively correlated with
+    source: CHEBI:17489
+    target: HP:4000007
+  - key: positively correlated with
+    source: HP:4000007
+    target: MESH:D001986
+multigraph: true
+nodes:
+  - id: MESH:D000420
+    label: Drug
+    name: Salbutamol
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: UniProt:B7Z2C7
+    label: Protein
+    name: Adenylate cyclase
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: HP:4000007
+    label: PhenotypicFeature
+    name: Bronchoconstriction
+  - id: MESH:D001986
+    label: Disease
+    name: Bronchospasm
+references:
+  - https://go.drugbank.com/drugs/DB01001

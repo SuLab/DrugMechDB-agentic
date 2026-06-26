@@ -1,0 +1,70 @@
+comment: This disease is denoted as Herpes simplex dendritic keratitis in the original
+  file as per DrugCentral. The drug needs to be converted to Vidarabine Phosphate
+  first (monophosphate --> diphosphate --> triphosphate) to become active and exert
+  its role as inhibitor (https://pubchem.ncbi.nlm.nih.gov/compound/21704#section=Mechanism-of-Action).
+directed: true
+graph:
+  _id: DB00194_MESH_D007635_1
+  disease: Keratitis, Dendritic
+  disease_mesh: MESH:D007635
+  drug: vidarabine
+  drug_mesh: MESH:D014740
+  drugbank: DB:DB00194
+links:
+  - key: has metabolite
+    source: MESH:D014740
+    target: MESH:D001084
+  - key: decreases activity of
+    source: MESH:D001084
+    target: UniProt:P04293
+  - key: positively regulates
+    source: UniProt:P04293
+    target: GO:0039686
+  - key: positively regulates
+    source: UniProt:P04293
+    target: GO:0090503
+  - key: positively regulates
+    source: UniProt:P04293
+    target: GO:0043631
+  - key: in taxon
+    source: GO:0043631
+    target: taxonomy:10299
+  - key: in taxon
+    source: GO:0039686
+    target: taxonomy:10299
+  - key: in taxon
+    source: GO:0090503
+    target: taxonomy:10299
+  - key: causes
+    source: taxonomy:10299
+    target: MESH:D007635
+multigraph: true
+nodes:
+  - id: MESH:D014740
+    label: Drug
+    name: vidarabine
+  - id: MESH:D001084
+    label: ChemicalSubstance
+    name: Vidarabine Phosphate
+  - id: UniProt:P04293
+    label: Protein
+    name: DNA polymerase catalytic subunit
+  - id: GO:0039686
+    label: BiologicalProcess
+    name: bidirectional double-stranded viral DNA replication
+  - id: GO:0090503
+    label: BiologicalProcess
+    name: RNA phosphodiester bond hydrolysis, exonucleolytic
+  - id: GO:0043631
+    label: BiologicalProcess
+    name: RNA polyadenylation
+  - id: taxonomy:10299
+    label: OrganismTaxon
+    name: Human alphaherpesvirus 1 strain 17
+  - id: MESH:D007635
+    label: Disease
+    name: Keratitis, Dendritic
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1090/
+  - https://en.wikipedia.org/wiki/Vidarabine#Mode_of_action
+  - https://go.drugbank.com/drugs/DB00194

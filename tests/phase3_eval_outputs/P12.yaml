@@ -1,0 +1,75 @@
+directed: true
+multigraph: true
+graph:
+  _id: P12_DB00951_MESH_D014397
+  drug: Isoniazid
+  drug_mesh: MESH:D007538
+  drugbank: DB:DB00951
+  disease: Pulmonary Tuberculosis
+  disease_mesh: MESH:D014397
+nodes:
+  - id: MESH:D007538
+    name: Isoniazid
+    label: Drug
+  - id: UniProt:P9WGR1
+    name: Enoyl-[acyl-carrier-protein] reductase [NADH] InhA
+    label: Protein
+  - id: GO:0071768
+    name: mycolic acid biosynthetic process
+    label: BiologicalProcess
+  - id: NCBITaxon:1773
+    name: Mycobacterium tuberculosis
+    label: OrganismTaxon
+  - id: MESH:D014397
+    name: Pulmonary Tuberculosis
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D007538
+    target: UniProt:P9WGR1
+    evidence:
+      - reference: PMID:38460337
+        snippet: Isoniazid (INH), a treatment for tuberculosis (TB), targets the enzyme InhA (mycobacterium enoyl acyl carrier protein reductase)
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Isoniazid targets and inhibits InhA, the enoyl-ACP reductase of M. tuberculosis, reducing its catalytic activity.
+      - reference: PMID:37482022
+        snippet: InhA is the primary target of isoniazid (INH), one of the most effective compounds to treat TB.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: InhA is directly identified as the primary enzymatic target of isoniazid in M. tuberculosis.
+  - key: positively regulates
+    source: UniProt:P9WGR1
+    target: GO:0071768
+    evidence:
+      - reference: PMID:10336454
+        snippet: InhA, is a member of an unusual FAS-II system that prefers longer chain fatty acyl substrates for the purpose of synthesizing mycolic acids, a major component of mycobacterial cell walls.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: InhA (enoyl-ACP reductase) is part of the FAS-II system responsible for mycolic acid biosynthesis, confirming it positively regulates this process.
+  - key: occurs in
+    source: GO:0071768
+    target: NCBITaxon:1773
+    evidence:
+      - reference: PMID:41432360
+        snippet: Upon activation, INH inhibits InhA, thereby disrupting mycolic acid biosynthesis, a crucial process for maintaining Mtb's distinctive, lipid-rich cell wall.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Mycolic acid biosynthesis is explicitly described as a process occurring in and essential for M. tuberculosis (Mtb).
+      - reference: PMID:37482022
+        snippet: Enzymes belonging to the type II fatty acid synthase system (FAS-II) are involved in the biosynthesis of mycolic acids, cell envelope components essential for mycobacterial survival.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Mycolic acid biosynthesis by the FAS-II system occurs in mycobacteria; loss of this process is lethal to the organism.
+  - key: causes
+    source: NCBITaxon:1773
+    target: MESH:D014397
+    evidence:
+      - reference: PMID:41432360
+        snippet: Mycobacterium tuberculosis (Mtb), the causative agent of tuberculosis (TB), is responsible for a global health burden affecting over a quarter of the world's population.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: M. tuberculosis is the established causative agent of tuberculosis, including pulmonary tuberculosis.
+references:
+  - https://go.drugbank.com/drugs/DB00951#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P9WGR1

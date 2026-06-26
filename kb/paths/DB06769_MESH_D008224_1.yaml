@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB06769_MESH_D008224_1
+  disease: Follicular non-Hodgkin's lymphoma
+  disease_mesh: MESH:D008224
+  drug: bendamustine
+  drug_mesh: MESH:D000069461
+  drugbank: DB:DB06769
+links:
+  - key: disrupts
+    source: MESH:D000069461
+    target: MESH:D004247
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006260
+  - key: precedes
+    source: GO:0006260
+    target: GO:0046651
+  - key: positively correlated with
+    source: GO:0046651
+    target: MESH:D008224
+multigraph: true
+nodes:
+  - id: MESH:D000069461
+    label: Drug
+    name: bendamustine
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: GO:0046651
+    label: BiologicalProcess
+    name: lymphocyte proliferation
+  - id: MESH:D008224
+    label: Disease
+    name: Follicular non-Hodgkin's lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB06769

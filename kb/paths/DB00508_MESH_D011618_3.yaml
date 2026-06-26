@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00508_MESH_D011618_3
+  disease: Psychotic Disorders
+  disease_mesh: MESH:D011618
+  drug: Triflupromazine
+  drug_mesh: MESH:D014273
+  drugbank: DB:DB00508
+links:
+  - key: decreases activity of
+    source: MESH:D014273
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0007213
+  - key: positively correlated with
+    source: GO:0007213
+    target: MESH:D000109
+  - key: contributes to
+    source: MESH:D000109
+    target: HP:0100753
+  - key: positively correlated with
+    source: HP:0100753
+    target: MESH:D011618
+multigraph: true
+nodes:
+  - id: MESH:D014273
+    label: Drug
+    name: Triflupromazine
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: GO:0007213
+    label: BiologicalProcess
+    name: G protein-coupled acetylcholine receptor signaling pathway
+  - id: MESH:D000109
+    label: ChemicalSubstance
+    name: Acetylcholine
+  - id: HP:0100753
+    label: PhenotypicFeature
+    name: Schizophrenia
+  - id: MESH:D011618
+    label: Disease
+    name: Psychotic Disorders
+references:
+  - https://go.drugbank.com/drugs/DB00508#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P11229#function
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4268065/
+  - https://en.wikipedia.org/wiki/Psychosis

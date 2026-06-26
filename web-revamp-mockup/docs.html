@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation · DrugMechDB</title>
+<link rel="stylesheet" href="styles.css?v=3">
+<style>
+  .doc-list { border-top:1px solid var(--line); margin:8px 0 40px; }
+  .doc-row { display:flex; align-items:baseline; gap:16px; padding:16px 2px; border-bottom:1px solid var(--line); }
+  .doc-row .dt { font-weight:600; font-size:15px; min-width:210px; }
+  .doc-row .dd { color:var(--muted); font-size:13.5px; flex:1; }
+  .doc-row .ar { color:var(--faint); }
+  .doc-row:hover .dt { text-decoration:underline; }
+  pre.code { background:var(--line-2); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; overflow:auto; font-family:var(--mono); font-size:12.5px; line-height:1.7; color:var(--ink-2); }
+  pre.code .k { color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="mock-banner">MOCKUP · DrugMechDB website revamp · not final</div>
+
+<nav class="nav"><div class="container nav-inner">
+  <a class="brand" href="index.html"><span class="mark">D</span>DrugMech<span class="tail">DB</span></a>
+  <div class="nav-links">
+    <a href="browse.html">Browse</a>
+    <a href="embeddings.html">Embeddings</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="docs.html" class="active">Docs</a>
+  </div>
+</div></nav>
+
+<div class="container">
+  <header class="rec-header" style="border-bottom:none">
+    <div class="rec-title">Documentation</div>
+    <p class="rec-summary" style="margin-top:10px">How DrugMechDB is structured, curated, validated, and reused.</p>
+  </header>
+
+  <div class="doc-list">
+    <a class="doc-row" href="#record"><span class="dt">Data format &amp; schema</span><span class="dd">The record structure, 14 node types, and Biolink predicate vocabulary (LinkML).</span><span class="ar">→</span></a>
+    <a class="doc-row" href="#"><span class="dt">Curation guide</span><span class="dd">How a mechanism path is built, step by step, with path-quality conventions.</span><span class="ar">→</span></a>
+    <a class="doc-row" href="#"><span class="dt">Sourcing policy</span><span class="dd">Established, already-asserted mechanisms only — DrugBank MoA, GO, UniProt, Reactome, reviews.</span><span class="ar">→</span></a>
+    <a class="doc-row" href="#"><span class="dt">Quality gate (4 layers)</span><span class="dd">Schema → node ontology → predicate enum → verbatim evidence. What each layer checks.</span><span class="ar">→</span></a>
+    <a class="doc-row" href="#"><span class="dt">Download &amp; API</span><span class="dd">Get the corpus as YAML/JSON, or query the BioThings/TRAPI endpoint.</span><span class="ar">→</span></a>
+    <a class="doc-row" href="#"><span class="dt">Citing DrugMechDB</span><span class="dd">Reference and DOI for the database and the Scientific Data paper.</span><span class="ar">→</span></a>
+    <a class="doc-row" href="#"><span class="dt">Changelog</span><span class="dd">Release history and what changed between versions.</span><span class="ar">→</span></a>
+  </div>
+
+  <section id="record">
+    <div class="section-title">Anatomy of a record</div>
+    <p class="rec-summary">Each path is a directed drug→…→disease multigraph. Nodes are CURIE-identified and Biolink-typed; edges are Biolink predicates joined by node id. Newer records carry per-edge evidence.</p>
+<pre class="code"><span class="k">graph</span>:
+  _id: DB00570_MESH_D013736_2
+  drug: Vinblastine        drugbank: DB00570
+  disease: Malignant tumor of testis   disease_mesh: MESH:D013736
+<span class="k">nodes</span>:
+  - id: MESH:D014747     label: Drug       name: Vinblastine
+  - id: UniProt:P07437   label: Protein    name: Tubulin beta chain
+  - id: MESH:D013736     label: Disease    name: Malignant tumor of testis
+<span class="k">links</span>:
+  - key: decreases activity of   source: MESH:D014747   target: UniProt:P07437
+    <span class="k">evidence</span>:
+      snippet: "Vinblastine binds to tubulin dimers, inhibiting assembly of microtubules."
+      publication: PMID:12042791
+<span class="k">references</span>:
+  - https://go.drugbank.com/drugs/DB00570#mechanism-of-action
+directed: true     multigraph: true</pre>
+  </section>
+</div>
+
+<footer class="footer"><div class="container footer-inner">
+  <div>DrugMechDB · Su Lab · curated under the Biolink Model · CC0</div>
+  <div class="links"><a href="#">GitHub</a><a href="#">DOI</a><a href="#">Translator</a></div>
+</div></footer>
+</body>
+</html>

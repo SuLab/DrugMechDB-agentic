@@ -1,0 +1,45 @@
+comment: The disease is also known as Extrapyramidal disease as per the original file.
+directed: true
+graph:
+  _id: DB00810_MESH_D001480_1
+  disease: Basal Ganglia Diseases
+  disease_mesh: MESH:D001480
+  drug: biperiden
+  drug_mesh: MESH:D001712
+  drugbank: DB:DB00810
+links:
+  - key: negatively regulates
+    source: MESH:D001712
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0007271
+  - key: positively correlated with
+    source: GO:0007271
+    target: HP:0002071
+  - key: manifestation of
+    source: HP:0002071
+    target: MESH:D001480
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C036432
+    id: MESH:D001712
+    label: Drug
+    name: biperiden
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: GO:0007271
+    label: BiologicalProcess
+    name: synaptic transmission, cholinergic
+  - id: HP:0002071
+    label: PhenotypicFeature
+    name: Abnormality of extrapyramidal motor function
+  - id: MESH:D001480
+    label: Disease
+    name: Basal Ganglia Diseases
+references:
+  - https://go.drugbank.com/drugs/DB00810#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Muscarinic_antagonist#Effects
+  - https://en.wikipedia.org/wiki/Extrapyramidal_symptoms#Treatment

@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB09321_MESH_D005076_1
+  disease: Exanthema
+  disease_mesh: MESH:D005076
+  drug: zinc oxide
+  drug_mesh: MESH:D015034
+  drugbank: DB:DB09321
+links:
+  - key: negatively regulates
+    source: MESH:D015034
+    target: GO:0006954
+  - key: positively regulates
+    source: MESH:D015034
+    target: GO:0061436
+  - key: negatively correlated with
+    source: GO:0061436
+    target: MESH:D005076
+  - key: causes
+    source: GO:0006954
+    target: MESH:D005076
+multigraph: true
+nodes:
+  - id: MESH:D015034
+    label: Drug
+    name: Zinc oxide
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammation
+  - id: GO:0061436
+    label: BiologicalProcess
+    name: Establishment of skin barrier
+  - id: MESH:D005076
+    label: Disease
+    name: Exanthema
+references:
+  - https://go.drugbank.com/drugs/DB09321
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4120804/

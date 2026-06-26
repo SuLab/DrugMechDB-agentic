@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01285_MESH_D013262_1
+  disease: Stevens-Johnson syndrome
+  disease_mesh: MESH:D013262
+  drug: corticotropin
+  drugbank: DB:DB01285
+links:
+  - key: positively regulates
+    source: DB:DB01285
+    target: UniProt:Q01718
+  - key: negatively regulates
+    source: UniProt:Q01718
+    target: GO:0006954
+  - key: correlated with
+    source: GO:0006954
+    target: HP:0100326
+  - key: manifestation of
+    source: HP:0100326
+    target: MESH:D013262
+multigraph: true
+nodes:
+  - id: DB:DB01285
+    label: Drug
+    name: corticotropin
+  - id: UniProt:Q01718
+    label: Protein
+    name: Adrenocorticotropic hormone receptor
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0100326
+    label: PhenotypicFeature
+    name: Immunologic hypersensitivity
+  - id: MESH:D013262
+    label: Disease
+    name: Stevens-Johnson syndrome
+references:
+  - https://go.drugbank.com/drugs/DB01285#BE0000848
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201610/

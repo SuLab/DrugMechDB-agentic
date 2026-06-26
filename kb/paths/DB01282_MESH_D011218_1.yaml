@@ -1,0 +1,22 @@
+directed: true
+graph:
+  _id: DB01282_MESH_D011218_1
+  disease: Prader-Willi syndrome
+  disease_mesh: MESH:D011218
+  drug: carbetocin
+  drug_mesh: MESH:C020731
+  drugbank: DB:DB01282
+links:
+  - key: treats
+    source: MESH:C020731
+    target: MESH:D011218
+multigraph: true
+nodes:
+  - id: MESH:C020731
+    label: Drug
+    name: Carbetocin
+  - id: MESH:D011218
+    label: Disease
+    name: Prader-Willi syndrome
+references:
+  - https://go.drugbank.com/drugs/DB01282#mechanismofaction

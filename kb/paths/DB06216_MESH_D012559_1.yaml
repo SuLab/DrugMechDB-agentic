@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB06216_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: Asenapine
+  drug_mesh: MESH:C522667
+  drugbank: DB:DB06216
+links:
+  - key: decreases activity of
+    source: MESH:C522667
+    target: UniProt:P28223
+  - key: decreases activity of
+    source: MESH:C522667
+    target: UniProt:P14416
+  - key: positively correlated with
+    source: UniProt:P28223
+    target: HP:0000716
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: reactome:R-HSA-390651
+  - key: phenotype of
+    source: HP:0000716
+    target: MESH:D012559
+  - key: correlated with
+    source: reactome:R-HSA-390651
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:C522667
+    label: Drug
+    name: Asenapine
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: HP:0000716
+    label: PhenotypicFeature
+    name: Depressivity
+  - id: reactome:R-HSA-390651
+    label: Pathway
+    name: Dopamine receptors
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/27356921/
+  - https://go.drugbank.com/drugs/DB06216#BE0000451
+  - https://en.wikipedia.org/wiki/5-HT2A_receptor

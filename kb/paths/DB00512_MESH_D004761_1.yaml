@@ -1,0 +1,71 @@
+comment: Vancomycin is not active against Gram-negative bacteria (https://en.wikipedia.org/wiki/Vancomycin#Mechanism_of_action).
+  MESH:D004761 is denoted as Enterocolitis, Pseudomembranous in the MESH website (https://meshb.nlm.nih.gov/record/ui?ui=D004761).
+directed: true
+graph:
+  _id: DB00512_MESH_D004761_1
+  disease: Pseudomembranous enterocolitis
+  disease_mesh: MESH:D004761
+  drug: vancomycin
+  drug_mesh: MESH:D014640
+  drugbank: DB:DB00512
+links:
+  - key: disrupts
+    source: MESH:D014640
+    target: CHEBI:16576
+  - key: negatively regulates
+    source: MESH:D014640
+    target: GO:0018104
+  - key: in taxon
+    source: GO:0018104
+    target: taxonomy:1496
+  - key: negatively regulates
+    source: MESH:D014640
+    target: GO:0032774
+  - key: in taxon
+    source: GO:0032774
+    target: taxonomy:1496
+  - key: disrupts
+    source: MESH:D014640
+    target: MESH:D010539
+  - key: in taxon
+    source: MESH:D010539
+    target: taxonomy:1496
+  - key: located in
+    source: CHEBI:16576
+    target: GO:0009275
+  - key: in taxon
+    source: GO:0009275
+    target: taxonomy:1496
+  - key: causes
+    source: taxonomy:1496
+    target: MESH:D004761
+multigraph: true
+nodes:
+  - id: MESH:D014640
+    label: Drug
+    name: vancomycin
+  - id: CHEBI:16576
+    label: ChemicalSubstance
+    name: D-alanyl-D-alanine
+  - id: GO:0009275
+    label: CellularComponent
+    name: Gram-positive-bacterium-type cell wall
+  - id: GO:0018104
+    label: BiologicalProcess
+    name: peptidoglycan-protein cross-linking
+  - id: GO:0032774
+    label: BiologicalProcess
+    name: RNA biosynthetic process
+  - id: MESH:D010539
+    label: BiologicalProcess
+    name: Permeability
+  - id: taxonomy:1496
+    label: OrganismTaxon
+    name: Clostridioides difficile
+  - id: MESH:D004761
+    label: Disease
+    name: Pseudomembranous enterocolitis
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/14969#section=Mechanism-of-Action
+  - https://go.drugbank.com/drugs/DB00512
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL262777/

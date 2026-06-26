@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB01015_MESH_D003235_1
+  disease: Conjunctivitis, Inclusion
+  disease_mesh: MESH:D003235
+  drug: Sulfamethoxazole
+  drug_mesh: MESH:D013420
+  drugbank: DB:DB01015
+links:
+  - key: decreases activity of
+    source: MESH:D013420
+    target: UniProt:O84619
+  - key: positively regulates
+    source: UniProt:O84619
+    target: GO:0046654
+  - key: increases abundance of
+    source: GO:0046654
+    target: MESH:D013763
+  - key: positively correlated with
+    source: MESH:D013763
+    target: GO:0071897
+  - key: in taxon
+    source: GO:0071897
+    target: taxonomy:813
+  - key: causes
+    source: taxonomy:813
+    target: MESH:D003235
+multigraph: true
+nodes:
+  - id: MESH:D013420
+    label: Drug
+    name: Sulfamethoxazole
+  - id: UniProt:O84619
+    label: Protein
+    name: Folate synthesis bifunctional protein
+  - id: GO:0046654
+    label: BiologicalProcess
+    name: tetrahydrofolate biosynthetic process
+  - id: MESH:D013763
+    label: ChemicalSubstance
+    name: Tetrahydrofolates
+  - id: GO:0071897
+    label: BiologicalProcess
+    name: DNA biosynthetic process
+  - id: taxonomy:813
+    label: OrganismTaxon
+    name: Chlamydia trachomatis
+  - id: MESH:D003235
+    label: Disease
+    name: Conjunctivitis, Inclusion
+references:
+  - https://go.drugbank.com/drugs/DB01015#mechanism-of-action
+  - https://www.uniprot.org/uniprot/O84619#function
+  - https://en.wikipedia.org/wiki/Conjunctivitis

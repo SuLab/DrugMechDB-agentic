@@ -1,0 +1,81 @@
+directed: true
+graph:
+  _id: DB00201_MESH_D018781_1
+  disease: Tension-Type Headache
+  disease_mesh: MESH:D018781
+  drug: caffeine
+  drug_mesh: MESH:D002110
+  drugbank: DB:DB00201
+links:
+  - key: decreases activity of
+    source: MESH:D002110
+    target: UniProt:P29274
+  - key: decreases activity of
+    source: MESH:D002110
+    target: UniProt:P29275
+  - key: decreases activity of
+    source: MESH:D002110
+    target: InterPro:IPR023088
+  - key: positively regulates
+    source: UniProt:P29274
+    target: GO:0004016
+  - key: positively regulates
+    source: UniProt:P29275
+    target: GO:0004016
+  - key: positively regulates
+    source: InterPro:IPR023088
+    target: GO:0006198
+  - key: increases abundance of
+    source: GO:0004016
+    target: MESH:D000242
+  - key: decreases abundance of
+    source: GO:0006198
+    target: MESH:D000242
+  - key: positively regulates
+    source: MESH:D000242
+    target: GO:0019233
+  - key: positively correlated with
+    source: GO:0019233
+    target: HP:0012531
+  - key: contributes to
+    source: HP:0012531
+    target: MESH:D018781
+multigraph: true
+nodes:
+  - id: MESH:D002110
+    label: Drug
+    name: caffeine
+  - id: UniProt:P29274
+    label: Protein
+    name: Adenosine receptor A2a
+  - id: UniProt:P29275
+    label: Protein
+    name: Adenosine receptor A2b
+  - id: InterPro:IPR023088
+    label: GeneFamily
+    name: 3'5'-cyclic nucleotide phosphodiesterase
+  - id: GO:0004016
+    label: BiologicalProcess
+    name: adenylate cyclase activity
+  - id: GO:0006198
+    label: BiologicalProcess
+    name: cAMP catabolic process
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: Cyclic AMP
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: sensory perception of pain
+  - id: HP:0012531
+    label: PhenotypicFeature
+    name: Pain
+  - id: MESH:D018781
+    label: Disease
+    name: Tension-Type Headache
+references:
+  - https://go.drugbank.com/drugs/DB00201#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Caffeine
+  - https://en.wikipedia.org/wiki/Adenosine_receptor
+  - https://en.wikipedia.org/wiki/Cyclic_nucleotide_phosphodiesterase
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5366829/
+  - https://en.wikipedia.org/wiki/Tension_headache

@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB01183_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: Naloxone
+  drug_mesh: MESH:D009270
+  drugbank: DB:DB01183
+links:
+  - key: decreases activity of
+    source: MESH:D009270
+    target: UniProt:P35372
+  - key: decreases activity of
+    source: MESH:D009270
+    target: UniProt:P41143
+  - key: decreases activity of
+    source: MESH:D009270
+    target: UniProt:P41145
+  - key: participates in
+    source: UniProt:P35372
+    target: GO:0038003
+  - key: participates in
+    source: UniProt:P41143
+    target: GO:0038003
+  - key: participates in
+    source: UniProt:P41145
+    target: GO:0038003
+  - key: positively correlated with
+    source: GO:0038003
+    target: MESH:D006930
+  - key: positively correlated with
+    source: MESH:D006930
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:D009270
+    label: Drug
+    name: Naloxone
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu-type opioid receptor
+  - id: UniProt:P41143
+    label: Protein
+    name: Delta-type opioid receptor
+  - id: UniProt:P41145
+    label: Protein
+    name: Kappa-type opioid receptor
+  - id: GO:0038003
+    label: BiologicalProcess
+    name: G protein-coupled opioid receptor signaling pathway
+  - id: MESH:D006930
+    label: Disease
+    name: Hyperalgesia
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+references:
+  - https://go.drugbank.com/drugs/DB01183#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P35372#function
+  - https://www.uniprot.org/uniprot/P41143#function
+  - https://www.uniprot.org/uniprot/P41145#function
+  - https://pubmed.ncbi.nlm.nih.gov/21412369/
+  - https://pubs.asahq.org/anesthesiology/article/118/5/1160/13630/Effects-of-Naloxone-on-Opioid-induced-Hyperalgesia
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3330728/
+  - https://en.wikipedia.org/wiki/Pain

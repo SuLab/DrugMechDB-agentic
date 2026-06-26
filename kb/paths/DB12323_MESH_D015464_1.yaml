@@ -1,0 +1,105 @@
+directed: true
+graph:
+  _id: DB12323_MESH_D015464_1
+  disease: Chronic myeloid leukemia
+  disease_mesh: MESH:D015464
+  drug: Radotinib
+  drug_mesh: MESH:C000606751
+  drugbank: DB:DB12323
+links:
+  - key: decreases activity of
+    source: MESH:C000606751
+    target: UniProt:P00519
+  - key: decreases activity of
+    source: MESH:C000606751
+    target: MESH:D016044
+  - key: decreases activity of
+    source: MESH:C000606751
+    target: MESH:D017479
+  - key: positively regulates
+    source: UniProt:P00519
+    target: GO:0004713
+  - key: positively regulates
+    source: MESH:D016044
+    target: GO:0004713
+  - key: positively regulates
+    source: MESH:D017479
+    target: GO:0004713
+  - key: positively correlated with
+    source: UniProt:P00519
+    target: GO:0035791
+  - key: positively correlated with
+    source: MESH:D016044
+    target: GO:0035791
+  - key: positively correlated with
+    source: MESH:D017479
+    target: GO:0048008
+  - key: positively correlated with
+    source: GO:0035791
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0048008
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0004713
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0035791
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0048008
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0004713
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0035791
+    target: GO:0001525
+  - key: positively correlated with
+    source: GO:0048008
+    target: GO:0001525
+  - key: positively correlated with
+    source: GO:0004713
+    target: GO:0001525
+  - key: positively correlated with
+    source: GO:0001525
+    target: MESH:D015464
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D015464
+multigraph: true
+nodes:
+  - id: MESH:C000606751
+    label: Drug
+    name: Radotinib
+  - id: UniProt:P00519
+    label: Protein
+    name: Tyrosine-protein kinase ABL1
+  - id: MESH:D016044
+    label: Protein
+    name: Fusion Proteins, bcr-abl
+  - id: MESH:D017479
+    label: GeneFamily
+    name: Receptors, Platelet-Derived Growth Factor
+  - id: GO:0004713
+    label: MolecularActivity
+    name: protein tyrosine kinase activity
+  - id: GO:0035791
+    label: BiologicalProcess
+    name: platelet-derived growth factor receptor-beta signaling pathway
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: GO:0048008
+    label: BiologicalProcess
+    name: platelet-derived growth factor receptor signaling pathway
+  - id: GO:0001525
+    label: BiologicalProcess
+    name: angiogenesis
+  - id: MESH:D015464
+    label: Disease
+    name: Chronic myeloid leukemia
+references:
+  - https://go.drugbank.com/drugs/DB12323#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Radotinib
+  - https://drugcentral.org/drugcard/5188

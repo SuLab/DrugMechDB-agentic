@@ -1,0 +1,53 @@
+comment: Butriptyline may seem to be very weak at blocking any biogenic amine uptake,
+  including serotonin (https://pubmed.ncbi.nlm.nih.gov/6499924/).
+directed: true
+graph:
+  _id: DB09016_MESH_D003866_1
+  disease: Depressive disorder
+  disease_mesh: MESH:D003866
+  drug: butriptyline
+  drug_mesh: MESH:C100242
+  drugbank: DB:DB09016
+links:
+  - key: negatively regulates
+    source: MESH:C100242
+    target: UniProt:P23975
+  - key: negatively regulates
+    source: MESH:C100242
+    target: UniProt:P31645
+  - key: positively regulates
+    source: UniProt:P23975
+    target: GO:0051934
+  - key: positively regulates
+    source: UniProt:P31645
+    target: GO:0051610
+  - key: positively correlated with
+    source: GO:0051610
+    target: MESH:D003866
+  - key: positively correlated with
+    source: GO:0051934
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:C100242
+    label: Drug
+    name: butriptyline
+  - id: UniProt:P31645
+    label: Protein
+    name: Sodium-dependent serotonin transporter
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051610
+    label: BiologicalProcess
+    name: serotonin uptake
+  - id: GO:0051934
+    label: BiologicalProcess
+    name: catecholamine uptake involved in synaptic transmission
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB09016
+  - https://en.wikipedia.org/wiki/Butriptyline#Pharmacodynamics
+  - https://pubchem.ncbi.nlm.nih.gov/compound/21772#section=MeSH-Pharmacological-Classification

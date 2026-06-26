@@ -1,0 +1,23 @@
+comment: No evidence found to support allergic rhinitis treatment with a glycine.
+directed: true
+graph:
+  _id: DB00145_MESH_D065631_1
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: glycine
+  drug_mesh: MESH:D005998
+  drugbank: DB:DB00145
+links:
+  - key: treats
+    source: MESH:D005998
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: MESH:D005998
+    label: Drug
+    name: Glycine
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB00145

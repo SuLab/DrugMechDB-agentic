@@ -1,0 +1,57 @@
+directed: true
+graph:
+  _id: DB01399_MESH_D001172_1
+  disease: Arthritis, Rheumatoid
+  disease_mesh: MESH:D001172
+  drug: salicylsalicylic acid
+  drug_mesh: MESH:C014182
+  drugbank: DB:DB01399
+links:
+  - key: decreases activity of
+    source: MESH:C014182
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:C014182
+    target: UniProt:P35354
+  - key: positively regulates
+    source: UniProt:P23219
+    target: GO:0001516
+  - key: positively regulates
+    source: UniProt:P35354
+    target: GO:0001516
+  - key: positively correlated with
+    source: GO:0001516
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0005059
+  - key: manifestation of
+    source: HP:0005059
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:C014182
+    label: Drug
+    name: salicylsalicylic acid
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: GO:0001516
+    label: BiologicalProcess
+    name: prostaglandin biosynthetic process
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0005059
+    label: PhenotypicFeature
+    name: Arthralgia/arthritis
+  - id: MESH:D001172
+    label: Disease
+    name: Arthritis, Rheumatoid
+references:
+  - https://go.drugbank.com/drugs/DB01399#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P23219#function
+  - https://www.uniprot.org/uniprot/P35354#function

@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00559_MESH_D012594_1
+  disease: Systemic sclerosis
+  disease_mesh: MESH:D012594
+  drug: bosentan
+  drug_mesh: MESH:C086232
+  drugbank: DB:DB00559
+links:
+  - key: decreases activity of
+    source: MESH:C086232
+    target: UniProt:P25101
+  - key: decreases activity of
+    source: MESH:C086232
+    target: UniProt:P24530
+  - key: positively regulates
+    source: UniProt:P25101
+    target: GO:0042310
+  - key: capable of
+    source: UniProt:P24530
+    target: GO:0042310
+  - key: positively regulates
+    source: GO:0042310
+    target: HP:0000822
+  - key: manifestation of
+    source: HP:0000822
+    target: MESH:D012594
+multigraph: true
+nodes:
+  - id: MESH:C086232
+    label: Drug
+    name: Bosentan
+  - id: UniProt:P25101
+    label: Protein
+    name: Endothelin-1 receptor
+  - id: UniProt:P24530
+    label: Protein
+    name: Endothelin receptor type B
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: Hypertension
+  - id: MESH:D012594
+    label: Disease
+    name: Systemic sclerosis
+references:
+  - https://en.wikipedia.org/wiki/Bosentan
+  - https://go.drugbank.com/drugs/DB00559#BE0000043

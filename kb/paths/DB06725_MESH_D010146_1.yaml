@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB06725_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: lornoxicam
+  drug_mesh: MESH:C059451
+  drugbank: DB:DB06725
+links:
+  - key: negatively regulates
+    source: MESH:C059451
+    target: UniProt:P23219
+  - key: negatively regulates
+    source: MESH:C059451
+    target: UniProt:P35354
+  - key: positively regulates
+    source: UniProt:P23219
+    target: GO:0006954
+  - key: positively regulates
+    source: UniProt:P35354
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:C059451
+    label: Drug
+    name: lornoxicam
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+references:
+  - https://go.drugbank.com/drugs/DB06725

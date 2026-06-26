@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00502_MESH_D011618_1
+  disease: Psychotic disorder
+  disease_mesh: MESH:D011618
+  drug: haloperidol
+  drug_mesh: MESH:D006220
+  drugbank: DB:DB00502
+links:
+  - key: negatively regulates
+    source: MESH:D006220
+    target: UniProt:P14416
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: GO:0061527
+  - key: positively correlated with
+    source: GO:0061527
+    target: HP:0000708
+  - key: manifestation of
+    source: HP:0000708
+    target: MESH:D011618
+multigraph: true
+nodes:
+  - id: MESH:D006220
+    label: Drug
+    name: haloperidol
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: dopamine secretion, neurotransmission
+  - id: HP:0000708
+    label: PhenotypicFeature
+    name: Behavioral abnormality
+  - id: MESH:D011618
+    label: Disease
+    name: Psychotic disorder
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/3559#section=Mechanism-of-Action

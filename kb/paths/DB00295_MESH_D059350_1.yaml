@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB00295_MESH_D059350_1
+  disease: Chronic pain
+  disease_mesh: MESH:D059350
+  drug: morphine
+  drug_mesh: MESH:D009020
+  drugbank: DB:DB00295
+links:
+  - key: increases activity of
+    source: MESH:D009020
+    target: InterPro:IPR001418
+  - key: decreases activity of
+    source: InterPro:IPR001418
+    target: GO:0019233
+  - key: regulates
+    source: GO:0019233
+    target: MESH:D059350
+multigraph: true
+nodes:
+  - id: MESH:D009020
+    label: Drug
+    name: morphine
+  - id: InterPro:IPR001418
+    label: GeneFamily
+    name: Opioid receptor
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: sensory perception of pain
+  - id: MESH:D059350
+    label: Disease
+    name: Chronic pain
+references:
+  - https://go.drugbank.com/drugs/DB00295#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Analgesic#Opioids
+  - https://en.wikipedia.org/wiki/Chronic_pain#Opioids

@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00553_MESH_D016410_1
+  disease: Primary cutaneous T-cell lymphoma
+  disease_mesh: MESH:D016410
+  drug: methoxsalen
+  drug_mesh: MESH:D008730
+  drugbank: DB:DB00553
+links:
+  - key: disrupts
+    source: MESH:D008730
+    target: MESH:D004247
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006260
+  - key: positively correlated with
+    source: GO:0006260
+    target: HP:0031377
+  - key: causes
+    source: HP:0031377
+    target: MESH:D016410
+multigraph: true
+nodes:
+  - id: MESH:D008730
+    label: Drug
+    name: Methoxsalen
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D016410
+    label: Disease
+    name: Primary cutaneous T-cell lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB00553

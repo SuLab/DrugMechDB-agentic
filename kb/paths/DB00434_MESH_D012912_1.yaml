@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00434_MESH_D012912_1
+  disease: Sneezing
+  disease_mesh: MESH:D012912
+  drug: Cyproheptadine
+  drug_mesh: MESH:D003533
+  drugbank: DB:DB00434
+links:
+  - key: decreases activity of
+    source: MESH:D003533
+    target: UniProt:P35367
+  - key: participates in
+    source: UniProt:P35367
+    target: GO:0051381
+  - key: positively regulates
+    source: GO:0051381
+    target: GO:0023041
+  - key: located in
+    source: GO:0023041
+    target: UBERON:0000004
+  - key: affected by
+    source: UBERON:0000004
+    target: UBERON:0001645
+  - key: contributes to
+    source: UBERON:0001645
+    target: MESH:D012912
+multigraph: true
+nodes:
+  - id: MESH:D003533
+    label: Drug
+    name: Cyproheptadine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: GO:0051381
+    label: MolecularActivity
+    name: Histamine binding
+  - id: GO:0023041
+    label: BiologicalProcess
+    name: neuronal signal transduction
+  - id: UBERON:0000004
+    label: GrossAnatomicalStructure
+    name: Nose
+  - alt_ids:
+      - MESH:D014276
+    id: UBERON:0001645
+    label: GrossAnatomicalStructure
+    name: Trigeminal nerve
+  - id: MESH:D012912
+    label: Disease
+    name: Sneezing
+references:
+  - https://go.drugbank.com/drugs/DB00434
+  - https://en.wikipedia.org/wiki/Sneeze

@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB08860_MESH_D006950_1
+  disease: Mixed hyperlipidemia
+  disease_mesh: MESH:D006950
+  drug: Pitavastatin
+  drug_mesh: MESH:C108475
+  drugbank: DB:DB08860
+links:
+  - key: decreases activity of
+    source: MESH:C108475
+    target: UniProt:P04035
+  - key: positively regulates
+    source: UniProt:P04035
+    target: GO:0006695
+  - key: increases abundance of
+    source: GO:0006695
+    target: MESH:D002784
+  - key: positively correlated with
+    source: MESH:D002784
+    target: MESH:D006950
+multigraph: true
+nodes:
+  - id: MESH:C108475
+    label: Drug
+    name: Pitavastatin
+  - id: UniProt:P04035
+    label: Protein
+    name: 3-hydroxy-3-methylglutaryl-coenzyme A reductase
+  - id: GO:0006695
+    label: BiologicalProcess
+    name: Cholesterol biosynthetic process
+  - id: MESH:D002784
+    label: ChemicalSubstance
+    name: Cholesterol
+  - id: MESH:D006950
+    label: Disease
+    name: Mixed hyperlipidemia
+references:
+  - https://go.drugbank.com/drugs/DB08860
+  - https://en.wikipedia.org/wiki/Combined_hyperlipidemia

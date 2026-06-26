@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00249_MESH_D016849_1
+  disease: Herpes simplex keratitis
+  disease_mesh: MESH:D016849
+  drug: idoxuridine
+  drug_mesh: MESH:D007065
+  drugbank: DB:DB00249
+links:
+  - key: disrupts
+    source: MESH:D007065
+    target: CHEBI:16991
+  - key: in taxon
+    source: CHEBI:16991
+    target: taxonomy:10299
+  - key: causes
+    source: taxonomy:10299
+    target: MESH:D016849
+multigraph: true
+nodes:
+  - id: MESH:D007065
+    label: Drug
+    name: idoxuridine
+  - id: CHEBI:16991
+    label: ChemicalSubstance
+    name: deoxyribonucleic acid
+  - id: taxonomy:10299
+    label: OrganismTaxon
+    name: Human alphaherpesvirus 1 strain 17
+  - id: MESH:D016849
+    label: Disease
+    name: Herpes simplex keratitis
+references:
+  - https://go.drugbank.com/drugs/DB00249
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL788/

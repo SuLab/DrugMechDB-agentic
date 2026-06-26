@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00297_MESH_D011537_1
+  disease: Itching of skin
+  disease_mesh: MESH:D011537
+  drug: bupivacaine
+  drug_mesh: MESH:D002045
+  drugbank: DB:DB00297
+links:
+  - key: decreases activity of
+    source: DB:DB00297
+    target: UniProt:Q9Y5Y9
+  - key: positively regulates
+    source: UniProt:Q9Y5Y9
+    target: GO:0086010
+  - key: occurs in
+    source: GO:0086010
+    target: CL:0000197
+  - key: positively correlated with
+    source: CL:0000197
+    target: MESH:D011537
+multigraph: true
+nodes:
+  - id: DB:DB00297
+    label: Drug
+    name: Bupivacaine
+  - id: UniProt:Q9Y5Y9
+    label: Protein
+    name: Sodium channel protein type 10 subunit alpha
+  - id: GO:0086010
+    label: BiologicalProcess
+    name: Membrane depolarization during action potential
+  - id: CL:0000197
+    label: Cell
+    name: Sensory Receptor Cell
+  - id: MESH:D011537
+    label: Disease
+    name: Itching of skin
+references:
+  - https://go.drugbank.com/drugs/DB00297

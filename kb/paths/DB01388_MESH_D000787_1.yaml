@@ -1,0 +1,102 @@
+comment: Mibefradil was withdrawn from the market in 1998 because of potentially harmful
+  interactions with other drugs
+directed: true
+graph:
+  _id: DB01388_MESH_D000787_1
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: mibefradil
+  drug_mesh: MESH:D020748
+  drugbank: DB:DB01388
+links:
+  - key: decreases activity of
+    source: MESH:D020748
+    target: UniProt:O43497
+  - key: decreases activity of
+    source: MESH:D020748
+    target: UniProt:Q13936
+  - key: decreases activity of
+    source: MESH:D020748
+    target: UniProt:O95180
+  - key: decreases activity of
+    source: MESH:D020748
+    target: UniProt:Q01668
+  - key: decreases activity of
+    source: MESH:D020748
+    target: UniProt:O60840
+  - key: decreases activity of
+    source: MESH:D020748
+    target: UniProt:Q9P0X4
+  - key: decreases activity of
+    source: MESH:D020748
+    target: UniProt:Q13698
+  - key: participates in
+    source: UniProt:O43497
+    target: GO:0070509
+  - key: participates in
+    source: UniProt:Q13936
+    target: GO:0070509
+  - key: participates in
+    source: UniProt:O95180
+    target: GO:0070509
+  - key: participates in
+    source: UniProt:Q01668
+    target: GO:0070509
+  - key: participates in
+    source: UniProt:O60840
+    target: GO:0070509
+  - key: participates in
+    source: UniProt:Q9P0X4
+    target: GO:0070509
+  - key: participates in
+    source: UniProt:Q13698
+    target: GO:0070509
+  - key: contributes to
+    source: GO:0070509
+    target: GO:0045907
+  - key: negatively regulates
+    source: GO:0045907
+    target: GO:0008015
+  - key: negatively correlated with
+    source: GO:0008015
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:D020748
+    label: Drug
+    name: mibefradil
+  - id: UniProt:O43497
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1G
+  - id: UniProt:Q13936
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1C
+  - id: UniProt:O95180
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1H
+  - id: UniProt:Q01668
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1D
+  - id: UniProt:O60840
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1F
+  - id: UniProt:Q9P0X4
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1I
+  - id: UniProt:Q13698
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1S
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: transmembrane calcium influx
+  - id: GO:0045907
+    label: BiologicalProcess
+    name: positive regulation of vasoconstriction
+  - id: GO:0008015
+    label: BiologicalProcess
+    name: blood circulation
+  - id: MESH:D000787
+    label: Disease
+    name: Angina pectoris
+references:
+  - https://go.drugbank.com/drugs/DB01388

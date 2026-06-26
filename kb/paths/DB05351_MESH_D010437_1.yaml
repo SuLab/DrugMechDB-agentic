@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB05351_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: Dexlansoprazole
+  drug_mesh: MESH:D064748
+  drugbank: DB:DB05351
+links:
+  - key: decreases activity of
+    source: MESH:D064748
+    target: UniProt:P20648
+  - key: decreases activity of
+    source: MESH:D064748
+    target: UniProt:P51164
+  - key: positively regulates
+    source: UniProt:P20648
+    target: GO:0001696
+  - key: positively regulates
+    source: UniProt:P51164
+    target: GO:0001696
+  - key: increases abundance of
+    source: GO:0001696
+    target: MESH:D005744
+  - key: positively correlated with
+    source: MESH:D005744
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:D064748
+    label: Drug
+    name: Dexlansoprazole
+  - id: UniProt:P20648
+    label: Protein
+    name: Potassium-transporting ATPase alpha chain 1
+  - id: UniProt:P51164
+    label: Protein
+    name: Potassium-transporting ATPase subunit beta
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: Gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB05351#BE0000349

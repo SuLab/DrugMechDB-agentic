@@ -1,0 +1,27 @@
+comment: Please note that the pernicious anemia is a megaloblastic anemia caused by
+  vitamin B12 deficiency not thiamine deficiency. Differential diagnosis for pernicious
+  anemia includes thiamine-responsive megaloblastic anemia syndrome which is treated
+  high doses of thiamine
+directed: true
+graph:
+  _id: DB00152_MESH_D000752_1
+  disease: Pernicious anemia
+  disease_mesh: MESH:D000752
+  drug: Thiamine
+  drug_mesh: MESH:D013831
+  drugbank: DB:DB00152
+links:
+  - key: treats
+    source: MESH:D013831
+    target: MESH:D000752
+multigraph: true
+nodes:
+  - id: MESH:D013831
+    label: Drug
+    name: Thiamine
+  - id: MESH:D000752
+    label: Disease
+    name: Pernicious anemia
+references:
+  - https://go.drugbank.com/drugs/DB00152
+  - https://drugcentral.org/drugcard/2832?q=thiamine

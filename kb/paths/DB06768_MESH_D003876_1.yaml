@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB06768_MESH_D003876_1
+  disease: Dermatitis, Atopic
+  disease_mesh: MESH:D003876
+  drug: Ammonium lactate
+  drugbank: DB:DB06768
+links:
+  - key: part of
+    source: DB:DB06768
+    target: MESH:D058427
+  - key: negatively regulates
+    source: MESH:D058427
+    target: GO:0070268
+  - key: occurs in
+    source: GO:0070268
+    target: UBERON:0002027
+  - key: location of
+    source: UBERON:0002027
+    target: MESH:D003876
+multigraph: true
+nodes:
+  - id: DB:DB06768
+    label: Drug
+    name: Ammonium lactate
+  - id: MESH:D058427
+    label: ChemicalSubstance
+    name: Hygroscopic Agents
+  - id: GO:0070268
+    label: BiologicalProcess
+    name: cornification
+  - id: UBERON:0002027
+    label: GrossAnatomicalStructure
+    name: stratum corneum of epidermis
+  - id: MESH:D003876
+    label: Disease
+    name: Dermatitis, Atopic
+references:
+  - https://go.drugbank.com/drugs/DB06768#pharmacodynamics
+  - https://en.wikipedia.org/wiki/Atopic_dermatitis

@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00198_MESH_D007251_1
+  disease: Influenza
+  disease_mesh: MESH:D007251
+  drug: oseltamivir
+  drug_mesh: MESH:C535162,MESH:C403132,MESH:D053139
+  drugbank: DB:DB00198
+links:
+  - key: negatively regulates
+    source: DB:DB00198
+    target: UniProt:P11485
+  - key: positively regulates
+    source: UniProt:P11485
+    target: GO:0004308
+  - key: positively correlated with
+    source: GO:0004308
+    target: GO:0140374
+  - key: in taxon
+    source: GO:0140374
+    target: taxonomy:380985
+  - key: causes
+    source: taxonomy:380985
+    target: MESH:D007251
+multigraph: true
+nodes:
+  - id: DB:DB00198
+    label: Drug
+    name: Oseltamivir
+  - id: UniProt:P11485
+    label: Protein
+    name: Neuraminidase
+  - id: GO:0004308
+    label: BiologicalProcess
+    name: exo-alpha-sialidase activity
+  - id: GO:0140374
+    label: BiologicalProcess
+    name: viral budding from plasma membrane
+  - id: taxonomy:380985
+    label: OrganismTaxon
+    name: Influenza A virus (A/Chile/1/1983(H1N1))
+  - id: MESH:D007251
+    label: Disease
+    name: Influenza
+references:
+  - https://go.drugbank.com/drugs/DB00198#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Oseltamivir#Mechanism_of_action

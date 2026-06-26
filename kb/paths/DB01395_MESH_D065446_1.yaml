@@ -1,0 +1,85 @@
+comment: The use of progesterone, progestin and similar compounds may not be superior
+  to placebo in reducing premenstrual symptoms judging from the results of the majority
+  of controlled trials (https://pubmed.ncbi.nlm.nih.gov/7791258/). Also note that
+  it is generally agreed that neither a deficiency nor excess in progesterone/progestin
+  levels is etiologically relevant to the disorder (https://pubmed.ncbi.nlm.nih.gov/16650465/).
+  It's largelly accepted that SSRIs as better treatment and should be the first attempt
+  for treatment of premenstrual dysphoric disorder.
+directed: true
+graph:
+  _id: DB01395_MESH_D065446_1
+  disease: Premenstrual dysphoric disorder
+  disease_mesh: MESH:D065446
+  drug: drospirenone
+  drug_mesh: MESH:C035144
+  drugbank: DB:DB01395
+links:
+  - key: negatively regulates
+    source: MESH:C035144
+    target: UniProt:P08235
+  - key: positively correlated with
+    source: UniProt:P08235
+    target: GO:0005890
+  - key: positively correlated with
+    source: UniProt:P08235
+    target: InterPro:IPR001696
+  - key: regulates
+    source: GO:0005890
+    target: GO:0070294
+  - key: regulates
+    source: GO:0005890
+    target: GO:0036359
+  - key: regulates
+    source: InterPro:IPR001696
+    target: GO:0070294
+  - key: correlated with
+    source: GO:0036359
+    target: HP:0000969
+  - key: correlated with
+    source: GO:0070294
+    target: HP:0000969
+  - key: correlated with
+    source: GO:0036359
+    target: MESH:D059373
+  - key: correlated with
+    source: GO:0070294
+    target: MESH:D059373
+  - key: manifestation of
+    source: MESH:D059373
+    target: MESH:D065446
+  - key: correlated with
+    source: HP:0000969
+    target: MESH:D065446
+multigraph: true
+nodes:
+  - id: MESH:C035144
+    label: Drug
+    name: drospirenone
+  - id: UniProt:P08235
+    label: Protein
+    name: Mineralocorticoid receptor
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: GO:0005890
+    label: CellularComponent
+    name: sodium:potassium-exchanging ATPase complex
+  - id: GO:0070294
+    label: BiologicalProcess
+    name: renal sodium ion absorption
+  - id: GO:0036359
+    label: BiologicalProcess
+    name: renal potassium excretion
+  - id: HP:0000969
+    label: PhenotypicFeature
+    name: Edema
+  - id: MESH:D059373
+    label: PhenotypicFeature
+    name: Mastodynia
+  - id: MESH:D065446
+    label: Disease
+    name: Premenstrual dysphoric disorder
+references:
+  - https://go.drugbank.com/drugs/DB01395#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Antimineralocorticoid#Mechanism_of_action
+  - https://pubmed.ncbi.nlm.nih.gov/18472980/

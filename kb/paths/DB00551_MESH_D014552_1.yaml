@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00551_MESH_D014552_1
+  disease: Urinary tract infectious disease
+  disease_mesh: MESH:D014552
+  drug: acetohydroxamic acid
+  drug_mesh: MESH:C006358
+  drugbank: DB:DB00551
+links:
+  - key: negatively regulates
+    source: MESH:C006358
+    target: Pfam:PF00449
+  - key: positively regulates
+    source: Pfam:PF00449
+    target: GO:0043419
+  - key: in taxon
+    source: GO:0043419
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D014552
+multigraph: true
+nodes:
+  - id: MESH:C006358
+    label: Drug
+    name: acetohydroxamic acid
+  - id: Pfam:PF00449
+    label: GeneFamily
+    name: Urease alpha-subunit, N-terminal domain
+  - id: GO:0043419
+    label: BiologicalProcess
+    name: urea catabolic process
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D014552
+    label: Disease
+    name: Urinary tract infectious disease
+references:
+  - https://go.drugbank.com/drugs/DB00551
+  - https://en.wikipedia.org/wiki/Acetohydroxamic_acid

@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB00005_MESH_D001171_1
+  disease: Juvenile idiopathic arthritis
+  disease_mesh: MESH:D001171
+  drug: Etanercept
+  drug_mesh: MESH:D000068800
+  drugbank: DB:DB00005
+links:
+  - key: decreases activity of
+    source: MESH:D000068800
+    target: UniProt:P01375
+  - key: participates in
+    source: UniProt:P01375
+    target: reactome:R-HSA-75893
+  - key: positively regulates
+    source: reactome:R-HSA-75893
+    target: GO:0006954
+  - key: positively regulates
+    source: GO:0006954
+    target: HP:0002829
+  - key: positively regulates
+    source: GO:0006954
+    target: HP:0001386
+  - key: manifestation of
+    source: HP:0002829
+    target: MESH:D001171
+  - key: manifestation of
+    source: HP:0001386
+    target: MESH:D001171
+  - key: causes
+    source: GO:0006954
+    target: MESH:D001171
+multigraph: true
+nodes:
+  - id: MESH:D000068800
+    label: Drug
+    name: Etanercept
+  - id: UniProt:P01375
+    label: Protein
+    name: Tumor necrosis factor
+  - id: reactome:R-HSA-75893
+    label: Pathway
+    name: TNF signaling
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Arthralgia
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: MESH:D001171
+    label: Disease
+    name: Juvenile idiopathic arthritis
+references:
+  - https://go.drugbank.com/drugs/DB00005#BE0000704
+  - https://en.wikipedia.org/wiki/Etanercept#Mechanism_of_action

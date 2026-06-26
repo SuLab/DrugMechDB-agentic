@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB06594_MESH_D003865_1
+  disease: Major depressive disorder
+  disease_mesh: MESH:D003865
+  drug: agomelatine
+  drug_mesh: MESH:C084711
+  drugbank: DB:DB06594
+links:
+  - key: decreases activity of
+    source: MESH:C084711
+    target: UniProt:P28335
+  - key: increases activity of
+    source: MESH:C084711
+    target: UniProt:P48039
+  - key: increases activity of
+    source: MESH:C084711
+    target: UniProt:P49286
+  - key: negatively regulates
+    source: UniProt:P28335
+    target: GO:0061533
+  - key: treats
+    source: GO:0061533
+    target: MESH:D003865
+  - key: negatively regulates
+    source: UniProt:P28335
+    target: GO:0061527
+  - key: treats
+    source: GO:0061527
+    target: MESH:D003865
+  - key: positively regulates
+    source: UniProt:P48039
+    target: GO:0045187
+  - key: positively regulates
+    source: UniProt:P49286
+    target: GO:0045187
+  - key: negatively correlated with
+    source: GO:0045187
+    target: MESH:D003865
+multigraph: true
+nodes:
+  - id: MESH:C084711
+    label: Drug
+    name: agomelatine
+  - id: UniProt:P28335
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2C
+  - id: GO:0061533
+    label: BiologicalProcess
+    name: Norepinephrine secretion, neurotransmission
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: UniProt:P48039
+    label: Protein
+    name: Melatonin receptor type 1A
+  - id: UniProt:P49286
+    label: Protein
+    name: Melatonin receptor type 1B
+  - id: GO:0045187
+    label: BiologicalProcess
+    name: Regulation of circadian sleep/wake cycle, sleep
+  - id: MESH:D003865
+    label: Disease
+    name: Major depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB06594#BE0000515
+  - https://en.wikipedia.org/wiki/Agomelatine

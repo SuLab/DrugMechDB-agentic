@@ -1,0 +1,63 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB00830_MESH_D009765_1
+  disease: Obesity
+  disease_mesh: MESH:D009765
+  drug: phenmetrazine
+  drug_mesh: MESH:D010633
+  drugbank: DB:DB00830
+links:
+  - key: negatively regulates
+    source: MESH:D010633
+    target: UniProt:P23975
+  - key: negatively regulates
+    source: MESH:D010633
+    target: UniProt:Q01959
+  - key: positively correlated with
+    source: UniProt:P23975
+    target: GO:0051583
+  - key: positively correlated with
+    source: UniProt:Q01959
+    target: GO:0051583
+  - key: located in
+    source: GO:0051583
+    target: UBERON:0004092
+  - key: correlated with
+    source: UBERON:0004092
+    target: HP:0100738
+  - key: correlated with
+    source: HP:0100738
+    target: HP:0004324
+  - key: manifestation of
+    source: HP:0004324
+    target: MESH:D009765
+multigraph: true
+nodes:
+  - id: MESH:D010633
+    label: Drug
+    name: phenmetrazine
+  - id: UniProt:Q01959
+    label: Protein
+    name: Sodium-dependent dopamine transporter
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051583
+    label: BiologicalProcess
+    name: dopamine uptake involved in synaptic transmission
+  - id: UBERON:0004092
+    label: GrossAnatomicalStructure
+    name: hypothalamus-pituitary axis
+  - id: HP:0100738
+    label: PhenotypicFeature
+    name: Abnormal eating behavior
+  - id: HP:0004324
+    label: PhenotypicFeature
+    name: Increased body weight
+  - id: MESH:D009765
+    label: Disease
+    name: Obesity
+references:
+  - https://go.drugbank.com/drugs/DB00830
+  - https://en.wikipedia.org/wiki/Phenmetrazine#Pharmacology

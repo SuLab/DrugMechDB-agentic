@@ -1,0 +1,53 @@
+comment: The disease, specially the acute form, is mainly caused by infection (https://en.wikipedia.org/wiki/Enterocolitis#Cause),
+  leading to inflammation. So in addition to treating the symptoms (such as spams
+  and GI secretions), antibiotics, anti-virals etc may be needed for treatment (https://en.wikipedia.org/wiki/Enterocolitis#Treatment).
+directed: true
+graph:
+  _id: DB00771_MESH_D004760_1
+  disease: Enterocolitis
+  disease_mesh: MESH:D004760
+  drug: clidinium
+  drug_mesh: MESH:C054940
+  drugbank: DB:DB00771
+links:
+  - key: negatively regulates
+    source: MESH:C054940
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0006939
+  - key: positively correlated with
+    source: GO:0006939
+    target: GO:0001696
+  - key: positively correlated with
+    source: GO:0006939
+    target: HP:0003394
+  - key: correlated with
+    source: GO:0001696
+    target: MESH:D004760
+  - key: correlated with
+    source: HP:0003394
+    target: MESH:D004760
+multigraph: true
+nodes:
+  - id: MESH:C054940
+    label: Drug
+    name: clidinium
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: Intestinal Secretions
+  - id: HP:0003394
+    label: PhenotypicFeature
+    name: Muscle spasm
+  - id: MESH:D004760
+    label: Disease
+    name: Enterocolitis
+references:
+  - https://go.drugbank.com/drugs/DB00771#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Clidinium_bromide#Mechanism_of_action

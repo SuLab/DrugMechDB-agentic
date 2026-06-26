@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01610_MESH_D003586_1
+  disease: CMV infection
+  disease_mesh: MESH:D003586
+  drug: valganciclovir
+  drug_mesh: MESH:D000077562
+  drugbank: DB:DB01610
+links:
+  - key: increases abundance of
+    source: MESH:D000077562
+    target: MESH:D015774
+  - key: negatively regulates
+    source: MESH:D015774
+    target: GO:0039693
+  - key: occurs in
+    source: GO:0039693
+    target: taxonomy:10358
+  - key: causes
+    source: taxonomy:10358
+    target: MESH:D003586
+multigraph: true
+nodes:
+  - id: MESH:D000077562
+    label: Drug
+    name: valganciclovir
+  - id: MESH:D015774
+    label: ChemicalSubstance
+    name: ganciclovir
+  - id: GO:0039693
+    label: BiologicalProcess
+    name: viral DNA replication
+  - id: taxonomy:10358
+    label: OrganismTaxon
+    name: Cytomegalovirus
+  - id: MESH:D003586
+    label: Disease
+    name: CMV infection

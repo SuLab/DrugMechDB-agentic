@@ -1,0 +1,56 @@
+comment: This drug seems to be used for prophylaxis only because of its high cost
+  and limited efficacy (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7096974/#CR20).
+  It's believed to elicit an antibody-dependent cell-mediated cytotoxicity activity
+  in vivo ()https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4000855/.
+directed: true
+graph:
+  _id: DB00110_MESH_D018357_1
+  disease: Respiratory syncytial virus infection
+  disease_mesh: MESH:D018357
+  drug: palivizumab
+  drug_mesh: MESH:D000069455
+  drugbank: DB:DB00110
+links:
+  - key: negatively regulates
+    source: MESH:D000069455
+    target: UniProt:P13843
+  - key: positively regulates
+    source: UniProt:P13843
+    target: GO:0019064
+  - key: positively regulates
+    source: UniProt:P13843
+    target: GO:0046718
+  - key: in taxon
+    source: GO:0046718
+    target: taxonomy:12814
+  - key: in taxon
+    source: GO:0019064
+    target: taxonomy:12814
+  - key: causes
+    source: taxonomy:12814
+    target: MESH:D018357
+multigraph: true
+nodes:
+  - id: MESH:D000069455
+    label: Drug
+    name: palivizumab
+  - id: UniProt:P13843
+    label: Protein
+    name: Fusion glycoprotein F0
+  - id: GO:0019064
+    label: BiologicalProcess
+    name: fusion of virus membrane with host plasma membrane
+  - id: GO:0046718
+    label: BiologicalProcess
+    name: viral entry into host cell
+  - id: taxonomy:12814
+    label: OrganismTaxon
+    name: Respiratory syncytial virus
+  - id: MESH:D018357
+    label: Disease
+    name: Respiratory syncytial virus infection
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201586/
+  - https://go.drugbank.com/drugs/DB00110#BE0000686
+  - https://en.wikipedia.org/wiki/Respiratory_syncytial_virus#Immunoprophylaxis
+  - https://en.wikipedia.org/wiki/Palivizumab

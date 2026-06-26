@@ -1,0 +1,37 @@
+comment: The mechanism of action of trifluridine as an antiviral agent has not been
+  fully elucidated, but appears to involve the inhibition of viral replication.
+directed: true
+graph:
+  _id: DB00432_MESH_D016849_1
+  disease: Herpes simplex keratitis
+  disease_mesh: MESH:D016849
+  drug: trifluridine
+  drug_mesh: MESH:D014271
+  drugbank: DB:DB00432
+links:
+  - key: negatively regulates
+    source: MESH:D014271
+    target: GO:0039693
+  - key: in taxon
+    source: GO:0039693
+    target: taxonomy:10298
+  - key: causes
+    source: taxonomy:10298
+    target: MESH:D016849
+multigraph: true
+nodes:
+  - id: MESH:D014271
+    label: Drug
+    name: Trifluridine
+  - id: GO:0039693
+    label: BiologicalProcess
+    name: Viral DNA genome replication
+  - id: taxonomy:10298
+    label: OrganismTaxon
+    name: Human alphaherpesvirus 1
+  - id: MESH:D016849
+    label: Disease
+    name: Herpes simplex keratitis
+references:
+  - https://en.wikipedia.org/wiki/Herpes_simplex_keratitis
+  - https://go.drugbank.com/drugs/DB00432

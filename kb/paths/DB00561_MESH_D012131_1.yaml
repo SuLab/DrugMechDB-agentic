@@ -1,0 +1,64 @@
+directed: true
+graph:
+  _id: DB00561_MESH_D012131_1
+  disease: Decreased respiratory function
+  disease_mesh: MESH:D012131
+  drug: doxapram
+  drug_mesh: MESH:D004315
+  drugbank: DB:DB00561
+links:
+  - key: decreases activity of
+    source: MESH:D004315
+    target: UniProt:O14649
+  - key: decreases activity of
+    source: MESH:D004315
+    target: UniProt:Q9NPC2
+  - key: located in
+    source: UniProt:O14649
+    target: UBERON:0001629
+  - key: located in
+    source: UniProt:Q9NPC2
+    target: UBERON:0001629
+  - key: participates in
+    source: UBERON:0001629
+    target: GO:0003039
+  - key: participates in
+    source: UBERON:0001629
+    target: GO:0003035
+  - key: positively correlated with
+    source: GO:0003039
+    target: GO:0007585
+  - key: positively correlated with
+    source: GO:0003035
+    target: GO:0007585
+  - key: treats
+    source: GO:0007585
+    target: MESH:D012131
+multigraph: true
+nodes:
+  - id: MESH:D004315
+    label: Drug
+    name: doxapram
+  - id: UniProt:O14649
+    label: Protein
+    name: Potassium channel subfamily K member 3
+  - id: UniProt:Q9NPC2
+    label: Protein
+    name: Potassium channel subfamily K member 9
+  - id: UBERON:0001629
+    label: GrossAnatomicalStructure
+    name: carotid body
+  - id: GO:0003039
+    label: BiologicalProcess
+    name: detection of reduced oxygen by carotid body chemoreceptor signaling
+  - id: GO:0003035
+    label: BiologicalProcess
+    name: detection of increased carbon dioxide by carotid body chemoreceptor signaling
+  - id: GO:0007585
+    label: BiologicalProcess
+    name: respiratory gaseous exchange by respiratory system
+  - id: MESH:D012131
+    label: Disease
+    name: Decreased respiratory function
+references:
+  - https://go.drugbank.com/drugs/DB00561

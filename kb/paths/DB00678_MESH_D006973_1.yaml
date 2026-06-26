@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00678_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: Losartan
+  drug_mesh: MESH:D019808
+  drugbank: DB:DB00678
+links:
+  - key: negatively regulates
+    source: MESH:D019808
+    target: UniProt:P30556
+  - key: positively correlated with
+    source: UniProt:P30556
+    target: MESH:D000804
+  - key: positively regulates
+    source: MESH:D000804
+    target: MESH:D014661
+  - key: positively correlated with
+    source: MESH:D014661
+    target: GO:0008217
+  - key: positively correlated with
+    source: GO:0008217
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D019808
+    label: Drug
+    name: Losartan
+  - id: UniProt:P30556
+    label: Protein
+    name: Type-1 angiotensin II receptor
+  - id: MESH:D000804
+    label: ChemicalSubstance
+    name: Angiotensin II
+  - id: MESH:D014661
+    label: Disease
+    name: Vasoconstriction
+  - id: GO:0008217
+    label: BiologicalProcess
+    name: Blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00678

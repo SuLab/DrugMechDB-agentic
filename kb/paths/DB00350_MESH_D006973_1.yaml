@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00350_MESH_D006973_1
+  disease: Hypertension
+  disease_mesh: MESH:D006973
+  drug: minoxidil
+  drug_mesh: MESH:D008914
+  drugbank: DB:DB00350
+links:
+  - key: increases activity of
+    source: MESH:D008914
+    target: UniProt:P48048
+  - key: participates in
+    source: UniProt:P48048
+    target: GO:0060081
+  - key: negatively regulates
+    source: GO:0060081
+    target: GO:0070509
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0006939
+  - key: positively regulates
+    source: GO:0006939
+    target: GO:0045907
+  - key: contributes to
+    source: GO:0045907
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D008914
+    label: Drug
+    name: Minoxidil
+  - id: UniProt:P48048
+    label: Protein
+    name: ATP-sensitive inward rectifier potassium channel 1
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: Membrane hyperpolarization
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Transmembrane calcium influx
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: Smooth muscle contraction
+  - id: GO:0045907
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertension
+references:
+  - https://go.drugbank.com/drugs/DB00350

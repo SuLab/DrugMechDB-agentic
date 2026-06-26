@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB11767_MESH_D001172_1
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: sarilumab
+  drug_mesh: MESH:C000592401
+  drugbank: DB:DB11767
+links:
+  - key: decreases activity of
+    source: MESH:C000592401
+    target: UniProt:P08887
+  - key: positively regulates
+    source: UniProt:P08887
+    target: GO:0070102
+  - key: positively regulates
+    source: GO:0070102
+    target: GO:0006954
+  - key: positively regulates
+    source: GO:0006954
+    target: HP:0005187
+  - key: manifestation of
+    source: HP:0005187
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:C000592401
+    label: ChemicalSubstance
+    name: Sarilumab
+  - id: UniProt:P08887
+    label: Protein
+    name: Interleukin-6 receptor subunit alpha
+  - id: GO:0070102
+    label: BiologicalProcess
+    name: Interleukin-6-mediated signaling pathway
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: HP:0005187
+    label: PhenotypicFeature
+    name: Progressive joint destruction
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB11767

@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00169_MESH_D014808_2
+  disease: Vitamin deficiency
+  disease_mesh: MESH:D014808
+  drug: Colecalciferol
+  drug_mesh: MESH:D002762
+  drugbank: DB:DB00169
+links:
+  - key: increases activity of
+    source: MESH:D002762
+    target: UniProt:P11473
+  - key: positively regulates
+    source: UniProt:P11473
+    target: GO:0033280
+  - key: positively regulates
+    source: GO:0033280
+    target: GO:0030282
+  - key: negatively correlated with
+    source: GO:0030282
+    target: MESH:D014808
+  - key: negatively correlated with
+    source: GO:0033280
+    target: HP:0001324
+  - key: positively correlated with
+    source: HP:0001324
+    target: MESH:D014808
+multigraph: true
+nodes:
+  - id: MESH:D002762
+    label: Drug
+    name: Colecalciferol
+  - id: UniProt:P11473
+    label: Protein
+    name: Vitamin D3 receptor
+  - id: GO:0033280
+    label: BiologicalProcess
+    name: Response to vitamin D
+  - id: GO:0030282
+    label: BiologicalProcess
+    name: Bone mineralization
+  - id: HP:0001324
+    label: PhenotypicFeature
+    name: Muscle weakness
+  - id: MESH:D014808
+    label: Disease
+    name: Vitamin deficiency
+references:
+  - https://go.drugbank.com/drugs/DB00169
+  - https://en.wikipedia.org/wiki/Vitamin_D_deficiency#Signs_and_symptoms

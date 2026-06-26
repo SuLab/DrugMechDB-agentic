@@ -1,0 +1,71 @@
+directed: true
+graph:
+  _id: DB01244_MESH_D000787_3
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: bepridil
+  drug_mesh: MESH:D015764
+  drugbank: DB:DB01244
+links:
+  - key: negatively regulates
+    source: MESH:D015764
+    target: UniProt:O00555
+  - key: positively correlated with
+    source: UniProt:O00555
+    target: GO:0070509
+  - key: negatively correlated with
+    source: GO:0070509
+    target: GO:0042311
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0060047
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:1903779
+  - key: negatively correlated with
+    source: GO:0042311
+    target: MESH:D017202
+  - key: negatively correlated with
+    source: GO:0060047
+    target: MESH:D017202
+  - key: negatively correlated with
+    source: GO:1903779
+    target: MESH:D017202
+  - key: positively correlated with
+    source: MESH:D017202
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:D015764
+    label: Drug
+    name: Bepridil
+  - id: UniProt:O00555
+    label: Protein
+    name: Voltage-dependent P/Q-type calcium channel subunit alpha-1A
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: calcium ion import
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: GO:0060047
+    label: BiologicalProcess
+    name: heart contraction
+  - id: GO:1903779
+    label: BiologicalProcess
+    name: regulation of cardiac conduction
+  - id: MESH:D017202
+    label: PhenotypicFeature
+    name: Myocardial Ischemia
+  - id: MESH:D000787
+    label: Disease
+    name: Angina pectoris
+references:
+  - https://go.drugbank.com/drugs/DB01244#BE0000356
+  - https://en.wikipedia.org/wiki/Calcium_channel_blocker#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Bepridil
+  - https://www.cvpharmacology.com/vasodilator/CCB
+comment: note that this drug is only associated with calcium channel blockers in ChEMBL
+  (https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1008/), not with potassium
+  channel blockers (or other targets) as DrugBank has it. This drug is no longer sold
+  in the United States. It's been implicated in causing ventricular arrhythmia.

@@ -1,0 +1,33 @@
+directed: true
+graph:
+  _id: DB00624_MESH_D019584_1
+  disease: Menopausal flushing
+  disease_mesh: MESH:D019584
+  drug: testosterone cypionate
+  drugbank: DB:DB00624
+links:
+  - key: increases activity of
+    source: DB:DB00624
+    target: UniProt:P10275
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0030521
+  - key: treats
+    source: GO:0030521
+    target: MESH:D019584
+multigraph: true
+nodes:
+  - id: DB:DB00624
+    label: Drug
+    name: Testosterone cypionate
+  - id: UniProt:P10275
+    label: Protein
+    name: Androgen receptor
+  - id: GO:0030521
+    label: BiologicalProcess
+    name: Androgen receptor signaling pathway
+  - id: MESH:D019584
+    label: Disease
+    name: Menopausal flushing
+references:
+  - https://go.drugbank.com/drugs/DB13943

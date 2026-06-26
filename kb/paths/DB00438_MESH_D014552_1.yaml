@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00438_MESH_D014552_1
+  disease: Bacterial urinary infection
+  disease_mesh: MESH:D014552
+  drug: ceftazidime
+  drug_mesh: MESH:D002442
+  drugbank: DB:DB00438
+links:
+  - key: decreases activity of
+    source: MESH:D002442
+    target: TIGR:02074
+  - key: participates in
+    source: TIGR:02074
+    target: GO:0009252
+  - key: occurs in
+    source: GO:0009252
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D014552
+multigraph: true
+nodes:
+  - id: MESH:D002442
+    label: Drug
+    name: ceftazidime
+  - id: TIGR:02074
+    label: GeneFamily
+    name: Penicillin-binding protein 1A
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: Bacterial Cell Wall Synthesis
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D014552
+    label: Disease
+    name: Bacterial urinary infection

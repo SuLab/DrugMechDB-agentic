@@ -1,0 +1,23 @@
+comment: The exact mechanism of action is unknown.
+directed: true
+graph:
+  _id: DB09115_MESH_D000562_1
+  disease: Amebic infection
+  disease_mesh: MESH:D000562
+  drug: diiodohydroxyquinoline
+  drug_mesh: MESH:D004103
+  drugbank: DB:DB09115
+links:
+  - key: treats
+    source: MESH:D004103
+    target: MESH:D000562
+multigraph: true
+nodes:
+  - id: MESH:D004103
+    label: Drug
+    name: diiodohydroxyquinoline
+  - id: MESH:D000562
+    label: Disease
+    name: Amebic infection
+references:
+  - https://go.drugbank.com/drugs/DB09115

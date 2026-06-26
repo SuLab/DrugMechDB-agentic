@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01256_MESH_D007169_1
+  disease: Impetigo
+  disease_mesh: MESH:D007169
+  drug: retapamulin
+  drug_mesh: MESH:C508887,MESH:C475718
+  drugbank: DB:DB01256
+links:
+  - key: decreases activity of
+    source: DB:DB01256
+    target: UniProt:Q9A1X4
+  - key: positively regulates
+    source: UniProt:Q9A1X4
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:1314
+  - key: causes
+    source: taxonomy:1314
+    target: MESH:D007169
+multigraph: true
+nodes:
+  - id: DB:DB01256
+    label: Drug
+    name: Retapamulin
+  - id: UniProt:Q9A1X4
+    label: Protein
+    name: 50S ribosomal protein L3 (Streptococcus pyogenes)
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: taxonomy:1314
+    label: OrganismTaxon
+    name: Streptococcus pyogenes
+  - id: MESH:D007169
+    label: Disease
+    name: Impetigo
+references:
+  - https://go.drugbank.com/drugs/DB01256#BE0000843

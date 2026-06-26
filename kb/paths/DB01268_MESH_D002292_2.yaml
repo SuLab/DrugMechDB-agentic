@@ -1,0 +1,134 @@
+directed: true
+graph:
+  _id: DB01268_MESH_D002292_2
+  disease: Renal cell carcinoma
+  disease_mesh: MESH:D002292
+  drug: sunitinib
+  drug_mesh: MESH:C473478
+  drugbank: DB:DB01268
+links:
+  - key: decreases activity of
+    source: MESH:C473478
+    target: UniProt:P09619
+  - key: decreases activity of
+    source: MESH:C473478
+    target: UniProt:P17948
+  - key: decreases activity of
+    source: MESH:C473478
+    target: UniProt:P10721
+  - key: decreases activity of
+    source: MESH:C473478
+    target: UniProt:P35968
+  - key: decreases activity of
+    source: MESH:C473478
+    target: UniProt:P35916
+  - key: decreases activity of
+    source: MESH:C473478
+    target: UniProt:P36888
+  - key: decreases activity of
+    source: MESH:C473478
+    target: UniProt:P07333
+  - key: decreases activity of
+    source: MESH:C473478
+    target: UniProt:P16234
+  - key: positively regulates
+    source: UniProt:P09619
+    target: GO:0008284
+  - key: positively regulates
+    source: UniProt:P17948
+    target: GO:0008284
+  - key: positively regulates
+    source: UniProt:P10721
+    target: GO:0008284
+  - key: positively regulates
+    source: UniProt:P35968
+    target: GO:0008284
+  - key: positively regulates
+    source: UniProt:P35916
+    target: GO:0008284
+  - key: positively regulates
+    source: UniProt:P36888
+    target: GO:0008284
+  - key: positively regulates
+    source: UniProt:P07333
+    target: GO:0008284
+  - key: positively regulates
+    source: UniProt:P16234
+    target: GO:0008284
+  - key: positively regulates
+    source: UniProt:P09619
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P17948
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P10721
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P35968
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P35916
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P36888
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P07333
+    target: GO:0045766
+  - key: positively regulates
+    source: UniProt:P16234
+    target: GO:0045766
+  - key: located in
+    source: GO:0045766
+    target: CL:0001064
+  - key: located in
+    source: GO:0008284
+    target: CL:0001064
+  - key: participates in
+    source: CL:0001064
+    target: MESH:D002292
+multigraph: true
+nodes:
+  - id: MESH:C473478
+    label: Drug
+    name: sunitinib
+  - id: UniProt:P09619
+    label: Protein
+    name: Platelet-derived growth factor receptor beta
+  - id: UniProt:P17948
+    label: Protein
+    name: Vascular endothelial growth factor receptor 1
+  - id: UniProt:P10721
+    label: Protein
+    name: Mast/stem cell growth factor receptor Kit
+  - id: UniProt:P35968
+    label: Protein
+    name: Vascular endothelial growth factor receptor 2
+  - id: UniProt:P35916
+    label: Protein
+    name: Vascular endothelial growth factor receptor 3
+  - id: UniProt:P36888
+    label: Protein
+    name: Receptor-type tyrosine-protein kinase FLT3
+  - id: UniProt:P07333
+    label: Protein
+    name: Macrophage colony-stimulating factor 1 receptor
+  - id: UniProt:P16234
+    label: Protein
+    name: Platelet-derived growth factor receptor alpha
+  - id: GO:0008284
+    label: BiologicalProcess
+    name: positive regulation of cell population proliferation
+  - id: GO:0045766
+    label: BiologicalProcess
+    name: positive regulation of angiogenesis
+  - id: CL:0001064
+    label: Cell
+    name: cancer cell
+  - id: MESH:D002292
+    label: Disease
+    name: Renal cell carcinoma
+references:
+  - https://go.drugbank.com/drugs/DB01268
+  - https://pubmed.ncbi.nlm.nih.gov/20110785/

@@ -1,0 +1,43 @@
+comment: Fluoxymesterone is a synthetic androgen, or male hormone, similar to testosterone
+directed: true
+graph:
+  _id: DB01185_MESH_D011628_3
+  disease: Delayed puberty
+  disease_mesh: MESH:D011628
+  drug: Fluoxymesterone
+  drug_mesh: MESH:D005474
+  drugbank: DB:DB01185
+links:
+  - key: increases activity of
+    source: MESH:D005474
+    target: UniProt:P10275
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0030521
+  - key: positively correlated with
+    source: GO:0030521
+    target: GO:0045136
+  - key: negatively correlated with
+    source: GO:0045136
+    target: MESH:D011628
+multigraph: true
+nodes:
+  - id: MESH:D005474
+    label: Drug
+    name: Fluoxymesterone
+  - id: UniProt:P10275
+    label: Protein
+    name: Androgen receptor
+  - id: GO:0030521
+    label: BiologicalProcess
+    name: Androgen receptor signaling pathway
+  - id: GO:0045136
+    label: BiologicalProcess
+    name: Development of secondary sexual characteristics
+  - id: MESH:D011628
+    label: Disease
+    name: Delayed puberty
+references:
+  - https://go.drugbank.com/drugs/DB01185
+  - https://en.wikipedia.org/wiki/Fluoxymesterone
+  - https://en.wikipedia.org/wiki/Androgen

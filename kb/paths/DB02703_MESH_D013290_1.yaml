@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB02703_MESH_D013290_1
+  disease: Streptococcal Infections
+  disease_mesh: MESH:D013290
+  drug: fusidic acid
+  drug_mesh: MESH:D005672
+  drugbank: DB:DB02703
+links:
+  - key: decreases activity of
+    source: MESH:D005672
+    target: UniProt:A2RCI2
+  - key: positively regulates
+    source: UniProt:A2RCI2
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:1301
+  - key: causes
+    source: taxonomy:1301
+    target: MESH:D013290
+multigraph: true
+nodes:
+  - id: MESH:D005672
+    label: Drug
+    name: fusidic acid
+  - id: UniProt:A2RCI2
+    label: Protein
+    name: Elongation factor G
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:1301
+    label: OrganismTaxon
+    name: Streptococcus
+  - id: MESH:D013290
+    label: Disease
+    name: Streptococcal Infections
+references:
+  - https://go.drugbank.com/drugs/DB02703#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Fusidic_acid
+  - https://www.uniprot.org/uniprot/A2RCI2#function
+  - https://en.wikipedia.org/wiki/Streptococcus#Group_A

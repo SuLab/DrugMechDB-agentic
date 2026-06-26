@@ -1,0 +1,90 @@
+directed: true
+graph:
+  _id: DB02701_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: ecabet
+  drug_mesh: MESH:C061681
+  drugbank: DB:DB02701
+links:
+  - key: molecularly interacts with
+    source: MESH:C061681
+    target: MESH:C047874
+  - key: located in
+    source: MESH:C047874
+    target: MESH:D005753
+  - key: produces
+    source: MESH:D005753
+    target: UBERON:0000912
+  - key: negatively correlated with
+    source: UBERON:0000912
+    target: MESH:D010437
+  - key: disrupts
+    source: MESH:C061681
+    target: CHEBI:16412
+  - key: positively regulates
+    source: CHEBI:16412
+    target: reactome:R-HSA-166016
+  - key: positively correlated with
+    source: reactome:R-HSA-166016
+    target: GO:0006954
+  - key: located in
+    source: GO:0006954
+    target: UBERON:0001276
+  - key: location of
+    source: UBERON:0001276
+    target: MESH:D010437
+  - key: negatively regulates
+    source: MESH:C061681
+    target: InterPro:IPR017950
+  - key: positively regulates
+    source: InterPro:IPR017950
+    target: GO:0009039
+  - key: in taxon
+    source: GO:0009039
+    target: taxonomy:210
+  - key: causes
+    source: taxonomy:210
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:C061681
+    label: Drug
+    name: ecabet
+  - id: CHEBI:16412
+    label: ChemicalSubstance
+    name: lipopolysaccharide
+  - id: reactome:R-HSA-166016
+    label: Pathway
+    name: Toll Like Receptor 4 (TLR4) Cascade
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: UBERON:0001276
+    label: GrossAnatomicalStructure
+    name: epithelium of stomach
+  - id: InterPro:IPR017950
+    label: GeneFamily
+    name: Urease active site
+  - id: GO:0009039
+    label: MolecularActivity
+    name: urease activity
+  - id: taxonomy:210
+    label: OrganismTaxon
+    name: Helicobacter pylori
+  - id: MESH:C047874
+    label: GeneFamily
+    name: gastric mucus glycoproteins
+  - id: UBERON:0000912
+    label: GrossAnatomicalStructure
+    name: Mucus
+  - id: MESH:D005753
+    label: GrossAnatomicalStructure
+    name: Gastric Mucosa
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB05265#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Peptic_ulcer_disease#H._pylori
+  - https://drugs.ncats.io/drug/2K02669KW

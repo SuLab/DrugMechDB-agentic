@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00111_MESH_D020529_1
+  disease: Relapsing remitting multiple sclerosis
+  disease_mesh: MESH:D020529
+  drug: daclizumab
+  drug_mesh: MESH:C096001
+  drugbank: DB:DB00111
+links:
+  - key: decreases activity of
+    source: MESH:C096001
+    target: UniProt:P01589
+  - key: part of
+    source: UniProt:P01589
+    target: GO:0005893
+  - key: participates in
+    source: GO:0005893
+    target: GO:0038110
+  - key: positively correlated with
+    source: GO:0038110
+    target: GO:0050798
+  - key: positively correlated with
+    source: GO:0050798
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D020529
+multigraph: true
+nodes:
+  - id: MESH:C096001
+    label: Drug
+    name: daclizumab
+  - id: UniProt:P01589
+    label: Protein
+    name: Interleukin-2 receptor subunit alpha
+  - id: GO:0005893
+    label: CellularComponent
+    name: interleukin-2 receptor complex
+  - id: GO:0038110
+    label: BiologicalProcess
+    name: interleukin-2-mediated signaling pathway
+  - id: GO:0050798
+    label: BiologicalProcess
+    name: Activated T cell proliferation
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D020529
+    label: Disease
+    name: Relapsing remitting multiple sclerosis
+references:
+  - https://go.drugbank.com/drugs/DB00111
+  - https://en.wikipedia.org/wiki/Daclizumab
+comment: Biogen and Abbvie announced a voluntary withdrawal of their product Zinbryta
+  (daclizumab) from the global market on 2 March 2018. This withdrawal was concurrent
+  to the European Medicines Agency announcement of a recall owing to 12 worldwide
+  reports of serious inflammatory brain disorders associated with the use of Zinbryta
+  (daclizumab)

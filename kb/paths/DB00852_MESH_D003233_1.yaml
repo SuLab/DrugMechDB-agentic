@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00852_MESH_D003233_1
+  disease: Allergic conjunctivitis
+  disease_mesh: MESH:D003233
+  drug: pseudoephedrine
+  drug_mesh: MESH:D054199
+  drugbank: DB:DB00852
+links:
+  - key: increases activity of
+    source: MESH:D054199
+    target: UniProt:P35348
+  - key: positively regulates
+    source: UniProt:P35348
+    target: GO:0042310
+  - key: negatively correlated with
+    source: GO:0042310
+    target: GO:0070254
+  - key: positively correlated with
+    source: GO:0070254
+    target: HP:0012393
+  - key: positively correlated with
+    source: HP:0012393
+    target: MESH:D003233
+multigraph: true
+nodes:
+  - id: MESH:D054199
+    label: Drug
+    name: Pseudoephedrine
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: GO:0070254
+    label: BiologicalProcess
+    name: Mucus secretion
+  - id: HP:0012393
+    label: PhenotypicFeature
+    name: Allergy
+  - id: MESH:D003233
+    label: Disease
+    name: Allergic conjunctivitis
+references:
+  - https://go.drugbank.com/drugs/DB00852#BE0000694
+  - https://en.wikipedia.org/wiki/Pseudoephedrine#Mechanism_of_action

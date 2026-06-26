@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB06782_MESH_D020261_1
+  disease: Toxic effect of arsenic AND/OR its compounds
+  disease_mesh: MESH:D020261
+  drug: dimercaprol
+  drug_mesh: MESH:D004112
+  drugbank: DB:DB06782
+links:
+  - key: subclass of
+    source: MESH:D004112
+    target: MESH:D002614
+  - key: positively correlated with
+    source: MESH:D002614
+    target: GO:0071722
+  - key: negatively correlated with
+    source: GO:0071722
+    target: MESH:D020261
+multigraph: true
+nodes:
+  - id: MESH:D004112
+    label: Drug
+    name: dimercaprol
+  - id: MESH:D002614
+    label: ChemicalSubstance
+    name: Chelating Agents
+  - id: GO:0071722
+    label: BiologicalProcess
+    name: detoxification of arsenic-containing substance
+  - id: MESH:D020261
+    label: Disease
+    name: Toxic effect of arsenic AND/OR its compounds
+references:
+  - https://go.drugbank.com/drugs/DB06782
+  - https://pubchem.ncbi.nlm.nih.gov/compound/3080#section=Mechanism-of-Action
+  - https://en.wikipedia.org/wiki/Dimercaprol#Mechanism_of_action

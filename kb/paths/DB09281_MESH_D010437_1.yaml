@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB09281_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: Magnesium silicate
+  drug_mesh: MESH:C001671,MESH:C005013
+  drugbank: DB:DB09281
+links:
+  - key: negatively regulates
+    source: DB:DB09281
+    target: MESH:D005744
+  - key: positively correlated with
+    source: MESH:D005744
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: DB:DB09281
+    label: Drug
+    name: Magnesium silicate
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB13249

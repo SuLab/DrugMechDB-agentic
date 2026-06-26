@@ -1,0 +1,61 @@
+comment: gabapentin enacarbil is a prodrug of gabapentin, it's physiological effects
+  are the same as gabapentin
+directed: true
+graph:
+  _id: DB08872_MESH_D012148_2
+  disease: Restless legs
+  disease_mesh: MESH:D012148
+  drug: gabapentin enacarbil
+  drug_mesh: MESH:C493250
+  drugbank: DB:DB08872
+links:
+  - key: has metabolite
+    source: MESH:C493250
+    target: CHEBI:42797
+  - key: decreases activity of
+    source: CHEBI:42797
+    target: UniProt:Q9NY47
+  - key: located in
+    source: UniProt:Q9NY47
+    target: GO:0098793
+  - key: participates in
+    source: GO:0098793
+    target: GO:0070509
+  - key: participates in
+    source: GO:0070509
+    target: GO:0007269
+  - key: participates in
+    source: GO:0007269
+    target: HP:0012514
+  - key: correlated with
+    source: HP:0012514
+    target: MESH:D012148
+multigraph: true
+nodes:
+  - id: MESH:C493250
+    label: Drug
+    name: Gabapentin enacarbil
+  - id: CHEBI:42797
+    label: ChemicalSubstance
+    name: Gabapentin
+  - id: UniProt:Q9NY47
+    label: Protein
+    name: Voltage-dependent calcium channel subunit alpha-2/delta-2
+  - id: GO:0098793
+    label: CellularComponent
+    name: Presynapse
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Calcium ion import
+  - id: GO:0007269
+    label: BiologicalProcess
+    name: Neurotransmitter release
+  - id: HP:0012514
+    label: PhenotypicFeature
+    name: Lower limb pain
+  - id: MESH:D012148
+    label: Disease
+    name: Restless legs
+references:
+  - https://go.drugbank.com/drugs/DB08872#BE0000691
+  - https://bjanaesthesia.org/article/S0007-0912(18)30234-4/pdf

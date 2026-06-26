@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB01103_MESH_D005873_1
+  disease: Giardiasis
+  disease_mesh: MESH:D005873
+  drug: mepacrine
+  drug_mesh: MESH:D011796
+  drugbank: DB:DB01103
+links:
+  - key: disrupts
+    source: MESH:D011796
+    target: MESH:D004247
+  - key: in taxon
+    source: MESH:D004247
+    target: taxonomy:5741
+  - key: causes
+    source: taxonomy:5741
+    target: MESH:D005873
+multigraph: true
+nodes:
+  - id: MESH:D011796
+    label: Drug
+    name: Mepacrine
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: taxonomy:5741
+    label: OrganismTaxon
+    name: Giardia intestinalis
+  - id: MESH:D005873
+    label: Disease
+    name: Giardiasis
+references:
+  - https://go.drugbank.com/drugs/DB01103

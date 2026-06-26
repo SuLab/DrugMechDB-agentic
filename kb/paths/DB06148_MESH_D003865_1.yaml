@@ -1,0 +1,124 @@
+directed: true
+graph:
+  _id: DB06148_MESH_D003865_1
+  disease: Major depressive disorder
+  disease_mesh: MESH:D003865
+  drug: mianserin
+  drug_mesh: MESH:D008803
+  drugbank: DB:DB06148
+links:
+  - key: decreases activity of
+    source: MESH:D008803
+    target: UniProt:P28223
+  - key: decreases activity of
+    source: MESH:D008803
+    target: UniProt:P28335
+  - key: decreases activity of
+    source: MESH:D008803
+    target: UniProt:P23975
+  - key: decreases activity of
+    source: MESH:D008803
+    target: UniProt:P08913
+  - key: decreases activity of
+    source: MESH:D008803
+    target: UniProt:P18825
+  - key: decreases activity of
+    source: MESH:D008803
+    target: UniProt:P35367
+  - key: participates in
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: decreases abundance of
+    source: GO:0051620
+    target: MESH:D009638
+  - key: participates in
+    source: MESH:D009638
+    target: GO:0023041
+  - key: negatively correlated with
+    source: GO:0023041
+    target: MESH:D003865
+  - key: positively correlated with
+    source: UniProt:P28223
+    target: MESH:D012701
+  - key: positively correlated with
+    source: UniProt:P28335
+    target: MESH:D012701
+  - key: correlated with
+    source: UniProt:P08913
+    target: MESH:D003865
+  - key: correlated with
+    source: UniProt:P18825
+    target: MESH:D003865
+  - key: positively correlated with
+    source: UniProt:P35367
+    target: HP:0000739
+  - key: positively correlated with
+    source: MESH:D012701
+    target: GO:0032099
+  - key: positively correlated with
+    source: MESH:D012701
+    target: HP:0000739
+  - key: positively correlated with
+    source: MESH:D012701
+    target: HP:0002360
+  - key: positively correlated with
+    source: GO:0032099
+    target: MESH:D003865
+  - key: positively correlated with
+    source: HP:0000739
+    target: MESH:D003865
+  - key: positively correlated with
+    source: HP:0002360
+    target: MESH:D003865
+multigraph: true
+nodes:
+  - id: MESH:D008803
+    label: Drug
+    name: mianserin
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: UniProt:P28335
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2C
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: UniProt:P08913
+    label: Protein
+    name: Alpha-2A adrenergic receptor
+  - id: UniProt:P18825
+    label: Protein
+    name: Alpha-2C adrenergic receptor
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: noradrenaline
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: Noradrenaline uptake
+  - id: GO:0023041
+    label: BiologicalProcess
+    name: Neuronal activation
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: GO:0032099
+    label: BiologicalProcess
+    name: Negative regulation of appetite
+  - id: HP:0000739
+    label: PhenotypicFeature
+    name: Anxiety
+  - id: HP:0002360
+    label: PhenotypicFeature
+    name: Sleep disturbance
+  - id: MESH:D003865
+    label: Disease
+    name: Major depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB06148
+  - https://en.wikipedia.org/wiki/Mianserin#Pharmacodynamics
+  - https://pubchem.ncbi.nlm.nih.gov/compound/4184
+  - https://drugs.ncats.io/drug/250PJI13LM

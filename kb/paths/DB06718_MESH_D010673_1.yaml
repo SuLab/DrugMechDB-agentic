@@ -1,0 +1,95 @@
+directed: true
+graph:
+  _id: DB06718_MESH_D010673_1
+  disease: Pheochromocytoma
+  disease_mesh: MESH:D010673
+  drug: phenoxybenzamine
+  drug_mesh: MESH:D010643
+  drugbank: DB:DB06718
+links:
+  - key: decreases activity of
+    source: MESH:D010643
+    target: UniProt:P35348
+  - key: decreases activity of
+    source: MESH:D010643
+    target: UniProt:P08913
+  - key: decreases activity of
+    source: MESH:D010643
+    target: UniProt:P18825
+  - key: decreases activity of
+    source: MESH:D010643
+    target: UniProt:P25100
+  - key: decreases activity of
+    source: MESH:D010643
+    target: UniProt:P35368
+  - key: decreases activity of
+    source: MESH:D010643
+    target: UniProt:P18089
+  - key: positively regulates
+    source: UniProt:P35348
+    target: GO:0042310
+  - key: regulates
+    source: UniProt:P08913
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P18825
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P25100
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P35368
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P18089
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: MESH:D014655
+  - key: positively correlated with
+    source: MESH:D014655
+    target: HP:0002640
+  - key: manifestation of
+    source: HP:0002640
+    target: MESH:D010673
+multigraph: true
+nodes:
+  - id: MESH:D010643
+    label: Drug
+    name: phenoxybenzamine
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P08913
+    label: Protein
+    name: Alpha-2A adrenergic receptor
+  - id: UniProt:P18825
+    label: Protein
+    name: Alpha-2C adrenergic receptor
+  - id: UniProt:P25100
+    label: Protein
+    name: Alpha-1D adrenergic receptor
+  - id: UniProt:P18089
+    label: Protein
+    name: Alpha-2B adrenergic receptor
+  - id: UniProt:P35368
+    label: Protein
+    name: Alpha-1B adrenergic receptor
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: MESH:D014655
+    label: BiologicalProcess
+    name: Vascular Resistance
+  - id: HP:0002640
+    label: PhenotypicFeature
+    name: Hypertension associated with pheochromocytoma
+  - id: MESH:D010673
+    label: Disease
+    name: Pheochromocytoma
+references:
+  - https://go.drugbank.com/drugs/DB00925#mechanism-of-action
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL753/
+  - https://en.wikipedia.org/wiki/Alpha_blocker#Hypertension
+  - https://en.wikipedia.org/wiki/Phenoxybenzamine#Pharmacology
+  - https://en.wikipedia.org/wiki/Pheochromocytoma#Alpha_blockade

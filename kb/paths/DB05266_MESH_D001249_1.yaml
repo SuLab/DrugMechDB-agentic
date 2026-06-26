@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB05266_MESH_D001249_1
+  disease: Asthma
+  disease_mesh: MESH:D001249
+  drug: ibudilast
+  drug_mesh: MESH:C038366
+  drugbank: DB:DB05266
+links:
+  - key: decreases activity of
+    source: MESH:C038366
+    target: InterPro:IPR043371
+  - key: decreases abundance of
+    source: InterPro:IPR043371
+    target: CHEBI:17489
+  - key: negatively regulates
+    source: CHEBI:17489
+    target: GO:0006954
+  - key: positively regulates
+    source: CHEBI:17489
+    target: GO:0044557
+  - key: causes
+    source: GO:0006954
+    target: MESH:D001249
+  - key: negatively correlated with
+    source: GO:0044557
+    target: MESH:D001249
+multigraph: true
+nodes:
+  - id: MESH:C038366
+    label: Drug
+    name: Ibudilast
+  - id: InterPro:IPR043371
+    label: GeneFamily
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: Relaxation of smooth muscle
+  - id: MESH:D001249
+    label: Disease
+    name: Asthma
+references:
+  - https://go.drugbank.com/drugs/DB05266#BE0001133
+  - https://pubmed.ncbi.nlm.nih.gov/26419847/

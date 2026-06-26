@@ -1,0 +1,29 @@
+comment: null
+directed: true
+graph:
+  _id: DB06616_MESH_D001752_1
+  disease: Blastic phase of chronic myeloid leukemia
+  disease_mesh: MESH:D001752
+  drug: bosutinib
+  drug_mesh: MESH:C471992
+  drugbank: DB:DB06616
+links:
+  - key: decreases activity of
+    source: MESH:C471992
+    target: UniProt:A9UF02
+  - key: causes
+    source: UniProt:A9UF02
+    target: MESH:D001752
+multigraph: true
+nodes:
+  - id: MESH:C471992
+    label: Drug
+    name: Bosutinib
+  - id: UniProt:A9UF02
+    label: Protein
+    name: BCR/ABL protein-tyrosine kinase
+  - id: MESH:D001752
+    label: Disease
+    name: Blastic phase of chronic myeloid leukemia
+references:
+  - https://go.drugbank.com/drugs/DB06616

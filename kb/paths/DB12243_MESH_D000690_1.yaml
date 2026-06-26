@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB12243_MESH_D000690_1
+  disease: Amyotrophic lateral sclerosis
+  disease_mesh: MESH:D000690
+  drug: edaravone
+  drug_mesh: MESH:C005435
+  drugbank: DB:DB12243
+links:
+  - key: positively regulates
+    source: MESH:C005435
+    target: GO:0019430
+  - key: subclass of
+    source: MESH:C005435
+    target: CHEBI:63726
+  - key: subclass of
+    source: MESH:C005435
+    target: CHEBI:66980
+  - key: negatively correlated with
+    source: GO:0019430
+    target: MESH:D000690
+  - key: negatively correlated with
+    source: CHEBI:63726
+    target: MESH:D000690
+  - key: negatively correlated with
+    source: CHEBI:66980
+    target: MESH:D000690
+multigraph: true
+nodes:
+  - id: MESH:C005435
+    label: Drug
+    name: edaravone
+  - id: GO:0019430
+    label: BiologicalProcess
+    name: removal of superoxide radicals
+  - id: CHEBI:63726
+    label: ChemicalSubstance
+    name: neuroprotective agent
+  - id: CHEBI:66980
+    label: ChemicalSubstance
+    name: nootropic agent
+  - id: MESH:D000690
+    label: Disease
+    name: Amyotrophic lateral sclerosis
+references:
+  - https://go.drugbank.com/drugs/DB12243
+  - https://en.wikipedia.org/wiki/Edaravone#Pharmacology
+  - https://pubchem.ncbi.nlm.nih.gov/compound/4021#section=Mechanism-of-Action

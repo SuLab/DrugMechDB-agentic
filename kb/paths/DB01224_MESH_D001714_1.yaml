@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB01224_MESH_D001714_1
+  disease: Bipolar Disorder
+  disease_mesh: MESH:D001714
+  drug: quetiapine
+  drug_mesh: MESH:D000069348
+  drugbank: DB:DB01224
+links:
+  - key: decreases activity of
+    source: MESH:D000069348
+    target: UniProt:P23975
+  - key: positively regulates
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: positively correlated with
+    source: GO:0051620
+    target: HP:0000716
+  - key: positively correlated with
+    source: GO:0051620
+    target: HP:0100754
+  - key: manifestation of
+    source: HP:0000716
+    target: MESH:D001714
+  - key: manifestation of
+    source: HP:0100754
+    target: MESH:D001714
+multigraph: true
+nodes:
+  - id: MESH:D000069348
+    label: Drug
+    name: quetiapine
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: norepinephrine uptake
+  - id: HP:0000716
+    label: PhenotypicFeature
+    name: Depressivity
+  - id: HP:0100754
+    label: PhenotypicFeature
+    name: Mania
+  - id: MESH:D001714
+    label: Disease
+    name: Bipolar Disorder
+references:
+  - https://go.drugbank.com/drugs/DB01224#mechanism-of-action
+  - https://www.genecards.org/cgi-bin/carddisp.pl?gene=SLC6A2#drugs_compounds
+  - https://en.wikipedia.org/wiki/Quetiapine#cite_note-pmid18059438-50
+  - https://pubmed.ncbi.nlm.nih.gov/20307622/
+  - https://pubmed.ncbi.nlm.nih.gov/20931407/
+comment: The disease is denoted as Bipolar affective disorder, current episode depression
+  in the original file. It seems that either Quetiapine or its metabolite (Norquetiapine,
+  also known as N-desalkylquetiapine) could bind to UniProt:P23975 and inhibit its
+  function and is associated with lower synaptic norepinephrine levels (https://en.wikipedia.org/wiki/Quetiapine#Pharmacokinetics
+  https://www.ebi.ac.uk/chembl/document_report_card/CHEMBL3526075/).

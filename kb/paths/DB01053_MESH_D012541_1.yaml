@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01053_MESH_D012541_1
+  disease: Scarlet fever
+  disease_mesh: MESH:D012541
+  drug: benzathine benzylpenicillin
+  drug_mesh: MESH:D010401
+  drugbank: DB:DB01053
+links:
+  - key: negatively regulates
+    source: MESH:D010401
+    target: InterPro:IPR001460
+  - key: positively correlated with
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0071555
+  - key: in taxon
+    source: GO:0071555
+    target: taxonomy:1314
+  - key: causes
+    source: taxonomy:1314
+    target: MESH:D012541
+multigraph: true
+nodes:
+  - alt_ids:
+      - DB:DBSALT002768
+    alt_names:
+      - Penicillin G Benzathine
+      - Benzylpenicillin
+      - Benzylpenicillin benzathine hydrate
+    id: MESH:D010401
+    label: Drug
+    name: benzathine benzylpenicillin
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0071555
+    label: BiologicalProcess
+    name: cell wall organization
+  - id: taxonomy:1314
+    label: OrganismTaxon
+    name: Streptococcus pyogenes
+  - id: MESH:D012541
+    label: Disease
+    name: Scarlet fever
+references:
+  - https://go.drugbank.com/drugs/DB01053

@@ -1,0 +1,67 @@
+directed: true
+graph:
+  _id: DB11126_MESH_D010024_1
+  disease: Osteoporosis
+  disease_mesh: MESH:D010024
+  drug: calcium gluconate
+  drug_mesh: MESH:D002125
+  drugbank: DB:DB11126
+links:
+  - key: increases abundance of
+    source: MESH:D002125
+    target: MESH:D002118
+  - key: positively regulates
+    source: MESH:D002118
+    target: UniProt:P41180
+  - key: negatively regulates
+    source: UniProt:P41180
+    target: GO:0035898
+  - key: positively correlated with
+    source: GO:0035898
+    target: GO:0045453
+  - key: positively correlated with
+    source: GO:0045453
+    target: HP:0004349
+  - key: positively correlated with
+    source: HP:0004349
+    target: MESH:D010024
+  - key: positively regulates
+    source: UniProt:P41180
+    target: GO:0070509
+  - key: positively correlated with
+    source: GO:0070509
+    target: GO:0001503
+  - key: negatively correlated with
+    source: GO:0001503
+    target: MESH:D010024
+multigraph: true
+nodes:
+  - id: MESH:D002125
+    label: Drug
+    name: Calcium gluconate
+  - id: MESH:D002118
+    label: ChemicalSubstance
+    name: Calcium
+  - id: UniProt:P41180
+    label: Protein
+    name: Extracellular calcium-sensing receptor
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Calcium ion import
+  - id: GO:0035898
+    label: BiologicalProcess
+    name: Parathyroid hormone secretion
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: Bone resorption
+  - id: GO:0001503
+    label: BiologicalProcess
+    name: Ossification
+  - id: HP:0004349
+    label: PhenotypicFeature
+    name: Reduced bone mineral density
+  - id: MESH:D010024
+    label: Disease
+    name: Osteoporosis
+references:
+  - https://go.drugbank.com/drugs/DB11126

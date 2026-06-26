@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB13125_MESH_D013921_1
+  disease: Thrombocytopenia
+  disease_mesh: MESH:D013921
+  drug: lusutrombopag
+  drug_mesh: MESH:C000611387
+  drugbank: DB:DB13125
+links:
+  - key: increases activity of
+    source: MESH:C000611387
+    target: UniProt:P40238
+  - key: positively regulates
+    source: UniProt:P40238
+    target: GO:0030220
+  - key: increases abundance of
+    source: GO:0030220
+    target: MESH:D001792
+  - key: negatively correlated with
+    source: MESH:D001792
+    target: MESH:D013921
+multigraph: true
+nodes:
+  - id: MESH:C000611387
+    label: Drug
+    name: lusutrombopag
+  - id: UniProt:P40238
+    label: Protein
+    name: Thrombopoietin receptor
+  - id: GO:0030220
+    label: BiologicalProcess
+    name: platelet formation
+  - id: MESH:D001792
+    label: ChemicalSubstance
+    name: Blood Platelets
+  - id: MESH:D013921
+    label: Disease
+    name: Thrombocytopenia
+references:
+  - https://go.drugbank.com/drugs/DB13125#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22LUSUTROMBOPAG%22
+  - https://www.uniprot.org/uniprot/P40238#function
+  - https://en.wikipedia.org/wiki/Thrombocytopenia

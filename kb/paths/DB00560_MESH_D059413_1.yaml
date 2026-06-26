@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00560_MESH_D059413_1
+  disease: Infectious disease of abdomen
+  disease_mesh: MESH:D059413
+  drug: tigecycline
+  drug_mesh: MESH:D000078304
+  drugbank: DB:DB00560
+links:
+  - key: negatively regulates
+    source: MESH:D000078304
+    target: GO:0015935
+  - key: part of
+    source: GO:0015935
+    target: GO:0005840
+  - key: positively regulates
+    source: GO:0005840
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D059413
+multigraph: true
+nodes:
+  - id: MESH:D000078304
+    label: Drug
+    name: Tigecycline
+  - id: GO:0015935
+    label: CellularComponent
+    name: Small ribosomal subunit
+  - id: GO:0005840
+    label: CellularComponent
+    name: Ribosome
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D059413
+    label: Disease
+    name: Infectious disease of abdomen
+references:
+  - https://go.drugbank.com/drugs/DB00560

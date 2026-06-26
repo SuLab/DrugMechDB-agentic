@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB00252_MESH_D012640_1
+  disease: Seizures
+  disease_mesh: MESH:D012640
+  drug: Phenytoin
+  drug_mesh: MESH:D010672
+  drugbank: DB:DB00252
+links:
+  - key: decreases activity of
+    source: MESH:D010672
+    target: InterPro:IPR001696
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0098870
+  - key: contributes to
+    source: GO:0098870
+    target: MESH:D012640
+multigraph: true
+nodes:
+  - id: MESH:D010672
+    label: Drug
+    name: Phenytoin
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: GO:0098870
+    label: BiologicalProcess
+    name: action potential propagation
+  - id: MESH:D012640
+    label: Disease
+    name: Seizures
+references:
+  - https://go.drugbank.com/drugs/DB00252#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Phenytoin#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Seizure

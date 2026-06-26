@@ -1,0 +1,25 @@
+comment: In the DrugCentral serine is indicated for open-angle glaucoma, however no
+  literature evidences found about the mechanism of action of serine treating open-angle
+  glaucoma.
+directed: true
+graph:
+  _id: DB00133_MESH_D005902_1
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: serine
+  drug_mesh: MESH:D012694
+  drugbank: DB:DB00133
+links:
+  - key: treats
+    source: MESH:D012694
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:D012694
+    label: Drug
+    name: Serine
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - https://go.drugbank.com/drugs/DB00133

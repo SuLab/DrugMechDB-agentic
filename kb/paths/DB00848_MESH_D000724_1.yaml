@@ -1,0 +1,56 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB00848_MESH_D000724_1
+  disease: Ancylostomiasis
+  disease_mesh: MESH:D000724
+  drug: levamisole
+  drug_mesh: MESH:D007978
+  drugbank: DB:DB00848
+links:
+  - key: increases activity of
+    source: MESH:D007978
+    target: UniProt:F1L348
+  - key: increases activity of
+    source: MESH:D007978
+    target: UniProt:F1KYN0
+  - key: positively regulates
+    source: UniProt:F1L348
+    target: HP:0001257
+  - key: positively regulates
+    source: UniProt:F1KYN0
+    target: HP:0001257
+  - key: negatively correlated with
+    source: HP:0001257
+    target: GO:0022414
+  - key: occurs in
+    source: GO:0022414
+    target: taxonomy:51022
+  - key: causes
+    source: taxonomy:51022
+    target: MESH:D000724
+multigraph: true
+nodes:
+  - id: MESH:D007978
+    label: Drug
+    name: Levamisole
+  - id: UniProt:F1L348
+    label: Protein
+    name: Acetylcholine receptor subunit alpha-type unc-38 (Ascaris lumbricoides)
+  - id: UniProt:F1KYN0
+    label: Protein
+    name: Acetylcholine receptor subunit beta-type unc-29 (Ascaris lumbricoides)
+  - id: HP:0001257
+    label: PhenotypicFeature
+    name: Muscle spasticity
+  - id: GO:0022414
+    label: BiologicalProcess
+    name: Reproductive process
+  - id: taxonomy:51022
+    label: OrganismTaxon
+    name: Ancylostoma duodenale
+  - id: MESH:D000724
+    label: Disease
+    name: Ancylostomiasis
+references:
+  - https://go.drugbank.com/drugs/DB00848#BE0003585

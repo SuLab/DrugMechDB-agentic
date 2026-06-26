@@ -1,0 +1,43 @@
+comment: Octinoxate is a sunscreen agent found in sunscreens that absorbs UV rays.
+directed: true
+graph:
+  _id: DB09496_MESH_D008548_1
+  disease: Chloasma
+  disease_mesh: MESH:D008548
+  drug: octinoxate
+  drug_mesh: MESH:C516303
+  drugbank: DB:DB09496
+links:
+  - key: prevents
+    source: MESH:C516303
+    target: GO:0043479
+  - key: negatively correlated with
+    source: MESH:C516303
+    target: HP:0000953
+  - key: positively correlated with
+    source: GO:0043479
+    target: MESH:D008548
+  - key: positively correlated with
+    source: HP:0000953
+    target: MESH:D008548
+multigraph: true
+nodes:
+  - alt_names:
+      - Octyl methoxycinnamate
+      - ethylhexyl methoxycinnamate
+    id: MESH:C516303
+    label: Drug
+    name: octinoxate
+  - id: GO:0043479
+    label: BiologicalProcess
+    name: pigment accumulation in tissues in response to UV light
+  - id: HP:0000953
+    label: PhenotypicFeature
+    name: Hyperpigmentation of the skin
+  - id: MESH:D008548
+    label: Disease
+    name: Chloasma
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5355130#section=Mechanism-of-Action
+  - https://go.drugbank.com/drugs/DB09496
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3183184/

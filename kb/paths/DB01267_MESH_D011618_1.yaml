@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB01267_MESH_D011618_1
+  disease: Psychotic Disorders
+  disease_mesh: MESH:D011618
+  drug: Paliperidone Palmitate
+  drug_mesh: MESH:D000068882
+  drugbank: DB:DB01267
+links:
+  - key: is metabolite of
+    source: MESH:D000068882
+    target: MESH:D018967
+  - key: decreases activity of
+    source: MESH:D018967
+    target: UniProt:P28223
+  - key: decreases activity of
+    source: MESH:D018967
+    target: UniProt:P14416
+  - key: participates in
+    source: UniProt:P28223
+    target: GO:1904014
+  - key: participates in
+    source: UniProt:P14416
+    target: GO:1903350
+  - key: correlated with
+    source: GO:1903350
+    target: HP:0000738
+  - key: correlated with
+    source: GO:1904014
+    target: MESH:D011618
+  - key: manifestation of
+    source: HP:0000738
+    target: MESH:D011618
+multigraph: true
+nodes:
+  - id: MESH:D000068882
+    label: Drug
+    name: Paliperidone Palmitate
+  - id: MESH:D018967
+    label: ChemicalSubstance
+    name: Risperidone
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: GO:1904014
+    label: BiologicalProcess
+    name: response to serotonin
+  - id: GO:1903350
+    label: BiologicalProcess
+    name: response to dopamine
+  - id: HP:0000738
+    label: PhenotypicFeature
+    name: Hallucinations
+  - id: MESH:D011618
+    label: Disease
+    name: Psychotic Disorders
+references:
+  - https://go.drugbank.com/drugs/DB01267#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Paliperidone#Pharmacology
+  - https://www.uniprot.org/uniprot/P28223#function
+  - https://www.uniprot.org/uniprot/P14416#function
+  - https://en.wikipedia.org/wiki/Psychosis#Treatment_2

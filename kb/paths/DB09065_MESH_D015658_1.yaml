@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB09065_MESH_D015658_1
+  disease: HIV infection
+  disease_mesh: MESH:D015658
+  drug: cobicistat
+  drug_mesh: MESH:D000069547
+  drugbank: DB:DB09065
+links:
+  - key: decreases activity of
+    source: MESH:D000069547
+    target: UniProt:Q9HB55
+  - key: decreases abundance of
+    source: UniProt:Q9HB55
+    target: MESH:D000069446
+  - key: decreases activity of
+    source: MESH:D000069446
+    target: UniProt:P04585
+  - key: participates in
+    source: UniProt:P04585
+    target: GO:0019068
+  - key: causes
+    source: GO:0019068
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:D000069547
+    label: Drug
+    name: cobicistat
+  - id: UniProt:Q9HB55
+    label: Protein
+    name: cytochrome P450 3A (CYP3A) isoforms
+  - id: MESH:D000069446
+    label: ChemicalSubstance
+    name: atazanavir
+  - id: UniProt:P04585
+    label: Protein
+    name: Gag-Pol polyprotein
+  - id: GO:0019068
+    label: BiologicalProcess
+    name: Viral Assembly
+  - id: MESH:D015658
+    label: Disease
+    name: HIV infection

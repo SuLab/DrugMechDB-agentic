@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB01210_MESH_D009798_1
+  disease: Ocular Hypertension
+  disease_mesh: MESH:D009798
+  drug: Levobunolol
+  drug_mesh: MESH:D002040
+  drugbank: DB:DB01210
+links:
+  - key: decreases activity of
+    source: MESH:D002040
+    target: UniProt:P08588
+  - key: decreases activity of
+    source: MESH:D002040
+    target: UniProt:P07550
+  - key: increases abundance of
+    source: UniProt:P08588
+    target: MESH:D000242
+  - key: increases abundance of
+    source: UniProt:P07550
+    target: MESH:D000242
+  - key: located in
+    source: MESH:D000242
+    target: UBERON:0010427
+  - key: correlated with
+    source: UBERON:0010427
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: MESH:D009798
+multigraph: true
+nodes:
+  - id: MESH:D002040
+    label: Drug
+    name: Levobunolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: Cyclic AMP
+  - id: UBERON:0010427
+    label: GrossAnatomicalStructure
+    name: ciliary processes
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: aqueous humor of eyeball
+  - id: MESH:D009798
+    label: Disease
+    name: Ocular Hypertension
+references:
+  - https://go.drugbank.com/drugs/DB01210#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Levobunolol
+  - https://www.uniprot.org/uniprot/P08588#function
+  - https://www.uniprot.org/uniprot/P07550#function
+  - https://en.wikipedia.org/wiki/Ocular_hypertension

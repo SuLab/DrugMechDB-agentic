@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB00325_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: nitroprusside
+  drug_mesh: MESH:D009599
+  drugbank: DB:DB00325
+links:
+  - key: produces
+    source: MESH:D009599
+    target: CHEBI:16480
+  - key: positively regulates
+    source: CHEBI:16480
+    target: GO:0004383
+  - key: increases abundance of
+    source: GO:0004383
+    target: MESH:D006152
+  - key: positively regulates
+    source: MESH:D006152
+    target: GO:0044557
+  - key: positively correlated with
+    source: GO:0044557
+    target: GO:0042311
+  - key: negatively regulates
+    source: GO:0042311
+    target: HP:0032263
+  - key: positively correlated with
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D009599
+    label: Drug
+    name: nitroprusside
+  - id: CHEBI:16480
+    label: ChemicalSubstance
+    name: nitric oxide
+  - id: GO:0004383
+    label: MolecularActivity
+    name: guanylate cyclase activity
+  - id: MESH:D006152
+    label: ChemicalSubstance
+    name: cyclic GMP
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: smooth muscle relaxation
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00325#BE0000556
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2097081/

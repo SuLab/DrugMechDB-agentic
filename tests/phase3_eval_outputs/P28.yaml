@@ -1,0 +1,85 @@
+directed: true
+multigraph: true
+graph:
+  _id: P28_DB00451_MESH_D007037
+  drug: Levothyroxine
+  drug_mesh: MESH:D013974
+  drugbank: DB:DB00451
+  disease: Hypothyroidism
+  disease_mesh: MESH:D007037
+nodes:
+  - id: MESH:D013974
+    name: Levothyroxine
+    label: Drug
+  - id: MESH:D014284
+    name: Triiodothyronine
+    label: ChemicalSubstance
+  - id: UniProt:P10828
+    name: Thyroid hormone receptor beta
+    label: Protein
+  - id: GO:0002154
+    name: Thyroid hormone mediated signaling pathway
+    label: BiologicalProcess
+  - id: MESH:D007037
+    name: Hypothyroidism
+    label: Disease
+links:
+  - key: has metabolite
+    source: MESH:D013974
+    target: MESH:D014284
+    evidence:
+      - reference: PMID:21292729
+        snippet: The thyroid gland predominantly secretes the pro-hormone thyroxine (T(4)) that is converted to the active hormone 3,5,3'-l-triiodothyronine (T(3)) in target cells.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Levothyroxine is synthetic T4; upon administration it is converted to the active metabolite T3 by tissue deiodinases, establishing T3 as its active metabolite.
+      - reference: PMID:23883148
+        snippet: The monodeiodination of T4 to 3,3',5-triiodothyronine (T3) by selenium-containing deiodinases (ID-1, ID-2) is a key step in the activation of thyroid hormones.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Deiodination of T4 to T3 is the key activation step; administered levothyroxine (T4) is therefore a prodrug whose active form is T3.
+  - key: increases activity of
+    source: MESH:D014284
+    target: UniProt:P10828
+    evidence:
+      - reference: PMID:23235186
+        snippet: Thyroid hormone has to be transported into the cell, where it can bind to the thyroid hormone receptor (TR) in the nucleus to exert its effect on cellular gene-transcription.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: T3 binds nuclear thyroid hormone receptors (including TRβ/THRB) and activates them as transcription factors, directly increasing THRB activity.
+      - reference: PMID:21292729
+        snippet: T(3) action in target tissues is determined by DIO2-regulated local availability of T(3) to its nuclear receptors, TRα and TRβ.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: T3 acts via its nuclear receptors TRα and TRβ (UniProt:P10828); local T3 availability drives receptor activity.
+  - key: positively regulates
+    source: UniProt:P10828
+    target: GO:0002154
+    evidence:
+      - reference: PMID:38081939
+        snippet: TRβ-deficiency blunts T3-regulated gene expression, indicating that TRβ confers transcriptional sensitivity.
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: TRβ (THRB) is required for T3-regulated gene expression in the pituitary; its deficiency blunts the thyroid hormone mediated signaling pathway.
+      - reference: PMID:29892814
+        snippet: The thyroid hormones act through their nuclear receptor TRs that are T3-modulated transcription factors.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: TRs including THRB are T3-activated transcription factors that drive thyroid hormone-responsive gene expression, i.e. they positively regulate the thyroid hormone mediated signaling pathway.
+  - key: negatively regulates
+    source: GO:0002154
+    target: MESH:D007037
+    evidence:
+      - reference: PMID:14751033
+        snippet: optimal therapy for hypothyroidism requires replacement of the deficiency in thyroid hormone with synthetic levothyroxine
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Hypothyroidism is a state of deficient thyroid hormone signaling; restoring that signaling (via levothyroxine) treats the disease, confirming the pathway negatively regulates the disease state.
+      - reference: PMID:19491714
+        snippet: Standard therapy for patients with hypothyroidism is replacement with synthetic thyroxine (T4).
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Synthetic T4 (levothyroxine) restores thyroid hormone mediated signaling, confirming that active signaling counteracts (negatively regulates) hypothyroidism.
+references:
+  - https://go.drugbank.com/drugs/DB00451#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P10828

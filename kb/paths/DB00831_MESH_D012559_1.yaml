@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB00831_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: Trifluoperazine
+  drug_mesh: MESH:D014268
+  drugbank: DB:DB00831
+links:
+  - key: decreases activity of
+    source: MESH:D014268
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:D014268
+    target: UniProt:P21728
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P21728
+    target: MESH:D004298
+  - key: positively correlated with
+    source: MESH:D004298
+    target: GO:0061527
+  - key: affected by
+    source: GO:0061527
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:D014268
+    label: Drug
+    name: Trifluoperazine
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P21728
+    label: Protein
+    name: D(1A) dopamine receptor
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB00831#BE0000666
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5566
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4032934/

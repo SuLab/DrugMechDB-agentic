@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB12710_MESH_D001007_1
+  disease: Anxiety
+  disease_mesh: MESH:D001007
+  drug: perazine
+  drug_mesh: MESH:D010464
+  drugbank: DB:DB12710
+links:
+  - key: decreases activity of
+    source: DB:DB12710
+    target: UniProt:P14416
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: participates in
+    source: MESH:D004298
+    target: GO:0061527
+  - key: correlated with
+    source: GO:0061527
+    target: MESH:D001007
+multigraph: true
+nodes:
+  - id: DB:DB12710
+    label: Drug
+    name: Perazine
+  - id: UniProt:P14416
+    label: Protein
+    name: Dopamine D2 receptor
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D001007
+    label: Disease
+    name: Anxiety
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/26317601/
+  - https://drugs.ncats.io/drug/8915147A2B
+  - https://go.drugbank.com/drugs/DB12710

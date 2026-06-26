@@ -1,0 +1,57 @@
+directed: true
+graph:
+  _id: DB00521_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: carteolol
+  drug_mesh: MESH:D002354
+  drugbank: DB:DB00521
+links:
+  - key: decreases activity of
+    source: MESH:D002354
+    target: UniProt:P07550
+  - key: decreases activity of
+    source: MESH:D002354
+    target: UniProt:P08588
+  - key: positively regulates
+    source: UniProt:P07550
+    target: UBERON:0000013
+  - key: positively regulates
+    source: UniProt:P08588
+    target: UBERON:0000013
+  - key: positively correlated with
+    source: UBERON:0000013
+    target: UBERON:0018229
+  - key: positively correlated with
+    source: UBERON:0018229
+    target: HP:0032263
+  - key: positively correlated with
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D002354
+    label: Drug
+    name: carteolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: UBERON:0000013
+    label: GrossAnatomicalStructure
+    name: sympathetic nervous system
+  - id: UBERON:0018229
+    label: GrossAnatomicalStructure
+    name: renin-angiotensin system
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00521
+  - https://en.wikipedia.org/wiki/Beta_blocker#%CE%B2-receptor_antagonism
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5342868/#__sec2title

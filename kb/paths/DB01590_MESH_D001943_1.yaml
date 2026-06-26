@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01590_MESH_D001943_1
+  disease: Breast Neoplasms
+  disease_mesh: MESH:D001943
+  drug: everolimus
+  drug_mesh: MESH:D000068338
+  drugbank: DB:DB01590
+links:
+  - key: decreases activity of
+    source: MESH:D000068338
+    target: UniProt:P42345
+  - key: positively regulates
+    source: UniProt:P42345
+    target: GO:0031929
+  - key: positively correlated with
+    source: GO:0031929
+    target: HP:0031377
+  - key: causes
+    source: HP:0031377
+    target: MESH:D001943
+multigraph: true
+nodes:
+  - id: UniProt:P42345
+    label: Protein
+    name: Serine/threonine-protein kinase mTOR
+  - id: MESH:D000068338
+    label: Drug
+    name: everolimus
+  - id: GO:0031929
+    label: BiologicalProcess
+    name: TOR signaling
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D001943
+    label: Disease
+    name: Breast Neoplasms
+references:
+  - https://go.drugbank.com/drugs/DB01590#BE0002386

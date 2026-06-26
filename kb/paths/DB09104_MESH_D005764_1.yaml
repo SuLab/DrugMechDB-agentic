@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB09104_MESH_D005764_1
+  disease: Gastroesophageal reflux disease
+  disease_mesh: MESH:D005764
+  drug: magnesium hydroxide
+  drug_mesh: MESH:D008276
+  drugbank: DB:DB09104
+links:
+  - key: subclass of
+    source: MESH:D008276
+    target: MESH:D000863
+  - key: negatively correlated with
+    source: MESH:D000863
+    target: MESH:D005744
+  - key: positively correlated with
+    source: MESH:D005744
+    target: MESH:D005764
+multigraph: true
+nodes:
+  - id: MESH:D008276
+    label: Drug
+    name: magnesium hydroxide
+  - id: MESH:D000863
+    label: ChemicalSubstance
+    name: Antacids
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: MESH:D005764
+    label: Disease
+    name: Gastroesophageal reflux disease
+references:
+  - https://go.drugbank.com/drugs/DB09104

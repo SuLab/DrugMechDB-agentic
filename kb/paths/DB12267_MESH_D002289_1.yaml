@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB12267_MESH_D002289_1
+  disease: Non-small cell lung cancer
+  disease_mesh: MESH:D002289
+  drug: brigatinib
+  drug_mesh: MESH:C000598580
+  drugbank: DB:DB12267
+links:
+  - key: decreases activity of
+    source: MESH:C000598580
+    target: UniProt:Q9UM73
+  - key: positively regulates
+    source: UniProt:Q9UM73
+    target: GO:0008283
+  - key: decreases activity of
+    source: MESH:C000598580
+    target: UniProt:P00533
+  - key: positively regulates
+    source: UniProt:P00533
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: CL:0001063
+  - key: positively correlated with
+    source: CL:0001063
+    target: MESH:D002289
+multigraph: true
+nodes:
+  - id: MESH:C000598580
+    label: Drug
+    name: brigatinib
+  - id: UniProt:Q9UM73
+    label: Protein
+    name: anaplastic lymphoma kinase (ALK)
+  - id: UniProt:P00533
+    label: Protein
+    name: Epidermal growth factor receptor
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: proliferation of cells
+  - id: CL:0001063
+    label: Cell
+    name: tumor cell
+  - id: MESH:D002289
+    label: Disease
+    name: Non-small cell lung cancer
+references:
+  - https://go.drugbank.com/drugs/DB12267
+  - https://www.sciencedirect.com/science/article/pii/S1319016418300902

@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB01257_MESH_D006457_1
+  disease: Paroxysmal nocturnal hemoglobinuria
+  disease_mesh: MESH:D006457
+  drug: eculizumab
+  drug_mesh: MESH:C481642
+  drugbank: DB:DB01257
+links:
+  - key: decreases activity of
+    source: MESH:C481642
+    target: UniProt:P01031
+  - key: participates in
+    source: UniProt:P01031
+    target: GO:0006956
+  - key: contributes to
+    source: GO:0006956
+    target: HP:0001878
+  - key: manifestation of
+    source: HP:0001878
+    target: MESH:D006457
+multigraph: true
+nodes:
+  - id: MESH:C481642
+    label: Drug
+    name: Eculizumab
+  - id: UniProt:P01031
+    label: Protein
+    name: Complement C5
+  - id: GO:0006956
+    label: BiologicalProcess
+    name: Complement activation
+  - id: HP:0001878
+    label: PhenotypicFeature
+    name: Hemolytic anemia
+  - id: MESH:D006457
+    label: Disease
+    name: Paroxysmal nocturnal hemoglobinuria
+references:
+  - https://en.wikipedia.org/wiki/Paroxysmal_nocturnal_hemoglobinuria
+  - https://go.drugbank.com/drugs/DB01257#BE0000855

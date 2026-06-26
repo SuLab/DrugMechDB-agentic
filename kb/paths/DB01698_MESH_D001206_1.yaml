@@ -1,0 +1,41 @@
+comment: The drug name available in the original file (before curation) was Rutoside.
+  This is one of the synonyms of Rutin, which is the canonical name in DrugBank).
+  Its mechanism of action is not well reported. Some sources have it as an aid to
+  enhance the action of vitamin C (https://www.drugs.com/mtm/rutin.html), whereas
+  others describe rutin (aka vitamin P) acting as a "sparing factor, which slows the
+  oxidation of vitamin C" into dehydroascorbic acid (https://en.wikipedia.org/wiki/Dehydroascorbic_acid).
+directed: true
+graph:
+  _id: DB01698_MESH_D001206_1
+  disease: Ascorbic acid deficiency
+  disease_mesh: MESH:D001206
+  drug: Rutin
+  drug_mesh: MESH:D012431
+  drugbank: DB:DB01698
+links:
+  - key: increases activity of
+    source: MESH:D012431
+    target: CHEBI:21241
+  - key: positively correlated with
+    source: CHEBI:21241
+    target: MESH:D001205
+  - key: negatively correlated with
+    source: MESH:D001205
+    target: MESH:D001206
+multigraph: true
+nodes:
+  - id: MESH:D012431
+    label: Drug
+    name: Rutin
+  - id: CHEBI:21241
+    label: ChemicalSubstance
+    name: vitamin C
+  - id: MESH:D001205
+    label: ChemicalSubstance
+    name: Ascorbic Acid
+  - id: MESH:D001206
+    label: Disease
+    name: Ascorbic acid deficiency
+references:
+  - https://en.wikipedia.org/wiki/Vitamin_C#Significance
+  - https://en.wikipedia.org/wiki/Rutin

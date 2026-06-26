@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB02659_MESH_D019294_1
+  disease: Cerebrotendinous Xanthomatosis
+  disease_mesh: MESH:D019294
+  drug: cholic acid
+  drug_mesh: MESH:D019826
+  drugbank: DB:DB02659
+links:
+  - key: produced by
+    source: MESH:D019826
+    target: UniProt:Q02318
+  - key: negatively correlated with
+    source: UniProt:Q02318
+    target: MESH:D019294
+  - key: decreases abundance of
+    source: UniProt:Q02318
+    target: MESH:D004083
+  - key: contributes to
+    source: MESH:D004083
+    target: MESH:D019294
+multigraph: true
+nodes:
+  - id: MESH:D019826
+    label: Drug
+    name: cholic acid
+  - id: UniProt:Q02318
+    label: Protein
+    name: Sterol 26-hydroxylase, mitochondrial
+  - id: MESH:D019294
+    label: Disease
+    name: Cerebrotendinous Xanthomatosis
+  - id: MESH:D004083
+    label: ChemicalSubstance
+    name: Cholestanol
+references:
+  - https://go.drugbank.com/drugs/DB02659
+  - https://www.ncbi.nlm.nih.gov/books/NBK395578/

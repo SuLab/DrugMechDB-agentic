@@ -1,0 +1,48 @@
+comment: Magnesium carbonate reacts with hydrochloric acid in the stomach to form
+  carbon dioxide and magnesium chloride thus neutralizing excess acid in the stomach
+directed: true
+graph:
+  _id: DB09481_MESH_D005764_1
+  disease: Gastroesophageal reflux disease
+  disease_mesh: MESH:D005764
+  drug: magnesium carbonate
+  drug_mesh: MESH:C005479
+  drugbank: DB:DB09481
+links:
+  - key: subclass of
+    source: MESH:C005479
+    target: MESH:D000863
+  - key: negatively correlated with
+    source: MESH:D000863
+    target: GO:0001696
+  - key: positively correlated with
+    source: GO:0001696
+    target: MESH:D005744
+  - key: positively correlated with
+    source: MESH:D005744
+    target: MESH:D006356
+  - key: positively correlated with
+    source: MESH:D006356
+    target: MESH:D005764
+multigraph: true
+nodes:
+  - id: MESH:C005479
+    label: Drug
+    name: magnesium carbonate
+  - id: MESH:D000863
+    label: ChemicalSubstance
+    name: Antacids
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: Gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: MESH:D006356
+    label: Disease
+    name: Heartburn
+  - id: MESH:D005764
+    label: Disease
+    name: Gastroesophageal reflux disease
+references:
+  - https://go.drugbank.com/drugs/DB09481

@@ -1,0 +1,44 @@
+comment: In addition to its antifungal actions, miconazole has antiglucocorticoid
+  effects (https://pubmed.ncbi.nlm.nih.gov/16608920/).
+directed: true
+graph:
+  _id: DB01110_MESH_D014008_1
+  disease: Tinea pedis
+  disease_mesh: MESH:D014008
+  drug: miconazole
+  drug_mesh: MESH:D008825
+  drugbank: DB:DB01110
+links:
+  - key: negatively regulates
+    source: MESH:D008825
+    target: InterPro:IPR001128
+  - key: positively regulates
+    source: InterPro:IPR001128
+    target: GO:0006696
+  - key: in taxon
+    source: GO:0006696
+    target: taxonomy:5551
+  - key: causes
+    source: taxonomy:5551
+    target: MESH:D014008
+multigraph: true
+nodes:
+  - id: MESH:D008825
+    label: Drug
+    name: miconazole
+  - id: InterPro:IPR001128
+    label: GeneFamily
+    name: Cytochrome P450
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: ergosterol biosynthetic process
+  - id: taxonomy:5551
+    label: OrganismTaxon
+    name: Trichophyton rubrum
+  - id: MESH:D014008
+    label: Disease
+    name: Tinea pedis
+references:
+  - https://go.drugbank.com/drugs/DB01110
+  - https://en.wikipedia.org/wiki/Miconazole#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Ergosterol#Target_for_antifungal_drugs

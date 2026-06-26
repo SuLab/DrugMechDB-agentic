@@ -1,0 +1,59 @@
+comment: Moexipril hydrochloride is a non-sulfhydryl of Moexipril, and acts as a prodrug
+  of Moexiprilat.
+directed: true
+graph:
+  _id: DB00691_MESH_D006973_1
+  disease: Hypertension
+  disease_mesh: MESH:D006973
+  drug: moexipril
+  drug_mesh: MESH:C058302
+  drugbank: DB:DB00691
+links:
+  - key: has metabolite
+    source: MESH:C058302
+    target: MESH:C059506
+  - key: decreases activity of
+    source: MESH:C059506
+    target: UniProt:P12821
+  - key: positively regulates
+    source: UniProt:P12821
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P12821
+    target: GO:0035932
+  - key: participates in
+    source: GO:0042310
+    target: GO:0045777
+  - key: participates in
+    source: GO:0035932
+    target: GO:0045777
+  - key: contributes to
+    source: GO:0045777
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C058302
+    label: Drug
+    name: moexipril
+  - id: MESH:C059506
+    label: ChemicalSubstance
+    name: moexiprilat
+  - id: UniProt:P12821
+    label: Protein
+    name: Angiotensin-converting enzyme
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: GO:0035932
+    label: BiologicalProcess
+    name: aldosterone secretion
+  - id: GO:0045777
+    label: BiologicalProcess
+    name: positive regulation of blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertension
+references:
+  - https://go.drugbank.com/drugs/DB00691#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P12821#function
+  - https://en.wikipedia.org/wiki/Hypertension

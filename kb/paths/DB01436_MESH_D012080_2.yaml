@@ -1,0 +1,63 @@
+directed: true
+graph:
+  _id: DB01436_MESH_D012080_2
+  disease: Chronic Kidney Disease-Mineral and Bone Disorder
+  disease_mesh: MESH:D012080
+  drug: alfacalcidol
+  drug_mesh: MESH:C008088
+  drugbank: DB:DB01436
+links:
+  - key: molecularly interacts with
+    source: MESH:C008088
+    target: UniProt:O15528
+  - key: increases abundance of
+    source: UniProt:O15528
+    target: MESH:D002117
+  - key: increases activity of
+    source: MESH:D002117
+    target: UniProt:P11473
+  - key: in complex with
+    source: UniProt:P11473
+    target: UniProt:P19793
+  - key: positively regulates
+    source: UniProt:P19793
+    target: GO:0070293
+  - key: positively correlated with
+    source: GO:0070293
+    target: MESH:D002118
+  - key: treats
+    source: MESH:D002118
+    target: MESH:D012080
+multigraph: true
+nodes:
+  - id: MESH:C008088
+    label: Drug
+    name: alfacalcidol
+  - id: UniProt:O15528
+    label: Protein
+    name: 25-hydroxyvitamin D-1 alpha hydroxylase, mitochondrial
+  - id: MESH:D002117
+    label: ChemicalSubstance
+    name: Calcitriol
+  - id: UniProt:P11473
+    label: Protein
+    name: Vitamin D3 receptor
+  - id: UniProt:P19793
+    label: Protein
+    name: Retinoic acid receptor RXR-alpha
+  - id: GO:0070293
+    label: BiologicalProcess
+    name: renal absorption
+  - id: MESH:D002118
+    label: ChemicalSubstance
+    name: Calcium
+  - id: MESH:D012080
+    label: Disease
+    name: Chronic Kidney Disease-Mineral and Bone Disorder
+references:
+  - https://go.drugbank.com/drugs/DB01436#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Alfacalcidol
+  - https://www.uniprot.org/uniprot/O15528#function
+  - https://www.uniprot.org/uniprot/P11473#function
+  - https://www.uniprot.org/uniprot/P19793#function
+  - https://en.wikipedia.org/wiki/Renal_osteodystrophy

@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00836_MESH_D003967_1
+  disease: Diarrhea
+  disease_mesh: MESH:D003967
+  drug: loperamide
+  drug_mesh: MESH:D008139
+  drugbank: DB:DB00836
+links:
+  - key: increases activity of
+    source: MESH:D008139
+    target: UniProt:P35372
+  - key: decreases activity of
+    source: UniProt:P35372
+    target: UBERON:0002439
+  - key: positively regulates
+    source: UBERON:0002439
+    target: UBERON:0004221
+  - key: participates in
+    source: UBERON:0004221
+    target: GO:0120054
+  - key: positively regulates
+    source: GO:0120054
+    target: GO:0030421
+  - key: positively correlated with
+    source: GO:0030421
+    target: MESH:D003967
+multigraph: true
+nodes:
+  - id: MESH:D008139
+    label: Drug
+    name: Loperamide
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu-type opioid receptor
+  - id: UBERON:0002439
+    label: GrossAnatomicalStructure
+    name: Myenteric nerve plexus
+  - id: UBERON:0004221
+    label: GrossAnatomicalStructure
+    name: Intestine smooth muscle
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: Intestinal motility
+  - id: GO:0030421
+    label: BiologicalProcess
+    name: Defecation
+  - id: MESH:D003967
+    label: Disease
+    name: Diarrhea
+references:
+  - https://go.drugbank.com/drugs/DB00836#BE0000770

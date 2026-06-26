@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00323_MESH_D010300_1
+  disease: Parkinson's disease
+  disease_mesh: MESH:D010300
+  drug: tolcapone
+  drug_mesh: MESH:C066340
+  drugbank: DB:DB00323
+links:
+  - key: decreases activity of
+    source: MESH:C066340
+    target: UniProt:P21964
+  - key: negatively regulates
+    source: UniProt:P21964
+    target: MESH:D007980
+  - key: treats
+    source: MESH:D007980
+    target: MESH:D010300
+multigraph: true
+nodes:
+  - id: MESH:C066340
+    label: Drug
+    name: Tolcapone
+  - id: UniProt:P21964
+    label: Protein
+    name: Catechol O-methyltransferase
+  - id: MESH:D007980
+    label: ChemicalSubstance
+    name: Levodopa
+  - id: MESH:D010300
+    label: Disease
+    name: Parkinson's disease
+references:
+  - https://go.drugbank.com/drugs/DB00323
+  - https://en.wikipedia.org/wiki/Tolcapone

@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00036_MESH_D013915_1
+  disease: Glanzmann's thrombasthenia
+  disease_mesh: MESH:D013915
+  drug: eptacog alfa (activated)
+  drug_mesh: MESH:C103587
+  drugbank: DB:DB00036
+links:
+  - key: chemically similar to
+    source: MESH:C103587
+    target: UniProt:P08709
+  - key: increases activity of
+    source: UniProt:P08709
+    target: UniProt:P38435
+  - key: increases activity of
+    source: UniProt:P38435
+    target: UniProt:P00742
+  - key: participates in
+    source: UniProt:P00742
+    target: reactome:R-HSA-140834
+  - key: positively correlated with
+    source: reactome:R-HSA-140834
+    target: GO:0070527
+  - key: negatively correlated with
+    source: GO:0070527
+    target: HP:0001975
+  - key: prevents
+    source: HP:0001975
+    target: MESH:D013915
+multigraph: true
+nodes:
+  - id: MESH:C103587
+    label: Drug
+    name: eptacog alfa (activated)
+  - id: UniProt:P08709
+    label: Protein
+    name: Coagulation factor VII
+  - id: UniProt:P38435
+    label: Protein
+    name: Vitamin K-dependent gamma-carboxylase
+  - id: UniProt:P00742
+    label: Protein
+    name: Coagulation factor X
+  - id: reactome:R-HSA-140834
+    label: Pathway
+    name: Extrinsic Pathway of Fibrin Clot Formation
+  - id: GO:0070527
+    label: BiologicalProcess
+    name: platelet aggregation
+  - id: HP:0001975
+    label: PhenotypicFeature
+    name: Decreased platelet glycoprotein IIb-IIIa
+  - id: MESH:D013915
+    label: Disease
+    name: Glanzmann's thrombasthenia
+references:
+  - https://go.drugbank.com/drugs/DB00036

@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB00803_MESH_D010032_1
+  disease: Otitis externa
+  disease_mesh: MESH:D010032
+  drug: colistin
+  drug_mesh: MESH:D003091
+  drugbank: DB:DB00803
+links:
+  - key: disrupts
+    source: MESH:D003091
+    target: GO:0005886
+  - key: in taxon
+    source: GO:0005886
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D010032
+multigraph: true
+nodes:
+  - id: MESH:D003091
+    label: Drug
+    name: Colistin
+  - id: GO:0005886
+    label: CellularComponent
+    name: Plasma membrane
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D010032
+    label: Disease
+    name: Otitis externa
+references:
+  - https://go.drugbank.com/drugs/DB00803

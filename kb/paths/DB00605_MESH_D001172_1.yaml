@@ -1,0 +1,64 @@
+directed: true
+graph:
+  _id: DB00605_MESH_D001172_1
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: sulindac
+  drug_mesh: MESH:D013467
+  drugbank: DB:DB00605
+links:
+  - key: decreases activity of
+    source: MESH:D013467
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:D013467
+    target: UniProt:P35354
+  - key: increases abundance of
+    source: UniProt:P23219
+    target: MESH:D011453
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: MESH:D011453
+  - key: positively regulates
+    source: MESH:D011453
+    target: GO:0006954
+  - key: positively regulates
+    source: GO:0006954
+    target: HP:0002829
+  - key: positively regulates
+    source: GO:0006954
+    target: HP:0001386
+  - key: manifestation of
+    source: HP:0002829
+    target: MESH:D001172
+  - key: manifestation of
+    source: HP:0001386
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:D013467
+    label: Drug
+    name: Sulindac
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Joint pain
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB00605

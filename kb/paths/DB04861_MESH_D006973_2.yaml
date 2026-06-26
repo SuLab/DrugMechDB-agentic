@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB04861_MESH_D006973_2
+  disease: Hypertension
+  disease_mesh: MESH:D006973
+  drug: Nebivolol
+  drug_mesh: MESH:D000068577
+  drugbank: DB:DB04861
+links:
+  - key: decreases activity of
+    source: MESH:D000068577
+    target: MESH:D000450
+  - key: positively correlated with
+    source: MESH:D000450
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D000068577
+    label: Drug
+    name: Nebivolol
+  - id: MESH:D000450
+    label: ChemicalSubstance
+    name: Aldosterone
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertension
+references:
+  - https://go.drugbank.com/drugs/DB04861#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Nebivolol
+  - https://en.wikipedia.org/wiki/Hypertension

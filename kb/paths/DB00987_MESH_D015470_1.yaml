@@ -1,0 +1,63 @@
+directed: true
+graph:
+  _id: DB00987_MESH_D015470_1
+  disease: Acute myeloid leukemia, disease
+  disease_mesh: MESH:D015470
+  drug: cytarabine
+  drug_mesh: MESH:D003561
+  drugbank: DB:DB00987
+links:
+  - key: has metabolite
+    source: MESH:D003561
+    target: MESH:D001085
+  - key: decreases activity of
+    source: MESH:D001085
+    target: UniProt:P06746
+  - key: positively regulates
+    source: UniProt:P06746
+    target: GO:0090592
+  - key: positively regulates
+    source: GO:0090592
+    target: GO:0008283
+  - key: causes
+    source: MESH:D001085
+    target: GO:0008219
+  - key: negatively regulates
+    source: GO:0008219
+    target: CL:0001063
+  - key: manifestation of
+    source: CL:0001063
+    target: MESH:D015470
+  - key: precedes
+    source: GO:0008283
+    target: MESH:D015470
+multigraph: true
+nodes:
+  - id: MESH:D003561
+    label: Drug
+    name: cytarabine
+  - id: MESH:D001085
+    label: ChemicalSubstance
+    name: Arabinofuranosylcytosine Triphosphate
+  - id: UniProt:P06746
+    label: Protein
+    name: DNA polymerase beta
+  - id: GO:0090592
+    label: BiologicalProcess
+    name: DNA synthesis involved in DNA replication
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: GO:0008219
+    label: BiologicalProcess
+    name: Cell death
+  - id: CL:0001063
+    label: Cell
+    name: tumor cells
+  - id: MESH:D015470
+    label: Disease
+    name: Acute myeloid leukemia, disease
+references:
+  - https://go.drugbank.com/drugs/DB00987#mechanismofaction
+  - https://en.wikipedia.org/wiki/Cytarabine
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL803/

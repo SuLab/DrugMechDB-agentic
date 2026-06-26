@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01211_MESH_D015523_1
+  disease: Acute maxillary sinusitis
+  disease_mesh: MESH:D015523
+  drug: clarithromycin
+  drug_mesh: MESH:D017291
+  drugbank: DB:DB01211
+links:
+  - key: decreases activity of
+    source: MESH:D017291
+    target: UniProt:P44350
+  - key: participates in
+    source: UniProt:P44350
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:727
+  - key: causes
+    source: taxonomy:727
+    target: MESH:D015523
+multigraph: true
+nodes:
+  - id: MESH:D017291
+    label: Drug
+    name: clarithromycin
+  - id: UniProt:P44350
+    label: Protein
+    name: 50S Ribosomal protein l-10
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Bacterial Translation
+  - id: taxonomy:727
+    label: OrganismTaxon
+    name: Haemophilus influenzae
+  - id: MESH:D015523
+    label: Disease
+    name: Acute maxillary sinusitis

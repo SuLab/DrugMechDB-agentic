@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00035_MESH_D014842_1
+  disease: von Willebrand disorder
+  disease_mesh: MESH:D014842
+  drug: desmopressin
+  drug_mesh: MESH:D003894
+  drugbank: DB:DB00035
+links:
+  - key: increases activity of
+    source: MESH:D003894
+    target: UniProt:P30518
+  - key: positively regulates
+    source: UniProt:P30518
+    target: GO:1904116
+  - key: increases abundance of
+    source: GO:1904116
+    target: UniProt:P04275
+  - key: positively regulates
+    source: UniProt:P04275
+    target: GO:0007596
+  - key: negatively correlated with
+    source: GO:0007596
+    target: MESH:D014842
+multigraph: true
+nodes:
+  - id: MESH:D003894
+    label: Drug
+    name: Desmopressin
+  - id: UniProt:P30518
+    label: Protein
+    name: Vasopressin V2 receptor
+  - id: GO:1904116
+    label: BiologicalProcess
+    name: Response to vasopressin
+  - id: GO:1904116
+    label: BiologicalProcess
+    name: Response to vasopressin
+  - id: UniProt:P04275
+    label: Protein
+    name: Von Willebrand factor
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: Blood coagulation
+  - id: MESH:D014842
+    label: Disease
+    name: Von Willebrand disorder
+references:
+  - https://go.drugbank.com/drugs/DB00035
+  - https://en.wikipedia.org/wiki/Desmopressin#Mechanism_of_action

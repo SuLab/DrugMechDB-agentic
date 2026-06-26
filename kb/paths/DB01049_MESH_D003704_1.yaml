@@ -1,0 +1,105 @@
+comment: This drug seems to have mixed effects in the dopamine, serotonin, and noradrenaline
+  systems (https://pubmed.ncbi.nlm.nih.gov/2869188/), suggesting it can compensate
+  for deficits in disease and in aging while preventing the pathological effects that
+  result from excessive activity in these systems in normal individuals. This drug
+  is contraindicated in patients who have psychosis, acute or chronic (https://en.wikipedia.org/wiki/Ergoloid#Contraindications).
+directed: true
+graph:
+  _id: DB01049_MESH_D003704_1
+  disease: Dementia
+  disease_mesh: MESH:D003704
+  drug: Ergoloid mesylates
+  drug_mesh: MESH:D004877
+  drugbank: DB:DB01049
+links:
+  - key: positively regulates
+    source: MESH:D004877
+    target: InterPro:IPR000929
+  - key: positively regulates
+    source: MESH:D004877
+    target: InterPro:IPR002231
+  - key: negatively regulates
+    source: MESH:D004877
+    target: InterPro:IPR002233
+  - key: positively correlated with
+    source: InterPro:IPR000929
+    target: GO:0001963
+  - key: positively correlated with
+    source: InterPro:IPR002231
+    target: GO:0007271
+  - key: positively correlated with
+    source: InterPro:IPR002231
+    target: GO:0001963
+  - key: positively correlated with
+    source: InterPro:IPR002231
+    target: GO:0035249
+  - key: positively correlated with
+    source: InterPro:IPR002231
+    target: GO:0051932
+  - key: negatively correlated with
+    source: GO:0007271
+    target: HP:0001268
+  - key: negatively correlated with
+    source: GO:0035249
+    target: HP:0001268
+  - key: negatively correlated with
+    source: GO:0051932
+    target: HP:0001268
+  - key: positively correlated with
+    source: InterPro:IPR002233
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0002354
+  - key: manifestation of
+    source: HP:0002354
+    target: MESH:D003704
+  - key: negatively correlated with
+    source: GO:0001963
+    target: HP:0001268
+  - key: manifestation of
+    source: HP:0001268
+    target: MESH:D003704
+multigraph: true
+nodes:
+  - id: MESH:D004877
+    label: Drug
+    name: Ergoloid mesylates
+  - id: InterPro:IPR000929
+    label: GeneFamily
+    name: Dopamine receptor family
+  - id: InterPro:IPR002233
+    label: GeneFamily
+    name: Adrenoceptor family
+  - id: InterPro:IPR002231
+    label: GeneFamily
+    name: 5-hydroxytryptamine receptor family
+  - id: GO:0001963
+    label: BiologicalProcess
+    name: synaptic transmission, dopaminergic
+  - id: GO:0007271
+    label: BiologicalProcess
+    name: synaptic transmission, cholinergic
+  - id: GO:0035249
+    label: BiologicalProcess
+    name: synaptic transmission, glutamatergic
+  - id: GO:0051932
+    label: BiologicalProcess
+    name: synaptic transmission, GABAergic
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0002354
+    label: PhenotypicFeature
+    name: Memory impairment
+  - id: HP:0001268
+    label: PhenotypicFeature
+    name: Mental deterioration
+  - id: MESH:D003704
+    label: Disease
+    name: Dementia
+references:
+  - https://go.drugbank.com/drugs/DB01049#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Ergoloid#Mechanism_of_action
+  - https://selfhacked.com/blog/hydergine/#Mechanism_of_Action
+  - https://en.wikipedia.org/wiki/5-HT_receptor

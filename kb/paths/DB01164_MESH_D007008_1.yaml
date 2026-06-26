@@ -1,0 +1,25 @@
+directed: true
+graph:
+  _id: DB01164_MESH_D007008_1
+  disease: Hypokalemia
+  disease_mesh: MESH:D007008
+  drug: Calcium chloride
+  drug_mesh: MESH:D002122
+  drugbank: DB:DB01164
+links:
+  - key: treats
+    source: MESH:D002122
+    target: MESH:D007008
+multigraph: true
+nodes:
+  - id: MESH:D002122
+    label: Drug
+    name: Calcium chloride
+  - id: MESH:D007008
+    label: Disease
+    name: Hypokalemia
+references:
+  - https://go.drugbank.com/drugs/DB01164#mechanismofaction
+  - https://www.aafp.org/afp/2015/0915/p487.html
+  - https://en.wikipedia.org/wiki/Hyperkalemia#:~:text=Calcium%20(calcium%20chloride%20or%20calcium,is%20elevated%20abnormally%20in%20hyperkalemia
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Calcium-dichloride#section=Pharmacology-and-Biochemistry

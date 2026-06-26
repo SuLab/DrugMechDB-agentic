@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB01165_MESH_D018784_1
+  disease: Abdominal abscess
+  disease_mesh: MESH:D018784
+  drug: ofloxacin
+  drug_mesh: MESH:D015242
+  drugbank: DB:DB01165
+links:
+  - key: negatively regulates
+    source: MESH:D015242
+    target: InterPro:IPR013759
+  - key: positively regulates
+    source: InterPro:IPR013759
+    target: GO:0006265
+  - key: in taxon
+    source: GO:0006265
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D018784
+multigraph: true
+nodes:
+  - id: MESH:D015242
+    label: Drug
+    name: ofloxacin
+  - id: InterPro:IPR013759
+    label: GeneFamily
+    name: DNA topoisomerase, type IIA, subunit B, C-terminal
+  - id: GO:0006265
+    label: BiologicalProcess
+    name: DNA topological change
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D018784
+    label: Disease
+    name: Abdominal abscess
+references:
+  - https://en.wikipedia.org/wiki/Ofloxacin#Mode_of_action
+  - https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2311224/
+  - https://go.drugbank.com/drugs/DB01165

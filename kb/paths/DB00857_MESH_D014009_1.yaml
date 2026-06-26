@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00857_MESH_D014009_1
+  disease: Onychomycosis due to dermatophyte
+  disease_mesh: MESH:D014009
+  drug: terbinafine
+  drug_mesh: MESH:C041359
+  drugbank: DB:DB00857
+links:
+  - key: negatively regulates
+    source: MESH:C041359
+    target: InterPro:IPR040125
+  - key: positively regulates
+    source: InterPro:IPR040125
+    target: GO:0006696
+  - key: increases abundance of
+    source: GO:0006696
+    target: CHEBI:16933
+  - key: located in
+    source: CHEBI:16933
+    target: GO:0030445
+  - key: in taxon
+    source: GO:0030445
+    target: taxonomy:34384
+  - key: causes
+    source: taxonomy:34384
+    target: MESH:D014009
+multigraph: true
+nodes:
+  - id: MESH:C041359
+    label: Drug
+    name: terbinafine
+  - id: InterPro:IPR040125
+    label: GeneFamily
+    name: Squalene monooxygenase
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: ergosterol biosynthetic process
+  - id: CHEBI:16933
+    label: ChemicalSubstance
+    name: ergosterol
+  - id: GO:0030445
+    label: CellularComponent
+    name: yeast-form cell wall
+  - id: taxonomy:34384
+    label: OrganismTaxon
+    name: Arthrodermataceae
+  - id: MESH:D014009
+    label: Disease
+    name: Onychomycosis due to dermatophyte
+references:
+  - https://go.drugbank.com/drugs/DB00857
+  - https://en.wikipedia.org/wiki/Terbinafine#Pharmacodynamics

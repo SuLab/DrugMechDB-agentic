@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00531_MESH_D012175_1
+  disease: Retinoblastoma
+  disease_mesh: MESH:D012175
+  drug: cyclophosphamide
+  drug_mesh: MESH:D003520
+  drugbank: DB:DB00531
+links:
+  - key: has metabolite
+    source: MESH:D003520
+    target: CHEBI:8163
+  - key: disrupts
+    source: CHEBI:8163
+    target: CHEBI:16991
+  - key: positively correlated with
+    source: CHEBI:16991
+    target: GO:0008283
+  - key: located in
+    source: GO:0008283
+    target: UBERON:0000966
+  - key: location of
+    source: UBERON:0000966
+    target: MESH:D012175
+multigraph: true
+nodes:
+  - id: MESH:D003520
+    label: Drug
+    name: cyclophosphamide
+  - id: CHEBI:8163
+    label: ChemicalSubstance
+    name: phosphoramide mustard
+  - id: CHEBI:16991
+    label: ChemicalSubstance
+    name: deoxyribonucleic acid
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: UBERON:0000966
+    label: GrossAnatomicalStructure
+    name: retina
+  - id: MESH:D012175
+    label: Disease
+    name: Retinoblastoma
+references:
+  - https://go.drugbank.com/drugs/DB00531
+  - https://pubchem.ncbi.nlm.nih.gov/compound/2907#section=Mechanism-of-Action

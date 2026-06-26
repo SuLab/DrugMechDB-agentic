@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB01167_MESH_D001759_1
+  disease: Blastomycosis
+  disease_mesh: MESH:D001759
+  drug: Itraconazole
+  drug_mesh: MESH:D017964
+  drugbank: DB:DB01167
+links:
+  - key: decreases activity of
+    source: MESH:D017964
+    target: UniProt:P50859
+  - key: increases abundance of
+    source: UniProt:P50859
+    target: MESH:D004875
+  - key: positively correlated with
+    source: MESH:D004875
+    target: GO:0005886
+  - key: in taxon
+    source: GO:0005886
+    target: taxonomy:5039
+  - key: causes
+    source: taxonomy:5039
+    target: MESH:D001759
+multigraph: true
+nodes:
+  - id: MESH:D017964
+    label: Drug
+    name: Itraconazole
+  - id: UniProt:P50859
+    label: Protein
+    name: Lanosterol 14-alpha-demethylase
+  - id: MESH:D004875
+    label: ChemicalSubstance
+    name: Ergosterol
+  - id: GO:0005886
+    label: BiologicalProcess
+    name: plasma membrane
+  - id: taxonomy:5039
+    label: OrganismTaxon
+    name: Blastomyces dermatitidis
+  - id: MESH:D001759
+    label: Disease
+    name: Blastomycosis
+references:
+  - https://go.drugbank.com/drugs/DB01167#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P50859#function
+  - https://en.wikipedia.org/wiki/Blastomycosis

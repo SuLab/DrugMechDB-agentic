@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB06702_MESH_D053202_1
+  disease: Urge Incontinence
+  disease_mesh: MESH:D053202
+  drug: fesoterodine
+  drug_mesh: MESH:C526675
+  drugbank: DB:DB06702
+links:
+  - key: decreases activity of
+    source: MESH:C526675
+    target: UniProt:P20309
+  - key: positively regulates
+    source: UniProt:P20309
+    target: GO:0014832
+  - key: positively regulates
+    source: GO:0014832
+    target: GO:0060073
+  - key: positively correlated with
+    source: GO:0060073
+    target: MESH:D053202
+multigraph: true
+nodes:
+  - id: MESH:C526675
+    label: Drug
+    name: Fesoterodine
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:0014832
+    label: BiologicalProcess
+    name: Urinary bladder smooth muscle contraction
+  - id: GO:0060073
+    label: BiologicalProcess
+    name: Urination
+  - id: MESH:D053202
+    label: Disease
+    name: Urge Incontinence
+references:
+  - https://go.drugbank.com/drugs/DB06702#BE0000045
+  - https://en.wikipedia.org/wiki/Urinary_incontinence

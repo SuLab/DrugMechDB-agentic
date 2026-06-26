@@ -1,0 +1,28 @@
+comment: The exact mechanism of action of ascorbic acid for the treatment of symptoms
+  and signs of disorders caused by severe deficiency in vitamin C is unknown. However,
+  administration of ascorbic acid seems to restore the body pool of ascorbic acid
+  (https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/209112s000lbl.pdf).
+directed: true
+graph:
+  _id: DB00126_MESH_D001206_1
+  disease: Ascorbic acid deficiency
+  disease_mesh: MESH:D001206
+  drug: ascorbic acid
+  drug_mesh: MESH:D001205
+  drugbank: DB:DB00126
+links:
+  - key: treats
+    source: MESH:D001205
+    target: MESH:D001206
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C069207
+    id: MESH:D001205
+    label: Drug
+    name: ascorbic acid
+  - id: MESH:D001206
+    label: Disease
+    name: Ascorbic acid deficiency
+references:
+  - https://go.drugbank.com/drugs/DB00126

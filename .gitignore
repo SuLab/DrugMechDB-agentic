@@ -1,0 +1,139 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# Mac
+.DS_Store
+
+# Jekyll
+Gemfile.lock
+_site
+
+# mypy
+.mypy_cache/
+.venv/
+.venv-py310/
+
+.claude/settings.local.json
+.claude/cache/
+
+# Quality judge local artifacts (grounding + verdict caches) — reproducible, not source
+quality_cache/
+.env
+.env.local
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# --- Fresh-repo excludes (next-gen DrugMechDB) ---
+# Pre-rendered matplotlib pathographs (818 MB, one PNG per record). The revamp
+# renders the pathograph client-side from kb/paths/, so these are not source.
+images/
+# Drift-audit scratch (145 MB: caches, bmt install log, intermediate JSON). The
+# finished audit *reports* live in docs/ and are kept; this working dir is not.
+audit_work/
+# Local research dossiers / large data dumps that are reproducible, not source
+*.zip

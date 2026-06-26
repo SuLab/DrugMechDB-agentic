@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01017_MESH_D010930_1
+  disease: Plague
+  disease_mesh: MESH:D010930
+  drug: minocycline
+  drug_mesh: MESH:D008911
+  drugbank: DB:DB01017
+links:
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:Q8ZJ88
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:Q8ZB62
+  - key: positively regulates
+    source: UniProt:Q8ZJ88
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:Q8ZB62
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:632
+  - key: causes
+    source: taxonomy:632
+    target: MESH:D010930
+multigraph: true
+nodes:
+  - id: MESH:D008911
+    label: Drug
+    name: minocycline
+  - id: UniProt:Q8ZJ88
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:Q8ZB62
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:632
+    label: OrganismTaxon
+    name: Yersinia pestis
+  - id: MESH:D010930
+    label: Disease
+    name: Plague
+references:
+  - https://go.drugbank.com/drugs/DB01017#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q8ZJ88#function
+  - https://www.uniprot.org/uniprot/Q8ZB62#function
+  - https://en.wikipedia.org/wiki/Minocycline
+  - https://en.wikipedia.org/wiki/Plague_(disease)

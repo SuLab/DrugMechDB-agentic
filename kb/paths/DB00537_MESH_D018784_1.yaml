@@ -1,0 +1,55 @@
+comment: Ciprofloxacin is a second generation fluoroquinolone that is used to treat
+  a wide variety of bacterial susceptible infections.
+directed: true
+graph:
+  _id: DB00537_MESH_D018784_1
+  disease: Abdominal Abscess
+  disease_mesh: MESH:D018784
+  drug: ciprofloxacin
+  drug_mesh: MESH:D002939
+  drugbank: DB:DB00537
+links:
+  - key: decreases activity of
+    source: MESH:D002939
+    target: UniProt:P0AES4
+  - key: decreases activity of
+    source: MESH:D002939
+    target: UniProt:P0AFI2
+  - key: positively regulates
+    source: UniProt:P0AES4
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:P0AFI2
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D018784
+multigraph: true
+nodes:
+  - id: MESH:D002939
+    label: Drug
+    name: ciprofloxacin
+  - id: UniProt:P0AES4
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:P0AFI2
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D018784
+    label: Disease
+    name: Abdominal Abscess
+references:
+  - https://go.drugbank.com/drugs/DB00537#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P0AES4#function
+  - https://www.uniprot.org/uniprot/P0AFI2#function
+  - https://www.hopkinsmedicine.org/health/conditions-and-diseases/intraabdominal-abscess
+  - https://en.wikipedia.org/wiki/Intra-abdominal_infection

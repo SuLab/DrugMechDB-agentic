@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB09087_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: alum
+  drug_mesh: MESH:D000534
+  drugbank: DB:DB09087
+links:
+  - key: negatively regulates
+    source: MESH:D000534
+    target: GO:0006954
+  - key: negatively regulates
+    source: MESH:D000534
+    target: GO:0001696
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D010437
+  - key: positively correlated with
+    source: GO:0001696
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C041524
+    id: MESH:D000534
+    label: Drug
+    name: alum
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: gastric acid secretion
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB09087#pharmacodynamics
+  - https://en.wikipedia.org/wiki/Potassium_alum#Medicine_and_cosmetics

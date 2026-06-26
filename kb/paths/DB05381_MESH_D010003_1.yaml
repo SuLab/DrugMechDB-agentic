@@ -1,0 +1,26 @@
+comment: Histamine dihydrochloride is an active ingredient that is used for the temporary
+  relief of minor aches and pains of the muscles and joints associated with arthritis.
+directed: true
+graph:
+  _id: DB05381_MESH_D010003_1
+  disease: Osteoarthritis
+  disease_mesh: MESH:D010003
+  drug: histamine
+  drug_mesh: MESH:D006632
+  drugbank: DB:DB05381
+links:
+  - key: treats
+    source: MESH:D006632
+    target: MESH:D010003
+multigraph: true
+nodes:
+  - id: MESH:D006632
+    label: Drug
+    name: histamine
+  - id: MESH:D010003
+    label: Disease
+    name: Osteoarthritis
+references:
+  - https://en.wikipedia.org/wiki/Histamine_dihydrochloride
+  - https://en.wikipedia.org/wiki/Osteoarthritis
+  - https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=869735f9-335e-4a5e-adfc-91167ae943c5

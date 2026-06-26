@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB01015_MESH_D004405_1
+  disease: Dysentery, Bacillary
+  disease_mesh: MESH:D004405
+  drug: Sulfamethoxazole
+  drug_mesh: MESH:D013420
+  drugbank: DB:DB01015
+links:
+  - key: decreases activity of
+    source: MESH:D013420
+    target: UniProt:Q8GND6
+  - key: positively regulates
+    source: UniProt:Q8GND6
+    target: GO:0046654
+  - key: increases abundance of
+    source: GO:0046654
+    target: MESH:D013763
+  - key: positively correlated with
+    source: MESH:D013763
+    target: GO:0071897
+  - key: in taxon
+    source: GO:0071897
+    target: taxonomy:543
+  - key: causes
+    source: taxonomy:543
+    target: MESH:D004405
+multigraph: true
+nodes:
+  - id: MESH:D013420
+    label: Drug
+    name: Sulfamethoxazole
+  - id: UniProt:Q8GND6
+    label: Protein
+    name: Dihydropteroate synthase
+  - id: GO:0046654
+    label: BiologicalProcess
+    name: tetrahydrofolate biosynthetic process
+  - id: MESH:D013763
+    label: ChemicalSubstance
+    name: Tetrahydrofolates
+  - id: GO:0071897
+    label: BiologicalProcess
+    name: DNA biosynthetic process
+  - id: taxonomy:543
+    label: OrganismTaxon
+    name: Enterobacteriaceae
+  - id: MESH:D004405
+    label: Disease
+    name: Dysentery, Bacillary
+references:
+  - https://go.drugbank.com/drugs/DB01015#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q8GND6#function
+  - https://en.wikipedia.org/wiki/Bacillary_dysentery

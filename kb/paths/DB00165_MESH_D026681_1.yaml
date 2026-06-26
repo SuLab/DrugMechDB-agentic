@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00165_MESH_D026681_1
+  disease: Vitamin B6 deficiency
+  disease_mesh: MESH:D026681
+  drug: pyridoxine
+  drug_mesh: MESH:D011736
+  drugbank: DB:DB00165
+links:
+  - key: interacts with
+    source: MESH:D011736
+    target: UniProt:O00764
+  - key: positively regulates
+    source: UniProt:O00764
+    target: GO:0008478
+  - key: positively correlated with
+    source: GO:0008478
+    target: CHEBI:18405
+  - key: negatively correlated with
+    source: CHEBI:18405
+    target: MESH:D026681
+multigraph: true
+nodes:
+  - id: MESH:D011736
+    label: Drug
+    name: pyridoxine
+  - id: UniProt:O00764
+    label: Protein
+    name: Pyridoxal kinase
+  - id: GO:0008478
+    label: MolecularActivity
+    name: pyridoxal kinase activity
+  - id: CHEBI:18405
+    label: ChemicalSubstance
+    name: pyridoxal 5'-phosphate
+  - id: MESH:D026681
+    label: Disease
+    name: Vitamin B6 deficiency
+references:
+  - https://go.drugbank.com/drugs/DB00165#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Pyridoxine

@@ -1,0 +1,69 @@
+directed: true
+graph:
+  _id: DB00591_MESH_D008179_1
+  disease: Discoid lupus erythematosus
+  disease_mesh: MESH:D008179
+  drug: fluocinolone acetonide
+  drug_mesh: MESH:D005446
+  drugbank: DB:DB00591
+links:
+  - key: positively regulates
+    source: MESH:D005446
+    target: UniProt:P04150
+  - key: increases activity of
+    source: UniProt:P04150
+    target: UniProt:P04083
+  - key: decreases activity of
+    source: UniProt:P04083
+    target: UniProt:P47712
+  - key: negatively regulates
+    source: UniProt:P04083
+    target: UniProt:P35354
+  - key: increases abundance of
+    source: UniProt:P47712
+    target: MESH:D011453
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: MESH:D011453
+  - key: positively regulates
+    source: MESH:D011453
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0000989
+  - key: manifestation of
+    source: HP:0000989
+    target: MESH:D008179
+multigraph: true
+nodes:
+  - id: MESH:D005446
+    label: Drug
+    name: fluocinolone acetonide
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: UniProt:P04083
+    label: Protein
+    name: Annexin A1
+  - id: UniProt:P47712
+    label: Protein
+    name: Cytosolic phospholipase A2
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: HP:0000989
+    label: PhenotypicFeature
+    name: Pruritus
+  - id: MESH:D008179
+    label: Disease
+    name: Discoid lupus erythematosus
+references:
+  - https://go.drugbank.com/drugs/DB00591
+  - https://en.wikipedia.org/wiki/Fluocinolone_acetonide
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL989/

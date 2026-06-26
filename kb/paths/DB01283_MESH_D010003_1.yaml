@@ -1,0 +1,58 @@
+comment: Withdrawn from the market in several countries. It has never been approved
+  in the US.
+directed: true
+graph:
+  _id: DB01283_MESH_D010003_1
+  disease: Osteoarthritis
+  disease_mesh: MESH:D010003
+  drug: lumiracoxib
+  drug_mesh: MESH:C473384
+  drugbank: DB:DB01283
+links:
+  - key: decreases activity of
+    source: MESH:C473384
+    target: UniProt:P35354
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0002829
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0001386
+  - key: manifestation of
+    source: HP:0001386
+    target: MESH:D010003
+  - key: manifestation of
+    source: HP:0002829
+    target: MESH:D010003
+multigraph: true
+nodes:
+  - id: MESH:C473384
+    label: Drug
+    name: lumiracoxib
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Arthralgia
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: MESH:D010003
+    label: Disease
+    name: Osteoarthritis
+references:
+  - https://go.drugbank.com/drugs/DB01283
+  - https://en.wikipedia.org/wiki/Lumiracoxib

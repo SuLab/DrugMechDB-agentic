@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB00971_MESH_D014010_1
+  disease: Pityriasis versicolor
+  disease_mesh: MESH:D014010
+  drug: Selenium sulfide
+  drug_mesh: MESH:C025698
+  drugbank: DB:DB00971
+links:
+  - key: disrupts
+    source: MESH:C025698
+    target: taxonomy:76773
+  - key: causes
+    source: taxonomy:76773
+    target: MESH:D014010
+multigraph: true
+nodes:
+  - id: MESH:C025698
+    label: Drug
+    name: Selenium sulfide
+  - id: taxonomy:76773
+    label: OrganismTaxon
+    name: Malassezia globosa
+  - id: MESH:D014010
+    label: Drug
+    name: Pityriasis versicolor
+references:
+  - https://en.wikipedia.org/wiki/Tinea_versicolor
+  - https://go.drugbank.com/drugs/DB00971

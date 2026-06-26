@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01091_MESH_D014010_1
+  disease: Pityriasis versicolor
+  disease_mesh: MESH:D014010
+  drug: butenafine
+  drug_mesh: MESH:C067594
+  drugbank: DB:DB01091
+links:
+  - key: decreases activity of
+    source: MESH:C067594
+    target: UniProt:Q14534
+  - key: positively regulates
+    source: UniProt:Q14534
+    target: GO:0006696
+  - key: increases abundance of
+    source: GO:0006696
+    target: MESH:D004875
+  - key: participates in
+    source: MESH:D004875
+    target: GO:0042546
+  - key: occurs in
+    source: GO:0042546
+    target: taxonomy:76773
+  - key: causes
+    source: taxonomy:76773
+    target: MESH:D014010
+multigraph: true
+nodes:
+  - id: MESH:C067594
+    label: Drug
+    name: butenafine
+  - id: UniProt:Q14534
+    label: Protein
+    name: Squalene monooxygenase
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: ergosterol biosynthetic process
+  - id: MESH:D004875
+    label: ChemicalSubstance
+    name: ergosterol
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: cell wall biogenesis
+  - id: taxonomy:76773
+    label: OrganismTaxon
+    name: Malassezia globosa
+  - id: MESH:D014010
+    label: Disease
+    name: Pityriasis versicolor
+references:
+  - https://go.drugbank.com/drugs/DB01091#BE0000577
+  - https://en.wikipedia.org/wiki/Tinea_versicolors

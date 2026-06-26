@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00595_MESH_D014552_1
+  disease: Urinary Tract Infections
+  disease_mesh: MESH:D014552
+  drug: oxytetracycline
+  drug_mesh: MESH:D010118
+  drugbank: DB:DB00595
+links:
+  - key: decreases activity of
+    source: MESH:D010118
+    target: UniProt:P0A7V8
+  - key: decreases activity of
+    source: MESH:D010118
+    target: UniProt:P0A7X3
+  - key: positively regulates
+    source: UniProt:P0A7V8
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:P0A7X3
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D014552
+multigraph: true
+nodes:
+  - id: MESH:D010118
+    label: Drug
+    name: oxytetracycline
+  - id: UniProt:P0A7V8
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:P0A7X3
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D014552
+    label: Disease
+    name: Urinary Tract Infections
+references:
+  - https://go.drugbank.com/drugs/DB00595#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P0A7V8#function
+  - https://www.uniprot.org/uniprot/P0A7X3#function
+  - https://en.wikipedia.org/wiki/Urinary_tract_infection

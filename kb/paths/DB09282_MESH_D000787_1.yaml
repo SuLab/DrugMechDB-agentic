@@ -1,0 +1,62 @@
+comment: Molsidomine is a drug that is metabolized in the liver to the active metabolite
+  linsidomine which releases nitric oxide, a vasodilating compound.
+directed: true
+graph:
+  _id: DB09282_MESH_D000787_1
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: molsidomine
+  drug_mesh: MESH:D008981
+  drugbank: DB:DB09282
+links:
+  - key: has metabolite
+    source: MESH:D008981
+    target: MESH:C002385
+  - key: produces
+    source: MESH:C002385
+    target: MESH:D009569
+  - key: positively regulates
+    source: MESH:D009569
+    target: GO:0004383
+  - key: increases abundance of
+    source: GO:0004383
+    target: MESH:D006152
+  - key: positively correlated with
+    source: MESH:D006152
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: MESH:D017202
+  - key: contributes to
+    source: MESH:D017202
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:D008981
+    label: Drug
+    name: molsidomine
+  - id: MESH:C002385
+    label: ChemicalSubstance
+    name: linsidomine
+  - id: MESH:D009569
+    label: ChemicalSubstance
+    name: Nitric Oxide
+  - id: GO:0004383
+    label: MolecularActivity
+    name: guanylate cyclase activity
+  - id: MESH:D006152
+    label: ChemicalSubstance
+    name: Cyclic GMP
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: MESH:D017202
+    label: Disease
+    name: Myocardial Ischemia
+  - id: MESH:D000787
+    label: Disease
+    name: Angina Pectoris
+references:
+  - https://go.drugbank.com/drugs/DB09282#mechanism-of-action
+  - https://drugs.ncats.io/drug/D46583G77X
+  - https://en.wikipedia.org/wiki/Angina

@@ -1,0 +1,58 @@
+comment: Fimasartan is currently under clinical trial phase III.
+directed: true
+graph:
+  _id: DB09279_MESH_D006973_1
+  disease: Hypertension
+  disease_mesh: MESH:D006973
+  drug: fimasartan
+  drug_mesh: MESH:C558933
+  drugbank: DB:DB09279
+links:
+  - key: decreases activity of
+    source: MESH:C558933
+    target: UniProt:P30556
+  - key: positively regulates
+    source: UniProt:P30556
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P30556
+    target: GO:0002018
+  - key: contributes to
+    source: GO:0042310
+    target: HP:0032263
+  - key: increases abundance of
+    source: GO:0002018
+    target: MESH:D000450
+  - key: contributes to
+    source: MESH:D000450
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C558933
+    label: Drug
+    name: fimasartan
+  - id: UniProt:P30556
+    label: Protein
+    name: Type-1 angiotensin II receptor
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: GO:0002018
+    label: BiologicalProcess
+    name: renin-angiotensin regulation of aldosterone production
+  - id: MESH:D000450
+    label: ChemicalSubstance
+    name: Aldosterone
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertension
+references:
+  - https://go.drugbank.com/drugs/DB09279#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Fimasartan
+  - https://en.wikipedia.org/wiki/Hypertension

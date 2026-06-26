@@ -1,0 +1,68 @@
+directed: true
+multigraph: true
+graph:
+  _id: P07_DB00619_MESH_D015464
+  drug: Imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+  disease: Chronic Myeloid Leukemia
+  disease_mesh: MESH:D015464
+nodes:
+  - id: MESH:D000068877
+    name: Imatinib
+    label: Drug
+  - id: UniProt:P00519
+    name: Tyrosine-protein kinase ABL1
+    label: Protein
+  - id: GO:0070661
+    name: leukocyte proliferation
+    label: BiologicalProcess
+  - id: MESH:D015464
+    name: Chronic Myeloid Leukemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: UniProt:P00519
+    evidence:
+      - reference: PMID:39182842
+        snippet: "inhibiting oncogenic protein BCR::ABL1 in a targeted manner with imatinib, a tyrosine kinase inhibitor."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Imatinib is a tyrosine kinase inhibitor that targets and inhibits the oncogenic BCR::ABL1 kinase (whose catalytic domain is ABL1, UniProt:P00519), decreasing its activity in CML patients."
+      - reference: PMID:36959211
+        snippet: "the inhibition of BCR-ABL1 kinase with Imatinib prevented Smad4 tyrosine phosphorylation and re-sensitized CML cells to TGF-β-induced antiproliferative and pro-apoptotic responses."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Imatinib inhibits BCR-ABL1 kinase activity, abolishing its downstream tyrosine-phosphorylation activity in CML cells — direct support for the decreases-activity-of edge."
+  - key: positively regulates
+    source: UniProt:P00519
+    target: GO:0070661
+    evidence:
+      - reference: PMID:42011924
+        snippet: "generates the constitutively active BCR::ABL1 tyrosine kinase, driving uncontrolled myeloid proliferation."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "The constitutively active BCR::ABL1 tyrosine kinase (ABL1 catalytic moiety, UniProt:P00519) drives uncontrolled myeloid (leukocyte) proliferation — i.e. it positively regulates the proliferation process."
+      - reference: PMID:35257901
+        snippet: "the dysregulated BCR-Abl fusion oncoprotein is formed and it produces the abnormal proliferation of white blood cells."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "The BCR-Abl fusion kinase produces (positively regulates) the abnormal proliferation of white blood cells (leukocytes)."
+  - key: causes
+    source: GO:0070661
+    target: MESH:D015464
+    evidence:
+      - reference: PMID:42011924
+        snippet: "Chronic myeloid leukemia (CML) is a clonal hematopoietic malignancy characterized by the presence of the Philadelphia chromosome, which generates the constitutively active BCR::ABL1 tyrosine kinase, driving uncontrolled myeloid proliferation."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "CML is defined as a malignancy characterized by uncontrolled myeloid (leukocyte) proliferation — the proliferative process is the defining cause/manifestation of the disease."
+      - reference: PMID:42074261
+        snippet: "Chronic myeloid leukaemia (CML) is driven by the t(9;22) forming the BCR::ABL1 fusion gene, leading to the development of hyper-myeloid proliferation."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "CML development is characterized by hyper-myeloid proliferation, linking the leukocyte-proliferation process to the chronic myeloid leukemia disease state."
+references:
+  - https://go.drugbank.com/drugs/DB00619#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P00519#function

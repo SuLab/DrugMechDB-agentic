@@ -1,0 +1,25 @@
+comment: Only combination of estradiol and norethindrone is used for the treatment
+  of atrophic vaginitis. Please refer to this curation DB00783_MESH_D059268_1 for
+  MoA.
+directed: true
+graph:
+  _id: DB00717_MESH_D059268_1
+  disease: Atrophic vaginitis
+  disease_mesh: MESH:D059268
+  drug: norethindrone acetate
+  drug_mesh: MESH:D009640
+  drugbank: DB:DB00717
+links:
+  - key: treats
+    source: MESH:D009640
+    target: MESH:D059268
+multigraph: true
+nodes:
+  - id: MESH:D009640
+    label: Drug
+    name: Norethisterone
+  - id: MESH:D059268
+    label: Disease
+    name: Atrophic vaginitis
+references:
+  - https://go.drugbank.com/drugs/DB00717

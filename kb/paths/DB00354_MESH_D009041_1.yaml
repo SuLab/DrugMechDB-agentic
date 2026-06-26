@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00354_MESH_D009041_1
+  disease: Motion sickness
+  disease_mesh: MESH:D009041
+  drug: buclizine
+  drug_mesh: MESH:C046894
+  drugbank: DB:DB00354
+links:
+  - key: decreases activity of
+    source: MESH:C046894
+    target: UniProt:P35367
+  - key: decreases activity of
+    source: MESH:C046894
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:P35367
+    target: GO:0034776
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:1905144
+  - key: positively regulates
+    source: GO:0034776
+    target: HP:0002017
+  - key: positively regulates
+    source: GO:1905144
+    target: HP:0002017
+  - key: positively correlated with
+    source: HP:0002017
+    target: MESH:D009041
+multigraph: true
+nodes:
+  - id: MESH:C046894
+    label: Drug
+    name: Buclizine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: HP:0002017
+    label: PhenotypicFeature
+    name: Nausea and vomiting
+  - id: GO:0034776
+    label: BiologicalProcess
+    name: Response to histamine
+  - id: GO:1905144
+    label: BiologicalProcess
+    name: Response to acetylcholine
+  - id: MESH:D009041
+    label: Disease
+    name: Motion sickness
+references:
+  - https://go.drugbank.com/drugs/DB00354

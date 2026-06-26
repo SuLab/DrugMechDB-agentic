@@ -1,0 +1,74 @@
+directed: true
+graph:
+  _id: DB04846_MESH_D000787_1
+  disease: Angina Pectoris
+  disease_mesh: MESH:D000787
+  drug: Celiprolol
+  drug_mesh: MESH:D017272
+  drugbank: DB:DB04846
+links:
+  - key: decreases activity of
+    source: MESH:D017272
+    target: UniProt:P08588
+  - key: increases activity of
+    source: MESH:D017272
+    target: UniProt:P07550
+  - key: positively regulates
+    source: UniProt:P08588
+    target: GO:0004016
+  - key: positively regulates
+    source: UniProt:P07550
+    target: GO:0042311
+  - key: increases abundance of
+    source: GO:0004016
+    target: MESH:D000242
+  - key: decreases abundance of
+    source: MESH:D000242
+    target: MESH:D002118
+  - key: regulates
+    source: MESH:D002118
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: HP:0000822
+  - key: positively correlated with
+    source: HP:0000822
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:D017272
+    label: Drug
+    name: Celiprolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: GO:0004016
+    label: BiologicalProcess
+    name: adenylate cyclase activity
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: Cyclic AMP
+  - id: MESH:D002118
+    label: ChemicalSubstance
+    name: Calcium
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: Hypertension
+  - id: MESH:D000787
+    label: Disease
+    name: Angina Pectoris
+references:
+  - https://go.drugbank.com/drugs/DB04846#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Celiprolol
+  - https://www.uniprot.org/uniprot/P08588#function
+  - https://www.uniprot.org/uniprot/P07550#function
+  - https://en.wikipedia.org/wiki/Beta-1_adrenergic_receptor#Antagonists
+  - https://en.wikipedia.org/wiki/Beta_blocker#%CE%B2-receptor_antagonism
+  - https://en.wikipedia.org/wiki/Beta2-adrenergic_agonist
+  - https://en.wikipedia.org/wiki/Angina

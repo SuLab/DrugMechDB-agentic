@@ -1,0 +1,74 @@
+comment: Chronic alcohol exposure is believed to alter the normal balance between
+  neuronal excitation and inhibition. Both in vitro and in vivo studies seem to suggest
+  acamprosate may interact with glutamate and GABA neurotransmitter systems centrally,
+  and has led to the hypothesis that acamprosate restores this balance (https://pubchem.ncbi.nlm.nih.gov/compound/71158#section=Mechanism-of-Action).
+  The drug may not an effective therapy if be used alone (https://en.wikipedia.org/wiki/Acamprosate#Pharmacodynamics).
+  Acamprosate may influence GABAA transmission via inhibition of presynaptic γ-aminobutyric
+  acid type B (GABAB) receptors (https://pubmed.ncbi.nlm.nih.gov/9514305/).
+directed: true
+graph:
+  _id: DB00659_MESH_D000437_1
+  disease: Alcoholism
+  disease_mesh: MESH:D000437
+  drug: acamprosate
+  drug_mesh: MESH:C043877
+  drugbank: DB:DB00659
+links:
+  - key: negatively regulates
+    source: MESH:C043877
+    target: UniProt:Q9UBS5
+  - key: positively regulates
+    source: UniProt:Q9UBS5
+    target: InterPro:IPR006028
+  - key: positively regulates
+    source: InterPro:IPR006028
+    target: GO:0098977
+  - key: negatively correlated with
+    source: GO:0098977
+    target: HP:0000739
+  - key: negatively correlated with
+    source: HP:0000739
+    target: MESH:D000437
+  - key: negatively regulates
+    source: MESH:C043877
+    target: InterPro:IPR001320
+  - key: positively regulates
+    source: InterPro:IPR001320
+    target: GO:0045471
+  - key: correlated with
+    source: GO:0045471
+    target: MESH:D000437
+multigraph: true
+nodes:
+  - id: MESH:C043877
+    label: Drug
+    name: acamprosate
+  - id: InterPro:IPR001320
+    label: GeneFamily
+    name: Ionotropic glutamate receptor
+  - id: UniProt:Q9UBS5
+    label: Protein
+    name: Gamma-aminobutyric acid type B receptor subunit 1
+  - id: InterPro:IPR006028
+    label: GeneFamily
+    name: Gamma-aminobutyric acid A receptor/Glycine receptor alpha
+  - id: GO:0045471
+    label: BiologicalProcess
+    name: response to ethanol
+  - id: GO:0098977
+    label: BiologicalProcess
+    name: inhibitory chemical synaptic transmission
+  - id: HP:0000739
+    label: PhenotypicFeature
+    name: Anxiety
+  - id: MESH:D000437
+    label: Disease
+    name: Alcoholism
+references:
+  - https://go.drugbank.com/drugs/DB00659
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201293/
+  - https://en.wikipedia.org/wiki/Acamprosate#Pharmacodynamics
+  - https://en.wikipedia.org/wiki/GABAA_receptor#Structure_and_function
+  - https://en.wikipedia.org/wiki/Psychoactive_drug#Purposes
+  - https://pubmed.ncbi.nlm.nih.gov/22346357/
+  - https://pubmed.ncbi.nlm.nih.gov/23278595/

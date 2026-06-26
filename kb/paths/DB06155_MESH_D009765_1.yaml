@@ -1,0 +1,35 @@
+comment: Rimonabant was rejected for approval for use in the United States.
+directed: true
+graph:
+  _id: DB06155_MESH_D009765_1
+  disease: Obesity
+  disease_mesh: MESH:D009765
+  drug: rimonabant
+  drug_mesh: MESH:C089032
+  drugbank: DB:DB06155
+links:
+  - key: decreases activity of
+    source: MESH:C089032
+    target: UniProt:P21554
+  - key: positively correlated with
+    source: UniProt:P21554
+    target: GO:0032100
+  - key: positively correlated with
+    source: GO:0032100
+    target: MESH:D009765
+multigraph: true
+nodes:
+  - id: MESH:C089032
+    label: Drug
+    name: Rimonabant
+  - id: UniProt:P21554
+    label: Protein
+    name: Cannabinoid receptor 1
+  - id: GO:0032100
+    label: BiologicalProcess
+    name: Positive regulation of appetite
+  - id: MESH:D009765
+    label: Disease
+    name: Obesity
+references:
+  - https://go.drugbank.com/drugs/DB06155

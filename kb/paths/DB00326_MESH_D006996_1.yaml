@@ -1,0 +1,26 @@
+directed: true
+graph:
+  _id: DB00326_MESH_D006996_1
+  disease: hypocalcemia
+  disease_mesh: MESH:D006996
+  drug: calcium glucoheptonate
+  drug_mesh: MESH:C007852
+  drugbank: DB:DB00326
+links:
+  - key: increases abundance of
+    source: MESH:C007852
+    target: MESH:D002118
+  - key: prevents
+    source: MESH:D002118
+    target: MESH:D006996
+multigraph: true
+nodes:
+  - id: MESH:C007852
+    label: Drug
+    name: calcium glucoheptonate
+  - id: MESH:D002118
+    label: ChemicalSubstance
+    name: Calcium Ion
+  - id: MESH:D006996
+    label: Disease
+    name: hypocalcemia

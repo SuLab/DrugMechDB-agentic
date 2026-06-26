@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB05336_MESH_C571912_1
+  disease: Inhalation anthrax
+  disease_mesh: MESH:C571912
+  drug: obiltoxaximab
+  drug_mesh: MESH:C000611266
+  drugbank: DB:DB05336
+links:
+  - key: decreases activity of
+    source: MESH:C000611266
+    target: UniProt:P13423
+  - key: positively regulates
+    source: UniProt:P13423
+    target: GO:0035635
+  - key: in taxon
+    source: GO:0035635
+    target: taxonomy:1392
+  - key: causes
+    source: taxonomy:1392
+    target: MESH:C571912
+multigraph: true
+nodes:
+  - id: MESH:C000611266
+    label: Drug
+    name: obiltoxaximab
+  - id: UniProt:P13423
+    label: Protein
+    name: Protective antigen
+  - id: GO:0035635
+    label: BiologicalProcess
+    name: entry of bacterium into host cell
+  - id: taxonomy:1392
+    label: OrganismTaxon
+    name: Bacillus anthracis
+  - id: MESH:C571912
+    label: Disease
+    name: Inhalation anthrax
+references:
+  - https://go.drugbank.com/drugs/DB05336#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Obiltoxaximab
+  - https://www.uniprot.org/uniprot/P13423#function
+  - https://en.wikipedia.org/wiki/Anthrax

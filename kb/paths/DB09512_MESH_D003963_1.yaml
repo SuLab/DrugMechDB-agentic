@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB09512_MESH_D003963_1
+  disease: Diaper rash
+  disease_mesh: MESH:D003963
+  drug: dimethicone
+  drug_mesh: MESH:C501844
+  drugbank: DB:DB09512
+links:
+  - key: positively regulates
+    source: MESH:C501844
+    target: GO:0061436
+  - key: negatively correlated with
+    source: GO:0061436
+    target: MESH:D003963
+multigraph: true
+nodes:
+  - id: MESH:C501844
+    label: Drug
+    name: Dimethicone
+  - id: GO:0061436
+    label: BiologicalProcess
+    name: Establishment of skin barrier
+  - id: MESH:D003963
+    label: Disease
+    name: Diaper rash
+references:
+  - https://go.drugbank.com/drugs/DB11074

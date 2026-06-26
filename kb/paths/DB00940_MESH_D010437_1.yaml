@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00940_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: methanthelinium
+  drug_mesh: MESH:C084588
+  drugbank: DB:DB00940
+links:
+  - key: decreases activity of
+    source: MESH:C084588
+    target: InterPro:IPR000995
+  - key: participates in
+    source: InterPro:IPR000995
+    target: GO:0001699
+  - key: increases abundance of
+    source: GO:0001699
+    target: MESH:D005744
+  - key: contributes to
+    source: MESH:D005744
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:C084588
+    label: Drug
+    name: Methanthelinium
+  - id: InterPro:IPR000995
+    label: GeneFamily
+    name: Muscarinic acetylcholine receptor family
+  - id: GO:0001699
+    label: BiologicalProcess
+    name: Acetylcholine-induced gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric acid
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB00940
+  - https://en.wikipedia.org/wiki/Methantheline

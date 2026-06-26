@@ -1,0 +1,46 @@
+comment: Selective action of tamsulosin in alpha 1A/D receptors is controversial and
+  over three quarters of tamsulosin registered human studies are unpublished.
+directed: true
+graph:
+  _id: DB09206_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: trimazosin
+  drug_mesh: MESH:C005185
+  drugbank: DB:DB09206
+links:
+  - key: decreases activity of
+    source: MESH:C005185
+    target: UniProt:P35348
+  - key: decreases activity of
+    source: MESH:C005185
+    target: UniProt:P25100
+  - key: positively regulates
+    source: UniProt:P35348
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P25100
+    target: GO:0042310
+  - key: affects risk for
+    source: GO:0042310
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C005185
+    label: Drug
+    name: Trimazosin
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P25100
+    label: Protein
+    name: Alpha-1D adrenergic receptor
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://en.wikipedia.org/wiki/Tamsulosin
+  - https://go.drugbank.com/drugs/DB09206

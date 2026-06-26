@@ -1,0 +1,36 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB06692_MESH_D006470_1
+  disease: Hemorrhage
+  disease_mesh: MESH:D006470
+  drug: Aprotinin
+  drug_mesh: MESH:D007611
+  drugbank: DB:DB06692
+links:
+  - key: decreases activity of
+    source: MESH:D007611
+    target: InterPro:IPR001254
+  - key: positively regulates
+    source: InterPro:IPR001254
+    target: GO:0042730
+  - key: positively correlated with
+    source: GO:0042730
+    target: MESH:D006470
+multigraph: true
+nodes:
+  - id: MESH:D007611
+    label: Drug
+    name: Aprotinin
+  - id: InterPro:IPR001254
+    label: GeneFamily
+    name: Serine proteases, trypsin domain
+  - id: GO:0042730
+    label: BiologicalProcess
+    name: Fibrinolysis
+  - id: MESH:D006470
+    label: Disease
+    name: Hemorrhage
+references:
+  - https://en.wikipedia.org/wiki/Aprotinin
+  - https://go.drugbank.com/drugs/DB06692

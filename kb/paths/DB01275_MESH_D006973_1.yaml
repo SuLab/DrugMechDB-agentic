@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01275_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: hydralazine
+  drug_mesh: MESH:D006830
+  drugbank: DB:DB01275
+links:
+  - key: negatively regulates
+    source: MESH:D006830
+    target: GO:0048763
+  - key: positively regulates
+    source: GO:0048763
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D006830
+    label: Drug
+    name: hydralazine
+  - id: GO:0048763
+    label: MolecularActivity
+    name: calcium-induced calcium release activity
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB01275

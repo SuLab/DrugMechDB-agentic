@@ -1,0 +1,43 @@
+comment: Capreomycin is a member of the aminoglycoside family of antibiotics, but
+  little is known about capreomycin's exact mechanism of action. Capreomycin is used
+  in the treatment of tuberculosis in combination with other drugs.
+directed: true
+graph:
+  _id: DB00314_MESH_D014397_1
+  disease: Pulmonary tuberculosis
+  disease_mesh: MESH:D014397
+  drug: Capreomycin
+  drug_mesh: MESH:D002207
+  drugbank: DB:DB00314
+links:
+  - key: decreases activity of
+    source: MESH:D002207
+    target: GO:0005840
+  - key: participates in
+    source: GO:0005840
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:1773
+  - key: causes
+    source: taxonomy:1773
+    target: MESH:D014397
+multigraph: true
+nodes:
+  - id: MESH:D002207
+    label: Drug
+    name: Capreomycin
+  - id: GO:0005840
+    label: CellularComponent
+    name: Ribosome
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: taxonomy:1773
+    label: OrganismTaxon
+    name: Mycobacterium tuberculosis
+  - id: MESH:D014397
+    label: Disease
+    name: Pulmonary tuberculosis
+references:
+  - https://go.drugbank.com/drugs/DB00314#BE0009727

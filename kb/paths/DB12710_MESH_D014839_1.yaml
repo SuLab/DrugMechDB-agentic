@@ -1,0 +1,31 @@
+comment: This drug is in Phase III Clinical Trials. Perazine has incomplete annotation
+  in the DrugBank.
+directed: true
+graph:
+  _id: DB12710_MESH_D014839_1
+  disease: Vomiting
+  disease_mesh: MESH:D014839
+  drug: perazine
+  drug_mesh: MESH:D010464
+  drugbank: DB:DB12710
+links:
+  - key: decreases activity of
+    source: MESH:D010464
+    target: UniProt:P14416
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D014839
+multigraph: true
+nodes:
+  - id: MESH:D010464
+    label: Drug
+    name: Perazine
+  - id: UniProt:P14416
+    label: Protein
+    name: Dopamine D2 receptor
+  - id: MESH:D014839
+    label: Disease
+    name: Vomiting
+references:
+  - https://drugs.ncats.io/drug/8915147A2B
+  - https://go.drugbank.com/drugs/DB12710

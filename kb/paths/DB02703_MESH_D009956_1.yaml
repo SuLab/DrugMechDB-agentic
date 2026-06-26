@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB02703_MESH_D009956_1
+  disease: Psittacosis
+  disease_mesh: MESH:D009956
+  drug: fusidic acid
+  drug_mesh: MESH:D005672
+  drugbank: DB:DB02703
+links:
+  - key: decreases activity of
+    source: MESH:D005672
+    target: UniProt:S7JCG1
+  - key: positively regulates
+    source: UniProt:S7JCG1
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:83554
+  - key: causes
+    source: taxonomy:83554
+    target: MESH:D009956
+multigraph: true
+nodes:
+  - id: MESH:D005672
+    label: Drug
+    name: fusidic acid
+  - id: UniProt:S7JCG1
+    label: Protein
+    name: Elongation factor G
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:83554
+    label: OrganismTaxon
+    name: Chlamydia psittaci
+  - id: MESH:D009956
+    label: Disease
+    name: Psittacosis
+references:
+  - https://go.drugbank.com/drugs/DB02703#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Fusidic_acid
+  - https://www.uniprot.org/uniprot/S7JCG1#function
+  - https://en.wikipedia.org/wiki/Psittacosis

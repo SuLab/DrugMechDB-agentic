@@ -1,0 +1,62 @@
+comment: The exact mechanism of action of ingenol mebutate in actinic keratosis is
+  unknown.
+directed: true
+graph:
+  _id: DB05013_MESH_D055623_1
+  disease: Actinic keratosis
+  disease_mesh: MESH:D055623
+  drug: ingenol mebutate
+  drug_mesh: MESH:C486592
+  drugbank: DB:DB05013
+links:
+  - key: increases activity of
+    source: MESH:C486592
+    target: UniProt:Q05655
+  - key: positively correlated with
+    source: UniProt:Q05655
+    target: GO:0004697
+  - key: increases activity of
+    source: MESH:C486592
+    target: UniProt:P17252
+  - key: positively correlated with
+    source: UniProt:P17252
+    target: GO:0004697
+  - key: positively regulates
+    source: GO:0004697
+    target: GO:0070265
+  - key: positively regulates
+    source: GO:0004697
+    target: GO:0001788
+  - key: treats
+    source: GO:0070265
+    target: MESH:D055623
+  - key: treats
+    source: GO:0001788
+    target: MESH:D055623
+multigraph: true
+nodes:
+  - id: MESH:C486592
+    label: Drug
+    name: Ingenol mebutate
+  - id: UniProt:Q05655
+    label: Protein
+    name: Protein kinase C delta type
+  - id: GO:0004697
+    label: MolecularActivity
+    name: Protein kinase C activity
+  - id: UniProt:P17252
+    label: Protein
+    name: Protein kinase C alpha type
+  - id: GO:0070265
+    label: BiologicalProcess
+    name: Necrotic cell death
+  - id: GO:0001788
+    label: BiologicalProcess
+    name: Antibody-dependent cellular cytotoxicity
+  - id: MESH:D055623
+    label: Disease
+    name: Actinic keratosis
+references:
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4257954/
+  - https://en.wikipedia.org/wiki/Actinic_keratosis
+  - https://go.drugbank.com/drugs/DB05013

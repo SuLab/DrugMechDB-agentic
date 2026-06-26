@@ -1,0 +1,37 @@
+comment: Trioxsalen is a psoralen derivative that has been used in combination with
+  UV light to treat vitiligo, but has been discontinued by its manufacturer.
+directed: true
+graph:
+  _id: DB04571_MESH_D014820_1
+  disease: Vitiligo
+  disease_mesh: MESH:D014820
+  drug: trioxsalen
+  drug_mesh: MESH:D014307
+  drugbank: DB:DB04571
+links:
+  - key: disrupts
+    source: MESH:D014307
+    target: MESH:D004247
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006915
+  - key: treats
+    source: GO:0006915
+    target: MESH:D014820
+multigraph: true
+nodes:
+  - id: MESH:D014307
+    label: Drug
+    name: Trioxsalen
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: Apoptotic process
+  - id: MESH:D014820
+    label: Disease
+    name: Vitiligo
+references:
+  - https://go.drugbank.com/drugs/DB04571
+  - https://en.wikipedia.org/wiki/Vitiligo

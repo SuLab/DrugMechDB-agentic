@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB01109_MESH_D020246_1
+  disease: Deep venous thrombosis
+  disease_mesh: MESH:D020246
+  drug: heparin
+  drug_mesh: MESH:D006493
+  drugbank: DB:DB01109
+links:
+  - key: decreases activity of
+    source: MESH:D006493
+    target: UniProt:P00742
+  - key: increases activity of
+    source: MESH:D006493
+    target: UniProt:P01008
+  - key: positively regulates
+    source: UniProt:P00742
+    target: GO:0072377
+  - key: negatively regulates
+    source: UniProt:P01008
+    target: GO:0007596
+  - key: positively correlated with
+    source: GO:0072377
+    target: GO:0072378
+  - key: positively correlated with
+    source: GO:0007596
+    target: GO:0072378
+  - key: positively correlated with
+    source: GO:0072378
+    target: MESH:D020246
+multigraph: true
+nodes:
+  - id: MESH:D006493
+    label: Drug
+    name: Heparin
+  - id: UniProt:P00742
+    label: Protein
+    name: Coagulation factor X
+  - id: UniProt:P01008
+    label: Protein
+    name: Antithrombin-III
+  - id: GO:0072377
+    label: BiologicalProcess
+    name: Blood coagulation, common pathway
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: Blood coagulation
+  - id: GO:0072378
+    label: BiologicalProcess
+    name: Blood coagulation, fibrin clot formation
+  - id: MESH:D020246
+    label: Disease
+    name: Deep venous thrombosis
+references:
+  - https://en.wikipedia.org/wiki/Disseminated_intravascular_coagulation
+  - https://go.drugbank.com/drugs/DB01109

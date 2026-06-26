@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB04843_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: Mepenzolate
+  drug_mesh: MESH:C005101
+  drugbank: DB:DB04843
+links:
+  - key: decreases activity of
+    source: MESH:C005101
+    target: UniProt:P20309
+  - key: decreases activity of
+    source: MESH:C005101
+    target: UniProt:P11229
+  - key: participates in
+    source: UniProt:P11229
+    target: GO:0001699
+  - key: participates in
+    source: UniProt:P20309
+    target: GO:0001699
+  - key: increases abundance of
+    source: GO:0001699
+    target: MESH:D005744
+  - key: contributes to
+    source: MESH:D005744
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:C005101
+    label: Drug
+    name: Mepenzolate
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: GO:0001699
+    label: BiologicalProcess
+    name: Acetylcholine-induced gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric acid
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB04843#BE0000092

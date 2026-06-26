@@ -1,0 +1,89 @@
+comment: The disease is denoted Carcinoma of breast in the original file as per DrugCentral.
+  The drug intercaltes with DNA and prevents DNA replication and downstream processes,
+  some of them involving UniProt:P11388, which leads to cell/tumour death.
+directed: true
+graph:
+  _id: DB00445_MESH_D001943_1
+  disease: Breast Neoplasms
+  disease_mesh: MESH:D001943
+  drug: epirubicin
+  drug_mesh: MESH:D015251
+  drugbank: DB:DB00445
+links:
+  - key: negatively regulates
+    source: MESH:D015251
+    target: GO:0140014
+  - key: positively correlated with
+    source: GO:0140014
+    target: HP:0031377
+  - key: positively correlated with
+    source: HP:0031377
+    target: MESH:D001943
+  - key: decreases abundance of
+    source: MESH:D015251
+    target: GO:0032993
+  - key: has participant
+    source: GO:0032993
+    target: UniProt:P11388
+  - key: positively correlated with
+    source: UniProt:P11388
+    target: GO:0006260
+  - key: increases abundance of
+    source: MESH:D015251
+    target: MESH:D005609
+  - key: positively correlated with
+    source: MESH:D005609
+    target: GO:0090734
+  - key: positively correlated with
+    source: GO:0090734
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D001943
+  - key: positively correlated with
+    source: GO:0006260
+    target: HP:0031377
+  - key: positively correlated with
+    source: GO:0006260
+    target: GO:0140014
+  - key: positively correlated with
+    source: GO:0140014
+    target: HP:0031377
+  - key: manifestation of
+    source: HP:0031377
+    target: MESH:D001943
+multigraph: true
+nodes:
+  - id: MESH:D015251
+    label: Drug
+    name: epirubicin
+  - id: UniProt:P11388
+    label: Protein
+    name: DNA topoisomerase 2-alpha
+  - id: GO:0032993
+    label: CellularComponent
+    name: protein-DNA complex
+  - id: MESH:D005609
+    label: ChemicalSubstance
+    name: Free Radicals
+  - id: GO:0090734
+    label: CellularComponent
+    name: site of DNA damage
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: GO:0140014
+    label: BiologicalProcess
+    name: mitotic nuclear division
+  - id: MESH:D001943
+    label: Disease
+    name: Breast Neoplasm
+references:
+  - https://go.drugbank.com/drugs/DB00445#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Epirubicin

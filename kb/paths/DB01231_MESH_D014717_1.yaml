@@ -1,0 +1,64 @@
+directed: true
+graph:
+  _id: DB01231_MESH_D014717_1
+  disease: Vertigo
+  disease_mesh: MESH:D014717
+  drug: diphenidol
+  drug_mesh: MESH:C004858
+  drugbank: DB:DB01231
+links:
+  - key: decreases activity of
+    source: MESH:C004858
+    target: UniProt:P11229
+  - key: decreases activity of
+    source: MESH:C004858
+    target: UniProt:P08172
+  - key: decreases activity of
+    source: MESH:C004858
+    target: UniProt:P20309
+  - key: positively correlated with
+    source: UniProt:P11229
+    target: GO:0007271
+  - key: positively correlated with
+    source: UniProt:P08172
+    target: GO:0007271
+  - key: positively correlated with
+    source: UniProt:P20309
+    target: GO:0007271
+  - key: positively correlated with
+    source: GO:0007271
+    target: HP:0002017
+  - key: manifestation of
+    source: HP:0002017
+    target: MESH:D014717
+multigraph: true
+nodes:
+  - id: MESH:C004858
+    label: Drug
+    name: diphenidol
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: UniProt:P08172
+    label: Protein
+    name: Muscarinic acetylcholine receptor M2
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:0007271
+    label: BiologicalProcess
+    name: synaptic transmission, cholinergic
+  - id: HP:0002017
+    label: PhenotypicFeature
+    name: Nausea and vomiting
+  - id: MESH:D014717
+    label: Disease
+    name: Vertigo
+references:
+  - https://go.drugbank.com/drugs/DB01231#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22diphenidol%22
+  - https://www.uniprot.org/uniprot/P11229#function
+  - https://www.uniprot.org/uniprot/P08172#function
+  - https://www.uniprot.org/uniprot/P20309#function
+  - https://en.wikipedia.org/wiki/Muscarinic_acetylcholine_receptor
+  - https://en.wikipedia.org/wiki/Vertigo

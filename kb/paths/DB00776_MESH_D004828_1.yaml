@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00776_MESH_D004828_1
+  disease: Localization-related epilepsy
+  disease_mesh: MESH:D004828
+  drug: oxcarbazepine
+  drug_mesh: MESH:C036006
+  drugbank: DB:DB00776
+links:
+  - key: has metabolite
+    source: MESH:C036006
+    target: CHEBI:701
+  - key: decreases activity of
+    source: CHEBI:701
+    target: MESH:D061566
+  - key: positively regulates
+    source: MESH:D061566
+    target: GO:0035725
+  - key: positively regulates
+    source: GO:0035725
+    target: GO:0019228
+  - key: positively correlated with
+    source: GO:0019228
+    target: HP:0011097
+  - key: positively correlated with
+    source: HP:0011097
+    target: MESH:D004828
+multigraph: true
+nodes:
+  - id: MESH:C036006
+    label: Drug
+    name: oxcarbazepine
+  - id: CHEBI:701
+    label: ChemicalSubstance
+    name: licarbazepine
+  - id: MESH:D061566
+    label: GeneFamily
+    name: Voltage-Gated Sodium Channels
+  - id: GO:0035725
+    label: BiologicalProcess
+    name: sodium ion transmembrane transport
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: neuronal action potential
+  - id: HP:0011097
+    label: PhenotypicFeature
+    name: Epileptic spasm
+  - id: MESH:D004828
+    label: Disease
+    name: Localization-related epilepsy
+references:
+  - https://go.drugbank.com/drugs/DB00776
+  - https://en.wikipedia.org/wiki/Oxcarbazepine
+comment: Oxcarbazepine is a prodrug, which is largely metabolised to its pharmacologically
+  active 10-monohydroxy derivative licarbazepine (sometimes abbreviated MHD).

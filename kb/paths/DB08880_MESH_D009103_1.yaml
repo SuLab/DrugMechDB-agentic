@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB08880_MESH_D009103_1
+  disease: Multiple sclerosis
+  disease_mesh: MESH:D009103
+  drug: teriflunomide
+  drug_mesh: MESH:C527525
+  drugbank: DB:DB08880
+links:
+  - key: negatively regulates
+    source: MESH:C527525
+    target: UniProt:Q02127
+  - key: positively regulates
+    source: UniProt:Q02127
+    target: GO:0006221
+  - key: participates in
+    source: GO:0006221
+    target: GO:0050671
+  - key: located in
+    source: GO:0050671
+    target: UBERON:0001017
+  - key: affected by
+    source: UBERON:0001017
+    target: GO:0006954
+  - key: contributes to
+    source: GO:0006954
+    target: GO:0048681
+  - key: contributes to
+    source: GO:0048681
+    target: MESH:D009103
+multigraph: true
+nodes:
+  - id: MESH:C527525
+    label: Drug
+    name: teriflunomide
+  - id: UniProt:Q02127
+    label: Protein
+    name: Dihydroorotate dehydrogenase (quinone), mitochondrial
+  - id: GO:0006221
+    label: BiologicalProcess
+    name: pyrimidine nucleotide biosynthetic process
+  - id: GO:0050671
+    label: BiologicalProcess
+    name: positive regulation of lymphocyte proliferation
+  - id: UBERON:0001017
+    label: GrossAnatomicalStructure
+    name: central nervous system
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: GO:0048681
+    label: BiologicalProcess
+    name: negative regulation of axon regeneration
+  - id: MESH:D009103
+    label: Disease
+    name: Multiple sclerosis
+references:
+  - https://go.drugbank.com/drugs/DB08880#BE0000382
+  - https://pubmed.ncbi.nlm.nih.gov/24740824/

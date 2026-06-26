@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB11739_MESH_D013276_1
+  disease: Gastric ulcer
+  disease_mesh: MESH:D013276
+  drug: Vonoprazan
+  drug_mesh: MESH:C552956
+  drugbank: DB:DB11739
+links:
+  - key: decreases activity of
+    source: MESH:C552956
+    target: UniProt:P20648
+  - key: positively regulates
+    source: UniProt:P20648
+    target: GO:0001696
+  - key: increases abundance of
+    source: GO:0001696
+    target: MESH:D005744
+  - key: positively regulates
+    source: MESH:D005744
+    target: InterPro:IPR034162
+  - key: contributes to
+    source: InterPro:IPR034162
+    target: MESH:D013276
+multigraph: true
+nodes:
+  - id: MESH:C552956
+    label: Drug
+    name: Vonoprazan
+  - id: UniProt:P20648
+    label: Protein
+    name: Potassium-transporting ATPase alpha chain 1
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: Gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: InterPro:IPR034162
+    label: GeneFamily
+    name: Pepsin catalytic domain
+  - id: MESH:D013276
+    label: Disease
+    name: Gastric ulcer
+references:
+  - https://en.wikipedia.org/wiki/Vonoprazan
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6034668/

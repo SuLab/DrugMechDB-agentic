@@ -1,0 +1,64 @@
+directed: true
+graph:
+  _id: DB01162_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: terazosin
+  drug_mesh: MESH:C041226
+  drugbank: DB:DB01162
+links:
+  - key: negatively regulates
+    source: MESH:C041226
+    target: UniProt:P35348
+  - key: negatively regulates
+    source: MESH:C041226
+    target: UniProt:P35368
+  - key: negatively regulates
+    source: MESH:C041226
+    target: UniProt:P25100
+  - key: participates in
+    source: UniProt:P35348
+    target: reactome:R-HSA-416476
+  - key: participates in
+    source: UniProt:P35368
+    target: reactome:R-HSA-416476
+  - key: participates in
+    source: UniProt:P25100
+    target: reactome:R-HSA-416476
+  - key: positively correlated with
+    source: reactome:R-HSA-416476
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C041226
+    label: Drug
+    name: Terazosin
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P35368
+    label: Protein
+    name: Alpha-1B adrenergic receptor
+  - id: UniProt:P25100
+    label: Protein
+    name: Alpha-1D adrenergic receptor
+  - id: reactome:R-HSA-416476
+    label: Pathway
+    name: G alpha (q) signalling events
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB01162

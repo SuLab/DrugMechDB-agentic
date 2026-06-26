@@ -1,0 +1,90 @@
+directed: true
+graph:
+  _id: DB00975_MESH_D001281_1
+  disease: Atrial fibrillation
+  disease_mesh: MESH:D001281
+  drug: dipyridamole
+  drug_mesh: MESH:D004176
+  drugbank: DB:DB00975
+links:
+  - key: decreases activity of
+    source: MESH:D004176
+    target: UniProt:Q9Y233
+  - key: decreases activity of
+    source: MESH:D004176
+    target: UniProt:O76074
+  - key: decreases activity of
+    source: MESH:D004176
+    target: UniProt:P27815
+  - key: decreases activity of
+    source: MESH:D004176
+    target: UniProt:P00813
+  - key: decreases abundance of
+    source: UniProt:Q9Y233
+    target: MESH:D000242
+  - key: decreases abundance of
+    source: UniProt:O76074
+    target: MESH:D000242
+  - key: decreases abundance of
+    source: UniProt:P27815
+    target: MESH:D000242
+  - key: decreases abundance of
+    source: UniProt:P00813
+    target: MESH:D000242
+  - key: negatively regulates
+    source: MESH:D000242
+    target: GO:0050482
+  - key: negatively regulates
+    source: GO:0050482
+    target: GO:0004796
+  - key: participates in
+    source: GO:0004796
+    target: GO:0070527
+  - key: decreases uptake of
+    source: MESH:D004176
+    target: CHEBI:16335
+  - key: negatively correlated with
+    source: CHEBI:16335
+    target: GO:0070527
+  - key: positively correlated with
+    source: GO:0070527
+    target: MESH:D001281
+multigraph: true
+nodes:
+  - id: MESH:D004176
+    label: Drug
+    name: Dipyridamole
+  - id: UniProt:Q9Y233
+    label: Protein
+    name: cAMP and cAMP-inhibited cGMP 3',5'-cyclic phosphodiesterase 10A
+  - id: UniProt:O76074
+    label: Protein
+    name: cGMP-specific 3',5'-cyclic phosphodiesterase
+  - id: UniProt:P27815
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4A
+  - id: UniProt:P00813
+    label: Protein
+    name: Adenosine deaminase
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: Cyclic AMP
+  - id: GO:0050482
+    label: BiologicalProcess
+    name: arachidonic acid secretion
+  - id: GO:0004796
+    label: MolecularActivity
+    name: thromboxane-A synthase activity
+  - id: GO:0070527
+    label: BiologicalProcess
+    name: Platelet aggregation
+  - id: CHEBI:16335
+    label: ChemicalSubstance
+    name: adenosine
+  - id: MESH:D001281
+    label: Disease
+    name: Atrial fibrillation
+references:
+  - https://go.drugbank.com/drugs/DB00975
+  - https://en.wikipedia.org/wiki/Dipyridamole
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3166992/

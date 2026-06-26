@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB01070_MESH_D006996_1
+  disease: Hypocalcemia
+  disease_mesh: MESH:D006996
+  drug: dihydrotachysterol
+  drug_mesh: MESH:D004097
+  drugbank: DB:DB01070
+links:
+  - key: increases activity of
+    source: MESH:D004097
+    target: UniProt:P11473
+  - key: participates in
+    source: UniProt:P11473
+    target: GO:0070561
+  - key: increases activity of
+    source: GO:0070561
+    target: UniProt:P05937
+  - key: positively regulates
+    source: UniProt:P05937
+    target: GO:0055074
+  - key: negatively correlated with
+    source: GO:0055074
+    target: MESH:D006996
+multigraph: true
+nodes:
+  - id: MESH:D004097
+    label: Drug
+    name: Dihydrotachysterol
+  - id: UniProt:P11473
+    label: Protein
+    name: Vitamin D3 receptor
+  - id: GO:0070561
+    label: BiologicalProcess
+    name: Vitamin D receptor signaling pathway
+  - id: UniProt:P05937
+    label: Protein
+    name: Calbindin
+  - id: GO:0055074
+    label: BiologicalProcess
+    name: Calcium ion homeostasis
+  - id: MESH:D006996
+    label: Disease
+    name: Hypocalcemia
+references:
+  - https://go.drugbank.com/drugs/DB01070
+  - https://en.wikipedia.org/wiki/Calbindin

@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00967_MESH_D006255_1
+  disease: Seasonal allergic rhinitis
+  disease_mesh: MESH:D006255
+  drug: desloratadine
+  drug_mesh: MESH:C121345
+  drugbank: DB:DB00967
+links:
+  - key: decreases activity of
+    source: MESH:C121345
+    target: UniProt:P35367
+  - key: positively regulates
+    source: UniProt:P35367
+    target: GO:0004969
+  - key: participates in
+    source: GO:0004969
+    target: GO:0071420
+  - key: positively correlated with
+    source: GO:0071420
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D006255
+multigraph: true
+nodes:
+  - id: MESH:C121345
+    label: Drug
+    name: desloratadine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: GO:0004969
+    label: MolecularActivity
+    name: histamine receptor activity
+  - id: GO:0071420
+    label: BiologicalProcess
+    name: cellular response to histamine
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D006255
+    label: Disease
+    name: Seasonal allergic rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB00967
+  - https://en.wikipedia.org/wiki/Antihistamine#H1-antihistamines

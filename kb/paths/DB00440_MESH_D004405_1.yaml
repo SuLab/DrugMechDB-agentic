@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00440_MESH_D004405_1
+  disease: Shigellosis
+  disease_mesh: MESH:D004405
+  drug: trimethoprim
+  drug_mesh: MESH:D014295
+  drugbank: DB:DB00440
+links:
+  - key: negatively regulates
+    source: MESH:D014295
+    target: Pfam:PF00186
+  - key: positively regulates
+    source: Pfam:PF00186
+    target: GO:0046654
+  - key: in taxon
+    source: GO:0046654
+    target: taxonomy:624
+  - key: causes
+    source: taxonomy:624
+    target: MESH:D004405
+multigraph: true
+nodes:
+  - id: MESH:D014295
+    label: Drug
+    name: trimethoprim
+  - id: Pfam:PF00186
+    label: GeneFamily
+    name: Dihydrofolate reductase
+  - id: GO:0046654
+    label: BiologicalProcess
+    name: tetrahydrofolate biosynthetic process
+  - id: taxonomy:624
+    label: OrganismTaxon
+    name: Shigella sonnei
+  - id: MESH:D004405
+    label: Disease
+    name: Shigellosis
+references:
+  - https://go.drugbank.com/drugs/DB00440
+  - https://en.wikipedia.org/wiki/Trimethoprim#Mechanism_of_actions

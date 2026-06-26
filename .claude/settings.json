@@ -1,0 +1,57 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(just --list:*)",
+      "Bash(just qc:*)",
+      "Bash(just qc-legacy:*)",
+      "Bash(just qc-ai:*)",
+      "Bash(just qc-layer:*)",
+      "Bash(just qc-json:*)",
+      "Bash(just canonicalize:*)",
+      "Bash(just canonicalize-write:*)",
+      "Bash(just normalize:*)",
+      "Bash(just normalize-write:*)",
+      "Bash(just rebuild-index:*)",
+      "Bash(just test:*)",
+      "Bash(just env-info:*)",
+      "Bash(.venv-py310/bin/python scripts/qc.py:*)",
+      "Bash(.venv-py310/bin/python scripts/pubmed_fetch.py:*)",
+      "Bash(.venv-py310/bin/python scripts/research.py:*)",
+      "Bash(.venv-py310/bin/python scripts/canonicalize_predicates.py:*)",
+      "Bash(.venv-py310/bin/python scripts/rebuild_index.py:*)",
+      "Bash(.venv-py310/bin/runoak:*)",
+      "Bash(git diff:*)",
+      "Bash(git status:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)",
+      "Bash(git add kb/:*)",
+      "Bash(git add references_cache/:*)",
+      "Bash(git add research/:*)",
+      "Bash(git add .claude/:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh issue view:*)",
+      "Bash(wc -l:*)",
+      "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)",
+      "WebFetch(domain:pmc.ncbi.nlm.nih.gov)",
+      "WebSearch(allowed_domains:pubmed.ncbi.nlm.nih.gov)",
+      "mcp__ols-mcp__search",
+      "mcp__pubmed__search_articles",
+      "mcp__pubmed__get_article_metadata",
+      "mcp__pubmed__get_full_text_article"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_path_hook.py"
+          }
+        ]
+      }
+    ]
+  }
+}

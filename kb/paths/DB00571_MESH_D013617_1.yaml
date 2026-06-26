@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB00571_MESH_D013617_1
+  disease: Tachycardia, Supraventricular
+  disease_mesh: MESH:D013617
+  drug: Propranolol
+  drug_mesh: MESH:D011433
+  drugbank: DB:DB00571
+links:
+  - key: decreases activity of
+    source: MESH:D011433
+    target: UniProt:P08588
+  - key: decreases activity of
+    source: MESH:D011433
+    target: UniProt:P07550
+  - key: positively correlated with
+    source: UniProt:P07550
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P08588
+    target: UniProt:P00797
+  - key: positively regulates
+    source: UniProt:P00797
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: contributes to
+    source: HP:0032263
+    target: HP:0004308
+  - key: manifestation of
+    source: HP:0004308
+    target: MESH:D013617
+multigraph: true
+nodes:
+  - id: MESH:D011433
+    label: Drug
+    name: Propranolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: UniProt:P00797
+    label: Protein
+    name: Renin
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: HP:0004308
+    label: PhenotypicFeature
+    name: Ventricular arrhythmia
+  - id: MESH:D013617
+    label: Disease
+    name: Tachycardia, Supraventricular
+references:
+  - https://go.drugbank.com/drugs/DB00571#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P08588#function
+  - https://www.uniprot.org/uniprot/P07550#function
+  - https://www.uniprot.org/uniprot/P00797#function
+  - https://en.wikipedia.org/wiki/Tachycardia

@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB01607_MESH_D016868_1
+  disease: Serratia Infections
+  disease_mesh: MESH:D016868
+  drug: ticarcillin
+  drug_mesh: MESH:D013982
+  drugbank: DB:DB01607
+links:
+  - key: negatively regulates
+    source: MESH:D013982
+    target: InterPro:IPR001460
+  - key: positively regulates
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:613
+  - key: causes
+    source: taxonomy:613
+    target: MESH:D016868
+multigraph: true
+nodes:
+  - id: MESH:D013982
+    label: Drug
+    name: ticarcillin
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:613
+    label: OrganismTaxon
+    name: Serratia sp.
+  - alt_names:
+      - Bacterial infection due to Serratia
+    id: MESH:D016868
+    label: Disease
+    name: Serratia Infections
+references:
+  - https://go.drugbank.com/drugs/DB01607

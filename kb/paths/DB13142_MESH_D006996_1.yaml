@@ -1,0 +1,26 @@
+directed: true
+graph:
+  _id: DB13142_MESH_D006996_1
+  disease: Hypocalcemia
+  disease_mesh: MESH:D006996
+  drug: calcium glubionate
+  drug_mesh: MESH:C042131
+  drugbank: DB:DB13142
+links:
+  - key: increases abundance of
+    source: MESH:C042131
+    target: MESH:D002118
+  - key: prevents
+    source: MESH:D002118
+    target: MESH:D006996
+multigraph: true
+nodes:
+  - id: MESH:C042131
+    label: Drug
+    name: calcium glubionate
+  - id: MESH:D002118
+    label: ChemicalSubstance
+    name: Calcium Ion
+  - id: MESH:D006996
+    label: Disease
+    name: Hypocalcemia

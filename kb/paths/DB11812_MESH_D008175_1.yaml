@@ -1,0 +1,30 @@
+comment: Talaporfin (INN, also known as aspartyl chlorin, mono-L-aspartyl chlorin
+  e6, NPe6, or LS11) is a chlorin based photosensitizer used in photodynamic therapy.
+directed: true
+graph:
+  _id: DB11812_MESH_D008175_1
+  disease: Malignant tumor of lung
+  disease_mesh: MESH:D008175
+  drug: Talaporfin
+  drug_mesh: MESH:C053434
+  drugbank: DB:DB11812
+links:
+  - key: positively regulates
+    source: MESH:C053434
+    target: GO:0008219
+  - key: negatively correlated with
+    source: GO:0008219
+    target: MESH:D008175
+multigraph: true
+nodes:
+  - id: MESH:C053434
+    label: Drug
+    name: Talaporfin
+  - id: GO:0008219
+    label: BiologicalProcess
+    name: Cell death
+  - id: MESH:D008175
+    label: Disease
+    name: Malignant tumor of lung
+references:
+  - https://en.wikipedia.org/wiki/Talaporfin

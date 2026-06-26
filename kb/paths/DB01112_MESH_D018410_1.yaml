@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB01112_MESH_D018410_1
+  disease: Pneumonia, Bacterial
+  disease_mesh: MESH:D018410
+  drug: cefuroxime
+  drug_mesh: MESH:D002444
+  drugbank: DB:DB01112
+links:
+  - key: decreases activity of
+    source: MESH:D002444
+    target: InterPro:IPR001460
+  - key: participates in
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D018410
+multigraph: true
+nodes:
+  - id: MESH:D002444
+    label: Drug
+    name: cefuroxime
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D018410
+    label: Disease
+    name: Pneumonia, Bacterial
+references:
+  - https://go.drugbank.com/drugs/DB01112#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Bacterial_pneumonia

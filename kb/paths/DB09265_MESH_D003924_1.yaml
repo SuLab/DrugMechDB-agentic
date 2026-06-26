@@ -1,0 +1,60 @@
+directed: true
+graph:
+  _id: DB09265_MESH_D003924_1
+  disease: Diabetes mellitus type 2
+  disease_mesh: MESH:D003924
+  drug: lixisenatide
+  drug_mesh: MESH:C479460
+  drugbank: DB:DB09265
+links:
+  - key: increases activity of
+    source: MESH:C479460
+    target: UniProt:P43220
+  - key: participates in
+    source: UniProt:P43220
+    target: reactome:R-HSA-381676
+  - key: participates in
+    source: UniProt:P43220
+    target: reactome:R-HSA-418555
+  - key: positively correlated with
+    source: reactome:R-HSA-418555
+    target: GO:0014808
+  - key: positively correlated with
+    source: reactome:R-HSA-381676
+    target: GO:0014808
+  - key: positively correlated with
+    source: GO:0014808
+    target: GO:0030073
+  - key: negatively correlated with
+    source: GO:0030073
+    target: MESH:D003924
+multigraph: true
+nodes:
+  - id: MESH:C479460
+    label: Drug
+    name: lixisenatide
+  - id: UniProt:P43220
+    label: Protein
+    name: Glucagon-like peptide 1 receptor
+  - id: UniProt:P43220
+    label: Protein
+    name: Glucagon-like peptide 1 receptor
+  - id: reactome:R-HSA-381676
+    label: Pathway
+    name: Glucagon-like Peptide-1 (GLP1) regulates insulin secretion
+  - id: reactome:R-HSA-418555
+    label: Pathway
+    name: G alpha (s) signalling events
+  - id: GO:0014808
+    label: BiologicalProcess
+    name: release of sequestered calcium ion into cytosol by sarcoplasmic reticulum
+  - id: GO:0030073
+    label: BiologicalProcess
+    name: insulin secretion
+  - id: MESH:D003924
+    label: Disease
+    name: Diabetes mellitus type 2
+references:
+  - https://go.drugbank.com/drugs/DB09265
+  - https://en.wikipedia.org/wiki/Lixisenatide#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Glucagon-like_peptide-1_receptor#Function_and_therapeutic_potential

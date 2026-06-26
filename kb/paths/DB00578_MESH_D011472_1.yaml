@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00578_MESH_D011472_1
+  disease: Prostatitis
+  disease_mesh: MESH:D011472
+  drug: Carbenicillin
+  drug_mesh: MESH:D002228
+  drugbank: DB:DB00578
+links:
+  - key: decreases activity of
+    source: MESH:D002228
+    target: InterPro:IPR001460
+  - key: participates in
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D011472
+multigraph: true
+nodes:
+  - id: MESH:D002228
+    label: Drug
+    name: Carbenicillin
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D011472
+    label: Disease
+    name: Prostatitis
+references:
+  - https://go.drugbank.com/drugs/DB00578#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Prostatitis

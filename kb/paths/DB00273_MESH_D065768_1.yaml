@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB00273_MESH_D065768_1
+  disease: Lennox Gastaut Syndrome
+  disease_mesh: MESH:D065768
+  drug: topiramate
+  drug_mesh: MESH:D000077236
+  drugbank: DB:DB00273
+links:
+  - key: increases activity of
+    source: MESH:D000077236
+    target: GO:0022851
+  - key: decreases activity of
+    source: MESH:D000077236
+    target: InterPro:IPR001696
+  - key: negatively correlated with
+    source: GO:0022851
+    target: GO:0051899
+  - key: positively correlated with
+    source: InterPro:IPR001696
+    target: GO:0051899
+  - key: positively regulates
+    source: GO:0051899
+    target: GO:0019228
+  - key: regulates
+    source: GO:0019228
+    target: GO:0050806
+  - key: positively correlated with
+    source: GO:0050806
+    target: MESH:D065768
+multigraph: true
+nodes:
+  - id: MESH:D000077236
+    label: Drug
+    name: topiramate
+  - id: GO:0022851
+    label: MolecularActivity
+    name: GABA-gated chloride ion channel activity
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: GO:0051899
+    label: BiologicalProcess
+    name: membrane depolarization
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: neuronal action potential
+  - id: GO:0050806
+    label: BiologicalProcess
+    name: positive regulation of synaptic transmission
+  - id: MESH:D065768
+    label: Disease
+    name: Lennox Gastaut Syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00273#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Lennox%E2%80%93Gastaut_syndrome

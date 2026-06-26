@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB12248_MESH_D011656_1
+  disease: Pulmonary emphysema
+  disease_mesh: MESH:D011656
+  drug: tulobuterol
+  drug_mesh: MESH:C010809
+  drugbank: DB:DB12248
+links:
+  - key: positively regulates
+    source: MESH:C010809
+    target: UniProt:P07550
+  - key: participates in
+    source: UniProt:P07550
+    target: GO:0007190
+  - key: positively regulates
+    source: GO:0007190
+    target: GO:0006171
+  - key: precedes
+    source: GO:0006171
+    target: GO:0044557
+  - key: negatively correlated with
+    source: GO:0044557
+    target: MESH:D011656
+multigraph: true
+nodes:
+  - id: MESH:C010809
+    label: Drug
+    name: tulobuterol
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: GO:0007190
+    label: BiologicalProcess
+    name: activation of adenylate cyclase activity
+  - id: GO:0006171
+    label: BiologicalProcess
+    name: cAMP biosynthetic process
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: relaxation of smooth muscle
+  - id: MESH:D011656
+    label: Disease
+    name: Pulmonary emphysema
+references:
+  - https://go.drugbank.com/drugs/DB12248#mechanism-of-action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/tulobuterol#section=Pharmacology-and-Biochemistry
+  - https://www.chemm.nlm.nih.gov/countermeasure_albuterol.htm#eb

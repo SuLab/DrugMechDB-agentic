@@ -1,0 +1,65 @@
+comment: The activation of Atrial natriuretic peptide receptor 1 has been observed
+  in vitro (https://pubmed.ncbi.nlm.nih.gov/12890708/) and it's reported in DrugBank
+  whereas ChEMBL favours the Soluble Guanylyl Cyclase route. Also note that when the
+  drug is admnistered at low doses, it dilates veins and reduces the volume of blood
+  in the heart after filling (this is supposedly the main mechanism of action). At
+  higher doses, it dilates arteries as well.
+directed: true
+graph:
+  _id: DB00727_MESH_D000787_1
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: glyceryl trinitrate
+  drug_mesh: MESH:D005996
+  drugbank: DB:DB00727
+links:
+  - key: produces
+    source: MESH:D005996
+    target: CHEBI:16480
+  - key: positively regulates
+    source: CHEBI:16480
+    target: GO:0038060
+  - key: positively correlated with
+    source: GO:0038060
+    target: GO:0042311
+  - key: positively regulates
+    source: CHEBI:16480
+    target: UniProt:P16066
+  - key: positively regulates
+    source: UniProt:P16066
+    target: GO:0007168
+  - key: positively correlated with
+    source: GO:0007168
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - alt_names:
+      - Nitroglycerin
+    id: MESH:D005996
+    label: Drug
+    name: glyceryl trinitrate
+  - id: CHEBI:16480
+    label: ChemicalSubstance
+    name: nitric oxide
+  - id: UniProt:P16066
+    label: Protein
+    name: Atrial natriuretic peptide receptor 1
+  - id: GO:0038060
+    label: BiologicalProcess
+    name: nitric oxide-cGMP-mediated signaling pathway
+  - id: GO:0007168
+    label: BiologicalProcess
+    name: receptor guanylyl cyclase signaling pathway
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: MESH:D000787
+    label: Disease
+    name: Angina pectoris
+references:
+  - https://go.drugbank.com/drugs/DB00727#mechanism-of-action
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL730/
+  - https://en.wikipedia.org/wiki/Nitroglycerin#Medical_use

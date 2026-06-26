@@ -1,0 +1,75 @@
+directed: true
+multigraph: true
+graph:
+  _id: P21_DB00563_MESH_D001172
+  drug: Methotrexate
+  drug_mesh: MESH:D008727
+  drugbank: DB:DB00563
+  disease: Rheumatoid Arthritis
+  disease_mesh: MESH:D001172
+nodes:
+  - id: MESH:D008727
+    name: Methotrexate
+    label: Drug
+  - id: UniProt:P31939
+    name: bifunctional purine biosynthesis protein ATIC
+    label: Protein
+  - id: MESH:D000241
+    name: Adenosine
+    label: ChemicalSubstance
+  - id: GO:0006954
+    name: inflammatory response
+    label: BiologicalProcess
+  - id: MESH:D001172
+    name: Rheumatoid Arthritis
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D008727
+    target: UniProt:P31939
+    evidence:
+      - reference: PMID:23464989
+        snippet: intracellular MTX polyglutamates inhibit AICAR transformylase (ATIC) activity and thereby promote adenosine release
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Methotrexate polyglutamates (the active intracellular form of MTX) directly inhibit ATIC activity, the enzyme encoded by the ATIC gene (UniProt:P31939), thereby decreasing its catalytic function.
+  - key: decreases abundance of
+    source: UniProt:P31939
+    target: MESH:D000241
+    evidence:
+      - reference: PMID:23464989
+        snippet: intracellular MTX polyglutamates inhibit AICAR transformylase (ATIC) activity and thereby promote adenosine release
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: This snippet establishes by contrapositive that ATIC activity limits adenosine release; when ATIC is inhibited, AICAR accumulates and promotes adenosine release, confirming that active ATIC decreases adenosine abundance.
+      - reference: PMID:40362255
+        snippet: the pathway generating extracellular adenosine and its effects on promoting the immune regulation for the mechanism of MTX therapy of RA
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Confirms that extracellular adenosine generation is the key downstream effector in MTX-treated RA patients; ATIC inhibition is the upstream step that releases this brake on adenosine abundance.
+  - key: negatively regulates
+    source: MESH:D000241
+    target: GO:0006954
+    evidence:
+      - reference: PMID:12106498
+        snippet: many of the anti-inflammatory effects of methotrexate are mediated by adenosine. This nucleoside, acting at one or more of its receptors, is a potent endogenous anti-inflammatory mediator.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Adenosine, acting via its cell-surface receptors, is a potent endogenous anti-inflammatory mediator that negatively regulates the inflammatory response; this review cites both animal and clinical studies confirming this.
+      - reference: PMID:30081197
+        snippet: methotrexate increases adenosine levels and on engagement of adenosine with its extracellular receptors an intracellular cascade is activated promoting an overall anti-inflammatory state
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Adenosine engagement with extracellular receptors activates an intracellular cascade that promotes an overall anti-inflammatory state, directly supporting negatively regulates inflammatory response.
+  - key: contributes to
+    source: GO:0006954
+    target: MESH:D001172
+    evidence:
+      - reference: PMID:42169647
+        snippet: Rheumatoid arthritis (RA) is a chronic autoimmune disease characterized by synovial inflammation and joint destruction.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Synovial inflammation (i.e. the inflammatory response in joint tissue) is the defining pathological process of RA; the inflammatory response therefore contributes to the disease.
+references:
+  - https://go.drugbank.com/drugs/DB00563#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P31939

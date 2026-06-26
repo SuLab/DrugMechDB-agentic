@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB09263_MESH_D006947_1
+  disease: Hyperkalemia
+  disease_mesh: MESH:D006947
+  drug: patiromer calcium
+  drug_mesh: MESH:C568789
+  drugbank: DB:DB09263
+links:
+  - key: decreases abundance of
+    source: MESH:C568789
+    target: CHEBI:29103
+  - key: positively correlated with
+    source: CHEBI:29103
+    target: MESH:D006947
+multigraph: true
+nodes:
+  - id: MESH:C568789
+    label: Drug
+    name: Patiromer calcium
+  - id: CHEBI:29103
+    label: ChemicalSubstance
+    name: Potassium(1+)
+  - id: MESH:D006947
+    label: Disease
+    name: Hyperkalemia
+references:
+  - https://en.wikipedia.org/wiki/Hyperkalemia
+  - https://go.drugbank.com/drugs/DB09263#BE0004816

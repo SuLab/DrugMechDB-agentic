@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00581_MESH_D003248_1
+  disease: Constipation
+  disease_mesh: MESH:D003248
+  drug: lactulose
+  drug_mesh: MESH:D007792
+  drugbank: DB:DB00581
+links:
+  - key: subclass of
+    source: MESH:D007792
+    target: CHEBI:50503
+  - key: positively regulates
+    source: MESH:D007792
+    target: GO:0120054
+  - key: positively regulates
+    source: MESH:D007792
+    target: GO:0030432
+  - key: negatively correlated with
+    source: GO:0120054
+    target: MESH:D003248
+  - key: negatively correlated with
+    source: GO:0030432
+    target: MESH:D003248
+  - key: negatively correlated with
+    source: CHEBI:50503
+    target: HP:0012423
+  - key: manifestation of
+    source: HP:0012423
+    target: MESH:D003248
+multigraph: true
+nodes:
+  - id: MESH:D007792
+    label: Drug
+    name: lactulose
+  - id: CHEBI:50503
+    label: ChemicalSubstance
+    name: laxative
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: intestinal motility
+  - id: GO:0030432
+    label: BiologicalProcess
+    name: peristalsis
+  - id: HP:0012423
+    label: PhenotypicFeature
+    name: Colonic inertia
+  - id: MESH:D003248
+    label: Disease
+    name: Constipation
+references:
+  - https://go.drugbank.com/drugs/DB00581

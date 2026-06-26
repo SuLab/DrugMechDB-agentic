@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB00063_MESH_D054058_1
+  disease: Acute coronary syndrome
+  disease_mesh: MESH:D054058
+  drug: eptifibatide
+  drug_mesh: MESH:C086648
+  drugbank: DB:DB00063
+links:
+  - key: decreases activity of
+    source: MESH:C086648
+    target: UniProt:P05106
+  - key: decreases activity of
+    source: MESH:C086648
+    target: UniProt:P08514
+  - key: positively regulates
+    source: UniProt:P05106
+    target: GO:0070527
+  - key: positively regulates
+    source: UniProt:P08514
+    target: GO:0070527
+  - key: positively correlated with
+    source: GO:0070527
+    target: GO:0072378
+  - key: negatively regulates
+    source: GO:0072378
+    target: GO:0008015
+  - key: negatively correlated with
+    source: GO:0008015
+    target: MESH:D054058
+multigraph: true
+nodes:
+  - id: MESH:C086648
+    label: Drug
+    name: Eptifibatide
+  - id: UniProt:P05106
+    label: Protein
+    name: Integrin beta-3
+  - id: UniProt:P08514
+    label: Protein
+    name: Integrin alpha-IIb
+  - id: GO:0072378
+    label: BiologicalProcess
+    name: Blood coagulation, fibrin clot formation
+  - id: GO:0008015
+    label: BiologicalProcess
+    name: Blood circulation
+  - id: GO:0070527
+    label: BiologicalProcess
+    name: Platelet aggregation
+  - id: MESH:D054058
+    label: Disease
+    name: Acute coronary syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00063
+  - https://en.wikipedia.org/wiki/Eptifibatide

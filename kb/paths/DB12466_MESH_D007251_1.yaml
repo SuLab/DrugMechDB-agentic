@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB12466_MESH_D007251_1
+  disease: Influenza
+  disease_mesh: MESH:D007251
+  drug: favipiravir
+  drug_mesh: MESH:C462182
+  drugbank: DB:DB12466
+links:
+  - key: has metabolite
+    source: MESH:C462182
+    target: CHEBI:170009
+  - key: negatively regulates
+    source: CHEBI:170009
+    target: UniProt:Q809M3
+  - key: positively regulates
+    source: UniProt:Q809M3
+    target: GO:0039694
+  - key: in taxon
+    source: GO:0039694
+    target: taxonomy:11309
+  - key: causes
+    source: taxonomy:11309
+    target: MESH:D007251
+multigraph: true
+nodes:
+  - id: MESH:C462182
+    label: Drug
+    name: favipiravir
+  - id: CHEBI:170009
+    label: ChemicalSubstance
+    name: favipiravir-RTP
+  - id: UniProt:Q809M3
+    label: Protein
+    name: RNA-directed RNA polymerase catalytic subunit
+  - id: GO:0039694
+    label: BiologicalProcess
+    name: viral RNA genome replication
+  - id: taxonomy:11309
+    label: OrganismTaxon
+    name: Influenza virus
+  - id: MESH:D007251
+    label: Disease
+    name: Influenza
+references:
+  - https://go.drugbank.com/drugs/DB12466
+  - https://pubmed.ncbi.nlm.nih.gov/28769016/

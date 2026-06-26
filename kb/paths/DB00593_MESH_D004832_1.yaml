@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00593_MESH_D004832_1
+  disease: Epilepsy, Absence
+  disease_mesh: MESH:D004832
+  drug: Ethosuximide
+  drug_mesh: MESH:D005013
+  drugbank: DB:DB00593
+links:
+  - key: decreases activity of
+    source: MESH:D005013
+    target: UniProt:O43497
+  - key: positively regulates
+    source: UniProt:O43497
+    target: GO:0019228
+  - key: contributes to
+    source: GO:0019228
+    target: GO:0035249
+  - key: positively correlated with
+    source: GO:0035249
+    target: MESH:D004832
+multigraph: true
+nodes:
+  - id: MESH:D005013
+    label: Drug
+    name: Ethosuximide
+  - id: UniProt:O43497
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1G
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: neuronal action potential
+  - id: GO:0035249
+    label: BiologicalProcess
+    name: synaptic transmission, glutamatergic
+  - id: MESH:D004832
+    label: Disease
+    name: Epilepsy, Absence
+references:
+  - https://go.drugbank.com/drugs/DB00593#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Ethosuximide#Mechanism_of_action
+  - https://www.uniprot.org/uniprot/O43497#function
+  - https://en.wikipedia.org/wiki/Epilepsy

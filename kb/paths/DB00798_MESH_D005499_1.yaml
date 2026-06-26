@@ -1,0 +1,65 @@
+comment: Gentamicin is a bactericidal aminoglycoside that initialy binds to the bacterial
+  outer membrane and then the cytoplasmic membrane for the entry into the bacterial
+  cell.
+directed: true
+graph:
+  _id: DB00798_MESH_D005499_1
+  disease: Folliculitis
+  disease_mesh: MESH:D005499
+  drug: gentamicin
+  drug_mesh: MESH:D005839
+  drugbank: DB:DB00798
+links:
+  - key: decreases activity of
+    source: MESH:D005839
+    target: UniProt:P0A7S3
+  - key: negatively regulates
+    source: MESH:D005839
+    target: MESH:D012336
+  - key: negatively regulates
+    source: MESH:D005839
+    target: MESH:D012338
+  - key: participates in
+    source: UniProt:P0A7S3
+    target: GO:0006412
+  - key: participates in
+    source: MESH:D012336
+    target: GO:0006412
+  - key: participates in
+    source: MESH:D012338
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D005499
+multigraph: true
+nodes:
+  - id: MESH:D005839
+    label: Drug
+    name: gentamicin
+  - id: UniProt:P0A7S3
+    label: Protein
+    name: 30S ribosomal protein S12
+  - id: MESH:D012336
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 16S
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D005499
+    label: Disease
+    name: Folliculitis
+references:
+  - https://go.drugbank.com/drugs/DB00798#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P0A7S3#function
+  - https://drugs.ncats.io/drug/T6Z9V48IKG
+  - https://en.wikipedia.org/wiki/Gentamicin#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Folliculitis#Bacterial

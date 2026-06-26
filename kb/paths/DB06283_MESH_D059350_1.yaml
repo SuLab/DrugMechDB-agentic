@@ -1,0 +1,64 @@
+directed: true
+graph:
+  _id: DB06283_MESH_D059350_1
+  disease: Chronic pain
+  disease_mesh: MESH:D059350
+  drug: ziconotide
+  drug_mesh: MESH:C078452
+  drugbank: DB:DB06283
+links:
+  - key: decreases activity of
+    source: MESH:C078452
+    target: UniProt:Q00975
+  - key: positively regulates
+    source: UniProt:Q00975
+    target: GO:0007268
+  - key: positively correlated with
+    source: GO:0007268
+    target: GO:1990793
+  - key: positively correlated with
+    source: GO:0007268
+    target: GO:0061535
+  - key: positively regulates
+    source: GO:0007268
+    target: InterPro:IPR015476
+  - key: positively regulates
+    source: GO:1990793
+    target: GO:0019233
+  - key: positively regulates
+    source: GO:0061535
+    target: GO:0019233
+  - key: positively regulates
+    source: InterPro:IPR015476
+    target: GO:0019233
+  - key: occurs in
+    source: GO:0019233
+    target: MESH:D059350
+multigraph: true
+nodes:
+  - id: MESH:C078452
+    label: Drug
+    name: Ziconotide
+  - id: UniProt:Q00975
+    label: Protein
+    name: Voltage-dependent N-type calcium channel subunit alpha-1B
+  - id: GO:0007268
+    label: BiologicalProcess
+    name: Chemical synaptic transmission
+  - id: GO:1990793
+    label: BiologicalProcess
+    name: Substance P secretion, neurotransmission
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: Glutamate secretion, neurotransmission
+  - id: InterPro:IPR015476
+    label: GeneFamily
+    name: Calcitonin gene-related peptide
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: Sensory perception of pain
+  - id: MESH:D059350
+    label: Disease
+    name: Chronic pain
+references:
+  - https://go.drugbank.com/drugs/DB06283#BE0002226

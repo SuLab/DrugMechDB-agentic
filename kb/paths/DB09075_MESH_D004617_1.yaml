@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB09075_MESH_D004617_1
+  disease: Embolism
+  disease_mesh: MESH:D004617
+  drug: edoxaban
+  drug_mesh: MESH:C552171
+  drugbank: DB:DB09075
+links:
+  - key: decreases activity of
+    source: MESH:C552171
+    target: UniProt:P00742
+  - key: positively regulates
+    source: UniProt:P00742
+    target: GO:0072378
+  - key: has output
+    source: GO:0072378
+    target: UBERON:0010210
+  - key: occurs in
+    source: UBERON:0010210
+    target: MESH:D004617
+multigraph: true
+nodes:
+  - id: MESH:C552171
+    label: Drug
+    name: Edoxaban
+  - id: UniProt:P00742
+    label: Protein
+    name: Coagulation factor X
+  - id: GO:0072378
+    label: BiologicalProcess
+    name: Blood coagulation, fibrin clot formation
+  - id: UBERON:0010210
+    label: GrossAnatomicalStructure
+    name: Blood clot
+  - id: MESH:D004617
+    label: Disease
+    name: Embolism
+references:
+  - https://go.drugbank.com/drugs/DB09075

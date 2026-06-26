@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB01600_MESH_D010003_1
+  disease: Osteoarthritis
+  disease_mesh: MESH:D010003
+  drug: tiaprofenic acid
+  drug_mesh: MESH:C021270
+  drugbank: DB:DB01600
+links:
+  - key: decreases activity of
+    source: MESH:C021270
+    target: UniProt:P35354
+  - key: decreases activity of
+    source: MESH:C021270
+    target: UniProt:P23219
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: MESH:D011453
+  - key: increases abundance of
+    source: UniProt:P23219
+    target: MESH:D011453
+  - key: positively regulates
+    source: MESH:D011453
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D010003
+multigraph: true
+nodes:
+  - id: MESH:C021270
+    label: Drug
+    name: tiaprofenic acid
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D010003
+    label: Disease
+    name: Osteoarthritis
+references:
+  - https://go.drugbank.com/drugs/DB01600
+  - https://en.wikipedia.org/wiki/Tiaprofenic_acid

@@ -1,0 +1,52 @@
+comment: For use as a diagnostic aid in the screening of patients presumed to have
+  adrenocortical insufficiency. Please note tetracosactide does not significantly
+  increase plasma cortisol concentration in patients with primary or secondary adrenocortical
+  insufficiency.
+directed: true
+graph:
+  _id: DB01284_MESH_D000309_1
+  disease: Adrenal cortical hypofunction
+  disease_mesh: MESH:D000309
+  drug: Tetracosactide
+  drug_mesh: MESH:D003366
+  drugbank: DB:DB01284
+links:
+  - key: increases activity of
+    source: MESH:D003366
+    target: UniProt:Q01718
+  - key: positively regulates
+    source: UniProt:Q01718
+    target: reactome:R-HSA-170660
+  - key: positively regulates
+    source: reactome:R-HSA-170660
+    target: GO:0006694
+  - key: increases abundance of
+    source: GO:0006694
+    target: MESH:D000305
+  - key: negatively correlated with
+    source: MESH:D000305
+    target: MESH:D000309
+multigraph: true
+nodes:
+  - id: MESH:D003366
+    label: Drug
+    name: Tetracosactide
+  - id: UniProt:Q01718
+    label: Protein
+    name: Adrenocorticotropic hormone receptor
+  - id: reactome:R-HSA-170660
+    label: Pathway
+    name: Adenylate cyclase activating pathway
+  - id: GO:0006694
+    label: BiologicalProcess
+    name: Steroid biosynthetic process
+  - id: MESH:D000305
+    label: ChemicalSubstance
+    name: Adrenal Cortex Hormones
+  - id: MESH:D000309
+    label: Disease
+    name: Adrenal cortical hypofunction
+references:
+  - https://go.drugbank.com/drugs/DB01284#BE0000848
+  - https://en.wikipedia.org/wiki/Adrenocorticotropic_hormone#Function
+  - https://en.wikipedia.org/wiki/ACTH_stimulation_test

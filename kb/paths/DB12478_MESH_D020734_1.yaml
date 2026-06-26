@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB12478_MESH_D020734_1
+  disease: Parkinsonism
+  disease_mesh: MESH:D020734
+  drug: Piribedil
+  drug_mesh: MESH:D010891
+  drugbank: DB:DB12478
+links:
+  - key: increases activity of
+    source: MESH:D010891
+    target: UniProt:P14416
+  - key: increases activity of
+    source: MESH:D010891
+    target: UniProt:P35462
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P35462
+    target: MESH:D004298
+  - key: positively correlated with
+    source: MESH:D004298
+    target: GO:0061527
+  - key: disrupted by
+    source: GO:0061527
+    target: MESH:D020734
+multigraph: true
+nodes:
+  - id: MESH:D010891
+    label: Drug
+    name: Piribedil
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P35462
+    label: Protein
+    name: D(3) dopamine receptor
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D020734
+    label: Disease
+    name: Parkinsonism
+references:
+  - https://en.wikipedia.org/wiki/Piribedil
+  - https://en.wikipedia.org/wiki/Parkinsonism

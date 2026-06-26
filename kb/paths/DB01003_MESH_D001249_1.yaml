@@ -1,0 +1,63 @@
+directed: true
+graph:
+  _id: DB01003_MESH_D001249_1
+  disease: Asthma
+  disease_mesh: MESH:D001249
+  drug: cromoglicic acid
+  drug_mesh: MESH:D004205
+  drugbank: DB:DB01003
+links:
+  - key: decreases activity of
+    source: MESH:D004205
+    target: UniProt:P25815
+  - key: positively correlated with
+    source: UniProt:P25815
+    target: GO:0043303
+  - key: caused by
+    source: GO:0043303
+    target: reactome:R-HSA-2454202
+  - key: positively correlated with
+    source: reactome:R-HSA-2454202
+    target: GO:0002441
+  - key: positively correlated with
+    source: reactome:R-HSA-2454202
+    target: GO:0002540
+  - key: positively correlated with
+    source: GO:0002441
+    target: MESH:D001249
+  - key: positively correlated with
+    source: GO:0002540
+    target: MESH:D001249
+multigraph: true
+nodes:
+  - id: MESH:D004205
+    label: Drug
+    name: cromoglicic acid
+  - id: UniProt:P25815
+    label: Protein
+    name: Protein S100-P
+  - id: GO:0043303
+    label: BiologicalProcess
+    name: mast cell degranulation
+  - id: reactome:R-HSA-2454202
+    label: Pathway
+    name: Allergen dependent IgE bound FCERI aggregation
+  - id: GO:0002540
+    label: BiologicalProcess
+    name: leukotriene production involved in inflammatory response
+  - id: GO:0002441
+    label: BiologicalProcess
+    name: histamine secretion involved in inflammatory response
+  - id: MESH:D001249
+    label: Disease
+    name: Asthma
+references:
+  - https://go.drugbank.com/drugs/DB01003#mechanism-of-action
+  - https://pubmed.ncbi.nlm.nih.gov/25450399/
+  - https://pubchem.ncbi.nlm.nih.gov/compound/2882#section=Pharmacology-and-Biochemistry
+  - https://pubmed.ncbi.nlm.nih.gov/12645002/
+  - https://en.wikipedia.org/wiki/RAGE_(receptor)#RAGE_and_disease
+  - https://en.wikipedia.org/wiki/S100P#Interactions
+  - https://en.wikipedia.org/wiki/Mastocytosis#Anti-mediator_therapy
+  - https://en.wikipedia.org/wiki/Mast_cell_stabilizer
+  - https://en.wikipedia.org/wiki/Asthma#Management

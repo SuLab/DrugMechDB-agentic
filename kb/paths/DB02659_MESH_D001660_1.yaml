@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB02659_MESH_D001660_1
+  disease: Disorder of biliary tract
+  disease_mesh: MESH:D001660
+  drug: cholic acid
+  drug_mesh: MESH:D019826
+  drugbank: DB:DB02659
+links:
+  - key: produced by
+    source: MESH:D019826
+    target: UBERON:0002423
+  - key: affected by
+    source: UBERON:0002423
+    target: MESH:D001660
+multigraph: true
+nodes:
+  - id: MESH:D019826
+    label: Drug
+    name: cholic acid
+  - id: UBERON:0002423
+    label: GrossAnatomicalStructure
+    name: hepatobiliary system
+  - id: MESH:D001660
+    label: Disease
+    name: Disorder of biliary tract
+references:
+  - https://go.drugbank.com/drugs/DB02659

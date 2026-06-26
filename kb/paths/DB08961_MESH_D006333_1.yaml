@@ -1,0 +1,36 @@
+comment: Note that DrugCentral only lists Congestive heart failure as indications
+  for this drug, whereas other sources include edema, hypertension e ascites (https://drugs.ncats.io/drug/MR40VT1L8Z#general).
+directed: true
+graph:
+  _id: DB08961_MESH_D006333_1
+  disease: Congestive heart failure
+  disease_mesh: MESH:D006333
+  drug: azosemide
+  drug_mesh: MESH:C018222
+  drugbank: DB:DB08961
+links:
+  - key: negatively regulates
+    source: MESH:C018222
+    target: GO:0003092
+  - key: positively correlated with
+    source: GO:0003092
+    target: HP:0000822
+  - key: affects risk for
+    source: HP:0000822
+    target: MESH:D006333
+multigraph: true
+nodes:
+  - id: MESH:C018222
+    label: Drug
+    name: azosemide
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: renal water retention
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: Hypertension
+  - id: MESH:D006333
+    label: Disease
+    name: Congestive heart failure
+references:
+  - https://go.drugbank.com/drugs/DB08961

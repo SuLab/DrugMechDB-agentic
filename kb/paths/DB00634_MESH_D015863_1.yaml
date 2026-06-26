@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00634_MESH_D015863_1
+  disease: Iridocyclitis
+  disease_mesh: MESH:D015863
+  drug: sulfacetamide
+  drug_mesh: MESH:D013409
+  drugbank: DB:DB00634
+links:
+  - key: decreases activity of
+    source: MESH:D013409
+    target: Pfam:PF00809
+  - key: positively correlated with
+    source: Pfam:PF00809
+    target: GO:0046656
+  - key: in taxon
+    source: GO:0046656
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D015863
+multigraph: true
+nodes:
+  - id: MESH:D013409
+    label: Drug
+    name: sulfacetamide
+  - id: Pfam:PF00809
+    label: GeneFamily
+    name: Dihydropteroate synthase
+  - id: GO:0046656
+    label: BiologicalProcess
+    name: folic acid biosynthetic process
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D015863
+    label: Disease
+    name: Iridocyclitis
+references:
+  - https://go.drugbank.com/drugs/DB00634#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Sulfacetamide#Mechanisms_of_action

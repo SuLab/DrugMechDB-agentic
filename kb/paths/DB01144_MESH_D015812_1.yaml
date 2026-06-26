@@ -1,0 +1,90 @@
+directed: true
+graph:
+  _id: DB01144_MESH_D015812_1
+  disease: Angle-closure glaucoma
+  disease_mesh: MESH:D015812
+  drug: dichlorphenamide
+  drug_mesh: MESH:D004005
+  drugbank: DB:DB01144
+links:
+  - key: negatively regulates
+    source: MESH:D004005
+    target: UniProt:P00915
+  - key: negatively regulates
+    source: MESH:D004005
+    target: UniProt:P00918
+  - key: negatively regulates
+    source: MESH:D004005
+    target: UniProt:P22748
+  - key: negatively regulates
+    source: MESH:D004005
+    target: UniProt:P43166
+  - key: negatively regulates
+    source: MESH:D004005
+    target: UniProt:O43570
+  - key: positively regulates
+    source: UniProt:P00915
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:P00918
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:P22748
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:P43166
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:O43570
+    target: GO:0015701
+  - key: increases abundance of
+    source: GO:0015701
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: HP:0007906
+  - key: positively correlated with
+    source: HP:0007906
+    target: MESH:D015812
+multigraph: true
+nodes:
+  - alt_names:
+      - Diclofenamide
+    id: MESH:D004005
+    label: Drug
+    name: dichlorphenamide
+  - id: UniProt:P00915
+    label: Protein
+    name: Carbonic anhydrase 1
+  - id: UniProt:P00918
+    label: Protein
+    name: Carbonic anhydrase 2
+  - id: UniProt:P22748
+    label: Protein
+    name: Carbonic anhydrase 4
+  - id: UniProt:P43166
+    label: Protein
+    name: Carbonic anhydrase 7
+  - id: UniProt:O43570
+    label: Protein
+    name: Carbonic anhydrase 12
+  - id: GO:0015701
+    label: BiologicalProcess
+    name: bicarbonate transport
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: aqueous humor of eyeball
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Ocular Hypertension
+  - id: MESH:D015812
+    label: Disease
+    name: Angle-closure glaucoma
+references:
+  - https://go.drugbank.com/drugs/DB01144#mechanism-of-action
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL17/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC506660/
+  - https://en.wikipedia.org/wiki/Glaucoma#Medication\
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC506660/
+  - https://www.aaopt.org/docs/knowledge-base/outline26514.doc?sfvrsn=5f863d3_0
+  - https://en.wikipedia.org/wiki/Aqueous_humour#Clinical_significance

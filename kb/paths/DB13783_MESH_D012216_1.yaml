@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB13783_MESH_D012216_1
+  disease: Rheumatism
+  disease_mesh: MESH:D012216
+  drug: acemetacin
+  drug_mesh: MESH:C026784
+  drugbank: DB:DB13783
+links:
+  - key: has metabolite
+    source: MESH:C026784
+    target: DB:DB00328
+  - key: negatively regulates
+    source: DB:DB00328
+    target: UniProt:P35354
+  - key: negatively regulates
+    source: DB:DB00328
+    target: UniProt:P23219
+  - key: participates in
+    source: UniProt:P23219
+    target: reactome:R-HSA-2162123
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: CHEBI:26333
+  - key: negatively correlated with
+    source: CHEBI:26333
+    target: GO:0006954
+  - key: negatively correlated with
+    source: GO:0006954
+    target: MESH:D012216
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C519896
+    alt_names:
+      - acemethacin
+    id: MESH:C026784
+    label: Drug
+    name: acemetacin
+  - id: DB:DB00328
+    label: ChemicalSubstance
+    name: Indomethacin
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: CHEBI:26333
+    label: ChemicalSubstance
+    name: prostaglandin
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D012216
+    label: Disease
+    name: Rheumatism
+references:
+  - https://go.drugbank.com/drugs/DB13783

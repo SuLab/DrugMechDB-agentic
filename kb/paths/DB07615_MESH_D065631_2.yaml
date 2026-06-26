@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB07615_MESH_D065631_2
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: Tranilast
+  drug_mesh: MESH:C012293
+  drugbank: DB:DB07615
+links:
+  - key: decreases activity of
+    source: MESH:C012293
+    target: UniProt:P35354
+  - key: decreases activity of
+    source: UniProt:P35354
+    target: GO:0001516
+  - key: decreases abundance of
+    source: GO:0001516
+    target: MESH:D044062
+  - key: decreases activity of
+    source: MESH:C012293
+    target: MESH:D016207
+  - key: ameliorates
+    source: MESH:D016207
+    target: GO:0006954
+  - key: ameliorates
+    source: MESH:D044062
+    target: GO:0006954
+  - key: correlated with
+    source: GO:0006954
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: MESH:C012293
+    label: Drug
+    name: Tranilast
+  - id: UniProt:P35354
+    label: Protein
+    name: Cyclooxygenase-2
+  - id: GO:0001516
+    label: BiologicalProcess
+    name: Prostaglandin biosynthetic process
+  - id: MESH:D016207
+    label: BiologicalProcess
+    name: Cytokines release
+  - id: MESH:D044062
+    label: ChemicalSubstance
+    name: Prostaglandins I
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB07615
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Tranilast#section=MeSH-Pharmacological-Classification
+  - https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1527-3466.1998.tb00359.x
+  - https://newdrugapprovals.org/2020/02/28/tranilast/

@@ -1,0 +1,70 @@
+comment: The main components of OM3-CA, eicosapentaenoic acid, and docosahexaenoic
+  acid, are poor substrates for the enzymes responsible for the synthesis of triglycerides
+  (TG). It enhances the clearance of TG from circulating VLDL particles; increased
+  breakdown of fatty acids; inhibition of DAG; and increased activity of lipoprotein
+  lipase in blood.
+directed: true
+graph:
+  _id: DB09568_MESH_D015228_1
+  disease: Hypertriglyceridemia
+  disease_mesh: MESH:D015228
+  drug: omega-3-carboxylic acids
+  drugbank: DB:DB09568
+links:
+  - key: decreases activity of
+    source: DB:DB09568
+    target: UniProt:O75907
+  - key: negatively regulates
+    source: UniProt:O75907
+    target: reactome:R-HSA-75109
+  - key: decreases abundance of
+    source: reactome:R-HSA-75109
+    target: MESH:D014280
+  - key: increases activity of
+    source: DB:DB09568
+    target: UniProt:P06858
+  - key: located in
+    source: UniProt:P06858
+    target: UBERON:0000178
+  - key: increases degradation of
+    source: UBERON:0000178
+    target: MESH:D014280
+  - key: increases activity of
+    source: DB:DB09568
+    target: GO:0006635
+  - key: increases degradation of
+    source: GO:0006635
+    target: MESH:D014280
+  - key: manifestation of
+    source: MESH:D014280
+    target: MESH:D015228
+multigraph: true
+nodes:
+  - id: DB:DB09568
+    label: Drug
+    name: omega-3-carboxylic acids
+  - id: UniProt:O75907
+    label: Protein
+    name: Diglyceride acyltransferase
+  - id: reactome:R-HSA-75109
+    label: Pathway
+    name: Triglyceride biosynthesis
+  - id: GO:0006635
+    label: BiologicalProcess
+    name: Fatty acid beta-oxidation
+  - id: UBERON:0000178
+    label: GrossAnatomicalStructure
+    name: Blood
+  - id: UniProt:P06858
+    label: Protein
+    name: Lipoprotein lipase
+  - id: MESH:D014280
+    label: ChemicalSubstance
+    name: Triglyceride
+  - id: MESH:D015228
+    label: Disease
+    name: Hypertriglyceridemia
+references:
+  - https://go.drugbank.com/drugs/DB09568#mechanismofaction
+  - https://en.wikipedia.org/wiki/Omega-3_carboxylic_acids
+  - https://pubmed.ncbi.nlm.nih.gov/28003756/

@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB06650_MESH_D015451_2
+  disease: Chronic lymphoid leukemia, disease
+  disease_mesh: MESH:D015451
+  drug: ofatumumab
+  drug_mesh: MESH:C527517
+  drugbank: DB:DB06650
+links:
+  - key: positively regulates
+    source: MESH:C527517
+    target: GO:0001788
+  - key: positively regulates
+    source: MESH:C527517
+    target: GO:0097278
+  - key: precedes
+    source: GO:0001788
+    target: GO:0001783
+  - key: precedes
+    source: GO:0097278
+    target: GO:0001783
+  - key: negatively correlated with
+    source: GO:0001783
+    target: MESH:D015451
+multigraph: true
+nodes:
+  - id: MESH:C527517
+    label: Drug
+    name: Ofatumumab
+  - id: GO:0001788
+    label: BiologicalProcess
+    name: Antibody-dependent cell-mediated cytotoxicity
+  - id: GO:0097278
+    label: BiologicalProcess
+    name: Complement-dependent cytotoxicity
+  - id: GO:0001783
+    label: BiologicalProcess
+    name: B cell apoptotic process
+  - id: MESH:D015451
+    label: Disease
+    name: Chronic lymphoid leukemia, disease
+references:
+  - https://go.drugbank.com/drugs/DB06650#BE0000066
+  - https://en.wikipedia.org/wiki/Chronic_lymphocytic_leukemia

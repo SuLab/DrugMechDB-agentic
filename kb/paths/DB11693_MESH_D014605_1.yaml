@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB11693_MESH_D014605_1
+  disease: Noninfectious Uveitis
+  disease_mesh: MESH:D014605
+  drug: voclosporin
+  drug_mesh: MESH:C484071
+  drugbank: DB:DB11693
+links:
+  - key: decreases activity of
+    source: MESH:C484071
+    target: UniProt:P63098
+  - key: increases abundance of
+    source: UniProt:P63098
+    target: UniProt:O95644
+  - key: increases abundance of
+    source: UniProt:O95644
+    target: UniProt:P60568
+  - key: produces
+    source: UniProt:P60568
+    target: CL:0000084
+  - key: causes
+    source: CL:0000084
+    target: MESH:D014605
+multigraph: true
+nodes:
+  - id: MESH:C484071
+    label: Drug
+    name: voclosporin
+  - id: UniProt:P63098
+    label: Protein
+    name: Calcineurin subunit B type 1
+  - id: UniProt:O95644
+    label: Protein
+    name: Nuclear factor of activated T-cells, cytoplasmic 1
+  - id: UniProt:P60568
+    label: Protein
+    name: interleukin 2
+  - id: CL:0000084
+    label: Cell
+    name: T-Cell
+  - id: MESH:D014605
+    label: Disease
+    name: Noninfectious Uveitis

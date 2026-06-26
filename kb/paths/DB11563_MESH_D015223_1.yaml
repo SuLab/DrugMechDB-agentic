@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB11563_MESH_D015223_1
+  disease: Wolman's disease
+  disease_mesh: MESH:D015223
+  drug: sebelipase alfa
+  drug_mesh: MESH:C000603932
+  drugbank: DB:DB11563
+links:
+  - key: positively regulates
+    source: MESH:C000603932
+    target: GO:0016298
+  - key: increases abundance of
+    source: GO:0016298
+    target: CHEBI:35366
+  - key: increases abundance of
+    source: GO:0016298
+    target: CHEBI:16113
+  - key: negatively correlated with
+    source: CHEBI:16113
+    target: MESH:D015223
+  - key: negatively correlated with
+    source: CHEBI:35366
+    target: MESH:D015223
+multigraph: true
+nodes:
+  - id: MESH:C000603932
+    label: Drug
+    name: sebelipase alfa
+  - id: GO:0016298
+    label: MolecularActivity
+    name: lipase activity
+  - id: CHEBI:35366
+    label: ChemicalSubstance
+    name: fatty acid
+  - id: CHEBI:16113
+    label: ChemicalSubstance
+    name: cholesterol
+  - id: MESH:D015223
+    label: Disease
+    name: Wolman's disease
+references:
+  - https://en.wikipedia.org/wiki/Sebelipase_alfa
+  - https://go.drugbank.com/drugs/DB11563

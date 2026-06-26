@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB04815_MESH_D014008_1
+  disease: Tinea pedis
+  disease_mesh: MESH:D014008
+  drug: clioquinol
+  drug_mesh: MESH:D007464
+  drugbank: DB:DB04815
+links:
+  - key: decreases abundance of
+    source: MESH:D007464
+    target: taxonomy:4751
+  - key: causes
+    source: taxonomy:4751
+    target: MESH:D014008
+multigraph: true
+nodes:
+  - id: MESH:D007464
+    label: Drug
+    name: clioquinol
+  - id: taxonomy:4751
+    label: OrganismTaxon
+    name: Fungi
+  - id: MESH:D014008
+    label: Disease
+    name: Tinea pedis
+references:
+  - https://go.drugbank.com/drugs/DB04815

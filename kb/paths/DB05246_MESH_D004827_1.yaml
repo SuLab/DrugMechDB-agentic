@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB05246_MESH_D004827_1
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+  drug: methsuximide
+  drug_mesh: MESH:C100286
+  drugbank: DB:DB05246
+links:
+  - key: decreases activity of
+    source: MESH:C100286
+    target: UniProt:O43497
+  - key: positively regulates
+    source: UniProt:O43497
+    target: GO:0070509
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0007268
+  - key: correlated with
+    source: GO:0007268
+    target: HP:0012535
+  - key: phenotype of
+    source: HP:0012535
+    target: MESH:D004827
+multigraph: true
+nodes:
+  - id: MESH:C100286
+    label: Drug
+    name: methsuximide
+  - id: UniProt:O43497
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1G
+  - id: GO:0007268
+    label: BiologicalProcess
+    name: Chemical synaptic transmission
+  - id: HP:0012535
+    label: PhenotypicFeature
+    name: Abnormal synaptic transmission
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Calcium ion import
+  - id: MESH:D004827
+    label: Disease
+    name: Epilepsy
+references:
+  - https://go.drugbank.com/drugs/DB05246

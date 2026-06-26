@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01121_MESH_D004827_1
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+  drug: Phenacemide
+  drug_mesh: MESH:C005396
+  drugbank: DB:DB01121
+links:
+  - key: decreases activity of
+    source: MESH:C005396
+    target: UniProt:P35498
+  - key: positively regulates
+    source: UniProt:P35498
+    target: GO:0019228
+  - key: positively correlated with
+    source: GO:0019228
+    target: HP:0001250
+  - key: manifestation of
+    source: HP:0001250
+    target: MESH:D004827
+multigraph: true
+nodes:
+  - id: MESH:C005396
+    label: Drug
+    name: Phenacemide
+  - id: UniProt:P35498
+    label: Protein
+    name: Sodium channel protein type 1 subunit alpha
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: Neuronal action potential
+  - id: HP:0001250
+    label: PhenotypicFeature
+    name: Seizure
+  - id: MESH:D004827
+    label: Disease
+    name: Epilepsy
+references:
+  - https://go.drugbank.com/drugs/DB01121#BE0000141

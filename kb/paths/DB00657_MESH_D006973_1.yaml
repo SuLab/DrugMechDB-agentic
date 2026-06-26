@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00657_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: mecamylamine
+  drug_mesh: MESH:D008464
+  drugbank: DB:DB00657
+links:
+  - key: decreases activity of
+    source: MESH:D008464
+    target: InterPro:IPR002394
+  - key: positively regulates
+    source: InterPro:IPR002394
+    target: GO:0007271
+  - key: positively correlated with
+    source: GO:0007271
+    target: GO:0006939
+  - key: positively correlated with
+    source: GO:0006939
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D008464
+    label: Drug
+    name: mecamylamine
+  - id: InterPro:IPR002394
+    label: GeneFamily
+    name: Nicotinic acetylcholine receptor
+  - id: GO:0007271
+    label: BiologicalProcess
+    name: synaptic transmission, cholinergic
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL267936/
+  - https://go.drugbank.com/drugs/DB00657

@@ -1,0 +1,75 @@
+directed: true
+graph:
+  _id: DB01023_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: felodipine
+  drug_mesh: MESH:D015736
+  drugbank: DB:DB01023
+links:
+  - key: decreases activity of
+    source: MESH:D015736
+    target: UniProt:Q13936
+  - key: decreases activity of
+    source: MESH:D015736
+    target: UniProt:Q01668
+  - key: decreases activity of
+    source: MESH:D015736
+    target: UniProt:O60840
+  - key: decreases activity of
+    source: MESH:D015736
+    target: UniProt:Q13698
+  - key: positively regulates
+    source: UniProt:Q13936
+    target: GO:0006939
+  - key: positively regulates
+    source: UniProt:Q01668
+    target: GO:0006939
+  - key: positively regulates
+    source: UniProt:O60840
+    target: GO:0006939
+  - key: positively regulates
+    source: UniProt:Q13698
+    target: GO:0006939
+  - key: positively correlated with
+    source: GO:0006939
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D015736
+    label: Drug
+    name: felodipine
+  - id: UniProt:Q13936
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1C
+  - id: UniProt:Q01668
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1D
+  - id: UniProt:O60840
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1F
+  - id: UniProt:Q13698
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1S
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1480/
+  - https://en.wikipedia.org/wiki/Felodipine#Mechanism_of_action
+  - https://go.drugbank.com/drugs/DB01023

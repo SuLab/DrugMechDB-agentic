@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB00318_MESH_D065631_1
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: codeine
+  drug_mesh: MESH:D003061
+  drugbank: DB:DB00318
+links:
+  - key: has metabolite
+    source: MESH:D003061
+    target: MESH:D009020
+  - key: increases activity of
+    source: MESH:D009020
+    target: InterPro:IPR001418
+  - key: participates in
+    source: InterPro:IPR001418
+    target: reactome:R-HSA-418594
+  - key: decreases abundance of
+    source: reactome:R-HSA-418594
+    target: MESH:D013373
+  - key: positively correlated with
+    source: MESH:D013373
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: MESH:D003061
+    label: Drug
+    name: codeine
+  - id: MESH:D009020
+    label: ChemicalSubstance
+    name: morphine
+  - id: InterPro:IPR001418
+    label: GeneFamily
+    name: Opioid receptor
+  - id: reactome:R-HSA-418594
+    label: Pathway
+    name: G alpha (i) signalling events
+  - id: MESH:D013373
+    label: ChemicalSubstance
+    name: Substance P
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB00318
+  - https://en.wikipedia.org/wiki/Codeine#Mechanism_of_action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5284371#section=Pharmacology

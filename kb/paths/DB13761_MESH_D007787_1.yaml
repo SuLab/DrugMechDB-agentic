@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB13761_MESH_D007787_1
+  disease: Lactose intolerance
+  disease_mesh: MESH:D007787
+  drug: Tilactase
+  drugbank: DB:DB13761
+links:
+  - key: increases degradation of
+    source: DB:DB13761
+    target: CHEBI:17716
+  - key: has metabolite
+    source: CHEBI:17716
+    target: CHEBI:28061
+  - key: has metabolite
+    source: CHEBI:17716
+    target: CHEBI:4167
+  - key: positively correlated with
+    source: CHEBI:28061
+    target: GO:0050892
+  - key: positively correlated with
+    source: CHEBI:4167
+    target: GO:0050892
+  - key: disrupted by
+    source: GO:0050892
+    target: MESH:D007787
+multigraph: true
+nodes:
+  - id: DB:DB13761
+    label: Drug
+    name: Tilactase
+  - id: CHEBI:17716
+    label: ChemicalSubstance
+    name: Lactose
+  - id: CHEBI:4167
+    label: ChemicalSubstance
+    name: D-glucopyranose
+  - id: CHEBI:28061
+    label: ChemicalSubstance
+    name: α-D-galactose
+  - id: GO:0050892
+    label: BiologicalProcess
+    name: intestinal absorption
+  - id: MESH:D007787
+    label: Disease
+    name: Lactose intolerance
+references:
+  - https://go.drugbank.com/drugs/DB13761#mechanism-of-action

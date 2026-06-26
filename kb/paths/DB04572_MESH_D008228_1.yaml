@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB04572_MESH_D008228_1
+  disease: Non-Hodgkin's lymphoma
+  disease_mesh: MESH:D008228
+  drug: thiotepa
+  drug_mesh: MESH:D013852
+  drugbank: DB:DB04572
+links:
+  - key: disrupts
+    source: MESH:D013852
+    target: MESH:D004247
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006260
+  - key: precedes
+    source: GO:0006260
+    target: GO:0046651
+  - key: positively correlated with
+    source: GO:0046651
+    target: MESH:D008228
+multigraph: true
+nodes:
+  - id: MESH:D013852
+    label: Drug
+    name: thiotepa
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: GO:0046651
+    label: BiologicalProcess
+    name: lymphocyte proliferation
+  - id: MESH:D008228
+    label: Disease
+    name: Non-Hodgkin's lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB04572
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL671/

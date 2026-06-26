@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB09324_MESH_D004927_1
+  disease: Infection due to Escherichia coli
+  disease_mesh: MESH:D004927
+  drug: sulbactam
+  drug_mesh: MESH:D013407
+  drugbank: DB:DB09324
+links:
+  - key: negatively regulates
+    source: MESH:D013407
+    target: InterPro:IPR012338
+  - key: positively regulates
+    source: InterPro:IPR012338
+    target: GO:0008800
+  - key: in taxon
+    source: GO:0008800
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D004927
+multigraph: true
+nodes:
+  - id: MESH:D013407
+    label: Drug
+    name: sulbactam
+  - id: InterPro:IPR012338
+    label: GeneFamily
+    name: Beta-lactamase/transpeptidase-like
+  - id: GO:0008800
+    label: MolecularActivity
+    name: beta-lactamase activity
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D004927
+    label: Disease
+    name: Infection due to Escherichia coli
+references:
+  - https://go.drugbank.com/drugs/DB09324

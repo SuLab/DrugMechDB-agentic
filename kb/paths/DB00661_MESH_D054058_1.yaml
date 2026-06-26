@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00661_MESH_D054058_1
+  disease: Acute coronary syndrome
+  disease_mesh: MESH:D054058
+  drug: verapamil
+  drug_mesh: MESH:D014700
+  drugbank: DB:DB00661
+links:
+  - key: decreases activity of
+    source: MESH:D014700
+    target: InterPro:IPR005446
+  - key: positively regulates
+    source: InterPro:IPR005446
+    target: GO:0060402
+  - key: positively correlated with
+    source: GO:0060402
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0033401
+  - key: positively correlated with
+    source: HP:0033401
+    target: MESH:D054058
+multigraph: true
+nodes:
+  - id: MESH:D014700
+    label: Drug
+    name: verapamil
+  - id: InterPro:IPR005446
+    label: GeneFamily
+    name: Voltage-dependent calcium channel, L-type, alpha-1 subunit
+  - id: GO:0060402
+    label: BiologicalProcess
+    name: calcium ion transport into cytosol
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0033401
+    label: PhenotypicFeature
+    name: Tissue ischemia
+  - id: MESH:D054058
+    label: Disease
+    name: Acute coronary syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00661#mechanism-of-action
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL6966/
+  - https://en.wikipedia.org/wiki/Verapamil#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Antiarrhythmic_agent#Class_IV_agents

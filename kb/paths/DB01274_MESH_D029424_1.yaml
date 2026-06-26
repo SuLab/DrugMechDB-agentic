@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB01274_MESH_D029424_1
+  disease: Chronic obstructive lung disease
+  disease_mesh: MESH:D029424
+  drug: arformoterol
+  drugbank: DB:DB01274
+links:
+  - key: increases activity of
+    source: DB:DB01274
+    target: UniProt:P07550
+  - key: increases activity of
+    source: UniProt:P07550
+    target: InterPro:IPR030672
+  - key: increases abundance of
+    source: InterPro:IPR030672
+    target: MESH:D000242
+  - key: negatively correlated with
+    source: MESH:D000242
+    target: GO:0006939
+  - key: occurs in
+    source: GO:0006939
+    target: UBERON:0002185
+  - key: affected by
+    source: UBERON:0002185
+    target: MESH:D029424
+multigraph: true
+nodes:
+  - id: DB:DB01274
+    label: Drug
+    name: Arformoterol
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: InterPro:IPR030672
+    label: GeneFamily
+    name: Adenylate cyclase
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: Cyclic AMP
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: Smooth muscle contraction
+  - id: UBERON:0002185
+    label: GrossAnatomicalStructure
+    name: Bronchus
+  - id: MESH:D029424
+    label: Disease
+    name: Chronic obstructive lung disease
+references:
+  - https://go.drugbank.com/drugs/DB01274

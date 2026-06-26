@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB01246_MESH_D065631_1
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: alimemazine
+  drug_mesh: MESH:D014291,MESH:C031242
+  drugbank: DB:DB01246
+links:
+  - key: negatively regulates
+    source: DB:DB01246
+    target: UniProt:P35367
+  - key: participates in
+    source: UniProt:P35367
+    target: GO:0034776
+  - key: causes
+    source: GO:0034776
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: DB:DB01246
+    label: Drug
+    name: alimemazine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: GO:0034776
+    label: BiologicalProcess
+    name: histamine response
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic Rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB01246#BE0000442

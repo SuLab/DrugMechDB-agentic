@@ -1,0 +1,76 @@
+directed: true
+graph:
+  _id: DB00997_MESH_D009101_1
+  disease: Multiple Myeloma
+  disease_mesh: MESH:D009101
+  drug: doxorubicin
+  drug_mesh: MESH:D004317
+  drugbank: DB:DB00997
+links:
+  - key: decreases activity of
+    source: MESH:D004317
+    target: UniProt:P11388
+  - key: negatively regulates
+    source: MESH:D004317
+    target: MESH:D006657
+  - key: increases abundance of
+    source: MESH:D004317
+    target: MESH:D005609
+  - key: positively correlated with
+    source: MESH:D006657
+    target: GO:0006260
+  - key: positively correlated with
+    source: UniProt:P11388
+    target: GO:0006260
+  - key: positively correlated with
+    source: GO:0006260
+    target: HP:0031377
+  - key: located in
+    source: HP:0031377
+    target: CL:0000786
+  - key: location of
+    source: CL:0000786
+    target: MESH:D009101
+  - key: positively correlated with
+    source: MESH:D005609
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D009101
+multigraph: true
+nodes:
+  - id: MESH:D004317
+    label: Drug
+    name: doxorubicin
+  - id: MESH:D006657
+    label: ChemicalSubstance
+    name: Histones
+  - id: MESH:D005609
+    label: ChemicalSubstance
+    name: Free Radicals
+  - id: UniProt:P11388
+    label: Protein
+    name: DNA topoisomerase 2-alpha
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: CL:0000786
+    label: Cell
+    name: plasma cell
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: MESH:D009101
+    label: Disease
+    name: Multiple Myeloma
+references:
+  - https://go.drugbank.com/drugs/DB00997#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Doxorubicin
+  - https://www.uniprot.org/uniprot/P11388#function
+  - https://en.wikipedia.org/wiki/Type_II_topoisomerase
+  - https://www.nature.com/articles/ncomms2921
+  - https://en.wikipedia.org/wiki/Histone
+  - https://en.wikipedia.org/wiki/Multiple_myeloma

@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB01225_MESH_D020246_1
+  disease: Venous Thrombosis
+  disease_mesh: MESH:D020246
+  drug: Enoxaparin
+  drug_mesh: MESH:D017984
+  drugbank: DB:DB01225
+links:
+  - key: molecularly interacts with
+    source: MESH:D017984
+    target: UniProt:P01008
+  - key: decreases activity of
+    source: UniProt:P01008
+    target: UniProt:P00742
+  - key: positively regulates
+    source: UniProt:P00742
+    target: GO:0007596
+  - key: positively correlated with
+    source: GO:0007596
+    target: MESH:D020246
+multigraph: true
+nodes:
+  - id: MESH:D017984
+    label: Drug
+    name: Enoxaparin
+  - id: UniProt:P01008
+    label: Protein
+    name: Antithrombin-III
+  - id: UniProt:P00742
+    label: Protein
+    name: Coagulation factor X
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: blood coagulation
+  - id: MESH:D020246
+    label: Disease
+    name: Venous Thrombosis
+references:
+  - https://go.drugbank.com/drugs/DB01225#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P01008#function
+  - https://www.uniprot.org/uniprot/P00742#function
+  - https://en.wikipedia.org/wiki/Venous_thrombosis

@@ -1,0 +1,103 @@
+directed: true
+graph:
+  _id: DB00668_MESH_D004417_1
+  disease: Dyspnea
+  disease_mesh: MESH:D004417
+  drug: Epinephrine
+  drug_mesh: MESH:D004837
+  drugbank: DB:DB00668
+links:
+  - key: increases activity of
+    source: MESH:D004837
+    target: UniProt:P35348
+  - key: increases activity of
+    source: MESH:D004837
+    target: UniProt:P35368
+  - key: decreases activity of
+    source: MESH:D004837
+    target: UniProt:P25100
+  - key: increases activity of
+    source: MESH:D004837
+    target: UniProt:P08913
+  - key: increases activity of
+    source: MESH:D004837
+    target: UniProt:P18089
+  - key: increases activity of
+    source: MESH:D004837
+    target: UniProt:P08588
+  - key: increases activity of
+    source: MESH:D004837
+    target: UniProt:P07550
+  - key: negatively regulates
+    source: UniProt:P35348
+    target: GO:0042310
+  - key: negatively regulates
+    source: UniProt:P35368
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P25100
+    target: GO:0042310
+  - key: negatively regulates
+    source: UniProt:P08913
+    target: GO:0042310
+  - key: negatively regulates
+    source: UniProt:P18089
+    target: GO:0042310
+  - key: negatively regulates
+    source: UniProt:P08588
+    target: GO:0042310
+  - key: negatively regulates
+    source: UniProt:P07550
+    target: GO:0042310
+  - key: located in
+    source: GO:0042310
+    target: UBERON:0001005
+  - key: location of
+    source: UBERON:0001005
+    target: MESH:D004417
+multigraph: true
+nodes:
+  - id: MESH:D004837
+    label: Drug
+    name: Epinephrine
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P35368
+    label: Protein
+    name: Alpha-1B adrenergic receptor
+  - id: UniProt:P25100
+    label: Protein
+    name: Alpha-1D adrenergic receptor
+  - id: UniProt:P08913
+    label: Protein
+    name: Alpha-2A adrenergic receptor
+  - id: UniProt:P18089
+    label: Protein
+    name: Alpha-2B adrenergic receptor
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: UBERON:0001005
+    label: GrossAnatomicalStructure
+    name: respiratory airway
+  - id: MESH:D004417
+    label: Disease
+    name: Dyspnea
+references:
+  - https://go.drugbank.com/drugs/DB00668#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Epinephrine_(medication)
+  - https://www.uniprot.org/uniprot/P35348#function
+  - https://www.uniprot.org/uniprot/P35368#function
+  - https://www.uniprot.org/uniprot/P25100#function
+  - https://www.uniprot.org/uniprot/P08913#function
+  - https://www.uniprot.org/uniprot/P18089#function
+  - https://www.uniprot.org/uniprot/P08588#function
+  - https://www.uniprot.org/uniprot/P07550#function
+  - https://en.wikipedia.org/wiki/Shortness_of_breath

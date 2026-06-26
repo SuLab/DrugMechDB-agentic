@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00619_MESH_D034721_1
+  disease: Systemic mast cell disease
+  disease_mesh: MESH:D034721
+  drug: imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+links:
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: UniProt:P10721
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: UniProt:P16234
+  - key: positively regulates
+    source: UniProt:P10721
+    target: GO:0008283
+  - key: positively regulates
+    source: UniProt:P16234
+    target: GO:0008283
+  - key: causes
+    source: GO:0008283
+    target: MESH:D034721
+multigraph: true
+nodes:
+  - id: MESH:D000068877
+    label: Drug
+    name: imatinib
+  - id: UniProt:P10721
+    label: Protein
+    name: c-Kit
+  - id: UniProt:P16234
+    label: Protein
+    name: Pdgf
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cellular proliferation
+  - id: MESH:D034721
+    label: Disease
+    name: Systemic mast cell disease

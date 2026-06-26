@@ -1,0 +1,54 @@
+comment: Drug has been withdrawn in Europe due to increased risk of abuse or addiction,
+  intoxication and events related to psychomotor impairment (https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1233/).
+directed: true
+graph:
+  _id: DB00395_MESH_D001416_1
+  disease: Backache
+  disease_mesh: MESH:D001416
+  drug: carisoprodol
+  drug_mesh: MESH:D002328
+  drugbank: DB:DB00395
+links:
+  - key: negatively correlated with
+    source: MESH:D002328
+    target: HP:0003552
+  - key: negatively correlated with
+    source: MESH:D002328
+    target: HP:0003326
+  - key: negatively correlated with
+    source: MESH:D002328
+    target: HP:0003394
+  - key: located in
+    source: HP:0003552
+    target: UBERON:0004479
+  - key: located in
+    source: HP:0003326
+    target: UBERON:0004479
+  - key: located in
+    source: HP:0003394
+    target: UBERON:0004479
+  - key: location of
+    source: UBERON:0004479
+    target: MESH:D001416
+multigraph: true
+nodes:
+  - id: MESH:D002328
+    label: Drug
+    name: carisoprodol
+  - id: HP:0003552
+    label: PhenotypicFeature
+    name: Muscle stiffness
+  - id: HP:0003326
+    label: PhenotypicFeature
+    name: Myalgia
+  - id: HP:0003394
+    label: PhenotypicFeature
+    name: Muscle spasm
+  - id: UBERON:0004479
+    label: GrossAnatomicalStructure
+    name: musculature of trunk
+  - id: MESH:D001416
+    label: Disease
+    name: Backache
+references:
+  - https://go.drugbank.com/drugs/DB00395#mechanism-of-action

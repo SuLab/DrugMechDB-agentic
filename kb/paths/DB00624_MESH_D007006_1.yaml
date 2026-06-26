@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00624_MESH_D007006_1
+  disease: Hypogonadotropic hypogonadism
+  disease_mesh: MESH:D007006
+  drug: Testosterone
+  drug_mesh: MESH:D013739
+  drugbank: DB:DB00624
+links:
+  - key: positively correlated with
+    source: MESH:D013739
+    target: GO:0034699
+  - key: positively correlated with
+    source: GO:0034699
+    target: MESH:D007986
+  - key: positively correlated with
+    source: MESH:D007986
+    target: GO:0005183
+  - key: negatively correlated with
+    source: GO:0005183
+    target: MESH:D007006
+multigraph: true
+nodes:
+  - id: MESH:D013739
+    label: Drug
+    name: Testosterone
+  - id: GO:0034699
+    label: BiologicalProcess
+    name: Response to luteinizing hormone
+  - id: MESH:D007986
+    label: ChemicalSubstance
+    name: Luteinizing Hormone
+  - id: GO:0005183
+    label: BiologicalProcess
+    name: Gonadotropin hormone-releasing hormone activity
+  - id: MESH:D007006
+    label: Disease
+    name: Hypogonadotropic hypogonadism
+references:
+  - https://go.drugbank.com/drugs/DB00624
+  - https://en.wikipedia.org/wiki/Hypogonadotropic_hypogonadism

@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB00825_MESH_D014010_1
+  disease: Pityriasis versicolor
+  disease_mesh: MESH:D014010
+  drug: levomenthol
+  drug_mesh: MESH:D008610
+  drugbank: DB:DB00825
+links:
+  - key: negatively regulates
+    source: MESH:D008610
+    target: GO:0040007
+  - key: in taxon
+    source: GO:0040007
+    target: taxonomy:76773
+  - key: causes
+    source: taxonomy:76773
+    target: MESH:D014010
+multigraph: true
+nodes:
+  - id: MESH:D008610
+    label: Drug
+    name: Levomenthol
+  - id: GO:0040007
+    label: BiologicalProcess
+    name: Growth
+  - id: taxonomy:76773
+    label: OrganismTaxon
+    name: Malassezia globosa
+  - id: MESH:D014010
+    label: Disease
+    name: Pityriasis versicolor
+references:
+  - https://go.drugbank.com/drugs/DB00825

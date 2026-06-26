@@ -1,0 +1,42 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB00439_MESH_D006950_1
+  disease: Mixed hyperlipidemia
+  disease_mesh: MESH:D006950
+  drug: Cerivastatin
+  drug_mesh: MESH:C086276
+  drugbank: DB:DB00439
+links:
+  - key: decreases activity of
+    source: MESH:C086276
+    target: UniProt:P04035
+  - key: positively regulates
+    source: UniProt:P04035
+    target: GO:0006695
+  - key: increases abundance of
+    source: GO:0006695
+    target: MESH:D002784
+  - key: positively correlated with
+    source: MESH:D002784
+    target: MESH:D006950
+multigraph: true
+nodes:
+  - id: MESH:C086276
+    label: Drug
+    name: Cerivastatin
+  - id: UniProt:P04035
+    label: Protein
+    name: 3-hydroxy-3-methylglutaryl-coenzyme A reductase
+  - id: GO:0006695
+    label: BiologicalProcess
+    name: Cholesterol biosynthetic process
+  - id: MESH:D002784
+    label: ChemicalSubstance
+    name: Cholesterol
+  - id: MESH:D006950
+    label: Disease
+    name: Mixed hyperlipidemia
+references:
+  - https://en.wikipedia.org/wiki/Combined_hyperlipidemia
+  - https://go.drugbank.com/drugs/DB00439

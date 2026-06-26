@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB02701_MESH_D010383_1
+  disease: Pellagra
+  disease_mesh: MESH:D010383
+  drug: nicotinamide
+  drug_mesh: MESH:D009536
+  drugbank: DB:DB02701
+links:
+  - key: correlated with
+    source: MESH:D009536
+    target: CHEBI:15940
+  - key: negatively correlated with
+    source: CHEBI:15940
+    target: HP:0100497
+  - key: positively correlated with
+    source: HP:0100497
+    target: MESH:D010383
+multigraph: true
+nodes:
+  - id: MESH:D009536
+    label: Drug
+    name: nicotinamide
+  - id: CHEBI:15940
+    label: ChemicalSubstance
+    name: nicotinic acid
+  - id: HP:0100497
+    label: PhenotypicFeature
+    name: Vitamin B3 deficiency
+  - id: MESH:D010383
+    label: Disease
+    name: Pellagra
+references:
+  - https://en.wikipedia.org/wiki/Nicotinamide
+  - https://en.wikipedia.org/wiki/Pellagra#Treatment

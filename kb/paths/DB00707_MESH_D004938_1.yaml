@@ -1,0 +1,36 @@
+comment: Please note Porfimer sodium is a photosensitizing agent used in combination
+  with a specific type of light in so called photodynamic therapy
+directed: true
+graph:
+  _id: DB00707_MESH_D004938_1
+  disease: Malignant tumor of esophagus
+  disease_mesh: MESH:D004938
+  drug: Porfimer sodium
+  drug_mesh: MESH:D017323
+  drugbank: DB:DB00707
+links:
+  - key: positively regulates
+    source: MESH:D017323
+    target: GO:0006979
+  - key: positively correlated with
+    source: GO:0006979
+    target: GO:0008219
+  - key: negatively correlated with
+    source: GO:0008219
+    target: MESH:D004938
+multigraph: true
+nodes:
+  - id: MESH:D017323
+    label: Drug
+    name: Porfimer sodium
+  - id: GO:0006979
+    label: BiologicalProcess
+    name: Response to oxidative stress
+  - id: GO:0008219
+    label: BiologicalProcess
+    name: Cell death
+  - id: MESH:D004938
+    label: Disease
+    name: Malignant tumor of esophagus
+references:
+  - https://go.drugbank.com/drugs/DB00707

@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00879_MESH_D015658_1
+  disease: Human immunodeficiency virus infection
+  disease_mesh: MESH:D015658
+  drug: emtricitabine
+  drug_mesh: MESH:D000068679
+  drugbank: DB:DB00879
+links:
+  - key: decreases activity of
+    source: MESH:D000068679
+    target: UniProt:Q72547
+  - key: positively regulates
+    source: UniProt:Q72547
+    target: GO:0003964
+  - key: positively correlated with
+    source: GO:0003964
+    target: GO:0019079
+  - key: in taxon
+    source: GO:0019079
+    target: taxonomy:11676
+  - key: causes
+    source: taxonomy:11676
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:D000068679
+    label: Drug
+    name: emtricitabine
+  - id: UniProt:Q72547
+    label: Protein
+    name: HIV-1 reverse transcriptase
+  - id: GO:0003964
+    label: MolecularActivity
+    name: RNA-directed DNA polymerase activity
+  - id: GO:0019079
+    label: BiologicalProcess
+    name: viral genome replication
+  - id: taxonomy:11676
+    label: OrganismTaxon
+    name: Human immunodeficiency virus 1
+  - id: MESH:D015658
+    label: Disease
+    name: Human immunodeficiency virus infection
+references:
+  - https://go.drugbank.com/drugs/DB00879#BE0004136

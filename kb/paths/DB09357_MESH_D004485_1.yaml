@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB09357_MESH_D004485_1
+  disease: Eczema
+  disease_mesh: MESH:D004485
+  drug: dexpanthenol
+  drug_mesh: MESH:C007288
+  drugbank: DB:DB09357
+links:
+  - key: negatively regulates
+    source: MESH:C007288
+    target: GO:0006954
+  - key: positively regulates
+    source: MESH:C007288
+    target: GO:0061436
+  - key: positively regulates
+    source: GO:0006954
+    target: MESH:D004485
+  - key: negatively correlated with
+    source: GO:0061436
+    target: MESH:D004485
+multigraph: true
+nodes:
+  - id: MESH:C007288
+    label: Drug
+    name: dexpanthenol
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: GO:0061436
+    label: BiologicalProcess
+    name: establishment of skin barrier
+  - id: MESH:D004485
+    label: Disease
+    name: Eczema
+references:
+  - https://go.drugbank.com/drugs/DB09357#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Panthenol
+  - https://pubmed.ncbi.nlm.nih.gov/19753737/
+  - https://pubmed.ncbi.nlm.nih.gov/12113650/
+  - https://en.wikipedia.org/wiki/Dermatitis

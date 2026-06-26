@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00623_MESH_D011618_1
+  disease: Psychotic disorder
+  disease_mesh: MESH:D011618
+  drug: fluphenazine decanoate
+  drug_mesh: MESH:C011825
+  drugbank: DB:DB00623
+links:
+  - key: decreases activity of
+    source: MESH:C011825
+    target: UniProt:P14416
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: GO:0061527
+  - key: located in
+    source: GO:0061527
+    target: UBERON:0001017
+  - key: correlated with
+    source: UBERON:0001017
+    target: InterPro:IPR022423
+  - key: correlated with
+    source: InterPro:IPR022423
+    target: HP:0000708
+  - key: manifestation of
+    source: HP:0000708
+    target: MESH:D011618
+multigraph: true
+nodes:
+  - id: MESH:C011825
+    label: Drug
+    name: fluphenazine decanoate
+  - id: UniProt:P14416
+    label: Protein
+    name: dopamine D2 receptor
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: dopamine secretion, neurotransmission
+  - id: UBERON:0001017
+    label: GrossAnatomicalStructure
+    name: central nervous system
+  - id: InterPro:IPR022423
+    label: GeneFamily
+    name: Neurohypophysial hormone
+  - id: HP:0000708
+    label: PhenotypicFeature
+    name: Behavioral abnormality
+  - id: MESH:D011618
+    label: Disease
+    name: Psychotic disorder
+references:
+  - https://go.drugbank.com/drugs/DB00623
+  - https://pubchem.ncbi.nlm.nih.gov/compound/3372
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL726/
+  - https://en.wikipedia.org/wiki/Fluphenazine

@@ -1,0 +1,100 @@
+comment: The active metabolite is an agonist of the presynaptic α2-adrenergic receptor
+  in the CNS. These are inhibitory receptors that when activated cause inhibition
+  of neurotransmitter release, which inhibits vasoconstriction.
+directed: true
+graph:
+  _id: DB00968_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: methyldopa
+  drug_mesh: MESH:D008750
+  drugbank: DB:DB00968
+links:
+  - key: has metabolite
+    source: MESH:D008750
+    target: CHEBI:141146
+  - key: increases activity of
+    source: CHEBI:141146
+    target: UniProt:P08913
+  - key: increases activity of
+    source: CHEBI:141146
+    target: UniProt:P18089
+  - key: increases activity of
+    source: CHEBI:141146
+    target: UniProt:P18825
+  - key: negatively regulates
+    source: UniProt:P08913
+    target: GO:0048242
+  - key: negatively regulates
+    source: UniProt:P18089
+    target: GO:0048242
+  - key: negatively regulates
+    source: UniProt:P18825
+    target: GO:0048242
+  - key: negatively regulates
+    source: UniProt:P08913
+    target: GO:0048243
+  - key: negatively regulates
+    source: UniProt:P18089
+    target: GO:0048243
+  - key: negatively regulates
+    source: UniProt:P18825
+    target: GO:0048243
+  - key: positively correlated with
+    source: GO:0048242
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0048243
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D008750
+    label: Drug
+    name: methyldopa
+  - alt_names:
+      - levonordefrin
+      - Corbadrine
+      - Nordefrin
+    id: CHEBI:141146
+    label: ChemicalSubstance
+    name: α-methylnoradrenaline
+  - id: UniProt:P08913
+    label: Protein
+    name: Alpha-2A adrenergic receptor
+  - id: UniProt:P18089
+    label: Protein
+    name: Alpha-2B adrenergic receptor
+  - id: UniProt:P18825
+    label: Protein
+    name: Alpha-2C adrenergic receptor
+  - id: GO:0048242
+    label: BiologicalProcess
+    name: epinephrine secretion
+  - id: GO:0048243
+    label: BiologicalProcess
+    name: norepinephrine secretion
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00968
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL459/
+  - https://en.wikipedia.org/wiki/Methyldopa#Mechanism_of_action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/38853
+  - https://en.wikipedia.org/wiki/Corbadrine
+  - https://meshb.nlm.nih.gov/record/ui?ui=D008771
+  - https://en.wikipedia.org/wiki/Antihypertensive_drug#Alpha-2_adrenergic_receptor_agonists
+  - https://en.wikipedia.org/wiki/Adrenaline#Mechanism_of_action
+  - https://www.rxlist.com/aldomet-drug.htm#clinpharm

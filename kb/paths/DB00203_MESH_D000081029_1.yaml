@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00203_MESH_D000081029_1
+  disease: Pulmonary arterial hypertension
+  disease_mesh: MESH:D000081029
+  drug: Sildenafil
+  drug_mesh: MESH:D000068677
+  drugbank: DB:DB00203
+links:
+  - key: decreases activity of
+    source: MESH:D000068677
+    target: UniProt:O76074
+  - key: decreases abundance of
+    source: UniProt:O76074
+    target: CHEBI:16356
+  - key: positively regulates
+    source: CHEBI:16356
+    target: GO:0044557
+  - key: positively correlated with
+    source: GO:0044557
+    target: GO:0042311
+  - key: negatively regulates
+    source: GO:0042311
+    target: GO:0008217
+  - key: positively correlated with
+    source: GO:0008217
+    target: MESH:D000081029
+multigraph: true
+nodes:
+  - id: MESH:D000068677
+    label: Drug
+    name: Sildenafil
+  - id: UniProt:O76074
+    label: Protein
+    name: cGMP-specific 3',5'-cyclic phosphodiesterase
+  - id: CHEBI:16356
+    label: ChemicalSubstance
+    name: 3',5'-cyclic GMP
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: Relaxation of smooth muscle
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: Vasodilation
+  - id: GO:0008217
+    label: BiologicalProcess
+    name: Blood pressure
+  - id: MESH:D000081029
+    label: Disease
+    name: Pulmonary arterial hypertension
+references:
+  - https://go.drugbank.com/drugs/DB00203#BE0000182

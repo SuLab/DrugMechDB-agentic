@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB00376_MESH_D020734_1
+  disease: Parkinsonism
+  disease_mesh: MESH:D020734
+  drug: trihexyphenidyl
+  drug_mesh: MESH:D014282
+  drugbank: DB:DB00376
+links:
+  - key: negatively regulates
+    source: MESH:D014282
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0007274
+  - key: precedes
+    source: GO:0007274
+    target: HP:0100022
+  - key: manifestation of
+    source: HP:0100022
+    target: MESH:D020734
+multigraph: true
+nodes:
+  - id: MESH:D014282
+    label: Drug
+    name: trihexyphenidyl
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: GO:0007274
+    label: BiologicalProcess
+    name: neuromuscular synaptic transmission
+  - id: HP:0100022
+    label: PhenotypicFeature
+    name: Abnormality of movement
+  - id: MESH:D020734
+    label: Disease
+    name: Parkinsonism
+references:
+  - https://go.drugbank.com/drugs/DB00376#BE0000092
+  - https://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1490
+  - https://en.wikipedia.org/wiki/Trihexyphenidyl#Pharmacology

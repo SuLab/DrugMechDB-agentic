@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB01095_MESH_D001161_1
+  disease: Arteriosclerotic vascular disease
+  disease_mesh: MESH:D001161
+  drug: fluvastatin
+  drug_mesh: MESH:C065180
+  drugbank: DB:DB01095
+links:
+  - key: decreases activity of
+    source: MESH:C065180
+    target: UniProt:P04035
+  - key: positively regulates
+    source: UniProt:P04035
+    target: GO:0006695
+  - key: increases abundance of
+    source: GO:0006695
+    target: CHEBI:16113
+  - key: positively correlated with
+    source: CHEBI:16113
+    target: HP:0002621
+  - key: manifestation of
+    source: HP:0002621
+    target: MESH:D001161
+multigraph: true
+nodes:
+  - id: MESH:C065180
+    label: Drug
+    name: fluvastatin
+  - id: UniProt:P04035
+    label: Protein
+    name: 3-hydroxy-3-methylglutaryl-coenzyme A reductase
+  - id: GO:0006695
+    label: BiologicalProcess
+    name: cholesterol biosynthetic process
+  - id: CHEBI:16113
+    label: ChemicalSubstance
+    name: cholesterol
+  - id: HP:0002621
+    label: PhenotypicFeature
+    name: Atherosclerosis
+  - id: MESH:D001161
+    label: Disease
+    name: Arteriosclerotic vascular disease
+references:
+  - https://go.drugbank.com/drugs/DB01095
+  - https://en.wikipedia.org/wiki/Fluvastatin#Mechanism_of_action

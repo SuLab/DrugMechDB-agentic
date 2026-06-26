@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00956_MESH_D065631_1
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: hydrocodone
+  drug_mesh: MESH:D006853
+  drugbank: DB:DB00956
+links:
+  - key: positively regulates
+    source: MESH:D006853
+    target: InterPro:IPR001418
+  - key: negatively regulates
+    source: InterPro:IPR001418
+    target: GO:0007600
+  - key: positively correlated with
+    source: GO:0007600
+    target: MESH:D020078
+  - key: positively correlated with
+    source: MESH:D020078
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: MESH:D006853
+    label: Drug
+    name: hydrocodone
+  - id: InterPro:IPR001418
+    label: GeneFamily
+    name: Opioid receptor
+  - id: GO:0007600
+    label: BiologicalProcess
+    name: sensory perception
+  - id: MESH:D020078
+    label: PhenotypicFeature
+    name: Neurogenic Inflammation
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB00956
+  - https://en.wikipedia.org/wiki/Hydrocodone#Pharmacodynamics

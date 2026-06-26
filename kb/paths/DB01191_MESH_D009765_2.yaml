@@ -1,0 +1,53 @@
+comment: FDA has withdrawn the approval for marketing this drug as per its cardiovascular
+  side-effects.
+directed: true
+graph:
+  _id: DB01191_MESH_D009765_2
+  disease: Obesity
+  disease_mesh: MESH:D009765
+  drug: dexfenfluramine
+  drug_mesh: MESH:D020372
+  drugbank: DB:DB01191
+links:
+  - key: positively regulates
+    source: MESH:D020372
+    target: UniProt:P28335
+  - key: participates in
+    source: UniProt:P28335
+    target: reactome:R-HSA-416476
+  - key: positively regulates
+    source: reactome:R-HSA-416476
+    target: GO:0007631
+  - key: positively regulates
+    source: reactome:R-HSA-416476
+    target: GO:0032098
+  - key: positively correlated with
+    source: GO:0007631
+    target: MESH:D009765
+  - key: negatively correlated with
+    source: GO:0032098
+    target: MESH:D009765
+multigraph: true
+nodes:
+  - id: MESH:D020372
+    label: Drug
+    name: dexfenfluramine
+  - id: UniProt:P28335
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2C
+  - id: reactome:R-HSA-416476
+    label: Pathway
+    name: G alpha (q) signalling events
+  - id: GO:0007631
+    label: BiologicalProcess
+    name: feeding behavior
+  - id: GO:0032098
+    label: BiologicalProcess
+    name: regulation of appetite
+  - id: MESH:D009765
+    label: Disease
+    name: Obesity
+references:
+  - https://go.drugbank.com/drugs/DB01191#mechanism-of-action
+  - https://en.wikipedia.org/wiki/5-HT2C_receptor_agonist#Obesity
+  - https://en.wikipedia.org/wiki/5-HT2C_receptor_agonist#Mechanism_of_action

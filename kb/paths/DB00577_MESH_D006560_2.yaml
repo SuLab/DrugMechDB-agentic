@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00577_MESH_D006560_2
+  disease: Herpes labialis
+  disease_mesh: MESH:D006560
+  drug: valaciclovir
+  drug_mesh: MESH:C084555
+  drugbank: DB:DB00577
+links:
+  - key: has metabolite
+    source: MESH:C084555
+    target: MESH:D000212
+  - key: negatively regulates
+    source: MESH:D000212
+    target: Pfam:PF11590
+  - key: positively regulates
+    source: Pfam:PF11590
+    target: GO:0039693
+  - key: in taxon
+    source: GO:0039693
+    target: taxonomy:10298
+  - key: causes
+    source: taxonomy:10298
+    target: MESH:D006560
+multigraph: true
+nodes:
+  - id: MESH:C084555
+    label: Drug
+    name: valaciclovir
+  - alt_names:
+      - Aciclovir
+    id: MESH:D000212
+    label: Drug
+    name: Acyclovir
+  - id: Pfam:PF11590
+    label: GeneFamily
+    name: DNA polymerase catalytic subunit Pol
+  - id: GO:0039693
+    label: BiologicalProcess
+    name: viral DNA genome replication
+  - id: taxonomy:10298
+    label: OrganismTaxon
+    name: Human alphaherpesvirus 1
+  - id: MESH:D006560
+    label: Disease
+    name: Herpes labialis
+references:
+  - https://go.drugbank.com/drugs/DB00577

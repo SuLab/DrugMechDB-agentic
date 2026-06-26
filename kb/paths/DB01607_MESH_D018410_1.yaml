@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB01607_MESH_D018410_1
+  disease: Pneumonia, Bacterial
+  disease_mesh: MESH:D018410
+  drug: ticarcillin
+  drug_mesh: MESH:D013982
+  drugbank: DB:DB01607
+links:
+  - key: negatively regulates
+    source: MESH:D013982
+    target: UniProt:Q8DNB6
+  - key: positively regulates
+    source: UniProt:Q8DNB6
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D018410
+multigraph: true
+nodes:
+  - id: MESH:D013982
+    label: Drug
+    name: ticarcillin
+  - id: UniProt:Q8DNB6
+    label: Protein
+    name: Penicillin-binding protein 2a
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - alt_names:
+      - Bacterial pneumonia
+    id: MESH:D018410
+    label: Disease
+    name: Pneumonia, Bacterial
+references:
+  - https://go.drugbank.com/drugs/DB01607

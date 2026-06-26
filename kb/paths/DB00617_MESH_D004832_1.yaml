@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB00617_MESH_D004832_1
+  disease: Absence seizure
+  disease_mesh: MESH:D004832
+  drug: paramethadione
+  drug_mesh: MESH:C005731
+  drugbank: DB:DB00617
+links:
+  - key: decreases activity of
+    source: MESH:C005731
+    target: UniProt:O43497
+  - key: decreases activity of
+    source: MESH:C005731
+    target: UniProt:O95180
+  - key: decreases activity of
+    source: MESH:C005731
+    target: UniProt:Q9P0X4
+  - key: positively regulates
+    source: UniProt:O43497
+    target: GO:0005245
+  - key: positively regulates
+    source: UniProt:O95180
+    target: GO:0005245
+  - key: positively regulates
+    source: UniProt:Q9P0X4
+    target: GO:0005245
+  - key: positively regulates
+    source: GO:0005245
+    target: GO:0019228
+  - key: positively regulates
+    source: GO:0019228
+    target: GO:0023041
+  - key: positively correlated with
+    source: GO:0023041
+    target: MESH:D004832
+multigraph: true
+nodes:
+  - id: MESH:C005731
+    label: Drug
+    name: Paramethadione
+  - id: UniProt:O43497
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1G
+  - id: UniProt:Q9P0X4
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1I
+  - id: UniProt:O95180
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1H
+  - id: GO:0005245
+    label: MolecularActivity
+    name: Voltage-gated calcium channel activity
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: Neuronal action potential
+  - id: GO:0023041
+    label: BiologicalProcess
+    name: Neuronal signal transduction
+  - id: MESH:D004832
+    label: Disease
+    name: Absence seizure
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1100/
+  - https://go.drugbank.com/drugs/DB00617

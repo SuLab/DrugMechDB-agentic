@@ -1,0 +1,42 @@
+comment: Dilators could open up airways and help to reduce cough (https://www.mayoclinic.org/diseases-conditions/chronic-cough/diagnosis-treatment/drc-20351580).
+directed: true
+graph:
+  _id: DB01240_MESH_D003371_1
+  disease: Cough
+  disease_mesh: MESH:D003371
+  drug: epoprostenol
+  drug_mesh: MESH:D011464
+  drugbank: DB:DB01240
+links:
+  - key: positively correlated with
+    source: MESH:D011464
+    target: UniProt:P43119
+  - key: positively regulates
+    source: UniProt:P43119
+    target: GO:0016501
+  - key: positively regulates
+    source: GO:0016501
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: MESH:D003371
+multigraph: true
+nodes:
+  - id: MESH:D011464
+    label: Drug
+    name: epoprostenol
+  - id: UniProt:P43119
+    label: Protein
+    name: Prostacyclin receptor
+  - id: GO:0016501
+    label: MolecularActivity
+    name: prostacyclin receptor activity
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: MESH:D003371
+    label: Disease
+    name: Cough
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1139/
+  - https://go.drugbank.com/drugs/DB01240#BE0000475

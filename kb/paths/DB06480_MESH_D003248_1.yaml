@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB06480_MESH_D003248_1
+  disease: Constipation
+  disease_mesh: MESH:D003248
+  drug: prucalopride
+  drug_mesh: MESH:C406662
+  drugbank: DB:DB06480
+links:
+  - key: positively regulates
+    source: MESH:C406662
+    target: UniProt:Q13639
+  - key: positively regulates
+    source: UniProt:Q13639
+    target: GO:0061526
+  - key: positively correlated with
+    source: GO:0061526
+    target: GO:0120054
+  - key: negatively correlated with
+    source: GO:0120054
+    target: MESH:D003248
+multigraph: true
+nodes:
+  - id: MESH:C406662
+    label: Drug
+    name: prucalopride
+  - id: UniProt:Q13639
+    label: Protein
+    name: 5-hydroxytryptamine receptor 4
+  - id: GO:0061526
+    label: BiologicalProcess
+    name: acetylcholine secretion
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: intestinal motility
+  - id: MESH:D003248
+    label: Disease
+    name: Constipation
+references:
+  - https://go.drugbank.com/drugs/DB06480#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Prucalopride#Mechanism_of_action

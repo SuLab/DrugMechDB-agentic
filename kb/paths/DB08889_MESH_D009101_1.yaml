@@ -1,0 +1,92 @@
+directed: true
+graph:
+  _id: DB08889_MESH_D009101_1
+  disease: Multiple myeloma
+  disease_mesh: MESH:D009101
+  drug: carfilzomib
+  drug_mesh: MESH:C524865, MESH:C519125
+  drugbank: DB:DB08889
+links:
+  - key: decreases activity of
+    source: DB:DB08889
+    target: UniProt:P28074
+  - key: decreases activity of
+    source: DB:DB08889
+    target: UniProt:P28062
+  - key: decreases activity of
+    source: DB:DB08889
+    target: UniProt:P20618
+  - key: decreases activity of
+    source: DB:DB08889
+    target: UniProt:P28065
+  - key: decreases activity of
+    source: DB:DB08889
+    target: UniProt:P49721
+  - key: decreases activity of
+    source: DB:DB08889
+    target: UniProt:P40306
+  - key: located in
+    source: UniProt:P28074
+    target: GO:0005839
+  - key: located in
+    source: UniProt:P28062
+    target: GO:0005839
+  - key: located in
+    source: UniProt:P20618
+    target: GO:0005839
+  - key: located in
+    source: UniProt:P28065
+    target: GO:0005839
+  - key: located in
+    source: UniProt:P49721
+    target: GO:0005839
+  - key: located in
+    source: UniProt:P40306
+    target: GO:0005839
+  - key: positively correlated with
+    source: GO:0005839
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: CL:0001063
+  - key: positively correlated with
+    source: CL:0001063
+    target: MESH:D009101
+multigraph: true
+nodes:
+  - id: DB:DB08889
+    label: Drug
+    name: carfilzomib
+  - id: UniProt:P28074
+    label: Protein
+    name: Proteasome subunit beta type-5
+  - id: UniProt:P28062
+    label: Protein
+    name: Proteasome subunit beta type-8
+  - id: UniProt:P20618
+    label: Protein
+    name: Proteasome subunit beta type-1
+  - id: UniProt:P28065
+    label: Protein
+    name: Proteasome subunit beta type-9
+  - id: UniProt:P49721
+    label: Protein
+    name: Proteasome subunit beta type-2
+  - id: UniProt:P40306
+    label: Protein
+    name: Proteasome subunit beta type-10
+  - id: GO:0005839
+    label: CellularComponent
+    name: proteosome core complex
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: CL:0001063
+    label: Cell
+    name: tumor cell
+  - id: MESH:D009101
+    label: Disease
+    name: Multiple myeloma
+references:
+  - https://go.drugbank.com/drugs/DB08889
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4849338/

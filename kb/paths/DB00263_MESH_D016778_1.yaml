@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00263_MESH_D016778_1
+  disease: Falciparum malaria
+  disease_mesh: MESH:D016778
+  drug: sulfafurazole
+  drug_mesh: MESH:D013444
+  drugbank: DB:DB00263
+links:
+  - key: negatively regulates
+    source: MESH:D013444
+    target: GO:0046656
+  - key: positively correlated with
+    source: GO:0046656
+    target: GO:0032774
+  - key: in taxon
+    source: GO:0032774
+    target: taxonomy:5833
+  - key: causes
+    source: taxonomy:5833
+    target: MESH:D016778
+multigraph: true
+nodes:
+  - id: MESH:D013444
+    label: Drug
+    name: sulfafurazole
+  - id: GO:0046656
+    label: BiologicalProcess
+    name: folic acid biosynthetic process
+  - id: GO:0032774
+    label: BiologicalProcess
+    name: RNA biosynthetic process
+  - id: taxonomy:5833
+    label: OrganismTaxon
+    name: Plasmodium falciparum
+  - id: MESH:D016778
+    label: Disease
+    name: Falciparum malaria
+references:
+  - https://pharmacycode.com/Sulfafurazole.html
+  - https://www.msdvetmanual.com/pharmacology/antibacterial-agents/sulfonamides-and-sulfonamide-combinations
+  - https://www.drugfuture.com/mt/sulfafurazole-diolamine.pdf
+  - https://www.ebi.ac.uk/chebi/searchId.do?chebiId=9343

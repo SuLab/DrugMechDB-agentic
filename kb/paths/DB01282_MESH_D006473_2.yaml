@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB01282_MESH_D006473_2
+  disease: postpartum hemorrhage
+  disease_mesh: MESH:D006473
+  drug: carbetocin
+  drug_mesh: MESH:C020731
+  drugbank: DB:DB01282
+links:
+  - key: increases activity of
+    source: MESH:C020731
+    target: UniProt:P30559
+  - key: positively regulates
+    source: UniProt:P30559
+    target: GO:0070474
+  - key: prevents
+    source: GO:0070474
+    target: MESH:D006473
+multigraph: true
+nodes:
+  - id: MESH:C020731
+    label: Drug
+    name: Carbetocin
+  - id: UniProt:P30559
+    label: Protein
+    name: oxytocin receptors
+  - id: GO:0070474
+    label: BiologicalProcess
+    name: uterine smooth muscle relaxation
+  - id: MESH:D006473
+    label: Disease
+    name: postpartum hemorrhage
+references:
+  - https://go.drugbank.com/drugs/DB01282#mechanismofaction

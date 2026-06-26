@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB01214_MESH_D009798_1
+  disease: Ocular hypertension
+  disease_mesh: MESH:D009798
+  drug: metipranolol
+  drug_mesh: MESH:D014290
+  drugbank: DB:DB01214
+links:
+  - key: decreases activity of
+    source: MESH:D014290
+    target: UniProt:P08588
+  - key: positively regulates
+    source: UniProt:P08588
+    target: UBERON:0001796
+  - key: decreases activity of
+    source: MESH:D014290
+    target: UniProt:P07550
+  - key: positively regulates
+    source: UniProt:P07550
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: MESH:D009798
+multigraph: true
+nodes:
+  - id: MESH:D014290
+    label: Drug
+    name: Metipranolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: Aqueous humor of eyeball
+  - id: MESH:D009798
+    label: Disease
+    name: Ocular hypertension
+references:
+  - https://go.drugbank.com/drugs/DB01214

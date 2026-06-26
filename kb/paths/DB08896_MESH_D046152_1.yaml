@@ -1,0 +1,57 @@
+directed: true
+graph:
+  _id: DB08896_MESH_D046152_1
+  disease: Gastrointestinal stromal tumor
+  disease_mesh: MESH:D046152
+  drug: regorafenib
+  drug_mesh: MESH:C559147
+  drugbank: DB:DB08896
+links:
+  - key: decreases activity of
+    source: MESH:C559147
+    target: UniProt:P10721
+  - key: decreases activity of
+    source: MESH:C559147
+    target: UniProt:P16234
+  - key: participates in
+    source: UniProt:P10721
+    target: reactome:R-HSA-9670439
+  - key: participates in
+    source: UniProt:P16234
+    target: reactome:R-HSA-9673767
+  - key: contributes to
+    source: reactome:R-HSA-9670439
+    target: GO:0008284
+  - key: contributes to
+    source: reactome:R-HSA-9673767
+    target: GO:0008284
+  - key: causes
+    source: GO:0008284
+    target: MESH:D046152
+multigraph: true
+nodes:
+  - id: MESH:C559147
+    label: Drug
+    name: regorafenib
+  - id: UniProt:P10721
+    label: Protein
+    name: Mast/stem cell growth factor receptor Kit
+  - id: UniProt:P16234
+    label: Protein
+    name: Platelet-derived growth factor receptor alpha
+  - id: reactome:R-HSA-9670439
+    label: Pathway
+    name: Signaling by phosphorylated juxtamembrane, extracellular and kinase domain
+      KIT mutants
+  - id: reactome:R-HSA-9673767
+    label: Pathway
+    name: Signaling by PDGFRA transmembrane, juxtamembrane and kinase domain mutants
+  - id: GO:0008284
+    label: BiologicalProcess
+    name: positive regulation of cell population proliferation
+  - id: MESH:D046152
+    label: Disease
+    name: Gastrointestinal stromal tumor
+references:
+  - https://go.drugbank.com/drugs/DB08896#BE0000029
+  - https://pubmed.ncbi.nlm.nih.gov/31308690/

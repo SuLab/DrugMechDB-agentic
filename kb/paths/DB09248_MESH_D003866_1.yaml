@@ -1,0 +1,45 @@
+comment: Withdrawn due to hepatotoxicity (https://en.wikipedia.org/wiki/Mebanazine).
+directed: true
+graph:
+  _id: DB09248_MESH_D003866_1
+  disease: Depressive disorder
+  disease_mesh: MESH:D003866
+  drug: mebanazine
+  drug_mesh: MESH:C004343
+  drugbank: DB:DB09248
+links:
+  - key: negatively regulates
+    source: MESH:C004343
+    target: UniProt:P21397
+  - key: negatively regulates
+    source: MESH:C004343
+    target: UniProt:P27338
+  - key: positively regulates
+    source: UniProt:P21397
+    target: GO:0042135
+  - key: positively regulates
+    source: UniProt:P27338
+    target: GO:0042135
+  - key: positively correlated with
+    source: GO:0042135
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:C004343
+    label: Drug
+    name: mebanazine
+  - id: UniProt:P21397
+    label: Protein
+    name: Amine oxidase [flavin-containing] A
+  - id: UniProt:P27338
+    label: Protein
+    name: Amine oxidase [flavin-containing] B
+  - id: GO:0042135
+    label: BiologicalProcess
+    name: neurotransmitter catabolic process
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive disorder
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1909283/
+  - https://en.wikipedia.org/wiki/Monoamine_oxidase_inhibitor#Mechanism_of_action

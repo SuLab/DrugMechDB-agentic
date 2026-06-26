@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB01281_MESH_D001172_1
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: abatacept
+  drug_mesh: MESH:D000069594
+  drugbank: DB:DB01281
+links:
+  - key: decreases activity of
+    source: MESH:D000069594
+    target: UniProt:P33681
+  - key: decreases activity of
+    source: MESH:D000069594
+    target: UniProt:P42081
+  - key: increases activity of
+    source: UniProt:P33681
+    target: UniProt:P10747
+  - key: increases activity of
+    source: UniProt:P42081
+    target: UniProt:P10747
+  - key: participates in
+    source: UniProt:P10747
+    target: GO:0032743
+  - key: participates in
+    source: UniProt:P10747
+    target: GO:0042102
+  - key: participates in
+    source: UniProt:P10747
+    target: GO:0042110
+  - key: positively correlated with
+    source: GO:0032743
+    target: MESH:D001172
+  - key: positively correlated with
+    source: GO:0042110
+    target: MESH:D001172
+  - key: positively correlated with
+    source: GO:0042102
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:D000069594
+    label: Drug
+    name: Abatacept
+  - id: UniProt:P33681
+    label: Protein
+    name: T-lymphocyte activation antigen CD80
+  - id: UniProt:P42081
+    label: Protein
+    name: T-lymphocyte activation antigen CD86
+  - id: UniProt:P10747
+    label: Protein
+    name: T-cell-specific surface glycoprotein CD28
+  - id: GO:0032743
+    label: BiologicalProcess
+    name: Positive regulation of interleukin-2 production
+  - id: GO:0042102
+    label: BiologicalProcess
+    name: Positive regulation of T cell proliferation
+  - id: GO:0042110
+    label: BiologicalProcess
+    name: T cell activation
+  - id: MESH:D001172
+    label: Drug
+    name: Rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB01281#BE0000847
+  - https://en.wikipedia.org/wiki/Abatacept

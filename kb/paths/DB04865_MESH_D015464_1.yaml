@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB04865_MESH_D015464_1
+  disease: Chronic myeloid leukemia
+  disease_mesh: MESH:D015464
+  drug: omacetaxine mepesuccinate
+  drug_mesh: MESH:C001652
+  drugbank: DB:DB04865
+links:
+  - key: decreases activity of
+    source: MESH:C001652
+    target: UniProt:P39023
+  - key: participates in
+    source: UniProt:P39023
+    target: GO:0006412
+  - key: increases abundance of
+    source: GO:0006412
+    target: UniProt:A9UF02
+  - key: causes
+    source: UniProt:A9UF02
+    target: MESH:D015464
+multigraph: true
+nodes:
+  - id: MESH:C001652
+    label: Drug
+    name: omacetaxine mepesuccinate
+  - id: UniProt:P39023
+    label: Protein
+    name: 60S ribosomal protein L3
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: UniProt:A9UF02
+    label: Protein
+    name: BCR/ABL protein-tyrosine kinase
+  - id: MESH:D015464
+    label: Disease
+    name: Chronic myeloid leukemia
+references:
+  - https://go.drugbank.com/drugs/DB04865#BE0003833
+  - https://pubmed.ncbi.nlm.nih.gov/24501394/

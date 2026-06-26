@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB04572_MESH_D001749_1
+  disease: Malignant tumor of urinary bladder
+  disease_mesh: MESH:D001749
+  drug: thiotepa
+  drug_mesh: MESH:D013852
+  drugbank: DB:DB04572
+links:
+  - key: disrupts
+    source: MESH:D013852
+    target: MESH:D004247
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006260
+  - key: precedes
+    source: GO:0006260
+    target: GO:0050673
+  - key: positively correlated with
+    source: GO:0050673
+    target: MESH:D001749
+multigraph: true
+nodes:
+  - id: MESH:D013852
+    label: Drug
+    name: thiotepa
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: GO:0050673
+    label: BiologicalProcess
+    name: epithelial cell proliferation
+  - id: MESH:D001749
+    label: Disease
+    name: Malignant tumor of urinary bladder
+references:
+  - https://go.drugbank.com/drugs/DB04572
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL671/

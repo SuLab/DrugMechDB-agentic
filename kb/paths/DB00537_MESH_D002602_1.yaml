@@ -1,0 +1,54 @@
+comment: Ciprofloxacin is a second generation fluoroquinolone that is used to treat
+  a wide variety of bacterial susceptible infections.
+directed: true
+graph:
+  _id: DB00537_MESH_D002602_1
+  disease: Chancroid
+  disease_mesh: MESH:D002602
+  drug: ciprofloxacin
+  drug_mesh: MESH:D002939
+  drugbank: DB:DB00537
+links:
+  - key: decreases activity of
+    source: MESH:D002939
+    target: UniProt:Q7VKW4
+  - key: decreases activity of
+    source: MESH:D002939
+    target: UniProt:Q7VL92
+  - key: positively regulates
+    source: UniProt:Q7VKW4
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:Q7VL92
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:730
+  - key: causes
+    source: taxonomy:730
+    target: MESH:D002602
+multigraph: true
+nodes:
+  - id: MESH:D002939
+    label: Drug
+    name: ciprofloxacin
+  - id: UniProt:Q7VKW4
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:Q7VL92
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:730
+    label: OrganismTaxon
+    name: Haemophilus ducreyi
+  - id: MESH:D002602
+    label: Disease
+    name: Chancroid
+references:
+  - https://go.drugbank.com/drugs/DB00537#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q7VKW4#function
+  - https://www.uniprot.org/uniprot/Q7VL92#function
+  - https://en.wikipedia.org/wiki/Chancroid

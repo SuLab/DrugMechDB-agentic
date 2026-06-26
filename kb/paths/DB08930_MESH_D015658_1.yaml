@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB08930_MESH_D015658_1
+  disease: Human immunodeficiency virus infection
+  disease_mesh: MESH:D015658
+  drug: dolutegravir
+  drug_mesh: MESH:C562325
+  drugbank: DB:DB08930
+links:
+  - key: decreases activity of
+    source: MESH:C562325
+    target: UniProt:Q7ZJM1
+  - key: positively regulates
+    source: UniProt:Q7ZJM1
+    target: GO:0044825
+  - key: positively correlated with
+    source: GO:0044825
+    target: GO:0019079
+  - key: in taxon
+    source: GO:0019079
+    target: taxonomy:11676
+  - key: causes
+    source: taxonomy:11676
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:C562325
+    label: Drug
+    name: dolutegravir
+  - id: UniProt:Q7ZJM1
+    label: Protein
+    name: Integrase
+  - id: GO:0044825
+    label: MolecularActivity
+    name: retroviral strand transfer activity
+  - id: GO:0019079
+    label: BiologicalProcess
+    name: viral genome replication
+  - id: taxonomy:11676
+    label: OrganismTaxon
+    name: Human immunodeficiency virus 1
+  - id: MESH:D015658
+    label: Disease
+    name: Human immunodeficiency virus infection
+references:
+  - https://go.drugbank.com/drugs/DB08930
+comment: The current target for this drug is a protein that is yet unreviewed

@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB12498_MESH_D016411_1
+  disease: Peripheral T-cell lymphoma
+  disease_mesh: MESH:D016411
+  drug: mogamulizumab
+  drug_mesh: MESH:C549035
+  drugbank: DB:DB12498
+links:
+  - key: negatively regulates
+    source: MESH:C549035
+    target: UniProt:P51679
+  - key: positively regulates
+    source: UniProt:P51679
+    target: GO:0038152
+  - key: positively regulates
+    source: GO:0038152
+    target: GO:0042098
+  - key: positively correlated with
+    source: GO:0042098
+    target: MESH:D016411
+multigraph: true
+nodes:
+  - id: MESH:C549035
+    label: Drug
+    name: mogamulizumab
+  - id: UniProt:P51679
+    label: Protein
+    name: C-C chemokine receptor type 4
+  - id: GO:0038152
+    label: BiologicalProcess
+    name: C-C chemokine receptor CCR4 signaling pathway
+  - id: GO:0042098
+    label: BiologicalProcess
+    name: T cell proliferation
+  - id: MESH:D016411
+    label: Disease
+    name: Peripheral T-cell lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB12498#BE0009787

@@ -1,0 +1,55 @@
+comment: The disease is denoted as Postencephalitic parkinsonism in the original file.
+  This disease is believed to be caused by a viral infection, leading to clinical
+  parkinsonism (https://en.wikipedia.org/wiki/Postencephalitic_parkinsonism) and anti-Parkinson
+  drugs may be helpful in treating the symptoms (https://en.wikipedia.org/wiki/Encephalitis_lethargica).
+  For example, muscarinic antagonists can allow dopamine levels to rebalance, which
+  can help relieve some Parkinsonian symptoms e.g. involuntary movements. Anticholinergic
+  drugs may also be prescribed to improve bladder dysfunction (https://pubmed.ncbi.nlm.nih.gov/20370804/).
+directed: true
+graph:
+  _id: DB00810_MESH_D010301_1
+  disease: Parkinson Disease, Postencephalitic
+  disease_mesh: MESH:D010301
+  drug: biperiden
+  drug_mesh: MESH:D001712
+  drugbank: DB:DB00810
+links:
+  - key: negatively regulates
+    source: MESH:D001712
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0007271
+  - key: positively correlated with
+    source: GO:0007271
+    target: HP:0100022
+  - key: positively correlated with
+    source: HP:0100022
+    target: HP:0001300
+  - key: manifestation of
+    source: HP:0001300
+    target: MESH:D010301
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C036432
+    id: MESH:D001712
+    label: Drug
+    name: biperiden
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: GO:0007271
+    label: BiologicalProcess
+    name: synaptic transmission, cholinergic
+  - id: HP:0100022
+    label: PhenotypicFeature
+    name: Abnormality of movement
+  - id: HP:0001300
+    label: PhenotypicFeature
+    name: Parkinsonism
+  - id: MESH:D010301
+    label: Disease
+    name: Parkinson Disease, Postencephalitic
+references:
+  - https://go.drugbank.com/drugs/DB00810#mechanism-of-action

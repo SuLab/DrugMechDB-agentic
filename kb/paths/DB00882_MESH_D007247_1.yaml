@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00882_MESH_D007247_1
+  disease: Female infertility
+  disease_mesh: MESH:D007247
+  drug: clomifene
+  drug_mesh: MESH:D002996
+  drugbank: DB:DB00882
+links:
+  - key: regulates
+    source: MESH:D002996
+    target: UniProt:P03372
+  - key: molecularly interacts with
+    source: UniProt:P03372
+    target: MESH:D004967
+  - key: increases abundance of
+    source: MESH:D002996
+    target: MESH:D005640
+  - key: increases abundance of
+    source: MESH:D002996
+    target: MESH:D007986
+  - key: positively regulates
+    source: MESH:D005640
+    target: GO:0030728
+  - key: positively regulates
+    source: MESH:D007986
+    target: GO:0030728
+  - key: positively regulates
+    source: MESH:D004967
+    target: GO:0030728
+  - key: negatively correlated with
+    source: GO:0030728
+    target: MESH:D007247
+multigraph: true
+nodes:
+  - id: MESH:D002996
+    label: Drug
+    name: Clomifene
+  - id: UniProt:P03372
+    label: Protein
+    name: Estrogen receptor
+  - id: MESH:D005640
+    label: ChemicalSubstance
+    name: Follicle Stimulating Hormone
+  - id: MESH:D007986
+    label: ChemicalSubstance
+    name: Luteinizing Hormone
+  - id: GO:0030728
+    label: BiologicalProcess
+    name: Ovulation
+  - id: MESH:D004967
+    label: ChemicalSubstance
+    name: Estrogens
+  - id: MESH:D007247
+    label: Disease
+    name: Female infertility
+references:
+  - https://go.drugbank.com/drugs/DB00882#BE0000123

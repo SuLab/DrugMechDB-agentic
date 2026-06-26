@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB06715_MESH_D003139_1
+  disease: Common cold
+  disease_mesh: MESH:D003139
+  drug: potassium iodide
+  drug_mesh: MESH:D011193
+  drugbank: DB:DB06715
+links:
+  - key: subclass of
+    source: MESH:D011193
+    target: CHEBI:77035
+  - key: negatively correlated with
+    source: CHEBI:77035
+    target: HP:0012735
+  - key: increases activity of
+    source: CHEBI:77035
+    target: GO:0120197
+  - key: negatively correlated with
+    source: GO:0120197
+    target: HP:0012735
+  - key: manifestation of
+    source: HP:0012735
+    target: MESH:D003139
+multigraph: true
+nodes:
+  - id: MESH:D011193
+    label: Drug
+    name: potassium iodide
+  - id: CHEBI:77035
+    label: ChemicalSubstance
+    name: expectorant
+  - id: GO:0120197
+    label: BiologicalProcess
+    name: mucociliary clearance
+  - id: HP:0012735
+    label: PhenotypicFeature
+    name: Cough
+  - id: MESH:D003139
+    label: Disease
+    name: Common cold
+references:
+  - https://en.wikipedia.org/wiki/Mucoactive_agent
+  - https://go.drugbank.com/drugs/DB06715#drug-categories

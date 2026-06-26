@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB01626_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: pargyline
+  drug_mesh: MESH:D010293
+  drugbank: DB:DB01626
+links:
+  - key: negatively regulates
+    source: MESH:D010293
+    target: UniProt:P27338
+  - key: positively regulates
+    source: UniProt:P27338
+    target: GO:0042402
+  - key: decreases abundance of
+    source: GO:0042402
+    target: MESH:D012701
+  - key: decreases abundance of
+    source: GO:0042402
+    target: MESH:D009638
+  - key: positively correlated with
+    source: MESH:D012701
+    target: GO:0099153
+  - key: positively correlated with
+    source: MESH:D009638
+    target: GO:0099155
+  - key: negatively correlated with
+    source: GO:0099153
+    target: MESH:D006973
+  - key: negatively correlated with
+    source: GO:0099155
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D010293
+    label: Drug
+    name: pargyline
+  - id: UniProt:P27338
+    label: Protein
+    name: Amine oxidase [flavin-containing] B
+  - id: GO:0042402
+    label: BiologicalProcess
+    name: cellular biogenic amine catabolic process
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: GO:0099153
+    label: BiologicalProcess
+    name: synaptic transmission, serotonergic
+  - id: GO:0099155
+    label: BiologicalProcess
+    name: synaptic transmission, noradrenergic
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB01626#BE0002196
+  - https://pubmed.ncbi.nlm.nih.gov/8489485/

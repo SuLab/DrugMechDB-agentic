@@ -1,0 +1,88 @@
+directed: true
+graph:
+  _id: DB00747_MESH_D015863_1
+  disease: Iridocyclitis
+  disease_mesh: MESH:D015863
+  drug: scopolamine
+  drug_mesh: MESH:D012601
+  drugbank: DB:DB00747
+links:
+  - key: decreases activity of
+    source: MESH:D012601
+    target: UniProt:P11229
+  - key: decreases activity of
+    source: MESH:D012601
+    target: UniProt:P08172
+  - key: decreases activity of
+    source: MESH:D012601
+    target: UniProt:P20309
+  - key: decreases activity of
+    source: MESH:D012601
+    target: UniProt:P08173
+  - key: decreases activity of
+    source: MESH:D012601
+    target: UniProt:P08912
+  - key: participates in
+    source: UniProt:P11229
+    target: GO:1905144
+  - key: participates in
+    source: UniProt:P08172
+    target: GO:1905144
+  - key: participates in
+    source: UniProt:P20309
+    target: GO:1905144
+  - key: participates in
+    source: UniProt:P08173
+    target: GO:1905144
+  - key: participates in
+    source: UniProt:P08912
+    target: GO:1905144
+  - key: positively regulates
+    source: GO:1905144
+    target: GO:0006939
+  - key: positively correlated with
+    source: GO:0006939
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D010146
+  - key: manifestation of
+    source: MESH:D010146
+    target: MESH:D015863
+multigraph: true
+nodes:
+  - id: MESH:D012601
+    label: Drug
+    name: Scopolamine
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: UniProt:P08172
+    label: Protein
+    name: Muscarinic acetylcholine receptor M2
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: UniProt:P08173
+    label: Protein
+    name: Muscarinic acetylcholine receptor M4
+  - id: UniProt:P08912
+    label: Protein
+    name: Muscarinic acetylcholine receptor M5
+  - id: GO:1905144
+    label: BiologicalProcess
+    name: Response to acetylcholine
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: Smooth muscle contraction
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammation
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+  - id: MESH:D015863
+    label: Disease
+    name: Iridocyclitis
+references:
+  - https://go.drugbank.com/drugs/DB00747

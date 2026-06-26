@@ -1,0 +1,60 @@
+directed: true
+graph:
+  _id: DB01624_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: zuclopenthixol
+  drug_mesh: MESH:D003006
+  drugbank: DB:DB01624
+links:
+  - key: decreases activity of
+    source: MESH:D003006
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:D003006
+    target: UniProt:P21918
+  - key: decreases activity of
+    source: MESH:D003006
+    target: UniProt:P21728
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P21918
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P21728
+    target: MESH:D004298
+  - key: positively correlated with
+    source: MESH:D004298
+    target: GO:0061527
+  - key: affected by
+    source: GO:0061527
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:D003006
+    label: Drug
+    name: zuclopenthixol
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P21918
+    label: Protein
+    name: D(1B) dopamine receptor
+  - id: UniProt:P21728
+    label: Protein
+    name: D(1A) dopamine receptor
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5566
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4032934/
+  - https://go.drugbank.com/drugs/DB01624#BE0000020

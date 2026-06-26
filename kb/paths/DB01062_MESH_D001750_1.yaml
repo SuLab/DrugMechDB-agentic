@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB01062_MESH_D001750_1
+  disease: Neurogenic bladder
+  disease_mesh: MESH:D001750
+  drug: oxybutynin
+  drug_mesh: MESH:C005419
+  drugbank: DB:DB01062
+links:
+  - key: decreases activity of
+    source: MESH:C005419
+    target: UniProt:P20309
+  - key: decreases activity of
+    source: MESH:C005419
+    target: UniProt:P08172
+  - key: decreases activity of
+    source: MESH:C005419
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:P20309
+    target: GO:0014832
+  - key: positively regulates
+    source: UniProt:P08172
+    target: GO:0014832
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0014832
+  - key: positively regulates
+    source: GO:0014832
+    target: GO:0060073
+  - key: positively correlated with
+    source: GO:0060073
+    target: MESH:D001750
+multigraph: true
+nodes:
+  - id: MESH:C005419
+    label: Drug
+    name: Oxybutynin
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: UniProt:P08172
+    label: Protein
+    name: Muscarinic acetylcholine receptor M2
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: GO:0014832
+    label: BiologicalProcess
+    name: Urinary bladder smooth muscle contraction
+  - id: GO:0060073
+    label: BiologicalProcess
+    name: Urination
+  - id: MESH:D001750
+    label: Disease
+    name: Neurogenic bladder
+references:
+  - https://go.drugbank.com/drugs/DB01062#BE0000045
+  - https://en.wikipedia.org/wiki/Neurogenic_bladder_dysfunction

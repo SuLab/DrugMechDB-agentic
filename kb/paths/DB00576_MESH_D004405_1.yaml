@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00576_MESH_D004405_1
+  disease: Shigellosis
+  disease_mesh: MESH:D004405
+  drug: sulfamethizole
+  drug_mesh: MESH:D013419
+  drugbank: DB:DB00576
+links:
+  - key: decreases activity of
+    source: MESH:D013419
+    target: Pfam:PF00809
+  - key: positively regulates
+    source: Pfam:PF00809
+    target: GO:0046654
+  - key: positively regulates
+    source: GO:0046654
+    target: GO:0009113
+  - key: positively regulates
+    source: GO:0009113
+    target: GO:0071897
+  - key: part of
+    source: GO:0071897
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:620
+  - key: causes
+    source: taxonomy:620
+    target: MESH:D004405
+multigraph: true
+nodes:
+  - id: MESH:D013419
+    label: Drug
+    name: Sulfamethizole
+  - id: Pfam:PF00809
+    label: GeneFamily
+    name: Dihydropteroate synthase
+  - id: GO:0046654
+    label: BiologicalProcess
+    name: Tetrahydrofolate biosynthetic process
+  - id: GO:0009113
+    label: BiologicalProcess
+    name: Purine nucleobase biosynthetic process
+  - id: GO:0071897
+    label: BiologicalProcess
+    name: DNA biosynthetic process
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: Cell division
+  - id: taxonomy:620
+    label: OrganismTaxon
+    name: Shigella
+  - id: MESH:D004405
+    label: Disease
+    name: Shigellosis
+references:
+  - https://go.drugbank.com/drugs/DB00576#BE0000803

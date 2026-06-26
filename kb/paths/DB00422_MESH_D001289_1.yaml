@@ -1,0 +1,53 @@
+comment: This drug may be able to bind to UniProt:P08908 but its pharmacological activity
+  (agonism vs. antagonism) is not known (https://go.drugbank.com/drugs/DB00422#BE0000291).
+directed: true
+graph:
+  _id: DB00422_MESH_D001289_1
+  disease: Attention deficit hyperactivity disorder
+  disease_mesh: MESH:D001289
+  drug: methylphenidate
+  drug_mesh: MESH:D008774
+  drugbank: DB:DB00422
+links:
+  - key: decreases activity of
+    source: MESH:D008774
+    target: UniProt:Q01959
+  - key: decreases activity of
+    source: MESH:D008774
+    target: UniProt:P23975
+  - key: positively regulates
+    source: UniProt:Q01959
+    target: GO:0090494
+  - key: positively regulates
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: positively correlated with
+    source: GO:0051620
+    target: MESH:D001289
+  - key: positively correlated with
+    source: GO:0090494
+    target: MESH:D001289
+multigraph: true
+nodes:
+  - id: MESH:D008774
+    label: Drug
+    name: methylphenidate
+  - id: UniProt:Q01959
+    label: Protein
+    name: Sodium-dependent dopamine transporter
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0090494
+    label: BiologicalProcess
+    name: dopamine uptake
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: norepinephrine uptake
+  - id: MESH:D001289
+    label: Disease
+    name: Attention deficit hyperactivity disorder
+references:
+  - https://go.drugbank.com/drugs/DB00422#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Methylphenidate#Pharmacodynamics
+  - https://www.targetvalidation.org/summary?drug=CHEMBL796

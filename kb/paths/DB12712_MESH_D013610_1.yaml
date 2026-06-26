@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB12712_MESH_D013610_1
+  disease: Tachyarrhythmia
+  disease_mesh: MESH:D013610
+  drug: Pilsicainide
+  drug_mesh: MESH:C042288
+  drugbank: DB:DB12712
+links:
+  - key: decreases activity of
+    source: MESH:C042288
+    target: UniProt:Q14524
+  - key: positively regulates
+    source: UniProt:Q14524
+    target: GO:0051899
+  - key: positively regulates
+    source: GO:0051899
+    target: GO:0060048
+  - key: positively regulates
+    source: GO:0060048
+    target: GO:0060047
+  - key: positively correlated with
+    source: GO:0060047
+    target: GO:0010460
+  - key: positively correlated with
+    source: GO:0010460
+    target: MESH:D013610
+multigraph: true
+nodes:
+  - id: MESH:C042288
+    label: Drug
+    name: Pilsicainide
+  - id: UniProt:Q14524
+    label: Protein
+    name: Sodium channel protein type 5 subunit alpha
+  - id: GO:0051899
+    label: BiologicalProcess
+    name: Membrane depolarization
+  - id: GO:0060048
+    label: BiologicalProcess
+    name: Cardiac muscle contraction
+  - id: GO:0060047
+    label: BiologicalProcess
+    name: Heart contraction
+  - id: GO:0010460
+    label: BiologicalProcess
+    name: Positive regulation of heart rate
+  - id: MESH:D013610
+    label: Disease
+    name: Tachyarrhythmia
+references:
+  - https://en.wikipedia.org/wiki/Pilsicainide
+  - https://en.wikipedia.org/wiki/Tachycardia#Causes
+  - https://en.wikipedia.org/wiki/Nav1.5
+  - https://en.wikipedia.org/wiki/Sodium_channel_blocker#Class_Ic_agents

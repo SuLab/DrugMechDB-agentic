@@ -1,0 +1,50 @@
+comment: Increased cytosolic calcium lowers heart rate by lengthening the cardiac
+  action potential and improves contractility by increasing the availability of calcium
+  for sarcomeric excitation–contraction coupling.
+directed: true
+graph:
+  _id: DB00390_MESH_D001281_1
+  disease: Atrial fibrillation
+  disease_mesh: MESH:D001281
+  drug: digoxin
+  drug_mesh: MESH:D004077
+  drugbank: DB:DB00390
+links:
+  - key: negatively regulates
+    source: MESH:D004077
+    target: UniProt:P05023
+  - key: positively regulates
+    source: UniProt:P05023
+    target: GO:0006814
+  - key: negatively correlated with
+    source: GO:0006814
+    target: GO:1902656
+  - key: negatively correlated with
+    source: GO:1902656
+    target: GO:0060047
+  - key: correlated with
+    source: GO:0060047
+    target: MESH:D001281
+multigraph: true
+nodes:
+  - id: MESH:D004077
+    label: Drug
+    name: digoxin
+  - id: UniProt:P05023
+    label: Protein
+    name: Sodium/potassium-transporting ATPase subunit alpha-1
+  - id: GO:0006814
+    label: BiologicalProcess
+    name: sodium ion transport
+  - id: GO:1902656
+    label: BiologicalProcess
+    name: calcium ion import into cytosol
+  - id: GO:0060047
+    label: BiologicalProcess
+    name: heart contraction
+  - id: MESH:D001281
+    label: Disease
+    name: Atrial fibrillation
+references:
+  - https://go.drugbank.com/drugs/DB00390
+  - https://pubmed.ncbi.nlm.nih.gov/25925484/

@@ -1,0 +1,108 @@
+directed: true
+graph:
+  _id: DB11613_MESH_D019698_1
+  disease: Chronic hepatitis C
+  disease_mesh: MESH:D019698
+  drug: velpatasvir
+  drug_mesh: MESH:C000604171
+  drugbank: DB:DB11613
+links:
+  - key: negatively regulates
+    source: MESH:C000604171
+    target: UniProt:Q5L478
+  - key: molecularly interacts with
+    source: UniProt:Q5L478
+    target: MESH:C000618292
+  - key: increases abundance of
+    source: MESH:C000618292
+    target: MESH:C037178
+  - key: positively correlated with
+    source: MESH:C037178
+    target: MESH:D002784
+  - key: located in
+    source: MESH:D002784
+    target: MESH:D000086969
+  - key: location of
+    source: MESH:D000086969
+    target: GO:0039694
+  - key: positively regulates
+    source: UniProt:Q5L478
+    target: GO:0003968
+  - key: positively regulates
+    source: GO:0003968
+    target: GO:0039694
+  - key: positively regulates
+    source: UniProt:Q5L478
+    target: GO:0004197
+  - key: positively regulates
+    source: UniProt:Q5L478
+    target: GO:0004252
+  - key: positively correlated with
+    source: GO:0004197
+    target: MESH:D014779
+  - key: positively correlated with
+    source: GO:0004252
+    target: MESH:D014779
+  - key: positively correlated with
+    source: MESH:D014779
+    target: MESH:D019065
+  - key: in taxon
+    source: GO:0039694
+    target: taxonomy:11103
+  - key: in taxon
+    source: MESH:D019065
+    target: taxonomy:11103
+  - key: causes
+    source: taxonomy:11103
+    target: MESH:D019698
+multigraph: true
+nodes:
+  - id: MESH:C000604171
+    label: Drug
+    name: velpatasvir
+  - id: UniProt:Q5L478
+    label: Protein
+    name: Nonstructural protein 5A
+  - id: GO:0003968
+    label: MolecularActivity
+    name: RNA-directed 5'-3' RNA polymerase activity
+  - id: GO:0039694
+    label: BiologicalProcess
+    name: viral RNA genome replication
+  - id: MESH:C000618292
+    label: Protein
+    name: PI4KIIIalpha protein, human
+  - id: MESH:C037178
+    label: ChemicalSubstance
+    name: phosphatidylinositol 4-phosphate
+  - id: MESH:D002784
+    label: ChemicalSubstance
+    name: Cholesterol
+  - id: MESH:D000086969
+    label: CellularComponent
+    name: Viral Replication Compartments
+  - id: GO:0004197
+    label: MolecularActivity
+    name: cysteine-type endopeptidase activity
+  - id: GO:0004252
+    label: MolecularActivity
+    name: serine-type endopeptidase activity
+  - id: MESH:D014779
+    label: BiologicalProcess
+    name: Virus Replication
+  - id: MESH:D019065
+    label: BiologicalProcess
+    name: Virus Assembly
+  - id: taxonomy:11103
+    label: OrganismTaxon
+    name: Hepacivirus C
+  - id: MESH:D019698
+    label: Disease
+    name: Chronic hepatitis C
+references:
+  - https://go.drugbank.com/drugs/DB11613
+  - https://en.wikipedia.org/wiki/Velpatasvir#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Discovery_and_development_of_NS5A_inhibitors#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Discovery_and_development_of_NS5A_inhibitors#Function
+  - https://pubmed.ncbi.nlm.nih.gov/25384189/
+  - https://www.ncbi.nlm.nih.gov/books/NBK1623/

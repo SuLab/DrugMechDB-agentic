@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB01032_MESH_D015210_1
+  disease: Articular gout
+  disease_mesh: MESH:D015210
+  drug: probenecid
+  drug_mesh: MESH:D011339
+  drugbank: DB:DB01032
+links:
+  - key: decreases activity of
+    source: MESH:D011339
+    target: UniProt:Q4U2R8
+  - key: decreases activity of
+    source: MESH:D011339
+    target: UniProt:Q9NSA0
+  - key: decreases activity of
+    source: MESH:D011339
+    target: UniProt:Q8TCC7
+  - key: positively regulates
+    source: UniProt:Q4U2R8
+    target: GO:0015711
+  - key: positively regulates
+    source: UniProt:Q9NSA0
+    target: GO:0015711
+  - key: positively regulates
+    source: UniProt:Q8TCC7
+    target: GO:0015711
+  - key: increases abundance of
+    source: GO:0015711
+    target: MESH:D014527
+  - key: contributes to
+    source: MESH:D014527
+    target: MESH:D015210
+multigraph: true
+nodes:
+  - id: MESH:D011339
+    label: Drug
+    name: Probenecid
+  - id: UniProt:Q4U2R8
+    label: Protein
+    name: Solute carrier family 22 member 6
+  - id: UniProt:Q9NSA0
+    label: Protein
+    name: Solute carrier family 22 member 11
+  - id: UniProt:Q8TCC7
+    label: Protein
+    name: Solute carrier family 22 member 8
+  - id: GO:0015711
+    label: BiologicalProcess
+    name: Organic anion transport
+  - id: MESH:D014527
+    label: ChemicalSubstance
+    name: Uric Acid
+  - id: MESH:D015210
+    label: Disease
+    name: Articular gout
+references:
+  - https://go.drugbank.com/drugs/DB01032#BE0000879

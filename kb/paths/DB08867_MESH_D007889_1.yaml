@@ -1,0 +1,37 @@
+directed: true
+graph:
+  _id: DB08867_MESH_D007889_1
+  disease: Uterine leiomyoma
+  disease_mesh: MESH:D007889
+  drug: ulipristal
+  drug_mesh: MESH:C555622,MESH:C094854
+  drugbank: DB:DB08867
+links:
+  - key: positively regulates
+    source: DB:DB08867
+    target: GO:0006915
+  - key: positively regulates
+    source: DB:DB08867
+    target: GO:0008285
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D007889
+  - key: negatively correlated with
+    source: GO:0008285
+    target: MESH:D007889
+multigraph: true
+nodes:
+  - id: DB:DB08867
+    label: Drug
+    name: ulipristal
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: GO:0008285
+    label: BiologicalProcess
+    name: down regulation of cell proliferation
+  - id: MESH:D007889
+    label: Disease
+    name: Uterine leiomyoma
+references:
+  - https://go.drugbank.com/drugs/DB08867

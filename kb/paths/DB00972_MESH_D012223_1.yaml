@@ -1,0 +1,89 @@
+directed: true
+graph:
+  _id: DB00972_MESH_D012223_1
+  disease: Vasomotor rhinitis
+  disease_mesh: MESH:D012223
+  drug: azelastine
+  drug_mesh: MESH:C020976
+  drugbank: DB:DB00972
+links:
+  - key: decreases activity of
+    source: MESH:C020976
+    target: UniProt:P35367
+  - key: decreases activity of
+    source: MESH:C020976
+    target: UniProt:P25021
+  - key: decreases activity of
+    source: MESH:C020976
+    target: UniProt:P04054
+  - key: decreases activity of
+    source: MESH:C020976
+    target: UniProt:Q16873
+  - key: positively regulates
+    source: UniProt:P35367
+    target: GO:0001821
+  - key: positively regulates
+    source: UniProt:P25021
+    target: GO:0001821
+  - key: positively correlated with
+    source: GO:0001821
+    target: GO:0006954
+  - key: participates in
+    source: UniProt:P04054
+    target: GO:0019370
+  - key: participates in
+    source: UniProt:Q16873
+    target: GO:0019370
+  - key: participates in
+    source: GO:0019370
+    target: GO:0043303
+  - key: decreases abundance of
+    source: MESH:C020976
+    target: CHEBI:25029
+  - key: correlated with
+    source: CHEBI:25029
+    target: GO:0043303
+  - key: correlated with
+    source: GO:0043303
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D012223
+multigraph: true
+nodes:
+  - id: MESH:C020976
+    label: Drug
+    name: azelastine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: UniProt:P25021
+    label: Protein
+    name: Histamine H2 receptor
+  - id: UniProt:P04054
+    label: Protein
+    name: Phospholipase A2
+  - id: UniProt:Q16873
+    label: Protein
+    name: Leukotriene C4 synthase
+  - id: GO:0001821
+    label: BiologicalProcess
+    name: histamine secretion
+  - id: GO:0019370
+    label: BiologicalProcess
+    name: leukotriene biosynthetic process
+  - id: CHEBI:25029
+    label: ChemicalSubstance
+    name: leukotriene
+  - id: GO:0043303
+    label: BiologicalProcess
+    name: Mast cell degranulation
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D012223
+    label: Disease
+    name: Vasomotor rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB00972#BE0000442
+  - https://en.wikipedia.org/wiki/Azelastine

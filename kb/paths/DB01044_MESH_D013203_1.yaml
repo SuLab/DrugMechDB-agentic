@@ -1,0 +1,67 @@
+directed: true
+graph:
+  _id: DB01044_MESH_D013203_1
+  disease: Infection due to Staphylococcus aureus
+  disease_mesh: MESH:D013203
+  drug: Gatifloxacin
+  drug_mesh: MESH:C078049
+  drugbank: DB:DB01044
+links:
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:Q2FYS4
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:Q2FYS5
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:Q2FKQ0
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:P66936
+  - key: participates in
+    source: UniProt:Q2FYS4
+    target: GO:0006260
+  - key: participates in
+    source: UniProt:Q2FYS5
+    target: GO:0006260
+  - key: participates in
+    source: UniProt:Q2FKQ0
+    target: GO:0006260
+  - key: participates in
+    source: UniProt:P66936
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D013203
+multigraph: true
+nodes:
+  - id: MESH:C078049
+    label: Drug
+    name: Gatifloxacin
+  - id: UniProt:Q2FYS4
+    label: Protein
+    name: DNA topoisomerase 4 subunit A (Staphylococcus aureus)
+  - id: UniProt:Q2FYS5
+    label: Protein
+    name: DNA topoisomerase 4 subunit B (Staphylococcus aureus)
+  - id: UniProt:Q2FKQ0
+    label: Protein
+    name: DNA gyrase subunit A (Staphylococcus aureus)
+  - id: UniProt:P66936
+    label: Protein
+    name: DNA gyrase subunit B (Staphylococcus aureus)
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D013203
+    label: Disease
+    name: Infection due to Staphylococcus aureus
+references:
+  - https://go.drugbank.com/drugs/DB01044

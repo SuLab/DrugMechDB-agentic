@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB12026_MESH_D019698_1
+  disease: Chronic hepatitis C
+  disease_mesh: MESH:D019698
+  drug: voxilaprevir
+  drug_mesh: MESH:C000619503
+  drugbank: DB:DB12026
+links:
+  - key: decreases activity of
+    source: MESH:C000619503
+    target: UniProt:B0B3C9
+  - key: positively regulates
+    source: UniProt:B0B3C9
+    target: GO:0046718
+  - key: in taxon
+    source: GO:0046718
+    target: taxonomy:11103
+  - key: causes
+    source: taxonomy:11103
+    target: MESH:D019698
+multigraph: true
+nodes:
+  - id: MESH:C000619503
+    label: Drug
+    name: voxilaprevir
+  - id: UniProt:B0B3C9
+    label: Protein
+    name: Genome polyprotein
+  - id: GO:0046718
+    label: BiologicalProcess
+    name: viral entry into host cell
+  - id: taxonomy:11103
+    label: OrganismTaxon
+    name: Hepacivirus C
+  - id: MESH:D019698
+    label: Disease
+    name: Chronic hepatitis C
+references:
+  - https://go.drugbank.com/drugs/DB12026

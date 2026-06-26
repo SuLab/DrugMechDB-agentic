@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB11614_MESH_D014581_1
+  disease: Urticaria
+  disease_mesh: MESH:D014581
+  drug: rupatadine
+  drug_mesh: MESH:C103639
+  drugbank: DB:DB11614
+links:
+  - key: decreases activity of
+    source: MESH:C103639
+    target: UniProt:P35367
+  - key: decreases activity of
+    source: MESH:C103639
+    target: UniProt:P25105
+  - key: positively correlated with
+    source: UniProt:P35367
+    target: GO:0043117
+  - key: positively correlated with
+    source: UniProt:P25105
+    target: GO:0043312
+  - key: participates in
+    source: GO:0043117
+    target: GO:0006954
+  - key: participates in
+    source: GO:0043312
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D014581
+multigraph: true
+nodes:
+  - id: MESH:C103639
+    label: Drug
+    name: rupatadine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: UniProt:P25105
+    label: Protein
+    name: Platelet-activating factor receptor
+  - id: GO:0043117
+    label: BiologicalProcess
+    name: positive regulation of vascular permeability
+  - id: GO:0043312
+    label: BiologicalProcess
+    name: neutrophil degranulation
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D014581
+    label: Disease
+    name: Urticaria
+references:
+  - https://go.drugbank.com/drugs/DB11614#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Rupatadine#Mechanism_of_action

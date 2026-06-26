@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB00758_MESH_D020766_1
+  disease: Intracranial Embolism
+  disease_mesh: MESH:D020766
+  drug: Clopidogrel
+  drug_mesh: MESH:D000077144
+  drugbank: DB:DB00758
+links:
+  - key: decreases activity of
+    source: MESH:D000077144
+    target: UniProt:Q9H244
+  - key: positively regulates
+    source: UniProt:Q9H244
+    target: GO:0070527
+  - key: contributes to
+    source: GO:0070527
+    target: MESH:D020766
+multigraph: true
+nodes:
+  - id: MESH:D000077144
+    label: Drug
+    name: Clopidogrel
+  - id: UniProt:Q9H244
+    label: Protein
+    name: P2Y purinoceptor 12
+  - id: GO:0070527
+    label: BiologicalProcess
+    name: platelet aggregation
+  - id: MESH:D020766
+    label: Disease
+    name: Intracranial Embolism
+references:
+  - https://go.drugbank.com/drugs/DB00758#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q9H244#function
+  - https://en.wikipedia.org/wiki/Embolism

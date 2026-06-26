@@ -1,0 +1,38 @@
+comment: Gimeracil is available in combination with oteracil and tegafur within the
+  commercially available product "Teysuno". Gimeracil's main role within Teysuno is
+  to prevent the breakdown of Fluorouracil (5-FU), which helps to maintin high enough
+  concentrations for sustained effect against cancer cells.
+directed: true
+graph:
+  _id: DB09257_MESH_D013274_1
+  disease: Malignant tumor of stomach
+  disease_mesh: MESH:D013274
+  drug: gimeracil
+  drug_mesh: MESH:C104201
+  drugbank: DB:DB09257
+links:
+  - key: decreases activity of
+    source: MESH:C104201
+    target: UniProt:Q12882
+  - key: decreases abundance of
+    source: UniProt:Q12882
+    target: MESH:D005472
+  - key: treats
+    source: MESH:D005472
+    target: MESH:D013274
+multigraph: true
+nodes:
+  - id: MESH:C104201
+    label: Drug
+    name: Gimeracil
+  - id: UniProt:Q12882
+    label: Protein
+    name: Dihydropyrimidine dehydrogenase
+  - id: MESH:D005472
+    label: Drug
+    name: Fluorouracil
+  - id: MESH:D013274
+    label: Disease
+    name: Malignant tumor of stomach
+references:
+  - https://go.drugbank.com/drugs/DB09257#BE0000960

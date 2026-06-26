@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00502_MESH_D005879_1
+  disease: Gilles de la Tourette's syndrome
+  disease_mesh: MESH:D005879
+  drug: haloperidol
+  drug_mesh: MESH:D006220
+  drugbank: DB:DB00502
+links:
+  - key: negatively regulates
+    source: MESH:D006220
+    target: UniProt:P14416
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: GO:0061527
+  - key: positively correlated with
+    source: GO:0061527
+    target: HP:0100033
+  - key: manifestation of
+    source: HP:0100033
+    target: MESH:D005879
+multigraph: true
+nodes:
+  - id: MESH:D006220
+    label: Drug
+    name: haloperidol
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: dopamine secretion, neurotransmission
+  - id: HP:0100033
+    label: PhenotypicFeature
+    name: Tics
+  - id: MESH:D005879
+    label: Disease
+    name: Gilles de la Tourette's syndrome
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/3559#section=Mechanism-of-Action

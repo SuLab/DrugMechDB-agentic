@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB06768_MESH_D011538_1
+  disease: Pruritus Ani
+  disease_mesh: MESH:D011538
+  drug: Ammonium lactate
+  drugbank: DB:DB06768
+links:
+  - key: part of
+    source: DB:DB06768
+    target: MESH:D058427
+  - key: negatively regulates
+    source: MESH:D058427
+    target: GO:0070268
+  - key: occurs in
+    source: GO:0070268
+    target: UBERON:0002027
+  - key: location of
+    source: UBERON:0002027
+    target: HP:0000989
+  - key: positively correlated with
+    source: HP:0000989
+    target: MESH:D011538
+multigraph: true
+nodes:
+  - id: DB:DB06768
+    label: Drug
+    name: Ammonium lactate
+  - id: MESH:D058427
+    label: ChemicalSubstance
+    name: Hygroscopic Agents
+  - id: GO:0070268
+    label: BiologicalProcess
+    name: cornification
+  - id: UBERON:0002027
+    label: GrossAnatomicalStructure
+    name: stratum corneum of epidermis
+  - id: HP:0000989
+    label: PhenotypicFeature
+    name: Pruritus
+  - id: MESH:D011538
+    label: Disease
+    name: Pruritus Ani
+references:
+  - https://go.drugbank.com/drugs/DB06768#pharmacodynamics
+  - https://en.wikipedia.org/wiki/Pruritus_ani

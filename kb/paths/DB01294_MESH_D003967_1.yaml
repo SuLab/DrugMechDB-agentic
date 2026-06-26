@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB01294_MESH_D003967_1
+  disease: Diarrhea
+  disease_mesh: MESH:D003967
+  drug: bismuth subsalicylate
+  drug_mesh: MESH:C015715
+  drugbank: DB:DB01294
+links:
+  - key: produces
+    source: MESH:C015715
+    target: MESH:D020156
+  - key: negatively regulates
+    source: MESH:D020156
+    target: reactome:R-HSA-2162123
+  - key: positively regulates
+    source: reactome:R-HSA-2162123
+    target: GO:0006954
+  - key: contributes to
+    source: GO:0006954
+    target: HP:0002037
+  - key: manifestation of
+    source: HP:0002037
+    target: MESH:D003967
+multigraph: true
+nodes:
+  - id: MESH:C015715
+    label: Drug
+    name: bismuth subsalicylate
+  - id: MESH:D020156
+    label: ChemicalSubstance
+    name: Salicylic Acid
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0002037
+    label: PhenotypicFeature
+    name: Inflammation of the large intestine
+  - id: MESH:D003967
+    label: Disease
+    name: Diarrhea
+references:
+  - https://go.drugbank.com/drugs/DB01294#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Bismuth_subsalicylate
+  - https://en.wikipedia.org/wiki/Diarrhea

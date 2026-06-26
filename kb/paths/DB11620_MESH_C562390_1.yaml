@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB11620_MESH_C562390_1
+  disease: Humoral hypercalcemia of malignancy
+  disease_mesh: MESH:C562390
+  drug: neridronic acid
+  drug_mesh: MESH:C053389
+  drugbank: DB:DB11620
+links:
+  - key: prevents
+    source: MESH:C053389
+    target: GO:0045453
+  - key: correlated with
+    source: GO:0045453
+    target: HP:0004363
+  - key: phenotype of
+    source: HP:0004363
+    target: MESH:C562390
+multigraph: true
+nodes:
+  - id: MESH:C053389
+    label: Drug
+    name: neridronic acid
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: bone resorption
+  - id: HP:0004363
+    label: PhenotypicFeature
+    name: Abnormal circulating calcium concentration
+  - id: MESH:C562390
+    label: Disease
+    name: Humoral hypercalcemia of malignancy
+references:
+  - https://go.drugbank.com/drugs/DB11620

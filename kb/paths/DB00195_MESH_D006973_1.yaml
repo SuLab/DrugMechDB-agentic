@@ -1,0 +1,68 @@
+comment: L-type calcium channels are modulated by the adrenergic nervous system, hence
+  betaxolol could indirectly modulate L calcium channels, decreasing heart rate and
+  contraction, ultimately decreasing high blood pressure (https://en.wikipedia.org/wiki/L-type_calcium_channel#Inhibition_and_modulation).
+directed: true
+graph:
+  _id: DB00195_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: betaxolol
+  drug_mesh: MESH:D015784
+  drugbank: DB:DB00195
+links:
+  - key: decreases activity of
+    source: MESH:D015784
+    target: UniProt:P08588
+  - key: participates in
+    source: UniProt:P08588
+    target: reactome:R-HSA-418555
+  - key: increases abundance of
+    source: reactome:R-HSA-418555
+    target: CHEBI:17489
+  - key: positively regulates
+    source: reactome:R-HSA-418555
+    target: InterPro:IPR005446
+  - key: positively correlated with
+    source: InterPro:IPR005446
+    target: GO:0060047
+  - key: positively correlated with
+    source: GO:0060047
+    target: HP:0032263
+  - key: positively correlated with
+    source: CHEBI:17489
+    target: GO:0060047
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D015784
+    label: Drug
+    name: betaxolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: reactome:R-HSA-418555
+    label: Pathway
+    name: G alpha (s) signalling events
+  - id: InterPro:IPR005446
+    label: GeneFamily
+    name: Voltage-dependent calcium channel, L-type, alpha-1 subunit
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3,5-cyclic AMP
+  - id: GO:0060047
+    label: BiologicalProcess
+    name: heart contraction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00195#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Betaxolol
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL423/
+  - https://pubchem.ncbi.nlm.nih.gov/compound/2369#section=Pharmacology-and-Biochemistry
+  - https://en.wikipedia.org/wiki/CAMP-dependent_pathway#Importance

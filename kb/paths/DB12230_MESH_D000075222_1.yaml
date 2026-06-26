@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB12230_MESH_D000075222_1
+  disease: Essential hypertension
+  disease_mesh: MESH:D000075222
+  drug: Bunazosin
+  drug_mesh: MESH:C018176
+  drugbank: DB:DB12230
+links:
+  - key: decreases activity of
+    source: MESH:C018176
+    target: UniProt:P35348
+  - key: decreases activity of
+    source: MESH:C018176
+    target: UniProt:P25100
+  - key: positively regulates
+    source: UniProt:P35348
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P25100
+    target: GO:0042310
+  - key: affects risk for
+    source: GO:0042310
+    target: MESH:D000075222
+multigraph: true
+nodes:
+  - id: MESH:C018176
+    label: Drug
+    name: Bunazosin
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P25100
+    label: Protein
+    name: Alpha-1D adrenergic receptor
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D000075222
+    label: Disease
+    name: Essential hypertension
+references:
+  - https://en.wikipedia.org/wiki/Bunazosin
+  - https://go.drugbank.com/drugs/DB12230
+  - https://en.wikipedia.org/wiki/Alpha-1_blocker
+  - https://drugs.ncats.io/drug/9UUW4V7G2H

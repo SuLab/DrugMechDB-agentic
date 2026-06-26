@@ -1,0 +1,89 @@
+comment: Muscarinic receptor antagonists (also known as anticholinergics) seem to
+  be used in patients with Schizophrenia to alleviate motor side effects caused by
+  first-generation antipsychotics. However these antagonists do seem to lead to cognitive
+  dysfunction in healthy controls. So whether these muscarinic receptors should be
+  positively or negatively regulated in schizophrenia is a matter of debate (see https://www.nature.com/articles/4001924
+  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3726271/). In addition, some suggest
+  that that schizophrenia involves an overactivation of cholinergic neurons, which
+  could provide cholinergic input to dopaminergic neurons. The dopamine neurons are
+  located in the mesolimbic dopaminergic system (BTO:0005591), which is a component
+  pathway of the medial forebrain bundle (UBERON:0001910). See https://en.wikipedia.org/wiki/Medial_forebrain_bundle#Anatomy
+  for more details.
+directed: true
+graph:
+  _id: DB01239_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: chlorprothixene
+  drug_mesh: MESH:D002749
+  drugbank: DB:DB01239
+links:
+  - key: decreases activity of
+    source: MESH:D002749
+    target: InterPro:IPR000995
+  - key: decreases activity of
+    source: MESH:D002749
+    target: InterPro:IPR000929
+  - key: decreases activity of
+    source: MESH:D002749
+    target: InterPro:IPR002231
+  - key: positively regulates
+    source: InterPro:IPR000995
+    target: GO:0007274
+  - key: positively correlated with
+    source: GO:0007274
+    target: HP:0011442
+  - key: manifestation of
+    source: HP:0011442
+    target: MESH:D012559
+  - key: positively regulates
+    source: InterPro:IPR002231
+    target: GO:0014046
+  - key: positively regulates
+    source: InterPro:IPR000995
+    target: GO:0007213
+  - key: positively correlated with
+    source: GO:0007213
+    target: GO:0014046
+  - key: positively regulates
+    source: InterPro:IPR000929
+    target: GO:0014046
+  - key: positively correlated with
+    source: GO:0014046
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:D002749
+    label: Drug
+    name: chlorprothixene
+  - id: InterPro:IPR000995
+    label: GeneFamily
+    name: Muscarinic acetylcholine receptor family
+  - id: InterPro:IPR002231
+    label: GeneFamily
+    name: 5-hydroxytryptamine receptor family
+  - id: InterPro:IPR000929
+    label: GeneFamily
+    name: Dopamine receptor family
+  - id: GO:0014046
+    label: BiologicalProcess
+    name: dopamine secretion
+  - id: GO:0007274
+    label: BiologicalProcess
+    name: neuromuscular synaptic transmission
+  - id: GO:0007213
+    label: BiologicalProcess
+    name: G protein-coupled acetylcholine receptor signaling pathway
+  - id: HP:0011442
+    label: PhenotypicFeature
+    name: Abnormal central motor function
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB01239#mechanism-of-action
+  - https://go.drugbank.com/drugs/DB01239#BE0000092
+  - https://www.targetvalidation.org/summary?drug=CHEMBL908
+  - https://en.wikipedia.org/wiki/Antipsychotic#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Mesolimbic_pathway#Relation_to_neurological_and_psychological_disorders
+  - https://en.wikipedia.org/wiki/Schizophrenia#Medication

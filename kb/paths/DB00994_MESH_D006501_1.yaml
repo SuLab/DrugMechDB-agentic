@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00994_MESH_D006501_1
+  disease: Hepatic encephalopathy
+  disease_mesh: MESH:D006501
+  drug: neomycin
+  drug_mesh: MESH:D009355
+  drugbank: DB:DB00994
+links:
+  - key: decreases activity of
+    source: MESH:D009355
+    target: CHEBI:18111
+  - key: in taxon
+    source: CHEBI:18111
+    target: taxonomy:562
+  - key: regulates
+    source: taxonomy:562
+    target: GO:0097272
+  - key: prevents
+    source: GO:0097272
+    target: HP:0001987
+  - key: positively correlated with
+    source: HP:0001987
+    target: MESH:D006501
+multigraph: true
+nodes:
+  - id: MESH:D009355
+    label: Drug
+    name: neomycin
+  - id: CHEBI:18111
+    label: ChemicalSubstance
+    name: ribosomal RNA
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: GO:0097272
+    label: BiologicalProcess
+    name: ammonium homeostasis
+  - id: HP:0001987
+    label: PhenotypicFeature
+    name: Hyperammonemia
+  - id: MESH:D006501
+    label: Disease
+    name: Hepatic encephalopathy
+references:
+  - https://go.drugbank.com/drugs/DB00994#mechanism-of-action

@@ -1,0 +1,45 @@
+comment: It seems that only low doses of naltrexone has been documented to enhance
+  or produce an analgesic response. Low-dose naltrexone (LDN) describes the off-label
+  use of naltrexone at low doses for diseases not related to chemical dependency or
+  intoxication. The annotation is for Low Dose Naltrexone (LDN).
+directed: true
+graph:
+  _id: DB00704_MESH_D059350_1
+  disease: Chronic pain
+  disease_mesh: MESH:D059350
+  drug: Low Dose Naltrexone
+  drug_mesh: MESH:D009270
+  drugbank: DB:DB00704
+links:
+  - key: decreases activity of
+    source: MESH:D009270
+    target: UniProt:O00206
+  - key: increases activity of
+    source: UniProt:O00206
+    target: UniProt:P01375
+  - key: positively regulates
+    source: UniProt:P01375
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D059350
+multigraph: true
+nodes:
+  - id: MESH:D009270
+    label: Drug
+    name: Low Dose Naltrexone
+  - id: UniProt:O00206
+    label: Protein
+    name: Toll-like receptor 4
+  - id: UniProt:P01375
+    label: Protein
+    name: Tumor necrosis factor
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D059350
+    label: Disease
+    name: Chronic pain
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/32845365/
+  - https://pubmed.ncbi.nlm.nih.gov/30248938/

@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00327_MESH_D003371_1
+  disease: Cough
+  disease_mesh: MESH:D003371
+  drug: Hydromorphone
+  drug_mesh: MESH:D004091
+  drugbank: DB:DB00327
+links:
+  - key: negatively regulates
+    source: MESH:D004091
+    target: UBERON:0001896
+  - key: negatively regulates
+    source: MESH:D004091
+    target: GO:0070254
+  - key: positively regulates
+    source: UBERON:0001896
+    target: MESH:D003371
+  - key: positively correlated with
+    source: GO:0070254
+    target: MESH:D003371
+multigraph: true
+nodes:
+  - id: MESH:D004091
+    label: Drug
+    name: Hydromorphone
+  - id: UBERON:0001896
+    label: GrossAnatomicalStructure
+    name: Medulla oblongata
+  - id: GO:0070254
+    label: BiologicalProcess
+    name: Mucus secretion
+  - id: MESH:D003371
+    label: Disease
+    name: Cough
+references:
+  - https://go.drugbank.com/drugs/DB00327
+  - https://www.accessdata.fda.gov/drugsatfda_docs/label/2007/019892s015lbl.pdf

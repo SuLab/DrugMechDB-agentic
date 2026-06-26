@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00224_MESH_D015658_1
+  disease: Human immunodeficiency virus infection
+  disease_mesh: MESH:D015658
+  drug: indinavir
+  drug_mesh: MESH:D019469
+  drugbank: DB:DB00224
+links:
+  - key: negatively regulates
+    source: MESH:D019469
+    target: UniProt:Q72874
+  - key: positively regulates
+    source: UniProt:Q72874
+    target: GO:0006508
+  - key: in taxon
+    source: GO:0006508
+    target: taxonomy:11676
+  - key: causes
+    source: taxonomy:11676
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:D019469
+    label: Drug
+    name: indinavir
+  - id: UniProt:Q72874
+    label: Protein
+    name: Protease
+  - id: GO:0006508
+    label: BiologicalProcess
+    name: proteolysis
+  - id: taxonomy:11676
+    label: OrganismTaxon
+    name: Human immunodeficiency virus 1
+  - id: MESH:D015658
+    label: Disease
+    name: Human immunodeficiency virus infection
+references:
+  - https://go.drugbank.com/drugs/DB00224

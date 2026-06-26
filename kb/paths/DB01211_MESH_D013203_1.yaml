@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01211_MESH_D013203_1
+  disease: Infection due to Staphylococcus aureus
+  disease_mesh: MESH:D013203
+  drug: clarithromycin
+  drug_mesh: MESH:C040934,MESH:D017291
+  drugbank: DB:DB01211
+links:
+  - key: negatively regulates
+    source: DB:DB01211
+    target: MESH:D012338
+  - key: located in
+    source: MESH:D012338
+    target: GO:0005840
+  - key: positively regulates
+    source: GO:0005840
+    target: GO:0006412
+  - key: part of
+    source: GO:0006412
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:1280
+  - key: occurs in
+    source: taxonomy:1280
+    target: MESH:D013203
+multigraph: true
+nodes:
+  - id: DB:DB01211
+    label: Drug
+    name: Clarithromycin
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: GO:0005840
+    label: CellularComponent
+    name: Ribosome
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: Cell division
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D013203
+    label: Disease
+    name: Infection due to Staphylococcus aureus
+references:
+  - https://go.drugbank.com/polypeptides/P0A7J6
+  - https://en.wikipedia.org/wiki/Clarithromycin#Mechanism_of_action

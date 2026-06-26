@@ -1,0 +1,75 @@
+directed: true
+graph:
+  _id: DB00489_MESH_D001281_1
+  disease: Atrial Fibrillation
+  disease_mesh: MESH:D001281
+  drug: Sotalol
+  drug_mesh: MESH:D013015
+  drugbank: DB:DB00489
+links:
+  - key: decreases activity of
+    source: MESH:D013015
+    target: UniProt:P08588
+  - key: decreases activity of
+    source: MESH:D013015
+    target: UniProt:P07550
+  - key: decreases activity of
+    source: MESH:D013015
+    target: UniProt:Q12809
+  - key: positively regulates
+    source: UniProt:P08588
+    target: GO:0005245
+  - key: positively regulates
+    source: UniProt:P07550
+    target: GO:0005245
+  - key: positively regulates
+    source: UniProt:Q12809
+    target: GO:0005249
+  - key: positively correlated with
+    source: GO:0005245
+    target: GO:0060047
+  - key: positively correlated with
+    source: GO:0005249
+    target: GO:0060047
+  - key: positively correlated with
+    source: GO:0060047
+    target: HP:0031860
+  - key: contributes to
+    source: HP:0031860
+    target: MESH:D001281
+multigraph: true
+nodes:
+  - id: MESH:D013015
+    label: Drug
+    name: Sotalol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: UniProt:Q12809
+    label: Protein
+    name: Potassium voltage-gated channel subfamily H member 2
+  - id: GO:0005245
+    label: MolecularActivity
+    name: voltage-gated calcium channel activity
+  - id: GO:0005249
+    label: MolecularActivity
+    name: voltage-gated potassium channel activity
+  - id: GO:0060047
+    label: BiologicalProcess
+    name: voltage-gated calcium channel activity
+  - id: HP:0031860
+    label: PhenotypicFeature
+    name: Abnormal heart rate variability
+  - id: MESH:D001281
+    label: Disease
+    name: Atrial Fibrillation
+references:
+  - https://go.drugbank.com/drugs/DB00489#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Sotalol#Mechanisms_of_action
+  - https://www.uniprot.org/uniprot/P08588#function
+  - https://www.uniprot.org/uniprot/P07550#function
+  - https://www.uniprot.org/uniprot/Q12809#function
+  - https://en.wikipedia.org/wiki/Atrial_fibrillation

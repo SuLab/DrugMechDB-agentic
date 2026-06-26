@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB11611_MESH_D015352_1
+  disease: Tear film insufficiency
+  disease_mesh: MESH:D015352
+  drug: lifitegrast
+  drug_mesh: MESH:C575157
+  drugbank: DB:DB11611
+links:
+  - key: decreases activity of
+    source: MESH:C575157
+    target: UniProt:P20701
+  - key: positively correlated with
+    source: UniProt:P20701
+    target: GO:0042110
+  - key: positively correlated with
+    source: UniProt:P20701
+    target: GO:0042098
+  - key: positively correlated with
+    source: GO:0042110
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0042098
+    target: GO:0006954
+  - key: occurs in
+    source: GO:0006954
+    target: MESH:D015352
+multigraph: true
+nodes:
+  - id: MESH:C575157
+    label: Drug
+    name: Lifitegrast
+  - id: UniProt:P20701
+    label: Protein
+    name: Integrin alpha-L
+  - id: GO:0042098
+    label: BiologicalProcess
+    name: T cell proliferation
+  - id: GO:0042110
+    label: BiologicalProcess
+    name: T cell activation
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D015352
+    label: Disease
+    name: Tear film insufficiency
+references:
+  - https://go.drugbank.com/drugs/DB11611
+  - https://en.wikipedia.org/wiki/Lifitegrast

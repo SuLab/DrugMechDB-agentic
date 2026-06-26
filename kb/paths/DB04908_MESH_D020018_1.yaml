@@ -1,0 +1,79 @@
+directed: true
+graph:
+  _id: DB04908_MESH_D020018_1
+  disease: Sexual Dysfunctions, Psychological
+  disease_mesh: MESH:D020018
+  drug: flibanserin
+  drug_mesh: MESH:C098107
+  drugbank: DB:DB04908
+links:
+  - key: positively regulates
+    source: MESH:C098107
+    target: UniProt:P08908
+  - key: positively regulates
+    source: UniProt:P08908
+    target: GO:0099155
+  - key: positively regulates
+    source: UniProt:P08908
+    target: GO:0014046
+  - key: increases abundance of
+    source: GO:0014046
+    target: CHEBI:18243
+  - key: negatively correlated with
+    source: CHEBI:18243
+    target: HP:0046504
+  - key: negatively correlated with
+    source: GO:0099155
+    target: HP:0046504
+  - key: negatively regulates
+    source: MESH:C098107
+    target: UniProt:P28223
+  - key: positively regulates
+    source: UniProt:P28223
+    target: GO:0099153
+  - key: positively correlated with
+    source: GO:0099153
+    target: HP:0046504
+  - key: positively regulates
+    source: UniProt:P08908
+    target: GO:0014046
+  - key: negatively correlated with
+    source: CHEBI:18243
+    target: HP:0046504
+  - key: manifestation of
+    source: HP:0046504
+    target: MESH:D020018
+multigraph: true
+nodes:
+  - id: MESH:C098107
+    label: Drug
+    name: flibanserin
+  - id: UniProt:P08908
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1A
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: GO:0014046
+    label: BiologicalProcess
+    name: dopamine secretion
+  - id: CHEBI:18243
+    label: ChemicalSubstance
+    name: dopamine
+  - id: GO:0099153
+    label: BiologicalProcess
+    name: synaptic transmission, serotonergic
+  - id: GO:0099155
+    label: BiologicalProcess
+    name: synaptic transmission, noradrenergic
+  - id: HP:0046504
+    label: PhenotypicFeature
+    name: Decreased libido
+  - id: MESH:D020018
+    label: Disease
+    name: Sexual Dysfunctions, Psychological
+references:
+  - https://go.drugbank.com/drugs/DB04908
+  - https://en.wikipedia.org/wiki/Sexual_dysfunction#Females
+comment: The disease is denoted as Lack or loss of sexual desire in the original file
+  as per DrugCentral.

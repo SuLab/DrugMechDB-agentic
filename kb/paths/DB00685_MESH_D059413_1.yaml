@@ -1,0 +1,50 @@
+comment: Due to its hepatotoxic potential, trovafloxacin was withdrawn from the market.
+directed: true
+graph:
+  _id: DB00685_MESH_D059413_1
+  disease: Infectious disease of abdomen
+  disease_mesh: MESH:D059413
+  drug: Trovafloxacin
+  drug_mesh: MESH:C080163
+  drugbank: DB:DB00685
+links:
+  - key: negatively regulates
+    source: MESH:C080163
+    target: InterPro:IPR035516
+  - key: negatively regulates
+    source: MESH:C080163
+    target: InterPro:IPR013760
+  - key: positively regulates
+    source: InterPro:IPR035516
+    target: GO:0006260
+  - key: positively regulates
+    source: InterPro:IPR013760
+    target: GO:0006260
+  - key: in taxon
+    source: GO:0006260
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D059413
+multigraph: true
+nodes:
+  - id: MESH:C080163
+    label: Drug
+    name: Trovafloxacin
+  - id: InterPro:IPR035516
+    label: GeneFamily
+    name: DNA gyrase/topoisomerase IV, subunit A, C-terminal
+  - id: InterPro:IPR013760
+    label: GeneFamily
+    name: DNA topoisomerase, type IIA-like domain superfamily
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D059413
+    label: Disease
+    name: Infectious disease of abdomen
+references:
+  - https://go.drugbank.com/drugs/DB00685

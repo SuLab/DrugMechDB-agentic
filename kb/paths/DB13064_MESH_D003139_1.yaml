@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB13064_MESH_D003139_1
+  disease: Common cold
+  disease_mesh: MESH:D003139
+  drug: tramazoline
+  drug_mesh: MESH:C005370
+  drugbank: DB:DB13064
+links:
+  - key: increases activity of
+    source: MESH:C005370
+    target: UniProt:P08913
+  - key: positively regulates
+    source: UniProt:P08913
+    target: GO:0042310
+  - key: negatively correlated with
+    source: GO:0042310
+    target: HP:0001742
+  - key: phenotype of
+    source: HP:0001742
+    target: MESH:D003139
+multigraph: true
+nodes:
+  - id: MESH:C005370
+    label: Drug
+    name: Tramazoline
+  - id: UniProt:P08913
+    label: Protein
+    name: Alpha-2A adrenergic receptor
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: HP:0001742
+    label: PhenotypicFeature
+    name: Nasal obstruction
+  - id: MESH:D003139
+    label: Disease
+    name: Common cold
+references:
+  - https://go.drugbank.com/drugs/DB06711#BE0000501
+  - https://drugs.ncats.io/drug/4DG710Q678
+  - https://pubmed.ncbi.nlm.nih.gov/16809058/

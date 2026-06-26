@@ -1,0 +1,81 @@
+directed: true
+graph:
+  _id: DB00399_MESH_D010024_1
+  disease: Osteoporosis
+  disease_mesh: MESH:D010024
+  drug: zoledronic acid
+  drug_mesh: MESH:C088658
+  drugbank: DB:DB00399
+links:
+  - key: decreases activity of
+    source: MESH:C088658
+    target: UniProt:P14324
+  - key: decreases activity of
+    source: MESH:C088658
+    target: UniProt:O95749
+  - key: molecularly interacts with
+    source: MESH:C088658
+    target: CHEBI:52255
+  - key: positively correlated with
+    source: CHEBI:52255
+    target: GO:0001503
+  - key: positively correlated with
+    source: CHEBI:52255
+    target: GO:1990523
+  - key: positively correlated with
+    source: UniProt:P14324
+    target: GO:0008299
+  - key: positively correlated with
+    source: UniProt:O95749
+    target: GO:0008299
+  - key: positively correlated with
+    source: GO:0008299
+    target: GO:0045453
+  - key: positively correlated with
+    source: GO:0045453
+    target: HP:0004349
+  - key: positively correlated with
+    source: HP:0004349
+    target: MESH:D010024
+  - key: negatively correlated with
+    source: GO:0001503
+    target: MESH:D010024
+  - key: negatively correlated with
+    source: GO:1990523
+    target: MESH:D010024
+multigraph: true
+nodes:
+  - id: MESH:C088658
+    label: Drug
+    name: zoledronic acid
+  - id: UniProt:P14324
+    label: Protein
+    name: Farnesyl pyrophosphate synthase
+  - id: UniProt:O95749
+    label: Protein
+    name: Geranylgeranyl pyrophosphate synthase
+  - id: CHEBI:52255
+    label: ChemicalSubstance
+    name: hydroxylapatite
+  - id: GO:0008299
+    label: BiologicalProcess
+    name: isoprenoid biosynthetic process
+  - id: GO:0001503
+    label: BiologicalProcess
+    name: ossification
+  - id: GO:1990523
+    label: BiologicalProcess
+    name: bone regeneration
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: bone resorption
+  - id: HP:0004349
+    label: PhenotypicFeature
+    name: Reduced bone mineral density
+  - id: MESH:D010024
+    label: Disease
+    name: Osteoporosis
+references:
+  - https://go.drugbank.com/drugs/DB00399
+  - https://en.wikipedia.org/wiki/Zoledronic_acid
+  - https://journals.sagepub.com/doi/10.4137/BTRI.S36138

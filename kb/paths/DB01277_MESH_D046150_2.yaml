@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB01277_MESH_D046150_2
+  disease: Laron-type isolated somatotropin defect
+  disease_mesh: MESH:D046150
+  drug: mecasermin
+  drug_mesh: MESH:C000604197
+  drugbank: DB:DB01277
+links:
+  - key: chemically similar to
+    source: MESH:C000604197
+    target: UniProt:P05019
+  - key: increases activity of
+    source: UniProt:P05019
+    target: UniProt:P08069
+  - key: participates in
+    source: UniProt:P08069
+    target: GO:0035988
+  - key: participates in
+    source: UniProt:P08069
+    target: GO:0003423
+  - key: participates in
+    source: UniProt:P08069
+    target: GO:0046622
+  - key: negatively correlated with
+    source: GO:0035988
+    target: HP:0003510
+  - key: negatively correlated with
+    source: GO:0003423
+    target: HP:0003510
+  - key: negatively correlated with
+    source: GO:0046622
+    target: HP:0003510
+  - key: correlated with
+    source: HP:0003510
+    target: MESH:D046150
+multigraph: true
+nodes:
+  - id: MESH:C000604197
+    label: Drug
+    name: mecasermin
+  - id: UniProt:P05019
+    label: Protein
+    name: Insulin-like growth factor I
+  - id: UniProt:P08069
+    label: Protein
+    name: Insulin-like growth factor 1 receptor
+  - id: GO:0035988
+    label: BiologicalProcess
+    name: chondrocyte proliferation
+  - id: GO:0003423
+    label: BiologicalProcess
+    name: growth plate cartilage chondrocyte division
+  - id: GO:0046622
+    label: BiologicalProcess
+    name: positive regulation of organ growth
+  - id: HP:0003510
+    label: PhenotypicFeature
+    name: Severe short stature
+  - id: MESH:D046150
+    label: Disease
+    name: Laron-type isolated somatotropin defect
+references:
+  - https://go.drugbank.com/drugs/DB01277
+  - https://pubmed.ncbi.nlm.nih.gov/19198769/

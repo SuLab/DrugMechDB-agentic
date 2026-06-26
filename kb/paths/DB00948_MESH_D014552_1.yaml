@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00948_MESH_D014552_1
+  disease: Urinary tract infectious disease
+  disease_mesh: MESH:D014552
+  drug: mezlocillin
+  drug_mesh: MESH:D008802
+  drugbank: DB:DB00948
+links:
+  - key: decreases activity of
+    source: MESH:D008802
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D014552
+multigraph: true
+nodes:
+  - id: MESH:D008802
+    label: Drug
+    name: mezlocillin
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding protein transpeptidase domain
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D014552
+    label: Disease
+    name: Urinary tract infectious disease
+references:
+  - https://go.drugbank.com/drugs/DB00948

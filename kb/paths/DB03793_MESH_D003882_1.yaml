@@ -1,0 +1,26 @@
+comment: Literature evidences shows potassium para-aminobenzoate is used to treat
+  Dermatomyositis
+directed: true
+graph:
+  _id: DB03793_MESH_D003882_1
+  disease: Dermatomyositis
+  disease_mesh: MESH:D003882
+  drug: Benzoic acid
+  drug_mesh: MESH:D019817
+  drugbank: DB:DB03793
+links:
+  - key: treats
+    source: MESH:D019817
+    target: MESH:D003882
+multigraph: true
+nodes:
+  - id: MESH:D019817
+    label: Drug
+    name: Benzoic acid
+  - id: MESH:D003882
+    label: Disease
+    name: Dermatomyositis
+references:
+  - https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/554547
+  - https://pubmed.ncbi.nlm.nih.gov/2406809/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3533636

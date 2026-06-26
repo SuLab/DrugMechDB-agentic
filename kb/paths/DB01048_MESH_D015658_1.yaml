@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01048_MESH_D015658_1
+  disease: HIV infection
+  disease_mesh: MESH:D015658
+  drug: abacavir
+  drug_mesh: MESH:C106538
+  drugbank: DB:DB01048
+links:
+  - key: increases abundance of
+    source: MESH:C106538
+    target: MESH:C066928
+  - key: decreases activity of
+    source: MESH:C066928
+    target: UniProt:P04585
+  - key: participates in
+    source: UniProt:P04585
+    target: GO:0039693
+  - key: causes
+    source: GO:0039693
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:C106538
+    label: Drug
+    name: abacavir
+  - id: MESH:C066928
+    label: ChemicalSubstance
+    name: carbovir triphosphate
+  - id: UniProt:P04585
+    label: Protein
+    name: HIV-1 reverse transcriptase
+  - id: GO:0039693
+    label: BiologicalProcess
+    name: Viral DNA replication
+  - id: MESH:D015658
+    label: Disease
+    name: HIV infection

@@ -1,0 +1,74 @@
+comment: Trimethaphan is indicated for production of controlled hypotension during
+  surgery. During the emergency treatment of pulmonary edema in patients with pulmonary
+  hypertension associated with systemic hypertension.
+directed: true
+graph:
+  _id: DB01116_MESH_D011654_1
+  disease: Pulmonary edema
+  disease_mesh: MESH:D011654
+  drug: trimetaphan
+  drug_mesh: MESH:D014294
+  drugbank: DB:DB01116
+links:
+  - key: decreases activity of
+    source: MESH:D014294
+    target: UniProt:Q9GZZ6
+  - key: decreases activity of
+    source: MESH:D014294
+    target: UniProt:P30926
+  - key: decreases activity of
+    source: MESH:D014294
+    target: UniProt:P32297
+  - key: positively regulates
+    source: UniProt:Q9GZZ6
+    target: GO:0007271
+  - key: positively regulates
+    source: UniProt:P30926
+    target: GO:0007271
+  - key: positively regulates
+    source: UniProt:P32297
+    target: GO:0007271
+  - key: negatively correlated with
+    source: GO:0007271
+    target: GO:0044557
+  - key: positively correlated with
+    source: GO:0044557
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: HP:0032263
+  - key: positively correlated with
+    source: HP:0032263
+    target: MESH:D011654
+multigraph: true
+nodes:
+  - id: MESH:D014294
+    label: Drug
+    name: trimetaphan
+  - id: UniProt:Q9GZZ6
+    label: Protein
+    name: Neuronal acetylcholine receptor subunit alpha-10
+  - id: UniProt:P30926
+    label: Protein
+    name: Neuronal acetylcholine receptor subunit beta-4
+  - id: UniProt:P32297
+    label: Protein
+    name: Neuronal acetylcholine receptor subunit beta-3
+  - id: GO:0007271
+    label: BiologicalProcess
+    name: synaptic transmission, cholinergic
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: smooth muscle relaxation
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D011654
+    label: Disease
+    name: Pulmonary edema
+references:
+  - https://go.drugbank.com/drugs/DB01116
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201329/

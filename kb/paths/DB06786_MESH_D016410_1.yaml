@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB06786_MESH_D016410_1
+  disease: Primary cutaneous T-cell lymphoma
+  disease_mesh: MESH:D016410
+  drug: halcinonide
+  drug_mesh: MESH:D006206
+  drugbank: DB:DB06786
+links:
+  - key: positively regulates
+    source: MESH:D006206
+    target: UniProt:P04150
+  - key: negatively correlated with
+    source: UniProt:P04150
+    target: HP:0011123
+  - key: manifestation of
+    source: HP:0011123
+    target: MESH:D016410
+multigraph: true
+nodes:
+  - id: MESH:D006206
+    label: Drug
+    name: halcinonide
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: HP:0011123
+    label: PhenotypicFeature
+    name: Inflammatory abnormality of the skin
+  - id: MESH:D016410
+    label: Disease
+    name: Primary cutaneous T-cell lymphoma
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200845/
+  - https://en.wikipedia.org/wiki/Halcinonide
+  - https://pubchem.ncbi.nlm.nih.gov/compound/443943#section=Mechanism-of-Action
+  - https://en.wikipedia.org/wiki/Corticosteroid#Pharmacology
+  - https://en.wikipedia.org/wiki/Cutaneous_T_cell_lymphoma#Signs_and_symptoms

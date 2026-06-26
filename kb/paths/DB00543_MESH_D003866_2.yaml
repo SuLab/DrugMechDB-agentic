@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00543_MESH_D003866_2
+  disease: Depressive disorder
+  disease_mesh: MESH:D003866
+  drug: amoxapine
+  drug_mesh: MESH:D000657
+  drugbank: DB:DB00543
+links:
+  - key: decreases activity of
+    source: MESH:D000657
+    target: UniProt:P21728
+  - key: positively regulates
+    source: UniProt:P21728
+    target: GO:0051584
+  - key: positively correlated with
+    source: GO:0051584
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:D000657
+    label: Drug
+    name: amoxapine
+  - id: UniProt:P21728
+    label: Protein
+    name: D(1A) dopamine receptor
+  - id: GO:0051584
+    label: BiologicalProcess
+    name: regulation of dopamine uptake involved in synaptic transmission
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00543#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Dopamine_receptor#D1-like_family
+  - https://pubmed.ncbi.nlm.nih.gov/9347388/
+  - https://pubmed.ncbi.nlm.nih.gov/2698268/
+  - https://en.wikipedia.org/wiki/Amineptine#Pharmacology

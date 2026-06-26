@@ -1,0 +1,60 @@
+comment: Apoptosis could be the cause of the anemia in patients with this disease
+  (https://pubmed.ncbi.nlm.nih.gov/8298126/) and corticosteroids appear to have an
+  anti-apoptotic effect (https://www.sciencedirect.com/science/article/pii/S0006497119529913).
+  More details on the mechanism of action are not available.
+directed: true
+graph:
+  _id: DB01234_MESH_D029503_1
+  disease: Congenital hypoplastic anemia
+  disease_mesh: MESH:D029503
+  drug: dexamethasone
+  drug_mesh: MESH:D003907
+  drugbank: DB:DB01234
+links:
+  - key: positively regulates
+    source: MESH:D003907
+    target: UniProt:P04150
+  - key: increases abundance of
+    source: UniProt:P04150
+    target: InterPro:IPR001464
+  - key: negatively regulates
+    source: InterPro:IPR001464
+    target: InterPro:IPR001211
+  - key: positively correlated with
+    source: InterPro:IPR001211
+    target: GO:0006915
+  - key: positively correlated with
+    source: GO:0006915
+    target: HP:0001903
+  - key: manifestation of
+    source: HP:0001903
+    target: MESH:D029503
+multigraph: true
+nodes:
+  - id: MESH:D003907
+    label: Drug
+    name: dexamethasone
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: InterPro:IPR001464
+    label: GeneFamily
+    name: Annexin
+  - id: InterPro:IPR001211
+    label: GeneFamily
+    name: Phospholipase A2
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: HP:0001903
+    label: PhenotypicFeature
+    name: Anemia
+  - alt_names:
+      - Anemia, Diamond-Blackfan
+    id: MESH:D029503
+    label: Disease
+    name: Congenital hypoplastic anemia
+references:
+  - https://go.drugbank.com/drugs/DB01234
+  - https://pubmed.ncbi.nlm.nih.gov/21435508/
+  - https://pubmed.ncbi.nlm.nih.gov/16564042/

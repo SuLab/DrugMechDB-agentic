@@ -1,0 +1,58 @@
+comment: Esmolol hydrochloride inhibits the beta1 receptors located chiefly in cardiac
+  muscle, but this preferential effect is not absolute and at higher doses it begins
+  to inhibit beta2 receptors located chiefly in the bronchial and vascular musculature.
+directed: true
+graph:
+  _id: DB00187_MESH_D013617_1
+  disease: Supraventricular tachycardia
+  disease_mesh: MESH:D013617
+  drug: esmolol
+  drug_mesh: MESH:C036604
+  drugbank: DB:DB00187
+links:
+  - key: decreases activity of
+    source: MESH:C036604
+    target: UniProt:P08588
+  - key: increases activity of
+    source: UniProt:P08588
+    target: InterPro:IPR030672
+  - key: increases abundance of
+    source: InterPro:IPR030672
+    target: CHEBI:17489
+  - key: positively regulates
+    source: CHEBI:17489
+    target: GO:0070509
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0086003
+  - key: positively correlated with
+    source: GO:0086003
+    target: MESH:D013617
+multigraph: true
+nodes:
+  - id: MESH:C036604
+    label: Drug
+    name: esmolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: InterPro:IPR030672
+    label: GeneFamily
+    name: Adenylate cyclase
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Calcium ion import
+  - id: GO:0086003
+    label: BiologicalProcess
+    name: Cardiac muscle cell contraction
+  - id: MESH:D013617
+    label: Disease
+    name: Supraventricular tachycardia
+references:
+  - https://go.drugbank.com/drugs/DB00187
+  - https://pubchem.ncbi.nlm.nih.gov/compound/59768
+  - https://en.wikipedia.org/wiki/Esmolol
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL768/

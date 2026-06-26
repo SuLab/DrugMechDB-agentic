@@ -1,0 +1,72 @@
+comment: Bisacodyl is deacetylated to the active bis-(p-hydroxyphenyl)-pyridyl-2-methane
+  (BHPM) by an intestinal deacetylase.
+directed: true
+graph:
+  _id: DB09020_MESH_D003248_1
+  disease: Constipation
+  disease_mesh: MESH:D003248
+  drug: bisacodyl
+  drug_mesh: MESH:D001726
+  drugbank: DB:DB09020
+links:
+  - key: has metabolite
+    source: MESH:D001726
+    target: MESH:C073061
+  - key: positively regulates
+    source: MESH:C073061
+    target: GO:0120054
+  - key: negatively correlated with
+    source: GO:0120054
+    target: MESH:D003248
+  - key: positively regulates
+    source: MESH:C073061
+    target: UBERON:0004293
+  - key: positively regulates
+    source: UBERON:0004293
+    target: UBERON:0012399
+  - key: positively regulates
+    source: UBERON:0012399
+    target: GO:0120054
+  - key: decreases activity of
+    source: MESH:C073061
+    target: UniProt:Q92482
+  - key: regulates
+    source: UniProt:Q92482
+    target: GO:0006833
+  - key: located in
+    source: GO:0006833
+    target: UBERON:0001155
+  - key: correlated with
+    source: UBERON:0001155
+    target: MESH:D003248
+multigraph: true
+nodes:
+  - id: MESH:D001726
+    label: Drug
+    name: Bisacodyl
+  - id: MESH:C073061
+    label: ChemicalSubstance
+    name: 4-(2-benzyl-4-hydroxy)phenoxy-N-methylbutylamine
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: Intestinal motility
+  - id: UBERON:0004293
+    label: GrossAnatomicalStructure
+    name: Parasympathetic nerve
+  - id: UBERON:0012399
+    label: GrossAnatomicalStructure
+    name: Large intestine smooth muscle longitudinal layer
+  - id: UBERON:0001155
+    label: GrossAnatomicalStructure
+    name: Colon
+  - id: GO:0006833
+    label: BiologicalProcess
+    name: Water transport
+  - id: UniProt:Q92482
+    label: Protein
+    name: Aquaporin-3
+  - id: MESH:D003248
+    label: Disease
+    name: Constipation
+references:
+  - https://go.drugbank.com/drugs/DB09020

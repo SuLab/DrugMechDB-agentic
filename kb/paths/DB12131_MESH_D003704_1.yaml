@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB12131_MESH_D003704_1
+  disease: Dementia
+  disease_mesh: MESH:D003704
+  drug: vinpocetine
+  drug_mesh: MESH:C013983
+  drugbank: DB:DB12131
+links:
+  - key: decreases activity of
+    source: MESH:C013983
+    target: UniProt:P54750
+  - key: part of
+    source: UniProt:P54750
+    target: GO:0043025
+  - key: correlated with
+    source: GO:0043025
+    target: MESH:D003704
+multigraph: true
+nodes:
+  - id: MESH:C013983
+    label: Drug
+    name: vinpocetine
+  - id: UniProt:P54750
+    label: Protein
+    name: Calcium/calmodulin-dependent 3',5'-cyclic nucleotide phosphodiesterase 1A
+  - id: GO:0043025
+    label: CellularComponent
+    name: Neuronal Cell Body
+  - id: MESH:D003704
+    label: Disease
+    name: Dementia

@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00582_MESH_D055744_1
+  disease: Invasive pulmonary aspergillosis
+  disease_mesh: MESH:D055744
+  drug: voriconazole
+  drug_mesh: MESH:D065819
+  drugbank: DB:DB00582
+links:
+  - key: negatively regulates
+    source: MESH:D065819
+    target: InterPro:IPR001128
+  - key: positively regulates
+    source: InterPro:IPR001128
+    target: GO:0006696
+  - key: positively correlated with
+    source: GO:0006696
+    target: GO:0030445
+  - key: in taxon
+    source: GO:0030445
+    target: taxonomy:5052
+  - key: causes
+    source: taxonomy:5052
+    target: MESH:D055744
+multigraph: true
+nodes:
+  - id: MESH:D065819
+    label: Drug
+    name: voriconazole
+  - id: InterPro:IPR001128
+    label: GeneFamily
+    name: Cytochrome P450
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: ergosterol biosynthetic process
+  - id: GO:0030445
+    label: CellularComponent
+    name: yeast-form cell wall
+  - id: taxonomy:5052
+    label: OrganismTaxon
+    name: Aspergillus sp.
+  - id: MESH:D055744
+    label: Disease
+    name: Invasive pulmonary aspergillosis
+references:
+  - https://go.drugbank.com/drugs/DB00582#mechanism-of-action

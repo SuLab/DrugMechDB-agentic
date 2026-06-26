@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01606_MESH_D018410_1
+  disease: Bacterial pneumonia
+  disease_mesh: MESH:D018410
+  drug: tazobactam
+  drug_mesh: MESH:C043265
+  drugbank: DB:DB01606
+links:
+  - key: negatively regulates
+    source: MESH:C043265
+    target: UniProt:P0AD63
+  - key: positively regulates
+    source: UniProt:P0AD63
+    target: GO:0030655
+  - key: in taxon
+    source: GO:0030655
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D018410
+multigraph: true
+nodes:
+  - id: MESH:C043265
+    label: Drug
+    name: tazobactam
+  - id: UniProt:P0AD63
+    label: Protein
+    name: Beta-lactamase SHV-1
+  - id: GO:0030655
+    label: BiologicalProcess
+    name: beta-lactam antibiotic catabolic process
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D018410
+    label: Disease
+    name: Bacterial pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB01606#mechanism-of-action

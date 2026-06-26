@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB01603_MESH_D011023_1
+  disease: Staphylococcal pneumonia
+  disease_mesh: MESH:D011023
+  drug: meticillin
+  drug_mesh: MESH:D008712
+  drugbank: DB:DB01603
+links:
+  - key: negatively regulates
+    source: MESH:D008712
+    target: UniProt:P0A3M6
+  - key: negatively regulates
+    source: MESH:D008712
+    target: UniProt:Q8DR59
+  - key: positively regulates
+    source: UniProt:P0A3M6
+    target: GO:0071972
+  - key: positively regulates
+    source: UniProt:Q8DR59
+    target: GO:0008955
+  - key: positively correlated with
+    source: GO:0071972
+    target: GO:0018104
+  - key: positively correlated with
+    source: GO:0008955
+    target: GO:0018104
+  - key: positively correlated with
+    source: GO:0018104
+    target: GO:0031504
+  - key: in taxon
+    source: GO:0031504
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D011023
+multigraph: true
+nodes:
+  - id: MESH:D008712
+    label: Drug
+    name: meticillin
+  - id: UniProt:Q8DR59
+    label: Protein
+    name: Penicillin-binding protein 1A
+  - id: UniProt:P0A3M6
+    label: Protein
+    name: Penicillin-binding protein 2B
+  - id: GO:0071972
+    label: MolecularActivity
+    name: peptidoglycan L,D-transpeptidase activity
+  - id: GO:0008955
+    label: MolecularActivity
+    name: peptidoglycan glycosyltransferase activity
+  - id: GO:0018104
+    label: BiologicalProcess
+    name: peptidoglycan-protein cross-linking
+  - id: GO:0031504
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall organization
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D011023
+    label: Disease
+    name: Staphylococcal pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB01603#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Methicillin#Mechanism_of_action

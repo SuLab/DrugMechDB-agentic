@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DB00313_MESH_D004832_1
+  disease: Epilepsy, Absence
+  disease_mesh: MESH:D004832
+  drug: Valproic Acid
+  drug_mesh: MESH:D014635
+  drugbank: DB:DB00313
+links:
+  - key: decreases activity of
+    source: MESH:D014635
+    target: UniProt:P51649
+  - key: decreases activity of
+    source: MESH:D014635
+    target: UniProt:Q9UKV0
+  - key: positively regulates
+    source: UniProt:P51649
+    target: GO:0009450
+  - key: positively regulates
+    source: UniProt:Q9UKV0
+    target: GO:0016575
+  - key: correlated with
+    source: GO:0016575
+    target: GO:0010629
+  - key: positively correlated with
+    source: GO:0009450
+    target: MESH:D004832
+  - key: contributes to
+    source: GO:0010629
+    target: MESH:D004832
+multigraph: true
+nodes:
+  - id: MESH:D014635
+    label: Drug
+    name: Valproic Acid
+  - id: UniProt:P51649
+    label: Protein
+    name: Succinate-semialdehyde dehydrogenase, mitochondrial
+  - id: UniProt:Q9UKV0
+    label: Protein
+    name: Histone deacetylase 9
+  - id: GO:0009450
+    label: BiologicalProcess
+    name: gamma-aminobutyric acid catabolic process
+  - id: GO:0016575
+    label: BiologicalProcess
+    name: histone deacetylation
+  - id: GO:0010629
+    label: BiologicalProcess
+    name: negative regulation of gene expression
+  - id: MESH:D004832
+    label: Disease
+    name: Epilepsy, Absence
+references:
+  - https://go.drugbank.com/drugs/DB00313#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22VALPROIC%20ACID%22
+  - https://www.uniprot.org/uniprot/P51649#function
+  - https://www.uniprot.org/uniprot/Q9UKV0#function
+  - https://pubmed.ncbi.nlm.nih.gov/11520315/
+  - https://en.wikipedia.org/wiki/Histone_acetylation_and_deacetylation
+  - https://en.wikipedia.org/wiki/Epilepsy

@@ -1,0 +1,58 @@
+comment: The antiseizure mechanism of action based on the voltage sodium channels
+  is not a consensus (https://en.wikipedia.org/wiki/Eslicarbazepine_acetate#Mechanism_of_action).
+  The drug could also bind to calcium channels (https://go.drugbank.com/drugs/DB09119#mechanism-of-action).
+  Note that the protein target listed in DrugBank (https://go.drugbank.com/drugs/DB09119#BE0005793)
+  does not seem to be involved in epilepsy, but rather in inflammation and pain.
+directed: true
+graph:
+  _id: DB09119_MESH_D004828_1
+  disease: Epilepsies, Partial
+  disease_mesh: MESH:D004828
+  drug: eslicarbazepine acetate
+  drug_mesh: MESH:C416835
+  drugbank: DB:DB09119
+links:
+  - key: has metabolite
+    source: MESH:C416835
+    target: MESH:C571001
+  - key: decreases activity of
+    source: MESH:C571001
+    target: InterPro:IPR001696
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0035725
+  - key: regulates
+    source: GO:0035725
+    target: GO:0019228
+  - key: contributes to
+    source: GO:0019228
+    target: HP:0011097
+  - key: positively correlated with
+    source: HP:0011097
+    target: MESH:D004828
+multigraph: true
+nodes:
+  - id: MESH:C416835
+    label: Drug
+    name: eslicarbazepine acetate
+  - id: MESH:C571001
+    label: Drug
+    name: eslicarbazepine
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: GO:0035725
+    label: BiologicalProcess
+    name: sodium ion transmembrane transport
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: neuronal action potential
+  - id: HP:0011097
+    label: PhenotypicFeature
+    name: Epileptic spasm
+  - id: MESH:D004828
+    label: Disease
+    name: Epilepsies, Partial
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/179344#section=Pharmacology-and-Biochemistry
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL87992/

@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB06736_MESH_D001416_1
+  disease: Backache
+  disease_mesh: MESH:D001416
+  drug: aceclofenac
+  drug_mesh: MESH:C056498
+  drugbank: DB:DB06736
+links:
+  - key: decreases activity of
+    source: MESH:C056498
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:C056498
+    target: UniProt:P35354
+  - key: participates in
+    source: UniProt:P23219
+    target: reactome:R-HSA-2162123
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0003326
+  - key: located in
+    source: HP:0003326
+    target: UBERON:0004479
+  - key: location of
+    source: UBERON:0004479
+    target: MESH:D001416
+multigraph: true
+nodes:
+  - id: MESH:C056498
+    label: Drug
+    name: aceclofenac
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: HP:0003326
+    label: PhenotypicFeature
+    name: Myalgia
+  - id: UBERON:0004479
+    label: GrossAnatomicalStructure
+    name: musculature of trunk
+  - id: MESH:D001416
+    label: Disease
+    name: Backache
+references:
+  - https://go.drugbank.com/drugs/DB06736
+  - https://en.wikipedia.org/wiki/Aceclofenac#Chemistry

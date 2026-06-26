@@ -1,0 +1,100 @@
+directed: true
+graph:
+  _id: DB06595_MESH_D015470_1
+  disease: Acute myeloid leukemia, disease
+  disease_mesh: MESH:D015470
+  drug: midostaurin
+  drug_mesh: MESH:C059539
+  drugbank: DB:DB06595
+links:
+  - key: negatively regulates
+    source: MESH:C059539
+    target: UniProt:P36888
+  - key: negatively regulates
+    source: MESH:C059539
+    target: UniProt:P10721
+  - key: negatively regulates
+    source: MESH:C059539
+    target: UniProt:P17252
+  - key: negatively regulates
+    source: MESH:C059539
+    target: UniProt:P09619
+  - key: negatively regulates
+    source: MESH:C059539
+    target: UniProt:P16234
+  - key: negatively regulates
+    source: MESH:C059539
+    target: UniProt:P35968
+  - key: positively regulates
+    source: UniProt:P35968
+    target: GO:0001525
+  - key: positively regulates
+    source: UniProt:P10721
+    target: GO:0008283
+  - key: positively regulates
+    source: UniProt:P09619
+    target: GO:0008283
+  - key: positively regulates
+    source: UniProt:P16234
+    target: GO:0008283
+  - key: positively regulates
+    source: UniProt:P17252
+    target: GO:0001525
+  - key: positively regulates
+    source: UniProt:P36888
+    target: GO:0035726
+  - key: positively correlated with
+    source: GO:0035726
+    target: MESH:D015470
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D015470
+  - key: positively correlated with
+    source: GO:0001525
+    target: MESH:D015470
+  - key: negatively correlated with
+    source: MESH:C059539
+    target: reactome:R-HSA-9607240
+  - key: positively correlated with
+    source: reactome:R-HSA-9607240
+    target: MESH:D015470
+multigraph: true
+nodes:
+  - id: MESH:C059539
+    label: Drug
+    name: midostaurin
+  - id: UniProt:P36888
+    label: Protein
+    name: Receptor-type tyrosine-protein kinase FLT3
+  - id: UniProt:P09619
+    label: Protein
+    name: Platelet-derived growth factor receptor beta
+  - id: UniProt:P16234
+    label: Protein
+    name: Platelet-derived growth factor receptor alpha
+  - id: UniProt:P35968
+    label: Protein
+    name: Vascular endothelial growth factor receptor 2
+  - id: UniProt:P10721
+    label: Protein
+    name: Mast/stem cell growth factor receptor Kit
+  - id: UniProt:P17252
+    label: Protein
+    name: Protein kinase C alpha type
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: GO:0001525
+    label: BiologicalProcess
+    name: angiogenesis
+  - id: reactome:R-HSA-9607240
+    label: Pathway
+    name: FLT3 Signaling
+  - id: GO:0035726
+    label: BiologicalProcess
+    name: common myeloid progenitor cell proliferation
+  - id: MESH:D015470
+    label: Disease
+    name: Acute myeloid leukemia, disease
+references:
+  - https://go.drugbank.com/drugs/DB06595

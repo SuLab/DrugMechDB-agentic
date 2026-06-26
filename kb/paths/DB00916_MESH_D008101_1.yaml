@@ -1,0 +1,43 @@
+comment: Metronidazole is a nitroimidazole which is only effective against anaerobic
+  bacterial infections.
+directed: true
+graph:
+  _id: DB00916_MESH_D008101_1
+  disease: Liver Abscess, Amebic
+  disease_mesh: MESH:D008101
+  drug: metronidazole
+  drug_mesh: MESH:D008795
+  drugbank: DB:DB00916
+links:
+  - key: decreases activity of
+    source: MESH:D008795
+    target: MESH:D004247
+  - key: positively regulates
+    source: MESH:D004247
+    target: GO:0090304
+  - key: occurs in
+    source: GO:0090304
+    target: taxonomy:5759
+  - key: causes
+    source: taxonomy:5759
+    target: MESH:D008101
+multigraph: true
+nodes:
+  - id: MESH:D008795
+    label: Drug
+    name: metronidazole
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0090304
+    label: BiologicalProcess
+    name: nucleic acid metabolic process
+  - id: taxonomy:5759
+    label: OrganismTaxon
+    name: Entamoeba histolytica
+  - id: MESH:D008101
+    label: Disease
+    name: Liver Abscess, Amebic
+references:
+  - https://go.drugbank.com/drugs/DB00916#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Amoebic_liver_abscess

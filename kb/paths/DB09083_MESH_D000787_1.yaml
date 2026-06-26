@@ -1,0 +1,58 @@
+comment: Both UniProt:Q9UL51 and UniProt:Q9Y3Q4 are slow sodium channels, also known
+  as If channels, where 'f' stands for funny, as per the unusual properties compared
+  with other current systems known at the time of their discovery. Note that out of
+  the two proteins, UniProt:Q9Y3Q4 is the most highly expressed in sinoatrial node
+  myocytes (https://pubmed.ncbi.nlm.nih.gov/17999560/).
+directed: true
+graph:
+  _id: DB09083_MESH_D000787_1
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: ivabradine
+  drug_mesh: MESH:C088408
+  drugbank: DB:DB09083
+links:
+  - key: negatively regulates
+    source: MESH:C088408
+    target: UniProt:Q9UL51
+  - key: negatively regulates
+    source: MESH:C088408
+    target: UniProt:Q9Y3Q4
+  - key: regulates
+    source: UniProt:Q9UL51
+    target: GO:0086012
+  - key: regulates
+    source: UniProt:Q9Y3Q4
+    target: GO:0086012
+  - key: regulates
+    source: GO:0086012
+    target: GO:0006936
+  - key: correlated with
+    source: GO:0006936
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:C088408
+    label: Drug
+    name: ivabradine
+  - id: UniProt:Q9UL51
+    label: Protein
+    name: Potassium/sodium hyperpolarization-activated cyclic nucleotide-gated channel
+      2
+  - id: UniProt:Q9Y3Q4
+    label: Protein
+    name: Potassium/sodium hyperpolarization-activated cyclic nucleotide-gated channel
+      4
+  - id: GO:0086012
+    label: BiologicalProcess
+    name: membrane depolarization during cardiac muscle cell action potential
+  - id: GO:0006936
+    label: BiologicalProcess
+    name: muscle contraction
+  - id: MESH:D000787
+    label: Disease
+    name: Angina pectoris
+references:
+  - https://go.drugbank.com/drugs/DB09083
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL471737/
+  - https://en.wikipedia.org/wiki/Ivabradine#Mechanism_of_action

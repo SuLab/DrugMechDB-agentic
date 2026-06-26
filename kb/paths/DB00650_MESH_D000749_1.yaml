@@ -1,0 +1,26 @@
+directed: true
+graph:
+  _id: DB00650_MESH_D000749_1
+  disease: Megaloblastic anemia (Methotrexate Treatment)
+  disease_mesh: MESH:D000749
+  drug: leucovorin
+  drug_mesh: MESH:D002955
+  drugbank: DB:DB00650
+links:
+  - key: increases abundance of
+    source: MESH:D002955
+    target: MESH:D005492
+  - key: prevents
+    source: MESH:D005492
+    target: MESH:D000749
+multigraph: true
+nodes:
+  - id: MESH:D002955
+    label: Drug
+    name: leucovorin
+  - id: MESH:D005492
+    label: ChemicalSubstance
+    name: Folic Acid
+  - id: MESH:D000749
+    label: Disease
+    name: Megaloblastic anemia (Methotrexate Treatment)

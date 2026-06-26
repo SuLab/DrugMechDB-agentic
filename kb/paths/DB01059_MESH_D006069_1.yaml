@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01059_MESH_D006069_1
+  disease: Gonorrhea
+  disease_mesh: MESH:D006069
+  drug: norfloxacin
+  drug_mesh: MESH:D009643
+  drugbank: DB:DB01059
+links:
+  - key: decreases activity of
+    source: MESH:D009643
+    target: UniProt:P48371
+  - key: decreases activity of
+    source: MESH:D009643
+    target: UniProt:P48374
+  - key: positively regulates
+    source: UniProt:P48371
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:P48374
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:485
+  - key: causes
+    source: taxonomy:485
+    target: MESH:D006069
+multigraph: true
+nodes:
+  - id: MESH:D009643
+    label: Drug
+    name: norfloxacin
+  - id: UniProt:P48371
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:P48374
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:485
+    label: OrganismTaxon
+    name: Neisseria gonorrhoeae
+  - id: MESH:D006069
+    label: Disease
+    name: Gonorrhea
+references:
+  - https://go.drugbank.com/drugs/DB01059#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P48371#function
+  - https://www.uniprot.org/uniprot/P48374#function
+  - https://en.wikipedia.org/wiki/Gonorrhea

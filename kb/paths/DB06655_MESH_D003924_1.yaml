@@ -1,0 +1,60 @@
+directed: true
+graph:
+  _id: DB06655_MESH_D003924_1
+  disease: Diabetes Mellitus, Type 2
+  disease_mesh: MESH:D003924
+  drug: Liraglutide
+  drug_mesh: MESH:D000069450
+  drugbank: DB:DB06655
+links:
+  - key: increases activity of
+    source: MESH:D000069450
+    target: UniProt:P43220
+  - key: increases abundance of
+    source: UniProt:P43220
+    target: MESH:D000242
+  - key: positively regulates
+    source: MESH:D000242
+    target: GO:0035773
+  - key: negatively regulates
+    source: GO:0035773
+    target: GO:0070091
+  - key: increases abundance of
+    source: GO:0070091
+    target: MESH:D001786
+  - key: positively correlated with
+    source: MESH:D001786
+    target: HP:0003074
+  - key: manifestation of
+    source: HP:0003074
+    target: MESH:D003924
+multigraph: true
+nodes:
+  - id: MESH:D000069450
+    label: Drug
+    name: Liraglutide
+  - id: UniProt:P43220
+    label: Protein
+    name: Glucagon-like peptide 1 receptor
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: Cyclic AMP
+  - id: GO:0035773
+    label: BiologicalProcess
+    name: insulin secretion involved in cellular response to glucose stimulus
+  - id: GO:0070091
+    label: BiologicalProcess
+    name: glucagon secretion
+  - id: MESH:D001786
+    label: ChemicalSubstance
+    name: Blood Glucose
+  - id: HP:0003074
+    label: PhenotypicFeature
+    name: Hyperglycemia
+  - id: MESH:D003924
+    label: Disease
+    name: Diabetes Mellitus, Type 2
+references:
+  - https://go.drugbank.com/drugs/DB06655#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P43220#function
+  - https://en.wikipedia.org/wiki/Type_2_diabetes

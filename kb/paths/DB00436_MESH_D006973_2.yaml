@@ -1,0 +1,36 @@
+comment: The antihypertensive mechanism of bendroflumethiazide is not well understood.
+directed: true
+graph:
+  _id: DB00436_MESH_D006973_2
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: bendroflumethiazide
+  drug_mesh: MESH:D001539
+  drugbank: DB:DB00436
+links:
+  - key: negatively regulates
+    source: MESH:D001539
+    target: GO:0004089
+  - key: positively correlated with
+    source: GO:0004089
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D001539
+    label: Drug
+    name: Bendroflumethiazide
+  - id: GO:0004089
+    label: MolecularActivity
+    name: Carbonate dehydratase activity
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/25079851/
+  - https://go.drugbank.com/drugs/DB00436

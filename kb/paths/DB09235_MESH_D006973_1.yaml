@@ -1,0 +1,57 @@
+directed: true
+graph:
+  _id: DB09235_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: efonidipine
+  drug_mesh: MESH:C066425
+  drugbank: DB:DB09235
+links:
+  - key: decreases activity of
+    source: MESH:C066425
+    target: UniProt:Q13936
+  - key: decreases activity of
+    source: MESH:C066425
+    target: UniProt:Q9P0X4
+  - key: positively regulates
+    source: UniProt:Q13936
+    target: GO:0006939
+  - key: positively regulates
+    source: UniProt:Q9P0X4
+    target: GO:0006939
+  - key: positively correlated with
+    source: GO:0006939
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C066425
+    label: Drug
+    name: efonidipine
+  - id: UniProt:Q13936
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1C
+  - id: UniProt:Q9P0X4
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1I
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://en.wikipedia.org/wiki/Efonidipine#Mechanism_of_action
+  - https://go.drugbank.com/drugs/DB09235
+  - https://pubchem.ncbi.nlm.nih.gov/compound/119171#section=Mechanism-of-Action

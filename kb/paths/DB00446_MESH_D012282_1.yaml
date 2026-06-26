@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00446_MESH_D012282_1
+  disease: Disease caused by rickettsiae
+  disease_mesh: MESH:D012282
+  drug: chloramphenicol
+  drug_mesh: MESH:D002701
+  drugbank: DB:DB00446
+links:
+  - key: negatively regulates
+    source: MESH:D002701
+    target: InterPro:IPR000114
+  - key: positively regulates
+    source: InterPro:IPR000114
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:780
+  - key: causes
+    source: taxonomy:780
+    target: MESH:D012282
+multigraph: true
+nodes:
+  - id: MESH:D002701
+    label: Drug
+    name: chloramphenicol
+  - id: InterPro:IPR000114
+    label: GeneFamily
+    name: Ribosomal protein L16
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:780
+    label: OrganismTaxon
+    name: Rickettsia sp
+  - id: MESH:D012282
+    label: Disease
+    name: Disease caused by rickettsiae
+references:
+  - https://go.drugbank.com/drugs/DB00446

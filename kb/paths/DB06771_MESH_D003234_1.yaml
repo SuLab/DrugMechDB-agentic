@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB06771_MESH_D003234_1
+  disease: Bacterial conjunctivitis
+  disease_mesh: MESH:D003234
+  drug: besifloxacin
+  drug_mesh: MESH:C522124
+  drugbank: DB:DB06771
+links:
+  - key: decreases activity of
+    source: MESH:C522124
+    target: UniProt:P72525
+  - key: decreases activity of
+    source: MESH:C522124
+    target: UniProt:P72524
+  - key: participates in
+    source: UniProt:P72525
+    target: GO:0051301
+  - key: participates in
+    source: UniProt:P72524
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:2
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D003234
+multigraph: true
+nodes:
+  - id: MESH:C522124
+    label: Drug
+    name: besifloxacin
+  - id: UniProt:P72525
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: UniProt:P72524
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D003234
+    label: Disease
+    name: Bacterial conjunctivitis
+references:
+  - https://go.drugbank.com/drugs/DB06771#BE0003726

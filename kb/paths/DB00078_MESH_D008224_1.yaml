@@ -1,0 +1,82 @@
+comment: Ibritumomab tiuxetan is an Indium or yttrium conjugated murine IgG1 kappa
+  monoclonal antibody directed against the CD20 antigen, The Fab segment of the antibody
+  targets the CD20 epitope on B-cells, allowing the radioactive yttrium to destroy
+  the cell via production of beta particles.
+directed: true
+graph:
+  _id: DB00078_MESH_D008224_1
+  disease: Follicular non-Hodgkin's lymphoma
+  disease_mesh: MESH:D008224
+  drug: ibritumomab tiuxetan
+  drug_mesh: MESH:C422802
+  drugbank: DB:DB00078
+links:
+  - key: physically interacts with
+    source: MESH:C422802
+    target: UniProt:P11836
+  - key: positively regulates
+    source: UniProt:P11836
+    target: GO:0006959
+  - key: coexists with
+    source: MESH:C422802
+    target: MESH:D015021
+  - key: produces
+    source: MESH:D015021
+    target: MESH:D001610
+  - key: causes
+    source: MESH:D001610
+    target: GO:0008219
+  - key: positively regulates
+    source: GO:0006959
+    target: GO:0001788
+  - key: positively regulates
+    source: GO:0006959
+    target: GO:0097278
+  - key: precedes
+    source: GO:0097278
+    target: GO:0008219
+  - key: precedes
+    source: GO:0001788
+    target: GO:0008219
+  - key: decreases abundance of
+    source: GO:0008219
+    target: CL:0001063
+  - key: manifestation of
+    source: CL:0001063
+    target: MESH:D008224
+multigraph: true
+nodes:
+  - id: MESH:C422802
+    label: Drug
+    name: ibritumomab tiuxetan
+  - id: UniProt:P11836
+    label: Protein
+    name: B-lymphocyte antigen CD20
+  - id: GO:0006959
+    label: BiologicalProcess
+    name: humoral immune response
+  - id: MESH:D015021
+    label: ChemicalSubstance
+    name: Yttrium Radioisotopes
+  - id: MESH:D001610
+    label: ChemicalSubstance
+    name: beta particles
+  - id: GO:0001788
+    label: BiologicalProcess
+    name: antibody-dependent cellular cytotoxicity
+  - id: GO:0097278
+    label: BiologicalProcess
+    name: complement-dependent cytotoxicity
+  - id: GO:0008219
+    label: BiologicalProcess
+    name: Cell death
+  - id: CL:0001063
+    label: Cell
+    name: tumor cell
+  - id: MESH:D008224
+    label: Disease
+    name: Follicular non-Hodgkin's lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB00078
+  - https://en.wikipedia.org/wiki/Ibritumomab_tiuxetan
+  - https://en.wikipedia.org/wiki/Antibody-dependent_cellular_cytotoxicity

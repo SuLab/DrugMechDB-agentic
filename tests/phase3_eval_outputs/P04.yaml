@@ -1,0 +1,73 @@
+directed: true
+multigraph: true
+graph:
+  _id: P04_DB00264_MESH_D006333
+  drug: Metoprolol
+  drug_mesh: MESH:D008790
+  drugbank: DB:DB00264
+  disease: Heart failure
+  disease_mesh: MESH:D006333
+nodes:
+  - id: MESH:D008790
+    name: Metoprolol
+    label: Drug
+  - id: UniProt:P08588
+    name: Beta-1 adrenergic receptor
+    label: Protein
+  - id: GO:0003300
+    name: cardiac muscle hypertrophy
+    label: BiologicalProcess
+  - id: MESH:D006333
+    name: Heart failure
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D008790
+    target: UniProt:P08588
+    evidence:
+      - reference: PMID:22617407
+        snippet: "Most of these effects were reduced in BNP-Sham and PMI mice by the selective β1-adrenergic blocker metoprolol."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Identifies metoprolol as a selective β1-adrenergic blocker, i.e. it decreases the activity of the beta-1 adrenergic receptor."
+      - reference: PMID:41920890
+        snippet: "Metoprolol tartrate, a β1-receptor blocker with a short half-life and low oral bioavailability, was selected as the model drug."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Confirms metoprolol's mechanism class as a β1-receptor blocker (antagonist), decreasing beta-1 adrenergic receptor activity."
+  - key: positively regulates
+    source: UniProt:P08588
+    target: GO:0003300
+    evidence:
+      - reference: PMID:35053304
+        snippet: "The present study tested the hypothesis that sympathetic-mediated hypertrophy of neonatal rat ventricular cardiomyocytes (NRVMs) translated to an increase in calcium influx secondary to the upregulation of CaV1.2 channel subunits."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Sympathetic (catecholamine/β1-adrenergic) stimulation of ventricular cardiomyocytes drives a hypertrophic response, i.e. β1-adrenergic receptor signaling positively regulates cardiac muscle hypertrophy."
+      - reference: PMID:35053304
+        snippet: "Confocal imaging of norepinephrine (NE)-treated NRVMs revealed a hypertrophic response compared to untreated NRVMs."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Norepinephrine acting through the β1-adrenergic receptor produces a hypertrophic response in ventricular cardiomyocytes, evidencing positive regulation of cardiac muscle hypertrophy by β1-AR signaling."
+      - reference: PMID:27001422
+        snippet: "Overstimulation of the orthosympathetic system leads to cardiovascular cell and tissue damage through prolonged activation of β-1-2 adrenergic receptors (BARs)."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Prolonged activation of β1 adrenergic receptors drives maladaptive cardiac tissue changes (including hypertrophy), supporting that β1-AR signaling positively regulates pathological cardiac muscle hypertrophy."
+  - key: contributes to
+    source: GO:0003300
+    target: MESH:D006333
+    evidence:
+      - reference: PMID:26631854
+        snippet: "Chronic activation of the sympathetic nervous system (SNS) contributes to cardiac remodeling and the transition to heart failure (HF)."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Pathological cardiac muscle hypertrophy is the central maladaptive component of cardiac remodeling; chronic sympathetic-driven remodeling contributes to the transition to heart failure."
+      - reference: PMID:22617407
+        snippet: "Elevated BNP levels, by inducing sympathetic overdrive and altering Ca(2+) handling, promote adverse cardiac remodelling and VAs, which could account in part for the progression of HF after MI."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Adverse cardiac remodelling (of which pathological muscle hypertrophy is the core process) contributes to the progression of heart failure."
+references:
+  - https://go.drugbank.com/drugs/DB00264#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P08588#function

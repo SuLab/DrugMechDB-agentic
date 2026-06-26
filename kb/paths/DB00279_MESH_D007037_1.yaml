@@ -1,0 +1,77 @@
+directed: true
+graph:
+  _id: DB00279_MESH_D007037_1
+  disease: Hypothyroidism
+  disease_mesh: MESH:D007037
+  drug: Liothyronine
+  drug_mesh: MESH:D014284
+  drugbank: DB:DB00279
+links:
+  - key: increases activity of
+    source: MESH:D014284
+    target: UniProt:P10827
+  - key: increases activity of
+    source: MESH:D014284
+    target: UniProt:P10828
+  - key: positively regulates
+    source: UniProt:P10827
+    target: GO:0002154
+  - key: positively regulates
+    source: UniProt:P10828
+    target: GO:0002154
+  - key: positively regulates
+    source: GO:0002154
+    target: GO:0001659
+  - key: positively correlated with
+    source: GO:0002154
+    target: GO:0010460
+  - key: positively regulates
+    source: GO:0002154
+    target: GO:0120054
+  - key: negatively correlated with
+    source: GO:0002154
+    target: HP:0012378
+  - key: negatively correlated with
+    source: GO:0001659
+    target: MESH:D007037
+  - key: negatively correlated with
+    source: GO:0010460
+    target: MESH:D007037
+  - key: negatively correlated with
+    source: GO:0120054
+    target: MESH:D007037
+  - key: positively correlated with
+    source: HP:0012378
+    target: MESH:D007037
+multigraph: true
+nodes:
+  - id: MESH:D014284
+    label: Drug
+    name: Liothyronine
+  - id: UniProt:P10827
+    label: Protein
+    name: Thyroid hormone receptor alpha
+  - id: UniProt:P10828
+    label: Protein
+    name: Thyroid hormone receptor beta
+  - id: GO:0002154
+    label: BiologicalProcess
+    name: Thyroid hormone mediated signaling pathway
+  - id: GO:0001659
+    label: BiologicalProcess
+    name: Temperature homeostasis
+  - id: GO:0010460
+    label: BiologicalProcess
+    name: Positive regulation of heart rate
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: Intestinal motility
+  - id: HP:0012378
+    label: PhenotypicFeature
+    name: Fatigue
+  - id: MESH:D007037
+    label: Disease
+    name: Hypothyroidism
+references:
+  - https://go.drugbank.com/drugs/DB00279#BE0000687
+  - https://en.wikipedia.org/wiki/Hypothyroidism#Signs_and_symptoms

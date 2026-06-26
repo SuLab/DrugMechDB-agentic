@@ -1,0 +1,65 @@
+comment: This disease is denoted as Malignant neoplasm of liver in the original file
+  as per DrugCentral.
+directed: true
+graph:
+  _id: DB00322_MESH_D008113_1
+  disease: Liver Neoplasms
+  disease_mesh: MESH:D008113
+  drug: floxuridine
+  drug_mesh: MESH:D005467
+  drugbank: DB:DB00322
+links:
+  - key: has metabolite
+    source: MESH:D005467
+    target: CHEBI:46345
+  - key: decreases activity of
+    source: CHEBI:46345
+    target: UniProt:P04818
+  - key: positively regulates
+    source: UniProt:P04818
+    target: GO:0006235
+  - key: positively regulates
+    source: UniProt:P04818
+    target: GO:0006231
+  - key: positively correlated with
+    source: GO:0006231
+    target: GO:0006260
+  - key: positively correlated with
+    source: GO:0006235
+    target: GO:0006260
+  - key: precedes
+    source: GO:0006260
+    target: HP:0031377
+  - key: positively correlated with
+    source: HP:0031377
+    target: MESH:D008113
+multigraph: true
+nodes:
+  - id: MESH:D005467
+    label: Drug
+    name: floxuridine
+  - id: CHEBI:46345
+    label: ChemicalSubstance
+    name: 5-fluorouracil
+  - id: UniProt:P04818
+    label: Protein
+    name: Thymidylate synthase
+  - id: GO:0006235
+    label: BiologicalProcess
+    name: dTTP biosynthetic process
+  - id: GO:0006231
+    label: BiologicalProcess
+    name: dTMP biosynthetic process
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D008113
+    label: Disease
+    name: Liver Neoplasms
+references:
+  - https://go.drugbank.com/drugs/DB00322#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Floxuridine#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Fluorouracil#Mechanism_of_action

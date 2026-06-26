@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB01607_MESH_D012488_1
+  disease: Salpingitis
+  disease_mesh: MESH:D012488
+  drug: ticarcillin
+  drug_mesh: MESH:D013982
+  drugbank: DB:DB01607
+links:
+  - key: negatively regulates
+    source: MESH:D013982
+    target: InterPro:IPR001460
+  - key: positively regulates
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:485
+  - key: causes
+    source: taxonomy:485
+    target: MESH:D012488
+multigraph: true
+nodes:
+  - id: MESH:D013982
+    label: Drug
+    name: ticarcillin
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:485
+    label: OrganismTaxon
+    name: Neisseria gonorrhoeae
+  - id: MESH:D012488
+    label: Disease
+    name: Salpingitis
+references:
+  - https://go.drugbank.com/drugs/DB01607
+  - https://en.wikipedia.org/wiki/Salpingitis#Bacterial_species

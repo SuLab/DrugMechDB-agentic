@@ -1,0 +1,42 @@
+comment: Fludrocortisone acetate is a prodrug of fludrocortisone, a synthetic mineralocorticoid
+  used in conjunction with hydrocortisone
+directed: true
+graph:
+  _id: DB00687_MESH_D000312_2
+  disease: Congenital adrenal hyperplasia
+  disease_mesh: MESH:D000312
+  drug: Fludrocortisone acetate
+  drug_mesh: MESH:C034635
+  drugbank: DB:DB00687
+links:
+  - key: has metabolite
+    source: MESH:C034635
+    target: MESH:D005438
+  - key: increases activity of
+    source: MESH:D005438
+    target: UniProt:P08235
+  - key: positively correlated with
+    source: UniProt:P08235
+    target: MESH:D000450
+  - key: negatively correlated with
+    source: MESH:D000450
+    target: MESH:D000312
+multigraph: true
+nodes:
+  - id: MESH:C034635
+    label: Drug
+    name: Fludrocortisone acetate
+  - id: MESH:D005438
+    label: ChemicalSubstance
+    name: Fludrocortisone
+  - id: UniProt:P08235
+    label: Protein
+    name: Mineralocorticoid receptor
+  - id: MESH:D000450
+    label: ChemicalSubstance
+    name: Aldosterone
+  - id: MESH:D000312
+    label: Disease
+    name: Congenital adrenal hyperplasia
+references:
+  - https://go.drugbank.com/drugs/DB00687

@@ -1,0 +1,104 @@
+comment: A working hypothesis for a mode of action is that reduced metabolism weakens
+  homeostatic control of intracellular and extracellular ionic concentrations, leading
+  to hyperexcitability and seizure. However it's not known the exact mechanisms by
+  which (A) glucose deprivation cause ionic imbalance and at the same time sustain
+  neuronal hyperexcitability (i.e., a status associated with higher metabolic demands);
+  and (B) which reduced glucose metabolism can generate seizures while also being
+  anticonvulsant (https://pubmed.ncbi.nlm.nih.gov/29143800/).
+directed: true
+graph:
+  _id: DB09118_MESH_D004831_1
+  disease: Myoclonic seizure
+  disease_mesh: MESH:D004831
+  drug: stiripentol
+  drug_mesh: MESH:C021092
+  drugbank: DB:DB09118
+links:
+  - key: negatively regulates
+    source: MESH:C021092
+    target: UniProt:P00338
+  - key: positively correlated with
+    source: MESH:C021092
+    target: MESH:D000066829
+  - key: negatively correlated with
+    source: MESH:D000066829
+    target: MESH:D004831
+  - key: negatively regulates
+    source: MESH:C021092
+    target: UniProt:P07195
+  - key: positively regulates
+    source: UniProt:P00338
+    target: GO:0006090
+  - key: positively regulates
+    source: UniProt:P07195
+    target: GO:0006090
+  - key: regulates
+    source: GO:0006090
+    target: GO:0019228
+  - key: regulates
+    source: UniProt:P07195
+    target: Pfam:PF01007
+  - key: regulates
+    source: UniProt:P00338
+    target: Pfam:PF01007
+  - key: regulates
+    source: Pfam:PF01007
+    target: GO:0019228
+  - key: positively correlated with
+    source: UniProt:P00338
+    target: GO:0019228
+  - key: positively correlated with
+    source: UniProt:P07195
+    target: GO:0019228
+  - key: positively correlated with
+    source: GO:0019228
+    target: MESH:D004831
+  - key: increases abundance of
+    source: MESH:C021092
+    target: CHEBI:16865
+  - key: correlated with
+    source: CHEBI:16865
+    target: GO:0060077
+  - key: negatively correlated with
+    source: GO:0060077
+    target: MESH:D004831
+multigraph: true
+nodes:
+  - id: MESH:C021092
+    label: Drug
+    name: stiripentol
+  - id: CHEBI:16865
+    label: ChemicalSubstance
+    name: γ-aminobutyric acid
+  - id: GO:0060077
+    label: CellularComponent
+    name: inhibitory synapse
+  - id: UniProt:P00338
+    label: Protein
+    name: L-lactate dehydrogenase A chain
+  - id: UniProt:P07195
+    label: Protein
+    name: L-lactate dehydrogenase B chain
+  - id: GO:0006090
+    label: BiologicalProcess
+    name: pyruvate metabolic process
+  - id: Pfam:PF01007
+    label: GeneFamily
+    name: Inward-rectifier potassium ion channel
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: neuronal action potential
+  - id: MESH:D000066829
+    label: BiologicalProcess
+    name: Neuroprotection
+  - alt_names:
+      - Epilepsies, Myoclonic
+      - Dravet Syndrome
+    id: MESH:D004831
+    label: Disease
+    name: Myoclonic seizure
+references:
+  - https://go.drugbank.com/drugs/DB09118
+  - https://en.wikipedia.org/wiki/Stiripentol#Pharmacology
+  - https://pubmed.ncbi.nlm.nih.gov/28434133/
+  - https://en.wikipedia.org/wiki/Potassium_channel

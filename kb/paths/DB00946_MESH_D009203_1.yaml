@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00946_MESH_D009203_1
+  disease: Myocardial infarction
+  disease_mesh: MESH:D009203
+  drug: phenprocoumon
+  drug_mesh: MESH:D010644
+  drugbank: DB:DB00946
+links:
+  - key: decreases activity of
+    source: MESH:D010644
+    target: UniProt:Q9BQB6
+  - key: participates in
+    source: UniProt:Q9BQB6
+    target: GO:0042373
+  - key: produces
+    source: GO:0042373
+    target: MESH:D014812
+  - key: positively correlated with
+    source: MESH:D014812
+    target: GO:0072378
+  - key: positively correlated with
+    source: GO:0072378
+    target: UBERON:0010210
+  - key: affects risk for
+    source: UBERON:0010210
+    target: MESH:D009203
+multigraph: true
+nodes:
+  - id: MESH:D010644
+    label: Drug
+    name: phenprocoumon
+  - id: UniProt:Q9BQB6
+    label: Protein
+    name: Vitamin K epoxide reductase complex subunit 1
+  - id: GO:0042373
+    label: BiologicalProcess
+    name: Vitamin K metabolic process
+  - id: MESH:D014812
+    label: ChemicalSubstance
+    name: vitamin k
+  - id: GO:0072378
+    label: BiologicalProcess
+    name: blood coagulation, fibrin clot formation
+  - id: UBERON:0010210
+    label: GrossAnatomicalStructure
+    name: Blood clot
+  - id: MESH:D009203
+    label: Disease
+    name: Myocardial infarction
+references:
+  - https://go.drugbank.com/drugs/DB00946
+  - https://en.wikipedia.org/wiki/Phenprocoumon

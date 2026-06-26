@@ -1,0 +1,45 @@
+directed: true
+graph:
+  _id: DB09220_MESH_D000787_1
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: nicorandil
+  drug_mesh: MESH:D020108
+  drugbank: DB:DB09220
+links:
+  - key: positively regulates
+    source: MESH:D020108
+    target: UniProt:O60706
+  - key: positively regulates
+    source: UniProt:O60706
+    target: GO:0061337
+  - key: positively regulates
+    source: UniProt:O60706
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: MESH:D000787
+  - key: negatively correlated with
+    source: GO:0061337
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:D020108
+    label: Drug
+    name: nicorandil
+  - id: UniProt:O60706
+    label: Protein
+    name: ATP-binding cassette sub-family C member 9
+  - id: GO:0061337
+    label: BiologicalProcess
+    name: cardiac conduction
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: MESH:D000787
+    label: Disease
+    name: Angina pectoris
+references:
+  - https://go.drugbank.com/drugs/DB09220
+  - https://en.wikipedia.org/wiki/Nicorandil#Mechanism_of_action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/47528#section=Mechanism-of-Action

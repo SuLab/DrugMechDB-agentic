@@ -1,0 +1,46 @@
+comment: The drug has been approved in Japan but not yet in the US
+directed: true
+graph:
+  _id: DB04942_MESH_D015473_1
+  disease: Acute promyelocytic leukemia, FAB M3
+  disease_mesh: MESH:D015473
+  drug: tamibarotene
+  drug_mesh: MESH:C061133
+  drugbank: DB:DB04942
+links:
+  - key: positively regulates
+    source: MESH:C061133
+    target: UniProt:P10826
+  - key: positively regulates
+    source: MESH:C061133
+    target: UniProt:P10276
+  - key: negatively regulates
+    source: UniProt:P10826
+    target: GO:0008283
+  - key: negatively regulates
+    source: UniProt:P10276
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D015473
+multigraph: true
+nodes:
+  - id: MESH:C061133
+    label: Drug
+    name: tamibarotene
+  - id: UniProt:P10826
+    label: Protein
+    name: Retinoic acid receptor beta
+  - id: UniProt:P10276
+    label: Protein
+    name: Retinoic acid receptor alpha
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: MESH:D015473
+    label: Disease
+    name: Acute promyelocytic leukemia, FAB M3
+references:
+  - https://go.drugbank.com/drugs/DB04942
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL25202/
+  - https://en.wikipedia.org/wiki/Tamibarotene

@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB09082_MESH_D001249_1
+  disease: Asthma
+  disease_mesh: MESH:D001249
+  drug: vilanterol
+  drug_mesh: MESH:C550468
+  drugbank: DB:DB09082
+links:
+  - key: positively regulates
+    source: MESH:C550468
+    target: UniProt:P07550
+  - key: positively regulates
+    source: UniProt:P07550
+    target: UniProt:B7Z2C7
+  - key: increases abundance of
+    source: UniProt:B7Z2C7
+    target: CHEBI:17489
+  - key: positively correlated with
+    source: CHEBI:17489
+    target: GO:0044557
+  - key: located in
+    source: GO:0044557
+    target: UBERON:0002185
+  - key: affected by
+    source: UBERON:0002185
+    target: MESH:D001249
+multigraph: true
+nodes:
+  - id: MESH:C550468
+    label: Drug
+    name: Vilanterol
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: UniProt:B7Z2C7
+    label: Protein
+    name: Adenylate cyclase
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: Relaxation of smooth muscle
+  - id: UBERON:0002185
+    label: GrossAnatomicalStructure
+    name: Bronchus
+  - id: MESH:D001249
+    label: Disease
+    name: Asthma
+references:
+  - https://go.drugbank.com/drugs/DB09082

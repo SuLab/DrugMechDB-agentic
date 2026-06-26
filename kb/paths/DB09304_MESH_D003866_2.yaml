@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB09304_MESH_D003866_2
+  disease: Depressive disorder
+  disease_mesh: MESH:D003866
+  drug: setiptiline
+  drug_mesh: MESH:C050605
+  drugbank: DB:DB09304
+links:
+  - key: decreases activity of
+    source: MESH:C050605
+    target: InterPro:IPR002231
+  - key: negatively regulates
+    source: InterPro:IPR002231
+    target: GO:0001820
+  - key: precedes
+    source: GO:0001820
+    target: GO:0099153
+  - key: negatively correlated with
+    source: GO:0099153
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:C050605
+    label: Drug
+    name: setiptiline
+  - id: InterPro:IPR002231
+    label: GeneFamily
+    name: 5-hydroxytryptamine receptor family
+  - id: GO:0001820
+    label: BiologicalProcess
+    name: serotonin secretion
+  - id: GO:0099153
+    label: BiologicalProcess
+    name: synaptic transmission, serotonergic
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB09304#mechanism-of-action
+  - https://drugs.ncats.io/substance/7L38105Z6E#general

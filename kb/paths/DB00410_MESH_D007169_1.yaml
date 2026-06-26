@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00410_MESH_D007169_1
+  disease: Impetigo
+  disease_mesh: MESH:D007169
+  drug: mupirocin
+  drug_mesh: MESH:D016712
+  drugbank: DB:DB00410
+links:
+  - key: decreases activity of
+    source: MESH:D016712
+    target: UniProt:41972
+  - key: positively regulates
+    source: UniProt:41972
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:41972
+    target: GO:0043039
+  - key: in taxon
+    source: GO:0043039
+    target: taxonomy:1280
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D007169
+multigraph: true
+nodes:
+  - id: MESH:D016712
+    label: Drug
+    name: Mupirocin
+  - id: UniProt:41972
+    label: Protein
+    name: Isoleucine--tRNA ligase
+  - id: GO:0043039
+    label: BiologicalProcess
+    name: tRNA aminoacylation
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D007169
+    label: Disease
+    name: Impetigo
+references:
+  - https://go.drugbank.com/drugs/DB00410

@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB09302_MESH_D006937_1
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+  drug: alirocumab
+  drug_mesh: MESH:C571059
+  drugbank: DB:DB09302
+links:
+  - key: decreases activity of
+    source: MESH:C571059
+    target: UniProt:Q8NBP7
+  - key: negatively regulates
+    source: UniProt:Q8NBP7
+    target: GO:0090118
+  - key: negatively correlated with
+    source: GO:0090118
+    target: HP:0003141
+  - key: manifestation of
+    source: HP:0003141
+    target: MESH:D006937
+multigraph: true
+nodes:
+  - id: MESH:C571059
+    label: Drug
+    name: alirocumab
+  - id: UniProt:Q8NBP7
+    label: Protein
+    name: Proprotein convertase subtilisin/kexin type 9
+  - id: GO:0090118
+    label: BiologicalProcess
+    name: receptor-mediated endocytosis involved in cholesterol transport
+  - id: HP:0003141
+    label: PhenotypicFeature
+    name: Increased LDL cholesterol concentration
+  - id: MESH:D006937
+    label: Disease
+    name: Hypercholesterolemia
+references:
+  - https://go.drugbank.com/drugs/DB09302
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109540/
+  - https://en.wikipedia.org/wiki/Alirocumab#Pharmacology

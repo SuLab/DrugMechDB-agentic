@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00415_MESH_D004756_1
+  disease: Enterobacteriaceae Infections
+  disease_mesh: MESH:D004756
+  drug: ampicillin
+  drug_mesh: MESH:D000667
+  drugbank: DB:DB00415
+links:
+  - key: negatively regulates
+    source: MESH:D000667
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:543
+  - key: causes
+    source: taxonomy:543
+    target: MESH:D004756
+multigraph: true
+nodes:
+  - id: MESH:D000667
+    label: Drug
+    name: ampicillin
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding protein transpeptidase domain
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:543
+    label: OrganismTaxon
+    name: Enterobacteriaceae
+  - alt_names:
+      - Infection due to Enterobacteriaceae
+    id: MESH:D004756
+    label: Disease
+    name: Enterobacteriaceae Infections
+references:
+  - https://go.drugbank.com/drugs/DB00415
+  - https://meshb.nlm.nih.gov/record/ui?ui=D004756

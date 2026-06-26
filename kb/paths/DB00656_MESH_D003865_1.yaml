@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00656_MESH_D003865_1
+  disease: Depressive Disorder, Major
+  disease_mesh: MESH:D003865
+  drug: trazodone
+  drug_mesh: MESH:D014196
+  drugbank: DB:DB00656
+links:
+  - key: decreases activity of
+    source: MESH:D014196
+    target: UniProt:P31645
+  - key: decreases activity of
+    source: MESH:D014196
+    target: InterPro:IPR002231
+  - key: participates in
+    source: UniProt:P31645
+    target: GO:0051610
+  - key: participates in
+    source: InterPro:IPR002231
+    target: GO:0051610
+  - key: decreases abundance of
+    source: GO:0051610
+    target: MESH:D012701
+  - key: positively correlated with
+    source: MESH:D012701
+    target: GO:0060096
+  - key: negatively regulates
+    source: GO:0060096
+    target: MESH:D003865
+multigraph: true
+nodes:
+  - id: MESH:D014196
+    label: Drug
+    name: trazodone
+  - id: UniProt:P31645
+    label: Protein
+    name: Sodium-dependent serotonin transporter
+  - id: InterPro:IPR002231
+    label: GeneFamily
+    name: 5-hydroxytryptamine receptor family
+  - id: GO:0051610
+    label: BiologicalProcess
+    name: serotonin uptake
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: GO:0060096
+    label: BiologicalProcess
+    name: serotonin secretion, neurotransmission
+  - id: MESH:D003865
+    label: Disease
+    name: Depressive Disorder, Major
+references:
+  - https://go.drugbank.com/drugs/DB00656#mechanism-of-action
+  - https://www.ebi.ac.uk/interpro/entry/InterPro/IPR002231/
+  - https://www.uniprot.org/uniprot/P31645#function
+  - https://en.wikipedia.org/wiki/Major_depressive_disorder

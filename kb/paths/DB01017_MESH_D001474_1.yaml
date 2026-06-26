@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01017_MESH_D001474_1
+  disease: Bartonella Infections
+  disease_mesh: MESH:D001474
+  drug: minocycline
+  drug_mesh: MESH:D008911
+  drugbank: DB:DB01017
+links:
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:Q6FZU4
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:Q6FZQ5
+  - key: positively regulates
+    source: UniProt:Q6FZU4
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:Q6FZQ5
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:773
+  - key: causes
+    source: taxonomy:773
+    target: MESH:D001474
+multigraph: true
+nodes:
+  - id: MESH:D008911
+    label: Drug
+    name: minocycline
+  - id: UniProt:Q6FZU4
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:Q6FZQ5
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:773
+    label: OrganismTaxon
+    name: Bartonella
+  - id: MESH:D001474
+    label: Disease
+    name: Bartonella Infections
+references:
+  - https://go.drugbank.com/drugs/DB01017#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q6FZU4#function
+  - https://www.uniprot.org/uniprot/Q6FZQ5#function
+  - https://en.wikipedia.org/wiki/Bartonellosis

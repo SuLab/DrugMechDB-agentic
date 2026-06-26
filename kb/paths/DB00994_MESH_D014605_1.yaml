@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00994_MESH_D014605_1
+  disease: Uveitis
+  disease_mesh: MESH:D014605
+  drug: neomycin
+  drug_mesh: MESH:D009355
+  drugbank: DB:DB00994
+links:
+  - key: decreases activity of
+    source: MESH:D009355
+    target: CHEBI:18111
+  - key: participates in
+    source: CHEBI:18111
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D014605
+multigraph: true
+nodes:
+  - id: MESH:D009355
+    label: Drug
+    name: neomycin
+  - id: CHEBI:18111
+    label: ChemicalSubstance
+    name: ribosomal RNA
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D014605
+    label: Disease
+    name: Uveitis
+references:
+  - https://go.drugbank.com/drugs/DB00994#mechanism-of-action

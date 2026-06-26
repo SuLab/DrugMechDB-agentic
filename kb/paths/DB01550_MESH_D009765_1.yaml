@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01550_MESH_D009765_1
+  disease: Obesity
+  disease_mesh: MESH:D009765
+  drug: fenproporex
+  drug_mesh: MESH:C026013
+  drugbank: DB:DB01550
+links:
+  - key: has metabolite
+    source: MESH:C026013
+    target: MESH:D000661
+  - key: positively regulates
+    source: MESH:D000661
+    target: GO:0004936
+  - key: positively regulates
+    source: MESH:D000661
+    target: GO:0004939
+  - key: negatively regulates
+    source: GO:0004936
+    target: GO:0032100
+  - key: negatively regulates
+    source: GO:0004939
+    target: GO:0032100
+  - key: positively correlated with
+    source: GO:0032100
+    target: MESH:D009765
+multigraph: true
+nodes:
+  - id: MESH:C026013
+    label: Drug
+    name: fenproporex
+  - id: MESH:D000661
+    label: ChemicalSubstance
+    name: Amphetamine
+  - id: GO:0004936
+    label: MolecularActivity
+    name: alpha-adrenergic receptor activity
+  - id: GO:0004939
+    label: MolecularActivity
+    name: beta-adrenergic receptor activity
+  - id: GO:0032100
+    label: BiologicalProcess
+    name: appetite stimulation
+  - id: MESH:D009765
+    label: Disease
+    name: Obesity
+references:
+  - https://go.drugbank.com/drugs/DB01550

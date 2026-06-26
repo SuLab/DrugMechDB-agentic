@@ -1,0 +1,83 @@
+directed: true
+graph:
+  _id: DB11656_MESH_D005756_1
+  disease: Gastritis
+  disease_mesh: MESH:D005756
+  drug: rebamipide
+  drug_mesh: MESH:C052785
+  drugbank: DB:DB11656
+links:
+  - key: positively correlated with
+    source: MESH:C052785
+    target: GO:0019371
+  - key: increases abundance of
+    source: GO:0019371
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: GO:0070254
+  - key: positively correlated with
+    source: MESH:D011453
+    target: GO:0008283
+  - key: negatively correlated with
+    source: MESH:D011453
+    target: GO:0001696
+  - key: negatively correlated with
+    source: GO:0070254
+    target: MESH:D005756
+  - key: negatively correlated with
+    source: GO:0008283
+    target: MESH:D005756
+  - key: positively correlated with
+    source: GO:0001696
+    target: MESH:D005756
+  - key: negatively correlated with
+    source: MESH:C052785
+    target: MESH:D005609
+  - key: negatively correlated with
+    source: MESH:C052785
+    target: UniProt:P01375
+  - key: positively correlated with
+    source: UniProt:P01375
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D005756
+  - key: positively correlated with
+    source: MESH:D005609
+    target: MESH:D005756
+multigraph: true
+nodes:
+  - id: MESH:C052785
+    label: Drug
+    name: rebamipide
+  - id: GO:0019371
+    label: BiologicalProcess
+    name: cyclooxygenase pathway
+  - id: UniProt:P01375
+    label: Protein
+    name: Tumor necrosis factor
+  - id: GO:0070254
+    label: BiologicalProcess
+    name: mucus secretion
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: gastric acid secretion
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: MESH:D005609
+    label: ChemicalSubstance
+    name: Free Radicals
+  - id: MESH:D005756
+    label: Disease
+    name: Gastritis
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5042#section=Pharmacology
+  - https://en.wikipedia.org/wiki/Rebamipide

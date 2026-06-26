@@ -1,0 +1,64 @@
+directed: true
+graph:
+  _id: DB00432_MESH_D003110_1
+  disease: Malignant tumor of colon
+  disease_mesh: MESH:D003110
+  drug: trifluridine
+  drug_mesh: MESH:D014271
+  drugbank: DB:DB00432
+links:
+  - key: decreases activity of
+    source: MESH:D014271
+    target: UniProt:P04818
+  - key: disrupts
+    source: MESH:D014271
+    target: MESH:D004247
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:P04818
+    target: GO:0006235
+  - key: positively regulates
+    source: UniProt:P04818
+    target: GO:0006231
+  - key: positively correlated with
+    source: GO:0006231
+    target: GO:0006260
+  - key: positively correlated with
+    source: GO:0006235
+    target: GO:0006260
+  - key: precedes
+    source: GO:0006260
+    target: HP:0031377
+  - key: positively correlated with
+    source: HP:0031377
+    target: MESH:D003110
+multigraph: true
+nodes:
+  - id: MESH:D014271
+    label: Drug
+    name: Trifluridine
+  - id: UniProt:P04818
+    label: Protein
+    name: Thymidylate synthase
+  - id: GO:0006235
+    label: BiologicalProcess
+    name: dTTP biosynthetic process
+  - id: GO:0006231
+    label: BiologicalProcess
+    name: dTMP biosynthetic process
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: MESH:D003110
+    label: Disease
+    name: Malignant tumor of colon
+references:
+  - https://go.drugbank.com/drugs/DB00432

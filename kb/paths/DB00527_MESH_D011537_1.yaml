@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DB00527_MESH_D011537_1
+  disease: Itching of skin
+  disease_mesh: MESH:D011537
+  drug: cinchocaine
+  drug_mesh: MESH:D003992
+  drugbank: DB:DB00527
+links:
+  - key: decreases activity of
+    source: MESH:D003992
+    target: UniProt:Q9Y5Y9
+  - key: decreases activity of
+    source: MESH:D003992
+    target: UniProt:Q14524
+  - key: participates in
+    source: UniProt:Q9Y5Y9
+    target: GO:0005248
+  - key: participates in
+    source: UniProt:Q14524
+    target: GO:0005248
+  - key: positively regulates
+    source: GO:0005248
+    target: GO:0051899
+  - key: positively regulates
+    source: GO:0051899
+    target: GO:0001508
+  - key: positively regulates
+    source: GO:0001508
+    target: CL:0000197
+  - key: positively correlated with
+    source: CL:0000197
+    target: MESH:D011537
+multigraph: true
+nodes:
+  - id: MESH:D003992
+    label: Drug
+    name: Cinchocaine
+  - id: UniProt:Q9Y5Y9
+    label: Protein
+    name: Sodium channel protein type 10 subunit alpha
+  - id: UniProt:Q14524
+    label: Protein
+    name: Sodium channel protein type 5 subunit alpha
+  - id: GO:0005248
+    label: BiologicalProcess
+    name: Voltage-gated sodium channel activity
+  - id: GO:0051899
+    label: BiologicalProcess
+    name: Membrane depolarization
+  - id: GO:0001508
+    label: BiologicalProcess
+    name: Action potential
+  - id: CL:0000197
+    label: Cell
+    name: Sensory Receptor Cell
+  - id: MESH:D011537
+    label: Drug
+    name: Itching of skin
+references:
+  - https://go.drugbank.com/drugs/DB00527#BE0000177

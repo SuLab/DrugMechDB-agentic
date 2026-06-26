@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00207_MESH_D018410_1
+  disease: Bacterial pneumonia
+  disease_mesh: MESH:D018410
+  drug: azithromycin
+  drug_mesh: MESH:D017963
+  drugbank: DB:DB00207
+links:
+  - key: negatively regulates
+    source: MESH:D017963
+    target: MESH:D012338
+  - key: positively correlated with
+    source: MESH:D012338
+    target: UniProt:P0A7J6
+  - key: participates in
+    source: UniProt:P0A7J6
+    target: GO:0045727
+  - key: participates in
+    source: GO:0045727
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D018410
+multigraph: true
+nodes:
+  - id: MESH:D017963
+    label: Drug
+    name: azithromycin
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: UniProt:P0A7J6
+    label: Protein
+    name: 50S ribosomal protein L10
+  - id: GO:0045727
+    label: BiologicalProcess
+    name: positive regulation of translation
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D018410
+    label: Disease
+    name: Bacterial pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB00207#BE0004800

@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01137_MESH_D011704_1
+  disease: Pyelonephritis
+  disease_mesh: MESH:D011704
+  drug: levofloxacin
+  drug_mesh: MESH:D064704
+  drugbank: DB:DB01137
+links:
+  - key: decreases activity of
+    source: MESH:D064704
+    target: UniProt:P11388
+  - key: participates in
+    source: UniProt:P11388
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D011704
+multigraph: true
+nodes:
+  - id: MESH:D064704
+    label: Drug
+    name: levofloxacin
+  - id: UniProt:P11388
+    label: Protein
+    name: DNA gyrase
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: E. coli
+  - id: MESH:D011704
+    label: Disease
+    name: Pyelonephritis

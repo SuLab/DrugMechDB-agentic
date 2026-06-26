@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00795_MESH_D003093_1
+  disease: Ulcerative Colitis
+  disease_mesh: MESH:D003093
+  drug: sulfasalazine
+  drug_mesh: MESH:D012460
+  drugbank: DB:DB00795
+links:
+  - key: decreases activity of
+    source: MESH:D012460
+    target: UniProt:P09917
+  - key: positively regulates
+    source: UniProt:P09917
+    target: GO:0019370
+  - key: part of
+    source: GO:0019370
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D003093
+multigraph: true
+nodes:
+  - id: MESH:D012460
+    label: Drug
+    name: sulfasalazine
+  - id: UniProt:P09917
+    label: Protein
+    name: Arachidonate 5-lipoxygenase
+  - id: GO:0019370
+    label: BiologicalProcess
+    name: leukotriene biosynthesis
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D003093
+    label: Disease
+    name: Ulcerative Colitis

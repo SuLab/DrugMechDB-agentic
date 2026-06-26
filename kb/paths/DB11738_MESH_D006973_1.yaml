@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB11738_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: rilmenidine
+  drug_mesh: MESH:C032302
+  drugbank: DB:DB11738
+links:
+  - key: increases activity of
+    source: MESH:C032302
+    target: UniProt:Q9Y2I1
+  - key: decreases activity of
+    source: UniProt:Q9Y2I1
+    target: UBERON:0000013
+  - key: positively correlated with
+    source: UBERON:0000013
+    target: GO:0045777
+  - key: positively correlated with
+    source: GO:0045777
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C032302
+    label: Drug
+    name: rilmenidine
+  - id: UniProt:Q9Y2I1
+    label: Protein
+    name: Nischarin
+  - id: UBERON:0000013
+    label: GrossAnatomicalStructure
+    name: Sympathetic nervous system
+  - id: GO:0045777
+    label: BiologicalProcess
+    name: Positive regulation of blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB11738
+  - https://pubmed.ncbi.nlm.nih.gov/8911724/
+  - https://pubmed.ncbi.nlm.nih.gov/10921529/

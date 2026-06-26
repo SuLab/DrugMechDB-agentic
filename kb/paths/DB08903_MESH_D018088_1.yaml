@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB08903_MESH_D018088_1
+  disease: Drug resistant tuberculosis
+  disease_mesh: MESH:D018088
+  drug: bedaquiline
+  drug_mesh: MESH:C493870
+  drugbank: DB:DB08903
+links:
+  - key: decreases activity of
+    source: MESH:C493870
+    target: UniProt:P9WPS1
+  - key: increases abundance of
+    source: UniProt:P9WPS1
+    target: MESH:D000255
+  - key: participates in
+    source: MESH:D000255
+    target: GO:0046034
+  - key: in taxon
+    source: GO:0046034
+    target: taxonomy:1773
+  - key: causes
+    source: taxonomy:1773
+    target: MESH:D018088
+multigraph: true
+nodes:
+  - id: MESH:C493870
+    label: Disease
+    name: Bedaquiline
+  - id: UniProt:P9WPS1
+    label: Protein
+    name: ATP synthase subunit c (Mycobacterium tuberculosis)
+  - id: MESH:D000255
+    label: ChemicalSubstance
+    name: Adenosine Triphosphate
+  - id: GO:0046034
+    label: BiologicalProcess
+    name: ATP metabolic process
+  - id: taxonomy:1773
+    label: OrganismTaxon
+    name: Mycobacterium tuberculosis
+  - id: MESH:D018088
+    label: Disease
+    name: Drug resistant tuberculosis
+references:
+  - https://go.drugbank.com/drugs/DB08903#BE0004748

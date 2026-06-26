@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00767_MESH_D020250_1
+  disease: Postoperative Nausea and Vomiting
+  disease_mesh: MESH:D020250
+  drug: benzquinamide
+  drug_mesh: MESH:C100234
+  drugbank: DB:DB00767
+links:
+  - key: decreases activity of
+    source: MESH:C100234
+    target: UniProt:P14416
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: HP:0002017
+  - key: positively correlated with
+    source: HP:0002017
+    target: MESH:D020250
+multigraph: true
+nodes:
+  - id: MESH:C100234
+    label: Drug
+    name: benzquinamide
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: HP:0002017
+    label: PhenotypicFeature
+    name: Nausea and vomiting
+  - id: MESH:D020250
+    label: Disease
+    name: Postoperative Nausea and Vomiting
+references:
+  - https://go.drugbank.com/drugs/DB00767#mechanism-of-action
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201250/
+  - https://drugs.ncats.io/substances?q=%22BENZQUINAMIDE%22
+  - https://www.uniprot.org/uniprot/P14416#function
+  - https://en.wikipedia.org/wiki/Postoperative_nausea_and_vomiting

@@ -1,0 +1,61 @@
+comment: pixantrone has not yet received FDA approval in the United States, it has
+  been granted conditional marketing approval by the European Union.
+directed: true
+graph:
+  _id: DB06193_MESH_D008228_1
+  disease: Non-Hodgkin's lymphoma
+  disease_mesh: MESH:D008228
+  drug: Pixantrone
+  drug_mesh: MESH:C086548
+  drugbank: DB:DB06193
+links:
+  - key: increases abundance of
+    source: MESH:C086548
+    target: MESH:D018736
+  - key: decreases activity of
+    source: MESH:D018736
+    target: UniProt:P11388
+  - key: positively regulates
+    source: UniProt:P11388
+    target: GO:0006974
+  - key: positively regulates
+    source: GO:0006974
+    target: GO:0030263
+  - key: positively correlated with
+    source: GO:0030263
+    target: GO:0008219
+  - key: decreases abundance of
+    source: GO:0008219
+    target: CL:0001063
+  - key: manifestation of
+    source: CL:0001063
+    target: MESH:D008228
+multigraph: true
+nodes:
+  - id: MESH:C086548
+    label: Drug
+    name: Pixantrone
+  - id: UniProt:P11388
+    label: Protein
+    name: DNA topoisomerase 2-alpha
+  - id: MESH:D018736
+    label: ChemicalSubstance
+    name: DNA adducts
+  - id: GO:0006974
+    label: BiologicalProcess
+    name: cellular response to DNA damage stimulus
+  - id: GO:0030263
+    label: BiologicalProcess
+    name: apoptotic chromosome condensation
+  - id: GO:0008219
+    label: BiologicalProcess
+    name: cell death
+  - id: CL:0001063
+    label: Cell
+    name: tumor cells
+  - id: MESH:D008228
+    label: Disease
+    name: Non-Hodgkin's lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB06193
+  - https://en.wikipedia.org/wiki/Pixantrone

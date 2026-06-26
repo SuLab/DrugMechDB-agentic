@@ -1,0 +1,73 @@
+directed: true
+graph:
+  _id: DB01233_MESH_D005764_1
+  disease: Gastroesophageal reflux disease
+  disease_mesh: MESH:D005764
+  drug: metoclopramide
+  drug_mesh: MESH:D008787
+  drugbank: DB:DB01233
+links:
+  - key: decreases activity of
+    source: MESH:D008787
+    target: UniProt:P14416
+  - key: increases activity of
+    source: MESH:D008787
+    target: UniProt:P11229
+  - key: increases activity of
+    source: MESH:D008787
+    target: UniProt:Q13639
+  - key: negatively regulates
+    source: UniProt:P14416
+    target: GO:0014055
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0014055
+  - key: positively regulates
+    source: UniProt:Q13639
+    target: GO:0014055
+  - key: positively regulates
+    source: GO:0014055
+    target: UBERON:0007652
+  - key: positively regulates
+    source: GO:0014055
+    target: GO:0035482
+  - key: negatively regulates
+    source: UBERON:0007652
+    target: MESH:D005764
+  - key: positively regulates
+    source: GO:0035482
+    target: GO:0035483
+  - key: negatively correlated with
+    source: GO:0035483
+    target: MESH:D005764
+multigraph: true
+nodes:
+  - id: MESH:D008787
+    label: Drug
+    name: Metoclopramide
+  - id: UniProt:P14416
+    label: Protein
+    name: D2 dopamine receptor
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: UniProt:Q13639
+    label: Protein
+    name: 5-hydroxytryptamine receptor 4
+  - id: GO:0014055
+    label: BiologicalProcess
+    name: Acetylcholine secretion, neurotransmission
+  - id: UBERON:0007652
+    label: GrossAnatomicalStructure
+    name: Esophageal sphincter
+  - id: GO:0035482
+    label: BiologicalProcess
+    name: Gastric motility
+  - id: GO:0035483
+    label: BiologicalProcess
+    name: Gastric emptying
+  - id: MESH:D005764
+    label: Disease
+    name: Gastroesophageal reflux disease
+references:
+  - https://go.drugbank.com/drugs/DB01233#BE0000756

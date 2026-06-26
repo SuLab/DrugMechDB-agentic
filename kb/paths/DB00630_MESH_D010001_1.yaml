@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00630_MESH_D010001_1
+  disease: Osteitis deformans
+  disease_mesh: MESH:D010001
+  drug: alendronic acid
+  drug_mesh: MESH:D019386
+  drugbank: DB:DB00630
+links:
+  - key: positively regulates
+    source: MESH:D019386
+    target: GO:0006915
+  - key: located in
+    source: GO:0006915
+    target: CL:0000092
+  - key: participates in
+    source: CL:0000092
+    target: GO:0045453
+  - key: causes
+    source: GO:0045453
+    target: MESH:D010001
+multigraph: true
+nodes:
+  - id: MESH:D019386
+    label: Drug
+    name: alendronic acid
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: CL:0000092
+    label: Cell
+    name: Osteoclast
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: Bone Resorption
+  - id: MESH:D010001
+    label: Disease
+    name: Osteitis deformans
+references:
+  - https://go.drugbank.com/drugs/DB00630

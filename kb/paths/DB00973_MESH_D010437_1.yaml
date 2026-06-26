@@ -1,0 +1,66 @@
+directed: true
+graph:
+  _id: DB00973_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: chlordiazepoxide
+  drug_mesh: MESH:D002707
+  drugbank: DB:DB00973
+links:
+  - key: negatively correlated with
+    source: MESH:D002707
+    target: GO:0001696
+  - key: positively correlated with
+    source: GO:0001696
+    target: MESH:D010437
+  - key: increases activity of
+    source: MESH:D002707
+    target: InterPro:IPR006028
+  - key: positively regulates
+    source: InterPro:IPR006028
+    target: GO:0022851
+  - key: positively correlated with
+    source: GO:0022851
+    target: GO:0060081
+  - key: negatively correlated with
+    source: GO:0060081
+    target: GO:0007269
+  - key: positively correlated with
+    source: GO:0007269
+    target: HP:0100852
+  - key: affects risk for
+    source: HP:0100852
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:D002707
+    label: Drug
+    name: chlordiazepoxide
+  - id: InterPro:IPR006028
+    label: GeneFamily
+    name: Gamma-aminobutyric acid A receptor/Glycine receptor alpha
+  - id: GO:0022851
+    label: BiologicalProcess
+    name: GABA-gated chloride ion channel activity
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: membrane hyperpolarization
+  - id: GO:0007269
+    label: BiologicalProcess
+    name: neurotransmitter secretion
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: gastric acid secretion
+  - id: HP:0100852
+    label: PhenotypicFeature
+    name: Abnormal fear/anxiety-related behavior
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB00475
+  - https://en.wikipedia.org/wiki/Chlordiazepoxide/clidinium_bromide
+comment: The drug can be useful for cases where the cause of peptic ulcer is due to
+  emotional/somatic factors. Also if used in combination with clinidium (DB:DB00771,
+  brand name Librax), it will inhibit acid secretion (antisecretory effect) and will
+  be beneficial for treating ulcers (https://go.drugbank.com/unearth/q?utf8=%E2%9C%93&searcher=drugs&query=Librax).

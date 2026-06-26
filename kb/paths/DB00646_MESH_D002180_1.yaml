@@ -1,0 +1,72 @@
+directed: true
+graph:
+  _id: DB00646_MESH_D002180_1
+  disease: Candidiasis, Oral
+  disease_mesh: MESH:D002180
+  drug: nystatin
+  drug_mesh: MESH:D009761
+  drugbank: DB:DB00646
+links:
+  - key: causes
+    source: MESH:D009761
+    target: MESH:D015227
+  - key: disrupts
+    source: MESH:D015227
+    target: GO:0006811
+  - key: located in
+    source: GO:0006811
+    target: GO:0030445
+  - key: produces
+    source: MESH:D009761
+    target: UBERON:0008915
+  - key: located in
+    source: UBERON:0008915
+    target: GO:0030445
+  - key: molecularly interacts with
+    source: MESH:D009761
+    target: CHEBI:16933
+  - key: located in
+    source: CHEBI:16933
+    target: GO:0030445
+  - key: regulates
+    source: GO:0030445
+    target: MESH:D002463
+  - key: in taxon
+    source: MESH:D002463
+    target: taxonomy:237561
+  - key: causes
+    source: taxonomy:237561
+    target: MESH:D002180
+multigraph: true
+nodes:
+  - id: MESH:D009761
+    label: Drug
+    name: nystatin
+  - id: UBERON:0008915
+    label: GrossAnatomicalStructure
+    name: pore
+  - id: MESH:D015227
+    label: BiologicalProcess
+    name: Lipid Peroxidation
+  - id: GO:0006811
+    label: BiologicalProcess
+    name: ion transport
+  - id: CHEBI:16933
+    label: ChemicalSubstance
+    name: ergosterol
+  - id: GO:0030445
+    label: CellularComponent
+    name: yeast-form cell wall
+  - id: MESH:D002463
+    label: PhenotypicFeature
+    name: Cell Membrane Permeability
+  - id: taxonomy:237561
+    label: OrganismTaxon
+    name: Candida albicans SC5314
+  - id: MESH:D002180
+    label: Disease
+    name: Candidiasis, Oral
+references:
+  - https://go.drugbank.com/drugs/DB00646
+  - https://en.wikipedia.org/wiki/Nystatin#Mechanism_of_action
+comment: MESH:D002179 was denoted as Candidiasis of mouth in the original file.

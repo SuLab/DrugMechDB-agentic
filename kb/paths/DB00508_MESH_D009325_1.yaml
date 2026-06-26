@@ -1,0 +1,37 @@
+directed: true
+graph:
+  _id: DB00508_MESH_D009325_1
+  disease: Nausea
+  disease_mesh: MESH:D009325
+  drug: Triflupromazine
+  drug_mesh: MESH:D014273
+  drugbank: DB:DB00508
+links:
+  - key: decreases activity of
+    source: MESH:D014273
+    target: UniProt:P14416
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: positively correlated with
+    source: MESH:D004298
+    target: MESH:D009325
+multigraph: true
+nodes:
+  - id: MESH:D014273
+    label: Drug
+    name: Triflupromazine
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: MESH:D009325
+    label: Disease
+    name: Nausea
+references:
+  - https://go.drugbank.com/drugs/DB00508#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P14416#function
+  - https://en.wikipedia.org/wiki/Dopamine_receptor
+  - https://en.wikipedia.org/wiki/Nausea

@@ -1,0 +1,37 @@
+comment: MESH:D003865 is denoted as Depressive Disorder, Major in the MESH website.
+  Note that the drug may slighlty inhibit the reuptake of serotonin too.
+directed: true
+graph:
+  _id: DB00234_MESH_D003865_1
+  disease: Major depressive disorder
+  disease_mesh: MESH:D003865
+  drug: reboxetine
+  drug_mesh: MESH:C074679
+  drugbank: DB:DB00234
+links:
+  - key: negatively regulates
+    source: MESH:C074679
+    target: UniProt:P23975
+  - key: positively regulates
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: positively correlated with
+    source: GO:0051620
+    target: MESH:D003865
+multigraph: true
+nodes:
+  - id: MESH:C074679
+    label: Drug
+    name: reboxetine
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: norepinephrine uptake
+  - id: MESH:D003865
+    label: Disease
+    name: Major depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00234
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL14370/

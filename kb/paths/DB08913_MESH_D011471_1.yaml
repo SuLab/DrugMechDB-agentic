@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB08913_MESH_D011471_1
+  disease: Malignant tumor of prostate
+  disease_mesh: MESH:D011471
+  drug: radium Ra 223 dichloride
+  drug_mesh: MESH:C581106
+  drugbank: DB:DB08913
+links:
+  - key: positively correlated with
+    source: MESH:C581106
+    target: GO:0035861
+  - key: positively regulates
+    source: GO:0035861
+    target: GO:0006915
+  - key: positively correlated with
+    source: GO:0006915
+    target: GO:0008219
+  - key: decreases abundance of
+    source: GO:0008219
+    target: CL:0001063
+  - key: positively correlated with
+    source: CL:0001063
+    target: MESH:D011471
+multigraph: true
+nodes:
+  - id: MESH:C581106
+    label: Drug
+    name: radium Ra 223 dichloride
+  - id: GO:0035861
+    label: CellularComponent
+    name: site of double-strand break
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: GO:0008219
+    label: BiologicalProcess
+    name: cell death
+  - id: CL:0001063
+    label: Cell
+    name: tumor cell
+  - id: MESH:D011471
+    label: Disease
+    name: Malignant tumor of prostate
+references:
+  - https://go.drugbank.com/drugs/DB08913
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107816/
+  - https://pubmed.ncbi.nlm.nih.gov/28919714/

@@ -1,0 +1,91 @@
+comment: Fludrocortisone acetate is a prodrug of fludrocortisone, a synthetic mineralocorticoid
+  used in conjunction with hydrocortisone
+directed: true
+graph:
+  _id: DB00687_MESH_D000224_2
+  disease: Addison disease
+  disease_mesh: MESH:D000224
+  drug: Fludrocortisone acetate
+  drug_mesh: MESH:C034635
+  drugbank: DB:DB00687
+links:
+  - key: has metabolite
+    source: MESH:C034635
+    target: MESH:D005438
+  - key: increases activity of
+    source: MESH:D005438
+    target: UniProt:P08235
+  - key: positively correlated with
+    source: UniProt:P08235
+    target: GO:0070294
+  - key: increases abundance of
+    source: GO:0070294
+    target: MESH:D012964
+  - key: negatively correlated with
+    source: MESH:D012964
+    target: HP:0002615
+  - key: positively correlated with
+    source: UniProt:P08235
+    target: GO:0036359
+  - key: decreases abundance of
+    source: GO:0036359
+    target: MESH:D011188
+  - key: contributes to
+    source: MESH:D011188
+    target: HP:0002153
+  - key: manifestation of
+    source: HP:0002153
+    target: MESH:D000224
+  - key: positively correlated with
+    source: UniProt:P08235
+    target: GO:0070295
+  - key: positively correlated with
+    source: GO:0070295
+    target: HP:0002632
+  - key: negatively correlated with
+    source: HP:0002632
+    target: HP:0002615
+  - key: manifestation of
+    source: HP:0002615
+    target: MESH:D000224
+multigraph: true
+nodes:
+  - id: MESH:C034635
+    label: Drug
+    name: Fludrocortisone acetate
+  - id: MESH:D005438
+    label: ChemicalSubstance
+    name: Fludrocortisone
+  - id: UniProt:P08235
+    label: Protein
+    name: Mineralocorticoid receptor
+  - id: GO:0070294
+    label: BiologicalProcess
+    name: Renal sodium ion absorption
+  - id: MESH:D012964
+    label: ChemicalSubstance
+    name: Sodium
+  - id: HP:0002632
+    label: PhenotypicFeature
+    name: Blood pressure
+  - id: GO:0070295
+    label: BiologicalProcess
+    name: Renal water absorption
+  - id: GO:0036359
+    label: BiologicalProcess
+    name: Renal potassium excretion
+  - id: MESH:D011188
+    label: ChemicalSubstance
+    name: Potassium
+  - id: HP:0002153
+    label: PhenotypicFeature
+    name: Hyperkalemia
+  - id: HP:0002615
+    label: PhenotypicFeature
+    name: Hypotension
+  - id: MESH:D000224
+    label: Disease
+    name: Addison disease
+references:
+  - https://go.drugbank.com/drugs/DB00687
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Fludrocortisone#section=Pharmacology

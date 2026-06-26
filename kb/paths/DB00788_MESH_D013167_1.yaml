@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB00788_MESH_D013167_1
+  disease: Spondylitis, Ankylosing
+  disease_mesh: MESH:D013167
+  drug: naproxen
+  drug_mesh: MESH:D009288
+  drugbank: DB:DB00788
+links:
+  - key: decreases activity of
+    source: MESH:D009288
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:D009288
+    target: UniProt:P35354
+  - key: positively regulates
+    source: UniProt:P23219
+    target: GO:0001516
+  - key: positively regulates
+    source: UniProt:P35354
+    target: GO:0001516
+  - key: positively correlated with
+    source: GO:0001516
+    target: GO:0006954
+  - key: contributes to
+    source: GO:0006954
+    target: HP:0001369
+  - key: manifestation of
+    source: HP:0001369
+    target: MESH:D013167
+multigraph: true
+nodes:
+  - id: MESH:D009288
+    label: Drug
+    name: naproxen
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: GO:0001516
+    label: BiologicalProcess
+    name: prostaglandin biosynthetic process
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0001369
+    label: PhenotypicFeature
+    name: Arthritis
+  - id: MESH:D013167
+    label: Disease
+    name: Spondylitis, Ankylosing
+references:
+  - https://go.drugbank.com/drugs/DB00788#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P23219#function
+  - https://www.uniprot.org/uniprot/P35354#function
+  - https://en.wikipedia.org/wiki/Cyclooxygenase
+  - https://en.wikipedia.org/wiki/Ankylosing_spondylitis

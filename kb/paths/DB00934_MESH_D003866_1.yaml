@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00934_MESH_D003866_1
+  disease: Depressive Disorder
+  disease_mesh: MESH:D003866
+  drug: Maprotiline
+  drug_mesh: MESH:D008376
+  drugbank: DB:DB00934
+links:
+  - key: decreases activity of
+    source: MESH:D008376
+    target: UniProt:P23975
+  - key: participates in
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: located in
+    source: GO:0051620
+    target: UBERON:0027221
+  - key: participates in
+    source: UBERON:0027221
+    target: HP:0000716
+  - key: correlated with
+    source: HP:0000716
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:D008376
+    label: Drug
+    name: Maprotiline
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: norepinephrine uptake
+  - id: UBERON:0027221
+    label: GrossAnatomicalStructure
+    name: adrenergic system
+  - id: HP:0000716
+    label: PhenotypicFeature
+    name: Depression
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive Disorder
+references:
+  - https://go.drugbank.com/drugs/DB00934#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Maprotiline
+  - https://www.uniprot.org/uniprot/P23975#function
+  - https://en.wikipedia.org/wiki/Depression_(mood)
+  - https://en.wikipedia.org/wiki/Major_depressive_disorder

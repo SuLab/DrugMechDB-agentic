@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00191_MESH_D007022_1
+  disease: Low blood pressure
+  disease_mesh: MESH:D007022
+  drug: phentermine
+  drug_mesh: MESH:D010645
+  drugbank: DB:DB00191
+links:
+  - key: decreases activity of
+    source: MESH:D010645
+    target: UniProt:P23975
+  - key: participates in
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: decreases abundance of
+    source: GO:0051620
+    target: MESH:D009638
+  - key: positively regulates
+    source: MESH:D009638
+    target: GO:0004936
+  - key: positively regulates
+    source: GO:0004936
+    target: GO:0042310
+  - key: negatively correlated with
+    source: GO:0042310
+    target: MESH:D007022
+multigraph: true
+nodes:
+  - id: MESH:D010645
+    label: Drug
+    name: Phentermine
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: Norepinephrine uptake
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: GO:0004936
+    label: BiologicalProcess
+    name: Alpha-adrenergic receptor activity
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D007022
+    label: Disease
+    name: Low blood pressure
+references:
+  - https://go.drugbank.com/drugs/DB00191#BE0000486

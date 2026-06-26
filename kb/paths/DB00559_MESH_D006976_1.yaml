@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB00559_MESH_D006976_1
+  disease: Pulmonary hypertension
+  disease_mesh: MESH:D006976
+  drug: bosentan
+  drug_mesh: MESH:C086232
+  drugbank: DB:DB00559
+links:
+  - key: decreases activity of
+    source: MESH:C086232
+    target: UniProt:P25101
+  - key: decreases activity of
+    source: MESH:C086232
+    target: UniProt:P24530
+  - key: positively regulates
+    source: UniProt:P25101
+    target: GO:0042310
+  - key: capable of
+    source: UniProt:P24530
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: MESH:D006976
+multigraph: true
+nodes:
+  - id: MESH:C086232
+    label: Drug
+    name: Bosentan
+  - id: UniProt:P25101
+    label: Protein
+    name: Endothelin-1 receptor
+  - id: UniProt:P24530
+    label: Protein
+    name: Endothelin receptor type B
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D006976
+    label: Disease
+    name: Pulmonary hypertension
+references:
+  - https://en.wikipedia.org/wiki/Bosentan
+  - https://go.drugbank.com/drugs/DB00559#BE0000043

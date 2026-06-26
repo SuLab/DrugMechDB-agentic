@@ -1,0 +1,30 @@
+comment: Only for treatment of mild haemophilia
+directed: true
+graph:
+  _id: DB00067_MESH_D006467_1
+  disease: Factor VIII Deficiency (Haemophilia A)
+  disease_mesh: MESH:D006467
+  drug: Vasopressin
+  drug_mesh: MESH:C016671
+  drugbank: DB:DB00067
+links:
+  - key: increases abundance of
+    source: MESH:C016671
+    target: UniProt:P00451
+  - key: disrupted by
+    source: UniProt:P00451
+    target: MESH:D006467
+multigraph: true
+nodes:
+  - id: MESH:C016671
+    label: Drug
+    name: Vasopressin
+  - id: UniProt:P00451
+    label: Protein
+    name: Coagulation factor VIII
+  - id: MESH:D006467
+    label: Disease
+    name: Hereditary factor VIII deficiency disease
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/18173690/
+  - https://go.drugbank.com/drugs/DB00067

@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00479_MESH_D016920_1
+  disease: Bacterial meningitis
+  disease_mesh: MESH:D016920
+  drug: amikacin
+  drug_mesh: MESH:D000583
+  drugbank: DB:DB00479
+links:
+  - key: decreases activity of
+    source: MESH:D000583
+    target: UniProt:P0A7S3
+  - key: participates in
+    source: UniProt:P0A7S3
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D016920
+multigraph: true
+nodes:
+  - id: MESH:D000583
+    label: Drug
+    name: amikacin
+  - id: UniProt:P0A7S3
+    label: Protein
+    name: 30S Ribosomal Subunit
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Bacterial Translation
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D016920
+    label: Disease
+    name: Bacterial meningitis

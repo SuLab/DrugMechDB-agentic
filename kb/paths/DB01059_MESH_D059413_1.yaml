@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01059_MESH_D059413_1
+  disease: Intraabdominal Infections
+  disease_mesh: MESH:D059413
+  drug: norfloxacin
+  drug_mesh: MESH:D009643
+  drugbank: DB:DB01059
+links:
+  - key: decreases activity of
+    source: MESH:D009643
+    target: UniProt:P0AES4
+  - key: decreases activity of
+    source: MESH:D009643
+    target: UniProt:P0AFI2
+  - key: positively regulates
+    source: UniProt:P0AES4
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:P0AFI2
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D059413
+multigraph: true
+nodes:
+  - id: MESH:D009643
+    label: Drug
+    name: norfloxacin
+  - id: UniProt:P0AES4
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:P0AFI2
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D059413
+    label: Disease
+    name: Intraabdominal Infections
+references:
+  - https://go.drugbank.com/drugs/DB01059#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P0AES4#function
+  - https://www.uniprot.org/uniprot/P0AFI2#function
+  - https://en.wikipedia.org/wiki/Intra-abdominal_infection

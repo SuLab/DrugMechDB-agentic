@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB06217_MESH_D001281_1
+  disease: Atrial fibrillation
+  disease_mesh: MESH:D001281
+  drug: vernakalant
+  drug_mesh: MESH:C524581
+  drugbank: DB:DB06217
+links:
+  - key: decreases activity of
+    source: MESH:C524581
+    target: UniProt:P22460
+  - key: positively regulates
+    source: UniProt:P22460
+    target: GO:0086013
+  - key: decreases activity of
+    source: MESH:C524581
+    target: UniProt:Q9UK17
+  - key: positively regulates
+    source: UniProt:Q9UK17
+    target: GO:0086013
+  - key: occurs in
+    source: GO:0086013
+    target: UBERON:0000948
+  - key: affected by
+    source: UBERON:0000948
+    target: MESH:D001281
+multigraph: true
+nodes:
+  - id: MESH:C524581
+    label: Drug
+    name: Vernakalant
+  - id: GO:0086013
+    label: BiologicalProcess
+    name: Membrane repolarization during cardiac muscle cell action potential
+  - id: UniProt:P22460
+    label: Protein
+    name: Potassium voltage-gated channel subfamily A member 5
+  - id: UniProt:Q9UK17
+    label: Protein
+    name: Potassium voltage-gated channel subfamily D member 3
+  - id: UBERON:0000948
+    label: GrossAnatomicalStructure
+    name: Heart
+  - id: MESH:D001281
+    label: Disease
+    name: Atrial fibrillation
+references:
+  - https://go.drugbank.com/drugs/DB06217#BE0004717
+  - https://en.wikipedia.org/wiki/Vernakalant#Mechanism_of_action

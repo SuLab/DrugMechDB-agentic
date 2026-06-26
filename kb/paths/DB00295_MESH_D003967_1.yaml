@@ -1,0 +1,66 @@
+directed: true
+graph:
+  _id: DB00295_MESH_D003967_1
+  disease: Diarrhea
+  disease_mesh: MESH:D003967
+  drug: morphine
+  drug_mesh: MESH:D009020
+  drugbank: DB:DB00295
+links:
+  - key: positively regulates
+    source: MESH:D009020
+    target: InterPro:IPR001418
+  - key: increases abundance of
+    source: InterPro:IPR001418
+    target: CHEBI:16480
+  - key: negatively regulates
+    source: CHEBI:16480
+    target: GO:0120054
+  - key: decreases activity of
+    source: InterPro:IPR001418
+    target: GO:0035483
+  - key: decreases activity of
+    source: InterPro:IPR001418
+    target: GO:0030432
+  - key: increases activity of
+    source: GO:0035483
+    target: GO:0120054
+  - key: increases activity of
+    source: GO:0030432
+    target: GO:0120054
+  - key: negatively correlated with
+    source: GO:0120054
+    target: HP:0002019
+  - key: negatively correlated with
+    source: HP:0002019
+    target: MESH:D003967
+multigraph: true
+nodes:
+  - id: MESH:D009020
+    label: Drug
+    name: morphine
+  - id: InterPro:IPR001418
+    label: GeneFamily
+    name: Opioid receptor
+  - id: GO:0030432
+    label: BiologicalProcess
+    name: peristalsis
+  - id: GO:0035483
+    label: BiologicalProcess
+    name: gastric emptying
+  - id: CHEBI:16480
+    label: ChemicalSubstance
+    name: nitric oxide
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: intestinal motility
+  - id: HP:0002019
+    label: PhenotypicFeature
+    name: Constipation
+  - id: MESH:D003967
+    label: Disease
+    name: Diarrhea
+references:
+  - https://go.drugbank.com/drugs/DB00295#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Analgesic#Opioids
+  - https://en.wikipedia.org/wiki/Morphine#Constipation

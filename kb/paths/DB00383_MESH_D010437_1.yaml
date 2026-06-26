@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00383_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: oxyphencyclimine
+  drug_mesh: MESH:C100201
+  drugbank: DB:DB00383
+links:
+  - key: decreases activity of
+    source: MESH:C100201
+    target: UniProt:P20309
+  - key: participates in
+    source: UniProt:P20309
+    target: GO:0001699
+  - key: increases abundance of
+    source: GO:0001699
+    target: MESH:D005744
+  - key: contributes to
+    source: MESH:D005744
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:C100201
+    label: Drug
+    name: oxyphencyclimine
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:0001699
+    label: BiologicalProcess
+    name: acetylcholine-induced gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: gastric acid
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB00383

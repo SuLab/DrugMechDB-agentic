@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB00594_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: amiloride
+  drug_mesh: MESH:D000584
+  drugbank: DB:DB00594
+links:
+  - key: decreases activity of
+    source: MESH:D000584
+    target: UniProt:P51170
+  - key: decreases activity of
+    source: MESH:D000584
+    target: UniProt:P37088
+  - key: decreases activity of
+    source: MESH:D000584
+    target: UniProt:P51168
+  - key: participates in
+    source: UniProt:P51170
+    target: GO:0070294
+  - key: participates in
+    source: UniProt:P37088
+    target: GO:0070294
+  - key: participates in
+    source: UniProt:P51168
+    target: GO:0070294
+  - key: positively correlated with
+    source: GO:0070294
+    target: GO:0003092
+  - key: positively correlated with
+    source: GO:0003092
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D000584
+    label: Drug
+    name: amiloride
+  - id: UniProt:P51170
+    label: Protein
+    name: Amiloride-sensitive sodium channel subunit gamma
+  - id: UniProt:P37088
+    label: Protein
+    name: Amiloride-sensitive sodium channel subunit alpha
+  - id: UniProt:P51168
+    label: Protein
+    name: Amiloride-sensitive sodium channel subunit beta
+  - id: GO:0070294
+    label: BiologicalProcess
+    name: renal sodium ion absorption
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: renal water retention
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2107836/
+  - https://go.drugbank.com/drugs/DB00594

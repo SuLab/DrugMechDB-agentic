@@ -1,0 +1,26 @@
+comment: Levonorgestrel is prescribed in combination with estradiol as a hormone therapy
+  during menopause to prevent menopausal flushing and in this case estradiol is the
+  acive drug, while levonorgestrel is added for the protection of the endometrium
+directed: true
+graph:
+  _id: DB00367_MESH_D019584_1
+  disease: Menopausal flushing
+  disease_mesh: MESH:D019584
+  drug: Levonorgestrel
+  drug_mesh: MESH:D016912
+  drugbank: DB:DB00367
+links:
+  - key: treats
+    source: MESH:D016912
+    target: MESH:D019584
+multigraph: true
+nodes:
+  - id: MESH:D016912
+    label: Drug
+    name: Levonorgestrel
+  - id: MESH:D019584
+    label: Disease
+    name: Menopausal flushing
+references:
+  - https://go.drugbank.com/drugs/DB00367#BE0000557
+  - https://en.wikipedia.org/wiki/Levonorgestrel#Hormone_therapy

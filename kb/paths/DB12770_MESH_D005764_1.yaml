@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB12770_MESH_D005764_1
+  disease: Gastroesophageal Reflux
+  disease_mesh: MESH:D005764
+  drug: lafutidine
+  drug_mesh: MESH:C076948
+  drugbank: DB:DB12770
+links:
+  - key: decreases activity of
+    source: MESH:C076948
+    target: UniProt:P25021
+  - key: positively regulates
+    source: UniProt:P25021
+    target: GO:0001696
+  - key: positively correlated with
+    source: GO:0001696
+    target: MESH:D005764
+multigraph: true
+nodes:
+  - id: MESH:C076948
+    label: Drug
+    name: lafutidine
+  - id: UniProt:P25021
+    label: Protein
+    name: Histamine H2 Receptor
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: Gastric acid secretion
+  - id: MESH:D005764
+    label: Disease
+    name: Gastroesophageal Reflux

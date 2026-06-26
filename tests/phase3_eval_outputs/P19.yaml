@@ -1,0 +1,85 @@
+directed: true
+multigraph: true
+graph:
+  _id: P19_DB00996_MESH_D004827
+  drug: Gabapentin
+  drug_mesh: MESH:D000077306
+  drugbank: DB:DB00996
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+nodes:
+  - id: MESH:D000077306
+    name: Gabapentin
+    label: Drug
+  - id: UniProt:P54289
+    name: Voltage-dependent calcium channel subunit alpha-2/delta-1
+    label: Protein
+  - id: GO:0070588
+    name: calcium ion transmembrane transport
+    label: BiologicalProcess
+  - id: GO:0007269
+    name: neurotransmitter secretion
+    label: BiologicalProcess
+  - id: MESH:D004827
+    name: Epilepsy
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000077306
+    target: UniProt:P54289
+    evidence:
+      - reference: PMID:32607809
+        snippet: α2δ proteins are the targets of the widely prescribed anti-epileptic and anti-allodynic drugs gabapentin and pregabalin
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Gabapentin binds to the α2δ-1 (CACNA2D1) auxiliary subunit of voltage-gated calcium channels, acting as a high-affinity ligand that reduces its functional activity.
+      - reference: PMID:32321743
+        snippet: The α 2 δ-1 protein is required for the ability of gabapentin and pregabalin to reduce neurotransmitter release in neuronal tissue, consistent with a therapeutic mechanism of action via voltage-gated calcium channels.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: The α2δ-1 protein is both the high-affinity binding site and required mediator of gabapentin's mechanism, confirming gabapentin decreases its activity.
+  - key: positively regulates
+    source: UniProt:P54289
+    target: GO:0070588
+    evidence:
+      - reference: PMID:17403543
+        snippet: All alpha2delta subunits increase the density at the plasma membrane of Ca(2+) channels activated by high voltage
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: The α2δ-1 subunit promotes trafficking of voltage-gated calcium channels to the plasma membrane, thereby positively regulating calcium ion transmembrane transport.
+      - reference: PMID:32607809
+        snippet: They serve as regulatory subunits of voltage-gated calcium channels
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: As a regulatory subunit of voltage-gated calcium channels, α2δ-1 positively regulates calcium ion flux across the neuronal membrane.
+  - key: positively regulates
+    source: GO:0070588
+    target: GO:0007269
+    evidence:
+      - reference: PMID:29793598
+        snippet: They inhibit calcium mediated neurotransmitter release through effects on α2δ-1 subunits
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Calcium-mediated neurotransmitter release is explicitly invoked — calcium ion transmembrane transport drives (positively regulates) neurotransmitter secretion at presynaptic terminals.
+      - reference: PMID:21150315
+        snippet: GBPs reduced release of various neurotransmitters from synapses in several neuronal tissues
+        supports: PARTIAL
+        evidence_source: IN_VITRO
+        explanation: Gabapentinoids reduce neurotransmitter release by modulating presynaptic Ca2+ currents, consistent with calcium influx positively driving neurotransmitter secretion.
+  - key: contributes to
+    source: GO:0007269
+    target: MESH:D004827
+    evidence:
+      - reference: PMID:17126531
+        snippet: Pregabalin subtly reduces the synaptic release of several neurotransmitters, apparently by binding to alpha2-delta subunits, and possibly accounting for its actions in vivo to reduce neuronal excitability and seizures
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: Reducing neurotransmitter secretion reduces neuronal excitability and seizures; conversely, excess neurotransmitter secretion contributes to the seizure activity that defines epilepsy.
+      - reference: PMID:17126531
+        snippet: reduction of abnormal neuronal excitability through reduced neurotransmitter release
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: Abnormal neurotransmitter release drives neuronal hyperexcitability and epileptic seizures; reducing secretion is the therapeutic rationale, confirming secretion contributes to epilepsy.
+references:
+  - https://go.drugbank.com/drugs/DB00996#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P54289

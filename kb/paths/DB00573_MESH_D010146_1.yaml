@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB00573_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: fenoprofen
+  drug_mesh: MESH:D005279
+  drugbank: DB:DB00573
+links:
+  - key: decreases activity of
+    source: MESH:D005279
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:D005279
+    target: UniProt:P35354
+  - key: participates in
+    source: UniProt:P23219
+    target: reactome:R-HSA-2162123
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:D005279
+    label: Drug
+    name: fenoprofen
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: reactome:R-HSA-2162123
+    label: BiologicalProcess
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+references:
+  - https://go.drugbank.com/drugs/DB00573
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1297/
+  - https://en.wikipedia.org/wiki/Fenoprofen#Pharmacology

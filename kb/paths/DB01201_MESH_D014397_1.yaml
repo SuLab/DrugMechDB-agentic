@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01201_MESH_D014397_1
+  disease: Pulmonary tuberculosis
+  disease_mesh: MESH:D014397
+  drug: rifapentine
+  drug_mesh: MESH:C018421
+  drugbank: DB:DB01201
+links:
+  - key: decreases activity of
+    source: MESH:C018421
+    target: UniProt:P9WGY7
+  - key: participates in
+    source: UniProt:P9WGY7
+    target: GO:0032774
+  - key: occurs in
+    source: GO:0032774
+    target: taxonomy:1773
+  - key: causes
+    source: taxonomy:1773
+    target: MESH:D014397
+multigraph: true
+nodes:
+  - id: MESH:C018421
+    label: Drug
+    name: rifapentine
+  - id: UniProt:P9WGY7
+    label: Protein
+    name: DNA-directed RNA polymerase subunit beta
+  - id: GO:0032774
+    label: BiologicalProcess
+    name: RNA synthesis
+  - id: taxonomy:1773
+    label: OrganismTaxon
+    name: Mycobacterium tuberculosis infection
+  - id: MESH:D014397
+    label: Disease
+    name: Pulmonary tuberculosis

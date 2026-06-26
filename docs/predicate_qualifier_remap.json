@@ -1,0 +1,267 @@
+{
+  "sizing": {
+    "biolink_model_version": "4.2.2",
+    "source": "biolink-model predicate_mapping.yaml @ v4.2.2 + bmt 1.4.8",
+    "not_in_biolink_edges_18": 16812,
+    "renamed_set_edges_3": 59,
+    "deterministic_edges": 16789,
+    "deterministic_pct_of_all": 99.51,
+    "needs_review_edges": 82,
+    "needs_review_pct_of_all": 0.49,
+    "rules_total": 21,
+    "qualifier_expansion_rules": 13,
+    "rename_rules": 7,
+    "needs_review_rules": 1
+  },
+  "rules": [
+    {
+      "old_predicate": "positively regulates",
+      "corpus_uses": 6630,
+      "class": "qualifier-expansion",
+      "target": {
+        "predicate": "regulates",
+        "object_direction_qualifier": "upregulated"
+      },
+      "verification_source": "predicate_mapping.yaml",
+      "note": "mapped under 'entity/process positively regulates \u2026'; no qualified_predicate"
+    },
+    {
+      "old_predicate": "decreases activity of",
+      "corpus_uses": 4561,
+      "class": "qualifier-expansion",
+      "target": {
+        "predicate": "affects",
+        "qualified_predicate": "causes",
+        "object_aspect_qualifier": "activity",
+        "object_direction_qualifier": "decreased"
+      },
+      "verification_source": "predicate_mapping.yaml",
+      "note": ""
+    },
+    {
+      "old_predicate": "increases activity of",
+      "corpus_uses": 1974,
+      "class": "qualifier-expansion",
+      "target": {
+        "predicate": "affects",
+        "qualified_predicate": "causes",
+        "object_aspect_qualifier": "activity",
+        "object_direction_qualifier": "increased"
+      },
+      "verification_source": "predicate_mapping.yaml",
+      "note": ""
+    },
+    {
+      "old_predicate": "negatively regulates",
+      "corpus_uses": 1913,
+      "class": "qualifier-expansion",
+      "target": {
+        "predicate": "regulates",
+        "object_direction_qualifier": "downregulated"
+      },
+      "verification_source": "predicate_mapping.yaml",
+      "note": "mapped under 'entity/process negatively regulates \u2026'; no qualified_predicate"
+    },
+    {
+      "old_predicate": "increases abundance of",
+      "corpus_uses": 1028,
+      "class": "qualifier-expansion",
+      "target": {
+        "predicate": "affects",
+        "qualified_predicate": "causes",
+        "object_aspect_qualifier": "abundance",
+        "object_direction_qualifier": "increased"
+      },
+      "verification_source": "predicate_mapping.yaml",
+      "note": ""
+    },
+    {
+      "old_predicate": "decreases abundance of",
+      "corpus_uses": 476,
+      "class": "qualifier-expansion",
+      "target": {
+        "predicate": "affects",
+        "qualified_predicate": "causes",
+        "object_aspect_qualifier": "abundance",
+        "object_direction_qualifier": "decreased"
+      },
+      "verification_source": "predicate_mapping.yaml",
+      "note": ""
+    },
+    {
+      "old_predicate": "molecularly interacts with",
+      "corpus_uses": 109,
+      "class": "rename",
+      "target": {
+        "predicate": "directly physically interacts with"
+      },
+      "verification_source": "bmt-verified-rename",
+      "note": "documented Biolink deprecation replacement; semantic narrowing \u2014 broader alt 'interacts with' also exists (curator may prefer it)"
+    },
+    {
+      "old_predicate": "affects risk for",
+      "corpus_uses": 82,
+      "class": "needs-review",
+      "target": {
+        "candidates": [
+          "associated with increased likelihood of",
+          "associated with decreased likelihood of",
+          "contributes to"
+        ]
+      },
+      "verification_source": "bmt-verified-rename",
+      "note": "sign-dependent: maps to increased- vs decreased-likelihood per edge; resolvable by reading the edge's intended direction, but not a single 1:1 rule"
+    },
+    {
+      "old_predicate": "prevents",
+      "corpus_uses": 44,
+      "class": "rename",
+      "target": {
+        "predicate": "preventative for condition"
+      },
+      "verification_source": "bmt-verified-rename",
+      "note": "already flagged renamed in drift audit"
+    },
+    {
+      "old_predicate": "ameliorates",
+      "corpus_uses": 12,
+      "class": "rename",
+      "target": {
+        "predicate": "ameliorates condition"
+      },
+      "verification_source": "bmt-verified-rename",
+      "note": "already flagged renamed in drift audit"
+    },
+    {
+      "old_predicate": "increases degradation of",
+      "corpus_uses": 9,
+      "class": "qualifier-expansion",
+      "target": {
+        "predicate": "affects",
+        "qualified_predicate": "causes",
+        "object_aspect_qualifier": "degradation",
+        "object_direction_qualifier": "increased"
+      },
+      "verification_source": "predicate_mapping.yaml",
+      "note": ""
+    },
+    {
+      "old_predicate": "contraindicated for",
+      "corpus_uses": 8,
+      "class": "rename",
+      "target": {
+        "predicate": "contraindicated in"
+      },
+      "verification_source": "bmt-verified-rename",
+      "note": ""
+    },
+    {
+      "old_predicate": "increases transport of",
+      "corpus_uses": 7,
+      "class": "qualifier-expansion",
+      "target": {
+        "predicate": "affects",
+        "qualified_predicate": "causes",
+        "object_aspect_qualifier": "transport",
+        "object_direction_qualifier": "increased"
+      },
+      "verification_source": "predicate_mapping.yaml",
+      "note": ""
+    },
+    {
+      "old_predicate": "directly interacts with",
+      "corpus_uses": 5,
+      "class": "rename",
+      "target": {
+        "predicate": "directly physically interacts with"
+      },
+      "verification_source": "bmt-verified-rename",
+      "note": ""
+    },
+    {
+      "old_predicate": "increases stability of",
+      "corpus_uses": 4,
+      "class": "qualifier-expansion",
+      "target": {
+        "predicate": "affects",
+        "qualified_predicate": "causes",
+        "object_aspect_qualifier": "stability",
+        "object_direction_qualifier": "increased"
+      },
+      "verification_source": "by-analogy",
+      "note": "aspect 'stability' exists in GeneOrGeneProductOrChemicalEntityAspectEnum; explicit row not shipped in predicate_mapping.yaml but the +increases/-decreases pattern is fully systematic"
+    },
+    {
+      "old_predicate": "exacerbates",
+      "corpus_uses": 3,
+      "class": "rename",
+      "target": {
+        "predicate": "exacerbates condition"
+      },
+      "verification_source": "bmt-verified-rename",
+      "note": "already flagged renamed in drift audit"
+    },
+    {
+      "old_predicate": "decreases synthesis of",
+      "corpus_uses": 2,
+      "class": "qualifier-expansion",
+      "target": {
+        "predicate": "affects",
+        "qualified_predicate": "causes",
+        "object_aspect_qualifier": "synthesis",
+        "object_direction_qualifier": "decreased"
+      },
+      "verification_source": "predicate_mapping.yaml",
+      "note": ""
+    },
+    {
+      "old_predicate": "increases expression of",
+      "corpus_uses": 1,
+      "class": "qualifier-expansion",
+      "target": {
+        "predicate": "affects",
+        "qualified_predicate": "causes",
+        "object_aspect_qualifier": "expression",
+        "object_direction_qualifier": "increased"
+      },
+      "verification_source": "predicate_mapping.yaml",
+      "note": ""
+    },
+    {
+      "old_predicate": "decreases expression of",
+      "corpus_uses": 1,
+      "class": "qualifier-expansion",
+      "target": {
+        "predicate": "affects",
+        "qualified_predicate": "causes",
+        "object_aspect_qualifier": "expression",
+        "object_direction_qualifier": "decreased"
+      },
+      "verification_source": "predicate_mapping.yaml",
+      "note": ""
+    },
+    {
+      "old_predicate": "decreases uptake of",
+      "corpus_uses": 1,
+      "class": "qualifier-expansion",
+      "target": {
+        "predicate": "affects",
+        "qualified_predicate": "causes",
+        "object_aspect_qualifier": "uptake",
+        "object_direction_qualifier": "decreased"
+      },
+      "verification_source": "predicate_mapping.yaml",
+      "note": ""
+    },
+    {
+      "old_predicate": "predisposes",
+      "corpus_uses": 1,
+      "class": "rename",
+      "target": {
+        "predicate": "predisposes to condition"
+      },
+      "verification_source": "bmt-verified-rename",
+      "note": ""
+    }
+  ]
+}

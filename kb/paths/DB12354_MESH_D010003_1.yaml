@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB12354_MESH_D010003_1
+  disease: Osteoarthritis
+  disease_mesh: MESH:D010003
+  drug: imrecoxib
+  drug_mesh: MESH:C488833
+  drugbank: DB:DB12354
+links:
+  - key: decreases activity of
+    source: MESH:C488833
+    target: UniProt:P35354
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: MESH:D011453
+  - key: positively regulates
+    source: MESH:D011453
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0002829
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0001386
+  - key: positively correlated with
+    source: HP:0001386
+    target: MESH:D010003
+  - key: positively correlated with
+    source: HP:0002829
+    target: MESH:D010003
+multigraph: true
+nodes:
+  - id: MESH:C488833
+    label: Drug
+    name: Imrecoxib
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: reactome:R-HSA-2162123
+    label: BiologicalProcess
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Joint pain
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: MESH:D010003
+    label: Disease
+    name: Osteoarthritis
+references:
+  - https://drugcentral.org/drugcard/5250
+  - https://go.drugbank.com/drugs/DB12354

@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB01270_MESH_D003930_1
+  disease: Diabetic retinopathy
+  disease_mesh: MESH:D003930
+  drug: Ranibizumab
+  drug_mesh: MESH:D000069579
+  drugbank: DB:DB01270
+links:
+  - key: decreases activity of
+    source: MESH:D000069579
+    target: UniProt:P15692
+  - key: positively regulates
+    source: UniProt:P15692
+    target: GO:0001525
+  - key: positively correlated with
+    source: GO:0001525
+    target: MESH:D003930
+multigraph: true
+nodes:
+  - id: MESH:D000069579
+    label: Drug
+    name: Ranibizumab
+  - id: UniProt:P15692
+    label: Protein
+    name: Vascular endothelial growth factor A
+  - id: GO:0001525
+    label: BiologicalProcess
+    name: Angiogenesis
+  - id: MESH:D003930
+    label: Disease
+    name: Diabetic retinopathy
+references:
+  - https://go.drugbank.com/drugs/DB01270
+  - https://pubmed.ncbi.nlm.nih.gov/19199892/

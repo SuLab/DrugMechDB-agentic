@@ -1,0 +1,24 @@
+comment: Cancer drugs such as paclitaxel can increase intraocular pressure and should
+  be used with caution in patients with open-angle glaucoma.
+directed: true
+graph:
+  _id: DB01229_MESH_D005902_1
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: paclitaxel
+  drug_mesh: MESH:D017239,MESH:D000068196
+  drugbank: DB:DB01229
+links:
+  - key: contraindicated for
+    source: DB:DB01229
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: DB:DB01229
+    label: Drug
+    name: Paclitaxel
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - https://www.nature.com/articles/eye2011128#Sec25

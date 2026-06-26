@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB06414_MESH_D015658_1
+  disease: Human immunodeficiency virus infection
+  disease_mesh: MESH:D015658
+  drug: Etravirine
+  drug_mesh: MESH:C451734
+  drugbank: DB:DB06414
+links:
+  - key: decreases activity of
+    source: MESH:C451734
+    target: InterPro:IPR000477
+  - key: positively correlated with
+    source: InterPro:IPR000477
+    target: GO:0019079
+  - key: in taxon
+    source: GO:0019079
+    target: taxonomy:12721
+  - key: causes
+    source: taxonomy:12721
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:C451734
+    label: Drug
+    name: Etravirine
+  - id: InterPro:IPR000477
+    label: GeneFamily
+    name: Reverse transcriptase domain
+  - id: GO:0019079
+    label: BiologicalProcess
+    name: Viral genome replication
+  - id: taxonomy:12721
+    label: OrganismTaxon
+    name: Human immunodeficiency virus
+  - id: MESH:D015658
+    label: Disease
+    name: Human immunodeficiency virus infection
+references:
+  - https://go.drugbank.com/drugs/DB06414
+  - https://en.wikipedia.org/wiki/Etravirine

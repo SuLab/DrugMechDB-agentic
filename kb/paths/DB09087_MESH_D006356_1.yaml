@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB09087_MESH_D006356_1
+  disease: Heartburn
+  disease_mesh: MESH:D006356
+  drug: alum
+  drug_mesh: MESH:D000534
+  drugbank: DB:DB09087
+links:
+  - key: subclass of
+    source: MESH:D000534
+    target: MESH:D001252
+  - key: negatively correlated with
+    source: MESH:D001252
+    target: MESH:D005744
+  - key: located in
+    source: MESH:D005744
+    target: UBERON:0001043
+  - key: location of
+    source: UBERON:0001043
+    target: MESH:D006356
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C041524
+    id: MESH:D000534
+    label: Drug
+    name: alum
+  - id: MESH:D001252
+    label: ChemicalSubstance
+    name: Astringents
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: UBERON:0001043
+    label: GrossAnatomicalStructure
+    name: esophagus
+  - id: MESH:D006356
+    label: Disease
+    name: Heartburn
+references:
+  - https://go.drugbank.com/drugs/DB09087#pharmacodynamics
+  - https://en.wikipedia.org/wiki/Potassium_alum#Medicine_and_cosmetics
+  - https://en.wikipedia.org/wiki/Heartburn#Treatment

@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00215_MESH_D003866_1
+  disease: Depressive Disorder
+  disease_mesh: MESH:D003866
+  drug: Citalopram
+  drug_mesh: MESH:D015283
+  drugbank: DB:DB00215
+links:
+  - key: decreases activity of
+    source: MESH:D015283
+    target: UniProt:P31645
+  - key: positively regulates
+    source: UniProt:P31645
+    target: GO:0051610
+  - key: decreases abundance of
+    source: GO:0051610
+    target: MESH:D012701
+  - key: negatively correlated with
+    source: MESH:D012701
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:D015283
+    label: Drug
+    name: Citalopram
+  - id: UniProt:P31645
+    label: Protein
+    name: Sodium-dependent serotonin transporter
+  - id: GO:0051610
+    label: BiologicalProcess
+    name: serotonin uptake
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive Disorder
+references:
+  - https://go.drugbank.com/drugs/DB00215#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Citalopram#Depression
+  - https://www.uniprot.org/uniprot/P31645#function
+  - https://en.wikipedia.org/wiki/Major_depressive_disorder

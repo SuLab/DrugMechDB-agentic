@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00814_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: meloxicam
+  drug_mesh: MESH:D000077239
+  drugbank: DB:DB00814
+links:
+  - key: decreases activity of
+    source: MESH:D000077239
+    target: UniProt:P35354
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: MESH:D011453
+  - key: increases activity of
+    source: MESH:D011453
+    target: InterPro:IPR000265
+  - key: causes
+    source: InterPro:IPR000265
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:D000077239
+    label: Drug
+    name: meloxicam
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin synthhase 2
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: InterPro:IPR000265
+    label: GeneFamily
+    name: Pain Receptors
+  - id: MESH:D010146
+    label: Disease
+    name: Pain

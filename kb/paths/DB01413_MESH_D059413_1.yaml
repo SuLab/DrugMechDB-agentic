@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01413_MESH_D059413_1
+  disease: Infectious disease of abdomen
+  disease_mesh: MESH:D059413
+  drug: Cefepime
+  drug_mesh: MESH:C043266
+  drugbank: DB:DB01413
+links:
+  - key: negatively regulates
+    source: MESH:C043266
+    target: UniProt:P0AD65
+  - key: positively regulates
+    source: UniProt:P0AD65
+    target: GO:0071972
+  - key: participates in
+    source: GO:0071972
+    target: GO:0018104
+  - key: correlated with
+    source: GO:0018104
+    target: GO:0031504
+  - key: in taxon
+    source: GO:0031504
+    target: taxonomy:562
+  - key: positively correlated with
+    source: taxonomy:562
+    target: MESH:D059413
+multigraph: true
+nodes:
+  - id: MESH:C043266
+    label: Drug
+    name: Cefepime
+  - id: UniProt:P0AD65
+    label: Protein
+    name: Penicillin-binding protein 2 (Escherichia coli)
+  - id: GO:0071972
+    label: MolecularActivity
+    name: peptidoglycan L,D-transpeptidase activity
+  - id: GO:0018104
+    label: BiologicalProcess
+    name: peptidoglycan-protein cross-linking
+  - id: GO:0031504
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall organization
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D059413
+    label: Disease
+    name: Infectious disease of abdomen
+references:
+  - https://go.drugbank.com/drugs/DB01413#mechanism-of-action
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3049134/

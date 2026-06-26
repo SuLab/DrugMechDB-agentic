@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB09050_MESH_D059413_1
+  disease: Infectious disease of abdomen
+  disease_mesh: MESH:D059413
+  drug: ceftolozane
+  drug_mesh: MESH:C519491
+  drugbank: DB:DB09050
+links:
+  - key: negatively regulates
+    source: MESH:C519491
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: in taxon
+    source: GO:0009252
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D059413
+multigraph: true
+nodes:
+  - id: MESH:C519491
+    label: Drug
+    name: ceftolozane
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding proteins
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D059413
+    label: Disease
+    name: Infectious disease of abdomen
+references:
+  - https://go.drugbank.com/drugs/DB09050

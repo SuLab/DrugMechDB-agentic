@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB04812_MESH_D001172_1
+  disease: Arthritis, Rheumatoid
+  disease_mesh: MESH:D001172
+  drug: benoxaprofen
+  drug_mesh: MESH:C011677
+  drugbank: DB:DB04812
+links:
+  - key: decreases activity of
+    source: MESH:C011677
+    target: UniProt:P09917
+  - key: positively regulates
+    source: UniProt:P09917
+    target: GO:0019370
+  - key: increases abundance of
+    source: GO:0019370
+    target: MESH:D015289
+  - key: positively regulates
+    source: MESH:D015289
+    target: GO:0006954
+  - key: has phenotype
+    source: GO:0006954
+    target: HP:0002829
+  - key: manifestation of
+    source: HP:0002829
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:C011677
+    label: Drug
+    name: benoxaprofen
+  - id: UniProt:P09917
+    label: Protein
+    name: Polyunsaturated fatty acid 5-lipoxygenase
+  - id: GO:0019370
+    label: BiologicalProcess
+    name: leukotriene biosynthetic process
+  - id: MESH:D015289
+    label: ChemicalSubstance
+    name: Leukotrienes
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Arthralgia
+  - id: MESH:D001172
+    label: Disease
+    name: Arthritis, Rheumatoid
+references:
+  - https://drugs.ncats.io/drug/K274V650EH
+  - https://www.uniprot.org/uniprot/P09917#function
+  - https://pubmed.ncbi.nlm.nih.gov/24593197/
+  - https://en.wikipedia.org/wiki/Arthralgia
+  - https://en.wikipedia.org/wiki/Rheumatoid_arthritis

@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01155_MESH_D018410_2
+  disease: Bacterial pneumonia
+  disease_mesh: MESH:D018410
+  drug: gemifloxacin
+  drug_mesh: MESH:C103274
+  drugbank: DB:DB01155
+links:
+  - key: decreases activity of
+    source: MESH:C103274
+    target: UniProt:P72525
+  - key: decreases activity of
+    source: MESH:C103274
+    target: UniProt:Q8DPM2
+  - key: participates in
+    source: UniProt:P72525
+    target: GO:0044787
+  - key: participates in
+    source: UniProt:Q8DPM2
+    target: GO:0044787
+  - key: occurs in
+    source: GO:0044787
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D018410
+multigraph: true
+nodes:
+  - id: MESH:C103274
+    label: Drug
+    name: Gemifloxacin
+  - id: UniProt:P72525
+    label: Protein
+    name: DNA topoisomerase 4 subunit A (Streptococcus pneumoniae)
+  - id: UniProt:Q8DPM2
+    label: Protein
+    name: DNA gyrase subunit A (Streptococcus pneumoniae)
+  - id: GO:0044787
+    label: BiologicalProcess
+    name: Bacterial-type DNA replication
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D018410
+    label: Disease
+    name: Bacterial pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB01155

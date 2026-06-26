@@ -1,0 +1,68 @@
+comment: The drug stimulates the expression of several genes (e.g. HSP, SOD, etc)
+  but it's not clear if the drug binds to these or other targets to modulate the known
+  actions namely oxygen radical scavenging, anti-oxidation, anti-inflammation, and
+  acceleration of gastrointestinal wound healing.
+directed: true
+graph:
+  _id: DB09221_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: polaprezinc
+  drug_mesh: MESH:C061957
+  drugbank: DB:DB09221
+links:
+  - key: decreases abundance of
+    source: MESH:C061957
+    target: CHEBI:26523
+  - key: positively correlated with
+    source: MESH:C061957
+    target: GO:0070254
+  - key: negatively correlated with
+    source: MESH:C061957
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D010437
+  - key: negatively correlated with
+    source: GO:0070254
+    target: MESH:D010437
+  - key: positively correlated with
+    source: MESH:C061957
+    target: GO:0042060
+  - key: negatively correlated with
+    source: MESH:C061957
+    target: taxonomy:210
+  - key: causes
+    source: taxonomy:210
+    target: MESH:D010437
+  - key: negatively correlated with
+    source: GO:0042060
+    target: MESH:D010437
+  - key: positively correlated with
+    source: CHEBI:26523
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:C061957
+    label: Drug
+    name: polaprezinc
+  - id: CHEBI:26523
+    label: ChemicalSubstance
+    name: reactive oxygen species
+  - id: taxonomy:210
+    label: OrganismTaxon
+    name: Helicobacter pylori
+  - id: GO:0042060
+    label: BiologicalProcess
+    name: Wound Healing
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: GO:0070254
+    label: BiologicalProcess
+    name: mucus secretion
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://en.wikipedia.org/wiki/Zinc_L-carnosine#Mechanisms_of_action

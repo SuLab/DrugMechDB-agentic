@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB01138_MESH_D033461_1
+  disease: Hyperuricemia
+  disease_mesh: MESH:D033461
+  drug: Sulfinpyrazone
+  drug_mesh: MESH:D013442
+  drugbank: DB:DB01138
+links:
+  - key: decreases activity of
+    source: MESH:D013442
+    target: UniProt:Q96S37
+  - key: negatively correlated with
+    source: UniProt:Q96S37
+    target: GO:0097744
+  - key: negatively correlated with
+    source: GO:0097744
+    target: MESH:D033461
+multigraph: true
+nodes:
+  - id: MESH:D013442
+    label: Drug
+    name: Sulfinpyrazone
+  - id: UniProt:Q96S37
+    label: Protein
+    name: Solute carrier family 22 member 12
+  - id: GO:0097744
+    label: BiologicalProcess
+    name: Urate salt excretion
+  - id: MESH:D033461
+    label: Disease
+    name: Hyperuricemia
+references:
+  - https://go.drugbank.com/drugs/DB01138

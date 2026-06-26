@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00199_MESH_D003235_1
+  disease: Conjunctivitis, Inclusion
+  disease_mesh: MESH:D003235
+  drug: erythromycin
+  drug_mesh: MESH:D004917
+  drugbank: DB:DB00199
+links:
+  - key: negatively regulates
+    source: MESH:D004917
+    target: MESH:D012338
+  - key: participates in
+    source: MESH:D012338
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:813
+  - key: causes
+    source: taxonomy:813
+    target: MESH:D003235
+multigraph: true
+nodes:
+  - id: MESH:D004917
+    label: Drug
+    name: erythromycin
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:813
+    label: OrganismTaxon
+    name: Chlamydia trachomatis
+  - id: MESH:D003235
+    label: Disease
+    name: Conjunctivitis, Inclusion
+references:
+  - https://go.drugbank.com/drugs/DB00199#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Conjunctivitis

@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00919_MESH_D006069_1
+  disease: Gonorrhea
+  disease_mesh: MESH:D006069
+  drug: spectinomycin
+  drug_mesh: MESH:D000198
+  drugbank: DB:DB00919
+links:
+  - key: decreases activity of
+    source: MESH:D000198
+    target: UniProt:Q5F5S1
+  - key: participates in
+    source: UniProt:Q5F5S1
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:485
+  - key: causes
+    source: taxonomy:485
+    target: MESH:D006069
+multigraph: true
+nodes:
+  - id: MESH:D000198
+    label: Drug
+    name: Spectinomycin
+  - id: UniProt:Q5F5S1
+    label: Protein
+    name: 30S ribosomal protein S12 (Neisseria gonorrhoeae)
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: taxonomy:485
+    label: OrganismTaxon
+    name: Neisseria gonorrhoeae
+  - id: MESH:D006069
+    label: Disease
+    name: Gonorrhea
+references:
+  - https://go.drugbank.com/drugs/DB00919

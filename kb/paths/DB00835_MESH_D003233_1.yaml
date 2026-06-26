@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB00835_MESH_D003233_1
+  disease: Conjunctivitis, Allergic
+  disease_mesh: MESH:D003233
+  drug: Brompheniramine
+  drug_mesh: MESH:D001977
+  drugbank: DB:DB00835
+links:
+  - key: decreases activity of
+    source: MESH:D001977
+    target: UniProt:P35367
+  - key: positively correlated with
+    source: UniProt:P35367
+    target: MESH:D006632
+  - key: positively regulates
+    source: MESH:D006632
+    target: GO:0043114
+  - key: correlated with
+    source: GO:0043114
+    target: MESH:D003233
+multigraph: true
+nodes:
+  - id: MESH:D001977
+    label: Drug
+    name: Brompheniramine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: MESH:D006632
+    label: ChemicalSubstance
+    name: Histamine
+  - id: GO:0043114
+    label: BiologicalProcess
+    name: regulation of vascular permeability
+  - id: MESH:D003233
+    label: Disease
+    name: Conjunctivitis, Allergic
+references:
+  - https://go.drugbank.com/drugs/DB00835#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P35367#function
+  - https://en.wikipedia.org/wiki/Allergic_conjunctivitis

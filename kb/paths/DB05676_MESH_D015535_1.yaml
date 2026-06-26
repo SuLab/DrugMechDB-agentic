@@ -1,0 +1,110 @@
+directed: true
+graph:
+  _id: DB05676_MESH_D015535_1
+  disease: Psoriasis with arthropathy
+  disease_mesh: MESH:D015535
+  drug: Apremilast
+  drug_mesh: MESH:C505730
+  drugbank: DB:DB05676
+links:
+  - key: negatively regulates
+    source: MESH:C505730
+    target: UniProt:P27815
+  - key: negatively regulates
+    source: MESH:C505730
+    target: UniProt:Q07343
+  - key: negatively regulates
+    source: MESH:C505730
+    target: UniProt:Q08493
+  - key: negatively regulates
+    source: MESH:C505730
+    target: UniProt:Q08499
+  - key: positively correlated with
+    source: UniProt:P27815
+    target: GO:0006198
+  - key: positively correlated with
+    source: UniProt:P27815
+    target: GO:0006198
+  - key: positively correlated with
+    source: UniProt:Q07343
+    target: GO:0006198
+  - key: positively correlated with
+    source: UniProt:Q08493
+    target: GO:0006198
+  - key: positively correlated with
+    source: UniProt:Q08499
+    target: GO:0006198
+  - key: decreases abundance of
+    source: GO:0006198
+    target: CHEBI:17489
+  - key: negatively regulates
+    source: CHEBI:17489
+    target: GO:0032680
+  - key: negatively regulates
+    source: CHEBI:17489
+    target: UniProt:P35228
+  - key: negatively regulates
+    source: CHEBI:17489
+    target: GO:0032627
+  - key: positively regulates
+    source: CHEBI:17489
+    target: GO:0032613
+  - key: positively regulates
+    source: GO:0032680
+    target: GO:0006954
+  - key: positively regulates
+    source: UniProt:P35228
+    target: GO:0006954
+  - key: positively regulates
+    source: GO:0032627
+    target: GO:0006954
+  - key: negatively regulates
+    source: GO:0032613
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D015535
+multigraph: true
+nodes:
+  - id: MESH:C505730
+    label: Drug
+    name: Apremilast
+  - id: UniProt:P27815
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4A
+  - id: UniProt:Q07343
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4B
+  - id: UniProt:Q08493
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4C
+  - id: UniProt:Q08499
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4D
+  - id: GO:0006198
+    label: BiologicalProcess
+    name: cAMP catabolic process
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: GO:0032680
+    label: BiologicalProcess
+    name: Regulation of tumor necrosis factor production
+  - id: UniProt:P35228
+    label: Protein
+    name: Nitric oxide synthase, inducible
+  - id: GO:0032627
+    label: BiologicalProcess
+    name: Interleukin-23 production
+  - id: GO:0032613
+    label: BiologicalProcess
+    name: Interleukin-10 production
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D015535
+    label: Disease
+    name: Psoriasis with arthropathy
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/22257911/
+  - https://go.drugbank.com/drugs/DB05676#BE0009697

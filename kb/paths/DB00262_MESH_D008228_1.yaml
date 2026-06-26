@@ -1,0 +1,70 @@
+directed: true
+graph:
+  _id: DB00262_MESH_D008228_1
+  disease: Non-Hodgkin's lymphoma
+  disease_mesh: MESH:D008228
+  drug: carmustine
+  drug_mesh: MESH:D002330
+  drugbank: DB:DB00262
+links:
+  - key: decreases activity of
+    source: MESH:D002330
+    target: UniProt:P00390
+  - key: disrupts
+    source: MESH:D002330
+    target: MESH:D004247
+  - key: disrupts
+    source: MESH:D002330
+    target: MESH:D012313
+  - key: participates in
+    source: UniProt:P00390
+    target: GO:0034599
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006260
+  - key: participates in
+    source: MESH:D012313
+    target: GO:0006412
+  - key: capable of
+    source: GO:0034599
+    target: GO:0008219
+  - key: occurs in
+    source: GO:0006260
+    target: MESH:D008228
+  - key: occurs in
+    source: GO:0006412
+    target: MESH:D008228
+  - key: negatively correlated with
+    source: GO:0008219
+    target: MESH:D008228
+multigraph: true
+nodes:
+  - id: MESH:D002330
+    label: Drug
+    name: Carmustine
+  - id: UniProt:P00390
+    label: Protein
+    name: Glutathione reductase, mitochondrial
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: MESH:D012313
+    label: ChemicalSubstance
+    name: RNA
+  - id: GO:0034599
+    label: BiologicalProcess
+    name: Cellular response to oxidative stress
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: GO:0008219
+    label: BiologicalProcess
+    name: Cell death
+  - id: MESH:D008228
+    label: Disease
+    name: Non-Hodgkin's lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB00262

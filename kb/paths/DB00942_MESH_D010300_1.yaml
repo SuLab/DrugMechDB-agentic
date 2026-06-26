@@ -1,0 +1,46 @@
+comment: In Parkinson's disease, there is imbalance between levels of acetylcholine
+  and dopamine, where increased levels of acetylcholine and degeneration of dopaminergic
+  pathways are observed. Therefore, muscarinic antagonists block central cholinergic
+  activity and balance out neurotransmitters in the brain (https://en.wikipedia.org/wiki/Muscarinic_antagonist#Effects).
+  Anticholinergic drugs may also be prescribed to improve bladder dysfunction (https://pubmed.ncbi.nlm.nih.gov/20370804/).
+directed: true
+graph:
+  _id: DB00942_MESH_D010300_1
+  disease: Parkinson's disease
+  disease_mesh: MESH:D010300
+  drug: cycrimine
+  drug_mesh: MESH:C012262
+  drugbank: DB:DB00942
+links:
+  - key: negatively regulates
+    source: MESH:C012262
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0007271
+  - key: increases activity of
+    source: GO:0007271
+    target: GO:0014055
+  - key: positively correlated with
+    source: GO:0014055
+    target: MESH:D010300
+multigraph: true
+nodes:
+  - id: MESH:C012262
+    label: Drug
+    name: cycrimine
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: GO:0007271
+    label: BiologicalProcess
+    name: synaptic transmission, cholinergic
+  - id: GO:0014055
+    label: BiologicalProcess
+    name: acetylcholine secretion, neurotransmission
+  - id: MESH:D010300
+    label: Disease
+    name: Parkinson's disease
+references:
+  - https://go.drugbank.com/drugs/DB00942#mechanism-of-action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/2911#section=Pharmacology-and-Biochemistry

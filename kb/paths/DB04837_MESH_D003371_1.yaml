@@ -1,0 +1,31 @@
+comment: Clofedanol suppresses the cough reflex by a direct effect on the cough center
+  in the medulla of the brain
+directed: true
+graph:
+  _id: DB04837_MESH_D003371_1
+  disease: Cough
+  disease_mesh: MESH:D003371
+  drug: Clofedanol
+  drug_mesh: MESH:C010432
+  drugbank: DB:DB04837
+links:
+  - key: negatively regulates
+    source: MESH:C010432
+    target: GO:0060004
+  - key: positively correlated with
+    source: GO:0060004
+    target: MESH:D003371
+multigraph: true
+nodes:
+  - id: MESH:C010432
+    label: Drug
+    name: Clofedanol
+  - id: GO:0060004
+    label: BiologicalProcess
+    name: Reflex
+  - id: MESH:D003371
+    label: Disease
+    name: Cough
+references:
+  - https://go.drugbank.com/drugs/DB04837
+  - https://pubchem.ncbi.nlm.nih.gov/compound/2795

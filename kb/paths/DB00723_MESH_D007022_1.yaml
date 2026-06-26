@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00723_MESH_D007022_1
+  disease: Low blood pressure
+  disease_mesh: MESH:D007022
+  drug: methoxamine
+  drug_mesh: MESH:D008729
+  drugbank: DB:DB00723
+links:
+  - key: increases activity of
+    source: MESH:D008729
+    target: UniProt:P35348
+  - key: increases activity of
+    source: MESH:D008729
+    target: UniProt:P35368
+  - key: positively regulates
+    source: UniProt:P35348
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P35368
+    target: GO:0042310
+  - key: negatively correlated with
+    source: GO:0042310
+    target: MESH:D007022
+multigraph: true
+nodes:
+  - id: MESH:D008729
+    label: Drug
+    name: Methoxamine
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P35368
+    label: Protein
+    name: Alpha-1B adrenergic receptor
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D007022
+    label: Disease
+    name: Low blood pressure
+references:
+  - https://go.drugbank.com/drugs/DB00723#BE0000501

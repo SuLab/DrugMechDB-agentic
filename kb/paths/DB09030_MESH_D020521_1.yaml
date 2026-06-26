@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB09030_MESH_D020521_1
+  disease: Cerebrovascular accident
+  disease_mesh: MESH:D020521
+  drug: vorapaxar
+  drug_mesh: MESH:C530299
+  drugbank: DB:DB09030
+links:
+  - key: negatively regulates
+    source: MESH:C530299
+    target: UniProt:P25116
+  - key: positively regulates
+    source: UniProt:P25116
+    target: GO:0015057
+  - key: participates in
+    source: GO:0015057
+    target: reactome:R-HSA-140877
+  - key: positively correlated with
+    source: reactome:R-HSA-140877
+    target: GO:0070527
+  - key: positively correlated with
+    source: GO:0070527
+    target: MESH:D013927
+  - key: positively correlated with
+    source: MESH:D013927
+    target: MESH:D020521
+multigraph: true
+nodes:
+  - id: MESH:C530299
+    label: Drug
+    name: vorapaxar
+  - id: UniProt:P25116
+    label: Protein
+    name: Proteinase-activated receptor 1
+  - id: GO:0015057
+    label: MolecularActivity
+    name: thrombin-activated receptor activity
+  - id: reactome:R-HSA-140877
+    label: Pathway
+    name: Formation of Fibrin Clot (Clotting Cascade)
+  - id: GO:0070527
+    label: BiologicalProcess
+    name: platelet aggregation
+  - id: MESH:D013927
+    label: PhenotypicFeature
+    name: Thrombosis
+  - id: MESH:D020521
+    label: Disease
+    name: Cerebrovascular accident
+references:
+  - https://go.drugbank.com/drugs/DB09030#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Vorapaxar#Mechanism_of_action

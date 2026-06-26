@@ -1,0 +1,61 @@
+comment: Dipivefrin is a prodrug with little or no pharmacologically activity until
+  it is hydrolyzed into epinephrine inside the human eye.
+directed: true
+graph:
+  _id: DB00449_MESH_D005902_1
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: dipivefrine
+  drug_mesh: MESH:C015173
+  drugbank: DB:DB00449
+links:
+  - key: has metabolite
+    source: MESH:C015173
+    target: MESH:D004837
+  - key: increases activity of
+    source: MESH:D004837
+    target: InterPro:IPR002233
+  - key: participates in
+    source: InterPro:IPR002233
+    target: GO:0004935
+  - key: positively regulates
+    source: GO:0004935
+    target: GO:0042310
+  - key: negatively correlated with
+    source: GO:0042310
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: HP:0007906
+  - key: positively correlated with
+    source: HP:0007906
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:C015173
+    label: Drug
+    name: dipivefrine
+  - id: MESH:D004837
+    label: ChemicalSubstance
+    name: epinephrine
+  - id: InterPro:IPR002233
+    label: GeneFamily
+    name: Adrenoceptor family
+  - id: GO:0004935
+    label: MolecularActivity
+    name: adrenergic receptor activity
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: Aqueous Humor
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Ocular Hypertension
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - https://go.drugbank.com/drugs/DB00449
+  - https://en.wikipedia.org/wiki/Dipivefrine

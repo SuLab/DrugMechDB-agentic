@@ -1,0 +1,42 @@
+comment: Mechanism of action of laquinimod on Relapsing remitting multiple sclerosis
+  is not well understood. Available evidence suggests it as anti-inflammatory and
+  neuroprotective agent based on in vivo experiments. The drug was withdrawn from
+  phase III clinical trials
+directed: true
+graph:
+  _id: DB06685_MESH_D020529_1
+  disease: Relapsing remitting multiple sclerosis
+  disease_mesh: MESH:D020529
+  drug: laquinimod
+  drug_mesh: MESH:C476223
+  drugbank: DB:DB06685
+links:
+  - key: chemically similar to
+    source: MESH:C476223
+    target: CHEBI:35472
+  - key: chemically similar to
+    source: MESH:C476223
+    target: CHEBI:63726
+  - key: treats
+    source: CHEBI:35472
+    target: MESH:D020529
+  - key: treats
+    source: CHEBI:63726
+    target: MESH:D020529
+multigraph: true
+nodes:
+  - id: MESH:C476223
+    label: Drug
+    name: laquinimod
+  - id: CHEBI:35472
+    label: ChemicalSubstance
+    name: anti-inflammatory drug
+  - id: CHEBI:63726
+    label: ChemicalSubstance
+    name: neuroprotective agent
+  - id: MESH:D020529
+    label: Disease
+    name: Relapsing remitting multiple sclerosis
+references:
+  - https://go.drugbank.com/drugs/DB06685
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4798201/

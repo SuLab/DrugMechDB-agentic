@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB01344_MESH_D006947_1
+  disease: Hyperkalemia
+  disease_mesh: MESH:D006947
+  drug: calcium polystyrene sulfonate
+  drug_mesh: MESH:C003321
+  drugbank: DB:DB01344
+links:
+  - key: decreases abundance of
+    source: MESH:C003321
+    target: CHEBI:29103
+  - key: positively correlated with
+    source: CHEBI:29103
+    target: MESH:D006947
+multigraph: true
+nodes:
+  - id: MESH:C003321
+    label: Drug
+    name: calcium polystyrene sulfonate
+  - id: CHEBI:29103
+    label: ChemicalSubstance
+    name: Potassium(1+)
+  - id: MESH:D006947
+    label: Disease
+    name: Hyperkalemia
+references:
+  - https://go.drugbank.com/drugs/DB01344
+  - https://en.wikipedia.org/wiki/Polystyrene_sulfonate

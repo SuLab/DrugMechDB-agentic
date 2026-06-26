@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB01044_MESH_D061387_1
+  disease: Chlamydial pneumonia
+  disease_mesh: MESH:D061387
+  drug: Gatifloxacin
+  drug_mesh: MESH:C078049
+  drugbank: DB:DB01044
+links:
+  - key: negatively regulates
+    source: MESH:C078049
+    target: GO:0009340
+  - key: participates in
+    source: GO:0009340
+    target: GO:0006260
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:Q9Z8R4
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:Q9Z8R3
+  - key: participates in
+    source: UniProt:Q9Z8R4
+    target: GO:0006260
+  - key: participates in
+    source: UniProt:Q9Z8R3
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:83558
+  - key: causes
+    source: taxonomy:83558
+    target: MESH:D061387
+multigraph: true
+nodes:
+  - id: MESH:C078049
+    label: Drug
+    name: Gatifloxacin
+  - id: GO:0009340
+    label: CellularComponent
+    name: DNA topoisomerase IV complex
+  - id: UniProt:Q9Z8R4
+    label: Protein
+    name: DNA gyrase subunit A (Chlamydia pneumoniae)
+  - id: UniProt:Q9Z8R3
+    label: Protein
+    name: DNA gyrase subunit B (Chlamydia pneumoniae)
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: taxonomy:83558
+    label: OrganismTaxon
+    name: Chlamydia pneumoniae
+  - id: MESH:D061387
+    label: Disease
+    name: Chlamydial pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB01044

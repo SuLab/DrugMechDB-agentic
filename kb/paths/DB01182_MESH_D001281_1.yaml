@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01182_MESH_D001281_1
+  disease: Paroxysmal atrial fibrillation
+  disease_mesh: MESH:D001281
+  drug: propafenone
+  drug_mesh: MESH:D011405
+  drugbank: DB:DB01182
+links:
+  - key: negatively regulates
+    source: MESH:D011405
+    target: InterPro:IPR001696
+  - key: increases transport of
+    source: InterPro:IPR001696
+    target: MESH:D012964
+  - key: positively regulates
+    source: MESH:D012964
+    target: GO:0086001
+  - key: positively correlated with
+    source: GO:0086001
+    target: GO:0086003
+  - key: positively correlated with
+    source: GO:0086003
+    target: HP:0004308
+  - key: manifestation of
+    source: HP:0004308
+    target: MESH:D001281
+multigraph: true
+nodes:
+  - id: MESH:D011405
+    label: Drug
+    name: propafenone
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: MESH:D012964
+    label: ChemicalSubstance
+    name: Sodium
+  - id: GO:0086001
+    label: BiologicalProcess
+    name: Cardiac muscle cell action potential
+  - id: GO:0086003
+    label: BiologicalProcess
+    name: cardiac muscle cell contraction
+  - id: HP:0004308
+    label: PhenotypicFeature
+    name: Ventricular arrhythmia
+  - id: MESH:D001281
+    label: Disease
+    name: Paroxysmal atrial fibrillation
+references:
+  - https://go.drugbank.com/drugs/DB01182
+  - https://en.wikipedia.org/wiki/Propafenone

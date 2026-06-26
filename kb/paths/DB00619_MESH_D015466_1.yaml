@@ -1,0 +1,59 @@
+comment: Imatinib also modulates other protein targets and is an indication for other
+  malignancies (https://en.wikipedia.org/wiki/Imatinib#Medical_uses).
+directed: true
+graph:
+  _id: DB00619_MESH_D015466_1
+  disease: Chronic phase chronic myeloid leukemia
+  disease_mesh: MESH:D015466
+  drug: imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+links:
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: MESH:D016044
+  - key: positively regulates
+    source: MESH:D016044
+    target: GO:0004674
+  - key: positively correlated with
+    source: GO:0004674
+    target: GO:0007266
+  - key: positively correlated with
+    source: GO:0007266
+    target: GO:0008283
+  - key: negatively correlated with
+    source: GO:0007266
+    target: GO:0006915
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D015466
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D015466
+multigraph: true
+nodes:
+  - id: MESH:D000068877
+    label: Drug
+    name: imatinib
+  - id: MESH:D016044
+    label: Protein
+    name: Fusion Proteins, bcr-abl
+  - id: GO:0004674
+    label: MolecularActivity
+    name: protein serine/threonine kinase activity
+  - id: GO:0007266
+    label: BiologicalProcess
+    name: Rho protein signal transduction
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: MESH:D015466
+    label: Disease
+    name: Chronic phase chronic myeloid leukemia
+references:
+  - https://www.cancer.gov/publications/dictionaries/cancer-drug/def/imatinib-mesylate
+  - https://go.drugbank.com/drugs/DB00619#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Imatinib#Chronic_myelogenous_leukemia

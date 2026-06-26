@@ -1,0 +1,55 @@
+comment: Disease is denoted Infection by Strongyloides in the original file.
+directed: true
+graph:
+  _id: DB00602_MESH_D013322_1
+  disease: Strongyloidiasis
+  disease_mesh: MESH:D013322
+  drug: ivermectin
+  drug_mesh: MESH:D007559
+  drugbank: DB:DB00602
+links:
+  - key: increases activity of
+    source: MESH:D007559
+    target: InterPro:IPR015680
+  - key: positively regulates
+    source: InterPro:IPR015680
+    target: GO:0005254
+  - key: positively correlated with
+    source: GO:0005254
+    target: GO:0060081
+  - key: negatively regulates
+    source: GO:0060081
+    target: GO:0099565
+  - key: in taxon
+    source: GO:0099565
+    target: taxonomy:6248
+  - key: causes
+    source: taxonomy:6248
+    target: MESH:D013322
+multigraph: true
+nodes:
+  - id: MESH:D007559
+    label: Drug
+    name: ivermectin
+  - id: InterPro:IPR015680
+    label: GeneFamily
+    name: Glutamate-Gated Chloride Channel
+  - id: GO:0005254
+    label: MolecularActivity
+    name: chloride channel activity
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: membrane hyperpolarization
+  - id: GO:0099565
+    label: BiologicalProcess
+    name: chemical synaptic transmission, postsynaptic
+  - id: taxonomy:6248
+    label: OrganismTaxon
+    name: Strongyloides stercoralis
+  - id: MESH:D013322
+    label: Disease
+    name: Strongyloidiasis
+references:
+  - https://en.wikipedia.org/wiki/Ivermectin#Mechanism_of_action
+  - https://go.drugbank.com/drugs/DB00602#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Strongyloidiasis#Treatment

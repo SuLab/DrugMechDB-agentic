@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00104_MESH_D000172_1
+  disease: Acromegaly
+  disease_mesh: MESH:D000172
+  drug: Octreotide
+  drug_mesh: MESH:D015282
+  drugbank: DB:DB00104
+links:
+  - key: positively regulates
+    source: MESH:D015282
+    target: GO:0038169
+  - key: negatively regulates
+    source: GO:0038169
+    target: UniProt:P01241
+  - key: positively correlated with
+    source: UniProt:P01241
+    target: MESH:D000172
+multigraph: true
+nodes:
+  - id: MESH:D015282
+    label: Drug
+    name: Octreotide
+  - id: GO:0038169
+    label: BiologicalProcess
+    name: Somatostatin receptor signaling pathway
+  - id: UniProt:P01241
+    label: Protein
+    name: Somatotropin
+  - id: MESH:D000172
+    label: Disease
+    name: Acromegaly
+references:
+  - https://go.drugbank.com/drugs/DB00104#BE0010008
+  - https://en.wikipedia.org/wiki/Acromegaly#Signs_and_symptoms

@@ -1,0 +1,98 @@
+comment: Alteration of the epigenetic landscape is a feature of myeloid leukemias
+  and decitabine is a hypomethylating agent, a type of epigenetic therapy (https://en.wikipedia.org/wiki/Hypomethylating_agent).
+directed: true
+graph:
+  _id: DB01262_MESH_D015470_1
+  disease: Acute myeloid leukemia, disease
+  disease_mesh: MESH:D015470
+  drug: decitabine
+  drug_mesh: MESH:D000077209
+  drugbank: DB:DB01262
+links:
+  - key: has metabolite
+    source: MESH:D000077209
+    target: DB:DBMET03189
+  - key: positively correlated with
+    source: DB:DBMET03189
+    target: GO:0035861
+  - key: negatively regulates
+    source: DB:DBMET03189
+    target: CHEBI:16991
+  - key: negatively regulates
+    source: DB:DBMET03189
+    target: UniProt:Q9Y6K1
+  - key: negatively regulates
+    source: DB:DBMET03189
+    target: UniProt:P26358
+  - key: positively regulates
+    source: UniProt:Q9Y6K1
+    target: GO:0006306
+  - key: positively regulates
+    source: UniProt:P26358
+    target: GO:0006306
+  - key: location of
+    source: CHEBI:16991
+    target: GO:0006306
+  - key: negatively correlated with
+    source: GO:0006306
+    target: GO:0006351
+  - key: positively correlated with
+    source: GO:0006351
+    target: MESH:D016147
+  - key: negatively correlated with
+    source: MESH:D016147
+    target: MESH:D015470
+  - key: regulates
+    source: GO:0006306
+    target: GO:0035726
+  - key: positively correlated with
+    source: GO:0035726
+    target: MESH:D015470
+  - key: positively correlated with
+    source: GO:0035861
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D015470
+multigraph: true
+nodes:
+  - id: MESH:D000077209
+    label: Drug
+    name: decitabine
+  - id: DB:DBMET03189
+    label: ChemicalSubstance
+    name: 5-aza-2'-deoxycytidine-triphosphate
+  - id: UniProt:P26358
+    label: Protein
+    name: DNA (cytosine-5)-methyltransferase 1
+  - id: UniProt:Q9Y6K1
+    label: Protein
+    name: DNA (cytosine-5)-methyltransferase 3A
+  - id: CHEBI:16991
+    label: ChemicalSubstance
+    name: deoxyribonucleic acid
+  - id: GO:0006306
+    label: BiologicalProcess
+    name: DNA methylation
+  - id: GO:0006351
+    label: BiologicalProcess
+    name: transcription, DNA-templated
+  - id: MESH:D016147
+    label: ChemicalSubstance
+    name: Genes, Tumor Suppressor
+  - id: GO:0035726
+    label: BiologicalProcess
+    name: common myeloid progenitor cell proliferation
+  - id: GO:0035861
+    label: CellularComponent
+    name: site of double-strand break
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: MESH:D015470
+    label: Disease
+    name: Acute myeloid leukemia, disease
+references:
+  - https://go.drugbank.com/drugs/DB01262
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201129/
+  - https://en.wikipedia.org/wiki/Hypomethylating_agent#Mechanism_of_action

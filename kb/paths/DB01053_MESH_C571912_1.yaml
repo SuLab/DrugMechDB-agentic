@@ -1,0 +1,50 @@
+comment: Benzylpenicillin (penicillin G) is a derivative of penicillin that is used
+  in the form of its sodium or potassium salts in the treatment of various bacterial
+  infections.
+directed: true
+graph:
+  _id: DB01053_MESH_C571912_1
+  disease: Inhalation anthrax
+  disease_mesh: MESH:C571912
+  drug: benzylpenicillin
+  drug_mesh: MESH:D010400
+  drugbank: DB:DB01053
+links:
+  - key: decreases activity of
+    source: MESH:D010400
+    target: InterPro:IPR001460
+  - key: participates in
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:1392
+  - key: causes
+    source: taxonomy:1392
+    target: MESH:C571912
+multigraph: true
+nodes:
+  - id: MESH:D010400
+    label: Drug
+    name: benzylpenicillin
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:1392
+    label: OrganismTaxon
+    name: Bacillus anthracis
+  - id: MESH:C571912
+    label: Disease
+    name: Inhalation anthrax
+references:
+  - https://go.drugbank.com/drugs/DB01053#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Anthrax#Lungs

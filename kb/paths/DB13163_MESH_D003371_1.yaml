@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB13163_MESH_D003371_1
+  disease: Cough
+  disease_mesh: MESH:D003371
+  drug: terpin
+  drug_mesh: MESH:C005804
+  drugbank: DB:DB13163
+links:
+  - key: negatively regulates
+    source: MESH:C005804
+    target: UBERON:0000912
+  - key: positively correlated with
+    source: UBERON:0000912
+    target: MESH:D003371
+multigraph: true
+nodes:
+  - id: MESH:C005804
+    label: Drug
+    name: Terpin
+  - id: UBERON:0000912
+    label: GrossAnatomicalStructure
+    name: Mucus
+  - id: MESH:D003371
+    label: Disease
+    name: Cough
+references:
+  - https://go.drugbank.com/drugs/DB13163

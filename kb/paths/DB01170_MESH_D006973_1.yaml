@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB01170_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: guanethidine
+  drug_mesh: MESH:D006145
+  drugbank: DB:DB01170
+links:
+  - key: molecularly interacts with
+    source: MESH:D006145
+    target: UniProt:P23975
+  - key: decreases abundance of
+    source: UniProt:P23975
+    target: MESH:D009638
+  - key: positively regulates
+    source: MESH:D009638
+    target: GO:0042310
+  - key: negatively regulates
+    source: MESH:D006145
+    target: GO:0048243
+  - key: positively correlated with
+    source: GO:0048243
+    target: MESH:D009638
+  - key: positively correlated with
+    source: GO:0042310
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D006145
+    label: Drug
+    name: Guanethidine
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: GO:0048243
+    label: BiologicalProcess
+    name: Norepinephrine secretion
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB01170#BE0000486
+  - https://drugs.ncats.io/drug/5UBY8Y002G

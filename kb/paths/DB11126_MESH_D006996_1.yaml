@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB11126_MESH_D006996_1
+  disease: Hypocalcemia
+  disease_mesh: MESH:D006996
+  drug: calcium gluconate
+  drug_mesh: MESH:D002125
+  drugbank: DB:DB11126
+links:
+  - key: increases activity of
+    source: MESH:D002125
+    target: UniProt:P41180
+  - key: increases abundance of
+    source: MESH:D002125
+    target: MESH:D002118
+  - key: positively regulates
+    source: UniProt:P41180
+    target: GO:0055074
+  - key: negatively correlated with
+    source: MESH:D002118
+    target: MESH:D006996
+  - key: negatively correlated with
+    source: GO:0055074
+    target: MESH:D006996
+multigraph: true
+nodes:
+  - id: MESH:D002125
+    label: Drug
+    name: Calcium gluconate
+  - id: MESH:D002118
+    label: ChemicalSubstance
+    name: Calcium
+  - id: UniProt:P41180
+    label: Protein
+    name: Extracellular calcium-sensing receptor
+  - id: GO:0055074
+    label: BiologicalProcess
+    name: Calcium ion homeostasis
+  - id: MESH:D006996
+    label: Disease
+    name: Hypocalcemia
+references:
+  - https://go.drugbank.com/drugs/DB11126

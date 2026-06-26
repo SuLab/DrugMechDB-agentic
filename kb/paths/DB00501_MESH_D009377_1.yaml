@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00501_MESH_D009377_1
+  disease: Multiple Endocrine Neoplasia
+  disease_mesh: MESH:D009377
+  drug: Cimetidine
+  drug_mesh: MESH:D002927
+  drugbank: DB:DB00501
+links:
+  - key: decreases activity of
+    source: MESH:D002927
+    target: UniProt:P25021
+  - key: positively regulates
+    source: UniProt:P25021
+    target: GO:0035898
+  - key: positively correlated with
+    source: GO:0035898
+    target: MESH:D009377
+multigraph: true
+nodes:
+  - id: MESH:D002927
+    label: Drug
+    name: Cimetidine
+  - id: UniProt:P25021
+    label: Protein
+    name: Histamine H2 receptor
+  - id: GO:0035898
+    label: BiologicalProcess
+    name: parathyroid hormone secretion
+  - id: MESH:D009377
+    label: Disease
+    name: Multiple Endocrine Neoplasia
+references:
+  - https://go.drugbank.com/drugs/DB00501#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Cimetidine
+  - https://www.uniprot.org/uniprot/P25021#function
+  - https://pubmed.ncbi.nlm.nih.gov/7451639/
+  - https://en.wikipedia.org/wiki/Multiple_endocrine_neoplasia#Manifestations

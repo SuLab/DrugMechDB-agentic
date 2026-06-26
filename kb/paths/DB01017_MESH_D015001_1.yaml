@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01017_MESH_D015001_1
+  disease: Yaws
+  disease_mesh: MESH:D015001
+  drug: minocycline
+  drug_mesh: MESH:D008911
+  drugbank: DB:DB01017
+links:
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:O83328
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:O83987
+  - key: positively regulates
+    source: UniProt:O83328
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:O83987
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:160
+  - key: causes
+    source: taxonomy:160
+    target: MESH:D015001
+multigraph: true
+nodes:
+  - id: MESH:D008911
+    label: Drug
+    name: minocycline
+  - id: UniProt:O83328
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:O83987
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:160
+    label: OrganismTaxon
+    name: Treponema pallidum
+  - id: MESH:D015001
+    label: Disease
+    name: Yaws
+references:
+  - https://go.drugbank.com/drugs/DB01017#mechanism-of-action
+  - https://www.uniprot.org/uniprot/O83328#function
+  - https://www.uniprot.org/uniprot/O83987#function
+  - https://en.wikipedia.org/wiki/Yaws

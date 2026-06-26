@@ -1,0 +1,52 @@
+comment: This medication is reserved for tumors that express PD-L1 or have high mutation
+  burden.
+directed: true
+graph:
+  _id: DB11714_MESH_D002295_1
+  disease: Transitional cell carcinoma
+  disease_mesh: MESH:D002295
+  drug: durvalumab
+  drug_mesh: MESH:C000599740,MESH:C000613593
+  drugbank: DB:DB11714
+links:
+  - key: decreases activity of
+    source: DB:DB11714
+    target: UniProt:Q9NZQ7
+  - key: negatively regulates
+    source: UniProt:Q9NZQ7
+    target: GO:0042098
+  - key: negatively regulates
+    source: UniProt:Q9NZQ7
+    target: GO:0042110
+  - key: positively correlated with
+    source: GO:0042098
+    target: GO:0002424
+  - key: positively correlated with
+    source: GO:0042110
+    target: GO:0002424
+  - key: negatively correlated with
+    source: GO:0002424
+    target: MESH:D002295
+multigraph: true
+nodes:
+  - id: DB:DB11714
+    label: Drug
+    name: Durvalumab
+  - id: UniProt:Q9NZQ7
+    label: Protein
+    name: Programmed cell death 1 ligand 1
+  - id: GO:0042098
+    label: BiologicalProcess
+    name: T cell proliferation
+  - id: GO:0042110
+    label: BiologicalProcess
+    name: T cell activation
+  - id: GO:0002424
+    label: BiologicalProcess
+    name: T cell mediated immune response to tumor cell
+  - id: MESH:D002295
+    label: Disease
+    name: Transitional cell carcinoma
+references:
+  - https://go.drugbank.com/drugs/DB11714
+  - https://en.wikipedia.org/wiki/PD-1_and_PD-L1_inhibitors

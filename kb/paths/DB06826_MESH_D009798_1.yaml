@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB06826_MESH_D009798_1
+  disease: Ocular hypertension
+  disease_mesh: MESH:D009798
+  drug: unoprostone isopropyl
+  drug_mesh: MESH:C072630
+  drugbank: DB:DB06826
+links:
+  - key: positively regulates
+    source: MESH:C072630
+    target: UBERON:0005969
+  - key: decreases abundance of
+    source: UBERON:0005969
+    target: UBERON:0001796
+  - key: positively regulates
+    source: UBERON:0001796
+    target: MESH:D009798
+multigraph: true
+nodes:
+  - id: MESH:C072630
+    label: Drug
+    name: Unoprostone isopropyl
+  - id: UBERON:0005969
+    label: GrossAnatomicalStructure
+    name: Eye trabecular meshwork
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: Aqueous humor of eyeball
+  - id: MESH:D009798
+    label: Disease
+    name: Ocular Hypertension
+references:
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3958522/
+  - https://go.drugbank.com/drugs/DB06826

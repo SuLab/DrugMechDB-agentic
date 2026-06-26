@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00869_MESH_D005902_1
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: dorzolamide
+  drug_mesh: MESH:C062765
+  drugbank: DB:DB00869
+links:
+  - key: negatively regulates
+    source: MESH:C062765
+    target: UniProt:P00918
+  - key: positively regulates
+    source: UniProt:P00918
+    target: GO:0015701
+  - key: increases abundance of
+    source: GO:0015701
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: HP:0007906
+  - key: manifestation of
+    source: HP:0007906
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:C062765
+    label: Drug
+    name: dorzolamide
+  - id: UniProt:P00918
+    label: Protein
+    name: Carbonic anhydrase 2
+  - id: GO:0015701
+    label: BiologicalProcess
+    name: bicarbonate transport
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: aqueous humor of eyeball
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Ocular Hypertension
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL218490/
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5284549#section=Mechanism-of-Action
+  - https://en.wikipedia.org/wiki/Glaucoma#Medication
+  - https://www.aaopt.org/docs/knowledge-base/outline26514.doc?sfvrsn=5f863d3_0
+  - https://en.wikipedia.org/wiki/Aqueous_humour#Clinical_significance

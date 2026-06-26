@@ -1,0 +1,69 @@
+directed: true
+graph:
+  _id: DB00548_MESH_D000152_2
+  disease: Acne Vulgaris
+  disease_mesh: MESH:D000152
+  drug: azelaic acid
+  drug_mesh: MESH:C010038
+  drugbank: DB:DB00548
+links:
+  - key: decreases activity of
+    source: MESH:C010038
+    target: InterPro:IPR043502
+  - key: decreases activity of
+    source: MESH:C010038
+    target: InterPro:IPR005982
+  - key: decreases activity of
+    source: MESH:C010038
+    target: InterPro:IPR002227
+  - key: decreases activity of
+    source: MESH:C010038
+    target: InterPro:IPR001104
+  - key: positively regulates
+    source: InterPro:IPR043502
+    target: GO:0008283
+  - key: positively regulates
+    source: InterPro:IPR005982
+    target: GO:0008283
+  - key: positively regulates
+    source: InterPro:IPR002227
+    target: GO:0008283
+  - key: positively regulates
+    source: InterPro:IPR001104
+    target: GO:0008283
+  - key: in taxon
+    source: GO:0008283
+    target: taxonomy:1747
+  - key: causes
+    source: taxonomy:1747
+    target: MESH:D000152
+multigraph: true
+nodes:
+  - id: MESH:C010038
+    label: Drug
+    name: azelaic acid
+  - id: InterPro:IPR043502
+    label: GeneFamily
+    name: DNA/RNA polymerase superfamily
+  - id: InterPro:IPR005982
+    label: GeneFamily
+    name: Thioredoxin reductase
+  - id: InterPro:IPR002227
+    label: GeneFamily
+    name: Tyrosinase copper-binding domain
+  - id: InterPro:IPR001104
+    label: GeneFamily
+    name: 3-oxo-5-alpha-steroid 4-dehydrogenase, C-terminal
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: taxonomy:1747
+    label: OrganismTaxon
+    name: Cutibacterium acnes
+  - id: MESH:D000152
+    label: Disease
+    name: Acne Vulgaris
+references:
+  - https://go.drugbank.com/drugs/DB00548#mechanism-of-action
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6560440/
+  - https://en.wikipedia.org/wiki/Acne

@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB00205_MESH_D008288_1
+  disease: Malaria
+  disease_mesh: MESH:D008288
+  drug: pyrimethamine
+  drug_mesh: MESH:D011739
+  drugbank: DB:DB00205
+links:
+  - key: negatively regulates
+    source: MESH:D011739
+    target: UniProt:P13922
+  - key: positively regulates
+    source: UniProt:P13922
+    target: GO:0046654
+  - key: positively correlated with
+    source: GO:0046654
+    target: GO:0006221
+  - key: positively correlated with
+    source: GO:0046654
+    target: GO:0019363
+  - key: positively correlated with
+    source: GO:0006221
+    target: GO:0000280
+  - key: positively correlated with
+    source: GO:0019363
+    target: GO:0000280
+  - key: in taxon
+    source: GO:0000280
+    target: taxonomy:5839
+  - key: causes
+    source: taxonomy:5839
+    target: MESH:D008288
+multigraph: true
+nodes:
+  - id: MESH:D011739
+    label: Drug
+    name: pyrimethamine
+  - id: UniProt:P13922
+    label: Protein
+    name: Bifunctional dihydrofolate reductase-thymidylate synthase
+  - id: GO:0046654
+    label: BiologicalProcess
+    name: tetrahydrofolate biosynthetic process
+  - id: GO:0006221
+    label: BiologicalProcess
+    name: pyrimidine nucleotide biosynthetic process
+  - id: GO:0019363
+    label: BiologicalProcess
+    name: pyridine nucleotide biosynthetic process
+  - id: GO:0000280
+    label: BiologicalProcess
+    name: nuclear division
+  - id: taxonomy:5839
+    label: OrganismTaxon
+    name: Plasmodium falciparum K1
+  - id: MESH:D008288
+    label: Disease
+    name: Malaria
+references:
+  - https://go.drugbank.com/drugs/DB00205#mechanism-of-action
+  - https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL1939/

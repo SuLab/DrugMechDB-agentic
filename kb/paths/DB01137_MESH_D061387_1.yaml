@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB01137_MESH_D061387_1
+  disease: Chlamydial pneumonia
+  disease_mesh: MESH:D061387
+  drug: levofloxacin
+  drug_mesh: MESH:D064704
+  drugbank: DB:DB01137
+links:
+  - key: negatively regulates
+    source: MESH:D064704
+    target: InterPro:IPR035516
+  - key: negatively regulates
+    source: MESH:D064704
+    target: InterPro:IPR013760
+  - key: positively regulates
+    source: InterPro:IPR035516
+    target: GO:0006260
+  - key: positively regulates
+    source: InterPro:IPR013760
+    target: GO:0006260
+  - key: in taxon
+    source: GO:0006260
+    target: taxonomy:83558
+  - key: causes
+    source: taxonomy:83558
+    target: MESH:D061387
+multigraph: true
+nodes:
+  - id: MESH:D064704
+    label: Drug
+    name: levofloxacin
+  - id: InterPro:IPR035516
+    label: GeneFamily
+    name: DNA gyrase/topoisomerase IV, subunit A, C-terminal
+  - id: InterPro:IPR013760
+    label: GeneFamily
+    name: DNA topoisomerase, type IIA-like domain superfamily
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: taxonomy:83558
+    label: OrganismTaxon
+    name: Chlamydia pneumoniae
+  - id: MESH:D061387
+    label: Disease
+    name: Chlamydial pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB01137#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Chlamydia#Infants
+  - https://pubmed.ncbi.nlm.nih.gov/32809709/
+  - https://en.wikipedia.org/wiki/Levofloxacin#Mechanism_of_action
+comment: Different bacterial species can cause pneumonia, the most frequent ones are
+  Streptococcus pneumoniae, Staphylococcus aureus, and Bacillus anthracis, among the
+  gram-positive types of bacteria. Gram-negative examples of bacteria causing pneumonia
+  are Haemophilus influenzae, Klebsiella pneumoniae and Escherichia coli.

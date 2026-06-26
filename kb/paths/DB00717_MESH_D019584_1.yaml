@@ -1,0 +1,25 @@
+comment: Only combination of Estradiol and norethindrone is used for the treatment
+  of menopausal flushing. Please refer to this curation DB00783_MESH_D019584_1 for
+  MoA.
+directed: true
+graph:
+  _id: DB00717_MESH_D019584_1
+  disease: Menopausal flushing
+  disease_mesh: MESH:D019584
+  drug: norethisterone
+  drug_mesh: MESH:D009640
+  drugbank: DB:DB00717
+links:
+  - key: treats
+    source: MESH:D009640
+    target: MESH:D019584
+multigraph: true
+nodes:
+  - id: MESH:D009640
+    label: Drug
+    name: Norethisterone
+  - id: MESH:D019584
+    label: Disease
+    name: Menopausal flushing
+references:
+  - https://go.drugbank.com/drugs/DB00717#BE0000557

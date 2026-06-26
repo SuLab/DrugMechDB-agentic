@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB01126_MESH_D011470_1
+  disease: Benign prostatic hyperplasia
+  disease_mesh: MESH:D011470
+  drug: Dutasteride
+  drug_mesh: MESH:D000068538
+  drugbank: DB:DB01126
+links:
+  - key: decreases activity of
+    source: MESH:D000068538
+    target: UniProt:P31213
+  - key: decreases activity of
+    source: MESH:D000068538
+    target: UniProt:P18405
+  - key: increases abundance of
+    source: UniProt:P31213
+    target: MESH:D013196
+  - key: increases abundance of
+    source: UniProt:P18405
+    target: MESH:D013196
+  - key: positively correlated with
+    source: MESH:D013196
+    target: MESH:D011470
+multigraph: true
+nodes:
+  - id: MESH:D000068538
+    label: Drug
+    name: Dutasteride
+  - id: UniProt:P31213
+    label: Protein
+    name: 3-oxo-5-alpha-steroid 4-dehydrogenase 2
+  - id: UniProt:P18405
+    label: Protein
+    name: 3-oxo-5-alpha-steroid 4-dehydrogenase 1
+  - id: MESH:D013196
+    label: ChemicalSubstance
+    name: Dihydrotestosterone
+  - id: MESH:D011470
+    label: Disease
+    name: Benign prostatic hyperplasia
+references:
+  - https://go.drugbank.com/drugs/DB01126

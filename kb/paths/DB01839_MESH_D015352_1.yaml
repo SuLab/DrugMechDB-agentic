@@ -1,0 +1,30 @@
+comment: Propylene glycol helps create an ocular shield, allowing for epithelial repair.
+directed: true
+graph:
+  _id: DB01839_MESH_D015352_1
+  disease: Dry Eye Syndromes
+  disease_mesh: MESH:D015352
+  drug: Propylene glycol
+  drug_mesh: MESH:D019946
+  drugbank: DB:DB01839
+links:
+  - key: positively correlated with
+    source: MESH:D019946
+    target: GO:0010669
+  - key: negatively correlated with
+    source: GO:0010669
+    target: MESH:D015352
+multigraph: true
+nodes:
+  - id: MESH:D019946
+    label: Drug
+    name: Propylene glycol
+  - id: GO:0010669
+    label: BiologicalProcess
+    name: Epithelial structure maintenance
+  - id: MESH:D015352
+    label: Disease
+    name: Dry Eye Syndromes
+references:
+  - https://go.drugbank.com/drugs/DB01839#BE0002565
+  - https://en.wikipedia.org/wiki/Dry_eye_syndrome

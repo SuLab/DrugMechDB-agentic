@@ -1,0 +1,32 @@
+comment: Adrenal Insufficiency is a disorder of the adrenal glands, the pitutary gland
+  or the hypothalamus which is caused by the defects in the synthesis of adrenal corticosteroids.
+directed: true
+graph:
+  _id: DB00635_MESH_D000309_1
+  disease: Adrenal Insufficiency
+  disease_mesh: MESH:D000309
+  drug: prednisone
+  drug_mesh: MESH:D011241
+  drugbank: DB:DB00635
+links:
+  - key: has metabolite
+    source: MESH:D011241
+    target: MESH:D011239
+  - key: treats
+    source: MESH:D011239
+    target: MESH:D000309
+multigraph: true
+nodes:
+  - id: MESH:D011241
+    label: Drug
+    name: prednisone
+  - id: MESH:D011239
+    label: ChemicalSubstance
+    name: Prednisolone
+  - id: MESH:D000309
+    label: Disease
+    name: Adrenal Insufficiency
+references:
+  - https://go.drugbank.com/drugs/DB00635#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Prednisone
+  - https://en.wikipedia.org/wiki/Adrenal_insufficiency

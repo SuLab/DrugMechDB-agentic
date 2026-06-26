@@ -1,0 +1,43 @@
+comment: The drug is not effective by itself as an antibiotic and it can be combined
+  with penicillin-group antibiotics.
+directed: true
+graph:
+  _id: DB00766_MESH_D012226_1
+  disease: Rhinoscleroma
+  disease_mesh: MESH:D012226
+  drug: clavulanic acid
+  drug_mesh: MESH:D019818
+  drugbank: DB:DB00766
+links:
+  - key: negatively regulates
+    source: MESH:D019818
+    target: InterPro:IPR012338
+  - key: positively regulates
+    source: InterPro:IPR012338
+    target: GO:0008800
+  - key: in taxon
+    source: GO:0008800
+    target: taxonomy:39831
+  - key: causes
+    source: taxonomy:39831
+    target: MESH:D012226
+multigraph: true
+nodes:
+  - id: MESH:D019818
+    label: Drug
+    name: clavulanic acid
+  - id: InterPro:IPR012338
+    label: GeneFamily
+    name: Beta-lactamase/transpeptidase-like
+  - id: GO:0008800
+    label: MolecularActivity
+    name: beta-lactamase activity
+  - id: taxonomy:39831
+    label: OrganismTaxon
+    name: Klebsiella pneumoniae subsp. rhinoscleromatis
+  - id: MESH:D012226
+    label: Disease
+    name: Rhinoscleroma
+references:
+  - https://go.drugbank.com/drugs/DB00766
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL777/

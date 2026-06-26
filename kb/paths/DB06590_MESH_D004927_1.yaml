@@ -1,0 +1,60 @@
+directed: true
+graph:
+  _id: DB06590_MESH_D004927_1
+  disease: Infection due to Escherichia coli
+  disease_mesh: MESH:D004927
+  drug: Ceftaroline fosamil
+  drug_mesh: MESH:C515501
+  drugbank: DB:DB06590
+links:
+  - key: has metabolite
+    source: MESH:C515501
+    target: CHEBI:70729
+  - key: decreases activity of
+    source: CHEBI:70729
+    target: InterPro:IPR001460
+  - key: positively regulates
+    source: InterPro:IPR001460
+    target: GO:0018104
+  - key: positively regulates
+    source: GO:0018104
+    target: GO:0009273
+  - key: has output
+    source: GO:0009273
+    target: GO:0005618
+  - key: occurs in
+    source: GO:0005618
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D004927
+multigraph: true
+nodes:
+  - id: MESH:C515501
+    label: Drug
+    name: Ceftaroline fosamil
+  - id: CHEBI:70729
+    label: ChemicalSubstance
+    name: Ceftaroline
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0018104
+    label: BiologicalProcess
+    name: Cross-linking of the peptidoglycan
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: Peptidoglycan-based cell wall biogenesis
+  - id: GO:0005618
+    label: CellularComponent
+    name: Cell wall
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D004927
+    label: Disease
+    name: Infection due to Escherichia coli
+references:
+  - https://go.drugbank.com/drugs/DB06590
+  - https://en.wikipedia.org/wiki/Ceftaroline_fosamil#Chemistry
+  - https://en.wikipedia.org/wiki/Rhinoscleroma

@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00216_MESH_D008881_2
+  disease: Migraine
+  disease_mesh: MESH:D008881
+  drug: eletriptan
+  drug_mesh: MESH:C115647
+  drugbank: DB:DB00216
+links:
+  - key: positively regulates
+    source: MESH:C115647
+    target: UniProt:P28222
+  - key: positively regulates
+    source: UniProt:P28222
+    target: GO:0004993
+  - key: positively correlated with
+    source: GO:0004993
+    target: GO:0042310
+  - key: negatively correlated with
+    source: GO:0042310
+    target: MESH:D008881
+multigraph: true
+nodes:
+  - id: MESH:C115647
+    label: Drug
+    name: eletriptan
+  - id: UniProt:P28222
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1B
+  - id: GO:0004993
+    label: MolecularActivity
+    name: G protein-coupled serotonin receptor activity
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: MESH:D008881
+    label: Disease
+    name: Migraine
+references:
+  - https://go.drugbank.com/drugs/DB00216#mechanism-of-action

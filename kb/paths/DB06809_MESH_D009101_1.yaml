@@ -1,0 +1,46 @@
+comment: Plerixafor is used in combination with granulocyte-colony stimulating factor
+  (G-CSF, filgrastim) to mobilize hematopoietic stem cells to the peripheral blood
+  for collection and subsequent autologous transplantation in patients with multiple
+  myeloma.
+directed: true
+graph:
+  _id: DB06809_MESH_D009101_1
+  disease: Multiple myeloma
+  disease_mesh: MESH:D009101
+  drug: Plerixafor
+  drug_mesh: MESH:C088327
+  drugbank: DB:DB06809
+links:
+  - key: decreases activity of
+    source: MESH:C088327
+    target: UniProt:P61073
+  - key: negatively correlated with
+    source: UniProt:P61073
+    target: GO:0035701
+  - key: increases abundance of
+    source: GO:0035701
+    target: CL:0000037
+  - key: treats
+    source: CL:0000037
+    target: MESH:D009101
+multigraph: true
+nodes:
+  - id: MESH:C088327
+    label: Drug
+    name: Plerixafor
+  - id: UniProt:P61073
+    label: Protein
+    name: C-X-C chemokine receptor type 4
+  - id: GO:0035701
+    label: BiologicalProcess
+    name: Hematopoietic stem cell migration
+  - id: CL:0000037
+    label: Cell
+    name: Hematopoietic stem cell
+  - id: MESH:D009101
+    label: Disease
+    name: Multiple myeloma
+references:
+  - https://en.wikipedia.org/wiki/Plerixafor#Pharmacology
+  - https://go.drugbank.com/drugs/DB06809
+  - https://pubmed.ncbi.nlm.nih.gov/17640590/

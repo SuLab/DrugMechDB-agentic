@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB13165_MESH_D009798_1
+  disease: Ocular Hypertension
+  disease_mesh: MESH:D009798
+  drug: K-115
+  drug_mesh: MESH:C584679
+  drugbank: DB:DB13165
+links:
+  - key: decreases activity of
+    source: MESH:C584679
+    target: UniProt:Q13464
+  - key: decreases activity of
+    source: MESH:C584679
+    target: UniProt:O75116
+  - key: positively regulates
+    source: UniProt:Q13464
+    target: GO:0006939
+  - key: positively regulates
+    source: UniProt:O75116
+    target: GO:0006939
+  - key: occurs in
+    source: GO:0006939
+    target: UBERON:0005969
+  - key: positively regulates
+    source: UBERON:0005969
+    target: UBERON:0003956
+  - key: correlated with
+    source: UBERON:0003956
+    target: MESH:D009798
+multigraph: true
+nodes:
+  - id: MESH:C584679
+    label: Drug
+    name: K-115
+  - id: UniProt:Q13464
+    label: Protein
+    name: Rho-associated protein kinase 1
+  - id: UniProt:O75116
+    label: Protein
+    name: Rho-associated protein kinase 2
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: UBERON:0005969
+    label: GrossAnatomicalStructure
+    name: eye trabecular meshwork
+  - id: UBERON:0003956
+    label: GrossAnatomicalStructure
+    name: aqueous drainage system
+  - id: MESH:D009798
+    label: Disease
+    name: Ocular Hypertension
+references:
+  - https://go.drugbank.com/drugs/DB13165#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22RIPASUDIL%22
+  - https://www.uniprot.org/uniprot/Q13464#function
+  - https://www.uniprot.org/uniprot/O75116#function
+  - https://en.wikipedia.org/wiki/Ocular_hypertension

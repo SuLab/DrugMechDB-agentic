@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB11945_MESH_D015266_1
+  disease: Merkel cell carcinoma
+  disease_mesh: MESH:D015266
+  drug: avelumab
+  drug_mesh: MESH:C000609138
+  drugbank: DB:DB11945
+links:
+  - key: decreases activity of
+    source: MESH:C000609138
+    target: UniProt:Q9NZQ7
+  - key: negatively regulates
+    source: UniProt:Q9NZQ7
+    target: GO:0036037
+  - key: negatively regulates
+    source: GO:0036037
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D015266
+multigraph: true
+nodes:
+  - id: MESH:C000609138
+    label: Drug
+    name: avelumab
+  - id: UniProt:Q9NZQ7
+    label: Protein
+    name: Programmed cell death 1 ligand 1
+  - id: GO:0036037
+    label: BiologicalProcess
+    name: Cytotoxic T-Cell activity
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell proliferation
+  - id: MESH:D015266
+    label: Disease
+    name: Merkel cell carcinoma

@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB01192_MESH_D059350_1
+  disease: Chronic Pain
+  disease_mesh: MESH:D059350
+  drug: oxymorphone
+  drug_mesh: MESH:D010111
+  drugbank: DB:DB01192
+links:
+  - key: increases activity of
+    source: MESH:D010111
+    target: UniProt:P35372
+  - key: participates in
+    source: UniProt:P35372
+    target: GO:0038003
+  - key: negatively correlated with
+    source: GO:0038003
+    target: GO:0019233
+  - key: positively regulates
+    source: GO:0019233
+    target: MESH:D009619
+  - key: positively correlated with
+    source: MESH:D009619
+    target: MESH:D059350
+multigraph: true
+nodes:
+  - id: MESH:D010111
+    label: Drug
+    name: oxymorphone
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu-type opioid receptor
+  - id: GO:0038003
+    label: BiologicalProcess
+    name: G protein-coupled opioid receptor signaling pathway
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: sensory perception of pain
+  - id: MESH:D009619
+    label: ChemicalSubstance
+    name: Nociceptors
+  - id: MESH:D059350
+    label: Disease
+    name: Chronic Pain
+references:
+  - https://go.drugbank.com/drugs/DB01192#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P35372#function
+  - https://en.wikipedia.org/wiki/Chronic_pain

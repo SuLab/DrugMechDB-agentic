@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB01280_MESH_D054218_1
+  disease: T-cell acute lymphoblastic leukemia
+  disease_mesh: MESH:D054218
+  drug: nelarabine
+  drug_mesh: MESH:C104457
+  drugbank: DB:DB01280
+links:
+  - key: produces
+    source: MESH:C104457
+    target: MESH:C022206
+  - key: decreases activity of
+    source: MESH:C022206
+    target: UniProt:P09884
+  - key: positively regulates
+    source: UniProt:P09884
+    target: GO:0006260
+  - key: positively correlated with
+    source: GO:0006260
+    target: HP:0031379
+  - key: prevents
+    source: MESH:C022206
+    target: GO:0090592
+  - key: positively correlated with
+    source: GO:0090592
+    target: HP:0031379
+  - key: positively correlated with
+    source: HP:0031379
+    target: MESH:D054218
+multigraph: true
+nodes:
+  - id: MESH:C104457
+    label: Drug
+    name: nelarabine
+  - id: MESH:C022206
+    label: ChemicalSubstance
+    name: 9-beta-D-arabinofuranosylguanosine 5'-triphosphate
+  - id: UniProt:P09884
+    label: Protein
+    name: DNA polymerase alpha catalytic subunit
+  - id: GO:0090592
+    label: BiologicalProcess
+    name: DNA synthesis involved in DNA replication
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: HP:0031379
+    label: PhenotypicFeature
+    name: Abnormal T cell proliferation
+  - id: MESH:D054218
+    label: Disease
+    name: T-cell acute lymphoblastic leukemia
+references:
+  - https://go.drugbank.com/drugs/DB01280#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Nelarabine

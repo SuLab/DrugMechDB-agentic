@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00008_MESH_D019698_1
+  disease: Chronic hepatitis C
+  disease_mesh: MESH:D019698
+  drug: peginterferon alfa-2a
+  drug_mesh: MESH:C100416
+  drugbank: DB:DB00008
+links:
+  - key: positively regulates
+    source: MESH:C100416
+    target: UniProt:P48551
+  - key: participates in
+    source: UniProt:P48551
+    target: GO:0007259
+  - key: positively regulates
+    source: GO:0007259
+    target: reactome:R-HSA-1169410
+  - key: part of
+    source: reactome:R-HSA-1169410
+    target: GO:0140374
+  - key: in taxon
+    source: GO:0140374
+    target: taxonomy:11103
+  - key: causes
+    source: taxonomy:11103
+    target: MESH:D019698
+multigraph: true
+nodes:
+  - id: MESH:C100416
+    label: Drug
+    name: peginterferon alfa-2a
+  - id: UniProt:P48551
+    label: Protein
+    name: Interferon alpha/beta receptor 2
+  - id: GO:0007259
+    label: BiologicalProcess
+    name: receptor signaling pathway via JAK-STAT
+  - id: reactome:R-HSA-1169410
+    label: Pathway
+    name: Antiviral mechanism by IFN-stimulated genes
+  - id: GO:0140374
+    label: BiologicalProcess
+    name: antiviral innate immune response
+  - id: taxonomy:11103
+    label: OrganismTaxon
+    name: Hepacivirus C
+  - id: MESH:D019698
+    label: Disease
+    name: Chronic hepatitis C
+references:
+  - https://go.drugbank.com/drugs/DB00008#mechanism-of-action

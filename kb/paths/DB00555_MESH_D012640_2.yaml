@@ -1,0 +1,68 @@
+comment: This drug may also affect GABA-mediated synaptic transmission (https://go.drugbank.com/drugs/DB00555#BE0000013).
+  However this is rather contentious, so it has not been annotated as such in here.
+  Besides if the drug does inhibit gamma-aminobutyric acid receptor it's a rather
+  weak inhibition seen in animal models (yet to be determined in humans). Note that
+  the drug could be contraindicated for treatment of seizures as it can exacerbate
+  them, specially the myoclonic type (https://pubmed.ncbi.nlm.nih.gov/9596203/). Finally,
+  this disease is denoted as Tonic-clonic seizure in the original file but known as
+  Seizures in MESH.
+directed: true
+graph:
+  _id: DB00555_MESH_D012640_2
+  disease: Seizures
+  disease_mesh: MESH:D012640
+  drug: lamotrigine
+  drug_mesh: MESH:C047781
+  drugbank: DB:DB00555
+links:
+  - key: negatively regulates
+    source: MESH:C047781
+    target: UniProt:Q15878
+  - key: participates in
+    source: UniProt:Q15878
+    target: reactome:R-HSA-112308
+  - key: participates in
+    source: UniProt:Q15878
+    target: reactome:R-HSA-112308
+  - key: positively correlated with
+    source: reactome:R-HSA-112308
+    target: GO:0007268
+  - key: positively correlated with
+    source: GO:0007268
+    target: GO:0061535
+  - key: positively correlated with
+    source: GO:0061535
+    target: HP:0020219
+  - key: positively correlated with
+    source: HP:0020219
+    target: MESH:D012640
+multigraph: true
+nodes:
+  - id: MESH:C047781
+    label: Drug
+    name: lamotrigine
+  - id: UniProt:Q15878
+    label: Protein
+    name: Voltage-dependent R-type calcium channel subunit alpha-1E
+  - id: reactome:R-HSA-112308
+    label: Pathway
+    name: Presynaptic depolarization and calcium channel opening
+  - id: GO:0007268
+    label: BiologicalProcess
+    name: chemical synaptic transmission
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: glutamate secretion, neurotransmission
+  - id: HP:0020219
+    label: PhenotypicFeature
+    name: Motor seizure
+  - id: MESH:D012640
+    label: Disease
+    name: Seizures
+references:
+  - https://go.drugbank.com/drugs/DB00555#BE0009609
+  - https://en.wikipedia.org/wiki/Lamotrigine#Mechanism_of_action
+  - https://pubmed.ncbi.nlm.nih.gov/10530688/
+  - https://pubmed.ncbi.nlm.nih.gov/9579933/
+  - https://en.wikipedia.org/wiki/Anticonvulsant
+  - https://en.wikipedia.org/wiki/Neuroprotection

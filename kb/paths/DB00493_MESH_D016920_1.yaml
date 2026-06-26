@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00493_MESH_D016920_1
+  disease: Meningitis, Bacterial
+  disease_mesh: MESH:D016920
+  drug: cefotaxime
+  drug_mesh: MESH:D002439
+  drugbank: DB:DB00493
+links:
+  - key: decreases activity of
+    source: MESH:D002439
+    target: InterPro:IPR001460
+  - key: participates in
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D016920
+multigraph: true
+nodes:
+  - id: MESH:D002439
+    label: Drug
+    name: cefotaxime
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D016920
+    label: Disease
+    name: Meningitis, Bacterial
+references:
+  - https://go.drugbank.com/drugs/DB00493#mechanism-of-action
+  - https://www.ebi.ac.uk/interpro/entry/InterPro/IPR001460/

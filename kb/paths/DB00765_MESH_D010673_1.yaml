@@ -1,0 +1,73 @@
+directed: true
+graph:
+  _id: DB00765_MESH_D010673_1
+  disease: Pheochromocytoma
+  disease_mesh: MESH:D010673
+  drug: metirosine
+  drug_mesh: MESH:D019805
+  drugbank: DB:DB00765
+links:
+  - key: decreases activity of
+    source: MESH:D019805
+    target: UniProt:P07101
+  - key: positively regulates
+    source: UniProt:P07101
+    target: reactome:R-HSA-209905
+  - key: positively correlated with
+    source: reactome:R-HSA-209905
+    target: CHEBI:18243
+  - key: positively correlated with
+    source: reactome:R-HSA-209905
+    target: CHEBI:33568
+  - key: positively correlated with
+    source: reactome:R-HSA-209905
+    target: CHEBI:33569
+  - key: positively regulates
+    source: CHEBI:18243
+    target: GO:0042310
+  - key: positively regulates
+    source: CHEBI:33568
+    target: GO:0042310
+  - key: positively regulates
+    source: CHEBI:33569
+    target: GO:0042310
+  - key: affects risk for
+    source: GO:0042310
+    target: HP:0000822
+  - key: manifestation of
+    source: HP:0000822
+    target: MESH:D010673
+multigraph: true
+nodes:
+  - id: MESH:D019805
+    label: Drug
+    name: metirosine
+  - id: UniProt:P07101
+    label: Protein
+    name: Tyrosine 3-monooxygenase
+  - id: reactome:R-HSA-209905
+    label: Pathway
+    name: Catecholamine biosynthesis
+  - id: CHEBI:18243
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: CHEBI:33568
+    label: ChemicalSubstance
+    name: adrenaline
+  - id: CHEBI:33569
+    label: ChemicalSubstance
+    name: noradrenaline
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: Hypertension
+  - id: MESH:D010673
+    label: Disease
+    name: Pheochromocytoma
+references:
+  - https://go.drugbank.com/drugs/DB00765
+  - https://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1200862
+  - https://en.wikipedia.org/wiki/Pheochromocytoma
+  - https://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=441350

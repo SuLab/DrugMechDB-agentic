@@ -1,0 +1,149 @@
+directed: true
+graph:
+  _id: DB00806_MESH_D016491_1
+  disease: Peripheral vascular disease
+  disease_mesh: MESH:D016491
+  drug: pentoxifylline
+  drug_mesh: MESH:D010431
+  drugbank: DB:DB00806
+links:
+  - key: decreases activity of
+    source: MESH:D010431
+    target: UniProt:Q14432
+  - key: decreases activity of
+    source: MESH:D010431
+    target: UniProt:Q13370
+  - key: decreases activity of
+    source: MESH:D010431
+    target: InterPro:IPR043371
+  - key: decreases abundance of
+    source: UniProt:Q14432
+    target: MESH:D000242
+  - key: negatively regulates
+    source: MESH:D000242
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: MESH:D013928
+  - key: positively regulates
+    source: MESH:D013928
+    target: GO:0070527
+  - key: occurs in
+    source: GO:0070527
+    target: MESH:D016491
+  - key: decreases abundance of
+    source: UniProt:Q13370
+    target: MESH:D000242
+  - key: decreases abundance of
+    source: InterPro:IPR043371
+    target: MESH:D000242
+  - key: increases activity of
+    source: MESH:D010431
+    target: UniProt:P29274
+  - key: positively regulates
+    source: UniProt:P29274
+    target: GO:0004016
+  - key: increases abundance of
+    source: GO:0004016
+    target: MESH:D000242
+  - key: positively regulates
+    source: MESH:D000242
+    target: GO:0010737
+  - key: negatively regulates
+    source: GO:0010737
+    target: GO:0071159
+  - key: positively regulates
+    source: GO:0071159
+    target: GO:0032612
+  - key: positively regulates
+    source: GO:0071159
+    target: GO:0032635
+  - key: increases activity of
+    source: GO:0071159
+    target: UniProt:P05362
+  - key: increases activity of
+    source: GO:0071159
+    target: UniProt:P19320
+  - key: increases activity of
+    source: GO:0071159
+    target: UniProt:P02741
+  - key: positively correlated with
+    source: GO:0032612
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0032635
+    target: GO:0006954
+  - key: positively correlated with
+    source: UniProt:P05362
+    target: GO:0006954
+  - key: positively correlated with
+    source: UniProt:P19320
+    target: GO:0006954
+  - key: positively correlated with
+    source: UniProt:P02741
+    target: GO:0006954
+  - key: contributes to
+    source: GO:0006954
+    target: MESH:D016491
+multigraph: true
+nodes:
+  - id: MESH:D010431
+    label: Drug
+    name: Pentoxifylline
+  - id: UniProt:Q14432
+    label: Protein
+    name: cGMP-inhibited 3',5'-cyclic phosphodiesterase A
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: Cyclic AMP
+  - id: reactome:R-HSA-2162123
+    label: BiologicalProcess
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: MESH:D013928
+    label: ChemicalSubstance
+    name: Thromboxane A2
+  - id: GO:0070527
+    label: BiologicalProcess
+    name: Platelet aggregation
+  - id: UniProt:Q13370
+    label: Protein
+    name: cGMP-inhibited 3',5'-cyclic phosphodiesterase B
+  - id: InterPro:IPR043371
+    label: GeneFamily
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4
+  - id: UniProt:P29274
+    label: Protein
+    name: Adenosine receptor A2a
+  - id: GO:0004016
+    label: MolecularActivity
+    name: Adenylate cyclase activity
+  - id: GO:0010737
+    label: BiologicalProcess
+    name: Protein kinase A signaling
+  - id: GO:0071159
+    label: CellularComponent
+    name: NF-kappaB complex
+  - id: GO:0032612
+    label: BiologicalProcess
+    name: Interleukin-1 production
+  - id: GO:0032635
+    label: BiologicalProcess
+    name: Interleukin-6 production
+  - id: UniProt:P05362
+    label: Protein
+    name: Intercellular adhesion molecule 1
+  - id: UniProt:P19320
+    label: Protein
+    name: Vascular cell adhesion protein 1
+  - id: UniProt:P02741
+    label: Protein
+    name: C-reactive protein
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D016491
+    label: Disease
+    name: Peripheral vascular disease
+references:
+  - https://europepmc.org/article/PMC/2716262
+  - https://go.drugbank.com/drugs/DB00806

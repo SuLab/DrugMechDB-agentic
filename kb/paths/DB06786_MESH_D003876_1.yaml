@@ -1,0 +1,37 @@
+directed: true
+graph:
+  _id: DB06786_MESH_D003876_1
+  disease: Atopic dermatitis
+  disease_mesh: MESH:D003876
+  drug: halcinonide
+  drug_mesh: MESH:D006206
+  drugbank: DB:DB06786
+links:
+  - key: positively regulates
+    source: MESH:D006206
+    target: UniProt:P04150
+  - key: negatively correlated with
+    source: UniProt:P04150
+    target: HP:0001019
+  - key: manifestation of
+    source: HP:0001019
+    target: MESH:D003876
+multigraph: true
+nodes:
+  - id: MESH:D006206
+    label: Drug
+    name: halcinonide
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: HP:0001019
+    label: PhenotypicFeature
+    name: Erythroderma
+  - id: MESH:D003876
+    label: Disease
+    name: Atopic dermatitis
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200845/
+  - https://en.wikipedia.org/wiki/Halcinonide
+  - https://pubchem.ncbi.nlm.nih.gov/compound/443943#section=Mechanism-of-Action
+  - https://en.wikipedia.org/wiki/Corticosteroid#Pharmacology

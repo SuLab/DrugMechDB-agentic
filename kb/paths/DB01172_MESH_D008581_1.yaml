@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01172_MESH_D008581_1
+  disease: Meningitis
+  disease_mesh: MESH:D008581
+  drug: kanamycin
+  drug_mesh: MESH:D007612
+  drugbank: DB:DB01172
+links:
+  - key: disrupts
+    source: MESH:D007612
+    target: MESH:D054680
+  - key: location of
+    source: MESH:D054680
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:487
+  - key: causes
+    source: taxonomy:487
+    target: MESH:D008581
+multigraph: true
+nodes:
+  - id: MESH:D007612
+    label: Drug
+    name: kanamycin
+  - id: MESH:D054680
+    label: ChemicalSubstance
+    name: Ribosome Subunits, Small, Bacterial
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:487
+    label: OrganismTaxon
+    name: Neisseria meningitidis
+  - id: MESH:D008581
+    label: Disease
+    name: Meningitis
+references:
+  - https://go.drugbank.com/drugs/DB01172

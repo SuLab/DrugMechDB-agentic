@@ -1,0 +1,118 @@
+directed: true
+graph:
+  _id: DB06144_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: sertindole
+  drug_mesh: MESH:C066304
+  drugbank: DB:DB06144
+links:
+  - key: decreases activity of
+    source: MESH:C066304
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:C066304
+    target: UniProt:P28335
+  - key: decreases activity of
+    source: MESH:C066304
+    target: UniProt:P28223
+  - key: decreases activity of
+    source: MESH:C066304
+    target: UniProt:P35368
+  - key: decreases activity of
+    source: MESH:C066304
+    target: UniProt:P35348
+  - key: decreases activity of
+    source: MESH:C066304
+    target: UniProt:P25100
+  - key: correlated with
+    source: UniProt:P35348
+    target: HP:0002071
+  - key: correlated with
+    source: UniProt:P25100
+    target: HP:0002071
+  - key: correlated with
+    source: UniProt:P35368
+    target: HP:0002071
+  - key: correlated with
+    source: HP:0002071
+    target: MESH:D012559
+  - key: negatively regulates
+    source: UniProt:P28335
+    target: GO:0014046
+  - key: positively regulates
+    source: UniProt:P28223
+    target: GO:0014046
+  - key: positively regulates
+    source: UniProt:P28223
+    target: GO:0014047
+  - key: positively correlated with
+    source: GO:0014047
+    target: GO:0004952
+  - key: positively correlated with
+    source: GO:0004952
+    target: HP:0000709
+  - key: positively regulates
+    source: UniProt:P14416
+    target: GO:0014046
+  - key: located in
+    source: GO:0014046
+    target: UBERON:0001910
+  - key: negatively correlated with
+    source: GO:0014046
+    target: MESH:D012559
+  - key: positively correlated with
+    source: UBERON:0001910
+    target: MESH:D012559
+  - key: positively correlated with
+    source: HP:0000709
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:C066304
+    label: Drug
+    name: sertindole
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: UniProt:P28335
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2C
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P25100
+    label: Protein
+    name: Alpha-1D adrenergic receptor
+  - id: UniProt:P35368
+    label: Protein
+    name: Alpha-1B adrenergic receptor
+  - id: GO:0014046
+    label: BiologicalProcess
+    name: dopamine secretion
+  - id: GO:0014047
+    label: BiologicalProcess
+    name: glutamate secretion
+  - id: GO:0004952
+    label: MolecularActivity
+    name: dopamine neurotransmitter receptor activity
+  - id: UBERON:0001910
+    label: GrossAnatomicalStructure
+    name: medial forebrain bundle
+  - id: HP:0000709
+    label: PhenotypicFeature
+    name: Psychosis
+  - id: HP:0002071
+    label: PhenotypicFeature
+    name: Abnormality of extrapyramidal motor function
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL12713/
+  - https://go.drugbank.com/drugs/DB06144
+  - https://pubmed.ncbi.nlm.nih.gov/24300463/
+  - https://pubmed.ncbi.nlm.nih.gov/8778681/

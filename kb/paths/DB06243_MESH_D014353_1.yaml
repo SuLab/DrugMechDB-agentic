@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB06243_MESH_D014353_1
+  disease: African trypanosomiasis
+  disease_mesh: MESH:D014353
+  drug: Eflornithine
+  drug_mesh: MESH:D000518
+  drugbank: DB:DB06243
+links:
+  - key: decreases activity of
+    source: MESH:D000518
+    target: UniProt:P11926
+  - key: positively regulates
+    source: UniProt:P11926
+    target: GO:0033387
+  - key: positively correlated with
+    source: GO:0033387
+    target: CHEBI:35490
+  - key: positively regulates
+    source: CHEBI:35490
+    target: GO:0045454
+  - key: in taxon
+    source: GO:0045454
+    target: taxonomy:5691
+  - key: causes
+    source: taxonomy:5691
+    target: MESH:D014353
+multigraph: true
+nodes:
+  - id: MESH:D000518
+    label: Drug
+    name: Eflornithine
+  - id: UniProt:P11926
+    label: Protein
+    name: Ornithine decarboxylase
+  - id: GO:0033387
+    label: BiologicalProcess
+    name: Putrescine biosynthetic process from ornithine
+  - id: CHEBI:35490
+    label: ChemicalSubstance
+    name: Trypanothione disulfide
+  - id: GO:0045454
+    label: BiologicalProcess
+    name: Cell redox homeostasis
+  - id: taxonomy:5691
+    label: OrganismTaxon
+    name: Trypanosoma brucei
+  - id: MESH:D014353
+    label: Disease
+    name: African trypanosomiasis
+references:
+  - https://www.sciencedirect.com/topics/pharmacology-toxicology-and-pharmaceutical-science/eflornithine#:~:text=Eflornithine%20acts%20as%20an%20irreversible,to%20block%20reactive%20oxygen%20intermediates
+  - https://go.drugbank.com/drugs/DB06243

@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB09040_MESH_D014009_1
+  disease: Onychomycosis due to dermatophyte
+  disease_mesh: MESH:D014009
+  drug: Efinaconazole
+  drug_mesh: MESH:C431707
+  drugbank: DB:DB09040
+links:
+  - key: decreases activity of
+    source: MESH:C431707
+    target: PR:000006147
+  - key: positively regulates
+    source: PR:000006147
+    target: GO:0006696
+  - key: increases abundance of
+    source: GO:0006696
+    target: MESH:D004875
+  - key: participates in
+    source: MESH:D004875
+    target: GO:0042546
+  - key: in taxon
+    source: GO:0042546
+    target: taxonomy:5551
+  - key: causes
+    source: taxonomy:5551
+    target: MESH:D014009
+multigraph: true
+nodes:
+  - id: MESH:C431707
+    label: Drug
+    name: Efinaconazole
+  - id: PR:000006147
+    label: MacromolecularComplex
+    name: Lanosterol 14-alpha demethylase
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: Ergosterol biosynthetic process
+  - id: MESH:D004875
+    label: ChemicalSubstance
+    name: Ergosterol
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: Cell wall biogenesis
+  - id: taxonomy:5551
+    label: OrganismTaxon
+    name: Trichophyton rubrum
+  - id: MESH:D014009
+    label: Disease
+    name: Onychomycosis due to dermatophyte
+references:
+  - https://go.drugbank.com/drugs/DB09040#BE0000690
+  - https://en.wikipedia.org/wiki/Onychomycosis#Dermatophytes

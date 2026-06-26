@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB03843_MESH_D007251_1
+  disease: Influenza, Human
+  disease_mesh: MESH:D007251
+  drug: formaldehyde
+  drug_mesh: MESH:D005557
+  drugbank: DB:DB03843
+links:
+  - key: positively regulates
+    source: MESH:D005557
+    target: GO:0008213
+  - key: positively regulates
+    source: MESH:D005557
+    target: GO:0006305
+  - key: disrupts
+    source: GO:0008213
+    target: MESH:D036022
+  - key: disrupts
+    source: GO:0006305
+    target: MESH:D036022
+  - key: in taxon
+    source: MESH:D036022
+    target: taxonomy:11320
+  - key: causes
+    source: taxonomy:11320
+    target: MESH:D007251
+multigraph: true
+nodes:
+  - id: MESH:D005557
+    label: Drug
+    name: formaldehyde
+  - id: GO:0008213
+    label: BiologicalProcess
+    name: protein alkylation
+  - id: GO:0006305
+    label: BiologicalProcess
+    name: DNA alkylation
+  - id: MESH:D036022
+    label: ChemicalSubstance
+    name: Capsid Proteins
+  - id: taxonomy:11320
+    label: OrganismTaxon
+    name: Influenza A virus
+  - id: MESH:D007251
+    label: Disease
+    name: Influenza, Human
+references:
+  - https://go.drugbank.com/drugs/DB03843#mechanism-of-action
+  - https://www.cdc.gov/infectioncontrol/guidelines/disinfection/disinfection-methods/chemical.html#Formaldehyde

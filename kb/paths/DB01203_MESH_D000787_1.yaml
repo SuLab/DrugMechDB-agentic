@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB01203_MESH_D000787_1
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: nadolol
+  drug_mesh: MESH:D009248
+  drugbank: DB:DB01203
+links:
+  - key: decreases activity of
+    source: MESH:D009248
+    target: UniProt:P08588
+  - key: positively regulates
+    source: UniProt:P08588
+    target: HP:0033533
+  - key: positively regulates
+    source: UniProt:P08588
+    target: UniProt:P00797
+  - key: positively regulates
+    source: UniProt:P00797
+    target: GO:0042310
+  - key: affects risk for
+    source: GO:0042310
+    target: HP:0000822
+  - key: contributes to
+    source: HP:0000822
+    target: MESH:D000787
+  - key: positively correlated with
+    source: HP:0033533
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:D009248
+    label: Drug
+    name: Nadolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: HP:0033533
+    label: PhenotypicFeature
+    name: Increased cardiac output
+  - id: UniProt:P00797
+    label: Protein
+    name: Renin
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: Hypertension
+  - id: MESH:D000787
+    label: Disease
+    name: Angina pectoris
+references:
+  - https://go.drugbank.com/drugs/DB01203

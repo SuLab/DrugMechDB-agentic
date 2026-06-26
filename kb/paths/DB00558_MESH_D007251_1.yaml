@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00558_MESH_D007251_1
+  disease: Influenza
+  disease_mesh: MESH:D007251
+  drug: zanamivir
+  drug_mesh: MESH:D053243
+  drugbank: DB:DB00558
+links:
+  - key: negatively regulates
+    source: MESH:D053243
+    target: UniProt:P03468
+  - key: positively regulates
+    source: UniProt:P03468
+    target: GO:0019076
+  - key: in taxon
+    source: GO:0019076
+    target: taxonomy:11320
+  - key: causes
+    source: taxonomy:11320
+    target: MESH:D007251
+multigraph: true
+nodes:
+  - id: MESH:D053243
+    label: Drug
+    name: zanamivir
+  - id: UniProt:P03468
+    label: Protein
+    name: Neuraminidase
+  - id: GO:0019076
+    label: BiologicalProcess
+    name: viral release from host cell
+  - id: taxonomy:11320
+    label: OrganismTaxon
+    name: Influenza A virus
+  - id: MESH:D007251
+    label: Disease
+    name: Influenza
+references:
+  - https://go.drugbank.com/drugs/DB00558
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL222813/

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Browse paths · DrugMechDB</title>
+<link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+<div class="mock-banner">MOCKUP · DrugMechDB website revamp · sample data, not final — navigation is search-driven (no giant sidebar)</div>
+
+<nav class="nav"><div class="container nav-inner">
+  <a class="brand" href="index.html"><span class="mark">D</span>DrugMech<span class="tail">DB</span></a>
+  <div class="nav-links">
+    <a href="browse.html" class="active">Browse</a>
+    <a href="embeddings.html">Embeddings</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="docs.html">Docs</a>
+  </div>
+</div></nav>
+
+<div class="container">
+  <div class="browse-layout">
+
+    <!-- FACETS -->
+    <aside class="facets">
+      <div class="facet">
+        <h4>Disease area</h4>
+        <div id="f-area"></div>
+      </div>
+      <div class="facet">
+        <h4>Node type present</h4>
+        <div id="f-type"></div>
+      </div>
+      <div class="facet">
+        <h4>Path length</h4>
+        <div id="f-len"></div>
+      </div>
+    </aside>
+
+    <!-- RESULTS -->
+    <main>
+      <div class="browse-search"><span style="color:var(--muted)">⌕</span>
+        <input id="q" placeholder="Search drug, disease, or target protein…" autofocus></div>
+      <div class="results-head"><span id="rcount"></span><span>Sorted by relevance</span></div>
+      <div id="results"></div>
+    </main>
+
+  </div>
+</div>
+
+<footer class="footer"><div class="container footer-inner">
+  <div>DrugMechDB · Su Lab · curated under the Biolink Model · CC0</div>
+  <div class="links"><a href="#">GitHub</a><a href="#">DOI</a><a href="#">Translator</a></div>
+</div></footer>
+
+<script src="data.js"></script>
+<script>
+const TYPE_COLOR = {
+  Drug:"#4f46e5", ChemicalSubstance:"#7c3aed", Protein:"#2563eb", GeneFamily:"#0ea5e9",
+  MacromolecularComplex:"#0891b2", Pathway:"#0d9488", BiologicalProcess:"#16a34a",
+  MolecularActivity:"#4d7c0f", CellularComponent:"#d97706", Cell:"#ea580c",
+  GrossAnatomicalStructure:"#a16207", PhenotypicFeature:"#db2777", Disease:"#dc2626", OrganismTaxon:"#6b7280"
+};
+const IDX = window.DMDB_INDEX;
+const sel = { area:new Set(), type:new Set(), len:new Set() };
+
+function counts(key, val){ return IDX.filter(r => key==="type" ? r.types.includes(val) : key==="len" ? lenBucket(r.steps)===val : r[key]===val).length; }
+function lenBucket(s){ return s<=3?"3 or fewer":s<=5?"4–5":"6+"; }
+
+const areas = [...new Set(IDX.map(r=>r.area))].sort();
+const types = [...new Set(IDX.flatMap(r=>r.types))];
+const lens = ["3 or fewer","4–5","6+"];
+
+function facet(elId, key, vals){
+  document.getElementById(elId).innerHTML = vals.map(v=>
+    `<label><input type="checkbox" data-k="${key}" value="${v}"> ${v} <span class="fc">${counts(key,v)}</span></label>`).join("");
+}
+facet("f-area","area",areas);
+facet("f-type","type",types);
+facet("f-len","len",lens);
+
+document.querySelectorAll(".facet input").forEach(cb=>cb.addEventListener("change",e=>{
+  const s = sel[e.target.dataset.k];
+  e.target.checked ? s.add(e.target.value) : s.delete(e.target.value);
+  render();
+}));
+document.getElementById("q").addEventListener("input", render);
+
+function render(){
+  const q = document.getElementById("q").value.toLowerCase().trim();
+  const out = IDX.filter(r=>{
+    if(q && !(`${r.drug} ${r.disease} ${r.target}`.toLowerCase().includes(q))) return false;
+    if(sel.area.size && !sel.area.has(r.area)) return false;
+    if(sel.type.size && ![...sel.type].every(t=>r.types.includes(t))) return false;
+    if(sel.len.size && !sel.len.has(lenBucket(r.steps))) return false;
+    return true;
+  });
+  document.getElementById("rcount").textContent = `${out.length} of ${IDX.length} paths`;
+  document.getElementById("results").innerHTML = out.map(r=>{
+    const preview = r.types.map((t,i)=>
+      `<span class="mini-node" style="background:${TYPE_COLOR[t]||'#6b7280'}">${t.replace(/([a-z])([A-Z])/g,'$1 $2')}</span>`+
+      (i<r.types.length-1?'<span class="mini-ar">→</span>':'')).join("");
+    return `<a class="result" href="record.html">
+      <div class="r-title"><span class="drug">${r.drug}</span> <span class="ar">↓</span> <span class="disease">${r.disease}</span></div>
+      <div class="r-meta">${r.area} · target: ${r.target} · ${r.steps} steps · <span class="mono">${r.id}</span></div>
+      <div class="r-path">${preview}</div></a>`;
+  }).join("") || `<div class="card" style="padding:40px;text-align:center;color:var(--muted)">No paths match these filters.</div>`;
+}
+render();
+</script>
+</body>
+</html>

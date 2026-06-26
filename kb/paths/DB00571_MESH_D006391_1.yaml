@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB00571_MESH_D006391_1
+  disease: Hemangioma
+  disease_mesh: MESH:D006391
+  drug: Propranolol
+  drug_mesh: MESH:D011433
+  drugbank: DB:DB00571
+links:
+  - key: decreases activity of
+    source: MESH:D011433
+    target: UniProt:P15692
+  - key: positively regulates
+    source: UniProt:P15692
+    target: GO:0001525
+  - key: positively regulates
+    source: UniProt:P15692
+    target: GO:0001570
+  - key: positively correlated with
+    source: GO:0001525
+    target: HP:0100742
+  - key: positively correlated with
+    source: GO:0001570
+    target: HP:0100742
+  - key: manifestation of
+    source: HP:0100742
+    target: MESH:D006391
+multigraph: true
+nodes:
+  - id: MESH:D011433
+    label: Drug
+    name: Propranolol
+  - id: UniProt:P15692
+    label: Protein
+    name: Vascular endothelial growth factor A
+  - id: GO:0001570
+    label: BiologicalProcess
+    name: vasculogenesis
+  - id: GO:0001525
+    label: BiologicalProcess
+    name: angiogenesis
+  - id: HP:0100742
+    label: PhenotypicFeature
+    name: Vascular neoplasm
+  - id: MESH:D006391
+    label: Disease
+    name: Hemangioma
+references:
+  - https://go.drugbank.com/drugs/DB00571#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P15692#function
+  - https://en.wikipedia.org/wiki/Hemangioma

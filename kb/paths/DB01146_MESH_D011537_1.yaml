@@ -1,0 +1,37 @@
+directed: true
+graph:
+  _id: DB01146_MESH_D011537_1
+  disease: Pruritus
+  disease_mesh: MESH:D011537
+  drug: diphenylpyraline
+  drug_mesh: MESH:C009871
+  drugbank: DB:DB01146
+links:
+  - key: decreases activity of
+    source: MESH:C009871
+    target: UniProt:P35367
+  - key: positively correlated with
+    source: UniProt:P35367
+    target: MESH:D006632
+  - key: positively correlated with
+    source: MESH:D006632
+    target: MESH:D011537
+multigraph: true
+nodes:
+  - id: MESH:C009871
+    label: Drug
+    name: diphenylpyraline
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: MESH:D006632
+    label: ChemicalSubstance
+    name: Histamine
+  - id: MESH:D011537
+    label: Disease
+    name: Pruritus
+references:
+  - https://go.drugbank.com/drugs/DB01146#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22DIPHENYLPYRALINE%22
+  - https://www.uniprot.org/uniprot/P35367#function
+  - https://en.wikipedia.org/wiki/Itch

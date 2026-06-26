@@ -1,0 +1,66 @@
+directed: true
+graph:
+  _id: DB00781_MESH_D007634_1
+  disease: Keratitis
+  disease_mesh: MESH:D007634
+  drug: Polymyxin B
+  drug_mesh: MESH:D011112
+  drugbank: DB:DB00781
+links:
+  - key: disrupts
+    source: MESH:D011112
+    target: CHEBI:16412
+  - key: disrupts
+    source: MESH:D011112
+    target: CHEBI:25051
+  - key: negatively regulates
+    source: MESH:D011112
+    target: InterPro:IPR005025
+  - key: located in
+    source: CHEBI:16412
+    target: GO:0009274
+  - key: located in
+    source: CHEBI:25051
+    target: GO:0009274
+  - key: part of
+    source: InterPro:IPR005025
+    target: GO:0045272
+  - key: in taxon
+    source: GO:0009274
+    target: taxonomy:1280
+  - key: in taxon
+    source: GO:0045272
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D007634
+multigraph: true
+nodes:
+  - id: MESH:D011112
+    label: Drug
+    name: Polymyxin B
+  - id: CHEBI:16412
+    label: ChemicalSubstance
+    name: lipopolysaccharide
+  - id: CHEBI:25051
+    label: ChemicalSubstance
+    name: Lipid A
+  - id: InterPro:IPR005025
+    label: GeneFamily
+    name: NADPH-dependent FMN reductase-like
+  - id: GO:0009274
+    label: CellularComponent
+    name: peptidoglycan-based cell wall
+  - id: GO:0045272
+    label: CellularComponent
+    name: plasma membrane respiratory chain complex I
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D007634
+    label: Disease
+    name: Keratitis
+references:
+  - https://go.drugbank.com/drugs/DB00781#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Polymyxin_B#Mechanism_of_action
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5355641/

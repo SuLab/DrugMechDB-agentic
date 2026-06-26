@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB08941_MESH_D011928_1
+  disease: Raynaud's disease
+  disease_mesh: MESH:D011928
+  drug: isoxsuprine
+  drug_mesh: MESH:D007556
+  drugbank: DB:DB08941
+links:
+  - key: increases activity of
+    source: MESH:D007556
+    target: UniProt:P07550
+  - key: positively regulates
+    source: UniProt:P07550
+    target: GO:0044557
+  - key: positively regulates
+    source: GO:0044557
+    target: GO:0042311
+  - key: positively correlated with
+    source: GO:0042311
+    target: GO:0008015
+  - key: negatively correlated with
+    source: GO:0008015
+    target: MESH:D011928
+multigraph: true
+nodes:
+  - id: MESH:D007556
+    label: Drug
+    name: Isoxsuprine
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: Relaxation of smooth muscle
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: Vasodilation
+  - id: GO:0008015
+    label: BiologicalProcess
+    name: Blood circulation
+  - id: MESH:D011928
+    label: Disease
+    name: Raynaud's disease
+references:
+  - https://go.drugbank.com/drugs/DB08941
+  - https://en.wikipedia.org/wiki/Isoxsuprine
+  - https://en.wikipedia.org/wiki/Raynaud_syndrome

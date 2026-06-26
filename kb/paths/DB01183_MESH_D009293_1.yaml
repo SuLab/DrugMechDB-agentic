@@ -1,0 +1,72 @@
+directed: true
+graph:
+  _id: DB01183_MESH_D009293_1
+  disease: Opioid-Related Disorders
+  disease_mesh: MESH:D009293
+  drug: Naloxone
+  drug_mesh: MESH:D009270
+  drugbank: DB:DB01183
+links:
+  - key: decreases activity of
+    source: MESH:D009270
+    target: UniProt:P35372
+  - key: decreases activity of
+    source: MESH:D009270
+    target: UniProt:P41143
+  - key: decreases activity of
+    source: MESH:D009270
+    target: UniProt:P41145
+  - key: participates in
+    source: UniProt:P35372
+    target: GO:0038003
+  - key: participates in
+    source: UniProt:P41143
+    target: GO:0038003
+  - key: participates in
+    source: UniProt:P41145
+    target: GO:0038003
+  - key: positively regulates
+    source: GO:0038003
+    target: reactome:R-HSA-1296059
+  - key: correlated with
+    source: reactome:R-HSA-1296059
+    target: HP:0002791
+  - key: positively correlated with
+    source: HP:0002791
+    target: MESH:D009293
+multigraph: true
+nodes:
+  - id: MESH:D009270
+    label: Drug
+    name: Naloxone
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu-type opioid receptor
+  - id: UniProt:P41143
+    label: Protein
+    name: Delta-type opioid receptor
+  - id: UniProt:P41145
+    label: Protein
+    name: Kappa-type opioid receptor
+  - id: GO:0038003
+    label: BiologicalProcess
+    name: G protein-coupled opioid receptor signaling pathway
+  - id: reactome:R-HSA-1296059
+    label: Pathway
+    name: G protein gated Potassium channels
+  - id: HP:0002791
+    label: PhenotypicFeature
+    name: Hypoventilation
+  - id: MESH:D009293
+    label: Disease
+    name: Opioid-Related Disorders
+references:
+  - https://go.drugbank.com/drugs/DB01183#mechanism-of-action
+  - https://nida.nih.gov/publications/drugfacts/naloxone
+  - https://www.sciencedirect.com/topics/neuroscience/naloxone
+  - https://www.uniprot.org/uniprot/P35372#function
+  - https://www.uniprot.org/uniprot/P41143#function
+  - https://www.uniprot.org/uniprot/P41145#function
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4755838/
+  - https://en.wikipedia.org/wiki/Opioid_receptor#Mechanism_of_activation
+  - https://en.wikipedia.org/wiki/Opioid_use_disorder

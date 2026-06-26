@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00888_MESH_D015464_1
+  disease: Chronic myeloid leukemia
+  disease_mesh: MESH:D015464
+  drug: mechlorethamine
+  drug_mesh: MESH:D008466
+  drugbank: DB:DB00888
+links:
+  - key: disrupts
+    source: MESH:D008466
+    target: MESH:D004247
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: HP:0031377
+  - key: phenotype of
+    source: HP:0031377
+    target: MESH:D015464
+multigraph: true
+nodes:
+  - id: MESH:D008466
+    label: Drug
+    name: Mechlorethamine
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D015464
+    label: Disease
+    name: Chronic myeloid leukemia
+references:
+  - https://go.drugbank.com/drugs/DB00888

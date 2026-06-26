@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB09324_MESH_D012226_1
+  disease: Rhinoscleroma
+  disease_mesh: MESH:D012226
+  drug: sulbactam
+  drug_mesh: MESH:D013407
+  drugbank: DB:DB09324
+links:
+  - key: negatively regulates
+    source: MESH:D013407
+    target: InterPro:IPR012338
+  - key: positively regulates
+    source: InterPro:IPR012338
+    target: GO:0008800
+  - key: in taxon
+    source: GO:0008800
+    target: taxonomy:39831
+  - key: causes
+    source: taxonomy:39831
+    target: MESH:D012226
+multigraph: true
+nodes:
+  - id: MESH:D013407
+    label: Drug
+    name: sulbactam
+  - id: InterPro:IPR012338
+    label: GeneFamily
+    name: Beta-lactamase/transpeptidase-like
+  - id: GO:0008800
+    label: MolecularActivity
+    name: beta-lactamase activity
+  - id: taxonomy:39831
+    label: OrganismTaxon
+    name: Klebsiella pneumoniae subsp. rhinoscleromatis
+  - id: MESH:D012226
+    label: Disease
+    name: Rhinoscleroma
+references:
+  - https://go.drugbank.com/drugs/DB09324

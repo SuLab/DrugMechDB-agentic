@@ -1,0 +1,73 @@
+directed: true
+graph:
+  _id: DB00275_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: Olmesartan Medoxomil
+  drug_mesh: MESH:D000068557
+  drugbank: DB:DB00275
+links:
+  - key: has metabolite
+    source: MESH:D000068557
+    target: MESH:C437965
+  - key: negatively regulates
+    source: MESH:C437965
+    target: UniProt:P30556
+  - key: positively regulates
+    source: UniProt:P30556
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P30556
+    target: GO:0002018
+  - key: positively regulates
+    source: GO:0002018
+    target: GO:0003092
+  - key: positively regulates
+    source: GO:0002018
+    target: GO:0070294
+  - key: positively correlated with
+    source: GO:0070294
+    target: HP:0032263
+  - key: positively correlated with
+    source: GO:0003092
+    target: HP:0032263
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D000068557
+    label: Drug
+    name: Olmesartan Medoxomil
+  - id: MESH:C437965
+    label: ChemicalSubstance
+    name: olmesartan
+  - id: UniProt:P30556
+    label: Protein
+    name: Type-1 angiotensin II receptor
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: GO:0002018
+    label: BiologicalProcess
+    name: renin-angiotensin regulation of aldosterone production
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: renal water retention
+  - id: GO:0070294
+    label: BiologicalProcess
+    name: renal sodium ion absorption
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00275
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200692/
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1516/
+  - https://en.wikipedia.org/wiki/Aldosterone

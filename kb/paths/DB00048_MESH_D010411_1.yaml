@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB00048_MESH_D010411_1
+  disease: Induratio penis plastica
+  disease_mesh: MESH:D010411
+  drug: collagenase
+  drugbank: DB:DB00048
+links:
+  - key: positively regulates
+    source: DB:DB00048
+    target: GO:0030574
+  - key: negatively correlated with
+    source: GO:0030574
+    target: HP:0100699
+  - key: positively correlated with
+    source: HP:0100699
+    target: MESH:D010411
+multigraph: true
+nodes:
+  - id: DB:DB00048
+    label: Drug
+    name: Collagenase
+  - id: GO:0030574
+    label: BiologicalProcess
+    name: Collagen catabolic process
+  - id: HP:0100699
+    label: PhenotypicFeature
+    name: Scarring
+  - id: MESH:D010411
+    label: Disease
+    name: Induratio penis plastica
+references:
+  - https://en.wikipedia.org/wiki/Peyronie%27s_disease
+  - https://go.drugbank.com/drugs/DB00048#BE0000025

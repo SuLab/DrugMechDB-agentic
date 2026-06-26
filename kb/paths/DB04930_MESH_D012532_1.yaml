@@ -1,0 +1,61 @@
+comment: DrugBank has this drug modulating a human target/protein (https://go.drugbank.com/drugs/DB04930#mechanism-of-action)
+  instead of the non-vertebrate proteome. Because humans (and other mammals) share
+  similar ion channels this drug can have some toxic effects on the vertebrate host
+  (e.g. https://pubmed.ncbi.nlm.nih.gov/11812616/)
+directed: true
+graph:
+  _id: DB04930_MESH_D012532_1
+  disease: Infestation by Sarcoptes scabiei var hominis
+  disease_mesh: MESH:D012532
+  drug: permethrin
+  drug_mesh: MESH:D026023
+  drugbank: DB:DB04930
+links:
+  - key: disrupts
+    source: MESH:D026023
+    target: UniProt:Q2VKV7
+  - key: positively regulates
+    source: UniProt:Q2VKV7
+    target: GO:1902305
+  - key: positively correlated with
+    source: GO:1902305
+    target: GO:0086009
+  - key: occurs in
+    source: GO:0086009
+    target: MESH:D001369
+  - key: in taxon
+    source: MESH:D001369
+    target: taxonomy:52283
+  - key: causes
+    source: taxonomy:52283
+    target: MESH:D012532
+multigraph: true
+nodes:
+  - id: MESH:D026023
+    label: Drug
+    name: permethrin
+  - id: UniProt:Q2VKV7
+    label: Protein
+    name: Sodium channel protein
+  - id: GO:1902305
+    label: BiologicalProcess
+    name: regulation of sodium ion transmembrane transport
+  - id: GO:0086009
+    label: BiologicalProcess
+    name: membrane repolarization
+  - id: MESH:D001369
+    label: Cell
+    name: Axons
+  - id: taxonomy:52283
+    label: OrganismTaxon
+    name: Sarcoptes scabiei
+  - id: MESH:D012532
+    label: Disease
+    name: Infestation by Sarcoptes scabiei var hominis
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1525/
+  - https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4de55a80-67d6-42c0-a6fc-57b89400c5b3
+  - https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2362985/
+  - https://beta.targetvalidation.org/drug/CHEMBL1525
+  - https://en.wikipedia.org/wiki/Permethrin#Pharmacokinetics
+  - https://en.wikipedia.org/wiki/Pyrethroid#Mode_of_action

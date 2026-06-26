@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00152_MESH_D020915_1
+  disease: Korsakoff Syndrome
+  disease_mesh: MESH:D020915
+  drug: Thiamine
+  drug_mesh: MESH:D013831
+  drugbank: DB:DB00152
+links:
+  - key: positively regulates
+    source: MESH:D013831
+    target: GO:0006006
+  - key: occurs in
+    source: GO:0006006
+    target: UBERON:0002206
+  - key: positively regulates
+    source: UBERON:0002206
+    target: GO:0007616
+  - key: negatively correlated with
+    source: GO:0007616
+    target: MESH:D020915
+multigraph: true
+nodes:
+  - id: MESH:D013831
+    label: Drug
+    name: Thiamine
+  - id: GO:0006006
+    label: BiologicalProcess
+    name: Glucose metabolic process
+  - id: UBERON:0002206
+    label: GrossAnatomicalStructure
+    name: Mammillary body
+  - id: GO:0007616
+    label: BiologicalProcess
+    name: Long-term memory
+  - id: MESH:D020915
+    label: Disease
+    name: Korsakoff Syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00152
+  - https://en.wikipedia.org/wiki/Korsakoff_syndrome

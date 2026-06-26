@@ -1,0 +1,26 @@
+comment: Contraindicated. As per drugbank sodium fluoride is being used to prevent
+  dental caries and tooth decay. The literature evidence suggests that sodium fluoride
+  causes vitamin defeciency
+directed: true
+graph:
+  _id: DB09325_MESH_D001361_1
+  disease: Vitamin deficiency
+  disease_mesh: MESH:D001361
+  drug: sodium fluoride
+  drug_mesh: MESH:D012969
+  drugbank: DB:DB09325
+links:
+  - key: contraindicated for
+    source: MESH:D012969
+    target: MESH:D001361
+multigraph: true
+nodes:
+  - id: MESH:D012969
+    label: Drug
+    name: sodium fluoride
+  - id: MESH:D001361
+    label: Disease
+    name: Vitamin deficiency
+references:
+  - https://go.drugbank.com/drugs/DB09325
+  - https://www.sciencedirect.com/science/article/abs/pii/S0736574815300630

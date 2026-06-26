@@ -1,0 +1,60 @@
+directed: true
+graph:
+  _id: DB00903_MESH_D004487_1
+  disease: Edema
+  disease_mesh: MESH:D004487
+  drug: ethacrynic acid
+  drug_mesh: MESH:D004976
+  drugbank: DB:DB00903
+links:
+  - key: negatively regulates
+    source: MESH:D004976
+    target: UniProt:Q13621
+  - key: positively regulates
+    source: UniProt:Q13621
+    target: GO:0008511
+  - key: negatively correlated with
+    source: GO:0008511
+    target: GO:0036359
+  - key: negatively correlated with
+    source: GO:0008511
+    target: GO:0035812
+  - key: negatively correlated with
+    source: GO:0036359
+    target: GO:0003092
+  - key: negatively correlated with
+    source: GO:0035812
+    target: GO:0003092
+  - key: contributes to
+    source: GO:0003092
+    target: MESH:D004487
+multigraph: true
+nodes:
+  - id: MESH:D004976
+    label: Drug
+    name: ethacrynic acid
+  - id: UniProt:Q13621
+    label: Protein
+    name: Solute carrier family 12 member 1
+  - id: GO:0008511
+    label: MolecularActivity
+    name: sodium:potassium:chloride symporter activity
+  - id: GO:0035812
+    label: BiologicalProcess
+    name: renal sodium excretion
+  - id: GO:0036359
+    label: BiologicalProcess
+    name: renal potassium excretion
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: renal water retention
+  - id: MESH:D004487
+    label: Disease
+    name: Edema
+references:
+  - https://en.wikipedia.org/wiki/Etacrynic_acid#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Loop_diuretic#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Na-K-Cl_cotransporter#NKCC2
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL456/
+  - https://go.drugbank.com/drugs/DB00903#BE0000502
+  - https://en.wikipedia.org/wiki/Diuretic#High_ceiling/loop_diuretic

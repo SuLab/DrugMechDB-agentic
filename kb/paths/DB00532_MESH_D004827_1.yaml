@@ -1,0 +1,60 @@
+comment: Mephenytoin is no longer available in the US or the UK (https://en.wikipedia.org/wiki/Mephenytoin).
+directed: true
+graph:
+  _id: DB00532_MESH_D004827_1
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+  drug: mephenytoin
+  drug_mesh: MESH:D008617
+  drugbank: DB:DB00532
+links:
+  - key: negatively regulates
+    source: MESH:D008617
+    target: InterPro:IPR001696
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0061530
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0061535
+  - key: positively correlated with
+    source: GO:0061530
+    target: HP:0020219
+  - key: positively correlated with
+    source: GO:0061535
+    target: HP:0020219
+  - key: negatively correlated with
+    source: GO:0061535
+    target: MESH:D000066829
+  - key: negatively correlated with
+    source: MESH:D000066829
+    target: MESH:D004827
+  - key: positively correlated with
+    source: HP:0020219
+    target: MESH:D004827
+multigraph: true
+nodes:
+  - id: MESH:D008617
+    label: Drug
+    name: mephenytoin
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: GO:0061530
+    label: BiologicalProcess
+    name: aspartate secretion, neurotransmission
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: glutamate secretion, neurotransmission
+  - id: HP:0020219
+    label: PhenotypicFeature
+    name: Motor seizure
+  - id: MESH:D000066829
+    label: PhenotypicFeature
+    name: Neuroprotection
+  - id: MESH:D004827
+    label: Disease
+    name: Epilepsy
+references:
+  - https://go.drugbank.com/drugs/DB00532
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL861/

@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB00662_MESH_D009325_1
+  disease: Nausea
+  disease_mesh: MESH:D009325
+  drug: trimethobenzamide
+  drug_mesh: MESH:C100146
+  drugbank: DB:DB00662
+links:
+  - key: decreases activity of
+    source: MESH:C100146
+    target: UniProt:P14416
+  - key: positively regulates
+    source: UniProt:P14416
+    target: MESH:D009325
+multigraph: true
+nodes:
+  - id: MESH:C100146
+    label: Drug
+    name: Trimethobenzamide
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: MESH:D009325
+    label: Disease
+    name: Nausea
+references:
+  - https://go.drugbank.com/drugs/DB00662
+  - https://en.wikipedia.org/wiki/Trimethobenzamide

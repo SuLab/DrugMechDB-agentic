@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00290_MESH_D010412_1
+  disease: Malignant tumor of penis
+  disease_mesh: MESH:D010412
+  drug: bleomycin
+  drug_mesh: MESH:D001761
+  drugbank: DB:DB00290
+links:
+  - key: negatively regulates
+    source: MESH:D001761
+    target: GO:0071897
+  - key: increases abundance of
+    source: MESH:D001761
+    target: CHEBI:26523
+  - key: negatively correlated with
+    source: CHEBI:26523
+    target: MESH:D010412
+  - key: positively correlated with
+    source: GO:0071897
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D010412
+multigraph: true
+nodes:
+  - id: MESH:D001761
+    label: Drug
+    name: bleomycin
+  - id: CHEBI:26523
+    label: ChemicalSubstance
+    name: reactive oxygen species
+  - id: GO:0071897
+    label: BiologicalProcess
+    name: DNA biosynthetic process
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: MESH:D010412
+    label: Disease
+    name: Malignant tumor of penis
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5360373#section=Mechanism-of-Action

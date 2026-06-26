@@ -1,0 +1,24 @@
+comment: There appears to be no evidence that adenosine phosphate can be used to treat
+  Cystic fibrosis of the lung.
+directed: true
+graph:
+  _id: DB00131_MESH_D003550_1
+  disease: Cystic fibrosis of the lung
+  disease_mesh: MESH:D003550
+  drug: adenosine phosphate
+  drug_mesh: MESH:D000249
+  drugbank: DB:DB00131
+links:
+  - key: treats
+    source: MESH:D000249
+    target: MESH:D003550
+multigraph: true
+nodes:
+  - id: MESH:D000249
+    label: Drug
+    name: adenosine phosphate
+  - id: MESH:D003550
+    label: Disease
+    name: Cystic fibrosis of the lung
+references:
+  - https://go.drugbank.com/drugs/DB00131

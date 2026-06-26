@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB01178_MESH_D001007_1
+  disease: Anxiety
+  disease_mesh: MESH:D001007
+  drug: Chlormezanone
+  drug_mesh: MESH:D002720
+  drugbank: DB:DB01178
+links:
+  - key: positively regulates
+    source: MESH:D002720
+    target: GO:0016917
+  - key: positively correlated with
+    source: GO:0016917
+    target: GO:0061534
+  - key: negatively correlated with
+    source: GO:0061534
+    target: MESH:D001007
+  - key: negatively regulates
+    source: GO:0061534
+    target: MESH:D007319
+  - key: manifestation of
+    source: MESH:D007319
+    target: MESH:D001007
+multigraph: true
+nodes:
+  - id: MESH:D002720
+    label: Drug
+    name: Chlormezanone
+  - id: GO:0016917
+    label: MolecularActivity
+    name: GABA receptor activity
+  - id: GO:0061534
+    label: BiologicalProcess
+    name: Gamma-aminobutyric acid secretion, neurotransmission
+  - id: MESH:D007319
+    label: Disease
+    name: Sleeplessness
+  - id: MESH:D001007
+    label: Disease
+    name: Anxiety
+references:
+  - https://go.drugbank.com/drugs/DB01178

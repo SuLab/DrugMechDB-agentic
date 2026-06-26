@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB11622_MESH_D003248_1
+  disease: Constipation
+  disease_mesh: MESH:D003248
+  drug: dehydrocholic acid
+  drug_mesh: MESH:D003685
+  drugbank: DB:DB11622
+links:
+  - key: positively regulates
+    source: MESH:D003685
+    target: GO:0032782
+  - key: positively correlated with
+    source: GO:0032782
+    target: GO:0120054
+  - key: negatively correlated with
+    source: GO:0120054
+    target: MESH:D003248
+multigraph: true
+nodes:
+  - id: MESH:D003685
+    label: Drug
+    name: dehydrocholic acid
+  - id: GO:0032782
+    label: BiologicalProcess
+    name: bile acid secretion
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: intestinal motility
+  - id: MESH:D003248
+    label: Disease
+    name: Constipation
+references:
+  - https://go.drugbank.com/drugs/DB11622
+  - https://pubmed.ncbi.nlm.nih.gov/7714463/
+  - https://www.mayoclinic.org/drugs-supplements/laxative-oral-route/precautions/drg-20070683?FLUSHCACHE=0&UPDATEAPP=false&p=1

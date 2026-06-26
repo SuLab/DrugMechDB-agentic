@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB01164_MESH_D006996_1
+  disease: Hypocalcemia
+  disease_mesh: MESH:D006996
+  drug: Calcium Chloride
+  drug_mesh: MESH:D002122
+  drugbank: DB:DB01164
+links:
+  - key: increases abundance of
+    source: MESH:D002122
+    target: MESH:D002118
+  - key: negatively correlated with
+    source: MESH:D002118
+    target: MESH:D006996
+multigraph: true
+nodes:
+  - id: MESH:D002122
+    label: Drug
+    name: Calcium Chloride
+  - id: MESH:D002118
+    label: ChemicalSubstance
+    name: Calcium
+  - id: MESH:D006996
+    label: Disease
+    name: Hypocalcemia
+references:
+  - https://go.drugbank.com/drugs/DB01164#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Hypocalcemia

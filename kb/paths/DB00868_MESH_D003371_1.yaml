@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB00868_MESH_D003371_1
+  disease: Cough
+  disease_mesh: MESH:D003371
+  drug: Benzonatate
+  drug_mesh: MESH:C029755
+  drugbank: DB:DB00868
+links:
+  - key: positively regulates
+    source: MESH:C029755
+    target: GO:0072347
+  - key: negatively correlated with
+    source: GO:0072347
+    target: MESH:D003371
+multigraph: true
+nodes:
+  - id: MESH:C029755
+    label: Drug
+    name: Benzonatate
+  - id: GO:0072347
+    label: BiologicalProcess
+    name: Response to anesthetic
+  - id: MESH:D003371
+    label: Disease
+    name: Cough
+references:
+  - https://go.drugbank.com/drugs/DB00868
+  - https://en.wikipedia.org/wiki/Benzonatate

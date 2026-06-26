@@ -1,0 +1,79 @@
+comment: MESH:D005058 is named male hypogonadism in the original file.
+directed: true
+graph:
+  _id: DB06710_MESH_D005058_1
+  disease: Eunuchism
+  disease_mesh: MESH:D005058
+  drug: methyltestosterone
+  drug_mesh: MESH:D008777
+  drugbank: DB:DB06710
+links:
+  - key: increases activity of
+    source: MESH:D008777
+    target: UniProt:P10275
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0060742
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0048808
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0008584
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0019102
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0007283
+  - key: positively correlated with
+    source: GO:0060742
+    target: CHEBI:17347
+  - key: positively correlated with
+    source: GO:0048808
+    target: CHEBI:17347
+  - key: positively correlated with
+    source: GO:0008584
+    target: CHEBI:17347
+  - key: positively correlated with
+    source: GO:0019102
+    target: CHEBI:17347
+  - key: positively correlated with
+    source: GO:0007283
+    target: CHEBI:17347
+  - key: negatively correlated with
+    source: CHEBI:17347
+    target: MESH:D005058
+multigraph: true
+nodes:
+  - id: MESH:D008777
+    label: Drug
+    name: methyltestosterone
+  - id: UniProt:P10275
+    label: Protein
+    name: Androgen receptor
+  - id: GO:0060742
+    label: BiologicalProcess
+    name: epithelial cell differentiation involved in prostate gland development
+  - id: GO:0048808
+    label: BiologicalProcess
+    name: male genitalia morphogenesis
+  - id: GO:0008584
+    label: BiologicalProcess
+    name: male gonad development
+  - id: GO:0019102
+    label: BiologicalProcess
+    name: male somatic sex determination
+  - id: GO:0007283
+    label: BiologicalProcess
+    name: spermatogenesis
+  - id: CHEBI:17347
+    label: ChemicalSubstance
+    name: testosterone
+  - id: MESH:D005058
+    label: Disease
+    name: Eunuchism
+references:
+  - https://go.drugbank.com/drugs/DB06710#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Hypogonadism#Treatment
+  - https://en.wikipedia.org/wiki/Hypogonadism#Men

@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01158_MESH_D014693_1
+  disease: Ventricular Fibrillation
+  disease_mesh: MESH:D014693
+  drug: bretylium
+  drug_mesh: MESH:C045166
+  drugbank: DB:DB01158
+links:
+  - key: decreases activity of
+    source: MESH:C045166
+    target: UniProt:P05023
+  - key: positively regulates
+    source: UniProt:P05023
+    target: GO:0006813
+  - key: positively correlated with
+    source: GO:0006813
+    target: CHEBI:29103
+  - key: positively correlated with
+    source: CHEBI:29103
+    target: HP:0011675
+  - key: manifestation of
+    source: HP:0011675
+    target: MESH:D014693
+multigraph: true
+nodes:
+  - id: MESH:C045166
+    label: Drug
+    name: bretylium
+  - id: UniProt:P05023
+    label: Protein
+    name: Sodium/potassium-transporting ATPase subunit alpha-1
+  - id: GO:0006813
+    label: BiologicalProcess
+    name: potassium ion transport
+  - id: CHEBI:29103
+    label: ChemicalSubstance
+    name: potassium(1+)
+  - id: HP:0011675
+    label: PhenotypicFeature
+    name: Arrhythmia
+  - id: MESH:D014693
+    label: Disease
+    name: Ventricular Fibrillation
+references:
+  - https://go.drugbank.com/drugs/DB01158#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Bretylium
+  - https://www.uniprot.org/uniprot/P05023#function
+  - https://en.wikipedia.org/wiki/Ventricular_fibrillation

@@ -1,0 +1,36 @@
+comment: Please note that the MESH ID has changed for sodium citrate and current ID
+  is D000077559 (previously used MESH IDs were MESH:C102006,MESH:C514290).
+directed: true
+graph:
+  _id: DB09154_MESH_D005764_1
+  disease: Gastroesophageal reflux disease
+  disease_mesh: MESH:D005764
+  drug: sodium citrate
+  drug_mesh: MESH:D000077559
+  drugbank: DB:DB09154
+links:
+  - key: negatively regulates
+    source: DB:DB09154
+    target: MESH:D005744
+  - key: positively correlated with
+    source: MESH:D005744
+    target: MESH:D006356
+  - key: manifestation of
+    source: MESH:D006356
+    target: MESH:D005764
+multigraph: true
+nodes:
+  - id: DB:DB09154
+    label: Drug
+    name: Sodium citrate
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: MESH:D006356
+    label: Disease
+    name: Heartburn
+  - id: MESH:D005764
+    label: Disease
+    name: Gastroesophageal reflux disease
+references:
+  - https://go.drugbank.com/drugs/DB09154

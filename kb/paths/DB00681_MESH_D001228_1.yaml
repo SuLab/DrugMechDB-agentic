@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00681_MESH_D001228_1
+  disease: Aspergillosis
+  disease_mesh: MESH:D001228
+  drug: amphotericin B
+  drug_mesh: MESH:D000666
+  drugbank: DB:DB00681
+links:
+  - key: negatively regulates
+    source: MESH:D000666
+    target: MESH:D004875
+  - key: positively regulates
+    source: MESH:D004875
+    target: GO:0009277
+  - key: in taxon
+    source: GO:0009277
+    target: taxonomy:5052
+  - key: causes
+    source: taxonomy:5052
+    target: MESH:D001228
+multigraph: true
+nodes:
+  - id: MESH:D000666
+    label: Drug
+    name: amphotericin B
+  - id: MESH:D004875
+    label: ChemicalSubstance
+    name: Ergosterol
+  - id: GO:0009277
+    label: CellularComponent
+    name: fungal-type cell wall
+  - id: taxonomy:5052
+    label: OrganismTaxon
+    name: Aspergillus
+  - id: MESH:D001228
+    label: Disease
+    name: Aspergillosis
+references:
+  - https://go.drugbank.com/drugs/DB00681#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Amphotericin_B#Mechanism_of_action
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4856207/
+  - https://en.wikipedia.org/wiki/Aspergillosis

@@ -1,0 +1,57 @@
+directed: true
+graph:
+  _id: DB00284_MESH_D003924_1
+  disease: Diabetes mellitus type 2
+  disease_mesh: MESH:D003924
+  drug: acarbose
+  drug_mesh: MESH:D020909
+  drugbank: DB:DB00284
+links:
+  - key: negatively regulates
+    source: MESH:D020909
+    target: UniProt:P04746
+  - key: negatively regulates
+    source: MESH:D020909
+    target: UniProt:O43451
+  - key: positively regulates
+    source: UniProt:P04746
+    target: GO:0016052
+  - key: positively regulates
+    source: UniProt:O43451
+    target: GO:0005983
+  - key: increases abundance of
+    source: GO:0016052
+    target: CHEBI:17234
+  - key: increases abundance of
+    source: GO:0005983
+    target: CHEBI:17234
+  - key: positively correlated with
+    source: CHEBI:17234
+    target: MESH:D003924
+multigraph: true
+nodes:
+  - id: MESH:D020909
+    label: Drug
+    name: acarbose
+  - id: UniProt:P04746
+    label: Protein
+    name: Pancreatic alpha-amylase
+  - id: UniProt:O43451
+    label: Protein
+    name: Maltase-glucoamylase, intestinal
+  - id: GO:0016052
+    label: BiologicalProcess
+    name: carbohydrate catabolic process
+  - id: GO:0005983
+    label: BiologicalProcess
+    name: starch catabolic process
+  - id: CHEBI:17234
+    label: ChemicalSubstance
+    name: glucose
+  - id: MESH:D003924
+    label: Disease
+    name: Diabetes mellitus type 2
+references:
+  - https://go.drugbank.com/drugs/DB00284
+  - https://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1566
+  - https://en.wikipedia.org/wiki/Acarbose#Mechanism_of_action

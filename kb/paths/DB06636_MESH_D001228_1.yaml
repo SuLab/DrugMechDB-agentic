@@ -1,0 +1,74 @@
+directed: true
+graph:
+  _id: DB06636_MESH_D001228_1
+  disease: Aspergillosis
+  disease_mesh: MESH:D001228
+  drug: isavuconazonium
+  drug_mesh: MESH:C508735
+  drugbank: DB:DB06636
+links:
+  - key: decreases activity of
+    source: MESH:C508735
+    target: Pfam:PF00067
+  - key: positively regulates
+    source: Pfam:PF00067
+    target: GO:0008398
+  - key: positively regulates
+    source: Pfam:PF00067
+    target: GO:0006696
+  - key: positively correlated with
+    source: GO:0008398
+    target: CHEBI:16933
+  - key: increases abundance of
+    source: GO:0006696
+    target: CHEBI:16933
+  - key: negatively correlated with
+    source: GO:0008398
+    target: CHEBI:16521
+  - key: decreases abundance of
+    source: GO:0006696
+    target: CHEBI:16521
+  - key: negatively correlated with
+    source: CHEBI:16521
+    target: GO:0009277
+  - key: contributes to
+    source: CHEBI:16933
+    target: GO:0009277
+  - key: in taxon
+    source: GO:0009277
+    target: taxonomy:5052
+  - key: causes
+    source: taxonomy:5052
+    target: MESH:D001228
+multigraph: true
+nodes:
+  - id: MESH:C508735
+    label: Drug
+    name: isavuconazonium
+  - id: Pfam:PF00067
+    label: GeneFamily
+    name: Cytochrome P450
+  - id: GO:0008398
+    label: MolecularActivity
+    name: sterol 14-demethylase activity
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: ergosterol biosynthetic process
+  - id: CHEBI:16933
+    label: ChemicalSubstance
+    name: ergosterol
+  - id: CHEBI:16521
+    label: ChemicalSubstance
+    name: lanosterol
+  - id: GO:0009277
+    label: CellularComponent
+    name: fungal-type cell wall
+  - id: taxonomy:5052
+    label: OrganismTaxon
+    name: Aspergillus sp.
+  - id: MESH:D001228
+    label: Disease
+    name: Aspergillosis
+references:
+  - https://go.drugbank.com/drugs/DB06636#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Isavuconazonium#Pharmacology

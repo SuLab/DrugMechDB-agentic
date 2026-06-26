@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB09063_MESH_D002289_1
+  disease: Non-small cell lung cancer
+  disease_mesh: MESH:D002289
+  drug: ceritinib
+  drug_mesh: MESH:C586847
+  drugbank: DB:DB09063
+links:
+  - key: decreases activity of
+    source: MESH:C586847
+    target: UniProt:Q9UM73
+  - key: positively regulates
+    source: UniProt:Q9UM73
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D002289
+multigraph: true
+nodes:
+  - id: MESH:C586847
+    label: Drug
+    name: ceritinib
+  - id: UniProt:Q9UM73
+    label: Protein
+    name: ALK tyrosine kinase receptor
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: MESH:D002289
+    label: Disease
+    name: Non-small cell lung cancer
+references:
+  - https://go.drugbank.com/drugs/DB09063
+  - https://en.wikipedia.org/wiki/Ceritinib#Mechanism_of_action

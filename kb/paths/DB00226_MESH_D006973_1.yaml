@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB00226_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: guanadrel
+  drug_mesh: MESH:C004945
+  drugbank: DB:DB00226
+links:
+  - key: regulates
+    source: MESH:C004945
+    target: UniProt:P23975
+  - key: participates in
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: decreases abundance of
+    source: GO:0051620
+    target: MESH:D009638
+  - key: positively regulates
+    source: MESH:D009638
+    target: GO:0042310
+  - key: negatively regulates
+    source: MESH:C004945
+    target: GO:0048243
+  - key: positively correlated with
+    source: GO:0048243
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C004945
+    label: Drug
+    name: Guanadrel
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: Norepinephrine uptake
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: GO:0048243
+    label: BiologicalProcess
+    name: Norepinephrine secretion
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00226
+  - https://pubchem.ncbi.nlm.nih.gov/compound/38521
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1037/
+  - https://en.wikipedia.org/wiki/Guanadrel
+  - https://pubmed.ncbi.nlm.nih.gov/3896742/

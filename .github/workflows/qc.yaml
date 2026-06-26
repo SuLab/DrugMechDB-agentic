@@ -1,0 +1,91 @@
+name: QC gate
+
+# Run the 4-layer QC gate (scripts/qc.py) on the
+# kb/paths/*.yaml files changed by a PR, and block merge on failure.
+#
+# Scope (intentionally narrow until the choices here are confirmed with the maintainers):
+#   - Triggers only on PRs targeting the default branch that touch kb/paths/.
+#   - Validates only the *changed* path files, not the whole 4,846-record corpus.
+#   - Layer 4 runs with --offline: PubMed snippets are checked against the
+#     committed references_cache/ (deterministic, no network/secrets/rate-limits).
+#     Convention: a PR adding evidence must commit its references_cache/ entry.
+#   - A failing gate can be overridden by a maintainer applying the
+#     `validation-override` label to the PR.
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'kb/paths/**'
+
+# Cancel superseded runs on the same PR.
+concurrency:
+  group: qc-${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  qc-gate:
+    name: QC gate on changed paths
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history for base..head diff)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: pip
+
+      - name: Install project + dev tools
+        # Option-A pyproject layout means the documented extras install works
+        # on the runner's default pip — no special pip version required.
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: QC gate
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          OVERRIDE: ${{ contains(github.event.pull_request.labels.*.name, 'validation-override') }}
+        run: |
+          set -euo pipefail
+
+          # Changed path files (added/copied/modified/renamed — not deleted),
+          # excluding the generated index.
+          mapfile -t FILES < <(
+            git diff --name-only --diff-filter=ACMR "$BASE_SHA" "$HEAD_SHA" -- 'kb/paths/*.yaml' \
+              | grep -v '/_index\.yaml$' || true
+          )
+
+          if [ ${#FILES[@]} -eq 0 ]; then
+            echo "No kb/paths/*.yaml changes to validate."
+            exit 0
+          fi
+
+          echo "Validating ${#FILES[@]} changed path file(s):"
+          printf '  %s\n' "${FILES[@]}"
+          echo
+
+          set +e
+          python scripts/qc.py --offline "${FILES[@]}"
+          code=$?
+          set -e
+
+          if [ "$code" -ne 0 ]; then
+            if [ "$OVERRIDE" = "true" ]; then
+              echo "::warning::QC gate failed (exit $code) but the 'validation-override' label is present — not blocking merge."
+              exit 0
+            fi
+            echo "::error::QC gate failed (exit $code). Fix the flagged path(s), or apply the 'validation-override' label (maintainer approval) to bypass."
+            exit "$code"
+          fi
+
+          echo "QC gate passed."

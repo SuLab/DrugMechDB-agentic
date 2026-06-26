@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01244_MESH_D000787_7
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: bepridil
+  drug_mesh: MESH:D015764
+  drugbank: DB:DB01244
+links:
+  - key: negatively regulates
+    source: MESH:D015764
+    target: UniProt:P0DP23
+  - key: positively regulates
+    source: UniProt:P0DP23
+    target: GO:0055117
+  - key: negatively correlated with
+    source: GO:0055117
+    target: MESH:D017202
+  - key: positively correlated with
+    source: MESH:D017202
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:D015764
+    label: Drug
+    name: Bepridil
+  - id: UniProt:P0DP23
+    label: Protein
+    name: Calmodulin-1
+  - id: GO:0055117
+    label: BiologicalProcess
+    name: regulation of cardiac muscle contraction
+  - id: MESH:D017202
+    label: PhenotypicFeature
+    name: Myocardial Ischemia
+  - id: MESH:D000787
+    label: Disease
+    name: Angina pectoris
+references:
+  - https://go.drugbank.com/drugs/DB01244#BE0001024

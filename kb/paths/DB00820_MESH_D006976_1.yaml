@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00820_MESH_D006976_1
+  disease: Pulmonary hypertension
+  disease_mesh: MESH:D006976
+  drug: tadalafil
+  drug_mesh: MESH:D000068581
+  drugbank: DB:DB00820
+links:
+  - key: decreases activity of
+    source: MESH:D000068581
+    target: UniProt:O76074
+  - key: positively regulates
+    source: UniProt:O76074
+    target: GO:0046069
+  - key: decreases abundance of
+    source: GO:0046069
+    target: CHEBI:16356
+  - key: positively correlated with
+    source: CHEBI:16356
+    target: GO:0007263
+  - key: positively correlated with
+    source: GO:0007263
+    target: GO:0060087
+  - key: negatively correlated with
+    source: GO:0060087
+    target: MESH:D006976
+multigraph: true
+nodes:
+  - id: MESH:D000068581
+    label: Drug
+    name: tadalafil
+  - id: UniProt:O76074
+    label: Protein
+    name: cGMP-specific 3',5'-cyclic phosphodiesterase
+  - id: GO:0046069
+    label: BiologicalProcess
+    name: cGMP catabolic process
+  - id: CHEBI:16356
+    label: ChemicalSubstance
+    name: 3',5'-cyclic GMP
+  - id: GO:0007263
+    label: BiologicalProcess
+    name: nitric oxide mediated signal transduction
+  - id: GO:0060087
+    label: BiologicalProcess
+    name: relaxation of vascular associated smooth muscle
+  - id: MESH:D006976
+    label: Disease
+    name: Pulmonary hypertension
+references:
+  - https://go.drugbank.com/drugs/DB00820

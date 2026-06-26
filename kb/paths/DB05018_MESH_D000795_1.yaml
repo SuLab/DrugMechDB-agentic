@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB05018_MESH_D000795_1
+  disease: Fabry Disease
+  disease_mesh: MESH:D000795
+  drug: migalastat
+  drug_mesh: MESH:C090092
+  drugbank: DB:DB05018
+links:
+  - key: decreases activity of
+    source: MESH:C090092
+    target: UniProt:P06280
+  - key: positively regulates
+    source: UniProt:P06280
+    target: GO:0046479
+  - key: increases abundance of
+    source: GO:0046479
+    target: MESH:D013107
+  - key: positively correlated with
+    source: MESH:D013107
+    target: MESH:D000795
+multigraph: true
+nodes:
+  - id: MESH:C090092
+    label: Drug
+    name: migalastat
+  - id: UniProt:P06280
+    label: Protein
+    name: Alpha-galactosidase A
+  - id: GO:0046479
+    label: BiologicalProcess
+    name: glycosphingolipid catabolic process
+  - id: MESH:D013107
+    label: ChemicalSubstance
+    name: Sphingolipids
+  - id: MESH:D000795
+    label: Disease
+    name: Fabry Disease
+references:
+  - https://go.drugbank.com/drugs/DB05018#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Migalastat
+  - https://www.uniprot.org/uniprot/P06280#function
+  - https://en.wikipedia.org/wiki/Fabry_disease

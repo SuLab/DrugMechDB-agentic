@@ -1,0 +1,86 @@
+directed: true
+multigraph: true
+graph:
+  _id: P13_DB00512_MESH_D055624
+  drug: Vancomycin
+  drug_mesh: MESH:D014640
+  drugbank: DB:DB00512
+  disease: Methicillin-Resistant Staphylococcal Infections
+  disease_mesh: MESH:D055624
+nodes:
+  - id: MESH:D014640
+    name: Vancomycin
+    label: Drug
+  - id: CHEBI:16576
+    name: D-alanyl-D-alanine
+    label: ChemicalSubstance
+  - id: GO:0009252
+    name: peptidoglycan biosynthetic process
+    label: BiologicalProcess
+  - id: NCBITaxon:1280
+    name: Staphylococcus aureus
+    label: OrganismTaxon
+  - id: MESH:D055624
+    name: Methicillin-Resistant Staphylococcal Infections
+    label: Disease
+links:
+  - key: molecularly interacts with
+    source: MESH:D014640
+    target: CHEBI:16576
+    evidence:
+      - reference: PMID:39656010
+        snippet: Vancomycin binds to the D-ala-D-ala terminus of the nascent peptidoglycan precursor lipid II, preventing cell wall biosynthesis.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Vancomycin directly binds the D-alanyl-D-alanine (D-ala-D-ala) terminus of peptidoglycan precursor lipid II, which is the molecular basis of its antibacterial mechanism.
+      - reference: PMID:24805824
+        snippet: They inhibit bacterial cell wall biosynthesis by binding to the D-Ala-D-Ala C-terminus of peptidoglycan precursors.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Glycopeptide antibiotics including vancomycin inhibit cell wall biosynthesis by binding to the D-Ala-D-Ala C-terminus of peptidoglycan precursors, directly confirming the binding relationship.
+  - key: participates in
+    source: CHEBI:16576
+    target: GO:0009252
+    evidence:
+      - reference: PMID:41563485
+        snippet: Vancomycin is a critical glycopeptide antibiotic for treating severe infections caused by Gram-positive bacteria, particularly MRSA and Clostridioides difficile, by inhibiting cell wall synthesis through binding to D-Ala-D-Ala termini of peptidoglycan precursors.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: D-Ala-D-Ala termini of peptidoglycan precursors are the substrates whose accessibility is required for peptidoglycan biosynthesis; vancomycin's binding to them disrupts the process, confirming that D-alanyl-D-alanine participates in peptidoglycan biosynthetic process.
+      - reference: PMID:24805824
+        snippet: They inhibit bacterial cell wall biosynthesis by binding to the D-Ala-D-Ala C-terminus of peptidoglycan precursors.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: The D-Ala-D-Ala C-terminus of peptidoglycan precursors is essential for cell wall (peptidoglycan) biosynthesis; blocking it inhibits the biosynthetic process, confirming D-alanyl-D-alanine participates in this process.
+  - key: in taxon
+    source: GO:0009252
+    target: NCBITaxon:1280
+    evidence:
+      - reference: PMID:39656010
+        snippet: The use of vancomycin, a frontline antibiotic used to treat hospitalized patients with methicillin-resistant Staphylococcus aureus (MRSA) infections, is complicated by high rates of treatment failure.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: The paper discusses vancomycin's mechanism of preventing cell wall biosynthesis specifically in the context of MRSA (methicillin-resistant Staphylococcus aureus), placing the peptidoglycan biosynthetic process in the S. aureus taxon.
+      - reference: PMID:41563485
+        snippet: Vancomycin is a critical glycopeptide antibiotic for treating severe infections caused by Gram-positive bacteria, particularly MRSA and Clostridioides difficile, by inhibiting cell wall synthesis through binding to D-Ala-D-Ala termini of peptidoglycan precursors.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: The paper describes vancomycin inhibiting cell wall synthesis (peptidoglycan biosynthesis) specifically in the context of MRSA (methicillin-resistant S. aureus), confirming the biosynthetic process occurs in the S. aureus taxon.
+  - key: causes
+    source: NCBITaxon:1280
+    target: MESH:D055624
+    evidence:
+      - reference: PMID:42248931
+        snippet: methicillin-resistant Staphylococcus aureus (MRSA) represents one of the most widespread MDR bacterium responsible for severe nosocomial infections.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Methicillin-resistant Staphylococcus aureus (MRSA), a strain of S. aureus (NCBITaxon:1280), is the causative agent of MRSA infections; this paper confirms MRSA is responsible for severe nosocomial infections, supporting the causes relationship.
+      - reference: PMID:39656010
+        snippet: The use of vancomycin, a frontline antibiotic used to treat hospitalized patients with methicillin-resistant Staphylococcus aureus (MRSA) infections, is complicated by high rates of treatment failure.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Methicillin-resistant Staphylococcus aureus (a strain of S. aureus, NCBITaxon:1280) causes MRSA infections in hospitalized patients, as established in this clinical context.
+references:
+  - https://go.drugbank.com/drugs/DB00512#mechanism-of-action
+  - https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:16576
+  - https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1280

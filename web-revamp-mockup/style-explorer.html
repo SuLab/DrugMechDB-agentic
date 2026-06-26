@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DrugMechDB · Style explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@500;600;700&family=Public+Sans:wght@400;600;700&family=Newsreader:wght@500;600;700&family=Fraunces:wght@500;600;700&family=Libre+Franklin:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; background:#f1f3f5; color:#1f2933; font-family:-apple-system,"Segoe UI",Roboto,sans-serif; line-height:1.6; }
+  .wrap { max-width:1120px; margin:0 auto; padding:40px 24px 80px; }
+  h1 { font-size:30px; letter-spacing:-.02em; margin:0 0 6px; }
+  .sub { color:#64748b; margin:0 0 8px; }
+  h2.sec { font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:#94a3b8; margin:48px 0 18px; border-bottom:1px solid #e2e8f0; padding-bottom:10px; }
+  .note { background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:14px 18px; font-size:14px; color:#475569; }
+
+  /* ---- color schemes ---- */
+  .schemes { display:grid; grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); gap:18px; }
+  .scheme { background:#fff; border:1px solid #e2e8f0; border-radius:14px; overflow:hidden; }
+  .scheme-head { padding:14px 18px 8px; }
+  .scheme-head h3 { margin:0; font-size:17px; }
+  .scheme-head span { color:#94a3b8; font-size:12.5px; }
+  .swatches { display:flex; gap:0; padding:0 18px 14px; flex-wrap:wrap; }
+  .sw { font-size:10px; color:#64748b; text-align:center; margin-right:10px; }
+  .sw i { display:block; width:54px; height:34px; border-radius:7px; margin-bottom:4px; border:1px solid rgba(0,0,0,.06); }
+  .sw b { display:block; font-family:"IBM Plex Mono",monospace; font-size:10px; color:#334155; }
+  .preview { margin:0 14px 14px; border:1px solid var(--bd); border-radius:12px; overflow:hidden; }
+  .pv-top { background:var(--p); color:#fff; padding:11px 16px; font-weight:700; font-size:15px; display:flex; gap:10px; align-items:center; }
+  .pv-top .mk { width:24px;height:24px;border-radius:6px;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:13px; }
+  .pv-body { padding:16px; background:var(--bg); }
+  .pv-body .btn { display:inline-block; background:var(--p); color:#fff; border:none; border-radius:8px; padding:8px 15px; font-weight:600; font-size:13px; cursor:pointer; }
+  .pv-body .lnk { color:var(--p); font-weight:600; font-size:13px; margin-left:14px; }
+  .pv-row { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .pv-pill { background:var(--ps); color:var(--pd); border-radius:999px; padding:4px 12px; font-size:12px; font-weight:600; }
+  .pv-tag { background:var(--ps); color:var(--pd); border-radius:7px; padding:4px 11px; font-size:12px; font-weight:600; }
+  .pv-acc { background:var(--ac); color:#fff; border-radius:7px; padding:4px 11px; font-size:12px; font-weight:600; }
+  .pv-card { margin-top:14px; background:#fff; border:1px solid var(--bd); border-left:4px solid var(--p); border-radius:9px; padding:12px 14px; font-size:13.5px; }
+  .pv-card b { color:var(--pd); }
+
+  /* ---- typography ---- */
+  .fonts { display:grid; gap:16px; }
+  .fp { background:#fff; border:1px solid #e2e8f0; border-radius:14px; padding:22px 26px; }
+  .fp .tag { font-size:12px; color:#0e7490; font-weight:700; font-family:"IBM Plex Mono",monospace; }
+  .fp .h1 { font-size:32px; letter-spacing:-.02em; margin:6px 0 2px; color:#1f2933; }
+  .fp .h2 { font-size:14px; text-transform:uppercase; letter-spacing:.05em; color:#64748b; margin:10px 0 6px; }
+  .fp .body { font-size:15px; color:#334155; max-width:680px; }
+  .fp .mono { font-size:13px; color:#475569; margin-top:8px; }
+  .fp .desc { color:#94a3b8; font-size:12.5px; margin-top:10px; }
+
+  /* ---- card treatments ---- */
+  .cards3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+  .demo { background:#fff; border:1px solid #e2e8f0; border-radius:14px; padding:18px; }
+  .demo > .lbl { font-size:12px; font-weight:700; color:#0e7490; margin-bottom:12px; }
+  .clcard { border:1px solid #e2e8f0; border-radius:12px; padding:16px; }
+  .clcard .ct { font-weight:700; font-size:15px; }
+  .clcard .cm { font-family:"IBM Plex Mono",monospace; font-size:11px; color:#94a3b8; }
+  .clcard .cd { font-size:13px; color:#475569; margin:6px 0 12px; }
+  .items { display:flex; gap:7px; flex-wrap:wrap; }
+  .i-pill { background:#eef4f4; color:#0e6e7d; border-radius:999px; padding:5px 12px; font-size:12.5px; font-weight:500; }
+  .i-rect { background:#fff; color:#334155; border:1px solid #e2e8f0; border-radius:8px; padding:6px 12px; font-size:12.5px; font-weight:500; }
+  .i-row { display:flex; flex-direction:column; gap:0; width:100%; }
+  .i-row span { padding:8px 4px; border-bottom:1px solid #f1f5f9; font-size:13px; }
+  .i-row span:last-child { border-bottom:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>DrugMechDB — style explorer</h1>
+  <p class="sub">Pick one <b>color scheme</b>, one <b>type pairing</b>, and one <b>card treatment</b>. No purples / royal blues / reds. The pathograph keeps its own multi-color node palette regardless.</p>
+  <div class="note">These swatches render the actual colors. Tell me the scheme name + font pairing + card style you want, and I'll rebuild the real pages (landing / record / browse) on that system.</div>
+
+  <h2 class="sec">1 · Color schemes</h2>
+  <div class="schemes">
+
+    <div class="scheme" style="--p:#1f7a55;--pd:#155e41;--ps:#e7f3ec;--ac:#c07a2e;--bg:#f5faf7;--bd:#dbe9e2">
+      <div class="scheme-head"><h3>Pine Green</h3><span>cool · life-sciences · grounded</span></div>
+      <div class="swatches">
+        <div class="sw"><i style="background:#1f7a55"></i><b>#1F7A55</b>primary</div>
+        <div class="sw"><i style="background:#155e41"></i><b>#155E41</b>dark</div>
+        <div class="sw"><i style="background:#e7f3ec"></i><b>#E7F3EC</b>tint</div>
+        <div class="sw"><i style="background:#c07a2e"></i><b>#C07A2E</b>accent</div>
+      </div>
+      <div class="preview">
+        <div class="pv-top"><span class="mk">D</span>DrugMechDB</div>
+        <div class="pv-body"><span class="btn">Browse paths</span><span class="lnk">View record →</span>
+          <div class="pv-row"><span class="pv-pill">Protein</span><span class="pv-tag">Neoplasms</span><span class="pv-acc">5 paths</span></div>
+          <div class="pv-card"><b>Vinblastine</b> → Testicular tumor</div></div>
+      </div>
+    </div>
+
+    <div class="scheme" style="--p:#0e6e7d;--pd:#0a5260;--ps:#e4f2f3;--ac:#d4863c;--bg:#f4f9fa;--bd:#d6e7e9">
+      <div class="scheme-head"><h3>Petrol</h3><span>deep teal-blue · clinical · serious</span></div>
+      <div class="swatches">
+        <div class="sw"><i style="background:#0e6e7d"></i><b>#0E6E7D</b>primary</div>
+        <div class="sw"><i style="background:#0a5260"></i><b>#0A5260</b>dark</div>
+        <div class="sw"><i style="background:#e4f2f3"></i><b>#E4F2F3</b>tint</div>
+        <div class="sw"><i style="background:#d4863c"></i><b>#D4863C</b>accent</div>
+      </div>
+      <div class="preview">
+        <div class="pv-top"><span class="mk">D</span>DrugMechDB</div>
+        <div class="pv-body"><span class="btn">Browse paths</span><span class="lnk">View record →</span>
+          <div class="pv-row"><span class="pv-pill">Protein</span><span class="pv-tag">Neoplasms</span><span class="pv-acc">5 paths</span></div>
+          <div class="pv-card"><b>Vinblastine</b> → Testicular tumor</div></div>
+      </div>
+    </div>
+
+    <div class="scheme" style="--p:#34607d;--pd:#274a61;--ps:#eaf1f5;--ac:#c0843c;--bg:#f6f9fb;--bd:#dbe6ed">
+      <div class="scheme-head"><h3>Steel Blue</h3><span>muted slate-blue · calm · authoritative</span></div>
+      <div class="swatches">
+        <div class="sw"><i style="background:#34607d"></i><b>#34607D</b>primary</div>
+        <div class="sw"><i style="background:#274a61"></i><b>#274A61</b>dark</div>
+        <div class="sw"><i style="background:#eaf1f5"></i><b>#EAF1F5</b>tint</div>
+        <div class="sw"><i style="background:#c0843c"></i><b>#C0843C</b>accent</div>
+      </div>
+      <div class="preview">
+        <div class="pv-top"><span class="mk">D</span>DrugMechDB</div>
+        <div class="pv-body"><span class="btn">Browse paths</span><span class="lnk">View record →</span>
+          <div class="pv-row"><span class="pv-pill">Protein</span><span class="pv-tag">Neoplasms</span><span class="pv-acc">5 paths</span></div>
+          <div class="pv-card"><b>Vinblastine</b> → Testicular tumor</div></div>
+      </div>
+    </div>
+
+    <div class="scheme" style="--p:#b4602f;--pd:#8c4a23;--ps:#f7ece4;--ac:#33607a;--bg:#faf8f6;--bd:#e9e3dd">
+      <div class="scheme-head"><h3>Slate &amp; Copper</h3><span>neutral UI · warm metallic brand · editorial</span></div>
+      <div class="swatches">
+        <div class="sw"><i style="background:#b4602f"></i><b>#B4602F</b>brand</div>
+        <div class="sw"><i style="background:#8c4a23"></i><b>#8C4A23</b>dark</div>
+        <div class="sw"><i style="background:#f7ece4"></i><b>#F7ECE4</b>tint</div>
+        <div class="sw"><i style="background:#33607a"></i><b>#33607A</b>accent</div>
+      </div>
+      <div class="preview">
+        <div class="pv-top"><span class="mk">D</span>DrugMechDB</div>
+        <div class="pv-body"><span class="btn">Browse paths</span><span class="lnk">View record →</span>
+          <div class="pv-row"><span class="pv-pill">Protein</span><span class="pv-tag">Neoplasms</span><span class="pv-acc">5 paths</span></div>
+          <div class="pv-card"><b>Vinblastine</b> → Testicular tumor</div></div>
+      </div>
+    </div>
+
+    <div class="scheme" style="--p:#9c7818;--pd:#7a5d12;--ps:#f6efda;--ac:#2f5d77;--bg:#faf9f5;--bd:#ebe6da">
+      <div class="scheme-head"><h3>Graphite &amp; Gold</h3><span>near-black UI · ochre brand · archival</span></div>
+      <div class="swatches">
+        <div class="sw"><i style="background:#9c7818"></i><b>#9C7818</b>brand</div>
+        <div class="sw"><i style="background:#7a5d12"></i><b>#7A5D12</b>dark</div>
+        <div class="sw"><i style="background:#f6efda"></i><b>#F6EFDA</b>tint</div>
+        <div class="sw"><i style="background:#2f5d77"></i><b>#2F5D77</b>accent</div>
+      </div>
+      <div class="preview">
+        <div class="pv-top" style="--p:#1c1a17"><span class="mk">D</span>DrugMechDB</div>
+        <div class="pv-body"><span class="btn">Browse paths</span><span class="lnk">View record →</span>
+          <div class="pv-row"><span class="pv-pill">Protein</span><span class="pv-tag">Neoplasms</span><span class="pv-acc">5 paths</span></div>
+          <div class="pv-card"><b>Vinblastine</b> → Testicular tumor</div></div>
+      </div>
+    </div>
+
+    <div class="scheme" style="--p:#5f7548;--pd:#4a5c39;--ps:#eef2e7;--ac:#b06a36;--bg:#f8faf5;--bd:#e3e8da">
+      <div class="scheme-head"><h3>Sage / Olive</h3><span>muted earthy green · understated · natural</span></div>
+      <div class="swatches">
+        <div class="sw"><i style="background:#5f7548"></i><b>#5F7548</b>primary</div>
+        <div class="sw"><i style="background:#4a5c39"></i><b>#4A5C39</b>dark</div>
+        <div class="sw"><i style="background:#eef2e7"></i><b>#EEF2E7</b>tint</div>
+        <div class="sw"><i style="background:#b06a36"></i><b>#B06A36</b>accent</div>
+      </div>
+      <div class="preview">
+        <div class="pv-top"><span class="mk">D</span>DrugMechDB</div>
+        <div class="pv-body"><span class="btn">Browse paths</span><span class="lnk">View record →</span>
+          <div class="pv-row"><span class="pv-pill">Protein</span><span class="pv-tag">Neoplasms</span><span class="pv-acc">5 paths</span></div>
+          <div class="pv-card"><b>Vinblastine</b> → Testicular tumor</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 class="sec">2 · Typography</h2>
+  <div class="fonts">
+
+    <div class="fp">
+      <div class="tag">A · IBM Plex Sans + IBM Plex Mono</div>
+      <div class="h1" style="font-family:'IBM Plex Sans'">DrugMechDB</div>
+      <div class="h2" style="font-family:'IBM Plex Sans'">Mechanism pathograph</div>
+      <div class="body" style="font-family:'IBM Plex Sans'">Vinblastine binds tubulin and inhibits microtubule assembly, arresting mitosis in rapidly dividing testicular tumor cells.</div>
+      <div class="mono" style="font-family:'IBM Plex Mono'">DB00570_MESH_D013736_2 · UniProt:P07437</div>
+      <div class="desc">Technical, precise, neutral. Built for data products; the matching mono is ideal for CURIEs. Safe, authoritative default.</div>
+    </div>
+
+    <div class="fp">
+      <div class="tag">B · Source Serif 4 (headings) + Source Sans 3 (body)</div>
+      <div class="h1" style="font-family:'Source Serif 4'">DrugMechDB</div>
+      <div class="h2" style="font-family:'Source Sans 3'">Mechanism pathograph</div>
+      <div class="body" style="font-family:'Source Sans 3'">Vinblastine binds tubulin and inhibits microtubule assembly, arresting mitosis in rapidly dividing testicular tumor cells.</div>
+      <div class="mono" style="font-family:'IBM Plex Mono'">DB00570_MESH_D013736_2 · UniProt:P07437</div>
+      <div class="desc">Academic / journal feel — a serif headline over a clean sans signals scholarly authority (think Nature, eLife).</div>
+    </div>
+
+    <div class="fp">
+      <div class="tag">C · Public Sans (everything)</div>
+      <div class="h1" style="font-family:'Public Sans'">DrugMechDB</div>
+      <div class="h2" style="font-family:'Public Sans'">Mechanism pathograph</div>
+      <div class="body" style="font-family:'Public Sans'">Vinblastine binds tubulin and inhibits microtubule assembly, arresting mitosis in rapidly dividing testicular tumor cells.</div>
+      <div class="mono" style="font-family:'IBM Plex Mono'">DB00570_MESH_D013736_2 · UniProt:P07437</div>
+      <div class="desc">The U.S. government design-system font — reads as official and institutional. Fitting for "the official DrugMechDB."</div>
+    </div>
+
+    <div class="fp">
+      <div class="tag">D · Newsreader (serif headings) + Libre Franklin (body)</div>
+      <div class="h1" style="font-family:'Newsreader'">DrugMechDB</div>
+      <div class="h2" style="font-family:'Libre Franklin'">Mechanism pathograph</div>
+      <div class="body" style="font-family:'Libre Franklin'">Vinblastine binds tubulin and inhibits microtubule assembly, arresting mitosis in rapidly dividing testicular tumor cells.</div>
+      <div class="mono" style="font-family:'IBM Plex Mono'">DB00570_MESH_D013736_2 · UniProt:P07437</div>
+      <div class="desc">Editorial-scientific — a refined literary serif with a grotesque body. Warmer, more "publication" than "tool."</div>
+    </div>
+
+    <div class="fp">
+      <div class="tag">E · Fraunces (display headings) + IBM Plex Sans (body)</div>
+      <div class="h1" style="font-family:'Fraunces'">DrugMechDB</div>
+      <div class="h2" style="font-family:'IBM Plex Sans'">Mechanism pathograph</div>
+      <div class="body" style="font-family:'IBM Plex Sans'">Vinblastine binds tubulin and inhibits microtubule assembly, arresting mitosis in rapidly dividing testicular tumor cells.</div>
+      <div class="mono" style="font-family:'IBM Plex Mono'">DB00570_MESH_D013736_2 · UniProt:P07437</div>
+      <div class="desc">Distinctive + premium — Fraunces has character (the "old-style" serif) without being decorative. Most unique identity.</div>
+    </div>
+
+  </div>
+
+  <h2 class="sec">3 · Card &amp; sub-item treatments</h2>
+  <p class="sub" style="margin-top:-8px">Same organizing principle as Dismech's classification cards (a card per item, grouped sub-items inside) — three ways to render the sub-items.</p>
+  <div class="cards3">
+
+    <div class="demo">
+      <div class="lbl">A · Pill chips (Dismech-style)</div>
+      <div class="clcard">
+        <div class="ct">Channelopathy classification</div>
+        <div class="cm">enum · ChannelopathyOrganSystemEnum</div>
+        <div class="cd">Diseases caused by ion-channel dysfunction, grouped by primary organ system.</div>
+        <div class="items">
+          <span class="i-pill">Cardiac</span><span class="i-pill">Neuronal</span><span class="i-pill">Muscular</span>
+          <span class="i-pill">Renal</span><span class="i-pill">Respiratory</span><span class="i-pill">+1 more</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="lbl">B · Rounded-rectangle tags (your lean)</div>
+      <div class="clcard">
+        <div class="ct">Channelopathy classification</div>
+        <div class="cm">enum · ChannelopathyOrganSystemEnum</div>
+        <div class="cd">Diseases caused by ion-channel dysfunction, grouped by primary organ system.</div>
+        <div class="items">
+          <span class="i-rect">Cardiac</span><span class="i-rect">Neuronal</span><span class="i-rect">Muscular</span>
+          <span class="i-rect">Renal</span><span class="i-rect">Respiratory</span><span class="i-rect">+1 more</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="lbl">C · Bordered list rows (densest)</div>
+      <div class="clcard">
+        <div class="ct">Channelopathy classification</div>
+        <div class="cm">enum · ChannelopathyOrganSystemEnum</div>
+        <div class="cd">Diseases caused by ion-channel dysfunction, grouped by primary organ system.</div>
+        <div class="items i-row">
+          <span>Cardiac</span><span>Neuronal</span><span>Muscular</span><span>Renal</span><span>Respiratory + 1</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>

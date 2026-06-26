@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00865_MESH_D009765_1
+  disease: Obesity
+  disease_mesh: MESH:D009765
+  drug: benzphetamine
+  drug_mesh: MESH:D001589
+  drugbank: DB:DB00865
+links:
+  - key: increases activity of
+    source: MESH:D001589
+    target: UniProt:P35348
+  - key: negatively correlated with
+    source: UniProt:P35348
+    target: GO:0032100
+  - key: positively correlated with
+    source: GO:0032100
+    target: MESH:D009765
+multigraph: true
+nodes:
+  - id: MESH:D001589
+    label: Drug
+    name: Benzphetamine
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: GO:0032100
+    label: BiologicalProcess
+    name: Appetite stimulation
+  - id: MESH:D009765
+    label: Disease
+    name: Obesity
+references:
+  - https://go.drugbank.com/drugs/DB00865#BE0000118
+  - https://en.wikipedia.org/wiki/Alpha-1_adrenergic_receptor

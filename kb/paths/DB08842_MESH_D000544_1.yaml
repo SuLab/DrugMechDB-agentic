@@ -1,0 +1,161 @@
+directed: true
+graph:
+  _id: DB08842_MESH_D000544_1
+  disease: Alzheimer Disease
+  disease_mesh: MESH:D000544
+  drug: Acetylcarnitine
+  drug_mesh: MESH:D000108
+  drugbank: DB:DB08842
+links:
+  - key: positively regulates
+    source: MESH:D000108
+    target: GO:0007271
+  - key: positively regulates
+    source: MESH:D000108
+    target: GO:0035249
+  - key: increases activity of
+    source: MESH:D000108
+    target: GO:0005947
+  - key: increases activity of
+    source: MESH:D000108
+    target: GO:0004129
+  - key: decreases abundance of
+    source: MESH:D000108
+    target: MESH:D005609
+  - key: increases abundance of
+    source: MESH:D000108
+    target: MESH:D017475
+  - key: positively regulates
+    source: MESH:D000108
+    target: GO:0018393
+  - key: positively correlated with
+    source: GO:0007271
+    target: GO:0014055
+  - key: positively correlated with
+    source: GO:0035249
+    target: GO:0061535
+  - key: positively regulates
+    source: GO:0005947
+    target: GO:0006979
+  - key: positively regulates
+    source: GO:0004129
+    target: GO:0006979
+  - key: positively correlated with
+    source: MESH:D005609
+    target: HP:0025464
+  - key: positively correlated with
+    source: MESH:D017475
+    target: GO:0007613
+  - key: occurs in
+    source: GO:0018393
+    target: CHEBI:64645
+  - key: occurs in
+    source: GO:0018393
+    target: InterPro:IPR002955
+  - key: correlated with
+    source: GO:0006979
+    target: GO:0150076
+  - key: positively correlated with
+    source: HP:0025464
+    target: GO:0150076
+  - key: negatively correlated with
+    source: GO:0007613
+    target: HP:0002354
+  - key: contributes to
+    source: CHEBI:64645
+    target: CHEBI:60425
+  - key: contributes to
+    source: InterPro:IPR002955
+    target: HP:0002185
+  - key: negatively correlated with
+    source: GO:0014055
+    target: MESH:D000544
+  - key: negatively correlated with
+    source: GO:0061535
+    target: MESH:D000544
+  - key: positively correlated with
+    source: GO:0150076
+    target: MESH:D000544
+  - key: positively correlated with
+    source: HP:0002354
+    target: MESH:D000544
+  - key: positively correlated with
+    source: CHEBI:60425
+    target: MESH:D000544
+  - key: positively correlated with
+    source: HP:0002185
+    target: MESH:D000544
+multigraph: true
+nodes:
+  - id: MESH:D000108
+    label: Drug
+    name: Acetylcarnitine
+  - id: GO:0007271
+    label: BiologicalProcess
+    name: synaptic transmission, cholinergic
+  - id: GO:0035249
+    label: BiologicalProcess
+    name: synaptic transmission, glutamatergic
+  - id: GO:0005947
+    label: CellularComponent
+    name: mitochondrial alpha-ketoglutarate dehydrogenase complex
+  - id: GO:0004129
+    label: MolecularActivity
+    name: cytochrome-c oxidase activity
+  - id: MESH:D005609
+    label: ChemicalSubstance
+    name: Free Radicals
+  - id: MESH:D017475
+    label: ChemicalSubstance
+    name: Receptors, Nerve Growth Factor
+  - id: GO:0018393
+    label: BiologicalProcess
+    name: internal peptidyl-lysine acetylation
+  - id: GO:0006979
+    label: BiologicalProcess
+    name: response to oxidative stress
+  - id: HP:0025464
+    label: PhenotypicFeature
+    name: Increased reactive oxygen species production
+  - id: GO:0007613
+    label: BiologicalProcess
+    name: memory
+  - id: CHEBI:64645
+    label: ChemicalSubstance
+    name: amyloid-β
+  - id: InterPro:IPR002955
+    label: GeneFamily
+    name: Microtubule-associated protein Tau
+  - id: GO:0014055
+    label: BiologicalProcess
+    name: acetylcholine secretion, neurotransmission
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: glutamate secretion, neurotransmission
+  - id: GO:0150076
+    label: BiologicalProcess
+    name: neuroinflammatory response
+  - id: HP:0002354
+    label: PhenotypicFeature
+    name: Memory impairment
+  - id: CHEBI:60425
+    label: ChemicalSubstance
+    name: amyloid fibril
+  - id: HP:0002185
+    label: PhenotypicFeature
+    name: Neurofibrillary tangles
+  - id: MESH:D000544
+    label: Disease
+    name: Alzheimer Disease
+references:
+  - https://go.drugbank.com/drugs/DB08842#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Acetylcarnitine
+  - https://www.nature.com/articles/4000805
+  - https://en.wikipedia.org/wiki/Acetylcarnitine
+  - https://pubmed.ncbi.nlm.nih.gov/16273023/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5791143/
+  - https://pubmed.ncbi.nlm.nih.gov/8937831/
+  - https://pubmed.ncbi.nlm.nih.gov/22729864/
+  - https://pubmed.ncbi.nlm.nih.gov/10381209/
+  - https://en.wikipedia.org/wiki/Oxoglutarate_dehydrogenase_complex#Pathology
+  - https://en.wikipedia.org/wiki/Alzheimer%27s_disease

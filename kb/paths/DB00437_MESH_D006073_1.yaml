@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00437_MESH_D006073_1
+  disease: Gout
+  disease_mesh: MESH:D006073
+  drug: allopurinol
+  drug_mesh: MESH:D000493
+  drugbank: DB:DB00437
+links:
+  - key: negatively regulates
+    source: MESH:D000493
+    target: UniProt:P47989
+  - key: participates in
+    source: UniProt:P47989
+    target: reactome:R-HSA-74259
+  - key: increases abundance of
+    source: reactome:R-HSA-74259
+    target: CHEBI:27226
+  - key: positively correlated with
+    source: CHEBI:27226
+    target: MESH:D006073
+multigraph: true
+nodes:
+  - id: MESH:D000493
+    label: Drug
+    name: allopurinol
+  - id: UniProt:P47989
+    label: Protein
+    name: Xanthine dehydrogenase/oxidase
+  - id: reactome:R-HSA-74259
+    label: Pathway
+    name: Purine catabolism
+  - id: CHEBI:27226
+    label: ChemicalSubstance
+    name: uric acid
+  - id: MESH:D006073
+    label: Disease
+    name: Gout
+references:
+  - https://go.drugbank.com/drugs/DB00437
+  - https://en.wikipedia.org/wiki/Allopurinol#Mechanism_of_action

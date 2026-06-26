@@ -1,0 +1,79 @@
+comment: Illicit, Withdrawn. Please note that amineptine selectively inhibits the
+  reuptake of dopamine and to a lesser extent norepinephrine.
+directed: true
+graph:
+  _id: DB04836_MESH_D003866_1
+  disease: Depressive disorder
+  disease_mesh: MESH:D003866
+  drug: Amineptine
+  drug_mesh: MESH:C011597
+  drugbank: DB:DB04836
+links:
+  - key: decreases activity of
+    source: MESH:C011597
+    target: UniProt:P23975
+  - key: decreases activity of
+    source: MESH:C011597
+    target: UniProt:Q01959
+  - key: positively regulates
+    source: MESH:C011597
+    target: GO:0061527
+  - key: participates in
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: participates in
+    source: UniProt:Q01959
+    target: GO:0051583
+  - key: decreases abundance of
+    source: GO:0051620
+    target: MESH:D009638
+  - key: decreases abundance of
+    source: GO:0051583
+    target: MESH:D004298
+  - key: participates in
+    source: MESH:D009638
+    target: GO:0061533
+  - key: participates in
+    source: MESH:D004298
+    target: GO:0061527
+  - key: negatively correlated with
+    source: GO:0061533
+    target: MESH:D003866
+  - key: negatively correlated with
+    source: GO:0061527
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:C011597
+    label: Drug
+    name: Amineptine
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: UniProt:Q01959
+    label: Protein
+    name: Sodium-dependent dopamine transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: Noradrenaline uptake
+  - id: GO:0051583
+    label: BiologicalProcess
+    name: Dopamine uptake involved in synaptic transmission
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Noradrenaline
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0061533
+    label: BiologicalProcess
+    name: Norepinephrine secretion, neurotransmission
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB04836
+  - https://en.wikipedia.org/wiki/Amineptine#Pharmacology

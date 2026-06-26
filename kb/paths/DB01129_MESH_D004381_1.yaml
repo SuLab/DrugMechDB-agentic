@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB01129_MESH_D004381_1
+  disease: Duodenal ulcer disease
+  disease_mesh: MESH:D004381
+  drug: rabeprazole
+  drug_mesh: MESH:D064750
+  drugbank: DB:DB01129
+links:
+  - key: decreases activity of
+    source: MESH:D064750
+    target: UniProt:P20648
+  - key: positively regulates
+    source: UniProt:P20648
+    target: GO:0001696
+  - key: increases abundance of
+    source: GO:0001696
+    target: MESH:D005744
+  - key: positively correlated with
+    source: MESH:D005744
+    target: MESH:D004381
+multigraph: true
+nodes:
+  - id: MESH:D064750
+    label: Drug
+    name: rabeprazole
+  - id: UniProt:P20648
+    label: Protein
+    name: Potassium-transporting ATPase alpha chain 1
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: MESH:D004381
+    label: Disease
+    name: Duodenal ulcer disease
+references:
+  - https://go.drugbank.com/drugs/DB01129
+  - https://en.wikipedia.org/wiki/Rabeprazole#Mechanism_of_action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5029#section=Mechanism-of-Action

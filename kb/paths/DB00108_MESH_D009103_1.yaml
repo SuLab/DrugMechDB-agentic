@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00108_MESH_D009103_1
+  disease: Multiple sclerosis
+  disease_mesh: MESH:D009103
+  drug: Natalizumab
+  drug_mesh: MESH:D000069442
+  drugbank: DB:DB00108
+links:
+  - key: molecularly interacts with
+    source: MESH:D000069442
+    target: UniProt:P13612
+  - key: participates in
+    source: UniProt:P13612
+    target: GO:1904994
+  - key: regulates
+    source: GO:1904994
+    target: GO:0050900
+  - key: regulates
+    source: GO:0050900
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D009103
+multigraph: true
+nodes:
+  - id: MESH:D000069442
+    label: Drug
+    name: Natalizumab
+  - id: UniProt:P13612
+    label: Protein
+    name: Integrin alpha-4
+  - id: GO:1904994
+    label: BiologicalProcess
+    name: regulation of leukocyte adhesion to vascular endothelial cell
+  - id: GO:0050900
+    label: BiologicalProcess
+    name: leukocyte migration
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammation
+  - id: MESH:D009103
+    label: Disease
+    name: Multiple sclerosis
+references:
+  - https://go.drugbank.com/drugs/DB00108#BE0000590
+  - https://en.wikipedia.org/wiki/Natalizumab

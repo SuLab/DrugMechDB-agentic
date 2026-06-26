@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB11359_MESH_D012220_1
+  disease: Rhinitis
+  disease_mesh: MESH:D012220
+  drug: guaiacol
+  drug_mesh: MESH:D006139
+  drugbank: DB:DB11359
+links:
+  - key: subclass of
+    source: MESH:D006139
+    target: CHEBI:77035
+  - key: negatively correlated with
+    source: CHEBI:77035
+    target: HP:0006536
+  - key: positively correlated with
+    source: HP:0006536
+    target: HP:0012735
+  - key: manifestation of
+    source: HP:0012735
+    target: MESH:D012220
+multigraph: true
+nodes:
+  - id: MESH:D006139
+    label: Drug
+    name: guaiacol
+  - id: CHEBI:77035
+    label: ChemicalSubstance
+    name: expectorant
+  - id: HP:0006536
+    label: PhenotypicFeature
+    name: Airway obstruction
+  - id: HP:0012735
+    label: PhenotypicFeature
+    name: Cough
+  - id: MESH:D012220
+    label: Disease
+    name: Rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB11359
+  - https://en.wikipedia.org/wiki/Rhinitis
+  - https://en.wikipedia.org/wiki/Mucoactive_agent

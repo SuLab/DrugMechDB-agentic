@@ -1,0 +1,39 @@
+# Synthetic ai_curated path used by tests/ to exercise the full QC pipeline
+# including Layer 4. The PMID is the test-only sentinel PMID:99999999; its
+# "abstract" lives at references_cache/PMID_99999999.md.
+directed: true
+graph:
+  _id: DBTEST_MESH_DTEST_1
+  drug: cetuximab
+  drug_mesh: MESH:D000068818
+  drugbank: DB:DB00002
+  disease: Malignant tumor of colon
+  disease_mesh: MESH:D003110
+multigraph: true
+nodes:
+  - id: MESH:D000068818
+    name: cetuximab
+    label: Drug
+  - id: UniProt:P00533
+    name: Epidermal growth factor receptor
+    label: Protein
+  - id: MESH:D003110
+    name: Malignant tumor of colon
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000068818
+    target: UniProt:P00533
+    evidence:
+      - reference: PMID:99999999
+        snippet: Cetuximab decreases the activity of EGFR by binding to its extracellular domain
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: contributes to
+    source: UniProt:P00533
+    target: MESH:D003110
+    evidence:
+      - reference: PMID:99999999
+        snippet: contributes to the antitumor effect of cetuximab in EGFR-overexpressing tumors
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL

@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB00257_MESH_D014008_1
+  disease: Tinea pedis
+  disease_mesh: MESH:D014008
+  drug: clotrimazole
+  drug_mesh: MESH:D003022
+  drugbank: DB:DB00257
+links:
+  - key: disrupts
+    source: MESH:D003022
+    target: CHEBI:16933
+  - key: located in
+    source: CHEBI:16933
+    target: GO:0030445
+  - key: in taxon
+    source: GO:0030445
+    target: taxonomy:237561
+  - key: causes
+    source: taxonomy:237561
+    target: MESH:D014008
+multigraph: true
+nodes:
+  - id: MESH:D003022
+    label: Drug
+    name: clotrimazole
+  - id: CHEBI:16933
+    label: ChemicalSubstance
+    name: ergosterol
+  - id: GO:0030445
+    label: CellularComponent
+    name: yeast-form cell wall
+  - id: taxonomy:237561
+    label: OrganismTaxon
+    name: Candida albicans SC5314
+  - id: MESH:D014008
+    label: Disease
+    name: Tinea pedis
+references:
+  - https://go.drugbank.com/drugs/DB00257#BE0000233
+  - https://en.wikipedia.org/wiki/Clotrimazole#Pharmacodynamics
+  - https://en.wikipedia.org/wiki/Ergosterol#Target_for_antifungal_drugs

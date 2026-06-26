@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00103_MESH_D000795_1
+  disease: Fabry's disease
+  disease_mesh: MESH:D000795
+  drug: agalsidase beta
+  drug_mesh: MESH:C459420
+  drugbank: DB:DB00103
+links:
+  - key: chemically similar to
+    source: MESH:C459420
+    target: UniProt:P06280
+  - key: decreases abundance of
+    source: UniProt:P06280
+    target: MESH:D006028
+  - key: contributes to
+    source: MESH:D006028
+    target: MESH:D000795
+multigraph: true
+nodes:
+  - id: MESH:C459420
+    label: Drug
+    name: Agalsidase beta
+  - id: UniProt:P06280
+    label: Protein
+    name: Alpha-galactosidase A
+  - id: MESH:D006028
+    label: ChemicalSubstance
+    name: Glycosphingolipids
+  - id: MESH:D000795
+    label: Disease
+    name: Fabry's disease
+references:
+  - https://en.wikipedia.org/wiki/Fabry_disease
+  - https://go.drugbank.com/drugs/DB00103

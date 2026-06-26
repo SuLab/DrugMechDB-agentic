@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB09078_MESH_D018263_3
+  disease: Adenocarcinoma, Follicular
+  disease_mesh: MESH:D018263
+  drug: lenvatinib
+  drug_mesh: MESH:C531958
+  drugbank: DB:DB09078
+links:
+  - key: decreases activity of
+    source: MESH:C531958
+    target: UniProt:P16234
+  - key: positively regulates
+    source: UniProt:P16234
+    target: GO:0008283
+  - key: occurs in
+    source: GO:0008283
+    target: CL:0001064
+  - key: participates in
+    source: CL:0001064
+    target: MESH:D018263
+multigraph: true
+nodes:
+  - id: MESH:C531958
+    label: Drug
+    name: lenvatinib
+  - id: UniProt:P16234
+    label: Protein
+    name: Platelet-derived growth factor receptor alpha
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: CL:0001064
+    label: Cell
+    name: malignant cell
+  - id: MESH:D018263
+    label: Disease
+    name: Adenocarcinoma, Follicular
+references:
+  - https://go.drugbank.com/drugs/DB09078#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P16234#function
+  - https://en.wikipedia.org/wiki/Adenocarcinoma

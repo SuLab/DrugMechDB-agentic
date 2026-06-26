@@ -1,0 +1,57 @@
+comment: The exact mechanism by which deflazacort exerts its therapeutic effects in
+  patients with DMD is unknown but likely occurs via its anti-inflammatory activities.
+directed: true
+graph:
+  _id: DB11921_MESH_D020388_1
+  disease: Duchenne muscular dystrophy
+  disease_mesh: MESH:D020388
+  drug: deflazacort
+  drug_mesh: MESH:C021988
+  drugbank: DB:DB11921
+links:
+  - key: has metabolite
+    source: MESH:C021988
+    target: DB:DBMET02573
+  - key: positively regulates
+    source: DB:DBMET02573
+    target: UniProt:P04150
+  - key: negatively regulates
+    source: UniProt:P04150
+    target: GO:0006954
+  - key: correlated with
+    source: GO:0006954
+    target: HP:0003323
+  - key: manifestation of
+    source: HP:0003323
+    target: MESH:D020388
+multigraph: true
+nodes:
+  - alt_names:
+      - oxazacort
+    id: MESH:C021988
+    label: Drug
+    name: deflazacort
+  - alt_names:
+      - Deacetyldeflazacort
+      - 21-Desacetyldeflazacort
+    id: DB:DBMET02573
+    label: ChemicalSubstance
+    name: 21-deflazacort
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0003323
+    label: PhenotypicFeature
+    name: Progressive muscle weakness
+  - id: MESH:D020388
+    label: Disease
+    name: Duchenne muscular dystrophy
+references:
+  - https://go.drugbank.com/drugs/DB11921
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201891/
+  - https://pubchem.ncbi.nlm.nih.gov/compound/189821
+  - https://en.wikipedia.org/wiki/Deflazacort#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Glucocorticoid#Mechanism_of_action

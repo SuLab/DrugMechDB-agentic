@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB12092_MESH_D011470_1
+  disease: Benign prostatic hyperplasia
+  disease_mesh: MESH:D011470
+  drug: naftopidil
+  drug_mesh: MESH:C064357
+  drugbank: DB:DB12092
+links:
+  - key: decreases activity of
+    source: MESH:C064357
+    target: UniProt:P25100
+  - key: positively regulates
+    source: UniProt:P25100
+    target: GO:0006939
+  - key: positively correlated with
+    source: GO:0006939
+    target: HP:0011037
+  - key: manifestation of
+    source: HP:0011037
+    target: MESH:D011470
+multigraph: true
+nodes:
+  - id: MESH:C064357
+    label: Drug
+    name: naftopidil
+  - id: UniProt:P25100
+    label: Protein
+    name: Alpha-1D adrenergic receptor
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: HP:0011037
+    label: PhenotypicFeature
+    name: Decreased urine output
+  - id: MESH:D011470
+    label: Disease
+    name: Benign prostatic hyperplasia
+references:
+  - https://en.wikipedia.org/wiki/Naftopidil
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL142635/
+  - https://en.wikipedia.org/wiki/Alpha_blocker#Benign_prostatic_hyperplasia
+  - https://en.wikipedia.org/wiki/Benign_prostatic_hyperplasia

@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB07565_MESH_D014435_1
+  disease: Typhoid fever
+  disease_mesh: MESH:D014435
+  drug: chloramphenicol succinate
+  drug_mesh: MESH:C026016
+  drugbank: DB:DB07565
+links:
+  - key: decreases activity of
+    source: MESH:C026016
+    target: UniProt:P0A298
+  - key: participates in
+    source: UniProt:P0A298
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:90370
+  - key: causes
+    source: taxonomy:90370
+    target: MESH:D014435
+multigraph: true
+nodes:
+  - id: MESH:C026016
+    label: Drug
+    name: chloramphenicol succinate
+  - id: UniProt:P0A298
+    label: Protein
+    name: 50S ribosomal subunit
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Bacterial Protein Synthesis
+  - id: taxonomy:90370
+    label: OrganismTaxon
+    name: Salmonella typhi
+  - id: MESH:D014435
+    label: Disease
+    name: Typhoid fever

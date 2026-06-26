@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB06762_MESH_D006973_1
+  disease: Hypertension
+  disease_mesh: MESH:D006973
+  drug: pinacidil
+  drug_mesh: MESH:D020110
+  drugbank: DB:DB06762
+links:
+  - key: increases activity of
+    source: MESH:D020110
+    target: UniProt:Q12791
+  - key: participates in
+    source: UniProt:Q12791
+    target: GO:0042311
+  - key: capable of
+    source: GO:0042311
+    target: GO:0008217
+  - key: prevents
+    source: GO:0008217
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D020110
+    label: Drug
+    name: pinacidil
+  - id: UniProt:Q12791
+    label: Protein
+    name: Calcium-activated potassium channel subunit alpha-1
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: Vasodilation
+  - id: GO:0008217
+    label: BiologicalProcess
+    name: Negative Regulation of Blood Pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertension

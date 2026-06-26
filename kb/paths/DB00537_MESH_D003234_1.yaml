@@ -1,0 +1,55 @@
+comment: Ciprofloxacin is a second generation fluoroquinolone that is used to treat
+  a wide variety of bacterial susceptible infections.
+directed: true
+graph:
+  _id: DB00537_MESH_D003234_1
+  disease: Conjunctivitis, Bacterial
+  disease_mesh: MESH:D003234
+  drug: ciprofloxacin
+  drug_mesh: MESH:D002939
+  drugbank: DB:DB00537
+links:
+  - key: decreases activity of
+    source: MESH:D002939
+    target: UniProt:Q2G2Q0
+  - key: decreases activity of
+    source: MESH:D002939
+    target: UniProt:Q2FYS4
+  - key: positively regulates
+    source: UniProt:Q2G2Q0
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:Q2FYS4
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D003234
+multigraph: true
+nodes:
+  - id: MESH:D002939
+    label: Drug
+    name: ciprofloxacin
+  - id: UniProt:Q2G2Q0
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:Q2FYS4
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D003234
+    label: Disease
+    name: Conjunctivitis, Bacterial
+references:
+  - https://go.drugbank.com/drugs/DB00537#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q2G2Q0#function
+  - https://www.uniprot.org/uniprot/Q2FYS4#function
+  - https://eyewiki.aao.org/Bacterial_Conjunctivitis
+  - https://en.wikipedia.org/wiki/Conjunctivitis

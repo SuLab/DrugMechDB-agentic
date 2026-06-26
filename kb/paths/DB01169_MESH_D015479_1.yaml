@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB01169_MESH_D015479_1
+  disease: Acute myelomonocytic leukemia, FAB M4
+  disease_mesh: MESH:D015479
+  drug: arsenic trioxide
+  drug_mesh: MESH:C006632
+  drugbank: DB:DB01169
+links:
+  - key: negatively correlated with
+    source: MESH:C006632
+    target: GO:0071838
+  - key: positively correlated with
+    source: GO:0071838
+    target: MESH:D015479
+  - key: negatively correlated with
+    source: MESH:C006632
+    target: GO:0001525
+  - key: positively correlated with
+    source: GO:0001525
+    target: MESH:D015479
+  - key: increases abundance of
+    source: MESH:C006632
+    target: CHEBI:26523
+  - key: positively correlated with
+    source: CHEBI:26523
+    target: GO:0006309
+  - key: disrupts
+    source: MESH:C006632
+    target: MESH:D015514
+  - key: positively correlated with
+    source: MESH:D015514
+    target: MESH:D015479
+  - key: negatively correlated with
+    source: GO:0006309
+    target: MESH:D015479
+multigraph: true
+nodes:
+  - id: MESH:C006632
+    label: Drug
+    name: arsenic trioxide
+  - id: MESH:D015514
+    label: Protein
+    name: Oncogene Proteins, Fusion
+  - id: CHEBI:26523
+    label: ChemicalSubstance
+    name: reactive oxygen species
+  - id: GO:0071838
+    label: BiologicalProcess
+    name: cell proliferation in bone marrow
+  - id: GO:0001525
+    label: BiologicalProcess
+    name: angiogenesis
+  - id: GO:0006309
+    label: BiologicalProcess
+    name: apoptotic DNA fragmentation
+  - id: MESH:D015479
+    label: Disease
+    name: Acute myelomonocytic leukemia, FAB M4
+references:
+  - https://go.drugbank.com/drugs/DB01169
+  - https://pubmed.ncbi.nlm.nih.gov/12124315/

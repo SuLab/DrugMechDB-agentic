@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB01265_MESH_D019694_1
+  disease: Chronic type B viral hepatitis
+  disease_mesh: MESH:D019694
+  drug: telbivudine
+  drug_mesh: MESH:C487779
+  drugbank: DB:DB01265
+links:
+  - key: decreases activity of
+    source: MESH:C487779
+    target: UniProt:Q05486
+  - key: capable of
+    source: UniProt:Q05486
+    target: GO:0003887
+  - key: capable of
+    source: UniProt:Q05486
+    target: GO:0003964
+  - key: positively correlated with
+    source: GO:0003887
+    target: GO:0019079
+  - key: positively correlated with
+    source: GO:0003964
+    target: GO:0019079
+  - key: in taxon
+    source: GO:0019079
+    target: taxonomy:10407
+  - key: causes
+    source: taxonomy:10407
+    target: MESH:D019694
+multigraph: true
+nodes:
+  - id: MESH:C487779
+    label: Drug
+    name: Telbivudine
+  - id: UniProt:Q05486
+    label: Protein
+    name: Protein P
+  - id: GO:0003887
+    label: MolecularActivity
+    name: DNA-directed DNA polymerase activity
+  - id: GO:0003964
+    label: MolecularActivity
+    name: RNA-directed DNA polymerase activity
+  - id: GO:0019079
+    label: BiologicalProcess
+    name: Viral genome replication
+  - id: taxonomy:10407
+    label: OrganismTaxon
+    name: Hepatitis B virus
+  - id: MESH:D019694
+    label: Disease
+    name: Chronic type B viral hepatitis
+references:
+  - https://go.drugbank.com/drugs/DB01265

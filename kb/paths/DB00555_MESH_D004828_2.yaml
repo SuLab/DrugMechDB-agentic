@@ -1,0 +1,68 @@
+comment: This drug may also affect GABA-mediated synaptic transmission as listed by
+  DrugBank (https://go.drugbank.com/drugs/DB00555#BE0000013). However, this is contentious
+  and if the drug does modulate GABA it's not known whether it is as agonist or antagonist
+  due to conflicting data (at best it would be a weak modulation seen in animal models
+  only). Note that the drug could be contraindicated for treatment of seizures as
+  it can exacerbate them, specially the myoclonic type (https://pubmed.ncbi.nlm.nih.gov/9596203/).
+  Finally, this disease is denoted as Simple partial seizure in the original file
+  but known as Epilepsies, Partial in MESH.
+directed: true
+graph:
+  _id: DB00555_MESH_D004828_2
+  disease: Epilepsies, Partial
+  disease_mesh: MESH:D004828
+  drug: lamotrigine
+  drug_mesh: MESH:C047781
+  drugbank: DB:DB00555
+links:
+  - key: negatively regulates
+    source: MESH:C047781
+    target: UniProt:Q15878
+  - key: participates in
+    source: UniProt:Q15878
+    target: reactome:R-HSA-112308
+  - key: participates in
+    source: UniProt:Q15878
+    target: reactome:R-HSA-112308
+  - key: positively correlated with
+    source: reactome:R-HSA-112308
+    target: GO:0007268
+  - key: positively correlated with
+    source: GO:0007268
+    target: GO:0061535
+  - key: positively correlated with
+    source: GO:0061535
+    target: HP:0032843
+  - key: positively correlated with
+    source: HP:0032843
+    target: MESH:D004828
+multigraph: true
+nodes:
+  - id: MESH:C047781
+    label: Drug
+    name: lamotrigine
+  - id: UniProt:Q15878
+    label: Protein
+    name: Voltage-dependent R-type calcium channel subunit alpha-1E
+  - id: reactome:R-HSA-112308
+    label: Pathway
+    name: Presynaptic depolarization and calcium channel opening
+  - id: GO:0007268
+    label: BiologicalProcess
+    name: chemical synaptic transmission
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: glutamate secretion, neurotransmission
+  - id: HP:0032843
+    label: PhenotypicFeature
+    name: Focal-onset epileptic spasm
+  - id: MESH:D004828
+    label: Disease
+    name: Epilepsies, Partial
+references:
+  - https://go.drugbank.com/drugs/DB00555#BE0009609
+  - https://en.wikipedia.org/wiki/Lamotrigine#Mechanism_of_action
+  - https://pubmed.ncbi.nlm.nih.gov/10530688/
+  - https://pubmed.ncbi.nlm.nih.gov/9579933/
+  - https://en.wikipedia.org/wiki/Anticonvulsant
+  - https://en.wikipedia.org/wiki/Neuroprotection

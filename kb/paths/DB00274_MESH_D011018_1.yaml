@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00274_MESH_D011018_1
+  disease: Pneumonia due to Streptococcus
+  disease_mesh: MESH:D011018
+  drug: Cefmetazole
+  drug_mesh: MESH:D015311
+  drugbank: DB:DB00274
+links:
+  - key: decreases activity of
+    source: MESH:D015311
+    target: InterPro:IPR005311
+  - key: positively regulates
+    source: InterPro:IPR005311
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: positively correlated with
+    source: GO:0009273
+    target: GO:0051301
+  - key: in taxon
+    source: GO:0051301
+    target: taxonomy:1301
+  - key: causes
+    source: taxonomy:1301
+    target: MESH:D011018
+multigraph: true
+nodes:
+  - id: MESH:D015311
+    label: Drug
+    name: Cefmetazole
+  - id: InterPro:IPR005311
+    label: GeneFamily
+    name: Penicillin binding proteins
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: Peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: Peptidoglycan-based cell wall biogenesis
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: Cell division
+  - id: taxonomy:1301
+    label: OrganismTaxon
+    name: Streptococcus
+  - id: MESH:D011018
+    label: Disease
+    name: Pneumonia due to Streptococcus
+references:
+  - https://go.drugbank.com/drugs/DB00274

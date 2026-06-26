@@ -1,0 +1,24 @@
+comment: Potassium chloride  is not a laxative, but it is often used in a laxative
+  solution that also contains potassium, sodium, and other minerals to replace electrolytes.
+directed: true
+graph:
+  _id: DB00761_MESH_D003248_1
+  disease: Constipation
+  disease_mesh: MESH:D003248
+  drug: potassium chloride
+  drug_mesh: MESH:D011189
+  drugbank: DB:DB00761
+links:
+  - key: treats
+    source: MESH:D011189
+    target: MESH:D003248
+multigraph: true
+nodes:
+  - id: MESH:D011189
+    label: Drug
+    name: Potassium chloride
+  - id: MESH:D003248
+    label: Disease
+    name: Constipation
+references:
+  - https://go.drugbank.com/drugs/DB00761

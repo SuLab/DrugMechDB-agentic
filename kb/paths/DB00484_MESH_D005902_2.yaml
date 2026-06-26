@@ -1,0 +1,106 @@
+comment: UBERON:0003956 includes the uveoscleral network as well as other canals for
+  aqueous humor drainage. The uveoscleral network is the structure that seems to be
+  affected by alpha adrenergic agonists, such as brimonidine, specially in long-term
+  treatments (i.e. chronic dosing).
+directed: true
+graph:
+  _id: DB00484_MESH_D005902_2
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: brimonidine
+  drug_mesh: MESH:D000068438
+  drugbank: DB:DB00484
+links:
+  - key: increases activity of
+    source: MESH:D000068438
+    target: UniProt:P08913
+  - key: increases activity of
+    source: MESH:D000068438
+    target: UniProt:P18089
+  - key: increases activity of
+    source: MESH:D000068438
+    target: UniProt:P18825
+  - key: participates in
+    source: UniProt:P08913
+    target: reactome:R-HSA-418594
+  - key: participates in
+    source: UniProt:P18089
+    target: reactome:R-HSA-418594
+  - key: participates in
+    source: UniProt:P18825
+    target: reactome:R-HSA-418594
+  - key: participates in
+    source: UniProt:P08913
+    target: reactome:R-HSA-418597
+  - key: participates in
+    source: UniProt:P18089
+    target: reactome:R-HSA-418597
+  - key: participates in
+    source: UniProt:P18825
+    target: reactome:R-HSA-418597
+  - key: decreases abundance of
+    source: reactome:R-HSA-418594
+    target: CHEBI:17489
+  - key: decreases abundance of
+    source: reactome:R-HSA-418597
+    target: CHEBI:17489
+  - key: positively correlated with
+    source: CHEBI:17489
+    target: UBERON:0001796
+  - key: regulates
+    source: CHEBI:17489
+    target: GO:0006939
+  - key: regulates
+    source: GO:0006939
+    target: UBERON:0003956
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: HP:0007906
+  - key: negatively correlated with
+    source: UBERON:0003956
+    target: HP:0007906
+  - key: positively correlated with
+    source: HP:0007906
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:D000068438
+    label: Drug
+    name: brimonidine
+  - id: UniProt:P08913
+    label: Protein
+    name: Alpha-2A adrenergic receptor
+  - id: UniProt:P18089
+    label: Protein
+    name: Alpha-2B adrenergic receptor
+  - id: UniProt:P18825
+    label: Protein
+    name: Alpha-2C adrenergic receptor
+  - id: reactome:R-HSA-418594
+    label: Pathway
+    name: G alpha (i) signalling events
+  - id: reactome:R-HSA-418597
+    label: Pathway
+    name: G alpha (z) signalling events
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3,5-cyclic AMP
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: aqueous humor of eyeball
+  - id: UBERON:0003956
+    label: GrossAnatomicalStructure
+    name: aqueous drainage system
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Ocular Hypertension
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - mhttps://go.drugbank.com/drugs/DB00484#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Brimonidine#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Aqueous_humour#Clinical_significance https://en.wikipedia.org/wiki/Ciliary_body#Clinical_significance

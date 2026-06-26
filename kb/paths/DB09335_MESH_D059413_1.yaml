@@ -1,0 +1,50 @@
+comment: Alatrofloxacin is a prodrug of trovafloxacin (https://meshb.nlm.nih.gov/record/ui?ui=C106856).
+  Both are withdrawn from the US market (https://en.wikipedia.org/wiki/Alatrofloxacin).
+directed: true
+graph:
+  _id: DB09335_MESH_D059413_1
+  disease: Infectious disease of abdomen
+  disease_mesh: MESH:D059413
+  drug: alatrofloxacin
+  drug_mesh: MESH:C106856
+  drugbank: DB:DB09335
+links:
+  - key: has metabolite
+    source: MESH:C106856
+    target: DB:DB00685
+  - key: negatively regulates
+    source: DB:DB00685
+    target: InterPro:IPR035516
+  - key: positively regulates
+    source: InterPro:IPR035516
+    target: GO:0006265
+  - key: in taxon
+    source: GO:0006265
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D059413
+multigraph: true
+nodes:
+  - id: MESH:C106856
+    label: Drug
+    name: alatrofloxacin
+  - id: DB:DB00685
+    label: ChemicalSubstance
+    name: Trovafloxacin
+  - id: InterPro:IPR035516
+    label: GeneFamily
+    name: DNA gyrase/topoisomerase IV, subunit A, C-terminal
+  - id: GO:0006265
+    label: BiologicalProcess
+    name: DNA topological change
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D059413
+    label: Disease
+    name: Infectious disease of abdomen
+references:
+  - https://go.drugbank.com/drugs/DB09335
+  - https://go.drugbank.com/drugs/DB00685
+  - https://en.wikipedia.org/wiki/Trovafloxacin

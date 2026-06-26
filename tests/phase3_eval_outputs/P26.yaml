@@ -1,0 +1,80 @@
+directed: true
+multigraph: true
+graph:
+  _id: P26_DB00331_MESH_D003924
+  drug: Metformin
+  drug_mesh: MESH:D008687
+  drugbank: DB:DB00331
+  disease: Diabetes mellitus type 2
+  disease_mesh: MESH:D003924
+nodes:
+  - id: MESH:D008687
+    name: Metformin
+    label: Drug
+  - id: UniProt:Q13131
+    name: 5'-AMP-activated protein kinase catalytic subunit alpha-1
+    label: Protein
+  - id: GO:0006094
+    name: gluconeogenesis
+    label: BiologicalProcess
+  - id: HP:0003074
+    name: Hyperglycemia
+    label: PhenotypicFeature
+  - id: MESH:D003924
+    name: Diabetes mellitus type 2
+    label: Disease
+links:
+  - key: increases activity of
+    source: MESH:D008687
+    target: UniProt:Q13131
+    evidence:
+      - reference: PMID:31693892
+        snippet: activation of AMPK by metformin improves mitochondrial respiration and hyperglycemia in obesity
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: Metformin activates AMPK (whose α1 catalytic subunit is encoded by PRKAA1/UniProt:Q13131) in hepatocytes and in vivo, demonstrated by knockout of AMPKα1/2 abolishing metformin's glucose-lowering effect.
+      - reference: PMID:41819225
+        snippet: raise cytosolic AMP and activate AMP-activated protein kinase (AMPK)
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Comprehensive review confirming that metformin raises cytosolic AMP, which activates AMPK (including the PRKAA1-containing heterotrimeric complex).
+  - key: negatively regulates
+    source: UniProt:Q13131
+    target: GO:0006094
+    evidence:
+      - reference: PMID:41924526
+        snippet: activating the hepatic AMP-activated protein kinase (AMPK) pathway, thus suppressing hepatic gluconeogenesis
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: AMPK activation (via the PRKAA1 catalytic subunit) suppresses hepatic gluconeogenesis, directly supporting the negatively regulates edge.
+      - reference: PMID:36637190
+        snippet: the main effect of AMPK activation pertinent to the control of hepatic gluconeogenesis is to antagonize glucagon signalling in the short-term
+        supports: PARTIAL
+        evidence_source: OTHER
+        explanation: Review concludes AMPK activation's primary gluconeogenesis-relevant effect is antagonizing glucagon signalling; supports the directionality but notes the mechanism is indirect (via signalling cross-talk rather than direct transcriptional suppression).
+  - key: positively correlated with
+    source: GO:0006094
+    target: HP:0003074
+    evidence:
+      - reference: PMID:41819225
+        snippet: It counters the effects of insulin resistance, improves glucose homeostasis, assists weight control and avoids overt hypoglycemia via reduced hepatic gluconeogenesis
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Reducing hepatic gluconeogenesis is a primary means by which metformin avoids hyperglycemia, establishing that elevated gluconeogenesis is positively correlated with hyperglycemia.
+      - reference: PMID:41924526
+        snippet: PP III administration significantly reduced hyperglycemia while enhancing insulin sensitivity. Transcriptomic sequencing analysis showed that PP III's mechanism involves gut microbiota-mediated short-chain fatty acid production (notably acetic acid and propionic acid), subsequently inhibiting hepatic gluconeogenesis.
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: Inhibiting hepatic gluconeogenesis reduces hyperglycemia in db/db mice, establishing the positive correlation between gluconeogenesis activity and hyperglycemia.
+  - key: manifestation of
+    source: HP:0003074
+    target: MESH:D003924
+    evidence:
+      - reference: PMID:41819225
+        snippet: Metformin (dimethyl biguanide) is a primary pharmacotherapy to treat hyperglycemia in type 2 diabetes.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Hyperglycemia is the defining metabolic manifestation of type 2 diabetes; metformin is prescribed specifically to reduce it.
+references:
+  - https://go.drugbank.com/drugs/DB00331#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q13131

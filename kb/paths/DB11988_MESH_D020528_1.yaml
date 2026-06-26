@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB11988_MESH_D020528_1
+  disease: Primary progressive multiple sclerosis
+  disease_mesh: MESH:D020528
+  drug: ocrelizumab
+  drug_mesh: MESH:C533411
+  drugbank: DB:DB11988
+links:
+  - key: negatively regulates
+    source: MESH:C533411
+    target: UniProt:P11836
+  - key: expressed in
+    source: UniProt:P11836
+    target: CL:0000236
+  - key: contributes to
+    source: CL:0000236
+    target: MESH:D020528
+multigraph: true
+nodes:
+  - id: MESH:C533411
+    label: Drug
+    name: Ocrelizumab
+  - id: UniProt:P11836
+    label: Protein
+    name: B-lymphocyte antigen CD20
+  - id: CL:0000236
+    label: Cell
+    name: B cell
+  - id: MESH:D020528
+    label: Disease
+    name: Primary progressive multiple sclerosis
+references:
+  - https://go.drugbank.com/drugs/DB11988

@@ -1,0 +1,131 @@
+directed: true
+graph:
+  _id: DB05219_MESH_D003876_1
+  disease: Atopic dermatitis
+  disease_mesh: MESH:D003876
+  drug: crisaborole
+  drug_mesh: MESH:C543085
+  drugbank: DB:DB05219
+links:
+  - key: negatively regulates
+    source: MESH:C543085
+    target: UniProt:P27815
+  - key: negatively regulates
+    source: MESH:C543085
+    target: UniProt:Q07343
+  - key: negatively regulates
+    source: MESH:C543085
+    target: UniProt:Q08493
+  - key: negatively regulates
+    source: MESH:C543085
+    target: UniProt:Q08499
+  - key: positively correlated with
+    source: UniProt:P27815
+    target: GO:0006198
+  - key: positively correlated with
+    source: UniProt:Q07343
+    target: GO:0006198
+  - key: positively correlated with
+    source: UniProt:Q08493
+    target: GO:0006198
+  - key: positively correlated with
+    source: UniProt:Q08499
+    target: GO:0006198
+  - key: positively correlated with
+    source: GO:0006198
+    target: GO:0032680
+  - key: positively correlated with
+    source: GO:0006198
+    target: GO:0032674
+  - key: positively correlated with
+    source: GO:0006198
+    target: GO:0032663
+  - key: positively correlated with
+    source: GO:0006198
+    target: GO:0032673
+  - key: positively correlated with
+    source: GO:0006198
+    target: GO:0032649
+  - key: positively correlated with
+    source: GO:0032680
+    target: GO:0006955
+  - key: positively correlated with
+    source: GO:0032674
+    target: GO:0006955
+  - key: positively correlated with
+    source: GO:0032663
+    target: GO:0006955
+  - key: positively correlated with
+    source: GO:0032649
+    target: GO:0006955
+  - key: positively correlated with
+    source: GO:0032673
+    target: GO:0006955
+  - key: positively correlated with
+    source: GO:0032673
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0032649
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0032663
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0032674
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0032680
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006955
+    target: MESH:D003876
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D003876
+multigraph: true
+nodes:
+  - id: MESH:C543085
+    label: Drug
+    name: crisaborole
+  - id: UniProt:P27815
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4A
+  - id: UniProt:Q07343
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4B
+  - id: UniProt:Q08493
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4C
+  - id: UniProt:Q08499
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4D
+  - id: GO:0006198
+    label: BiologicalProcess
+    name: cAMP catabolic process
+  - id: GO:0032680
+    label: BiologicalProcess
+    name: regulation of tumor necrosis factor production
+  - id: GO:0032674
+    label: BiologicalProcess
+    name: regulation of interleukin-5 production
+  - id: GO:0032663
+    label: BiologicalProcess
+    name: regulation of interleukin-2 production
+  - id: GO:0032673
+    label: BiologicalProcess
+    name: regulation of interleukin-4 production
+  - id: GO:0032649
+    label: BiologicalProcess
+    name: regulation of interferon-gamma production
+  - id: GO:0006955
+    label: BiologicalProcess
+    name: immune response
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D003876
+    label: Disease
+    name: Atopic dermatitis
+references:
+  - https://go.drugbank.com/drugs/DB05219#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Crisaborole#Pharmacology

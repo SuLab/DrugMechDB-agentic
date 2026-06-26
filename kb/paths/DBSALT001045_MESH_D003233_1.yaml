@@ -1,0 +1,54 @@
+comment: In the DrugCentral the drug trometamol (tromethamine) was indicated for allergic
+  conjunctivitis, however no literature evidences found about the mechanism of action
+  of trometamol treating allergic conjunctivitis. For the treatment of allergic conjunctivitis
+  the ketorolac tromethamine is used.
+directed: true
+graph:
+  _id: DBSALT001045_MESH_D003233_1
+  disease: Allergic conjunctivitis
+  disease_mesh: MESH:D003233
+  drug: Ketorolac tromethamine
+  drug_mesh: MESH:D020911
+  drugbank: DB:DBSALT001045
+links:
+  - key: decreases activity of
+    source: DB:DBSALT001045
+    target: UniProt:P35354
+  - key: decreases activity of
+    source: DB:DBSALT001045
+    target: UniProt:P23219
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: MESH:D011453
+  - key: increases abundance of
+    source: UniProt:P23219
+    target: MESH:D011453
+  - key: participates in
+    source: MESH:D011453
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D003233
+multigraph: true
+nodes:
+  - id: DB:DBSALT001045
+    label: Drug
+    name: Ketorolac tromethamine
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D003233
+    label: Disease
+    name: Allergic conjunctivitis
+references:
+  - https://go.drugbank.com/salts/DBSALT001045
+  - https://pubmed.ncbi.nlm.nih.gov/18433352/

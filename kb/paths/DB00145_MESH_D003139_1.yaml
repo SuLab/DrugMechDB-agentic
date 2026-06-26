@@ -1,0 +1,23 @@
+comment: No evidence found to support common cold treatment with a glycine.
+directed: true
+graph:
+  _id: DB00145_MESH_D003139_1
+  disease: Common cold
+  disease_mesh: MESH:D003139
+  drug: glycine
+  drug_mesh: MESH:D005998
+  drugbank: DB:DB00145
+links:
+  - key: treats
+    source: MESH:D005998
+    target: MESH:D003139
+multigraph: true
+nodes:
+  - id: MESH:D005998
+    label: Drug
+    name: Glycine
+  - id: MESH:D003139
+    label: Disease
+    name: Common cold
+references:
+  - https://go.drugbank.com/drugs/DB00145

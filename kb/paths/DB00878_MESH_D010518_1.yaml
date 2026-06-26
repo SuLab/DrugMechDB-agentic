@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB00878_MESH_D010518_1
+  disease: periodontitis
+  disease_mesh: MESH:D010518
+  drug: chlorhexidine
+  drug_mesh: MESH:D002710
+  drugbank: DB:DB00878
+links:
+  - key: disrupts
+    source: MESH:D002710
+    target: GO:0009274
+  - key: in taxon
+    source: GO:0009274
+    target: taxonomy:837
+  - key: causes
+    source: taxonomy:837
+    target: MESH:D010518
+multigraph: true
+nodes:
+  - id: MESH:D002710
+    label: Drug
+    name: chlorhexidine
+  - id: GO:0009274
+    label: CellularComponent
+    name: Bacterial Cell Wall
+  - id: taxonomy:837
+    label: OrganismTaxon
+    name: Porphyromonas gingivalis
+  - id: MESH:D010518
+    label: Disease
+    name: periodontitis

@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB04816_MESH_D003248_1
+  disease: dantron
+  disease_mesh: MESH:D003248
+  drug: prucalopride
+  drug_mesh: MESH:C004315
+  drugbank: DB:DB04816
+links:
+  - key: subclass of
+    source: MESH:C004315
+    target: CHEBI:50503
+  - key: negatively correlated with
+    source: CHEBI:50503
+    target: HP:0012423
+  - key: manifestation of
+    source: HP:0012423
+    target: MESH:D003248
+multigraph: true
+nodes:
+  - id: MESH:C004315
+    label: Drug
+    name: dantron
+  - id: CHEBI:50503
+    label: ChemicalSubstance
+    name: laxative
+  - id: HP:0012423
+    label: PhenotypicFeature
+    name: Colonic inertia
+  - id: MESH:D003248
+    label: Disease
+    name: Constipation
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/3042346/
+comment: The drug has been withdrawn from the Canadian, US, and UK markets in 1998
+  due to genotoxicity. Note that this drug may modulate UniProt:P19793 (see https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL53418/)
+  but a path involving retinoid X receptor alpha to treat constipation does not seem
+  feasible.

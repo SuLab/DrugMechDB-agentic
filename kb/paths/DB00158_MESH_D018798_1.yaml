@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00158_MESH_D018798_1
+  disease: Anemia, Iron-Deficiency
+  disease_mesh: MESH:D018798
+  drug: Folic Acid
+  drug_mesh: MESH:D005492
+  drugbank: DB:DB00158
+links:
+  - key: has metabolite
+    source: MESH:D005492
+    target: MESH:D013763
+  - key: positively regulates
+    source: MESH:D013763
+    target: GO:0006164
+  - key: occurs in
+    source: GO:0006164
+    target: CL:0000232
+  - key: negatively correlated with
+    source: CL:0000232
+    target: HP:0001903
+  - key: contributes to
+    source: HP:0001903
+    target: MESH:D018798
+multigraph: true
+nodes:
+  - id: MESH:D005492
+    label: Drug
+    name: Folic Acid
+  - id: MESH:D013763
+    label: ChemicalSubstance
+    name: Tetrahydrofolates
+  - id: GO:0006164
+    label: BiologicalProcess
+    name: purine nucleotide biosynthetic process
+  - id: CL:0000232
+    label: Cell
+    name: erythrocyte
+  - id: HP:0001903
+    label: PhenotypicFeature
+    name: Anemia
+  - id: MESH:D018798
+    label: Disease
+    name: Anemia, Iron-Deficiency
+references:
+  - https://go.drugbank.com/drugs/DB00158#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Iron-deficiency_anemia

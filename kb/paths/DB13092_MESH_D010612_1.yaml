@@ -1,0 +1,49 @@
+comment: Meclocycline is under investigation in clinical trial NCT00385515, As a tetracycline,
+  meclocycline likely works by reversably associating with the 30s S7 subuint of the
+  bacterial ribosome.
+directed: true
+graph:
+  _id: DB13092_MESH_D010612_1
+  disease: Pharyngitis
+  disease_mesh: MESH:D010612
+  drug: meclocycline
+  drug_mesh: MESH:C100122
+  drugbank: DB:DB13092
+links:
+  - key: decreases activity of
+    source: MESH:C100122
+    target: InterPro:IPR000235
+  - key: positively regulates
+    source: InterPro:IPR000235
+    target: GO:0043039
+  - key: participates in
+    source: GO:0043039
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D010612
+multigraph: true
+nodes:
+  - id: MESH:C100122
+    label: Drug
+    name: meclocycline
+  - id: InterPro:IPR000235
+    label: GeneFamily
+    name: 30S ribosomal protein S5/S7
+  - id: GO:0043039
+    label: BiologicalProcess
+    name: tRNA aminoacylation
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D010612
+    label: Disease
+    name: Pharyngitis
+references:
+  - https://go.drugbank.com/drugs/DB13092

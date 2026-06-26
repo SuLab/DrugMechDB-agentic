@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DBSALT001065_MESH_D007500_1
+  disease: Iritis
+  disease_mesh: MESH:D007500
+  drug: fluorometholone acetate
+  drugbank: DB:DBSALT001065
+links:
+  - key: increases activity of
+    source: DB:DBSALT001065
+    target: UniProt:P04150
+  - key: increases activity of
+    source: UniProt:P04150
+    target: UniProt:P04083
+  - key: decreases activity of
+    source: UniProt:P04083
+    target: UniProt:P47712
+  - key: negatively regulates
+    source: UniProt:P04083
+    target: UniProt:P35354
+  - key: increases abundance of
+    source: UniProt:P47712
+    target: MESH:D011453
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: MESH:D011453
+  - key: positively regulates
+    source: MESH:D011453
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D007500
+multigraph: true
+nodes:
+  - id: DB:DBSALT001065
+    label: Drug
+    name: Fluorometholone acetate
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: UniProt:P04083
+    label: Protein
+    name: Annexin A1
+  - id: UniProt:P47712
+    label: Protein
+    name: Cytosolic phospholipase A2
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D007500
+    label: Disease
+    name: Iritis
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/19104500/
+  - https://go.drugbank.com/drugs/DB00324

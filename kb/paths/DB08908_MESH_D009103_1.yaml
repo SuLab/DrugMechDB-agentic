@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB08908_MESH_D009103_1
+  disease: Multiple Sclerosis
+  disease_mesh: MESH:D009103
+  drug: dimethyl fumarate
+  drug_mesh: MESH:D000069462
+  drugbank: DB:DB08908
+links:
+  - key: decreases activity of
+    source: MESH:D000069462
+    target: UniProt:Q14145
+  - key: decreases abundance of
+    source: UniProt:Q14145
+    target: UniProt:Q16236
+  - key: negatively regulates
+    source: UniProt:Q16236
+    target: GO:0006979
+  - key: correlated with
+    source: GO:0006979
+    target: MESH:D009103
+multigraph: true
+nodes:
+  - id: MESH:D000069462
+    label: Drug
+    name: dimethyl fumarate
+  - id: UniProt:Q14145
+    label: Protein
+    name: Kelch-like ECH-associated protein 1
+  - id: UniProt:Q16236
+    label: Protein
+    name: Nrf2
+  - id: GO:0006979
+    label: BiologicalProcess
+    name: Oxidative Stress
+  - id: MESH:D009103
+    label: Disease
+    name: Multiple Sclerosis

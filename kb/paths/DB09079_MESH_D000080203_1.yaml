@@ -1,0 +1,110 @@
+directed: true
+graph:
+  _id: DB09079_MESH_D000080203_1
+  disease: Hamman-Rich Syndrome
+  disease_mesh: MESH:D000080203
+  drug: nintedanib
+  drug_mesh: MESH:C530716
+  drugbank: DB:DB09079
+links:
+  - key: decreases activity of
+    source: MESH:C530716
+    target: UniProt:P35236
+  - key: decreases activity of
+    source: MESH:C530716
+    target: UniProt:P17948
+  - key: decreases activity of
+    source: MESH:C530716
+    target: UniProt:P35968
+  - key: decreases activity of
+    source: MESH:C530716
+    target: UniProt:P35916
+  - key: decreases activity of
+    source: MESH:C530716
+    target: InterPro:IPR006782
+  - key: decreases activity of
+    source: MESH:C530716
+    target: InterPro:IPR016248
+  - key: participates in
+    source: UniProt:P35236
+    target: reactome:R-HSA-162582
+  - key: participates in
+    source: UniProt:P17948
+    target: reactome:R-HSA-5218921
+  - key: participates in
+    source: UniProt:P35968
+    target: reactome:R-HSA-5218921
+  - key: participates in
+    source: UniProt:P35916
+    target: reactome:R-HSA-5218921
+  - key: participates in
+    source: InterPro:IPR006782
+    target: reactome:R-HSA-186797
+  - key: participates in
+    source: InterPro:IPR016248
+    target: reactome:R-HSA-190236
+  - key: positively regulates
+    source: reactome:R-HSA-162582
+    target: GO:0048144
+  - key: positively regulates
+    source: reactome:R-HSA-5218921
+    target: GO:0048144
+  - key: positively regulates
+    source: reactome:R-HSA-186797
+    target: GO:0048144
+  - key: positively regulates
+    source: reactome:R-HSA-190236
+    target: GO:0048144
+  - key: contributes to
+    source: GO:0048144
+    target: MESH:D000080203
+multigraph: true
+nodes:
+  - id: MESH:C530716
+    label: Drug
+    name: nintedanib
+  - id: UniProt:P35236
+    label: Protein
+    name: Tyrosine-protein phosphatase non-receptor type
+  - id: UniProt:P17948
+    label: Protein
+    name: Vascular endothelial growth factor receptor 1
+  - id: UniProt:P35968
+    label: Protein
+    name: Vascular endothelial growth factor receptor 2
+  - id: UniProt:P35916
+    label: Protein
+    name: Vascular endothelial growth factor receptor 3
+  - id: InterPro:IPR006782
+    label: GeneFamily
+    name: Platelet-derived growth factor, N-terminal
+  - id: InterPro:IPR016248
+    label: GeneFamily
+    name: Fibroblast growth factor receptor family
+  - id: reactome:R-HSA-162582
+    label: Pathway
+    name: Signal Transduction
+  - id: reactome:R-HSA-5218921
+    label: Pathway
+    name: VEGFR2 mediated cell proliferation
+  - id: reactome:R-HSA-186797
+    label: Pathway
+    name: Signaling by PDGF
+  - id: reactome:R-HSA-190236
+    label: Pathway
+    name: Signaling by FGFR
+  - id: GO:0048144
+    label: BiologicalProcess
+    name: fibroblast proliferation
+  - id: MESH:D000080203
+    label: Disease
+    name: Hamman-Rich Syndrome
+references:
+  - https://go.drugbank.com/drugs/DB09079#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Nintedanib#Mechanism_of_action
+  - https://www.uniprot.org/uniprot/P35236#function
+  - https://www.uniprot.org/uniprot/P17948#function
+  - https://www.uniprot.org/uniprot/P35968#function
+  - https://www.uniprot.org/uniprot/P35916#function
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6409392/
+  - https://en.wikipedia.org/wiki/Acute_interstitial_pneumonitis

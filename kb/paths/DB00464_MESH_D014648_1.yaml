@@ -1,0 +1,46 @@
+comment: Sclerosing solutions cause the vein to scar, forcing blood to reroute through
+  healthier veins. The collapsed vein is reabsorbed into local tissue and eventually
+  fades (https://www.mayoclinic.org/tests-procedures/sclerotherapy/about/pac-20384592).
+directed: true
+graph:
+  _id: DB00464_MESH_D014648_1
+  disease: Venous varices
+  disease_mesh: MESH:D014648
+  drug: sodium tetradecyl sulfate
+  drug_mesh: MESH:D012981
+  drugbank: DB:DB00464
+links:
+  - key: part of
+    source: MESH:D012981
+    target: MESH:D012597
+  - key: negatively correlated with
+    source: MESH:D012597
+    target: HP:0012514
+  - key: negatively correlated with
+    source: MESH:D012597
+    target: HP:0010741
+  - key: manifestation of
+    source: HP:0012514
+    target: MESH:D014648
+  - key: manifestation of
+    source: HP:0010741
+    target: MESH:D014648
+multigraph: true
+nodes:
+  - id: MESH:D012981
+    label: Drug
+    name: sodium tetradecyl sulfate
+  - id: MESH:D012597
+    label: ChemicalSubstance
+    name: Sclerosing Solutions
+  - id: HP:0012514
+    label: PhenotypicFeature
+    name: Lower limb pain
+  - id: HP:0010741
+    label: PhenotypicFeature
+    name: Pedal edema
+  - id: MESH:D014648
+    label: Disease
+    name: Venous varices
+references:
+  - https://en.wikipedia.org/wiki/Sodium_tetradecyl_sulfate

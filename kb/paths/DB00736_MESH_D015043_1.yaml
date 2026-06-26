@@ -1,0 +1,66 @@
+comment: Esomeprazole is the s-isomer of Omeprazole, both are a proton pump inhibitor
+  class of drug and the mechanism of action for both is similar. Weve annotated the
+  path for the S isomer only as it seems this isomer is metabolized more slowly than
+  omeprazole and therefore it will act for longer and more effectively (https://onlinelibrary.wiley.com/doi/pdf/10.1046/j.1365-2036.17.s1.1.x).
+  This disease is denoted as Peptic reflux disease in the original file.
+directed: true
+graph:
+  _id: DB00736_MESH_D015043_1
+  disease: Zollinger-Ellison syndrome
+  disease_mesh: MESH:D015043
+  drug: esomeprazole
+  drug_mesh: MESH:D064098
+  drugbank: DB:DB00736
+links:
+  - key: decreases activity of
+    source: MESH:D064098
+    target: UniProt:P20648
+  - key: positively correlated with
+    source: UniProt:P20648
+    target: GO:0008900
+  - key: positively correlated with
+    source: GO:0008900
+    target: GO:0001696
+  - key: positively correlated with
+    source: GO:0001696
+    target: HP:0004398
+  - key: positively correlated with
+    source: GO:0001696
+    target: HP:0002588
+  - key: manifestation of
+    source: HP:0002588
+    target: MESH:D015043
+  - key: manifestation of
+    source: HP:0004398
+    target: MESH:D015043
+multigraph: true
+nodes:
+  - id: MESH:D064098
+    label: Drug
+    name: esomeprazole
+  - id: UniProt:P20648
+    label: Protein
+    name: Potassium-transporting ATPase alpha chain 1
+  - id: GO:0008900
+    label: MolecularActivity
+    name: P-type potassium:proton transporter activity
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: gastric acid secretion
+  - id: HP:0002588
+    label: PhenotypicFeature
+    name: Duodenal ulcer
+  - id: HP:0004398
+    label: PhenotypicFeature
+    name: Peptic Ulcer
+  - id: MESH:D015043
+    label: Disease
+    name: Zollinger-Ellison syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00736#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Esomeprazole
+  - https://en.wikipedia.org/wiki/Omeprazole#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Esophagitis#Causes
+  - https://en.wikipedia.org/wiki/Esophagitis#Medications
+  - https://en.wikipedia.org/wiki/Zollinger%E2%80%93Ellison_syndrome#Treatment
+  - https://en.wikipedia.org/wiki/Zollinger%E2%80%93Ellison_syndrome#Pathophysiology

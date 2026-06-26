@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB01251_MESH_D003924_1
+  disease: Diabetes mellitus type 2
+  disease_mesh: MESH:D003924
+  drug: gliquidone
+  drug_mesh: MESH:C010969
+  drugbank: DB:DB01251
+links:
+  - key: negatively regulates
+    source: MESH:C010969
+    target: UniProt:Q15842
+  - key: participates in
+    source: UniProt:Q15842
+    target: GO:0086009
+  - key: negatively regulates
+    source: GO:0086009
+    target: GO:0070509
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0030073
+  - key: negatively correlated with
+    source: GO:0030073
+    target: MESH:D003924
+multigraph: true
+nodes:
+  - id: MESH:C010969
+    label: Drug
+    name: gliquidone
+  - id: UniProt:Q15842
+    label: Protein
+    name: ATP-sensitive inward rectifier potassium channel 8
+  - id: GO:0086009
+    label: BiologicalProcess
+    name: membrane repolarization
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: calcium ion import
+  - id: GO:0030073
+    label: BiologicalProcess
+    name: insulin secretion
+  - id: MESH:D003924
+    label: Disease
+    name: Diabetes mellitus type 2
+references:
+  - https://go.drugbank.com/drugs/DB01251
+  - https://pubchem.ncbi.nlm.nih.gov/compound/91610#section=Mechanism-of-Action

@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00682_MESH_D013923_1
+  disease: Thromboembolic disorder
+  disease_mesh: MESH:D013923
+  drug: warfarin
+  drug_mesh: MESH:D014859
+  drugbank: DB:DB00682
+links:
+  - key: negatively regulates
+    source: MESH:D014859
+    target: UniProt:Q9BQB6
+  - key: positively regulates
+    source: UniProt:Q9BQB6
+    target: GO:0007596
+  - key: correlated with
+    source: GO:0007596
+    target: GO:0072378
+  - key: affects risk for
+    source: GO:0072378
+    target: MESH:D013923
+multigraph: true
+nodes:
+  - id: MESH:D014859
+    label: Drug
+    name: warfarin
+  - id: UniProt:Q9BQB6
+    label: Protein
+    name: Vitamin K epoxide reductase complex subunit 1
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: blood coagulation
+  - id: GO:0072378
+    label: BiologicalProcess
+    name: blood coagulation, fibrin clot formation
+  - id: MESH:D013923
+    label: Disease
+    name: Thromboembolic disorder
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1464/
+  - https://go.drugbank.com/drugs/DB00682

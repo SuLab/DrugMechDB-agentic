@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00257_MESH_D000152_1
+  disease: Acne vulgaris
+  disease_mesh: MESH:D000152
+  drug: Adapalene
+  drug_mesh: MESH:D000068816
+  drugbank: DB:DB00257
+links:
+  - key: positively regulates
+    source: MESH:D000068816
+    target: MESH:D018168
+  - key: negatively regulates
+    source: MESH:D018168
+    target: GO:0031424
+  - key: increases abundance of
+    source: GO:0031424
+    target: HP:0025249
+  - key: positively correlated with
+    source: HP:0025249
+    target: MESH:D000152
+multigraph: true
+nodes:
+  - id: MESH:D000068816
+    label: Drug
+    name: Adapalene
+  - id: MESH:D018168
+    label: GeneFamily
+    name: Receptors, Retinoic Acid
+  - id: GO:0031424
+    label: BiologicalProcess
+    name: keratinization
+  - id: HP:0025249
+    label: PhenotypicFeature
+    name: Comedo
+  - id: MESH:D000152
+    label: Disease
+    name: Acne vulgaris
+references:
+  - https://go.drugbank.com/drugs/DB00210#mechanism-of-action
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2374937/
+  - https://en.wikipedia.org/wiki/Adapalene#Pharmacodynamics
+  - https://pubmed.ncbi.nlm.nih.gov/19929446/

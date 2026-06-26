@@ -1,0 +1,73 @@
+directed: true
+graph:
+  _id: DB09299_MESH_D003866_1
+  disease: Depressive disorder
+  disease_mesh: MESH:D003866
+  drug: pirlindole
+  drug_mesh: MESH:C009830
+  drugbank: DB:DB09299
+links:
+  - key: decreases activity of
+    source: MESH:C009830
+    target: UniProt:P21397
+  - key: decreases abundance of
+    source: UniProt:P21397
+    target: MESH:D012701
+  - key: decreases abundance of
+    source: UniProt:P21397
+    target: MESH:D009638
+  - key: positively correlated with
+    source: MESH:D012701
+    target: GO:0099153
+  - key: disrupted by
+    source: GO:0099153
+    target: MESH:D003866
+  - key: negatively regulates
+    source: MESH:C009830
+    target: GO:0051620
+  - key: negatively regulates
+    source: MESH:C009830
+    target: GO:0051610
+  - key: decreases abundance of
+    source: GO:0051620
+    target: MESH:D009638
+  - key: decreases abundance of
+    source: GO:0051610
+    target: MESH:D012701
+  - key: positively correlated with
+    source: MESH:D009638
+    target: GO:0099155
+  - key: disrupted by
+    source: GO:0099155
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:C009830
+    label: Drug
+    name: Pirlindole
+  - id: UniProt:P21397
+    label: Protein
+    name: Amine oxidase [flavin-containing] A
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: GO:0099153
+    label: BiologicalProcess
+    name: Synaptic transmission, serotonergic
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: Norepinephrine uptake
+  - id: GO:0051610
+    label: BiologicalProcess
+    name: Serotonin uptake
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: GO:0099155
+    label: BiologicalProcess
+    name: Synaptic transmission, noradrenergic
+  - id: MESH:D003866
+    label: Drug
+    name: Depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB09244

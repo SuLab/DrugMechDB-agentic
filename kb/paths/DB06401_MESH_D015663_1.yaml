@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB06401_MESH_D015663_1
+  disease: Osteoporosis, Postmenopausal
+  disease_mesh: MESH:D015663
+  drug: bazedoxifene
+  drug_mesh: MESH:C447119
+  drugbank: DB:DB06401
+links:
+  - key: increases activity of
+    source: MESH:C447119
+    target: UniProt:P03372
+  - key: increases activity of
+    source: MESH:C447119
+    target: UniProt:Q92731
+  - key: positively regulates
+    source: UniProt:P03372
+    target: GO:0006874
+  - key: positively correlated with
+    source: GO:0006874
+    target: GO:0001503
+  - key: positively correlated with
+    source: UniProt:Q92731
+    target: GO:0001503
+  - key: negatively correlated with
+    source: GO:0001503
+    target: MESH:D015663
+multigraph: true
+nodes:
+  - id: MESH:C447119
+    label: Drug
+    name: bazedoxifene
+  - id: UniProt:P03372
+    label: Protein
+    name: Estrogen receptor
+  - id: UniProt:Q92731
+    label: Protein
+    name: Estrogen receptor beta
+  - id: GO:0001503
+    label: BiologicalProcess
+    name: ossification
+  - id: GO:0006874
+    label: BiologicalProcess
+    name: cellular calcium ion homeostasis
+  - id: MESH:D015663
+    label: Disease
+    name: Osteoporosis, Postmenopausal
+references:
+  - https://go.drugbank.com/drugs/DB06401#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Bazedoxifene#Pharmacology
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL46740/
+comment: The disease is denoted Postmenopausal osteoporosis in the original file as
+  per DrugCentral.

@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01291_MESH_D008171_1
+  disease: Disorder of lung
+  disease_mesh: MESH:D008171
+  drug: pirbuterol
+  drug_mesh: MESH:C009118
+  drugbank: DB:DB01291
+links:
+  - key: positively regulates
+    source: MESH:C009118
+    target: UniProt:P07550
+  - key: positively regulates
+    source: UniProt:P07550
+    target: UniProt:B7Z2C7
+  - key: increases abundance of
+    source: UniProt:B7Z2C7
+    target: CHEBI:17489
+  - key: positively correlated with
+    source: CHEBI:17489
+    target: GO:0044557
+  - key: located in
+    source: GO:0044557
+    target: UBERON:0002187
+  - key: affected by
+    source: UBERON:0002187
+    target: MESH:D008171
+multigraph: true
+nodes:
+  - id: MESH:C009118
+    label: Drug
+    name: Pirbuterol
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: UniProt:B7Z2C7
+    label: Protein
+    name: Adenylate cyclase
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: Relaxation of smooth muscle
+  - id: UBERON:0002187
+    label: GrossAnatomicalStructure
+    name: Terminal bronchiole
+  - id: MESH:D008171
+    label: Disease
+    name: Disorder of lung
+references:
+  - https://go.drugbank.com/drugs/DB01291

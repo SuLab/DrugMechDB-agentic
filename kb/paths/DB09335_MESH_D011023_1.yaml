@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB09335_MESH_D011023_1
+  disease: Staphylococcal pneumonia
+  disease_mesh: MESH:D011023
+  drug: alatrofloxacin
+  drug_mesh: MESH:C106856
+  drugbank: DB:DB09335
+links:
+  - key: decreases activity of
+    source: MESH:C106856
+    target: UniProt:P0C1U9
+  - key: decreases activity of
+    source: MESH:C106856
+    target: UniProt:P20831
+  - key: participates in
+    source: UniProt:P0C1U9
+    target: GO:0006260
+  - key: participates in
+    source: UniProt:P20831
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D011023
+multigraph: true
+nodes:
+  - id: MESH:C106856
+    label: Drug
+    name: alatrofloxacin
+  - id: UniProt:P0C1U9
+    label: Protein
+    name: Topoisomeraze 4
+  - id: UniProt:P20831
+    label: Protein
+    name: DNA gyrase
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D011023
+    label: Disease
+    name: Staphylococcal pneumonia

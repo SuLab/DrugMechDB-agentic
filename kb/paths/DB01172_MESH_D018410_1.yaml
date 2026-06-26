@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01172_MESH_D018410_1
+  disease: Bacterial pneumonia
+  disease_mesh: MESH:D018410
+  drug: kanamycin
+  drug_mesh: MESH:D007612
+  drugbank: DB:DB01172
+links:
+  - key: disrupts
+    source: MESH:D007612
+    target: MESH:D054680
+  - key: location of
+    source: MESH:D054680
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D018410
+multigraph: true
+nodes:
+  - id: MESH:D007612
+    label: Drug
+    name: kanamycin
+  - id: MESH:D054680
+    label: ChemicalSubstance
+    name: Ribosome Subunits, Small, Bacterial
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D018410
+    label: Disease
+    name: Bacterial pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB01172

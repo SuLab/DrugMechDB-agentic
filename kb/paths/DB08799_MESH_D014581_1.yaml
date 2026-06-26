@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB08799_MESH_D014581_1
+  disease: Urticaria
+  disease_mesh: MESH:D014581
+  drug: antazoline
+  drug_mesh: MESH:D000865
+  drugbank: DB:DB08799
+links:
+  - key: negatively regulates
+    source: MESH:D000865
+    target: UniProt:P35367
+  - key: positively correlated with
+    source: UniProt:P35367
+    target: MESH:D006632
+  - key: causes
+    source: MESH:D006632
+    target: GO:0043117
+  - key: positively correlated with
+    source: GO:0043117
+    target: HP:0000969
+  - key: phenotype of
+    source: HP:0000969
+    target: MESH:D014581
+multigraph: true
+nodes:
+  - id: MESH:D000865
+    label: Drug
+    name: Antazoline
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: MESH:D006632
+    label: ChemicalSubstance
+    name: Histamine
+  - id: GO:0043117
+    label: BiologicalProcess
+    name: positive regulation of vascular permeability
+  - id: HP:0000969
+    label: PhenotypicFeature
+    name: Edema
+  - id: MESH:D014581
+    label: Disease
+    name: Urticaria
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/25539676
+  - https://go.drugbank.com/drugs/DB08799

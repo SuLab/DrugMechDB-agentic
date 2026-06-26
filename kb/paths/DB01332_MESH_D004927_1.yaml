@@ -1,0 +1,51 @@
+comment: Ceftizoxime is a semisynthetic, third-generation cephalosporin antibiotic
+  which can be administered intravenously or by suppository for the treatment of various
+  bacterial infections.
+directed: true
+graph:
+  _id: DB01332_MESH_D004927_1
+  disease: Escherichia coli Infections
+  disease_mesh: MESH:D004927
+  drug: ceftizoxime
+  drug_mesh: MESH:D015296
+  drugbank: DB:DB01332
+links:
+  - key: decreases activity of
+    source: MESH:D015296
+    target: InterPro:IPR001460
+  - key: participates in
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D004927
+multigraph: true
+nodes:
+  - id: MESH:D015296
+    label: Drug
+    name: ceftizoxime
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D004927
+    label: Disease
+    name: Escherichia coli Infections
+references:
+  - https://go.drugbank.com/drugs/DB01332#mechanism-of-action
+  - https://drugs.ncats.io/drug/C43C467DPE
+  - https://en.wikipedia.org/wiki/Escherichia_coli#Role_in_disease

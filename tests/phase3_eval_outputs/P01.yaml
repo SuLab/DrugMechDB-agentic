@@ -1,0 +1,92 @@
+directed: true
+multigraph: true
+graph:
+  _id: P01_DB00945_MESH_D009203
+  drug: Aspirin
+  drug_mesh: MESH:D001241
+  drugbank: DB:DB00945
+  disease: Myocardial Infarction
+  disease_mesh: MESH:D009203
+nodes:
+  - id: MESH:D001241
+    name: Aspirin
+    label: Drug
+  - id: UniProt:P23219
+    name: Prostaglandin G/H synthase 1
+    label: Protein
+  - id: GO:0001516
+    name: prostaglandin biosynthetic process
+    label: BiologicalProcess
+  - id: MESH:D013928
+    name: Thromboxane A2
+    label: ChemicalSubstance
+  - id: GO:0070527
+    name: platelet aggregation
+    label: BiologicalProcess
+  - id: MESH:D009203
+    name: Myocardial Infarction
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D001241
+    target: UniProt:P23219
+    evidence:
+      - reference: PMID:23422285
+        snippet: "It acetylates Ser529 residue in cyclooxygenase-1 (COX-1) and prevents thromboxane A2 (TXA2) formation from arachidonic acid (AA) in platelets."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Aspirin covalently acetylates Ser529 of platelet COX-1, irreversibly inhibiting its catalytic activity (study in 108 aspirin-treated volunteers)."
+      - reference: PMID:32535107
+        snippet: "The most recognized mechanism of aspirin (acetylsalicylic acid, ASA) action, at therapeutic dosing, is the inhibition of prostanoid biosynthesis through the acetylation of cyclooxygenase (COX)-isozymes (COX-1 at serine-529 and COX-2 at serine-516)."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Quantitative proteomic confirmation that aspirin acetylates COX-1 at Ser529, the canonical mechanistic step."
+  - key: positively regulates
+    source: UniProt:P23219
+    target: GO:0001516
+    evidence:
+      - reference: PMID:32535107
+        snippet: "The most recognized mechanism of aspirin (acetylsalicylic acid, ASA) action, at therapeutic dosing, is the inhibition of prostanoid biosynthesis through the acetylation of cyclooxygenase (COX)-isozymes (COX-1 at serine-529 and COX-2 at serine-516)."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Catalytically active COX-1 is required for prostanoid biosynthesis; acetylating COX-1 inhibits the prostaglandin biosynthetic process, confirming COX-1 positively regulates it."
+  - key: has output
+    source: GO:0001516
+    target: MESH:D013928
+    evidence:
+      - reference: PMID:23422285
+        snippet: "It acetylates Ser529 residue in cyclooxygenase-1 (COX-1) and prevents thromboxane A2 (TXA2) formation from arachidonic acid (AA) in platelets."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "TXA2 is the platelet-specific prostanoid generated from arachidonic acid via COX-1 — i.e. it is an output of the prostaglandin biosynthetic process in platelets."
+  - key: positively regulates
+    source: MESH:D013928
+    target: GO:0070527
+    evidence:
+      - reference: PMID:18752570
+        snippet: "These studies demonstrate a linear relationship between inhibition of platelet TXA(2) generation and TXA(2)-mediated aggregation."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "TXA2 generation tracks linearly with TXA2-mediated platelet aggregation; reducing TXA2 reduces aggregation, indicating positive regulation."
+      - reference: PMID:16359516
+        snippet: "Collagen-induced TxA2 production of the entire cohort was 128.7 +/- 21.6 pg 10(-8) cells, and was significantly correlated with platelet aggregation (Spearman's correlation coefficient = 0.44; P < 0.0001)."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "In aspirin-treated patients, residual platelet TXA2 production correlates significantly with platelet aggregation, confirming TXA2 positively regulates aggregation in vivo."
+  - key: contributes to
+    source: GO:0070527
+    target: MESH:D009203
+    evidence:
+      - reference: PMID:2899772
+        snippet: "Aspirin significantly reduced non-fatal reinfarction (1.0% vs 2.0%) and non-fatal stroke (0.3% vs 0.6%), and was not associated with any significant increase in cerebral haemorrhage or in bleeds requiring transfusion."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "ISIS-2 landmark trial (n=17,187): aspirin — whose principal action is inhibition of platelet aggregation — halved non-fatal MI reinfarction, demonstrating that platelet aggregation contributes to MI."
+      - reference: PMID:2500270
+        snippet: "These finding suggest that platelet aggregation limits the response to coronary thrombolysis and that platelet activation in this setting is partly TXA2-dependent."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Canine coronary thrombosis model showing platelet aggregation drives coronary thrombosis — the proximate pathophysiologic cause of myocardial infarction."
+references:
+  - https://go.drugbank.com/drugs/DB00945#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P23219#function

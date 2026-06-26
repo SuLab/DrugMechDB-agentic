@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00921_MESH_D059350_2
+  disease: Chronic Pain
+  disease_mesh: MESH:D059350
+  drug: Buprenorphine
+  drug_mesh: MESH:D002047
+  drugbank: DB:DB00921
+links:
+  - key: decreases activity of
+    source: MESH:D002047
+    target: UniProt:P41145
+  - key: regulates
+    source: UniProt:P41145
+    target: GO:0019233
+  - key: positively correlated with
+    source: GO:0019233
+    target: HP:0012531
+  - key: positively correlated with
+    source: HP:0012531
+    target: MESH:D059350
+multigraph: true
+nodes:
+  - id: MESH:D002047
+    label: Drug
+    name: Buprenorphine
+  - id: UniProt:P41145
+    label: Protein
+    name: Kappa-type opioid receptor
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: sensory perception of pain
+  - id: HP:0012531
+    label: PhenotypicFeature
+    name: Pain
+  - id: MESH:D059350
+    label: Disease
+    name: Chronic Pain
+references:
+  - https://go.drugbank.com/drugs/DB00921#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P41145#function
+  - https://en.wikipedia.org/wiki/%CE%9A-opioid_receptor
+  - https://en.wikipedia.org/wiki/Chronic_pain

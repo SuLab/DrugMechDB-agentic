@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB01126_MESH_D011470_2
+  disease: Benign prostatic hyperplasia
+  disease_mesh: MESH:D011470
+  drug: Finasteride
+  drug_mesh: MESH:D018120
+  drugbank: DB:DB01126
+links:
+  - key: decreases activity of
+    source: MESH:D018120
+    target: UniProt:P31213
+  - key: increases abundance of
+    source: UniProt:P31213
+    target: MESH:D013196
+  - key: positively correlated with
+    source: MESH:D013196
+    target: MESH:D011470
+multigraph: true
+nodes:
+  - id: MESH:D018120
+    label: Drug
+    name: Finasteride
+  - id: UniProt:P31213
+    label: Protein
+    name: 3-oxo-5-alpha-steroid 4-dehydrogenase 2
+  - id: MESH:D013196
+    label: ChemicalSubstance
+    name: Dihydrotestosterone
+  - id: MESH:D011470
+    label: Disease
+    name: Benign prostatic hyperplasia
+references:
+  - https://go.drugbank.com/drugs/DB01216

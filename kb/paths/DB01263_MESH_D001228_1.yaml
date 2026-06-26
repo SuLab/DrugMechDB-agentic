@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB01263_MESH_D001228_1
+  disease: Aspergillosis
+  disease_mesh: MESH:D001228
+  drug: posaconazole
+  drug_mesh: MESH:C101425
+  drugbank: DB:DB01263
+links:
+  - key: decreases activity of
+    source: MESH:C101425
+    target: UniProt:B8N2C8
+  - key: positively regulates
+    source: UniProt:B8N2C8
+    target: GO:0006696
+  - key: precedes
+    source: GO:0006696
+    target: GO:0042546
+  - key: occurs in
+    source: GO:0042546
+    target: taxonomy:5052
+  - key: causes
+    source: taxonomy:5052
+    target: MESH:D001228
+multigraph: true
+nodes:
+  - id: MESH:C101425
+    label: Drug
+    name: Posaconazole
+  - id: UniProt:B8N2C8
+    label: Protein
+    name: Lanosterol 14-alpha demethylase (Aspergillus flavus)
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: Ergosterol biosynthetic process
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: Cell wall biogenesis
+  - id: taxonomy:5052
+    label: OrganismTaxon
+    name: Aspergillus
+  - id: MESH:D001228
+    label: Disease
+    name: Aspergillosis
+references:
+  - https://go.drugbank.com/drugs/DB01263#BE0000233

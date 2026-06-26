@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB13140_MESH_D003015_1
+  disease: Clostridium difficile infection
+  disease_mesh: MESH:D003015
+  drug: bezlotoxumab
+  drug_mesh: MESH:C000613978
+  drugbank: DB:DB13140
+links:
+  - key: decreases activity of
+    source: MESH:C000613978
+    target: UniProt:P18177
+  - key: produced by
+    source: UniProt:P18177
+    target: taxonomy:1496
+  - key: causes
+    source: taxonomy:1496
+    target: MESH:D003015
+multigraph: true
+nodes:
+  - id: MESH:C000613978
+    label: Drug
+    name: Bezlotoxumab
+  - id: UniProt:P18177
+    label: Protein
+    name: Toxin B
+  - id: taxonomy:1496
+    label: OrganismTaxon
+    name: Clostridioides difficile
+  - id: MESH:D003015
+    label: Disease
+    name: Clostridium difficile infection
+references:
+  - https://go.drugbank.com/drugs/DB13140#BE0008671

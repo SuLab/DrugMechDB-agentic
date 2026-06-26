@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00759_MESH_D011014_1
+  disease: Pneumonia
+  disease_mesh: MESH:D011014
+  drug: tetracycline
+  drug_mesh: MESH:D013752
+  drugbank: DB:DB00759
+links:
+  - key: disrupts
+    source: MESH:D013752
+    target: GO:0044391
+  - key: location of
+    source: GO:0044391
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D011014
+multigraph: true
+nodes:
+  - id: MESH:D013752
+    label: Drug
+    name: tetracycline
+  - id: GO:0044391
+    label: CellularComponent
+    name: ribosomal subunit
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D011014
+    label: Disease
+    name: Pneumonia
+references:
+  - https://en.wikipedia.org/wiki/Tetracycline#Mechanism_of_action

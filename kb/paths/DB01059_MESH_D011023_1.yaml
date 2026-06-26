@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01059_MESH_D011023_1
+  disease: Pneumonia, Staphylococcal
+  disease_mesh: MESH:D011023
+  drug: norfloxacin
+  drug_mesh: MESH:D009643
+  drugbank: DB:DB01059
+links:
+  - key: decreases activity of
+    source: MESH:D009643
+    target: UniProt:Q2G2Q0
+  - key: decreases activity of
+    source: MESH:D009643
+    target: UniProt:Q2FYS4
+  - key: positively regulates
+    source: UniProt:Q2G2Q0
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:Q2FYS4
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D011023
+multigraph: true
+nodes:
+  - id: MESH:D009643
+    label: Drug
+    name: norfloxacin
+  - id: UniProt:Q2G2Q0
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:Q2FYS4
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D011023
+    label: Disease
+    name: Pneumonia, Staphylococcal
+references:
+  - https://go.drugbank.com/drugs/DB01059#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q2G2Q0#function
+  - https://www.uniprot.org/uniprot/Q2FYS4#function
+  - https://en.wikipedia.org/wiki/Staphylococcal_infection

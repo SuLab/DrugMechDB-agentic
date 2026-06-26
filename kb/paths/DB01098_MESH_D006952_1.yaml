@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DB01098_MESH_D006952_1
+  disease: Familial type 3 hyperlipoproteinemia
+  disease_mesh: MESH:D006952
+  drug: Rosuvastatin
+  drug_mesh: MESH:D000068718
+  drugbank: DB:DB01098
+links:
+  - key: decreases activity of
+    source: MESH:D000068718
+    target: UniProt:P04035
+  - key: positively regulates
+    source: UniProt:P04035
+    target: GO:0006695
+  - key: increases abundance of
+    source: GO:0006695
+    target: MESH:D002784
+  - key: positively correlated with
+    source: MESH:D002784
+    target: MESH:D006952
+  - key: increases activity of
+    source: MESH:D000068718
+    target: UniProt:P01130
+  - key: positively regulates
+    source: UniProt:P01130
+    target: GO:0034383
+  - key: decreases abundance of
+    source: GO:0034383
+    target: MESH:D008077
+  - key: positively correlated with
+    source: MESH:D008077
+    target: MESH:D006952
+multigraph: true
+nodes:
+  - id: MESH:D000068718
+    label: Drug
+    name: Rosuvastatin
+  - id: UniProt:P04035
+    label: Protein
+    name: 3-hydroxy-3-methylglutaryl-coenzyme A reductase
+  - id: GO:0006695
+    label: BiologicalProcess
+    name: Cholesterol biosynthetic process
+  - id: MESH:D002784
+    label: ChemicalSubstance
+    name: Cholesterol
+  - id: UniProt:P01130
+    label: Protein
+    name: Low-density lipoprotein receptor
+  - id: GO:0034383
+    label: BiologicalProcess
+    name: Low-density lipoprotein particle clearance
+  - id: MESH:D008077
+    label: ChemicalSubstance
+    name: Lipoproteins, LDL
+  - id: MESH:D006952
+    label: Disease
+    name: Familial type 3 hyperlipoproteinemia
+references:
+  - https://go.drugbank.com/drugs/DB01098#BE0000574

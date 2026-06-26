@@ -1,0 +1,78 @@
+directed: true
+graph:
+  _id: DB00918_MESH_D008881_1
+  disease: Migraine
+  disease_mesh: MESH:D008881
+  drug: almotriptan
+  drug_mesh: MESH:C409045
+  drugbank: DB:DB00918
+links:
+  - key: increases activity of
+    source: MESH:C409045
+    target: UniProt:P28222
+  - key: increases activity of
+    source: MESH:C409045
+    target: UniProt:P28221
+  - key: positively regulates
+    source: UniProt:P28222
+    target: GO:0042310
+  - key: negatively regulates
+    source: GO:0042310
+    target: MESH:D010146
+  - key: positively correlated with
+    source: MESH:D010146
+    target: MESH:D008881
+  - key: negatively regulates
+    source: UniProt:P28222
+    target: MESH:D020078
+  - key: negatively regulates
+    source: UniProt:P28221
+    target: MESH:D020078
+  - key: positively correlated with
+    source: MESH:D020078
+    target: MESH:D008881
+  - key: decreases activity of
+    source: UniProt:P28222
+    target: UBERON:0001645
+  - key: decreases activity of
+    source: UniProt:P28221
+    target: UBERON:0001645
+  - key: participates in
+    source: UBERON:0001645
+    target: GO:0019233
+  - key: positively correlated with
+    source: GO:0019233
+    target: MESH:D008881
+multigraph: true
+nodes:
+  - id: MESH:C409045
+    label: Drug
+    name: Almotriptan
+  - id: UniProt:P28222
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1B
+  - id: UniProt:P28221
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1D
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D020078
+    label: Disease
+    name: Neurogenic Inflammation
+  - id: UBERON:0001645
+    label: GrossAnatomicalStructure
+    name: Trigeminal nerve
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: Sensory perception of pain
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+  - id: MESH:D008881
+    label: Disease
+    name: Migraine
+references:
+  - https://go.drugbank.com/drugs/DB00918
+  - https://pubmed.ncbi.nlm.nih.gov/16099727/
+  - https://pubmed.ncbi.nlm.nih.gov/27312704/

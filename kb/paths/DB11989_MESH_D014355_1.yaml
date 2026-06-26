@@ -1,0 +1,41 @@
+comment: Tinidazole is a prodrug
+directed: true
+graph:
+  _id: DB11989_MESH_D014355_1
+  disease: Infection by Trypanosoma cruzi
+  disease_mesh: MESH:D014355
+  drug: benznidazole
+  drug_mesh: MESH:C009999
+  drugbank: DB:DB11989
+links:
+  - key: positively regulates
+    source: MESH:C009999
+    target: GO:0000305
+  - key: disrupts
+    source: GO:0000305
+    target: MESH:D004247
+  - key: in taxon
+    source: MESH:D004247
+    target: taxonomy:5693
+  - key: causes
+    source: taxonomy:5693
+    target: MESH:D014355
+multigraph: true
+nodes:
+  - id: MESH:C009999
+    label: Drug
+    name: Benznidazole
+  - id: GO:0000305
+    label: BiologicalProcess
+    name: Response to oxygen radical
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: taxonomy:5693
+    label: OrganismTaxon
+    name: Trypanosoma cruzi
+  - id: MESH:D014355
+    label: Disease
+    name: Infection by Trypanosoma cruzi
+references:
+  - https://go.drugbank.com/drugs/DB11989

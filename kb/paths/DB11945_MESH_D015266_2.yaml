@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB11945_MESH_D015266_2
+  disease: Merkel cell carcinoma
+  disease_mesh: MESH:D015266
+  drug: Avelumab
+  drug_mesh: MESH:C000609138
+  drugbank: DB:DB11945
+links:
+  - key: decreases activity of
+    source: MESH:C000609138
+    target: UniProt:Q9NZQ7
+  - key: negatively regulates
+    source: UniProt:Q9NZQ7
+    target: GO:0042098
+  - key: negatively regulates
+    source: UniProt:Q9NZQ7
+    target: GO:0042110
+  - key: positively correlated with
+    source: GO:0042098
+    target: GO:0002424
+  - key: positively correlated with
+    source: GO:0042110
+    target: GO:0002424
+  - key: negatively correlated with
+    source: GO:0002424
+    target: MESH:D015266
+multigraph: true
+nodes:
+  - id: MESH:C000609138
+    label: Drug
+    name: Avelumab
+  - id: UniProt:Q9NZQ7
+    label: Protein
+    name: Programmed cell death 1 ligand 1
+  - id: GO:0042098
+    label: BiologicalProcess
+    name: T cell proliferation
+  - id: GO:0042110
+    label: BiologicalProcess
+    name: T cell activation
+  - id: GO:0002424
+    label: BiologicalProcess
+    name: T cell mediated immune response to tumor cell
+  - id: MESH:D015266
+    label: Disease
+    name: Merkel cell carcinoma
+references:
+  - https://go.drugbank.com/drugs/DB11945
+  - https://en.wikipedia.org/wiki/Avelumab

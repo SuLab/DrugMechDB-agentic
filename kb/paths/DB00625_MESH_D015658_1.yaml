@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB00625_MESH_D015658_1
+  disease: HIV Infections
+  disease_mesh: MESH:D015658
+  drug: efavirenz
+  drug_mesh: MESH:C098320
+  drugbank: DB:DB00625
+links:
+  - key: decreases activity of
+    source: MESH:C098320
+    target: UniProt:Q72547
+  - key: positively regulates
+    source: UniProt:Q72547
+    target: GO:0039688
+  - key: in taxon
+    source: GO:0039688
+    target: taxonomy:11676
+  - key: causes
+    source: taxonomy:11676
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:C098320
+    label: Drug
+    name: efavirenz
+  - id: UniProt:Q72547
+    label: Protein
+    name: Reverse transcriptase/RNaseH
+  - id: GO:0039688
+    label: BiologicalProcess
+    name: viral double stranded DNA replication via reverse transcription
+  - id: taxonomy:11676
+    label: OrganismTaxon
+    name: Human immunodeficiency virus 1
+  - id: MESH:D015658
+    label: Disease
+    name: HIV Infections
+references:
+  - https://go.drugbank.com/drugs/DB00625#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q72547#function
+  - https://en.wikipedia.org/wiki/HIV/AIDS

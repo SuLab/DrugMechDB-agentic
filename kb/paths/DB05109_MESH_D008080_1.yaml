@@ -1,0 +1,74 @@
+directed: true
+graph:
+  _id: DB05109_MESH_D008080_1
+  disease: Liposarcoma
+  disease_mesh: MESH:D008080
+  drug: Trabectedin
+  drug_mesh: MESH:C099150
+  drugbank: DB:DB05109
+links:
+  - key: negatively regulates
+    source: MESH:C099150
+    target: GO:0006283
+  - key: decreases activity of
+    source: MESH:C099150
+    target: UniProt:P08183
+  - key: negatively regulates
+    source: MESH:C099150
+    target: GO:0007049
+  - key: disrupts
+    source: MESH:C099150
+    target: MESH:D004247
+  - key: positively regulates
+    source: GO:0006283
+    target: GO:0006281
+  - key: positively regulates
+    source: UniProt:P08183
+    target: HP:0020174
+  - key: positively regulates
+    source: GO:0007049
+    target: GO:0008283
+  - key: occurs in
+    source: MESH:D004247
+    target: MESH:D008080
+  - key: occurs in
+    source: GO:0006281
+    target: MESH:D008080
+  - key: phenotype of
+    source: HP:0020174
+    target: MESH:D008080
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D008080
+multigraph: true
+nodes:
+  - id: MESH:C099150
+    label: Drug
+    name: Trabectedin
+  - id: GO:0006283
+    label: BiologicalProcess
+    name: Transcription-coupled nucleotide-excision repair
+  - id: UniProt:P08183
+    label: Protein
+    name: ATP-dependent translocase ABCB1
+  - id: GO:0007049
+    label: BiologicalProcess
+    name: Cell cycle
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0006281
+    label: BiologicalProcess
+    name: DNA repair
+  - id: HP:0020174
+    label: PhenotypicFeature
+    name: Refractory drug response
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: MESH:D008080
+    label: Disease
+    name: Liposarcoma
+references:
+  - https://en.wikipedia.org/wiki/Trabectedin#Mechanism_of_action
+  - https://go.drugbank.com/drugs/DB05109

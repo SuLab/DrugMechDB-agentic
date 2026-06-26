@@ -1,0 +1,52 @@
+comment: Fenofibrate is pharmacologically inactive prodrug which undergoes rapid hydrolysis
+  at the ester bond to form the active metabolite fenofibric acid.
+directed: true
+graph:
+  _id: DB01039_MESH_D006937_1
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+  drug: fenofibrate
+  drug_mesh: MESH:D011345
+  drugbank: DB:DB01039
+links:
+  - key: has metabolite
+    source: MESH:D011345
+    target: MESH:C006012
+  - key: increases activity of
+    source: MESH:C006012
+    target: UniProt:Q07869
+  - key: increases abundance of
+    source: UniProt:Q07869
+    target: MESH:D008075
+  - key: decreases abundance of
+    source: UniProt:Q07869
+    target: MESH:D015243
+  - key: negatively correlated with
+    source: MESH:D008075
+    target: MESH:D006937
+  - key: positively correlated with
+    source: MESH:D015243
+    target: MESH:D006937
+multigraph: true
+nodes:
+  - id: MESH:D011345
+    label: Drug
+    name: Fenofibrate
+  - id: MESH:C006012
+    label: Drug
+    name: Fenofibric acid
+  - id: UniProt:Q07869
+    label: Protein
+    name: Peroxisome proliferator-activated receptor alpha
+  - id: MESH:D008075
+    label: ChemicalSubstance
+    name: Lipoproteins, HDL
+  - id: MESH:D015243
+    label: ChemicalSubstance
+    name: Cholesterol, VLDL
+  - id: MESH:D006937
+    label: Disease
+    name: Hypercholesterolemia
+references:
+  - https://go.drugbank.com/drugs/DB01039#BE0000071
+  - https://pubmed.ncbi.nlm.nih.gov/29760790/

@@ -1,0 +1,83 @@
+directed: true
+graph:
+  _id: DB00563_MESH_D002051_1
+  disease: Burkitt's lymphoma
+  disease_mesh: MESH:D002051
+  drug: methotrexate
+  drug_mesh: MESH:D008727
+  drugbank: DB:DB00563
+links:
+  - key: decreases activity of
+    source: MESH:D008727
+    target: UniProt:P04818
+  - key: decreases activity of
+    source: MESH:D008727
+    target: UniProt:P00374
+  - key: participates in
+    source: UniProt:P04818
+    target: GO:0046105
+  - key: participates in
+    source: UniProt:P00374
+    target: GO:0046105
+  - key: precedes
+    source: GO:0046105
+    target: GO:0071897
+  - key: decreases activity of
+    source: MESH:D008727
+    target: UniProt:P31939
+  - key: participates in
+    source: UniProt:P31939
+    target: GO:0042451
+  - key: precedes
+    source: GO:0042451
+    target: GO:0032774
+  - key: part of
+    source: GO:0032774
+    target: GO:0008283
+  - key: part of
+    source: GO:0071897
+    target: GO:0008283
+  - key: located in
+    source: GO:0008283
+    target: CL:0001064
+  - key: positively correlated with
+    source: CL:0001064
+    target: MESH:D002051
+multigraph: true
+nodes:
+  - id: MESH:D008727
+    label: Drug
+    name: methotrexate
+  - id: UniProt:P04818
+    label: Protein
+    name: Thymidylate synthase
+  - id: UniProt:P00374
+    label: Protein
+    name: Dihydrofolate reductase
+  - id: GO:0046105
+    label: BiologicalProcess
+    name: Thymidine biosynthetic process
+  - id: UniProt:P31939
+    label: Protein
+    name: Bifunctional purine biosynthesis protein ATIC
+  - id: GO:0042451
+    label: BiologicalProcess
+    name: Purine nucleoside biosynthetic process
+  - id: GO:0071897
+    label: BiologicalProcess
+    name: DNA biosynthetic process
+  - id: GO:0032774
+    label: BiologicalProcess
+    name: RNA biosynthetic process
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: CL:0001064
+    label: Cell
+    name: cancer cell
+  - id: MESH:D002051
+    label: Disease
+    name: Burkitt's lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB00563#BE0000330
+  - https://en.wikipedia.org/wiki/Methotrexate

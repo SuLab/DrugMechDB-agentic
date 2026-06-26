@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00494_MESH_D010300_1
+  disease: Parkinson's disease
+  disease_mesh: MESH:D010300
+  drug: entacapone
+  drug_mesh: MESH:C071192
+  drugbank: DB:DB00494
+links:
+  - key: negatively regulates
+    source: MESH:C071192
+    target: UniProt:P21964
+  - key: positively regulates
+    source: UniProt:P21964
+    target: GO:0102084
+  - key: decreases abundance of
+    source: GO:0102084
+    target: CHEBI:15765
+  - key: positively correlated with
+    source: CHEBI:15765
+    target: GO:0001963
+  - key: negatively correlated with
+    source: GO:0001963
+    target: MESH:D010300
+multigraph: true
+nodes:
+  - id: MESH:C071192
+    label: Drug
+    name: entacapone
+  - id: UniProt:P21964
+    label: Protein
+    name: Catechol O-methyltransferase
+  - id: GO:0102084
+    label: MolecularActivity
+    name: L-dopa O-methyltransferase activity
+  - id: CHEBI:15765
+    label: ChemicalSubstance
+    name: L-dopa
+  - id: GO:0001963
+    label: BiologicalProcess
+    name: synaptic transmission, dopaminergic
+  - id: MESH:D010300
+    label: Disease
+    name: Parkinson's disease
+references:
+  - https://go.drugbank.com/drugs/DB00494#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Entacapone#Mechanism_of_action

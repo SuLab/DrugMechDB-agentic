@@ -1,0 +1,51 @@
+comment: Exactly how auranofin works is not well understood
+directed: true
+graph:
+  _id: DB00995_MESH_D001172_1
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: Auranofin
+  drug_mesh: MESH:D001310
+  drugbank: DB:DB00995
+links:
+  - key: decreases activity of
+    source: MESH:D001310
+    target: UniProt:O14920
+  - key: negatively regulates
+    source: MESH:D001310
+    target: CL:0000235
+  - key: positively regulates
+    source: UniProt:O14920
+    target: GO:0006955
+  - key: participates in
+    source: CL:0000235
+    target: GO:0006955
+  - key: positively correlated with
+    source: GO:0006955
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:D001310
+    label: Drug
+    name: Auranofin
+  - id: UniProt:O14920
+    label: Protein
+    name: Inhibitor of nuclear factor kappa-B kinase subunit beta
+  - id: CL:0000235
+    label: Cell
+    name: Macrophage
+  - id: GO:0006955
+    label: BiologicalProcess
+    name: Immune response
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://www.sciencedirect.com/topics/chemistry/auranofin
+  - https://go.drugbank.com/drugs/DB00995

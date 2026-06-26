@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00755_MESH_D015473_1
+  disease: Acute promyelocytic leukemia, FAB M3
+  disease_mesh: MESH:D015473
+  drug: tretinoin
+  drug_mesh: MESH:D014212
+  drugbank: DB:DB00755
+links:
+  - key: increases activity of
+    source: MESH:D014212
+    target: UniProt:P10276
+  - key: increases activity of
+    source: MESH:D014212
+    target: UniProt:P13631
+  - key: increases activity of
+    source: MESH:D014212
+    target: UniProt:P10826
+  - key: negatively correlated with
+    source: UniProt:P10276
+    target: GO:0008283
+  - key: negatively correlated with
+    source: UniProt:P13631
+    target: GO:0008283
+  - key: negatively correlated with
+    source: UniProt:P10826
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D015473
+multigraph: true
+nodes:
+  - id: MESH:D014212
+    label: Drug
+    name: tretinoin
+  - id: UniProt:P10276
+    label: Protein
+    name: Retinoic acid receptor alpha
+  - id: UniProt:P10826
+    label: Protein
+    name: Retinoic acid receptor beta
+  - id: UniProt:P13631
+    label: Protein
+    name: Retinoic acid receptor gamma
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: MESH:D015473
+    label: Disease
+    name: Acute promyelocytic leukemia, FAB M3
+references:
+  - https://go.drugbank.com/drugs/DB00755
+  - https://en.wikipedia.org/wiki/Tretinoin#Mechanism_of_action

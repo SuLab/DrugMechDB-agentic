@@ -1,0 +1,38 @@
+comment: The exact mechanism of action of sodium oxybate for treating narcolepsy and
+  cataplexy is not known but is is hypothesised that its therapeutic effects are due
+  to GABA(B) effects on noradrenergic, dopaminaergic and thalamocorticol neurons.
+directed: true
+graph:
+  _id: DB09072_MESH_D009290_1
+  disease: Cataplexy and narcolepsy
+  disease_mesh: MESH:D009290
+  drug: sodium oxybate
+  drug_mesh: MESH:D012978
+  drugbank: DB:DB09072
+links:
+  - key: increases activity of
+    source: MESH:D012978
+    target: UniProt:Q9UBS5
+  - key: participates in
+    source: UniProt:Q9UBS5
+    target: GO:0016917
+  - key: treats
+    source: GO:0016917
+    target: MESH:D009290
+multigraph: true
+nodes:
+  - id: MESH:D012978
+    label: Drug
+    name: Sodium oxybate
+  - id: GO:0016917
+    label: MolecularActivity
+    name: GABA receptor activity
+  - id: UniProt:Q9UBS5
+    label: Protein
+    name: Gamma-aminobutyric acid type B receptor subunit 1
+  - id: MESH:D009290
+    label: Disease
+    name: Cataplexy and narcolepsy
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200682/
+  - https://go.drugbank.com/drugs/DB09072

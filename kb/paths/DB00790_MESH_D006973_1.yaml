@@ -1,0 +1,57 @@
+comment: Perindopril is a nonsulfhydryl prodrug of perindoprilat, which is used to
+  treat hypertension.
+directed: true
+graph:
+  _id: DB00790_MESH_D006973_1
+  disease: Hypertension
+  disease_mesh: MESH:D006973
+  drug: Perindopril
+  drug_mesh: MESH:D020913
+  drugbank: DB:DB00790
+links:
+  - key: has metabolite
+    source: MESH:D020913
+    target: MESH:C053500
+  - key: decreases activity of
+    source: MESH:C053500
+    target: UniProt:P12821
+  - key: produces
+    source: UniProt:P12821
+    target: MESH:D000804
+  - key: positively regulates
+    source: MESH:D000804
+    target: GO:0042310
+  - key: contributes to
+    source: GO:0042310
+    target: HP:0032263
+  - key: positively correlated with
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D020913
+    label: Drug
+    name: Perindopril
+  - id: MESH:C053500
+    label: ChemicalSubstance
+    name: perindoprilat
+  - id: UniProt:P12821
+    label: Protein
+    name: Angiotensin-converting enzyme
+  - id: MESH:D000804
+    label: ChemicalSubstance
+    name: Angiotensin II
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertension
+references:
+  - https://go.drugbank.com/drugs/DB00790#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Perindopril
+  - https://www.uniprot.org/uniprot/P12821#function
+  - https://en.wikipedia.org/wiki/Hypertension

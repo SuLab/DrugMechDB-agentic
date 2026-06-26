@@ -1,0 +1,74 @@
+directed: true
+multigraph: true
+graph:
+  _id: P22_DB00065_MESH_D003424
+  drug: Infliximab
+  drug_mesh: MESH:D000069285
+  drugbank: DB:DB00065
+  disease: Crohn's disease
+  disease_mesh: MESH:D003424
+nodes:
+  - id: MESH:D000069285
+    name: Infliximab
+    label: Drug
+  - id: UniProt:P01375
+    name: Tumor necrosis factor
+    label: Protein
+  - id: GO:0038061
+    name: NIK/NF-kappaB signaling
+    label: BiologicalProcess
+  - id: GO:0006954
+    name: inflammatory response
+    label: BiologicalProcess
+  - id: MESH:D003424
+    name: Crohn's disease
+    label: Disease
+links:
+  - key: molecularly interacts with
+    source: MESH:D000069285
+    target: UniProt:P01375
+    evidence:
+      - reference: PMID:34478145
+        snippet: "The mechanism of action (MOA) of infliximab involves its binding to soluble (s) and membrane (m) TNFα."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Infliximab's MoA is defined by its physical binding to both soluble and membrane-bound TNF-α, establishing a direct molecular interaction between the drug and its target protein."
+  - key: decreases activity of
+    source: MESH:D000069285
+    target: UniProt:P01375
+    evidence:
+      - reference: PMID:33614645
+        snippet: "Infliximab, adalimumab, and other anti-TNF antibodies neutralize TNFα, preventing interactions with its receptors and reducing the inflammatory response."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Infliximab neutralizes TNF-α, preventing it from engaging its receptors. Neutralization is equivalent to decreasing TNF-α functional activity."
+  - key: positively regulates
+    source: UniProt:P01375
+    target: GO:0038061
+    evidence:
+      - reference: PMID:33601000
+        snippet: "TNF-α activated the nuclear factor-κB (NF-κB) pathway, as confirmed by IκB-α degradation, and phosphorylation and nuclear migration of NF-κB p65."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "TNF-α directly activates NF-κB signaling (GO:0038061 NIK/NF-κB signaling), as shown by IκB-α degradation and NF-κB p65 nuclear translocation upon TNF-α stimulation."
+  - key: positively regulates
+    source: GO:0038061
+    target: GO:0006954
+    evidence:
+      - reference: PMID:42148126
+        snippet: "NF-κB signalling mediates intestinal inflammatory responses at different levels including cytokine secretion, inflammasome signalling, the recruiting of immune cells and antibody production."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "NF-κB signaling positively regulates the inflammatory response by driving cytokine secretion, inflammasome activation, and immune cell recruitment in the intestinal mucosa."
+  - key: contributes to
+    source: GO:0006954
+    target: MESH:D003424
+    evidence:
+      - reference: PMID:42148126
+        snippet: "a dysregulated NF-κB signalling appears often in multiple chronic intestinal inflammatory conditions, such as Crohn's Disease (CD) and Ulcerative Colitis (UC), Celiac Disease (CeD) or microscopic colitis."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Chronic intestinal inflammatory response, driven by dysregulated NF-κB signaling, is a hallmark of Crohn's disease, establishing the inflammatory response as a contributor to CD pathogenesis."
+references:
+  - https://go.drugbank.com/drugs/DB00065#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P01375#function

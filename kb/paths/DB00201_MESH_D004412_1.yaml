@@ -1,0 +1,66 @@
+directed: true
+graph:
+  _id: DB00201_MESH_D004412_1
+  disease: Dysmenorrhea
+  disease_mesh: MESH:D004412
+  drug: caffeine
+  drug_mesh: MESH:D002110
+  drugbank: DB:DB00201
+links:
+  - key: decreases activity of
+    source: MESH:D002110
+    target: InterPro:IPR001634
+  - key: decreases activity of
+    source: MESH:D002110
+    target: InterPro:IPR023088
+  - key: positively regulates
+    source: InterPro:IPR001634
+    target: GO:0006954
+  - key: positively regulates
+    source: InterPro:IPR023088
+    target: GO:0006198
+  - key: decreases abundance of
+    source: GO:0006198
+    target: MESH:D000242
+  - key: negatively correlated with
+    source: MESH:D000242
+    target: GO:0006954
+  - key: has phenotype
+    source: GO:0006954
+    target: HP:0012531
+  - key: positively correlated with
+    source: HP:0012531
+    target: MESH:D004412
+multigraph: true
+nodes:
+  - id: MESH:D002110
+    label: Drug
+    name: caffeine
+  - id: InterPro:IPR001634
+    label: GeneFamily
+    name: Adenosine receptor
+  - id: InterPro:IPR023088
+    label: GeneFamily
+    name: 3'5'-cyclic nucleotide phosphodiesterase
+  - id: GO:0006198
+    label: BiologicalProcess
+    name: cAMP catabolic process
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: Cyclic AMP
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0012531
+    label: PhenotypicFeature
+    name: Pain
+  - id: MESH:D004412
+    label: Disease
+    name: Dysmenorrhea
+references:
+  - https://go.drugbank.com/drugs/DB00201#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Caffeine
+  - https://en.wikipedia.org/wiki/Adenosine_receptor
+  - https://en.wikipedia.org/wiki/Cyclic_nucleotide_phosphodiesterase
+  - https://pubmed.ncbi.nlm.nih.gov/17397885/
+  - https://en.wikipedia.org/wiki/Dysmenorrhea

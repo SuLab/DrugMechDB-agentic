@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB01036_MESH_D053202_1
+  disease: Urge Incontinence
+  disease_mesh: MESH:D053202
+  drug: tolterodine
+  drug_mesh: MESH:D000068737
+  drugbank: DB:DB01036
+links:
+  - key: decreases activity of
+    source: MESH:D000068737
+    target: UniProt:P20309
+  - key: positively regulates
+    source: UniProt:P20309
+    target: GO:0014832
+  - key: positively regulates
+    source: GO:0014832
+    target: GO:0060073
+  - key: positively correlated with
+    source: GO:0060073
+    target: MESH:D053202
+multigraph: true
+nodes:
+  - id: MESH:D000068737
+    label: Drug
+    name: Tolterodine
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:0014832
+    label: BiologicalProcess
+    name: Urinary bladder smooth muscle contraction
+  - id: GO:0060073
+    label: BiologicalProcess
+    name: Micturition
+  - id: MESH:D053202
+    label: Disease
+    name: Urge Incontinence
+references:
+  - https://en.wikipedia.org/wiki/Urinary_incontinence
+  - https://go.drugbank.com/drugs/DB01036

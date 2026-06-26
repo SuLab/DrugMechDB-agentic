@@ -1,0 +1,48 @@
+comment: Tolvaptan is also known as aquaretic (https://en.wikipedia.org/wiki/Aquaretic).
+  Note that hyponatremia corresponds to the state where water content is relatively
+  large for the sodium content available (https://pubmed.ncbi.nlm.nih.gov/19322975/),
+  which is possibly due to increased water reabsorption. There are different types
+  of hyponatremia, and medications like tolvaptan should only be used in those patients
+  with high volume or normal volume hyponatremia (https://en.wikipedia.org/wiki/Hyponatremia#Medications).
+directed: true
+graph:
+  _id: DB06212_MESH_D007010_1
+  disease: Hyponatremia
+  disease_mesh: MESH:D007010
+  drug: tolvaptan
+  drug_mesh: MESH:C116664
+  drugbank: DB:DB06212
+links:
+  - key: negatively regulates
+    source: MESH:C116664
+    target: UniProt:P30518
+  - key: participates in
+    source: UniProt:P30518
+    target: reactome:R-HSA-432040
+  - key: positively regulates
+    source: reactome:R-HSA-432040
+    target: GO:0070295
+  - key: positively correlated with
+    source: GO:0070295
+    target: MESH:D007010
+multigraph: true
+nodes:
+  - id: MESH:C116664
+    label: Drug
+    name: tolvaptan
+  - id: UniProt:P30518
+    label: Protein
+    name: Vasopressin V2 receptor
+  - id: reactome:R-HSA-432040
+    label: Pathway
+    name: Vasopressin regulates renal water homeostasis via Aquaporins
+  - id: GO:0070295
+    label: BiologicalProcess
+    name: renal water absorption
+  - id: MESH:D007010
+    label: Disease
+    name: Hyponatremia
+references:
+  - https://go.drugbank.com/drugs/DB06212#mechanism-of-action
+  - https://pubmed.ncbi.nlm.nih.gov/20868352/
+  - https://en.wikipedia.org/wiki/Vasopressin_receptor_antagonist

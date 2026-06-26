@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00578_MESH_D014552_1
+  disease: Urinary Tract Infections
+  disease_mesh: MESH:D014552
+  drug: Carbenicillin
+  drug_mesh: MESH:D002228
+  drugbank: DB:DB00578
+links:
+  - key: decreases activity of
+    source: MESH:D002228
+    target: InterPro:IPR001460
+  - key: participates in
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D014552
+multigraph: true
+nodes:
+  - id: MESH:D002228
+    label: Drug
+    name: Carbenicillin
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D014552
+    label: Disease
+    name: Urinary Tract Infections
+references:
+  - https://go.drugbank.com/drugs/DB00578#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Urinary_tract_infection

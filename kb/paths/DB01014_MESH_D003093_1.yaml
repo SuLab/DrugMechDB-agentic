@@ -1,0 +1,132 @@
+comment: Balsalazide is a prodrug and it releases mesalazine in the large intestine,
+  the active site of ulcerative colitis (https://en.wikipedia.org/wiki/Balsalazide
+  https://en.wikipedia.org/wiki/Mesalazine#Chemistry).
+directed: true
+graph:
+  _id: DB01014_MESH_D003093_1
+  disease: Ulcerative colitis
+  disease_mesh: MESH:D003093
+  drug: balsalazide
+  drug_mesh: MESH:C038637
+  drugbank: DB:DB01014
+links:
+  - key: has metabolite
+    source: MESH:C038637
+    target: MESH:D019804
+  - key: decreases activity of
+    source: MESH:D019804
+    target: UniProt:P35354
+  - key: decreases activity of
+    source: MESH:D019804
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:D019804
+    target: UniProt:O15111
+  - key: decreases activity of
+    source: MESH:D019804
+    target: UniProt:O14920
+  - key: positively regulates
+    source: UniProt:O14920
+    target: GO:0007249
+  - key: positively regulates
+    source: UniProt:O15111
+    target: GO:0007249
+  - key: positively correlated with
+    source: GO:0007249
+    target: GO:0006954
+  - key: decreases activity of
+    source: MESH:D019804
+    target: UniProt:P09917
+  - key: increases activity of
+    source: MESH:D019804
+    target: UniProt:P37231
+  - key: negatively correlated with
+    source: UniProt:P37231
+    target: reactome:R-HSA-1169091
+  - key: positively correlated with
+    source: reactome:R-HSA-1169091
+    target: GO:0006954
+  - key: participates in
+    source: UniProt:P09917
+    target: reactome:R-HSA-2142691
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: participates in
+    source: UniProt:P23219
+    target: reactome:R-HSA-2162123
+  - key: positively correlated with
+    source: reactome:R-HSA-2162123
+    target: GO:0006954
+  - key: positively correlated with
+    source: reactome:R-HSA-2142691
+    target: GO:0006954
+  - key: located in
+    source: GO:0006954
+    target: UBERON:0001052
+  - key: located in
+    source: GO:0006954
+    target: UBERON:0001155
+  - key: location of
+    source: UBERON:0001052
+    target: MESH:D003093
+  - key: location of
+    source: UBERON:0001155
+    target: MESH:D003093
+multigraph: true
+nodes:
+  - id: MESH:C038637
+    label: Drug
+    name: balsalazide
+  - id: MESH:D019804
+    label: ChemicalSubstance
+    name: Mesalamine
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: UniProt:P09917
+    label: Protein
+    name: Polyunsaturated fatty acid 5-lipoxygenase
+  - id: UniProt:P37231
+    label: Protein
+    name: Peroxisome proliferator-activated receptor gamma
+  - id: UniProt:O15111
+    label: Protein
+    name: Inhibitor of nuclear factor kappa-B kinase subunit alpha
+  - id: UniProt:O14920
+    label: Protein
+    name: Inhibitor of nuclear factor kappa-B kinase subunit beta
+  - id: GO:0007249
+    label: BiologicalProcess
+    name: I-kappaB kinase/NF-kappaB signaling
+  - id: reactome:R-HSA-2142691
+    label: Pathway
+    name: Synthesis of Leukotrienes (LT) and Eoxins (EX)
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: reactome:R-HSA-1169091
+    label: Pathway
+    name: Activation of NF-kappaB in B cells
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: UBERON:0001052
+    label: GrossAnatomicalStructure
+    name: rectum
+  - id: UBERON:0001155
+    label: GrossAnatomicalStructure
+    name: colon
+  - id: MESH:D003093
+    label: Disease
+    name: Ulcerative colitis
+references:
+  - https://go.drugbank.com/drugs/DB01014#mechanism-of-action
+  - https://go.drugbank.com/drugs/DB00244#mechanism-of-action
+  - https://pubmed.ncbi.nlm.nih.gov/20151072/
+  - https://go.drugbank.com/drugs/DB00244#BE0004655
+  - https://en.wikipedia.org/wiki/CHUK#Clinical_significance
+  - https://en.wikipedia.org/wiki/IKK2#Clinical_significance

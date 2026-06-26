@@ -1,0 +1,79 @@
+directed: true
+graph:
+  _id: DB00270_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: Isradipine
+  drug_mesh: MESH:D017275
+  drugbank: DB:DB00270
+links:
+  - key: decreases activity of
+    source: MESH:D017275
+    target: InterPro:IPR005446
+  - key: decreases activity of
+    source: MESH:D017275
+    target: InterPro:IPR000584
+  - key: decreases activity of
+    source: MESH:D017275
+    target: InterPro:IPR013680
+  - key: decreases activity of
+    source: MESH:D017275
+    target: UniProt:O95180
+  - key: positively regulates
+    source: InterPro:IPR005446
+    target: GO:0070509
+  - key: positively regulates
+    source: InterPro:IPR000584
+    target: GO:0070509
+  - key: positively regulates
+    source: InterPro:IPR013680
+    target: GO:0070509
+  - key: positively regulates
+    source: UniProt:O95180
+    target: GO:0070509
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0004687
+  - key: positively regulates
+    source: GO:0004687
+    target: GO:0006939
+  - key: positively regulates
+    source: GO:0006939
+    target: GO:0042310
+  - key: affects risk for
+    source: GO:0042310
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D017275
+    label: Drug
+    name: Isradipine
+  - id: InterPro:IPR005446
+    label: GeneFamily
+    name: Voltage-dependent calcium channel, L-type, alpha-1 subunit
+  - id: InterPro:IPR000584
+    label: GeneFamily
+    name: Voltage-dependent L-type calcium channel subunit beta
+  - id: InterPro:IPR013680
+    label: GeneFamily
+    name: Voltage-dependent calcium channel, alpha-2/delta subunit, conserved regio
+  - id: UniProt:O95180
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1H
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Calcium ion import
+  - id: GO:0004687
+    label: BiologicalProcess
+    name: Myosin light chain kinase activity
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: Smooth muscle contraction
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00270#BE0000864

@@ -1,0 +1,77 @@
+comment: Note that this drug is used as a support to the treatment of chronic alcoholism
+  by producing an acute sensitivity to ethanol (as part of an avoidance therapy for
+  alcohol abuse). It's been suggested that disulfiram itself is unlikely responsible
+  for the enzyme inactivation in vivo; several active metabolites of the drug, especially
+  diethylthiomethylcarbamate, inhibits the enzyme in vitro (https://pubchem.ncbi.nlm.nih.gov/compound/3117#section=Mechanism-of-Action).
+directed: true
+graph:
+  _id: DB00822_MESH_D000437_1
+  disease: Alcoholism
+  disease_mesh: MESH:D000437
+  drug: disulfiram
+  drug_mesh: MESH:D004221
+  drugbank: DB:DB00822
+links:
+  - key: negatively regulates
+    source: MESH:D004221
+    target: UniProt:P05091
+  - key: positively regulates
+    source: UniProt:P05091
+    target: GO:0006069
+  - key: decreases abundance of
+    source: GO:0006069
+    target: CHEBI:15343
+  - key: positively correlated with
+    source: CHEBI:15343
+    target: HP:0002017
+  - key: positively correlated with
+    source: CHEBI:15343
+    target: HP:0002098
+  - key: positively correlated with
+    source: CHEBI:15343
+    target: HP:0001033
+  - key: positively correlated with
+    source: CHEBI:15343
+    target: HP:0002098
+  - key: positively correlated with
+    source: CHEBI:15343
+    target: HP:0002017
+  - key: negatively correlated with
+    source: HP:0001033
+    target: MESH:D000437
+  - key: negatively correlated with
+    source: HP:0002098
+    target: MESH:D000437
+  - key: negatively correlated with
+    source: HP:0002017
+    target: MESH:D000437
+multigraph: true
+nodes:
+  - id: MESH:D004221
+    label: Drug
+    name: disulfiram
+  - id: UniProt:P05091
+    label: Protein
+    name: Aldehyde dehydrogenase, mitochondrial
+  - id: CHEBI:15343
+    label: ChemicalSubstance
+    name: acetaldehyde
+  - id: GO:0006069
+    label: BiologicalProcess
+    name: ethanol oxidation
+  - id: HP:0001033
+    label: PhenotypicFeature
+    name: Facial flushing after alcohol intake
+  - id: HP:0002098
+    label: PhenotypicFeature
+    name: Respiratory distress
+  - id: HP:0002017
+    label: PhenotypicFeature
+    name: Nausea and vomiting
+  - id: MESH:D000437
+    label: Disease
+    name: Alcoholism
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL964/
+  - https://en.wikipedia.org/wiki/Disulfiram
+  - https://en.wikipedia.org/wiki/Acetaldehyde#Aggravating_factors

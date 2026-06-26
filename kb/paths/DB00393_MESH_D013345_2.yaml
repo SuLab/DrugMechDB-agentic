@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00393_MESH_D013345_2
+  disease: Subarachnoid intracranial hemorrhage
+  disease_mesh: MESH:D013345
+  drug: nimodipine
+  drug_mesh: MESH:D009553
+  drugbank: DB:DB00393
+links:
+  - key: decreases activity of
+    source: MESH:D009553
+    target: InterPro:IPR031649
+  - key: positively regulates
+    source: InterPro:IPR031649
+    target: GO:0070509
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0006939
+  - key: positively regulates
+    source: GO:0006939
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0025637
+  - key: positively correlated with
+    source: HP:0025637
+    target: MESH:D013345
+multigraph: true
+nodes:
+  - id: MESH:D009553
+    label: Drug
+    name: Nimodipine
+  - id: InterPro:IPR031649
+    label: GeneFamily
+    name: Voltage-dependent L-type calcium channel, IQ-associated domain
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Calcium ion import
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: Smooth muscle contraction
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: HP:0025637
+    label: PhenotypicFeature
+    name: Vasospasm
+  - id: MESH:D013345
+    label: Disease
+    name: Subarachnoid intracranial hemorrhage
+references:
+  - https://en.wikipedia.org/wiki/Nimodipine
+  - https://go.drugbank.com/drugs/DB00393

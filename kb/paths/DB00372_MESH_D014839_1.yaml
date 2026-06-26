@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB00372_MESH_D014839_1
+  disease: Vomiting
+  disease_mesh: MESH:D014839
+  drug: thiethylperazine
+  drug_mesh: MESH:D013847
+  drugbank: DB:DB00372
+links:
+  - key: subclass of
+    source: MESH:D013847
+    target: CHEBI:50919
+  - key: negatively correlated with
+    source: CHEBI:50919
+    target: MESH:D014839
+multigraph: true
+nodes:
+  - id: MESH:D013847
+    label: Drug
+    name: thiethylperazine
+  - id: CHEBI:50919
+    label: ChemicalSubstance
+    name: antiemetic
+  - id: MESH:D014839
+    label: Disease
+    name: Vomiting
+references:
+  - https://en.wikipedia.org/wiki/Thiethylperazine

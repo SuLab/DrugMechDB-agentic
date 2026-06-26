@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00859_MESH_D003555_2
+  disease: Cystinuria
+  disease_mesh: MESH:D003555
+  drug: penicillamine
+  drug_mesh: MESH:D010396
+  drugbank: DB:DB00859
+links:
+  - key: capable of
+    source: MESH:D010396
+    target: GO:0046911
+  - key: decreases abundance of
+    source: GO:0046911
+    target: CHEBI:17376
+  - key: causes
+    source: CHEBI:17376
+    target: HP:0003131
+  - key: manifestation of
+    source: HP:0003131
+    target: MESH:D003555
+multigraph: true
+nodes:
+  - id: MESH:D010396
+    label: Drug
+    name: penicillamine
+  - id: GO:0046911
+    label: MolecularActivity
+    name: metal chelating activity
+  - id: CHEBI:17376
+    label: ChemicalSubstance
+    name: cystine
+  - id: HP:0003131
+    label: PhenotypicFeature
+    name: Cystinuria
+  - id: MESH:D003555
+    label: Disease
+    name: Cystinuria
+references:
+  - https://go.drugbank.com/drugs/DB00859

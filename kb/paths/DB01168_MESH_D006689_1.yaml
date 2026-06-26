@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB01168_MESH_D006689_1
+  disease: Hodgkin's disease
+  disease_mesh: MESH:D006689
+  drug: procarbazine
+  drug_mesh: MESH:D011344
+  drugbank: DB:DB01168
+links:
+  - key: decreases activity of
+    source: MESH:D011344
+    target: GO:0030488
+  - key: participates in
+    source: GO:0030488
+    target: GO:0006412
+  - key: positively correlated with
+    source: GO:0006412
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: CL:0001063
+  - key: positively correlated with
+    source: CL:0001063
+    target: MESH:D006689
+multigraph: true
+nodes:
+  - id: MESH:D011344
+    label: Drug
+    name: procarbazine
+  - id: GO:0030488
+    label: BiologicalProcess
+    name: tRNA methylation
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: CL:0001063
+    label: Cell
+    name: tumor cell
+  - id: MESH:D006689
+    label: Disease
+    name: Hodgkin's disease
+references:
+  - https://go.drugbank.com/drugs/DB01168
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Procarbazine

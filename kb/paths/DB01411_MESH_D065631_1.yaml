@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01411_MESH_D065631_1
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: pranlukast
+  drug_mesh: MESH:C047681
+  drugbank: DB:DB01411
+links:
+  - key: decreases activity of
+    source: MESH:C047681
+    target: UniProt:Q9Y271
+  - key: participates in
+    source: UniProt:Q9Y271
+    target: GO:0061737
+  - key: positively correlated with
+    source: GO:0061737
+    target: GO:0002437
+  - key: positively correlated with
+    source: GO:0002437
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: MESH:C047681
+    label: Drug
+    name: pranlukast
+  - id: UniProt:Q9Y271
+    label: Protein
+    name: Cysteinyl leukotriene receptor 1
+  - id: GO:0061737
+    label: BiologicalProcess
+    name: leukotriene signaling pathway
+  - id: GO:0002437
+    label: BiologicalProcess
+    name: inflammatory response to antigenic stimulus
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB01411

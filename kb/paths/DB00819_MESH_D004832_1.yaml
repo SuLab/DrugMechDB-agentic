@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00819_MESH_D004832_1
+  disease: Absence seizure
+  disease_mesh: MESH:D004832
+  drug: acetazolamide
+  drug_mesh: MESH:D000086
+  drugbank: DB:DB00819
+links:
+  - key: decreases activity of
+    source: MESH:D000086
+    target: UniProt:P00918
+  - key: decreases abundance of
+    source: UniProt:P00918
+    target: MESH:D002245
+  - key: treats
+    source: MESH:D002245
+    target: MESH:D004832
+multigraph: true
+nodes:
+  - id: MESH:D000086
+    label: Drug
+    name: Acetazolamide
+  - id: UniProt:P00918
+    label: Protein
+    name: Carbonic anhydrase 2
+  - id: MESH:D002245
+    label: ChemicalSubstance
+    name: Carbon Dioxide
+  - id: MESH:D004832
+    label: Disease
+    name: Absence seizure
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/8740334/
+  - https://go.drugbank.com/drugs/DB00819

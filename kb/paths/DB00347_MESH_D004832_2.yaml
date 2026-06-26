@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00347_MESH_D004832_2
+  disease: Absence seizure
+  disease_mesh: MESH:D004832
+  drug: trimethadione
+  drug_mesh: MESH:D014293
+  drugbank: DB:DB00347
+links:
+  - key: decreases activity of
+    source: MESH:D014293
+    target: UniProt:O43497
+  - key: positively regulates
+    source: UniProt:O43497
+    target: GO:0007268
+  - key: correlated with
+    source: GO:0007268
+    target: HP:0012535
+  - key: correlated with
+    source: HP:0012535
+    target: HP:0002121
+  - key: positively correlated with
+    source: HP:0002121
+    target: MESH:D004832
+multigraph: true
+nodes:
+  - id: MESH:D014293
+    label: Drug
+    name: trimethadione
+  - id: UniProt:O43497
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1G
+  - id: GO:0007268
+    label: BiologicalProcess
+    name: chemical synaptic transmission
+  - id: HP:0012535
+    label: PhenotypicFeature
+    name: Abnormal synaptic transmission
+  - id: HP:0002121
+    label: PhenotypicFeature
+    name: Generalized non-motor (absence) seizure
+  - id: MESH:D004832
+    label: Disease
+    name: Absence seizure
+references:
+  - https://go.drugbank.com/drugs/DB00347#mechanism-of-action
+comment: This drug is most commonly used to treat epileptic conditions that are resistant
+  to other treatments due to its toxicity (https://en.wikipedia.org/wiki/Trimethadione,
+  https://go.drugbank.com/drugs/DB00347).

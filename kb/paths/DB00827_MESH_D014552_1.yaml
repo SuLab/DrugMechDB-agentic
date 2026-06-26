@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00827_MESH_D014552_1
+  disease: Urinary tract infectious disease
+  disease_mesh: MESH:D014552
+  drug: cinoxacin
+  drug_mesh: MESH:D002937
+  drugbank: DB:DB00827
+links:
+  - key: negatively regulates
+    source: MESH:D002937
+    target: UniProt:P0AES4
+  - key: positively regulates
+    source: UniProt:P0AES4
+    target: GO:0006261
+  - key: precedes
+    source: GO:0006261
+    target: GO:0051301
+  - key: in taxon
+    source: GO:0051301
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D014552
+multigraph: true
+nodes:
+  - id: MESH:D002937
+    label: Drug
+    name: cinoxacin
+  - id: UniProt:P0AES4
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: GO:0006261
+    label: BiologicalProcess
+    name: DNA-dependent DNA replication
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D014552
+    label: Disease
+    name: Urinary tract infectious disease
+references:
+  - https://go.drugbank.com/drugs/DB00827#mechanism-of-action

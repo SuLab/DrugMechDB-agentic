@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00948_MESH_D011015_1
+  disease: Aspiration pneumonia
+  disease_mesh: MESH:D011015
+  drug: mezlocillin
+  drug_mesh: MESH:D008802
+  drugbank: DB:DB00948
+links:
+  - key: decreases activity of
+    source: MESH:D008802
+    target: UniProt:Q04707
+  - key: positively regulates
+    source: UniProt:Q04707
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D011015
+multigraph: true
+nodes:
+  - id: MESH:D008802
+    label: Drug
+    name: mezlocillin
+  - id: UniProt:Q04707
+    label: Protein
+    name: Penicillin-binding protein 1A
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D011015
+    label: Disease
+    name: Aspiration pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB00948

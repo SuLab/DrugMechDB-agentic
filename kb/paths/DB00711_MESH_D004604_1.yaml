@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00711_MESH_D004604_1
+  disease: Lymphatic filariasis
+  disease_mesh: MESH:D004604
+  drug: diethylcarbamazine
+  drug_mesh: MESH:D004049
+  drugbank: DB:DB00711
+links:
+  - key: negatively regulates
+    source: MESH:D004049
+    target: GO:0019369
+  - key: regulates
+    source: GO:0019369
+    target: GO:0005886
+  - key: in taxon
+    source: GO:0005886
+    target: taxonomy:6293
+  - key: causes
+    source: taxonomy:6293
+    target: MESH:D004604
+multigraph: true
+nodes:
+  - id: MESH:D004049
+    label: Drug
+    name: Diethylcarbamazine
+  - id: GO:0019369
+    label: BiologicalProcess
+    name: Arachidonic acid metabolic process
+  - id: GO:0005886
+    label: CellularComponent
+    name: Plasma membrane
+  - id: taxonomy:6293
+    label: OrganismTaxon
+    name: Wuchereria bancrofti
+  - id: MESH:D004604
+    label: Disease
+    name: Lymphatic filariasis
+references:
+  - https://go.drugbank.com/drugs/DB00711

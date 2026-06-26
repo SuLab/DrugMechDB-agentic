@@ -1,0 +1,95 @@
+directed: true
+graph:
+  _id: DB08896_MESH_D006528_1
+  disease: Hepatocellular Carcinoma
+  disease_mesh: MESH:D006528
+  drug: regorafenib
+  drug_mesh: MESH:C559147
+  drugbank: DB:DB08896
+links:
+  - key: decreases activity of
+    source: MESH:C559147
+    target: UniProt:P04049
+  - key: decreases activity of
+    source: MESH:C559147
+    target: UniProt:P15056
+  - key: decreases activity of
+    source: MESH:C559147
+    target: UniProt:P16234
+  - key: decreases activity of
+    source: MESH:C559147
+    target: UniProt:P11362
+  - key: decreases activity of
+    source: MESH:C559147
+    target: UniProt:P17948
+  - key: decreases activity of
+    source: MESH:C559147
+    target: UniProt:P35968
+  - key: participates in
+    source: UniProt:P04049
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P15056
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P16234
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P11362
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P17948
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P35968
+    target: reactome:R-HSA-9006934
+  - key: contributes to
+    source: reactome:R-HSA-9006934
+    target: GO:0008284
+  - key: contributes to
+    source: reactome:R-HSA-9006934
+    target: GO:0045766
+  - key: causes
+    source: GO:0008284
+    target: MESH:D006528
+  - key: causes
+    source: GO:0045766
+    target: MESH:D006528
+multigraph: true
+nodes:
+  - id: MESH:C559147
+    label: Disease
+    name: regorafenib
+  - id: UniProt:P04049
+    label: Protein
+    name: RAF proto-oncogene serine/threonine-protein kinase
+  - id: UniProt:P15056
+    label: Protein
+    name: Serine/threonine-protein kinase B-raf
+  - id: UniProt:P16234
+    label: Protein
+    name: Platelet-derived growth factor receptor alpha
+  - id: UniProt:P11362
+    label: Protein
+    name: Fibroblast growth factor receptor 1
+  - id: UniProt:P17948
+    label: Protein
+    name: Vascular endothelial growth factor receptor 1
+  - id: UniProt:P35968
+    label: Protein
+    name: Vascular endothelial growth factor receptor 2
+  - id: reactome:R-HSA-9006934
+    label: Pathway
+    name: Signaling by Receptor Tyrosine Kinases
+  - id: GO:0008284
+    label: BiologicalProcess
+    name: positive regulation of cell population proliferation
+  - id: GO:0045766
+    label: BiologicalProcess
+    name: positive regulation of angiogenesis
+  - id: MESH:D006528
+    label: Disease
+    name: Hepatocellular Carcinoma
+references:
+  - https://go.drugbank.com/drugs/DB08896
+  - https://pubmed.ncbi.nlm.nih.gov/31954487/

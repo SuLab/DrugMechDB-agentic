@@ -1,0 +1,67 @@
+comment: Topical doxepin is approved for short-term (up to 8 days) management of moderate
+  pruritus in adult patients with atopic dermatitis, pruritus or lichen simplex chronicus.
+  Antihistamine properties of doxepin is beleived to be MoA
+directed: true
+graph:
+  _id: DB01142_MESH_D011537_1
+  disease: Itching of skin
+  disease_mesh: MESH:D011537
+  drug: doxepin
+  drug_mesh: MESH:D004316
+  drugbank: DB:DB01142
+links:
+  - key: decreases activity of
+    source: MESH:D004316
+    target: UniProt:P35367
+  - key: decreases activity of
+    source: MESH:D004316
+    target: UniProt:P25021
+  - key: positively regulates
+    source: UniProt:P35367
+    target: GO:0004969
+  - key: positively regulates
+    source: UniProt:P25021
+    target: GO:0004969
+  - key: participates in
+    source: GO:0004969
+    target: GO:0071420
+  - key: positively correlated with
+    source: GO:0071420
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0000989
+  - key: manifestation of
+    source: HP:0000989
+    target: MESH:D011537
+multigraph: true
+nodes:
+  - id: MESH:D004316
+    label: Drug
+    name: doxepin
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: UniProt:P25021
+    label: Protein
+    name: Histamine H2 receptor
+  - id: GO:0004969
+    label: MolecularActivity
+    name: Histamine receptor activity
+  - id: GO:0071420
+    label: BiologicalProcess
+    name: Cellular response to histamine
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: HP:0000989
+    label: PhenotypicFeature
+    name: Pruritus
+  - id: MESH:D011537
+    label: Disease
+    name: Itching of skin
+references:
+  - https://go.drugbank.com/drugs/DB01142
+  - https://en.wikipedia.org/wiki/Doxepin
+  - https://pubmed.ncbi.nlm.nih.gov/9161661/
+  - https://pubmed.ncbi.nlm.nih.gov/8089287/

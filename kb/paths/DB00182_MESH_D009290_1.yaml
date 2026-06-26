@@ -1,0 +1,82 @@
+directed: true
+graph:
+  _id: DB00182_MESH_D009290_1
+  disease: Narcolepsy
+  disease_mesh: MESH:D009290
+  drug: Amphetamine
+  drug_mesh: MESH:D000661
+  drugbank: DB:DB00182
+links:
+  - key: decreases activity of
+    source: MESH:D000661
+    target: UniProt:Q05940
+  - key: negatively regulates
+    source: MESH:D000661
+    target: GO:0098810
+  - key: increases activity of
+    source: MESH:D000661
+    target: UniProt:Q96RJ0
+  - key: positively regulates
+    source: UniProt:Q05940
+    target: GO:0098810
+  - key: negatively regulates
+    source: UniProt:Q96RJ0
+    target: GO:0098810
+  - key: increases abundance of
+    source: GO:0098810
+    target: MESH:D004298
+  - key: increases abundance of
+    source: GO:0098810
+    target: MESH:D009638
+  - key: increases abundance of
+    source: GO:0098810
+    target: MESH:D012701
+  - key: contributes to
+    source: MESH:D004298
+    target: MESH:D009290
+  - key: contributes to
+    source: MESH:D009638
+    target: MESH:D009290
+  - key: contributes to
+    source: MESH:D012701
+    target: MESH:D009290
+multigraph: true
+nodes:
+  - id: MESH:D000661
+    label: Drug
+    name: Amphetamine
+  - id: UniProt:Q05940
+    label: Protein
+    name: Synaptic vesicular amine transporter
+  - id: GO:0098810
+    label: BiologicalProcess
+    name: neurotransmitter reuptake
+  - id: UniProt:Q96RJ0
+    label: Protein
+    name: Trace amine-associated receptor 1
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: MESH:D009290
+    label: Disease
+    name: Narcolepsy
+references:
+  - https://go.drugbank.com/drugs/DB00182#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Amphetamine
+  - https://en.wikipedia.org/wiki/Adderall#Mechanism_of_action
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6095132/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8142296/
+  - https://www.uniprot.org/uniprot/Q05940#function
+  - https://www.uniprot.org/uniprot/Q96RJ0#function
+  - https://en.wikipedia.org/wiki/Neurotransmitter
+  - https://en.wikipedia.org/wiki/Reuptake
+  - https://en.wikipedia.org/wiki/Narcolepsy

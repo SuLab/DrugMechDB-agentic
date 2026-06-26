@@ -1,0 +1,88 @@
+comment: This disease was named Mixed hyperlipidemia in the original file for curation
+  but it's known as Hyperlipidemia, Familial Combined in MESH. Note there does not
+  seem to be any evidence supporting this drug indication (e.g. https://en.wikipedia.org/wiki/Combined_hyperlipidemia#Treatment),
+  so this path is hypothetic and based on the disease phenotype (i.e increased LDL
+  and triglyceride concentrations). Other commonly used names for this drug are inositol
+  nicotinate (CHEBI:50134), myo inositol hexanicotinate (CHEBI:31699) and inositol
+  hexanicotinate (CHEBI:33064)(https://en.wikipedia.org/wiki/Inositol_nicotinate).
+  This drug is made of niacin (vitamin B3, MESH:D009525) and inositol (MESH:D007294.
+  Note the original drug to curate for this disease was inositol but there is no evidence
+  for it to be used as treatment unless it's bound to nicotinic acid to form inositol
+  hexanicotinate.
+directed: true
+graph:
+  _id: DB08949_MESH_D006950_1
+  disease: Hyperlipidemia, Familial Combined
+  disease_mesh: MESH:D006950
+  drug: Inositol Niacinate
+  drug_mesh: MESH:C005193
+  drugbank: DB:DB08949
+links:
+  - key: increases activity of
+    source: MESH:C005193
+    target: UniProt:P49019
+  - key: increases activity of
+    source: MESH:C005193
+    target: UniProt:Q8TDS4
+  - key: participates in
+    source: UniProt:P49019
+    target: reactome:R-HSA-418594
+  - key: participates in
+    source: UniProt:Q8TDS4
+    target: reactome:R-HSA-418594
+  - key: decreases abundance of
+    source: reactome:R-HSA-418594
+    target: MESH:D014280
+  - key: positively correlated with
+    source: MESH:D014280
+    target: MESH:C032607
+  - key: positively correlated with
+    source: MESH:D014280
+    target: MESH:D008078
+  - key: positively correlated with
+    source: MESH:D014280
+    target: MESH:D008077
+  - key: positively correlated with
+    source: MESH:C032607
+    target: MESH:D006950
+  - key: positively correlated with
+    source: MESH:D008078
+    target: MESH:D006950
+  - key: positively correlated with
+    source: MESH:D008077
+    target: MESH:D006950
+multigraph: true
+nodes:
+  - id: MESH:C005193
+    label: Drug
+    name: Inositol Niacinate
+  - id: UniProt:P49019
+    label: Protein
+    name: Hydroxycarboxylic acid receptor 3
+  - id: UniProt:Q8TDS4
+    label: Protein
+    name: Hydroxycarboxylic acid receptor 2
+  - id: reactome:R-HSA-418594
+    label: Pathway
+    name: G alpha (i) signalling events
+  - id: MESH:D014280
+    label: ChemicalSubstance
+    name: Triglycerides
+  - id: MESH:C032607
+    label: ChemicalSubstance
+    name: low density lipoprotein triglyceride
+  - id: MESH:D008078
+    label: ChemicalSubstance
+    name: Cholesterol, LDL
+  - id: MESH:D008077
+    label: ChemicalSubstance
+    name: Lipoproteins, LDL
+  - id: MESH:D006950
+    label: Disease
+    name: Hyperlipidemia, Familial Combined
+references:
+  - https://go.drugbank.com/drugs/DB08949#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Triglyceride#Role_in_disease
+  - https://pubmed.ncbi.nlm.nih.gov/15083592/
+  - https://www.sciencedirect.com/science/article/pii/B978032329738700037X
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5441126/

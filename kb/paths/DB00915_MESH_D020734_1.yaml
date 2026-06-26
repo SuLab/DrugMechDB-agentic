@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB00915_MESH_D020734_1
+  disease: Parkinsonian Disorders
+  disease_mesh: MESH:D020734
+  drug: Amantadine
+  drug_mesh: MESH:D000547
+  drugbank: DB:DB00915
+links:
+  - key: increases activity of
+    source: MESH:D000547
+    target: UniProt:P14416
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: positively correlated with
+    source: MESH:D004298
+    target: GO:0061527
+  - key: negatively correlated with
+    source: GO:0061527
+    target: MESH:D020734
+multigraph: true
+nodes:
+  - id: MESH:D000547
+    label: Drug
+    name: Amantadine
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D020734
+    label: Disease
+    name: Parkinsonian Disorders
+references:
+  - https://go.drugbank.com/drugs/DB00915#BE0000756
+  - https://en.wikipedia.org/wiki/Parkinsonism
+  - https://en.wikipedia.org/wiki/Dementia_with_Lewy_bodies#Causes

@@ -1,0 +1,49 @@
+comment: Phensuximide is an anticonvulsant in the succinimide class. Discontinued.
+  https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=008855
+directed: true
+graph:
+  _id: DB00832_MESH_D004832_1
+  disease: Absence seizure
+  disease_mesh: MESH:D004832
+  drug: Phensuximide
+  drug_mesh: MESH:C100129
+  drugbank: DB:DB00832
+links:
+  - key: decreases activity of
+    source: MESH:C100129
+    target: UniProt:O43497
+  - key: positively regulates
+    source: UniProt:O43497
+    target: GO:0070509
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0019228
+  - key: located in
+    source: GO:0019228
+    target: UBERON:0000955
+  - key: positively correlated with
+    source: UBERON:0000955
+    target: MESH:D004832
+multigraph: true
+nodes:
+  - id: MESH:C100129
+    label: Drug
+    name: Phensuximide
+  - id: UniProt:O43497
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1G
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Calcium ion import
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: Neuronal action potential
+  - id: UBERON:0000955
+    label: GrossAnatomicalStructure
+    name: Brain
+  - id: MESH:D004832
+    label: Disease
+    name: Absence seizure
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL797/
+  - https://go.drugbank.com/drugs/DB00832

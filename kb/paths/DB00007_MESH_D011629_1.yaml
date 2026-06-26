@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB00007_MESH_D011629_1
+  disease: Precocious puberty
+  disease_mesh: MESH:D011629
+  drug: leuprorelin
+  drug_mesh: MESH:D016729,MESH:C493311
+  drugbank: DB:DB00007
+links:
+  - key: increases activity of
+    source: DB:DB00007
+    target: UniProt:P30968
+  - key: positively regulates
+    source: UniProt:P30968
+    target: GO:0005183
+  - key: regulates
+    source: GO:0005183
+    target: GO:0006703
+  - key: regulates
+    source: GO:0005183
+    target: GO:0006702
+  - key: regulates
+    source: GO:0005183
+    target: GO:0006701
+  - key: negatively correlated with
+    source: GO:0006703
+    target: MESH:D011629
+  - key: negatively correlated with
+    source: GO:0006702
+    target: MESH:D011629
+  - key: negatively correlated with
+    source: GO:0006701
+    target: MESH:D011629
+multigraph: true
+nodes:
+  - id: DB:DB00007
+    label: Drug
+    name: leuprorelin
+  - id: UniProt:P30968
+    label: Protein
+    name: Gonadotropin-releasing hormone receptor
+  - id: GO:0005183
+    label: BiologicalProcess
+    name: gonadotropin hormone-releasing hormone activity
+  - id: GO:0006703
+    label: BiologicalProcess
+    name: estrogen biosynthetic process
+  - id: GO:0006702
+    label: BiologicalProcess
+    name: androgen biosynthetic process
+  - id: GO:0006701
+    label: BiologicalProcess
+    name: progesterone biosynthetic process
+  - id: MESH:D011629
+    label: Disease
+    name: Precocious puberty
+references:
+  - https://go.drugbank.com/drugs/DB00007
+  - https://en.wikipedia.org/wiki/Precocious_puberty

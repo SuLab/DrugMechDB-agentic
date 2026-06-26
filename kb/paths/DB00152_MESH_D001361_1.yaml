@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB00152_MESH_D001361_1
+  disease: Avitaminosis
+  disease_mesh: MESH:D001361
+  drug: Thiamine
+  drug_mesh: MESH:D013831
+  drugbank: DB:DB00152
+links:
+  - key: positively regulates
+    source: MESH:D013831
+    target: GO:0006006
+  - key: positively regulates
+    source: MESH:D013831
+    target: GO:0014055
+  - key: negatively regulates
+    source: MESH:D013831
+    target: GO:0019249
+  - key: positively regulates
+    source: GO:0006006
+    target: GO:0042775
+  - key: negatively correlated with
+    source: GO:0014055
+    target: MESH:D001361
+  - key: positively correlated with
+    source: GO:0019249
+    target: MESH:D001361
+  - key: negatively correlated with
+    source: GO:0042775
+    target: MESH:D001361
+multigraph: true
+nodes:
+  - id: MESH:D013831
+    label: Drug
+    name: Thiamine
+  - id: GO:0006006
+    label: BiologicalProcess
+    name: Glucose metabolic process
+  - id: GO:0014055
+    label: BiologicalProcess
+    name: Acetylcholine secretion, neurotransmission
+  - id: GO:0019249
+    label: BiologicalProcess
+    name: Lactate biosynthetic process
+  - id: GO:0042775
+    label: BiologicalProcess
+    name: Mitochondrial ATP synthesis coupled electron transport
+  - id: MESH:D001361
+    label: Disease
+    name: Avitaminosis
+references:
+  - https://go.drugbank.com/drugs/DB00152
+  - https://en.wikipedia.org/wiki/Thiamine_deficiency
+  - https://en.wikipedia.org/wiki/Vitamin_deficiency

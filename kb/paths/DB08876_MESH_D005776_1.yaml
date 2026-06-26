@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB08876_MESH_D005776_1
+  disease: Chronic non-neuropathic Gaucher's disease
+  disease_mesh: MESH:D005776
+  drug: taliglucerase alfa
+  drug_mesh: MESH:C582473
+  drugbank: DB:DB08876
+links:
+  - key: decreases abundance of
+    source: MESH:C582473
+    target: MESH:D005963
+  - key: causes
+    source: MESH:D005963
+    target: MESH:D005776
+multigraph: true
+nodes:
+  - id: MESH:C582473
+    label: Drug
+    name: Taliglucerase alfa
+  - id: MESH:D005963
+    label: ChemicalSubstance
+    name: Glucosylceramides
+  - id: MESH:D005776
+    label: Disease
+    name: Chronic non-neuropathic Gaucher's disease
+references:
+  - https://en.wikipedia.org/wiki/Gaucher%27s_disease
+  - https://go.drugbank.com/drugs/DB08876

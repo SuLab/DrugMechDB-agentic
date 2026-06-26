@@ -1,0 +1,96 @@
+directed: true
+multigraph: true
+graph:
+  _id: P15_DB00787_MESH_D006561
+  drug: Acyclovir
+  drug_mesh: MESH:D000212
+  drugbank: DB:DB00787
+  disease: Herpes Simplex
+  disease_mesh: MESH:D006561
+nodes:
+  - id: MESH:D000212
+    name: Acyclovir
+    label: Drug
+  - id: UniProt:P03176
+    name: HSV-1 thymidine kinase
+    label: Protein
+  - id: UniProt:P04293
+    name: HSV-1 DNA polymerase catalytic subunit
+    label: Protein
+  - id: GO:0039693
+    name: viral DNA genome replication
+    label: BiologicalProcess
+  - id: NCBITaxon:10298
+    name: Human alphaherpesvirus 1
+    label: OrganismTaxon
+  - id: MESH:D006561
+    name: Herpes Simplex
+    label: Disease
+links:
+  - key: affected by
+    source: MESH:D000212
+    target: UniProt:P03176
+    evidence:
+      - reference: PMID:28027917
+        snippet: "The antiherpetic drugs acyclovir (ACV, valaciclovir) and penciclovir (famciclovir) are phosphorylated by viral thymidine kinase and terminate DNA synthesis."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Acyclovir is selectively phosphorylated to acyclovir monophosphate by HSV-encoded thymidine kinase, the first activation step in the antiviral pathway."
+  - key: in taxon
+    source: UniProt:P03176
+    target: NCBITaxon:10298
+    evidence:
+      - reference: PMID:25857706
+        snippet: "The inhibition of herpes simplex virus (HSV) by these compounds is not dependent on the viral thymidine kinase (TK), which is known to phosphorylate acyclovir (ACV), a standard treatment for HSV infections."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Thymidine kinase that phosphorylates acyclovir is encoded by herpes simplex virus, establishing the protein's taxon assignment."
+  - key: decreases activity of
+    source: MESH:D000212
+    target: UniProt:P04293
+    evidence:
+      - reference: PMID:8755822
+        snippet: "Acyclovir triphosphate, the active intracellular metabolite of acyclovir, exerts its antiviral effect by inhibiting herpesviral DNA polymerases through premature chain termination."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Once converted to acyclovir triphosphate by cellular kinases, the drug inhibits viral DNA polymerase via premature chain termination after incorporation into nascent viral DNA."
+  - key: in taxon
+    source: UniProt:P04293
+    target: NCBITaxon:10298
+    evidence:
+      - reference: PMID:39197451
+        snippet: "We determined cryoelectron microscopy (cryo-EM) structures of DNA-bound herpes simplex virus polymerase holoenzyme in multiple conformations and interacting with antivirals in clinical use."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "The DNA polymerase catalytic subunit (Pol) targeted by acyclovir is encoded by herpes simplex virus."
+  - key: positively regulates
+    source: UniProt:P04293
+    target: GO:0039693
+    evidence:
+      - reference: PMID:39197451
+        snippet: "These structures reveal how the catalytic subunit Pol and the processivity factor UL42 bind DNA to promote processive DNA synthesis."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "The HSV Pol catalytic subunit drives processive viral DNA synthesis, i.e. viral DNA genome replication."
+  - key: in taxon
+    source: GO:0039693
+    target: NCBITaxon:10298
+    evidence:
+      - reference: PMID:39078136
+        snippet: "The conventional clinical management of HSK primarily relies on anti-virals to suppress HSV-1 replication, anti-inflammatory drugs (such as corticosteroids) to provide symptomatic relief from pain and inflammation, and surgical interventions in more severe cases to replace damaged cornea."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "HSV-1 replication (viral DNA genome replication) is the process targeted by antivirals such as acyclovir; the process is taxon-bound to HSV-1."
+  - key: causes
+    source: NCBITaxon:10298
+    target: MESH:D006561
+    evidence:
+      - reference: PMID:36309081
+        snippet: "Herpes simplex viruses (HSV), the causative agents of recurrent orofacial and anogenital infections, can cause significant morbidity and mortality in both immunocompetent and immunocompromised individuals."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "HSV-1 is the etiologic agent of herpes simplex disease."
+references:
+  - https://go.drugbank.com/drugs/DB00787
+  - https://www.uniprot.org/uniprot/P03176
+  - https://www.uniprot.org/uniprot/P04293

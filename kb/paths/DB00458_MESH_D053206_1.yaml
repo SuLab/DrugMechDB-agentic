@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00458_MESH_D053206_1
+  disease: Nocturnal enuresis
+  disease_mesh: MESH:D053206
+  drug: Imipramine
+  drug_mesh: MESH:D007099
+  drugbank: DB:DB00458
+links:
+  - key: decreases activity of
+    source: MESH:D007099
+    target: InterPro:IPR000995
+  - key: positively correlated with
+    source: InterPro:IPR000995
+    target: CHEBI:15355
+  - key: positively regulates
+    source: CHEBI:15355
+    target: UBERON:0000381
+  - key: positively regulates
+    source: UBERON:0000381
+    target: GO:0060073
+  - key: manifestation of
+    source: GO:0060073
+    target: MESH:D053206
+multigraph: true
+nodes:
+  - id: MESH:D007099
+    label: Drug
+    name: Imipramine
+  - id: InterPro:IPR000995
+    label: GeneFamily
+    name: Muscarinic acetylcholine receptor family
+  - id: CHEBI:15355
+    label: ChemicalSubstance
+    name: Acetylcholine
+  - id: UBERON:0000381
+    label: GrossAnatomicalStructure
+    name: Urinary bladder detrusor smooth muscle
+  - id: GO:0060073
+    label: BiologicalProcess
+    name: Micturition
+  - id: MESH:D053206
+    label: Disease
+    name: Nocturnal enuresis
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/22761613/
+  - https://go.drugbank.com/drugs/DB00458

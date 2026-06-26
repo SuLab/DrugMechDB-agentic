@@ -1,0 +1,100 @@
+directed: true
+graph:
+  _id: DB01349_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: tasosartan
+  drug_mesh: MESH:C086167
+  drugbank: DB:DB01349
+links:
+  - key: has metabolite
+    source: MESH:C086167
+    target: MESH:C415846
+  - key: negatively regulates
+    source: MESH:C415846
+    target: UniProt:P30556
+  - key: positively regulates
+    source: UniProt:P30556
+    target: reactome:R-HSA-2022377
+  - key: positively correlated with
+    source: reactome:R-HSA-2022377
+    target: GO:0042310
+  - key: positively regulates
+    source: reactome:R-HSA-2022377
+    target: GO:0003092
+  - key: positively regulates
+    source: reactome:R-HSA-2022377
+    target: GO:0070294
+  - key: positively correlated with
+    source: GO:0070294
+    target: HP:0032263
+  - key: positively correlated with
+    source: GO:0003092
+    target: HP:0032263
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: affects risk for
+    source: HP:0032263
+    target: MESH:D006973
+  - key: positively regulates
+    source: UniProt:P30556
+    target: GO:0035932
+  - key: located in
+    source: GO:0035932
+    target: UBERON:0001235
+  - key: positively regulates
+    source: UBERON:0001235
+    target: GO:0003095
+  - key: positively regulates
+    source: GO:0003095
+    target: HP:0000822
+  - key: manifestation of
+    source: HP:0000822
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C086167
+    label: Drug
+    name: tasosartan
+  - id: MESH:C415846
+    label: ChemicalSubstance
+    name: enoltasosartan
+  - id: UniProt:P30556
+    label: Protein
+    name: Type-1 angiotensin II receptor
+  - id: reactome:R-HSA-2022377
+    label: Pathway
+    name: Renin-angiotensin-aldosterone system
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: renal water retention
+  - id: GO:0070294
+    label: BiologicalProcess
+    name: renal sodium ion absorption
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: GO:0035932
+    label: BiologicalProcess
+    name: Aldosterone secretion
+  - id: GO:0003095
+    label: BiologicalProcess
+    name: Pressure natriuresis
+  - id: UBERON:0001235
+    label: GrossAnatomicalStructure
+    name: Adrenal cortex
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: Blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB01349
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL432162/
+  - https://pubmed.ncbi.nlm.nih.gov/11046101/
+  - https://pubmed.ncbi.nlm.nih.gov/9784100/

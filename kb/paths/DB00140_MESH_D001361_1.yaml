@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00140_MESH_D001361_1
+  disease: Avitaminosis
+  disease_mesh: MESH:D001361
+  drug: Riboflavin
+  drug_mesh: MESH:D012256
+  drugbank: DB:DB00140
+links:
+  - key: molecularly interacts with
+    source: MESH:D012256
+    target: UniProt:Q969G6
+  - key: positively regulates
+    source: UniProt:Q969G6
+    target: GO:0009398
+  - key: increases abundance of
+    source: GO:0009398
+    target: MESH:D005486
+  - key: negatively correlated with
+    source: MESH:D005486
+    target: HP:0100504
+  - key: positively correlated with
+    source: HP:0100504
+    target: MESH:D001361
+multigraph: true
+nodes:
+  - id: MESH:D012256
+    label: Drug
+    name: Riboflavin
+  - id: UniProt:Q969G6
+    label: Protein
+    name: Riboflavin kinase
+  - id: GO:0009398
+    label: BiologicalProcess
+    name: FMN biosynthetic process
+  - id: MESH:D005486
+    label: ChemicalSubstance
+    name: Flavin Mononucleotide
+  - id: HP:0100504
+    label: PhenotypicFeature
+    name: Low levels of vitamin B2
+  - id: MESH:D001361
+    label: Disease
+    name: Avitaminosis
+references:
+  - https://go.drugbank.com/drugs/DB00140#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q969G6#function
+  - https://en.wikipedia.org/wiki/Vitamin_deficiency

@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB06813_MESH_D016411_1
+  disease: Peripheral T-cell lymphoma
+  disease_mesh: MESH:D016411
+  drug: pralatrexate
+  drug_mesh: MESH:C418863
+  drugbank: DB:DB06813
+links:
+  - key: decreases activity of
+    source: MESH:C418863
+    target: UniProt:P00374
+  - key: decreases activity of
+    source: MESH:C418863
+    target: UniProt:P04818
+  - key: positively regulates
+    source: UniProt:P04818
+    target: GO:0006221
+  - key: positively regulates
+    source: UniProt:P00374
+    target: GO:0046654
+  - key: positively correlated with
+    source: GO:0046654
+    target: GO:0042098
+  - key: positively correlated with
+    source: GO:0006221
+    target: GO:0042098
+  - key: positively correlated with
+    source: GO:0042098
+    target: MESH:D016411
+multigraph: true
+nodes:
+  - id: MESH:C418863
+    label: Drug
+    name: pralatrexate
+  - id: UniProt:P00374
+    label: Protein
+    name: Dihydrofolate reductase
+  - id: UniProt:P04818
+    label: Protein
+    name: Thymidylate synthase
+  - id: GO:0006221
+    label: BiologicalProcess
+    name: pyrimidine nucleotide biosynthetic process
+  - id: GO:0046654
+    label: BiologicalProcess
+    name: tetrahydrofolate biosynthetic process
+  - id: GO:0042098
+    label: BiologicalProcess
+    name: T cell proliferation
+  - id: MESH:D016411
+    label: Disease
+    name: Peripheral T-cell lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB06813
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201746/
+  - https://en.wikipedia.org/wiki/Pralatrexate#Mechanism
+  - https://pubchem.ncbi.nlm.nih.gov/compound/148121#section=Mechanism-of-Action

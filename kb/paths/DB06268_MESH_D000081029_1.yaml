@@ -1,0 +1,44 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB06268_MESH_D000081029_1
+  disease: Pulmonary hypertension
+  disease_mesh: MESH:D000081029
+  drug: sitaxentan
+  drug_mesh: MESH:C106276
+  drugbank: DB:DB06268
+links:
+  - key: decreases activity of
+    source: MESH:C106276
+    target: UniProt:P25101
+  - key: decreases activity of
+    source: MESH:C106276
+    target: UniProt:P24530
+  - key: positively regulates
+    source: UniProt:P25101
+    target: GO:0042310
+  - key: capable of
+    source: UniProt:P24530
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: MESH:D000081029
+multigraph: true
+nodes:
+  - id: MESH:C106276
+    label: Drug
+    name: Sitaxentan
+  - id: UniProt:P25101
+    label: Protein
+    name: Endothelin-1 receptor
+  - id: UniProt:P24530
+    label: Protein
+    name: Endothelin receptor type B
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D000081029
+    label: Disease
+    name: Pulmonary hypertension
+references:
+  - https://go.drugbank.com/drugs/DB06268

@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB00245_MESH_D010301_1
+  disease: Postencephalitic parkinsonism
+  disease_mesh: MESH:D010301
+  drug: Benzatropine
+  drug_mesh: MESH:D001590
+  drugbank: DB:DB00245
+links:
+  - key: decreases activity of
+    source: MESH:D001590
+    target: UniProt:Q01959
+  - key: decreases activity of
+    source: MESH:D001590
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:Q01959
+    target: GO:0090494
+  - key: positively correlated with
+    source: UniProt:P11229
+    target: CHEBI:15355
+  - key: negatively regulates
+    source: GO:0090494
+    target: GO:0061527
+  - key: positively correlated with
+    source: CHEBI:15355
+    target: HP:0001337
+  - key: occurs in
+    source: GO:0061527
+    target: UBERON:0002038
+  - key: manifestation of
+    source: HP:0001337
+    target: MESH:D010301
+  - key: disrupted by
+    source: UBERON:0002038
+    target: MESH:D010301
+multigraph: true
+nodes:
+  - id: MESH:D001590
+    label: Drug
+    name: Benzatropine
+  - id: UniProt:Q01959
+    label: Protein
+    name: Sodium-dependent dopamine transporter
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: GO:0090494
+    label: BiologicalProcess
+    name: Dopamine uptake
+  - id: CHEBI:15355
+    label: ChemicalSubstance
+    name: Acetylcholine
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: HP:0001337
+    label: BiologicalProcess
+    name: Tremor
+  - id: UBERON:0002038
+    label: GrossAnatomicalStructure
+    name: Substantia nigra
+  - id: MESH:D010301
+    label: Disease
+    name: Postencephalitic parkinsonism
+references:
+  - https://go.drugbank.com/drugs/DB00245#BE0000647
+  - https://en.wikipedia.org/wiki/Parkinson%27s_disease

@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB00285_MESH_D016584_2
+  disease: Panic disorder
+  disease_mesh: MESH:D016584
+  drug: venlafaxine
+  drug_mesh: MESH:D000069470
+  drugbank: DB:DB00285
+links:
+  - key: negatively regulates
+    source: MESH:D000069470
+    target: UniProt:P23975
+  - key: positively regulates
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: positively correlated with
+    source: GO:0051620
+    target: MESH:D016584
+multigraph: true
+nodes:
+  - id: MESH:D000069470
+    label: Drug
+    name: venlafaxine
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: norepinephrine uptake
+  - id: MESH:D016584
+    label: Disease
+    name: Panic disorder
+references:
+  - https://go.drugbank.com/drugs/DB00285#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Venlafaxine#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Panic_disorder#Medication

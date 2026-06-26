@@ -1,0 +1,41 @@
+comment: The precise mechanism of action is unknown.
+directed: true
+graph:
+  _id: DB09276_MESH_D001172_1
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: sodium aurothiomalate
+  drug_mesh: MESH:D006052
+  drugbank: DB:DB09276
+links:
+  - key: negatively regulates
+    source: MESH:D006052
+    target: GO:0001516
+  - key: increases abundance of
+    source: GO:0001516
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0001369
+  - key: superclass of
+    source: HP:0001369
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:D006052
+    label: Drug
+    name: sodium aurothiomalate
+  - id: GO:0001516
+    label: BiologicalProcess
+    name: prostaglandin biosynthetic process
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: HP:0001369
+    label: PhenotypicFeature
+    name: Arthritis
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB09276

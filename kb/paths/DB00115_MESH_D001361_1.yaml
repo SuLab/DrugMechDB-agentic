@@ -1,0 +1,86 @@
+directed: true
+graph:
+  _id: DB00115_MESH_D001361_1
+  disease: Vitamin deficiency
+  disease_mesh: MESH:D001361
+  drug: cyanocobalamin
+  drugbank: DB:DB00115
+links:
+  - key: positively regulates
+    source: DB:DB00115
+    target: UniProt:Q99707
+  - key: positively regulates
+    source: DB:DB00115
+    target: UniProt:P22033
+  - key: participates in
+    source: UniProt:Q99707
+    target: GO:0046105
+  - key: negatively regulates
+    source: UniProt:P22033
+    target: CHEBI:16625
+  - key: participates in
+    source: GO:0046105
+    target: GO:0090592
+  - key: positively correlated with
+    source: CHEBI:16625
+    target: HP:0002912
+  - key: part of
+    source: GO:0090592
+    target: GO:0051301
+  - key: causes
+    source: HP:0002912
+    target: HP:0000707
+  - key: negatively correlated with
+    source: GO:0051301
+    target: HP:0020060
+  - key: positively correlated with
+    source: HP:0000707
+    target: MESH:D001361
+  - key: positively correlated with
+    source: HP:0020060
+    target: HP:0001889
+  - key: positively correlated with
+    source: HP:0001889
+    target: MESH:D001361
+multigraph: true
+nodes:
+  - id: DB:DB00115
+    label: Drug
+    name: cyanocobalamin
+  - id: UniProt:Q99707
+    label: Protein
+    name: methionine synthase
+  - id: UniProt:P22033
+    label: Protein
+    name: Methylmalonyl-CoA mutase, mitochondrial
+  - id: GO:0046105
+    label: BiologicalProcess
+    name: thymidine biosynthetic process
+  - id: CHEBI:16625
+    label: ChemicalSubstance
+    name: methylmalonyl-CoA
+  - id: GO:0090592
+    label: BiologicalProcess
+    name: DNA synthesis involved in DNA replication
+  - id: HP:0002912
+    label: PhenotypicFeature
+    name: Methylmalonic acidemia
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: HP:0000707
+    label: PhenotypicFeature
+    name: Abnormality of the nervous system
+  - id: HP:0020060
+    label: PhenotypicFeature
+    name: Decreased red blood cell count
+  - id: MESH:D001361
+    label: Disease
+    name: Vitamin deficiency
+  - id: HP:0001889
+    label: PhenotypicFeature
+    name: Megaloblastic anemia
+references:
+  - https://go.drugbank.com/drugs/DB00115#BE0000777
+  - https://pubmed.ncbi.nlm.nih.gov/28660890/
+  - https://en.wikipedia.org/wiki/Methylmalonic_acidemia#Neurologic_effects

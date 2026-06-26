@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB06219_MESH_D013207_1
+  disease: Staphylococcal infection of skin
+  disease_mesh: MESH:D013207
+  drug: dalbavancin
+  drug_mesh: MESH:C469289
+  drugbank: DB:DB06219
+links:
+  - key: disrupts
+    source: MESH:C469289
+    target: CHEBI:8005
+  - key: located in
+    source: CHEBI:8005
+    target: GO:0009274
+  - key: in taxon
+    source: GO:0009274
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D013207
+multigraph: true
+nodes:
+  - id: MESH:C469289
+    label: Drug
+    name: dalbavancin
+  - id: CHEBI:8005
+    label: ChemicalSubstance
+    name: peptidoglycan
+  - id: GO:0009274
+    label: CellularComponent
+    name: peptidoglycan-based cell wall
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D013207
+    label: Disease
+    name: Staphylococcal infection of skin
+references:
+  - https://go.drugbank.com/drugs/DB06219
+  - https://en.wikipedia.org/wiki/Dalbavancin#Mechanism_of_action

@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB01100_MESH_D005879_2
+  disease: Gilles de la Tourette's syndrome
+  disease_mesh: MESH:D005879
+  drug: pimozide
+  drug_mesh: MESH:D010868
+  drugbank: DB:DB01100
+links:
+  - key: decreases activity of
+    source: MESH:D010868
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:D010868
+    target: UniProt:P35462
+  - key: participates in
+    source: UniProt:P14416
+    target: GO:1903350
+  - key: participates in
+    source: UniProt:P35462
+    target: GO:1903350
+  - key: positively correlated with
+    source: GO:1903350
+    target: MESH:D005879
+multigraph: true
+nodes:
+  - id: MESH:D010868
+    label: Drug
+    name: pimozide
+  - id: UniProt:P14416
+    label: Protein
+    name: Dopamine D2 receptor
+  - id: UniProt:P35462
+    label: Protein
+    name: Dopamine D3 receptor
+  - id: GO:1903350
+    label: BiologicalProcess
+    name: response to dopamine
+  - id: MESH:D005879
+    label: Disease
+    name: Gilles de la Tourette's syndrome
+references:
+  - https://go.drugbank.com/drugs/DB01100
+  - https://en.wikipedia.org/wiki/Tourette_syndrome

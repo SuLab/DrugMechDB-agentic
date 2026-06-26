@@ -1,0 +1,30 @@
+directed: true
+graph:
+  _id: DB11596_MESH_D000749_1
+  disease: Megaloblastic anemia
+  disease_mesh: MESH:D000749
+  drug: levofolinic acid
+  drug_mesh: MESH:D058766
+  drugbank: DB:DB11596
+links:
+  - key: produces
+    source: MESH:D058766
+    target: DB:DB04789
+  - key: negatively correlated with
+    source: DB:DB04789
+    target: MESH:D000749
+multigraph: true
+nodes:
+  - alt_names:
+      - Levoleucovorin
+    id: MESH:D058766
+    label: Drug
+    name: levofolinic acid
+  - id: DB:DB04789
+    label: ChemicalSubstance
+    name: 5-methyltetrahydrofolic acid
+  - id: MESH:D000749
+    label: Disease
+    name: Megaloblastic anemia
+references:
+  - https://go.drugbank.com/drugs/DB11596

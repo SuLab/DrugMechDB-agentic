@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00214_MESH_D004487_1
+  disease: Edema
+  disease_mesh: MESH:D004487
+  drug: torsemide
+  drug_mesh: MESH:C026116
+  drugbank: DB:DB00214
+links:
+  - key: decreases activity of
+    source: MESH:C026116
+    target: UniProt:Q13621
+  - key: positively regulates
+    source: UniProt:Q13621
+    target: GO:0006814
+  - key: regulates
+    source: GO:0006814
+    target: GO:0003092
+  - key: positively correlated with
+    source: GO:0003092
+    target: MESH:D004487
+multigraph: true
+nodes:
+  - id: MESH:C026116
+    label: Drug
+    name: torsemide
+  - id: UniProt:Q13621
+    label: Protein
+    name: Solute carrier family 12 member 1
+  - id: GO:0006814
+    label: BiologicalProcess
+    name: sodium ion transport
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: renal water retention
+  - id: MESH:D004487
+    label: Disease
+    name: Edema
+references:
+  - https://go.drugbank.com/drugs/DB00214#BE0000502
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1148/

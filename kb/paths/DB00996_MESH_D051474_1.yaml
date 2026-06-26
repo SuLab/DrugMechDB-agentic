@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB00996_MESH_D051474_1
+  disease: Neuralgia, Postherpetic
+  disease_mesh: MESH:D051474
+  drug: Gabapentin
+  drug_mesh: MESH:D000077206
+  drugbank: DB:DB00996
+links:
+  - key: decreases activity of
+    source: MESH:D000077206
+    target: UniProt:P54289
+  - key: participates in
+    source: UniProt:P54289
+    target: GO:0005245
+  - key: increases abundance of
+    source: GO:0005245
+    target: MESH:D013373
+  - key: positively correlated with
+    source: MESH:D013373
+    target: GO:0019233
+  - key: positively correlated with
+    source: GO:0019233
+    target: HP:0012534
+  - key: positively correlated with
+    source: HP:0012534
+    target: MESH:D051474
+multigraph: true
+nodes:
+  - id: MESH:D000077206
+    label: Drug
+    name: Gabapentin
+  - id: UniProt:P54289
+    label: Protein
+    name: Voltage-dependent calcium channel subunit alpha-2/delta-1
+  - id: GO:0005245
+    label: MolecularActivity
+    name: voltage-gated calcium channel activity
+  - id: MESH:D013373
+    label: ChemicalSubstance
+    name: Substance P
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: sensory perception of pain
+  - id: HP:0012534
+    label: PhenotypicFeature
+    name: Dysesthesia
+  - id: MESH:D051474
+    label: Disease
+    name: Neuralgia, Postherpetic
+references:
+  - https://go.drugbank.com/drugs/DB00996#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Gabapentin#Pharmacology
+  - https://www.uniprot.org/uniprot/P54289#function
+  - https://pubmed.ncbi.nlm.nih.gov/10621952/
+  - https://en.wikipedia.org/wiki/Postherpetic_neuralgia

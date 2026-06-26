@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB06777_MESH_D002769_1
+  disease: Calculus in biliary tract
+  disease_mesh: MESH:D002769
+  drug: chenodiol
+  drug_mesh: MESH:D002635
+  drugbank: DB:DB06777
+links:
+  - key: negatively regulates
+    source: MESH:D002635
+    target: GO:0006695
+  - key: decreases abundance of
+    source: MESH:D002635
+    target: MESH:D002784
+  - key: increases abundance of
+    source: GO:0006695
+    target: MESH:D002784
+  - key: occurs in
+    source: MESH:D002784
+    target: HP:0011980
+  - key: manifestation of
+    source: HP:0011980
+    target: MESH:D002769
+multigraph: true
+nodes:
+  - id: MESH:D002635
+    label: Drug
+    name: Chenodiol
+  - id: GO:0006695
+    label: BiologicalProcess
+    name: Cholesterol biosynthetic process
+  - id: MESH:D002784
+    label: ChemicalSubstance
+    name: Cholesterol
+  - id: HP:0011980
+    label: PhenotypicFeature
+    name: Cholesterol gallstones
+  - id: MESH:D002769
+    label: Disease
+    name: Calculus in biliary tract
+references:
+  - https://go.drugbank.com/drugs/DB06777

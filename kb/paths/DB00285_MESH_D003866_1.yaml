@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00285_MESH_D003866_1
+  disease: Depressive disorder
+  disease_mesh: MESH:D003866
+  drug: amoxapine
+  drug_mesh: MESH:D000657
+  drugbank: DB:DB00285
+links:
+  - key: negatively regulates
+    source: MESH:D000657
+    target: UniProt:P23975
+  - key: positively regulates
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: positively correlated with
+    source: GO:0051620
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:D000657
+    label: Drug
+    name: amoxapine
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: norepinephrine uptake
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00543#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Amoxapine#Pharmacology

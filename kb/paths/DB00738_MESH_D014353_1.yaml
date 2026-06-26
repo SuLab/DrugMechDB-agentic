@@ -1,0 +1,44 @@
+comment: The mode of action of pentamidine is not fully understood
+directed: true
+graph:
+  _id: DB00738_MESH_D014353_1
+  disease: African trypanosomiasis
+  disease_mesh: MESH:D014353
+  drug: Pentamidine
+  drug_mesh: MESH:D010419
+  drugbank: DB:DB00738
+links:
+  - key: disrupts
+    source: MESH:D010419
+    target: MESH:D004247
+  - key: negatively regulates
+    source: MESH:D010419
+    target: GO:0006412
+  - key: occurs in
+    source: MESH:D004247
+    target: taxonomy:5691
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:5691
+  - key: causes
+    source: taxonomy:5691
+    target: MESH:D014353
+multigraph: true
+nodes:
+  - id: MESH:D010419
+    label: Drug
+    name: Pentamidine
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Protein biosynthesis
+  - id: taxonomy:5691
+    label: OrganismTaxon
+    name: Trypanosoma brucei
+  - id: MESH:D014353
+    label: Disease
+    name: African trypanosomiasis
+references:
+  - https://go.drugbank.com/drugs/DB00738

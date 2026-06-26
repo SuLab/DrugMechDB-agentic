@@ -1,0 +1,54 @@
+comment: Pembrolizumab is indicated for first-line treatment of patients with metastatic
+  non-small cell lung cancer whose tumors have high PD-L1 expression [(Tumor Proportion
+  Score (TPS) ≥50%)] as determined by an FDA-approved test, with no EGFR or ALK genomic
+  tumor aberrations
+directed: true
+graph:
+  _id: DB09037_MESH_D002289_1
+  disease: Non-small cell lung cancer (PD-L1 expression positive)
+  disease_mesh: MESH:D002289
+  drug: pembrolizumab
+  drug_mesh: MESH:C582435
+  drugbank: DB:DB09037
+links:
+  - key: decreases activity of
+    source: DB:DB09037
+    target: UniProt:Q15116
+  - key: negatively regulates
+    source: UniProt:Q15116
+    target: GO:0042098
+  - key: negatively regulates
+    source: UniProt:Q15116
+    target: GO:0042110
+  - key: positively correlated with
+    source: GO:0042098
+    target: GO:0002424
+  - key: positively correlated with
+    source: GO:0042110
+    target: GO:0002424
+  - key: negatively correlated with
+    source: GO:0002424
+    target: MESH:D002289
+multigraph: true
+nodes:
+  - id: DB:DB09037
+    label: Drug
+    name: Pembrolizumab
+  - id: UniProt:Q15116
+    label: Protein
+    name: Programmed cell death protein 1
+  - id: GO:0042098
+    label: BiologicalProcess
+    name: T cell proliferation
+  - id: GO:0042110
+    label: BiologicalProcess
+    name: T cell activation
+  - id: GO:0002424
+    label: BiologicalProcess
+    name: T cell mediated immune response to tumor cell
+  - id: MESH:D002289
+    label: Disease
+    name: Non-small cell lung cancer (PD-L1 expression positive)
+references:
+  - https://go.drugbank.com/drugs/DB09037#BE0003436
+  - https://en.wikipedia.org/wiki/PD-1_and_PD-L1_inhibitors

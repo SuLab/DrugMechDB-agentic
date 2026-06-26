@@ -1,0 +1,45 @@
+comment: Cobicistat does not have any anti-HIV activity on its own; it acts as a pharmacokinetic
+  enhancer by inhibiting cytochrome P450 3A isoforms (CYP3A) and therefore increases
+  the systemic exposure of coadministered agents that are metabolized by CYP3A enzymes
+  (https://pubchem.ncbi.nlm.nih.gov/compound/25151504#section=Mechanism-of-Action)
+directed: true
+graph:
+  _id: DB09065_MESH_D015658_2
+  disease: Human immunodeficiency virus infection
+  disease_mesh: MESH:D015658
+  drug: cobicistat
+  drug_mesh: MESH:D000069547
+  drugbank: DB:DB09065
+links:
+  - key: negatively regulates
+    source: MESH:D000069547
+    target: "InterPro:IPR001128\uFEFF"
+  - key: positively regulates
+    source: "InterPro:IPR001128\uFEFF"
+    target: GO:0042178
+  - key: decreases abundance of
+    source: GO:0042178
+    target: CHEBI:22587
+  - key: negatively correlated with
+    source: CHEBI:22587
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:D000069547
+    label: Drug
+    name: cobicistat
+  - id: "InterPro:IPR001128\uFEFF"
+    label: GeneFamily
+    name: Cytochrome P450
+  - id: GO:0042178
+    label: BiologicalProcess
+    name: xenobiotic catabolic process
+  - id: CHEBI:22587
+    label: ChemicalSubstance
+    name: antiviral agent
+  - id: MESH:D015658
+    label: Disease
+    name: Human immunodeficiency virus infection
+references:
+  - https://go.drugbank.com/drugs/DB09065
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2095208/

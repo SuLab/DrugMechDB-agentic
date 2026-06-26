@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00878_MESH_D005891_1
+  disease: Gingivitis
+  disease_mesh: MESH:D005891
+  drug: Chlorhexidine
+  drug_mesh: MESH:D002710
+  drugbank: DB:DB00878
+links:
+  - key: disrupts
+    source: MESH:D002710
+    target: GO:0005886
+  - key: in taxon
+    source: GO:0005886
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D005891
+multigraph: true
+nodes:
+  - id: MESH:D002710
+    label: Drug
+    name: Chlorhexidine
+  - id: GO:0005886
+    label: CellularComponent
+    name: plasma membrane
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D005891
+    label: Disease
+    name: Gingivitis
+references:
+  - https://go.drugbank.com/drugs/DB00878#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Gingivitis

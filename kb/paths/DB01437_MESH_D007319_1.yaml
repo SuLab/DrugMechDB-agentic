@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB01437_MESH_D007319_1
+  disease: Insomnia
+  disease_mesh: MESH:D007319
+  drug: glutethimide
+  drug_mesh: MESH:D005984
+  drugbank: DB:DB01437
+links:
+  - key: increases activity of
+    source: MESH:D005984
+    target: UniProt:P14867
+  - key: participates in
+    source: UniProt:P14867
+    target: GO:1904862
+  - key: correlated with
+    source: GO:1904862
+    target: MESH:D007319
+multigraph: true
+nodes:
+  - id: MESH:D005984
+    label: Drug
+    name: glutethimide
+  - id: UniProt:P14867
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-1
+  - id: GO:1904862
+    label: BiologicalProcess
+    name: inhibitory synapse assembly
+  - id: MESH:D007319
+    label: Disease
+    name: Insomnia

@@ -1,0 +1,60 @@
+directed: true
+graph:
+  _id: DB00479_MESH_D018410_1
+  disease: Pneumonia, Bacterial
+  disease_mesh: MESH:D018410
+  drug: amikacin
+  drug_mesh: MESH:D000583
+  drugbank: DB:DB00479
+links:
+  - key: decreases activity of
+    source: MESH:D000583
+    target: UniProt:P0A7S3
+  - key: negatively regulates
+    source: MESH:D000583
+    target: MESH:D012336
+  - key: part of
+    source: UniProt:P0A7S3
+    target: GO:0015935
+  - key: located in
+    source: MESH:D012336
+    target: GO:0015935
+  - key: participates in
+    source: GO:0015935
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D018410
+multigraph: true
+nodes:
+  - id: MESH:D000583
+    label: Drug
+    name: amikacin
+  - id: UniProt:P0A7S3
+    label: Protein
+    name: 30S ribosomal protein S12
+  - id: MESH:D012336
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 16S
+  - id: GO:0015935
+    label: CellularComponent
+    name: small ribosomal subunit
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D018410
+    label: Disease
+    name: Pneumonia, Bacterial
+references:
+  - https://go.drugbank.com/drugs/DB00479#mechanism-of-action
+  - https://drugs.ncats.io/drug/84319SGC3C
+  - https://en.wikipedia.org/wiki/Amikacin#Mechanism_of_action
+  - https://www.uniprot.org/uniprot/P0A7S3#function
+  - https://en.wikipedia.org/wiki/Prokaryotic_small_ribosomal_subunit
+  - https://en.wikipedia.org/wiki/Bacterial_pneumonia

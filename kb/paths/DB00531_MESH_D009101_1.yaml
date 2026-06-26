@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00531_MESH_D009101_1
+  disease: Multiple myeloma
+  disease_mesh: MESH:D009101
+  drug: cyclophosphamide
+  drug_mesh: MESH:D003520
+  drugbank: DB:DB00531
+links:
+  - key: has metabolite
+    source: MESH:D003520
+    target: CHEBI:8163
+  - key: disrupts
+    source: CHEBI:8163
+    target: CHEBI:16991
+  - key: positively correlated with
+    source: CHEBI:16991
+    target: GO:0070661
+  - key: positively correlated with
+    source: GO:0070661
+    target: MESH:D009101
+multigraph: true
+nodes:
+  - id: MESH:D003520
+    label: Drug
+    name: cyclophosphamide
+  - id: CHEBI:8163
+    label: ChemicalSubstance
+    name: phosphoramide mustard
+  - id: CHEBI:16991
+    label: ChemicalSubstance
+    name: deoxyribonucleic acid
+  - id: GO:0070661
+    label: BiologicalProcess
+    name: leukocyte proliferation
+  - id: MESH:D009101
+    label: Disease
+    name: Multiple myeloma
+references:
+  - https://go.drugbank.com/drugs/DB00531
+  - https://pubchem.ncbi.nlm.nih.gov/compound/2907#section=Mechanism-of-Action

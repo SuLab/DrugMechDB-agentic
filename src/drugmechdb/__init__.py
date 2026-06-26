@@ -1,0 +1,1 @@
+"""DrugMechDB — Drug Mechanism Database."""

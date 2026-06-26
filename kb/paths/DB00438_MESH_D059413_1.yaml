@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00438_MESH_D059413_1
+  disease: Intraabdominal Infections
+  disease_mesh: MESH:D059413
+  drug: ceftazidime
+  drug_mesh: MESH:D002442
+  drugbank: DB:DB00438
+links:
+  - key: negatively regulates
+    source: MESH:D002442
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D059413
+multigraph: true
+nodes:
+  - id: MESH:D002442
+    label: Drug
+    name: ceftazidime
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding protein transpeptidase domain
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - alt_names:
+      - Infectious disease of abdomen
+    id: MESH:D059413
+    label: Disease
+    name: Intraabdominal Infections
+references:
+  - https://go.drugbank.com/drugs/DB00438
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL44354/

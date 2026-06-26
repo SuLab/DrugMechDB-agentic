@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB05197_MESH_D013276_1
+  disease: Gastric ulcer
+  disease_mesh: MESH:D013276
+  drug: sofalcone
+  drug_mesh: MESH:C035032
+  drugbank: DB:DB05197
+links:
+  - key: decreases activity of
+    source: MESH:C035032
+    target: UniProt:P15428
+  - key: disrupts
+    source: MESH:C035032
+    target: taxonomy:210
+  - key: negatively regulates
+    source: MESH:C035032
+    target: GO:0009039
+  - key: decreases abundance of
+    source: UniProt:P15428
+    target: CHEBI:15551
+  - key: in taxon
+    source: GO:0009039
+    target: taxonomy:210
+  - key: treats
+    source: CHEBI:15551
+    target: MESH:D013276
+  - key: causes
+    source: taxonomy:210
+    target: MESH:D013276
+multigraph: true
+nodes:
+  - id: MESH:C035032
+    label: Drug
+    name: Sofalcone
+  - id: taxonomy:210
+    label: OrganismTaxon
+    name: Helicobacter Pylori
+  - id: UniProt:P15428
+    label: Protein
+    name: 15-hydroxyprostaglandin dehydrogenase
+  - id: GO:0009039
+    label: MolecularActivity
+    name: Urease activityS
+  - id: CHEBI:15551
+    label: ChemicalSubstance
+    name: Prostaglandin E2
+  - id: MESH:D013276
+    label: Disease
+    name: Gastric ulcer
+references:
+  - https://drugs.ncats.io/drug/2B668TJX8E
+  - https://pubmed.ncbi.nlm.nih.gov/31614142/
+  - https://pubmed.ncbi.nlm.nih.gov/1629577/
+  - https://go.drugbank.com/drugs/DB05197

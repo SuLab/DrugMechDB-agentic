@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB01580_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: oxprenolol
+  drug_mesh: MESH:D010096
+  drugbank: DB:DB01580
+links:
+  - key: decreases activity of
+    source: MESH:D010096
+    target: UniProt:P08588
+  - key: decreases activity of
+    source: MESH:D010096
+    target: UniProt:P07550
+  - key: positively regulates
+    source: UniProt:P08588
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P08588
+    target: UniProt:P00797
+  - key: positively regulates
+    source: UniProt:P07550
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P00797
+    target: GO:0042310
+  - key: affects risk for
+    source: GO:0042310
+    target: HP:0000822
+  - key: positively correlated with
+    source: HP:0000822
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D010096
+    label: Drug
+    name: Oxprenolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: UniProt:P00797
+    label: Protein
+    name: Renin
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: Hypertension
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB01580#BE0000172

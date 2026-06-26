@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB01240_MESH_D012220_1
+  disease: Rhinitis
+  disease_mesh: MESH:D012220
+  drug: epoprostenol
+  drug_mesh: MESH:D011464
+  drugbank: DB:DB01240
+links:
+  - key: positively correlated with
+    source: MESH:D011464
+    target: UniProt:P43119
+  - key: negatively correlated with
+    source: UniProt:P43119
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D012220
+multigraph: true
+nodes:
+  - id: MESH:D011464
+    label: Drug
+    name: epoprostenol
+  - id: UniProt:P43119
+    label: Protein
+    name: Prostacyclin receptor
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D012220
+    label: Disease
+    name: Rhinitis
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1139/
+  - https://go.drugbank.com/drugs/DB01240#BE0000475
+  - https://en.wikipedia.org/wiki/Prostacyclin#Mechanism

@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00609_MESH_D014397_1
+  disease: Pulmonary tuberculosis
+  disease_mesh: MESH:D014397
+  drug: Ethionamide
+  drug_mesh: MESH:D005000
+  drugbank: DB:DB00609
+links:
+  - key: decreases activity of
+    source: MESH:D005000
+    target: UniProt:P9WGR1
+  - key: positively regulates
+    source: UniProt:P9WGR1
+    target: GO:0071768
+  - key: positively correlated with
+    source: GO:0071768
+    target: GO:0042546
+  - key: has output
+    source: GO:0042546
+    target: GO:0005618
+  - key: in taxon
+    source: GO:0005618
+    target: taxonomy:1773
+  - key: causes
+    source: taxonomy:1773
+    target: MESH:D014397
+multigraph: true
+nodes:
+  - id: MESH:D005000
+    label: Drug
+    name: Ethionamide
+  - id: UniProt:P9WGR1
+    label: Protein
+    name: Enoyl-[acyl-carrier-protein] reductase [NADH]
+  - id: GO:0071768
+    label: BiologicalProcess
+    name: Mycolic acid biosynthetic process
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: Cell wall biogenesis
+  - id: GO:0005618
+    label: CellularComponent
+    name: Cell wall
+  - id: taxonomy:1773
+    label: OrganismTaxon
+    name: Mycobacterium tuberculosis
+  - id: MESH:D014397
+    label: Disease
+    name: Pulmonary tuberculosis
+references:
+  - https://go.drugbank.com/drugs/DB00609

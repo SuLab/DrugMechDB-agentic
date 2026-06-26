@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB02703_MESH_D002690_1
+  disease: Chlamydia Infections
+  disease_mesh: MESH:D002690
+  drug: fusidic acid
+  drug_mesh: MESH:D005672
+  drugbank: DB:DB02703
+links:
+  - key: decreases activity of
+    source: MESH:D005672
+    target: UniProt:O84444
+  - key: positively regulates
+    source: UniProt:O84444
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:813
+  - key: causes
+    source: taxonomy:813
+    target: MESH:D002690
+multigraph: true
+nodes:
+  - id: MESH:D005672
+    label: Drug
+    name: fusidic acid
+  - id: UniProt:O84444
+    label: Protein
+    name: Elongation factor G
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:813
+    label: OrganismTaxon
+    name: Chlamydia trachomatis
+  - id: MESH:D002690
+    label: Disease
+    name: Chlamydia Infections
+references:
+  - https://go.drugbank.com/drugs/DB02703#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Fusidic_acid
+  - https://www.uniprot.org/uniprot/O84444#function
+  - https://en.wikipedia.org/wiki/Chlamydia_trachomatis#Role_in_disease

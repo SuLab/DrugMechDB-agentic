@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB04911_MESH_D013207_1
+  disease: Staphylococcal Skin Infections
+  disease_mesh: MESH:D013207
+  drug: oritavancin
+  drug_mesh: MESH:C100708
+  drugbank: DB:DB04911
+links:
+  - key: negatively regulates
+    source: MESH:C100708
+    target: GO:0009273
+  - key: positively correlated with
+    source: GO:0009273
+    target: GO:0051301
+  - key: in taxon
+    source: GO:0051301
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D013207
+multigraph: true
+nodes:
+  - id: MESH:C100708
+    label: Drug
+    name: oritavancin
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D013207
+    label: Disease
+    name: Staphylococcal Skin Infections
+references:
+  - https://go.drugbank.com/drugs/DB04911#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Oritavancin
+  - https://en.wikipedia.org/wiki/Staphylococcal_infection

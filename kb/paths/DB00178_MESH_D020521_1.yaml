@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00178_MESH_D020521_1
+  disease: Cerebrovascular accident
+  disease_mesh: MESH:D020521
+  drug: ramipril
+  drug_mesh: MESH:D017257
+  drugbank: DB:DB00178
+links:
+  - key: has metabolite
+    source: MESH:D017257
+    target: CHEBI:77363
+  - key: decreases activity of
+    source: CHEBI:77363
+    target: UniProt:P12821
+  - key: positively regulates
+    source: UniProt:P12821
+    target: GO:0002003
+  - key: positively regulates
+    source: GO:0002003
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0000822
+  - key: positively correlated with
+    source: HP:0000822
+    target: MESH:D020521
+multigraph: true
+nodes:
+  - id: MESH:D017257
+    label: Drug
+    name: ramipril
+  - id: CHEBI:77363
+    label: ChemicalSubstance
+    name: ramiprilat
+  - id: UniProt:P12821
+    label: Protein
+    name: Angiotensin-converting enzyme
+  - id: GO:0002003
+    label: BiologicalProcess
+    name: angiotensin maturation
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: Hypertension
+  - id: MESH:D020521
+    label: Disease
+    name: Cerebrovascular accident
+references:
+  - https://go.drugbank.com/drugs/DB00178

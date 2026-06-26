@@ -1,0 +1,37 @@
+comment: Betaine is not a standard treatment for cystitis https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5895837/
+directed: true
+graph:
+  _id: DB06756_MESH_D003556_1
+  disease: Cystitis
+  disease_mesh: MESH:D003556
+  drug: Betaine
+  drug_mesh: MESH:D001622
+  drugbank: DB:DB06756
+links:
+  - key: contributes to
+    source: MESH:D001622
+    target: HP:0012072
+  - key: negatively correlated with
+    source: HP:0012072
+    target: MESH:D001437
+  - key: positively correlated with
+    source: MESH:D001437
+    target: MESH:D003556
+multigraph: true
+nodes:
+  - id: MESH:D001622
+    label: Drug
+    name: Betaine
+  - id: HP:0012072
+    label: PhenotypicFeature
+    name: Acidic urine
+  - id: MESH:D001437
+    label: Disease
+    name: Bacteriuria
+  - id: MESH:D003556
+    label: Disease
+    name: Cystitis
+references:
+  - https://go.drugbank.com/drugs/DB06756
+  - https://pubmed.ncbi.nlm.nih.gov/31604680/
+  - https://www.aafp.org/afp/2011/1201/p1234.html

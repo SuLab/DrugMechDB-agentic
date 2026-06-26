@@ -1,0 +1,89 @@
+directed: true
+graph:
+  _id: DB00703_MESH_D015812_1
+  disease: Glaucoma, Angle-Closure
+  disease_mesh: MESH:D015812
+  drug: Methazolamide
+  drug_mesh: MESH:D008704
+  drugbank: DB:DB00703
+links:
+  - key: negatively regulates
+    source: MESH:D008704
+    target: UniProt:P00915
+  - key: negatively regulates
+    source: MESH:D008704
+    target: UniProt:P00918
+  - key: negatively regulates
+    source: MESH:D008704
+    target: UniProt:P07451
+  - key: negatively regulates
+    source: MESH:D008704
+    target: UniProt:P22748
+  - key: negatively regulates
+    source: MESH:D008704
+    target: UniProt:P43166
+  - key: positively regulates
+    source: UniProt:P00915
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:P00918
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:P07451
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:P22748
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:P43166
+    target: GO:0015701
+  - key: increases abundance of
+    source: GO:0015701
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: HP:0007906
+  - key: manifestation of
+    source: HP:0007906
+    target: MESH:D015812
+multigraph: true
+nodes:
+  - id: MESH:D008704
+    label: Drug
+    name: Methazolamide
+  - id: UniProt:P00915
+    label: Protein
+    name: Carbonic anhydrase 1
+  - id: UniProt:P00918
+    label: Protein
+    name: Carbonic anhydrase 2
+  - id: UniProt:P07451
+    label: Protein
+    name: Carbonic anhydrase 3
+  - id: UniProt:P22748
+    label: Protein
+    name: Carbonic anhydrase 4
+  - id: UniProt:P43166
+    label: Protein
+    name: Carbonic anhydrase 7
+  - id: GO:0015701
+    label: BiologicalProcess
+    name: bicarbonate transport
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: aqueous humor of eyeball
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Ocular hypertension
+  - id: MESH:D015812
+    label: Disease
+    name: Glaucoma, Angle-Closure
+references:
+  - https://go.drugbank.com/drugs/DB00703#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Methazolamide
+  - https://www.uniprot.org/uniprot/P00915#function
+  - https://www.uniprot.org/uniprot/P00918#function
+  - https://www.uniprot.org/uniprot/P07451#function
+  - https://www.uniprot.org/uniprot/P22748#function
+  - https://www.uniprot.org/uniprot/P43166#function
+  - https://en.wikipedia.org/wiki/Secondary_glaucoma

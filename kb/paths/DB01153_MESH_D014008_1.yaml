@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB01153_MESH_D014008_1
+  disease: Tinea pedis
+  disease_mesh: MESH:D014008
+  drug: sertaconazole
+  drug_mesh: MESH:C061131
+  drugbank: DB:DB01153
+links:
+  - key: negatively regulates
+    source: MESH:C061131
+    target: InterPro:IPR001128
+  - key: positively regulates
+    source: InterPro:IPR001128
+    target: GO:0006696
+  - key: positively correlated with
+    source: GO:0006696
+    target: GO:0009277
+  - key: in taxon
+    source: GO:0009277
+    target: taxonomy:5551
+  - key: causes
+    source: taxonomy:5551
+    target: MESH:D014008
+multigraph: true
+nodes:
+  - id: MESH:C061131
+    label: Drug
+    name: sertaconazole
+  - id: InterPro:IPR001128
+    label: GeneFamily
+    name: Cytochrome P450
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: ergosterol biosynthetic process
+  - id: GO:0009277
+    label: CellularComponent
+    name: fungal-type cell wall
+  - id: taxonomy:5551
+    label: OrganismTaxon
+    name: Trichophyton rubrum
+  - id: MESH:D014008
+    label: Disease
+    name: Tinea pedis
+references:
+  - https://go.drugbank.com/drugs/DB01153

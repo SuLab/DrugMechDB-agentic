@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB09041_MESH_D014009_1
+  disease: Onychomycosis due to dermatophyte
+  disease_mesh: MESH:D014009
+  drug: tavaborole
+  drug_mesh: MESH:C512998
+  drugbank: DB:DB09041
+links:
+  - key: decreases activity of
+    source: MESH:C512998
+    target: UniProt:Q9HGT2
+  - key: positively regulates
+    source: UniProt:Q9HGT2
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:5551
+  - key: causes
+    source: taxonomy:5551
+    target: MESH:D014009
+multigraph: true
+nodes:
+  - id: MESH:C512998
+    label: Drug
+    name: Tavaborole
+  - id: UniProt:Q9HGT2
+    label: Protein
+    name: Cytosolic leucyl-tRNA synthetase
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Protein biosynthesis
+  - id: taxonomy:5551
+    label: OrganismTaxon
+    name: Trichophyton rubrum
+  - id: MESH:D014009
+    label: Disease
+    name: Onychomycosis due to dermatophyte
+references:
+  - https://go.drugbank.com/drugs/DB09041#BE0002395
+  - https://en.wikipedia.org/wiki/Onychomycosis

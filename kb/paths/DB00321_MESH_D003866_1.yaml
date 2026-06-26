@@ -1,0 +1,80 @@
+comment: The mechanism of action of amitriptyline is not fully elucidated.
+directed: true
+graph:
+  _id: DB00321_MESH_D003866_1
+  disease: Depressive disorder
+  disease_mesh: MESH:D003866
+  drug: Amitriptyline
+  drug_mesh: MESH:D000639
+  drugbank: DB:DB00321
+links:
+  - key: decreases activity of
+    source: MESH:D000639
+    target: UniProt:P23975
+  - key: decreases activity of
+    source: MESH:D000639
+    target: UniProt:P31645
+  - key: decreases activity of
+    source: MESH:D000639
+    target: UniProt:P28223
+  - key: positively correlated with
+    source: UniProt:P28223
+    target: HP:0000716
+  - key: positively regulates
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: positively regulates
+    source: UniProt:P31645
+    target: GO:0051610
+  - key: negatively regulates
+    source: GO:0051620
+    target: GO:0061533
+  - key: negatively regulates
+    source: GO:0051610
+    target: GO:0060096
+  - key: negatively correlated with
+    source: GO:0061533
+    target: MESH:D003866
+  - key: manifestation of
+    source: HP:0000716
+    target: MESH:D003866
+  - key: negatively correlated with
+    source: GO:0060096
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:D000639
+    label: Drug
+    name: Amitriptyline
+  - id: HP:0000716
+    label: PhenotypicFeature
+    name: Depressivity
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: UniProt:P31645
+    label: Protein
+    name: Sodium-dependent serotonin transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: Norepinephrine uptake
+  - id: GO:0051610
+    label: BiologicalProcess
+    name: Serotonin uptake
+  - id: GO:0061533
+    label: BiologicalProcess
+    name: Norepinephrine secretion, neurotransmission
+  - id: GO:0060096
+    label: BiologicalProcess
+    name: Serotonin secretion, neurotransmission
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00321
+  - https://pubmed.ncbi.nlm.nih.gov/10703757/
+  - https://en.wikipedia.org/wiki/5-HT2A_receptor
+  - https://en.wikipedia.org/wiki/Tricyclic_antidepressant#Clinical_depression

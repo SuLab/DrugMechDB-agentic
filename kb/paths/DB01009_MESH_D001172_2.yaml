@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB01009_MESH_D001172_2
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: ketoprofen
+  drug_mesh: MESH:D007660
+  drugbank: DB:DB01009
+links:
+  - key: negatively regulates
+    source: MESH:D007660
+    target: UniProt:P25024
+  - key: positively regulates
+    source: UniProt:P25024
+    target: GO:0030593
+  - key: positively regulates
+    source: UniProt:P25024
+    target: GO:0002407
+  - key: positively correlated with
+    source: GO:0030593
+    target: HP:0005059
+  - key: positively correlated with
+    source: GO:0030593
+    target: HP:0001386
+  - key: positively correlated with
+    source: GO:0002407
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D001172
+  - key: positively correlated with
+    source: HP:0005059
+    target: MESH:D001172
+  - key: positively correlated with
+    source: HP:0001386
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:D007660
+    label: Drug
+    name: ketoprofen
+  - id: UniProt:P25024
+    label: Protein
+    name: C-X-C chemokine receptor type 1
+  - id: GO:0030593
+    label: BiologicalProcess
+    name: neutrophil chemotaxis
+  - id: GO:0002407
+    label: BiologicalProcess
+    name: dendritic cell chemotaxis
+  - id: HP:0005059
+    label: PhenotypicFeature
+    name: Arthralgia/arthritis
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB01009#BE0003552
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4943798/

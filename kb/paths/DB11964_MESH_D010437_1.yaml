@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB11964_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: ilaprazole
+  drug_mesh: MESH:C119615
+  drugbank: DB:DB11964
+links:
+  - key: decreases activity of
+    source: MESH:C119615
+    target: UniProt:P20648
+  - key: positively correlated with
+    source: UniProt:P20648
+    target: GO:0008900
+  - key: located in
+    source: GO:0008900
+    target: UBERON:0000325
+  - key: positively correlated with
+    source: UBERON:0000325
+    target: GO:0001696
+  - key: positively correlated with
+    source: GO:0001696
+    target: MESH:D006356
+  - key: manifestation of
+    source: MESH:D006356
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:C119615
+    label: Drug
+    name: ilaprazole
+  - id: UniProt:P20648
+    label: Protein
+    name: Potassium-transporting ATPase alpha chain 1
+  - id: GO:0008900
+    label: MolecularActivity
+    name: P-type potassium:proton transporter activity
+  - id: UBERON:0000325
+    label: GrossAnatomicalStructure
+    name: gastric gland
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: gastric acid secretion
+  - id: MESH:D006356
+    label: PhenotypicFeature
+    name: Heartburn
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB11964
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009550/
+comment: ilaprazole mechanism of action was not provided in the drugbank DB. From
+  the literature it was reported as same as Omeprazole.

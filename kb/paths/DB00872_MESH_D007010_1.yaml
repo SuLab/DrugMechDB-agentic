@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00872_MESH_D007010_1
+  disease: Hyponatremia
+  disease_mesh: MESH:D007010
+  drug: conivaptan
+  drug_mesh: MESH:C106389
+  drugbank: DB:DB00872
+links:
+  - key: decreases activity of
+    source: MESH:C106389
+    target: UniProt:P37288
+  - key: decreases activity of
+    source: MESH:C106389
+    target: UniProt:P30518
+  - key: participates in
+    source: UniProt:P37288
+    target: reactome:R-HSA-432040
+  - key: participates in
+    source: UniProt:P30518
+    target: reactome:R-HSA-432040
+  - key: positively regulates
+    source: reactome:R-HSA-432040
+    target: GO:0070295
+  - key: positively correlated with
+    source: GO:0070295
+    target: MESH:D007010
+multigraph: true
+nodes:
+  - id: MESH:C106389
+    label: Drug
+    name: conivaptan
+  - id: UniProt:P37288
+    label: Protein
+    name: Vasopressin V1a receptor
+  - id: UniProt:P30518
+    label: Protein
+    name: Vasopressin V2 receptor
+  - id: reactome:R-HSA-432040
+    label: Pathway
+    name: Vasopressin regulates renal water homeostasis via Aquaporins
+  - id: GO:0070295
+    label: BiologicalProcess
+    name: renal water absorption
+  - id: MESH:D007010
+    label: Disease
+    name: Hyponatremia
+references:
+  - https://go.drugbank.com/drugs/DB00872
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1755/

@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB06612_MESH_D011657_1
+  disease: Eosinophilic asthma
+  disease_mesh: MESH:D011657
+  drug: mepolizumab
+  drug_mesh: MESH:C434107
+  drugbank: DB:DB06612
+links:
+  - key: decreases activity of
+    source: MESH:C434107
+    target: UniProt:P05113
+  - key: positively regulates
+    source: UniProt:P05113
+    target: GO:0043307
+  - key: positively regulates
+    source: UniProt:P05113
+    target: GO:0072677
+  - key: positively regulates
+    source: UniProt:P05113
+    target: GO:0030222
+  - key: positively correlated with
+    source: GO:0043307
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0072677
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0030222
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0100699
+  - key: phenotype of
+    source: HP:0100699
+    target: MESH:D011657
+multigraph: true
+nodes:
+  - id: MESH:C434107
+    label: Drug
+    name: mepolizumab
+  - id: UniProt:P05113
+    label: Protein
+    name: Interleukin-5
+  - id: GO:0043307
+    label: BiologicalProcess
+    name: Eosinophil activation
+  - id: GO:0072677
+    label: BiologicalProcess
+    name: Eosinophil migration
+  - id: GO:0030222
+    label: BiologicalProcess
+    name: Eosinophil differentiation
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: HP:0100699
+    label: PhenotypicFeature
+    name: Scarring
+  - id: MESH:D011657
+    label: Disease
+    name: Eosinophilic asthma
+references:
+  - https://go.drugbank.com/drugs/DB06612
+  - https://en.wikipedia.org/wiki/Asthma

@@ -1,0 +1,55 @@
+comment: The precise mechanism of brivaracetam's anti-epileptogenic activity is unknown.
+  It is thought that brivaracetam binds to SV2A and causes the reduction in the rate
+  of vesicle release including release of excitatory neurotransmitters.
+directed: true
+graph:
+  _id: DB05541_MESH_D004828_1
+  disease: Partial seizure
+  disease_mesh: MESH:D004828
+  drug: Brivaracetam
+  drug_mesh: MESH:C482793
+  drugbank: DB:DB05541
+links:
+  - key: negatively regulates
+    source: MESH:C482793
+    target: UniProt:Q7L0J3
+  - key: negatively regulates
+    source: MESH:C482793
+    target: GO:0005248
+  - key: participates in
+    source: UniProt:Q7L0J3
+    target: GO:0007269
+  - key: positively correlated with
+    source: GO:0005248
+    target: HP:0001250
+  - key: correlated with
+    source: GO:0007269
+    target: MESH:D004828
+  - key: manifestation of
+    source: HP:0001250
+    target: MESH:D004828
+multigraph: true
+nodes:
+  - id: MESH:C482793
+    label: Drug
+    name: Brivaracetam
+  - id: UniProt:Q7L0J3
+    label: Protein
+    name: Synaptic vesicle glycoprotein 2A
+  - id: GO:0005248
+    label: MolecularActivity
+    name: Voltage-gated sodium channel activity
+  - id: GO:0007269
+    label: BiologicalProcess
+    name: Neurotransmitter secretion
+  - id: HP:0001250
+    label: PhenotypicFeature
+    name: Seizure
+  - id: MESH:D004828
+    label: Disease
+    name: Partial seizure
+references:
+  - https://en.wikipedia.org/wiki/Brivaracetam#Pharmacology
+  - https://go.drugbank.com/drugs/DB05541
+  - https://pubmed.ncbi.nlm.nih.gov/27768878/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4888813/

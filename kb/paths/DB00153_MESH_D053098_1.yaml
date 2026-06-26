@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00153_MESH_D053098_1
+  disease: Familial x-linked hypophosphatemic vitamin D refractory rickets
+  disease_mesh: MESH:D053098
+  drug: ergocalciferol
+  drugbank: DB:DB00153
+links:
+  - key: has metabolite
+    source: DB:DB00153
+    target: CHEBI:86320
+  - key: increases activity of
+    source: CHEBI:86320
+    target: UniProt:P11473
+  - key: positively regulates
+    source: UniProt:P11473
+    target: GO:0070561
+  - key: positively regulates
+    source: GO:0070561
+    target: GO:0030282
+  - key: negatively correlated with
+    source: GO:0030282
+    target: MESH:D053098
+multigraph: true
+nodes:
+  - id: DB:DB00153
+    label: Drug
+    name: ergocalciferol
+  - id: CHEBI:86320
+    label: ChemicalSubstance
+    name: 1α,25-dihydroxyvitamin D2
+  - id: UniProt:P11473
+    label: Protein
+    name: Vitamin D3 receptor
+  - id: GO:0070561
+    label: BiologicalProcess
+    name: vitamin D receptor signaling pathway
+  - id: GO:0030282
+    label: BiologicalProcess
+    name: bone mineralization
+  - id: MESH:D053098
+    label: Disease
+    name: Familial x-linked hypophosphatemic vitamin D refractory rickets
+references:
+  - https://go.drugbank.com/drugs/DB00153
+  - https://en.wikipedia.org/wiki/Ergocalciferol#Mechanism
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5280793#section=Mechanism-of-Action

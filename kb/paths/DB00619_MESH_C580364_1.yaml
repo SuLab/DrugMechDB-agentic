@@ -1,0 +1,53 @@
+comment: The disease is also known as Chronic eosinophilic leukemia as per the original
+  file. The malignancy is driven by FIP1L1-PDGFRA fusion genes (https://en.wikipedia.org/wiki/FIP1L1#FIP1L1-PDGFRA_fusion_genes).
+directed: true
+graph:
+  _id: DB00619_MESH_C580364_1
+  disease: Pdgfra-Associated Chronic Eosinophilic Leukemia
+  disease_mesh: MESH:C580364
+  drug: imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+links:
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: UniProt:P16234
+  - key: positively regulates
+    source: UniProt:P16234
+    target: GO:0048008
+  - key: positively correlated with
+    source: GO:0048008
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: HP:0001880
+  - key: manifestation of
+    source: HP:0001880
+    target: MESH:C580364
+multigraph: true
+nodes:
+  - id: MESH:D000068877
+    label: Drug
+    name: imatinib
+  - id: UniProt:P16234
+    label: Protein
+    name: Platelet-derived growth factor receptor alpha
+  - id: GO:0048008
+    label: BiologicalProcess
+    name: platelet-derived growth factor receptor signaling pathway
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: HP:0001880
+    label: PhenotypicFeature
+    name: Eosinophilia
+  - id: MESH:C580364
+    label: Disease
+    name: Pdgfra-Associated Chronic Eosinophilic Leukemia
+references:
+  - https://www.cancer.gov/publications/dictionaries/cancer-drug/def/imatinib-mesylate
+  - https://go.drugbank.com/drugs/DB00619#BE0000205
+  - https://go.drugbank.com/drugs/DB00619#BE0000852
+  - https://en.wikipedia.org/wiki/Chronic_eosinophilic_leukemia
+  - https://en.wikipedia.org/wiki/Eosinophilia#Chronic_eosinophilic_leukemia_(NOS)
+  - https://en.wikipedia.org/wiki/Imatinib#Other

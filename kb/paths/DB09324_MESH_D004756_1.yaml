@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB09324_MESH_D004756_1
+  disease: Infection due to Enterobacteriaceae
+  disease_mesh: MESH:D004756
+  drug: sulbactam
+  drug_mesh: MESH:D013407
+  drugbank: DB:DB09324
+links:
+  - key: negatively regulates
+    source: MESH:D013407
+    target: InterPro:IPR012338
+  - key: positively regulates
+    source: InterPro:IPR012338
+    target: GO:0008800
+  - key: in taxon
+    source: GO:0008800
+    target: taxonomy:543
+  - key: causes
+    source: taxonomy:543
+    target: MESH:D004756
+multigraph: true
+nodes:
+  - id: MESH:D013407
+    label: Drug
+    name: sulbactam
+  - id: InterPro:IPR012338
+    label: GeneFamily
+    name: Beta-lactamase/transpeptidase-like
+  - id: GO:0008800
+    label: MolecularActivity
+    name: beta-lactamase activity
+  - id: taxonomy:543
+    label: OrganismTaxon
+    name: Enterobacteriaceae
+  - id: MESH:D004756
+    label: Disease
+    name: Infection due to Enterobacteriaceae
+references:
+  - https://go.drugbank.com/drugs/DB09324

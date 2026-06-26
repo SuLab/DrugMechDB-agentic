@@ -1,0 +1,28 @@
+comment: Mestranol is a biologically inactive prodrug of ethinylestradiol, which it
+  is demethylated in the liver with a conversion efficiency of 70%. Mestranol is used
+  as an estrogen component of many combined oral contraceptives. The combined oral
+  contraceptives show efficacy in endometriosis symptoms management, but not estrogen
+  component itself.
+directed: true
+graph:
+  _id: DB01357_MESH_D004715_1
+  disease: Endometriosis
+  disease_mesh: MESH:D004715
+  drug: Mestranol
+  drug_mesh: MESH:D008656
+  drugbank: DB:DB01357
+links:
+  - key: treats
+    source: MESH:D008656
+    target: MESH:D004715
+multigraph: true
+nodes:
+  - id: MESH:D008656
+    label: Drug
+    name: Mestranol
+  - id: MESH:D004715
+    label: Disease
+    name: Endometriosis
+references:
+  - https://go.drugbank.com/drugs/DB01357
+  - https://pubmed.ncbi.nlm.nih.gov/31488888/

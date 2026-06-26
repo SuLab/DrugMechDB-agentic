@@ -1,0 +1,45 @@
+directed: true
+graph:
+  _id: DB09010_MESH_D003110_1
+  disease: Colonic Neoplasms
+  disease_mesh: MESH:D003110
+  drug: carmofur
+  drug_mesh: MESH:C017367
+  drugbank: DB:DB09010
+links:
+  - key: decreases activity of
+    source: MESH:C017367
+    target: UniProt:Q13510
+  - key: positively regulates
+    source: UniProt:Q13510
+    target: GO:0016049
+  - key: located in
+    source: GO:0016049
+    target: UBERON:0001155
+  - key: location of
+    source: UBERON:0001155
+    target: MESH:D003110
+multigraph: true
+nodes:
+  - id: MESH:C017367
+    label: Drug
+    name: carmofur
+  - id: UniProt:Q13510
+    label: Protein
+    name: Acid ceramidase
+  - id: GO:0016049
+    label: BiologicalProcess
+    name: cell growth
+  - id: UBERON:0001155
+    label: GrossAnatomicalStructure
+    name: colon
+  - id: MESH:D003110
+    label: Disease
+    name: Colonic Neoplasms
+references:
+  - https://go.drugbank.com/drugs/DB09010#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Carmofur
+  - https://www.uniprot.org/uniprot/Q13510#function
+  - https://en.wikipedia.org/wiki/ASAH1
+  - https://pubmed.ncbi.nlm.nih.gov/17064658/
+  - https://en.wikipedia.org/wiki/Colorectal_cancer

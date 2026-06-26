@@ -1,0 +1,100 @@
+comment: Prednisone is a synthetic glucocorticoid derived from cortisone. It acts
+  as a prodrug and converted into the active metabolite prednisolone in the liver.
+directed: true
+graph:
+  _id: DB00635_MESH_D016403_1
+  disease: Lymphoma, Large B-Cell, Diffuse
+  disease_mesh: MESH:D016403
+  drug: prednisone
+  drug_mesh: MESH:D011241
+  drugbank: DB:DB00635
+links:
+  - key: has metabolite
+    source: MESH:D011241
+    target: MESH:D011239
+  - key: increases activity of
+    source: MESH:D011239
+    target: UniProt:P04150
+  - key: increases activity of
+    source: UniProt:P04150
+    target: UniProt:P04083
+  - key: decreases activity of
+    source: UniProt:P04150
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: UniProt:P04150
+    target: UniProt:P35354
+  - key: decreases activity of
+    source: UniProt:P04083
+    target: UniProt:P47712
+  - key: positively regulates
+    source: UniProt:P23219
+    target: GO:0001516
+  - key: positively regulates
+    source: UniProt:P35354
+    target: GO:0001516
+  - key: positively regulates
+    source: UniProt:P47712
+    target: GO:0019370
+  - key: positively regulates
+    source: UniProt:P47712
+    target: GO:0001516
+  - key: positively correlated with
+    source: GO:0019370
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0001516
+    target: GO:0006954
+  - key: contributes to
+    source: GO:0006954
+    target: HP:0002665
+  - key: manifestation of
+    source: HP:0002665
+    target: MESH:D016403
+multigraph: true
+nodes:
+  - id: MESH:D011241
+    label: Drug
+    name: prednisone
+  - id: MESH:D011239
+    label: ChemicalSubstance
+    name: Prednisolone
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: UniProt:P04083
+    label: Protein
+    name: Annexin A1
+  - id: UniProt:P47712
+    label: Protein
+    name: Cytosolic phospholipase A2
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: GO:0019370
+    label: BiologicalProcess
+    name: leukotriene biosynthetic process
+  - id: GO:0001516
+    label: BiologicalProcess
+    name: prostaglandin biosynthetic process
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0002665
+    label: PhenotypicFeature
+    name: Lymphoma
+  - id: MESH:D016403
+    label: Disease
+    name: Lymphoma, Large B-Cell, Diffuse
+references:
+  - https://go.drugbank.com/drugs/DB00635#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Prednisone
+  - https://www.uniprot.org/uniprot/P04150#function
+  - https://www.uniprot.org/uniprot/P04083#function
+  - https://www.uniprot.org/uniprot/P47712#function
+  - https://www.uniprot.org/uniprot/P23219#function
+  - https://www.uniprot.org/uniprot/P35354#function
+  - https://en.wikipedia.org/wiki/Diffuse_large_B-cell_lymphoma

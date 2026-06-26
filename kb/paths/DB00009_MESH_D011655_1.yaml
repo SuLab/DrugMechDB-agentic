@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00009_MESH_D011655_1
+  disease: Pulmonary embolism
+  disease_mesh: MESH:D011655
+  drug: alteplase
+  drug_mesh: MESH:D010959
+  drugbank: DB:DB00009
+links:
+  - key: increases activity of
+    source: MESH:D010959
+    target: UniProt:P00747
+  - key: positively regulates
+    source: UniProt:P00747
+    target: GO:0042730
+  - key: negatively correlated with
+    source: GO:0042730
+    target: GO:0072378
+  - key: positively correlated with
+    source: GO:0072378
+    target: MESH:D011655
+multigraph: true
+nodes:
+  - id: MESH:D010959
+    label: Drug
+    name: Alteplase
+  - id: UniProt:P00747
+    label: Protein
+    name: Plasminogen
+  - id: GO:0042730
+    label: BiologicalProcess
+    name: Fibrinolysis
+  - id: GO:0072378
+    label: BiologicalProcess
+    name: Blood coagulation, fibrin clot formation
+  - id: MESH:D011655
+    label: Disease
+    name: Pulmonary embolism
+references:
+  - https://go.drugbank.com/drugs/DB00009
+  - https://en.wikipedia.org/wiki/Alteplase

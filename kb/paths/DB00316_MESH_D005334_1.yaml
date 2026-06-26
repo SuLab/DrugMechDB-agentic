@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00316_MESH_D005334_1
+  disease: Fever
+  disease_mesh: MESH:D005334
+  drug: acetaminophen
+  drug_mesh: MESH:D000082
+  drugbank: DB:DB00316
+links:
+  - key: negatively regulates
+    source: MESH:D000082
+    target: reactome:R-HSA-2162123
+  - key: occurs in
+    source: reactome:R-HSA-2162123
+    target: UBERON:0000955
+  - key: location of
+    source: UBERON:0000955
+    target: GO:0001659
+  - key: negatively correlated with
+    source: GO:0001659
+    target: MESH:D005334
+multigraph: true
+nodes:
+  - id: MESH:D000082
+    label: Drug
+    name: acetaminophen
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: cycloxygenaze pathways
+  - id: UBERON:0000955
+    label: GrossAnatomicalStructure
+    name: Brain
+  - id: GO:0001659
+    label: BiologicalProcess
+    name: Temperature Homeostasis
+  - id: MESH:D005334
+    label: Disease
+    name: Fever

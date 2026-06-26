@@ -1,0 +1,77 @@
+directed: true
+graph:
+  _id: DB00364_MESH_D004381_1
+  disease: Duodenal ulcer disease
+  disease_mesh: MESH:D004381
+  drug: sucralfate
+  drug_mesh: MESH:D013392
+  drugbank: DB:DB00364
+links:
+  - key: decreases activity of
+    source: MESH:D013392
+    target: UniProt:P0DJD9
+  - key: positively correlated with
+    source: UniProt:P0DJD9
+    target: MESH:D004381
+  - key: decreases abundance of
+    source: MESH:D013392
+    target: CHEBI:22868
+  - key: positively correlated with
+    source: CHEBI:22868
+    target: MESH:D004381
+  - key: positively regulates
+    source: MESH:D013392
+    target: GO:0032310
+  - key: positively regulates
+    source: MESH:D013392
+    target: GO:0001516
+  - key: positively regulates
+    source: MESH:D013392
+    target: GO:0070254
+  - key: increases abundance of
+    source: MESH:D013392
+    target: MESH:D001639
+  - key: negatively correlated with
+    source: MESH:D001639
+    target: MESH:D004381
+  - key: negatively correlated with
+    source: GO:0032310
+    target: MESH:D004381
+  - key: negatively correlated with
+    source: GO:0001516
+    target: MESH:D004381
+  - key: negatively correlated with
+    source: GO:0070254
+    target: MESH:D004381
+multigraph: true
+nodes:
+  - id: MESH:D013392
+    label: Drug
+    name: sucralfate
+  - id: UniProt:P0DJD9
+    label: Protein
+    name: Pepsin A-5
+  - id: GO:0032310
+    label: BiologicalProcess
+    name: prostaglandin secretion
+  - id: GO:0001516
+    label: BiologicalProcess
+    name: prostaglandin biosynthetic process
+  - id: GO:0070254
+    label: BiologicalProcess
+    name: mucus secretion
+  - id: MESH:D001639
+    label: ChemicalSubstance
+    name: Bicarbonates
+  - id: CHEBI:22868
+    label: ChemicalSubstance
+    name: bile salt
+  - id: MESH:D004381
+    label: Disease
+    name: Duodenal ulcer disease
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/1611711/
+  - https://pubmed.ncbi.nlm.nih.gov/2190304/
+  - https://pubmed.ncbi.nlm.nih.gov/3113799/
+  - https://en.wikipedia.org/wiki/Sucralfate#Mechanism_of_action
+  - https://go.drugbank.com/drugs/DB00364

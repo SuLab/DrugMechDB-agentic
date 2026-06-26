@@ -1,0 +1,23 @@
+comment: No evidence found for MoA of citric acid treating headache disorders.
+directed: true
+graph:
+  _id: DB04272_MESH_D020773_1
+  disease: Headache disorder
+  disease_mesh: MESH:D020773
+  drug: citric acid
+  drug_mesh: MESH:D019343
+  drugbank: DB:DB04272
+links:
+  - key: treats
+    source: MESH:D019343
+    target: MESH:D020773
+multigraph: true
+nodes:
+  - id: MESH:D019343
+    label: Drug
+    name: Citric acid
+  - id: MESH:D020773
+    label: Disease
+    name: Headache disorder
+references:
+  - https://go.drugbank.com/drugs/DB04272

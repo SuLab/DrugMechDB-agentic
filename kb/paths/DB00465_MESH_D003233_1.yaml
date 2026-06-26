@@ -1,0 +1,60 @@
+directed: true
+graph:
+  _id: DB00465_MESH_D003233_1
+  disease: Allergic conjunctivitis
+  disease_mesh: MESH:D003233
+  drug: ketorolac
+  drug_mesh: MESH:D020910
+  drugbank: DB:DB00465
+links:
+  - key: negatively regulates
+    source: MESH:D020910
+    target: UniProt:P23219
+  - key: negatively regulates
+    source: MESH:D020910
+    target: UniProt:P35354
+  - key: participates in
+    source: UniProt:P23219
+    target: reactome:R-HSA-2162123
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0100533
+  - key: manifestation of
+    source: HP:0100533
+    target: MESH:D003233
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:D020911
+    alt_names:
+      - Ketorolac Tromethamine
+    id: MESH:D020910
+    label: Drug
+    name: ketorolac
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: HP:0100533
+    label: PhenotypicFeature
+    name: Inflammatory abnormality of the eye
+  - id: MESH:D003233
+    label: Disease
+    name: Allergic conjunctivitis
+references:
+  - https://go.drugbank.com/drugs/DB00465
+  - https://en.wikipedia.org/wiki/Ketorolac#Mechanism_of_action

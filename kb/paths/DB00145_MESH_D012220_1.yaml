@@ -1,0 +1,23 @@
+comment: No evidence found to support rhinitis treatment with a glycine.
+directed: true
+graph:
+  _id: DB00145_MESH_D012220_1
+  disease: Rhinitis
+  disease_mesh: MESH:D012220
+  drug: glycine
+  drug_mesh: MESH:D005998
+  drugbank: DB:DB00145
+links:
+  - key: treats
+    source: MESH:D005998
+    target: MESH:D012220
+multigraph: true
+nodes:
+  - id: MESH:D005998
+    label: Drug
+    name: Glycine
+  - id: MESH:D012220
+    label: Disease
+    name: Rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB00145

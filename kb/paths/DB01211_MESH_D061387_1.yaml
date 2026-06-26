@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01211_MESH_D061387_1
+  disease: Chlamydial pneumonia
+  disease_mesh: MESH:D061387
+  drug: clarithromycin
+  drug_mesh: MESH:C040934,MESH:D017291
+  drugbank: DB:DB01211
+links:
+  - key: negatively regulates
+    source: DB:DB01211
+    target: MESH:D012338
+  - key: located in
+    source: MESH:D012338
+    target: GO:0005840
+  - key: positively regulates
+    source: GO:0005840
+    target: GO:0006412
+  - key: part of
+    source: GO:0006412
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:83558
+  - key: occurs in
+    source: taxonomy:83558
+    target: MESH:D061387
+multigraph: true
+nodes:
+  - id: DB:DB01211
+    label: Drug
+    name: Clarithromycin
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: GO:0005840
+    label: CellularComponent
+    name: Ribosome
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: Cell division
+  - id: taxonomy:83558
+    label: OrganismTaxon
+    name: Chlamydia pneumoniae
+  - id: MESH:D061387
+    label: Disease
+    name: Chlamydial pneumonia
+references:
+  - https://go.drugbank.com/polypeptides/P0A7J6
+  - https://www.ncbi.nlm.nih.gov/books/NBK560874/

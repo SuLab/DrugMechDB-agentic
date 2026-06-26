@@ -1,0 +1,37 @@
+comment: Quinfamide is under phase III trial for the treatment of Amoebiasis and Helminthiasis.
+directed: true
+graph:
+  _id: DB12780_MESH_D000562_1
+  disease: Amebiasis
+  disease_mesh: MESH:D000562
+  drug: quinfamide
+  drug_mesh: MESH:C026546
+  drugbank: DB:DB12780
+links:
+  - key: negatively regulates
+    source: MESH:C026546
+    target: GO:0048870
+  - key: in taxon
+    source: GO:0048870
+    target: taxonomy:5759
+  - key: causes
+    source: taxonomy:5759
+    target: MESH:D000562
+multigraph: true
+nodes:
+  - id: MESH:C026546
+    label: Drug
+    name: quinfamide
+  - id: GO:0048870
+    label: BiologicalProcess
+    name: cell motility
+  - id: taxonomy:5759
+    label: OrganismTaxon
+    name: Entamoeba histolytica
+  - id: MESH:D000562
+    label: Disease
+    name: Amebiasis
+references:
+  - https://go.drugbank.com/drugs/DB12780#mechanism-of-action
+  - https://drugs.ncats.io/drug/O1ZB1046R1
+  - https://en.wikipedia.org/wiki/Amoebiasis

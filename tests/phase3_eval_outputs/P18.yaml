@@ -1,0 +1,76 @@
+directed: true
+multigraph: true
+graph:
+  _id: P18_DB01356_MESH_D001714
+  drug: Lithium
+  drug_mesh: MESH:D008094
+  drugbank: DB:DB01356
+  disease: Bipolar Disorder
+  disease_mesh: MESH:D001714
+nodes:
+  - id: MESH:D008094
+    name: Lithium
+    label: Drug
+  - id: UniProt:P49841
+    name: Glycogen synthase kinase-3 beta
+    label: Protein
+  - id: GO:0006915
+    name: apoptotic process
+    label: BiologicalProcess
+  - id: MESH:D001714
+    name: Bipolar Disorder
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D008094
+    target: UniProt:P49841
+    evidence:
+      - reference: PMID:12071511
+        snippet: lithium has been identified as a selective and direct inhibitor of GSK-3beta
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: >-
+          Seminal paper in Bipolar Disorders journal establishing lithium as a
+          selective and direct inhibitor of GSK-3beta activity.
+      - reference: PMID:21732538
+        snippet: lithium is known to be a direct inhibitor of GSK-3beta
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: >-
+          Medicinal chemistry paper developing GSK-3beta inhibitors for bipolar
+          disorder, confirming lithium's known direct inhibitory action on GSK-3beta.
+  - key: positively regulates
+    source: UniProt:P49841
+    target: GO:0006915
+    evidence:
+      - reference: PMID:12071511
+        snippet: GSK-3beta is a pro-apoptotic enzyme
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: >-
+          The paper explicitly identifies GSK-3beta as a pro-apoptotic enzyme,
+          meaning it positively regulates the apoptotic process.
+  - key: contributes to
+    source: GO:0006915
+    target: MESH:D001714
+    evidence:
+      - reference: PMID:12071511
+        snippet: several drugs therapeutic for bipolar disorder can provide neuroprotection by inhibiting the pro-apoptotic effects of GSK-3beta, providing new evidence that dysregulation of GSK-3beta may contribute to the pathophysiology of bipolar disorder
+        supports: PARTIAL
+        evidence_source: IN_VITRO
+        explanation: >-
+          The efficacy of bipolar drugs is attributed to inhibiting GSK-3beta's
+          pro-apoptotic effects, implying that apoptotic process driven by GSK-3beta
+          contributes to bipolar disorder pathophysiology. Support is PARTIAL because
+          "may contribute" is hedged language.
+      - reference: PMID:36440772
+        snippet: inhibition of glycogen synthase kinase 3 beta and inositol monophosphatase, resulting in induction of brain-derived neurotrophic factor, antiapoptotic proteins, deprivation of calcium-induced apoptosis
+        supports: PARTIAL
+        evidence_source: OTHER
+        explanation: >-
+          Lithium treats bipolar disorder by inducing antiapoptotic proteins and
+          depriving calcium-induced apoptosis, supporting that apoptotic process
+          is a pathological contributor to bipolar disorder.
+references:
+  - https://go.drugbank.com/drugs/DB01356#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P49841#function

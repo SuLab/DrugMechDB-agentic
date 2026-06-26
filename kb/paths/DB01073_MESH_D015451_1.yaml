@@ -1,0 +1,60 @@
+directed: true
+graph:
+  _id: DB01073_MESH_D015451_1
+  disease: Chronic lymphoid leukemia, disease
+  disease_mesh: MESH:D015451
+  drug: fludarabine phosphate
+  drug_mesh: MESH:C042382
+  drugbank: DB:DB01073
+links:
+  - key: negatively regulates
+    source: MESH:C042382
+    target: UniProt:P09884
+  - key: negatively regulates
+    source: MESH:C042382
+    target: UniProt:P23921
+  - key: negatively regulates
+    source: MESH:C042382
+    target: UniProt:P49643
+  - key: positively regulates
+    source: UniProt:P09884
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:P23921
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:P49643
+    target: GO:0006260
+  - key: correlated with
+    source: GO:0006260
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D015451
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C024352
+    id: MESH:C042382
+    label: Drug
+    name: fludarabine phosphate
+  - id: UniProt:P09884
+    label: Protein
+    name: DNA polymerase alpha catalytic subunit
+  - id: UniProt:P23921
+    label: Protein
+    name: Ribonucleoside-diphosphate reductase large subunit
+  - id: UniProt:P49643
+    label: Protein
+    name: DNA primase large subunit
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: MESH:D015451
+    label: Disease
+    name: Chronic lymphoid leukemia, disease
+references:
+  - https://www.cancer.gov/publications/dictionaries/cancer-drug/def/fludarabine-phosphate

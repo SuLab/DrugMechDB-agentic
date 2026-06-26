@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00313_MESH_D001714_3
+  disease: Bipolar disorder
+  disease_mesh: MESH:D001714
+  drug: valproic acid
+  drug_mesh: MESH:D014635
+  drugbank: DB:DB00313
+links:
+  - key: negatively regulates
+    source: MESH:D014635
+    target: UniProt:P29966
+  - key: negatively regulates
+    source: UniProt:P29966
+    target: UniProt:Q02156
+  - key: located in
+    source: UniProt:Q02156
+    target: UBERON:0001870
+  - key: contributes to
+    source: UBERON:0001870
+    target: GO:0051823
+  - key: treats
+    source: GO:0051823
+    target: MESH:D001714
+multigraph: true
+nodes:
+  - id: MESH:D014635
+    label: Drug
+    name: valproic acid
+  - id: UniProt:P29966
+    label: Protein
+    name: Myristoylated alanine-rich C kinase substrate
+  - id: UniProt:Q02156
+    label: Protein
+    name: protein kinase C (PKC)-ε
+  - id: UBERON:0001870
+    label: GrossAnatomicalStructure
+    name: frontal cortex
+  - id: GO:0051823
+    label: BiologicalProcess
+    name: synaptic remodeling
+  - id: MESH:D001714
+    label: Disease
+    name: Bipolar disorder
+references:
+  - https://go.drugbank.com/drugs/DB00313#mechanismofaction

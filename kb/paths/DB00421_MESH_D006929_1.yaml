@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00421_MESH_D006929_1
+  disease: Aldosteronism
+  disease_mesh: MESH:D006929
+  drug: spironolactone
+  drug_mesh: MESH:D013148
+  drugbank: DB:DB00421
+links:
+  - key: negatively regulates
+    source: MESH:D013148
+    target: UniProt:P08235
+  - key: positively correlated with
+    source: UniProt:P08235
+    target: MESH:D000450
+  - key: contributes to
+    source: MESH:D000450
+    target: MESH:D006929
+multigraph: true
+nodes:
+  - id: MESH:D013148
+    label: Drug
+    name: spironolactone
+  - id: UniProt:P08235
+    label: Protein
+    name: Mineralocorticoid receptor
+  - id: MESH:D000450
+    label: ChemicalSubstance
+    name: aldosterone
+  - id: MESH:D006929
+    label: Disease
+    name: Aldosteronism
+references:
+  - https://go.drugbank.com/drugs/DB00421
+  - https://en.wikipedia.org/wiki/Hyperaldosteronism

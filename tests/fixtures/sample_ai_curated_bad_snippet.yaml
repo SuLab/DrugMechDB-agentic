@@ -1,0 +1,27 @@
+# Negative test fixture — snippet text is NOT a verbatim substring of the
+# cached PMID:99999999 abstract. Layer 4 must FAIL on this file.
+directed: true
+graph:
+  _id: DBTEST_MESH_DTEST_2
+  drug: cetuximab
+  drug_mesh: MESH:D000068818
+  drugbank: DB:DB00002
+  disease: Malignant tumor of colon
+  disease_mesh: MESH:D003110
+multigraph: true
+nodes:
+  - id: MESH:D000068818
+    name: cetuximab
+    label: Drug
+  - id: UniProt:P00533
+    name: Epidermal growth factor receptor
+    label: Protein
+links:
+  - key: decreases activity of
+    source: MESH:D000068818
+    target: UniProt:P00533
+    evidence:
+      - reference: PMID:99999999
+        snippet: this text is intentionally NOT present in the cached abstract
+        supports: SUPPORT
+        evidence_source: IN_VITRO

@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB00773_MESH_D013736_1
+  disease: Malignant tumor of testis
+  disease_mesh: MESH:D013736
+  drug: etoposide
+  drug_mesh: MESH:D005047
+  drugbank: DB:DB00773
+links:
+  - key: decreases activity of
+    source: MESH:D005047
+    target: UniProt:P11388
+  - key: participates in
+    source: UniProt:P11388
+    target: GO:0003916
+  - key: participates in
+    source: GO:0003916
+    target: GO:0000084
+  - key: participates in
+    source: GO:0003916
+    target: GO:0000085
+  - key: positively correlated with
+    source: GO:0000084
+    target: GO:0007049
+  - key: positively correlated with
+    source: GO:0000085
+    target: GO:0007049
+  - key: located in
+    source: GO:0007049
+    target: CL:0001063
+  - key: correlated with
+    source: CL:0001063
+    target: MESH:D013736
+multigraph: true
+nodes:
+  - id: MESH:D005047
+    label: Drug
+    name: etoposide
+  - id: UniProt:P11388
+    label: Protein
+    name: DNA topoisomerase 2-alpha
+  - id: GO:0003916
+    label: MolecularActivity
+    name: DNA topoisomerase activity
+  - id: GO:0000084
+    label: BiologicalProcess
+    name: mitotic S phase
+  - id: GO:0000085
+    label: BiologicalProcess
+    name: mitotic G2 phase
+  - id: GO:0007049
+    label: BiologicalProcess
+    name: cell cycle
+  - id: CL:0001063
+    label: Cell
+    name: tumor cell
+  - id: MESH:D013736
+    label: Disease
+    name: Malignant tumor of testis
+references:
+  - https://go.drugbank.com/drugs/DB00773
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4652635/

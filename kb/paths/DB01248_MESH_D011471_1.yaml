@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DB01248_MESH_D011471_1
+  disease: Malignant tumor of prostate
+  disease_mesh: MESH:D011471
+  drug: docetaxel
+  drug_mesh: MESH:C067311
+  drugbank: DB:DB01248
+links:
+  - key: decreases activity of
+    source: DB:DB01248
+    target: UniProt:Q9H4B7
+  - key: decreases activity of
+    source: DB:DB01248
+    target: UniProt:P10415
+  - key: participates in
+    source: UniProt:Q9H4B7
+    target: GO:1902850
+  - key: negatively regulates
+    source: UniProt:P10415
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D011471
+  - key: positively correlated with
+    source: GO:1902850
+    target: GO:0140014
+  - key: positively correlated with
+    source: GO:0140014
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D011471
+multigraph: true
+nodes:
+  - id: DB:DB01248
+    label: Drug
+    name: Docetaxel
+  - id: UniProt:Q9H4B7
+    label: Protein
+    name: Tubulin beta-1 chain
+  - id: UniProt:P10415
+    label: Protein
+    name: Apoptosis regulator Bcl-2
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: Apoptotic process
+  - id: GO:1902850
+    label: BiologicalProcess
+    name: Microtubule cytoskeleton organization involved in mitosis
+  - id: GO:0140014
+    label: BiologicalProcess
+    name: Mitotic nuclear division
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: MESH:D011471
+    label: Disease
+    name: Malignant tumor of prostate
+references:
+  - https://go.drugbank.com/drugs/DB01248

@@ -1,0 +1,70 @@
+comment: Compared to the older central-acting antihypertensives, moxonidine binds
+  with much greater affinity to the imidazoline I1-receptor than to the α2-receptor.
+directed: true
+graph:
+  _id: DB09242_MESH_D000075222_1
+  disease: Essential hypertension
+  disease_mesh: MESH:D000075222
+  drug: moxonidine
+  drug_mesh: MESH:C043482
+  drugbank: DB:DB09242
+links:
+  - key: increases activity of
+    source: MESH:C043482
+    target: UniProt:P08913
+  - key: positively correlated with
+    source: UniProt:P08913
+    target: GO:0004938
+  - key: negatively regulates
+    source: GO:0004938
+    target: GO:0061533
+  - key: positively regulates
+    source: GO:0061533
+    target: HP:0000822
+  - key: positively correlated with
+    source: HP:0000822
+    target: MESH:D000075222
+  - key: increases activity of
+    source: MESH:C043482
+    target: UniProt:Q9Y2I1
+  - key: decreases activity of
+    source: UniProt:Q9Y2I1
+    target: UBERON:0000013
+  - key: positively correlated with
+    source: UBERON:0000013
+    target: GO:0045777
+  - key: positively correlated with
+    source: GO:0045777
+    target: MESH:D000075222
+multigraph: true
+nodes:
+  - id: MESH:C043482
+    label: Drug
+    name: Moxonidine
+  - id: UniProt:P08913
+    label: Protein
+    name: Alpha-2A adrenergic receptor
+  - id: GO:0004938
+    label: BiologicalProcess
+    name: Alpha2-adrenergic receptor activity
+  - id: GO:0061533
+    label: BiologicalProcess
+    name: Norepinephrine secretion, neurotransmission
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: Blood pressure
+  - id: UniProt:Q9Y2I1
+    label: Protein
+    name: Nischarin
+  - id: UBERON:0000013
+    label: GrossAnatomicalStructure
+    name: Sympathetic nervous system
+  - id: GO:0045777
+    label: BiologicalProcess
+    name: Positive regulation of blood pressure
+  - id: MESH:D000075222
+    label: Disease
+    name: Essential hypertension
+references:
+  - https://go.drugbank.com/drugs/DB09242
+  - https://en.wikipedia.org/wiki/Moxonidine

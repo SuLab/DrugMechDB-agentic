@@ -1,0 +1,51 @@
+comment: Tibolone is metabolised in the intestine and liver into 3 active metabolites,
+  namely 3α- and 3β-hydroxy metabolites and Δ4-7alpha-methylnorethisterone. The first
+  two metabolites bind to estrogen receptors, primarily ERα receptors, and have estrogenic
+  effects on bone. There appears to have no IDs for the metabolites of tibolone in
+  DrugBank, ChEBI or MESH.
+directed: true
+graph:
+  _id: DB09070_MESH_D015663_1
+  disease: Postmenopausal osteoporosis
+  disease_mesh: MESH:D015663
+  drug: tibolone
+  drug_mesh: MESH:C027385
+  drugbank: DB:DB09070
+links:
+  - key: increases activity of
+    source: MESH:C027385
+    target: UniProt:P03372
+  - key: positively regulates
+    source: UniProt:P03372
+    target: GO:0030520
+  - key: negatively correlated with
+    source: GO:0030520
+    target: GO:0045453
+  - key: positively correlated with
+    source: GO:0045453
+    target: MESH:D015663
+multigraph: true
+nodes:
+  - id: MESH:C027385
+    label: Drug
+    name: tibolone
+  - id: UniProt:P03372
+    label: Protein
+    name: Estrogen receptor
+  - id: GO:0030520
+    label: BiologicalProcess
+    name: intracellular estrogen receptor signaling pathway
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: bone resorption
+  - id: MESH:D015663
+    label: Disease
+    name: Postmenopausal osteoporosis
+references:
+  - https://go.drugbank.com/drugs/DB09070
+  - https://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL2103774
+  - https://pubchem.ncbi.nlm.nih.gov/compound/444008#section=Mechanism-of-Action
+  - https://pubmed.ncbi.nlm.nih.gov/11086020/
+  - https://en.wikipedia.org/wiki/Tibolone#Pharmacodynamics
+  - https://en.wikipedia.org/wiki/3%CE%B1-Hydroxytibolone
+  - https://pubchem.ncbi.nlm.nih.gov/substance/53787347

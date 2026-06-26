@@ -1,0 +1,115 @@
+id: https://w3id.org/sulab/drugmechdb/biolink_nodes
+name: drugmechdb-biolink-nodes
+description: >-
+  Biolink node type enumeration for DrugMechDB.
+  Each value corresponds to a Biolink Model class and controls which
+  ontology namespace is valid for that node's identifier.
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  biolink: https://w3id.org/biolink/vocab/
+
+imports:
+  - linkml:types
+
+default_prefix: https://w3id.org/sulab/drugmechdb/biolink_nodes/
+default_range: string
+
+enums:
+  BiolinkNodeType:
+    description: >-
+      The Biolink Model class of a node in a mechanistic path.
+      Controls which ontology namespace(s) are valid for the node identifier.
+    permissible_values:
+
+      Drug:
+        description: >-
+          A substance used in the diagnosis, treatment, or prevention of disease.
+          Canonical ID prefix: MESH, DB (DrugBank)
+        meaning: biolink:Drug
+
+      Protein:
+        description: >-
+          A gene product that is composed of amino acids.
+          Canonical ID prefix: UniProt
+        meaning: biolink:Protein
+
+      BiologicalProcess:
+        description: >-
+          One or more causally connected executions of molecular functions.
+          Canonical ID prefix: GO (GO:00xxxxxx)
+        meaning: biolink:BiologicalProcess
+
+      Disease:
+        description: >-
+          A disorder of structure or function, especially one that produces specific
+          signs, symptoms, or affects a specific location.
+          Canonical ID prefix: MESH
+        meaning: biolink:Disease
+
+      ChemicalSubstance:
+        description: >-
+          May be a chemical entity or a mixture of chemical entities, or a complex
+          chemical entity.
+          Canonical ID prefix: MESH, CHEBI
+        meaning: biolink:ChemicalSubstance
+
+      PhenotypicFeature:
+        description: >-
+          A combination of entity and quality that makes up a phenotypic description.
+          Canonical ID prefix: HP
+        meaning: biolink:PhenotypicFeature
+
+      OrganismTaxon:
+        description: >-
+          A classification of a set of organisms.
+          Canonical ID prefix: NCBITaxon (legacy: taxonomy)
+        meaning: biolink:OrganismTaxon
+
+      GeneFamily:
+        description: >-
+          Any grouping of multiple genes or gene products related by common descent
+          from a single ancestral genetic unit.
+          Canonical ID prefix: InterPro (legacy: Pfam, TIGR)
+        meaning: biolink:GeneFamily
+
+      GrossAnatomicalStructure:
+        description: >-
+          A tissue, organ, region of the body, etc. represented at a gross level.
+          Canonical ID prefix: UBERON
+        meaning: biolink:GrossAnatomicalStructure
+
+      MolecularActivity:
+        description: >-
+          An execution of a molecular function carried out by a gene product or
+          macromolecular complex.
+          Canonical ID prefix: GO
+        meaning: biolink:MolecularActivity
+
+      CellularComponent:
+        description: >-
+          A location in or around a cell.
+          Canonical ID prefix: GO (GO:00xxxxxx cellular component subtree)
+        meaning: biolink:CellularComponent
+
+      Pathway:
+        description: >-
+          A biological process that involves several steps and involves the repeated
+          use of a single gene product.
+          Canonical ID prefix: reactome (legacy: reactome:R-HSA-xxxxxxx)
+        meaning: biolink:Pathway
+
+      Cell:
+        description: >-
+          A cell is a self-contained, self-reproducing unit of living matter that
+          contains the hereditary material.
+          Canonical ID prefix: CL
+        meaning: biolink:Cell
+
+      MacromolecularComplex:
+        description: >-
+          A stable assembly of two or more macromolecules, i.e. proteins, nucleic
+          acids, carbohydrates or lipids, in which at least one component is a
+          protein and the constituent parts function together.
+          Canonical ID prefix: PR
+        meaning: biolink:MacromolecularComplex

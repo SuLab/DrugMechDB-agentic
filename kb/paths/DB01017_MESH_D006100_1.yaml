@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB01017_MESH_D006100_1
+  disease: Granuloma inguinale
+  disease_mesh: MESH:D006100
+  drug: minocycline
+  drug_mesh: MESH:D008911
+  drugbank: DB:DB01017
+links:
+  - key: decreases activity of
+    source: MESH:D008911
+    target: InterPro:IPR022801
+  - key: positively regulates
+    source: InterPro:IPR022801
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:39824
+  - key: causes
+    source: taxonomy:39824
+    target: MESH:D006100
+multigraph: true
+nodes:
+  - id: MESH:D008911
+    label: Drug
+    name: minocycline
+  - id: InterPro:IPR022801
+    label: GeneFamily
+    name: Ribosomal protein S4/S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:39824
+    label: OrganismTaxon
+    name: Klebsiella granulomatis
+  - id: MESH:D006100
+    label: Disease
+    name: Granuloma inguinale
+references:
+  - https://go.drugbank.com/drugs/DB01017#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Granuloma_inguinale

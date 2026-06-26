@@ -1,0 +1,84 @@
+directed: true
+graph:
+  _id: DB00604_MESH_D005764_1
+  disease: Gastroesophageal reflux disease
+  disease_mesh: MESH:D005764
+  drug: cisapride
+  drug_mesh: MESH:D020117
+  drugbank: DB:DB00604
+links:
+  - key: increases activity of
+    source: MESH:D020117
+    target: UniProt:Q13639
+  - key: increases activity of
+    source: MESH:D020117
+    target: UniProt:P46098
+  - key: increases activity of
+    source: MESH:D020117
+    target: UniProt:P28223
+  - key: positively regulates
+    source: UniProt:Q13639
+    target: GO:0014055
+  - key: positively regulates
+    source: UniProt:P46098
+    target: GO:0014055
+  - key: positively regulates
+    source: UniProt:P28223
+    target: GO:0014055
+  - key: positively regulates
+    source: GO:0014055
+    target: UBERON:0002439
+  - key: positively regulates
+    source: GO:0014055
+    target: UBERON:0001202
+  - key: negatively regulates
+    source: UBERON:0002439
+    target: MESH:D005764
+  - key: negatively regulates
+    source: UBERON:0001202
+    target: MESH:D005764
+  - key: positively regulates
+    source: GO:0014055
+    target: GO:0035482
+  - key: positively regulates
+    source: GO:0035482
+    target: GO:0035483
+  - key: negatively regulates
+    source: GO:0035483
+    target: MESH:D005764
+multigraph: true
+nodes:
+  - id: MESH:D020117
+    label: Drug
+    name: cisapride
+  - id: UniProt:Q13639
+    label: Protein
+    name: 5-hydroxytryptamine receptor 4
+  - id: UniProt:P46098
+    label: Protein
+    name: 5-hydroxytryptamine receptor 3A
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: GO:0014055
+    label: BiologicalProcess
+    name: Acetylcholine secretion, neurotransmission
+  - id: UBERON:0002439
+    label: GrossAnatomicalStructure
+    name: myenteric nerve plexus
+  - id: UBERON:0001202
+    label: GrossAnatomicalStructure
+    name: pyloric sphincter
+  - id: GO:0035482
+    label: BiologicalProcess
+    name: Gastric motility
+  - id: GO:0035483
+    label: BiologicalProcess
+    name: Gastric emptying
+  - id: MESH:D005764
+    label: Disease
+    name: Gastroesophageal reflux disease
+references:
+  - https://go.drugbank.com/drugs/DB00604#BE0000084
+  - https://pubmed.ncbi.nlm.nih.gov/8179003/
+  - http://www.annalsgastro.gr/index.php/annalsgastro/article/view/35

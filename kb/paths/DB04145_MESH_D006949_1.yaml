@@ -1,0 +1,82 @@
+comment: Nicotinyl alcohol has been shown to be metabolized rapidly to nicotinic acid
+  (niacin) https://pubmed.ncbi.nlm.nih.gov/4883785/
+directed: true
+graph:
+  _id: DB04145_MESH_D006949_1
+  disease: Hyperlipidemia
+  disease_mesh: MESH:D006949
+  drug: Nicotinyl alcohol
+  drug_mesh: MESH:D009540
+  drugbank: DB:DB04145
+links:
+  - key: increases abundance of
+    source: MESH:D009540
+    target: CHEBI:15940
+  - key: increases activity of
+    source: CHEBI:15940
+    target: UniProt:P49019
+  - key: increases activity of
+    source: CHEBI:15940
+    target: UniProt:Q8TDS4
+  - key: decreases activity of
+    source: CHEBI:15940
+    target: UniProt:Q96PD7
+  - key: decreases abundance of
+    source: UniProt:P49019
+    target: MESH:D005227
+  - key: decreases abundance of
+    source: UniProt:Q8TDS4
+    target: MESH:D005227
+  - key: increases abundance of
+    source: UniProt:Q96PD7
+    target: MESH:D014280
+  - key: increases activity of
+    source: MESH:D005227
+    target: UniProt:P02656
+  - key: positively correlated with
+    source: UniProt:P02656
+    target: MESH:D015243
+  - key: positively correlated with
+    source: MESH:D015243
+    target: MESH:D006949
+  - key: positively correlated with
+    source: MESH:D014280
+    target: MESH:D006949
+multigraph: true
+nodes:
+  - id: MESH:D009540
+    label: Drug
+    name: Nicotinyl alcohol
+  - id: CHEBI:15940
+    label: ChemicalSubstance
+    name: Nicotinic acid
+  - id: UniProt:P49019
+    label: Protein
+    name: Hydroxycarboxylic acid receptor 3
+  - id: UniProt:Q8TDS4
+    label: Protein
+    name: Hydroxycarboxylic acid receptor 2
+  - id: UniProt:Q96PD7
+    label: Protein
+    name: Diacylglycerol O-acyltransferase 2
+  - id: MESH:D005227
+    label: ChemicalSubstance
+    name: Fatty Acids
+  - id: UniProt:P02656
+    label: Protein
+    name: Apolipoprotein C-III
+  - id: MESH:D015243
+    label: ChemicalSubstance
+    name: Cholesterol, VLDL
+  - id: MESH:D014280
+    label: ChemicalSubstance
+    name: Triglycerides
+  - id: MESH:D006949
+    label: Disease
+    name: Hyperlipidemia
+references:
+  - https://go.drugbank.com/drugs/DB04145
+  - https://en.wikipedia.org/wiki/Nicotinyl_alcohol
+  - https://en.wikipedia.org/wiki/Hyperlipidemia
+  - https://go.drugbank.com/drugs/DB00627
+  - https://en.wikipedia.org/wiki/Niacin#As_lipid-modifying_medication

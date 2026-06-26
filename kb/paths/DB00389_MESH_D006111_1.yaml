@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00389_MESH_D006111_1
+  disease: Graves' disease
+  disease_mesh: MESH:D006111
+  drug: carbimazole
+  drug_mesh: MESH:D002231
+  drugbank: DB:DB00389
+links:
+  - key: has metabolite
+    source: MESH:D002231
+    target: CHEBI:50673
+  - key: decreases activity of
+    source: CHEBI:50673
+    target: UniProt:P07202
+  - key: participates in
+    source: UniProt:P07202
+    target: GO:0006590
+  - key: positively correlated with
+    source: GO:0006590
+    target: HP:0000836
+  - key: manifestation of
+    source: HP:0000836
+    target: MESH:D006111
+multigraph: true
+nodes:
+  - id: MESH:D002231
+    label: Drug
+    name: carbimazole
+  - id: CHEBI:50673
+    label: ChemicalSubstance
+    name: methimazole
+  - id: UniProt:P07202
+    label: Protein
+    name: Thyroid peroxidase
+  - id: GO:0006590
+    label: BiologicalProcess
+    name: thyroid hormone generation
+  - id: HP:0000836
+    label: PhenotypicFeature
+    name: Hyperthyroidism
+  - id: MESH:D006111
+    label: Disease
+    name: Graves' disease
+references:
+  - https://go.drugbank.com/drugs/DB00389
+  - https://en.wikipedia.org/wiki/Carbimazole

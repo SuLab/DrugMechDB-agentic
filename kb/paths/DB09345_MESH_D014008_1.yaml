@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB09345_MESH_D014008_1
+  disease: Tinea pedis
+  disease_mesh: MESH:D014008
+  drug: pramocaine
+  drug_mesh: MESH:C005548
+  drugbank: DB:DB09345
+links:
+  - key: negatively regulates
+    source: MESH:C005548
+    target: InterPro:IPR001696
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0006814
+  - key: positively correlated with
+    source: GO:0006814
+    target: GO:0086010
+  - key: regulates
+    source: GO:0086010
+    target: GO:0007600
+  - key: correlated with
+    source: GO:0007600
+    target: HP:0030900
+  - key: manifestation of
+    source: HP:0030900
+    target: MESH:D014008
+multigraph: true
+nodes:
+  - id: MESH:C005548
+    label: Drug
+    name: pramocaine
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: GO:0006814
+    label: BiologicalProcess
+    name: sodium ion transport
+  - id: GO:0086010
+    label: BiologicalProcess
+    name: membrane depolarization during action potential
+  - id: GO:0007600
+    label: BiologicalProcess
+    name: sensory perception
+  - id: HP:0030900
+    label: PhenotypicFeature
+    name: Pruritus on foot
+  - id: MESH:D014008
+    label: Disease
+    name: Tinea pedis
+references:
+  - https://go.drugbank.com/drugs/DB09345

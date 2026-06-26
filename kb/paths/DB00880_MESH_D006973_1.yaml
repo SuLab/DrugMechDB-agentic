@@ -1,0 +1,94 @@
+comment: The hypotensive effects of chlorothiazide and other thiazides are not necessarily
+  due to their diuretic activity (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2904515/#S1title).
+  The exact mechanism is yet not fully understood.
+directed: true
+graph:
+  _id: DB00880_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: chlorothiazide
+  drug_mesh: MESH:D002740
+  drugbank: DB:DB00880
+links:
+  - key: decreases activity of
+    source: MESH:D002740
+    target: UniProt:P55017
+  - key: positively regulates
+    source: UniProt:P55017
+    target: GO:0070294
+  - key: positively correlated with
+    source: GO:0070294
+    target: GO:0003092
+  - key: positively correlated with
+    source: GO:0003092
+    target: HP:0033533
+  - key: positively correlated with
+    source: HP:0033533
+    target: HP:0032263
+  - key: decreases activity of
+    source: MESH:D002740
+    target: UniProt:P00918
+  - key: positively regulates
+    source: UniProt:P00918
+    target: GO:0038166
+  - key: positively correlated with
+    source: GO:0038166
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: positively regulates
+    source: MESH:D002740
+    target: UniProt:Q12791
+  - key: positively regulates
+    source: UniProt:Q12791
+    target: GO:0060087
+  - key: negatively correlated with
+    source: GO:0060087
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D002740
+    label: Drug
+    name: chlorothiazide
+  - id: UniProt:P55017
+    label: Protein
+    name: Solute carrier family 12 member 3
+  - id: GO:0070294
+    label: BiologicalProcess
+    name: renal sodium ion absorption
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: renal water retention
+  - id: HP:0033533
+    label: PhenotypicFeature
+    name: Increased cardiac output
+  - id: UniProt:Q12791
+    label: Protein
+    name: Calcium-activated potassium channel subunit alpha-1
+  - id: UniProt:P00918
+    label: Protein
+    name: Carbonic anhydrase 2
+  - id: GO:0060087
+    label: BiologicalProcess
+    name: relaxation of vascular associated smooth muscle
+  - id: GO:0038166
+    label: BiologicalProcess
+    name: angiotensin-activated signaling pathway
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00880#BE0000322
+  - https://go.drugbank.com/drugs/DB00880#BE0000419
+  - https://en.wikipedia.org/wiki/Category:Carbonic_anhydrase_inhibitors
+  - https://pubchem.ncbi.nlm.nih.gov/compound/2720#section=Mechanism-of-Action

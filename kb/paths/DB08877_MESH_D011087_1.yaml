@@ -1,0 +1,67 @@
+directed: true
+graph:
+  _id: DB08877_MESH_D011087_1
+  disease: Polycythemia vera
+  disease_mesh: MESH:D011087
+  drug: ruxolitinib
+  drug_mesh: MESH:C540383
+  drugbank: DB:DB08877
+links:
+  - key: decreases activity of
+    source: MESH:C540383
+    target: UniProt:O60674
+  - key: decreases activity of
+    source: MESH:C540383
+    target: UniProt:P23458
+  - key: positively regulates
+    source: UniProt:O60674
+    target: GO:0007259
+  - key: positively regulates
+    source: UniProt:P23458
+    target: GO:0007259
+  - key: positively regulates
+    source: GO:0007259
+    target: GO:0070102
+  - key: positively regulates
+    source: GO:0007259
+    target: GO:0019221
+  - key: positively regulates
+    source: GO:0007259
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0070102
+    target: MESH:D011087
+  - key: positively correlated with
+    source: GO:0019221
+    target: MESH:D011087
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D011087
+multigraph: true
+nodes:
+  - id: MESH:C540383
+    label: Drug
+    name: Ruxolitinib
+  - id: UniProt:O60674
+    label: Protein
+    name: Tyrosine-protein kinase JAK2
+  - id: UniProt:P23458
+    label: Protein
+    name: Tyrosine-protein kinase JAK1
+  - id: GO:0007259
+    label: BiologicalProcess
+    name: Receptor signaling pathway via JAK-STAT
+  - id: GO:0070102
+    label: BiologicalProcess
+    name: Interleukin-6-mediated signaling pathway
+  - id: GO:0019221
+    label: BiologicalProcess
+    name: Cytokine-mediated signaling pathway
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: MESH:D011087
+    label: Disease
+    name: Polycythemia vera
+references:
+  - https://go.drugbank.com/drugs/DB08877#BE0002408

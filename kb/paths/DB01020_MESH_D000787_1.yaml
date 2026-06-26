@@ -1,0 +1,79 @@
+directed: true
+graph:
+  _id: DB01020_MESH_D000787_1
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: isosorbide mononitrate
+  drug_mesh: MESH:C030397
+  drugbank: DB:DB01020
+links:
+  - key: increases abundance of
+    source: MESH:C030397
+    target: MESH:D009569
+  - key: positively regulates
+    source: MESH:D009569
+    target: InterPro:IPR001170
+  - key: increases activity of
+    source: InterPro:IPR001170
+    target: MESH:D006152
+  - key: positively regulates
+    source: MESH:D006152
+    target: GO:0006470
+  - key: positively regulates
+    source: MESH:D006152
+    target: GO:0051208
+  - key: positively correlated with
+    source: GO:0051208
+    target: GO:0060087
+  - key: precedes
+    source: GO:0051208
+    target: GO:0042311
+  - key: ameliorates
+    source: GO:0042311
+    target: MESH:D000787
+  - key: occurs in
+    source: GO:0006470
+    target: MESH:D018994
+  - key: positively correlated with
+    source: MESH:D018994
+    target: GO:0060087
+  - key: ameliorates
+    source: GO:0060087
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:C030397
+    label: Drug
+    name: isosorbide mononitrate
+  - id: MESH:D009569
+    label: ChemicalSubstance
+    name: Nitric oxide
+  - id: InterPro:IPR001170
+    label: GeneFamily
+    name: Guanylate cyclase
+  - id: GO:0051208
+    label: BiologicalProcess
+    name: Sequestering of calcium ion
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: Vasodilation
+  - id: MESH:D006152
+    label: ChemicalSubstance
+    name: Cyclic guanosine 3',5'-monophosphate (cGMP)
+  - id: GO:0006470
+    label: BiologicalProcess
+    name: Protein dephosphorylation
+  - id: MESH:D018994
+    label: ChemicalSubstance
+    name: Myosin light chains
+  - id: GO:0060087
+    label: BiologicalProcess
+    name: Relaxation of vascular associated smooth muscle
+  - id: MESH:D000787
+    label: Disease
+    name: Angina pectoris
+references:
+  - https://go.drugbank.com/drugs/DB01020#mechanismofaction
+  - https://en.wikipedia.org/wiki/Isosorbide_mononitrate
+  - https://pubchem.ncbi.nlm.nih.gov/compound/27661
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1311/

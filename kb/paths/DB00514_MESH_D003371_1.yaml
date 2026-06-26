@@ -1,0 +1,59 @@
+comment: Dextromethorphan acts centrally in the cough center in the medulla to suppress
+  cough (https://pubmed.ncbi.nlm.nih.gov/18294576/). The drug is indicated in combination
+  with guaifenesin as an over the counter product to relieve a cough.
+directed: true
+graph:
+  _id: DB00514_MESH_D003371_1
+  disease: Cough
+  disease_mesh: MESH:D003371
+  drug: dextromethorphan
+  drug_mesh: MESH:D003915
+  drugbank: DB:DB00514
+links:
+  - key: has metabolite
+    source: MESH:D003915
+    target: DB:DB14682
+  - key: increases activity of
+    source: DB:DB14682
+    target: UniProt:Q99720
+  - key: decreases activity of
+    source: DB:DB14682
+    target: UniProt:P32297
+  - key: regulates
+    source: UniProt:P32297
+    target: GO:0006939
+  - key: correlated with
+    source: GO:0006939
+    target: MESH:D003371
+  - key: negatively regulates
+    source: UniProt:Q99720
+    target: GO:0060004
+  - key: positively correlated with
+    source: GO:0060004
+    target: MESH:D003371
+multigraph: true
+nodes:
+  - id: MESH:D003915
+    label: Drug
+    name: dextromethorphan
+  - id: DB:DB14682
+    label: ChemicalSubstance
+    name: Dextrorphan
+  - id: UniProt:Q99720
+    label: Protein
+    name: Sigma non-opioid intracellular receptor 1
+  - id: UniProt:P32297
+    label: Protein
+    name: Neuronal acetylcholine receptor subunit alpha-3
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: GO:0060004
+    label: BiologicalProcess
+    name: reflex
+  - id: MESH:D003371
+    label: Disease
+    name: Cough
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Dextromethorphan
+  - https://www.sciencedirect.com/topics/medicine-and-dentistry/airway-smooth-muscle-contraction

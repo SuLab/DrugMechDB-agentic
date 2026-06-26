@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB01156_MESH_D016574_1
+  disease: Seasonal affective disorder
+  disease_mesh: MESH:D016574
+  drug: bupropion
+  drug_mesh: MESH:D016642
+  drugbank: DB:DB01156
+links:
+  - key: decreases activity of
+    source: MESH:D016642
+    target: UniProt:P23975
+  - key: positively regulates
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: decreases abundance of
+    source: GO:0051620
+    target: MESH:D009638
+  - key: negatively correlated with
+    source: MESH:D009638
+    target: MESH:D016574
+  - key: decreases activity of
+    source: MESH:D016642
+    target: UniProt:Q01959
+  - key: positively regulates
+    source: UniProt:Q01959
+    target: GO:0090494
+  - key: decreases abundance of
+    source: GO:0090494
+    target: MESH:D004298
+  - key: negatively correlated with
+    source: MESH:D004298
+    target: MESH:D016574
+multigraph: true
+nodes:
+  - id: MESH:D016642
+    label: Drug
+    name: bupropion
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: norepinephrine uptake
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Noradrenaline
+  - id: UniProt:Q01959
+    label: Protein
+    name: Sodium-dependent dopamine transporter
+  - id: GO:0090494
+    label: BiologicalProcess
+    name: dopamine uptake
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: MESH:D016574
+    label: Disease
+    name: Seasonal affective disorder
+references:
+  - https://go.drugbank.com/drugs/DB01156
+  - https://en.wikipedia.org/wiki/Bupropion

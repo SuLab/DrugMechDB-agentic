@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB01685_MESH_D033461_1
+  disease: Hyperuricemia
+  disease_mesh: MESH:D033461
+  drug: FYX-051
+  drug_mesh: MESH:C504882
+  drugbank: DB:DB01685
+links:
+  - key: decreases activity of
+    source: MESH:C504882
+    target: UniProt:P47989
+  - key: decreases activity of
+    source: MESH:C504882
+    target: UniProt:Q9UNQ0
+  - key: increases abundance of
+    source: UniProt:P47989
+    target: MESH:D014527
+  - key: increases abundance of
+    source: UniProt:Q9UNQ0
+    target: MESH:D014527
+  - key: positively correlated with
+    source: MESH:D014527
+    target: MESH:D033461
+multigraph: true
+nodes:
+  - id: MESH:C504882
+    label: Drug
+    name: FYX-051
+  - id: UniProt:P47989
+    label: Protein
+    name: Xanthine dehydrogenase/oxidase
+  - id: UniProt:Q9UNQ0
+    label: Protein
+    name: Broad substrate specificity ATP-binding cassette transporter ABCG2
+  - id: MESH:D014527
+    label: ChemicalSubstance
+    name: Uric Acid
+  - id: MESH:D033461
+    label: Disease
+    name: Hyperuricemia
+references:
+  - https://go.drugbank.com/drugs/DB01685#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Topiroxostat
+  - https://en.wikipedia.org/wiki/Xanthine_dehydrogenase
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5187494/
+  - https://en.wikipedia.org/wiki/Hyperuricemia

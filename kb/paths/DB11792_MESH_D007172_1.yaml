@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB11792_MESH_D007172_1
+  disease: Impotence
+  disease_mesh: MESH:D007172
+  drug: mirodenafil
+  drug_mesh: MESH:C528396
+  drugbank: DB:DB11792
+links:
+  - key: negatively regulates
+    source: MESH:C528396
+    target: UniProt:O76074
+  - key: positively regulates
+    source: UniProt:O76074
+    target: GO:0046069
+  - key: decreases abundance of
+    source: GO:0046069
+    target: CHEBI:16356
+  - key: positively correlated with
+    source: CHEBI:16356
+    target: GO:0007263
+  - key: positively correlated with
+    source: GO:0007263
+    target: GO:0044557
+  - key: negatively correlated with
+    source: GO:0044557
+    target: HP:0100639
+  - key: manifestation of
+    source: HP:0100639
+    target: MESH:D007172
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C518762
+    id: MESH:C528396
+    label: Drug
+    name: mirodenafil
+  - id: UniProt:O76074
+    label: Protein
+    name: cGMP-specific 3',5'-cyclic phosphodiesterase
+  - id: GO:0046069
+    label: BiologicalProcess
+    name: cGMP catabolic process
+  - id: CHEBI:16356
+    label: ChemicalSubstance
+    name: 3',5'-cyclic GMP
+  - id: GO:0007263
+    label: BiologicalProcess
+    name: nitric oxide mediated signal transduction
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: relaxation of smooth muscle
+  - id: HP:0100639
+    label: PhenotypicFeature
+    name: Erectile dysfunction
+  - id: MESH:D007172
+    label: Disease
+    name: Impotence
+references:
+  - https://en.wikipedia.org/wiki/Mirodenafil
+  - https://en.wikipedia.org/wiki/PDE5_inhibitor#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Nitric_oxide#Biological_functions

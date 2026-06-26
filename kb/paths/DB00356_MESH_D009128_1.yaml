@@ -1,0 +1,91 @@
+comment: Althouth InterPro and Pfam have entries to encompass different types of calcium
+  channels, the chosen MESH term is the most generic term that encompasses ALL calcium
+  channels, rather than individual domains, subunits or classes.
+directed: true
+graph:
+  _id: DB00356_MESH_D009128_1
+  disease: Spasticity
+  disease_mesh: MESH:D009128
+  drug: chlorzoxazone
+  drug_mesh: MESH:D002753
+  drugbank: DB:DB00356
+links:
+  - key: negatively correlated with
+    source: MESH:D002753
+    target: HP:0002493
+  - key: positively correlated with
+    source: HP:0002493
+    target: MESH:D009128
+  - key: decreases abundance of
+    source: MESH:D002753
+    target: HP:0031826
+  - key: positively correlated with
+    source: HP:0031826
+    target: HP:0003394
+  - key: positively correlated with
+    source: HP:0003394
+    target: MESH:D009128
+  - key: negatively regulates
+    source: MESH:D002753
+    target: MESH:D015220
+  - key: negatively regulates
+    source: MESH:D002753
+    target: MESH:D015221
+  - key: positively correlated with
+    source: MESH:D015220
+    target: GO:0006936
+  - key: positively correlated with
+    source: MESH:D015221
+    target: GO:0006936
+  - key: positively regulates
+    source: MESH:D002753
+    target: GO:0016917
+  - key: positively correlated with
+    source: GO:0016917
+    target: GO:0061534
+  - key: positively correlated with
+    source: GO:0061534
+    target: GO:0090075
+  - key: positively correlated with
+    source: GO:0006936
+    target: MESH:D009128
+  - key: negatively correlated with
+    source: GO:0090075
+    target: MESH:D009128
+multigraph: true
+nodes:
+  - id: MESH:D002753
+    label: Drug
+    name: chlorzoxazone
+  - id: MESH:D015220
+    label: GeneFamily
+    name: Calcium Channels
+  - id: MESH:D015221
+    label: GeneFamily
+    name: Potassium Channels
+  - id: GO:0016917
+    label: MolecularActivity
+    name: GABA receptor activity
+  - id: GO:0061534
+    label: BiologicalProcess
+    name: Gamma-aminobutyric acid secretion, neurotransmission
+  - id: GO:0090075
+    label: BiologicalProcess
+    name: relaxation of muscle
+  - id: GO:0006936
+    label: BiologicalProcess
+    name: muscle contraction
+  - id: HP:0031826
+    label: PhenotypicFeature
+    name: Abnormal reflex
+  - id: HP:0003394
+    label: PhenotypicFeature
+    name: Muscle spasm
+  - id: HP:0002493
+    label: PhenotypicFeature
+    name: Upper motor neuron dysfunction
+  - id: MESH:D009128
+    label: Disease
+    name: Spasticity
+references:
+  - https://en.wikipedia.org/wiki/Chlorzoxazone

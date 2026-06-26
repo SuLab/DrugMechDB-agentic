@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00291_MESH_D006689_1
+  disease: Hodgkin's disease
+  disease_mesh: MESH:D006689
+  drug: Chlorambucil
+  drug_mesh: MESH:D002699
+  drugbank: DB:DB00291
+links:
+  - key: disrupts
+    source: MESH:D002699
+    target: MESH:D004247
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006260
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006351
+  - key: occurs in
+    source: GO:0006260
+    target: CL:0000542
+  - key: occurs in
+    source: GO:0006351
+    target: CL:0000542
+  - key: positively correlated with
+    source: CL:0000542
+    target: MESH:D006689
+multigraph: true
+nodes:
+  - id: MESH:D002699
+    label: Drug
+    name: Chlorambucil
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: GO:0006351
+    label: BiologicalProcess
+    name: Transcription, DNA-templated
+  - id: CL:0000542
+    label: Cell
+    name: Lymphocyte
+  - id: MESH:D006689
+    label: Disease
+    name: Hodgkin's disease
+references:
+  - https://go.drugbank.com/drugs/DB00291
+  - https://en.wikipedia.org/wiki/Hodgkin_lymphoma

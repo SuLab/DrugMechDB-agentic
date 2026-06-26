@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB09320_MESH_D009494_1
+  disease: Neurosyphilis
+  disease_mesh: MESH:D009494
+  drug: Procaine benzylpenicillin
+  drug_mesh: MESH:D010402
+  drugbank: DB:DB09320
+links:
+  - key: produces
+    source: MESH:D010402
+    target: DB:DB01053
+  - key: negatively regulates
+    source: DB:DB01053
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:160
+  - key: causes
+    source: taxonomy:160
+    target: MESH:D009494
+multigraph: true
+nodes:
+  - alt_names:
+      - Penicillin G Procaine
+    id: MESH:D010402
+    label: Drug
+    name: Procaine benzylpenicillin
+  - id: DB:DB01053
+    label: Drug
+    name: Benzylpenicillin
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding protein transpeptidase domain
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:160
+    label: OrganismTaxon
+    name: Treponema pallidum
+  - id: MESH:D009494
+    label: Disease
+    name: Neurosyphilis
+references:
+  - https://go.drugbank.com/drugs/DB09320
+  - https://en.wikipedia.org/wiki/Procaine_benzylpenicillin#Mechanism

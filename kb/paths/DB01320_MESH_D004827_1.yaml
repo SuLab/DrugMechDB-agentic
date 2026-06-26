@@ -1,0 +1,50 @@
+comment: Fosphenytoin is a prodrug of phenytoin used for the treatment of epileptic
+  seizures.
+directed: true
+graph:
+  _id: DB01320_MESH_D004827_1
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+  drug: fosphenytoin
+  drug_mesh: MESH:C043114
+  drugbank: DB:DB01320
+links:
+  - key: has metabolite
+    source: MESH:C043114
+    target: MESH:D010672
+  - key: decreases activity of
+    source: MESH:D010672
+    target: InterPro:IPR001696
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0098870
+  - key: contributes to
+    source: GO:0098870
+    target: HP:0001250
+  - key: manifestation of
+    source: HP:0001250
+    target: MESH:D004827
+multigraph: true
+nodes:
+  - id: MESH:C043114
+    label: Drug
+    name: fosphenytoin
+  - id: MESH:D010672
+    label: ChemicalSubstance
+    name: Phenytoin
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: GO:0098870
+    label: BiologicalProcess
+    name: action potential propagation
+  - id: HP:0001250
+    label: PhenotypicFeature
+    name: Seizure
+  - id: MESH:D004827
+    label: Disease
+    name: Epilepsy
+references:
+  - https://go.drugbank.com/drugs/DB01320#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Phenytoin#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Epilepsy

@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB06201_MESH_D065768_2
+  disease: Lennox-Gastaut syndrome
+  disease_mesh: MESH:D065768
+  drug: rufinamide
+  drug_mesh: MESH:C079703
+  drugbank: DB:DB06201
+links:
+  - key: decreases activity of
+    source: MESH:C079703
+    target: UniProt:P41594
+  - key: positively correlated with
+    source: UniProt:P41594
+    target: GO:0099530
+  - key: positively correlated with
+    source: GO:0099530
+    target: GO:0035249
+  - key: positively correlated with
+    source: GO:0035249
+    target: HP:0032792
+  - key: positively correlated with
+    source: HP:0032792
+    target: MESH:D065768
+multigraph: true
+nodes:
+  - id: MESH:C079703
+    label: Drug
+    name: rufinamide
+  - id: UniProt:P41594
+    label: Protein
+    name: Metabotropic glutamate receptor 5
+  - id: GO:0099530
+    label: MolecularActivity
+    name: G protein-coupled receptor activity involved in regulation of postsynaptic
+      membrane potential
+  - id: GO:0035249
+    label: BiologicalProcess
+    name: synaptic transmission, glutamatergic
+  - id: HP:0032792
+    label: PhenotypicFeature
+    name: Tonic seizure
+  - id: MESH:D065768
+    label: Disease
+    name: Lennox-Gastaut syndrome
+references:
+  - https://go.drugbank.com/drugs/DB06201#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Rufinamide
+  - https://pubmed.ncbi.nlm.nih.gov/30391662/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7461817/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7461817/
+  - https://en.wikipedia.org/wiki/Lennox%E2%80%93Gastaut_syndrome#Seizures
+comment: The drug will inhibit the glutamate receptor only at high concentration (https://pubchem.ncbi.nlm.nih.gov/compound/129228#section=Pharmacology-and-Biochemistry).

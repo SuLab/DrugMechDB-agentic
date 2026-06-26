@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB08816_MESH_D054058_1
+  disease: Acute coronary syndrome
+  disease_mesh: MESH:D054058
+  drug: ticagrelor
+  drug_mesh: MESH:C503700
+  drugbank: DB:DB08816
+links:
+  - key: decreases activity of
+    source: MESH:C503700
+    target: UniProt:Q9H244
+  - key: positively regulates
+    source: UniProt:Q9H244
+    target: GO:0007193
+  - key: positively regulates
+    source: GO:0007193
+    target: GO:0070527
+  - key: positively correlated with
+    source: GO:0070527
+    target: GO:0072378
+  - key: contributes to
+    source: GO:0072378
+    target: MESH:D054058
+multigraph: true
+nodes:
+  - id: MESH:C503700
+    label: Drug
+    name: Ticagrelor
+  - id: UniProt:Q9H244
+    label: Protein
+    name: P2Y purinoceptor 12
+  - id: GO:0007193
+    label: BiologicalProcess
+    name: Adenylate cyclase-inhibiting G protein-coupled receptor signaling pathway
+  - id: GO:0070527
+    label: BiologicalProcess
+    name: Platelet aggregation
+  - id: GO:0072378
+    label: BiologicalProcess
+    name: Blood coagulation, fibrin clot formation
+  - id: MESH:D054058
+    label: Disease
+    name: Acute coronary syndrome
+references:
+  - https://go.drugbank.com/drugs/DB08816#BE0000110

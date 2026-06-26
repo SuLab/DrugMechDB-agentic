@@ -1,0 +1,26 @@
+directed: true
+graph:
+  _id: DB06786_MESH_D012871_1
+  disease: Dermatosis
+  disease_mesh: MESH:D012871
+  drug: halcinonide
+  drug_mesh: MESH:D006206
+  drugbank: DB:DB06786
+links:
+  - key: negatively regulates
+    source: MESH:D006206
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D012871
+multigraph: true
+nodes:
+  - id: MESH:D006206
+    label: Drug
+    name: halcinonide
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory signalling
+  - id: MESH:D012871
+    label: Disease
+    name: Dermatosis

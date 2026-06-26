@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB03808_MESH_D015823_1
+  disease: Acanthamoeba keratitis
+  disease_mesh: MESH:D015823
+  drug: hexamidine
+  drug_mesh: MESH:C018961
+  drugbank: DB:DB03808
+links:
+  - key: molecularly interacts with
+    source: MESH:C018961
+    target: CHEBI:18059
+  - key: located in
+    source: CHEBI:18059
+    target: GO:0016020
+  - key: in taxon
+    source: GO:0016020
+    target: taxonomy:5754
+  - key: causes
+    source: taxonomy:5754
+    target: MESH:D015823
+multigraph: true
+nodes:
+  - id: MESH:C018961
+    label: Drug
+    name: hexamidine
+  - id: CHEBI:18059
+    label: ChemicalSubstance
+    name: lipid
+  - id: GO:0016020
+    label: CellularComponent
+    name: membrane
+  - id: taxonomy:5754
+    label: OrganismTaxon
+    name: Acanthamoeba sp.
+  - id: MESH:D015823
+    label: Disease
+    name: Acanthamoeba keratitis
+references:
+  - https://go.drugbank.com/drugs/DB03808
+  - https://en.wikipedia.org/wiki/Hexamidine

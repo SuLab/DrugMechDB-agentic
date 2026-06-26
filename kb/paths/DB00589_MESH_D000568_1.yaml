@@ -1,0 +1,59 @@
+comment: Lisuride is used to treat hyperprolactinemic amenorrhea.
+directed: true
+graph:
+  _id: DB00589_MESH_D000568_1
+  disease: Amenorrhea
+  disease_mesh: MESH:D000568
+  drug: Lisuride
+  drug_mesh: MESH:D008090
+  drugbank: DB:DB00589
+links:
+  - key: increases activity of
+    source: MESH:D008090
+    target: UniProt:P14416
+  - key: participates in
+    source: UniProt:P14416
+    target: GO:0007195
+  - key: decreases abundance of
+    source: GO:0007195
+    target: CHEBI:17489
+  - key: positively regulates
+    source: CHEBI:17489
+    target: GO:0051209
+  - key: contributes to
+    source: GO:0051209
+    target: GO:1902722
+  - key: causes
+    source: GO:1902722
+    target: MESH:D006966
+  - key: causes
+    source: MESH:D006966
+    target: MESH:D000568
+multigraph: true
+nodes:
+  - id: MESH:D008090
+    label: Drug
+    name: Lisuride
+  - id: UniProt:P14416
+    label: Protein
+    name: D2 dopamine receptor
+  - id: GO:0007195
+    label: BiologicalProcess
+    name: Adenylate cyclase-inhibiting dopamine receptor signaling pathway
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: GO:0051209
+    label: BiologicalProcess
+    name: Release of sequestered calcium ion into cytosol
+  - id: GO:1902722
+    label: BiologicalProcess
+    name: Positive regulation of prolactin secretion
+  - id: MESH:D006966
+    label: Disease
+    name: Hyperprolactinemia
+  - id: MESH:D000568
+    label: Disease
+    name: Amenorrhea
+references:
+  - https://go.drugbank.com/drugs/DB00589

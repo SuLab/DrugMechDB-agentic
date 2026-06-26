@@ -1,0 +1,51 @@
+comment: Ceftizoxime is a semisynthetic, third-generation cephalosporin antibiotic
+  which can be administered intravenously or by suppository for the treatment of various
+  bacterial infections.
+directed: true
+graph:
+  _id: DB01332_MESH_D059413_1
+  disease: Intraabdominal Infections
+  disease_mesh: MESH:D059413
+  drug: ceftizoxime
+  drug_mesh: MESH:D015296
+  drugbank: DB:DB01332
+links:
+  - key: decreases activity of
+    source: MESH:D015296
+    target: InterPro:IPR001460
+  - key: participates in
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D059413
+multigraph: true
+nodes:
+  - id: MESH:D015296
+    label: Drug
+    name: ceftizoxime
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D059413
+    label: Disease
+    name: Intraabdominal Infections
+references:
+  - https://go.drugbank.com/drugs/DB01332#mechanism-of-action
+  - https://drugs.ncats.io/drug/C43C467DPE
+  - https://en.wikipedia.org/wiki/Intra-abdominal_infection

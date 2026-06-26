@@ -1,0 +1,74 @@
+directed: true
+graph:
+  _id: DB00153_MESH_D010024_1
+  disease: Osteoporosis
+  disease_mesh: MESH:D010024
+  drug: ergocalciferol
+  drugbank: DB:DB00153
+links:
+  - key: has metabolite
+    source: DB:DB00153
+    target: CHEBI:86320
+  - key: increases activity of
+    source: CHEBI:86320
+    target: UniProt:P11473
+  - key: positively regulates
+    source: UniProt:P11473
+    target: GO:0070561
+  - key: positively regulates
+    source: GO:0070561
+    target: GO:0070509
+  - key: negatively regulates
+    source: GO:0070561
+    target: GO:0035898
+  - key: positively regulates
+    source: GO:0035898
+    target: CL:0000092
+  - key: positively correlated with
+    source: CL:0000092
+    target: GO:0045453
+  - key: positively correlated with
+    source: GO:0045453
+    target: MESH:D010024
+  - key: negatively correlated with
+    source: GO:0070509
+    target: HP:0002901
+  - key: positively correlated with
+    source: HP:0002901
+    target: MESH:D010024
+multigraph: true
+nodes:
+  - id: DB:DB00153
+    label: Drug
+    name: ergocalciferol
+  - id: CHEBI:86320
+    label: ChemicalSubstance
+    name: 1α,25-dihydroxyvitamin D2
+  - id: UniProt:P11473
+    label: Protein
+    name: Vitamin D3 receptor
+  - id: GO:0070561
+    label: BiologicalProcess
+    name: vitamin D receptor signaling pathway
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: bone resorption
+  - id: GO:0035898
+    label: BiologicalProcess
+    name: parathyroid hormone secretion
+  - id: CL:0000092
+    label: Cell
+    name: osteoclast
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: calcium ion import
+  - id: HP:0002901
+    label: PhenotypicFeature
+    name: Hypocalcemia
+  - id: MESH:D010024
+    label: Disease
+    name: Osteoporosis
+references:
+  - https://go.drugbank.com/drugs/DB00153
+  - https://en.wikipedia.org/wiki/Ergocalciferol#Mechanism
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5280793#section=Mechanism-of-Action

@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00263_MESH_D014552_1
+  disease: Urinary tract infectious disease
+  disease_mesh: MESH:D014552
+  drug: sulfafurazole
+  drug_mesh: MESH:D013444
+  drugbank: DB:DB00263
+links:
+  - key: negatively regulates
+    source: MESH:D013444
+    target: InterPro:IPR006390
+  - key: positively regulates
+    source: InterPro:IPR006390
+    target: GO:0046656
+  - key: positively correlated with
+    source: GO:0046656
+    target: GO:0032774
+  - key: in taxon
+    source: GO:0032774
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D014552
+multigraph: true
+nodes:
+  - id: MESH:D013444
+    label: Drug
+    name: sulfafurazole
+  - id: InterPro:IPR006390
+    label: GeneFamily
+    name: Dihydropteroate synthase
+  - id: GO:0046656
+    label: BiologicalProcess
+    name: folic acid biosynthetic process
+  - id: GO:0032774
+    label: BiologicalProcess
+    name: RNA biosynthetic process
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D014552
+    label: Disease
+    name: Urinary tract infectious disease
+references:
+  - https://go.drugbank.com/drugs/DB00263

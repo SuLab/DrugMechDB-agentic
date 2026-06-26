@@ -1,0 +1,47 @@
+comment: The drug has no anti-parkinson activity per se. It is admnistered in combination
+  with levodopa to prevent levodopa degradation to dopamine in extracerebral tissue,
+  thereby decreasing the peripheral side effects of levodopa.
+directed: true
+graph:
+  _id: DB00190_MESH_D010300_1
+  disease: Parkinson's disease
+  disease_mesh: MESH:D010300
+  drug: carbidopa
+  drug_mesh: MESH:D002230
+  drugbank: DB:DB00190
+links:
+  - key: negatively regulates
+    source: MESH:D002230
+    target: UniProt:P20711
+  - key: positively regulates
+    source: UniProt:P20711
+    target: GO:1903184
+  - key: positively correlated with
+    source: GO:1903184
+    target: HP:0002017
+  - key: manifestation of
+    source: HP:0002017
+    target: MESH:D010300
+multigraph: true
+nodes:
+  - id: MESH:D002230
+    label: Drug
+    name: carbidopa
+  - id: UniProt:P20711
+    label: Protein
+    name: Aromatic-L-amino-acid decarboxylase
+  - id: GO:1903184
+    label: BiologicalProcess
+    name: L-dopa metabolic process
+  - id: HP:0002017
+    label: PhenotypicFeature
+    name: Nausea and vomiting
+  - id: MESH:D010300
+    label: Disease
+    name: Parkinson's disease
+references:
+  - https://go.drugbank.com/drugs/DB00190
+  - https://www.ebmconsult.com/articles/carbidopa-levodopa-parkinson-disease
+  - https://en.wikipedia.org/wiki/L-DOPA#Medical_use
+  - https://en.wikipedia.org/wiki/Aromatic_L-amino_acid_decarboxylase_inhibitor
+  - https://en.wikipedia.org/wiki/Carbidopa/levodopa#Mechanism_of_action

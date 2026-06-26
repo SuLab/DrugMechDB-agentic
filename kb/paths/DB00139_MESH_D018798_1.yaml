@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB00139_MESH_D018798_1
+  disease: Iron deficiency anemia
+  disease_mesh: MESH:D018798
+  drug: succinic acid
+  drug_mesh: MESH:D019802
+  drugbank: DB:DB00139
+links:
+  - key: positively regulates
+    source: MESH:D019802
+    target: GO:0006826
+  - key: negatively correlated with
+    source: GO:0006826
+    target: MESH:D018798
+multigraph: true
+nodes:
+  - id: MESH:D019802
+    label: Drug
+    name: Succinic acid
+  - id: GO:0006826
+    label: BiologicalProcess
+    name: Ferric iron uptake
+  - id: MESH:D018798
+    label: Disease
+    name: Iron deficiency anemia
+references:
+  - https://go.drugbank.com/drugs/DB00139
+  - https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1600-0609.1971.tb01960.x
+comment: Succinic acid helps with oral iron absorbtion in the treatment of iron deficiency
+  anaemia. Ferric iron uptake instead of iron ion transport has been used for the
+  ontology term GO:0006826.

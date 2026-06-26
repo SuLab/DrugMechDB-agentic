@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01213_MESH_D000138_1
+  disease: Methanol poisoning
+  disease_mesh: MESH:D000138
+  drug: fomepizole
+  drug_mesh: MESH:D000077604
+  drugbank: DB:DB01213
+links:
+  - key: decreases activity of
+    source: MESH:D000077604
+    target: UniProt:P07327
+  - key: participates in
+    source: UniProt:P07327
+    target: reactome:R-HSA-71384
+  - key: has output
+    source: reactome:R-HSA-71384
+    target: MESH:C030544
+  - key: causes
+    source: MESH:C030544
+    target: MESH:D000138
+multigraph: true
+nodes:
+  - id: MESH:D000077604
+    label: Drug
+    name: fomepizole
+  - id: UniProt:P07327
+    label: Protein
+    name: Alcohol dehydrogenase 1A
+  - id: reactome:R-HSA-71384
+    label: Pathway
+    name: Ethanol oxidation
+  - id: MESH:C030544
+    label: ChemicalSubstance
+    name: formic acid
+  - id: MESH:D000138
+    label: Disease
+    name: Methanol poisoning

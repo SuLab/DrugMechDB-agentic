@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB00883_MESH_D000787_1
+  disease: Angina Pectoris
+  disease_mesh: MESH:D000787
+  drug: Isosorbide Dinitrate
+  drug_mesh: MESH:D007548
+  drugbank: DB:DB00883
+links:
+  - key: has metabolite
+    source: MESH:D007548
+    target: MESH:D009569
+  - key: increases activity of
+    source: MESH:D009569
+    target: UniProt:P16066
+  - key: increases abundance of
+    source: UniProt:P16066
+    target: MESH:D006152
+  - key: increases activity of
+    source: MESH:D006152
+    target: UniProt:Q13976
+  - key: regulates
+    source: UniProt:Q13976
+    target: GO:0050115
+  - key: positively regulates
+    source: GO:0050115
+    target: GO:0044557
+  - key: negatively correlated with
+    source: GO:0044557
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:D007548
+    label: Drug
+    name: Isosorbide Dinitrate
+  - id: MESH:D009569
+    label: ChemicalSubstance
+    name: Nitric Oxide
+  - id: UniProt:P16066
+    label: Protein
+    name: Atrial natriuretic peptide receptor 1
+  - id: MESH:D006152
+    label: ChemicalSubstance
+    name: Cyclic GMP
+  - id: UniProt:Q13976
+    label: Protein
+    name: cGMP-dependent protein kinase 1
+  - id: GO:0050115
+    label: MolecularActivity
+    name: myosin-light-chain-phosphatase activity
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: relaxation of smooth muscle
+  - id: MESH:D000787
+    label: Disease
+    name: Angina Pectoris
+references:
+  - https://go.drugbank.com/drugs/DB00883#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P16066#function
+  - https://www.uniprot.org/uniprot/Q13976#function
+  - https://en.wikipedia.org/wiki/Myosin-light-chain_phosphatase
+  - https://en.wikipedia.org/wiki/Angina

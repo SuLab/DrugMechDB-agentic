@@ -1,0 +1,69 @@
+directed: true
+graph:
+  _id: DB00347_MESH_D004827_1
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+  drug: trimethadione
+  drug_mesh: MESH:D014293
+  drugbank: DB:DB00347
+links:
+  - key: decreases activity of
+    source: MESH:D014293
+    target: UniProt:O43497
+  - key: decreases activity of
+    source: MESH:D014293
+    target: UniProt:O95180
+  - key: decreases activity of
+    source: MESH:D014293
+    target: UniProt:Q9P0X4
+  - key: positively regulates
+    source: UniProt:O43497
+    target: GO:0005245
+  - key: positively regulates
+    source: UniProt:O95180
+    target: GO:0005245
+  - key: positively regulates
+    source: UniProt:Q9P0X4
+    target: GO:0005245
+  - key: positively correlated with
+    source: GO:0005245
+    target: GO:0014047
+  - key: positively correlated with
+    source: GO:0005245
+    target: GO:0014051
+  - key: positively correlated with
+    source: GO:0014051
+    target: MESH:D004827
+  - key: positively correlated with
+    source: GO:0014047
+    target: MESH:D004827
+multigraph: true
+nodes:
+  - id: MESH:D014293
+    label: Drug
+    name: trimethadione
+  - id: UniProt:O43497
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1G
+  - id: UniProt:Q9P0X4
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1I
+  - id: UniProt:O95180
+    label: Protein
+    name: Voltage-dependent T-type calcium channel subunit alpha-1H
+  - id: GO:0005245
+    label: MolecularActivity
+    name: voltage-gated calcium channel activity
+  - id: GO:0014047
+    label: BiologicalProcess
+    name: glutamate secretion
+  - id: GO:0014051
+    label: BiologicalProcess
+    name: gamma-aminobutyric acid secretion
+  - id: MESH:D004827
+    label: Disease
+    name: Epilepsy
+references:
+  - https://go.drugbank.com/drugs/DB00347#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Trimethadione
+  - https://en.wikipedia.org/wiki/Anticonvulsant

@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB01131_MESH_D016778_1
+  disease: Malaria, Falciparum
+  disease_mesh: MESH:D016778
+  drug: Proguanil
+  drug_mesh: MESH:D002727
+  drugbank: DB:DB01131
+links:
+  - key: has metabolite
+    source: MESH:D002727
+    target: MESH:C026009
+  - key: decreases activity of
+    source: MESH:C026009
+    target: UniProt:P00374
+  - key: positively regulates
+    source: UniProt:P00374
+    target: reactome:R-HSA-8956320
+  - key: positively regulates
+    source: reactome:R-HSA-8956320
+    target: GO:0071897
+  - key: in taxon
+    source: GO:0071897
+    target: taxonomy:5833
+  - key: causes
+    source: taxonomy:5833
+    target: MESH:D016778
+multigraph: true
+nodes:
+  - id: MESH:D002727
+    label: Drug
+    name: Proguanil
+  - id: MESH:C026009
+    label: ChemicalSubstance
+    name: cycloguanil
+  - id: UniProt:P00374
+    label: Protein
+    name: Dihydrofolate reductase
+  - id: reactome:R-HSA-8956320
+    label: Pathway
+    name: Nucleotide biosynthesis
+  - id: GO:0071897
+    label: BiologicalProcess
+    name: DNA biosynthetic process
+  - id: taxonomy:5833
+    label: OrganismTaxon
+    name: Plasmodium falciparum
+  - id: MESH:D016778
+    label: Disease
+    name: Malaria, Falciparum
+references:
+  - https://go.drugbank.com/drugs/DB01131#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Proguanil
+  - https://en.wikipedia.org/wiki/Malaria

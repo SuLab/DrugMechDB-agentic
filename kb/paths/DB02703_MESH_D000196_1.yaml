@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB02703_MESH_D000196_1
+  disease: Actinomycosis
+  disease_mesh: MESH:D000196
+  drug: fusidic acid
+  drug_mesh: MESH:D005672
+  drugbank: DB:DB02703
+links:
+  - key: decreases activity of
+    source: MESH:D005672
+    target: InterPro:IPR030848
+  - key: positively regulates
+    source: InterPro:IPR030848
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:1654
+  - key: causes
+    source: taxonomy:1654
+    target: MESH:D000196
+multigraph: true
+nodes:
+  - id: MESH:D005672
+    label: Drug
+    name: fusidic acid
+  - id: InterPro:IPR030848
+    label: GeneFamily
+    name: Elongation factor G, chloroplastic
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:1654
+    label: OrganismTaxon
+    name: Actinomyces
+  - id: MESH:D000196
+    label: Disease
+    name: Actinomycosis
+references:
+  - https://go.drugbank.com/drugs/DB02703#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Fusidic_acid
+  - https://en.wikipedia.org/wiki/Actinomycosis

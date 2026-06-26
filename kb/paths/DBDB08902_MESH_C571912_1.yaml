@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DBDB08902_MESH_C571912_1
+  disease: Inhalational anthrax
+  disease_mesh: MESH:C571912
+  drug: raxibacumab
+  drug_mesh: MESH:C542124
+  drugbank: DB:DBDB08902
+links:
+  - key: decreases activity of
+    source: MESH:C542124
+    target: UniProt:P13423
+  - key: produced by
+    source: UniProt:P13423
+    target: taxonomy:1392
+  - key: causes
+    source: taxonomy:1392
+    target: MESH:C571912
+multigraph: true
+nodes:
+  - id: MESH:C542124
+    label: Drug
+    name: raxibacumab
+  - id: UniProt:P13423
+    label: Protein
+    name: Protective antigen
+  - id: taxonomy:1392
+    label: OrganismTaxon
+    name: Bacillus anthracis
+  - id: MESH:C571912
+    label: Disease
+    name: Inhalational anthrax
+references:
+  - https://en.wikipedia.org/wiki/Anthrax
+  - https://go.drugbank.com/drugs/DB08902

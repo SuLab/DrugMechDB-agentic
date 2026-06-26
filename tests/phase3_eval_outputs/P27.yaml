@@ -1,0 +1,75 @@
+directed: true
+multigraph: true
+graph:
+  _id: P27_DB00030_MESH_D003922
+  drug: Insulin Human
+  drug_mesh: MESH:D007328
+  drugbank: DB:DB00030
+  disease: Diabetes mellitus type 1
+  disease_mesh: MESH:D003922
+nodes:
+  - id: MESH:D007328
+    name: Insulin Human
+    label: Drug
+  - id: UniProt:P06213
+    name: Insulin receptor
+    label: Protein
+  - id: GO:0046323
+    name: glucose import
+    label: BiologicalProcess
+  - id: HP:0003074
+    name: Hyperglycemia
+    label: PhenotypicFeature
+  - id: MESH:D003922
+    name: Diabetes mellitus type 1
+    label: Disease
+links:
+  - key: molecularly interacts with
+    source: MESH:D007328
+    target: UniProt:P06213
+    evidence:
+      - reference: PMID:28677502
+        snippet: Its binding to insulin receptor on the surface of diverse cells allows glucose entry into cells, and activates a variety of cellular actions.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Insulin binds directly to the insulin receptor (INSR/UniProt:P06213) on cell surfaces; this molecular interaction is the initiating event of the insulin signalling cascade that lowers blood glucose.
+  - key: positively regulates
+    source: UniProt:P06213
+    target: GO:0046323
+    evidence:
+      - reference: PMID:37778516
+        snippet: activated the insulin receptor substrate 1 (IRS1)/phosphatidylinositol 3-kinase (PI3K)/protein kinase B (AKT) signaling pathway, and enhanced the translocation of glucose transporter type 4 (GLUT4) and glucose uptake in adipocytes treated with palmitic acid.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Insulin receptor activation triggers the IRS1/PI3K/AKT cascade that drives GLUT4 translocation to the plasma membrane, thereby positively regulating glucose import (GO:0046323) into insulin-sensitive cells.
+      - reference: PMID:29686650
+        snippet: impairments in the phosphoinositide 3-kinase (PI3K)/AKT signaling pathway, or perturbations in the trafficking of glucose transporters (GLUTs), which mediate the uptake of glucose into cells.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: The PI3K/AKT pathway downstream of INSR controls GLUT trafficking and glucose uptake into cells; disruption of this pathway impairs glucose import, confirming INSR positively regulates GO:0046323.
+  - key: negatively correlated with
+    source: GO:0046323
+    target: HP:0003074
+    evidence:
+      - reference: PMID:42130086
+        snippet: promoted glucose uptake in the liver and skeletal muscle, and upregulated hepatic Ghr and Igf1 levels to facilitate glucose homeostasis.
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: Promoting cellular glucose import in liver and muscle facilitates glucose homeostasis, the inverse of hyperglycemia; the same study showed that this effect alleviated hyperglycemia in insulin-deficient models, confirming that glucose import (GO:0046323) is negatively correlated with hyperglycemia (HP:0003074).
+  - key: manifestation of
+    source: HP:0003074
+    target: MESH:D003922
+    evidence:
+      - reference: PMID:31378283
+        snippet: In T1DM, the destruction of pancreatic β-cells leads to reduced insulin production or even absolute insulin deficiency, which consequently results in hyperglycemia.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Hyperglycemia is directly caused by the insulin deficiency that results from autoimmune beta-cell destruction in T1DM; it is therefore a manifestation of the disease.
+      - reference: PMID:27558810
+        snippet: The autoimmune process leads to a deficiency in insulin production and resultant hyperglycemia requiring lifelong treatment with insulin administration.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: This clinical review confirms that hyperglycemia is a direct manifestation of T1DM caused by autoimmune insulin deficiency, and that insulin administration is the required treatment.
+references:
+  - https://go.drugbank.com/drugs/DB00030#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P06213#function

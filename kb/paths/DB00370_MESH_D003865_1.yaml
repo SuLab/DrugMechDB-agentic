@@ -1,0 +1,89 @@
+comment: The (S)-(+) enantiomer of mirtazapine is responsible for antagonism of the
+  serotonin 5-HT2A and 5-HT2C receptors, while the (R)-(–) enantiomer is responsible
+  for antagonism of the 5-HT3 receptor.
+directed: true
+graph:
+  _id: DB00370_MESH_D003865_1
+  disease: Major depressive disorder
+  disease_mesh: MESH:D003865
+  drug: mirtazapine
+  drug_mesh: MESH:C035133
+  drugbank: DB:DB00370
+links:
+  - key: decreases activity of
+    source: MESH:C035133
+    target: UniProt:P28223
+  - key: decreases activity of
+    source: MESH:C035133
+    target: UniProt:P28335
+  - key: decreases activity of
+    source: MESH:C035133
+    target: UniProt:Q9UE69
+  - key: decreases activity of
+    source: MESH:C035133
+    target: UniProt:P08913
+  - key: positively correlated with
+    source: UniProt:P28223
+    target: MESH:D012701
+  - key: positively correlated with
+    source: UniProt:P28335
+    target: MESH:D012701
+  - key: positively correlated with
+    source: UniProt:Q9UE69
+    target: MESH:D012701
+  - key: positively correlated with
+    source: UniProt:P08913
+    target: MESH:D012701
+  - key: positively correlated with
+    source: MESH:D012701
+    target: GO:0032099
+  - key: positively correlated with
+    source: MESH:D012701
+    target: HP:0000739
+  - key: positively correlated with
+    source: MESH:D012701
+    target: HP:0002360
+  - key: positively correlated with
+    source: GO:0032099
+    target: MESH:D003865
+  - key: positively correlated with
+    source: HP:0000739
+    target: MESH:D003865
+  - key: positively correlated with
+    source: HP:0002360
+    target: MESH:D003865
+multigraph: true
+nodes:
+  - id: MESH:C035133
+    label: Drug
+    name: Mirtazapine
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: UniProt:P28335
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2C
+  - id: UniProt:Q9UE69
+    label: Protein
+    name: 5HT3 serotonin receptor
+  - id: UniProt:P08913
+    label: Protein
+    name: Alpha-2A adrenergic receptor
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: GO:0032099
+    label: BiologicalProcess
+    name: Negative regulation of appetite
+  - id: HP:0000739
+    label: PhenotypicFeature
+    name: Anxiety
+  - id: HP:0002360
+    label: PhenotypicFeature
+    name: Sleep disturbance
+  - id: MESH:D003865
+    label: Disease
+    name: Major depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00370#BE0005582
+  - https://en.wikipedia.org/wiki/Mirtazapine#Pharmacology

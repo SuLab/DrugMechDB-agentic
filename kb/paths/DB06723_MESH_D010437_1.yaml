@@ -1,0 +1,36 @@
+comment: Please note the entry term for a drug was algeldrate, however the proper
+  name is aluminum hydroxide.
+directed: true
+graph:
+  _id: DB06723_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: Aluminum hydroxide
+  drug_mesh: MESH:D000536
+  drugbank: DB:DB06723
+links:
+  - key: negatively regulates
+    source: MESH:D000536
+    target: MESH:D005744
+  - key: positively regulates
+    source: MESH:D005744
+    target: InterPro:IPR034162
+  - key: positively correlated with
+    source: InterPro:IPR034162
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:D000536
+    label: Drug
+    name: Aluminum hydroxide
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: InterPro:IPR034162
+    label: GeneFamily
+    name: Pepsin catalytic domain
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB06723

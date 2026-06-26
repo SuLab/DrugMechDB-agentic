@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB00986_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: Glycopyrronium bromide
+  drug_mesh: MESH:D006024
+  drugbank: DB:DB00986
+links:
+  - key: decreases activity of
+    source: MESH:D006024
+    target: UniProt:P20309
+  - key: decreases activity of
+    source: MESH:D006024
+    target: UniProt:P11229
+  - key: participates in
+    source: UniProt:P20309
+    target: GO:0001699
+  - key: participates in
+    source: UniProt:P11229
+    target: GO:0001699
+  - key: increases abundance of
+    source: GO:0001699
+    target: MESH:D005744
+  - key: positively regulates
+    source: MESH:D005744
+    target: InterPro:IPR034162
+  - key: positively correlated with
+    source: InterPro:IPR034162
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:D006024
+    label: Drug
+    name: Glycopyrronium bromide
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:0001699
+    label: BiologicalProcess
+    name: Acetylcholine-induced gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric acid
+  - id: InterPro:IPR034162
+    label: GeneFamily
+    name: Pepsin catalytic domain
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB00986
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201335/

@@ -1,0 +1,44 @@
+comment: In addition to its antifungal actions, miconazole has antiglucocorticoid
+  effects (https://pubmed.ncbi.nlm.nih.gov/16608920/).
+directed: true
+graph:
+  _id: DB01110_MESH_D002179_1
+  disease: Candidiasis of skin
+  disease_mesh: MESH:D002179
+  drug: miconazole
+  drug_mesh: MESH:D008825
+  drugbank: DB:DB01110
+links:
+  - key: negatively regulates
+    source: MESH:D008825
+    target: UniProt:P10613
+  - key: positively regulates
+    source: UniProt:P10613
+    target: GO:0006696
+  - key: in taxon
+    source: GO:0006696
+    target: taxonomy:237561
+  - key: causes
+    source: taxonomy:237561
+    target: MESH:D002179
+multigraph: true
+nodes:
+  - id: MESH:D008825
+    label: Drug
+    name: miconazole
+  - id: UniProt:P10613
+    label: Protein
+    name: Lanosterol 14-alpha demethylase
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: ergosterol biosynthetic process
+  - id: taxonomy:237561
+    label: OrganismTaxon
+    name: Candida albicans SC5314
+  - id: MESH:D002179
+    label: Disease
+    name: Candidiasis of skin
+references:
+  - https://go.drugbank.com/drugs/DB01110
+  - https://en.wikipedia.org/wiki/Miconazole#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Ergosterol#Target_for_antifungal_drugs

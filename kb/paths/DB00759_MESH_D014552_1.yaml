@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00759_MESH_D014552_1
+  disease: Urinary tract infectious disease
+  disease_mesh: MESH:D014552
+  drug: tetracycline
+  drug_mesh: MESH:D013752
+  drugbank: DB:DB00759
+links:
+  - key: disrupts
+    source: MESH:D013752
+    target: GO:0044391
+  - key: location of
+    source: GO:0044391
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D014552
+multigraph: true
+nodes:
+  - id: MESH:D013752
+    label: Drug
+    name: tetracycline
+  - id: GO:0044391
+    label: CellularComponent
+    name: ribosomal subunit
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D014552
+    label: Disease
+    name: Urinary tract infectious disease
+references:
+  - https://en.wikipedia.org/wiki/Tetracycline#Mechanism_of_action

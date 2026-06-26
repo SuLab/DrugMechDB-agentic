@@ -1,0 +1,82 @@
+comment: Withdrawn. Etretinate was taken off the market in Canada in 1996 and America
+  in 1998 due to the risk of birth defects. Etretinate is now used to treat T-cell
+  lymphomas.
+directed: true
+graph:
+  _id: DB00926_MESH_D011565_1
+  disease: Psoriasis
+  disease_mesh: MESH:D011565
+  drug: etretinate
+  drug_mesh: MESH:D005050
+  drugbank: DB:DB00926
+links:
+  - key: increases activity of
+    source: MESH:D005050
+    target: UniProt:P10276
+  - key: increases activity of
+    source: MESH:D005050
+    target: UniProt:P10826
+  - key: increases activity of
+    source: MESH:D005050
+    target: UniProt:P19793
+  - key: increases activity of
+    source: MESH:D005050
+    target: UniProt:P48443
+  - key: negatively regulates
+    source: UniProt:P10276
+    target: GO:0031424
+  - key: negatively regulates
+    source: UniProt:P19793
+    target: GO:0031424
+  - key: negatively regulates
+    source: UniProt:P10826
+    target: GO:0031424
+  - key: negatively regulates
+    source: UniProt:P48443
+    target: GO:0031424
+  - key: negatively regulates
+    source: UniProt:P10276
+    target: GO:0010481
+  - key: negatively regulates
+    source: UniProt:P19793
+    target: GO:0010481
+  - key: negatively regulates
+    source: UniProt:P10826
+    target: GO:0010481
+  - key: negatively regulates
+    source: UniProt:P48443
+    target: GO:0010481
+  - key: positively correlated with
+    source: GO:0031424
+    target: MESH:D011565
+  - key: positively correlated with
+    source: GO:0010481
+    target: MESH:D011565
+multigraph: true
+nodes:
+  - id: MESH:D005050
+    label: Drug
+    name: Etretinate
+  - id: UniProt:P10276
+    label: Protein
+    name: Retinoic acid receptor alpha
+  - id: UniProt:P10826
+    label: Protein
+    name: Retinoic acid receptor beta
+  - id: UniProt:P19793
+    label: Protein
+    name: Retinoic acid receptor RXR-alpha
+  - id: UniProt:P48443
+    label: Protein
+    name: Retinoic acid receptor RXR-gamma
+  - id: GO:0031424
+    label: BiologicalProcess
+    name: Keratinization
+  - id: GO:0010481
+    label: BiologicalProcess
+    name: Epidermal cell division
+  - id: MESH:D011565
+    label: Disease
+    name: Psoriasis
+references:
+  - https://go.drugbank.com/drugs/DB00926

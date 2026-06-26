@@ -1,0 +1,74 @@
+directed: true
+graph:
+  _id: DB00627_MESH_D006949_1
+  disease: Hyperlipidemias
+  disease_mesh: MESH:D006949
+  drug: Niacin
+  drug_mesh: MESH:D009525
+  drugbank: DB:DB00627
+links:
+  - key: decreases activity of
+    source: MESH:D009525
+    target: UniProt:O75907
+  - key: decreases activity of
+    source: MESH:D009525
+    target: UniProt:P04114
+  - key: increases activity of
+    source: MESH:D009525
+    target: UniProt:P02647
+  - key: positively regulates
+    source: UniProt:O75907
+    target: GO:0019432
+  - key: positively regulates
+    source: UniProt:P04114
+    target: GO:0019432
+  - key: positively regulates
+    source: UniProt:P02647
+    target: GO:0034380
+  - key: increases abundance of
+    source: GO:0019432
+    target: MESH:D014280
+  - key: increases abundance of
+    source: GO:0034380
+    target: MESH:D008075
+  - key: positively correlated with
+    source: MESH:D014280
+    target: MESH:D006949
+  - key: negatively correlated with
+    source: MESH:D008075
+    target: MESH:D006949
+multigraph: true
+nodes:
+  - id: MESH:D009525
+    label: Drug
+    name: Niacin
+  - id: UniProt:O75907
+    label: Protein
+    name: Diacylglycerol O-acyltransferase 1
+  - id: UniProt:P02647
+    label: Protein
+    name: Apolipoprotein A-I
+  - id: UniProt:P04114
+    label: Protein
+    name: Apolipoprotein B-100
+  - id: GO:0019432
+    label: BiologicalProcess
+    name: triglyceride biosynthetic process
+  - id: GO:0034380
+    label: BiologicalProcess
+    name: high-density lipoprotein particle assembly
+  - id: MESH:D014280
+    label: ChemicalSubstance
+    name: Triglycerides
+  - id: MESH:D008075
+    label: ChemicalSubstance
+    name: Lipoproteins, HDL
+  - id: MESH:D006949
+    label: Disease
+    name: Hyperlipidemias
+references:
+  - https://go.drugbank.com/drugs/DB00627#mechanism-of-action
+  - https://www.uniprot.org/uniprot/O75907#function
+  - https://www.uniprot.org/uniprot/P02647#function
+  - https://www.uniprot.org/uniprot/P04114#function
+  - https://en.wikipedia.org/wiki/Hyperlipidemia

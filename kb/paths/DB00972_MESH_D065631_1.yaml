@@ -1,0 +1,128 @@
+directed: true
+graph:
+  _id: DB00972_MESH_D065631_1
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: azelastine
+  drug_mesh: MESH:C020976
+  drugbank: DB:DB00972
+links:
+  - key: decreases activity of
+    source: MESH:C020976
+    target: UniProt:P35367
+  - key: decreases activity of
+    source: MESH:C020976
+    target: UniProt:P25021
+  - key: decreases activity of
+    source: MESH:C020976
+    target: UniProt:P04054
+  - key: decreases activity of
+    source: MESH:C020976
+    target: UniProt:Q16873
+  - key: positively regulates
+    source: UniProt:P35367
+    target: GO:0001821
+  - key: positively regulates
+    source: UniProt:P25021
+    target: GO:0001821
+  - key: positively correlated with
+    source: GO:0001821
+    target: GO:0006954
+  - key: participates in
+    source: UniProt:P04054
+    target: GO:0019370
+  - key: participates in
+    source: UniProt:Q16873
+    target: GO:0019370
+  - key: participates in
+    source: GO:0019370
+    target: GO:0043303
+  - key: decreases abundance of
+    source: MESH:C020976
+    target: CHEBI:25029
+  - key: correlated with
+    source: CHEBI:25029
+    target: GO:0043303
+  - key: correlated with
+    source: GO:0043303
+    target: GO:0006954
+  - key: decreases abundance of
+    source: MESH:C020976
+    target: CHEBI:80308
+  - key: decreases abundance of
+    source: MESH:C020976
+    target: CHEBI:3165
+  - key: located in
+    source: CHEBI:80308
+    target: UBERON:0000176
+  - key: located in
+    source: CHEBI:3165
+    target: UBERON:0000176
+  - key: causes
+    source: UBERON:0000176
+    target: HP:0025095
+  - key: causes
+    source: UBERON:0000176
+    target: HP:0000989
+  - key: correlated with
+    source: HP:0025095
+    target: MESH:D065631
+  - key: correlated with
+    source: HP:0000989
+    target: MESH:D065631
+  - key: causes
+    source: GO:0006954
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: MESH:C020976
+    label: Drug
+    name: azelastine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: UniProt:P25021
+    label: Protein
+    name: Histamine H2 receptor
+  - id: UniProt:P04054
+    label: Protein
+    name: Phospholipase A2
+  - id: UniProt:Q16873
+    label: Protein
+    name: Leukotriene C4 synthase
+  - id: GO:0001821
+    label: BiologicalProcess
+    name: histamine secretion
+  - id: GO:0019370
+    label: BiologicalProcess
+    name: leukotriene biosynthetic process
+  - id: CHEBI:25029
+    label: ChemicalSubstance
+    name: leukotriene
+  - id: GO:0043303
+    label: BiologicalProcess
+    name: Mast cell degranulation
+  - id: CHEBI:80308
+    label: ChemicalSubstance
+    name: Substance P
+  - id: CHEBI:3165
+    label: ChemicalSubstance
+    name: bradykinin
+  - id: UBERON:0000176
+    label: GrossAnatomicalStructure
+    name: oronasal secretion
+  - id: HP:0025095
+    label: PhenotypicFeature
+    name: Sneeze
+  - id: HP:0000989
+    label: PhenotypicFeature
+    name: Pruritus
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB00972#BE0000442
+  - https://en.wikipedia.org/wiki/Azelastine

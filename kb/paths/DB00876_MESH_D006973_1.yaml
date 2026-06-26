@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00876_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: Eprosartan
+  drug_mesh: MESH:C068373
+  drugbank: DB:DB00876
+links:
+  - key: negatively regulates
+    source: MESH:C068373
+    target: UniProt:P30556
+  - key: positively correlated with
+    source: UniProt:P30556
+    target: MESH:D000804
+  - key: positively regulates
+    source: MESH:D000804
+    target: MESH:D014661
+  - key: positively correlated with
+    source: MESH:D014661
+    target: HP:0032263
+  - key: positively correlated with
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C068373
+    label: Drug
+    name: Eprosartan
+  - id: UniProt:P30556
+    label: Protein
+    name: Type-1 angiotensin II receptor
+  - id: MESH:D000804
+    label: ChemicalSubstance
+    name: Angiotensin II
+  - id: MESH:D014661
+    label: Disease
+    name: Vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00876

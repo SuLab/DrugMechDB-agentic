@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB00712_MESH_D010003_1
+  disease: Osteoarthritis
+  disease_mesh: MESH:D010003
+  drug: flurbiprofen
+  drug_mesh: MESH:D005480
+  drugbank: DB:DB00712
+links:
+  - key: decreases activity of
+    source: MESH:D005480
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:D005480
+    target: UniProt:P35354
+  - key: participates in
+    source: UniProt:P23219
+    target: reactome:R-HSA-2162123
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0002829
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0001386
+  - key: positively correlated with
+    source: HP:0001386
+    target: MESH:D010003
+  - key: positively correlated with
+    source: HP:0002829
+    target: MESH:D010003
+multigraph: true
+nodes:
+  - id: MESH:D005480
+    label: Drug
+    name: flurbiprofen
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Arthralgia
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: MESH:D010003
+    label: Disease
+    name: Osteoarthritis
+references:
+  - https://go.drugbank.com/drugs/DB00712
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL563/

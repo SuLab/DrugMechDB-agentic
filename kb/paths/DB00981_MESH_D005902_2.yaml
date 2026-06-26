@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00981_MESH_D005902_2
+  disease: Glaucoma, Open-Angle
+  disease_mesh: MESH:D005902
+  drug: Physostigmine
+  drug_mesh: MESH:D010830
+  drugbank: DB:DB00981
+links:
+  - key: decreases activity of
+    source: MESH:D010830
+    target: UniProt:P22303
+  - key: decreases abundance of
+    source: UniProt:P22303
+    target: MESH:D000109
+  - key: increases activity of
+    source: MESH:D000109
+    target: InterPro:IPR000995
+  - key: negatively regulates
+    source: InterPro:IPR000995
+    target: HP:0007906
+  - key: manifestation of
+    source: HP:0007906
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:D010830
+    label: Drug
+    name: Physostigmine
+  - id: UniProt:P22303
+    label: Protein
+    name: Acetylcholinesterase
+  - id: MESH:D000109
+    label: ChemicalSubstance
+    name: Acetylcholine
+  - id: InterPro:IPR000995
+    label: GeneFamily
+    name: Muscarinic acetylcholine receptor family
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Ocular hypertension
+  - id: MESH:D005902
+    label: Disease
+    name: Glaucoma, Open-Angle
+references:
+  - https://go.drugbank.com/drugs/DB00981#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Physostigmine
+  - https://www.uniprot.org/uniprot/P22303#function
+  - https://en.wikipedia.org/wiki/Glaucoma

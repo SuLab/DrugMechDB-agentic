@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB06767_MESH_D003139_1
+  disease: Common cold
+  disease_mesh: MESH:D003139
+  drug: ammonium chloride
+  drug_mesh: MESH:D000643
+  drugbank: DB:DB06767
+links:
+  - key: interacts with
+    source: MESH:D000643
+    target: UBERON:0000410
+  - key: correlated with
+    source: UBERON:0000410
+    target: GO:0070254
+  - key: exacerbates
+    source: GO:0070254
+    target: HP:0031245
+  - key: treats
+    source: HP:0031245
+    target: MESH:D003139
+multigraph: true
+nodes:
+  - id: MESH:D000643
+    label: Drug
+    name: ammonium chloride
+  - id: UBERON:0000410
+    label: GrossAnatomicalStructure
+    name: bronchial mucosa
+  - id: GO:0070254
+    label: BiologicalProcess
+    name: Mucus secretion
+  - id: HP:0031245
+    label: PhenotypicFeature
+    name: Productive cough
+  - id: MESH:D003139
+    label: Disease
+    name: Common cold
+references:
+  - https://go.drugbank.com/drugs/DB06767
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Ammonium-chloride
+  - https://mavyn.in/webapp/pdf/googledrive/nigel-slater-vgw/ammonium-chloride-uses-in-cough-syrup-b03c77

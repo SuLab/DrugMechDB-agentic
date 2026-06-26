@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB06786_MESH_D008179_1
+  disease: Discoid lupus erythematosus
+  disease_mesh: MESH:D008179
+  drug: halcinonide
+  drug_mesh: MESH:D006206
+  drugbank: DB:DB06786
+links:
+  - key: positively regulates
+    source: MESH:D006206
+    target: UniProt:P04150
+  - key: negatively correlated with
+    source: UniProt:P04150
+    target: GO:0006954
+  - key: negatively correlated with
+    source: UniProt:P04150
+    target: HP:0000989
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D008179
+  - key: manifestation of
+    source: HP:0000989
+    target: MESH:D008179
+multigraph: true
+nodes:
+  - id: MESH:D006206
+    label: Drug
+    name: halcinonide
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0000989
+    label: PhenotypicFeature
+    name: Pruritus
+  - id: MESH:D008179
+    label: Disease
+    name: Discoid lupus erythematosus
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200845/
+  - https://en.wikipedia.org/wiki/Halcinonide
+  - https://pubchem.ncbi.nlm.nih.gov/compound/443943#section=Mechanism-of-Action
+  - https://en.wikipedia.org/wiki/Corticosteroid#Pharmacology

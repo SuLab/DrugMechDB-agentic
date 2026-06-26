@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB00268_MESH_D010300_1
+  disease: Parkinson's disease
+  disease_mesh: MESH:D010300
+  drug: Ropinirole
+  drug_mesh: MESH:C046649
+  drugbank: DB:DB00268
+links:
+  - key: positively regulates
+    source: MESH:C046649
+    target: UniProt:P14416
+  - key: positively regulates
+    source: MESH:C046649
+    target: UniProt:P35462
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P35462
+    target: MESH:D004298
+  - key: located in
+    source: MESH:D004298
+    target: UBERON:0035999
+  - key: located in
+    source: UBERON:0035999
+    target: UBERON:0002038
+  - key: part of
+    source: UBERON:0002038
+    target: UBERON:0014169
+  - key: disrupted by
+    source: UBERON:0014169
+    target: MESH:D010300
+multigraph: true
+nodes:
+  - id: MESH:C046649
+    label: Drug
+    name: Ropinirole
+  - id: UniProt:P14416
+    label: Protein
+    name: Dopamine D2 receptor
+  - id: UniProt:P35462
+    label: Protein
+    name: Dopamine D3 receptor
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: UBERON:0035999
+    label: GrossAnatomicalStructure
+    name: Dopaminergic cell groups
+  - id: UBERON:0002038
+    label: GrossAnatomicalStructure
+    name: Substantia nigra
+  - id: UBERON:0014169
+    label: GrossAnatomicalStructure
+    name: Nigrostriatal tract
+  - id: MESH:D010300
+    label: Disease
+    name: Parkinson's disease
+references:
+  - https://go.drugbank.com/drugs/DB00268
+  - https://en.wikipedia.org/wiki/Parkinson%27s_disease

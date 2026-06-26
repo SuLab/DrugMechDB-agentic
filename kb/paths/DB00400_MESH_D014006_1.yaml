@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00400_MESH_D014006_1
+  disease: Tinea capitis
+  disease_mesh: MESH:D014006
+  drug: griseofulvin
+  drug_mesh: MESH:D006118
+  drugbank: DB:DB00400
+links:
+  - key: decreases activity of
+    source: MESH:D006118
+    target: UniProt:Q5UBX3
+  - key: participates in
+    source: UniProt:Q5UBX3
+    target: GO:0046785
+  - key: participates in
+    source: GO:0046785
+    target: GO:0140014
+  - key: occurs in
+    source: GO:0140014
+    target: taxonomy:4751
+  - key: causes
+    source: taxonomy:4751
+    target: MESH:D014006
+multigraph: true
+nodes:
+  - id: MESH:D006118
+    label: Drug
+    name: Griseofulvin
+  - id: UniProt:Q5UBX3
+    label: Protein
+    name: Tubulin beta chain Trichophyton rubrum (Athlete's foot fungus)
+  - id: GO:0046785
+    label: BiologicalProcess
+    name: Microtubule assembly
+  - id: GO:0140014
+    label: BiologicalProcess
+    name: Mitosis
+  - id: taxonomy:4751
+    label: OrganismTaxon
+    name: Fungi
+  - id: MESH:D014006
+    label: Disease
+    name: Tinea capitis
+references:
+  - https://go.drugbank.com/drugs/DB00400#BE0000283

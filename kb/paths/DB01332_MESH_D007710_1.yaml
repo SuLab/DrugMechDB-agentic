@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01332_MESH_D007710_1
+  disease: Klebsiella cystitis
+  disease_mesh: MESH:D007710
+  drug: ceftizoxime
+  drug_mesh: MESH:D015296
+  drugbank: DB:DB01332
+links:
+  - key: decreases activity of
+    source: MESH:D015296
+    target: TIGR:02074
+  - key: participates in
+    source: TIGR:02074
+    target: GO:0009252
+  - key: occurs in
+    source: GO:0009252
+    target: taxonomy:573
+  - key: causes
+    source: taxonomy:573
+    target: MESH:D007710
+multigraph: true
+nodes:
+  - id: MESH:D015296
+    label: Drug
+    name: ceftizoxime
+  - id: TIGR:02074
+    label: GeneFamily
+    name: Penicillin-binding protein 1A
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: Bacterial Cell Wall Synthesis
+  - id: taxonomy:573
+    label: OrganismTaxon
+    name: Klebsiella pneumoniae
+  - id: MESH:D007710
+    label: Disease
+    name: Klebsiella cystitis

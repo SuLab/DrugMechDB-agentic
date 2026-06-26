@@ -1,0 +1,335 @@
+# Phase 3 stratified evaluation set
+# 30 drug-disease pairs spanning 6 drug classes and 7 disease areas.
+# `existing_in_corpus: true` means a legacy path for this exact pair already
+# exists in kb/paths/ — the eval can compare the agent's path against curator
+# work without overwriting (eval outputs land in tests/phase3_eval_outputs/).
+#
+# Stratification:
+#   drug_class      : 6 classes, 5 pairs each
+#   disease_area    : 7 areas
+#   existing_in_corpus : 22 / 30   (also-exists comparison set)
+#   net_new         :  8 / 30      (novel curation set)
+
+pairs:
+
+  # ── 1. Cardiovascular drugs ────────────────────────────────────────────
+  - id: P01
+    drug: Aspirin
+    disease: Myocardial Infarction
+    drug_class: cardiovascular
+    disease_area: cardiovascular
+    drugbank: DB:DB00945
+    drug_mesh: MESH:D001241
+    disease_mesh: MESH:D009203
+    existing_in_corpus: true
+    legacy_path_id: DB00945_MESH_D009203_1
+
+  - id: P02
+    drug: Atorvastatin
+    disease: Hypercholesterolemia
+    drug_class: cardiovascular
+    disease_area: cardiovascular
+    drugbank: DB:DB01076
+    drug_mesh: MESH:D000069059
+    disease_mesh: MESH:D006937
+    existing_in_corpus: true
+    legacy_path_id: DB01076_MESH_D006937_1
+
+  - id: P03
+    drug: Lisinopril
+    disease: Hypertension
+    drug_class: cardiovascular
+    disease_area: cardiovascular
+    drugbank: DB:DB00722
+    drug_mesh: MESH:D017706
+    disease_mesh: MESH:D006973
+    existing_in_corpus: false
+
+  - id: P04
+    drug: Metoprolol
+    disease: Heart Failure
+    drug_class: cardiovascular
+    disease_area: cardiovascular
+    drugbank: DB:DB00264
+    drug_mesh: MESH:D008790
+    disease_mesh: MESH:D006333
+    existing_in_corpus: false
+
+  - id: P05
+    drug: Clopidogrel
+    disease: Stroke
+    drug_class: cardiovascular
+    disease_area: cardiovascular
+    drugbank: DB:DB00758
+    drug_mesh: MESH:D000077144
+    disease_mesh: MESH:D020521
+    existing_in_corpus: false
+
+  # ── 2. Oncology ────────────────────────────────────────────────────────
+  - id: P06
+    drug: Tamoxifen
+    disease: Breast Cancer
+    drug_class: oncology
+    disease_area: cancer
+    drugbank: DB:DB00675
+    drug_mesh: MESH:D013629
+    disease_mesh: MESH:D001943
+    existing_in_corpus: true
+    legacy_path_id: DB00675_MESH_D018270_1
+
+  - id: P07
+    drug: Imatinib
+    disease: Chronic Myeloid Leukemia
+    drug_class: oncology
+    disease_area: cancer
+    drugbank: DB:DB00619
+    drug_mesh: MESH:D000068877
+    disease_mesh: MESH:D015464
+    existing_in_corpus: true
+    legacy_path_id: DB00619_MESH_D015464_1
+
+  - id: P08
+    drug: Cetuximab
+    disease: Colorectal Cancer
+    drug_class: oncology
+    disease_area: cancer
+    drugbank: DB:DB00002
+    drug_mesh: MESH:D000068818
+    disease_mesh: MESH:D015179
+    existing_in_corpus: false  # corpus has cetuximab + colon (D003110), not colorectal (D015179)
+
+  - id: P09
+    drug: Methotrexate
+    disease: Acute Lymphoblastic Leukemia
+    drug_class: oncology
+    disease_area: cancer
+    drugbank: DB:DB00563
+    drug_mesh: MESH:D008727
+    disease_mesh: MESH:D054198
+    existing_in_corpus: false
+
+  - id: P10
+    drug: Trastuzumab
+    disease: HER2-positive Breast Cancer
+    drug_class: oncology
+    disease_area: cancer
+    drugbank: DB:DB00072
+    drug_mesh: MESH:D000068878
+    disease_mesh: MESH:D001943
+    existing_in_corpus: false
+
+  # ── 3. Antimicrobials ──────────────────────────────────────────────────
+  - id: P11
+    drug: Rifampicin
+    disease: Pulmonary Tuberculosis
+    drug_class: antimicrobial
+    disease_area: infectious
+    drugbank: DB:DB01045
+    drug_mesh: MESH:D012293
+    disease_mesh: MESH:D014397
+    existing_in_corpus: true
+    legacy_path_id: DB01045_MESH_D014397_1
+
+  - id: P12
+    drug: Isoniazid
+    disease: Pulmonary Tuberculosis
+    drug_class: antimicrobial
+    disease_area: infectious
+    drugbank: DB:DB00951
+    drug_mesh: MESH:D007538
+    disease_mesh: MESH:D014397
+    existing_in_corpus: true
+    legacy_path_id: DB00951_MESH_D014397_1
+
+  - id: P13
+    drug: Vancomycin
+    disease: MRSA Infection
+    drug_class: antimicrobial
+    disease_area: infectious
+    drugbank: DB:DB00512
+    drug_mesh: MESH:D014640
+    disease_mesh: MESH:D055624
+    existing_in_corpus: false
+
+  - id: P14
+    drug: Oseltamivir
+    disease: Influenza
+    drug_class: antimicrobial
+    disease_area: infectious
+    drugbank: DB:DB00198
+    drug_mesh: MESH:D053139
+    disease_mesh: MESH:D007251
+    existing_in_corpus: true
+    legacy_path_id: DB00198_MESH_D007251_1
+
+  - id: P15
+    drug: Acyclovir
+    disease: Herpes Simplex
+    drug_class: antimicrobial
+    disease_area: infectious
+    drugbank: DB:DB00787
+    drug_mesh: MESH:D000212
+    disease_mesh: MESH:D006561
+    existing_in_corpus: false
+
+  # ── 4. CNS / neurology ────────────────────────────────────────────────
+  - id: P16
+    drug: Levodopa
+    disease: Parkinson's Disease
+    drug_class: cns
+    disease_area: neurological
+    drugbank: DB:DB01235
+    drug_mesh: MESH:D007980
+    disease_mesh: MESH:D010300
+    existing_in_corpus: true
+    legacy_path_id: DB01235_MESH_D010300_1
+
+  - id: P17
+    drug: Fluoxetine
+    disease: Major Depressive Disorder
+    drug_class: cns
+    disease_area: neurological
+    drugbank: DB:DB00472
+    drug_mesh: MESH:D005473
+    disease_mesh: MESH:D003865
+    existing_in_corpus: false
+
+  - id: P18
+    drug: Lithium
+    disease: Bipolar Disorder
+    drug_class: cns
+    disease_area: neurological
+    drugbank: DB:DB01356
+    drug_mesh: MESH:D008094
+    disease_mesh: MESH:D001714
+    existing_in_corpus: true
+    legacy_path_id: DB01356_MESH_D001714_1
+
+  - id: P19
+    drug: Gabapentin
+    disease: Epilepsy
+    drug_class: cns
+    disease_area: neurological
+    drugbank: DB:DB00996
+    drug_mesh: MESH:D000077306
+    disease_mesh: MESH:D004827
+    existing_in_corpus: false
+
+  - id: P20
+    drug: Donepezil
+    disease: Alzheimer's Disease
+    drug_class: cns
+    disease_area: neurological
+    drugbank: DB:DB00843
+    drug_mesh: MESH:D000077856
+    disease_mesh: MESH:D000544
+    existing_in_corpus: true
+    legacy_path_id: DB00843_MESH_D000544_1
+
+  # ── 5. Immunomodulators / autoimmune ──────────────────────────────────
+  - id: P21
+    drug: Methotrexate
+    disease: Rheumatoid Arthritis
+    drug_class: immunomodulator
+    disease_area: autoimmune
+    drugbank: DB:DB00563
+    drug_mesh: MESH:D008727
+    disease_mesh: MESH:D001172
+    existing_in_corpus: true
+    legacy_path_id: DB00563_MESH_D001171_1
+
+  - id: P22
+    drug: Infliximab
+    disease: Crohn's Disease
+    drug_class: immunomodulator
+    disease_area: autoimmune
+    drugbank: DB:DB00065
+    drug_mesh: MESH:D000069285
+    disease_mesh: MESH:D003424
+    existing_in_corpus: true
+    legacy_path_id: DB00065_MESH_D003424_1
+
+  - id: P23
+    drug: Hydroxychloroquine
+    disease: Systemic Lupus Erythematosus
+    drug_class: immunomodulator
+    disease_area: autoimmune
+    drugbank: DB:DB01611
+    drug_mesh: MESH:D006886
+    disease_mesh: MESH:D008180
+    existing_in_corpus: false
+
+  - id: P24
+    drug: Mycophenolate Mofetil
+    disease: Lupus Nephritis
+    drug_class: immunomodulator
+    disease_area: autoimmune
+    drugbank: DB:DB00688
+    drug_mesh: MESH:D000077732
+    disease_mesh: MESH:D008181
+    existing_in_corpus: false
+
+  - id: P25
+    drug: Adalimumab
+    disease: Psoriasis
+    drug_class: immunomodulator
+    disease_area: autoimmune
+    drugbank: DB:DB00051
+    drug_mesh: MESH:D000068879
+    disease_mesh: MESH:D011565
+    existing_in_corpus: false  # corpus has D015535 (psoriatic arthritis), not D011565 (psoriasis)
+
+  # ── 6. Endocrine / metabolic ──────────────────────────────────────────
+  - id: P26
+    drug: Metformin
+    disease: Type 2 Diabetes Mellitus
+    drug_class: endocrine
+    disease_area: metabolic
+    drugbank: DB:DB00331
+    drug_mesh: MESH:D008687
+    disease_mesh: MESH:D003924
+    existing_in_corpus: true
+    legacy_path_id: DB00331_MESH_D003924_1
+
+  - id: P27
+    drug: Insulin
+    disease: Type 1 Diabetes Mellitus
+    drug_class: endocrine
+    disease_area: metabolic
+    drugbank: DB:DB00030
+    drug_mesh: MESH:D007328
+    disease_mesh: MESH:D003922
+    existing_in_corpus: true
+    legacy_path_id: DB00030_MESH_D003922_1
+
+  - id: P28
+    drug: Levothyroxine
+    disease: Hypothyroidism
+    drug_class: endocrine
+    disease_area: metabolic
+    drugbank: DB:DB00451
+    drug_mesh: MESH:D013974
+    disease_mesh: MESH:D007037
+    existing_in_corpus: false  # corpus has D003409 (congenital), this targets D007037 (general)
+
+  - id: P29
+    drug: Allopurinol
+    disease: Gout
+    drug_class: endocrine
+    disease_area: metabolic
+    drugbank: DB:DB00437
+    drug_mesh: MESH:D000493
+    disease_mesh: MESH:D006073
+    existing_in_corpus: true
+    legacy_path_id: DB00437_MESH_D006073_1
+
+  - id: P30
+    drug: Empagliflozin
+    disease: Type 2 Diabetes Mellitus
+    drug_class: endocrine
+    disease_area: metabolic
+    drugbank: DB:DB09038
+    drug_mesh: MESH:C000591311
+    disease_mesh: MESH:D003924
+    existing_in_corpus: true
+    legacy_path_id: DB09038_MESH_D003924_1

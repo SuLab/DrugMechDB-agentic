@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB00024_MESH_D013964_1
+  disease: Thyroid cancer (Diagnostic)
+  disease_mesh: MESH:D013964
+  drug: thyrotropin alfa
+  drug_mesh: MESH:D057073
+  drugbank: DB:DB00024
+links:
+  - key: increases activity of
+    source: MESH:D057073
+    target: UniProt:P16473
+  - key: expressed in
+    source: UniProt:P16473
+    target: UBERON:0002046
+  - key: location of
+    source: UBERON:0002046
+    target: MESH:D013964
+multigraph: true
+nodes:
+  - id: MESH:D057073
+    label: Drug
+    name: thyrotropin alfa
+  - id: UniProt:P16473
+    label: Protein
+    name: Thyrotropin receptor
+  - id: UBERON:0002046
+    label: GrossAnatomicalStructure
+    name: Thyroid
+  - id: MESH:D013964
+    label: Disease
+    name: Thyroid cancer (Diagnostic)

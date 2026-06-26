@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB00307_MESH_D016410_1
+  disease: Primary cutaneous T-cell lymphoma
+  disease_mesh: MESH:D016410
+  drug: bexarotene
+  drug_mesh: MESH:C095105
+  drugbank: DB:DB00307
+links:
+  - key: increases activity of
+    source: MESH:C095105
+    target: UniProt:P19793
+  - key: increases activity of
+    source: MESH:C095105
+    target: UniProt:P28702
+  - key: increases activity of
+    source: MESH:C095105
+    target: UniProt:P48443
+  - key: negatively regulates
+    source: UniProt:P19793
+    target: HP:0031379
+  - key: negatively regulates
+    source: UniProt:P28702
+    target: HP:0031379
+  - key: negatively regulates
+    source: UniProt:P48443
+    target: HP:0031379
+  - key: positively correlated with
+    source: HP:0031379
+    target: MESH:D016410
+multigraph: true
+nodes:
+  - id: MESH:C095105
+    label: Drug
+    name: Bexarotene
+  - id: UniProt:P19793
+    label: Protein
+    name: Retinoic acid receptor RXR-alpha
+  - id: UniProt:P28702
+    label: Protein
+    name: Retinoic acid receptor RXR-beta
+  - id: UniProt:P48443
+    label: Protein
+    name: Retinoic acid receptor RXR-gamma
+  - id: HP:0031379
+    label: PhenotypicFeature
+    name: Abnormal T cell proliferation
+  - id: MESH:D016410
+    label: Disease
+    name: Primary cutaneous T-cell lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB00307#BE0000412
+  - https://en.wikipedia.org/wiki/Bexarotene
+  - https://pubmed.ncbi.nlm.nih.gov/16634713/

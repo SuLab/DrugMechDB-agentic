@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00962_MESH_D007319_1
+  disease: Disorders of initiating and maintaining sleep
+  disease_mesh: MESH:D007319
+  drug: zaleplon
+  drug_mesh: MESH:C085665
+  drugbank: DB:DB00962
+links:
+  - key: positively regulates
+    source: MESH:C085665
+    target: UniProt:P14867
+  - key: positively regulates
+    source: UniProt:P14867
+    target: GO:0005237
+  - key: negatively correlated with
+    source: GO:0005237
+    target: HP:0002360
+  - key: correlated with
+    source: HP:0002360
+    target: MESH:D007319
+multigraph: true
+nodes:
+  - id: MESH:C085665
+    label: Drug
+    name: zaleplon
+  - id: UniProt:P14867
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-1
+  - id: GO:0005237
+    label: MolecularActivity
+    name: inhibitory extracellular ligand-gated ion channel activity
+  - id: HP:0002360
+    label: PhenotypicFeature
+    name: Sleep disturbance
+  - id: MESH:D007319
+    label: Disease
+    name: Disorders of initiating and maintaining sleep
+references:
+  - https://go.drugbank.com/drugs/DB00962
+  - https://www.accessdata.fda.gov/drugsatfda_docs/label/2013/020859s013lbl.pdf

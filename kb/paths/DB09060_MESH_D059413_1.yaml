@@ -1,0 +1,62 @@
+comment: This antibiotic inhbits beta-lactamases, enzymes that break antibiotics and
+  therefore provide resistance to ampicillin and related beta-lacam antibiotics. Avibactam
+  therefore is useful to treat infections caused by bacteria that are multi-resistant
+  to β-lactam antibiotics.
+directed: true
+graph:
+  _id: DB09060_MESH_D059413_1
+  disease: Infectious disease of abdomen
+  disease_mesh: MESH:D059413
+  drug: avibactam
+  drug_mesh: MESH:C543519
+  drugbank: DB:DB09060
+links:
+  - key: negatively regulates
+    source: MESH:C543519
+    target: UniProt:P0A9Z7
+  - key: negatively regulates
+    source: MESH:C543519
+    target: UniProt:P0AD63
+  - key: negatively regulates
+    source: MESH:C543519
+    target: UniProt:P62593
+  - key: positively regulates
+    source: UniProt:P0A9Z7
+    target: GO:0008800
+  - key: positively regulates
+    source: UniProt:P0AD63
+    target: GO:0008800
+  - key: positively regulates
+    source: UniProt:P62593
+    target: GO:0008800
+  - key: in taxon
+    source: GO:0008800
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D059413
+multigraph: true
+nodes:
+  - id: MESH:C543519
+    label: Drug
+    name: avibactam
+  - id: UniProt:P0A9Z7
+    label: Protein
+    name: Beta-lactamase SHV-2
+  - id: UniProt:P0AD63
+    label: Protein
+    name: Beta-lactamase SHV-1
+  - id: UniProt:P62593
+    label: Protein
+    name: Beta-lactamase TEM
+  - id: GO:0008800
+    label: MolecularActivity
+    name: beta-lactamase activity
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D059413
+    label: Disease
+    name: Infectious disease of abdomen
+references:
+  - https://go.drugbank.com/drugs/DB09060#mechanism-of-action

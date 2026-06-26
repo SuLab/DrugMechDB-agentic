@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB01186_MESH_D020734_1
+  disease: Parkinsonism
+  disease_mesh: MESH:D020734
+  drug: pergolide
+  drug_mesh: MESH:D010479
+  drugbank: DB:DB01186
+links:
+  - key: increases activity of
+    source: MESH:D010479
+    target: InterPro:IPR000929
+  - key: negatively correlated with
+    source: InterPro:IPR000929
+    target: HP:0002071
+  - key: manifestation of
+    source: HP:0002071
+    target: MESH:D020734
+multigraph: true
+nodes:
+  - id: MESH:D010479
+    label: Drug
+    name: pergolide
+  - id: InterPro:IPR000929
+    label: GeneFamily
+    name: Dopamine receptor family
+  - id: HP:0002071
+    label: PhenotypicFeature
+    name: Abnormality of extrapyramidal motor function
+  - id: MESH:D020734
+    label: Disease
+    name: Parkinsonism
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL531/
+  - https://en.wikipedia.org/wiki/Dopamine_receptor#Parkinson's_disease
+  - https://pubchem.ncbi.nlm.nih.gov/compound/47811#section=Mechanism-of-Action

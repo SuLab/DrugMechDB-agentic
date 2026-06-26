@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB06043_MESH_D012509_1
+  disease: Sarcoma of soft tissue
+  disease_mesh: MESH:D012509
+  drug: olaratumab
+  drug_mesh: MESH:C000589393
+  drugbank: DB:DB06043
+links:
+  - key: decreases activity of
+    source: MESH:C000589393
+    target: UniProt:P16234
+  - key: positively regulates
+    source: UniProt:P16234
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D012509
+multigraph: true
+nodes:
+  - id: MESH:C000589393
+    label: Drug
+    name: olaratumab
+  - id: UniProt:P16234
+    label: Protein
+    name: Platelet-derived growth factor receptor alpha
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: MESH:D012509
+    label: Disease
+    name: Sarcoma of soft tissue
+references:
+  - https://go.drugbank.com/drugs/DB12598
+  - https://en.wikipedia.org/wiki/Olaratumab#Mechanism_of_action

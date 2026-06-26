@@ -1,0 +1,74 @@
+directed: true
+graph:
+  _id: DB06663_MESH_D000308_1
+  disease: Hypercortisolism
+  disease_mesh: MESH:D000308
+  drug: pasireotide
+  drug_mesh: MESH:C517782
+  drugbank: DB:DB06663
+links:
+  - key: increases activity of
+    source: MESH:C517782
+    target: UniProt:P30872
+  - key: increases activity of
+    source: MESH:C517782
+    target: UniProt:P30874
+  - key: increases activity of
+    source: MESH:C517782
+    target: UniProt:P32745
+  - key: increases activity of
+    source: MESH:C517782
+    target: UniProt:P35346
+  - key: participates in
+    source: UniProt:P30872
+    target: GO:0051460
+  - key: participates in
+    source: UniProt:P30874
+    target: GO:0051460
+  - key: participates in
+    source: UniProt:P32745
+    target: GO:0051460
+  - key: participates in
+    source: UniProt:P35346
+    target: GO:0051460
+  - key: participates in
+    source: GO:0051460
+    target: GO:0051463
+  - key: decreases abundance of
+    source: GO:0051463
+    target: CHEBI:17650
+  - key: positively correlated with
+    source: CHEBI:17650
+    target: MESH:D000308
+multigraph: true
+nodes:
+  - id: MESH:C517782
+    label: Drug
+    name: pasireotide
+  - id: UniProt:P30872
+    label: Protein
+    name: Somatostatin receptor type 1
+  - id: UniProt:P30874
+    label: Protein
+    name: Somatostatin receptor type 2
+  - id: UniProt:P32745
+    label: Protein
+    name: Somatostatin receptor type 3
+  - id: UniProt:P35346
+    label: Protein
+    name: Somatostatin receptor type 5
+  - id: GO:0051460
+    label: BiologicalProcess
+    name: negative regulation of corticotropin secretion
+  - id: GO:0051463
+    label: BiologicalProcess
+    name: negative regulation of cortisol secretion
+  - id: CHEBI:17650
+    label: ChemicalSubstance
+    name: cortisol
+  - id: MESH:D000308
+    label: Disease
+    name: Hypercortisolism
+references:
+  - https://go.drugbank.com/drugs/DB06663
+  - https://pubmed.ncbi.nlm.nih.gov/23462624/

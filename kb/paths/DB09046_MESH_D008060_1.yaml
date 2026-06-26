@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB09046_MESH_D008060_1
+  disease: lipodystrophy
+  disease_mesh: MESH:D008060
+  drug: metreleptin
+  drug_mesh: MESH:C415771
+  drugbank: DB:DB09046
+links:
+  - key: increases activity of
+    source: MESH:C415771
+    target: UniProt:P48357
+  - key: regulates
+    source: UniProt:P48357
+    target: GO:0060612
+  - key: negatively correlated with
+    source: GO:0060612
+    target: MESH:D008060
+multigraph: true
+nodes:
+  - id: MESH:C415771
+    label: Drug
+    name: metreleptin
+  - id: UniProt:P48357
+    label: Protein
+    name: leptin receptor
+  - id: GO:0060612
+    label: BiologicalProcess
+    name: adipogenesis
+  - id: MESH:D008060
+    label: Disease
+    name: lipodystrophy

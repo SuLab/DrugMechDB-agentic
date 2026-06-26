@@ -1,0 +1,24 @@
+comment: Contraindicated. Generally steroids are contraindicated for rosacea.
+directed: true
+graph:
+  _id: DBSALT001065_MESH_D012393_1
+  disease: Rosacea
+  disease_mesh: MESH:D012393
+  drug: fluorometholone acetate
+  drugbank: DB:DBSALT001065
+links:
+  - key: contraindicated for
+    source: DB:DBSALT001065
+    target: MESH:D012393
+multigraph: true
+nodes:
+  - id: DB:DBSALT001065
+    label: Drug
+    name: fluorometholone acetate
+  - id: MESH:D012393
+    label: Disease
+    name: Rosacea
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/26280139/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3088930/
+  - https://go.drugbank.com/salts/DBSALT001065

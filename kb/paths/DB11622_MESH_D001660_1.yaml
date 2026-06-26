@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB11622_MESH_D001660_1
+  disease: Disorder of biliary tract
+  disease_mesh: MESH:D001660
+  drug: dehydrocholic acid
+  drug_mesh: MESH:D003685
+  drugbank: DB:DB11622
+links:
+  - key: positively regulates
+    source: MESH:D003685
+    target: GO:0032782
+  - key: positively correlated with
+    source: GO:0032782
+    target: GO:0120054
+  - key: negatively correlated with
+    source: GO:0120054
+    target: HP:0002027
+  - key: manifestation of
+    source: HP:0002027
+    target: MESH:D001660
+multigraph: true
+nodes:
+  - id: MESH:D003685
+    label: Drug
+    name: dehydrocholic acid
+  - id: GO:0032782
+    label: BiologicalProcess
+    name: bile acid secretion
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: intestinal motility
+  - id: HP:0002027
+    label: PhenotypicFeature
+    name: Abdominal pain
+  - id: MESH:D001660
+    label: Disease
+    name: Disorder of biliary tract
+references:
+  - https://go.drugbank.com/drugs/DB11622
+  - https://pubmed.ncbi.nlm.nih.gov/7714463/
+  - https://www.gwhospital.com/conditions-services/digestive-disorder-center/biliary-disease

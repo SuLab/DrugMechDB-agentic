@@ -1,0 +1,33 @@
+comment: There appears to be no connection between Niacin deficiency and nicotine.
+  Although niacin and nicotine are somehow related (nicotine can turn into nicotinic
+  acid via oxidation), nicotine may not be able to replace niacin as treatment for
+  Niacin deficiency. Actually nicotine could compete with niacin for binding sites
+  in the enzymes necessary for vitamin B3 metabolism, and therefore would decrease
+  the amount of B3 available for the cells.
+directed: true
+graph:
+  _id: DB00184_MESH_D010383_1
+  disease: Niacin deficiency
+  disease_mesh: MESH:D010383
+  drug: nicotine
+  drug_mesh: MESH:D009538
+  drugbank: DB:DB00184
+links:
+  - key: treats
+    source: MESH:D009538
+    target: MESH:D010383
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:D061485
+    id: MESH:D009538
+    label: Drug
+    name: nicotine
+  - id: MESH:D010383
+    label: Disease
+    name: Niacin deficiency
+references:
+  - https://go.drugbank.com/drugs/DB00184#indication
+  - https://en.wikipedia.org/wiki/Nicotine#Biosynthesis
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3/
+  - https://hopes.stanford.edu/nicotinamide/#relationship-between-nicotinamide-and-nicotine

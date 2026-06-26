@@ -1,0 +1,90 @@
+directed: true
+graph:
+  _id: DB02329_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: carbenoxolone
+  drug_mesh: MESH:D002229
+  drugbank: DB:DB02329
+links:
+  - key: negatively regulates
+    source: MESH:D002229
+    target: UniProt:P28845
+  - key: negatively regulates
+    source: MESH:D002229
+    target: UniProt:P15428
+  - key: positively regulates
+    source: UniProt:P28845
+    target: GO:0016491
+  - key: positively regulates
+    source: UniProt:P15428
+    target: GO:0016616
+  - key: decreases abundance of
+    source: GO:0016491
+    target: MESH:D011453
+  - key: positively regulates
+    source: GO:0016616
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: GO:0070254
+  - key: positively correlated with
+    source: MESH:D011453
+    target: GO:0008283
+  - key: negatively correlated with
+    source: MESH:D011453
+    target: GO:0001696
+  - key: negatively correlated with
+    source: GO:0070254
+    target: MESH:D010437
+  - key: negatively correlated with
+    source: GO:0008283
+    target: MESH:D010437
+  - key: positively correlated with
+    source: GO:0001696
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:D002229
+    label: Drug
+    name: carbenoxolone
+  - id: UniProt:P28845
+    label: Protein
+    name: Corticosteroid 11-beta-dehydrogenase isozyme 1
+  - id: UniProt:P15428
+    label: Protein
+    name: 15-hydroxyprostaglandin dehydrogenase [NAD(+)]
+  - id: GO:0016491
+    label: MolecularActivity
+    name: oxidoreductase activity
+  - id: GO:0016616
+    label: MolecularActivity
+    name: oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP
+      as acceptor
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: GO:0070254
+    label: BiologicalProcess
+    name: mucus secretion
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: gastric acid secretion
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://gut.bmj.com/content/11/4/344
+  - https://www.sciencedirect.com/science/article/abs/pii/0039128X94900914
+  - https://scholar.googleusercontent.com/scholar?q=cache:A3Q9QZ97ZyAJ:scholar.google.com/&hl=en&as_sdt=0,5
+  - https://www.kegg.jp/entry/D01899
+  - http://www.oeso.org/OESO/books/Vol_3_Eso_Mucosa/Articles/ART088.HTML
+  - https://europepmc.org/article/MED/30117204
+  - https://pubmed.ncbi.nlm.nih.gov/2864318/
+  - https://pubmed.ncbi.nlm.nih.gov/780088/
+  - https://en.wikipedia.org/wiki/Carbenoxolone
+  - https://en.wikipedia.org/wiki/Enoxolone#Mechanism_of_action
+  - https://go.drugbank.com/drugs/DB02329#mechanism-of-action

@@ -1,0 +1,71 @@
+directed: true
+graph:
+  _id: DB11348_MESH_D006996_1
+  disease: Hypocalcemia
+  disease_mesh: MESH:D006996
+  drug: calcium phosphate
+  drug_mesh: MESH:C020243
+  drugbank: DB:DB11348
+links:
+  - key: derives into
+    source: MESH:C020243
+    target: MESH:D002118
+  - key: derives into
+    source: MESH:C020243
+    target: MESH:D010710
+  - key: negatively correlated with
+    source: MESH:D010710
+    target: MESH:D006996
+  - key: negatively correlated with
+    source: MESH:D002118
+    target: MESH:D006996
+  - key: negatively regulates
+    source: MESH:D002118
+    target: GO:0035898
+  - key: positively correlated with
+    source: GO:0035898
+    target: MESH:D002112
+  - key: has active ingredient
+    source: MESH:D002112
+    target: MESH:D002117
+  - key: negatively regulates
+    source: MESH:D002117
+    target: GO:0002158
+  - key: positively correlated with
+    source: GO:0002158
+    target: GO:0045453
+  - key: negatively correlated with
+    source: GO:0045453
+    target: MESH:D006996
+multigraph: true
+nodes:
+  - id: MESH:C020243
+    label: Drug
+    name: calcium phosphate
+  - id: MESH:D002118
+    label: ChemicalSubstance
+    name: Calcium
+  - id: MESH:D010710
+    label: ChemicalSubstance
+    name: Phosphates
+  - id: GO:0035898
+    label: BiologicalProcess
+    name: parathyroid hormone secretion
+  - id: MESH:D002112
+    label: ChemicalSubstance
+    name: Calcifediol
+  - id: MESH:D002117
+    label: ChemicalSubstance
+    name: Calcitriol
+  - id: GO:0002158
+    label: BiologicalProcess
+    name: osteoclast proliferation
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: bone resorption
+  - id: MESH:D006996
+    label: Disease
+    name: Hypocalcemia
+references:
+  - https://go.drugbank.com/drugs/DB11348#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Hypocalcemia

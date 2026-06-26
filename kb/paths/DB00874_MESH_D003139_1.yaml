@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB00874_MESH_D003139_1
+  disease: Common cold
+  disease_mesh: MESH:D003139
+  drug: guaifenesin
+  drug_mesh: MESH:D006140
+  drugbank: DB:DB00874
+links:
+  - key: subclass of
+    source: MESH:D006140
+    target: MESH:D005100
+  - key: decreases abundance of
+    source: MESH:D005100
+    target: UBERON:0016553
+  - key: positively correlated with
+    source: UBERON:0016553
+    target: MESH:D003139
+multigraph: true
+nodes:
+  - id: MESH:D006140
+    label: Drug
+    name: Guaifenesin
+  - id: MESH:D005100
+    label: ChemicalSubstance
+    name: Expectorants
+  - id: UBERON:0016553
+    label: GrossAnatomicalStructure
+    name: Respiratory system mucus
+  - id: MESH:D003139
+    label: Disease
+    name: Common cold
+references:
+  - https://go.drugbank.com/drugs/DB00874#BE0004956

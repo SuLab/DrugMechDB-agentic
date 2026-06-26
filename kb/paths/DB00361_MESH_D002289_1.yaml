@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00361_MESH_D002289_1
+  disease: Non-small cell lung cancer
+  disease_mesh: MESH:D002289
+  drug: vinorelbine
+  drug_mesh: MESH:C030852
+  drugbank: DB:DB00361
+links:
+  - key: decreases activity of
+    source: MESH:C030852
+    target: InterPro:IPR000217
+  - key: positively regulates
+    source: InterPro:IPR000217
+    target: GO:0000086
+  - key: positively correlated with
+    source: GO:0000086
+    target: GO:0051301
+  - key: positively correlated with
+    source: GO:0051301
+    target: HP:0031377
+  - key: positively correlated with
+    source: HP:0031377
+    target: MESH:D002289
+multigraph: true
+nodes:
+  - id: MESH:C030852
+    label: Drug
+    name: vinorelbine
+  - id: InterPro:IPR000217
+    label: GeneFamily
+    name: Tubulin
+  - id: GO:0000086
+    label: BiologicalProcess
+    name: G2/M transition of mitotic cell cycle
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D002289
+    label: Disease
+    name: Non-small cell lung cancer
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL553025/
+  - https://go.drugbank.com/drugs/DB00361#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Vinorelbine#Pharmacology
+comment: The MESH disease term (MESH:D002289) is known as Carcinoma, Non-Small-Cell
+  Lung on the MESH website.

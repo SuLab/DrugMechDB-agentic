@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00501_MESH_D004381_1
+  disease: Duodenal Ulcer
+  disease_mesh: MESH:D004381
+  drug: Cimetidine
+  drug_mesh: MESH:D002927
+  drugbank: DB:DB00501
+links:
+  - key: decreases activity of
+    source: MESH:D002927
+    target: UniProt:P25021
+  - key: positively regulates
+    source: UniProt:P25021
+    target: GO:0001696
+  - key: increases abundance of
+    source: GO:0001696
+    target: MESH:D005744
+  - key: contributes to
+    source: MESH:D005744
+    target: MESH:D010437
+  - key: located in
+    source: MESH:D010437
+    target: UBERON:0002114
+  - key: location of
+    source: UBERON:0002114
+    target: MESH:D004381
+multigraph: true
+nodes:
+  - id: MESH:D002927
+    label: Drug
+    name: Cimetidine
+  - id: UniProt:P25021
+    label: Protein
+    name: Histamine H2 receptor
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic Ulcer
+  - id: UBERON:0002114
+    label: GrossAnatomicalStructure
+    name: duodenum
+  - id: MESH:D004381
+    label: Disease
+    name: Duodenal Ulcer
+references:
+  - https://go.drugbank.com/drugs/DB00501#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Cimetidine
+  - https://www.uniprot.org/uniprot/P25021#function
+  - https://en.wikipedia.org/wiki/Peptic_ulcer_disease

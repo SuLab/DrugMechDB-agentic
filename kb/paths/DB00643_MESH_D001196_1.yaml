@@ -1,0 +1,76 @@
+directed: true
+graph:
+  _id: DB00643_MESH_D001196_1
+  disease: Ascariasis
+  disease_mesh: MESH:D001196
+  drug: mebendazole
+  drug_mesh: MESH:D008463
+  drugbank: DB:DB00643
+links:
+  - key: decreases activity of
+    source: MESH:D008463
+    target: UniProt:Q71U36
+  - key: decreases activity of
+    source: MESH:D008463
+    target: UniProt:P68371
+  - key: disrupts
+    source: MESH:D008463
+    target: GO:0046323
+  - key: participates in
+    source: UniProt:Q71U36
+    target: GO:0046785
+  - key: participates in
+    source: UniProt:P68371
+    target: GO:0046785
+  - key: positively correlated with
+    source: GO:0046323
+    target: GO:0042773
+  - key: occurs in
+    source: GO:0042773
+    target: taxonomy:6252
+  - key: precedes
+    source: GO:0046785
+    target: GO:0140014
+  - key: part of
+    source: GO:0140014
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:6252
+  - key: causes
+    source: taxonomy:6252
+    target: MESH:D001196
+multigraph: true
+nodes:
+  - id: MESH:D008463
+    label: Drug
+    name: Mebendazole
+  - id: UniProt:Q71U36
+    label: Protein
+    name: Tubulin alpha-1A chain
+  - id: UniProt:P68371
+    label: Protein
+    name: Tubulin beta-4B chain
+  - id: GO:0046323
+    label: BiologicalProcess
+    name: Glucose import
+  - id: GO:0046785
+    label: BiologicalProcess
+    name: Microtubule assembly
+  - id: GO:0042773
+    label: BiologicalProcess
+    name: ATP synthesis coupled electron transport
+  - id: GO:0140014
+    label: BiologicalProcess
+    name: Mitosis
+  - id: taxonomy:6252
+    label: OrganismTaxon
+    name: Ascaris lumbricoides
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: Cell division
+  - id: MESH:D001196
+    label: Disease
+    name: Ascariasis
+references:
+  - https://go.drugbank.com/drugs/DB00643#BE0001340

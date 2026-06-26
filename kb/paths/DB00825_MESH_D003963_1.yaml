@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB00825_MESH_D003963_1
+  disease: Diaper rash
+  disease_mesh: MESH:D003963
+  drug: levomenthol
+  drug_mesh: MESH:D008610
+  drugbank: DB:DB00825
+links:
+  - key: negatively regulates
+    source: MESH:D008610
+    target: GO:0040007
+  - key: in taxon
+    source: GO:0040007
+    target: taxonomy:4751
+  - key: causes
+    source: taxonomy:4751
+    target: MESH:D003963
+multigraph: true
+nodes:
+  - id: MESH:D008610
+    label: Drug
+    name: Levomenthol
+  - id: GO:0040007
+    label: BiologicalProcess
+    name: Growth
+  - id: taxonomy:4751
+    label: OrganismTaxon
+    name: Fungi
+  - id: MESH:D003963
+    label: Disease
+    name: Diaper rash
+references:
+  - https://go.drugbank.com/drugs/DB00825

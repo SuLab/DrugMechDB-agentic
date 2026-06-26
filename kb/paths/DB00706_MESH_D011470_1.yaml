@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00706_MESH_D011470_1
+  disease: Benign prostatic hyperplasia
+  disease_mesh: MESH:D011470
+  drug: tamsulosin
+  drug_mesh: MESH:C088482
+  drugbank: DB:DB00706
+links:
+  - key: decreases activity of
+    source: MESH:C088482
+    target: UniProt:P35348
+  - key: decreases activity of
+    source: MESH:C088482
+    target: UniProt:P25100
+  - key: positively regulates
+    source: UniProt:P35348
+    target: GO:0014832
+  - key: positively regulates
+    source: UniProt:P25100
+    target: GO:0014832
+  - key: positively correlated with
+    source: GO:0014832
+    target: HP:0100515
+  - key: manifestation of
+    source: HP:0100515
+    target: MESH:D011470
+multigraph: true
+nodes:
+  - id: MESH:C088482
+    label: Drug
+    name: Tamsulosin
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P25100
+    label: Protein
+    name: Alpha-1D adrenergic receptor
+  - id: GO:0014832
+    label: BiologicalProcess
+    name: Urinary bladder smooth muscle contraction
+  - id: HP:0100515
+    label: PhenotypicFeature
+    name: Pollakisuria
+  - id: MESH:D011470
+    label: Disease
+    name: Benign prostatic hyperplasia
+references:
+  - https://go.drugbank.com/drugs/DB00706

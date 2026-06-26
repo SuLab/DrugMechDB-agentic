@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00115_MESH_D000752_1
+  disease: Pernicious anemia
+  disease_mesh: MESH:D000752
+  drug: cyanocobalamin
+  drugbank: DB:DB00115
+links:
+  - key: positively regulates
+    source: DB:DB00115
+    target: UniProt:Q99707
+  - key: participates in
+    source: UniProt:Q99707
+    target: GO:0046105
+  - key: participates in
+    source: GO:0046105
+    target: GO:0090592
+  - key: part of
+    source: GO:0090592
+    target: GO:0051301
+  - key: negatively correlated with
+    source: GO:0051301
+    target: HP:0020060
+  - key: positively correlated with
+    source: HP:0020060
+    target: MESH:D000752
+multigraph: true
+nodes:
+  - id: DB:DB00115
+    label: Drug
+    name: cyanocobalamin
+  - id: UniProt:Q99707
+    label: Protein
+    name: methionine synthase 
+  - id: GO:0046105
+    label: BiologicalProcess
+    name: thymidine biosynthetic process
+  - id: GO:0090592
+    label: BiologicalProcess
+    name: DNA synthesis involved in DNA replication
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: HP:0020060
+    label: BiologicalProcess
+    name: Decreased red blood cell count
+  - id: MESH:D000752
+    label: Disease
+    name: Pernicious anemia
+references:
+  - https://go.drugbank.com/drugs/DB00115#BE0000777
+  - https://pubmed.ncbi.nlm.nih.gov/28660890/

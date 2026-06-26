@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01210_MESH_D009798_4
+  disease: Ocular hypertension
+  disease_mesh: MESH:D009798
+  drug: levobunolol
+  drug_mesh: MESH:D002040
+  drugbank: DB:DB01210
+links:
+  - key: decreases activity of
+    source: MESH:D002040
+    target: UniProt:P08588
+  - key: increases abundance of
+    source: UniProt:P08588
+    target: MESH:D000242
+  - key: located in
+    source: MESH:D000242
+    target: UBERON:0010427
+  - key: decreases synthesis of
+    source: UBERON:0010427
+    target: UBERON:0001796
+  - key: negatively regulates
+    source: UBERON:0001796
+    target: HP:0007906
+  - key: treats
+    source: HP:0007906
+    target: MESH:D009798
+multigraph: true
+nodes:
+  - id: MESH:D002040
+    label: Drug
+    name: levobunolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: cyclic adenosine monophosphate
+  - id: UBERON:0010427
+    label: GrossAnatomicalStructure
+    name: ciliary processes
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: aqueous humor
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: intraocular pressure
+  - id: MESH:D009798
+    label: Disease
+    name: Ocular hypertension
+references:
+  - https://go.drugbank.com/drugs/DB01210#mechanismofaction

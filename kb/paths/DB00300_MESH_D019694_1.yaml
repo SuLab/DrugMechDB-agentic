@@ -1,0 +1,56 @@
+comment: Tenofovir disoproxil acts as a prodrug of tenofovir, which is then converted
+  to the active metabolite, tenofovir diphosphate in the cell.
+directed: true
+graph:
+  _id: DB00300_MESH_D019694_1
+  disease: Hepatitis B, Chronic
+  disease_mesh: MESH:D019694
+  drug: Tenofovir disoproxil
+  drugbank: DB:DB00300
+links:
+  - key: has metabolite
+    source: DB:DB00300
+    target: MESH:D000068698
+  - key: has active ingredient
+    source: MESH:D000068698
+    target: MESH:C583447
+  - key: decreases activity of
+    source: MESH:C583447
+    target: UniProt:P03156
+  - key: positively regulates
+    source: UniProt:P03156
+    target: GO:0071897
+  - key: occurs in
+    source: GO:0071897
+    target: taxonomy:10407
+  - key: causes
+    source: taxonomy:10407
+    target: MESH:D019694
+multigraph: true
+nodes:
+  - id: DB:DB00300
+    label: Drug
+    name: Tenofovir disoproxil
+  - id: MESH:D000068698
+    label: ChemicalSubstance
+    name: Tenofovir
+  - id: MESH:C583447
+    label: ChemicalSubstance
+    name: tenofovir diphosphate
+  - id: UniProt:P03156
+    label: Protein
+    name: Protein P
+  - id: GO:0071897
+    label: BiologicalProcess
+    name: DNA biosynthetic process
+  - id: taxonomy:10407
+    label: OrganismTaxon
+    name: Hepatitis B virus
+  - id: MESH:D019694
+    label: Disease
+    name: Hepatitis B, Chronic
+references:
+  - https://go.drugbank.com/drugs/DB00300#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Tenofovir_disoproxil
+  - https://www.uniprot.org/uniprot/P03156#function
+  - https://en.wikipedia.org/wiki/Hepatitis_B

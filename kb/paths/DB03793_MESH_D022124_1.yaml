@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB03793_MESH_D022124_1
+  disease: Hyperammonemia
+  disease_mesh: MESH:D022124
+  drug: Benzoic Acid
+  drug_mesh: MESH:D019817
+  drugbank: DB:DB03793
+links:
+  - key: molecularly interacts with
+    source: MESH:D019817
+    target: MESH:D005998
+  - key: produces
+    source: MESH:D005998
+    target: MESH:D006626
+  - key: participates in
+    source: MESH:D006626
+    target: GO:0007588
+  - key: decreases abundance of
+    source: GO:0007588
+    target: MESH:D000641
+  - key: positively correlated with
+    source: MESH:D000641
+    target: MESH:D022124
+multigraph: true
+nodes:
+  - id: MESH:D019817
+    label: Drug
+    name: Benzoic Acid
+  - id: MESH:D005998
+    label: ChemicalSubstance
+    name: Glycine
+  - id: MESH:D006626
+    label: ChemicalSubstance
+    name: Hippurates
+  - id: GO:0007588
+    label: BiologicalProcess
+    name: excretion
+  - id: MESH:D000641
+    label: ChemicalSubstance
+    name: Ammonia
+  - id: MESH:D022124
+    label: Disease
+    name: Hyperammonemia
+references:
+  - https://go.drugbank.com/drugs/DB03793#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Hyperammonemia#Treatment

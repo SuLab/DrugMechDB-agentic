@@ -1,0 +1,80 @@
+directed: true
+multigraph: true
+graph:
+  _id: P11_DB01045_MESH_D014397
+  drug: Rifampicin
+  drug_mesh: MESH:D012293
+  drugbank: DB:DB01045
+  disease: Pulmonary tuberculosis
+  disease_mesh: MESH:D014397
+nodes:
+  - id: MESH:D012293
+    name: Rifampicin
+    label: Drug
+  - id: UniProt:P9WGY9
+    name: DNA-directed RNA polymerase subunit beta
+    label: Protein
+  - id: GO:0006351
+    name: transcription, DNA-templated
+    label: BiologicalProcess
+  - id: NCBITaxon:1773
+    name: Mycobacterium tuberculosis
+    label: OrganismTaxon
+  - id: MESH:D014397
+    name: Pulmonary tuberculosis
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D012293
+    target: UniProt:P9WGY9
+    evidence:
+      - reference: PMID:31269464
+        snippet: The antimicrobial activity of RIF is attributed to its ability to inhibit transcription by binding to the β subunit of bacterial RNA polymerase (encoded by rpoB).
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Rifampicin inhibits bacterial transcription by binding directly to the beta subunit (RpoB) of the RNA polymerase, thereby decreasing RpoB activity.
+      - reference: PMID:29706316
+        snippet: Because the action of RIF is on rpoB gene encoding RNA polymerase β subunit, 95% of RIF resistant mutations are present in rpoB gene.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: RIF acts on RpoB (RNA polymerase beta subunit); nearly all resistance mutations map to this subunit, confirming it is the direct target of rifampicin inhibition.
+  - key: positively regulates
+    source: UniProt:P9WGY9
+    target: GO:0006351
+    evidence:
+      - reference: PMID:31269464
+        snippet: The antimicrobial activity of RIF is attributed to its ability to inhibit transcription by binding to the β subunit of bacterial RNA polymerase (encoded by rpoB).
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Rifampicin inhibits transcription by binding RpoB; this confirms that RpoB (the beta subunit) is required for and positively regulates DNA-templated transcription in bacteria.
+      - reference: PMID:20150242
+        snippet: While the RNA polymerases from the parent or a mutant strain (harbouring a frequently occurring mutation, H442Y, in RpoB) were susceptible to Rif-mediated inhibition of transcription from calf thymus DNA, those from the insertion and deletion mutants were essentially refractory to such inhibition.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Wild-type RpoB is necessary for rifampicin to inhibit transcription, confirming that RpoB actively supports (positively regulates) the transcription process.
+  - key: in taxon
+    source: GO:0006351
+    target: NCBITaxon:1773
+    evidence:
+      - reference: PMID:29706316
+        snippet: Rifampicin (RIF) plays a pivotal role in the treatment of tuberculosis due to its bactericidal effects. Because the action of RIF is on rpoB gene encoding RNA polymerase β subunit, 95% of RIF resistant mutations are present in rpoB gene.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: The paper discusses rpoB-encoded RNA polymerase transcription in the context of Mycobacterium tuberculosis, placing this DNA-templated transcription process in the M. tuberculosis taxon.
+      - reference: PMID:41421076
+        snippet: RNA polymerase encoded by rpoB is the primary target of the first-front antibiotics of rifampicin.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: The paper describes rpoB-encoded RNA polymerase in M. tuberculosis as the primary target of rifampicin, confirming the transcription process occurs in the M. tuberculosis taxon.
+  - key: causes
+    source: NCBITaxon:1773
+    target: MESH:D014397
+    evidence:
+      - reference: PMID:40201850
+        snippet: Mycobacterium tuberculosis (Mtb), a pathogen that belongs to the M. tuberculosis complex, causes tuberculosis (TB), an infectious bacterial disease. Although it usually affects the lungs and results in pulmonary TB, it can also lead to extra-pulmonary TB by affecting other regions of the body.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Mtb is the direct causative agent of pulmonary tuberculosis, primarily affecting the lungs.
+references:
+  - https://go.drugbank.com/drugs/DB01045#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P9WGY9

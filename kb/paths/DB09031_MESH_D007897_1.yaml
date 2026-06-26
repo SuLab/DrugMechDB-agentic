@@ -1,0 +1,56 @@
+comment: The chosen MESH term is the most generic term that encompasses ALL Cytochromes
+  C, whereas InterPro and Pfam have terms to encompass specific types of cytochrome
+  C e.g. Cytochrome c oxidase subunit IV superfamily (IPR036639).
+directed: true
+graph:
+  _id: DB09031_MESH_D007897_1
+  disease: American mucocutaneous leishmaniasis
+  disease_mesh: MESH:D007897
+  drug: miltefosine
+  drug_mesh: MESH:C039128
+  drugbank: DB:DB09031
+links:
+  - key: disrupts
+    source: MESH:C039128
+    target: CHEBI:16247
+  - key: disrupts
+    source: MESH:C039128
+    target: CHEBI:15889
+  - key: in taxon
+    source: CHEBI:16247
+    target: taxonomy:5658
+  - key: in taxon
+    source: CHEBI:15889
+    target: taxonomy:5658
+  - key: negatively correlated with
+    source: MESH:C039128
+    target: MESH:D045304
+  - key: in taxon
+    source: MESH:D045304
+    target: taxonomy:5658
+  - key: causes
+    source: taxonomy:5658
+    target: MESH:D007897
+multigraph: true
+nodes:
+  - id: MESH:C039128
+    label: Drug
+    name: miltefosine
+  - id: MESH:D045304
+    label: GeneFamily
+    name: Cytochromes c
+  - id: CHEBI:16247
+    label: ChemicalSubstance
+    name: phospholipid
+  - id: CHEBI:15889
+    label: ChemicalSubstance
+    name: sterol
+  - id: taxonomy:5658
+    label: OrganismTaxon
+    name: Leishmania sp
+  - id: MESH:D007897
+    label: Disease
+    name: American mucocutaneous leishmaniasis
+references:
+  - https://go.drugbank.com/drugs/DB09031
+  - https://www.accessdata.fda.gov/drugsatfda_docs/label/2014/204684s000lbl.pdf

@@ -1,0 +1,56 @@
+comment: Tenofovir disoproxil acts as a prodrug of tenofovir, which is then converted
+  to the active metabolite, tenofovir diphosphate in the cell.
+directed: true
+graph:
+  _id: DB00300_MESH_D015658_1
+  disease: HIV Infections
+  disease_mesh: MESH:D015658
+  drug: Tenofovir disoproxil
+  drugbank: DB:DB00300
+links:
+  - key: has metabolite
+    source: DB:DB00300
+    target: MESH:D000068698
+  - key: has active ingredient
+    source: MESH:D000068698
+    target: MESH:C583447
+  - key: decreases activity of
+    source: MESH:C583447
+    target: UniProt:Q72547
+  - key: positively regulates
+    source: UniProt:Q72547
+    target: GO:0001171
+  - key: occurs in
+    source: GO:0001171
+    target: taxonomy:12721
+  - key: causes
+    source: taxonomy:12721
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: DB:DB00300
+    label: Drug
+    name: Tenofovir disoproxil
+  - id: MESH:D000068698
+    label: ChemicalSubstance
+    name: Tenofovir
+  - id: MESH:C583447
+    label: ChemicalSubstance
+    name: tenofovir diphosphate
+  - id: UniProt:Q72547
+    label: Protein
+    name: Reverse transcriptase/RNaseH
+  - id: GO:0001171
+    label: BiologicalProcess
+    name: reverse transcription
+  - id: taxonomy:12721
+    label: OrganismTaxon
+    name: Human immunodeficiency virus
+  - id: MESH:D015658
+    label: Disease
+    name: HIV Infections
+references:
+  - https://go.drugbank.com/drugs/DB00300#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Tenofovir_disoproxil
+  - https://www.uniprot.org/uniprot/Q72547#function
+  - https://en.wikipedia.org/wiki/HIV

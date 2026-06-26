@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB00864_MESH_D003876_1
+  disease: Atopic dermatitis
+  disease_mesh: MESH:D003876
+  drug: tacrolimus
+  drug_mesh: MESH:D016559
+  drugbank: DB:DB00864
+links:
+  - key: decreases activity of
+    source: MESH:D016559
+    target: UniProt:P62942
+  - key: participates in
+    source: UniProt:P62942
+    target: GO:0005528
+  - key: negatively regulates
+    source: GO:0005528
+    target: GO:0005955
+  - key: positively regulates
+    source: GO:0005955
+    target: GO:0032623
+  - key: positively regulates
+    source: GO:0032623
+    target: GO:0042098
+  - key: positively regulates
+    source: GO:0032623
+    target: GO:0042110
+  - key: positively correlated with
+    source: GO:0042098
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0042110
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D003876
+multigraph: true
+nodes:
+  - id: MESH:D016559
+    label: Drug
+    name: Tacrolimus
+  - id: UniProt:P62942
+    label: Protein
+    name: Peptidyl-prolyl cis-trans isomerase FKBP1A
+  - id: GO:0005955
+    label: CellularComponent
+    name: Calcineurin complex
+  - id: GO:0005528
+    label: MolecularActivity
+    name: FK506 binding
+  - id: GO:0032623
+    label: BiologicalProcess
+    name: Interleukin-2 production
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: GO:0042098
+    label: BiologicalProcess
+    name: T cell proliferation
+  - id: GO:0042110
+    label: BiologicalProcess
+    name: T cell activation
+  - id: MESH:D003876
+    label: Disease
+    name: Atopic dermatitis
+references:
+  - https://go.drugbank.com/drugs/DB00864
+  - https://en.wikipedia.org/wiki/Tacrolimus#Mechanism_of_action

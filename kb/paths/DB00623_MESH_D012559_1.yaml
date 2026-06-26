@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00623_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: fluphenazine
+  drug_mesh: MESH:D005476
+  drugbank: DB:DB00623
+links:
+  - key: decreases activity of
+    source: MESH:D005476
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:D005476
+    target: UniProt:P21728
+  - key: positively regulates
+    source: UniProt:P14416
+    target: GO:0030252
+  - key: increases abundance of
+    source: UniProt:P21728
+    target: MESH:D010907
+  - key: positively correlated with
+    source: GO:0030252
+    target: MESH:D012559
+  - key: manifestation of
+    source: MESH:D010907
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:D005476
+    label: Drug
+    name: fluphenazine
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P21728
+    label: Protein
+    name: dopaminaergeinc receptors
+  - id: GO:0030252
+    label: BiologicalProcess
+    name: growth hormone secretion
+  - id: MESH:D010907
+    label: ChemicalSubstance
+    name: hypophyseal hormones
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia

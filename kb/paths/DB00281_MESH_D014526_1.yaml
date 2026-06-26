@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB00281_MESH_D014526_1
+  disease: Urethritis
+  disease_mesh: MESH:D014526
+  drug: lidocaine
+  drug_mesh: MESH:D008012
+  drugbank: DB:DB00281
+links:
+  - key: decreases activity of
+    source: MESH:D008012
+    target: UniProt:Q9Y5Y9
+  - key: decreases activity of
+    source: MESH:D008012
+    target: UniProt:Q15858
+  - key: decreases activity of
+    source: MESH:D008012
+    target: UniProt:Q14524
+  - key: positively regulates
+    source: UniProt:Q9Y5Y9
+    target: GO:0019228
+  - key: positively regulates
+    source: UniProt:Q15858
+    target: GO:0019228
+  - key: positively regulates
+    source: UniProt:Q14524
+    target: GO:0019228
+  - key: occurs in
+    source: GO:0019228
+    target: CL:0000198
+  - key: participates in
+    source: CL:0000198
+    target: GO:0019233
+  - key: occurs in
+    source: GO:0019233
+    target: MESH:D014526
+multigraph: true
+nodes:
+  - id: MESH:D008012
+    label: Drug
+    name: Lidocaine
+  - id: UniProt:Q9Y5Y9
+    label: Protein
+    name: Sodium channel protein type 10 subunit alpha
+  - id: UniProt:Q15858
+    label: Protein
+    name: Sodium channel protein type 9 subunit alpha
+  - id: UniProt:Q14524
+    label: Protein
+    name: Sodium channel protein type 5 subunit alpha
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: Neuronal action potential
+  - id: CL:0000198
+    label: Cell
+    name: Pain receptor cell
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: Sensory perception of pain
+  - id: MESH:D014526
+    label: Disease
+    name: Urethritis
+references:
+  - https://go.drugbank.com/drugs/DB00281
+  - https://en.wikipedia.org/wiki/Urethritis

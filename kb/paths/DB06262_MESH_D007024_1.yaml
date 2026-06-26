@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB06262_MESH_D007024_1
+  disease: Orthostatic hypotension
+  disease_mesh: MESH:D007024
+  drug: droxidopa
+  drug_mesh: MESH:D015103
+  drugbank: DB:DB06262
+links:
+  - key: has metabolite
+    source: MESH:D015103
+    target: MESH:D009638
+  - key: increases activity of
+    source: MESH:D009638
+    target: UniProt:P35348
+  - key: increases activity of
+    source: MESH:D009638
+    target: UniProt:P35368
+  - key: increases activity of
+    source: MESH:D009638
+    target: UniProt:P25100
+  - key: positively regulates
+    source: UniProt:P35348
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P35368
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P25100
+    target: GO:0042310
+  - key: negatively correlated with
+    source: GO:0042310
+    target: MESH:D007024
+multigraph: true
+nodes:
+  - id: MESH:D015103
+    label: Drug
+    name: Droxidopa
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P35368
+    label: Protein
+    name: Alpha-1B adrenergic receptor
+  - id: UniProt:P25100
+    label: Protein
+    name: Alpha-1D adrenergic receptor
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D007024
+    label: Disease
+    name: Orthostatic hypotension
+references:
+  - https://go.drugbank.com/drugs/DB06262
+  - https://en.wikipedia.org/wiki/Orthostatic_hypotension

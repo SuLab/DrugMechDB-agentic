@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Embeddings explorer · DrugMechDB</title>
+<link rel="stylesheet" href="styles.css?v=3">
+<style>
+  .emb-layout { display:grid; grid-template-columns:240px 1fr; gap:40px; padding:24px 0 64px; align-items:start; }
+  @media (max-width:860px){ .emb-layout{ grid-template-columns:1fr; } }
+  .ctrl { margin-bottom:22px; }
+  .ctrl h4 { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin:0 0 8px; }
+  .ctrl select, .ctrl input { width:100%; font:inherit; font-size:14px; padding:8px 10px; border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--surface); color:var(--ink); }
+  #scatter { width:100%; height:560px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); }
+  #scatter circle { cursor:pointer; transition:r .1s; }
+  #scatter circle:hover { r:8; }
+  .emb-legend { display:flex; flex-wrap:wrap; gap:14px; margin-top:14px; }
+  .emb-legend .li { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink-2); }
+  .note { font-size:12.5px; color:var(--muted); margin-top:14px; max-width:640px; }
+</style>
+</head>
+<body>
+<div class="mock-banner">MOCKUP · DrugMechDB website revamp · points are illustrative (synthetic), not a real projection</div>
+
+<nav class="nav"><div class="container nav-inner">
+  <a class="brand" href="index.html"><span class="mark">D</span>DrugMech<span class="tail">DB</span></a>
+  <div class="nav-links">
+    <a href="browse.html">Browse</a>
+    <a href="embeddings.html" class="active">Embeddings</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="docs.html">Docs</a>
+  </div>
+</div></nav>
+
+<div class="container">
+  <header class="rec-header" style="border-bottom:none">
+    <div class="rec-title">Embeddings explorer</div>
+    <p class="rec-summary" style="margin-top:10px">A 2-D map where each point is a mechanism path; nearby points share targets, processes, or disease biology. Find drugs that work in similar ways.</p>
+  </header>
+
+  <div class="emb-layout">
+    <aside>
+      <div class="ctrl"><h4>Embedding basis</h4>
+        <select id="basis"><option>Whole mechanism path</option><option>Drug target</option><option>Biological process</option><option>Disease biology</option></select>
+      </div>
+      <div class="ctrl"><h4>Color by</h4>
+        <select id="colorby"><option value="area">Disease area</option><option value="target">Treatment target (symptom vs disease)</option><option value="type">Primary node type</option></select>
+      </div>
+      <div class="ctrl"><h4>Search</h4>
+        <input id="q" placeholder="Highlight a drug or disease…">
+      </div>
+      <div class="note">Production version projects real path embeddings (UMAP / t-SNE). This mock uses synthetic clusters to show the interaction model.</div>
+    </aside>
+
+    <main>
+      <svg id="scatter" viewBox="0 0 820 560" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="emb-legend" id="emb-legend"></div>
+    </main>
+  </div>
+</div>
+
+<footer class="footer"><div class="container footer-inner">
+  <div>DrugMechDB · Su Lab · curated under the Biolink Model · CC0</div>
+  <div class="links"><a href="#">GitHub</a><a href="#">DOI</a><a href="#">Translator</a></div>
+</div></footer>
+
+<script>
+const SVGNS="http://www.w3.org/2000/svg";
+const AREAS = [
+  {name:"Neoplasms",       c:"#1F2A44", cx:0.28, cy:0.34},
+  {name:"Metabolic",       c:"#3f7d6b", cx:0.70, cy:0.28},
+  {name:"Cardiovascular",  c:"#9a6a3a", cx:0.74, cy:0.66},
+  {name:"Nervous system",  c:"#6b6f8a", cx:0.30, cy:0.70},
+  {name:"Immune",          c:"#7a7a52", cx:0.52, cy:0.50},
+];
+const TARGET = { "disease":"#1F2A44", "symptom":"#9aa0ad" };
+const TYPECOL = { Protein:"#2563eb", BiologicalProcess:"#16a34a", Pathway:"#0d9488", MolecularActivity:"#4d7c0f" };
+const DRUGS = ["Vinblastine","Imatinib","Atorvastatin","Metformin","Aspirin","Naproxen","Celecoxib","Digoxin","Doxorubicin","Methotrexate","Simvastatin","Acetaminophen"];
+const DIS = {Neoplasms:["CML","Testicular tumor","Colorectal carcinoma","Myeloma"],Metabolic:["Type 2 diabetes","Hypercholesterolemia"],Cardiovascular:["Heart failure","Thrombosis"],"Nervous system":["Pain","Migraine","Fever"],Immune:["Rheumatoid arthritis","Osteoarthritis"]};
+
+// synthetic clustered points
+let pts=[], seed=7; const rnd=()=>{seed=(seed*9301+49297)%233280;return seed/233280;};
+AREAS.forEach(a=>{
+  const n=7+Math.floor(rnd()*3);
+  for(let i=0;i<n;i++){
+    const x=a.cx+(rnd()-0.5)*0.22, y=a.cy+(rnd()-0.5)*0.22;
+    const dlist=DIS[a.name]||["Disease"]; const dis=dlist[Math.floor(rnd()*dlist.length)];
+    const symptom = ["Pain","Fever","Migraine"].includes(dis);
+    pts.push({x,y,area:a.name,drug:DRUGS[Math.floor(rnd()*DRUGS.length)],dis,
+      target: symptom?"symptom":"disease",
+      type:["Protein","BiologicalProcess","Pathway","MolecularActivity"][Math.floor(rnd()*4)]});
+  }
+});
+
+const svg=document.getElementById("scatter");
+const W=820,H=560,M=40;
+let tip=document.querySelector(".tooltip"); if(!tip){tip=document.createElement("div");tip.className="tooltip";document.body.appendChild(tip);}
+
+function colorFor(p,mode){ if(mode==="area")return AREAS.find(a=>a.name===p.area).c; if(mode==="target")return TARGET[p.target]; return TYPECOL[p.type]||"#9aa0ad"; }
+function legendFor(mode){
+  if(mode==="area") return AREAS.map(a=>[a.name,a.c]);
+  if(mode==="target") return [["Disease-directed",TARGET.disease],["Symptomatic",TARGET.symptom]];
+  return Object.entries(TYPECOL);
+}
+function render(){
+  const mode=document.getElementById("colorby").value;
+  const q=document.getElementById("q").value.toLowerCase().trim();
+  svg.innerHTML="";
+  // graph background: grid + frame + axis labels (so points read as a plot, not floating)
+  const mk=(t,a)=>{const e=document.createElementNS(SVGNS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+  for(let gx=M;gx<=W-M+1;gx+=65) svg.appendChild(mk("line",{x1:gx,y1:M,x2:gx,y2:H-M,stroke:"#eee","stroke-width":1}));
+  for(let gy=M;gy<=H-M+1;gy+=65) svg.appendChild(mk("line",{x1:M,y1:gy,x2:W-M,y2:gy,stroke:"#eee","stroke-width":1}));
+  svg.appendChild(mk("rect",{x:M,y:M,width:W-2*M,height:H-2*M,fill:"none",stroke:"#e0e0e0","stroke-width":1}));
+  const xl=mk("text",{x:W/2,y:H-12,"text-anchor":"middle",fill:"#a1a1aa","font-size":11});xl.textContent="UMAP-1";svg.appendChild(xl);
+  const yl=mk("text",{x:16,y:H/2,"text-anchor":"middle",fill:"#a1a1aa","font-size":11,transform:`rotate(-90 16 ${H/2})`});yl.textContent="UMAP-2";svg.appendChild(yl);
+  pts.forEach(p=>{
+    const cx=M+p.x*(W-2*M), cy=M+p.y*(H-2*M);
+    const c=document.createElementNS(SVGNS,"circle");
+    const match = !q || (`${p.drug} ${p.dis}`.toLowerCase().includes(q));
+    c.setAttribute("cx",cx); c.setAttribute("cy",cy); c.setAttribute("r",6);
+    c.setAttribute("fill",colorFor(p,mode));
+    c.setAttribute("stroke","#fff"); c.setAttribute("stroke-width","1.5");
+    c.setAttribute("opacity", match?1:0.12);
+    c.addEventListener("mousemove",e=>{tip.innerHTML=`<div class="tt-name">${p.drug} → ${p.dis}</div><div class="tt-meta">${p.area} · ${p.target==="symptom"?"symptomatic":"disease-directed"}</div>`;tip.style.opacity="1";tip.style.left=(e.clientX+14)+"px";tip.style.top=(e.clientY+14)+"px";});
+    c.addEventListener("mouseleave",()=>tip.style.opacity="0");
+    c.addEventListener("click",()=>location.href="record.html");
+    svg.appendChild(c);
+  });
+  document.getElementById("emb-legend").innerHTML=legendFor(mode).map(([n,col])=>`<span class="li"><span class="dot" style="background:${col}"></span>${n}</span>`).join("");
+}
+document.getElementById("colorby").addEventListener("change",render);
+document.getElementById("q").addEventListener("input",render);
+render();
+</script>
+</body>
+</html>

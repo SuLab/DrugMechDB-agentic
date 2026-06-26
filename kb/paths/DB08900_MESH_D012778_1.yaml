@@ -1,0 +1,76 @@
+directed: true
+graph:
+  _id: DB08900_MESH_D012778_1
+  disease: Short bowel syndrome
+  disease_mesh: MESH:D012778
+  drug: teduglutide
+  drug_mesh: MESH:C438272,MESH:C494910
+  drugbank: DB:DB08900
+links:
+  - key: increases activity of
+    source: DB:DB08900
+    target: UniProt:O95838
+  - key: located in
+    source: UniProt:O95838
+    target: UBERON:0002439
+  - key: located in
+    source: UniProt:O95838
+    target: UBERON:0005304
+  - key: located in
+    source: UniProt:O95838
+    target: CL:1001516
+  - key: positively correlated with
+    source: UBERON:0002439
+    target: GO:0050892
+  - key: positively correlated with
+    source: UBERON:0005304
+    target: GO:0050892
+  - key: positively correlated with
+    source: CL:1001516
+    target: GO:0050892
+  - key: negatively correlated with
+    source: UniProt:O95838
+    target: GO:1990768
+  - key: positively correlated with
+    source: UniProt:O95838
+    target: GO:0001696
+  - key: treats
+    source: GO:0001696
+    target: MESH:D012778
+  - key: treats
+    source: GO:1990768
+    target: MESH:D012778
+  - key: treats
+    source: GO:0050892
+    target: MESH:D012778
+multigraph: true
+nodes:
+  - id: DB:DB08900
+    label: Drug
+    name: teduglutide
+  - id: UniProt:O95838
+    label: Protein
+    name: Glucagon-like peptide receptor
+  - id: UBERON:0002439
+    label: GrossAnatomicalStructure
+    name: myenteric nerve plexus
+  - id: UBERON:0005304
+    label: GrossAnatomicalStructure
+    name: submucous nerve plexus
+  - id: CL:1001516
+    label: Cell
+    name: intestinal enteroendocrine cell
+  - id: GO:0050892
+    label: BiologicalProcess
+    name: intestinal absorption
+  - id: GO:1990768
+    label: BiologicalProcess
+    name: gastric acid secretion
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: gastric mucosal blood circulation
+  - id: MESH:D012778
+    label: Disease
+    name: Short bowel syndrome
+references:
+  - https://go.drugbank.com/drugs/DB01253#BE0000501

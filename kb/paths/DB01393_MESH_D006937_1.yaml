@@ -1,0 +1,85 @@
+directed: true
+graph:
+  _id: DB01393_MESH_D006937_1
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+  drug: bezafibrate
+  drug_mesh: MESH:D001629
+  drugbank: DB:DB01393
+links:
+  - key: increases activity of
+    source: MESH:D001629
+    target: UniProt:P37231
+  - key: increases activity of
+    source: MESH:D001629
+    target: UniProt:Q07869
+  - key: increases activity of
+    source: MESH:D001629
+    target: UniProt:Q03181
+  - key: decreases abundance of
+    source: UniProt:P37231
+    target: MESH:D014280
+  - key: decreases abundance of
+    source: UniProt:Q07869
+    target: MESH:D014280
+  - key: decreases abundance of
+    source: UniProt:Q03181
+    target: MESH:D014280
+  - key: decreases abundance of
+    source: UniProt:P37231
+    target: MESH:D008078
+  - key: decreases abundance of
+    source: UniProt:Q07869
+    target: MESH:D008078
+  - key: decreases abundance of
+    source: UniProt:Q03181
+    target: MESH:D008078
+  - key: increases abundance of
+    source: UniProt:P37231
+    target: MESH:D008076
+  - key: increases abundance of
+    source: UniProt:Q07869
+    target: MESH:D008076
+  - key: increases abundance of
+    source: UniProt:Q03181
+    target: MESH:D008076
+  - key: negatively correlated with
+    source: MESH:D008076
+    target: MESH:D006937
+  - key: positively correlated with
+    source: MESH:D008078
+    target: MESH:D006937
+  - key: positively correlated with
+    source: MESH:D014280
+    target: MESH:D006937
+multigraph: true
+nodes:
+  - id: MESH:D001629
+    label: Drug
+    name: bezafibrate
+  - id: UniProt:P37231
+    label: Protein
+    name: Peroxisome proliferator-activated receptor gamma
+  - id: UniProt:Q07869
+    label: Protein
+    name: Peroxisome proliferator-activated receptor alpha
+  - id: UniProt:Q03181
+    label: Protein
+    name: Peroxisome proliferator-activated receptor delta
+  - id: MESH:D008076
+    label: ChemicalSubstance
+    name: Cholesterol, HDL
+  - id: MESH:D008078
+    label: ChemicalSubstance
+    name: Cholesterol, LDL
+  - id: MESH:D014280
+    label: ChemicalSubstance
+    name: Triglycerides
+  - id: MESH:D006937
+    label: Disease
+    name: Hypercholesterolemia
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL264374/
+  - https://go.drugbank.com/drugs/DB01393
+  - https://en.wikipedia.org/wiki/Bezafibrate
+  - https://en.wikipedia.org/wiki/Lipid-lowering_agent#Established

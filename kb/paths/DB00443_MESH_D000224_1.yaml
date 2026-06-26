@@ -1,0 +1,26 @@
+comment: Addison Disease is a primary adrenal insufficiency which is characterized
+  by the inadequate production of the steroid hormones such as cortisol and aldosterone.
+directed: true
+graph:
+  _id: DB00443_MESH_D000224_1
+  disease: Addison Disease
+  disease_mesh: MESH:D000224
+  drug: betamethasone
+  drug_mesh: MESH:D001623
+  drugbank: DB:DB00443
+links:
+  - key: treats
+    source: MESH:D001623
+    target: MESH:D000224
+multigraph: true
+nodes:
+  - id: MESH:D001623
+    label: Drug
+    name: betamethasone
+  - id: MESH:D000224
+    label: Disease
+    name: Addison Disease
+references:
+  - https://go.drugbank.com/drugs/DB00443#mechanism-of-action
+  - https://drugs.ncats.io/drug/9842X06Q6M
+  - https://en.wikipedia.org/wiki/Addison%27s_disease

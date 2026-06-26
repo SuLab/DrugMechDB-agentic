@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB01436_MESH_D006961_1
+  disease: Hyperparathyroidism
+  disease_mesh: MESH:D006961
+  drug: alfacalcidol
+  drug_mesh: MESH:C008088
+  drugbank: DB:DB01436
+links:
+  - key: molecularly interacts with
+    source: MESH:C008088
+    target: UniProt:O15528
+  - key: increases abundance of
+    source: UniProt:O15528
+    target: MESH:D002117
+  - key: positively correlated with
+    source: MESH:D002117
+    target: MESH:D002118
+  - key: negatively correlated with
+    source: MESH:D002118
+    target: UniProt:P01270
+  - key: positively correlated with
+    source: UniProt:P01270
+    target: MESH:D006961
+multigraph: true
+nodes:
+  - id: MESH:C008088
+    label: Drug
+    name: alfacalcidol
+  - id: UniProt:O15528
+    label: Protein
+    name: 25-hydroxyvitamin D-1 alpha hydroxylase, mitochondrial
+  - id: MESH:D002117
+    label: ChemicalSubstance
+    name: Calcitriol
+  - id: MESH:D002118
+    label: ChemicalSubstance
+    name: Calcium
+  - id: UniProt:P01270
+    label: Protein
+    name: Parathyroid hormone
+  - id: MESH:D006961
+    label: Disease
+    name: Hyperparathyroidism
+references:
+  - https://go.drugbank.com/drugs/DB01436#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Alfacalcidol
+  - https://www.uniprot.org/uniprot/O15528#function
+  - https://www.uniprot.org/uniprot/P01270#function
+  - https://en.wikipedia.org/wiki/Hyperparathyroidism#Mechanism

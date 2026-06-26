@@ -1,0 +1,36 @@
+comment: Guaifenesin is used in a combination with acetaminophen to treat fever.
+directed: true
+graph:
+  _id: DB00874_MESH_D020773_1
+  disease: Headache disorder
+  disease_mesh: MESH:D020773
+  drug: guaifenesin
+  drug_mesh: MESH:D006140
+  drugbank: DB:DB00874
+links:
+  - key: decreases activity of
+    source: MESH:D006140
+    target: GO:0004972
+  - key: positively regulates
+    source: GO:0004972
+    target: GO:0035235
+  - key: positively correlated with
+    source: GO:0035235
+    target: MESH:D020773
+multigraph: true
+nodes:
+  - id: MESH:D006140
+    label: Drug
+    name: Guaifenesin
+  - id: GO:0004972
+    label: MolecularActivity
+    name: NMDA glutamate receptor activity
+  - id: GO:0035235
+    label: BiologicalProcess
+    name: Ionotropic glutamate receptor signaling pathway
+  - id: MESH:D020773
+    label: Disease
+    name: Headache disorder
+references:
+  - https://link.springer.com/article/10.1007/s13311-018-0616-5
+  - https://go.drugbank.com/drugs/DB00874

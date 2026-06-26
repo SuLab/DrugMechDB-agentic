@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB09488_MESH_D012223_1
+  disease: Vasomotor rhinitis
+  disease_mesh: MESH:D012223
+  drug: acrivastine
+  drug_mesh: MESH:C043648
+  drugbank: DB:DB09488
+links:
+  - key: decreases activity of
+    source: MESH:C043648
+    target: UniProt:P35367
+  - key: participates in
+    source: UniProt:P35367
+    target: GO:0034776
+  - key: increases abundance of
+    source: GO:0034776
+    target: MESH:D013373
+  - key: participates in
+    source: MESH:D013373
+    target: MESH:D020078
+  - key: contributes to
+    source: MESH:D020078
+    target: MESH:D012223
+multigraph: true
+nodes:
+  - id: MESH:C043648
+    label: Drug
+    name: acrivastine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: GO:0034776
+    label: BiologicalProcess
+    name: response to histamine
+  - id: MESH:D013373
+    label: ChemicalSubstance
+    name: Substance P
+  - id: MESH:D020078
+    label: Disease
+    name: Neurogenic Inflammation
+  - id: MESH:D012223
+    label: Disease
+    name: Vasomotor rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB09488
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3764847/
+  - https://pubmed.ncbi.nlm.nih.gov/18651116/

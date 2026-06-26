@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00265_MESH_D012532_1
+  disease: Infestation by Sarcoptes scabiei var hominis
+  disease_mesh: MESH:D012532
+  drug: crotamiton
+  drug_mesh: MESH:C005553
+  drugbank: DB:DB00265
+links:
+  - key: decreases activity of
+    source: MESH:C005553
+    target: UniProt:Q9HBA0
+  - key: expressed in
+    source: UniProt:Q9HBA0
+    target: CL:0000101
+  - key: positively correlated with
+    source: CL:0000101
+    target: MESH:D011537
+  - key: manifestation of
+    source: MESH:D011537
+    target: MESH:D012532
+multigraph: true
+nodes:
+  - id: MESH:C005553
+    label: Drug
+    name: Crotamiton
+  - id: UniProt:Q9HBA0
+    label: Protein
+    name: Transient receptor potential cation channel subfamily V member 4
+  - id: CL:0000101
+    label: Cell
+    name: Sensory neuron
+  - id: MESH:D011537
+    label: Disease
+    name: Itching of skin
+  - id: MESH:D012532
+    label: Disease
+    name: Infestation by Sarcoptes scabiei var hominis
+references:
+  - https://en.wikipedia.org/wiki/Crotamiton
+  - https://go.drugbank.com/drugs/DB00265

@@ -1,0 +1,81 @@
+comment: Drug has been withdrawn in Europe due to increased risk of abuse or addiction,
+  intoxication and events related to psychomotor impairment (https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1233/).
+directed: true
+graph:
+  _id: DB00004_MESH_D016410_1
+  disease: Primary cutaneous T-cell lymphoma
+  disease_mesh: MESH:D016410
+  drug: denileukin diftitox
+  drug_mesh: MESH:C078456
+  drugbank: DB:DB00004
+links:
+  - key: molecularly interacts with
+    source: MESH:C078456
+    target: UniProt:P01589
+  - key: molecularly interacts with
+    source: MESH:C078456
+    target: UniProt:P14784
+  - key: molecularly interacts with
+    source: MESH:C078456
+    target: UniProt:P31785
+  - key: participates in
+    source: UniProt:P01589
+    target: GO:0006898
+  - key: participates in
+    source: UniProt:P14784
+    target: GO:0006898
+  - key: participates in
+    source: UniProt:P31785
+    target: GO:0006898
+  - key: positively correlated with
+    source: GO:0006898
+    target: GO:1901998
+  - key: increases abundance of
+    source: GO:1901998
+    target: MESH:D004167
+  - key: decreases activity of
+    source: MESH:D004167
+    target: UniProt:P13639
+  - key: positively regulates
+    source: UniProt:P13639
+    target: GO:0006414
+  - key: correlated with
+    source: GO:0006414
+    target: MESH:D016410
+multigraph: true
+nodes:
+  - id: MESH:C078456
+    label: Drug
+    name: denileukin diftitox
+  - id: UniProt:P01589
+    label: Protein
+    name: Interleukin-2 receptor subunit alpha
+  - id: UniProt:P14784
+    label: Protein
+    name: Interleukin-2 receptor subunit beta
+  - id: UniProt:P31785
+    label: Protein
+    name: Cytokine receptor common subunit gamma
+  - id: GO:0006898
+    label: BiologicalProcess
+    name: receptor-mediated endocytosis
+  - id: GO:1901998
+    label: BiologicalProcess
+    name: toxin transport
+  - id: MESH:D004167
+    label: ChemicalSubstance
+    name: Diphtheria Toxin
+  - id: UniProt:P13639
+    label: Protein
+    name: Elongation factor 2
+  - id: GO:0006414
+    label: BiologicalProcess
+    name: translational elongation
+  - id: MESH:D016410
+    label: Disease
+    name: Primary cutaneous T-cell lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB00004#mechanism-of-action
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201550/
+  - https://en.wikipedia.org/wiki/Denileukin_diftitox
+  - https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/103767s5144lbl.pdf

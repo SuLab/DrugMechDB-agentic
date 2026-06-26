@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00619_MESH_D001752_1
+  disease: Blast Crisis
+  disease_mesh: MESH:D001752
+  drug: imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+links:
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: MESH:D016044
+  - key: positively correlated with
+    source: MESH:D016044
+    target: GO:0007266
+  - key: positively correlated with
+    source: GO:0007266
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: HP:0001974
+  - key: manifestation of
+    source: HP:0001974
+    target: MESH:D001752
+multigraph: true
+nodes:
+  - id: MESH:D000068877
+    label: Drug
+    name: imatinib
+  - id: MESH:D016044
+    label: Protein
+    name: Fusion Proteins, bcr-abl
+  - id: GO:0007266
+    label: BiologicalProcess
+    name: Rho protein signal transduction
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: HP:0001974
+    label: PhenotypicFeature
+    name: Leukocytosis
+  - id: MESH:D001752
+    label: Disease
+    name: Blast Crisis
+references:
+  - https://www.cancer.gov/publications/dictionaries/cancer-drug/def/imatinib-mesylate
+  - https://en.wikipedia.org/wiki/Leukocytosis#Causes
+  - https://en.wikipedia.org/wiki/Chronic_myelogenous_leukemia#Chronic_phase_2
+comment: The disease is denoted Blastic phase chronic myeloid leukemia in the original
+  file.

@@ -1,0 +1,58 @@
+comment: Zafirlukast is an oral leukotriene receptor antagonist (LTRA) for the maintenance
+  treatment of asthma, often used in conjunction with an inhaled steroid and/or long-acting
+  bronchodilator.
+directed: true
+graph:
+  _id: DB00549_MESH_D001249_1
+  disease: Asthma
+  disease_mesh: MESH:D001249
+  drug: zafirlukast
+  drug_mesh: MESH:C062735
+  drugbank: DB:DB00549
+links:
+  - key: decreases activity of
+    source: MESH:C062735
+    target: UniProt:Q9Y271
+  - key: participates in
+    source: UniProt:Q9Y271
+    target: GO:0001631
+  - key: positively regulates
+    source: GO:0001631
+    target: GO:0006939
+  - key: located in
+    source: GO:0006939
+    target: UBERON:0002185
+  - key: location of
+    source: UBERON:0002185
+    target: MESH:D001249
+  - key: participates in
+    source: GO:0001631
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D001249
+multigraph: true
+nodes:
+  - id: MESH:C062735
+    label: Drug
+    name: Zafirlukast
+  - id: UniProt:Q9Y271
+    label: Protein
+    name: Cysteinyl leukotriene receptor 1
+  - id: GO:0001631
+    label: MolecularActivity
+    name: Cysteinyl leukotriene receptor activity
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: Smooth muscle contraction
+  - id: UBERON:0002185
+    label: GrossAnatomicalStructure
+    name: Bronchus
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D001249
+    label: Disease
+    name: Asthma
+references:
+  - https://go.drugbank.com/drugs/DB00549

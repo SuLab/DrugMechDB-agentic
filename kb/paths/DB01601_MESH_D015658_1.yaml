@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB01601_MESH_D015658_1
+  disease: Human immunodeficiency virus infection
+  disease_mesh: MESH:D015658
+  drug: lopinavir
+  drug_mesh: MESH:D061466
+  drugbank: DB:DB01601
+links:
+  - key: negatively regulates
+    source: MESH:D061466
+    target: UniProt:Q72874
+  - key: negatively correlated with
+    source: UniProt:Q72874
+    target: GO:0010466
+  - key: decreases activity of
+    source: GO:0010466
+    target: UniProt:P04591
+  - key: participates in
+    source: UniProt:P04591
+    target: GO:0019068
+  - key: in taxon
+    source: GO:0019068
+    target: taxonomy:11676
+  - key: causes
+    source: taxonomy:11676
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:D061466
+    label: Drug
+    name: lopinavir
+  - id: UniProt:Q72874
+    label: Protein
+    name: Protease
+  - id: GO:0010466
+    label: BiologicalProcess
+    name: negative regulation of peptidase activity
+  - id: UniProt:P04591
+    label: Protein
+    name: Gag polyprotein
+  - id: GO:0019068
+    label: BiologicalProcess
+    name: virion assembly
+  - id: taxonomy:11676
+    label: OrganismTaxon
+    name: Human immunodeficiency virus 1
+  - id: MESH:D015658
+    label: Disease
+    name: Human immunodeficiency virus infection
+references:
+  - https://go.drugbank.com/drugs/DB01601#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P04591#function
+  - https://pubmed.ncbi.nlm.nih.gov/23266279/

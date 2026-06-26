@@ -1,0 +1,66 @@
+directed: true
+graph:
+  _id: DB00804_MESH_D043183_1
+  disease: Irritable bowel syndrome
+  disease_mesh: MESH:D043183
+  drug: dicycloverine
+  drug_mesh: MESH:D004025
+  drugbank: DB:DB00804
+links:
+  - key: decreases activity of
+    source: MESH:D004025
+    target: UniProt:P20309
+  - key: participates in
+    source: UniProt:P20309
+    target: GO:1905144
+  - key: positively regulates
+    source: GO:1905144
+    target: GO:0006939
+  - key: positively regulates
+    source: GO:0006939
+    target: GO:0120054
+  - key: positively regulates
+    source: GO:0006939
+    target: GO:0030421
+  - key: occurs in
+    source: GO:0120054
+    target: MESH:D043183
+  - key: occurs in
+    source: GO:0030421
+    target: MESH:D043183
+  - key: negatively regulates
+    source: MESH:D004025
+    target: GO:0034776
+  - key: positively correlated with
+    source: GO:0034776
+    target: MESH:D043183
+multigraph: true
+nodes:
+  - id: MESH:D004025
+    label: Drug
+    name: Dicycloverine
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:1905144
+    label: BiologicalProcess
+    name: Response to acetylcholine
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: Intestinal motility
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: Smooth muscle contraction
+  - id: GO:0030421
+    label: BiologicalProcess
+    name: Defecation
+  - id: GO:0034776
+    label: BiologicalProcess
+    name: Response to histamine
+  - id: MESH:D043183
+    label: Disease
+    name: Irritable bowel syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00804
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1123/
+  - https://drugs.ncats.io/drug/4KV4X8IF6V

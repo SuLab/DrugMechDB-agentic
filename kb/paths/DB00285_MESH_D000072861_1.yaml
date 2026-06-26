@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB00285_MESH_D000072861_1
+  disease: Social phobia
+  disease_mesh: MESH:D000072861
+  drug: venlafaxine
+  drug_mesh: MESH:D000069470
+  drugbank: DB:DB00285
+links:
+  - key: negatively regulates
+    source: MESH:D000069470
+    target: UniProt:P31645
+  - key: positively regulates
+    source: UniProt:P31645
+    target: GO:0051610
+  - key: positively correlated with
+    source: GO:0051610
+    target: MESH:D000072861
+multigraph: true
+nodes:
+  - id: MESH:D000069470
+    label: Drug
+    name: venlafaxine
+  - id: UniProt:P31645
+    label: Protein
+    name: Sodium-dependent serotonin transporter
+  - id: GO:0051610
+    label: BiologicalProcess
+    name: serotonin uptake
+  - id: MESH:D000072861
+    label: Disease
+    name: Social phobia
+references:
+  - https://go.drugbank.com/drugs/DB00285#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Venlafaxine#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Social_anxiety_disorder#SSRIs

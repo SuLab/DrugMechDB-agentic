@@ -1,0 +1,46 @@
+comment: Tiopronin is a cystine depleting agent (MESH:D065104).
+directed: true
+graph:
+  _id: DB06823_MESH_D003555_1
+  disease: Cystinuria
+  disease_mesh: MESH:D003555
+  drug: tiopronin
+  drug_mesh: MESH:D008625
+  drugbank: DB:DB06823
+links:
+  - key: decreases abundance of
+    source: MESH:D008625
+    target: CHEBI:17376
+  - key: causes
+    source: CHEBI:17376
+    target: HP:0000787
+  - key: causes
+    source: CHEBI:17376
+    target: HP:0033067
+  - key: manifestation of
+    source: HP:0000787
+    target: MESH:D003555
+  - key: manifestation of
+    source: HP:0033067
+    target: MESH:D003555
+multigraph: true
+nodes:
+  - id: MESH:D008625
+    label: Drug
+    name: Tiopronin
+  - id: CHEBI:17376
+    label: ChemicalSubstance
+    name: cystine
+  - id: HP:0033067
+    label: PhenotypicFeature
+    name: Cystine crystalluria
+  - id: HP:0000787
+    label: PhenotypicFeature
+    name: Nephrolithiasis
+  - id: MESH:D003555
+    label: Disease
+    name: Cystinuria
+references:
+  - https://go.drugbank.com/drugs/DB06823#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Tiopronin#Uses
+  - https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=494a714e-923c-cd57-df6c-12886afb265a#nlm34090-1

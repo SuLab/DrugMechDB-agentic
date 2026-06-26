@@ -1,0 +1,35 @@
+comment: This drug is in Phase III clinial trials (as for June 2021).
+directed: true
+graph:
+  _id: DB09258_MESH_D011655_1
+  disease: Pulmonary embolism
+  disease_mesh: MESH:D011655
+  drug: bemiparin
+  drug_mesh: MESH:C411345
+  drugbank: DB:DB09258
+links:
+  - key: decreases activity of
+    source: MESH:C411345
+    target: UniProt:P00742
+  - key: positively regulates
+    source: UniProt:P00742
+    target: GO:0072378
+  - key: occurs in
+    source: GO:0072378
+    target: MESH:D011655
+multigraph: true
+nodes:
+  - id: MESH:C411345
+    label: Drug
+    name: Bemiparin
+  - id: UniProt:P00742
+    label: Protein
+    name: Coagulation factor X
+  - id: GO:0072378
+    label: BiologicalProcess
+    name: Blood coagulation, fibrin clot formation
+  - id: MESH:D011655
+    label: Disease
+    name: Pulmonary embolism
+references:
+  - https://go.drugbank.com/drugs/DB09258

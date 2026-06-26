@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB00742_MESH_D009798_1
+  disease: Ocular hypertension
+  disease_mesh: MESH:D009798
+  drug: Mannitol
+  drug_mesh: MESH:D008353
+  drugbank: DB:DB00742
+links:
+  - key: positively regulates
+    source: MESH:D008353
+    target: GO:0006972
+  - key: negatively regulates
+    source: GO:0006972
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: MESH:D009798
+multigraph: true
+nodes:
+  - id: MESH:D008353
+    label: Drug
+    name: Mannitol
+  - id: GO:0006972
+    label: BiologicalProcess
+    name: Hyperosmotic response
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: Aqueous humor of eyeball
+  - id: MESH:D009798
+    label: Disease
+    name: Ocular hypertension
+references:
+  - https://go.drugbank.com/drugs/DB00742

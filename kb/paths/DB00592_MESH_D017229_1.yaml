@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00592_MESH_D017229_1
+  disease: Enterobiasis
+  disease_mesh: MESH:D017229
+  drug: Piperazine
+  drugbank: DB:DB00592
+links:
+  - key: increases activity of
+    source: DB:DB00592
+    target: InterPro:IPR002289
+  - key: participates in
+    source: InterPro:IPR002289
+    target: HP:0003470
+  - key: in taxon
+    source: HP:0003470
+    target: taxonomy:51028
+  - key: causes
+    source: taxonomy:51028
+    target: MESH:D017229
+multigraph: true
+nodes:
+  - id: DB:DB00592
+    label: Drug
+    name: Piperazine
+  - id: InterPro:IPR002289
+    label: GeneFamily
+    name: Gamma-aminobutyric-acid A receptor, beta subunit
+  - id: HP:0003470
+    label: PhenotypicFeature
+    name: Paralysis
+  - id: taxonomy:51028
+    label: OrganismTaxon
+    name: Enterobius vermicularis
+  - id: MESH:D017229
+    label: Disease
+    name: Enterobiasis
+references:
+  - https://go.drugbank.com/drugs/DB00592
+  - https://drugs.ncats.io/drug/1RTM4PAL0V

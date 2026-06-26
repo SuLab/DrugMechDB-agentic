@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB00353_MESH_D006473_1
+  disease: Postpartum hemorrhage
+  disease_mesh: MESH:D006473
+  drug: methylergometrine
+  drug_mesh: MESH:D008755
+  drugbank: DB:DB00353
+links:
+  - key: increases activity of
+    source: MESH:D008755
+    target: UniProt:P41595
+  - key: increases activity of
+    source: MESH:D008755
+    target: GO:0004935
+  - key: positively regulates
+    source: UniProt:P41595
+    target: GO:0070471
+  - key: positively regulates
+    source: GO:0004935
+    target: GO:0070471
+  - key: negatively correlated with
+    source: GO:0070471
+    target: MESH:D006473
+multigraph: true
+nodes:
+  - id: MESH:D008755
+    label: Drug
+    name: Methylergometrine
+  - id: UniProt:P41595
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2B
+  - id: GO:0004935
+    label: MolecularActivity
+    name: Adrenergic receptor activity
+  - id: GO:0070471
+    label: BiologicalProcess
+    name: Uterine smooth muscle contraction
+  - id: MESH:D006473
+    label: Disease
+    name: Postpartum hemorrhage
+references:
+  - https://go.drugbank.com/drugs/DB00353#BE0000393
+  - https://en.wikipedia.org/wiki/Methylergometrine

@@ -1,0 +1,94 @@
+directed: true
+graph:
+  _id: DB00399_MESH_D010001_1
+  disease: Osteitis deformans
+  disease_mesh: MESH:D010001
+  drug: zoledronic acid
+  drug_mesh: MESH:C088658
+  drugbank: DB:DB00399
+links:
+  - key: decreases activity of
+    source: MESH:C088658
+    target: UniProt:P14324
+  - key: decreases activity of
+    source: MESH:C088658
+    target: UniProt:O95749
+  - key: positively correlated with
+    source: UniProt:P14324
+    target: GO:0008299
+  - key: positively correlated with
+    source: UniProt:O95749
+    target: GO:0008299
+  - key: positively correlated with
+    source: GO:0008299
+    target: GO:0045453
+  - key: positively regulates
+    source: MESH:C088658
+    target: GO:0006915
+  - key: decreases abundance of
+    source: GO:0006915
+    target: CL:0000092
+  - key: positively correlated with
+    source: CL:0000092
+    target: GO:0045453
+  - key: positively correlated with
+    source: GO:0045453
+    target: MESH:D010001
+  - key: molecularly interacts with
+    source: MESH:C088658
+    target: CHEBI:52255
+  - key: positively correlated with
+    source: CHEBI:52255
+    target: GO:0001503
+  - key: positively correlated with
+    source: CHEBI:52255
+    target: GO:1990523
+  - key: negatively correlated with
+    source: GO:1990523
+    target: MESH:D010001
+  - key: negatively correlated with
+    source: GO:0001503
+    target: MESH:D010001
+multigraph: true
+nodes:
+  - id: MESH:C088658
+    label: Drug
+    name: zoledronic acid
+  - id: UniProt:P14324
+    label: Protein
+    name: Farnesyl pyrophosphate synthase
+  - id: UniProt:O95749
+    label: Protein
+    name: Geranylgeranyl pyrophosphate synthase
+  - id: CHEBI:52255
+    label: ChemicalSubstance
+    name: hydroxylapatite
+  - id: CL:0000092
+    label: Cell
+    name: osteoclast
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: bone resorption
+  - id: GO:0008299
+    label: BiologicalProcess
+    name: isoprenoid biosynthetic process
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: GO:0001503
+    label: BiologicalProcess
+    name: ossification
+  - id: GO:1990523
+    label: BiologicalProcess
+    name: bone regeneration
+  - alt_names:
+      - Osseous Paget's Disease
+      - Paget Disease of Bone
+      - Paget's disease of bone
+    id: MESH:D010001
+    label: Disease
+    name: Osteitis deformans
+references:
+  - https://go.drugbank.com/drugs/DB00399
+  - https://en.wikipedia.org/wiki/Zoledronic_acid
+  - https://journals.sagepub.com/doi/10.4137/BTRI.S36138

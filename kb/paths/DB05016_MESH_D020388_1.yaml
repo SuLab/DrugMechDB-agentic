@@ -1,0 +1,53 @@
+comment: The drug enables ribosomes to bypass premature stop codons caused by nonsense
+  mutations in the dystrophin gene. This restores the full-length and functional capability
+  of dystrophin. Without the drug, the premature stop codon means that a truncated
+  protein will be produced, which will be unabled to play its role in muscle strenght
+  and proper function leading to the disease. The disease is denoted Duchenne muscular
+  dystrophy in the original file as per DrugCentral.
+directed: true
+graph:
+  _id: DB05016_MESH_D020388_1
+  disease: Muscular Dystrophy, Duchenne
+  disease_mesh: MESH:D020388
+  drug: ataluren
+  drug_mesh: MESH:C515878
+  drugbank: DB:DB05016
+links:
+  - key: positively correlated with
+    source: MESH:C515878
+    target: UniProt:P11532
+  - key: disrupted by
+    source: UniProt:P11532
+    target: MESH:D018389
+  - key: predisposes
+    source: MESH:D018389
+    target: MESH:D059365
+  - key: positively correlated with
+    source: MESH:D059365
+    target: HP:0003323
+  - key: manifestation of
+    source: HP:0003323
+    target: MESH:D020388
+multigraph: true
+nodes:
+  - id: MESH:C515878
+    label: Drug
+    name: ataluren
+  - id: UniProt:P11532
+    label: Protein
+    name: Dystrophin
+  - id: MESH:D018389
+    label: ChemicalSubstance
+    name: Codon, Nonsense
+  - id: MESH:D059365
+    label: BiologicalProcess
+    name: Nonsense Mediated mRNA Decay
+  - id: HP:0003323
+    label: PhenotypicFeature
+    name: Progressive muscle weakness
+  - id: MESH:D020388
+    label: Disease
+    name: Muscular Dystrophy, Duchenne
+references:
+  - https://go.drugbank.com/drugs/DB05016#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Ataluren#Pharmacology

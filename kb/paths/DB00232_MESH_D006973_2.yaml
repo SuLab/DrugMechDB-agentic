@@ -1,0 +1,37 @@
+comment: The antihypertensive mechanism of methyclothiazide is not well understood.
+  At low doses methylclothiazide can inhibit carbonic anhydrase.
+directed: true
+graph:
+  _id: DB00232_MESH_D006973_2
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: methylclothiazide
+  drug_mesh: MESH:D008736
+  drugbank: DB:DB00232
+links:
+  - key: negatively regulates
+    source: MESH:D008736
+    target: GO:0004089
+  - key: positively correlated with
+    source: GO:0004089
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D008736
+    label: Drug
+    name: Methylclothiazide
+  - id: GO:0004089
+    label: MolecularActivity
+    name: Carbonate dehydratase activity
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/25079851/
+  - https://go.drugbank.com/drugs/DB00232

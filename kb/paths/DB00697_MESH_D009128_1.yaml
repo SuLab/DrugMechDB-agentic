@@ -1,0 +1,55 @@
+comment: The relation between the α2 receptor agonism and the spasmolytic action is
+  still not fully understood (https://en.wikipedia.org/wiki/Tizanidine#Pharmacology).
+directed: true
+graph:
+  _id: DB00697_MESH_D009128_1
+  disease: Spasticity
+  disease_mesh: MESH:D009128
+  drug: tizanidine
+  drug_mesh: MESH:C023754
+  drugbank: DB:DB00697
+links:
+  - key: increases activity of
+    source: MESH:C023754
+    target: UniProt:P08913
+  - key: increases activity of
+    source: MESH:C023754
+    target: UniProt:P18825
+  - key: increases activity of
+    source: MESH:C023754
+    target: UniProt:P18089
+  - key: negatively correlated with
+    source: UniProt:P08913
+    target: HP:0003394
+  - key: negatively correlated with
+    source: UniProt:P18825
+    target: HP:0003394
+  - key: negatively correlated with
+    source: UniProt:P18089
+    target: HP:0003394
+  - key: positively correlated with
+    source: HP:0003394
+    target: MESH:D009128
+multigraph: true
+nodes:
+  - id: MESH:C023754
+    label: Drug
+    name: tizanidine
+  - id: UniProt:P08913
+    label: Protein
+    name: Alpha-2A adrenergic receptor
+  - id: UniProt:P18825
+    label: Protein
+    name: Alpha-2C adrenergic receptor
+  - id: UniProt:P18089
+    label: Protein
+    name: Alpha-2B adrenergic receptor
+  - id: HP:0003394
+    label: PhenotypicFeature
+    name: Muscle spasm
+  - id: MESH:D009128
+    label: Disease
+    name: Spasticity
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1079/
+  - https://go.drugbank.com/drugs/DB00697#BE0004864

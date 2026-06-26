@@ -1,0 +1,24 @@
+comment: Mechanism of action for Amyloidosis is not available for Acetylcysteine that
+  serves as a prodrug to L-cysteine, a precursor to the biologic antioxidant glutathione
+directed: true
+graph:
+  _id: DB06151_MESH_D000686_1
+  disease: Amyloidosis
+  disease_mesh: MESH:D000686
+  drug: Acetylcysteine
+  drug_mesh: MESH:D000111
+  drugbank: DB:DB06151
+links:
+  - key: treats
+    source: MESH:D000111
+    target: MESH:D000686
+multigraph: true
+nodes:
+  - id: MESH:D000111
+    label: Drug
+    name: Acetylcysteine
+  - id: MESH:D000686
+    label: Disease
+    name: Amyloidosis
+references:
+  - https://go.drugbank.com/drugs/DB06151

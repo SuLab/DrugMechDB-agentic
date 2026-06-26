@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB01430_MESH_D029424_1
+  disease: Chronic obstructive lung disease
+  disease_mesh: MESH:D029424
+  drug: almitrine
+  drug_mesh: MESH:D015765,MESH:C037558
+  drugbank: DB:DB01430
+links:
+  - key: increases activity of
+    source: DB:DB01430
+    target: UniProt:P05023
+  - key: located in
+    source: UniProt:P05023
+    target: UBERON:0001629
+  - key: participates in
+    source: UBERON:0001629
+    target: GO:0003039
+  - key: participates in
+    source: UBERON:0001629
+    target: GO:0003035
+  - key: positively correlated with
+    source: GO:0003039
+    target: GO:0007585
+  - key: positively correlated with
+    source: GO:0003035
+    target: GO:0007585
+  - key: treats
+    source: GO:0007585
+    target: MESH:D029424
+multigraph: true
+nodes:
+  - id: DB:DB01430
+    label: Drug
+    name: almitrine
+  - id: UniProt:P05023
+    label: Protein
+    name: Sodium/potassium-transporting ATPase subunit alpha-1
+  - id: UBERON:0001629
+    label: GrossAnatomicalStructure
+    name: carotid body
+  - id: GO:0003039
+    label: BiologicalProcess
+    name: detection of reduced oxygen by carotid body chemoreceptor signaling
+  - id: GO:0003035
+    label: BiologicalProcess
+    name: detection of increased carbon dioxide by carotid body chemoreceptor signaling
+  - id: GO:0007585
+    label: BiologicalProcess
+    name: respiratory gaseous exchange by respiratory system
+  - id: MESH:D029424
+    label: Disease
+    name: Chronic obstructive lung disease
+references:
+  - https://go.drugbank.com/drugs/DB01430

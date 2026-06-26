@@ -1,0 +1,75 @@
+directed: true
+graph:
+  _id: DB00724_MESH_D014860_1
+  disease: Verruca
+  disease_mesh: MESH:D014860
+  drug: imiquimod
+  drug_mesh: MESH:C056493
+  drugbank: DB:DB00724
+links:
+  - key: increases activity of
+    source: MESH:C056493
+    target: UniProt:Q9NYK1
+  - key: positively regulates
+    source: UniProt:Q9NYK1
+    target: GO:0032609
+  - key: positively regulates
+    source: UniProt:Q9NYK1
+    target: GO:0032635
+  - key: positively regulates
+    source: UniProt:Q9NYK1
+    target: GO:0032637
+  - key: positively regulates
+    source: UniProt:Q9NYK1
+    target: GO:0032606
+  - key: part of
+    source: GO:0032609
+    target: GO:0051607
+  - key: part of
+    source: GO:0032635
+    target: GO:0051607
+  - key: part of
+    source: GO:0032637
+    target: GO:0051607
+  - key: part of
+    source: GO:0032606
+    target: GO:0051607
+  - key: decreases abundance of
+    source: GO:0051607
+    target: taxonomy:10566
+  - key: causes
+    source: taxonomy:10566
+    target: MESH:D014860
+multigraph: true
+nodes:
+  - id: MESH:C056493
+    label: Drug
+    name: imiquimod
+  - id: UniProt:Q9NYK1
+    label: Protein
+    name: Toll-like receptor 7
+  - id: GO:0032609
+    label: BiologicalProcess
+    name: interferon-gamma production
+  - id: GO:0032606
+    label: BiologicalProcess
+    name: type I interferon production
+  - id: GO:0032637
+    label: BiologicalProcess
+    name: interleukin-8 production
+  - id: GO:0032635
+    label: BiologicalProcess
+    name: interleukin-6 production
+  - id: GO:0051607
+    label: BiologicalProcess
+    name: defense response to virus
+  - id: taxonomy:10566
+    label: OrganismTaxon
+    name: Human papillomavirus
+  - id: MESH:D014860
+    label: Disease
+    name: Verruca
+references:
+  - https://go.drugbank.com/drugs/DB00724#BE0000155
+  - https://en.wikipedia.org/wiki/Imiquimod#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Wart#Treatment

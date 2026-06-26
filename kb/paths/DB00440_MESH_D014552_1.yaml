@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00440_MESH_D014552_1
+  disease: Urinary tract infectious disease
+  disease_mesh: MESH:D014552
+  drug: trimethoprim
+  drug_mesh: MESH:D014295
+  drugbank: DB:DB00440
+links:
+  - key: negatively regulates
+    source: MESH:D014295
+    target: Pfam:PF00186
+  - key: positively regulates
+    source: Pfam:PF00186
+    target: GO:0046654
+  - key: in taxon
+    source: GO:0046654
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D014552
+multigraph: true
+nodes:
+  - id: MESH:D014295
+    label: Drug
+    name: trimethoprim
+  - id: Pfam:PF00186
+    label: GeneFamily
+    name: Dihydrofolate reductase
+  - id: GO:0046654
+    label: BiologicalProcess
+    name: tetrahydrofolate biosynthetic process
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D014552
+    label: Disease
+    name: Urinary tract infectious disease
+references:
+  - https://go.drugbank.com/drugs/DB00440
+  - https://en.wikipedia.org/wiki/Trimethoprim#Mechanism_of_actions

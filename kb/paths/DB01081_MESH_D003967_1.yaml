@@ -1,0 +1,47 @@
+comment: Diphenoxylic acid (or difenoxin) is the pharmacologically active metabolite
+  of diphenoxylate (https://pubmed.ncbi.nlm.nih.gov/3682841/), being 5 times more
+  potent (https://pharmaceutical-journal.com/article/ld/understanding-the-chemical-basis-of-drug-stability-and-degradation).
+  Diphenoxylate is rapidly metabolized to difenoxin (https://en.wikipedia.org/wiki/Diphenoxylate#Pharmacology).
+  It's been suggested that difenoxin may regulate non-opioid receptor pathways as
+  well (https://go.drugbank.com/drugs/DB01501#mechanism-of-action).
+directed: true
+graph:
+  _id: DB01081_MESH_D003967_1
+  disease: Diarrhea
+  disease_mesh: MESH:D003967
+  drug: diphenoxylate
+  drug_mesh: MESH:D004157
+  drugbank: DB:DB01081
+links:
+  - key: has metabolite
+    source: MESH:D004157
+    target: DB:DB01501
+  - key: increases activity of
+    source: DB:DB01501
+    target: UniProt:P35372
+  - key: negatively regulates
+    source: UniProt:P35372
+    target: GO:0120054
+  - key: positively correlated with
+    source: GO:0120054
+    target: MESH:D003967
+multigraph: true
+nodes:
+  - id: MESH:D004157
+    label: Drug
+    name: diphenoxylate
+  - id: DB:DB01501
+    label: ChemicalSubstance
+    name: Difenoxin
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu-type opioid receptor
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: intestinal motility
+  - id: MESH:D003967
+    label: Disease
+    name: Diarrhea
+references:
+  - https://go.drugbank.com/drugs/DB01081
+  - https://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1201294

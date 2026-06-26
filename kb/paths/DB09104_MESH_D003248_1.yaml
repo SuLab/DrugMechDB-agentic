@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB09104_MESH_D003248_1
+  disease: Constipation
+  disease_mesh: MESH:D003248
+  drug: magnesium hydroxide
+  drug_mesh: MESH:D008276
+  drugbank: DB:DB09104
+links:
+  - key: subclass of
+    source: MESH:D008276
+    target: MESH:D054368
+  - key: positively correlated with
+    source: MESH:D054368
+    target: GO:0030421
+  - key: negatively correlated with
+    source: GO:0030421
+    target: MESH:D003248
+multigraph: true
+nodes:
+  - id: MESH:D008276
+    label: Drug
+    name: magnesium hydroxide
+  - id: MESH:D054368
+    label: ChemicalSubstance
+    name: Laxatives
+  - id: GO:0030421
+    label: BiologicalProcess
+    name: defecation
+  - id: MESH:D003248
+    label: Disease
+    name: Constipation
+references:
+  - https://go.drugbank.com/drugs/DB09104

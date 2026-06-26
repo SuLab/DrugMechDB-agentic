@@ -1,0 +1,114 @@
+comment: The precise mechanism of action for thalidomide is unknown (https://en.wikipedia.org/wiki/Thalidomide#Pharmacology).
+directed: true
+graph:
+  _id: DB01041_MESH_D009101_1
+  disease: Multiple myeloma
+  disease_mesh: MESH:D009101
+  drug: thalidomide
+  drug_mesh: MESH:D013792
+  drugbank: DB:DB01041
+links:
+  - key: increases abundance of
+    source: MESH:D013792
+    target: CHEBI:26523
+  - key: positively correlated with
+    source: CHEBI:26523
+    target: GO:0036473
+  - key: negatively correlated with
+    source: GO:0036473
+    target: MESH:D009101
+  - key: decreases activity of
+    source: MESH:D013792
+    target: UniProt:Q96SW2
+  - key: positively regulates
+    source: UniProt:Q96SW2
+    target: GO:0016567
+  - key: negatively correlated with
+    source: GO:0016567
+    target: GO:0051301
+  - key: positively correlated with
+    source: GO:0051301
+    target: GO:0008283
+  - key: decreases activity of
+    source: MESH:D013792
+    target: UniProt:P01375
+  - key: decreases activity of
+    source: MESH:D013792
+    target: UniProt:P15692
+  - key: positively regulates
+    source: UniProt:P01375
+    target: GO:0008283
+  - key: positively regulates
+    source: UniProt:P01375
+    target: GO:0032635
+  - key: positively regulates
+    source: GO:0032635
+    target: GO:0006954
+  - key: positively regulates
+    source: UniProt:P01375
+    target: GO:0002534
+  - key: positively regulates
+    source: UniProt:P15692
+    target: GO:0001525
+  - key: positively correlated with
+    source: GO:0001525
+    target: MESH:D009101
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D009101
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D009101
+  - key: positively correlated with
+    source: GO:0002534
+    target: MESH:D009101
+multigraph: true
+nodes:
+  - id: MESH:D013792
+    label: Drug
+    name: thalidomide
+  - id: UniProt:P01375
+    label: Protein
+    name: Tumor necrosis factor
+  - id: UniProt:P15692
+    label: Protein
+    name: Vascular endothelial growth factor A
+  - id: UniProt:Q96SW2
+    label: Protein
+    name: Protein cereblon
+  - id: GO:0016567
+    label: BiologicalProcess
+    name: protein ubiquitination
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: GO:0001525
+    label: BiologicalProcess
+    name: angiogenesis
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: GO:0032635
+    label: BiologicalProcess
+    name: interleukin-6 production
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: CHEBI:26523
+    label: ChemicalSubstance
+    name: reactive oxygen species
+  - id: GO:0036473
+    label: BiologicalProcess
+    name: cell death in response to oxidative stress
+  - id: GO:0002534
+    label: BiologicalProcess
+    name: cytokine production involved in inflammatory response
+  - id: MESH:D009101
+    label: Disease
+    name: Multiple myeloma
+references:
+  - https://en.wikipedia.org/wiki/Immunomodulatory_imide_drug#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Cereblon#Ubiquitination_and_role_in_development
+  - https://pubmed.ncbi.nlm.nih.gov/14513045/
+  - https://pubmed.ncbi.nlm.nih.gov/27260630/
+  - https://go.drugbank.com/drugs/DB01041

@@ -1,0 +1,72 @@
+directed: true
+graph:
+  _id: DB00091_MESH_D007638_1
+  disease: Keratoconjunctivitis sicca
+  disease_mesh: MESH:D007638
+  drug: ciclosporin
+  drug_mesh: MESH:D016572
+  drugbank: DB:DB00091
+links:
+  - key: decreases activity of
+    source: MESH:D016572
+    target: UniProt:P62937
+  - key: participates in
+    source: UniProt:P62937
+    target: GO:0005955
+  - key: positively regulates
+    source: GO:0005955
+    target: GO:0070884
+  - key: positively regulates
+    source: GO:0005955
+    target: GO:0070884
+  - key: positively regulates
+    source: GO:0070884
+    target: GO:0032623
+  - key: positively regulates
+    source: GO:0032623
+    target: GO:0042098
+  - key: positively regulates
+    source: GO:0032623
+    target: GO:0042110
+  - key: positively correlated with
+    source: GO:0042098
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0042110
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D007638
+multigraph: true
+nodes:
+  - id: MESH:D016572
+    label: Drug
+    name: ciclosporin
+  - id: UniProt:P62937
+    label: Protein
+    name: Peptidyl-prolyl cis-trans isomerase A
+  - id: GO:0005955
+    label: CellularComponent
+    name: Calcineurin complex
+  - id: GO:0070884
+    label: BiologicalProcess
+    name: calcineurin-NFAT signaling cascade
+  - id: GO:0032623
+    label: BiologicalProcess
+    name: Interleukin-2 production
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: GO:0042098
+    label: BiologicalProcess
+    name: T cell proliferation
+  - id: GO:0042110
+    label: BiologicalProcess
+    name: T cell activation
+  - id: MESH:D007638
+    label: Disease
+    name: Keratoconjunctivitis sicca
+references:
+  - https://go.drugbank.com/drugs/DB00091
+  - https://en.wikipedia.org/wiki/Ciclosporin
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL160/

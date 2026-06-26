@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB09270_MESH_D006333_1
+  disease: Congestive heart failure
+  disease_mesh: MESH:D006333
+  drug: Ubidecarenone
+  drug_mesh: MESH:C010524
+  drugbank: DB:DB09270
+links:
+  - key: increases activity of
+    source: MESH:C010524
+    target: UniProt:P56181
+  - key: increases activity of
+    source: MESH:C010524
+    target: UniProt:P31040
+  - key: positively regulates
+    source: UniProt:P56181
+    target: GO:0042773
+  - key: positively regulates
+    source: UniProt:P31040
+    target: GO:0042773
+  - key: increases abundance of
+    source: GO:0042773
+    target: CHEBI:15422
+  - key: participates in
+    source: CHEBI:15422
+    target: GO:0060047
+  - key: negatively correlated with
+    source: GO:0060047
+    target: MESH:D006333
+multigraph: true
+nodes:
+  - id: MESH:C010524
+    label: Drug
+    name: Ubidecarenone
+  - id: UniProt:P56181
+    label: Protein
+    name: NADH dehydrogenase [ubiquinone] flavoprotein 3, mitochondrial
+  - id: UniProt:P31040
+    label: Protein
+    name: Succinate dehydrogenase [ubiquinone] flavoprotein subunit, mitochondrial
+  - id: GO:0042773
+    label: BiologicalProcess
+    name: ATP synthesis coupled electron transport
+  - id: CHEBI:15422
+    label: ChemicalSubstance
+    name: ATP
+  - id: GO:0060047
+    label: BiologicalProcess
+    name: Heart contraction
+  - id: MESH:D006333
+    label: Drug
+    name: Congestive heart failure
+references:
+  - https://go.drugbank.com/drugs/DB09270#BE0000176

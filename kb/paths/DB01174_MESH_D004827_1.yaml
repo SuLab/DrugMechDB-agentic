@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB01174_MESH_D004827_1
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+  drug: phenobarbital
+  drug_mesh: MESH:D010634
+  drugbank: DB:DB01174
+links:
+  - key: increases activity of
+    source: MESH:D010634
+    target: InterPro:IPR006028
+  - key: participates in
+    source: InterPro:IPR006028
+    target: GO:0099536
+  - key: negatively correlated with
+    source: GO:0099536
+    target: MESH:D004827
+multigraph: true
+nodes:
+  - id: MESH:D010634
+    label: Drug
+    name: phenobarbital
+  - id: InterPro:IPR006028
+    label: GeneFamily
+    name: GABAA Receptors
+  - id: GO:0099536
+    label: BiologicalProcess
+    name: Synaptic Signaling
+  - id: MESH:D004827
+    label: Disease
+    name: Epilepsy

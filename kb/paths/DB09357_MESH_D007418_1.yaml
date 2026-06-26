@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB09357_MESH_D007418_1
+  disease: Intestinal Pseudo-Obstruction
+  disease_mesh: MESH:D007418
+  drug: dexpanthenol
+  drug_mesh: MESH:C007288
+  drugbank: DB:DB09357
+links:
+  - key: produces
+    source: MESH:C007288
+    target: MESH:D010205
+  - key: part of
+    source: MESH:D010205
+    target: MESH:D003065
+  - key: positively regulates
+    source: MESH:D003065
+    target: GO:0008292
+  - key: increases abundance of
+    source: GO:0008292
+    target: MESH:D000109
+  - key: negatively correlated with
+    source: MESH:D000109
+    target: MESH:D007418
+multigraph: true
+nodes:
+  - id: MESH:C007288
+    label: Drug
+    name: dexpanthenol
+  - id: MESH:D010205
+    label: ChemicalSubstance
+    name: Pantothenic Acid
+  - id: MESH:D003065
+    label: ChemicalSubstance
+    name: Coenzyme A
+  - id: GO:0008292
+    label: BiologicalProcess
+    name: acetylcholine biosynthetic process
+  - id: MESH:D000109
+    label: ChemicalSubstance
+    name: Acetylcholine
+  - id: MESH:D007418
+    label: Disease
+    name: Intestinal Pseudo-Obstruction
+references:
+  - https://go.drugbank.com/drugs/DB09357#pharmacodynamics
+  - https://en.wikipedia.org/wiki/Panthenol
+  - https://en.wikipedia.org/wiki/Ileus

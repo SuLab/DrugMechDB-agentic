@@ -1,0 +1,49 @@
+comment: Camphor is analgesic (https://www.genome.jp/dbget-bin/www_bget?cpd:C00808).
+  The activation of members of the transient receptor ion channel protein family applications
+  lead to desensitization, which in turn contributes to the analgesic effects of camphor
+  after prolonged/repeated applications (https://pubmed.ncbi.nlm.nih.gov/33804078/).
+directed: true
+graph:
+  _id: DB01744_MESH_D001416_1
+  disease: Backache
+  disease_mesh: MESH:D001416
+  drug: camphor
+  drug_mesh: MESH:D002164
+  drugbank: DB:DB01744
+links:
+  - key: decreases activity of
+    source: MESH:D002164
+    target: UniProt:O75762
+  - key: negatively correlated with
+    source: MESH:D002164
+    target: HP:0012531
+  - key: regulates
+    source: UniProt:O75762
+    target: GO:0050968
+  - key: correlated with
+    source: GO:0050968
+    target: HP:0012531
+  - key: manifestation of
+    source: HP:0012531
+    target: MESH:D001416
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C436264
+    id: MESH:D002164
+    label: Drug
+    name: camphor
+  - id: UniProt:O75762
+    label: Protein
+    name: Transient receptor potential cation channel subfamily A member 1
+  - id: GO:0050968
+    label: BiologicalProcess
+    name: detection of chemical stimulus involved in sensory perception of pain
+  - id: HP:0012531
+    label: PhenotypicFeature
+    name: Pain
+  - id: MESH:D001416
+    label: Disease
+    name: Backache
+references:
+  - https://go.drugbank.com/drugs/DB01744

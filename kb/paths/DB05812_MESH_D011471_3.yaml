@@ -1,0 +1,91 @@
+comment: In addition to inhibiting UniProt:P05093 (the main target according to https://go.drugbank.com/drugs/DB05812#mechanism-of-action),
+  abiraterone also inhibits all these cytochrome P450s and can be useful in treating
+  castration-resistant prostate cancers.
+directed: true
+graph:
+  _id: DB05812_MESH_D011471_3
+  disease: Malignant tumor of prostate
+  disease_mesh: MESH:D011471
+  drug: abiraterone acetate
+  drug_mesh: MESH:D000069501
+  drugbank: DB:DB05812
+links:
+  - key: decreases activity of
+    source: MESH:D000069501
+    target: UniProt:P15538
+  - key: decreases activity of
+    source: MESH:D000069501
+    target: UniProt:P08686
+  - key: decreases activity of
+    source: MESH:D000069501
+    target: UniProt:P05177
+  - key: decreases activity of
+    source: MESH:D000069501
+    target: UniProt:P11712
+  - key: decreases activity of
+    source: MESH:D000069501
+    target: UniProt:P08684
+  - key: positively regulates
+    source: UniProt:P15538
+    target: GO:0006704
+  - key: positively regulates
+    source: UniProt:P08686
+    target: GO:0006704
+  - key: positively regulates
+    source: UniProt:P05177
+    target: GO:0006704
+  - key: positively regulates
+    source: UniProt:P11712
+    target: GO:0006704
+  - key: positively regulates
+    source: UniProt:P08684
+    target: GO:0006704
+  - key: positively correlated with
+    source: GO:0006704
+    target: GO:0061370
+  - key: positively correlated with
+    source: GO:0061370
+    target: HP:0030088
+  - key: positively correlated with
+    source: HP:0030088
+    target: MESH:D011471
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C089740
+    alt_names:
+      - abiraterone
+    id: MESH:D000069501
+    label: Drug
+    name: abiraterone acetate
+  - id: UniProt:P15538
+    label: Protein
+    name: Cytochrome P450 11B1, mitochondrial
+  - id: UniProt:P08686
+    label: Protein
+    name: Steroid 21-hydroxylase
+  - id: UniProt:P05177
+    label: Protein
+    name: Cytochrome P450 1A2
+  - id: UniProt:P11712
+    label: Protein
+    name: Cytochrome P450 2C9
+  - id: UniProt:P08684
+    label: Protein
+    name: Cytochrome P450 3A4
+  - id: GO:0006704
+    label: BiologicalProcess
+    name: glucocorticoid biosynthetic process
+  - id: GO:0061370
+    label: BiologicalProcess
+    name: testosterone biosynthetic process
+  - id: HP:0030088
+    label: PhenotypicFeature
+    name: Increased serum testosterone level
+  - id: MESH:D011471
+    label: Disease
+    name: Malignant tumor of prostate
+references:
+  - https://en.wikipedia.org/wiki/Abiraterone_acetate#Pharmacology
+  - https://www.kegg.jp/entry/D09701
+  - https://en.wikipedia.org/wiki/21-Hydroxylase#Function

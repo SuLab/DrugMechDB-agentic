@@ -1,0 +1,49 @@
+comment: MESH:D015210 is denominated as Arthritis, Gouty in the MESH website and defined
+  as "Arthritis, especially of the great toe, as a result of gout. " (https://meshb.nlm.nih.gov/record/ui?ui=D015210).
+directed: true
+graph:
+  _id: DB00437_MESH_D015210_1
+  disease: Articular gout
+  disease_mesh: MESH:D015210
+  drug: allopurinol
+  drug_mesh: MESH:D000493
+  drugbank: DB:DB00437
+links:
+  - key: negatively regulates
+    source: MESH:D000493
+    target: UniProt:P47989
+  - key: participates in
+    source: UniProt:P47989
+    target: reactome:R-HSA-74259
+  - key: increases abundance of
+    source: reactome:R-HSA-74259
+    target: CHEBI:27226
+  - key: positively correlated with
+    source: CHEBI:27226
+    target: HP:0001854
+  - key: manifestation of
+    source: HP:0001854
+    target: MESH:D015210
+multigraph: true
+nodes:
+  - id: MESH:D000493
+    label: Drug
+    name: allopurinol
+  - id: UniProt:P47989
+    label: Protein
+    name: Xanthine dehydrogenase/oxidase
+  - id: reactome:R-HSA-74259
+    label: Pathway
+    name: Purine catabolism
+  - id: CHEBI:27226
+    label: ChemicalSubstance
+    name: uric acid
+  - id: HP:0001854
+    label: PhenotypicFeature
+    name: Podagra
+  - id: MESH:D015210
+    label: Disease
+    name: Articular gout
+references:
+  - https://go.drugbank.com/drugs/DB00437
+  - https://en.wikipedia.org/wiki/Allopurinol#Mechanism_of_action

@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00921_MESH_D009293_2
+  disease: Opioid-Related Disorders
+  disease_mesh: MESH:D009293
+  drug: Buprenorphine
+  drug_mesh: MESH:D002047
+  drugbank: DB:DB00921
+links:
+  - key: decreases activity of
+    source: MESH:D002047
+    target: UniProt:P41145
+  - key: positively correlated with
+    source: UniProt:P41145
+    target: HP:0000716
+  - key: positively correlated with
+    source: UniProt:P41145
+    target: HP:0033511
+  - key: positively correlated with
+    source: HP:0000716
+    target: MESH:D009293
+  - key: positively correlated with
+    source: HP:0033511
+    target: MESH:D009293
+multigraph: true
+nodes:
+  - id: MESH:D002047
+    label: Drug
+    name: Buprenorphine
+  - id: UniProt:P41145
+    label: Protein
+    name: Kappa-type opioid receptor
+  - id: HP:0000716
+    label: PhenotypicFeature
+    name: Depression
+  - id: HP:0033511
+    label: PhenotypicFeature
+    name: Drug addiction
+  - id: MESH:D009293
+    label: Disease
+    name: Opioid-Related Disorders
+references:
+  - https://go.drugbank.com/drugs/DB00921#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P41145#function
+  - https://en.wikipedia.org/wiki/%CE%9A-opioid_receptor
+  - https://en.wikipedia.org/wiki/Opioid_use_disorder

@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00199_MESH_D061387_1
+  disease: Chlamydial Pneumonia
+  disease_mesh: MESH:D061387
+  drug: erythromycin
+  drug_mesh: MESH:D004917
+  drugbank: DB:DB00199
+links:
+  - key: negatively regulates
+    source: MESH:D004917
+    target: MESH:D012338
+  - key: participates in
+    source: MESH:D012338
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:810
+  - key: causes
+    source: taxonomy:810
+    target: MESH:D061387
+multigraph: true
+nodes:
+  - id: MESH:D004917
+    label: Drug
+    name: erythromycin
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:810
+    label: OrganismTaxon
+    name: Chlamydia
+  - id: MESH:D061387
+    label: Disease
+    name: Chlamydial Pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB00199#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Chlamydia

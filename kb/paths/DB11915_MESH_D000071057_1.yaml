@@ -1,0 +1,44 @@
+comment: The reviewed (SwissProt) entry is Q05940 (supersedes entry available on DrugBank
+  i.e.Q99870. The Ensembl gene ID is ENSG00000165646)
+directed: true
+graph:
+  _id: DB11915_MESH_D000071057_1
+  disease: Tardive dyskinesia
+  disease_mesh: MESH:D000071057
+  drug: valbenazine
+  drug_mesh: MESH:C000603978
+  drugbank: DB:DB11915
+links:
+  - key: decreases activity of
+    source: MESH:C000603978
+    target: UniProt:Q05940
+  - key: positively regulates
+    source: UniProt:Q05940
+    target: GO:0015842
+  - key: positively correlated with
+    source: GO:0015842
+    target: reactome:R-HSA-212676
+  - key: positively correlated with
+    source: reactome:R-HSA-212676
+    target: MESH:D000071057
+multigraph: true
+nodes:
+  - id: MESH:C000603978
+    label: Drug
+    name: valbenazine
+  - id: UniProt:Q05940
+    label: Protein
+    name: Synaptic vesicular amine transporter
+  - id: GO:0015842
+    label: BiologicalProcess
+    name: aminergic neurotransmitter loading into synaptic vesicle
+  - id: reactome:R-HSA-212676
+    label: Pathway
+    name: Dopamine Neurotransmitter Release Cycle
+  - id: MESH:D000071057
+    label: Disease
+    name: Tardive dyskinesia
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2364639/
+  - https://go.drugbank.com/drugs/DB11915#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Valbenazine#Mechanism_of_action

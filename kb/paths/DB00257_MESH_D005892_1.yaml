@@ -1,0 +1,61 @@
+comment: The disease is denoted as Acute necrotizing ulcerative gingivitis in the
+  original file but the name used for the path is the one seen in the MESH website.
+directed: true
+graph:
+  _id: DB00257_MESH_D005892_1
+  disease: Gingivitis, Necrotizing Ulcerative
+  disease_mesh: MESH:D005892
+  drug: sulfur
+  drug_mesh: MESH:D013455
+  drugbank: DB:DB00257
+links:
+  - key: precedes
+    source: MESH:D013455
+    target: CHEBI:16136
+  - key: subclass of
+    source: CHEBI:16136
+    target: MESH:D000900
+  - key: disrupts
+    source: MESH:D000900
+    target: taxonomy:28131
+  - key: disrupts
+    source: MESH:D000900
+    target: taxonomy:848
+  - key: disrupts
+    source: MESH:D000900
+    target: taxonomy:157
+  - key: causes
+    source: taxonomy:157
+    target: MESH:D005892
+  - key: causes
+    source: taxonomy:848
+    target: MESH:D005892
+  - key: causes
+    source: taxonomy:28131
+    target: MESH:D005892
+multigraph: true
+nodes:
+  - id: MESH:D013455
+    label: Drug
+    name: sulfur
+  - id: CHEBI:16136
+    label: ChemicalSubstance
+    name: hydrogen sulfide
+  - id: MESH:D000900
+    label: Drug
+    name: Anti-Bacterial Agents
+  - id: taxonomy:157
+    label: OrganismTaxon
+    name: Treponema
+  - id: taxonomy:848
+    label: OrganismTaxon
+    name: Fusobacterium
+  - id: taxonomy:28131
+    label: OrganismTaxon
+    name: Prevotella intermedia
+  - id: MESH:D005892
+    label: Disease
+    name: Gingivitis, Necrotizing Ulcerative
+references:
+  - https://go.drugbank.com/drugs/DB09353#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Acute_necrotizing_ulcerative_gingivitis#Causes

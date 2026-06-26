@@ -1,0 +1,62 @@
+comment: Withdrawn from the market in many countries. Never been marketed in the US.
+directed: true
+graph:
+  _id: DB04830_MESH_D003924_1
+  disease: Diabetes mellitus type 2
+  disease_mesh: MESH:D003924
+  drug: buformin
+  drug_mesh: MESH:D002026
+  drugbank: DB:DB04830
+links:
+  - key: negatively correlated with
+    source: MESH:D002026
+    target: GO:0001951
+  - key: negatively correlated with
+    source: MESH:D002026
+    target: GO:0006094
+  - key: negatively correlated with
+    source: MESH:D002026
+    target: HP:0008189
+  - key: increases activity of
+    source: MESH:D002026
+    target: GO:0046323
+  - key: positively correlated with
+    source: GO:0001951
+    target: HP:0003074
+  - key: positively correlated with
+    source: GO:0006094
+    target: HP:0003074
+  - key: positively correlated with
+    source: HP:0008189
+    target: HP:0003074
+  - key: negatively correlated with
+    source: GO:0046323
+    target: HP:0003074
+  - key: manifestation of
+    source: HP:0003074
+    target: MESH:D003924
+multigraph: true
+nodes:
+  - id: MESH:D002026
+    label: Drug
+    name: buformin
+  - id: GO:0001951
+    label: BiologicalProcess
+    name: intestinal D-glucose absorption
+  - id: HP:0008189
+    label: PhenotypicFeature
+    name: Insulin insensitivity
+  - id: GO:0046323
+    label: BiologicalProcess
+    name: glucose import
+  - id: GO:0006094
+    label: BiologicalProcess
+    name: gluconeogenesis
+  - id: HP:0003074
+    label: PhenotypicFeature
+    name: Hyperglycemia
+  - id: MESH:D003924
+    label: Disease
+    name: Diabetes mellitus type 2
+references:
+  - https://en.wikipedia.org/wiki/Buformin#Mechanism_of_action

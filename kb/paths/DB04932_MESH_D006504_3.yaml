@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB04932_MESH_D006504_3
+  disease: Hepatic Veno-Occlusive Disease
+  disease_mesh: MESH:D006504
+  drug: defibrotide
+  drug_mesh: MESH:C036901
+  drugbank: DB:DB04932
+links:
+  - key: increases activity of
+    source: MESH:C036901
+    target: UniProt:P00750
+  - key: decreases activity of
+    source: MESH:C036901
+    target: UniProt:P05121
+  - key: negatively regulates
+    source: UniProt:P00750
+    target: GO:0007596
+  - key: positively regulates
+    source: UniProt:P05121
+    target: GO:0007596
+  - key: positively correlated with
+    source: GO:0007596
+    target: HP:0002240
+  - key: contributes to
+    source: HP:0002240
+    target: MESH:D006504
+multigraph: true
+nodes:
+  - id: MESH:C036901
+    label: Drug
+    name: defibrotide
+  - id: UniProt:P00750
+    label: Protein
+    name: Tissue-type plasminogen activator
+  - id: UniProt:P05121
+    label: Protein
+    name: Plasminogen activator inhibitor 1
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: blood coagulation
+  - id: HP:0002240
+    label: PhenotypicFeature
+    name: Hepatomegaly
+  - id: MESH:D006504
+    label: Disease
+    name: Hepatic Veno-Occlusive Disease
+references:
+  - https://go.drugbank.com/drugs/DB04932#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Defibrotide
+  - https://www.uniprot.org/uniprot/P00750#function
+  - https://www.uniprot.org/uniprot/P05121#function
+  - https://en.wikipedia.org/wiki/Tissue_plasminogen_activator
+  - https://en.wikipedia.org/wiki/Plasminogen_activator_inhibitor-1
+  - https://www.sciencedirect.com/topics/medicine-and-dentistry/plasminogen-activator-inhibitor
+  - https://en.wikipedia.org/wiki/Hepatic_veno-occlusive_disease

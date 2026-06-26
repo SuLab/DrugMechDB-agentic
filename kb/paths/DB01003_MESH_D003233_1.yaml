@@ -1,0 +1,74 @@
+comment: This condition does not seem to be a true ocular allergic reaction, rather
+  caused by repeated mechanical irritation of the conjunctiva (https://en.wikipedia.org/wiki/Allergic_conjunctivitis#Giant_papillary_conjunctivitis).
+  So the treatment with cromoglicic acid may not be needed/useful at all but interruption
+  of contact lens wearing.
+directed: true
+graph:
+  _id: DB01003_MESH_D003233_1
+  disease: Giant papillary conjunctivitis
+  disease_mesh: MESH:D003233
+  drug: cromoglicic acid
+  drug_mesh: MESH:D004205
+  drugbank: DB:DB01003
+links:
+  - key: decreases activity of
+    source: MESH:D004205
+    target: UniProt:P25815
+  - key: positively correlated with
+    source: UniProt:P25815
+    target: GO:0043303
+  - key: positively correlated with
+    source: UniProt:P25815
+    target: GO:0043308
+  - key: caused by
+    source: GO:0043303
+    target: reactome:R-HSA-2454202
+  - key: positively correlated with
+    source: reactome:R-HSA-2454202
+    target: GO:0002441
+  - key: positively correlated with
+    source: reactome:R-HSA-2454202
+    target: GO:0002540
+  - key: positively correlated with
+    source: GO:0043308
+    target: GO:0002540
+  - key: positively correlated with
+    source: GO:0002441
+    target: MESH:D003233
+  - key: positively correlated with
+    source: GO:0002540
+    target: MESH:D003233
+multigraph: true
+nodes:
+  - id: MESH:D004205
+    label: Drug
+    name: cromoglicic acid
+  - id: UniProt:P25815
+    label: Protein
+    name: Protein S100-P
+  - id: GO:0043303
+    label: BiologicalProcess
+    name: mast cell degranulation
+  - id: GO:0043308
+    label: BiologicalProcess
+    name: eosinophil degranulation
+  - id: GO:0002540
+    label: BiologicalProcess
+    name: leukotriene production involved in inflammatory response
+  - id: reactome:R-HSA-2454202
+    label: Pathway
+    name: Allergen dependent IgE bound FCERI aggregation
+  - id: GO:0002441
+    label: BiologicalProcess
+    name: histamine secretion involved in inflammatory response
+  - id: MESH:D003233
+    label: Disease
+    name: Giant papillary conjunctivitis
+references:
+  - https://go.drugbank.com/drugs/DB01003#mechanism-of-action
+  - https://pubmed.ncbi.nlm.nih.gov/25450399/
+  - https://pubchem.ncbi.nlm.nih.gov/compound/2882#section=Pharmacology-and-Biochemistry
+  - https://pubmed.ncbi.nlm.nih.gov/12645002/
+  - https://en.wikipedia.org/wiki/RAGE_(receptor)#RAGE_and_disease
+  - https://en.wikipedia.org/wiki/Mast_cell_stabilizer
+  - https://en.wikipedia.org/wiki/S100P#Interactions

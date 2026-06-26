@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00525_MESH_D014008_1
+  disease: Tinea pedis
+  disease_mesh: MESH:D014008
+  drug: tolnaftate
+  drug_mesh: MESH:D014047
+  drugbank: DB:DB00525
+links:
+  - key: decreases activity of
+    source: MESH:D014047
+    target: UniProt:Q92206
+  - key: positively regulates
+    source: UniProt:Q92206
+    target: GO:0006696
+  - key: increases abundance of
+    source: GO:0006696
+    target: MESH:D004875
+  - key: participates in
+    source: MESH:D004875
+    target: GO:0042546
+  - key: occurs in
+    source: GO:0042546
+    target: taxonomy:4751
+  - key: causes
+    source: taxonomy:4751
+    target: MESH:D014008
+multigraph: true
+nodes:
+  - id: MESH:D014047
+    label: Drug
+    name: Tolnaftate
+  - id: UniProt:Q92206
+    label: Protein
+    name: Squalene monooxygenase (Candida albicans)
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: Ergosterol biosynthetic process
+  - id: MESH:D004875
+    label: ChemicalSubstance
+    name: Ergosterol
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: Cell wall biogenesis
+  - id: taxonomy:4751
+    label: OrganismTaxon
+    name: Fungi
+  - id: MESH:D014008
+    label: Disease
+    name: Tinea pedis
+references:
+  - https://en.wikipedia.org/wiki/Athlete%27s_foot
+  - https://go.drugbank.com/drugs/DB00525#BE0004670

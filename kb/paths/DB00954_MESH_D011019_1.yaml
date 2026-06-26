@@ -1,0 +1,70 @@
+directed: true
+graph:
+  _id: DB00954_MESH_D011019_1
+  disease: Pneumonia due to Mycoplasma pneumoniae
+  disease_mesh: MESH:D011019
+  drug: dirithromycin
+  drug_mesh: MESH:C053853
+  drugbank: DB:DB00954
+links:
+  - key: has metabolite
+    source: MESH:C053853
+    target: MESH:C007626
+  - key: negatively regulates
+    source: MESH:C007626
+    target: UniProt:P75575
+  - key: negatively regulates
+    source: MESH:C007626
+    target: MESH:D012338
+  - key: located in
+    source: UniProt:P75575
+    target: GO:0005840
+  - key: located in
+    source: MESH:D012338
+    target: GO:0005840
+  - key: positively regulates
+    source: GO:0005840
+    target: GO:0006412
+  - key: positively correlated with
+    source: GO:0006412
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:2104
+  - key: causes
+    source: taxonomy:2104
+    target: MESH:D011019
+multigraph: true
+nodes:
+  - id: MESH:C053853
+    label: Drug
+    name: dirithromycin
+  - id: MESH:C007626
+    label: ChemicalSubstance
+    name: erythromyclamine
+  - id: UniProt:P75575
+    label: Protein
+    name: 50S ribosomal protein L22 (Mycoplasma pneumoniae (strain ATCC 29342 / M129)
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: GO:0005840
+    label: CellularComponent
+    name: Ribosome
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: taxonomy:2104
+    label: OrganismTaxon
+    name: Mycoplasma pneumoniae
+  - id: MESH:D011019
+    label: Disease
+    name: Pneumonia due to Mycoplasma pneumoniae
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237072/
+  - https://go.drugbank.com/drugs/DB00954
+  - https://pubchem.ncbi.nlm.nih.gov/compound/6473883
+  - https://en.wikipedia.org/wiki/Dirithromycin

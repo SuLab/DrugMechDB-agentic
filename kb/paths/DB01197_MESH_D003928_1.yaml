@@ -1,0 +1,67 @@
+directed: true
+graph:
+  _id: DB01197_MESH_D003928_1
+  disease: Diabetic renal disease
+  disease_mesh: MESH:D003928
+  drug: Captopril
+  drug_mesh: MESH:D002216
+  drugbank: DB:DB01197
+links:
+  - key: decreases activity of
+    source: MESH:D002216
+    target: UniProt:P12821
+  - key: increases abundance of
+    source: UniProt:P12821
+    target: MESH:D000804
+  - key: causes
+    source: MESH:D000804
+    target: GO:0070294
+  - key: positively correlated with
+    source: GO:0070294
+    target: GO:0003092
+  - key: contributes to
+    source: GO:0003092
+    target: GO:0045777
+  - key: affects risk for
+    source: GO:0045777
+    target: HP:0000822
+  - key: causes
+    source: MESH:D000804
+    target: MESH:D014661
+  - key: contributes to
+    source: MESH:D014661
+    target: HP:0000822
+  - key: affects risk for
+    source: HP:0000822
+    target: MESH:D003928
+multigraph: true
+nodes:
+  - id: MESH:D002216
+    label: Drug
+    name: Captopril
+  - id: UniProt:P12821
+    label: Protein
+    name: Angiotensin-converting enzyme
+  - id: MESH:D000804
+    label: ChemicalSubstance
+    name: Angiotensin II
+  - id: GO:0070294
+    label: BiologicalProcess
+    name: Renal sodium ion absorption
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: Renal water retention
+  - id: GO:0045777
+    label: BiologicalProcess
+    name: Positive regulation of blood pressure
+  - id: MESH:D014661
+    label: Disease
+    name: Vasoconstriction
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: Hypertension
+  - id: MESH:D003928
+    label: Disease
+    name: Diabetic renal disease
+references:
+  - https://go.drugbank.com/drugs/DB01197#BE0000221

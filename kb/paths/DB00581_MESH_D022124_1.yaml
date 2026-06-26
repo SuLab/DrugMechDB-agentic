@@ -1,0 +1,37 @@
+comment: Lactulose is believed to decrease the generation of ammonia produced by bacteria
+  found in the digestive tract.
+directed: true
+graph:
+  _id: DB00581_MESH_D022124_1
+  disease: Hyperammonemia
+  disease_mesh: MESH:D022124
+  drug: lactulose
+  drug_mesh: MESH:D007792
+  drugbank: DB:DB00581
+links:
+  - key: decreases abundance of
+    source: MESH:D007792
+    target: CHEBI:16134
+  - key: correlated with
+    source: CHEBI:16134
+    target: HP:0004364
+  - key: superclass of
+    source: HP:0004364
+    target: MESH:D022124
+multigraph: true
+nodes:
+  - id: MESH:D007792
+    label: Drug
+    name: lactulose
+  - id: CHEBI:16134
+    label: ChemicalSubstance
+    name: ammonia
+  - id: HP:0004364
+    label: PhenotypicFeature
+    name: Abnormal circulating nitrogen compound concentration
+  - id: MESH:D022124
+    label: Disease
+    name: Hyperammonemia
+references:
+  - https://go.drugbank.com/drugs/DB00581
+  - https://en.wikipedia.org/wiki/Hepatic_encephalopathy#Lactulose/lactitol

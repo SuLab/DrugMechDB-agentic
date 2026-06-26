@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB09078_MESH_D018263_1
+  disease: Adenocarcinoma, Follicular
+  disease_mesh: MESH:D018263
+  drug: lenvatinib
+  drug_mesh: MESH:C531958
+  drugbank: DB:DB09078
+links:
+  - key: decreases activity of
+    source: MESH:C531958
+    target: InterPro:IPR009135
+  - key: positively regulates
+    source: InterPro:IPR009135
+    target: GO:0001525
+  - key: contributes to
+    source: GO:0001525
+    target: MESH:D018263
+multigraph: true
+nodes:
+  - id: MESH:C531958
+    label: Drug
+    name: lenvatinib
+  - id: InterPro:IPR009135
+    label: GeneFamily
+    name: Vascular endothelial growth factor receptor 1 (VEGFR1)
+  - id: GO:0001525
+    label: BiologicalProcess
+    name: angiogenesis
+  - id: MESH:D018263
+    label: Disease
+    name: Adenocarcinoma, Follicular
+references:
+  - https://go.drugbank.com/drugs/DB09078#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Adenocarcinoma

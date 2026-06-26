@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB01033_MESH_D015473_1
+  disease: Acute promyelocytic leukemia
+  disease_mesh: MESH:D015473
+  drug: Mercaptopurine
+  drug_mesh: MESH:D015122
+  drugbank: DB:DB01033
+links:
+  - key: decreases activity of
+    source: MESH:D015122
+    target: UniProt:P00492
+  - key: decreases activity of
+    source: MESH:D015122
+    target: UniProt:Q06203
+  - key: decreases activity of
+    source: MESH:D015122
+    target: UniProt:P20839
+  - key: decreases activity of
+    source: MESH:D015122
+    target: UniProt:P12268
+  - key: positively regulates
+    source: UniProt:P00492
+    target: GO:0006164
+  - key: positively regulates
+    source: UniProt:Q06203
+    target: GO:0006164
+  - key: positively regulates
+    source: UniProt:P20839
+    target: GO:0006164
+  - key: positively regulates
+    source: UniProt:P12268
+    target: GO:0006164
+  - key: occurs in
+    source: GO:0006164
+    target: CL:0000836
+  - key: positively correlated with
+    source: CL:0000836
+    target: MESH:D015473
+multigraph: true
+nodes:
+  - id: MESH:D015122
+    label: Drug
+    name: Mercaptopurine
+  - id: UniProt:P00492
+    label: Protein
+    name: Hypoxanthine-guanine phosphoribosyltransferase
+  - id: UniProt:Q06203
+    label: Protein
+    name: Amidophosphoribosyltransferase
+  - id: UniProt:P20839
+    label: Protein
+    name: Inosine-5'-monophosphate dehydrogenase 1
+  - id: UniProt:P12268
+    label: Protein
+    name: Inosine-5'-monophosphate dehydrogenase 2
+  - id: CL:0000836
+    label: Cell
+    name: Promyelocyte
+  - id: GO:0006164
+    label: BiologicalProcess
+    name: Purine nucleotide biosynthetic process
+  - id: MESH:D015473
+    label: Disease
+    name: Acute promyelocytic leukemia
+references:
+  - https://en.wikipedia.org/wiki/Acute_promyelocytic_leukemia
+  - https://go.drugbank.com/drugs/DB01033

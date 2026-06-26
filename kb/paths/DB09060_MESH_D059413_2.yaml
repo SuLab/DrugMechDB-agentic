@@ -1,0 +1,53 @@
+comment: This antibiotic inhbits beta-lactamases, enzymes that break antibiotics and
+  therefore provide resistance to ampicillin and related beta-lacam antibiotics. Avibactam
+  therefore is useful to treat infections caused by bacteria that are multi-resistant
+  to β-lactam antibiotics.
+directed: true
+graph:
+  _id: DB09060_MESH_D059413_2
+  disease: Infectious disease of abdomen
+  disease_mesh: MESH:D059413
+  drug: avibactam
+  drug_mesh: MESH:C543519
+  drugbank: DB:DB09060
+links:
+  - key: negatively regulates
+    source: MESH:C543519
+    target: UniProt:P0AD64
+  - key: negatively regulates
+    source: MESH:C543519
+    target: UniProt:Q9F663
+  - key: positively regulates
+    source: UniProt:P0AD64
+    target: GO:0008800
+  - key: positively regulates
+    source: UniProt:Q9F663
+    target: GO:0008800
+  - key: in taxon
+    source: GO:0008800
+    target: taxonomy:573
+  - key: causes
+    source: taxonomy:573
+    target: MESH:D059413
+multigraph: true
+nodes:
+  - id: MESH:C543519
+    label: Drug
+    name: avibactam
+  - id: UniProt:Q9F663
+    label: Protein
+    name: Carbapenem-hydrolyzing beta-lactamase KPC
+  - id: UniProt:P0AD64
+    label: Protein
+    name: Beta-lactamase SHV-1
+  - id: GO:0008800
+    label: MolecularActivity
+    name: beta-lactamase activity
+  - id: taxonomy:573
+    label: OrganismTaxon
+    name: Klebsiella pneumoniae
+  - id: MESH:D059413
+    label: Disease
+    name: Infectious disease of abdomen
+references:
+  - https://go.drugbank.com/drugs/DB09060#mechanism-of-action

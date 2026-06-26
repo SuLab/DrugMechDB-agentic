@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB00471_MESH_D065631_1
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: Montelukast
+  drug_mesh: MESH:C093875
+  drugbank: DB:DB00471
+links:
+  - key: decreases activity of
+    source: MESH:C093875
+    target: UniProt:Q9Y271
+  - key: positively correlated with
+    source: UniProt:Q9Y271
+    target: MESH:D017998
+  - key: positively regulates
+    source: MESH:D017998
+    target: GO:0070254
+  - key: positively regulates
+    source: MESH:D017998
+    target: GO:0043117
+  - key: positively regulates
+    source: MESH:D017998
+    target: GO:0006954
+  - key: manifestation of
+    source: GO:0070254
+    target: MESH:D065631
+  - key: manifestation of
+    source: GO:0043117
+    target: MESH:D065631
+  - key: manifestation of
+    source: GO:0006954
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: MESH:C093875
+    label: Drug
+    name: Montelukast
+  - id: UniProt:Q9Y271
+    label: Protein
+    name: Cysteinyl leukotriene receptor 1
+  - id: MESH:D017998
+    label: ChemicalSubstance
+    name: Leukotriene D4
+  - id: GO:0070254
+    label: BiologicalProcess
+    name: Mucus secretion
+  - id: GO:0043117
+    label: BiologicalProcess
+    name: Positive regulation of vascular permeability
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB00471#BE0000705
+  - https://en.wikipedia.org/wiki/Montelukast#Pharmacology

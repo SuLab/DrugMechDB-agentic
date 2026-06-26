@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB00200_MESH_D014806_1
+  disease: Cobalamin deficiency
+  disease_mesh: MESH:D014806
+  drug: hydroxocobalamin
+  drug_mesh: MESH:D006879
+  drugbank: DB:DB00200
+links:
+  - key: increases abundance of
+    source: MESH:D006879
+    target: CHEBI:30411
+  - key: negatively correlated with
+    source: CHEBI:30411
+    target: MESH:D014806
+multigraph: true
+nodes:
+  - id: MESH:D006879
+    label: Drug
+    name: hydroxocobalamin
+  - id: CHEBI:30411
+    label: ChemicalSubstance
+    name: cobalamin
+  - id: MESH:D014806
+    label: Disease
+    name: Cobalamin deficiency
+references:
+  - https://go.drugbank.com/drugs/DB00200
+  - https://en.wikipedia.org/wiki/Hydroxocobalamin#Mechanism_of_action

@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00530_MESH_D002289_1
+  disease: Non-small cell lung cancer
+  disease_mesh: MESH:D002289
+  drug: erlotinib
+  drug_mesh: MESH:D000069347
+  drugbank: DB:DB00530
+links:
+  - key: decreases activity of
+    source: MESH:D000069347
+    target: UniProt:P00533
+  - key: positively regulates
+    source: UniProt:P00533
+    target: reactome:R-HSA-5673001
+  - key: positively regulates
+    source: UniProt:P00533
+    target: reactome:R-HSA-109704
+  - key: positively regulates
+    source: reactome:R-HSA-5673001
+    target: GO:0008283
+  - key: positively regulates
+    source: reactome:R-HSA-109704
+    target: GO:0008283
+  - key: causes
+    source: GO:0008283
+    target: MESH:D002289
+multigraph: true
+nodes:
+  - id: MESH:D000069347
+    label: Drug
+    name: erlotinib
+  - id: UniProt:P00533
+    label: Protein
+    name: Epidermal growth factor receptor
+  - id: reactome:R-HSA-5673001
+    label: Pathway
+    name: RAF/MAP kinase cascade
+  - id: reactome:R-HSA-109704
+    label: Pathway
+    name: PI3K Cascade
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell proliferation
+  - id: MESH:D002289
+    label: Disease
+    name: Non-small cell lung cancer
+references:
+  - https://go.drugbank.com/drugs/DB00530#BE0000767
+  - https://pubmed.ncbi.nlm.nih.gov/30975211/

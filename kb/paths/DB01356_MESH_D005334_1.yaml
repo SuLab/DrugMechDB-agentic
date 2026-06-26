@@ -1,0 +1,24 @@
+comment: Lithium can cause side effects such as fever.
+directed: true
+graph:
+  _id: DB01356_MESH_D005334_1
+  disease: Fever
+  disease_mesh: MESH:D005334
+  drug: lithium carbonate
+  drug_mesh: MESH:D016651
+  drugbank: DB:DB01356
+links:
+  - key: causes
+    source: MESH:D016651
+    target: MESH:D005334
+multigraph: true
+nodes:
+  - id: MESH:D016651
+    label: Drug
+    name: Lithium carbonate
+  - id: MESH:D005334
+    label: Disease
+    name: Fever
+references:
+  - https://en.wikipedia.org/wiki/Lithium_toxicity
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5164879/

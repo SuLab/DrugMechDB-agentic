@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00108_MESH_D003424_1
+  disease: Crohn's disease
+  disease_mesh: MESH:D003424
+  drug: Natalizumab
+  drug_mesh: MESH:D000069442
+  drugbank: DB:DB00108
+links:
+  - key: molecularly interacts with
+    source: MESH:D000069442
+    target: UniProt:P13612
+  - key: participates in
+    source: UniProt:P13612
+    target: GO:0007159
+  - key: regulates
+    source: GO:0007159
+    target: GO:0050900
+  - key: regulates
+    source: GO:0050900
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D003424
+multigraph: true
+nodes:
+  - id: MESH:D000069442
+    label: Drug
+    name: Natalizumab
+  - id: UniProt:P13612
+    label: Protein
+    name: Integrin alpha-4
+  - id: GO:0007159
+    label: BiologicalProcess
+    name: leukocyte cell-cell adhesion
+  - id: GO:0050900
+    label: BiologicalProcess
+    name: leukocyte migration
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammation
+  - id: MESH:D003424
+    label: Disease
+    name: Crohn's disease
+references:
+  - https://go.drugbank.com/drugs/DB00108#BE0000590
+  - https://en.wikipedia.org/wiki/Natalizumab
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2721358/

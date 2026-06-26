@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00718_MESH_D019694_1
+  disease: Hepatitis B, Chronic
+  disease_mesh: MESH:D019694
+  drug: adefovir dipivoxil
+  drug_mesh: MESH:C106812
+  drugbank: DB:DB00718
+links:
+  - key: has metabolite
+    source: MESH:C106812
+    target: MESH:C053001
+  - key: decreases activity of
+    source: MESH:C053001
+    target: UniProt:P24024
+  - key: positively regulates
+    source: UniProt:P24024
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:10407
+  - key: causes
+    source: taxonomy:10407
+    target: MESH:D019694
+multigraph: true
+nodes:
+  - id: MESH:C106812
+    label: Drug
+    name: adefovir dipivoxil
+  - id: MESH:C053001
+    label: ChemicalSubstance
+    name: adefovir
+  - id: UniProt:P24024
+    label: Protein
+    name: Protein P
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:10407
+    label: OrganismTaxon
+    name: Hepatitis B virus
+  - id: MESH:D019694
+    label: Disease
+    name: Hepatitis B, Chronic
+references:
+  - https://go.drugbank.com/drugs/DB00718#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P24024#function
+  - https://en.wikipedia.org/wiki/Hepatitis_B

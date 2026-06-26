@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB00809_MESH_D015878_1
+  disease: Mydriasis
+  disease_mesh: MESH:D015878
+  drug: Tropicamide
+  drug_mesh: MESH:D014331
+  drugbank: DB:DB00809
+links:
+  - key: decreases activity of
+    source: MESH:D014331
+    target: UniProt:P20309
+  - key: positively regulates
+    source: UniProt:P20309
+    target: GO:0090075
+  - key: positively correlated with
+    source: GO:0090075
+    target: MESH:D015878
+multigraph: true
+nodes:
+  - id: MESH:D014331
+    label: Drug
+    name: Tropicamide
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:0090075
+    label: BiologicalProcess
+    name: relaxation of muscle
+  - id: MESH:D015878
+    label: Disease
+    name: Mydriasis
+references:
+  - https://go.drugbank.com/drugs/DB00809#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P20309#function
+  - https://en.wikipedia.org/wiki/Mydriasis

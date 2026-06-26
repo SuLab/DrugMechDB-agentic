@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB00146_MESH_D017674_1
+  disease: Hypophosphatemia
+  disease_mesh: MESH:D017674
+  drug: calcifediol
+  drug_mesh: MESH:D002112
+  drugbank: DB:DB00146
+links:
+  - key: produces
+    source: MESH:D002112
+    target: MESH:D002117
+  - key: increases activity of
+    source: MESH:D002117
+    target: UniProt:P11473
+  - key: positively regulates
+    source: UniProt:P11473
+    target: GO:0004498
+  - key: positively correlated with
+    source: GO:0004498
+    target: GO:0055074
+  - key: positively correlated with
+    source: GO:0055074
+    target: GO:0055062
+  - key: negatively correlated with
+    source: GO:0055062
+    target: MESH:D017674
+multigraph: true
+nodes:
+  - alt_names:
+      - Calcidiol
+      - 25-Hydroxyvitamin D3
+      - 25-hydroxycholecalciferol
+    id: MESH:D002112
+    label: Drug
+    name: calcifediol
+  - id: MESH:D002117
+    label: ChemicalSubstance
+    name: calcitriol
+  - id: UniProt:P11473
+    label: Protein
+    name: Vitamin D3 receptor
+  - id: GO:0004498
+    label: MolecularActivity
+    name: calcidiol 1-monooxygenase activity
+  - id: GO:0055074
+    label: BiologicalProcess
+    name: calcium ion homeostasis
+  - id: GO:0055062
+    label: BiologicalProcess
+    name: phosphate ion homeostasis
+  - id: MESH:D017674
+    label: Disease
+    name: Hypophosphatemia
+references:
+  - https://en.wikipedia.org/wiki/Calcifediol
+  - https://en.wikipedia.org/wiki/Calcitriol#Mechanism_of_action
+  - https://go.drugbank.com/drugs/DB00146
+  - https://en.wikipedia.org/wiki/Hypophosphatemia#Causes

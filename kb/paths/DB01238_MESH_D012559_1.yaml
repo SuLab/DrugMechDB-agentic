@@ -1,0 +1,80 @@
+comment: The antipsychotic action of aripiprazole is likely due to the agonism of
+  D2 and 5-HT1A receptors though the exact mechanism has not been defined.
+directed: true
+graph:
+  _id: DB01238_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: aripiprazole
+  drug_mesh: MESH:D000068180
+  drugbank: DB:DB01238
+links:
+  - key: regulates
+    source: MESH:D000068180
+    target: UniProt:P08908
+  - key: regulates
+    source: MESH:D000068180
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:D000068180
+    target: UniProt:P28223
+  - key: positively correlated with
+    source: UniProt:P08908
+    target: MESH:D012701
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P28223
+    target: HP:0000716
+  - key: positively correlated with
+    source: MESH:D012701
+    target: GO:0060096
+  - key: positively correlated with
+    source: MESH:D004298
+    target: GO:0061527
+  - key: manifestation of
+    source: HP:0000716
+    target: MESH:D012559
+  - key: disrupted by
+    source: GO:0060096
+    target: MESH:D012559
+  - key: disrupted by
+    source: GO:0061527
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:D000068180
+    label: Drug
+    name: Aripiprazole
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: UniProt:P08908
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1A
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: HP:0000716
+    label: PhenotypicFeature
+    name: Depressivity
+  - id: GO:0060096
+    label: BiologicalProcess
+    name: Serotonin secretion, neurotransmission
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB01238
+  - https://en.wikipedia.org/wiki/Aripiprazole#Pharmacology
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1112/

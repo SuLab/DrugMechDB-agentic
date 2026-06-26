@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00406_MESH_D002181_1
+  disease: Candidal vulvovaginitis
+  disease_mesh: MESH:D002181
+  drug: gentian violet
+  drug_mesh: MESH:D005840
+  drugbank: DB:DB00406
+links:
+  - key: disrupts
+    source: MESH:D005840
+    target: CHEBI:16991
+  - key: in taxon
+    source: CHEBI:16991
+    target: taxonomy:237561
+  - key: causes
+    source: taxonomy:237561
+    target: MESH:D002181
+multigraph: true
+nodes:
+  - id: MESH:D005840
+    label: Drug
+    name: gentian violet
+  - id: CHEBI:16991
+    label: ChemicalSubstance
+    name: deoxyribonucleic acid
+  - id: taxonomy:237561
+    label: OrganismTaxon
+    name: Candida albicans SC5314
+  - id: MESH:D002181
+    label: Disease
+    name: Candidal vulvovaginitis
+references:
+  - https://go.drugbank.com/drugs/DB00406
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL459265/

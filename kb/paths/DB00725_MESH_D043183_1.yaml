@@ -1,0 +1,60 @@
+directed: true
+graph:
+  _id: DB00725_MESH_D043183_1
+  disease: Irritable bowel syndrome
+  disease_mesh: MESH:D043183
+  drug: methylhomatropine
+  drug_mesh: MESH:C056244
+  drugbank: DB:DB00725
+links:
+  - key: negatively regulates
+    source: MESH:C056244
+    target: UniProt:P08172
+  - key: negatively regulates
+    source: MESH:C056244
+    target: UniProt:P20309
+  - key: participates in
+    source: UniProt:P08172
+    target: GO:0007197
+  - key: participates in
+    source: UniProt:P20309
+    target: GO:0007197
+  - key: positively correlated with
+    source: GO:0007197
+    target: GO:0006939
+  - key: positively correlated with
+    source: GO:0006939
+    target: HP:0032155
+  - key: manifestation of
+    source: HP:0032155
+    target: MESH:D043183
+multigraph: true
+nodes:
+  - alt_names:
+      - Homatropine methylbromide
+    id: MESH:C056244
+    label: Drug
+    name: methylhomatropine
+  - id: UniProt:P08172
+    label: Protein
+    name: Muscarinic acetylcholine receptor M2
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:0007197
+    label: BiologicalProcess
+    name: adenylate cyclase-inhibiting G protein-coupled acetylcholine receptor signaling
+      pathway
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: HP:0032155
+    label: PhenotypicFeature
+    name: Abdominal cramps
+  - id: MESH:D043183
+    label: Disease
+    name: Irritable bowel syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00725
+  - https://en.wikipedia.org/wiki/Homatropine_methylbromide
+  - https://en.wikipedia.org/wiki/Irritable_bowel_syndrome#Medication

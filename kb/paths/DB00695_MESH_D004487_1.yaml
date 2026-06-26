@@ -1,0 +1,69 @@
+directed: true
+graph:
+  _id: DB00695_MESH_D004487_1
+  disease: Edema
+  disease_mesh: MESH:D004487
+  drug: furosemide
+  drug_mesh: MESH:D005665
+  drugbank: DB:DB00695
+links:
+  - key: negatively regulates
+    source: MESH:D005665
+    target: UniProt:Q13621
+  - key: located in
+    source: UniProt:Q13621
+    target: UBERON:0001291
+  - key: positively regulates
+    source: UniProt:Q13621
+    target: GO:0008511
+  - key: negatively correlated with
+    source: GO:0008511
+    target: GO:0036359
+  - key: negatively correlated with
+    source: GO:0008511
+    target: GO:0035812
+  - key: negatively correlated with
+    source: GO:0036359
+    target: GO:0003092
+  - key: negatively correlated with
+    source: GO:0035812
+    target: GO:0003092
+  - key: positively correlated with
+    source: UBERON:0001291
+    target: GO:0003092
+  - key: contributes to
+    source: GO:0003092
+    target: MESH:D004487
+multigraph: true
+nodes:
+  - id: MESH:D005665
+    label: Drug
+    name: furosemide
+  - id: UniProt:Q13621
+    label: Protein
+    name: Solute carrier family 12 member 1
+  - id: UBERON:0001291
+    label: GrossAnatomicalStructure
+    name: thick ascending limb of loop of Henle
+  - id: GO:0008511
+    label: MolecularActivity
+    name: sodium:potassium:chloride symporter activity
+  - id: GO:0035812
+    label: BiologicalProcess
+    name: renal sodium excretion
+  - id: GO:0036359
+    label: BiologicalProcess
+    name: renal potassium excretion
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: renal water retention
+  - id: MESH:D004487
+    label: Disease
+    name: Edema
+references:
+  - https://go.drugbank.com/drugs/DB00695
+  - https://pubchem.ncbi.nlm.nih.gov/compound/3440
+  - https://en.wikipedia.org/wiki/Furosemide
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL35/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2014966/
+  - https://pubmed.ncbi.nlm.nih.gov/7230610/

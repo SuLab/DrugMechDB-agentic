@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB12863_MESH_D055371_1
+  disease: Acute lung injury
+  disease_mesh: MESH:D055371
+  drug: sivelestat
+  drug_mesh: MESH:C069195
+  drugbank: DB:DB12863
+links:
+  - key: decreases activity of
+    source: MESH:C069195
+    target: UniProt:P08246
+  - key: positively regulates
+    source: UniProt:P08246
+    target: GO:0002438
+  - key: positively regulates
+    source: UniProt:P08246
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0002438
+    target: MESH:D055371
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D055371
+multigraph: true
+nodes:
+  - id: MESH:C069195
+    label: Drug
+    name: Sivelestat
+  - id: UniProt:P08246
+    label: Protein
+    name: Neutrophil elastase
+  - id: GO:0002438
+    label: BiologicalProcess
+    name: Acute inflammatory response to antigenic stimulus
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D055371
+    label: Disease
+    name: Acute lung injury
+references:
+  - https://en.wikipedia.org/wiki/Sivelestat
+  - https://go.drugbank.com/drugs/DB12863

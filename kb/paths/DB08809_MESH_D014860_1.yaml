@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB08809_MESH_D014860_1
+  disease: Warts
+  disease_mesh: MESH:D014860
+  drug: Dichloroacetic Acid
+  drug_mesh: MESH:D003999
+  drugbank: DB:DB08809
+links:
+  - key: positively regulates
+    source: MESH:D003999
+    target: GO:0006915
+  - key: occurs in
+    source: GO:0006915
+    target: taxonomy:10566
+  - key: causes
+    source: taxonomy:10566
+    target: MESH:D014860
+multigraph: true
+nodes:
+  - id: MESH:D003999
+    label: Drug
+    name: Dichloroacetic Acid
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: taxonomy:10566
+    label: OrganismTaxon
+    name: Human papillomavirus
+  - id: MESH:D014860
+    label: Disease
+    name: Warts
+references:
+  - https://go.drugbank.com/drugs/DB08809#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Dichloroacetic_acid#Topical_chemoablation
+  - https://en.wikipedia.org/wiki/Wart#Treatment

@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00426_MESH_D006562_1
+  disease: Herpes zoster
+  disease_mesh: MESH:D006562
+  drug: famciclovir
+  drug_mesh: MESH:D000077595
+  drugbank: DB:DB00426
+links:
+  - key: has metabolite
+    source: MESH:D000077595
+    target: DB:DB00299
+  - key: negatively regulates
+    source: DB:DB00299
+    target: UniProt:P09252
+  - key: positively regulates
+    source: UniProt:P09252
+    target: GO:0039693
+  - key: in taxon
+    source: GO:0039693
+    target: taxonomy:10335
+  - key: causes
+    source: taxonomy:10335
+    target: MESH:D006562
+multigraph: true
+nodes:
+  - id: MESH:D000077595
+    label: Drug
+    name: famciclovir
+  - id: DB:DB00299
+    label: Drug
+    name: Penciclovir
+  - id: UniProt:P09252
+    label: Protein
+    name: DNA polymerase catalytic subunit
+  - id: GO:0039693
+    label: BiologicalProcess
+    name: viral DNA genome replication
+  - id: taxonomy:10335
+    label: OrganismTaxon
+    name: Human alphaherpesvirus 3
+  - id: MESH:D006562
+    label: Disease
+    name: Herpes zoster
+references:
+  - https://go.drugbank.com/drugs/DB00426

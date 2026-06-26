@@ -1,0 +1,61 @@
+comment: Betahistine was first approved by the FDA in the 1970s but withdrawn within
+  approximately 5 years due to a lack of evidence supporting its efficacy.
+directed: true
+graph:
+  _id: DB06698_MESH_D008575_1
+  disease: Meniere Disease
+  disease_mesh: MESH:D008575
+  drug: betahistine
+  drug_mesh: MESH:D001621
+  drugbank: DB:DB06698
+links:
+  - key: increases activity of
+    source: MESH:D001621
+    target: UniProt:P35367
+  - key: positively correlated with
+    source: UniProt:P35367
+    target: MESH:D006632
+  - key: contributes to
+    source: MESH:D006632
+    target: GO:0042311
+  - key: contributes to
+    source: MESH:D006632
+    target: GO:0043117
+  - key: decreases activity of
+    source: MESH:D001621
+    target: UniProt:Q9Y5N1
+  - key: decreases abundance of
+    source: UniProt:Q9Y5N1
+    target: MESH:D006632
+  - key: treats
+    source: GO:0042311
+    target: MESH:D008575
+  - key: treats
+    source: GO:0043117
+    target: MESH:D008575
+multigraph: true
+nodes:
+  - id: MESH:D001621
+    label: Drug
+    name: Betahistine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: MESH:D006632
+    label: ChemicalSubstance
+    name: Histamine
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: Vasodilation
+  - id: GO:0043117
+    label: BiologicalProcess
+    name: Positive regulation of vascular permeability
+  - id: UniProt:Q9Y5N1
+    label: Protein
+    name: Histamine H3 receptor
+  - id: MESH:D008575
+    label: Disease
+    name: Meniere Disease
+references:
+  - https://en.wikipedia.org/wiki/Histamine_H3_receptor
+  - https://go.drugbank.com/drugs/DB06698#BE0000442

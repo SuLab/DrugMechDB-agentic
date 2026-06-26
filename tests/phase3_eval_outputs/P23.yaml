@@ -1,0 +1,74 @@
+directed: true
+multigraph: true
+graph:
+  _id: P23_DB01611_MESH_D008180
+  drug: Hydroxychloroquine
+  drug_mesh: MESH:D006886
+  drugbank: DB:DB01611
+  disease: Systemic Lupus Erythematosus
+  disease_mesh: MESH:D008180
+nodes:
+  - id: MESH:D006886
+    name: Hydroxychloroquine
+    label: Drug
+  - id: UniProt:Q9NR96
+    name: Toll-like receptor 9
+    label: Protein
+  - id: GO:0032606
+    name: type I interferon production
+    label: BiologicalProcess
+  - id: MESH:D008180
+    name: Systemic Lupus Erythematosus
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D006886
+    target: UniProt:Q9NR96
+    evidence:
+      - reference: PMID:24342772
+        snippet: "Our data also confirm an earlier report that this same mechanism may explain inhibition of TLR7 and 9 signaling by hydroxychloroquine"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Lamphier et al. confirm that hydroxychloroquine inhibits TLR7 and TLR9 signaling via accumulation in intracellular acidic compartments, the same mechanism as the novel small-molecule inhibitors studied."
+      - reference: PMID:30846987
+        snippet: "clinically-relevant HCQ concentrations partially inhibit the pDC response to TLR9"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Gardet et al. show that blood HCQ levels in CLE patients correlate with reduced ex vivo pDC response to the TLR9 agonist CpG-A, confirming HCQ decreases TLR9 signaling activity in human clinical samples."
+      - reference: PMID:21448012
+        snippet: "antimalarials also appear to have an impact through inhibition of intracellular toll-like receptors (TLRs), particularly TLR9"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Katz and Russell review confirm that antimalarials including hydroxychloroquine act by inhibiting endosomal/intracellular TLRs, particularly TLR9."
+  - key: positively regulates
+    source: UniProt:Q9NR96
+    target: GO:0032606
+    evidence:
+      - reference: PMID:30846987
+        snippet: "PDCs were the only producers of IFNα in response to CpG-A, R848, and ssRNA stimulation in PBMC cultures."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "CpG-A is a TLR9 agonist; that pDCs are the sole IFNα producers in response to CpG-A demonstrates that TLR9 signaling drives type I interferon (IFNα) production."
+      - reference: PMID:38914753
+        snippet: "IFN-I signaling is increased in pediatric SLE, largely due to the presence of plasmacytoid dendritic cells and pathways such as cyclic GMP-AMP synthase-stimulator of interferon genes-TANK-binding kinase 1 and Toll-like receptor (TLR)4/TLR9."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Zhou and Song's review identifies TLR9 as one of the primary pathways driving increased type I interferon signaling/production in SLE patients."
+  - key: contributes to
+    source: GO:0032606
+    target: MESH:D008180
+    evidence:
+      - reference: PMID:30210502
+        snippet: "Aberrant and persistent production of interferon-α (IFN-α) by plasmacytoid dendritic cells (pDCs) is known to play a key role in the pathogenesis of systemic lupus erythematosus (SLE)."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Sakata et al. establish that aberrant type I interferon (IFNα) production is a key driver of SLE pathogenesis, confirming that the type I interferon production process contributes to SLE."
+      - reference: PMID:26953155
+        snippet: "nucleic acid-sensing Toll-like receptors (TLRs), and type I interferon can affect B-cell survival and decrease their threshold for activation"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Singh et al. confirm that type I interferon, produced downstream of nucleic-acid-sensing TLRs, contributes to aberrant B-cell activation that underlies SLE pathogenesis."
+references:
+  - https://go.drugbank.com/drugs/DB01611#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q9NR96#function
+  - https://www.quickgo.org/term/GO:0032606

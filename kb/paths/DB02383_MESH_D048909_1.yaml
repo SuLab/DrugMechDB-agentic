@@ -1,0 +1,48 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB02383_MESH_D048909_1
+  disease: Diabetic complication
+  disease_mesh: MESH:D048909
+  drug: Tolrestat
+  drug_mesh: MESH:C040550
+  drugbank: DB:DB02383
+links:
+  - key: decreases activity of
+    source: MESH:C040550
+    target: UniProt:P15121
+  - key: increases abundance of
+    source: UniProt:P15121
+    target: MESH:D013012
+  - key: causes
+    source: MESH:D013012
+    target: GO:0006970
+  - key: positively correlated with
+    source: GO:0006970
+    target: HP:0000518
+  - key: manifestation of
+    source: HP:0000518
+    target: MESH:D048909
+multigraph: true
+nodes:
+  - id: MESH:C040550
+    label: Drug
+    name: Tolrestat
+  - id: UniProt:P15121
+    label: Protein
+    name: Aldose reductase
+  - id: MESH:D013012
+    label: ChemicalSubstance
+    name: Sorbitol
+  - id: GO:0006970
+    label: BiologicalProcess
+    name: Response to osmotic stress
+  - id: HP:0000518
+    label: PhenotypicFeature
+    name: Cataract
+  - id: MESH:D048909
+    label: Disease
+    name: Diabetic complication
+references:
+  - https://go.drugbank.com/drugs/DB02383
+  - https://en.wikipedia.org/wiki/Aldose_reductase_inhibitor

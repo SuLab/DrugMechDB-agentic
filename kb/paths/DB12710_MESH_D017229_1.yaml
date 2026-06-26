@@ -1,0 +1,24 @@
+comment: No evidence found to support perazine treatment for enterobiasis.
+directed: true
+graph:
+  _id: DB12710_MESH_D017229_1
+  disease: Enterobiasis
+  disease_mesh: MESH:D017229
+  drug: perazine
+  drug_mesh: MESH:D010464
+  drugbank: DB:DB12710
+links:
+  - key: treats
+    source: MESH:D010464
+    target: MESH:D017229
+multigraph: true
+nodes:
+  - id: MESH:D010464
+    label: Drug
+    name: Perazine
+  - id: MESH:D017229
+    label: Disease
+    name: Enterobiasis
+references:
+  - https://drugs.ncats.io/drug/8915147A2B
+  - https://go.drugbank.com/drugs/DB12710

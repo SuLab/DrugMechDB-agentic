@@ -1,0 +1,43 @@
+comment: Metronidazole is a nitroimidazole which is only effective against anaerobic
+  bacterial infections.
+directed: true
+graph:
+  _id: DB00916_MESH_D005873_1
+  disease: Giardiasis
+  disease_mesh: MESH:D005873
+  drug: metronidazole
+  drug_mesh: MESH:D008795
+  drugbank: DB:DB00916
+links:
+  - key: decreases activity of
+    source: MESH:D008795
+    target: MESH:D004247
+  - key: positively regulates
+    source: MESH:D004247
+    target: GO:0090304
+  - key: occurs in
+    source: GO:0090304
+    target: taxonomy:5741
+  - key: causes
+    source: taxonomy:5741
+    target: MESH:D005873
+multigraph: true
+nodes:
+  - id: MESH:D008795
+    label: Drug
+    name: metronidazole
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0090304
+    label: BiologicalProcess
+    name: nucleic acid metabolic process
+  - id: taxonomy:5741
+    label: OrganismTaxon
+    name: Giardia intestinalis
+  - id: MESH:D005873
+    label: Disease
+    name: Giardiasis
+references:
+  - https://go.drugbank.com/drugs/DB00916#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Giardiasis

@@ -1,0 +1,26 @@
+comment: Progesterone is prescribed in combination with estradiol as a hormonemtherapy
+  during menopause to prevent menopausal flushing and in this case estradiol is the
+  acive drug, while progesterone is added for the protection of the endometrium. Please
+  refer to this curation DB00783_MESH_D019584_1 for MoA.
+directed: true
+graph:
+  _id: DB00396_MESH_D019584_1
+  disease: Menopausal flushing
+  disease_mesh: MESH:D019584
+  drug: Progesterone
+  drug_mesh: MESH:D011374
+  drugbank: DB:DB00396
+links:
+  - key: treats
+    source: DB:DB00396
+    target: MESH:D019584
+multigraph: true
+nodes:
+  - id: DB:DB00396
+    label: Drug
+    name: Progesterone
+  - id: MESH:D019584
+    label: Disease
+    name: Menopausal flushing
+references:
+  - https://go.drugbank.com/drugs/DB00396#BE0000557

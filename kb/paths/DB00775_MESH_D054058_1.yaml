@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00775_MESH_D054058_1
+  disease: Acute Coronary Syndrome
+  disease_mesh: MESH:D054058
+  drug: Tirofiban
+  drug_mesh: MESH:D000077466
+  drugbank: DB:DB00775
+links:
+  - key: decreases activity of
+    source: MESH:D000077466
+    target: UniProt:P08514
+  - key: decreases activity of
+    source: MESH:D000077466
+    target: UniProt:P05106
+  - key: positively regulates
+    source: UniProt:P08514
+    target: GO:0070527
+  - key: positively regulates
+    source: UniProt:P05106
+    target: GO:0070527
+  - key: positively correlated with
+    source: GO:0070527
+    target: HP:0004420
+  - key: positively correlated with
+    source: HP:0004420
+    target: MESH:D054058
+multigraph: true
+nodes:
+  - id: MESH:D000077466
+    label: Drug
+    name: Tirofiban
+  - id: UniProt:P08514
+    label: Protein
+    name: Integrin alpha-IIb
+  - id: UniProt:P05106
+    label: Protein
+    name: Integrin beta-3
+  - id: GO:0070527
+    label: BiologicalProcess
+    name: platelet aggregation
+  - id: HP:0004420
+    label: PhenotypicFeature
+    name: Arterial thrombosis
+  - id: MESH:D054058
+    label: Disease
+    name: Acute Coronary Syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00775#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P08514#function
+  - https://www.uniprot.org/uniprot/P05106#function
+  - https://en.wikipedia.org/wiki/Acute_coronary_syndrome

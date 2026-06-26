@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01059_MESH_D007710_1
+  disease: Klebsiella Infections
+  disease_mesh: MESH:D007710
+  drug: norfloxacin
+  drug_mesh: MESH:D009643
+  drugbank: DB:DB01059
+links:
+  - key: decreases activity of
+    source: MESH:D009643
+    target: UniProt:W1DID1
+  - key: decreases activity of
+    source: MESH:D009643
+    target: UniProt:W1DEE8
+  - key: positively regulates
+    source: UniProt:W1DID1
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:W1DEE8
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:570
+  - key: causes
+    source: taxonomy:570
+    target: MESH:D007710
+multigraph: true
+nodes:
+  - id: MESH:D009643
+    label: Drug
+    name: norfloxacin
+  - id: UniProt:W1DID1
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:W1DEE8
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:570
+    label: OrganismTaxon
+    name: Klebsiella
+  - id: MESH:D007710
+    label: Disease
+    name: Klebsiella Infections
+references:
+  - https://go.drugbank.com/drugs/DB01059#mechanism-of-action
+  - https://www.uniprot.org/uniprot/W1DID1#function
+  - https://www.uniprot.org/uniprot/W1DEE8#function
+  - https://en.wikipedia.org/wiki/Klebsiella#In_humans

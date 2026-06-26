@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00319_MESH_D016868_1
+  disease: Serratia Infections
+  disease_mesh: MESH:D016868
+  drug: piperacillin
+  drug_mesh: MESH:D010878
+  drugbank: DB:DB00319
+links:
+  - key: negatively regulates
+    source: MESH:D010878
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:613
+  - key: causes
+    source: taxonomy:613
+    target: MESH:D016868
+multigraph: true
+nodes:
+  - id: MESH:D010878
+    label: Drug
+    name: piperacillin
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding protein transpeptidase domain
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:613
+    label: OrganismTaxon
+    name: Serratia sp.
+  - alt_names:
+      - Bacterial infection due to Serratia
+    id: MESH:D016868
+    label: Disease
+    name: Serratia Infections
+references:
+  - https://go.drugbank.com/drugs/DB00319

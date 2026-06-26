@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00936_MESH_D014008_1
+  disease: Tinea pedis
+  disease_mesh: MESH:D014008
+  drug: salicylic acid
+  drug_mesh: MESH:D020156
+  drugbank: DB:DB00936
+links:
+  - key: decreases activity of
+    source: MESH:D020156
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:D020156
+    target: UniProt:P35354
+  - key: positively regulates
+    source: UniProt:P23219
+    target: GO:0001516
+  - key: positively regulates
+    source: UniProt:P35354
+    target: GO:0001516
+  - key: positively correlated with
+    source: GO:0001516
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0012531
+  - key: positively correlated with
+    source: HP:0012531
+    target: MESH:D014008
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:D012980
+      - MESH:C015075
+    id: MESH:D020156
+    label: Drug
+    name: salicylic acid
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: GO:0001516
+    label: BiologicalProcess
+    name: prostaglandin biosynthetic process
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0012531
+    label: PhenotypicFeature
+    name: Pain
+  - id: MESH:D014008
+    label: Disease
+    name: Tinea pedis
+references:
+  - https://go.drugbank.com/drugs/DB00936

@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00493_MESH_D020814_1
+  disease: Meningitis, Escherichia coli
+  disease_mesh: MESH:D020814
+  drug: cefotaxime
+  drug_mesh: MESH:D002439
+  drugbank: DB:DB00493
+links:
+  - key: decreases activity of
+    source: MESH:D002439
+    target: InterPro:IPR001460
+  - key: participates in
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D020814
+multigraph: true
+nodes:
+  - id: MESH:D002439
+    label: Drug
+    name: cefotaxime
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D020814
+    label: Disease
+    name: Meningitis, Escherichia coli
+references:
+  - https://go.drugbank.com/drugs/DB00493#mechanism-of-action
+  - https://www.ebi.ac.uk/interpro/entry/InterPro/IPR001460/

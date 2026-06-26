@@ -1,0 +1,153 @@
+comment: The action of the drug on 5-HT2 receptors is of an inverse agonist (https://en.wikipedia.org/wiki/Inverse_agonist).
+  The dopamine neurons are located in the mesolimbic dopaminergic system (BTO:0005591),
+  which is a component pathway of the medial forebrain bundle (UBERON:0001910)(https://en.wikipedia.org/wiki/Medial_forebrain_bundle#Anatomy).
+directed: true
+graph:
+  _id: DB08922_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: perospirone
+  drug_mesh: MESH:C065533
+  drugbank: DB:DB08922
+links:
+  - key: increases activity of
+    source: MESH:C065533
+    target: UniProt:P08908
+  - key: decreases activity of
+    source: MESH:C065533
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:C065533
+    target: UniProt:P28223
+  - key: negatively correlated with
+    source: UniProt:P08908
+    target: HP:0000739
+  - key: positively regulates
+    source: UniProt:P28223
+    target: GO:0014046
+  - key: positively regulates
+    source: UniProt:P28223
+    target: GO:0014047
+  - key: positively correlated with
+    source: GO:0014047
+    target: GO:0004952
+  - key: positively correlated with
+    source: GO:0004952
+    target: HP:0000709
+  - key: positively regulates
+    source: UniProt:P14416
+    target: GO:0014046
+  - key: increases abundance of
+    source: GO:0014046
+    target: CHEBI:18243
+  - key: located in
+    source: CHEBI:18243
+    target: UBERON:0001910
+  - key: correlated with
+    source: UBERON:0001910
+    target: HP:0000709
+  - key: positively correlated with
+    source: HP:0000709
+    target: MESH:D012559
+  - key: located in
+    source: CHEBI:18243
+    target: UBERON:0009834
+  - key: correlated with
+    source: UBERON:0009834
+    target: HP:0100543
+  - key: correlated with
+    source: UBERON:0009834
+    target: HP:0030213
+  - key: correlated with
+    source: UBERON:0009834
+    target: HP:0012154
+  - key: correlated with
+    source: UBERON:0009834
+    target: HP:0002465
+  - key: correlated with
+    source: UBERON:0009834
+    target: HP:0000741
+  - key: manifestation of
+    source: HP:0100543
+    target: MESH:D012559
+  - key: manifestation of
+    source: HP:0030213
+    target: MESH:D012559
+  - key: manifestation of
+    source: HP:0012154
+    target: MESH:D012559
+  - key: manifestation of
+    source: HP:0002465
+    target: MESH:D012559
+  - key: manifestation of
+    source: HP:0000741
+    target: MESH:D012559
+  - key: manifestation of
+    source: HP:0000739
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:C065533
+    label: Drug
+    name: perospirone
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P08908
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1A
+  - id: GO:0014046
+    label: BiologicalProcess
+    name: dopamine secretion
+  - id: GO:0014047
+    label: BiologicalProcess
+    name: glutamate secretion
+  - id: GO:0004952
+    label: MolecularActivity
+    name: dopamine neurotransmitter receptor activity
+  - id: CHEBI:18243
+    label: ChemicalSubstance
+    name: dopamine
+  - id: UBERON:0009834
+    label: GrossAnatomicalStructure
+    name: dorsolateral prefrontal cortex
+  - id: UBERON:0001910
+    label: GrossAnatomicalStructure
+    name: medial forebrain bundle
+  - id: HP:0100543
+    label: PhenotypicFeature
+    name: Cognitive impairment
+  - id: HP:0030213
+    label: PhenotypicFeature
+    name: Emotional blunting
+  - id: HP:0012154
+    label: PhenotypicFeature
+    name: Anhedonia
+  - id: HP:0002465
+    label: PhenotypicFeature
+    name: Poor speech
+  - id: HP:0000741
+    label: PhenotypicFeature
+    name: Apathy
+  - id: HP:0000709
+    label: PhenotypicFeature
+    name: Psychosis
+  - id: HP:0000739
+    label: PhenotypicFeature
+    name: Anxiety
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB08922#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Antipsychotic#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Mesolimbic_pathway#Relation_to_neurological_and_psychological_disorders
+  - https://en.wikipedia.org/wiki/Schizophrenia#Signs_and_symptoms
+  - https://en.wikipedia.org/wiki/Dopaminergic_pathways#Pathways
+  - https://en.wikipedia.org/wiki/Mesocortical_pathway
+  - https://en.wikipedia.org/wiki/Dopamine_hypothesis_of_schizophrenia#Introduction
+  - https://en.wikipedia.org/wiki/Atypical_antipsychotic#Pharmacology
+  - https://en.wikipedia.org/wiki/5-HT1A_receptor#Function

@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB06626_MESH_D002292_1
+  disease: Carcinoma, Renal Cell
+  disease_mesh: MESH:D002292
+  drug: Axitinib
+  drug_mesh: MESH:D000077784
+  drugbank: DB:DB06626
+links:
+  - key: decreases activity of
+    source: MESH:D000077784
+    target: UniProt:P17948
+  - key: decreases activity of
+    source: MESH:D000077784
+    target: UniProt:P35968
+  - key: decreases activity of
+    source: MESH:D000077784
+    target: UniProt:P35916
+  - key: positively regulates
+    source: UniProt:P17948
+    target: GO:0001525
+  - key: positively regulates
+    source: UniProt:P35968
+    target: GO:0001525
+  - key: positively regulates
+    source: UniProt:P35916
+    target: GO:0001525
+  - key: occurs in
+    source: GO:0001525
+    target: CL:0001063
+  - key: causes
+    source: CL:0001063
+    target: MESH:D002292
+multigraph: true
+nodes:
+  - id: MESH:D000077784
+    label: Drug
+    name: Axitinib
+  - id: UniProt:P17948
+    label: Protein
+    name: Vascular endothelial growth factor receptor 1
+  - id: UniProt:P35968
+    label: Protein
+    name: Vascular endothelial growth factor receptor 2
+  - id: UniProt:P35916
+    label: Protein
+    name: Vascular endothelial growth factor receptor 3
+  - id: GO:0001525
+    label: BiologicalProcess
+    name: angiogenesis
+  - id: CL:0001063
+    label: Cell
+    name: neoplastic cell
+  - id: MESH:D002292
+    label: Disease
+    name: Carcinoma, Renal Cell
+references:
+  - https://go.drugbank.com/drugs/DB06626#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P17948#function
+  - https://www.uniprot.org/uniprot/P35968#function
+  - https://www.uniprot.org/uniprot/P35916#function
+  - https://en.wikipedia.org/wiki/Renal_cell_carcinoma

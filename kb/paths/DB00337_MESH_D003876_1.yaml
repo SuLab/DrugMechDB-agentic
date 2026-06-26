@@ -1,0 +1,63 @@
+directed: true
+graph:
+  _id: DB00337_MESH_D003876_1
+  disease: Atopic dermatitis
+  disease_mesh: MESH:D003876
+  drug: Pimecrolimus
+  drug_mesh: MESH:C117268
+  drugbank: DB:DB00337
+links:
+  - key: decreases activity of
+    source: MESH:C117268
+    target: UniProt:Q08209
+  - key: negatively regulates
+    source: MESH:C117268
+    target: GO:0043303
+  - key: positively regulates
+    source: UniProt:Q08209
+    target: GO:0032623
+  - key: positively correlated with
+    source: GO:0043303
+    target: GO:0006954
+  - key: positively regulates
+    source: GO:0032623
+    target: GO:0042110
+  - key: positively correlated with
+    source: GO:0042110
+    target: GO:0006955
+  - key: causes
+    source: GO:0006954
+    target: MESH:D003876
+  - key: positively correlated with
+    source: GO:0006955
+    target: MESH:D003876
+multigraph: true
+nodes:
+  - id: MESH:C117268
+    label: Drug
+    name: Pimecrolimus
+  - id: UniProt:Q08209
+    label: Protein
+    name: Serine/threonine-protein phosphatase 2B catalytic subunit alpha isoform
+  - id: GO:0043303
+    label: BiologicalProcess
+    name: Mast cell degranulation
+  - id: GO:0032623
+    label: BiologicalProcess
+    name: Interleukin-2 production
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: GO:0042110
+    label: BiologicalProcess
+    name: T cell activation
+  - id: GO:0006955
+    label: BiologicalProcess
+    name: Immune response
+  - id: MESH:D003876
+    label: Disease
+    name: Atopic dermatitis
+references:
+  - https://en.wikipedia.org/wiki/Pimecrolimus
+  - https://go.drugbank.com/drugs/DB00337
+  - https://en.wikipedia.org/wiki/Immunosuppressive_drug#Drugs_acting_on_immunophilins

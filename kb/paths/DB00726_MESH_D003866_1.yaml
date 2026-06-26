@@ -1,0 +1,58 @@
+comment: The mechanism of action of trimipramine is not fully clear
+directed: true
+graph:
+  _id: DB00726_MESH_D003866_1
+  disease: Depressive disorder
+  disease_mesh: MESH:D003866
+  drug: Trimipramine
+  drug_mesh: MESH:D014299
+  drugbank: DB:DB00726
+links:
+  - key: decreases activity of
+    source: MESH:D014299
+    target: UniProt:P35367
+  - key: positively regulates
+    source: MESH:D014299
+    target: GO:0042421
+  - key: positively correlated with
+    source: UniProt:P35367
+    target: MESH:D006632
+  - key: negatively regulates
+    source: MESH:D006632
+    target: GO:0030431
+  - key: positively correlated with
+    source: GO:0042421
+    target: GO:0061533
+  - key: negatively correlated with
+    source: GO:0030431
+    target: MESH:D003866
+  - key: negatively correlated with
+    source: GO:0061533
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:D014299
+    label: Drug
+    name: Trimipramine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: MESH:D006632
+    label: ChemicalSubstance
+    name: Histamine
+  - id: GO:0042421
+    label: BiologicalProcess
+    name: Norepinephrine biosynthetic proces
+  - id: GO:0030431
+    label: BiologicalProcess
+    name: Sleep
+  - id: GO:0061533
+    label: BiologicalProcess
+    name: Norepinephrine secretion, neurotransmission
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00726
+  - https://pubmed.ncbi.nlm.nih.gov/8863001/
+  - https://en.wikipedia.org/wiki/Trimipramine

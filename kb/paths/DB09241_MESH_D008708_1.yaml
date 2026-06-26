@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB09241_MESH_D008708_1
+  disease: Methemoglobinemia
+  disease_mesh: MESH:D008708
+  drug: methylthioninium chloride
+  drug_mesh: MESH:D008751
+  drugbank: DB:DB09241
+links:
+  - key: increases abundance of
+    source: MESH:D008751
+    target: MESH:C011010
+  - key: decreases abundance of
+    source: MESH:C011010
+    target: MESH:D008706
+  - key: positively correlated with
+    source: MESH:D008706
+    target: MESH:D008708
+multigraph: true
+nodes:
+  - id: MESH:D008751
+    label: Drug
+    name: Methylthioninium chloride
+  - id: MESH:C011010
+    label: ChemicalSubstance
+    name: Hydromethylthionine
+  - id: MESH:D008706
+    label: ChemicalSubstance
+    name: Methemoglobin
+  - id: MESH:D008708
+    label: Disease
+    name: Methemoglobinemia
+references:
+  - https://go.drugbank.com/drugs/DB09241
+  - https://en.wikipedia.org/wiki/Methemoglobinemia

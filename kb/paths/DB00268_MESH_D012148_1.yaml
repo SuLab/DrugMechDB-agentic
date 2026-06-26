@@ -1,0 +1,53 @@
+comment: The precise mechanism of action of ropinirole as a treatment for Restless
+  Legs Syndrome is unknown, however, it is believed to be related to its ability to
+  stimulate dopamine receptors
+directed: true
+graph:
+  _id: DB00268_MESH_D012148_1
+  disease: Restless legs
+  disease_mesh: MESH:D012148
+  drug: Ropinirole
+  drug_mesh: MESH:C046649
+  drugbank: DB:DB00268
+links:
+  - key: positively regulates
+    source: MESH:C046649
+    target: UniProt:P14416
+  - key: positively regulates
+    source: MESH:C046649
+    target: UniProt:P35462
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P35462
+    target: MESH:D004298
+  - key: participates in
+    source: MESH:D004298
+    target: GO:0061527
+  - key: disrupted by
+    source: GO:0061527
+    target: MESH:D012148
+multigraph: true
+nodes:
+  - id: MESH:C046649
+    label: Drug
+    name: Ropinirole
+  - id: UniProt:P14416
+    label: Protein
+    name: Dopamine D2 receptor
+  - id: UniProt:P35462
+    label: Protein
+    name: Dopamine D3 receptor
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D012148
+    label: Disease
+    name: Restless legs
+references:
+  - https://go.drugbank.com/drugs/DB00268
+  - https://en.wikipedia.org/wiki/Restless_legs_syndrome#Mechanism

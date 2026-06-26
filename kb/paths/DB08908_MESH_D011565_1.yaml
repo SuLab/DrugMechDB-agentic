@@ -1,0 +1,75 @@
+comment: Fumaric acid is used for the treatment of psoriasis in an ester form as dimethyl
+  fumarate. This graph was made for dimethyl fumarate. Dimethyl fumarate ia a prodrug
+  which is metabolised into the pharmacologically active monomethyl fumarate.
+directed: true
+graph:
+  _id: DB08908_MESH_D011565_1
+  disease: Psoriasis
+  disease_mesh: MESH:D011565
+  drug: Dimethyl fumarate
+  drug_mesh: MESH:D000069462
+  drugbank: DB:DB08908
+links:
+  - key: negatively regulates
+    source: DB:DB08908
+    target: GO:0038061
+  - key: positively regulates
+    source: GO:0038061
+    target: GO:0001816
+  - key: positively correlated with
+    source: GO:0001816
+    target: GO:0006954
+  - key: positively regulates
+    source: DB:DB08908
+    target: reactome:R-HSA-8932339
+  - key: increases activity of
+    source: reactome:R-HSA-8932339
+    target: UniProt:P09601
+  - key: negatively regulates
+    source: UniProt:P09601
+    target: GO:0006954
+  - key: increases activity of
+    source: DB:DB08908
+    target: UniProt:Q8TDS4
+  - key: negatively regulates
+    source: UniProt:Q8TDS4
+    target: GO:1990266
+  - key: positively correlated with
+    source: GO:1990266
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D011565
+multigraph: true
+nodes:
+  - id: DB:DB08908
+    label: Drug
+    name: Dimethyl fumarate
+  - id: GO:0038061
+    label: BiologicalProcess
+    name: NIK/NF-kappaB signaling
+  - id: GO:0001816
+    label: BiologicalProcess
+    name: Cytokine production
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: reactome:R-HSA-8932339
+    label: Pathway
+    name: ROS sensing by NFE2L2
+  - id: UniProt:P09601
+    label: Protein
+    name: Heme oxygenase 1
+  - id: UniProt:Q8TDS4
+    label: Protein
+    name: Hydroxycarboxylic acid receptor 2
+  - id: GO:1990266
+    label: BiologicalProcess
+    name: Neutrophil migration
+  - id: MESH:D011565
+    label: Disease
+    name: Psoriasis
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/27271164/
+  - https://onlinelibrary.wiley.com/doi/10.1111/exd.13548
+  - https://go.drugbank.com/drugs/DB08908

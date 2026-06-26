@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB09098_MESH_D004393_1
+  disease: Pituitary dwarfism
+  disease_mesh: MESH:D004393
+  drug: somatrem
+  drug_mesh: MESH:C447442
+  drugbank: DB:DB09098
+links:
+  - key: increases activity of
+    source: MESH:C447442
+    target: UniProt:P10912
+  - key: participates in
+    source: UniProt:P10912
+    target: GO:0060396
+  - key: increases activity of
+    source: GO:0060396
+    target: UniProt:P05019
+  - key: positively regulates
+    source: UniProt:P05019
+    target: GO:0035264
+  - key: negatively correlated with
+    source: GO:0035264
+    target: MESH:D004393
+multigraph: true
+nodes:
+  - id: MESH:C447442
+    label: Drug
+    name: Somatrem
+  - id: UniProt:P10912
+    label: Protein
+    name: Growth hormone receptor
+  - id: GO:0060396
+    label: BiologicalProcess
+    name: Growth hormone receptor signaling pathway
+  - id: UniProt:P05019
+    label: Protein
+    name: Insulin-like growth factor I
+  - id: GO:0035264
+    label: BiologicalProcess
+    name: Multicellular organism growth
+  - id: MESH:D004393
+    label: Disease
+    name: Pituitary dwarfism
+references:
+  - https://go.drugbank.com/drugs/DB09098
+  - https://en.wikipedia.org/wiki/Insulin-like_growth_factor_1

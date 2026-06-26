@@ -1,0 +1,64 @@
+comment: Pyrazinamide diffuses into active M. tuberculosis that express pyrazinamidase
+  enzyme that converts pyrazinamide to the active form pyrazinoic acid.
+directed: true
+graph:
+  _id: DB00339_MESH_D014397_1
+  disease: Pulmonary tuberculosis
+  disease_mesh: MESH:D014397
+  drug: pyrazinamide
+  drug_mesh: MESH:D011718
+  drugbank: DB:DB00339
+links:
+  - key: has metabolite
+    source: MESH:D011718
+    target: MESH:C005296
+  - key: decreases activity of
+    source: MESH:C005296
+    target: GO:0005840
+  - key: decreases activity of
+    source: MESH:C005296
+    target: InterPro:IPR003965
+  - key: positively regulates
+    source: GO:0005840
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:1773
+  - key: positively regulates
+    source: InterPro:IPR003965
+    target: GO:0006633
+  - key: in taxon
+    source: GO:0006633
+    target: taxonomy:1773
+  - key: causes
+    source: taxonomy:1773
+    target: MESH:D014397
+multigraph: true
+nodes:
+  - id: MESH:D011718
+    label: Drug
+    name: Pyrazinamide
+  - id: MESH:C005296
+    label: ChemicalSubstance
+    name: Pyrazinoic acid
+  - id: GO:0005840
+    label: CellularComponent
+    name: Ribosome
+  - id: InterPro:IPR003965
+    label: GeneFamily
+    name: Fatty acid synthase
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: taxonomy:1773
+    label: OrganismTaxon
+    name: Mycobacterium tuberculosis
+  - id: GO:0006633
+    label: BiologicalProcess
+    name: Fatty acid biosynthetic process
+  - id: MESH:D014397
+    label: Disease
+    name: Pulmonary tuberculosis
+references:
+  - https://go.drugbank.com/drugs/DB00339
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL614/

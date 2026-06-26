@@ -1,0 +1,58 @@
+comment: This drug may also affect GABA-mediated synaptic transmission as listed by
+  DrugBank (https://go.drugbank.com/drugs/DB00555#BE0000013). However, this is contentious
+  and if the drug does modulate GABA it's not known whether it is as agonist or antagonist
+  due to conflicting data (at best it would be a weak modulation seen in animal models
+  only). Note that the drug could be contraindicated for treatment of seizures as
+  it can exacerbate them, specially the myoclonic type (https://pubmed.ncbi.nlm.nih.gov/9596203/).
+directed: true
+graph:
+  _id: DB00555_MESH_D004827_1
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+  drug: lamotrigine
+  drug_mesh: MESH:C047781
+  drugbank: DB:DB00555
+links:
+  - key: negatively regulates
+    source: MESH:C047781
+    target: InterPro:IPR001696
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0061530
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0061535
+  - key: positively correlated with
+    source: GO:0061530
+    target: HP:0020219
+  - key: positively correlated with
+    source: GO:0061535
+    target: HP:0020219
+  - key: positively correlated with
+    source: HP:0020219
+    target: MESH:D004827
+multigraph: true
+nodes:
+  - id: MESH:C047781
+    label: Drug
+    name: lamotrigine
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: GO:0061530
+    label: BiologicalProcess
+    name: aspartate secretion, neurotransmission
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: glutamate secretion, neurotransmission
+  - id: HP:0020219
+    label: PhenotypicFeature
+    name: Motor seizure
+  - id: MESH:D004827
+    label: Disease
+    name: Epilepsy
+references:
+  - https://go.drugbank.com/drugs/DB00555#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Lamotrigine#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Lennox%E2%80%93Gastaut_syndrome#Signs_and_symptoms
+  - https://en.wikipedia.org/wiki/Glutamate_(neurotransmitter)#Disease,_disabilities,_and_pharmacology

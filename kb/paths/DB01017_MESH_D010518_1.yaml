@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01017_MESH_D010518_1
+  disease: Periodontitis
+  disease_mesh: MESH:D010518
+  drug: minocycline
+  drug_mesh: MESH:D008911
+  drugbank: DB:DB01017
+links:
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:X2JRY4
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:X2K2U8
+  - key: positively regulates
+    source: UniProt:X2JRY4
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:X2K2U8
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:714
+  - key: causes
+    source: taxonomy:714
+    target: MESH:D010518
+multigraph: true
+nodes:
+  - id: MESH:D008911
+    label: Drug
+    name: minocycline
+  - id: UniProt:X2JRY4
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:X2K2U8
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:714
+    label: OrganismTaxon
+    name: Aggregatibacter actinomycetemcomitans
+  - id: MESH:D010518
+    label: Disease
+    name: Periodontitis
+references:
+  - https://go.drugbank.com/drugs/DB01017#mechanism-of-action
+  - https://www.uniprot.org/uniprot/X2JRY4#function
+  - https://www.uniprot.org/uniprot/X2K2U8#function
+  - https://pubmed.ncbi.nlm.nih.gov/24738586/
+  - https://en.wikipedia.org/wiki/Periodontal_disease

@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB08808_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: bupranolol
+  drug_mesh: MESH:D002046
+  drugbank: DB:DB08808
+links:
+  - key: decreases activity of
+    source: MESH:D002046
+    target: InterPro:cd15058
+  - key: positively regulates
+    source: InterPro:cd15058
+    target: UBERON:0000013
+  - key: positively correlated with
+    source: UBERON:0000013
+    target: UBERON:0018229
+  - key: positively correlated with
+    source: UBERON:0018229
+    target: HP:0032263
+  - key: positively correlated with
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D002046
+    label: Drug
+    name: bupranolol
+  - id: InterPro:cd15058
+    label: GeneFamily
+    name: beta adrenergic receptors (adenoceptors), member of the class A family of
+      seven-transmembrane G protein-coupled receptors
+  - id: UBERON:0000013
+    label: GrossAnatomicalStructure
+    name: sympathetic nervous system
+  - id: UBERON:0018229
+    label: GrossAnatomicalStructure
+    name: renin-angiotensin system
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB08808#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Beta_blocker#%CE%B2-receptor_antagonism

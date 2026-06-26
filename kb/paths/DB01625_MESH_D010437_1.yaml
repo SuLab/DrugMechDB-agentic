@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB01625_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: isopropamide
+  drug_mesh: MESH:C084831
+  drugbank: DB:DB01625
+links:
+  - key: decreases activity of
+    source: MESH:C084831
+    target: UniProt:P20309
+  - key: participates in
+    source: UniProt:P20309
+    target: GO:0001699
+  - key: increases abundance of
+    source: GO:0001699
+    target: MESH:D005744
+  - key: positively regulates
+    source: MESH:D005744
+    target: InterPro:IPR034162
+  - key: positively correlated with
+    source: InterPro:IPR034162
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:C084831
+    label: Drug
+    name: Isopropamide
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:0001699
+    label: BiologicalProcess
+    name: Acetylcholine-induced gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric acid
+  - id: InterPro:IPR034162
+    label: GeneFamily
+    name: Pepsin catalytic domain
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB01625

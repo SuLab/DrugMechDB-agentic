@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00038_MESH_D013921_1
+  disease: Thrombocytopenic disorder
+  disease_mesh: MESH:D013921
+  drug: oprelvekin
+  drug_mesh: MESH:C105308
+  drugbank: DB:DB00038
+links:
+  - key: increases activity of
+    source: MESH:C105308
+    target: UniProt:Q14626
+  - key: positively regulates
+    source: UniProt:Q14626
+    target: GO:0004921
+  - key: positively regulates
+    source: UniProt:Q14626
+    target: GO:0035726
+  - key: positively regulates
+    source: GO:0004921
+    target: GO:0030220
+  - key: positively regulates
+    source: GO:0035726
+    target: GO:0030220
+  - key: negatively correlated with
+    source: GO:0030220
+    target: MESH:D013921
+multigraph: true
+nodes:
+  - id: MESH:C105308
+    label: Drug
+    name: oprelvekin
+  - id: UniProt:Q14626
+    label: Protein
+    name: Interleukin-11 receptor subunit alpha
+  - id: GO:0004921
+    label: MolecularActivity
+    name: interleukin-11 receptor activity
+  - id: GO:0035726
+    label: BiologicalProcess
+    name: common myeloid progenitor cell proliferation
+  - id: GO:0030220
+    label: BiologicalProcess
+    name: platelet formation
+  - id: MESH:D013921
+    label: Disease
+    name: Thrombocytopenic disorder
+references:
+  - https://go.drugbank.com/drugs/DB00038#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Oprelvekin

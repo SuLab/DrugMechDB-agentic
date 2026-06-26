@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB00303_MESH_D059413_1
+  disease: Infectious disease of abdomen
+  disease_mesh: MESH:D059413
+  drug: ertapenem
+  drug_mesh: MESH:C446479
+  drugbank: DB:DB00303
+links:
+  - key: negatively regulates
+    source: MESH:C446479
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: in taxon
+    source: GO:0009252
+    target: taxonomy:562
+  - key: in taxon
+    source: GO:0009252
+    target: taxonomy:573
+  - key: in taxon
+    source: GO:0009252
+    target: taxonomy:550
+  - key: in taxon
+    source: GO:0009252
+    target: taxonomy:287
+  - key: causes
+    source: taxonomy:573
+    target: MESH:D059413
+  - key: causes
+    source: taxonomy:550
+    target: MESH:D059413
+  - key: causes
+    source: taxonomy:287
+    target: MESH:D059413
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D059413
+multigraph: true
+nodes:
+  - id: MESH:C446479
+    label: Drug
+    name: ertapenem
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding proteins
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: taxonomy:573
+    label: OrganismTaxon
+    name: Klebsiella pneumoniae
+  - id: taxonomy:550
+    label: OrganismTaxon
+    name: Enterobacter cloacae
+  - id: taxonomy:287
+    label: OrganismTaxon
+    name: Pseudomonas aeruginosa
+  - id: MESH:D059413
+    label: Disease
+    name: Infectious disease of abdomen
+references:
+  - https://en.wikipedia.org/wiki/Ertapenem#Mechanism_of_action
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1359/

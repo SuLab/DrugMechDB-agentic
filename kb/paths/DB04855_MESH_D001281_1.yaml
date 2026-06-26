@@ -1,0 +1,69 @@
+directed: true
+graph:
+  _id: DB04855_MESH_D001281_1
+  disease: Atrial fibrillation
+  disease_mesh: MESH:D001281
+  drug: dronedarone
+  drug_mesh: MESH:C118667
+  drugbank: DB:DB04855
+links:
+  - key: negatively regulates
+    source: MESH:C118667
+    target: InterPro:IPR001696
+  - key: negatively regulates
+    source: MESH:C118667
+    target: InterPro:IPR005446
+  - key: negatively regulates
+    source: MESH:C118667
+    target: UniProt:Q9Y3Q4
+  - key: negatively regulates
+    source: MESH:C118667
+    target: UniProt:P63252
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0061337
+  - key: positively regulates
+    source: InterPro:IPR005446
+    target: GO:0061337
+  - key: positively regulates
+    source: UniProt:Q9Y3Q4
+    target: GO:0061337
+  - key: positively regulates
+    source: UniProt:P63252
+    target: GO:0061337
+  - key: positively correlated with
+    source: GO:0061337
+    target: HP:0001692
+  - key: manifestation of
+    source: HP:0001692
+    target: MESH:D001281
+multigraph: true
+nodes:
+  - id: MESH:C118667
+    label: Drug
+    name: dronedarone
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: InterPro:IPR005446
+    label: GeneFamily
+    name: Voltage-dependent calcium channel, L-type, alpha-1 subunit
+  - id: UniProt:Q9Y3Q4
+    label: Protein
+    name: Potassium/sodium hyperpolarization-activated cyclic nucleotide-gated channel
+      4
+  - id: UniProt:P63252
+    label: Protein
+    name: Inward rectifier potassium channel 2
+  - id: GO:0061337
+    label: BiologicalProcess
+    name: cardiac conduction
+  - id: HP:0001692
+    label: PhenotypicFeature
+    name: Atrial arrhythmia
+  - id: MESH:D001281
+    label: Disease
+    name: Atrial fibrillation
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL184412/
+  - https://en.wikipedia.org/wiki/Dronedarone#Mechanism_of_action

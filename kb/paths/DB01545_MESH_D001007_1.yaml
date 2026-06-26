@@ -1,0 +1,81 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB01545_MESH_D001007_1
+  disease: Anxiety
+  disease_mesh: MESH:D001007
+  drug: ethyl loflazepate
+  drug_mesh: MESH:C040581,MESH:C029617
+  drugbank: DB:DB01545
+links:
+  - key: positively regulates
+    source: DB:DB01545
+    target: UniProt:P14867
+  - key: positively regulates
+    source: DB:DB01545
+    target: UniProt:P47869
+  - key: positively regulates
+    source: DB:DB01545
+    target: UniProt:P34903
+  - key: positively regulates
+    source: DB:DB01545
+    target: UniProt:P48169
+  - key: positively regulates
+    source: DB:DB01545
+    target: UniProt:P31644
+  - key: positively regulates
+    source: DB:DB01545
+    target: UniProt:Q16445
+  - key: positively regulates
+    source: UniProt:Q16445
+    target: GO:0007214
+  - key: positively regulates
+    source: UniProt:P14867
+    target: GO:0007214
+  - key: positively regulates
+    source: UniProt:P47869
+    target: GO:0007214
+  - key: positively regulates
+    source: UniProt:P34903
+    target: GO:0007214
+  - key: positively regulates
+    source: UniProt:P48169
+    target: GO:0007214
+  - key: positively regulates
+    source: UniProt:P31644
+    target: GO:0007214
+  - key: negatively correlated with
+    source: GO:0007214
+    target: MESH:D001007
+multigraph: true
+nodes:
+  - id: DB:DB01545
+    label: Drug
+    name: Ethyl loflazepate
+  - id: UniProt:P14867
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-1
+  - id: UniProt:P47869
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-2
+  - id: UniProt:P34903
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-3
+  - id: UniProt:P48169
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-4
+  - id: UniProt:P31644
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-5
+  - id: UniProt:Q16445
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-6
+  - id: GO:0007214
+    label: BiologicalProcess
+    name: Gamma-aminobutyric acid signaling pathway
+  - id: MESH:D001007
+    label: Disease
+    name: Anxiety
+references:
+  - https://go.drugbank.com/drugs/DB01545
+  - https://en.wikipedia.org/wiki/Gamma-Aminobutyric_acid

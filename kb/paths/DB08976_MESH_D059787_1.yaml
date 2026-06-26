@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB08976_MESH_D059787_1
+  disease: Acute pain
+  disease_mesh: MESH:D059787
+  drug: floctafenine
+  drug_mesh: MESH:C051733,MESH:C084600
+  drugbank: DB:DB08976
+links:
+  - key: decreases activity of
+    source: DB:DB08976
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: DB:DB08976
+    target: UniProt:P35354
+  - key: increases abundance of
+    source: UniProt:P23219
+    target: MESH:D011453
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: MESH:D011453
+  - key: participates in
+    source: MESH:D011453
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D059787
+multigraph: true
+nodes:
+  - id: DB:DB08976
+    label: Drug
+    name: floctafenine
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D059787
+    label: Disease
+    name: Acute pain
+references:
+  - https://go.drugbank.com/drugs/DB08976
+  - https://drugs.ncats.io/substances?q=%22FLOCTAFENINE%22&facet=Substance%20Form%2FPrincipal%20Form

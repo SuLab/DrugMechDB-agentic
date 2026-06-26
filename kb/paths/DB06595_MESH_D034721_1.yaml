@@ -1,0 +1,44 @@
+comment: https://en.wikipedia.org/wiki/Midostaurin#Systemic_mastocytosis
+directed: true
+graph:
+  _id: DB06595_MESH_D034721_1
+  disease: Aggressive systemic mastocytosis
+  disease_mesh: MESH:D034721
+  drug: midostaurin
+  drug_mesh: MESH:C059539
+  drugbank: DB:DB06595
+links:
+  - key: negatively regulates
+    source: MESH:C059539
+    target: UniProt:P10721
+  - key: negatively correlated with
+    source: MESH:C059539
+    target: reactome:R-HSA-9607240
+  - key: positively regulates
+    source: UniProt:P10721
+    target: GO:0070662
+  - key: positively correlated with
+    source: reactome:R-HSA-9607240
+    target: MESH:D034721
+  - key: positively correlated with
+    source: GO:0070662
+    target: MESH:D034721
+multigraph: true
+nodes:
+  - id: MESH:C059539
+    label: Drug
+    name: midostaurin
+  - id: UniProt:P10721
+    label: Protein
+    name: Mast/stem cell growth factor receptor Kit
+  - id: GO:0070662
+    label: BiologicalProcess
+    name: mast cell proliferation
+  - id: reactome:R-HSA-9607240
+    label: Pathway
+    name: FLT3 Signaling
+  - id: MESH:D034721
+    label: Disease
+    name: Aggressive systemic mastocytosis
+references:
+  - https://go.drugbank.com/drugs/DB06595#BE0000453

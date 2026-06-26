@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB06267_MESH_D007172_1
+  disease: Impotence
+  disease_mesh: MESH:D007172
+  drug: udenafil
+  drug_mesh: MESH:C419664
+  drugbank: DB:DB06267
+links:
+  - key: decreases activity of
+    source: MESH:C419664
+    target: UniProt:O76074
+  - key: decreases abundance of
+    source: UniProt:O76074
+    target: CHEBI:16356
+  - key: positively regulates
+    source: CHEBI:16356
+    target: GO:0044557
+  - key: positively regulates
+    source: GO:0044557
+    target: GO:0008015
+  - key: positively correlated with
+    source: GO:0008015
+    target: GO:0043084
+  - key: negatively correlated with
+    source: GO:0043084
+    target: MESH:D007172
+multigraph: true
+nodes:
+  - id: MESH:C419664
+    label: Drug
+    name: Udenafil
+  - id: UniProt:O76074
+    label: Protein
+    name: cGMP-specific 3',5'-cyclic phosphodiesterase
+  - id: CHEBI:16356
+    label: ChemicalSubstance
+    name: 3',5'-cyclic GMP
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: Relaxation of smooth muscle
+  - id: GO:0008015
+    label: BiologicalProcess
+    name: Blood circulation
+  - id: GO:0043084
+    label: BiologicalProcess
+    name: Penile erection
+  - id: MESH:D007172
+    label: Disease
+    name: Impotence
+references:
+  - https://go.drugbank.com/drugs/DB06267

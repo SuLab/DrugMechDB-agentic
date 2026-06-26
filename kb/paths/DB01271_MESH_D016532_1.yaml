@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB01271_MESH_D016532_1
+  disease: Mucopolysaccharidosis, MPS-II
+  disease_mesh: MESH:D016532
+  drug: idursulfase
+  drug_mesh: MESH:C517982,MESH:D007066
+  drugbank: DB:DB01271
+links:
+  - key: chemically similar to
+    source: DB:DB01271
+    target: UniProt:P22304
+  - key: decreases abundance of
+    source: UniProt:P22304
+    target: MESH:D006497
+  - key: decreases abundance of
+    source: UniProt:P22304
+    target: MESH:D003871
+  - key: contributes to
+    source: MESH:D006497
+    target: MESH:D016532
+  - key: contributes to
+    source: MESH:D003871
+    target: MESH:D016532
+multigraph: true
+nodes:
+  - id: DB:DB01271
+    label: Drug
+    name: Idursulfase
+  - id: UniProt:P22304
+    label: Protein
+    name: Iduronate 2-sulfatase
+  - id: MESH:D006497
+    label: ChemicalSubstance
+    name: Heparitin Sulfate
+  - id: MESH:D003871
+    label: ChemicalSubstance
+    name: Dermatan Sulfate
+  - id: MESH:D016532
+    label: Disease
+    name: Mucopolysaccharidosis, MPS-II
+references:
+  - https://go.drugbank.com/drugs/DB01271

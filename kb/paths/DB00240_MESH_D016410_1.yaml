@@ -1,0 +1,74 @@
+directed: true
+graph:
+  _id: DB00240_MESH_D016410_1
+  disease: Primary cutaneous T-cell lymphoma
+  disease_mesh: MESH:D016410
+  drug: alclometasone dipropionate
+  drug_mesh: MESH:C021137
+  drugbank: DB:DB00240
+links:
+  - key: positively regulates
+    source: MESH:C021137
+    target: UniProt:P04150
+  - key: negatively correlated with
+    source: MESH:C021137
+    target: InterPro:SSF50353
+  - key: negatively correlated with
+    source: MESH:C021137
+    target: CHEBI:18295
+  - key: positively correlated with
+    source: InterPro:SSF50353
+    target: HP:0011123
+  - key: positively correlated with
+    source: CHEBI:18295
+    target: HP:0011123
+  - key: increases abundance of
+    source: UniProt:P04150
+    target: InterPro:IPR001464
+  - key: negatively regulates
+    source: InterPro:IPR001464
+    target: InterPro:IPR001211
+  - key: positively correlated with
+    source: InterPro:IPR001211
+    target: CHEBI:25029
+  - key: positively correlated with
+    source: CHEBI:25029
+    target: HP:0011123
+  - key: manifestation of
+    source: HP:0011123
+    target: MESH:D016410
+multigraph: true
+nodes:
+  - id: MESH:C021137
+    label: Drug
+    name: alclometasone dipropionate
+  - id: InterPro:SSF50353
+    label: GeneFamily
+    name: Cytokine
+  - id: CHEBI:18295
+    label: ChemicalSubstance
+    name: histamine
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: HP:0011123
+    label: PhenotypicFeature
+    name: Inflammatory abnormality of the skin
+  - id: InterPro:IPR001464
+    label: GeneFamily
+    name: Annexin
+  - id: InterPro:IPR001211
+    label: GeneFamily
+    name: Phospholipase A2
+  - id: CHEBI:25029
+    label: ChemicalSubstance
+    name: leukotriene
+  - id: MESH:D016410
+    label: Disease
+    name: Primary cutaneous T-cell lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB00240
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200989/
+  - https://en.wikipedia.org/wiki/Alclometasone#Pharmacology
+  - https://en.wikipedia.org/wiki/Annexin
+  - https://pubmed.ncbi.nlm.nih.gov/30715370/

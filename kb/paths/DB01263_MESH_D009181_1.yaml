@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01263_MESH_D009181_1
+  disease: Fungal Infection
+  disease_mesh: MESH:D009181
+  drug: posaconazole
+  drug_mesh: MESH:C101425
+  drugbank: DB:DB01263
+links:
+  - key: decreases activity of
+    source: MESH:C101425
+    target: UniProt:P10613
+  - key: produces
+    source: UniProt:P10613
+    target: MESH:D004875
+  - key: located in
+    source: MESH:D004875
+    target: GO:0009277
+  - key: correlated with
+    source: GO:0009277
+    target: MESH:D009181
+multigraph: true
+nodes:
+  - id: MESH:C101425
+    label: Drug
+    name: posaconazole
+  - id: UniProt:P10613
+    label: Protein
+    name: sterol 14a-demethylase
+  - id: MESH:D004875
+    label: ChemicalSubstance
+    name: ergosterol
+  - id: GO:0009277
+    label: CellularComponent
+    name: Fungal Cell Membrane
+  - id: MESH:D009181
+    label: Disease
+    name: Fungal Infection

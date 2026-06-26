@@ -1,0 +1,57 @@
+directed: true
+graph:
+  _id: DB00977_MESH_D000152_1
+  disease: Acne vulgaris
+  disease_mesh: MESH:D000152
+  drug: Ethinylestradiol
+  drug_mesh: MESH:D004997
+  drugbank: DB:DB00977
+links:
+  - key: increases activity of
+    source: MESH:D004997
+    target: UniProt:P03372
+  - key: participates in
+    source: UniProt:P03372
+    target: GO:0043627
+  - key: negatively regulates
+    source: GO:0043627
+    target: CL:0000317
+  - key: negatively regulates
+    source: GO:0043627
+    target: GO:0006702
+  - key: positively correlated with
+    source: CL:0000317
+    target: MESH:D000152
+  - key: increases abundance of
+    source: GO:0006702
+    target: MESH:D000728
+  - key: contributes to
+    source: MESH:D000728
+    target: MESH:D000152
+multigraph: true
+nodes:
+  - id: MESH:D004997
+    label: Drug
+    name: Ethinylestradiol
+  - id: UniProt:P03372
+    label: Protein
+    name: Estrogen receptor alpha
+  - id: GO:0043627
+    label: BiologicalProcess
+    name: Response to estrogen
+  - id: CL:0000317
+    label: Cell
+    name: Sebum secreting cell
+  - id: GO:0006702
+    label: BiologicalProcess
+    name: Androgen synthesis
+  - id: MESH:D000728
+    label: ChemicalSubstance
+    name: Androgens
+  - id: MESH:D000152
+    label: Disease
+    name: Acne vulgaris
+references:
+  - https://go.drugbank.com/drugs/DB00977
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5015761/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5015761/

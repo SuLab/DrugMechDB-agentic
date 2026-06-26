@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB00668_MESH_D005902_3
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: epinephrine
+  drug_mesh: MESH:D004837
+  drugbank: DB:DB00668
+links:
+  - key: decreases activity of
+    source: MESH:D004837
+    target: UniProt:P08913
+  - key: participates in
+    source: UniProt:P08913
+    target: reactome:R-HSA-5357956
+  - key: participates in
+    source: UniProt:P08913
+    target: reactome:R-HSA-5357786
+  - key: positively correlated with
+    source: reactome:R-HSA-5357956
+    target: MESH:D016923
+  - key: positively correlated with
+    source: reactome:R-HSA-5357786
+    target: GO:0006915
+  - key: occurs in
+    source: MESH:D016923
+    target: CL:0000740
+  - key: occurs in
+    source: GO:0006915
+    target: CL:0000740
+  - key: disrupted by
+    source: CL:0000740
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:D004837
+    label: Drug
+    name: epinephrine
+  - id: UniProt:P08913
+    label: Protein
+    name: Tumor necrosis factor
+  - id: reactome:R-HSA-5357956
+    label: Pathway
+    name: TNFR1-induced NFkappaB signaling pathway
+  - id: reactome:R-HSA-5357786
+    label: Pathway
+    name: TNFR1-induced proapoptotic signaling
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: MESH:D016923
+    label: BiologicalProcess
+    name: Cell Death
+  - id: CL:0000740
+    label: Cell
+    name: retinal ganglion cell
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - https://go.drugbank.com/drugs/DB00668#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Retinal_ganglion_cell#Pathology
+  - https://europepmc.org/article/PMC/5497582
+  - https://europepmc.org/article/MED/32774906
+  - https://www.targetvalidation.org/evidence/ENSG00000232810/EFO_0000516?view=sec:literature

@@ -1,0 +1,48 @@
+comment: The disease is also known as Idiopathic hypereosinophilic syndrome as per
+  the original file. Treatment with imatinib is indicated for patients who have a
+  PDGFRA-FIP1L1 chimera, where PDGR, a tyrosine kinase (https://en.wikipedia.org/wiki/Hypereosinophilic_syndrome#Diagnosis)
+  and an oncogene (https://en.wikipedia.org/wiki/Oncogene#Classification) is fused
+  with FIP1L1, giving rise to a PDGFRA-FIP1L1 chimera.
+directed: true
+graph:
+  _id: DB00619_MESH_D017681_1
+  disease: Hypereosinophilic Syndrome
+  disease_mesh: MESH:D017681
+  drug: imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+links:
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: UniProt:P16234
+  - key: positively regulates
+    source: UniProt:P16234
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: HP:0001880
+  - key: manifestation of
+    source: HP:0001880
+    target: MESH:D017681
+multigraph: true
+nodes:
+  - id: MESH:D000068877
+    label: Drug
+    name: imatinib
+  - id: UniProt:P16234
+    label: Protein
+    name: Platelet-derived growth factor receptor alpha
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: HP:0001880
+    label: PhenotypicFeature
+    name: Eosinophilia
+  - id: MESH:D017681
+    label: Disease
+    name: Hypereosinophilic Syndrome
+references:
+  - https://www.cancer.gov/publications/dictionaries/cancer-drug/def/imatinib-mesylate
+  - https://go.drugbank.com/drugs/DB00619#BE0000205
+  - https://go.drugbank.com/drugs/DB00619#BE0000852
+  - https://en.wikipedia.org/wiki/Imatinib#Other

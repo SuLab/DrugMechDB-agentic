@@ -1,0 +1,63 @@
+directed: true
+graph:
+  _id: DB01306_MESH_D003920_1
+  disease: Diabetes mellitus
+  disease_mesh: MESH:D003920
+  drug: insulin aspart
+  drug_mesh: MESH:D061267
+  drugbank: DB:DB01306
+links:
+  - key: increases activity of
+    source: MESH:D061267
+    target: UniProt:P06213
+  - key: positively regulates
+    source: UniProt:P06213
+    target: GO:0004714
+  - key: positively regulates
+    source: GO:0004714
+    target: UniProt:P31749
+  - key: positively regulates
+    source: UniProt:P31749
+    target: UniProt:P14672
+  - key: positively regulates
+    source: UniProt:P31749
+    target: MESH:D011493
+  - key: positively regulates
+    source: UniProt:P14672
+    target: GO:0046323
+  - key: positively regulates
+    source: MESH:D011493
+    target: GO:0046323
+  - key: negatively correlated with
+    source: GO:0046323
+    target: MESH:D003920
+multigraph: true
+nodes:
+  - id: MESH:D061267
+    label: Drug
+    name: insulin detemir
+  - id: UniProt:P06213
+    label: Protein
+    name: Insulin receptor
+  - id: GO:0004714
+    label: MolecularActivity
+    name: transmembrane receptor protein tyrosine kinase activity
+  - id: UniProt:P31749
+    label: Protein
+    name: RAC-alpha serine/threonine-protein kinase
+  - id: MESH:D011493
+    label: Protein
+    name: Protein Kinase C
+  - id: UniProt:P14672
+    label: Protein
+    name: Solute carrier family 2, facilitated glucose transporter member 4
+  - id: GO:0046323
+    label: BiologicalProcess
+    name: glucose import
+  - id: MESH:D003920
+    label: Disease
+    name: Diabetes mellitus
+references:
+  - https://go.drugbank.com/drugs/DB01306
+  - https://en.wikipedia.org/wiki/Insulin_aspart
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201496/

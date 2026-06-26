@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB04845_MESH_D001943_1
+  disease: Carcinoma of breast
+  disease_mesh: MESH:D001943
+  drug: ixabepilone
+  drug_mesh: MESH:C430592
+  drugbank: DB:DB04845
+links:
+  - key: decreases activity of
+    source: MESH:C430592
+    target: InterPro:IPR002453
+  - key: participates in
+    source: InterPro:IPR002453
+    target: GO:1902850
+  - key: positively correlated with
+    source: GO:1902850
+    target: GO:0140014
+  - key: positively correlated with
+    source: GO:0140014
+    target: GO:0008283
+  - key: precedes
+    source: GO:0008283
+    target: CL:0001063
+  - key: positively correlated with
+    source: CL:0001063
+    target: MESH:D001943
+multigraph: true
+nodes:
+  - id: MESH:C430592
+    label: Drug
+    name: ixabepilone
+  - id: InterPro:IPR002453
+    label: GeneFamily
+    name: Beta-tubulin
+  - id: GO:1902850
+    label: BiologicalProcess
+    name: Microtubule cytoskeleton organization involved in mitosis
+  - id: GO:0140014
+    label: BiologicalProcess
+    name: Mitotic nuclear division
+  - id: CL:0001063
+    label: Cell
+    name: tumor cell
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: MESH:D001943
+    label: Disease
+    name: Carcinoma of breast
+references:
+  - https://go.drugbank.com/drugs/DB04845
+  - https://en.wikipedia.org/wiki/Ixabepilone
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201752/
+  - https://pubmed.ncbi.nlm.nih.gov/22113255/
+  - https://pubchem.ncbi.nlm.nih.gov/compound/6445540

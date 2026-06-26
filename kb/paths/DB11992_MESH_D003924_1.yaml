@@ -1,0 +1,60 @@
+comment: Omarigliptin is in phase III trial for the treatment of Type 2 Diabetes Mellitus.
+directed: true
+graph:
+  _id: DB11992_MESH_D003924_1
+  disease: Diabetes Mellitus, Type 2
+  disease_mesh: MESH:D003924
+  drug: Omarigliptin
+  drug_mesh: MESH:C587539
+  drugbank: DB:DB11992
+links:
+  - key: decreases activity of
+    source: DB:DB11992
+    target: UniProt:P27487
+  - key: decreases activity of
+    source: UniProt:P27487
+    target: MESH:D054795
+  - key: negatively regulates
+    source: MESH:D054795
+    target: GO:0070091
+  - key: positively regulates
+    source: MESH:D054795
+    target: GO:0030073
+  - key: increases abundance of
+    source: GO:0070091
+    target: MESH:D001786
+  - key: decreases abundance of
+    source: GO:0030073
+    target: MESH:D001786
+  - key: positively correlated with
+    source: MESH:D001786
+    target: MESH:D003924
+multigraph: true
+nodes:
+  - id: DB:DB11992
+    label: Drug
+    name: Omarigliptin
+  - id: UniProt:P27487
+    label: Protein
+    name: Dipeptidyl peptidase 4
+  - id: MESH:D054795
+    label: ChemicalSubstance
+    name: Incretins
+  - id: GO:0070091
+    label: BiologicalProcess
+    name: glucagon secretion
+  - id: GO:0030073
+    label: BiologicalProcess
+    name: insulin secretion
+  - id: MESH:D001786
+    label: ChemicalSubstance
+    name: Blood Glucose
+  - id: MESH:D003924
+    label: Disease
+    name: Diabetes Mellitus, Type 2
+references:
+  - https://go.drugbank.com/drugs/DB11992#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Omarigliptin
+  - https://en.wikipedia.org/wiki/Dipeptidyl_peptidase-4_inhibitor
+  - https://www.uniprot.org/uniprot/P27487#function
+  - https://en.wikipedia.org/wiki/Type_2_diabetes

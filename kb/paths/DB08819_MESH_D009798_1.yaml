@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB08819_MESH_D009798_1
+  disease: Ocular hypertension
+  disease_mesh: MESH:D009798
+  drug: tafluprost
+  drug_mesh: MESH:C485333
+  drugbank: DB:DB08819
+links:
+  - key: increases activity of
+    source: MESH:C485333
+    target: UniProt:P43088
+  - key: positively regulates
+    source: UniProt:P43088
+    target: GO:0008237
+  - key: decreases abundance of
+    source: GO:0008237
+    target: GO:0031012
+  - key: positively correlated with
+    source: GO:0031012
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: MESH:D009798
+multigraph: true
+nodes:
+  - id: MESH:C485333
+    label: Drug
+    name: Tafluprost
+  - id: UniProt:P43088
+    label: Protein
+    name: Prostaglandin F2-alpha receptor
+  - id: GO:0008237
+    label: BiologicalProcess
+    name: Metallopeptidase activity
+  - id: GO:0031012
+    label: CellularComponent
+    name: Extracellular matrix
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: Aqueous humor of eyeball
+  - id: MESH:D009798
+    label: Disease
+    name: Ocular hypertension
+references:
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3991965/
+  - https://go.drugbank.com/drugs/DB08819

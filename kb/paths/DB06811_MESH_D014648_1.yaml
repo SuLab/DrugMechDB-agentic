@@ -1,0 +1,51 @@
+comment: Polidocanol is a sclerosing agent indicated to treat uncomplicated spider
+  veins. Sclerosing solutions cause the vein to scar, forcing blood to reroute through
+  healthier veins. The collapsed vein is reabsorbed into local tissue and eventually
+  fades (https://www.mayoclinic.org/tests-procedures/sclerotherapy/about/pac-20384592).
+directed: true
+graph:
+  _id: DB06811_MESH_D014648_1
+  disease: Venous varices
+  disease_mesh: MESH:D014648
+  drug: polidocanol
+  drug_mesh: MESH:C008976
+  drugbank: DB:DB06811
+links:
+  - key: chemically similar to
+    source: MESH:C008976
+    target: MESH:D012597
+  - key: causes
+    source: MESH:D012597
+    target: HP:0100699
+  - key: positively correlated with
+    source: HP:0100699
+    target: GO:0097709
+  - key: negatively correlated with
+    source: GO:0097709
+    target: HP:0002619
+  - key: manifestation of
+    source: HP:0002619
+    target: MESH:D014648
+multigraph: true
+nodes:
+  - id: MESH:C008976
+    label: Drug
+    name: polidocanol
+  - id: MESH:D012597
+    label: ChemicalSubstance
+    name: Sclerosing Solutions
+  - id: HP:0100699
+    label: PhenotypicFeature
+    name: Scarring
+  - id: GO:0097709
+    label: BiologicalProcess
+    name: connective tissue replacement
+  - id: HP:0002619
+    label: PhenotypicFeature
+    name: Varicose veins
+  - id: MESH:D014648
+    label: Disease
+    name: Venous varices
+references:
+  - https://go.drugbank.com/drugs/DB06811
+  - https://en.wikipedia.org/wiki/Polidocanol

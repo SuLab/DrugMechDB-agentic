@@ -1,0 +1,77 @@
+# OAK Configuration for DrugMechDB term validation
+# Maps ontology prefixes to OAK adapter strings.
+#
+# Adapter types:
+#   sqlite:obo:<name>  — Pre-built SQLite databases (fast, offline, recommended)
+#   ols:               — Ontology Lookup Service (EBI, online)
+#   bioportal:         — NCBO BioPortal (requires API key)
+#   ""                 — Skip validation for this prefix (with warning suppressed)
+#
+# Coverage notes:
+#   MESH and UniProt are NOT OBO Foundry ontologies and have no sqlite:obo adapter.
+#   They are validated via custom scripts (scripts/validate_mesh.py,
+#   scripts/validate_uniprot.py) that call their respective REST APIs.
+#   Set them to "" here to suppress OAK warnings; custom validators handle them.
+
+ontology_adapters:
+
+  # ── OBO Foundry ontologies (validated by linkml-term-validator) ─────────────
+
+  # Gene Ontology — BiologicalProcess, MolecularActivity, CellularComponent nodes
+  GO: sqlite:obo:go
+
+  # Human Phenotype Ontology — PhenotypicFeature nodes
+  HP: sqlite:obo:hp
+
+  # Cell Ontology — Cell nodes
+  CL: sqlite:obo:cl
+
+  # Uberon anatomy — GrossAnatomicalStructure nodes
+  UBERON: sqlite:obo:uberon
+
+  # Chemical Entities of Biological Interest — ChemicalSubstance nodes (CHEBI variant)
+  CHEBI: sqlite:obo:chebi
+
+  # NCBI Taxonomy — OrganismTaxon nodes (canonical prefix)
+  NCBITaxon: sqlite:obo:ncbitaxon
+
+  # Protein Ontology — MacromolecularComplex nodes
+  PR: sqlite:obo:pr
+
+  # ── Non-OBO ontologies (custom validators, suppressed in OAK) ──────────────
+
+  # Medical Subject Headings — Drug, Disease, ChemicalSubstance nodes
+  # Validated by scripts/validate_mesh.py via NLM MeSH REST API
+  MESH: ""
+
+  # UniProt — Protein nodes
+  # Validated by scripts/validate_uniprot.py via UniProt REST API
+  UniProt: ""
+
+  # Reactome — Pathway nodes (canonical prefix REACT; legacy prefix reactome)
+  # Validated by scripts/validate_reactome.py via Reactome REST API
+  REACT: ""
+  reactome: ""
+
+  # InterPro / Pfam / TIGR — GeneFamily nodes
+  # Not easily validated via a public API with label matching; skip for now
+  InterPro: ""
+  Pfam: ""
+  TIGR: ""
+
+  # ── Legacy / non-canonical prefixes (aliased in schema to canonical URIs) ──
+
+  # Legacy OrganismTaxon prefix (maps to NCBITaxon)
+  taxonomy: sqlite:obo:ncbitaxon
+
+  # DrugBank IDs — Drug nodes; no public structured API for label validation
+  DB: ""
+
+  # ── Skip standard infrastructure prefixes ──────────────────────────────────
+  linkml: ""
+  schema: ""
+  xsd: ""
+  rdf: ""
+  rdfs: ""
+  owl: ""
+  PMID: ""

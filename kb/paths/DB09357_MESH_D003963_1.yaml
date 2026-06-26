@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB09357_MESH_D003963_1
+  disease: Diaper Rash
+  disease_mesh: MESH:D003963
+  drug: dexpanthenol
+  drug_mesh: MESH:C007288
+  drugbank: DB:DB09357
+links:
+  - key: produces
+    source: MESH:C007288
+    target: MESH:D010205
+  - key: part of
+    source: MESH:D010205
+    target: MESH:D003065
+  - key: positively regulates
+    source: MESH:D003065
+    target: GO:0048144
+  - key: positively correlated with
+    source: GO:0048144
+    target: GO:0042060
+  - key: negatively regulates
+    source: GO:0042060
+    target: MESH:D003963
+multigraph: true
+nodes:
+  - id: MESH:C007288
+    label: Drug
+    name: dexpanthenol
+  - id: MESH:D010205
+    label: ChemicalSubstance
+    name: Pantothenic Acid
+  - id: MESH:D003065
+    label: ChemicalSubstance
+    name: Coenzyme A
+  - id: GO:0048144
+    label: BiologicalProcess
+    name: fibroblast proliferation
+  - id: GO:0042060
+    label: BiologicalProcess
+    name: wound healing
+  - id: MESH:D003963
+    label: Disease
+    name: Diaper Rash
+references:
+  - https://go.drugbank.com/drugs/DB09357#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Panthenol
+  - https://en.wikipedia.org/wiki/Irritant_diaper_dermatitis

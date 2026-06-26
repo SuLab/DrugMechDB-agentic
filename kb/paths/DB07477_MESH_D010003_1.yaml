@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB07477_MESH_D010003_1
+  disease: Osteoarthritis
+  disease_mesh: MESH:D010003
+  drug: felbinac
+  drug_mesh: MESH:C012776
+  drugbank: DB:DB07477
+links:
+  - key: decreases activity of
+    source: MESH:C012776
+    target: UniProt:P35354
+  - key: decreases activity of
+    source: MESH:C012776
+    target: UniProt:P23219
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: MESH:D011453
+  - key: increases abundance of
+    source: UniProt:P23219
+    target: MESH:D011453
+  - key: participates in
+    source: MESH:D011453
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0002829
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0001386
+  - key: positively correlated with
+    source: HP:0001386
+    target: MESH:D010003
+  - key: positively correlated with
+    source: HP:0002829
+    target: MESH:D010003
+multigraph: true
+nodes:
+  - id: MESH:C012776
+    label: Drug
+    name: Felbinac
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Arthralgia
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: MESH:D010003
+    label: Disease
+    name: Osteoarthritis
+references:
+  - https://go.drugbank.com/drugs/DB07477
+  - https://en.wikipedia.org/wiki/Felbinac

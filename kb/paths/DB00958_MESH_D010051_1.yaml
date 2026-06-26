@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00958_MESH_D010051_1
+  disease: Malignant tumor of ovary
+  disease_mesh: MESH:D010051
+  drug: carboplatin
+  drug_mesh: MESH:D016190
+  drugbank: DB:DB00958
+links:
+  - key: disrupts
+    source: MESH:D016190
+    target: MESH:D004247
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0090592
+  - key: part of
+    source: GO:0090592
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D010051
+multigraph: true
+nodes:
+  - id: MESH:D016190
+    label: Drug
+    name: Carboplatin
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0090592
+    label: BiologicalProcess
+    name: DNA synthesis involved in DNA replication
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: MESH:D010051
+    label: Disease
+    name: Malignant tumor of ovary
+references:
+  - https://go.drugbank.com/drugs/DB00958

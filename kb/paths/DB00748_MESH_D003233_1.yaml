@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB00748_MESH_D003233_1
+  disease: seasonal allergic conjunctivitis
+  disease_mesh: MESH:D003233
+  drug: carbinoxamine
+  drug_mesh: MESH:C004649
+  drugbank: DB:DB00748
+links:
+  - key: decreases activity of
+    source: MESH:C004649
+    target: UniProt:P35367
+  - key: positively regulates
+    source: UniProt:P35367
+    target: GO:0034776
+  - key: causes
+    source: GO:0034776
+    target: MESH:D003233
+multigraph: true
+nodes:
+  - id: MESH:C004649
+    label: Drug
+    name: carbinoxamine
+  - id: UniProt:P35367
+    label: Protein
+    name: histamine H1 Receptor
+  - id: GO:0034776
+    label: BiologicalProcess
+    name: histamine response
+  - id: MESH:D003233
+    label: Disease
+    name: seasonal allergic conjunctivitis

@@ -1,0 +1,81 @@
+directed: true
+graph:
+  _id: DB06255_MESH_C562390_1
+  disease: Humoral hypercalcemia of malignancy
+  disease_mesh: MESH:C562390
+  drug: incadronic acid
+  drug_mesh: MESH:C071542
+  drugbank: DB:DB06255
+links:
+  - key: decreases activity of
+    source: MESH:C071542
+    target: UniProt:P14324
+  - key: positively correlated with
+    source: UniProt:P14324
+    target: GO:0008299
+  - key: positively correlated with
+    source: GO:0008299
+    target: GO:0045453
+  - key: positively regulates
+    source: MESH:C071542
+    target: GO:0006915
+  - key: decreases abundance of
+    source: GO:0006915
+    target: CL:0000092
+  - key: positively correlated with
+    source: CL:0000092
+    target: GO:0045453
+  - key: positively correlated with
+    source: GO:0045453
+    target: MESH:C562390
+  - key: molecularly interacts with
+    source: MESH:C071542
+    target: CHEBI:52255
+  - key: positively correlated with
+    source: CHEBI:52255
+    target: GO:0001503
+  - key: positively correlated with
+    source: CHEBI:52255
+    target: GO:1990523
+  - key: negatively correlated with
+    source: GO:1990523
+    target: MESH:C562390
+  - key: negatively correlated with
+    source: GO:0001503
+    target: MESH:C562390
+multigraph: true
+nodes:
+  - id: MESH:C071542
+    label: Drug
+    name: incadronic acid
+  - id: UniProt:P14324
+    label: Protein
+    name: Farnesyl pyrophosphate synthase
+  - id: CHEBI:52255
+    label: ChemicalSubstance
+    name: hydroxylapatite
+  - id: CL:0000092
+    label: Cell
+    name: osteoclast
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: bone resorption
+  - id: GO:0008299
+    label: BiologicalProcess
+    name: isoprenoid biosynthetic process
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: GO:0001503
+    label: BiologicalProcess
+    name: ossification
+  - id: GO:1990523
+    label: BiologicalProcess
+    name: bone regeneration
+  - id: MESH:C562390
+    label: Disease
+    name: Humoral hypercalcemia of malignancy
+references:
+  - https://go.drugbank.com/drugs/DB06255
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4683803/#sec1-6title
+  - https://journals.sagepub.com/doi/10.4137/BTRI.S36138

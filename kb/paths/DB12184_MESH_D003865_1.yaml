@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB12184_MESH_D003865_1
+  disease: Major depressive disorder
+  disease_mesh: MESH:D003865
+  drug: gepirone
+  drug_mesh: MESH:C039979
+  drugbank: DB:DB12184
+links:
+  - key: increases activity of
+    source: MESH:C039979
+    target: UniProt:P08908
+  - key: participates in
+    source: UniProt:P08908
+    target: GO:0050795
+  - key: negatively correlated with
+    source: GO:0050795
+    target: MESH:D003865
+multigraph: true
+nodes:
+  - id: MESH:C039979
+    label: Drug
+    name: gepirone
+  - id: UniProt:P08908
+    label: Protein
+    name: 5-HT1a receptor (serotonin 1A)
+  - id: GO:0050795
+    label: BiologicalProcess
+    name: regulation of behavior
+  - id: MESH:D003865
+    label: Disease
+    name: Major depressive disorder

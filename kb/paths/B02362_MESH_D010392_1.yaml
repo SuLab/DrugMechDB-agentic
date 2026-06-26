@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: B02362_MESH_D010392_1
+  disease: Pemphigus
+  disease_mesh: MESH:D010392
+  drug: aminobenzoic acid
+  drug_mesh: MESH:D010129
+  drugbank: DB:B02362
+links:
+  - key: negatively regulates
+    source: MESH:D010129
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D010392
+  - key: negatively regulates
+    source: MESH:D010129
+    target: UniProt:P21397
+  - key: decreases abundance of
+    source: UniProt:P21397
+    target: MESH:D012701
+  - key: positively correlated with
+    source: MESH:D012701
+    target: GO:0006954
+  - key: subclass of
+    source: MESH:D010129
+    target: MESH:D011480
+  - key: treats
+    source: MESH:D011480
+    target: MESH:D010392
+multigraph: true
+nodes:
+  - id: MESH:D010129
+    label: Drug
+    name: Aminobenzoic acid
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: UniProt:P21397
+    label: Protein
+    name: Amine oxidase [flavin-containing] A
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: MESH:D011480
+    label: ChemicalSubstance
+    name: Protease Inhibitors
+  - id: MESH:D010392
+    label: Disease
+    name: Pemphigus
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/15774254/
+  - https://go.drugbank.com/drugs/DB02362
+  - https://en.wikipedia.org/wiki/Pemphigus
+  - https://pubmed.ncbi.nlm.nih.gov/8931866/

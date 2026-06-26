@@ -1,0 +1,49 @@
+comment: The drug may also modulate other members of the Voltage-gated L-type calcium
+  channel protein family (https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1275868/)
+  or T-type calcium channel protein family (https://en.wikipedia.org/wiki/Azelnidipine).
+directed: true
+graph:
+  _id: DB09230_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: azelnidipine
+  drug_mesh: MESH:C061679
+  drugbank: DB:DB09230
+links:
+  - key: decreases activity of
+    source: MESH:C061679
+    target: UniProt:Q02641
+  - key: positively regulates
+    source: UniProt:Q02641
+    target: GO:0061577
+  - key: positively regulates
+    source: GO:0061577
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C061679
+    label: Drug
+    name: azelnidipine
+  - id: UniProt:Q02641
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit beta-1
+  - id: GO:0061577
+    label: BiologicalProcess
+    name: calcium ion transmembrane transport via high voltage-gated calcium channel
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB09230#mechanism-of-action

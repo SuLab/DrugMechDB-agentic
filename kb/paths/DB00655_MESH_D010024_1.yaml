@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB00655_MESH_D010024_1
+  disease: Osteoporosis
+  disease_mesh: MESH:D010024
+  drug: estrone
+  drug_mesh: MESH:D004970
+  drugbank: DB:DB00655
+links:
+  - key: regulates
+    source: MESH:D004970
+    target: MESH:D004967
+  - key: treats
+    source: MESH:D004967
+    target: MESH:D010024
+multigraph: true
+nodes:
+  - id: MESH:D004970
+    label: Drug
+    name: estrone
+  - id: MESH:D004967
+    label: ChemicalSubstance
+    name: estrogen
+  - id: MESH:D010024
+    label: Disease
+    name: osteoporosis
+references:
+  - https://go.drugbank.com/drugs/DB00655#mechanismofaction

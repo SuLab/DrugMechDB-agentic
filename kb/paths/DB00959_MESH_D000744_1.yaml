@@ -1,0 +1,93 @@
+directed: true
+graph:
+  _id: DB00959_MESH_D000744_1
+  disease: Anemia, Hemolytic, Autoimmune
+  disease_mesh: MESH:D000744
+  drug: methylprednisolone
+  drug_mesh: MESH:D008775
+  drugbank: DB:DB00959
+links:
+  - key: increases activity of
+    source: MESH:D008775
+    target: UniProt:P04150
+  - key: increases activity of
+    source: UniProt:P04150
+    target: UniProt:P04083
+  - key: decreases activity of
+    source: UniProt:P04150
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: UniProt:P04150
+    target: UniProt:P35354
+  - key: decreases activity of
+    source: UniProt:P04083
+    target: UniProt:P47712
+  - key: positively regulates
+    source: UniProt:P23219
+    target: GO:0001516
+  - key: positively regulates
+    source: UniProt:P35354
+    target: GO:0001516
+  - key: positively regulates
+    source: UniProt:P47712
+    target: GO:0019370
+  - key: positively regulates
+    source: UniProt:P47712
+    target: GO:0001516
+  - key: positively correlated with
+    source: GO:0019370
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0001516
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0001878
+  - key: positively correlated with
+    source: HP:0001878
+    target: MESH:D000744
+multigraph: true
+nodes:
+  - id: MESH:D008775
+    label: Drug
+    name: methylprednisolone
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: UniProt:P04083
+    label: Protein
+    name: Annexin A1
+  - id: UniProt:P47712
+    label: Protein
+    name: Cytosolic phospholipase A2
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: GO:0019370
+    label: BiologicalProcess
+    name: leukotriene biosynthetic process
+  - id: GO:0001516
+    label: BiologicalProcess
+    name: prostaglandin biosynthetic process
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0001878
+    label: PhenotypicFeature
+    name: Hemolytic anemia
+  - id: MESH:D000744
+    label: Disease
+    name: Anemia, Hemolytic, Autoimmune
+references:
+  - https://go.drugbank.com/drugs/DB00959#mechanism-of-action
+  - https://drugs.ncats.io/drug/X4W7ZR7023
+  - https://en.wikipedia.org/wiki/Methylprednisolone
+  - https://www.uniprot.org/uniprot/P04150#function
+  - https://www.uniprot.org/uniprot/P04083#function
+  - https://www.uniprot.org/uniprot/P47712#function
+  - https://www.uniprot.org/uniprot/P23219#function
+  - https://www.uniprot.org/uniprot/P35354#function
+  - https://en.wikipedia.org/wiki/Autoimmune_hemolytic_anemia

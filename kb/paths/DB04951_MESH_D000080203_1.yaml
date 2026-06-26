@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB04951_MESH_D000080203_1
+  disease: Hamman-Rich syndrome
+  disease_mesh: MESH:D000080203
+  drug: pirfenidone
+  drug_mesh: MESH:C093844
+  drugbank: DB:DB04951
+links:
+  - key: decreases activity of
+    source: MESH:C093844
+    target: UniProt:P01375
+  - key: decreases activity of
+    source: MESH:C093844
+    target: MESH:D016212
+  - key: negatively regulates
+    source: MESH:C093844
+    target: GO:0048144
+  - key: positively regulates
+    source: UniProt:P01375
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D000080203
+  - key: positively correlated with
+    source: MESH:D016212
+    target: MESH:D000080203
+  - key: positively correlated with
+    source: GO:0048144
+    target: MESH:D000080203
+multigraph: true
+nodes:
+  - id: MESH:C093844
+    label: Drug
+    name: Pirfenidone
+  - id: UniProt:P01375
+    label: Protein
+    name: Tumor necrosis factor
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D016212
+    label: ChemicalSubstance
+    name: Transforming Growth Factor beta
+  - id: GO:0048144
+    label: BiologicalProcess
+    name: Fibroblast proliferation
+  - id: MESH:D000080203
+    label: Disease
+    name: Hamman-Rich syndrome
+references:
+  - https://en.wikipedia.org/wiki/Pirfenidone#Mechanism_of_action
+  - https://go.drugbank.com/drugs/DB04951

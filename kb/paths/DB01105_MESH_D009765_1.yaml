@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB01105_MESH_D009765_1
+  disease: Obesity
+  disease_mesh: MESH:D009765
+  drug: sibutramine
+  drug_mesh: MESH:C058254
+  drugbank: DB:DB01105
+links:
+  - key: negatively regulates
+    source: MESH:C058254
+    target: GO:0098810
+  - key: increases abundance of
+    source: GO:0098810
+    target: MESH:D004298
+  - key: increases abundance of
+    source: GO:0098810
+    target: MESH:D009638
+  - key: increases abundance of
+    source: GO:0098810
+    target: MESH:D012701
+  - key: correlated with
+    source: MESH:D004298
+    target: HP:0002591
+  - key: correlated with
+    source: MESH:D009638
+    target: HP:0002591
+  - key: correlated with
+    source: MESH:D012701
+    target: HP:0002591
+  - key: contributes to
+    source: HP:0002591
+    target: MESH:D009765
+multigraph: true
+nodes:
+  - id: MESH:C058254
+    label: Drug
+    name: sibutramine
+  - id: GO:0098810
+    label: BiologicalProcess
+    name: neurotransmitter reuptake
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: HP:0002591
+    label: PhenotypicFeature
+    name: Polyphagia
+  - id: MESH:D009765
+    label: Disease
+    name: Obesity
+references:
+  - https://go.drugbank.com/drugs/DB01105#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Sibutramine
+  - https://en.wikipedia.org/wiki/Neurotransmitter
+  - https://en.wikipedia.org/wiki/Reuptake
+  - https://en.wikipedia.org/wiki/Obesity

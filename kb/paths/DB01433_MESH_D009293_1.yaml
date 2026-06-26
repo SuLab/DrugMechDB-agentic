@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB01433_MESH_D009293_1
+  disease: Opioid dependence
+  disease_mesh: MESH:D009293
+  drug: acetylmethadol
+  drug_mesh: MESH:D008692
+  drugbank: DB:DB01433
+links:
+  - key: increases activity of
+    source: MESH:D008692
+    target: UniProt:P35372
+  - key: positively regulates
+    source: UniProt:P35372
+    target: InterPro:IPR013673
+  - key: decreases abundance of
+    source: InterPro:IPR013673
+    target: MESH:D000242
+  - key: prevents
+    source: MESH:D000242
+    target: GO:0007269
+  - key: decreases activity of
+    source: GO:0007269
+    target: GO:0060081
+  - key: decreases response to
+    source: GO:0060081
+    target: HP:0033515
+  - key: ameliorates
+    source: HP:0033515
+    target: MESH:D009293
+multigraph: true
+nodes:
+  - id: MESH:D008692
+    label: Drug
+    name: acetylmethadol
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu opioid receptor
+  - id: InterPro:IPR013673
+    label: GeneFamily
+    name: G-protein–gated potassium channel
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: cAMP
+  - id: GO:0007269
+    label: BiologicalProcess
+    name: neurotransmitter release
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: membrane hyperpolarization
+  - id: HP:0033515
+    label: PhenotypicFeature
+    name: opioid addiction
+  - id: MESH:D009293
+    label: Disease
+    name: Opioid dependence
+references:
+  - https://go.drugbank.com/drugs/DB01433
+  - https://smpdb.ca/view/SMP0000678?highlight[compounds][]=DB01433&highlight[proteins][]=DB01433

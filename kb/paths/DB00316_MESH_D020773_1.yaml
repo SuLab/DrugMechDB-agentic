@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB00316_MESH_D020773_1
+  disease: Headache Disorders
+  disease_mesh: MESH:D020773
+  drug: Acetaminophen
+  drug_mesh: MESH:D000082
+  drugbank: DB:DB00316
+links:
+  - key: decreases activity of
+    source: MESH:D000082
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:D000082
+    target: UniProt:P35354
+  - key: decreases activity of
+    source: MESH:D000082
+    target: UniProt:Q15185
+  - key: positively regulates
+    source: UniProt:P23219
+    target: GO:0001516
+  - key: positively regulates
+    source: UniProt:P35354
+    target: GO:0001516
+  - key: positively regulates
+    source: UniProt:Q15185
+    target: GO:0001516
+  - key: increases abundance of
+    source: GO:0001516
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: MESH:D020773
+multigraph: true
+nodes:
+  - id: MESH:D000082
+    label: Drug
+    name: Acetaminophen
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: UniProt:Q15185
+    label: Protein
+    name: Prostaglandin E synthase 3
+  - id: GO:0001516
+    label: BiologicalProcess
+    name: prostaglandin biosynthetic process
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: MESH:D020773
+    label: Disease
+    name: Headache Disorders
+references:
+  - https://go.drugbank.com/drugs/DB00316#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P23219#function
+  - https://www.uniprot.org/uniprot/P35354#function
+  - https://www.uniprot.org/uniprot/Q15185#function
+  - https://en.wikipedia.org/wiki/Headache

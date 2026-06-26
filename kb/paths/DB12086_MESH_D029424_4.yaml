@@ -1,0 +1,36 @@
+comment: Oxitropium is used as Oxitropium bromide for treatment
+directed: true
+graph:
+  _id: DB12086_MESH_D029424_4
+  disease: Chronic obstructive lung disease
+  disease_mesh: MESH:D029424
+  drug: Oxitropium
+  drug_mesh: MESH:C017590
+  drugbank: DB:DB12086
+links:
+  - key: decreases activity of
+    source: MESH:C017590
+    target: UniProt:P20309
+  - key: causes
+    source: UniProt:P20309
+    target: GO:0006939
+  - key: contributes to
+    source: GO:0006939
+    target: MESH:D029424
+multigraph: true
+nodes:
+  - id: MESH:C017590
+    label: Drug
+    name: Oxitropium
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: Smooth muscle contraction
+  - id: MESH:D029424
+    label: Disease
+    name: Chronic obstructive lung disease
+references:
+  - https://go.drugbank.com/drugs/DB12086
+  - https://drugs.ncats.io/drug/8G15T83E6I

@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00026_MESH_D001172_1
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: anakinra
+  drug_mesh: MESH:D053590
+  drugbank: DB:DB00026
+links:
+  - key: decreases activity of
+    source: MESH:D053590
+    target: UniProt:P14778
+  - key: participates in
+    source: UniProt:P14778
+    target: GO:0004908
+  - key: positively regulates
+    source: GO:0004908
+    target: reactome:R-HSA-1592389
+  - key: positively regulates
+    source: reactome:R-HSA-1592389
+    target: HP:0100773
+  - key: phenotype of
+    source: HP:0100773
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:D053590
+    label: Drug
+    name: Anakinra
+  - id: UniProt:P14778
+    label: Protein
+    name: Interleukin-1 receptor type 1
+  - id: GO:0004908
+    label: MolecularActivity
+    name: Interleukin-1 receptor activity
+  - id: reactome:R-HSA-1592389
+    label: Pathway
+    name: Activation of Matrix Metalloproteinases
+  - id: HP:0100773
+    label: PhenotypicFeature
+    name: Cartilage destruction
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB00026#BE0000565
+  - https://pubmed.ncbi.nlm.nih.gov/17027524/

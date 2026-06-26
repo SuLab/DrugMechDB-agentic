@@ -1,0 +1,29 @@
+comment: Effective only for skin itching related to scabies
+directed: true
+graph:
+  _id: DB06770_MESH_D011537_1
+  disease: Itching of skin
+  disease_mesh: MESH:D011537
+  drug: benzyl alcohol
+  drug_mesh: MESH:D019905
+  drugbank: DB:DB06770
+links:
+  - key: decreases abundance of
+    source: MESH:D019905
+    target: taxonomy:52283
+  - key: causes
+    source: taxonomy:52283
+    target: MESH:D011537
+multigraph: true
+nodes:
+  - id: MESH:D019905
+    label: Drug
+    name: Benzyl alcohol
+  - id: taxonomy:52283
+    label: OrganismTaxon
+    name: Sarcoptes scabiei
+  - id: MESH:D011537
+    label: Disease
+    name: Itching of skin
+references:
+  - https://go.drugbank.com/drugs/DB06770

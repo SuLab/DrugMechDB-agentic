@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB13036_MESH_D065631_1
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: ramatroban
+  drug_mesh: MESH:C063119
+  drugbank: DB:DB13036
+links:
+  - key: decreases activity of
+    source: MESH:C063119
+    target: UniProt:Q9Y5Y4
+  - key: decreases activity of
+    source: MESH:C063119
+    target: UniProt:P21731
+  - key: positively correlated with
+    source: UniProt:Q9Y5Y4
+    target: GO:0006954
+  - key: positively correlated with
+    source: UniProt:P21731
+    target: MESH:D013928
+  - key: positively regulates
+    source: MESH:D013928
+    target: HP:4000007
+  - key: positively correlated with
+    source: HP:4000007
+    target: GO:0006954
+  - key: occurs in
+    source: GO:0006954
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: MESH:C063119
+    label: Drug
+    name: Ramatroban
+  - id: UniProt:Q9Y5Y4
+    label: Protein
+    name: Prostaglandin D2 receptor 2
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: UniProt:P21731
+    label: Protein
+    name: Thromboxane A2 receptor
+  - id: MESH:D013928
+    label: ChemicalSubstance
+    name: Thromboxane A2
+  - id: HP:4000007
+    label: PhenotypicFeature
+    name: Bronchoconstriction
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB13036#BE0003561
+  - https://en.wikipedia.org/wiki/Ramatroban
+  - https://aacijournal.biomedcentral.com/articles/10.1186/1710-1492-1-2-81
+  - https://pubmed.ncbi.nlm.nih.gov/8950952/

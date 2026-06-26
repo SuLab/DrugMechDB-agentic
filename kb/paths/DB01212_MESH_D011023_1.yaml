@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB01212_MESH_D011023_1
+  disease: Pneumonia, Staphylococcal
+  disease_mesh: MESH:D011023
+  drug: ceftriaxone
+  drug_mesh: MESH:D002443
+  drugbank: DB:DB01212
+links:
+  - key: decreases activity of
+    source: MESH:D002443
+    target: InterPro:IPR017790
+  - key: participates in
+    source: InterPro:IPR017790
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:1279
+  - key: causes
+    source: taxonomy:1279
+    target: MESH:D011023
+multigraph: true
+nodes:
+  - id: MESH:D002443
+    label: Drug
+    name: ceftriaxone
+  - id: InterPro:IPR017790
+    label: GeneFamily
+    name: Penicillin-binding protein 2
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:1279
+    label: OrganismTaxon
+    name: Staphylococcus
+  - id: MESH:D011023
+    label: Disease
+    name: Pneumonia, Staphylococcal
+references:
+  - https://go.drugbank.com/drugs/DB01212#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22CEFTRIAXONE%22
+  - https://en.wikipedia.org/wiki/Pneumonia

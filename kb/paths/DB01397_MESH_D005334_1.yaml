@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB01397_MESH_D005334_1
+  disease: Fever
+  disease_mesh: MESH:D005334
+  drug: Magnesium salicylate
+  drug_mesh: MESH:C496892
+  drugbank: DB:DB01397
+links:
+  - key: decreases activity of
+    source: MESH:C496892
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:C496892
+    target: UniProt:P35354
+  - key: increases abundance of
+    source: UniProt:P23219
+    target: CHEBI:15551
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: CHEBI:15551
+  - key: positively regulates
+    source: CHEBI:15551
+    target: MESH:D005334
+multigraph: true
+nodes:
+  - id: MESH:C496892
+    label: Drug
+    name: Magnesium salicylate
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: CHEBI:15551
+    label: ChemicalSubstance
+    name: Prostaglandin E2
+  - id: MESH:D005334
+    label: Disease
+    name: Fever
+references:
+  - https://go.drugbank.com/drugs/DB01397
+  - https://en.wikipedia.org/wiki/Fever

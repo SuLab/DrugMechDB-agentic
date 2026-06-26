@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB04932_MESH_D006504_1
+  disease: Hepatic Veno-Occlusive Disease
+  disease_mesh: MESH:D006504
+  drug: defibrotide
+  drug_mesh: MESH:C036901
+  drugbank: DB:DB04932
+links:
+  - key: increases activity of
+    source: MESH:C036901
+    target: MESH:D011464
+  - key: participates in
+    source: MESH:D011464
+    target: GO:0044557
+  - key: negatively correlated with
+    source: GO:0044557
+    target: GO:0070527
+  - key: correlated with
+    source: GO:0070527
+    target: MESH:D006504
+multigraph: true
+nodes:
+  - id: MESH:C036901
+    label: Drug
+    name: defibrotide
+  - id: MESH:D011464
+    label: ChemicalSubstance
+    name: Epoprostenol
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: relaxation of smooth muscle
+  - id: GO:0070527
+    label: BiologicalProcess
+    name: platelet aggregation
+  - id: MESH:D006504
+    label: Disease
+    name: Hepatic Veno-Occlusive Disease
+references:
+  - https://go.drugbank.com/drugs/DB04932#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Defibrotide
+  - https://en.wikipedia.org/wiki/Hepatic_veno-occlusive_disease

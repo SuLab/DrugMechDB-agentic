@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB08998_MESH_D003866_1
+  disease: Depressive Disorder
+  disease_mesh: MESH:D003866
+  drug: demexiptiline
+  drug_mesh: MESH:C033781
+  drugbank: DB:DB08998
+links:
+  - key: decreases activity of
+    source: MESH:C033781
+    target: GO:0051620
+  - key: decreases abundance of
+    source: GO:0051620
+    target: MESH:D009638
+  - key: negatively correlated with
+    source: MESH:D009638
+    target: HP:0000716
+  - key: positively correlated with
+    source: HP:0000716
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:C033781
+    label: Drug
+    name: demexiptiline
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: norepinephrine uptake
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: HP:0000716
+    label: PhenotypicFeature
+    name: Depression
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive Disorder
+references:
+  - https://go.drugbank.com/drugs/DB08998#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Demexiptiline
+  - https://en.wikipedia.org/wiki/Norepinephrine_reuptake_inhibitor
+  - https://en.wikipedia.org/wiki/Depression_(mood)
+  - https://en.wikipedia.org/wiki/Major_depressive_disorder

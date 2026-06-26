@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00313_MESH_D004827_4
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+  drug: valproic acid
+  drug_mesh: MESH:D014635
+  drugbank: DB:DB00313
+links:
+  - key: decreases activity of
+    source: MESH:D014635
+    target: UniProt:Q9UKV0
+  - key: positively regulates
+    source: UniProt:Q9UKV0
+    target: GO:0045893
+  - key: decreases activity of
+    source: GO:0045893
+    target: UniProt:P04406
+  - key: prevents
+    source: UniProt:P04406
+    target: MESH:D009410
+  - key: correlated with
+    source: MESH:D009410
+    target: MESH:D004827
+multigraph: true
+nodes:
+  - id: MESH:D014635
+    label: Drug
+    name: valproic acid
+  - id: UniProt:Q9UKV0
+    label: Protein
+    name: histone deactylase (HDAC)
+  - id: GO:0045893
+    label: BiologicalProcess
+    name: gene transcription
+  - id: UniProt:P04406
+    label: Protein
+    name: glyceraldehyde-3-phosphate dehydrogenase
+  - id: MESH:D009410
+    label: BiologicalProcess
+    name: neural degeneration
+  - id: MESH:D004827
+    label: Disease
+    name: Epilepsy
+references:
+  - https://go.drugbank.com/drugs/DB00313#mechanismofaction

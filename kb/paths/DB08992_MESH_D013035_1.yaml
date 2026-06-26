@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB08992_MESH_D013035_1
+  disease: Spasm
+  disease_mesh: MESH:D013035
+  drug: eperisone
+  drug_mesh: MESH:C030848
+  drugbank: DB:DB08992
+links:
+  - key: decreases activity of
+    source: MESH:C030848
+    target: InterPro:IPR010526
+  - key: positively regulates
+    source: InterPro:IPR010526
+    target: GO:0005248
+  - key: positively correlated with
+    source: GO:0005248
+    target: GO:0006936
+  - key: positively correlated with
+    source: GO:0006936
+    target: HP:0002486
+  - key: manifestation of
+    source: HP:0002486
+    target: MESH:D013035
+multigraph: true
+nodes:
+  - id: MESH:C030848
+    label: Drug
+    name: eperisone
+  - id: InterPro:IPR010526
+    label: GeneFamily
+    name: Sodium ion transport-associated
+  - id: GO:0005248
+    label: MolecularActivity
+    name: voltage-gated sodium channel activity
+  - id: GO:0006936
+    label: BiologicalProcess
+    name: muscle contraction
+  - id: HP:0002486
+    label: PhenotypicFeature
+    name: Myotonia
+  - id: MESH:D013035
+    label: Disease
+    name: Spasm
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/33235514/
+  - https://go.drugbank.com/drugs/DB08992
+  - https://en.wikipedia.org/wiki/Eperisone

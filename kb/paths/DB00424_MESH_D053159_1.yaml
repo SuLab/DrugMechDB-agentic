@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00424_MESH_D053159_1
+  disease: Dysuria
+  disease_mesh: MESH:D053159
+  drug: Hyoscyamine
+  drug_mesh: MESH:D064692
+  drugbank: DB:DB00424
+links:
+  - key: decreases activity of
+    source: MESH:D064692
+    target: UniProt:P20309
+  - key: positively correlated with
+    source: UniProt:P20309
+    target: CHEBI:15355
+  - key: positively regulates
+    source: CHEBI:15355
+    target: UBERON:0000381
+  - key: positively regulates
+    source: UBERON:0000381
+    target: GO:0060073
+  - key: manifestation of
+    source: GO:0060073
+    target: MESH:D053159
+multigraph: true
+nodes:
+  - id: MESH:D064692
+    label: Drug
+    name: Hyoscyamine
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: CHEBI:15355
+    label: ChemicalSubstance
+    name: Acetylcholine
+  - id: UBERON:0000381
+    label: GrossAnatomicalStructure
+    name: Urinary bladder detrusor smooth muscle
+  - id: GO:0060073
+    label: BiologicalProcess
+    name: Micturition
+  - id: MESH:D053159
+    label: Disease
+    name: MESH:D053159
+references:
+  - https://en.wikipedia.org/wiki/Dysuria
+  - https://go.drugbank.com/drugs/DB00424
+  - https://en.wikipedia.org/wiki/Muscarinic_acetylcholine_receptor

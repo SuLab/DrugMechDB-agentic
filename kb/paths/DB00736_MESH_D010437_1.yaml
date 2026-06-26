@@ -1,0 +1,47 @@
+comment: Esomeprazole is the s-isomer of Omeprazole, both are a proton pump inhibitor
+  class of drug and the mechanism of action for both is similar. Weve annotated the
+  path for the S isomer only as it seems this isomer is metabolized more slowly than
+  omeprazole and therefore it will act for longer and more effectively (https://onlinelibrary.wiley.com/doi/pdf/10.1046/j.1365-2036.17.s1.1.x).
+  This disease is denoted as Peptic reflux disease in the original file.
+directed: true
+graph:
+  _id: DB00736_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: esomeprazole
+  drug_mesh: MESH:D064098
+  drugbank: DB:DB00736
+links:
+  - key: decreases activity of
+    source: MESH:D064098
+    target: UniProt:P20648
+  - key: positively correlated with
+    source: UniProt:P20648
+    target: GO:0008900
+  - key: positively correlated with
+    source: GO:0008900
+    target: GO:0001696
+  - key: positively correlated with
+    source: GO:0001696
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:D064098
+    label: Drug
+    name: esomeprazole
+  - id: UniProt:P20648
+    label: Protein
+    name: Potassium-transporting ATPase alpha chain 1
+  - id: GO:0008900
+    label: MolecularActivity
+    name: P-type potassium:proton transporter activity
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: gastric acid secretion
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB00736#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Esomeprazole
+  - https://en.wikipedia.org/wiki/Omeprazole#Mechanism_of_action

@@ -1,0 +1,58 @@
+comment: Simvastatin is a prodrug in which the 6-membered lactone ring of simvastatin
+  is hydrolyzed to generate the simvastatin hydroxy acid (beta,delta-dihydroxy acid),
+  an active metabolite in the body.
+directed: true
+graph:
+  _id: DB00641_MESH_D001161_1
+  disease: Arteriosclerosis
+  disease_mesh: MESH:D001161
+  drug: Simvastatin
+  drug_mesh: MESH:D019821
+  drugbank: DB:DB00641
+links:
+  - key: has metabolite
+    source: MESH:D019821
+    target: CHEBI:169041
+  - key: decreases activity of
+    source: CHEBI:169041
+    target: UniProt:P04035
+  - key: positively regulates
+    source: UniProt:P04035
+    target: GO:0006695
+  - key: increases abundance of
+    source: GO:0006695
+    target: MESH:D002784
+  - key: located in
+    source: MESH:D002784
+    target: UBERON:0001637
+  - key: location of
+    source: UBERON:0001637
+    target: MESH:D001161
+multigraph: true
+nodes:
+  - id: MESH:D019821
+    label: Drug
+    name: Simvastatin
+  - id: CHEBI:169041
+    label: ChemicalSubstance
+    name: simvastatin hydroxy acid
+  - id: UniProt:P04035
+    label: Protein
+    name: 3-hydroxy-3-methylglutaryl-coenzyme A reductase
+  - id: GO:0006695
+    label: BiologicalProcess
+    name: cholesterol biosynthetic process
+  - id: MESH:D002784
+    label: ChemicalSubstance
+    name: Cholesterol
+  - id: UBERON:0001637
+    label: GrossAnatomicalStructure
+    name: artery
+  - id: MESH:D001161
+    label: Disease
+    name: Arteriosclerosis
+references:
+  - https://go.drugbank.com/drugs/DB00641#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Simvastatin#Pharmacology
+  - https://www.mayoclinic.org/diseases-conditions/arteriosclerosis-atherosclerosis/symptoms-causes/syc-20350569
+  - https://en.wikipedia.org/wiki/Arteriosclerosis

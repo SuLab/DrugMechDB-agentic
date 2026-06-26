@@ -1,0 +1,79 @@
+comment: The drug allows for the trabecular meshwork in the eye (UBERON:0005969) to
+  open, increasing the outflow of the aqueous humor and having a positive impact on
+  reducing intraocular pressure. Note that MESH:C061212 is not an alternative MESH
+  ID for this drug (https://meshb.nlm.nih.gov/record/ui?ui=C061212). The disease is
+  also known as Open-angle glaucoma as per in DrugCentral.
+directed: true
+graph:
+  _id: DB01057_MESH_D005902_1
+  disease: Glaucoma, Open-Angle
+  disease_mesh: MESH:D005902
+  drug: Echothiophate Iodide
+  drug_mesh: MESH:D004456
+  drugbank: DB:DB01057
+links:
+  - key: decreases activity of
+    source: MESH:D004456
+    target: UniProt:P22303
+  - key: decreases activity of
+    source: MESH:D004456
+    target: UniProt:P06276
+  - key: positively regulates
+    source: UniProt:P06276
+    target: GO:0003990
+  - key: decreases abundance of
+    source: GO:0003990
+    target: MESH:D000109
+  - key: positively regulates
+    source: UniProt:P22303
+    target: GO:0006581
+  - key: decreases abundance of
+    source: GO:0006581
+    target: MESH:D000109
+  - key: positively correlated with
+    source: MESH:D000109
+    target: HP:0000616
+  - key: negatively correlated with
+    source: HP:0000616
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: HP:0007906
+  - key: manifestation of
+    source: HP:0007906
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:D004456
+    label: Drug
+    name: Echothiophate Iodide
+  - id: UniProt:P22303
+    label: Protein
+    name: Acetylcholinesterase
+  - id: UniProt:P06276
+    label: Protein
+    name: Cholinesterase
+  - id: GO:0003990
+    label: MolecularActivity
+    name: acetylcholinesterase activity
+  - id: GO:0006581
+    label: BiologicalProcess
+    name: acetylcholine catabolic process
+  - id: MESH:D000109
+    label: ChemicalSubstance
+    name: Acetylcholine
+  - id: HP:0000616
+    label: PhenotypicFeature
+    name: Miosis
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: aqueous humor of eyeball
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Ocular hypertension
+  - id: MESH:D005902
+    label: Disease
+    name: Glaucoma, Open-Angle
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201341/
+  - https://go.drugbank.com/drugs/DB01057#BE0002180

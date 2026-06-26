@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01217_MESH_D001943_1
+  disease: Hormone receptor positive malignant neoplasm of breast
+  disease_mesh: MESH:D001943
+  drug: anastrozole
+  drug_mesh: MESH:D000077384
+  drugbank: DB:DB01217
+links:
+  - key: decreases activity of
+    source: MESH:D000077384
+    target: UniProt:P11511
+  - key: produces
+    source: UniProt:P11511
+    target: MESH:D004967
+  - key: positively regulates
+    source: MESH:D004967
+    target: GO:0030284
+  - key: correlated with
+    source: GO:0030284
+    target: MESH:D001943
+multigraph: true
+nodes:
+  - id: MESH:D000077384
+    label: Drug
+    name: anastrozole
+  - id: UniProt:P11511
+    label: Protein
+    name: aromatase
+  - id: MESH:D004967
+    label: ChemicalSubstance
+    name: estrogen
+  - id: GO:0030284
+    label: MolecularActivity
+    name: esterogne receptor activity
+  - id: MESH:D001943
+    label: Disease
+    name: Hormone receptor positive malignant neoplasm of breast

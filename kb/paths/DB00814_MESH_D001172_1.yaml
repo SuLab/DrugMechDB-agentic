@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DB00814_MESH_D001172_1
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: Meloxicam
+  drug_mesh: MESH:C065757
+  drugbank: DB:DB00814
+links:
+  - key: decreases activity of
+    source: MESH:C065757
+    target: UniProt:P35354
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: MESH:D011453
+  - key: positively regulates
+    source: MESH:D011453
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0002829
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0001386
+  - key: positively correlated with
+    source: HP:0001386
+    target: MESH:D001172
+  - key: positively correlated with
+    source: HP:0002829
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:C065757
+    label: Drug
+    name: Meloxicam
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: reactome:R-HSA-2162123
+    label: BiologicalProcess
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Joint pain
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB00814

@@ -1,0 +1,60 @@
+comment: Clobetasol is under investigation for the treatment of Scleroderma. Clobetasol
+  propionate is a propionate ester of clobetasol which act as a glucocorticoid receptor
+  and approved for the treatment of dermatoses.
+directed: true
+graph:
+  _id: DB11750_MESH_D003877_2
+  disease: Dermatitis, Contact
+  disease_mesh: MESH:D003877
+  drug: Clobetasol
+  drug_mesh: MESH:D002990
+  drugbank: DB:DB11750
+links:
+  - key: increases activity of
+    source: MESH:D002990
+    target: UniProt:P04150
+  - key: increases activity of
+    source: UniProt:P04150
+    target: MESH:D016753
+  - key: negatively regulates
+    source: MESH:D016753
+    target: InterPro:IPR000451
+  - key: positively regulates
+    source: InterPro:IPR000451
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0011123
+  - key: contributes to
+    source: HP:0011123
+    target: MESH:D003877
+multigraph: true
+nodes:
+  - id: MESH:D002990
+    label: Drug
+    name: Clobetasol
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: MESH:D016753
+    label: ChemicalSubstance
+    name: Interleukin-10
+  - id: InterPro:IPR000451
+    label: GeneFamily
+    name: NF-kappa-B/Dorsal
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0011123
+    label: PhenotypicFeature
+    name: Inflammatory abnormality of the skin
+  - id: MESH:D003877
+    label: Disease
+    name: Dermatitis, Contact
+references:
+  - https://go.drugbank.com/drugs/DB11750#mechanism-of-action
+  - https://go.drugbank.com/drugs/DB01013#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Clobetasol
+  - https://www.uniprot.org/uniprot/P04150#function
+  - https://pubmed.ncbi.nlm.nih.gov/7721885/
+  - https://en.wikipedia.org/wiki/Contact_dermatitis

@@ -1,0 +1,80 @@
+directed: true
+graph:
+  _id: DB11093_MESH_D015663_1
+  disease: Postmenopausal osteoporosis
+  disease_mesh: MESH:D015663
+  drug: strontium ranelate
+  drug_mesh: MESH:C081587
+  drugbank: DB:DB11093
+links:
+  - key: positively regulates
+    source: MESH:C081587
+    target: MESH:D010006
+  - key: increases abundance of
+    source: MESH:D010006
+    target: MESH:D053244
+  - key: increases expression of
+    source: MESH:D010006
+    target: MESH:D053244
+  - key: negatively correlated with
+    source: MESH:D053244
+    target: GO:0045453
+  - key: positively correlated with
+    source: GO:0045453
+    target: MESH:D015663
+  - key: positively regulates
+    source: MESH:C081587
+    target: UniProt:P41180
+  - key: positively correlated with
+    source: UniProt:P41180
+    target: GO:0006915
+  - key: decreases abundance of
+    source: GO:0006915
+    target: MESH:D010010
+  - key: positively correlated with
+    source: MESH:D010010
+    target: GO:0045453
+  - key: positively regulates
+    source: UniProt:P41180
+    target: GO:0070509
+  - key: positively correlated with
+    source: GO:0070509
+    target: GO:0001503
+  - key: negatively correlated with
+    source: GO:0001503
+    target: MESH:D015663
+multigraph: true
+nodes:
+  - id: MESH:C081587
+    label: Drug
+    name: strontium ranelate
+  - id: UniProt:P41180
+    label: Protein
+    name: Extracellular calcium-sensing receptor
+  - id: MESH:D053244
+    label: Protein
+    name: Osteoprotegerin
+  - id: MESH:D010006
+    label: Cell
+    name: Osteoblasts
+  - id: MESH:D010010
+    label: Cell
+    name: Osteoclasts
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: calcium ion import
+  - id: GO:0001503
+    label: BiologicalProcess
+    name: ossification
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: bone resorption
+  - id: MESH:D015663
+    label: Disease
+    name: Postmenopausal osteoporosis
+references:
+  - https://go.drugbank.com/drugs/DB09267#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Strontium_ranelate#Mechanism_of_action

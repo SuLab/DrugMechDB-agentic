@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00348_MESH_D020176_1
+  disease: Tyrosinemia type I
+  disease_mesh: MESH:D020176
+  drug: nitisinone
+  drug_mesh: MESH:C077073
+  drugbank: DB:DB00348
+links:
+  - key: decreases activity of
+    source: MESH:C077073
+    target: UniProt:P32754
+  - key: positively regulates
+    source: UniProt:P32754
+    target: GO:0006572
+  - key: produces
+    source: GO:0006572
+    target: MESH:C105171
+  - key: contributes to
+    source: MESH:C105171
+    target: HP:0001394
+  - key: manifestation of
+    source: HP:0001394
+    target: MESH:D020176
+multigraph: true
+nodes:
+  - id: MESH:C077073
+    label: Drug
+    name: Nitisinone
+  - id: UniProt:P32754
+    label: Protein
+    name: 4-hydroxyphenylpyruvate dioxygenase
+  - id: GO:0006572
+    label: BiologicalProcess
+    name: Tyrosine catabolic process
+  - id: MESH:C105171
+    label: ChemicalSubstance
+    name: Fumarylacetoacetate
+  - id: HP:0001394
+    label: PhenotypicFeature
+    name: Cirrhosis
+  - id: MESH:D020176
+    label: Disease
+    name: Tyrosinemia type I
+references:
+  - https://en.wikipedia.org/wiki/Tyrosinemia_type_I
+  - https://go.drugbank.com/drugs/DB00348#BE0000455

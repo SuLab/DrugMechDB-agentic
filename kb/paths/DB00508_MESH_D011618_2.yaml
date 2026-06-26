@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00508_MESH_D011618_2
+  disease: Psychotic Disorders
+  disease_mesh: MESH:D011618
+  drug: Triflupromazine
+  drug_mesh: MESH:D014273
+  drugbank: DB:DB00508
+links:
+  - key: decreases activity of
+    source: MESH:D014273
+    target: UniProt:P14416
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: contributes to
+    source: MESH:D004298
+    target: HP:0000738
+  - key: contributes to
+    source: MESH:D004298
+    target: HP:0000746
+  - key: manifestation of
+    source: HP:0000738
+    target: MESH:D011618
+  - key: manifestation of
+    source: HP:0000746
+    target: MESH:D011618
+multigraph: true
+nodes:
+  - id: MESH:D014273
+    label: Drug
+    name: Triflupromazine
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: HP:0000738
+    label: PhenotypicFeature
+    name: Hallucinations
+  - id: HP:0000746
+    label: PhenotypicFeature
+    name: Delusions
+  - id: MESH:D011618
+    label: Disease
+    name: Psychotic Disorders
+references:
+  - https://go.drugbank.com/drugs/DB00508#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P14416#function
+  - https://en.wikipedia.org/wiki/Dopamine_receptor
+  - https://en.wikipedia.org/wiki/Psychosis

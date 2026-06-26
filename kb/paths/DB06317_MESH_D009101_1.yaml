@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB06317_MESH_D009101_1
+  disease: Multiple myeloma
+  disease_mesh: MESH:D009101
+  drug: Elotuzumab
+  drug_mesh: MESH:C546027
+  drugbank: DB:DB06317
+links:
+  - key: increases activity of
+    source: MESH:C546027
+    target: UniProt:Q9NQ25
+  - key: expressed in
+    source: UniProt:Q9NQ25
+    target: CL:0000623
+  - key: capable of
+    source: CL:0000623
+    target: GO:0001788
+  - key: precedes
+    source: GO:0001788
+    target: GO:0008219
+  - key: negatively correlated with
+    source: GO:0008219
+    target: MESH:D009101
+multigraph: true
+nodes:
+  - id: MESH:C546027
+    label: Drug
+    name: Elotuzumab
+  - id: UniProt:Q9NQ25
+    label: Protein
+    name: SLAM family member 7
+  - id: CL:0000623
+    label: Cell
+    name: Natural killer cell
+  - id: GO:0001788
+    label: BiologicalProcess
+    name: Antibody-dependent cellular cytotoxicity
+  - id: GO:0008219
+    label: BiologicalProcess
+    name: Cell death
+  - id: MESH:D009101
+    label: Disease
+    name: Multiple myeloma
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/27695618/
+  - https://go.drugbank.com/drugs/DB06317#BE0003492

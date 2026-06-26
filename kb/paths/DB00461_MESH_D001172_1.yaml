@@ -1,0 +1,74 @@
+directed: true
+graph:
+  _id: DB00461_MESH_D001172_1
+  disease: Arthritis, Rheumatoid
+  disease_mesh: MESH:D001172
+  drug: Nabumetone
+  drug_mesh: MESH:D000077430
+  drugbank: DB:DB00461
+links:
+  - key: produces
+    source: MESH:D000077430
+    target: CHEBI:35628
+  - key: decreases activity of
+    source: CHEBI:35628
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: CHEBI:35628
+    target: UniProt:P35354
+  - key: participates in
+    source: UniProt:P23219
+    target: reactome:R-HSA-2162123
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0001386
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0002829
+  - key: positively correlated with
+    source: HP:0001386
+    target: MESH:D001172
+  - key: positively correlated with
+    source: HP:0002829
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:D000077430
+    label: Drug
+    name: Nabumetone
+  - id: CHEBI:35628
+    label: ChemicalSubstance
+    name: (6-methoxy-2-naphthyl)acetic acid
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Arthralgia
+  - id: MESH:D001172
+    label: Disease
+    name: Arthritis, Rheumatoid
+references:
+  - https://go.drugbank.com/drugs/DB00461#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Nabumetone
+  - https://www.uniprot.org/uniprot/P23219#function
+  - https://www.uniprot.org/uniprot/P35354#function
+  - https://en.wikipedia.org/wiki/Rheumatoid_arthritis

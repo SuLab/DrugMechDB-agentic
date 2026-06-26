@@ -1,0 +1,42 @@
+comment: Guanidine is known to causes many side effects; therefore it's not recommended.
+directed: true
+graph:
+  _id: DB00536_MESH_D015624_1
+  disease: Eaton-Lambert syndrome
+  disease_mesh: MESH:D015624
+  drug: guanidine
+  drug_mesh: MESH:D019791
+  drugbank: DB:DB00536
+links:
+  - key: disrupts
+    source: MESH:D019791
+    target: Pfam:PF03520
+  - key: positively regulates
+    source: Pfam:PF03520
+    target: GO:0007274
+  - key: affects risk for
+    source: GO:0007274
+    target: HP:0003690
+  - key: manifestation of
+    source: HP:0003690
+    target: MESH:D015624
+multigraph: true
+nodes:
+  - id: MESH:D019791
+    label: Drug
+    name: guanidine
+  - id: Pfam:PF03520
+    label: GeneFamily
+    name: KCNQ voltage-gated potassium channel
+  - id: GO:0007274
+    label: BiologicalProcess
+    name: neuromuscular synaptic transmission
+  - id: HP:0003690
+    label: PhenotypicFeature
+    name: Limb muscle weakness
+  - id: MESH:D015624
+    label: Disease
+    name: Eaton-Lambert syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00536
+  - https://en.wikipedia.org/wiki/Lambert%E2%80%93Eaton_myasthenic_syndrome#Other

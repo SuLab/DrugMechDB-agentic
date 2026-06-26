@@ -1,0 +1,75 @@
+comment: Hyperpigmentation can be arise following inflammatory dermatose (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2921758/),
+  for which cases fluocinolone acetonide could be used to reduce dark spots caused
+  by inflammation. Alternatively, fluocinolone acetonide when used in combination
+  with two hidroquinone and tretinoin can be used to treat chloasma (https://pubmed.ncbi.nlm.nih.gov/19090343/
+  and https://pubmed.ncbi.nlm.nih.gov/15732437/).
+directed: true
+graph:
+  _id: DB00591_MESH_D008548_1
+  disease: Chloasma
+  disease_mesh: MESH:D008548
+  drug: fluocinolone acetonide
+  drug_mesh: MESH:D005446
+  drugbank: DB:DB00591
+links:
+  - key: positively regulates
+    source: MESH:D005446
+    target: UniProt:P04150
+  - key: increases activity of
+    source: UniProt:P04150
+    target: UniProt:P04083
+  - key: decreases activity of
+    source: UniProt:P04083
+    target: UniProt:P47712
+  - key: negatively regulates
+    source: UniProt:P04083
+    target: UniProt:P35354
+  - key: increases abundance of
+    source: UniProt:P47712
+    target: MESH:D011453
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: MESH:D011453
+  - key: positively regulates
+    source: MESH:D011453
+    target: GO:0006954
+  - key: correlated with
+    source: GO:0006954
+    target: HP:0000953
+  - key: manifestation of
+    source: HP:0000953
+    target: MESH:D008548
+multigraph: true
+nodes:
+  - id: MESH:D005446
+    label: Drug
+    name: fluocinolone acetonide
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: UniProt:P04083
+    label: Protein
+    name: Annexin A1
+  - id: UniProt:P47712
+    label: Protein
+    name: Cytosolic phospholipase A2
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: HP:0000953
+    label: PhenotypicFeature
+    name: Hyperpigmentation of the skin
+  - id: MESH:D008548
+    label: Disease
+    name: Chloasma
+references:
+  - https://go.drugbank.com/drugs/DB00591
+  - https://en.wikipedia.org/wiki/Fluocinolone_acetonide
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL989/
+  - https://my.clevelandclinic.org/health/diseases/21454-melasma#management-and-treatment

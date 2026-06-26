@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB11362_MESH_D000081029_1
+  disease: Pulmonary arterial hypertension
+  disease_mesh: MESH:D000081029
+  drug: selexipag
+  drug_mesh: MESH:C523468
+  drugbank: DB:DB11362
+links:
+  - key: increases activity of
+    source: MESH:C523468
+    target: UniProt:P43119
+  - key: participates in
+    source: UniProt:P43119
+    target: GO:0016501
+  - key: positively regulates
+    source: GO:0016501
+    target: GO:0042311
+  - key: negatively regulates
+    source: GO:0042311
+    target: GO:0008217
+  - key: positively correlated with
+    source: GO:0008217
+    target: MESH:D000081029
+multigraph: true
+nodes:
+  - id: MESH:C523468
+    label: Drug
+    name: selexipag
+  - id: UniProt:P43119
+    label: Protein
+    name: prostacyclin receptor
+  - id: GO:0016501
+    label: MolecularActivity
+    name: prostacyclin receptor activity
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: GO:0008217
+    label: BiologicalProcess
+    name: blood pressure
+  - id: MESH:D000081029
+    label: Disease
+    name: Pulmonary arterial hypertension
+references:
+  - https://go.drugbank.com/drugs/DB11362
+  - https://en.wikipedia.org/wiki/Pulmonary_hypertension

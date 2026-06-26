@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB06785_MESH_D010062_1
+  disease: Ovulation induction
+  disease_mesh: MESH:D010062
+  drug: ganirelix
+  drug_mesh: MESH:C061018
+  drugbank: DB:DB06785
+links:
+  - key: decreases activity of
+    source: MESH:C061018
+    target: UniProt:P30968
+  - key: expressed in
+    source: UniProt:P30968
+    target: UBERON:0000007
+  - key: produces
+    source: UBERON:0000007
+    target: InterPro:IPR000476
+  - key: causes
+    source: InterPro:IPR000476
+    target: MESH:D010062
+multigraph: true
+nodes:
+  - id: MESH:C061018
+    label: Drug
+    name: ganirelix
+  - id: UniProt:P30968
+    label: Protein
+    name: GnRH receptor
+  - id: UBERON:0000007
+    label: GrossAnatomicalStructure
+    name: pituitary gland
+  - id: InterPro:IPR000476
+    label: GeneFamily
+    name: gonadotropins
+  - id: MESH:D010062
+    label: Disease
+    name: Ovulation induction

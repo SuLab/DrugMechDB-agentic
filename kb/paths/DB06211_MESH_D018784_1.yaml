@@ -1,0 +1,56 @@
+comment: The FDA revised the doripenem label in 2014 to include a warning against
+  use in ventilator-associated pneumonia and to reiterate its safety and efficacy
+  for its approved indications.
+directed: true
+graph:
+  _id: DB06211_MESH_D018784_1
+  disease: Abdominal abscess
+  disease_mesh: MESH:D018784
+  drug: Doripenem
+  drug_mesh: MESH:C099245
+  drugbank: DB:DB06211
+links:
+  - key: decreases activity of
+    source: MESH:C099245
+    target: InterPro:IPR001460
+  - key: positively regulates
+    source: InterPro:IPR001460
+    target: GO:0018104
+  - key: positively regulates
+    source: GO:0018104
+    target: GO:0009273
+  - key: has output
+    source: GO:0009273
+    target: GO:0005618
+  - key: occurs in
+    source: GO:0005618
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D018784
+multigraph: true
+nodes:
+  - id: MESH:C099245
+    label: Drug
+    name: Doripenem
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0018104
+    label: BiologicalProcess
+    name: Cross-linking of the peptidoglycan
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: Peptidoglycan-based cell wall biogenesis
+  - id: GO:0005618
+    label: CellularComponent
+    name: Cell wall
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D018784
+    label: Disease
+    name: Abdominal abscess
+references:
+  - https://go.drugbank.com/drugs/DB06211
+  - https://www.ncbi.nlm.nih.gov/books/NBK519573/

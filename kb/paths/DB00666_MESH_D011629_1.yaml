@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00666_MESH_D011629_1
+  disease: Precocious puberty
+  disease_mesh: MESH:D011629
+  drug: nafarelin
+  drug_mesh: MESH:D017274
+  drugbank: DB:DB00666
+links:
+  - key: increases activity of
+    source: MESH:D017274
+    target: UniProt:P30968
+  - key: positively correlated with
+    source: UniProt:P30968
+    target: GO:0002029
+  - key: decreases abundance of
+    source: GO:0002029
+    target: CHEBI:23965
+  - key: positively correlated with
+    source: CHEBI:23965
+    target: MESH:D011629
+  - key: positively correlated with
+    source: GO:0002029
+    target: HP:0000141
+  - key: positively correlated with
+    source: GO:0002029
+    target: MESH:D000858
+  - key: negatively correlated with
+    source: HP:0000141
+    target: MESH:D011629
+  - key: negatively correlated with
+    source: MESH:D000858
+    target: MESH:D011629
+multigraph: true
+nodes:
+  - id: MESH:D017274
+    label: Drug
+    name: nafarelin
+  - id: UniProt:P30968
+    label: Protein
+    name: Gonadotropin-releasing hormone receptor
+  - id: GO:0002029
+    label: BiologicalProcess
+    name: desensitization of G protein-coupled receptor signaling pathway
+  - id: HP:0000141
+    label: PhenotypicFeature
+    name: Amenorrhea
+  - id: MESH:D000858
+    label: PhenotypicFeature
+    name: Anovulation
+  - id: CHEBI:23965
+    label: ChemicalSubstance
+    name: estradiol
+  - id: MESH:D011629
+    label: Disease
+    name: Precocious puberty
+references:
+  - https://go.drugbank.com/drugs/DB00666

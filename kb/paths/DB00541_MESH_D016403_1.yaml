@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00541_MESH_D016403_1
+  disease: Diffuse non-Hodgkin's lymphoma, large cell
+  disease_mesh: MESH:D016403
+  drug: vincristine
+  drug_mesh: MESH:D014750
+  drugbank: DB:DB00541
+links:
+  - key: decreases activity of
+    source: MESH:D014750
+    target: UniProt:P07437
+  - key: part of
+    source: UniProt:P07437
+    target: GO:1902850
+  - key: positively regulates
+    source: GO:1902850
+    target: GO:0140014
+  - key: positively regulates
+    source: GO:0140014
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D016403
+multigraph: true
+nodes:
+  - id: MESH:D014750
+    label: Drug
+    name: Vincristine
+  - id: UniProt:P07437
+    label: Protein
+    name: Tubulin beta chain
+  - id: GO:1902850
+    label: BiologicalProcess
+    name: Microtubule cytoskeleton organization involved in mitosis
+  - id: GO:0140014
+    label: BiologicalProcess
+    name: Mitotic nuclear division
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: MESH:D016403
+    label: Disease
+    name: Diffuse non-Hodgkin's lymphoma, large cell
+references:
+  - https://go.drugbank.com/drugs/DB00541

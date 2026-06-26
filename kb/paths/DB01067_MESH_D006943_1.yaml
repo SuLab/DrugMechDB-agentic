@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01067_MESH_D006943_1
+  disease: Hyperglycemia
+  disease_mesh: MESH:D006943
+  drug: glipizide
+  drug_mesh: MESH:D005913
+  drugbank: DB:DB01067
+links:
+  - key: decreases activity of
+    source: MESH:D005913
+    target: UniProt:Q09428
+  - key: located in
+    source: UniProt:Q09428
+    target: CL:0000169
+  - key: expresses
+    source: CL:0000169
+    target: UniProt:P01308
+  - key: prevents
+    source: UniProt:P01308
+    target: MESH:D006943
+multigraph: true
+nodes:
+  - id: MESH:D005913
+    label: Drug
+    name: glipizide
+  - id: UniProt:Q09428
+    label: Protein
+    name: ATP-binding cassette sub-family C member 8
+  - id: CL:0000169
+    label: Cell
+    name: Islet Cells
+  - id: UniProt:P01308
+    label: Protein
+    name: insulin
+  - id: MESH:D006943
+    label: Disease
+    name: Hyperglycemia

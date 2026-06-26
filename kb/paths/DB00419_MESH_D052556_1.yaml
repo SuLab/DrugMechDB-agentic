@@ -1,0 +1,52 @@
+comment: Miglustat is an example of a substrate reduction therapy and it inhibits
+  the synthesis of glucosylceramide (also known as glucocerebroside).
+directed: true
+graph:
+  _id: DB00419_MESH_D052556_1
+  disease: Niemann-Pick disease, type C
+  disease_mesh: MESH:D052556
+  drug: miglustat
+  drug_mesh: MESH:C059896
+  drugbank: DB:DB00419
+links:
+  - key: decreases activity of
+    source: MESH:C059896
+    target: UniProt:Q16739
+  - key: positively regulates
+    source: UniProt:Q16739
+    target: GO:0006679
+  - key: increases abundance of
+    source: GO:0006679
+    target: CHEBI:36500
+  - key: positively correlated with
+    source: CHEBI:36500
+    target: HP:0000707
+  - key: manifestation of
+    source: HP:0000707
+    target: MESH:D052556
+multigraph: true
+nodes:
+  - id: MESH:C059896
+    label: Drug
+    name: miglustat
+  - id: UniProt:Q16739
+    label: Protein
+    name: Ceramide glucosyltransferase
+  - id: GO:0006679
+    label: BiologicalProcess
+    name: glucosylceramide biosynthetic process
+  - id: CHEBI:36500
+    label: ChemicalSubstance
+    name: glucosylceramide
+  - id: HP:0000707
+    label: PhenotypicFeature
+    name: Abnormality of the nervous system
+  - id: MESH:D052556
+    label: Disease
+    name: Niemann-Pick disease, type C
+references:
+  - https://go.drugbank.com/drugs/DB00419
+  - https://pubmed.ncbi.nlm.nih.gov/30111334/
+  - https://en.wikipedia.org/wiki/Niemann%E2%80%93Pick_disease,_type_C#Other_treatments_under_investigation
+  - https://en.wikipedia.org/wiki/Miglustat#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Substrate_reduction_therapy

@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB01115_MESH_D000788_1
+  disease: Prinzmetal angina
+  disease_mesh: MESH:D000788
+  drug: Nifedipine
+  drug_mesh: MESH:D009543
+  drugbank: DB:DB01115
+links:
+  - key: decreases activity of
+    source: MESH:D009543
+    target: UniProt:Q13936
+  - key: participates in
+    source: UniProt:Q13936
+    target: GO:0070509
+  - key: contributes to
+    source: GO:0070509
+    target: GO:0045907
+  - key: positively correlated with
+    source: GO:0045907
+    target: MESH:D000788
+multigraph: true
+nodes:
+  - id: MESH:D009543
+    label: Drug
+    name: Nifedipine
+  - id: UniProt:Q13936
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1C
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Transmembrane calcium influx
+  - id: GO:0045907
+    label: BiologicalProcess
+    name: Positive regulation of vasoconstriction
+  - id: MESH:D000788
+    label: Disease
+    name: Prinzmetal angina
+references:
+  - https://go.drugbank.com/drugs/DB01115#BE0000430
+  - https://en.wikipedia.org/wiki/Variant_angina#Mechanism

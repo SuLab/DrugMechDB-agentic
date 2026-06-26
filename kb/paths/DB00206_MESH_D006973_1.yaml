@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00206_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: reserpine
+  drug_mesh: MESH:D012110
+  drugbank: DB:DB00206
+links:
+  - key: negatively regulates
+    source: MESH:D012110
+    target: UniProt:Q05940
+  - key: participates in
+    source: UniProt:Q05940
+    target: reactome:R-HSA-181430
+  - key: positively correlated with
+    source: reactome:R-HSA-181430
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: positively correlated with
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D012110
+    label: Drug
+    name: reserpine
+  - id: UniProt:Q05940
+    label: Protein
+    name: Synaptic vesicular amine transporter
+  - id: reactome:R-HSA-181430
+    label: Pathway
+    name: Norepinephrine Neurotransmitter Release Cycle
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00206

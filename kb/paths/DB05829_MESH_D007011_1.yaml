@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB05829_MESH_D007011_1
+  disease: Hypoparathyroidism
+  disease_mesh: MESH:D007011
+  drug: parathyroid hormone
+  drug_mesh: MESH:D010281
+  drugbank: DB:DB05829
+links:
+  - key: positively regulates
+    source: MESH:D010281
+    target: UniProt:Q03431
+  - key: regulates
+    source: UniProt:Q03431
+    target: GO:0055074
+  - key: negatively correlated with
+    source: GO:0055074
+    target: HP:0004363
+  - key: manifestation of
+    source: HP:0004363
+    target: MESH:D007011
+multigraph: true
+nodes:
+  - id: MESH:D010281
+    label: Drug
+    name: parathyroid hormone
+  - id: UniProt:Q03431
+    label: Protein
+    name: Parathyroid hormone/parathyroid hormone-related peptide receptor
+  - id: GO:0055074
+    label: BiologicalProcess
+    name: calcium ion homeostasis
+  - id: HP:0004363
+    label: PhenotypicFeature
+    name: Abnormal circulating calcium concentration
+  - id: MESH:D007011
+    label: Disease
+    name: Hypoparathyroidism
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108078/
+  - https://go.drugbank.com/drugs/DB05829
+  - https://en.wikipedia.org/wiki/Recombinant_human_parathyroid_hormone#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Parathyroid_hormone_receptor

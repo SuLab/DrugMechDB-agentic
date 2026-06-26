@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00203_MESH_D007172_1
+  disease: Erectile Disfunction
+  disease_mesh: MESH:D007172
+  drug: sildenafil
+  drug_mesh: MESH:D000068677
+  drugbank: DB:DB00203
+links:
+  - key: decreases activity of
+    source: MESH:D000068677
+    target: UniProt:O76074
+  - key: decreases abundance of
+    source: UniProt:O76074
+    target: MESH:D006152
+  - key: participates in
+    source: MESH:D006152
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: MESH:D007172
+multigraph: true
+nodes:
+  - id: MESH:D000068677
+    label: Drug
+    name: sildenafil
+  - id: UniProt:O76074
+    label: Protein
+    name: phosphodisterase type 5
+  - id: MESH:D006152
+    label: ChemicalSubstance
+    name: cGMP
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: Vasodilation
+  - id: MESH:D007172
+    label: Disease
+    name: Erectile Disfunction

@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00309_MESH_D015464_1
+  disease: Chronic myeloid leukemia
+  disease_mesh: MESH:D015464
+  drug: Vindesine
+  drug_mesh: MESH:D014751
+  drugbank: DB:DB00309
+links:
+  - key: decreases activity of
+    source: MESH:D014751
+    target: UniProt:Q9H4B7
+  - key: part of
+    source: UniProt:Q9H4B7
+    target: GO:1902850
+  - key: positively regulates
+    source: GO:1902850
+    target: GO:0140014
+  - key: positively correlated with
+    source: GO:0140014
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D015464
+multigraph: true
+nodes:
+  - id: MESH:D014751
+    label: Drug
+    name: Vindesine
+  - id: UniProt:Q9H4B7
+    label: Protein
+    name: Tubulin beta-1 chain
+  - id: GO:1902850
+    label: BiologicalProcess
+    name: Microtubule cytoskeleton organization involved in mitosis
+  - id: GO:0140014
+    label: BiologicalProcess
+    name: Mitotic nuclear division
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: MESH:D015464
+    label: Disease
+    name: Chronic myeloid leukemia
+references:
+  - https://go.drugbank.com/drugs/DB00309

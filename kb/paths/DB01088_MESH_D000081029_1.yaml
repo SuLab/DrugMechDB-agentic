@@ -1,0 +1,93 @@
+directed: true
+graph:
+  _id: DB01088_MESH_D000081029_1
+  disease: Pulmonary arterial hypertension
+  disease_mesh: MESH:D000081029
+  drug: iloprost
+  drug_mesh: MESH:D016285
+  drugbank: DB:DB01088
+links:
+  - key: increases activity of
+    source: MESH:D016285
+    target: UniProt:P43119
+  - key: increases activity of
+    source: MESH:D016285
+    target: UniProt:P34995
+  - key: increases activity of
+    source: MESH:D016285
+    target: UniProt:P43116
+  - key: increases activity of
+    source: MESH:D016285
+    target: UniProt:P35408
+  - key: increases activity of
+    source: MESH:D016285
+    target: UniProt:Q9Y5Y4
+  - key: decreases abundance of
+    source: UniProt:P34995
+    target: MESH:D002118
+  - key: decreases abundance of
+    source: UniProt:P43116
+    target: MESH:D002118
+  - key: decreases abundance of
+    source: UniProt:Q9Y5Y4
+    target: MESH:D002118
+  - key: decreases abundance of
+    source: UniProt:P35408
+    target: MESH:D002118
+  - key: decreases abundance of
+    source: UniProt:P43119
+    target: MESH:D002118
+  - key: negatively correlated with
+    source: MESH:D002118
+    target: GO:0044557
+  - key: positively correlated with
+    source: GO:0044557
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: MESH:D000081029
+multigraph: true
+nodes:
+  - id: MESH:D016285
+    label: Drug
+    name: iloprost
+  - id: UniProt:P43119
+    label: Protein
+    name: Prostacyclin receptor
+  - id: UniProt:P34995
+    label: Protein
+    name: Prostaglandin E2 receptor EP1 subtype
+  - id: UniProt:P43116
+    label: Protein
+    name: Prostaglandin E2 receptor EP2 subtype
+  - id: UniProt:P35408
+    label: Protein
+    name: Prostaglandin E2 receptor EP4 subtype
+  - id: UniProt:Q9Y5Y4
+    label: Protein
+    name: Prostaglandin D2 receptor 2
+  - id: MESH:D002118
+    label: ChemicalSubstance
+    name: Calcium
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: relaxation of smooth muscle
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: MESH:D000081029
+    label: Disease
+    name: Pulmonary arterial hypertension
+references:
+  - https://go.drugbank.com/drugs/DB01088#BE0000475
+  - https://en.wikipedia.org/wiki/Iloprost#Clinical_pharmacology
+  - https://en.wikipedia.org/wiki/Vasodilation#Examples_and_individual_mechanisms
+  - https://en.wikipedia.org/wiki/Prostacyclin#Mechanism
+  - https://en.wikipedia.org/wiki/Prostaglandin_EP3_receptor#Therapeutics
+comment: This drug could potentially modulate UniProt:P43115 as it has little selectivity.
+  However, the action upon activing this target would be vasoconstriction, which would
+  be contraindicated in Pulmonary arterial hypertension. This could explain the hypertension
+  adverse event reported in https://www.targetvalidation.org/summary?drug=CHEMBL494.
+  DrugBank has the phosphodiesterase gene family as possible targets for this drug
+  but this is based on experiments where Iloprost was used in combination with phosphodiesterase
+  inhibitors. So, Iloprost on its own does not modulate phosphodiesterases.

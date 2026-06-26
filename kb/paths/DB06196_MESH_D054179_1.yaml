@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB06196_MESH_D054179_1
+  disease: hereditary angioneurotic edema
+  disease_mesh: MESH:D054179
+  drug: icatibant
+  drug_mesh: MESH:C065679
+  drugbank: DB:DB06196
+links:
+  - key: decreases activity of
+    source: MESH:C065679
+    target: UniProt:P30411
+  - key: molecularly interacts with
+    source: UniProt:P30411
+    target: MESH:D001920
+  - key: contributes to
+    source: MESH:D001920
+    target: GO:0043117
+  - key: has phenotype
+    source: GO:0043117
+    target: HP:0000969
+  - key: manifestation of
+    source: HP:0000969
+    target: MESH:D054179
+multigraph: true
+nodes:
+  - id: MESH:C065679
+    label: Drug
+    name: icatibant
+  - id: UniProt:P30411
+    label: Protein
+    name: B2 bradykinin receptor
+  - id: MESH:D001920
+    label: ChemicalSubstance
+    name: bradykinin
+  - id: GO:0043117
+    label: BiologicalProcess
+    name: positive regulation of vascular permeability
+  - id: HP:0000969
+    label: PhenotypicFeature
+    name: edema
+  - id: MESH:D054179
+    label: Disease
+    name: hereditary angioneurotic edema
+references:
+  - https://go.drugbank.com/drugs/DB06196#BE0003513
+  - https://en.wikipedia.org/wiki/Hereditary_angioedema

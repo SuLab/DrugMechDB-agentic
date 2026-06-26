@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB01377_MESH_D003248_1
+  disease: Constipation
+  disease_mesh: MESH:D003248
+  drug: magnesium oxide
+  drug_mesh: MESH:D008277
+  drugbank: DB:DB01377
+links:
+  - key: subclass of
+    source: MESH:D008277
+    target: MESH:D054368
+  - key: positively regulates
+    source: MESH:D054368
+    target: GO:0030421
+  - key: negatively correlated with
+    source: GO:0030421
+    target: MESH:D003248
+multigraph: true
+nodes:
+  - id: MESH:D008277
+    label: Drug
+    name: Magnesium oxide
+  - id: MESH:D054368
+    label: ChemicalSubstance
+    name: Laxatives
+  - id: GO:0030421
+    label: BiologicalProcess
+    name: Defecation
+  - id: MESH:D003248
+    label: Disease
+    name: Constipation
+references:
+  - https://go.drugbank.com/drugs/DB01377

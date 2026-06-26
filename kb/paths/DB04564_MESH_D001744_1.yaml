@@ -1,0 +1,23 @@
+comment: Gluconolactone is used as a component of irrigation solution Renacidin for
+  dissolution of bladder calculi of the struvite or apatite variety.
+directed: true
+graph:
+  _id: DB04564_MESH_D001744_1
+  disease: Urinary bladder stone
+  disease_mesh: MESH:D001744
+  drug: gluconolactone
+  drugbank: DB:DB04564
+links:
+  - key: treats
+    source: DB:DB04564
+    target: MESH:D001744
+multigraph: true
+nodes:
+  - id: DB:DB04564
+    label: Drug
+    name: Gluconolactone
+  - id: MESH:D001744
+    label: Disease
+    name: Urinary bladder stone
+references:
+  - https://drugs.ncats.io/drug/WQ29KQ9POT

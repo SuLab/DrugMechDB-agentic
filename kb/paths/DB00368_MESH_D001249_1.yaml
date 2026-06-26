@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00368_MESH_D001249_1
+  disease: Asthma
+  disease_mesh: MESH:D001249
+  drug: norepinephrine
+  drug_mesh: MESH:D009638
+  drugbank: DB:DB00368
+links:
+  - key: positively regulates
+    source: MESH:D009638
+    target: UniProt:P07550
+  - key: positively regulates
+    source: UniProt:P07550
+    target: GO:0044557
+  - key: negatively correlated with
+    source: GO:0044557
+    target: HP:0033540
+  - key: negatively correlated with
+    source: GO:0044557
+    target: HP:0002094
+  - key: manifestation of
+    source: HP:0002094
+    target: MESH:D001249
+  - key: manifestation of
+    source: HP:0033540
+    target: MESH:D001249
+multigraph: true
+nodes:
+  - id: MESH:D009638
+    label: Drug
+    name: norepinephrine
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: relaxation of smooth muscle
+  - id: HP:0033540
+    label: PhenotypicFeature
+    name: Reversible airflow obstruction
+  - id: HP:0002094
+    label: PhenotypicFeature
+    name: Dyspnea
+  - id: MESH:D001249
+    label: Disease
+    name: Asthma
+references:
+  - https://go.drugbank.com/drugs/DB00668#BE0000694
+  - https://pubchem.ncbi.nlm.nih.gov/compound/439260#section=Pharmacology

@@ -1,0 +1,32 @@
+comment: Addison Disease is a primary adrenal insufficiency which is characterized
+  by the inadequate production of the steroid hormones such as cortisol and aldosterone.
+directed: true
+graph:
+  _id: DB00635_MESH_D000224_1
+  disease: Addison Disease
+  disease_mesh: MESH:D000224
+  drug: prednisone
+  drug_mesh: MESH:D011241
+  drugbank: DB:DB00635
+links:
+  - key: has metabolite
+    source: MESH:D011241
+    target: MESH:D011239
+  - key: treats
+    source: MESH:D011239
+    target: MESH:D000224
+multigraph: true
+nodes:
+  - id: MESH:D011241
+    label: Drug
+    name: prednisone
+  - id: MESH:D011239
+    label: ChemicalSubstance
+    name: Prednisolone
+  - id: MESH:D000224
+    label: Disease
+    name: Addison Disease
+references:
+  - https://go.drugbank.com/drugs/DB00635#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Prednisone
+  - https://en.wikipedia.org/wiki/Addison%27s_disease

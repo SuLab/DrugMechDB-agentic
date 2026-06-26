@@ -1,0 +1,25 @@
+comment: Amlexanox is no longer available in the US (https://medlineplus.gov/druginfo/meds/a601017.html)
+directed: true
+graph:
+  _id: DB01025_MESH_D013281_1
+  disease: Stomatitis, Aphthous
+  disease_mesh: MESH:D013281
+  drug: amlexanox
+  drug_mesh: MESH:C045742
+  drugbank: DB:DB01025
+links:
+  - key: treats
+    source: MESH:C045742
+    target: MESH:D013281
+multigraph: true
+nodes:
+  - id: MESH:C045742
+    label: Drug
+    name: amlexanox
+  - alt_names:
+      - Aphthous ulcer of mouth
+    id: MESH:D013281
+    label: Disease
+    name: Stomatitis, Aphthous
+references:
+  - https://en.wikipedia.org/wiki/Amlexanox#Mechanism_of_action

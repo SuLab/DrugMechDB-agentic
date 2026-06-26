@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01200_MESH_D006966_1
+  disease: Hyperprolactinemia
+  disease_mesh: MESH:D006966
+  drug: bromocriptine
+  drug_mesh: MESH:D001971
+  drugbank: DB:DB01200
+links:
+  - key: positively regulates
+    source: MESH:D001971
+    target: UniProt:P14416
+  - key: positively regulates
+    source: MESH:D001971
+    target: UniProt:P35462
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P35462
+    target: MESH:D004298
+  - key: negatively correlated with
+    source: MESH:D004298
+    target: GO:1902722
+  - key: positively correlated with
+    source: GO:1902722
+    target: MESH:D006966
+multigraph: true
+nodes:
+  - id: MESH:D001971
+    label: Drug
+    name: bromocriptine
+  - id: UniProt:P14416
+    label: Protein
+    name: Dopamine D2 receptor
+  - id: UniProt:P35462
+    label: Protein
+    name: Dopamine D3 receptor
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: dopamine
+  - id: GO:1902722
+    label: BiologicalProcess
+    name: positive regulation of prolactin secretion
+  - id: MESH:D006966
+    label: Disease
+    name: Hyperprolactinemia
+references:
+  - https://go.drugbank.com/drugs/DB01200#BE0000581

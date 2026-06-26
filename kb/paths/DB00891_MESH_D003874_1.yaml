@@ -1,0 +1,38 @@
+comment: Potentially toxic. No longer prescribed.
+directed: true
+graph:
+  _id: DB00891_MESH_D003874_1
+  disease: Dermatitis herpetiformis
+  disease_mesh: MESH:D003874
+  drug: Sulfapyridine
+  drug_mesh: MESH:D013427
+  drugbank: DB:DB00891
+links:
+  - key: negatively regulates
+    source: MESH:D013427
+    target: GO:0002553
+  - key: negatively regulates
+    source: MESH:D013427
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0002553
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D003874
+multigraph: true
+nodes:
+  - id: MESH:D013427
+    label: Drug
+    name: Sulfapyridine
+  - id: GO:0002553
+    label: BiologicalProcess
+    name: Histamine secretion by mast cell
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D003874
+    label: Disease
+    name: Dermatitis herpetiformis
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/15842404/

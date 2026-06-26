@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB09054_MESH_D015451_1
+  disease: Leukemia, Lymphocytic, Chronic, B-Cell
+  disease_mesh: MESH:D015451
+  drug: Idelalisib
+  drug_mesh: MESH:C552946
+  drugbank: DB:DB09054
+links:
+  - key: decreases activity of
+    source: MESH:C552946
+    target: UniProt:O00329
+  - key: participates in
+    source: UniProt:O00329
+    target: reactome:R-HSA-109704
+  - key: positively regulates
+    source: reactome:R-HSA-109704
+    target: GO:0042100
+  - key: positively correlated with
+    source: GO:0042100
+    target: MESH:D015451
+multigraph: true
+nodes:
+  - id: MESH:C552946
+    label: Drug
+    name: Idelalisib
+  - id: UniProt:O00329
+    label: Protein
+    name: Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform
+  - id: reactome:R-HSA-109704
+    label: Pathway
+    name: PI3K Cascade
+  - id: GO:0042100
+    label: BiologicalProcess
+    name: B cell proliferation
+  - id: MESH:D015451
+    label: Disease
+    name: Leukemia, Lymphocytic, Chronic, B-Cell
+references:
+  - https://go.drugbank.com/drugs/DB09054#BE0002406
+  - https://en.wikipedia.org/wiki/Chronic_lymphocytic_leukemia

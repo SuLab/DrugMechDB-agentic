@@ -1,0 +1,60 @@
+comment: both Tafamidis and tafamidis meglumine (FX-1006A, which is drugbank:DB05352)
+  are benzoxazole derivatives (https://go.drugbank.com/drugs/DB11644#description)
+directed: true
+graph:
+  _id: DB05352_MESH_D000686_1
+  disease: Amyloidosis
+  disease_mesh: MESH:D000686
+  drug: tafamidis
+  drug_mesh: MESH:C547076
+  drugbank: DB:DB05352
+links:
+  - key: increases stability of
+    source: MESH:C547076
+    target: UniProt:P02766
+  - key: enables
+    source: UniProt:P02766
+    target: GO:0042802
+  - key: causes
+    source: GO:0042802
+    target: GO:0051262
+  - key: disrupted by
+    source: GO:0051262
+    target: GO:0043243
+  - key: correlated with
+    source: GO:0043243
+    target: GO:1903333
+  - key: exacerbates
+    source: GO:1903333
+    target: GO:1990000
+  - key: causes
+    source: GO:1990000
+    target: MESH:D000686
+multigraph: true
+nodes:
+  - id: MESH:C547076
+    label: Drug
+    name: tafamidis
+  - id: UniProt:P02766
+    label: Protein
+    name: Transthyretin
+  - id: GO:0042802
+    label: MolecularActivity
+    name: identical protein binding
+  - id: GO:0051262
+    label: BiologicalProcess
+    name: protein tetramerization
+  - id: GO:0043243
+    label: BiologicalProcess
+    name: positive regulation of protein-containing complex disassembly
+  - id: GO:1903333
+    label: BiologicalProcess
+    name: negative regulation of protein folding
+  - id: GO:1990000
+    label: BiologicalProcess
+    name: amyloid fibril formation
+  - id: MESH:D000686
+    label: Disease
+    name: Amyloidosis
+references:
+  - https://go.drugbank.com/drugs/DB11644#mechanism-of-action

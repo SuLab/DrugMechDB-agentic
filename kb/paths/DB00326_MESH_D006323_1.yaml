@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB00326_MESH_D006323_1
+  disease: Cardiac arrest
+  disease_mesh: MESH:D006323
+  drug: calcium glucoheptonate
+  drug_mesh: MESH:C007852
+  drugbank: DB:DB00326
+links:
+  - key: positively regulates
+    source: MESH:C007852
+    target: GO:0060075
+  - key: located in
+    source: GO:0060075
+    target: UBERON:0001133
+  - key: decreases activity of
+    source: UBERON:0001133
+    target: MESH:D006323
+multigraph: true
+nodes:
+  - id: MESH:C007852
+    label: Drug
+    name: calcium glucoheptonate
+  - id: GO:0060075
+    label: BiologicalProcess
+    name: resting membrane potential
+  - id: UBERON:0001133
+    label: GrossAnatomicalStructure
+    name: cardiac muscle
+  - id: MESH:D006323
+    label: Disease
+    name: Cardiac arrest
+references:
+  - https://go.drugbank.com/drugs/DB00326

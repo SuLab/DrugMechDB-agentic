@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB09564_MESH_D003920_1
+  disease: Diabetes mellitus
+  disease_mesh: MESH:D003920
+  drug: insulin degludec
+  drug_mesh: MESH:C571886
+  drugbank: DB:DB09564
+links:
+  - key: increases activity of
+    source: MESH:C571886
+    target: UniProt:P06213
+  - key: positively regulates
+    source: UniProt:P06213
+    target: GO:0004714
+  - key: participates in
+    source: GO:0004714
+    target: reactome:R-HSA-74713
+  - key: positively correlated with
+    source: reactome:R-HSA-74713
+    target: GO:0046323
+  - key: negatively correlated with
+    source: GO:0046323
+    target: MESH:D003920
+multigraph: true
+nodes:
+  - id: MESH:C571886
+    label: Drug
+    name: insulin degludec
+  - id: UniProt:P06213
+    label: Protein
+    name: Insulin receptor
+  - id: GO:0004714
+    label: MolecularActivity
+    name: transmembrane receptor protein tyrosine kinase activity
+  - id: reactome:R-HSA-74713
+    label: Pathway
+    name: IRS activation
+  - id: GO:0046323
+    label: BiologicalProcess
+    name: glucose import
+  - id: MESH:D003920
+    label: Disease
+    name: Diabetes mellitus
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107869/
+  - https://go.drugbank.com/drugs/DB09564
+  - https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=456c5e87-3dfd-46fa-8ac0-c6128d4c97c6

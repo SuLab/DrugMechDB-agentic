@@ -1,0 +1,72 @@
+comment: Vancomycin is not active against Gram-negative bacteria (https://en.wikipedia.org/wiki/Vancomycin#Mechanism_of_action).
+directed: true
+graph:
+  _id: DB00512_MESH_D000071074_1
+  disease: Sepsis of the newborn
+  disease_mesh: MESH:D000071074
+  drug: vancomycin
+  drug_mesh: MESH:D014640
+  drugbank: DB:DB00512
+links:
+  - key: disrupts
+    source: MESH:D014640
+    target: CHEBI:16576
+  - key: negatively regulates
+    source: MESH:D014640
+    target: GO:0018104
+  - key: in taxon
+    source: GO:0018104
+    target: taxonomy:1311
+  - key: negatively regulates
+    source: MESH:D014640
+    target: GO:0032774
+  - key: in taxon
+    source: GO:0032774
+    target: taxonomy:1311
+  - key: disrupts
+    source: MESH:D014640
+    target: MESH:D010539
+  - key: in taxon
+    source: MESH:D010539
+    target: taxonomy:1311
+  - key: located in
+    source: CHEBI:16576
+    target: GO:0009275
+  - key: in taxon
+    source: GO:0009275
+    target: taxonomy:1311
+  - key: causes
+    source: taxonomy:1311
+    target: MESH:D000071074
+multigraph: true
+nodes:
+  - id: MESH:D014640
+    label: Drug
+    name: vancomycin
+  - id: CHEBI:16576
+    label: ChemicalSubstance
+    name: D-alanyl-D-alanine
+  - id: GO:0009275
+    label: CellularComponent
+    name: Gram-positive-bacterium-type cell wall
+  - id: GO:0018104
+    label: BiologicalProcess
+    name: peptidoglycan-protein cross-linking
+  - id: GO:0032774
+    label: BiologicalProcess
+    name: RNA biosynthetic process
+  - id: MESH:D010539
+    label: BiologicalProcess
+    name: Permeability
+  - id: taxonomy:1311
+    label: OrganismTaxon
+    name: Streptococcus agalactiae
+  - id: MESH:D000071074
+    label: Disease
+    name: Sepsis of the newborn
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/14969#section=Mechanism-of-Action
+  - https://go.drugbank.com/drugs/DB00512
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL262777/
+  - https://medlineplus.gov/ency/article/007303.htm
+  - https://medlineplus.gov/ency/article/001366.htm

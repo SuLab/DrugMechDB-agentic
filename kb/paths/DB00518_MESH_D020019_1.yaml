@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB00518_MESH_D020019_1
+  disease: Cerebral cysticercosis
+  disease_mesh: MESH:D020019
+  drug: albendazole
+  drug_mesh: MESH:D015766
+  drugbank: DB:DB00518
+links:
+  - key: decreases activity of
+    source: MESH:D015766
+    target: InterPro:IPR000217
+  - key: negatively regulates
+    source: MESH:D015766
+    target: GO:0046323
+  - key: participates in
+    source: InterPro:IPR000217
+    target: GO:0048870
+  - key: in taxon
+    source: GO:0048870
+    target: taxonomy:6204
+  - key: positively correlated with
+    source: GO:0046323
+    target: GO:0042773
+  - key: in taxon
+    source: GO:0042773
+    target: taxonomy:6204
+  - key: causes
+    source: taxonomy:6204
+    target: MESH:D020019
+multigraph: true
+nodes:
+  - id: MESH:D015766
+    label: Drug
+    name: albendazole
+  - id: InterPro:IPR000217
+    label: GeneFamily
+    name: Tubulin
+  - id: GO:0046323
+    label: BiologicalProcess
+    name: Glucose import
+  - id: GO:0042773
+    label: BiologicalProcess
+    name: ATP synthesis coupled electron transport
+  - id: GO:0048870
+    label: BiologicalProcess
+    name: Cell motility
+  - id: taxonomy:6204
+    label: OrganismTaxon
+    name: Taenia solium
+  - id: MESH:D020019
+    label: Disease
+    name: Cerebral cysticercosis
+references:
+  - https://en.wikipedia.org/wiki/Albendazole#Mechanism_of_action
+  - https://go.drugbank.com/drugs/DB00518

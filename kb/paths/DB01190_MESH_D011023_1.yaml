@@ -1,0 +1,67 @@
+directed: true
+graph:
+  _id: DB01190_MESH_D011023_1
+  disease: Staphylococcal pneumonia
+  disease_mesh: MESH:D011023
+  drug: clindamycin phosphate
+  drug_mesh: MESH:C007084
+  drugbank: DB:DB01190
+links:
+  - key: decreases activity of
+    source: MESH:C007084
+    target: MESH:D012338
+  - key: part of
+    source: MESH:D012338
+    target: UniProt:Q2G0P0
+  - key: part of
+    source: UniProt:Q2G0P0
+    target: GO:0005840
+  - key: participates in
+    source: GO:0005840
+    target: GO:0000048
+  - key: positively correlated with
+    source: GO:0000048
+    target: GO:0006412
+  - key: positively correlated with
+    source: GO:0006412
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D011023
+multigraph: true
+nodes:
+  - id: MESH:C007084
+    label: Drug
+    name: clindamycin phosphate
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: UniProt:Q2G0P0
+    label: Protein
+    name: 50S ribosomal protein L1 Staphylococcus aureus (strain NCTC 8325)
+  - id: GO:0005840
+    label: CellularComponent
+    name: Ribosome
+  - id: GO:0000048
+    label: MolecularActivity
+    name: peptidyltransferase activity
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Bacterial translation
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D011023
+    label: Disease
+    name: Staphylococcal pneumonia
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1753/
+  - https://go.drugbank.com/drugs/DB01190
+  - https://pubchem.ncbi.nlm.nih.gov/compound/446598
+  - https://en.wikipedia.org/wiki/Clindamycin

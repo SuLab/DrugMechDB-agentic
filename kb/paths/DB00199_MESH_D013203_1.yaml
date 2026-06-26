@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00199_MESH_D013203_1
+  disease: Staphylococcal Infections
+  disease_mesh: MESH:D013203
+  drug: erythromycin
+  drug_mesh: MESH:D004917
+  drugbank: DB:DB00199
+links:
+  - key: negatively regulates
+    source: MESH:D004917
+    target: MESH:D012338
+  - key: participates in
+    source: MESH:D012338
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:1279
+  - key: causes
+    source: taxonomy:1279
+    target: MESH:D013203
+multigraph: true
+nodes:
+  - id: MESH:D004917
+    label: Drug
+    name: erythromycin
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:1279
+    label: OrganismTaxon
+    name: Staphylococcus
+  - id: MESH:D013203
+    label: Disease
+    name: Staphylococcal Infections
+references:
+  - https://go.drugbank.com/drugs/DB00199#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Staphylococcal_infection

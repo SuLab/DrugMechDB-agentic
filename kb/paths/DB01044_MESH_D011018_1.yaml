@@ -1,0 +1,67 @@
+directed: true
+graph:
+  _id: DB01044_MESH_D011018_1
+  disease: Pneumonia due to Streptococcus
+  disease_mesh: MESH:D011018
+  drug: Gatifloxacin
+  drug_mesh: MESH:C078049
+  drugbank: DB:DB01044
+links:
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:P72525
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:Q59961
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:P72524
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:P0A4L9
+  - key: participates in
+    source: UniProt:P72525
+    target: GO:0006260
+  - key: participates in
+    source: UniProt:Q59961
+    target: GO:0006260
+  - key: participates in
+    source: UniProt:P72524
+    target: GO:0006260
+  - key: participates in
+    source: UniProt:P0A4L9
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:1301
+  - key: causes
+    source: taxonomy:1301
+    target: MESH:D011018
+multigraph: true
+nodes:
+  - id: MESH:C078049
+    label: Drug
+    name: Gatifloxacin
+  - id: UniProt:P72525
+    label: Protein
+    name: DNA topoisomerase 4 subunit A (Streptococcus pneumoniae)
+  - id: UniProt:Q59961
+    label: Protein
+    name: DNA topoisomerase 4 subunit B (Streptococcus pneumoniae)
+  - id: UniProt:P72524
+    label: Protein
+    name: DNA gyrase subunit A (Streptococcus pneumoniae)
+  - id: UniProt:P0A4L9
+    label: Protein
+    name: DNA gyrase subunit B (Streptococcus pneumoniae)
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: taxonomy:1301
+    label: OrganismTaxon
+    name: Streptococcus
+  - id: MESH:D011018
+    label: Disease
+    name: Pneumonia due to Streptococcus
+references:
+  - https://go.drugbank.com/drugs/DB01044

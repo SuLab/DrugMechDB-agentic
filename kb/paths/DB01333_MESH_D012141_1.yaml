@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB01333_MESH_D012141_1
+  disease: Upper respiratory infection
+  disease_mesh: MESH:D012141
+  drug: cefradine
+  drug_mesh: MESH:D002515
+  drugbank: DB:DB01333
+links:
+  - key: decreases activity of
+    source: MESH:D002515
+    target: InterPro:IPR005311
+  - key: prevents
+    source: InterPro:IPR005311
+    target: GO:0018104
+  - key: contributes to
+    source: GO:0018104
+    target: GO:0005618
+  - key: in taxon
+    source: GO:0005618
+    target: taxonomy:727
+  - key: causes
+    source: taxonomy:727
+    target: MESH:D012141
+multigraph: true
+nodes:
+  - id: MESH:D002515
+    label: Drug
+    name: Cefradine
+  - id: InterPro:IPR005311
+    label: GeneFamily
+    name: penicillin binding proteins
+  - id: GO:0018104
+    label: BiologicalProcess
+    name: cross-linking of the peptidoglycan
+  - id: GO:0005618
+    label: CellularComponent
+    name: cell wall
+  - id: taxonomy:727
+    label: OrganismTaxon
+    name: Haemophilus influenzae
+  - id: MESH:D012141
+    label: Disease
+    name: Upper respiratory infection
+references:
+  - https://go.drugbank.com/drugs/DB01333

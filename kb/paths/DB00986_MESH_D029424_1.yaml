@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00986_MESH_D029424_1
+  disease: Chronic obstructive lung disease
+  disease_mesh: MESH:D029424
+  drug: Glycopyrronium bromide
+  drug_mesh: MESH:D006024
+  drugbank: DB:DB00986
+links:
+  - key: decreases activity of
+    source: MESH:D006024
+    target: UniProt:P20309
+  - key: positively regulates
+    source: UniProt:P20309
+    target: GO:0006939
+  - key: located in
+    source: GO:0006939
+    target: UBERON:0002185
+  - key: location of
+    source: UBERON:0002185
+    target: GO:0006954
+  - key: contributes to
+    source: GO:0006954
+    target: MESH:D029424
+multigraph: true
+nodes:
+  - id: MESH:D006024
+    label: Drug
+    name: Glycopyrronium bromide
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: Smooth muscle contraction
+  - id: UBERON:0002185
+    label: GrossAnatomicalStructure
+    name: Bronchus
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D029424
+    label: Disease
+    name: Chronic obstructive lung disease
+references:
+  - https://go.drugbank.com/drugs/DB00986

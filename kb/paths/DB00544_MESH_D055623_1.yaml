@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB00544_MESH_D055623_1
+  disease: Actinic keratosis
+  disease_mesh: MESH:D055623
+  drug: fluorouracil
+  drug_mesh: MESH:D005472
+  drugbank: DB:DB00544
+links:
+  - key: decreases activity of
+    source: MESH:D005472
+    target: UniProt:P04818
+  - key: positively regulates
+    source: UniProt:P04818
+    target: GO:0071897
+  - key: disrupts
+    source: MESH:D005472
+    target: MESH:D004247
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0071897
+  - key: occurs in
+    source: GO:0071897
+    target: MESH:D055623
+  - key: disrupts
+    source: MESH:D005472
+    target: MESH:D012313
+  - key: participates in
+    source: MESH:D012313
+    target: GO:0032774
+  - key: occurs in
+    source: GO:0032774
+    target: MESH:D055623
+multigraph: true
+nodes:
+  - id: MESH:D005472
+    label: Drug
+    name: Fluorouracil
+  - id: UniProt:P04818
+    label: Protein
+    name: Thymidylate synthase
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: MESH:D012313
+    label: ChemicalSubstance
+    name: RNA
+  - id: GO:0071897
+    label: BiologicalProcess
+    name: DNA biosynthetic process
+  - id: GO:0032774
+    label: BiologicalProcess
+    name: RNA biosynthetic process
+  - id: MESH:D055623
+    label: Disease
+    name: Actinic keratosis
+references:
+  - https://en.wikipedia.org/wiki/Actinic_keratosis
+  - https://go.drugbank.com/drugs/DB00544#BE0000324

@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00196_MESH_D002181_1
+  disease: Candidal vulvovaginitis
+  disease_mesh: MESH:D002181
+  drug: fluconazole
+  drug_mesh: MESH:D015725
+  drugbank: DB:DB00196
+links:
+  - key: decreases activity of
+    source: MESH:D015725
+    target: UniProt:P10613
+  - key: positively regulates
+    source: UniProt:P10613
+    target: GO:0006696
+  - key: precedes
+    source: GO:0006696
+    target: GO:0042546
+  - key: occurs in
+    source: GO:0042546
+    target: taxonomy:1535326
+  - key: causes
+    source: taxonomy:1535326
+    target: MESH:D002181
+multigraph: true
+nodes:
+  - id: MESH:D015725
+    label: Drug
+    name: Fluconazole
+  - id: UniProt:P10613
+    label: Protein
+    name: Lanosterol 14-alpha demethylase (Candida albicans)
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: Ergosterol biosynthetic process
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: Cell wall biogenesis
+  - id: taxonomy:1535326
+    label: OrganismTaxon
+    name: Candida
+  - id: MESH:D002181
+    label: Disease
+    name: Candidal vulvovaginitis
+references:
+  - https://go.drugbank.com/drugs/DB00196

@@ -1,0 +1,67 @@
+comment: Encainide (trade name Enkaid) is a class Ic antiarrhythmic agent. It is no
+  longer used because of its frequent proarrhythmic side effects.
+directed: true
+graph:
+  _id: DB01228_MESH_D018879_1
+  disease: Ventricular premature beats
+  disease_mesh: MESH:D018879
+  drug: encainide
+  drug_mesh: MESH:D016700
+  drugbank: DB:DB01228
+links:
+  - key: decreases activity of
+    source: MESH:D016700
+    target: InterPro:IPR001696
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0086060
+  - key: positively regulates
+    source: GO:0086060
+    target: GO:0061337
+  - key: positively regulates
+    source: GO:0061337
+    target: GO:0060047
+  - key: positively correlated with
+    source: GO:0060047
+    target: HP:0001649
+  - key: positively correlated with
+    source: GO:0060047
+    target: HP:0000822
+  - key: positively correlated with
+    source: HP:0001649
+    target: MESH:D018879
+  - key: positively correlated with
+    source: HP:0000822
+    target: MESH:D018879
+multigraph: true
+nodes:
+  - id: MESH:D016700
+    label: Drug
+    name: encainide
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: GO:0086060
+    label: MolecularActivity
+    name: voltage-gated sodium channel activity involved in AV node cell action potential
+  - id: GO:0061337
+    label: BiologicalProcess
+    name: cardiac conduction
+  - id: GO:0060047
+    label: BiologicalProcess
+    name: heart contraction
+  - id: HP:0001649
+    label: PhenotypicFeature
+    name: heart rate
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: blood pressure
+  - id: MESH:D018879
+    label: Disease
+    name: Ventricular premature beats
+references:
+  - https://go.drugbank.com/drugs/DB01228
+  - https://en.wikipedia.org/wiki/Encainide
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL315838/
+  - https://pubchem.ncbi.nlm.nih.gov/compound/48041
+  - https://pubmed.ncbi.nlm.nih.gov/2518680/

@@ -1,0 +1,21 @@
+comment: Cholic acid is not a common treatment for Cholelithiasis https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3348960/
+directed: true
+graph:
+  _id: DB02659_MESH_D002769_1
+  disease: Cholelithiasis
+  disease_mesh: MESH:D002769
+  drug: cholic acid
+  drug_mesh: MESH:D019826
+  drugbank: DB:DB02659
+links:
+  - key: treats
+    source: MESH:D019826
+    target: MESH:D002769
+multigraph: true
+nodes:
+  - id: MESH:D019826
+    label: Drug
+    name: cholic acid
+  - id: MESH:D002769
+    label: Disease
+    name: Cholelithiasis

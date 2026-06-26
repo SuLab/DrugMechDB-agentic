@@ -1,0 +1,55 @@
+comment: Travoprost, an isopropyl ester prodrug,that is rapidly hydrolyzed by esterases
+  in the cornea to its biologically active free acid.
+directed: true
+graph:
+  _id: DB00287_MESH_D005902_1
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: Travoprost
+  drug_mesh: MESH:D000069557
+  drugbank: DB:DB00287
+links:
+  - key: increases activity of
+    source: MESH:D000069557
+    target: UniProt:P43088
+  - key: positively regulates
+    source: UniProt:P43088
+    target: GO:0008237
+  - key: decreases abundance of
+    source: GO:0008237
+    target: GO:0031012
+  - key: positively correlated with
+    source: GO:0031012
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: HP:0007906
+  - key: affects risk for
+    source: HP:0007906
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:D000069557
+    label: Drug
+    name: Travoprost
+  - id: UniProt:P43088
+    label: Protein
+    name: Prostaglandin F2-alpha receptor
+  - id: GO:0008237
+    label: BiologicalProcess
+    name: Metallopeptidase activity
+  - id: GO:0031012
+    label: CellularComponent
+    name: Extracellular matrix
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: Aqueous humor of eyeball
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Ocular hypertension
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3991965/
+  - https://go.drugbank.com/drugs/DB00287

@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB08932_MESH_D000081029_1
+  disease: Pulmonary arterial hypertension
+  disease_mesh: MESH:D000081029
+  drug: macitentan
+  drug_mesh: MESH:C533860
+  drugbank: DB:DB08932
+links:
+  - key: decreases activity of
+    source: MESH:C533860
+    target: UniProt:P25101
+  - key: decreases activity of
+    source: MESH:C533860
+    target: UniProt:P24530
+  - key: capable of
+    source: UniProt:P25101
+    target: GO:0042310
+  - key: capable of
+    source: UniProt:P24530
+    target: GO:0042310
+  - key: has phenotype
+    source: GO:0042310
+    target: HP:0000822
+  - key: manifestation of
+    source: HP:0000822
+    target: MESH:D000081029
+multigraph: true
+nodes:
+  - id: MESH:C533860
+    label: Drug
+    name: macitentan
+  - id: UniProt:P25101
+    label: Protein
+    name: Endothelin-1 receptor
+  - id: UniProt:P24530
+    label: Protein
+    name: Endothelin receptor type B
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: Hypertension
+  - id: MESH:D000081029
+    label: Disease
+    name: Pulmonary arterial hypertension
+references:
+  - https://go.drugbank.com/drugs/DB08932#BE0000521

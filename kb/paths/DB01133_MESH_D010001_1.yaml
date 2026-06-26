@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB01133_MESH_D010001_1
+  disease: Osteitis deformans
+  disease_mesh: MESH:D010001
+  drug: Tiludronic acid
+  drug_mesh: MESH:C058651
+  drugbank: DB:DB01133
+links:
+  - key: decreases abundance of
+    source: MESH:C058651
+    target: MESH:D000255
+  - key: located in
+    source: MESH:D000255
+    target: CL:0000092
+  - key: participates in
+    source: CL:0000092
+    target: GO:0046849
+  - key: causes
+    source: GO:0046849
+    target: MESH:D010001
+multigraph: true
+nodes:
+  - id: MESH:C058651
+    label: Drug
+    name: Tiludronic acid
+  - id: MESH:D000255
+    label: ChemicalSubstance
+    name: Adenosine Triphosphate
+  - id: CL:0000092
+    label: Cell
+    name: Osteoclast
+  - id: GO:0046849
+    label: BiologicalProcess
+    name: Bone remodeling
+  - id: MESH:D010001
+    label: Disease
+    name: Osteitis deformans
+references:
+  - https://en.wikipedia.org/wiki/Tiludronic_acid
+  - https://go.drugbank.com/drugs/DB01133
+  - https://en.wikipedia.org/wiki/Paget%27s_disease_of_bone

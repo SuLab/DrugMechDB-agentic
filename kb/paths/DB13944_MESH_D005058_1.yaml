@@ -1,0 +1,70 @@
+directed: true
+graph:
+  _id: DB13944_MESH_D005058_1
+  disease: Male hypogonadism
+  disease_mesh: MESH:D005058
+  drug: testosterone enantate
+  drug_mesh: MESH:C004648
+  drugbank: DB:DB13944
+links:
+  - key: increases activity of
+    source: MESH:C004648
+    target: UniProt:P10275
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0060742
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0048808
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0008584
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0019102
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0007283
+  - key: negatively correlated with
+    source: GO:0060742
+    target: MESH:D005058
+  - key: negatively correlated with
+    source: GO:0048808
+    target: MESH:D005058
+  - key: negatively correlated with
+    source: GO:0008584
+    target: MESH:D005058
+  - key: negatively correlated with
+    source: GO:0019102
+    target: MESH:D005058
+  - key: negatively correlated with
+    source: GO:0007283
+    target: MESH:D005058
+multigraph: true
+nodes:
+  - id: MESH:C004648
+    label: Drug
+    name: Testosterone enantate
+  - id: UniProt:P10275
+    label: Protein
+    name: Androgen receptor
+  - id: GO:0060742
+    label: BiologicalProcess
+    name: Epithelial cell differentiation involved in prostate gland development
+  - id: GO:0048808
+    label: BiologicalProcess
+    name: Male genitalia morphogenesis
+  - id: GO:0008584
+    label: BiologicalProcess
+    name: Male gonad development
+  - id: GO:0019102
+    label: BiologicalProcess
+    name: Male somatic sex determination
+  - id: GO:0007283
+    label: BiologicalProcess
+    name: Spermatogenesis
+  - id: MESH:D005058
+    label: Disease
+    name: Male hypogonadism
+references:
+  - https://go.drugbank.com/drugs/DB13944

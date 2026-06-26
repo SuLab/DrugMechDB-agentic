@@ -1,0 +1,30 @@
+comment: Please note the entry term for a drug was algeldrate, however the proper
+  name is aluminum hydroxide
+directed: true
+graph:
+  _id: DB06723_MESH_D006356_1
+  disease: Heartburn
+  disease_mesh: MESH:D006356
+  drug: Aluminum hydroxide
+  drug_mesh: MESH:D000536
+  drugbank: DB:DB06723
+links:
+  - key: negatively regulates
+    source: MESH:D000536
+    target: MESH:D005744
+  - key: positively correlated with
+    source: MESH:D005744
+    target: MESH:D006356
+multigraph: true
+nodes:
+  - id: MESH:D000536
+    label: Drug
+    name: Aluminum hydroxide
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: MESH:D006356
+    label: Disease
+    name: Heartburn
+references:
+  - https://go.drugbank.com/drugs/DB06723

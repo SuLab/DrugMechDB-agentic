@@ -1,0 +1,29 @@
+comment: withdrawn
+directed: true
+graph:
+  _id: DB09010_MESH_D000086382_1
+  disease: Covid-19
+  disease_mesh: MESH:D000086382
+  drug: carmofur
+  drug_mesh: MESH:C017367
+  drugbank: DB:DB09010
+links:
+  - key: decreases activity of
+    source: MESH:C017367
+    target: UniProt:P0DTD1
+  - key: treats
+    source: UniProt:P0DTD1
+    target: MESH:D000086382
+multigraph: true
+nodes:
+  - id: MESH:C017367
+    label: Drug
+    name: carmofur
+  - id: UniProt:P0DTD1
+    label: Protein
+    name: SARS-CoV-2 main protease
+  - id: MESH:D000086382
+    label: Disease
+    name: covid-19
+references:
+  - https://en.wikipedia.org/wiki/Carmofur

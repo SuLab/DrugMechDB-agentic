@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB00524_MESH_D006973_1
+  disease: Hypertension
+  disease_mesh: MESH:D006973
+  drug: metolazone
+  drug_mesh: MESH:D008788
+  drugbank: DB:DB00524
+links:
+  - key: decreases activity of
+    source: MESH:D008788
+    target: UniProt:P55017
+  - key: participates in
+    source: UniProt:P55017
+    target: GO:0055078
+  - key: negatively correlated with
+    source: GO:0055078
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D008788
+    label: Drug
+    name: metolazone
+  - id: UniProt:P55017
+    label: Protein
+    name: Solute carrier family 12 member 3
+  - id: GO:0055078
+    label: BiologicalProcess
+    name: Sodium Ion Homeostasis
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertension

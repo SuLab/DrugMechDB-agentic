@@ -1,0 +1,44 @@
+comment: Enviomycin share the same binding site on the bacterial ribosome and have
+  effects on bacterial cells similar to those of viomycin https://pubmed.ncbi.nlm.nih.gov/26755601/
+directed: true
+graph:
+  _id: DB08993_MESH_D014397_1
+  disease: Pulmonary tuberculosis
+  disease_mesh: MESH:D014397
+  drug: Enviomycin
+  drug_mesh: MESH:D004776
+  drugbank: DB:DB08993
+links:
+  - key: decreases activity of
+    source: MESH:D004776
+    target: GO:0005840
+  - key: participates in
+    source: GO:0005840
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:1773
+  - key: causes
+    source: taxonomy:1773
+    target: MESH:D014397
+multigraph: true
+nodes:
+  - id: MESH:D004776
+    label: Drug
+    name: Enviomycin
+  - id: GO:0005840
+    label: CellularComponent
+    name: Ribosome
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: taxonomy:1773
+    label: OrganismTaxon
+    name: Mycobacterium tuberculosis
+  - id: MESH:D014397
+    label: Disease
+    name: Pulmonary tuberculosis
+references:
+  - https://go.drugbank.com/drugs/DB06827
+  - https://en.wikipedia.org/wiki/Viomycin
+  - https://go.drugbank.com/drugs/DB08993

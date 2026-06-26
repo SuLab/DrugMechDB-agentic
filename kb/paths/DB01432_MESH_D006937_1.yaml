@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB01432_MESH_D006937_1
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+  drug: Cholestyramine Resin
+  drug_mesh: MESH:D002792
+  drugbank: DB:DB01432
+links:
+  - key: negatively regulates
+    source: MESH:D002792
+    target: MESH:D001647
+  - key: derives from
+    source: MESH:D001647
+    target: MESH:D002784
+  - key: positively correlated with
+    source: MESH:D002784
+    target: MESH:D006937
+multigraph: true
+nodes:
+  - id: MESH:D002792
+    label: Drug
+    name: Cholestyramine Resin
+  - id: MESH:D001647
+    label: ChemicalSubstance
+    name: Bile Acids and Salts
+  - id: MESH:D002784
+    label: ChemicalSubstance
+    name: Cholesterol
+  - id: MESH:D006937
+    label: Disease
+    name: Hypercholesterolemia
+references:
+  - https://go.drugbank.com/drugs/DB01432#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Hypercholesterolemia

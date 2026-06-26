@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB00761_MESH_D007008_1
+  disease: Hypokalemia
+  disease_mesh: MESH:D007008
+  drug: potassium chloride
+  drug_mesh: MESH:D011189
+  drugbank: DB:DB00761
+links:
+  - key: increases abundance of
+    source: MESH:D011189
+    target: MESH:D011188
+  - key: negatively correlated with
+    source: MESH:D011188
+    target: MESH:D007008
+multigraph: true
+nodes:
+  - id: MESH:D011189
+    label: Drug
+    name: Potassium chloride
+  - id: MESH:D011188
+    label: ChemicalSubstance
+    name: Potassium
+  - id: MESH:D007008
+    label: Disease
+    name: Hypokalemia
+references:
+  - https://go.drugbank.com/drugs/DB00761

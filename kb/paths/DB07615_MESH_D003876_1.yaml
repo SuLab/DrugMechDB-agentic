@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DB07615_MESH_D003876_1
+  disease: Atopic dermatitis
+  disease_mesh: MESH:D003876
+  drug: Tranilast
+  drug_mesh: MESH:C012293
+  drugbank: DB:DB07615
+links:
+  - key: decreases activity of
+    source: MESH:C012293
+    target: UniProt:P35367
+  - key: negatively regulates
+    source: MESH:C012293
+    target: GO:0043303
+  - key: increases abundance of
+    source: GO:0043303
+    target: MESH:D006632
+  - key: causes
+    source: MESH:D006632
+    target: GO:0071420
+  - key: participates in
+    source: UniProt:P35367
+    target: GO:0004969
+  - key: participates in
+    source: GO:0004969
+    target: GO:0071420
+  - key: positively correlated with
+    source: GO:0071420
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D003876
+multigraph: true
+nodes:
+  - id: MESH:C012293
+    label: Drug
+    name: Tranilast
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: GO:0004969
+    label: MolecularActivity
+    name: Histamine receptor activity
+  - id: MESH:D006632
+    label: ChemicalSubstance
+    name: Histamine
+  - id: GO:0071420
+    label: BiologicalProcess
+    name: Cellular response to histamine
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: GO:0043303
+    label: BiologicalProcess
+    name: Mast cell degranulation
+  - id: MESH:D003876
+    label: Disease
+    name: Atopic dermatitis
+references:
+  - https://go.drugbank.com/drugs/DB07615

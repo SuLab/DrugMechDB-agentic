@@ -1,0 +1,50 @@
+comment: Pimavanserin is used for the treatment of hallucinations and delusions caused
+  by Parkinson's Disease.
+directed: true
+graph:
+  _id: DB05316_MESH_D010300_1
+  disease: Parkinson's disease
+  disease_mesh: MESH:D010300
+  drug: pimavanserin
+  drug_mesh: MESH:C510793
+  drugbank: DB:DB05316
+links:
+  - key: decreases activity of
+    source: MESH:C510793
+    target: UniProt:P28223
+  - key: positively correlated with
+    source: UniProt:P28223
+    target: MESH:D012701
+  - key: positively correlated with
+    source: MESH:D012701
+    target: GO:0060096
+  - key: positively correlated with
+    source: GO:0060096
+    target: HP:0000709
+  - key: phenotype of
+    source: HP:0000709
+    target: MESH:D010300
+multigraph: true
+nodes:
+  - id: MESH:C510793
+    label: Drug
+    name: Pimavanserin
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: GO:0060096
+    label: BiologicalProcess
+    name: Serotonin secretion, neurotransmission
+  - id: HP:0000709
+    label: PhenotypicFeature
+    name: Psychosis
+  - id: MESH:D010300
+    label: Disease
+    name: Parkinson's disease
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2111101/
+  - https://go.drugbank.com/drugs/DB05316#BE0000451
+  - https://pubmed.ncbi.nlm.nih.gov/27686027/

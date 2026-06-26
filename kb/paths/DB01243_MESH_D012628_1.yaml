@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB01243_MESH_D012628_1
+  disease: Seborrheic dermatitis
+  disease_mesh: MESH:D012628
+  drug: chloroxine
+  drug_mesh: MESH:C004357
+  drugbank: DB:DB01243
+links:
+  - key: negatively regulates
+    source: MESH:C004357
+    target: GO:0140014
+  - key: occurs in
+    source: GO:0140014
+    target: UBERON:0001003
+  - key: occurs in
+    source: GO:0140014
+    target: taxonomy:55193
+  - key: positively correlated with
+    source: UBERON:0001003
+    target: HP:0040189
+  - key: positively correlated with
+    source: taxonomy:55193
+    target: HP:0040189
+  - key: positively correlated with
+    source: HP:0040189
+    target: MESH:D012628
+multigraph: true
+nodes:
+  - id: MESH:C004357
+    label: Drug
+    name: chloroxine
+  - id: GO:0140014
+    label: BiologicalProcess
+    name: mitosis
+  - id: UBERON:0001003
+    label: GrossAnatomicalStructure
+    name: skin epidermis
+  - id: taxonomy:55193
+    label: OrganismTaxon
+    name: Malassezia sp.
+  - id: HP:0040189
+    label: PhenotypicFeature
+    name: scaling skin
+  - id: MESH:D012628
+    label: Disease
+    name: Seborrheic dermatitis
+references:
+  - https://go.drugbank.com/drugs/DB01243
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Chloroxine

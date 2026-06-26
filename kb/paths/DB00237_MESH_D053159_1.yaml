@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00237_MESH_D053159_1
+  disease: Dysuria
+  disease_mesh: MESH:D053159
+  drug: secbutabarbital
+  drug_mesh: MESH:C084833
+  drugbank: DB:DB00237
+links:
+  - key: increases activity of
+    source: MESH:C084833
+    target: InterPro:IPR006028
+  - key: participates in
+    source: InterPro:IPR006028
+    target: GO:0004890
+  - key: negatively regulates
+    source: GO:0004890
+    target: GO:0060083
+  - key: positively correlated with
+    source: GO:0060083
+    target: HP:0000017
+  - key: manifestation of
+    source: HP:0000017
+    target: MESH:D053159
+multigraph: true
+nodes:
+  - id: MESH:C084833
+    label: Drug
+    name: Secbutabarbital
+  - id: InterPro:IPR006028
+    label: GeneFamily
+    name: Gamma-aminobutyric acid A receptor/Glycine receptor alpha
+  - id: GO:0004890
+    label: MolecularActivity
+    name: GABA-A receptor activity
+  - id: GO:0060083
+    label: BiologicalProcess
+    name: Smooth muscle contraction involved in micturition
+  - id: HP:0000017
+    label: BiologicalProcess
+    name: Nocturia
+  - id: MESH:D053159
+    label: Disease
+    name: Dysuria
+references:
+  - https://en.wikipedia.org/wiki/Dysuria
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4733900/
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL449/

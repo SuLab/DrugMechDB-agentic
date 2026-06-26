@@ -1,0 +1,70 @@
+directed: true
+graph:
+  _id: DB05812_MESH_D011471_6
+  disease: Malignant tumor of prostate
+  disease_mesh: MESH:D011471
+  drug: abiraterone acetate
+  drug_mesh: MESH:D000069501,MESH:C089740
+  drugbank: DB:DB05812
+links:
+  - key: derives into
+    source: DB:DB05812
+    target: MESH:C000600172
+  - key: decreases activity of
+    source: MESH:C000600172
+    target: UniProt:P18405
+  - key: decreases activity of
+    source: MESH:C000600172
+    target: UniProt:P31213
+  - key: decreases activity of
+    source: MESH:C000600172
+    target: UniProt:Q9H8P0
+  - key: positively regulates
+    source: UniProt:P18405
+    target: GO:0033764
+  - key: positively regulates
+    source: UniProt:P31213
+    target: GO:0033764
+  - key: positively regulates
+    source: UniProt:Q9H8P0
+    target: GO:0033764
+  - key: produces
+    source: GO:0033764
+    target: CHEBI:16330
+  - key: positively correlated with
+    source: CHEBI:16330
+    target: MESH:D011471
+multigraph: true
+nodes:
+  - id: DB:DB05812
+    label: Drug
+    name: abiraterone acetate
+  - id: MESH:C000600172
+    label: Drug
+    name: delta4-abiraterone
+  - id: UniProt:P18405
+    label: Protein
+    name: 3-oxo-5-alpha-steroid 4-dehydrogenase 1
+  - id: UniProt:P31213
+    label: Protein
+    name: 3-oxo-5-alpha-steroid 4-dehydrogenase 2
+  - id: UniProt:Q9H8P0
+    label: Protein
+    name: Polyprenol reductase
+  - id: GO:0033764
+    label: MolecularActivity
+    name: steroid dehydrogenase activity, acting on the CH-OH group of donors, NAD
+      or NADP as acceptor
+  - id: CHEBI:16330
+    label: ChemicalSubstance
+    name: 17β-hydroxy-5α-androstan-3-one
+  - id: MESH:D011471
+    label: Disease
+    name: Malignant tumor of prostate
+references:
+  - https://en.wikipedia.org/wiki/Abiraterone_acetate#Pharmacology
+  - https://en.wikipedia.org/wiki/%CE%944-Abiraterone
+  - https://www.nature.com/articles/nrurol.2016.101
+  - https://www.medchemexpress.com/D4-abiraterone.html
+  - https://en.wikipedia.org/wiki/Dihydrotestosterone#Biological_function
+  - https://en.wikipedia.org/wiki/5%CE%B1-Reductase

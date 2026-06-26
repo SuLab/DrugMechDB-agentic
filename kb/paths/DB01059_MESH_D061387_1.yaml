@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01059_MESH_D061387_1
+  disease: Chlamydial Pneumonia
+  disease_mesh: MESH:D061387
+  drug: norfloxacin
+  drug_mesh: MESH:D009643
+  drugbank: DB:DB01059
+links:
+  - key: decreases activity of
+    source: MESH:D009643
+    target: UniProt:Q9Z8R4
+  - key: decreases activity of
+    source: MESH:D009643
+    target: UniProt:G4NN22
+  - key: positively regulates
+    source: UniProt:Q9Z8R4
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:G4NN22
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:810
+  - key: causes
+    source: taxonomy:810
+    target: MESH:D061387
+multigraph: true
+nodes:
+  - id: MESH:D009643
+    label: Drug
+    name: norfloxacin
+  - id: UniProt:Q9Z8R4
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:G4NN22
+    label: Protein
+    name: DNA topoisomerase 1
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:810
+    label: OrganismTaxon
+    name: Chlamydia
+  - id: MESH:D061387
+    label: Disease
+    name: Chlamydial Pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB01059#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q9Z8R4#function
+  - https://www.uniprot.org/uniprot/G4NN22#function
+  - https://emedicine.medscape.com/article/297351-overview
+  - https://en.wikipedia.org/wiki/Chlamydia

@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB06147_MESH_D014848_1
+  disease: Vulvovaginitis
+  disease_mesh: MESH:D014848
+  drug: sulfathiazole
+  drug_mesh: MESH:C005312
+  drugbank: DB:DB06147
+links:
+  - key: decreases activity of
+    source: MESH:C005312
+    target: Pfam:PF00809
+  - key: positively correlated with
+    source: Pfam:PF00809
+    target: GO:0046656
+  - key: in taxon
+    source: GO:0046656
+    target: taxonomy:5476
+  - key: causes
+    source: taxonomy:5476
+    target: MESH:D014848
+multigraph: true
+nodes:
+  - id: MESH:C005312
+    label: Drug
+    name: sulfathiazole
+  - id: Pfam:PF00809
+    label: GeneFamily
+    name: Dihydropteroate synthase
+  - id: GO:0046656
+    label: BiologicalProcess
+    name: folic acid biosynthetic process
+  - id: taxonomy:5476
+    label: OrganismTaxon
+    name: Candida albicans
+  - id: MESH:D014848
+    label: Disease
+    name: Vulvovaginitis
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5340#section=Mechanism-of-Action

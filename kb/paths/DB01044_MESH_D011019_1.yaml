@@ -1,0 +1,67 @@
+directed: true
+graph:
+  _id: DB01044_MESH_D011019_1
+  disease: Pneumonia due to Mycoplasma pneumoniae
+  disease_mesh: MESH:D011019
+  drug: Gatifloxacin
+  drug_mesh: MESH:C078049
+  drugbank: DB:DB01044
+links:
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:P75352
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:P78016
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:P22446
+  - key: decreases activity of
+    source: MESH:C078049
+    target: UniProt:P22447
+  - key: participates in
+    source: UniProt:P75352
+    target: GO:0006260
+  - key: participates in
+    source: UniProt:P78016
+    target: GO:0006260
+  - key: participates in
+    source: UniProt:P22446
+    target: GO:0006260
+  - key: participates in
+    source: UniProt:P22447
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:2104
+  - key: causes
+    source: taxonomy:2104
+    target: MESH:D011019
+multigraph: true
+nodes:
+  - id: MESH:C078049
+    label: Drug
+    name: Gatifloxacin
+  - id: UniProt:P75352
+    label: Protein
+    name: DNA topoisomerase 4 subunit A (Mycoplasma pneumoniae)
+  - id: UniProt:P78016
+    label: Protein
+    name: DNA topoisomerase 4 subunit B (Mycoplasma pneumoniae)
+  - id: UniProt:P22446
+    label: Protein
+    name: DNA gyrase subunit A (Mycoplasma pneumoniae)
+  - id: UniProt:P22447
+    label: Protein
+    name: DNA gyrase subunit B (Mycoplasma pneumoniae)
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: taxonomy:2104
+    label: OrganismTaxon
+    name: Mycoplasma pneumoniae
+  - id: MESH:D011019
+    label: Disease
+    name: Pneumonia due to Mycoplasma pneumoniae
+references:
+  - https://go.drugbank.com/drugs/DB01044

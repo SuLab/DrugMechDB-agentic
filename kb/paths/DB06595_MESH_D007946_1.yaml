@@ -1,0 +1,100 @@
+directed: true
+graph:
+  _id: DB06595_MESH_D007946_1
+  disease: Mast cell leukemia
+  disease_mesh: MESH:D007946
+  drug: midostaurin
+  drug_mesh: MESH:C059539
+  drugbank: DB:DB06595
+links:
+  - key: negatively correlated with
+    source: MESH:C059539
+    target: reactome:R-HSA-9607240
+  - key: negatively regulates
+    source: MESH:C059539
+    target: UniProt:P36888
+  - key: negatively regulates
+    source: MESH:C059539
+    target: UniProt:P10721
+  - key: negatively regulates
+    source: MESH:C059539
+    target: UniProt:P17252
+  - key: negatively regulates
+    source: MESH:C059539
+    target: UniProt:P09619
+  - key: negatively regulates
+    source: MESH:C059539
+    target: UniProt:P16234
+  - key: negatively regulates
+    source: MESH:C059539
+    target: UniProt:P35968
+  - key: positively regulates
+    source: UniProt:P35968
+    target: GO:0001525
+  - key: positively regulates
+    source: UniProt:P09619
+    target: GO:0008283
+  - key: positively regulates
+    source: UniProt:P16234
+    target: GO:0008283
+  - key: positively regulates
+    source: UniProt:P17252
+    target: GO:0001525
+  - key: positively regulates
+    source: UniProt:P10721
+    target: GO:0070662
+  - key: positively regulates
+    source: UniProt:P36888
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0070662
+    target: MESH:D007946
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D007946
+  - key: positively correlated with
+    source: GO:0001525
+    target: MESH:D007946
+  - key: positively correlated with
+    source: reactome:R-HSA-9607240
+    target: MESH:D007946
+multigraph: true
+nodes:
+  - id: MESH:C059539
+    label: Drug
+    name: midostaurin
+  - id: UniProt:P36888
+    label: Protein
+    name: Receptor-type tyrosine-protein kinase FLT3
+  - id: UniProt:P09619
+    label: Protein
+    name: Platelet-derived growth factor receptor beta
+  - id: UniProt:P16234
+    label: Protein
+    name: Platelet-derived growth factor receptor alpha
+  - id: UniProt:P35968
+    label: Protein
+    name: Vascular endothelial growth factor receptor 2
+  - id: UniProt:P10721
+    label: Protein
+    name: Mast/stem cell growth factor receptor Kit
+  - id: UniProt:P17252
+    label: Protein
+    name: Protein kinase C alpha type
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: GO:0001525
+    label: BiologicalProcess
+    name: angiogenesis
+  - id: GO:0070662
+    label: BiologicalProcess
+    name: mast cell proliferation
+  - id: reactome:R-HSA-9607240
+    label: Pathway
+    name: FLT3 Signaling
+  - id: MESH:D007946
+    label: Disease
+    name: Mast cell leukemia
+references:
+  - https://go.drugbank.com/drugs/DB06595

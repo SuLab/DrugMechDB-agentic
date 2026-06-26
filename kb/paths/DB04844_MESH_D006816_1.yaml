@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB04844_MESH_D006816_1
+  disease: Huntington Disease
+  disease_mesh: MESH:D006816
+  drug: Tetrabenazine
+  drug_mesh: MESH:D013747
+  drugbank: DB:DB04844
+links:
+  - key: decreases activity of
+    source: MESH:D013747
+    target: UniProt:Q05940
+  - key: positively regulates
+    source: UniProt:Q05940
+    target: GO:0015842
+  - key: positively correlated with
+    source: GO:0015842
+    target: reactome:R-HSA-212676
+  - key: positively correlated with
+    source: reactome:R-HSA-212676
+    target: MESH:D006816
+multigraph: true
+nodes:
+  - id: MESH:D013747
+    label: Drug
+    name: Tetrabenazine
+  - id: UniProt:Q05940
+    label: Protein
+    name: Synaptic vesicular amine transporter
+  - id: GO:0015842
+    label: BiologicalProcess
+    name: aminergic neurotransmitter loading into synaptic vesicle
+  - id: reactome:R-HSA-212676
+    label: Pathway
+    name: Dopamine Neurotransmitter Release Cycle
+  - id: MESH:D006816
+    label: Disease
+    name: Huntington Disease
+references:
+  - https://go.drugbank.com/drugs/DB04844

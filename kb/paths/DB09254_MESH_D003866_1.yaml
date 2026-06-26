@@ -1,0 +1,52 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB09254_MESH_D003866_1
+  disease: Depressive disorder
+  disease_mesh: MESH:D003866
+  drug: caroxazone
+  drug_mesh: MESH:C006919
+  drugbank: DB:DB09254
+links:
+  - key: decreases activity of
+    source: MESH:C006919
+    target: UniProt:P21397
+  - key: decreases activity of
+    source: MESH:C006919
+    target: UniProt:P27338
+  - key: positively regulates
+    source: UniProt:P21397
+    target: GO:0042420
+  - key: positively regulates
+    source: UniProt:P27338
+    target: GO:0042420
+  - key: decreases abundance of
+    source: GO:0042420
+    target: CHEBI:18243
+  - key: negatively correlated with
+    source: CHEBI:18243
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:C006919
+    label: Drug
+    name: caroxazone
+  - id: UniProt:P27338
+    label: Protein
+    name: Amine oxidase [flavin-containing] B
+  - id: UniProt:P21397
+    label: Protein
+    name: Amine oxidase [flavin-containing] A
+  - id: GO:0042420
+    label: BiologicalProcess
+    name: dopamine catabolic process
+  - id: CHEBI:18243
+    label: ChemicalSubstance
+    name: dopamine
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive disorder
+references:
+  - https://en.wikipedia.org/wiki/Caroxazone
+  - https://go.drugbank.com/drugs/DB09254
+  - https://pubmed.ncbi.nlm.nih.gov/17339521/

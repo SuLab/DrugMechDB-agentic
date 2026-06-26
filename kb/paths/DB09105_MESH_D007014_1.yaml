@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB09105_MESH_D007014_1
+  disease: Hypophosphatasia
+  disease_mesh: MESH:D007014
+  drug: asfotase alfa
+  drug_mesh: MESH:C570710
+  drugbank: DB:DB09105
+links:
+  - key: decreases abundance of
+    source: MESH:C570710
+    target: MESH:C107241
+  - key: negatively regulates
+    source: MESH:C107241
+    target: GO:0030282
+  - key: has phenotype
+    source: GO:0030282
+    target: HP:0004349
+  - key: manifestation of
+    source: HP:0004349
+    target: MESH:D007014
+multigraph: true
+nodes:
+  - id: MESH:C570710
+    label: Drug
+    name: asfotase alfa
+  - id: MESH:C107241
+    label: ChemicalSubstance
+    name: inorgainc pyrophosphate
+  - id: GO:0030282
+    label: BiologicalProcess
+    name: hydroxpatite crystal growth
+  - id: HP:0004349
+    label: PhenotypicFeature
+    name: Reduced bone mineral density
+  - id: MESH:D007014
+    label: Disease
+    name: Hypophosphatasia

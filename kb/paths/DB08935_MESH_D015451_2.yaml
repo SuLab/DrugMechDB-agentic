@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB08935_MESH_D015451_2
+  disease: Chronic lymphoid leukemia, disease
+  disease_mesh: MESH:D015451
+  drug: obinutuzumab
+  drug_mesh: MESH:C543332
+  drugbank: DB:DB08935
+links:
+  - key: positively regulates
+    source: MESH:C543332
+    target: GO:0001788
+  - key: precedes
+    source: GO:0001788
+    target: GO:0001783
+  - key: negatively correlated with
+    source: GO:0001783
+    target: MESH:D015451
+multigraph: true
+nodes:
+  - id: MESH:C543332
+    label: Drug
+    name: Obinutuzumab
+  - id: GO:0001788
+    label: BiologicalProcess
+    name: Antibody-dependent cellular cytotoxicity
+  - id: GO:0001783
+    label: BiologicalProcess
+    name: B cell apoptotic process
+  - id: MESH:D015451
+    label: Disease
+    name: Chronic lymphoid leukemia, disease
+references:
+  - https://go.drugbank.com/drugs/DB08935#BE0000066

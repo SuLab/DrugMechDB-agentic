@@ -1,0 +1,70 @@
+directed: true
+graph:
+  _id: DB05630_MESH_D007896_1
+  disease: Leishmaniasis
+  disease_mesh: MESH:D007896
+  drug: Antimony Sodium Gluconate
+  drug_mesh: MESH:D000967
+  drugbank: DB:DB05630
+links:
+  - key: decreases activity of
+    source: MESH:D000967
+    target: UniProt:Q9NJG8
+  - key: decreases abundance of
+    source: MESH:D000967
+    target: MESH:D000255
+  - key: decreases abundance of
+    source: MESH:D000967
+    target: MESH:D006160
+  - key: positively regulates
+    source: UniProt:Q9NJG8
+    target: GO:0009299
+  - key: positively regulates
+    source: UniProt:Q9NJG8
+    target: GO:0006260
+  - key: occurs in
+    source: MESH:D000255
+    target: taxonomy:5661
+  - key: occurs in
+    source: MESH:D006160
+    target: taxonomy:5661
+  - key: occurs in
+    source: GO:0009299
+    target: taxonomy:5661
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:5661
+  - key: causes
+    source: taxonomy:5661
+    target: MESH:D007896
+multigraph: true
+nodes:
+  - id: MESH:D000967
+    label: Drug
+    name: Antimony Sodium Gluconate
+  - id: UniProt:Q9NJG8
+    label: Protein
+    name: DNA topoisomerase I
+  - id: MESH:D000255
+    label: ChemicalSubstance
+    name: Adenosine Triphosphate
+  - id: MESH:D006160
+    label: ChemicalSubstance
+    name: Guanosine Triphosphate
+  - id: GO:0009299
+    label: BiologicalProcess
+    name: mRNA transcription
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:5661
+    label: OrganismTaxon
+    name: Leishmania donovani
+  - id: MESH:D007896
+    label: Disease
+    name: Leishmaniasis
+references:
+  - https://go.drugbank.com/drugs/DB05630#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Sodium_stibogluconate#Mechanism_of_action
+  - https://www.uniprot.org/uniprot/Q9NJG8#function
+  - https://en.wikipedia.org/wiki/Leishmaniasis

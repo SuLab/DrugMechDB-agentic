@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB06168_MESH_D054078_1
+  disease: Deficiency of mevalonate kinase
+  disease_mesh: MESH:D054078
+  drug: canakinumab
+  drug_mesh: MESH:C541220
+  drugbank: DB:DB06168
+links:
+  - key: decreases activity of
+    source: MESH:C541220
+    target: UniProt:P01584
+  - key: positively regulates
+    source: UniProt:P01584
+    target: HP:0001945
+  - key: positively regulates
+    source: UniProt:P01584
+    target: GO:0006954
+  - key: manifestation of
+    source: HP:0001945
+    target: MESH:D054078
+  - key: occurs in
+    source: GO:0006954
+    target: MESH:D054078
+multigraph: true
+nodes:
+  - id: MESH:C541220
+    label: Drug
+    name: Canakinumab
+  - id: UniProt:P01584
+    label: Protein
+    name: Interleukin-1 beta
+  - id: HP:0001945
+    label: PhenotypicFeature
+    name: Fever
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D054078
+    label: Disease
+    name: Deficiency of mevalonate kinase
+references:
+  - https://go.drugbank.com/drugs/DB06168
+  - https://en.wikipedia.org/wiki/Mevalonate_kinase_deficiency#Treatment

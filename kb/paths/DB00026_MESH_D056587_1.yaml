@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00026_MESH_D056587_1
+  disease: Cryopyrin associated periodic syndrome
+  disease_mesh: MESH:D056587
+  drug: anakinra
+  drug_mesh: MESH:D053590
+  drugbank: DB:DB00026
+links:
+  - key: decreases activity of
+    source: MESH:D053590
+    target: UniProt:P14778
+  - key: participates in
+    source: UniProt:P14778
+    target: GO:0004908
+  - key: positively regulates
+    source: GO:0004908
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D056587
+multigraph: true
+nodes:
+  - id: MESH:D053590
+    label: Drug
+    name: Anakinra
+  - id: UniProt:P14778
+    label: Protein
+    name: Interleukin-1 receptor type 1
+  - id: GO:0004908
+    label: MolecularActivity
+    name: Interleukin-1 receptor activity
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D056587
+    label: Disease
+    name: Cryopyrin associated periodic syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00026#BE0000565
+  - https://en.wikipedia.org/wiki/Cryopyrin-associated_periodic_syndrome

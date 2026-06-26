@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB06826_MESH_D005902_1
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: unoprostone isopropyl
+  drug_mesh: MESH:C072630
+  drugbank: DB:DB06826
+links:
+  - key: positively regulates
+    source: MESH:C072630
+    target: UBERON:0005969
+  - key: decreases abundance of
+    source: UBERON:0005969
+    target: UBERON:0001796
+  - key: positively regulates
+    source: UBERON:0001796
+    target: HP:0007906
+  - key: positively correlated with
+    source: HP:0007906
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:C072630
+    label: Drug
+    name: Unoprostone isopropyl
+  - id: UBERON:0005969
+    label: GrossAnatomicalStructure
+    name: Eye trabecular meshwork
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: Aqueous humor of eyeball
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Ocular Hypertension
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3958522/
+  - https://go.drugbank.com/drugs/DB06826

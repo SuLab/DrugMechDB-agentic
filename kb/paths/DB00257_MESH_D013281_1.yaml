@@ -1,0 +1,50 @@
+comment: The disease is denoted as Aphthous ulcer of mouth in the original file but
+  the name used for the path is the one seen in the MESH website. The causes for this
+  disease are not well known (https://ada.com/conditions/aphthous-ulcers/#causes).
+  It's important to prevent secondary infection of the ulcers (https://en.wikipedia.org/wiki/Aphthous_stomatitis#Medication);
+  that's when anti-bacterial agents can be administered.
+directed: true
+graph:
+  _id: DB00257_MESH_D013281_1
+  disease: Stomatitis, Aphthous
+  disease_mesh: MESH:D013281
+  drug: sulfur
+  drug_mesh: MESH:D013455
+  drugbank: DB:DB00257
+links:
+  - key: precedes
+    source: MESH:D013455
+    target: CHEBI:16136
+  - key: subclass of
+    source: CHEBI:16136
+    target: MESH:D000900
+  - key: disrupts
+    source: MESH:D000900
+    target: taxonomy:210
+  - key: causes
+    source: taxonomy:210
+    target: MESH:D013281
+multigraph: true
+nodes:
+  - id: MESH:D013455
+    label: Drug
+    name: sulfur
+  - id: CHEBI:16136
+    label: ChemicalSubstance
+    name: hydrogen sulfide
+  - id: MESH:D000900
+    label: Drug
+    name: Anti-Bacterial Agents
+  - id: taxonomy:210
+    label: OrganismTaxon
+    name: Helicobacter pylori
+  - id: MESH:D013281
+    label: Disease
+    name: Stomatitis, Aphthous
+references:
+  - https://go.drugbank.com/drugs/DB09353#mechanism-of-action
+  - https://ada.com/conditions/aphthous-ulcers/#causes
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4441245/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4002348/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3227248/
+  - https://www.mayoclinic.org/diseases-conditions/canker-sore/symptoms-causes/syc-20370615

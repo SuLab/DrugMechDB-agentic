@@ -1,0 +1,85 @@
+directed: true
+multigraph: true
+graph:
+  _id: P20_DB00843_MESH_D000544
+  drug: Donepezil
+  drug_mesh: MESH:D000077856
+  drugbank: DB:DB00843
+  disease: Alzheimer's disease
+  disease_mesh: MESH:D000544
+nodes:
+  - id: DB:DB00843
+    name: Donepezil
+    label: Drug
+  - id: UniProt:P22303
+    name: acetylcholinesterase
+    label: Protein
+  - id: GO:0006581
+    name: acetylcholine catabolic process
+    label: BiologicalProcess
+  - id: MESH:D000109
+    name: Acetylcholine
+    label: ChemicalSubstance
+  - id: MESH:D000544
+    name: Alzheimer's disease
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00843
+    target: UniProt:P22303
+    evidence:
+      - reference: PMID:36028305
+        snippet: "Donepezil inhibited muscle AChE with an approximate IC50 of 30 nM."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Direct measurement of donepezil inhibiting AChE enzymatic activity in isolated muscle preparations."
+      - reference: PMID:41839797
+        snippet: "Donepezil is an acetylcholinesterase inhibitor that has shown efficacy in Alzheimer disease"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Clinical review confirming donepezil is an acetylcholinesterase inhibitor with established efficacy in Alzheimer disease."
+  - key: positively regulates
+    source: UniProt:P22303
+    target: GO:0006581
+    evidence:
+      - reference: PMID:38333993
+        snippet: "The enzyme acetylcholinesterase (AChE) hydrolyzes the neurotransmitter acetylcholine (ACh) at cholinergic synapses of the peripheral and central nervous system."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "AChE catalyzes hydrolysis of ACh — it drives (positively regulates) the acetylcholine catabolic process."
+      - reference: PMID:41373466
+        snippet: "Acetylcholinesterase (AChE) is a key enzyme responsible for terminating cholinergic neurotransmission by hydrolyzing acetylcholine."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "AChE is the key enzyme that hydrolyzes acetylcholine, confirming its positive regulatory role in the acetylcholine catabolic process."
+  - key: decreases abundance of
+    source: GO:0006581
+    target: MESH:D000109
+    evidence:
+      - reference: PMID:41357417
+        snippet: "Cholinergic dysfunction due to the depletion of acetylcholine (ACh) levels in the synapse caused by increased acetylcholinesterase (AChE) activity is one of the major factors that drives AD progression."
+        supports: SUPPORT
+        evidence_source: COMPUTATIONAL
+        explanation: "Increased AChE activity (which drives acetylcholine catabolism) depletes ACh levels in the synapse, confirming the catabolic process decreases acetylcholine abundance."
+      - reference: PMID:27039041
+        snippet: "Donepezil (1.3 mg/kg s.c.) increased extracellular ACh levels in the hippocampus"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Donepezil (an AChE inhibitor that blocks ACh catabolism) increases extracellular ACh levels, confirming that ACh catabolism normally decreases ACh abundance."
+  - key: negatively correlated with
+    source: MESH:D000109
+    target: MESH:D000544
+    evidence:
+      - reference: PMID:28714400
+        snippet: "deficit of acetylcholine has been evidenced in patients of Alzheimer's disease (AD), cholinesterase inhibitors are currently the most prescribed drugs for the treatment of AD."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Acetylcholine deficit is documented in Alzheimer's disease patients, establishing a negative correlation between acetylcholine levels and the disease."
+      - reference: PMID:40340068
+        snippet: "a series of influential publications revealed a loss of cholinergic markers in the cerebral cortex of postmortem Alzheimer disease brain samples."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Loss of cholinergic markers (including acetylcholine) in Alzheimer disease brain tissue supports the negative correlation between acetylcholine and the disease."
+references:
+  - https://go.drugbank.com/drugs/DB00843#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P22303

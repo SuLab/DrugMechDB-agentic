@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB00476_MESH_D003865_1
+  disease: major depressive disorder
+  disease_mesh: MESH:D003865
+  drug: duloxetine
+  drug_mesh: MESH:D000068736
+  drugbank: DB:DB00476
+links:
+  - key: decreases activity of
+    source: MESH:D000068736
+    target: UniProt:P31645
+  - key: participates in
+    source: UniProt:P31645
+    target: GO:0051610
+  - key: causes
+    source: GO:0051610
+    target: MESH:D003865
+multigraph: true
+nodes:
+  - id: MESH:D000068736
+    label: Drug
+    name: duloxetine
+  - id: UniProt:P31645
+    label: Protein
+    name: sodium dependent serotonin transporter
+  - id: GO:0051610
+    label: BiologicalProcess
+    name: Neuronal serotonin reuptake
+  - id: MESH:D003865
+    label: Disease
+    name: major depressive disorder

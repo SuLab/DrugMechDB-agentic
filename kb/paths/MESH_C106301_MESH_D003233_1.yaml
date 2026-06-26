@@ -1,0 +1,25 @@
+directed: true
+graph:
+  _id: MESH_C106301_MESH_D003233_1
+  disease: Allergic conjuctivitis
+  disease_mesh: MESH:D003233
+  drug: tazanolast
+  drug_mesh: MESH:C106301
+links:
+  - key: negatively regulates
+    source: MESH:C106301
+    target: GO:0002553
+  - key: correlated with
+    source: GO:0002553
+    target: MESH:D003233
+multigraph: true
+nodes:
+  - id: MESH:C106301
+    label: Drug
+    name: tazanolast
+  - id: GO:0002553
+    label: BiologicalProcess
+    name: Histamine sections by Mast Cell
+  - id: MESH:D003233
+    label: Disease
+    name: Allergic conjuctivitis

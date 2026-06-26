@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DB11365_MESH_D003248_1
+  disease: Constipation
+  disease_mesh: MESH:D003248
+  drug: sennosides
+  drug_mesh: MESH:D012676
+  drugbank: DB:DB11365
+links:
+  - key: has metabolite
+    source: MESH:D012676
+    target: DB:DB13175
+  - key: increases activity of
+    source: DB:DB13175
+    target: UniProt:P35354
+  - key: decreases activity of
+    source: UniProt:P35354
+    target: UniProt:Q92482
+  - key: positively regulates
+    source: UniProt:Q92482
+    target: GO:0006833
+  - key: located in
+    source: GO:0006833
+    target: UBERON:0001155
+  - key: location of
+    source: UBERON:0001155
+    target: MESH:D003248
+  - key: positively regulates
+    source: DB:DB13175
+    target: GO:0030432
+  - key: negatively correlated with
+    source: GO:0030432
+    target: MESH:D003248
+multigraph: true
+nodes:
+  - id: MESH:D012676
+    label: Drug
+    name: Sennosides
+  - id: DB:DB13175
+    label: Drug
+    name: Rheinanthrone
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: UniProt:Q92482
+    label: Protein
+    name: Aquaporin-3
+  - id: GO:0006833
+    label: BiologicalProcess
+    name: Water transport
+  - id: GO:0030432
+    label: BiologicalProcess
+    name: Peristalsis
+  - id: UBERON:0001155
+    label: GrossAnatomicalStructure
+    name: Colon
+  - id: MESH:D003248
+    label: Disease
+    name: Constipation
+references:
+  - https://go.drugbank.com/drugs/DB11365

@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00636_MESH_D006949_1
+  disease: Hyperlipidemia
+  disease_mesh: MESH:D006949
+  drug: clofibrate
+  drug_mesh: MESH:D002994
+  drugbank: DB:DB00636
+links:
+  - key: increases activity of
+    source: MESH:D002994
+    target: UniProt:Q07869
+  - key: decreases abundance of
+    source: UniProt:Q07869
+    target: MESH:D014280
+  - key: decreases abundance of
+    source: UniProt:Q07869
+    target: MESH:D008078
+  - key: increases abundance of
+    source: UniProt:Q07869
+    target: MESH:D008076
+  - key: positively correlated with
+    source: MESH:D008078
+    target: HP:0003124
+  - key: negatively correlated with
+    source: MESH:D008076
+    target: HP:0003124
+  - key: positively correlated with
+    source: HP:0003124
+    target: MESH:D006949
+  - key: positively correlated with
+    source: MESH:D014280
+    target: MESH:D006949
+multigraph: true
+nodes:
+  - id: MESH:D002994
+    label: Drug
+    name: clofibrate
+  - id: UniProt:Q07869
+    label: Protein
+    name: Peroxisome proliferator-activated receptor alpha
+  - id: MESH:D008076
+    label: ChemicalSubstance
+    name: Cholesterol, HDL
+  - id: MESH:D008078
+    label: ChemicalSubstance
+    name: Cholesterol, LDL
+  - id: MESH:D014280
+    label: ChemicalSubstance
+    name: Triglycerides
+  - id: HP:0003124
+    label: PhenotypicFeature
+    name: Hypercholesterolemia
+  - id: MESH:D006949
+    label: Disease
+    name: Hyperlipidemia
+references:
+  - https://go.drugbank.com/drugs/DB00636

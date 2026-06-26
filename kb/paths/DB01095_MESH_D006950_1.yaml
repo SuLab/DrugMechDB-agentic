@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB01095_MESH_D006950_1
+  disease: Mixed hyperlipidemia
+  disease_mesh: MESH:D006950
+  drug: fluvastatin
+  drug_mesh: MESH:C065180
+  drugbank: DB:DB01095
+links:
+  - key: decreases activity of
+    source: MESH:C065180
+    target: UniProt:P04035
+  - key: positively regulates
+    source: UniProt:P04035
+    target: GO:0008610
+  - key: increases abundance of
+    source: GO:0008610
+    target: MESH:D008077
+  - key: increases abundance of
+    source: GO:0008610
+    target: CHEBI:16113
+  - key: increases abundance of
+    source: GO:0008610
+    target: CHEBI:17855
+  - key: positively correlated with
+    source: MESH:D008077
+    target: MESH:D006950
+  - key: positively correlated with
+    source: CHEBI:17855
+    target: MESH:D006950
+  - key: positively correlated with
+    source: CHEBI:16113
+    target: MESH:D006950
+multigraph: true
+nodes:
+  - id: MESH:C065180
+    label: Drug
+    name: fluvastatin
+  - id: UniProt:P04035
+    label: Protein
+    name: 3-hydroxy-3-methylglutaryl-coenzyme A reductase
+  - id: GO:0008610
+    label: BiologicalProcess
+    name: lipid biosynthetic process
+  - id: CHEBI:16113
+    label: ChemicalSubstance
+    name: cholesterol
+  - id: MESH:D008077
+    label: ChemicalSubstance
+    name: Lipoproteins, LDL
+  - id: CHEBI:17855
+    label: ChemicalSubstance
+    name: triglyceride
+  - id: MESH:D006950
+    label: Disease
+    name: Mixed hyperlipidemia
+references:
+  - https://go.drugbank.com/drugs/DB01095
+  - https://en.wikipedia.org/wiki/Fluvastatin#Mechanism_of_action

@@ -1,0 +1,297 @@
+id: https://w3id.org/sulab/drugmechdb/biolink_predicates
+name: drugmechdb-biolink-predicates
+description: >-
+  Controlled vocabulary of Biolink Model predicates (edge types) used in DrugMechDB.
+  Every PathEdge key must be one of these values.
+  Frequencies are counts from the 4,846-path corpus as of April 2026.
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  biolink: https://w3id.org/biolink/vocab/
+
+imports:
+  - linkml:types
+
+default_prefix: https://w3id.org/sulab/drugmechdb/biolink_predicates/
+default_range: string
+
+enums:
+  BiolinkPredicate:
+    description: >-
+      A Biolink-compliant predicate describing a directed relationship between
+      two biological entities in a mechanistic path.
+    permissible_values:
+
+      # ── High-frequency predicates (≥500 uses) ──────────────────────────────
+
+      positively regulates:           # 6,630 uses
+        meaning: biolink:positively_regulates
+        description: Subject positively regulates the object.
+
+      positively correlated with:     # 5,454 uses
+        meaning: biolink:positively_correlated_with
+        description: Subject is positively correlated with the object.
+
+      decreases activity of:          # 4,561 uses
+        meaning: biolink:decreases_activity_of
+        description: Subject decreases the activity of the object.
+
+      increases activity of:          # 1,974 uses
+        meaning: biolink:increases_activity_of
+        description: Subject increases the activity of the object.
+
+      negatively regulates:           # 1,913 uses
+        meaning: biolink:negatively_regulates
+        description: Subject negatively regulates the object.
+
+      causes:                         # 1,660 uses
+        meaning: biolink:causes
+        description: Subject is the cause of the object.
+
+      participates in:                # 1,622 uses
+        meaning: biolink:participates_in
+        description: Subject participates in the object process.
+
+      negatively correlated with:     # 1,178 uses
+        meaning: biolink:negatively_correlated_with
+        description: Subject is negatively correlated with the object.
+
+      increases abundance of:         # 1,028 uses
+        meaning: biolink:increases_abundance_of
+        description: Subject increases the abundance of the object.
+
+      occurs in:                      # 892 uses
+        meaning: biolink:occurs_in
+        description: Subject process occurs in the object location.
+
+      manifestation of:               # 776 uses
+        meaning: biolink:manifestation_of
+        description: Subject is a manifestation of the object.
+
+      in taxon:                       # 664 uses
+        meaning: biolink:in_taxon
+        description: Subject is found in the object taxon.
+
+      contributes to:                 # 578 uses
+        meaning: biolink:contributes_to
+        description: Subject contributes to the object condition.
+
+      located in:                     # 566 uses
+        meaning: biolink:located_in
+        description: Subject entity is located in the object.
+
+      decreases abundance of:         # 476 uses
+        meaning: biolink:decreases_abundance_of
+        description: Subject decreases the abundance of the object.
+
+      # ── Mid-frequency predicates (50–499 uses) ─────────────────────────────
+
+      correlated with:                # 294 uses
+        meaning: biolink:correlated_with
+        description: Subject is correlated with the object.
+
+      location of:                    # 280 uses
+        meaning: biolink:location_of
+        description: Subject location contains the object.
+
+      has metabolite:                 # 257 uses
+        meaning: biolink:has_metabolite
+        description: Subject has the object as a metabolite.
+
+      disrupts:                       # 235 uses
+        meaning: biolink:disrupts
+        description: Subject disrupts the object.
+
+      part of:                        # 233 uses
+        meaning: biolink:part_of
+        description: Subject is part of the object.
+
+      treats:                         # 167 uses
+        meaning: biolink:treats
+        description: Subject drug treats the object disease or condition.
+
+      produces:                       # 129 uses
+        meaning: biolink:produces
+        description: Subject produces the object.
+
+      regulates:                      # 117 uses
+        meaning: biolink:regulates
+        description: Subject regulates the object.
+
+      molecularly interacts with:     # 109 uses
+        meaning: biolink:molecularly_interacts_with
+        description: Subject molecularly interacts with the object.
+
+      has phenotype:                  # 102 uses
+        meaning: biolink:has_phenotype
+        description: Subject entity has the object phenotype.
+
+      precedes:                       # 93 uses
+        meaning: biolink:precedes
+        description: Subject event precedes the object event.
+
+      affects risk for:               # 82 uses
+        meaning: biolink:affects_risk_for
+        description: Subject affects the risk for the object condition.
+
+      has output:                     # 72 uses
+        meaning: biolink:has_output
+        description: Subject process has the object as output.
+
+      subclass of:                    # 58 uses
+        meaning: biolink:subclass_of
+        description: Subject is a subclass of the object.
+
+      caused by:                      # 46 uses
+        meaning: biolink:caused_by
+        description: Subject condition is caused by the object.
+
+      prevents:                       # 44 uses
+        meaning: biolink:prevents
+        description: Subject prevents the object.
+
+      affected by:                    # 44 uses
+        meaning: biolink:affected_by
+        description: Subject is affected by the object.
+
+      disrupted by:                   # 40 uses
+        meaning: biolink:disrupted_by
+        description: Subject is disrupted by the object.
+
+      phenotype of:                   # 39 uses
+        meaning: biolink:phenotype_of
+        description: Subject phenotype is a phenotype of the object entity.
+
+      capable of:                     # 37 uses
+        meaning: biolink:capable_of
+        description: Subject entity is capable of the object process.
+
+      chemically similar to:          # 29 uses
+        meaning: biolink:chemically_similar_to
+        description: Subject is chemically similar to the object.
+
+      # ── Low-frequency predicates (<30 uses) ────────────────────────────────
+
+      has participant:                # 16 uses
+        meaning: biolink:has_participant
+        description: Subject process has the object as a participant.
+
+      expressed in:                   # 15 uses
+        meaning: biolink:expressed_in
+        description: Subject gene/protein is expressed in the object location.
+
+      ameliorates:                    # 12 uses
+        meaning: biolink:ameliorates
+        description: Subject ameliorates the object condition.
+
+      superclass of:                  # 12 uses
+        meaning: biolink:superclass_of
+        description: Subject is a superclass of the object.
+
+      produced by:                    # 11 uses
+        meaning: biolink:produced_by
+        description: Subject is produced by the object.
+
+      actively involved in:           # 11 uses
+        meaning: biolink:actively_involved_in
+        description: Subject entity is actively involved in the object process.
+
+      derives into:                   # 10 uses
+        meaning: biolink:derives_into
+        description: Subject derives into the object.
+
+      increases degradation of:       # 9 uses
+        meaning: biolink:increases_degradation_of
+        description: Subject increases the degradation of the object.
+
+      contraindicated for:            # 8 uses
+        meaning: biolink:contraindicated_for
+        description: Subject drug is contraindicated for the object condition.
+
+      has active ingredient:          # 7 uses
+        meaning: biolink:has_active_ingredient
+        description: Subject substance has the object as an active ingredient.
+
+      increases transport of:         # 7 uses
+        meaning: biolink:increases_transport_of
+        description: Subject increases transport of the object.
+
+      in complex with:                # 6 uses
+        meaning: biolink:in_complex_with
+        description: Subject is in a complex with the object.
+
+      directly interacts with:        # 5 uses
+        meaning: biolink:directly_interacts_with
+        description: Subject directly interacts with the object.
+
+      increases stability of:         # 4 uses
+        meaning: biolink:increases_stability_of
+        description: Subject increases the stability of the object.
+
+      derives from:                   # 4 uses
+        meaning: biolink:derives_from
+        description: Subject derives from the object.
+
+      exacerbates:                    # 3 uses
+        description: Subject exacerbates the object condition.
+        # Note: not a standard Biolink predicate; mapped here for legacy data
+
+      interacts with:                 # 3 uses
+        meaning: biolink:interacts_with
+        description: Subject interacts with the object.
+
+      is metabolite of:               # 3 uses
+        meaning: biolink:is_metabolite_of
+        description: Subject is a metabolite of the object.
+
+      enables:                        # 2 uses
+        meaning: biolink:enables
+        description: Subject enables the object process.
+
+      decreases synthesis of:         # 2 uses
+        meaning: biolink:decreases_synthesis_of
+        description: Subject decreases the synthesis of the object.
+
+      coexists with:                  # 2 uses
+        meaning: biolink:coexists_with
+        description: Subject coexists with the object.
+
+      expresses:                      # 1 use
+        meaning: biolink:expresses
+        description: Subject entity expresses the object.
+
+      decreases response to:          # 1 use
+        meaning: biolink:decreases_response_to
+        description: Subject decreases the response to the object.
+
+      has part:                       # 1 use
+        meaning: biolink:has_part
+        description: Subject has the object as a part.
+
+      increases expression of:        # 1 use
+        meaning: biolink:increases_expression_of
+        description: Subject increases expression of the object.
+
+      predisposes:                    # 1 use
+        meaning: biolink:predisposes
+        description: Subject predisposes to the object condition.
+
+      increases response to:          # 1 use
+        meaning: biolink:increases_response_to
+        description: Subject increases the response to the object.
+
+      similar to:                     # 1 use
+        meaning: biolink:similar_to
+        description: Subject is similar to the object.
+
+      decreases expression of:        # 1 use
+        meaning: biolink:decreases_expression_of
+        description: Subject decreases expression of the object.
+
+      physically interacts with:      # 1 use
+        meaning: biolink:physically_interacts_with
+        description: Subject physically interacts with the object.
+
+      decreases uptake of:            # 1 use
+        meaning: biolink:decreases_uptake_of
+        description: Subject decreases uptake of the object.

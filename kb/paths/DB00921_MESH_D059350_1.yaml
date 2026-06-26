@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB00921_MESH_D059350_1
+  disease: Chronic Pain
+  disease_mesh: MESH:D059350
+  drug: Buprenorphine
+  drug_mesh: MESH:D002047
+  drugbank: DB:DB00921
+links:
+  - key: increases activity of
+    source: MESH:D002047
+    target: UniProt:P35372
+  - key: participates in
+    source: UniProt:P35372
+    target: reactome:R-HSA-418594
+  - key: decreases abundance of
+    source: reactome:R-HSA-418594
+    target: MESH:D013373
+  - key: positively correlated with
+    source: MESH:D013373
+    target: GO:0019233
+  - key: positively correlated with
+    source: GO:0019233
+    target: HP:0012531
+  - key: positively correlated with
+    source: HP:0012531
+    target: MESH:D059350
+multigraph: true
+nodes:
+  - id: MESH:D002047
+    label: Drug
+    name: Buprenorphine
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu opioid receptor
+  - id: reactome:R-HSA-418594
+    label: Pathway
+    name: G alpha (i) signalling events
+  - id: MESH:D013373
+    label: ChemicalSubstance
+    name: Substance P
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: sensory perception of pain
+  - id: HP:0012531
+    label: PhenotypicFeature
+    name: Pain
+  - id: MESH:D059350
+    label: Disease
+    name: Chronic Pain
+references:
+  - https://go.drugbank.com/drugs/DB00921#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P35372#function
+  - https://en.wikipedia.org/wiki/Chronic_pain

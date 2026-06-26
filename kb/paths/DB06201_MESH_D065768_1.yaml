@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB06201_MESH_D065768_1
+  disease: Lennox-Gastaut syndrome
+  disease_mesh: MESH:D065768
+  drug: rufinamide
+  drug_mesh: MESH:C079703
+  drugbank: DB:DB06201
+links:
+  - key: decreases activity of
+    source: MESH:C079703
+    target: UniProt:Q15858
+  - key: positively regulates
+    source: UniProt:Q15858
+    target: GO:0019228
+  - key: positively correlated with
+    source: GO:0019228
+    target: GO:0007269
+  - key: positively correlated with
+    source: GO:0007269
+    target: HP:0032792
+  - key: positively correlated with
+    source: HP:0032792
+    target: MESH:D065768
+multigraph: true
+nodes:
+  - id: MESH:C079703
+    label: Drug
+    name: rufinamide
+  - id: UniProt:Q15858
+    label: Protein
+    name: Sodium channel protein type 9 subunit alpha
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: neuronal action potential
+  - id: GO:0007269
+    label: BiologicalProcess
+    name: neurotransmitter secretion
+  - id: HP:0032792
+    label: PhenotypicFeature
+    name: Tonic seizure
+  - id: MESH:D065768
+    label: Disease
+    name: Lennox-Gastaut syndrome
+references:
+  - https://go.drugbank.com/drugs/DB06201#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Rufinamide
+  - https://pubmed.ncbi.nlm.nih.gov/30391662/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7461817/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7461817/
+  - https://en.wikipedia.org/wiki/Lennox%E2%80%93Gastaut_syndrome#Seizures
+comment: Many other members of the sodium channel protein alpha unit family (MESH:D061566
+  or CHEMBL:2331043) could also be targets for this drug, presumably through the same
+  MoA, according to ChEMBL (https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201754/)
+  and Pharos (https://pharos.nih.gov/ligands/rufinamide).

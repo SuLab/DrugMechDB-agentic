@@ -1,0 +1,58 @@
+comment: The majority of dermatofibrosarcoma tumours have two genes fused due to a
+  translocation involving the collagen gene (COL1A1) and the platelet-derived growth
+  factor (PDGF). The latter can be further subdivided giving rise to PDGFA, for example,
+  which is an oncogene.
+directed: true
+graph:
+  _id: DB00619_MESH_D018223_1
+  disease: Dermatofibrosarcoma
+  disease_mesh: MESH:D018223
+  drug: imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+links:
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: UniProt:P16234
+  - key: positively regulates
+    source: UniProt:P16234
+    target: GO:0030154
+  - key: positively regulates
+    source: UniProt:P16234
+    target: GO:0008283
+  - key: positively regulates
+    source: UniProt:P16234
+    target: MESH:D002470
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D018223
+  - key: positively correlated with
+    source: MESH:D002470
+    target: MESH:D018223
+  - key: positively correlated with
+    source: GO:0030154
+    target: MESH:D018223
+multigraph: true
+nodes:
+  - id: MESH:D000068877
+    label: Drug
+    name: imatinib
+  - id: UniProt:P16234
+    label: Protein
+    name: Platelet-derived growth factor receptor alpha
+  - id: GO:0030154
+    label: BiologicalProcess
+    name: cell differentiation
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: MESH:D002470
+    label: BiologicalProcess
+    name: Cell Survival
+  - id: MESH:D018223
+    label: Disease
+    name: Dermatofibrosarcoma
+references:
+  - https://www.cancer.gov/publications/dictionaries/cancer-drug/def/imatinib-mesylate
+  - https://en.wikipedia.org/wiki/Dermatofibrosarcoma_protuberans#Pathophysiology
+  - https://en.wikipedia.org/wiki/Imatinib#Dermatofibrosarcoma_protuberans_(DFSP)

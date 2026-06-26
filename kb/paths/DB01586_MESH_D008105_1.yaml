@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB01586_MESH_D008105_1
+  disease: Liver Cirrhosis, Biliary
+  disease_mesh: MESH:D008105
+  drug: Ursodeoxycholic Acid
+  drug_mesh: MESH:D014580
+  drugbank: DB:DB01586
+links:
+  - key: negatively regulates
+    source: MESH:D014580
+    target: GO:0097284
+  - key: participates in
+    source: MESH:D014580
+    target: GO:0032782
+  - key: increases abundance of
+    source: GO:0032782
+    target: MESH:D001647
+  - key: negatively correlated with
+    source: MESH:D001647
+    target: MESH:D008105
+  - key: positively correlated with
+    source: GO:0097284
+    target: MESH:D008105
+multigraph: true
+nodes:
+  - id: MESH:D014580
+    label: Drug
+    name: Ursodeoxycholic Acid
+  - id: GO:0097284
+    label: BiologicalProcess
+    name: hepatocyte apoptotic process
+  - id: GO:0032782
+    label: BiologicalProcess
+    name: bile acid secretion
+  - id: MESH:D001647
+    label: ChemicalSubstance
+    name: Bile Acids and Salts
+  - id: MESH:D008105
+    label: Disease
+    name: Liver Cirrhosis, Biliary
+references:
+  - https://go.drugbank.com/drugs/DB01586#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Primary_biliary_cholangitis

@@ -1,0 +1,49 @@
+comment: In fibrocystic breast disease, the exact mechanism of action of danazol is
+  unknown, but may be related to suppressed estrogenic stimulation as a result of
+  decreased ovarian production of estrogen.
+directed: true
+graph:
+  _id: DB01406_MESH_D005348_1
+  disease: Fibrocystic breast changes
+  disease_mesh: MESH:D005348
+  drug: danazol
+  drug_mesh: MESH:D003613
+  drugbank: DB:DB01406
+links:
+  - key: decreases activity of
+    source: MESH:D003613
+    target: UniProt:P30968
+  - key: increases abundance of
+    source: UniProt:P30968
+    target: MESH:D006065
+  - key: positively regulates
+    source: MESH:D006065
+    target: GO:0006703
+  - key: increases abundance of
+    source: GO:0006703
+    target: MESH:D004967
+  - key: positively correlated with
+    source: MESH:D004967
+    target: MESH:D005348
+multigraph: true
+nodes:
+  - id: MESH:D003613
+    label: Drug
+    name: Danazol
+  - id: UniProt:P30968
+    label: Protein
+    name: Gonadotropin-releasing hormone receptor
+  - id: MESH:D006065
+    label: ChemicalSubstance
+    name: Gonadotropins, Pituitary
+  - id: GO:0006703
+    label: BiologicalProcess
+    name: Estrogen biosynthetic process
+  - id: MESH:D004967
+    label: ChemicalSubstance
+    name: Estrogens
+  - id: MESH:D005348
+    label: Disease
+    name: Fibrocystic breast changes
+references:
+  - https://go.drugbank.com/drugs/DB01406

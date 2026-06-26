@@ -1,0 +1,45 @@
+directed: true
+graph:
+  _id: DB09013_MESH_D005902_1
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: Befunolol
+  drug_mesh: MESH:C006034
+  drugbank: DB:DB09013
+links:
+  - key: decreases activity of
+    source: MESH:C006034
+    target: UniProt:P08588
+  - key: decreases activity of
+    source: MESH:C006034
+    target: UniProt:P07550
+  - key: regulates
+    source: UniProt:P08588
+    target: HP:0007906
+  - key: regulates
+    source: UniProt:P07550
+    target: HP:0007906
+  - key: treats
+    source: HP:0007906
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:C006034
+    label: Drug
+    name: Befunolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: intraocular pressure
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - https://go.drugbank.com/drugs/DB09013
+  - https://pubmed.ncbi.nlm.nih.gov/12480285/
+  - https://pubmed.ncbi.nlm.nih.gov/37605/

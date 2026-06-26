@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00833_MESH_D011014_1
+  disease: Pneumonia
+  disease_mesh: MESH:D011014
+  drug: Cefaclor
+  drug_mesh: MESH:D002433
+  drugbank: DB:DB00833
+links:
+  - key: decreases activity of
+    source: MESH:D002433
+    target: InterPro:IPR001460
+  - key: actively involved in
+    source: InterPro:IPR001460
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D011014
+multigraph: true
+nodes:
+  - id: MESH:D002433
+    label: Drug
+    name: Cefaclor
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: Peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D011014
+    label: Disease
+    name: Pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB00833

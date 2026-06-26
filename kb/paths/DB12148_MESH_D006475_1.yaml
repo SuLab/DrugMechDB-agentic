@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB12148_MESH_D006475_1
+  disease: Hemorrhagic disease of the newborn due to vitamin K deficiency
+  disease_mesh: MESH:D006475
+  drug: menatetrenone
+  drug_mesh: MESH:C030814
+  drugbank: DB:DB12148
+links:
+  - key: increases activity of
+    source: MESH:C030814
+    target: UniProt:P38435
+  - key: positively regulates
+    source: UniProt:P38435
+    target: GO:0007596
+  - key: negatively correlated with
+    source: GO:0007596
+    target: MESH:D006475
+multigraph: true
+nodes:
+  - id: MESH:C030814
+    label: Drug
+    name: Menatetrenone
+  - id: UniProt:P38435
+    label: Protein
+    name: Vitamin K-dependent gamma-carboxylase
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: Blood coagulation
+  - id: MESH:D006475
+    label: Disease
+    name: Hemorrhagic disease of the newborn due to vitamin K deficiency
+references:
+  - https://en.wikipedia.org/wiki/Vitamin_K2#Mechanism_of_action

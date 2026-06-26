@@ -1,0 +1,26 @@
+comment: Progesterone is usually prescribed in combination with estradiol for a treatment
+  of postmenopausal osteoporosis. Please refer to this curation DB00783_MESH_D015663_1
+  for MoA.
+directed: true
+graph:
+  _id: DB00396_MESH_D015663_1
+  disease: Postmenopausal osteoporosis
+  disease_mesh: MESH:D015663
+  drug: Progesterone
+  drug_mesh: MESH:D011374
+  drugbank: DB:DB00396
+links:
+  - key: treats
+    source: MESH:D011374
+    target: MESH:D015663
+multigraph: true
+nodes:
+  - id: MESH:D011374
+    label: Drug
+    name: Progesterone
+  - id: MESH:D015663
+    label: Disease
+    name: Postmenopausal osteoporosis
+references:
+  - https://go.drugbank.com/drugs/DB00396#BE0000557
+  - https://pubmed.ncbi.nlm.nih.gov/29962257/

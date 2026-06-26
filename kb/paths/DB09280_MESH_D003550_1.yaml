@@ -1,0 +1,31 @@
+comment: :Lumacaftor is used to treat people with cystic fibrosis who are homozygous
+  for the F508del mutation
+directed: true
+graph:
+  _id: DB09280_MESH_D003550_1
+  disease: Cystic fibrosis of the lung
+  disease_mesh: MESH:D003550
+  drug: Lumacaftor
+  drug_mesh: MESH:C569105
+  drugbank: DB:DB09280
+links:
+  - key: increases stability of
+    source: MESH:C569105
+    target: UniProt:P13569
+  - key: disrupted by
+    source: UniProt:P13569
+    target: MESH:D003550
+multigraph: true
+nodes:
+  - id: MESH:C569105
+    label: Drug
+    name: Lumacaftor
+  - id: UniProt:P13569
+    label: Protein
+    name: Cystic fibrosis transmembrane conductance regulator
+  - id: MESH:D003550
+    label: Disease
+    name: Cystic fibrosis of the lung
+references:
+  - https://go.drugbank.com/drugs/DB09280#BE0001195
+  - https://en.wikipedia.org/wiki/Lumacaftor

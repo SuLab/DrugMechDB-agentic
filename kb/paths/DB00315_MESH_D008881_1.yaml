@@ -1,0 +1,63 @@
+directed: true
+graph:
+  _id: DB00315_MESH_D008881_1
+  disease: Migraine
+  disease_mesh: MESH:D008881
+  drug: zolmitriptan
+  drug_mesh: MESH:C089750
+  drugbank: DB:DB00315
+links:
+  - key: positively regulates
+    source: MESH:C089750
+    target: UniProt:P28221
+  - key: positively regulates
+    source: MESH:C089750
+    target: UniProt:P28222
+  - key: positively regulates
+    source: MESH:C089750
+    target: UniProt:P30939
+  - key: negatively regulates
+    source: UniProt:P28221
+    target: GO:0150076
+  - key: negatively regulates
+    source: UniProt:P30939
+    target: GO:0150076
+  - key: positively regulates
+    source: UniProt:P28222
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0150076
+    target: MESH:D008881
+  - key: negatively correlated with
+    source: GO:0042310
+    target: MESH:D008881
+multigraph: true
+nodes:
+  - id: MESH:C089750
+    label: Drug
+    name: zolmitriptan
+  - id: UniProt:P28221
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1D
+  - id: UniProt:P28222
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1B
+  - id: UniProt:P30939
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1F
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: GO:0150076
+    label: BiologicalProcess
+    name: neuroinflammatory response
+  - id: MESH:D008881
+    label: Disease
+    name: Migraine
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1185/
+  - https://en.wikipedia.org/wiki/Zolmitriptan#Mechanism_of_action
+  - https://go.drugbank.com/drugs/DB00315
+  - https://pubmed.ncbi.nlm.nih.gov/31263254/
+  - https://pubmed.ncbi.nlm.nih.gov/15911785/
+  - https://pubmed.ncbi.nlm.nih.gov/15320857/

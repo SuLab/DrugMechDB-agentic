@@ -1,0 +1,26 @@
+directed: true
+graph:
+  _id: DB13399_MESH_D006976_1
+  disease: Pulmonary hypertension
+  disease_mesh: MESH:D006976
+  drug: terguride
+  drug_mesh: MESH:C006208
+  drugbank: DB:DB13399
+links:
+  - key: decreases activity of
+    source: MESH:C006208
+    target: UniProt:P41595
+  - key: positively correlated with
+    source: UniProt:P41595
+    target: MESH:D006976
+multigraph: true
+nodes:
+  - id: MESH:C006208
+    label: Drug
+    name: terguride
+  - id: UniProt:P41595
+    label: Protein
+    name: 5-Hydroxytryptamine receptor 2B
+  - id: MESH:D006976
+    label: Disease
+    name: Pulmonary hypertension

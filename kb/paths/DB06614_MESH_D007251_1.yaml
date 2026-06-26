@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB06614_MESH_D007251_1
+  disease: Influenza
+  disease_mesh: MESH:D007251
+  drug: peramivir
+  drug_mesh: MESH:C414210
+  drugbank: DB:DB06614
+links:
+  - key: negatively regulates
+    source: MESH:C414210
+    target: UniProt:P03472
+  - key: positively regulates
+    source: UniProt:P03472
+    target: GO:0004308
+  - key: positively correlated with
+    source: GO:0004308
+    target: GO:0140374
+  - key: in taxon
+    source: GO:0140374
+    target: taxonomy:384509
+  - key: causes
+    source: taxonomy:384509
+    target: MESH:D007251
+multigraph: true
+nodes:
+  - id: MESH:C414210
+    label: Drug
+    name: peramivir
+  - id: UniProt:P03472
+    label: Protein
+    name: Neuraminidase
+  - id: GO:0004308
+    label: BiologicalProcess
+    name: exo-alpha-sialidase activity
+  - id: GO:0140374
+    label: BiologicalProcess
+    name: viral budding from plasma membrane
+  - id: taxonomy:384509
+    label: OrganismTaxon
+    name: Influenza A virus (A/tern/Australia/G70C/1975(H11N9))
+  - id: MESH:D007251
+    label: Disease
+    name: Influenza
+references:
+  - https://go.drugbank.com/drugs/DB06614#BE0001667

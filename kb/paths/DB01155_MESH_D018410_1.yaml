@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01155_MESH_D018410_1
+  disease: Bacterial pneumonia
+  disease_mesh: MESH:D018410
+  drug: gemifloxacin
+  drug_mesh: MESH:D000077735
+  drugbank: DB:DB01155
+links:
+  - key: decreases activity of
+    source: MESH:D000077735
+    target: UniProt:P72525
+  - key: participates in
+    source: UniProt:P72525
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D018410
+multigraph: true
+nodes:
+  - id: MESH:D000077735
+    label: Drug
+    name: gemifloxacin
+  - id: UniProt:P72525
+    label: Protein
+    name: Topoisomeraze 4
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D018410
+    label: Disease
+    name: Bacterial pneumonia

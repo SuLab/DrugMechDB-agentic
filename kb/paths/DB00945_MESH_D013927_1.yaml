@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00945_MESH_D013927_1
+  disease: Thrombosis
+  disease_mesh: MESH:D013927
+  drug: acetylsalicylic acid
+  drug_mesh: MESH:D001241
+  drugbank: DB:DB00945
+links:
+  - key: decreases activity of
+    source: MESH:D001241
+    target: UniProt:P23219
+  - key: participates in
+    source: UniProt:P23219
+    target: reactome:R-HSA-2162123
+  - key: participates in
+    source: UniProt:P23219
+    target: GO:0007596
+  - key: has output
+    source: reactome:R-HSA-2162123
+    target: MESH:D013928
+  - key: participates in
+    source: MESH:D013928
+    target: GO:0007596
+  - key: causes
+    source: GO:0007596
+    target: MESH:D013927
+multigraph: true
+nodes:
+  - id: MESH:D001241
+    label: Drug
+    name: acetylsalicylic acid
+  - id: UniProt:P23219
+    label: Protein
+    name: COX
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: Synthesis of Prostaglandins and Thromboxanes
+  - id: MESH:D013928
+    label: ChemicalSubstance
+    name: Thromboxane A2
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: Platelet Activiation / Blood Coagulation
+  - id: MESH:D013927
+    label: Disease
+    name: Thrombosis

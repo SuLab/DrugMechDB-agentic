@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB01101_MESH_D013274_1
+  disease: Malignant tumor of stomach
+  disease_mesh: MESH:D013274
+  drug: capecitabine
+  drug_mesh: MESH:D000069287
+  drugbank: DB:DB01101
+links:
+  - key: produces
+    source: MESH:D000069287
+    target: MESH:D005472
+  - key: decreases activity of
+    source: MESH:D005472
+    target: UniProt:P04818
+  - key: negatively regulates
+    source: MESH:D005472
+    target: GO:0090592
+  - key: negatively regulates
+    source: MESH:D005472
+    target: GO:0032774
+  - key: positively regulates
+    source: UniProt:P04818
+    target: CHEBI:63528
+  - key: part of
+    source: GO:0090592
+    target: GO:0008283
+  - key: part of
+    source: GO:0032774
+    target: GO:0008283
+  - key: participates in
+    source: CHEBI:63528
+    target: GO:0090592
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D013274
+multigraph: true
+nodes:
+  - id: MESH:D000069287
+    label: Drug
+    name: Capecitabine
+  - id: MESH:D005472
+    label: ChemicalSubstance
+    name: Fluorouracil
+  - id: UniProt:P04818
+    label: Protein
+    name: Thymidylate synthase
+  - id: GO:0090592
+    label: BiologicalProcess
+    name: DNA synthesis involved in DNA replication
+  - id: GO:0032774
+    label: BiologicalProcess
+    name: RNA biosynthetic process
+  - id: CHEBI:63528
+    label: ChemicalSubstance
+    name: Thymidine monophosphate
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: MESH:D013274
+    label: Disease
+    name: Malignant tumor of stomach
+references:
+  - https://go.drugbank.com/drugs/DB01101#BE0000324
+  - https://en.wikipedia.org/wiki/Stomach_cancer

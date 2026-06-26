@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB01058_MESH_D012552_1
+  disease: Schistosomiasis
+  disease_mesh: MESH:D012552
+  drug: Praziquantel
+  drug_mesh: MESH:D011223
+  drugbank: DB:DB01058
+links:
+  - key: disrupts
+    source: MESH:D011223
+    target: GO:0005886
+  - key: participates in
+    source: GO:0005886
+    target: GO:0070509
+  - key: positively correlated with
+    source: GO:0070509
+    target: GO:0006936
+  - key: contributes to
+    source: GO:0006936
+    target: HP:0003470
+  - key: occurs in
+    source: HP:0003470
+    target: taxonomy:6181
+  - key: causes
+    source: taxonomy:6181
+    target: MESH:D012552
+multigraph: true
+nodes:
+  - id: MESH:D011223
+    label: Drug
+    name: Praziquantel
+  - id: GO:0005886
+    label: CellularComponent
+    name: plasma membrane
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: calcium ion import
+  - id: GO:0006936
+    label: BiologicalProcess
+    name: muscle contraction
+  - id: HP:0003470
+    label: PhenotypicFeature
+    name: Paralysis
+  - id: taxonomy:6181
+    label: OrganismTaxon
+    name: Schistosoma
+  - id: MESH:D012552
+    label: Disease
+    name: Schistosomiasis
+references:
+  - https://go.drugbank.com/drugs/DB01058#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Praziquantel#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Schistosomiasis

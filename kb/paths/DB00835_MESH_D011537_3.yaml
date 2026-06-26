@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB00835_MESH_D011537_3
+  disease: Itching of skin
+  disease_mesh: MESH:D011537
+  drug: brompheniramine
+  drug_mesh: MESH:D001977
+  drugbank: DB:DB00835
+links:
+  - key: decreases activity of
+    source: MESH:D001977
+    target: InterPro:IPR000995
+  - key: treats
+    source: InterPro:IPR000995
+    target: MESH:D011537
+multigraph: true
+nodes:
+  - id: MESH:D001977
+    label: Drug
+    name: brompheniramine
+  - id: InterPro:IPR000995
+    label: GeneFamily
+    name: Muscarinic acetylcholine receptor
+  - id: MESH:D011537
+    label: Disease
+    name: Itching of skin
+references:
+  - https://go.drugbank.com/drugs/DB00835#mechanismofaction

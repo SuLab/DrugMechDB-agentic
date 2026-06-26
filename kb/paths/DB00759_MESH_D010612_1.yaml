@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00759_MESH_D010612_1
+  disease: Pharyngitis
+  disease_mesh: MESH:D010612
+  drug: tetracycline
+  drug_mesh: MESH:D013752
+  drugbank: DB:DB00759
+links:
+  - key: disrupts
+    source: MESH:D013752
+    target: GO:0044391
+  - key: location of
+    source: GO:0044391
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:1314
+  - key: causes
+    source: taxonomy:1314
+    target: MESH:D010612
+multigraph: true
+nodes:
+  - id: MESH:D013752
+    label: Drug
+    name: tetracycline
+  - id: GO:0044391
+    label: CellularComponent
+    name: ribosomal subunit
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:1314
+    label: OrganismTaxon
+    name: Streptococcus pyogenes
+  - id: MESH:D010612
+    label: Disease
+    name: Pharyngitis
+references:
+  - https://en.wikipedia.org/wiki/Tetracycline#Mechanism_of_action

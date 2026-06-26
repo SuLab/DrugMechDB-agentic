@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00438_MESH_D011023_1
+  disease: Staphylococcal pneumonia
+  disease_mesh: MESH:D011023
+  drug: ceftazidime
+  drug_mesh: MESH:D002442
+  drugbank: DB:DB00438
+links:
+  - key: negatively regulates
+    source: MESH:D002442
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D011023
+multigraph: true
+nodes:
+  - id: MESH:D002442
+    label: Drug
+    name: ceftazidime
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding protein transpeptidase domain
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - alt_names:
+      - Staphylococcal pneumonia
+    id: MESH:D011023
+    label: Disease
+    name: Pneumonia, Staphylococcal
+references:
+  - https://go.drugbank.com/drugs/DB00438
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL44354/

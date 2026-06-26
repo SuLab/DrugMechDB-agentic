@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB09351_MESH_D005902_1
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: levobetaxolol
+  drugbank: DB:DB09351
+links:
+  - key: decreases activity of
+    source: DB:DB09351
+    target: UniProt:P08588
+  - key: participates in
+    source: UniProt:P08588
+    target: reactome:R-HSA-418555
+  - key: increases abundance of
+    source: reactome:R-HSA-418555
+    target: CHEBI:17489
+  - key: positively correlated with
+    source: CHEBI:17489
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: HP:0007906
+  - key: positively correlated with
+    source: HP:0007906
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: DB:DB09351
+    label: Drug
+    name: Levobetaxolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: reactome:R-HSA-418555
+    label: Pathway
+    name: G alpha (s) signalling events
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3,5-cyclic AMP
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: Aqueous humor of eyeball
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Ocular Hypertension
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5342868/
+  - https://go.drugbank.com/drugs/DB09351

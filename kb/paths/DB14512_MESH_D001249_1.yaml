@@ -1,0 +1,60 @@
+comment: Mometasone furoate is a corticosteroid and acts as a prodrug of mometasone.
+  Mometasone is not currently used in medical products.
+directed: true
+graph:
+  _id: DB14512_MESH_D001249_1
+  disease: Asthma
+  disease_mesh: MESH:D001249
+  drug: mometasone furoate
+  drug_mesh: MESH:D000068656
+  drugbank: DB:DB14512
+links:
+  - key: increases activity of
+    source: MESH:D000068656
+    target: UniProt:P04150
+  - key: positively regulates
+    source: UniProt:P04150
+    target: GO:0071385
+  - key: negatively regulates
+    source: GO:0071385
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0030828
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0012735
+  - key: manifestation of
+    source: HP:0030828
+    target: MESH:D001249
+  - key: manifestation of
+    source: HP:0012735
+    target: MESH:D001249
+multigraph: true
+nodes:
+  - id: MESH:D000068656
+    label: Drug
+    name: mometasone furoate
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: GO:0071385
+    label: BiologicalProcess
+    name: cellular response to glucocorticoid stimulus
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0030828
+    label: PhenotypicFeature
+    name: Wheezing
+  - id: HP:0012735
+    label: PhenotypicFeature
+    name: Cough
+  - id: MESH:D001249
+    label: Disease
+    name: Asthma
+references:
+  - https://go.drugbank.com/drugs/DB14512#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P04150#function
+  - https://erj.ersjournals.com/content/39/2/279
+  - https://en.wikipedia.org/wiki/Asthma

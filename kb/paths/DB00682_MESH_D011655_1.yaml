@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00682_MESH_D011655_1
+  disease: Pulmonary embolism
+  disease_mesh: MESH:D011655
+  drug: warfarin
+  drug_mesh: MESH:D014859
+  drugbank: DB:DB00682
+links:
+  - key: decreases activity of
+    source: MESH:D014859
+    target: UniProt:Q9BQB6
+  - key: produces
+    source: UniProt:Q9BQB6
+    target: MESH:D014812
+  - key: participates in
+    source: MESH:D014812
+    target: GO:0007596
+  - key: causes
+    source: GO:0007596
+    target: MESH:D011655
+multigraph: true
+nodes:
+  - id: MESH:D014859
+    label: Drug
+    name: warfarin
+  - id: UniProt:Q9BQB6
+    label: Protein
+    name: vitamin k reductase
+  - id: MESH:D014812
+    label: ChemicalSubstance
+    name: reduced vitamin k
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: Coagulation factor Synthesis
+  - id: MESH:D011655
+    label: Disease
+    name: Pulmonary embolism

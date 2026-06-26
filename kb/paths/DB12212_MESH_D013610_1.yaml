@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB12212_MESH_D013610_1
+  disease: Tachyarrhythmia
+  disease_mesh: MESH:D013610
+  drug: landiolol
+  drug_mesh: MESH:C077049
+  drugbank: DB:DB12212
+links:
+  - key: decreases activity of
+    source: MESH:C077049
+    target: UniProt:P08588
+  - key: participates in
+    source: UniProt:P08588
+    target: GO:0045823
+  - key: causes
+    source: GO:0045823
+    target: MESH:D013610
+multigraph: true
+nodes:
+  - id: MESH:C077049
+    label: Drug
+    name: landiolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: GO:0045823
+    label: BiologicalProcess
+    name: positive regulation of heart contraction
+  - id: MESH:D013610
+    label: Disease
+    name: Tachyarrhythmia

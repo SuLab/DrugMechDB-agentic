@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB00404_MESH_D001007_1
+  disease: Anxiety
+  disease_mesh: MESH:D001007
+  drug: Alprazolam
+  drug_mesh: MESH:D000525
+  drugbank: DB:DB00404
+links:
+  - key: positively regulates
+    source: MESH:D000525
+    target: InterPro:IPR006028
+  - key: positively correlated with
+    source: InterPro:IPR006028
+    target: MESH:D005680
+  - key: negatively correlated with
+    source: MESH:D005680
+    target: MESH:D001007
+multigraph: true
+nodes:
+  - id: MESH:D000525
+    label: Drug
+    name: Alprazolam
+  - id: InterPro:IPR006028
+    label: GeneFamily
+    name: Gamma-aminobutyric acid A receptor/Glycine receptor alpha
+  - id: MESH:D005680
+    label: ChemicalSubstance
+    name: gamma-Aminobutyric Acid
+  - id: MESH:D001007
+    label: Disease
+    name: Anxiety
+references:
+  - https://go.drugbank.com/drugs/DB00404#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Alprazolam#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Anxiety_disorder

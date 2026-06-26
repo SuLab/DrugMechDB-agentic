@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB11901_MESH_D011471_1
+  disease: Nonmetastatic prostate cancer
+  disease_mesh: MESH:D011471
+  drug: apalutamide
+  drug_mesh: MESH:C572045
+  drugbank: DB:DB11901
+links:
+  - key: decreases activity of
+    source: MESH:C572045
+    target: UniProt:P10275
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0006351
+  - key: precedes
+    source: GO:0006351
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D011471
+multigraph: true
+nodes:
+  - id: MESH:C572045
+    label: Drug
+    name: apalutamide
+  - id: UniProt:P10275
+    label: Protein
+    name: androgen receptor
+  - id: GO:0006351
+    label: BiologicalProcess
+    name: gene transcription
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell proliferation
+  - id: MESH:D011471
+    label: Disease
+    name: Nonmetastatic prostate cancer

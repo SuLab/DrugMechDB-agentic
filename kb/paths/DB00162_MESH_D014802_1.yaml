@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB00162_MESH_D014802_1
+  disease: Vitamin A deficiency
+  disease_mesh: MESH:D014802
+  drug: Retinol
+  drug_mesh: MESH:D014801
+  drugbank: DB:DB00162
+links:
+  - key: positively correlated with
+    source: MESH:D014801
+    target: GO:0016063
+  - key: positively regulates
+    source: MESH:D014801
+    target: GO:0042098
+  - key: increases abundance of
+    source: GO:0016063
+    target: UniProt:P08100
+  - key: participates in
+    source: UniProt:P08100
+    target: GO:0007603
+  - key: positively correlated with
+    source: GO:0042098
+    target: GO:0002456
+  - key: negatively correlated with
+    source: GO:0007603
+    target: HP:0000662
+  - key: negatively correlated with
+    source: GO:0002456
+    target: MESH:D014802
+  - key: manifestation of
+    source: HP:0000662
+    target: MESH:D014802
+multigraph: true
+nodes:
+  - id: MESH:D014801
+    label: Drug
+    name: Retinol
+  - id: GO:0016063
+    label: BiologicalProcess
+    name: Rhodopsin biosynthetic process
+  - id: GO:0042098
+    label: BiologicalProcess
+    name: T cell proliferation
+  - id: UniProt:P08100
+    label: Protein
+    name: Rhodopsin
+  - id: GO:0002456
+    label: BiologicalProcess
+    name: T cell mediated immunity
+  - id: GO:0007603
+    label: BiologicalProcess
+    name: Phototransduction, visible light
+  - id: HP:0000662
+    label: PhenotypicFeature
+    name: Nyctalopia
+  - id: MESH:D014802
+    label: Disease
+    name: Vitamin A deficiency
+references:
+  - https://go.drugbank.com/drugs/DB00162
+  - https://en.wikipedia.org/wiki/Vitamin_A_deficiency#Signs_and_symptoms

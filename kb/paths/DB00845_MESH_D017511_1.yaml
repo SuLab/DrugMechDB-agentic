@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00845_MESH_D017511_1
+  disease: Pyoderma gangrenosum
+  disease_mesh: MESH:D017511
+  drug: clofazimine
+  drug_mesh: MESH:D002991
+  drugbank: DB:DB00845
+links:
+  - key: decreases activity of
+    source: MESH:D002991
+    target: UniProt:P22001
+  - key: positively regulates
+    source: UniProt:P22001
+    target: GO:0005244
+  - key: positively regulates
+    source: GO:0005244
+    target: reactome:R-HSA-2025928
+  - key: positively correlated with
+    source: reactome:R-HSA-2025928
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D017511
+multigraph: true
+nodes:
+  - id: MESH:D002991
+    label: Drug
+    name: clofazimine
+  - id: UniProt:P22001
+    label: Protein
+    name: Potassium voltage-gated channel subfamily A member 3
+  - id: GO:0005244
+    label: MolecularActivity
+    name: voltage-gated ion channel activity
+  - id: reactome:R-HSA-2025928
+    label: Pathway
+    name: Calcineurin activates NFAT
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D017511
+    label: Disease
+    name: Pyoderma gangrenosum
+references:
+  - https://go.drugbank.com/drugs/DB00845#BE0004716
+  - https://pubmed.ncbi.nlm.nih.gov/22020137/

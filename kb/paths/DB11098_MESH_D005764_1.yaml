@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB11098_MESH_D005764_1
+  disease: Gastroesophageal reflux disease
+  disease_mesh: MESH:D005764
+  drug: Potassium hydrogencarbonate
+  drug_mesh: MESH:C026329
+  drugbank: DB:DB11098
+links:
+  - key: negatively regulates
+    source: MESH:C026329
+    target: MESH:D005744
+  - key: positively correlated with
+    source: MESH:D005744
+    target: MESH:D005764
+multigraph: true
+nodes:
+  - id: MESH:C026329
+    label: Drug
+    name: Potassium hydrogencarbonate
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: MESH:D005764
+    label: Disease
+    name: Gastroesophageal reflux disease
+references:
+  - https://go.drugbank.com/drugs/DB11098

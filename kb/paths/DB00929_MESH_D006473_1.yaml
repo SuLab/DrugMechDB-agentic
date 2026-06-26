@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00929_MESH_D006473_1
+  disease: Postpartum hemorrhage
+  disease_mesh: MESH:D006473
+  drug: misoprostol
+  drug_mesh: MESH:D016595
+  drugbank: DB:DB00929
+links:
+  - key: increases activity of
+    source: MESH:D016595
+    target: UniProt:P35408
+  - key: positively regulates
+    source: UniProt:P35408
+    target: GO:0070471
+  - key: positively correlated with
+    source: GO:0070471
+    target: GO:0042310
+  - key: negatively correlated with
+    source: GO:0042310
+    target: MESH:D006473
+multigraph: true
+nodes:
+  - id: MESH:D016595
+    label: Drug
+    name: Misoprostol
+  - id: UniProt:P35408
+    label: Protein
+    name: Prostaglandin E2 receptor EP4 subtype
+  - id: GO:0070471
+    label: BiologicalProcess
+    name: Uterine smooth muscle contraction
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D006473
+    label: Disease
+    name: Postpartum hemorrhage
+references:
+  - https://go.drugbank.com/drugs/DB00429

@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00495_MESH_D015658_1
+  disease: HIV Infections
+  disease_mesh: MESH:D015658
+  drug: Zidovudine
+  drug_mesh: MESH:D015215
+  drugbank: DB:DB00495
+links:
+  - key: increases abundance of
+    source: MESH:D015215
+    target: MESH:C052873
+  - key: decreases activity of
+    source: MESH:C052873
+    target: UniProt:Q72547
+  - key: expressed in
+    source: UniProt:Q72547
+    target: GO:0039693
+  - key: in taxon
+    source: GO:0039693
+    target: taxonomy:12721
+  - key: causes
+    source: taxonomy:12721
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:D015215
+    label: Drug
+    name: Zidovudine
+  - id: MESH:C052873
+    label: ChemicalSubstance
+    name: zidovudine triphosphate
+  - id: UniProt:Q72547
+    label: Protein
+    name: Reverse transcriptase/RNaseH
+  - id: GO:0039693
+    label: BiologicalProcess
+    name: viral DNA genome replication
+  - id: taxonomy:12721
+    label: OrganismTaxon
+    name: Human immunodeficiency virus
+  - id: MESH:D015658
+    label: Disease
+    name: HIV Infections
+references:
+  - https://go.drugbank.com/drugs/DB00495#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Zidovudine
+  - https://en.wikipedia.org/wiki/HIV

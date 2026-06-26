@@ -1,0 +1,47 @@
+comment: The disease is also known as Parkinsonism as per the original file. Muscarinic
+  antagonists can allow dopamine levels to rebalance, which can help relieve some
+  Parkinsonian symptoms e.g. involuntary movements. Anticholinergic drugs may also
+  be prescribed to improve bladder dysfunction (https://pubmed.ncbi.nlm.nih.gov/20370804/).
+directed: true
+graph:
+  _id: DB00810_MESH_D020734_1
+  disease: Parkinsonian Disorders
+  disease_mesh: MESH:D020734
+  drug: biperiden
+  drug_mesh: MESH:D001712
+  drugbank: DB:DB00810
+links:
+  - key: negatively regulates
+    source: MESH:D001712
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0007271
+  - key: positively correlated with
+    source: GO:0007271
+    target: HP:0100022
+  - key: manifestation of
+    source: HP:0100022
+    target: MESH:D020734
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C036432
+    id: MESH:D001712
+    label: Drug
+    name: biperiden
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: GO:0007271
+    label: BiologicalProcess
+    name: synaptic transmission, cholinergic
+  - id: HP:0100022
+    label: PhenotypicFeature
+    name: Abnormality of movement
+  - id: MESH:D020734
+    label: Disease
+    name: Parkinsonian Disorders
+references:
+  - https://go.drugbank.com/drugs/DB00810#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Muscarinic_antagonist#Effects

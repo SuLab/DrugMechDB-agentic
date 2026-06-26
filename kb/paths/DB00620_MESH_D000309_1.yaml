@@ -1,0 +1,27 @@
+comment: Adrenal Insufficiency is a disorder of the adrenal glands, the pitutary gland
+  or the hypothalamus which is caused by the defects in the synthesis of adrenal corticosteroids.
+directed: true
+graph:
+  _id: DB00620_MESH_D000309_1
+  disease: Adrenal Insufficiency
+  disease_mesh: MESH:D000309
+  drug: triamcinolone
+  drug_mesh: MESH:D014221
+  drugbank: DB:DB00620
+links:
+  - key: treats
+    source: MESH:D014221
+    target: MESH:D000309
+multigraph: true
+nodes:
+  - id: MESH:D014221
+    label: Drug
+    name: triamcinolone
+  - id: MESH:D000309
+    label: Disease
+    name: Adrenal Insufficiency
+references:
+  - https://go.drugbank.com/drugs/DB00620#mechanism-of-action
+  - https://www.cancer.gov/publications/dictionaries/cancer-drug/def/triamcinolone
+  - https://www.ncbi.nlm.nih.gov/books/NBK544309/
+  - https://en.wikipedia.org/wiki/Adrenal_insufficiency

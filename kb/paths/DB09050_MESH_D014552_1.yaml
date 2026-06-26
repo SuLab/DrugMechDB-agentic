@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB09050_MESH_D014552_1
+  disease: Urinary tract infectious disease
+  disease_mesh: MESH:D014552
+  drug: ceftolozane
+  drug_mesh: MESH:C519491
+  drugbank: DB:DB09050
+links:
+  - key: negatively regulates
+    source: MESH:C519491
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: in taxon
+    source: GO:0009252
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D014552
+multigraph: true
+nodes:
+  - id: MESH:C519491
+    label: Drug
+    name: ceftolozane
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding proteins
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D014552
+    label: Disease
+    name: Urinary tract infectious disease
+references:
+  - https://go.drugbank.com/drugs/DB09050

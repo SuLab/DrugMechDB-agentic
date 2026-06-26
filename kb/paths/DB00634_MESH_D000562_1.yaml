@@ -1,0 +1,37 @@
+comment: There seems to be no evidence linking sulfacetamide as treatment for Amebic
+  infection. Sulfacetamide is an antibacterial type of drug (https://www.kegg.jp/entry/D05947)
+  and it seems the drug has some anti-inflammatory role. Since the disease could lead
+  to inflammation and ulceration of the colon perhaps there could be an anti-inflammation
+  hypothesis but the drug is mainly available as eye drops and lotions (https://en.wikipedia.org/wiki/Sulfacetamide#Available_forms),
+  and therefore unavailable to treat the intestinal tract in such formats. Note there
+  are few amoeba species that may cause skin or eye issues (https://en.wikipedia.org/wiki/Acanthamoeba_keratitis),
+  in which case sulfacetamide could potentially be an indication, albeit no evidence
+  to prove this assumption has been found in databases or literature.
+directed: true
+graph:
+  _id: DB00634_MESH_D000562_1
+  disease: Amebic infection
+  disease_mesh: MESH:D000562
+  drug: sulfacetamide
+  drug_mesh: MESH:D013409
+  drugbank: DB:DB00634
+links:
+  - key: negatively regulates
+    source: MESH:D013409
+    target: GO:0006954
+  - key: caused by
+    source: GO:0006954
+    target: MESH:D000562
+multigraph: true
+nodes:
+  - id: MESH:D013409
+    label: Drug
+    name: sulfacetamide
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D000562
+    label: Disease
+    name: Amebic infection
+references:
+  - https://go.drugbank.com/drugs/DB00634#mechanism-of-action

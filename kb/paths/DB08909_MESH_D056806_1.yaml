@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB08909_MESH_D056806_1
+  disease: Disorder of the urea cycle metabolism
+  disease_mesh: MESH:D056806
+  drug: glycerol phenylbutyrate
+  drug_mesh: MESH:C570223
+  drugbank: DB:DB08909
+links:
+  - key: derives into
+    source: MESH:C570223
+    target: CHEBI:75316
+  - key: derives into
+    source: CHEBI:75316
+    target: MESH:D010648
+  - key: molecularly interacts with
+    source: MESH:D010648
+    target: CHEBI:28300
+  - key: produces
+    source: CHEBI:28300
+    target: CHEBI:17884
+  - key: negatively correlated with
+    source: CHEBI:17884
+    target: MESH:D056806
+multigraph: true
+nodes:
+  - id: MESH:C570223
+    label: Drug
+    name: glycerol phenylbutyrate
+  - id: CHEBI:75316
+    label: ChemicalSubstance
+    name: sodium phenylbutyrate
+  - id: MESH:D010648
+    label: ChemicalSubstance
+    name: Phenylacetates
+  - id: CHEBI:28300
+    label: ChemicalSubstance
+    name: glutamine
+  - id: CHEBI:17884
+    label: ChemicalSubstance
+    name: N2-phenylacetyl-L-glutamine
+  - id: MESH:D056806
+    label: Disease
+    name: Disorder of the urea cycle metabolism
+references:
+  - https://go.drugbank.com/drugs/DB08909#mechanism-of-action
+  - https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=900e7dc0-9afe-4f50-80de-90567bb78519
+  - https://en.wikipedia.org/wiki/Sodium_phenylbutyrate#Pharmacology

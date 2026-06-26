@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB01113_MESH_D016491_1
+  disease: Peripheral Vascular Diseases
+  disease_mesh: MESH:D016491
+  drug: Papaverine
+  drug_mesh: MESH:D010208
+  drugbank: DB:DB01113
+links:
+  - key: decreases activity of
+    source: MESH:D010208
+    target: UniProt:Q07343
+  - key: decreases abundance of
+    source: UniProt:Q07343
+    target: MESH:D000242
+  - key: participates in
+    source: MESH:D000242
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: MESH:D016491
+multigraph: true
+nodes:
+  - id: MESH:D010208
+    label: Drug
+    name: Papaverine
+  - id: UniProt:Q07343
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4B
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: Cyclic AMP
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: MESH:D016491
+    label: Disease
+    name: Peripheral Vascular Diseases
+references:
+  - https://go.drugbank.com/drugs/DB01113#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q07343#function
+  - https://en.wikipedia.org/wiki/Peripheral_artery_disease

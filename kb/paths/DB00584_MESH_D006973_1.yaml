@@ -1,0 +1,71 @@
+comment: Being a prodrug, enalapril is rapidly biotransformed into its active metabolite,
+  enalaprilat. Please note this drug had 2 DrugBank IDs in the Drug Centarl, DB00584
+  and DB09477. The DB09477 is ID for Enalapril, which has been previously curated.
+directed: true
+graph:
+  _id: DB00584_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: Enalapril
+  drug_mesh: MESH:D004656
+  drugbank: DB:DB00584
+links:
+  - key: produces
+    source: MESH:D004656
+    target: MESH:D015773
+  - key: decreases activity of
+    source: MESH:D015773
+    target: UniProt:P12821
+  - key: increases abundance of
+    source: UniProt:P12821
+    target: MESH:D000804
+  - key: causes
+    source: MESH:D000804
+    target: GO:0070294
+  - key: positively correlated with
+    source: GO:0070294
+    target: GO:0003092
+  - key: contributes to
+    source: GO:0003092
+    target: GO:0045777
+  - key: affects risk for
+    source: GO:0045777
+    target: MESH:D006973
+  - key: causes
+    source: MESH:D000804
+    target: MESH:D014661
+  - key: contributes to
+    source: MESH:D014661
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D004656
+    label: Drug
+    name: Enalapril
+  - id: MESH:D015773
+    label: Drug
+    name: Enalaprilat
+  - id: UniProt:P12821
+    label: Protein
+    name: Angiotensin-converting enzyme
+  - id: MESH:D000804
+    label: ChemicalSubstance
+    name: Angiotensin II
+  - id: GO:0070294
+    label: BiologicalProcess
+    name: Renal sodium ion absorption
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: Renal water retention
+  - id: GO:0045777
+    label: BiologicalProcess
+    name: Positive regulation of blood pressure
+  - id: MESH:D014661
+    label: Disease
+    name: Vasoconstriction
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00584
+  - https://go.drugbank.com/drugs/DB09477#BE0000221

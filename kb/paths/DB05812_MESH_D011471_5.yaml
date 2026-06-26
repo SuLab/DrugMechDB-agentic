@@ -1,0 +1,82 @@
+directed: true
+graph:
+  _id: DB05812_MESH_D011471_5
+  disease: Malignant tumor of prostate
+  disease_mesh: MESH:D011471
+  drug: abiraterone acetate
+  drug_mesh: MESH:D000069501,MESH:C089740
+  drugbank: DB:DB05812
+links:
+  - key: derives into
+    source: DB:DB05812
+    target: MESH:C000600172
+  - key: negatively regulates
+    source: MESH:C000600172
+    target: UniProt:P05093
+  - key: negatively regulates
+    source: MESH:C000600172
+    target: UniProt:P26439
+  - key: negatively regulates
+    source: MESH:C000600172
+    target: UniProt:P14060
+  - key: positively regulates
+    source: UniProt:P05093
+    target: GO:0006702
+  - key: positively regulates
+    source: UniProt:P26439
+    target: GO:0006702
+  - key: positively regulates
+    source: UniProt:P14060
+    target: GO:0006702
+  - key: positively regulates
+    source: UniProt:P05093
+    target: GO:0006704
+  - key: positively regulates
+    source: UniProt:P26439
+    target: GO:0006704
+  - key: positively regulates
+    source: UniProt:P14060
+    target: GO:0006704
+  - key: positively correlated with
+    source: GO:0006704
+    target: HP:0030088
+  - key: positively correlated with
+    source: GO:0006702
+    target: HP:0030088
+  - key: positively correlated with
+    source: HP:0030088
+    target: MESH:D011471
+multigraph: true
+nodes:
+  - id: DB:DB05812
+    label: Drug
+    name: abiraterone acetate
+  - id: MESH:C000600172
+    label: Drug
+    name: delta4-abiraterone
+  - id: UniProt:P05093
+    label: Protein
+    name: Steroid 17-alpha-hydroxylase/17,20 lyase
+  - id: UniProt:P26439
+    label: Protein
+    name: 3 beta-hydroxysteroid dehydrogenase/Delta 5-->4-isomerase type 2
+  - id: UniProt:P14060
+    label: Protein
+    name: 3 beta-hydroxysteroid dehydrogenase/Delta 5-->4-isomerase type 1
+  - id: GO:0006702
+    label: BiologicalProcess
+    name: androgen biosynthetic process
+  - id: GO:0006704
+    label: BiologicalProcess
+    name: glucocorticoid biosynthetic process
+  - id: HP:0030088
+    label: PhenotypicFeature
+    name: Increased serum testosterone level
+  - id: MESH:D011471
+    label: Disease
+    name: Malignant tumor of prostate
+references:
+  - https://en.wikipedia.org/wiki/Abiraterone_acetate#Pharmacology
+  - https://en.wikipedia.org/wiki/%CE%944-Abiraterone
+  - https://www.nature.com/articles/nrurol.2016.101
+  - https://www.medchemexpress.com/D4-abiraterone.html

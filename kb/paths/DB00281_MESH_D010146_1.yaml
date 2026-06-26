@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB00281_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: lidocaine
+  drug_mesh: MESH:D008012
+  drugbank: DB:DB00281
+links:
+  - key: decreases activity of
+    source: MESH:D008012
+    target: InterPro:IPR028809
+  - key: participates in
+    source: InterPro:IPR028809
+    target: GO:0019233
+  - key: causes
+    source: GO:0019233
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:D008012
+    label: Drug
+    name: lidocaine
+  - id: InterPro:IPR028809
+    label: GeneFamily
+    name: Neuronal Voltage gated sodium channels
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: Sensory perception of pain
+  - id: MESH:D010146
+    label: Disease
+    name: Pain

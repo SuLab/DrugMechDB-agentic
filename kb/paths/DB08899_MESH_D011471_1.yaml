@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB08899_MESH_D011471_1
+  disease: Malignant tumor of prostate
+  disease_mesh: MESH:D011471
+  drug: enzalutamide
+  drug_mesh: MESH:C540278
+  drugbank: DB:DB08899
+links:
+  - key: decreases activity of
+    source: MESH:C540278
+    target: UniProt:P10275
+  - key: participates in
+    source: UniProt:P10275
+    target: GO:0030521
+  - key: positively regulates
+    source: GO:0030521
+    target: GO:0006351
+  - key: precedes
+    source: GO:0006351
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: CL:0001063
+  - key: positively correlated with
+    source: CL:0001063
+    target: MESH:D011471
+multigraph: true
+nodes:
+  - id: MESH:C540278
+    label: Drug
+    name: enzalutamide
+  - id: UniProt:P10275
+    label: Protein
+    name: Androgen receptor
+  - id: GO:0030521
+    label: BiologicalProcess
+    name: androgen receptor signaling pathway
+  - id: GO:0006351
+    label: BiologicalProcess
+    name: gene transcription
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: CL:0001063
+    label: Cell
+    name: tumor cell
+  - id: MESH:D011471
+    label: Disease
+    name: Malignant tumor of prostate
+references:
+  - https://go.drugbank.com/drugs/DB08899#BE0000132
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3721441/

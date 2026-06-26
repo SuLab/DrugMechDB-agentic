@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB00067_MESH_D053206_1
+  disease: Nocturnal enuresis
+  disease_mesh: MESH:D053206
+  drug: Vasopressin
+  drug_mesh: MESH:C016671
+  drugbank: DB:DB00067
+links:
+  - key: negatively regulates
+    source: MESH:C016671
+    target: GO:0035810
+  - key: positively correlated with
+    source: GO:0035810
+    target: GO:0060073
+  - key: manifestation of
+    source: GO:0060073
+    target: MESH:D053206
+multigraph: true
+nodes:
+  - id: MESH:C016671
+    label: Drug
+    name: Vasopressin
+  - id: GO:0035810
+    label: BiologicalProcess
+    name: Diuresis
+  - id: GO:0060073
+    label: BiologicalProcess
+    name: Urination
+  - id: MESH:D053206
+    label: Disease
+    name: Nocturnal enuresis
+references:
+  - https://go.drugbank.com/drugs/DB00067
+  - https://en.wikipedia.org/wiki/Nocturnal_enuresis
+  - https://pubmed.ncbi.nlm.nih.gov/29123651/

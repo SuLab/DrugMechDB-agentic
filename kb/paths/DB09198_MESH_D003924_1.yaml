@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB09198_MESH_D003924_1
+  disease: Diabetes mellitus type 2
+  disease_mesh: MESH:D003924
+  drug: lobeglitazone
+  drug_mesh: MESH:C546215
+  drugbank: DB:DB09198
+links:
+  - key: increases activity of
+    source: MESH:C546215
+    target: UniProt:P37231
+  - key: positively regulates
+    source: UniProt:P37231
+    target: GO:0032869
+  - key: increases response to
+    source: GO:0032869
+    target: GO:0001951
+  - key: decreases abundance of
+    source: GO:0001951
+    target: MESH:D001786
+  - key: correlated with
+    source: MESH:D001786
+    target: MESH:D003924
+multigraph: true
+nodes:
+  - id: MESH:C546215
+    label: Drug
+    name: lobeglitazone
+  - id: UniProt:P37231
+    label: Protein
+    name: Peroxisome proliferator-activated receptor gamma
+  - id: GO:0032869
+    label: BiologicalProcess
+    name: tissue sensitivity to insulin
+  - id: GO:0001951
+    label: BiologicalProcess
+    name: uptake of blood glucose
+  - id: MESH:D001786
+    label: ChemicalSubstance
+    name: glycated hemoglobin
+  - id: MESH:D003924
+    label: Disease
+    name: Diabetes mellitus type 2
+references:
+  - https://go.drugbank.com/drugs/DB09198#BE0000215

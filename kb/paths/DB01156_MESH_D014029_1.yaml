@@ -1,0 +1,81 @@
+directed: true
+graph:
+  _id: DB01156_MESH_D014029_1
+  disease: Nicotine dependence
+  disease_mesh: MESH:D014029
+  drug: bupropion
+  drug_mesh: MESH:D016642
+  drugbank: DB:DB01156
+links:
+  - key: decreases activity of
+    source: MESH:D016642
+    target: UniProt:Q01959
+  - key: positively regulates
+    source: UniProt:Q01959
+    target: GO:0090494
+  - key: decreases abundance of
+    source: GO:0090494
+    target: MESH:D004298
+  - key: negatively correlated with
+    source: MESH:D004298
+    target: HP:0030858
+  - key: decreases activity of
+    source: MESH:D016642
+    target: UniProt:P32297
+  - key: participates in
+    source: UniProt:P32297
+    target: reactome:R-HSA-629587
+  - key: participates in
+    source: UniProt:P32297
+    target: reactome:R-HSA-629594
+  - key: participates in
+    source: UniProt:P32297
+    target: reactome:R-HSA-629597
+  - key: positively correlated with
+    source: reactome:R-HSA-629587
+    target: HP:0030858
+  - key: positively correlated with
+    source: reactome:R-HSA-629594
+    target: HP:0030858
+  - key: positively correlated with
+    source: reactome:R-HSA-629597
+    target: HP:0030858
+  - key: positively correlated with
+    source: HP:0030858
+    target: MESH:D014029
+multigraph: true
+nodes:
+  - id: MESH:D016642
+    label: Drug
+    name: bupropion
+  - id: UniProt:Q01959
+    label: Protein
+    name: Sodium-dependent dopamine transporter
+  - id: GO:0090494
+    label: BiologicalProcess
+    name: dopamine uptake
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: UniProt:P32297
+    label: Protein
+    name: Neuronal acetylcholine receptor subunit alpha-3
+  - id: reactome:R-HSA-629587
+    label: Pathway
+    name: Highly sodium permeable postsynaptic acetylcholine nicotinic receptors
+  - id: reactome:R-HSA-629594
+    label: Pathway
+    name: Highly calcium permeable postsynaptic nicotinic acetylcholine receptors
+  - id: reactome:R-HSA-629597
+    label: Pathway
+    name: Highly calcium permeable nicotinic acetylcholine receptors
+  - id: HP:0030858
+    label: PhenotypicFeature
+    name: Addictive behavior
+  - id: MESH:D014029
+    label: Disease
+    name: Nicotine dependence
+references:
+  - https://go.drugbank.com/drugs/DB01156
+  - https://en.wikipedia.org/wiki/Bupropion
+  - https://pubmed.ncbi.nlm.nih.gov/10991997/

@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00415_MESH_D010284_1
+  disease: Paratyphoid fever
+  disease_mesh: MESH:D010284
+  drug: ampicillin
+  drug_mesh: MESH:D000667
+  drugbank: DB:DB00415
+links:
+  - key: negatively regulates
+    source: MESH:D000667
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:59201
+  - key: causes
+    source: taxonomy:59201
+    target: MESH:D010284
+multigraph: true
+nodes:
+  - id: MESH:D000667
+    label: Drug
+    name: ampicillin
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding protein transpeptidase domain
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:59201
+    label: OrganismTaxon
+    name: Salmonella enterica subsp. enterica
+  - id: MESH:D010284
+    label: Disease
+    name: Paratyphoid fever
+references:
+  - https://go.drugbank.com/drugs/DB00415

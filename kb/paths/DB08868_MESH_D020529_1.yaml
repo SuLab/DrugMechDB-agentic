@@ -1,0 +1,67 @@
+comment: Sphingosine kinase metabolizes fingolimod to an active metabolite, fingolimod
+  phosphate.
+directed: true
+graph:
+  _id: DB08868_MESH_D020529_1
+  disease: Relapsing remitting multiple sclerosis
+  disease_mesh: MESH:D020529
+  drug: fingolimod
+  drug_mesh: MESH:D000068876
+  drugbank: DB:DB08868
+links:
+  - key: has metabolite
+    source: MESH:D000068876
+    target: CHEBI:73420
+  - key: increases activity of
+    source: CHEBI:73420
+    target: UniProt:Q9H228
+  - key: increases activity of
+    source: CHEBI:73420
+    target: UniProt:P21453
+  - key: increases activity of
+    source: CHEBI:73420
+    target: UniProt:Q99500
+  - key: negatively regulates
+    source: UniProt:Q99500
+    target: GO:0072676
+  - key: negatively regulates
+    source: UniProt:Q9H228
+    target: GO:0072676
+  - key: negatively regulates
+    source: UniProt:P21453
+    target: GO:0072676
+  - key: positively correlated with
+    source: GO:0072676
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D020529
+multigraph: true
+nodes:
+  - id: MESH:D000068876
+    label: Drug
+    name: Fingolimod
+  - id: CHEBI:73420
+    label: ChemicalSubstance
+    name: Fingolimod phosphate
+  - id: UniProt:Q99500
+    label: Protein
+    name: Sphingosine 1-phosphate receptor 3
+  - id: UniProt:Q9H228
+    label: Protein
+    name: Sphingosine 1-phosphate receptor 5
+  - id: UniProt:P21453
+    label: Protein
+    name: Sphingosine 1-phosphate receptor 1
+  - id: GO:0072676
+    label: BiologicalProcess
+    name: Lymphocyte migration
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D020529
+    label: Disease
+    name: Relapsing remitting multiple sclerosis
+references:
+  - https://go.drugbank.com/drugs/DB08868
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL314854/

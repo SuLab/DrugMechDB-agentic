@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00595_MESH_D008219_1
+  disease: Lymphogranuloma venereum
+  disease_mesh: MESH:D008219
+  drug: oxytetracycline
+  drug_mesh: MESH:D010118
+  drugbank: DB:DB00595
+links:
+  - key: decreases activity of
+    source: MESH:D010118
+    target: UniProt:O84631
+  - key: decreases activity of
+    source: MESH:D010118
+    target: UniProt:O84128
+  - key: positively regulates
+    source: UniProt:O84631
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:O84128
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:813
+  - key: causes
+    source: taxonomy:813
+    target: MESH:D008219
+multigraph: true
+nodes:
+  - id: MESH:D010118
+    label: Drug
+    name: oxytetracycline
+  - id: UniProt:O84631
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:O84128
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:813
+    label: OrganismTaxon
+    name: Chlamydia trachomatis
+  - id: MESH:D008219
+    label: Disease
+    name: Lymphogranuloma venereum
+references:
+  - https://go.drugbank.com/drugs/DB00595#mechanism-of-action
+  - https://www.uniprot.org/uniprot/O84631#function
+  - https://www.uniprot.org/uniprot/O84128#function
+  - https://en.wikipedia.org/wiki/Lymphogranuloma_venereum

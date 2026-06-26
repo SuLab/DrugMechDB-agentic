@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB06413_MESH_D009290_1
+  disease: Narcolepsy
+  disease_mesh: MESH:D009290
+  drug: armodafinil
+  drug_mesh: MESH:C579652
+  drugbank: DB:DB06413
+links:
+  - key: decreases activity of
+    source: MESH:C579652
+    target: UniProt:Q01959
+  - key: positively regulates
+    source: UniProt:Q01959
+    target: GO:0090494
+  - key: decreases abundance of
+    source: GO:0090494
+    target: MESH:D004298
+  - key: positively regulates
+    source: MESH:D004298
+    target: GO:0042746
+  - key: negatively correlated with
+    source: GO:0042746
+    target: MESH:D009290
+multigraph: true
+nodes:
+  - id: MESH:C579652
+    label: Drug
+    name: Armodafinil
+  - id: UniProt:Q01959
+    label: Protein
+    name: Sodium-dependent dopamine transporter
+  - id: GO:0090494
+    label: BiologicalProcess
+    name: Dopamine uptake
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0042746
+    label: BiologicalProcess
+    name: Circadian sleep/wake cycle, wakefulness
+  - id: MESH:D009290
+    label: Disease
+    name: Narcolepsy
+references:
+  - https://go.drugbank.com/drugs/DB06413
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3026477/

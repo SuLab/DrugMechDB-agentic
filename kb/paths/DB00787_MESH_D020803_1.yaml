@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00787_MESH_D020803_1
+  disease: Encephalitis due to Herpesvirus
+  disease_mesh: MESH:D020803
+  drug: aciclovir
+  drug_mesh: MESH:D000212
+  drugbank: DB:DB00787
+links:
+  - key: negatively regulates
+    source: MESH:D000212
+    target: Pfam:PF11590
+  - key: positively regulates
+    source: Pfam:PF11590
+    target: GO:0039693
+  - key: in taxon
+    source: GO:0039693
+    target: taxonomy:10298
+  - key: in taxon
+    source: GO:0039693
+    target: taxonomy:10310
+  - key: causes
+    source: taxonomy:10298
+    target: MESH:D020803
+  - key: causes
+    source: taxonomy:10310
+    target: MESH:D020803
+multigraph: true
+nodes:
+  - id: MESH:D000212
+    label: Drug
+    name: aciclovir
+  - id: Pfam:PF11590
+    label: GeneFamily
+    name: DNA polymerase catalytic subunit Pol
+  - id: GO:0039693
+    label: BiologicalProcess
+    name: viral DNA genome replication
+  - id: taxonomy:10298
+    label: OrganismTaxon
+    name: Human alphaherpesvirus 1
+  - id: taxonomy:10310
+    label: OrganismTaxon
+    name: Human alphaherpesvirus 2
+  - id: MESH:D020803
+    label: Disease
+    name: Encephalitis due to Herpesvirus
+references:
+  - https://go.drugbank.com/drugs/DB00787

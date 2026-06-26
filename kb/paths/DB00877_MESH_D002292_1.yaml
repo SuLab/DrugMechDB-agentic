@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00877_MESH_D002292_1
+  disease: Renal cell carcinoma
+  disease_mesh: MESH:D002292
+  drug: sirolimus
+  drug_mesh: MESH:D020123
+  drugbank: DB:DB00877
+links:
+  - key: decreases activity of
+    source: MESH:D020123
+    target: UniProt:P42345
+  - key: positively regulates
+    source: UniProt:P42345
+    target: GO:0031929
+  - key: positively correlated with
+    source: GO:0031929
+    target: HP:0031377
+  - key: causes
+    source: HP:0031377
+    target: MESH:D002292
+multigraph: true
+nodes:
+  - id: UniProt:P42345
+    label: Protein
+    name: Serine/threonine-protein kinase mTOR
+  - id: MESH:D020123
+    label: Drug
+    name: Sirolimus
+  - id: GO:0031929
+    label: BiologicalProcess
+    name: TOR signaling
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D002292
+    label: Disease
+    name: Renal cell carcinoma
+references:
+  - https://go.drugbank.com/drugs/DB00877

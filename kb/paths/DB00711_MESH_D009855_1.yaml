@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00711_MESH_D009855_1
+  disease: Infection by Onchocerca volvulus
+  disease_mesh: MESH:D009855
+  drug: diethylcarbamazine
+  drug_mesh: MESH:D004049
+  drugbank: DB:DB00711
+links:
+  - key: negatively regulates
+    source: MESH:D004049
+    target: GO:0019369
+  - key: regulates
+    source: GO:0019369
+    target: GO:0005886
+  - key: in taxon
+    source: GO:0005886
+    target: taxonomy:6282
+  - key: causes
+    source: taxonomy:6282
+    target: MESH:D009855
+multigraph: true
+nodes:
+  - id: MESH:D004049
+    label: Drug
+    name: Diethylcarbamazine
+  - id: GO:0019369
+    label: BiologicalProcess
+    name: Arachidonic acid metabolic process
+  - id: GO:0005886
+    label: CellularComponent
+    name: Plasma membrane
+  - id: taxonomy:6282
+    label: OrganismTaxon
+    name: Onchocerca volvulus
+  - id: MESH:D009855
+    label: Disease
+    name: Infection by Onchocerca volvulus
+references:
+  - https://go.drugbank.com/drugs/DB00711

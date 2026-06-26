@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00053_MESH_D005776_1
+  disease: Gaucher Disease
+  disease_mesh: MESH:D005776
+  drug: imiglucerase
+  drug_mesh: MESH:C090568
+  drugbank: DB:DB00053
+links:
+  - key: positively regulates
+    source: MESH:C090568
+    target: UniProt:P04062
+  - key: negatively regulates
+    source: UniProt:P04062
+    target: MESH:D005963
+  - key: positively correlated with
+    source: MESH:D005963
+    target: MESH:D005776
+multigraph: true
+nodes:
+  - id: MESH:C090568
+    label: Drug
+    name: imiglucerase
+  - id: UniProt:P04062
+    label: Protein
+    name: Lysosomal acid glucosylceramidase
+  - id: MESH:D005963
+    label: ChemicalSubstance
+    name: Glucosylceramides
+  - id: MESH:D005776
+    label: Disease
+    name: Gaucher Disease
+references:
+  - https://go.drugbank.com/drugs/DB00053#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Imiglucerase
+  - https://www.uniprot.org/uniprot/P04062#function
+  - https://en.wikipedia.org/wiki/Glucocerebroside
+  - https://en.wikipedia.org/wiki/Gaucher%27s_disease

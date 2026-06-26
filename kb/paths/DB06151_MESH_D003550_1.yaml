@@ -1,0 +1,39 @@
+comment: Acetylcysteine serves as a prodrug to L-cysteine, a precursor to the biologic
+  antioxidant glutathione
+directed: true
+graph:
+  _id: DB06151_MESH_D003550_1
+  disease: Cystic Fibrosis
+  disease_mesh: MESH:D003550
+  drug: Acetylcysteine
+  drug_mesh: MESH:D000111
+  drugbank: DB:DB06151
+links:
+  - key: disrupts
+    source: MESH:D000111
+    target: GO:0042710
+  - key: caused by
+    source: GO:0042710
+    target: taxonomy:287
+  - key: causes
+    source: taxonomy:287
+    target: MESH:D003550
+multigraph: true
+nodes:
+  - id: MESH:D000111
+    label: Drug
+    name: Acetylcysteine
+  - id: GO:0042710
+    label: BiologicalProcess
+    name: Biofilm formation
+  - id: taxonomy:287
+    label: OrganismTaxon
+    name: Pseudomonas aeruginosa
+  - id: MESH:D003550
+    label: Disease
+    name: Cystic Fibrosis
+references:
+  - https://go.drugbank.com/drugs/DB06151
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Cysteine
+  - DOI:https://doi.org/10.1016/j.rmed.2016.06.015
+  - DOI:10.2217/fmb.10.125

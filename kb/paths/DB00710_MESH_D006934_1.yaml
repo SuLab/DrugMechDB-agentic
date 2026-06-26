@@ -1,0 +1,77 @@
+directed: true
+graph:
+  _id: DB00710_MESH_D006934_1
+  disease: Hypercalcemia
+  disease_mesh: MESH:D006934
+  drug: ibandronic acid
+  drug_mesh: MESH:C073007
+  drugbank: DB:DB00710
+links:
+  - key: decreases activity of
+    source: MESH:C073007
+    target: UniProt:P14324
+  - key: decreases activity of
+    source: MESH:C073007
+    target: UniProt:O95749
+  - key: molecularly interacts with
+    source: MESH:C073007
+    target: CHEBI:52255
+  - key: positively correlated with
+    source: CHEBI:52255
+    target: GO:0001503
+  - key: positively correlated with
+    source: CHEBI:52255
+    target: GO:1990523
+  - key: positively correlated with
+    source: UniProt:P14324
+    target: GO:0008299
+  - key: positively correlated with
+    source: UniProt:O95749
+    target: GO:0008299
+  - key: positively correlated with
+    source: GO:0008299
+    target: GO:0045453
+  - key: positively correlated with
+    source: GO:0045453
+    target: MESH:D006934
+  - key: negatively correlated with
+    source: GO:0001503
+    target: MESH:D006934
+  - key: negatively correlated with
+    source: GO:1990523
+    target: MESH:D006934
+multigraph: true
+nodes:
+  - id: MESH:C073007
+    label: Drug
+    name: ibandronic acid
+  - id: UniProt:P14324
+    label: Protein
+    name: Farnesyl pyrophosphate synthase
+  - id: UniProt:O95749
+    label: Protein
+    name: Geranylgeranyl pyrophosphate synthase
+  - id: CHEBI:52255
+    label: ChemicalSubstance
+    name: hydroxylapatite
+  - id: GO:0008299
+    label: BiologicalProcess
+    name: isoprenoid biosynthetic process
+  - id: GO:0001503
+    label: BiologicalProcess
+    name: ossification
+  - id: GO:1990523
+    label: BiologicalProcess
+    name: bone regeneration
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: bone resorption
+  - id: MESH:D006934
+    label: Disease
+    name: Hypercalcemia
+references:
+  - https://go.drugbank.com/drugs/DB00710#mechanism-of-action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/60852#section=Pharmacology
+  - https://en.wikipedia.org/wiki/Hypercalcaemia#Bisphosphonates_and_calcitonin
+  - https://journals.sagepub.com/doi/10.4137/BTRI.S36138
+  - https://pubmed.ncbi.nlm.nih.gov/16531132/

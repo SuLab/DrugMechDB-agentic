@@ -1,0 +1,44 @@
+comment: The precise mode of action of thiabendazole on the parasite is unknown, but
+  it most likely inhibits the helminth-specific enzyme fumarate reductase.
+directed: true
+graph:
+  _id: DB00730_MESH_D014235_1
+  disease: Infection by larvae of Trichinella spiralis
+  disease_mesh: MESH:D014235
+  drug: Thiabendazole
+  drug_mesh: MESH:D013827
+  drugbank: DB:DB00730
+links:
+  - key: decreases activity of
+    source: MESH:D013827
+    target: InterPro:IPR005884
+  - key: positively regulates
+    source: InterPro:IPR005884
+    target: GO:0009061
+  - key: in taxon
+    source: GO:0009061
+    target: taxonomy:6334
+  - key: causes
+    source: taxonomy:6334
+    target: MESH:D014235
+multigraph: true
+nodes:
+  - id: MESH:D013827
+    label: Drug
+    name: Thiabendazole
+  - id: GO:0009061
+    label: BiologicalProcess
+    name: Anaerobic respiration
+  - id: InterPro:IPR005884
+    label: GeneFamily
+    name: Fumarate reductase, flavoprotein subunit
+  - id: taxonomy:6334
+    label: OrganismTaxon
+    name: Trichinella spiralis
+  - id: MESH:D014235
+    label: Disease
+    name: Infection by larvae of Trichinella spiralis
+references:
+  - https://go.drugbank.com/drugs/DB00730#BE0000548
+  - https://en.wikipedia.org/wiki/Tiabendazole
+  - https://en.wikipedia.org/wiki/Fumarate_reductase

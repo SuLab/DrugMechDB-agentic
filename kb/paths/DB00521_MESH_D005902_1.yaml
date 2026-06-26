@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB00521_MESH_D005902_1
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: carteolol
+  drug_mesh: MESH:D002354
+  drugbank: DB:DB00521
+links:
+  - key: decreases activity of
+    source: MESH:D002354
+    target: UniProt:P07550
+  - key: decreases activity of
+    source: MESH:D002354
+    target: UniProt:P08588
+  - key: participates in
+    source: UniProt:P07550
+    target: reactome:R-HSA-418555
+  - key: participates in
+    source: UniProt:P08588
+    target: reactome:R-HSA-418555
+  - key: increases abundance of
+    source: reactome:R-HSA-418555
+    target: CHEBI:17489
+  - key: positively correlated with
+    source: CHEBI:17489
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: HP:0007906
+  - key: positively correlated with
+    source: HP:0007906
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:D002354
+    label: Drug
+    name: carteolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: reactome:R-HSA-418555
+    label: Pathway
+    name: G alpha (s) signalling events
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3,5-cyclic AMP
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: aqueous humor of eyeball
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Ocular Hypertension
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - https://go.drugbank.com/drugs/DB00521
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5342868/#__sec2title

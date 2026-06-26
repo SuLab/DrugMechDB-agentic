@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00927_MESH_D015043_1
+  disease: Zollinger-Ellison syndrome
+  disease_mesh: MESH:D015043
+  drug: famotidine
+  drug_mesh: MESH:D015738
+  drugbank: DB:DB00927
+links:
+  - key: decreases activity of
+    source: MESH:D015738
+    target: UniProt:P25021
+  - key: positively regulates
+    source: UniProt:P25021
+    target: GO:0001696
+  - key: increases abundance of
+    source: GO:0001696
+    target: MESH:D005744
+  - key: positively regulates
+    source: MESH:D005744
+    target: InterPro:IPR034162
+  - key: contributes to
+    source: InterPro:IPR034162
+    target: HP:0004398
+  - key: manifestation of
+    source: HP:0004398
+    target: MESH:D015043
+multigraph: true
+nodes:
+  - id: MESH:D015738
+    label: Drug
+    name: Famotidine
+  - id: UniProt:P25021
+    label: Protein
+    name: Histamine H2 receptor
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: Gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: InterPro:IPR034162
+    label: GeneFamily
+    name: Pepsin catalytic domain
+  - id: HP:0004398
+    label: PhenotypicFeature
+    name: Peptic ulcer
+  - id: MESH:D015043
+    label: Disease
+    name: Zollinger-Ellison syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00927#BE0000112

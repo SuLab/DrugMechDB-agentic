@@ -1,0 +1,22 @@
+directed: true
+graph:
+  _id: DB01914_MESH_D007003_1
+  disease: Hypoglycemia
+  disease_mesh: MESH:D007003
+  drug: glucose
+  drug_mesh: MESH:D005947
+  drugbank: DB:DB01914
+links:
+  - key: treats
+    source: MESH:D005947
+    target: MESH:D007003
+multigraph: true
+nodes:
+  - id: MESH:D005947
+    label: Drug
+    name: Glucose
+  - id: MESH:D007003
+    label: Disease
+    name: Hypoglycemia
+references:
+  - https://go.drugbank.com/drugs/DB01914

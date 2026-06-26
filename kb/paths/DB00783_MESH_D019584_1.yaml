@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00783_MESH_D019584_1
+  disease: Menopausal flushing
+  disease_mesh: MESH:D019584
+  drug: Estradiol
+  drug_mesh: MESH:D004958
+  drugbank: DB:DB00783
+links:
+  - key: increases activity of
+    source: MESH:D004958
+    target: UniProt:P03372
+  - key: increases activity of
+    source: MESH:D004958
+    target: UniProt:Q92731
+  - key: participates in
+    source: UniProt:P03372
+    target: GO:0043627
+  - key: participates in
+    source: UniProt:Q92731
+    target: GO:0043627
+  - key: treats
+    source: GO:0043627
+    target: MESH:D019584
+multigraph: true
+nodes:
+  - id: MESH:D004958
+    label: Drug
+    name: Estradiol
+  - id: UniProt:P03372
+    label: Protein
+    name: Estrogen receptor alpha
+  - id: UniProt:Q92731
+    label: Protein
+    name: Estrogen receptor beta
+  - id: GO:0043627
+    label: BiologicalProcess
+    name: Response to estrogen
+  - id: MESH:D019584
+    label: Disease
+    name: Menopausal flushing
+references:
+  - https://go.drugbank.com/drugs/DB00783#BE0000123

@@ -1,0 +1,84 @@
+comment: Vinpocetine is not approved for any therapeutic use in the United States.
+directed: true
+graph:
+  _id: DB12131_MESH_D003704_2
+  disease: Dementia
+  disease_mesh: MESH:D003704
+  drug: vinpocetine
+  drug_mesh: MESH:C013983
+  drugbank: DB:DB12131
+links:
+  - key: negatively regulates
+    source: MESH:C013983
+    target: GO:0098703
+  - key: positively correlated with
+    source: GO:0098703
+    target: GO:0051402
+  - key: positively correlated with
+    source: GO:0051402
+    target: MESH:D003704
+  - key: disrupts
+    source: GO:0098703
+    target: GO:0055074
+  - key: negatively correlated with
+    source: GO:0055074
+    target: MESH:D003704
+  - key: negatively regulates
+    source: MESH:C013983
+    target: Pfam:PF06512
+  - key: positively correlated with
+    source: Pfam:PF06512
+    target: HP:0001250
+  - key: decreases abundance of
+    source: MESH:C013983
+    target: MESH:D005609
+  - key: positively correlated with
+    source: MESH:D005609
+    target: GO:0036475
+  - key: positively correlated with
+    source: GO:0036475
+    target: HP:0001268
+  - key: manifestation of
+    source: HP:0001268
+    target: MESH:D003704
+  - key: manifestation of
+    source: HP:0001250
+    target: MESH:D003704
+multigraph: true
+nodes:
+  - id: MESH:C013983
+    label: Drug
+    name: vinpocetine
+  - id: Pfam:PF06512
+    label: GeneFamily
+    name: Sodium ion transport-associated
+  - id: GO:0098703
+    label: BiologicalProcess
+    name: calcium ion import across plasma membrane
+  - id: GO:0055074
+    label: BiologicalProcess
+    name: calcium ion homeostasis
+  - id: GO:0051402
+    label: BiologicalProcess
+    name: neuron apoptotic process
+  - id: MESH:D005609
+    label: ChemicalSubstance
+    name: Free Radicals
+  - id: GO:0036475
+    label: BiologicalProcess
+    name: neuron death in response to oxidative stress
+  - id: HP:0001268
+    label: PhenotypicFeature
+    name: Mental deterioration
+  - id: HP:0001250
+    label: PhenotypicFeature
+    name: Seizure
+  - id: MESH:D003704
+    label: Disease
+    name: Dementia
+references:
+  - https://en.wikipedia.org/wiki/Vinpocetine#Mechanism_of_action
+  - https://pubmed.ncbi.nlm.nih.gov/2146522/
+  - https://pubmed.ncbi.nlm.nih.gov/25826483/
+  - https://www.alomone.com/article/role-ion-channels-neurodegeneration
+  - https://en.wikipedia.org/wiki/Ion_channel_hypothesis_of_Alzheimer%27s_disease

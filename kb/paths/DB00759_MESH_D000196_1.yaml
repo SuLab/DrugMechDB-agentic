@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB00759_MESH_D000196_1
+  disease: Actinomycosis
+  disease_mesh: MESH:D000196
+  drug: tetracycline
+  drug_mesh: MESH:D013752
+  drugbank: DB:DB00759
+links:
+  - key: disrupts
+    source: MESH:D013752
+    target: GO:0044391
+  - key: location of
+    source: GO:0044391
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:1654
+  - key: causes
+    source: taxonomy:1654
+    target: MESH:D000196
+multigraph: true
+nodes:
+  - id: MESH:D013752
+    label: Drug
+    name: tetracycline
+  - id: GO:0044391
+    label: CellularComponent
+    name: ribosomal subunit
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:1654
+    label: OrganismTaxon
+    name: Actinomyces
+  - alt_names:
+      - Actinomycotic infection
+    id: MESH:D000196
+    label: Disease
+    name: Actinomycosis
+references:
+  - https://en.wikipedia.org/wiki/Tetracycline#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Actinomycosis#Causes
+  - https://meshb.nlm.nih.gov/record/ui?ui=D000196

@@ -1,0 +1,42 @@
+comment: Secnidazole is a prodrug  converted to an active form via reduction of nitro
+  groups to radical anions.
+directed: true
+graph:
+  _id: DB12834_MESH_D016585_1
+  disease: Bacterial vaginosis
+  disease_mesh: MESH:D016585
+  drug: Secnidazole
+  drug_mesh: MESH:C016724
+  drugbank: DB:DB12834
+links:
+  - key: positively regulates
+    source: MESH:C016724
+    target: GO:0000305
+  - key: disrupts
+    source: GO:0000305
+    target: MESH:D004247
+  - key: in taxon
+    source: MESH:D004247
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D016585
+multigraph: true
+nodes:
+  - id: MESH:C016724
+    label: Drug
+    name: Secnidazole
+  - id: GO:0000305
+    label: BiologicalProcess
+    name: Response to oxygen radical
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D016585
+    label: Disease
+    name: Bacterial vaginosis
+references:
+  - https://go.drugbank.com/drugs/DB12834

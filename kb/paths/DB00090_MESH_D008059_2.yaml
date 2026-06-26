@@ -1,0 +1,39 @@
+directed: true
+graph:
+  _id: DB00090_MESH_D008059_2
+  disease: Mucopolysaccharidosis, MPS-I
+  disease_mesh: MESH:D008059
+  drug: laronidase
+  drugbank: DB:DB00090
+links:
+  - key: chemically similar to
+    source: DB:DB00090
+    target: UniProt:P35475
+  - key: increases degradation of
+    source: UniProt:P35475
+    target: CHEBI:43394
+  - key: decreases abundance of
+    source: CHEBI:43394
+    target: MESH:D006025
+  - key: manifestation of
+    source: MESH:D006025
+    target: MESH:D008059
+multigraph: true
+nodes:
+  - id: DB:DB00090
+    label: Drug
+    name: laronidase
+  - id: UniProt:P35475
+    label: Protein
+    name: Alpha-L-iduronidase
+  - id: CHEBI:43394
+    label: ChemicalSubstance
+    name: α-L-iduronic acid
+  - id: MESH:D006025
+    label: ChemicalSubstance
+    name: Glycosaminoglycan
+  - id: MESH:D008059
+    label: Disease
+    name: Mucopolysaccharidosis, MPS-I
+references:
+  - https://go.drugbank.com/drugs/DB00090

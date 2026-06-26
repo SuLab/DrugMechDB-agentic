@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB09552_MESH_D010032_1
+  disease: Otitis externa
+  disease_mesh: MESH:D010032
+  drug: thonzonium
+  drug_mesh: MESH:C000609116
+  drugbank: DB:DB09552
+links:
+  - key: decreases activity of
+    source: MESH:C000609116
+    target: UniProt:Q59R99
+  - key: participates in
+    source: UniProt:Q59R99
+    target: GO:0030641
+  - key: occurs in
+    source: GO:0030641
+    target: taxonomy:5476
+  - key: causes
+    source: taxonomy:5476
+    target: MESH:D010032
+multigraph: true
+nodes:
+  - id: MESH:C000609116
+    label: Drug
+    name: thonzonium
+  - id: UniProt:Q59R99
+    label: Protein
+    name: V-type proton ATPase subunit a (Candida albicans)
+  - id: GO:0030641
+    label: BiologicalProcess
+    name: regulation of cellular pH
+  - id: taxonomy:5476
+    label: OrganismTaxon
+    name: Candida albicans
+  - id: MESH:D010032
+    label: Disease
+    name: Otitis externa
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/24478704/
+  - https://go.drugbank.com/drugs/DB09552

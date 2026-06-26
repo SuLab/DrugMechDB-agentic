@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01328_MESH_D011018_1
+  disease: Pneumonia due to Streptococcus
+  disease_mesh: MESH:D011018
+  drug: Cefonicid
+  drug_mesh: MESH:D015790
+  drugbank: DB:DB01328
+links:
+  - key: decreases activity of
+    source: MESH:D015790
+    target: InterPro:IPR001460
+  - key: positively regulates
+    source: InterPro:IPR001460
+    target: GO:0018104
+  - key: positively regulates
+    source: GO:0018104
+    target: GO:0009273
+  - key: has output
+    source: GO:0009273
+    target: GO:0005618
+  - key: occurs in
+    source: GO:0005618
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D011018
+multigraph: true
+nodes:
+  - id: MESH:D015790
+    label: Drug
+    name: Cefonicid
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0018104
+    label: BiologicalProcess
+    name: Cross-linking of the peptidoglycan
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: Peptidoglycan-based cell wall biogenesis
+  - id: GO:0005618
+    label: CellularComponent
+    name: Cell wall
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D011018
+    label: Disease
+    name: Pneumonia due to Streptococcus
+references:
+  - https://go.drugbank.com/drugs/DB01328

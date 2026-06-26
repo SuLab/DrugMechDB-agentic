@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00733_MESH_D062025_1
+  disease: Organophosphate poisoning
+  disease_mesh: MESH:D062025
+  drug: pralidoxime
+  drug_mesh: MESH:C028797
+  drugbank: DB:DB00733
+links:
+  - key: increases activity of
+    source: MESH:C028797
+    target: UniProt:P22303
+  - key: positively regulates
+    source: UniProt:P22303
+    target: GO:0006581
+  - key: decreases abundance of
+    source: GO:0006581
+    target: MESH:D000109
+  - key: contributes to
+    source: MESH:D000109
+    target: GO:0032224
+  - key: occurs in
+    source: GO:0032224
+    target: MESH:D062025
+multigraph: true
+nodes:
+  - id: MESH:C028797
+    label: Drug
+    name: Pralidoxime
+  - id: UniProt:P22303
+    label: Protein
+    name: Acetylcholinesterase
+  - id: GO:0006581
+    label: BiologicalProcess
+    name: Acetylcholine catabolic process
+  - id: MESH:D000109
+    label: ChemicalSubstance
+    name: Acetylcholine
+  - id: GO:0032224
+    label: BiologicalProcess
+    name: Positive regulation of synaptic transmission, cholinergic
+  - id: MESH:D062025
+    label: Disease
+    name: Organophosphate poisoning
+references:
+  - https://go.drugbank.com/drugs/DB00733
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1420/
+  - https://en.wikipedia.org/wiki/Organophosphate_poisoning#Signs_and_symptoms

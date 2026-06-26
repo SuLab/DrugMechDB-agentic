@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00759_MESH_D014141_1
+  disease: Trachoma
+  disease_mesh: MESH:D014141
+  drug: tetracycline
+  drug_mesh: MESH:D013752
+  drugbank: DB:DB00759
+links:
+  - key: disrupts
+    source: MESH:D013752
+    target: GO:0044391
+  - key: location of
+    source: GO:0044391
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:813
+  - key: causes
+    source: taxonomy:813
+    target: MESH:D014141
+multigraph: true
+nodes:
+  - id: MESH:D013752
+    label: Drug
+    name: tetracycline
+  - id: GO:0044391
+    label: CellularComponent
+    name: ribosomal subunit
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:813
+    label: OrganismTaxon
+    name: Chlamydia trachomatis
+  - id: MESH:D014141
+    label: Disease
+    name: Trachoma
+references:
+  - https://en.wikipedia.org/wiki/Tetracycline#Mechanism_of_action

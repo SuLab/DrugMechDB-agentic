@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB01080_MESH_D013036_1
+  disease: Spasms, Infantile
+  disease_mesh: MESH:D013036
+  drug: Vigabatrin
+  drug_mesh: MESH:D020888
+  drugbank: DB:DB01080
+links:
+  - key: decreases activity of
+    source: MESH:D020888
+    target: UniProt:P80404
+  - key: positively regulates
+    source: UniProt:P80404
+    target: GO:0009450
+  - key: decreases abundance of
+    source: GO:0009450
+    target: MESH:D005680
+  - key: negatively regulates
+    source: MESH:D005680
+    target: MESH:D013036
+multigraph: true
+nodes:
+  - id: MESH:D020888
+    label: Drug
+    name: Vigabatrin
+  - id: UniProt:P80404
+    label: Protein
+    name: 4-aminobutyrate aminotransferase, mitochondrial
+  - id: GO:0009450
+    label: BiologicalProcess
+    name: gamma-aminobutyric acid catabolic process
+  - id: MESH:D005680
+    label: ChemicalSubstance
+    name: gamma-Aminobutyric Acid
+  - id: MESH:D013036
+    label: Disease
+    name: Spasms, Infantile
+references:
+  - https://go.drugbank.com/drugs/DB01080#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Vigabatrin
+  - https://www.uniprot.org/uniprot/P80404#function
+  - https://en.wikipedia.org/wiki/Epileptic_spasms

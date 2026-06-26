@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB13166_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: zofenopril
+  drug_mesh: MESH:C044958
+  drugbank: DB:DB13166
+links:
+  - key: has metabolite
+    source: MESH:C044958
+    target: MESH:C065520
+  - key: decreases activity of
+    source: MESH:C065520
+    target: UniProt:P12821
+  - key: increases abundance of
+    source: UniProt:P12821
+    target: MESH:D000804
+  - key: causes
+    source: MESH:D000804
+    target: MESH:D014661
+  - key: contributes to
+    source: MESH:D014661
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C044958
+    label: Drug
+    name: zofenopril
+  - id: MESH:C065520
+    label: ChemicalSubstance
+    name: zofenoprilate
+  - id: UniProt:P12821
+    label: Protein
+    name: Angiotensin-converting enzyme
+  - id: MESH:D000804
+    label: ChemicalSubstance
+    name: Angiotensin II
+  - id: MESH:D014661
+    label: Disease
+    name: vasoconstriction
+  - id: MESH:D006973
+    label: Disease
+    name: hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB13166
+  - https://pubchem.ncbi.nlm.nih.gov/compound/92400
+  - https://en.wikipedia.org/wiki/Zofenopril

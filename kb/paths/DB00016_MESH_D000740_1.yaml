@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00016_MESH_D000740_1
+  disease: Anemia
+  disease_mesh: MESH:D000740
+  drug: epoetin theta
+  drug_mesh: MESH:C555712
+  drugbank: DB:DB00016
+links:
+  - key: increases activity of
+    source: MESH:C555712
+    target: UniProt:P19235
+  - key: positively regulates
+    source: UniProt:P19235
+    target: GO:0030218
+  - key: has output
+    source: GO:0030218
+    target: CL:0000232
+  - key: negatively correlated with
+    source: CL:0000232
+    target: MESH:D000740
+multigraph: true
+nodes:
+  - id: MESH:C555712
+    label: Drug
+    name: epoetin theta
+  - id: UniProt:P19235
+    label: Protein
+    name: erythropoietin receptor
+  - id: GO:0030218
+    label: BiologicalProcess
+    name: erythrocyte differentiation
+  - id: CL:0000232
+    label: Cell
+    name: erythrocytes
+  - id: MESH:D000740
+    label: Disease
+    name: Anemia

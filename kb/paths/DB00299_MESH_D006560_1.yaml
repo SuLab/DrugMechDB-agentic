@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00299_MESH_D006560_1
+  disease: Herpes Labialis
+  disease_mesh: MESH:D006560
+  drug: penciclovir
+  drug_mesh: MESH:C053539
+  drugbank: DB:DB00299
+links:
+  - key: has metabolite
+    source: MESH:C053539
+    target: MESH:C092310
+  - key: decreases activity of
+    source: MESH:C092310
+    target: UniProt:P04293
+  - key: positively regulates
+    source: UniProt:P04293
+    target: GO:0039693
+  - key: in taxon
+    source: GO:0039693
+    target: taxonomy:10298
+  - key: causes
+    source: taxonomy:10298
+    target: MESH:D006560
+multigraph: true
+nodes:
+  - id: MESH:C053539
+    label: Drug
+    name: penciclovir
+  - id: MESH:C092310
+    label: ChemicalSubstance
+    name: penciclovir triphosphate
+  - id: UniProt:P04293
+    label: Protein
+    name: DNA polymerase catalytic subunit
+  - id: GO:0039693
+    label: BiologicalProcess
+    name: viral DNA genome replication
+  - id: taxonomy:10298
+    label: OrganismTaxon
+    name: Human alphaherpesvirus 1
+  - id: MESH:D006560
+    label: Disease
+    name: Herpes Labialis
+references:
+  - https://go.drugbank.com/drugs/DB00299#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P04293#function
+  - https://en.wikipedia.org/wiki/Herpes_labialis

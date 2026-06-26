@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB01190_MESH_D011018_1
+  disease: Pneumococcal pneumonia
+  disease_mesh: MESH:D011018
+  drug: clindamycin
+  drug_mesh: MESH:D002981
+  drugbank: DB:DB01190
+links:
+  - key: decreases activity of
+    source: MESH:D002981
+    target: MESH:D012338
+  - key: part of
+    source: MESH:D012338
+    target: UniProt:P66096
+  - key: part of
+    source: UniProt:P66096
+    target: GO:0005840
+  - key: participates in
+    source: GO:0005840
+    target: GO:0000048
+  - key: positively correlated with
+    source: GO:0000048
+    target: GO:0006412
+  - key: positively correlated with
+    source: GO:0006412
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D011018
+multigraph: true
+nodes:
+  - id: MESH:D002981
+    label: Drug
+    name: clindamycin
+  - id: UniProt:P66096
+    label: Protein
+    name: 50S ribosomal protein L1 Streptococcus pneumoniae
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: GO:0005840
+    label: CellularComponent
+    name: Ribosome
+  - id: GO:0000048
+    label: MolecularActivity
+    name: peptidyltransferase activity
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Bacterial translation
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D011018
+    label: Disease
+    name: Pneumococcal pneumonia
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1753/
+  - https://go.drugbank.com/drugs/DB01190
+  - https://pubchem.ncbi.nlm.nih.gov/compound/446598
+  - https://en.wikipedia.org/wiki/Clindamycin
+  - https://www.medicinenet.com/script/main/art.asp?articlekey=60945

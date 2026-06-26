@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB06209_MESH_D054058_1
+  disease: Acute Coronary Syndrome
+  disease_mesh: MESH:D054058
+  drug: Prasugrel Hydrochloride
+  drug_mesh: MESH:D000068799
+  drugbank: DB:DB06209
+links:
+  - key: decreases activity of
+    source: MESH:D000068799
+    target: UniProt:Q9H244
+  - key: positively regulates
+    source: UniProt:Q9H244
+    target: GO:0070527
+  - key: positively regulates
+    source: UniProt:Q9H244
+    target: GO:0007596
+  - key: positively correlated with
+    source: GO:0070527
+    target: HP:0100749
+  - key: positively correlated with
+    source: GO:0007596
+    target: HP:0100749
+  - key: positively correlated with
+    source: HP:0100749
+    target: MESH:D054058
+multigraph: true
+nodes:
+  - id: MESH:D000068799
+    label: Drug
+    name: Prasugrel Hydrochloride
+  - id: UniProt:Q9H244
+    label: Protein
+    name: P2Y purinoceptor 12
+  - id: GO:0070527
+    label: BiologicalProcess
+    name: platelet aggregation
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: blood coagulation
+  - id: HP:0100749
+    label: PhenotypicFeature
+    name: Chest pain
+  - id: MESH:D054058
+    label: Disease
+    name: Acute Coronary Syndrome
+references:
+  - https://go.drugbank.com/drugs/DB06209#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Prasugrel#Mechanism_of_action
+  - https://www.uniprot.org/uniprot/Q9H244#function
+  - https://en.wikipedia.org/wiki/Acute_coronary_syndrome

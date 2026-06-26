@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: B02362_MESH_D012594_1
+  disease: Morphea
+  disease_mesh: MESH:D012594
+  drug: aminobenzoic acid
+  drug_mesh: MESH:D010129
+  drugbank: DB:B02362
+links:
+  - key: negatively regulates
+    source: MESH:D010129
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D012594
+  - key: increases activity of
+    source: MESH:D010129
+    target: UniProt:P21397
+  - key: decreases abundance of
+    source: UniProt:P21397
+    target: MESH:D012701
+  - key: positively correlated with
+    source: MESH:D012701
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D012594
+multigraph: true
+nodes:
+  - id: MESH:D010129
+    label: Drug
+    name: Aminobenzoic acid
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: UniProt:P21397
+    label: Protein
+    name: Amine oxidase [flavin-containing] A
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: MESH:D012594
+    label: Disease
+    name: Morphea
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/15774254/
+  - https://go.drugbank.com/drugs/DB02362
+  - https://en.wikipedia.org/wiki/Morphea

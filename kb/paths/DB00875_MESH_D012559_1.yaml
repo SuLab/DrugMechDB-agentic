@@ -1,0 +1,38 @@
+comment: Flupentixol is not approved for use in the United States. Flupentixol exists
+  in two geometric isomers, the trans(E) and pharmacologically active cis(Z) forms.It
+  is generally understood that positive symptoms of schizophrenia arise from a dysregulated
+  striatal dopamine pathway, leading to hyperstimulation of D2 receptors.
+directed: true
+graph:
+  _id: DB00875_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: flupentixol
+  drug_mesh: MESH:D005475
+  drugbank: DB:DB00875
+links:
+  - key: decreases activity of
+    source: MESH:D005475
+    target: UniProt:P14416
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: reactome:R-HSA-390651
+  - key: correlated with
+    source: reactome:R-HSA-390651
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:D005475
+    label: Drug
+    name: Flupentixol
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: reactome:R-HSA-390651
+    label: Pathway
+    name: Dopamine receptors
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB00875

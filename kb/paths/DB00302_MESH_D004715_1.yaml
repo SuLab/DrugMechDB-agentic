@@ -1,0 +1,60 @@
+directed: true
+graph:
+  _id: DB00302_MESH_D004715_1
+  disease: Endometriosis
+  disease_mesh: MESH:D004715
+  drug: tranexamic acid
+  drug_mesh: MESH:D014148
+  drugbank: DB:DB00302
+links:
+  - key: negatively regulates
+    source: MESH:D014148
+    target: UniProt:P00747
+  - key: decreases activity of
+    source: MESH:D014148
+    target: MESH:D005341
+  - key: positively regulates
+    source: MESH:D005341
+    target: GO:0042730
+  - key: positively regulates
+    source: UniProt:P00747
+    target: GO:0042730
+  - key: correlated with
+    source: GO:0042730
+    target: HP:0001892
+  - key: correlated with
+    source: GO:0042730
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D004715
+  - key: positively correlated with
+    source: HP:0001892
+    target: MESH:D004715
+multigraph: true
+nodes:
+  - id: MESH:D014148
+    label: Drug
+    name: tranexamic acid
+  - id: UniProt:P00747
+    label: Protein
+    name: Plasminogen
+  - id: MESH:D005341
+    label: Protein
+    name: Fibrinolysin
+  - id: GO:0042730
+    label: BiologicalProcess
+    name: fibrinolysis
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0001892
+    label: PhenotypicFeature
+    name: Abnormal bleeding
+  - id: MESH:D004715
+    label: Disease
+    name: Endometriosis
+references:
+  - https://go.drugbank.com/drugs/DB00302#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Tranexamic_acid#Mechanism_of_action
+  - https://pubmed.ncbi.nlm.nih.gov/32594031/

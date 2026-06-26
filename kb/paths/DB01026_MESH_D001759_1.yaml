@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB01026_MESH_D001759_1
+  disease: Blastomycosis
+  disease_mesh: MESH:D001759
+  drug: ketoconazole
+  drug_mesh: MESH:D007654
+  drugbank: DB:DB01026
+links:
+  - key: decreases activity of
+    source: MESH:D007654
+    target: InterPro:IPR002403
+  - key: positively regulates
+    source: InterPro:IPR002403
+    target: GO:0006696
+  - key: positively correlated with
+    source: GO:0006696
+    target: GO:0042546
+  - key: occurs in
+    source: GO:0042546
+    target: taxonomy:5039
+  - key: causes
+    source: taxonomy:5039
+    target: MESH:D001759
+multigraph: true
+nodes:
+  - id: MESH:D007654
+    label: Drug
+    name: ketoconazole
+  - id: InterPro:IPR002403
+    label: GeneFamily
+    name: Cytochrome P450, E-class, group IV
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: ergosterol biosynthetic process
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: cell wall biogenesis
+  - id: taxonomy:5039
+    label: OrganismTaxon
+    name: Blastomyces dermatitidis
+  - id: MESH:D001759
+    label: Disease
+    name: Blastomycosis
+references:
+  - https://go.drugbank.com/drugs/DB01026#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22KETOCONAZOLE%22
+  - https://en.wikipedia.org/wiki/Blastomycosis

@@ -1,0 +1,48 @@
+comment: Miglustat is an example of a substrate reduction therapy and it inhibits
+  the synthesis of glucosylceramide (also known as glucocerebroside).
+directed: true
+graph:
+  _id: DB00419_MESH_D005776_1
+  disease: Glucosylceramide beta-glucosidase deficiency
+  disease_mesh: MESH:D005776
+  drug: miglustat
+  drug_mesh: MESH:C059896
+  drugbank: DB:DB00419
+links:
+  - key: decreases activity of
+    source: MESH:C059896
+    target: UniProt:Q16739
+  - key: positively regulates
+    source: UniProt:Q16739
+    target: GO:0006679
+  - key: increases abundance of
+    source: GO:0006679
+    target: CHEBI:36500
+  - key: positively correlated with
+    source: CHEBI:36500
+    target: MESH:D005776
+multigraph: true
+nodes:
+  - id: MESH:C059896
+    label: Drug
+    name: miglustat
+  - id: UniProt:Q16739
+    label: Protein
+    name: Ceramide glucosyltransferase
+  - id: GO:0006679
+    label: BiologicalProcess
+    name: glucosylceramide biosynthetic process
+  - id: CHEBI:36500
+    label: ChemicalSubstance
+    name: glucosylceramide
+  - alt_names:
+      - Gaucher Disease
+    id: MESH:D005776
+    label: Disease
+    name: Glucosylceramide beta-glucosidase deficiency
+references:
+  - https://go.drugbank.com/drugs/DB00419
+  - https://en.wikipedia.org/wiki/Miglustat#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Gaucher%27s_disease
+  - https://en.wikipedia.org/wiki/Glucocerebrosidase#Clinical_significance
+  - https://en.wikipedia.org/wiki/Substrate_reduction_therapy

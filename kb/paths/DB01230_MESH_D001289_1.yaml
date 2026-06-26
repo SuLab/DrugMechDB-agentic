@@ -1,0 +1,31 @@
+comment: Pemoline is generally considered dopaminergic, but its precise method of
+  action hasn't yet been definitively determined.
+directed: true
+graph:
+  _id: DB01230_MESH_D001289_1
+  disease: Attention deficit hyperactivity disorder
+  disease_mesh: MESH:D001289
+  drug: pemoline
+  drug_mesh: MESH:D010389
+  drugbank: DB:DB01230
+links:
+  - key: positively regulates
+    source: MESH:D010389
+    target: GO:0061527
+  - key: treats
+    source: GO:0061527
+    target: MESH:D001289
+multigraph: true
+nodes:
+  - id: MESH:D010389
+    label: Drug
+    name: Pemoline
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D001289
+    label: Disease
+    name: Attention deficit hyperactivity disorder
+references:
+  - https://en.wikipedia.org/wiki/Pemoline Pemoline
+  - https://go.drugbank.com/drugs/DB01230

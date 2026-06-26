@@ -1,0 +1,112 @@
+comment: This disease is also known as Disorder of lung as per DrugCentral. Note this
+  disease name is a very generic term, that could encompass any diseases of the lungs,
+  including neoplasms, infectious diseases (e.g. tuberculosis) and rare diseases (e.g.
+  cystic fibrosis) for which theophylline may not have any therapeutic benefit at
+  all. Therefore, this annotation is done for all lung diseases that could be indications
+  for this drug to encompass diseases that are similar to asthma, bronchitis, COPD
+  and alike.
+directed: true
+graph:
+  _id: DB00277_MESH_D008171_1
+  disease: Lung Diseases
+  disease_mesh: MESH:D008171
+  drug: theophylline
+  drug_mesh: MESH:D013806
+  drugbank: DB:DB00277
+links:
+  - key: increases activity of
+    source: MESH:D013806
+    target: UniProt:Q92769
+  - key: positively regulates
+    source: UniProt:Q92769
+    target: GO:0016575
+  - key: negatively correlated with
+    source: GO:0016575
+    target: GO:0006954
+  - key: decreases activity of
+    source: MESH:D013806
+    target: InterPro:IPR023174
+  - key: decreases activity of
+    source: MESH:D013806
+    target: InterPro:IPR001634
+  - key: positively regulates
+    source: InterPro:IPR023174
+    target: GO:0006198
+  - key: negatively regulates
+    source: InterPro:IPR023174
+    target: GO:0019933
+  - key: positively regulates
+    source: InterPro:IPR001634
+    target: HP:4000007
+  - key: positively correlated with
+    source: HP:4000007
+    target: MESH:D008171
+  - key: positively regulates
+    source: InterPro:IPR001634
+    target: GO:0006954
+  - key: decreases abundance of
+    source: GO:0006198
+    target: CHEBI:17489
+  - key: increases abundance of
+    source: GO:0019933
+    target: CHEBI:17489
+  - key: positively correlated with
+    source: CHEBI:17489
+    target: GO:0044557
+  - key: negatively correlated with
+    source: CHEBI:17489
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D008171
+  - key: negatively correlated with
+    source: GO:0044557
+    target: MESH:D008171
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:D000628
+      - MESH:D031210
+    id: MESH:D013806
+    label: Drug
+    name: theophylline
+  - id: InterPro:IPR001634
+    label: GeneFamily
+    name: Adenosine receptor
+  - id: InterPro:IPR023174
+    label: GeneFamily
+    name: 3'5'-cyclic nucleotide phosphodiesterase, conserved site
+  - id: UniProt:Q92769
+    label: Protein
+    name: Histone deacetylase 2
+  - id: GO:0016575
+    label: BiologicalProcess
+    name: histone deacetylation
+  - id: GO:0006198
+    label: BiologicalProcess
+    name: cAMP catabolic process
+  - id: GO:0019933
+    label: BiologicalProcess
+    name: cAMP-mediated signaling
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: relaxation of smooth muscle
+  - id: HP:4000007
+    label: PhenotypicFeature
+    name: Bronchoconstriction
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: MESH:D008171
+    label: Disease
+    name: Lung Diseases
+references:
+  - https://go.drugbank.com/drugs/DB00277#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Theophylline#Pharmacodynamics
+  - https://pubmed.ncbi.nlm.nih.gov/18660825/
+  - https://pubmed.ncbi.nlm.nih.gov/12212985/
+  - https://pubmed.ncbi.nlm.nih.gov/15980878/
+  - https://pubmed.ncbi.nlm.nih.gov/19762093/

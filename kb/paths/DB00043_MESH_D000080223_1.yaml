@@ -1,0 +1,84 @@
+directed: true
+graph:
+  _id: DB00043_MESH_D000080223_1
+  disease: Chronic idiopathic urticaria
+  disease_mesh: MESH:D000080223
+  drug: omalizumab
+  drug_mesh: MESH:D000069444
+  drugbank: DB:DB00043
+links:
+  - key: decreases activity of
+    source: MESH:D000069444
+    target: GO:0019767
+  - key: part of
+    source: GO:0019767
+    target: UniProt:P01854
+  - key: expressed in
+    source: UniProt:P01854
+    target: CL:0000097
+  - key: expressed in
+    source: UniProt:P01854
+    target: CL:0000767
+  - key: positively correlated with
+    source: CL:0000097
+    target: GO:0043303
+  - key: positively correlated with
+    source: CL:0000767
+    target: GO:0002561
+  - key: caused by
+    source: GO:0043303
+    target: reactome:R-HSA-2454202
+  - key: caused by
+    source: GO:0002561
+    target: reactome:R-HSA-2454202
+  - key: positively correlated with
+    source: reactome:R-HSA-2454202
+    target: GO:0002441
+  - key: positively correlated with
+    source: reactome:R-HSA-2454202
+    target: GO:0002540
+  - key: positively correlated with
+    source: GO:0002441
+    target: MESH:D000080223
+  - key: positively correlated with
+    source: GO:0002540
+    target: MESH:D000080223
+multigraph: true
+nodes:
+  - id: MESH:D000069444
+    label: Drug
+    name: omalizumab
+  - id: GO:0019767
+    label: MolecularActivity
+    name: IgE receptor activity
+  - id: UniProt:P01854
+    label: Protein
+    name: Immunoglobulin heavy constant epsilon
+  - id: CL:0000097
+    label: Cell
+    name: mast cell
+  - id: CL:0000767
+    label: Cell
+    name: basophill
+  - id: GO:0043303
+    label: BiologicalProcess
+    name: mast cell degranulation
+  - id: GO:0002561
+    label: BiologicalProcess
+    name: basophil degranulation
+  - id: reactome:R-HSA-2454202
+    label: Pathway
+    name: Allergen dependent IgE bound FCERI aggregation
+  - id: GO:0002540
+    label: BiologicalProcess
+    name: leukotriene production involved in inflammatory response
+  - id: GO:0002441
+    label: BiologicalProcess
+    name: histamine secretion involved in inflammatory response
+  - id: MESH:D000080223
+    label: Disease
+    name: Chronic idiopathic urticaria
+references:
+  - https://go.drugbank.com/drugs/DB00043
+  - https://europepmc.org/article/pmc/pmc2478654
+  - https://en.wikipedia.org/wiki/Omalizumab

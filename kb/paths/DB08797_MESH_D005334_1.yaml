@@ -1,0 +1,58 @@
+comment: Salicylamide belongs to a group of drugs called Non-Steroidal Anti-Inflammatory
+  Drug (NSAIDs) https://link.springer.com/referenceworkentry/10.1007%2F978-3-540-29805-2_2823
+directed: true
+graph:
+  _id: DB08797_MESH_D005334_1
+  disease: Fever
+  disease_mesh: MESH:D005334
+  drug: Salicylamide
+  drug_mesh: MESH:C524082,MESH:C031060
+  drugbank: DB:DB08797
+links:
+  - key: decreases activity of
+    source: DB:DB08797
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: DB:DB08797
+    target: UniProt:P35354
+  - key: increases abundance of
+    source: UniProt:P23219
+    target: MESH:D011453
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: MESH:D011453
+  - key: occurs in
+    source: MESH:D011453
+    target: UBERON:0000955
+  - key: location of
+    source: UBERON:0000955
+    target: GO:0001659
+  - key: negatively correlated with
+    source: GO:0001659
+    target: MESH:D005334
+multigraph: true
+nodes:
+  - id: DB:DB08797
+    label: Drug
+    name: Salicylamide
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: UBERON:0000955
+    label: GrossAnatomicalStructure
+    name: Brain
+  - id: GO:0001659
+    label: BiologicalProcess
+    name: Temperature Homeostasis
+  - id: MESH:D005334
+    label: Disease
+    name: Fever
+references:
+  - https://go.drugbank.com/drugs/DB08797
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6047205/

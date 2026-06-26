@@ -1,0 +1,44 @@
+comment: This antibiotic inhbits beta-lactamases, enzymes that break antibiotics and
+  therefore provide resistance to ampicillin and related beta-lacam antibiotics. Avibactam
+  therefore is useful to treat infections caused by bacteria that are multi-resistant
+  to β-lactam antibiotics.
+directed: true
+graph:
+  _id: DB09060_MESH_D059413_4
+  disease: Infectious disease of abdomen
+  disease_mesh: MESH:D059413
+  drug: avibactam
+  drug_mesh: MESH:C543519
+  drugbank: DB:DB09060
+links:
+  - key: negatively regulates
+    source: MESH:C543519
+    target: UniProt:P37321
+  - key: positively regulates
+    source: UniProt:P37321
+    target: GO:0008800
+  - key: in taxon
+    source: GO:0008800
+    target: taxonomy:287
+  - key: causes
+    source: taxonomy:287
+    target: MESH:D059413
+multigraph: true
+nodes:
+  - id: MESH:C543519
+    label: Drug
+    name: avibactam
+  - id: UniProt:P37321
+    label: Protein
+    name: Extended-spectrum beta-lactamase PER-1
+  - id: GO:0008800
+    label: MolecularActivity
+    name: beta-lactamase activity
+  - id: taxonomy:287
+    label: OrganismTaxon
+    name: Pseudomonas aeruginosa
+  - id: MESH:D059413
+    label: Disease
+    name: Infectious disease of abdomen
+references:
+  - https://go.drugbank.com/drugs/DB09060#mechanism-of-action

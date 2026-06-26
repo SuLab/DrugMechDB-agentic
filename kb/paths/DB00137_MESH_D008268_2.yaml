@@ -1,0 +1,43 @@
+comment: Mechanism of action unknown. The hypothesis for the natural concentration
+  is that lutein helps protect from oxidative stress
+directed: true
+graph:
+  _id: DB00137_MESH_D008268_2
+  disease: Age related macular degeneration
+  disease_mesh: MESH:D008268
+  drug: lutein
+  drug_mesh: MESH:D014975
+  drugbank: DB:DB00137
+links:
+  - key: chemically similar to
+    source: MESH:D014975
+    target: CHEBI:23044
+  - key: located in
+    source: CHEBI:23044
+    target: UBERON:0000054
+  - key: participates in
+    source: UBERON:0000054
+    target: GO:0016209
+  - key: prevents
+    source: GO:0016209
+    target: MESH:D008268
+multigraph: true
+nodes:
+  - id: MESH:D014975
+    label: Drug
+    name: lutein
+  - id: CHEBI:23044
+    label: ChemicalSubstance
+    name: carotenoid
+  - id: UBERON:0000054
+    label: GrossAnatomicalStructure
+    name: Macula
+  - id: GO:0016209
+    label: MolecularActivity
+    name: antioxidant activity
+  - id: MESH:D008268
+    label: Disease
+    name: Age related macular degeneration
+references:
+  - https://go.drugbank.com/drugs/DB00137
+  - https://pubmed.ncbi.nlm.nih.gov/28425969/

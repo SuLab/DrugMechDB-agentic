@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00355_MESH_D012226_1
+  disease: Rhinoscleroma
+  disease_mesh: MESH:D012226
+  drug: Aztreonam
+  drug_mesh: MESH:D001398
+  drugbank: DB:DB00355
+links:
+  - key: decreases activity of
+    source: MESH:D001398
+    target: UniProt:R4YB92
+  - key: positively regulates
+    source: UniProt:R4YB92
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:39831
+  - key: causes
+    source: taxonomy:39831
+    target: MESH:D012226
+multigraph: true
+nodes:
+  - id: MESH:D001398
+    label: Drug
+    name: Aztreonam
+  - id: UniProt:R4YB92
+    label: Protein
+    name: Peptidoglycan D,D-transpeptidase FtsI
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:39831
+    label: OrganismTaxon
+    name: Klebsiella pneumoniae subsp. rhinoscleromatis
+  - id: MESH:D012226
+    label: Disease
+    name: Rhinoscleroma
+references:
+  - https://go.drugbank.com/drugs/DB00355#mechanism-of-action
+  - https://www.uniprot.org/uniprot/R4YB92#function
+  - https://en.wikipedia.org/wiki/Rhinoscleroma

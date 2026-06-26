@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00002_MESH_D003110_1
+  disease: Malignant tumor of colon
+  disease_mesh: MESH:D003110
+  drug: cetuximab
+  drug_mesh: MESH:D000068818
+  drugbank: DB:DB00002
+links:
+  - key: decreases activity of
+    source: MESH:D000068818
+    target: UniProt:P00533
+  - key: positively regulates
+    source: UniProt:P00533
+    target: GO:0004697
+  - key: positively regulates
+    source: GO:0004697
+    target: GO:0050673
+  - key: negatively regulates
+    source: GO:0004697
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D003110
+  - key: positively correlated with
+    source: GO:0050673
+    target: MESH:D003110
+multigraph: true
+nodes:
+  - id: MESH:D000068818
+    label: Drug
+    name: cetuximab
+  - id: UniProt:P00533
+    label: Protein
+    name: Epidermal growth factor receptor
+  - id: GO:0004697
+    label: MolecularActivity
+    name: protein kinase C activity
+  - id: GO:0050673
+    label: BiologicalProcess
+    name: epithelial cell proliferation
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: MESH:D003110
+    label: Disease
+    name: Malignant tumor of colon
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201577/
+  - https://en.wikipedia.org/wiki/Cetuximab#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Epidermal_growth_factor_receptor#Cancer
+  - https://en.wikipedia.org/wiki/Colorectal_cancer#Pathogenesis

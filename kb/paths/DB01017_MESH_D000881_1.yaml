@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01017_MESH_D000881_1
+  disease: Anthrax
+  disease_mesh: MESH:D000881
+  drug: minocycline
+  drug_mesh: MESH:D008911
+  drugbank: DB:DB01017
+links:
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:C3PBC1
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:C3PAK4
+  - key: positively regulates
+    source: UniProt:C3PBC1
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:C3PAK4
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:1392
+  - key: causes
+    source: taxonomy:1392
+    target: MESH:D000881
+multigraph: true
+nodes:
+  - id: MESH:D008911
+    label: Drug
+    name: minocycline
+  - id: UniProt:C3PBC1
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:C3PAK4
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:1392
+    label: OrganismTaxon
+    name: Bacillus anthracis
+  - id: MESH:D000881
+    label: Disease
+    name: Anthrax
+references:
+  - https://go.drugbank.com/drugs/DB01017#mechanism-of-action
+  - https://www.uniprot.org/uniprot/C3PBC1#function
+  - https://www.uniprot.org/uniprot/C3PAK4#function
+  - https://en.wikipedia.org/wiki/Anthrax

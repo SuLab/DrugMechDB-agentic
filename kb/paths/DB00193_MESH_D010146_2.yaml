@@ -1,0 +1,138 @@
+directed: true
+graph:
+  _id: DB00193_MESH_D010146_2
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: Tramadol
+  drug_mesh: MESH:D014147
+  drugbank: DB:DB00193
+links:
+  - key: increases activity of
+    source: MESH:D014147
+    target: UniProt:P35372
+  - key: decreases activity of
+    source: MESH:D014147
+    target: UniProt:P23975
+  - key: decreases activity of
+    source: MESH:D014147
+    target: UniProt:P31645
+  - key: participates in
+    source: UniProt:P31645
+    target: GO:0051610
+  - key: participates in
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: decreases abundance of
+    source: GO:0051620
+    target: MESH:D009638
+  - key: decreases abundance of
+    source: GO:0051610
+    target: MESH:D012701
+  - key: positively correlated with
+    source: MESH:D012701
+    target: GO:0060096
+  - key: positively correlated with
+    source: MESH:D009638
+    target: GO:0061533
+  - key: negatively regulates
+    source: GO:0060096
+    target: GO:0019233
+  - key: negatively regulates
+    source: GO:0061533
+    target: GO:0019233
+  - key: causes
+    source: GO:0019233
+    target: MESH:D010146
+  - key: decreases activity of
+    source: UniProt:P35372
+    target: UniProt:B7Z2C7
+  - key: decreases activity of
+    source: UniProt:B7Z2C7
+    target: UniProt:Q14654
+  - key: negatively regulates
+    source: UniProt:P35372
+    target: GO:0070509
+  - key: negatively regulates
+    source: UniProt:Q14654
+    target: GO:0099610
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:1990793
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0061535
+  - key: positively correlated with
+    source: GO:1990793
+    target: MESH:D010146
+  - key: positively correlated with
+    source: GO:0061535
+    target: MESH:D010146
+  - key: positively regulates
+    source: GO:0099610
+    target: CL:0000198
+  - key: positively correlated with
+    source: CL:0000198
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:D014147
+    label: Drug
+    name: Tramadol
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu-type opioid receptor
+  - id: UniProt:B7Z2C7
+    label: Protein
+    name: Adenylate cyclase
+  - id: UniProt:Q14654
+    label: Protein
+    name: ATP-sensitive inward rectifier potassium channel 11
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Transmembrane calcium influx
+  - id: GO:1990793
+    label: BiologicalProcess
+    name: Substance P secretion, neurotransmission
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: Glutamate secretion, neurotransmission
+  - id: GO:0099610
+    label: BiologicalProcess
+    name: Action potential initiation
+  - id: CL:0000198
+    label: Cell
+    name: Nociceptor
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: Noradrenaline uptake
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Noradrenaline
+  - id: GO:0061533
+    label: BiologicalProcess
+    name: Norepinephrine secretion, neurotransmission
+  - id: UniProt:P31645
+    label: Protein
+    name: Sodium-dependent serotonin transporter
+  - id: GO:0051610
+    label: BiologicalProcess
+    name: Serotonin uptake
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: GO:0060096
+    label: BiologicalProcess
+    name: Serotonin secretion, neurotransmission
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: Sensory perception of pain
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+references:
+  - https://go.drugbank.com/drugs/DB00193
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2811866/
+  - https://en.wikipedia.org/wiki/Opioid_receptor#Mechanism_of_activation

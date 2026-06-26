@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB01129_MESH_D005764_1
+  disease: Gastroesophageal reflux disease
+  disease_mesh: MESH:D005764
+  drug: rabeprazole
+  drug_mesh: MESH:D064750
+  drugbank: DB:DB01129
+links:
+  - key: decreases activity of
+    source: MESH:D064750
+    target: UniProt:P20648
+  - key: positively correlated with
+    source: UniProt:P20648
+    target: GO:0008900
+  - key: located in
+    source: GO:0008900
+    target: UBERON:0000325
+  - key: location of
+    source: UBERON:0000325
+    target: GO:0001696
+  - key: positively correlated with
+    source: GO:0001696
+    target: MESH:D006356
+  - key: manifestation of
+    source: MESH:D006356
+    target: MESH:D005764
+multigraph: true
+nodes:
+  - id: MESH:D064750
+    label: Drug
+    name: rabeprazole
+  - id: UniProt:P20648
+    label: Protein
+    name: Potassium-transporting ATPase alpha chain 1
+  - id: GO:0008900
+    label: MolecularActivity
+    name: P-type potassium:proton transporter activity
+  - id: UBERON:0000325
+    label: GrossAnatomicalStructure
+    name: gastric gland
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: gastric acid secretion
+  - id: MESH:D006356
+    label: PhenotypicFeature
+    name: Heartburn
+  - id: MESH:D005764
+    label: Disease
+    name: Gastroesophageal reflux disease
+references:
+  - https://go.drugbank.com/drugs/DB01129
+  - https://en.wikipedia.org/wiki/Rabeprazole#Mechanism_of_action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5029#section=Mechanism-of-Action

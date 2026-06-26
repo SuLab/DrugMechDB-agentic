@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00963_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: bromfenac
+  drug_mesh: MESH:C053083
+  drugbank: DB:DB00963
+links:
+  - key: decreases activity of
+    source: MESH:C053083
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:C053083
+    target: UniProt:P35354
+  - key: positively regulates
+    source: UniProt:P23219
+    target: GO:0001516
+  - key: positively regulates
+    source: UniProt:P35354
+    target: GO:0001516
+  - key: correlated with
+    source: GO:0001516
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:C053083
+    label: Drug
+    name: bromfenac
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: GO:0001516
+    label: BiologicalProcess
+    name: prostaglandin biosynthetic process
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+references:
+  - https://go.drugbank.com/drugs/DB00963

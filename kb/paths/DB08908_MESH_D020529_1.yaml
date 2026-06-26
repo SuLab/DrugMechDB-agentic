@@ -1,0 +1,39 @@
+comment: Dimethyl fumarate ia a prodrug which is metabolised into the pharmacologically
+  active monomethyl fumarate. The mechanism of action of dimethyl fumarate in multiple
+  sclerosis is not well understood.
+directed: true
+graph:
+  _id: DB08908_MESH_D020529_1
+  disease: Relapsing remitting multiple sclerosis
+  disease_mesh: MESH:D020529
+  drug: Dimethyl fumarate
+  drug_mesh: MESH:D000069462
+  drugbank: DB:DB08908
+links:
+  - key: positively regulates
+    source: MESH:D000069462
+    target: reactome:R-HSA-8932339
+  - key: negatively regulates
+    source: reactome:R-HSA-8932339
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D020529
+multigraph: true
+nodes:
+  - id: MESH:D000069462
+    label: Drug
+    name: Dimethyl fumarate
+  - id: reactome:R-HSA-8932339
+    label: Pathway
+    name: ROS sensing by NFE2L2
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D020529
+    label: Disease
+    name: Relapsing remitting multiple sclerosis
+references:
+  - https://go.drugbank.com/drugs/DB08908
+  - https://pubmed.ncbi.nlm.nih.gov/27825853/
+  - https://en.wikipedia.org/wiki/Dimethyl_fumarate#Pharmacology

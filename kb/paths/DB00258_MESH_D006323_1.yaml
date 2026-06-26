@@ -1,0 +1,27 @@
+comment: According to many sources the general use of calcium for cardiac arrest is
+  not recommended.
+directed: true
+graph:
+  _id: DB00258_MESH_D006323_1
+  disease: Cardiac arrest
+  disease_mesh: MESH:D006323
+  drug: calcium acetate
+  drug_mesh: MESH:C120662
+  drugbank: DB:DB00258
+links:
+  - key: contraindicated for
+    source: MESH:C120662
+    target: MESH:D006323
+multigraph: true
+nodes:
+  - id: MESH:C120662
+    label: Drug
+    name: Calcium acetate
+  - id: MESH:D006323
+    label: Disease
+    name: Cardiac arrest
+references:
+  - https://en.wikipedia.org/wiki/Cardiac_arrest
+  - https://go.drugbank.com/drugs/DB00258
+  - https://pubmed.ncbi.nlm.nih.gov/3752763/
+  - https://pubmed.ncbi.nlm.nih.gov/3526886/

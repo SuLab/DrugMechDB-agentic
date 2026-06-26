@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB06151_MESH_D001987_2
+  disease: Bronchiectasis
+  disease_mesh: MESH:D001987
+  drug: acetylcysteine
+  drug_mesh: MESH:D000111
+  drugbank: DB:DB06151
+links:
+  - key: has metabolite
+    source: MESH:D000111
+    target: CHEBI:15356
+  - key: decreases abundance of
+    source: CHEBI:15356
+    target: UBERON:0000912
+  - key: subclass of
+    source: CHEBI:15356
+    target: CHEBI:77034
+  - key: negatively correlated with
+    source: CHEBI:77034
+    target: MESH:D001987
+  - key: positively correlated with
+    source: UBERON:0000912
+    target: MESH:D001987
+multigraph: true
+nodes:
+  - id: MESH:D000111
+    label: Drug
+    name: acetylcysteine
+  - id: CHEBI:15356
+    label: ChemicalSubstance
+    name: cysteine
+  - id: CHEBI:77034
+    label: ChemicalSubstance
+    name: mucolytic
+  - id: UBERON:0000912
+    label: GrossAnatomicalStructure
+    name: mucus
+  - id: MESH:D001987
+    label: Disease
+    name: Bronchiectasis
+references:
+  - https://en.wikipedia.org/wiki/Acetylcysteine#Pharmacodynamics
+  - https://pubchem.ncbi.nlm.nih.gov/compound/12035#section=Mechanism-of-Action
+  - https://en.wikipedia.org/wiki/Acetylcysteine#Lungs
+  - https://en.wikipedia.org/wiki/Bronchiectasis#Airway_clearance

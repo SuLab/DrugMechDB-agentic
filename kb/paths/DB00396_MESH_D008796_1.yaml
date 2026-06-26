@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00396_MESH_D008796_1
+  disease: Dysfunctional uterine bleeding
+  disease_mesh: MESH:D008796
+  drug: Progesterone
+  drug_mesh: MESH:D011374
+  drugbank: DB:DB00396
+links:
+  - key: increases activity of
+    source: DB:DB00396
+    target: UniProt:P06401
+  - key: participates in
+    source: UniProt:P06401
+    target: GO:0050847
+  - key: negatively regulates
+    source: GO:0050847
+    target: GO:0050673
+  - key: located in
+    source: GO:0050673
+    target: UBERON:0001295
+  - key: correlated with
+    source: UBERON:0001295
+    target: HP:0030126
+  - key: causes
+    source: HP:0030126
+    target: MESH:D008796
+multigraph: true
+nodes:
+  - id: DB:DB00396
+    label: Drug
+    name: Progesterone
+  - id: UniProt:P06401
+    label: Protein
+    name: Progesterone receptor
+  - id: GO:0050847
+    label: BiologicalProcess
+    name: Progesterone receptor signaling pathway
+  - id: UBERON:0001295
+    label: GrossAnatomicalStructure
+    name: Endometrium
+  - id: HP:0030126
+    label: PhenotypicFeature
+    name: Abnormality of the endometrium
+  - id: GO:0050673
+    label: BiologicalProcess
+    name: Epithelial cell proliferation
+  - id: MESH:D008796
+    label: Disease
+    name: Dysfunctional uterine bleeding
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/8671392/
+  - https://go.drugbank.com/drugs/DB00396#BE0000557

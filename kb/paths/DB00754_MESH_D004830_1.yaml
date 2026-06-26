@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB00754_MESH_D004830_1
+  disease: Epilepsy, Tonic-Clonic
+  disease_mesh: MESH:D004830
+  drug: ethotoin
+  drug_mesh: MESH:C084606
+  drugbank: DB:DB00754
+links:
+  - key: negatively regulates
+    source: MESH:C084606
+    target: InterPro:IPR001696
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0019228
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0019227
+  - key: positively correlated with
+    source: GO:0019227
+    target: HP:0002069
+  - key: positively correlated with
+    source: GO:0019228
+    target: HP:0002069
+  - key: positively correlated with
+    source: HP:0002069
+    target: MESH:D004830
+multigraph: true
+nodes:
+  - id: MESH:C084606
+    label: Drug
+    name: ethotoin
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: neuronal action potential
+  - id: GO:0019227
+    label: BiologicalProcess
+    name: neuronal action potential propagation
+  - id: HP:0002069
+    label: PhenotypicFeature
+    name: Bilateral tonic-clonic seizure
+  - id: MESH:D004830
+    label: Disease
+    name: Epilepsy, Tonic-Clonic
+references:
+  - https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2331043/
+  - https://en.wikipedia.org/wiki/Ethotoin#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Phenytoin#Mechanism_of_action

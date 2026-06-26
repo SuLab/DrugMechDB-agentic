@@ -1,0 +1,37 @@
+directed: true
+graph:
+  _id: DB06715_MESH_D065631_1
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: potassium iodide
+  drug_mesh: MESH:D011193
+  drugbank: DB:DB06715
+links:
+  - key: negatively regulates
+    source: MESH:D011193
+    target: GO:0006954
+  - key: negatively regulates
+    source: MESH:D011193
+    target: HP:0012393
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D065631
+  - key: manifestation of
+    source: HP:0012393
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: MESH:D011193
+    label: Drug
+    name: potassium iodide
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0012393
+    label: PhenotypicFeature
+    name: Allergy
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic rhinitis
+references:
+  - https://www.jacionline.org/article/0021-8707(64)90007-3/pdf

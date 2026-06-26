@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB01586_MESH_D002769_1
+  disease: Cholelithiasis
+  disease_mesh: MESH:D002769
+  drug: Ursodeoxycholic Acid
+  drug_mesh: MESH:D014580
+  drugbank: DB:DB01586
+links:
+  - key: negatively regulates
+    source: MESH:D014580
+    target: GO:0006695
+  - key: increases abundance of
+    source: GO:0006695
+    target: MESH:D002784
+  - key: located in
+    source: MESH:D002784
+    target: UBERON:0002110
+  - key: location of
+    source: UBERON:0002110
+    target: MESH:D002769
+  - key: participates in
+    source: MESH:D014580
+    target: GO:0032782
+  - key: increases abundance of
+    source: GO:0032782
+    target: MESH:D001647
+  - key: negatively correlated with
+    source: MESH:D001647
+    target: MESH:D002769
+multigraph: true
+nodes:
+  - id: MESH:D014580
+    label: Drug
+    name: Ursodeoxycholic Acid
+  - id: GO:0006695
+    label: BiologicalProcess
+    name: cholesterol biosynthetic process
+  - id: MESH:D002784
+    label: ChemicalSubstance
+    name: Cholesterol
+  - id: UBERON:0002110
+    label: GrossAnatomicalStructure
+    name: gallbladder
+  - id: GO:0032782
+    label: BiologicalProcess
+    name: bile acid secretion
+  - id: MESH:D001647
+    label: ChemicalSubstance
+    name: Bile Acids and Salts
+  - id: MESH:D002769
+    label: Disease
+    name: Cholelithiasis
+references:
+  - https://go.drugbank.com/drugs/DB01586#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Gallstone

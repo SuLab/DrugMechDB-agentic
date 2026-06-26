@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB06756_MESH_D006712_1
+  disease: Homocystinuria
+  disease_mesh: MESH:D006712
+  drug: betaine
+  drug_mesh: MESH:D001622
+  drugbank: DB:DB06756
+links:
+  - key: decreases abundance of
+    source: MESH:D001622
+    target: MESH:D006710
+  - key: positively correlated with
+    source: MESH:D006710
+    target: MESH:D006712
+multigraph: true
+nodes:
+  - id: MESH:D001622
+    label: Drug
+    name: Betaine
+  - id: MESH:D006710
+    label: ChemicalSubstance
+    name: Homocysteine
+  - id: MESH:D006712
+    label: Disease
+    name: Homocystinuria
+references:
+  - https://go.drugbank.com/drugs/DB06756

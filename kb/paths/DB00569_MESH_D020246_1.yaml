@@ -1,0 +1,52 @@
+comment: The disease is also known as Deep venous thrombosis as per DrugCentral. Note
+  that among the original MESH IDs for this drug one of them seems to have been deprecated
+  (MESH:C438268) whereas the other (MESH:C049714) is for a compound where no evidence
+  has been found to be related to fondaparinux.
+directed: true
+graph:
+  _id: DB00569_MESH_D020246_1
+  disease: Venous Thrombosis
+  disease_mesh: MESH:D020246
+  drug: fondaparinux
+  drug_mesh: MESH:D000077425
+  drugbank: DB:DB00569
+links:
+  - key: positively regulates
+    source: MESH:D000077425
+    target: UniProt:P01008
+  - key: decreases activity of
+    source: UniProt:P01008
+    target: UniProt:P00742
+  - key: positively correlated with
+    source: UniProt:P00742
+    target: GO:0007596
+  - key: located in
+    source: GO:0007596
+    target: UBERON:0035552
+  - key: location of
+    source: UBERON:0035552
+    target: MESH:D020246
+multigraph: true
+nodes:
+  - id: MESH:D000077425
+    label: Drug
+    name: fondaparinux
+  - id: UniProt:P01008
+    label: Protein
+    name: Antithrombin-III
+  - id: UniProt:P00742
+    label: Protein
+    name: Coagulation factor X
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: blood coagulation
+  - id: UBERON:0035552
+    label: GrossAnatomicalStructure
+    name: deep vein
+  - id: MESH:D020246
+    label: Disease
+    name: Venous Thrombosis
+references:
+  - https://go.drugbank.com/drugs/DB00569#BE0000280
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201202/
+  - https://en.wikipedia.org/wiki/Fondaparinux#Mechanism_of_action

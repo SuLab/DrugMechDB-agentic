@@ -1,0 +1,39 @@
+directed: true
+graph:
+  _id: DB08874_MESH_D004761_1
+  disease: Pseudomembranous enterocolitis
+  disease_mesh: MESH:D004761
+  drug: Fidaxomicin
+  drugbank: DB:DB08874
+links:
+  - key: decreases activity of
+    source: DB:DB08874
+    target: UniProt:Q18BX5
+  - key: participates in
+    source: UniProt:Q18BX5
+    target: GO:0006352
+  - key: in taxon
+    source: GO:0006352
+    target: taxonomy:1496
+  - key: causes
+    source: taxonomy:1496
+    target: MESH:D004761
+multigraph: true
+nodes:
+  - id: DB:DB08874
+    label: Drug
+    name: Fidaxomicin
+  - id: UniProt:Q18BX5
+    label: Protein
+    name: RNA polymerase sigma factor SigA
+  - id: GO:0006352
+    label: BiologicalProcess
+    name: DNA-templated transcription initiation
+  - id: taxonomy:1496
+    label: OrganismTaxon
+    name: Clostridioides difficile
+  - id: MESH:D004761
+    label: Disease
+    name: Pseudomembranous enterocolitis
+references:
+  - https://go.drugbank.com/drugs/DB08874#mechanismofaction

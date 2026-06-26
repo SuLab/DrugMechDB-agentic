@@ -1,0 +1,57 @@
+comment: This drug can affect both host and parasite Pyruvate kinase, therefore it
+  is highly toxic with many side effects.
+directed: true
+graph:
+  _id: DB12864_MESH_D014353_1
+  disease: African trypanosomiasis
+  disease_mesh: MESH:D014353
+  drug: melarsoprol
+  drug_mesh: MESH:D008549
+  drugbank: DB:DB12864
+links:
+  - key: has metabolite
+    source: MESH:D008549
+    target: MESH:C044719
+  - key: disrupts
+    source: MESH:C044719
+    target: InterPro:IPR001697
+  - key: disrupts
+    source: MESH:C044719
+    target: CHEBI:17842
+  - key: in taxon
+    source: CHEBI:17842
+    target: taxonomy:5691
+  - key: positively regulates
+    source: InterPro:IPR001697
+    target: GO:0006096
+  - key: in taxon
+    source: GO:0006096
+    target: taxonomy:5691
+  - key: causes
+    source: taxonomy:5691
+    target: MESH:D014353
+multigraph: true
+nodes:
+  - id: MESH:D008549
+    label: Drug
+    name: melarsoprol
+  - id: MESH:C044719
+    label: ChemicalSubstance
+    name: melarsen oxide
+  - id: InterPro:IPR001697
+    label: GeneFamily
+    name: Pyruvate kinase
+  - id: CHEBI:17842
+    label: ChemicalSubstance
+    name: trypanothione
+  - id: GO:0006096
+    label: BiologicalProcess
+    name: glycolytic process
+  - id: taxonomy:5691
+    label: OrganismTaxon
+    name: Trypanosoma brucei
+  - id: MESH:D014353
+    label: Disease
+    name: African trypanosomiasis
+references:
+  - https://en.wikipedia.org/wiki/Melarsoprol#Mechanism_of_action

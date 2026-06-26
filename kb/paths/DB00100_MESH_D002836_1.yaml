@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00100_MESH_D002836_1
+  disease: Hereditary factor IX deficiency disease
+  disease_mesh: MESH:D002836
+  drug: nonacog alfa
+  drugbank: DB:DB00100
+links:
+  - key: chemically similar to
+    source: DB:DB00100
+    target: UniProt:P00740
+  - key: increases activity of
+    source: DB:DB00100
+    target: UniProt:P00742
+  - key: participates in
+    source: UniProt:P00742
+    target: GO:0072378
+  - key: participates in
+    source: UniProt:P00740
+    target: GO:0007597
+  - key: positively regulates
+    source: GO:0007597
+    target: GO:0072378
+  - key: negatively correlated with
+    source: GO:0072378
+    target: MESH:D002836
+multigraph: true
+nodes:
+  - id: DB:DB00100
+    label: Disease
+    name: Nonacog alfa
+  - id: UniProt:P00742
+    label: Protein
+    name: Coagulation factor X
+  - id: UniProt:P00740
+    label: Protein
+    name: Coagulation factor IX
+  - id: GO:0007597
+    label: BiologicalProcess
+    name: Blood coagulation, intrinsic pathway
+  - id: GO:0072378
+    label: BiologicalProcess
+    name: Blood coagulation, fibrin clot formation
+  - id: MESH:D002836
+    label: Disease
+    name: Hereditary factor IX deficiency disease
+references:
+  - https://go.drugbank.com/drugs/DB00100

@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB00366_MESH_D065631_1
+  disease: Allergic Rhinitis
+  disease_mesh: MESH:D065631
+  drug: doxylamine
+  drug_mesh: MESH:D004319
+  drugbank: DB:DB00366
+links:
+  - key: decreases activity of
+    source: MESH:D004319
+    target: UniProt:P35367
+  - key: participates in
+    source: UniProt:P35367
+    target: GO:0034776
+  - key: causes
+    source: GO:0034776
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: MESH:D004319
+    label: Drug
+    name: doxylamine
+  - id: UniProt:P35367
+    label: Protein
+    name: histamine H1 Receptor
+  - id: GO:0034776
+    label: BiologicalProcess
+    name: histamine response
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic Rhinitis

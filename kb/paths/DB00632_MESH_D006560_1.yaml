@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00632_MESH_D006560_1
+  disease: Herpes labialis
+  disease_mesh: MESH:D006560
+  drug: docosanol
+  drug_mesh: MESH:C529236
+  drugbank: DB:DB00632
+links:
+  - key: decreases activity of
+    source: MESH:C529236
+    target: UniProt:P03200
+  - key: participates in
+    source: UniProt:P03200
+    target: GO:0016032
+  - key: in taxon
+    source: GO:0016032
+    target: taxonomy:10298
+  - key: causes
+    source: taxonomy:10298
+    target: MESH:D006560
+multigraph: true
+nodes:
+  - id: MESH:C529236
+    label: Drug
+    name: Docosanol
+  - id: UniProt:P03200
+    label: Protein
+    name: Envelope glycoprotein GP350 (Epstein-Barr virus)
+  - id: GO:0016032
+    label: BiologicalProcess
+    name: Viral process
+  - id: taxonomy:10298
+    label: OrganismTaxon
+    name: Human alphaherpesvirus 1
+  - id: MESH:D006560
+    label: Disease
+    name: Herpes labialis
+references:
+  - https://go.drugbank.com/drugs/DB00632

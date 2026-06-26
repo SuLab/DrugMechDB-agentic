@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB01409_MESH_D011656_1
+  disease: Pulmonary emphysema
+  disease_mesh: MESH:D011656
+  drug: tiotropium bromide
+  drug_mesh: MESH:D000069447
+  drugbank: DB:DB01409
+links:
+  - key: decreases activity of
+    source: MESH:D000069447
+    target: UniProt:P20309
+  - key: participates in
+    source: UniProt:P20309
+    target: GO:1905144
+  - key: positively regulates
+    source: GO:1905144
+    target: GO:0006939
+  - key: located in
+    source: GO:0006939
+    target: UBERON:0002187
+  - key: location of
+    source: UBERON:0002187
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D011656
+multigraph: true
+nodes:
+  - id: MESH:D000069447
+    label: Drug
+    name: tiotropium bromide
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:1905144
+    label: BiologicalProcess
+    name: response to acetylcholine
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: UBERON:0002187
+    label: GrossAnatomicalStructure
+    name: terminal bronchiole
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D011656
+    label: Disease
+    name: Pulmonary emphysema
+references:
+  - https://go.drugbank.com/drugs/DB01409#BE0000092
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1900528/
+  - https://en.wikipedia.org/wiki/Tiotropium_bromide#Mechanism_of_action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5487427

@@ -1,0 +1,57 @@
+comment: The presence of deuterium in deutetrabenazine increases the half-lives of
+  the active metabolite and prolongs their pharmacological activity by attenuating
+  CYP2D6 metabolism of the compound.
+directed: true
+graph:
+  _id: DB12161_MESH_D000071057_1
+  disease: Tardive dyskinesia
+  disease_mesh: MESH:D000071057
+  drug: deutetrabenazine
+  drug_mesh: MESH:C000609690
+  drugbank: DB:DB12161
+links:
+  - key: has metabolite
+    source: MESH:C000609690
+    target: DB:DB04844
+  - key: decreases activity of
+    source: DB:DB04844
+    target: UniProt:Q05940
+  - key: positively regulates
+    source: UniProt:Q05940
+    target: GO:0015842
+  - key: prevents
+    source: GO:0015842
+    target: GO:0042420
+  - key: negatively regulates
+    source: GO:0042420
+    target: GO:0061527
+  - key: correlated with
+    source: GO:0061527
+    target: MESH:D000071057
+multigraph: true
+nodes:
+  - id: DB:DB04844
+    label: Drug
+    name: Tetrabenazine
+  - id: MESH:C000609690
+    label: Drug
+    name: Deutetrabenazine
+  - id: UniProt:Q05940
+    label: Protein
+    name: Synaptic vesicular amine transporter
+  - id: GO:0015842
+    label: BiologicalProcess
+    name: Aminergic neurotransmitter loading into synaptic vesicle
+  - id: GO:0042420
+    label: BiologicalProcess
+    name: Dopamine catabolic process
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D000071057
+    label: Disease
+    name: Tardive dyskinesia
+references:
+  - https://go.drugbank.com/drugs/DB12161
+  - https://en.wikipedia.org/wiki/Tardive_dyskinesia
+  - https://en.wikipedia.org/wiki/Tetrabenazine#Pharmacology

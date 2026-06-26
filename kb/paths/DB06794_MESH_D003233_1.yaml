@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB06794_MESH_D003233_1
+  disease: Vernal conjunctivitis
+  disease_mesh: MESH:D003233
+  drug: Lodoxamide
+  drug_mesh: MESH:C021702,MESH:C022028
+  drugbank: DB:DB06794
+links:
+  - key: negatively regulates
+    source: DB:DB06794
+    target: GO:0043303
+  - key: positively regulates
+    source: GO:0043303
+    target: GO:0001821
+  - key: positively regulates
+    source: GO:0001821
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D003233
+multigraph: true
+nodes:
+  - id: DB:DB06794
+    label: Drug
+    name: Lodoxamide
+  - id: GO:0043303
+    label: BiologicalProcess
+    name: Mast cell degranulation
+  - id: GO:0001821
+    label: BiologicalProcess
+    name: Histamine secretion
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D003233
+    label: Disease
+    name: Vernal conjunctivitis
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201266/
+  - https://go.drugbank.com/drugs/DB06794

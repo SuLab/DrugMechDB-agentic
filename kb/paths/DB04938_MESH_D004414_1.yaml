@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB04938_MESH_D004414_1
+  disease: Dyspareunia
+  disease_mesh: MESH:D004414
+  drug: ospemifene
+  drug_mesh: MESH:C119141
+  drugbank: DB:DB04938
+links:
+  - key: increases activity of
+    source: MESH:C119141
+    target: UniProt:P03372
+  - key: molecularly interacts with
+    source: UniProt:P03372
+    target: MESH:D004967
+  - key: prevents
+    source: MESH:D004967
+    target: MESH:D059268
+  - key: contributes to
+    source: MESH:D059268
+    target: MESH:D004414
+multigraph: true
+nodes:
+  - id: MESH:C119141
+    label: Drug
+    name: ospemifene
+  - id: UniProt:P03372
+    label: Protein
+    name: estrogen receptor
+  - id: MESH:D004967
+    label: ChemicalSubstance
+    name: estrogen
+  - id: MESH:D059268
+    label: Disease
+    name: postmenopausal atrophic vaginitis
+  - id: MESH:D004414
+    label: Disease
+    name: Dyspareunia

@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00829_MESH_D004827_1
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+  drug: diazepam
+  drug_mesh: MESH:D003975
+  drugbank: DB:DB00829
+links:
+  - key: positively regulates
+    source: MESH:D003975
+    target: GO:0016917
+  - key: positively regulates
+    source: GO:0016917
+    target: GO:0022851
+  - key: negatively regulates
+    source: GO:0022851
+    target: GO:0019228
+  - key: positively regulates
+    source: GO:0019228
+    target: GO:0061535
+  - key: positively correlated with
+    source: GO:0061535
+    target: MESH:D004827
+multigraph: true
+nodes:
+  - id: MESH:D003975
+    label: Drug
+    name: Diazepam
+  - id: GO:0016917
+    label: MolecularActivity
+    name: GABA receptor activity
+  - id: GO:0022851
+    label: BiologicalProcess
+    name: GABA-gated chloride ion channel activity
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: Neuronal action potential
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: Glutamate secretion, neurotransmission
+  - id: MESH:D004827
+    label: Disease
+    name: Epilepsy
+references:
+  - https://go.drugbank.com/drugs/DB00829#BE0004797

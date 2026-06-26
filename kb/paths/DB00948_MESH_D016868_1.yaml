@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00948_MESH_D016868_1
+  disease: Bacterial infection due to Serratia
+  disease_mesh: MESH:D016868
+  drug: mezlocillin
+  drug_mesh: MESH:D008802
+  drugbank: DB:DB00948
+links:
+  - key: decreases activity of
+    source: MESH:D008802
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:613
+  - key: causes
+    source: taxonomy:613
+    target: MESH:D016868
+multigraph: true
+nodes:
+  - id: MESH:D008802
+    label: Drug
+    name: mezlocillin
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding protein transpeptidase domain
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:613
+    label: OrganismTaxon
+    name: Serratia sp.
+  - id: MESH:D016868
+    label: Disease
+    name: Bacterial infection due to Serratia
+references:
+  - https://go.drugbank.com/drugs/DB00948

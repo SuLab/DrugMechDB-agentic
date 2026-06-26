@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB00853_MESH_D001254_1
+  disease: Astrocytoma, anaplastic
+  disease_mesh: MESH:D001254
+  drug: temozolomide
+  drug_mesh: MESH:C047246
+  drugbank: DB:DB00853
+links:
+  - key: disrupts
+    source: MESH:C047246
+    target: CHEBI:16991
+  - key: positively correlated with
+    source: CHEBI:16991
+    target: GO:0014009
+  - key: positively correlated with
+    source: GO:0014009
+    target: MESH:D001254
+multigraph: true
+nodes:
+  - id: MESH:C047246
+    label: Drug
+    name: temozolomide
+  - id: CHEBI:16991
+    label: ChemicalSubstance
+    name: deoxyribonucleic acid
+  - id: GO:0014009
+    label: BiologicalProcess
+    name: glial cell proliferation
+  - id: MESH:D001254
+    label: Disease
+    name: Astrocytoma, anaplastic
+references:
+  - https://go.drugbank.com/drugs/DB00853

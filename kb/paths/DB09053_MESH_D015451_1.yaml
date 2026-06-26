@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DB09053_MESH_D015451_1
+  disease: Chronic lymphoid leukemia, disease
+  disease_mesh: MESH:D015451
+  drug: ibrutinib
+  drug_mesh: MESH:C551803
+  drugbank: DB:DB09053
+links:
+  - key: negatively regulates
+    source: MESH:C551803
+    target: UniProt:Q06187
+  - key: positively regulates
+    source: UniProt:Q06187
+    target: GO:0050853
+  - key: positively regulates
+    source: GO:0050853
+    target: GO:0002368
+  - key: negatively correlated with
+    source: GO:0050853
+    target: GO:0006915
+  - key: positively correlated with
+    source: GO:0050853
+    target: GO:0060326
+  - key: positively correlated with
+    source: GO:0060326
+    target: MESH:D015451
+  - key: positively correlated with
+    source: GO:0002368
+    target: MESH:D015451
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D015451
+multigraph: true
+nodes:
+  - id: MESH:C551803
+    label: Drug
+    name: ibrutinib
+  - id: UniProt:Q06187
+    label: Protein
+    name: Tyrosine-protein kinase BTK
+  - id: GO:0050853
+    label: BiologicalProcess
+    name: B cell receptor signaling pathway
+  - id: GO:0002368
+    label: BiologicalProcess
+    name: B cell cytokine production
+  - id: GO:0060326
+    label: BiologicalProcess
+    name: cell chemotaxis
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: MESH:D015451
+    label: Disease
+    name: Chronic lymphoid leukemia, disease
+references:
+  - https://go.drugbank.com/drugs/DB09053#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Ibrutinib#Mechanism
+  - https://en.wikipedia.org/wiki/Ibrutinib#Medical_uses
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4632638/

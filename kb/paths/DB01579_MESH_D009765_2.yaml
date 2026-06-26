@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01579_MESH_D009765_2
+  disease: Obesity
+  disease_mesh: MESH:D009765
+  drug: phendimetrazine
+  drug_mesh: MESH:C100294
+  drugbank: DB:DB01579
+links:
+  - key: increases activity of
+    source: MESH:C100294
+    target: UniProt:P35368
+  - key: positively correlated with
+    source: UniProt:P35368
+    target: HP:0004396
+  - key: negatively correlated with
+    source: HP:0004396
+    target: MESH:D009765
+multigraph: true
+nodes:
+  - id: MESH:C100294
+    label: Drug
+    name: phendimetrazine
+  - id: UniProt:P35368
+    label: Protein
+    name: Alpha-1B adrenergic receptor
+  - id: HP:0004396
+    label: PhenotypicFeature
+    name: Poor appetite
+  - id: MESH:D009765
+    label: Disease
+    name: Obesity
+references:
+  - https://go.drugbank.com/drugs/DB01579#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Phendimetrazine
+  - https://www.uniprot.org/uniprot/P35368#function
+  - https://en.wikipedia.org/wiki/Alpha-1_adrenergic_receptor#Neuronal
+  - https://en.wikipedia.org/wiki/Obesity

@@ -1,0 +1,51 @@
+comment: Tamoxifen is a selective estrogen receptor modulator used to treat estrogen
+  receptor positive breast cancer.
+directed: true
+graph:
+  _id: DB00675_MESH_D018270_1
+  disease: Infiltrating duct carcinoma of breast
+  disease_mesh: MESH:D018270
+  drug: tamoxifen
+  drug_mesh: MESH:D013629
+  drugbank: DB:DB00675
+links:
+  - key: decreases activity of
+    source: MESH:D013629
+    target: UniProt:P03372
+  - key: participates in
+    source: UniProt:P03372
+    target: GO:0030284
+  - key: positively regulates
+    source: GO:0030284
+    target: GO:0008283
+  - key: decreases activity of
+    source: MESH:D013629
+    target: UniProt:Q92731
+  - key: participates in
+    source: UniProt:Q92731
+    target: GO:0030284
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D018270
+multigraph: true
+nodes:
+  - id: MESH:D013629
+    label: Drug
+    name: Tamoxifen
+  - id: UniProt:P03372
+    label: Protein
+    name: Estrogen receptor
+  - id: GO:0030284
+    label: MolecularActivity
+    name: Estrogen receptor activity
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: UniProt:Q92731
+    label: Protein
+    name: Estrogen receptor beta
+  - id: MESH:D018270
+    label: Disease
+    name: Infiltrating duct carcinoma of breast
+references:
+  - https://go.drugbank.com/drugs/DB00675#BE0000123

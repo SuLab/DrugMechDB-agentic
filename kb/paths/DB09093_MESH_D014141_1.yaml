@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB09093_MESH_D014141_1
+  disease: Trachoma
+  disease_mesh: MESH:D014141
+  drug: Chlortetracycline
+  drug_mesh: MESH:D002751
+  drugbank: DB:DB09093
+links:
+  - key: decreases activity of
+    source: MESH:D002751
+    target: InterPro:IPR030826
+  - key: decreases activity of
+    source: MESH:D002751
+    target: MESH:D012336
+  - key: participates in
+    source: InterPro:IPR030826
+    target: GO:0006412
+  - key: participates in
+    source: MESH:D012336
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:813
+  - key: causes
+    source: taxonomy:813
+    target: MESH:D014141
+multigraph: true
+nodes:
+  - id: MESH:D002751
+    label: Drug
+    name: Chlortetracycline
+  - id: InterPro:IPR030826
+    label: GeneFamily
+    name: 30S ribosomal protein
+  - id: MESH:D012336
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 16S
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: taxonomy:813
+    label: OrganismTaxon
+    name: Chlamydia trachomatis
+  - id: MESH:D014141
+    label: Disease
+    name: Trachoma
+references:
+  - https://go.drugbank.com/drugs/DB09093#BE0004799
+  - https://en.wikipedia.org/wiki/Trachoma

@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01060_MESH_D014069_1
+  disease: Streptococcal tonsillitis
+  disease_mesh: MESH:D014069
+  drug: amoxicillin
+  drug_mesh: MESH:D000658
+  drugbank: DB:DB01060
+links:
+  - key: decreases activity of
+    source: MESH:D000658
+    target: TIGR:02074
+  - key: participates in
+    source: TIGR:02074
+    target: GO:0009252
+  - key: occurs in
+    source: GO:0009252
+    target: taxonomy:1314
+  - key: causes
+    source: taxonomy:1314
+    target: MESH:D014069
+multigraph: true
+nodes:
+  - id: MESH:D000658
+    label: Drug
+    name: amoxicillin
+  - id: TIGR:02074
+    label: GeneFamily
+    name: Penicillin-binding proteins 1A
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: Peptidoglycan Biosyntheic Process
+  - id: taxonomy:1314
+    label: OrganismTaxon
+    name: Streptococcus pyogenes
+  - id: MESH:D014069
+    label: Disease
+    name: Streptococcal tonsillitis

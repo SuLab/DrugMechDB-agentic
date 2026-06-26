@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB06654_MESH_D010300_1
+  disease: Parkinson's disease
+  disease_mesh: MESH:D010300
+  drug: safinamide
+  drug_mesh: MESH:C092797
+  drugbank: DB:DB06654
+links:
+  - key: decreases activity of
+    source: MESH:C092797
+    target: UniProt:P27338
+  - key: decreases abundance of
+    source: UniProt:P27338
+    target: MESH:D004298
+  - key: participates in
+    source: MESH:D004298
+    target: GO:0061527
+  - key: disrupted by
+    source: GO:0061527
+    target: MESH:D010300
+multigraph: true
+nodes:
+  - id: MESH:C092797
+    label: Drug
+    name: Safinamide
+  - id: UniProt:P27338
+    label: Protein
+    name: Amine oxidase [flavin-containing] B
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D010300
+    label: Disease
+    name: Parkinson's disease
+references:
+  - https://go.drugbank.com/drugs/DB06654

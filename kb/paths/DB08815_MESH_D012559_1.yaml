@@ -1,0 +1,96 @@
+directed: true
+graph:
+  _id: DB08815_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: lurasidone
+  drug_mesh: MESH:D000069056
+  drugbank: DB:DB08815
+links:
+  - key: decreases activity of
+    source: MESH:D000069056
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:D000069056
+    target: UniProt:P28223
+  - key: positively regulates
+    source: UniProt:P14416
+    target: GO:0014046
+  - key: positively regulates
+    source: UniProt:P28223
+    target: GO:0014046
+  - key: correlated with
+    source: GO:0014046
+    target: HP:0100543
+  - key: correlated with
+    source: GO:0014046
+    target: HP:0030213
+  - key: correlated with
+    source: GO:0014046
+    target: HP:0012154
+  - key: correlated with
+    source: GO:0014046
+    target: HP:0002465
+  - key: correlated with
+    source: GO:0014046
+    target: HP:0000741
+  - key: correlated with
+    source: GO:0014046
+    target: HP:0000709
+  - key: manifestation of
+    source: HP:0100543
+    target: MESH:D012559
+  - key: manifestation of
+    source: HP:0030213
+    target: MESH:D012559
+  - key: manifestation of
+    source: HP:0012154
+    target: MESH:D012559
+  - key: manifestation of
+    source: HP:0002465
+    target: MESH:D012559
+  - key: manifestation of
+    source: HP:0000741
+    target: MESH:D012559
+  - key: manifestation of
+    source: HP:0000709
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - alt_names:
+      - Lurasidone Hydrochloride
+    id: MESH:D000069056
+    label: Drug
+    name: lurasidone
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: GO:0014046
+    label: BiologicalProcess
+    name: dopamine secretion
+  - id: HP:0100543
+    label: PhenotypicFeature
+    name: Cognitive impairment
+  - id: HP:0030213
+    label: PhenotypicFeature
+    name: Emotional blunting
+  - id: HP:0012154
+    label: PhenotypicFeature
+    name: Anhedonia
+  - id: HP:0002465
+    label: PhenotypicFeature
+    name: Poor speech
+  - id: HP:0000741
+    label: PhenotypicFeature
+    name: Apathy
+  - id: HP:0000709
+    label: PhenotypicFeature
+    name: Psychosis
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB08815

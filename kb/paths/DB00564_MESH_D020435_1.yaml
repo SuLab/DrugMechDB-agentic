@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00564_MESH_D020435_1
+  disease: Glossopharyngeal neuralgia
+  disease_mesh: MESH:D020435
+  drug: carbamazepine
+  drug_mesh: MESH:D002220
+  drugbank: DB:DB00564
+links:
+  - key: decreases activity of
+    source: MESH:D002220
+    target: InterPro:IPR001696
+  - key: positively correlated with
+    source: InterPro:IPR001696
+    target: GO:0051899
+  - key: positively regulates
+    source: GO:0051899
+    target: GO:0019228
+  - key: contributes to
+    source: GO:0019228
+    target: GO:0050806
+  - key: actively involved in
+    source: GO:0050806
+    target: GO:1904058
+  - key: causes
+    source: GO:1904058
+    target: MESH:D020435
+multigraph: true
+nodes:
+  - id: MESH:D002220
+    label: Drug
+    name: carbamazepine
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: GO:0051899
+    label: BiologicalProcess
+    name: membrane depolarization
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: neuronal action potential
+  - id: GO:0050806
+    label: BiologicalProcess
+    name: positive regulation of synaptic transmission
+  - id: GO:1904058
+    label: BiologicalProcess
+    name: positive regulation of sensory perception of pain
+  - id: MESH:D020435
+    label: Disease
+    name: Glossopharyngeal neuralgia
+references:
+  - https://go.drugbank.com/drugs/DB00564#BE0009738
+  - https://en.wikipedia.org/wiki/Neuralgia

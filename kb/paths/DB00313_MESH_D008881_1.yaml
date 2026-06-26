@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00313_MESH_D008881_1
+  disease: migraine
+  disease_mesh: MESH:D008881
+  drug: valproic acid
+  drug_mesh: MESH:D014635
+  drugbank: DB:DB00313
+links:
+  - key: decreases activity of
+    source: MESH:D014635
+    target: UniProt:O14975
+  - key: located in
+    source: UniProt:O14975
+    target: UBERON:0000955
+  - key: decreases abundance of
+    source: UBERON:0000955
+    target: MESH:C026563
+  - key: participates in
+    source: MESH:C026563
+    target: reactome:R-HSA-2162123
+  - key: treats
+    source: reactome:R-HSA-2162123
+    target: MESH:D008881
+multigraph: true
+nodes:
+  - id: MESH:D014635
+    label: Drug
+    name: valproic acid
+  - id: UniProt:O14975
+    label: Protein
+    name: microsomal long-chain fatty acyl-CoA synthetase
+  - id: UBERON:0000955
+    label: GrossAnatomicalStructure
+    name: brain
+  - id: MESH:C026563
+    label: ChemicalSubstance
+    name: Arachidonoyl-CoA
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: inflammatory prostaglandins production
+  - id: MESH:D008881
+    label: Disease
+    name: migraine
+references:
+  - https://go.drugbank.com/drugs/DB00313#mechanismofaction

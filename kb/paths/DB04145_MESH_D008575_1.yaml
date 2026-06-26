@@ -1,0 +1,30 @@
+directed: true
+graph:
+  _id: DB04145_MESH_D008575_1
+  disease: Ménière's disease
+  disease_mesh: MESH:D008575
+  drug: Nicotinyl alcohol
+  drug_mesh: MESH:D009540
+  drugbank: DB:DB04145
+links:
+  - key: negatively regulates
+    source: MESH:D009540
+    target: GO:0042310
+  - key: contributes to
+    source: GO:0042310
+    target: MESH:D008575
+multigraph: true
+nodes:
+  - id: MESH:D009540
+    label: Drug
+    name: Nicotinyl alcohol
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D008575
+    label: Disease
+    name: Ménière's disease
+references:
+  - https://go.drugbank.com/drugs/DB04145
+  - https://en.wikipedia.org/wiki/M%C3%A9ni%C3%A8re%27s_disease#Causes
+  - https://en.wikipedia.org/wiki/Nicotinyl_alcohol

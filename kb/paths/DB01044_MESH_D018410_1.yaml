@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01044_MESH_D018410_1
+  disease: Bacterial pneumonia
+  disease_mesh: MESH:D018410
+  drug: Gatifloxacin
+  drug_mesh: MESH:C078049
+  drugbank: DB:DB01044
+links:
+  - key: negatively regulates
+    source: MESH:C078049
+    target: GO:0009340
+  - key: negatively regulates
+    source: MESH:C078049
+    target: GO:0120217
+  - key: participates in
+    source: GO:0009340
+    target: GO:0006260
+  - key: participates in
+    source: GO:0120217
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D018410
+multigraph: true
+nodes:
+  - id: MESH:C078049
+    label: Drug
+    name: Gatifloxacin
+  - id: GO:0009340
+    label: CellularComponent
+    name: DNA topoisomerase IV complex
+  - id: GO:0120217
+    label: CellularComponent
+    name: DNA gyrase complex
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D018410
+    label: Disease
+    name: Bacterial pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB01044#BE0003726

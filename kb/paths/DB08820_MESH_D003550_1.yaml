@@ -1,0 +1,30 @@
+comment: Ivacaftor as monotherapy has failed to show a benefit for patients with delta-F508
+  mutations
+directed: true
+graph:
+  _id: DB08820_MESH_D003550_1
+  disease: Cystic fibrosis of the lung
+  disease_mesh: MESH:D003550
+  drug: Ivacaftor
+  drug_mesh: MESH:C545203
+  drugbank: DB:DB08820
+links:
+  - key: increases activity of
+    source: MESH:C545203
+    target: UniProt:P13569
+  - key: disrupted by
+    source: UniProt:P13569
+    target: MESH:D003550
+multigraph: true
+nodes:
+  - id: MESH:C545203
+    label: Drug
+    name: Ivacaftor
+  - id: UniProt:P13569
+    label: Protein
+    name: Cystic fibrosis transmembrane conductance regulator
+  - id: MESH:D003550
+    label: Disease
+    name: Cystic fibrosis of the lung
+references:
+  - https://go.drugbank.com/drugs/DB08820

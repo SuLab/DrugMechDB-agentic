@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00624_MESH_D003456_2
+  disease: Undescended testicle
+  disease_mesh: MESH:D003456
+  drug: Testosterone
+  drug_mesh: MESH:D013739
+  drugbank: DB:DB00624
+links:
+  - key: increases activity of
+    source: MESH:D013739
+    target: UniProt:P10275
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0048808
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0008584
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0019102
+  - key: negatively correlated with
+    source: GO:0048808
+    target: MESH:D003456
+  - key: negatively correlated with
+    source: GO:0008584
+    target: MESH:D003456
+  - key: negatively correlated with
+    source: GO:0019102
+    target: MESH:D003456
+multigraph: true
+nodes:
+  - id: MESH:D013739
+    label: Drug
+    name: Testosterone
+  - id: UniProt:P10275
+    label: Protein
+    name: Androgen receptor
+  - id: GO:0048808
+    label: BiologicalProcess
+    name: Male genitalia morphogenesis
+  - id: GO:0008584
+    label: BiologicalProcess
+    name: Male gonad development
+  - id: GO:0019102
+    label: BiologicalProcess
+    name: Male somatic sex determination
+  - id: MESH:D003456
+    label: Disease
+    name: Undescended testicle
+references:
+  - https://go.drugbank.com/drugs/DB13944

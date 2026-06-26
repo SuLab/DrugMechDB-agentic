@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00595_MESH_D009956_1
+  disease: Psittacosis
+  disease_mesh: MESH:D009956
+  drug: oxytetracycline
+  drug_mesh: MESH:D010118
+  drugbank: DB:DB00595
+links:
+  - key: decreases activity of
+    source: MESH:D010118
+    target: UniProt:S7IK33
+  - key: decreases activity of
+    source: MESH:D010118
+    target: UniProt:S7IMP9
+  - key: positively regulates
+    source: UniProt:S7IK33
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:S7IMP9
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:83554
+  - key: causes
+    source: taxonomy:83554
+    target: MESH:D009956
+multigraph: true
+nodes:
+  - id: MESH:D010118
+    label: Drug
+    name: oxytetracycline
+  - id: UniProt:S7IK33
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:S7IMP9
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:83554
+    label: OrganismTaxon
+    name: Chlamydia psittaci
+  - id: MESH:D009956
+    label: Disease
+    name: Psittacosis
+references:
+  - https://go.drugbank.com/drugs/DB00595#mechanism-of-action
+  - https://www.uniprot.org/uniprot/S7IK33#function
+  - https://www.uniprot.org/uniprot/S7IMP9#function
+  - https://en.wikipedia.org/wiki/Psittacosis

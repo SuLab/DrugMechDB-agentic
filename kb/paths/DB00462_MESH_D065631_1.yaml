@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00462_MESH_D065631_1
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: methscopolamine
+  drug_mesh: MESH:D019832
+  drugbank: DB:DB00462
+links:
+  - key: decreases activity of
+    source: MESH:D019832
+    target: UniProt:P20309
+  - key: participates in
+    source: UniProt:P20309
+    target: GO:1905144
+  - key: positively regulates
+    source: GO:1905144
+    target: UBERON:0012278
+  - key: produces
+    source: UBERON:0012278
+    target: UBERON:0002306
+  - key: occurs in
+    source: UBERON:0002306
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: MESH:D019832
+    label: Drug
+    name: Methscopolamine
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:1905144
+    label: BiologicalProcess
+    name: Response to acetylcholine
+  - id: UBERON:0012278
+    label: GrossAnatomicalStructure
+    name: Gland of nasal mucosa
+  - id: UBERON:0002306
+    label: GrossAnatomicalStructure
+    name: Nasal mucus
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic rhinitis
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL376897/

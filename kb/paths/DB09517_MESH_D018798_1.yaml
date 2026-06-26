@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB09517_MESH_D018798_1
+  disease: Iron deficiency anemia
+  disease_mesh: MESH:D018798
+  drug: ferrous gluconate
+  drug_mesh: MESH:C011819
+  drugbank: DB:DB09517
+links:
+  - key: increases abundance of
+    source: MESH:C011819
+    target: CHEBI:18248
+  - key: correlated with
+    source: CHEBI:18248
+    target: GO:0055072
+  - key: negatively correlated with
+    source: GO:0055072
+    target: MESH:D018798
+multigraph: true
+nodes:
+  - id: MESH:C011819
+    label: Drug
+    name: ferrous gluconate
+  - id: CHEBI:18248
+    label: ChemicalSubstance
+    name: iron atom
+  - id: GO:0055072
+    label: BiologicalProcess
+    name: iron ion homeostasis
+  - id: MESH:D018798
+    label: Disease
+    name: Iron deficiency anemia
+references:
+  - https://en.wikipedia.org/wiki/Iron(II)_gluconate

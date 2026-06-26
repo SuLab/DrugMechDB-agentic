@@ -1,0 +1,91 @@
+directed: true
+graph:
+  _id: DB06718_MESH_D006470_1
+  disease: Hemorrhage
+  disease_mesh: MESH:D006470
+  drug: menadiol sodium diphosphate
+  drugbank: DB:DB06718
+links:
+  - key: positively regulates
+    source: DB:DB06718
+    target: UniProt:P00734
+  - key: positively regulates
+    source: DB:DB06718
+    target: UniProt:P08709
+  - key: positively regulates
+    source: DB:DB06718
+    target: UniProt:P00740
+  - key: positively regulates
+    source: DB:DB06718
+    target: UniProt:P00742
+  - key: positively regulates
+    source: DB:DB06718
+    target: UniProt:P04070
+  - key: positively regulates
+    source: DB:DB06718
+    target: UniProt:P38435
+  - key: positively regulates
+    source: DB:DB06718
+    target: UniProt:P07225
+  - key: regulates
+    source: UniProt:P07225
+    target: GO:0007596
+  - key: positively regulates
+    source: UniProt:P38435
+    target: GO:0007596
+  - key: regulates
+    source: UniProt:P04070
+    target: GO:0007596
+  - key: positively regulates
+    source: UniProt:P00742
+    target: GO:0007596
+  - key: positively regulates
+    source: UniProt:P00740
+    target: GO:0007596
+  - key: positively regulates
+    source: UniProt:P08709
+    target: GO:0007596
+  - key: positively regulates
+    source: UniProt:P00734
+    target: GO:0007596
+  - key: negatively correlated with
+    source: GO:0007596
+    target: MESH:D006470
+multigraph: true
+nodes:
+  - id: DB:DB06718
+    label: Drug
+    name: menadiol sodium diphosphate
+  - id: UniProt:P00734
+    label: Protein
+    name: Prothrombin
+  - id: UniProt:P08709
+    label: Protein
+    name: Coagulation factor VII
+  - id: UniProt:P00740
+    label: Protein
+    name: Coagulation factor IX
+  - id: UniProt:P00742
+    label: Protein
+    name: Coagulation factor X
+  - id: UniProt:P04070
+    label: Protein
+    name: Vitamin K-dependent protein C
+  - id: UniProt:P38435
+    label: Protein
+    name: Vitamin K-dependent gamma-carboxylase
+  - id: UniProt:P07225
+    label: Protein
+    name: Vitamin K-dependent protein S
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: blood coagulation
+  - id: MESH:D006470
+    label: Disease
+    name: Hemorrhage
+references:
+  - https://journals.sagepub.com/doi/abs/10.3181/00379727-37-9668P
+  - https://www.medicalnewstoday.com/articles/165749#complications
+  - https://en.wikipedia.org/wiki/Vitamin_K#History
+comment: Marketing for this drug has been discontinued and is not available in North
+  America due to its likely carcinogenic potential and cytotoxic properties.

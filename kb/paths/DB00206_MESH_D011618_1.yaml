@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00206_MESH_D011618_1
+  disease: Psychotic disorder
+  disease_mesh: MESH:D011618
+  drug: reserpine
+  drug_mesh: MESH:D012110
+  drugbank: DB:DB00206
+links:
+  - key: negatively regulates
+    source: MESH:D012110
+    target: UniProt:Q05940
+  - key: positively regulates
+    source: UniProt:Q05940
+    target: GO:0001504
+  - key: affects risk for
+    source: GO:0001504
+    target: HP:0000708
+  - key: positively correlated with
+    source: HP:0000708
+    target: MESH:D011618
+multigraph: true
+nodes:
+  - id: MESH:D012110
+    label: Drug
+    name: reserpine
+  - id: UniProt:Q05940
+    label: Protein
+    name: Synaptic vesicular amine transporter
+  - id: GO:0001504
+    label: BiologicalProcess
+    name: neurotransmitter uptake
+  - id: HP:0000708
+    label: PhenotypicFeature
+    name: Behavioral abnormality
+  - id: MESH:D011618
+    label: Disease
+    name: Psychotic disorder
+references:
+  - https://go.drugbank.com/drugs/DB00206

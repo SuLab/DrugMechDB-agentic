@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB01111_MESH_D004927_1
+  disease: Infection due to Escherichia coli
+  disease_mesh: MESH:D004927
+  drug: colistimethate sodium
+  drug_mesh: MESH:C004691
+  drugbank: DB:DB01111
+links:
+  - key: disrupts
+    source: MESH:C004691
+    target: GO:0061701
+  - key: occurs in
+    source: GO:0061701
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D004927
+multigraph: true
+nodes:
+  - id: MESH:C004691
+    label: Drug
+    name: colistimethate sodium
+  - id: GO:0061701
+    label: CellularComponent
+    name: bacterial outer membrane vesicle
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D004927
+    label: Disease
+    name: Infection due to Escherichia coli
+references:
+  - https://go.drugbank.com/drugs/DB01111

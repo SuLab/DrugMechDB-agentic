@@ -1,0 +1,42 @@
+comment: Please note the entry term for this drug was macrogol, however the proper
+  name is polyethylene glycol.
+directed: true
+graph:
+  _id: DB09287_MESH_D003248_1
+  disease: Constipation
+  disease_mesh: MESH:D003248
+  drug: Polyethylene glycol
+  drug_mesh: MESH:C000595213,MESH:C000595211,MESH:C000595212
+  drugbank: DB:DB09287
+links:
+  - key: subclass of
+    source: DB:DB09287
+    target: MESH:D054368
+  - key: positively regulates
+    source: MESH:D054368
+    target: GO:0120054
+  - key: positively correlated with
+    source: GO:0120054
+    target: GO:0030421
+  - key: negatively correlated with
+    source: GO:0030421
+    target: MESH:D003248
+multigraph: true
+nodes:
+  - id: DB:DB09287
+    label: Drug
+    name: Polyethylene glycol
+  - id: MESH:D054368
+    label: ChemicalSubstance
+    name: Laxatives
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: Intestinal motility
+  - id: GO:0030421
+    label: BiologicalProcess
+    name: Defecation
+  - id: MESH:D003248
+    label: Disease
+    name: Constipation
+references:
+  - https://go.drugbank.com/drugs/DB09287

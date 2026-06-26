@@ -1,0 +1,30 @@
+directed: true
+graph:
+  _id: DB06439_MESH_D012127_1
+  disease: Respiratory distress syndrome in the newborn
+  disease_mesh: MESH:D012127
+  drug: Tyloxapol
+  drug_mesh: MESH:C016811
+  drugbank: DB:DB06439
+links:
+  - key: capable of
+    source: MESH:C016811
+    target: GO:0043129
+  - key: negatively correlated with
+    source: GO:0043129
+    target: MESH:D012127
+multigraph: true
+nodes:
+  - id: MESH:C016811
+    label: Drug
+    name: Tyloxapol
+  - id: GO:0043129
+    label: BiologicalProcess
+    name: Surfactant homeostasis
+  - id: MESH:D012127
+    label: Disease
+    name: Respiratory distress syndrome in the newborn
+references:
+  - https://go.drugbank.com/drugs/DB06439
+  - https://en.wikipedia.org/wiki/Infant_respiratory_distress_syndrome
+  - https://en.wikipedia.org/wiki/Tyloxapol

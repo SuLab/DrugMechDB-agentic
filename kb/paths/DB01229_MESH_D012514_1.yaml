@@ -1,0 +1,64 @@
+comment: Paclitaxel should not be given to patients with AIDS-related Kaposi’s sarcoma
+  if the baseline neutrophil count is less than 1000 cells/mm3.
+directed: true
+graph:
+  _id: DB01229_MESH_D012514_1
+  disease: Kaposi's sarcoma
+  disease_mesh: MESH:D012514
+  drug: paclitaxel
+  drug_mesh: MESH:D017239,MESH:D000068196
+  drugbank: DB:DB01229
+links:
+  - key: decreases activity of
+    source: DB:DB01229
+    target: UniProt:Q9H4B7
+  - key: decreases activity of
+    source: DB:DB01229
+    target: UniProt:P10415
+  - key: participates in
+    source: UniProt:Q9H4B7
+    target: GO:0051225
+  - key: negatively regulates
+    source: UniProt:P10415
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D012514
+  - key: positively correlated with
+    source: GO:0051225
+    target: GO:0000278
+  - key: positively correlated with
+    source: GO:0000278
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D012514
+multigraph: true
+nodes:
+  - id: DB:DB01229
+    label: Drug
+    name: Paclitaxel
+  - id: UniProt:Q9H4B7
+    label: Protein
+    name: Tubulin beta-1 chain
+  - id: UniProt:P10415
+    label: Protein
+    name: Apoptosis regulator Bcl-2
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: Apoptotic process
+  - id: GO:0051225
+    label: BiologicalProcess
+    name: Spindle assembly
+  - id: GO:0000278
+    label: BiologicalProcess
+    name: Mitotic cell cycle
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: MESH:D012514
+    label: Disease
+    name: Kaposi's sarcoma
+references:
+  - https://go.drugbank.com/drugs/DB01229
+  - https://www.accessdata.fda.gov/drugsatfda_docs/label/2011/020262s049lbl.pdf

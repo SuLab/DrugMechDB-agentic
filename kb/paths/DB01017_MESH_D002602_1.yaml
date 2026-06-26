@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01017_MESH_D002602_1
+  disease: Chancroid
+  disease_mesh: MESH:D002602
+  drug: minocycline
+  drug_mesh: MESH:D008911
+  drugbank: DB:DB01017
+links:
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:Q7VKF7
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:A0A448KJJ7
+  - key: positively regulates
+    source: UniProt:Q7VKF7
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:A0A448KJJ7
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:730
+  - key: causes
+    source: taxonomy:730
+    target: MESH:D002602
+multigraph: true
+nodes:
+  - id: MESH:D008911
+    label: Drug
+    name: minocycline
+  - id: UniProt:Q7VKF7
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:A0A448KJJ7
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:730
+    label: OrganismTaxon
+    name: Haemophilus ducreyi
+  - id: MESH:D002602
+    label: Disease
+    name: Chancroid
+references:
+  - https://go.drugbank.com/drugs/DB01017#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q7VKF7#function
+  - https://www.uniprot.org/uniprot/A0A448KJJ7#function
+  - https://en.wikipedia.org/wiki/Chancroid

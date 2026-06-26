@@ -1,0 +1,37 @@
+directed: true
+graph:
+  _id: DB00359_MESH_D003093_1
+  disease: Ulcerative colitis
+  disease_mesh: MESH:D003093
+  drug: sulfadiazine
+  drug_mesh: MESH:D013411
+  drugbank: DB:DB00359
+links:
+  - key: negatively correlated with
+    source: MESH:D013411
+    target: GO:0006954
+  - key: located in
+    source: GO:0006954
+    target: UBERON:0001155
+  - key: location of
+    source: UBERON:0001155
+    target: MESH:D003093
+multigraph: true
+nodes:
+  - id: MESH:D013411
+    label: Drug
+    name: sulfadiazine
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: UBERON:0001155
+    label: GrossAnatomicalStructure
+    name: colon
+  - id: MESH:D003093
+    label: Disease
+    name: Ulcerative colitis
+references:
+  - https://go.drugbank.com/drugs/DB00359
+  - https://en.wikipedia.org/wiki/Sulfadiazine#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Ulcerative_colitis
+  - https://pubmed.ncbi.nlm.nih.gov/11009042/

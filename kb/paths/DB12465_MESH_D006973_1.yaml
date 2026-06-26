@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB12465_MESH_D006973_1
+  disease: Hypertension
+  disease_mesh: MESH:D006973
+  drug: ketanserin
+  drug_mesh: MESH:D007650
+  drugbank: DB:DB12465
+links:
+  - key: decreases activity of
+    source: MESH:D007650
+    target: UniProt:P28223
+  - key: positively regulates
+    source: UniProt:P28223
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D007650
+    label: Drug
+    name: ketanserin
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertension
+references:
+  - https://go.drugbank.com/drugs/DB12465#mechanism-of-action
+  - https://drugs.ncats.io/drug/97F9DE4CT4
+  - https://www.uniprot.org/uniprot/P28223#function
+  - https://en.wikipedia.org/wiki/Hypertension

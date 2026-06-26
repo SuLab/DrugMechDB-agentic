@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB01400_MESH_D009157_1
+  disease: Myasthenia gravis
+  disease_mesh: MESH:D009157
+  drug: neostigmine
+  drug_mesh: MESH:D009388
+  drugbank: DB:DB01400
+links:
+  - key: decreases activity of
+    source: MESH:D009388
+    target: UniProt:P22303
+  - key: positively regulates
+    source: UniProt:P22303
+    target: GO:0006581
+  - key: decreases abundance of
+    source: GO:0006581
+    target: MESH:D000109
+  - key: increases activity of
+    source: MESH:D000109
+    target: GO:0015464
+  - key: disrupted by
+    source: GO:0015464
+    target: MESH:D009157
+multigraph: true
+nodes:
+  - id: MESH:D009388
+    label: Drug
+    name: Neostigmine
+  - id: UniProt:P22303
+    label: Protein
+    name: Acetylcholinesterase
+  - id: GO:0006581
+    label: BiologicalProcess
+    name: Acetylcholine catabolic process
+  - id: GO:0015464
+    label: MolecularActivity
+    name: Acetylcholine receptor activity
+  - id: MESH:D000109
+    label: ChemicalSubstance
+    name: Acetylcholine
+  - id: MESH:D009157
+    label: Disease
+    name: Myasthenia gravis
+references:
+  - https://go.drugbank.com/drugs/DB01400#BE0000426
+  - https://en.wikipedia.org/wiki/Myasthenia_gravis#Pathophysiology

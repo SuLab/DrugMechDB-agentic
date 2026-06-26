@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB01263_MESH_D002862_1
+  disease: Chromoblastomycosis
+  disease_mesh: MESH:D002862
+  drug: posaconazole
+  drug_mesh: MESH:C101425
+  drugbank: DB:DB01263
+links:
+  - key: decreases activity of
+    source: MESH:C101425
+    target: UniProt:P10613
+  - key: positively regulates
+    source: UniProt:P10613
+    target: GO:0006696
+  - key: precedes
+    source: GO:0006696
+    target: GO:0042546
+  - key: occurs in
+    source: GO:0042546
+    target: taxonomy:4751
+  - key: causes
+    source: taxonomy:4751
+    target: MESH:D002862
+multigraph: true
+nodes:
+  - id: MESH:C101425
+    label: Drug
+    name: Posaconazole
+  - id: UniProt:P10613
+    label: Protein
+    name: Lanosterol 14-alpha demethylase
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: Ergosterol biosynthetic process
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: Cell wall biogenesis
+  - id: taxonomy:4751
+    label: OrganismTaxon
+    name: Fungi
+  - id: MESH:D002862
+    label: Disease
+    name: Chromoblastomycosis
+references:
+  - https://go.drugbank.com/drugs/DB01263#BE0000233
+  - https://en.wikipedia.org/wiki/Chromoblastomycosis

@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00507_MESH_D003457_1
+  disease: Infection by Cryptosporidium
+  disease_mesh: MESH:D003457
+  drug: Nitazoxanide
+  drug_mesh: MESH:C041747
+  drugbank: DB:DB00507
+links:
+  - key: decreases activity of
+    source: MESH:C041747
+    target: UniProt:Q968X7
+  - key: positively regulates
+    source: UniProt:Q968X7
+    target: GO:0006754
+  - key: in taxon
+    source: GO:0006754
+    target: taxonomy:5806
+  - key: causes
+    source: taxonomy:5806
+    target: MESH:D003457
+multigraph: true
+nodes:
+  - id: MESH:C041747
+    label: Drug
+    name: Nitazoxanide
+  - id: UniProt:Q968X7
+    label: Protein
+    name: Pyruvate dehydrogenase [NADP(+)] (Cryptosporidium parvum)
+  - id: GO:0006754
+    label: BiologicalProcess
+    name: ATP biosynthetic process
+  - id: taxonomy:5806
+    label: OrganismTaxon
+    name: Cryptosporidium
+  - id: MESH:D003457
+    label: Disease
+    name: Infection by Cryptosporidium
+references:
+  - https://go.drugbank.com/drugs/DB00507
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1803158/

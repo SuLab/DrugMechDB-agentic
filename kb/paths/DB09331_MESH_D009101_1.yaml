@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB09331_MESH_D009101_1
+  disease: Multiple myeloma
+  disease_mesh: MESH:D009101
+  drug: daratumumab
+  drug_mesh: MESH:C556306
+  drugbank: DB:DB09331
+links:
+  - key: decreases activity of
+    source: MESH:C556306
+    target: UniProt:P28907
+  - key: negatively regulates
+    source: UniProt:P28907
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D009101
+  - key: positively regulates
+    source: UniProt:P28907
+    target: GO:0016049
+  - key: positively regulates
+    source: UniProt:P28907
+    target: GO:0042100
+  - key: positively correlated with
+    source: GO:0016049
+    target: MESH:D009101
+  - key: positively correlated with
+    source: GO:0042100
+    target: MESH:D009101
+multigraph: true
+nodes:
+  - id: MESH:C556306
+    label: Drug
+    name: daratumumab
+  - id: UniProt:P28907
+    label: Protein
+    name: ADP-ribosyl cyclase/cyclic ADP-ribose hydrolase 1
+  - id: GO:0016049
+    label: BiologicalProcess
+    name: cell growth
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: GO:0042100
+    label: BiologicalProcess
+    name: B cell proliferation
+  - id: MESH:D009101
+    label: Disease
+    name: Multiple myeloma
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743007/
+  - https://go.drugbank.com/drugs/DB09331
+  - https://www.darzalexhcp.com/iv/mechanisms-of-action

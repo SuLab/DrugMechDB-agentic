@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01606_MESH_D001064_1
+  disease: Appendicitis
+  disease_mesh: MESH:D001064
+  drug: tazobactam
+  drug_mesh: MESH:C043265
+  drugbank: DB:DB01606
+links:
+  - key: negatively regulates
+    source: MESH:C043265
+    target: InterPro:IPR012338
+  - key: positively regulates
+    source: InterPro:IPR012338
+    target: GO:0030655
+  - key: in taxon
+    source: GO:0030655
+    target: taxonomy:1763
+  - key: causes
+    source: taxonomy:1763
+    target: MESH:D001064
+multigraph: true
+nodes:
+  - id: MESH:C043265
+    label: Drug
+    name: tazobactam
+  - id: InterPro:IPR012338
+    label: GeneFamily
+    name: Beta-lactamase/transpeptidase-like
+  - id: GO:0030655
+    label: BiologicalProcess
+    name: beta-lactam antibiotic catabolic process
+  - id: taxonomy:1763
+    label: OrganismTaxon
+    name: Mycobacterium sp.
+  - id: MESH:D001064
+    label: Disease
+    name: Appendicitis
+references:
+  - https://go.drugbank.com/drugs/DB01606#mechanism-of-action

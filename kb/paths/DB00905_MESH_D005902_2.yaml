@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB00905_MESH_D005902_2
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: Bimatoprost
+  drug_mesh: MESH:D000069580
+  drugbank: DB:DB00905
+links:
+  - key: increases transport of
+    source: MESH:D000069580
+    target: UBERON:0001796
+  - key: contributes to
+    source: UBERON:0001796
+    target: HP:0007906
+  - key: positively correlated with
+    source: HP:0007906
+    target: MESH:D009798
+  - key: contributes to
+    source: MESH:D009798
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:D000069580
+    label: Drug
+    name: Bimatoprost
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: Aqueous humor of eyeball
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Intraocular pressure
+  - id: MESH:D009798
+    label: Disease
+    name: Ocular hypertension
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - https://go.drugbank.com/drugs/DB00905
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Bimatoprost#section=Pharmacology
+  - https://en.wikipedia.org/wiki/Bimatoprost

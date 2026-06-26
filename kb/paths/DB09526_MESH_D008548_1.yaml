@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB09526_MESH_D008548_1
+  disease: Melanosis
+  disease_mesh: MESH:D008548
+  drug: hydroquinone
+  drug_mesh: MESH:C031927
+  drugbank: DB:DB09526
+links:
+  - key: decreases activity of
+    source: MESH:C031927
+    target: UniProt:P14679
+  - key: positively regulates
+    source: UniProt:P14679
+    target: GO:0042438
+  - key: increases abundance of
+    source: GO:0042438
+    target: MESH:D008543
+  - key: positively correlated with
+    source: MESH:D008543
+    target: MESH:D008548
+multigraph: true
+nodes:
+  - id: MESH:C031927
+    label: Drug
+    name: hydroquinone
+  - id: UniProt:P14679
+    label: Protein
+    name: Tyrosinase
+  - id: GO:0042438
+    label: BiologicalProcess
+    name: melanin biosynthetic process
+  - id: MESH:D008543
+    label: ChemicalSubstance
+    name: Melanins
+  - id: MESH:D008548
+    label: Disease
+    name: Melanosis
+references:
+  - https://go.drugbank.com/drugs/DB09526#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P14679#function
+  - https://en.wikipedia.org/wiki/Melanosis

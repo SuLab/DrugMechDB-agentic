@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB06176_MESH_D016411_1
+  disease: Peripheral T-cell lymphoma
+  disease_mesh: MESH:D016411
+  drug: Romidepsin
+  drug_mesh: MESH:C087123
+  drugbank: DB:DB06176
+links:
+  - key: decreases activity of
+    source: MESH:C087123
+    target: UniProt:Q13547
+  - key: decreases activity of
+    source: MESH:C087123
+    target: UniProt:Q92769
+  - key: positively regulates
+    source: UniProt:Q13547
+    target: GO:0016575
+  - key: positively regulates
+    source: UniProt:Q92769
+    target: GO:0016575
+  - key: negatively correlated with
+    source: GO:0016575
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D016411
+  - key: positively correlated with
+    source: GO:0016575
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D016411
+multigraph: true
+nodes:
+  - id: MESH:C087123
+    label: Drug
+    name: Romidepsin
+  - id: UniProt:Q13547
+    label: Protein
+    name: Histone deacetylase 1
+  - id: UniProt:Q92769
+    label: Protein
+    name: Histone deacetylase 2
+  - id: GO:0016575
+    label: BiologicalProcess
+    name: Histone deacetylation
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: Apoptotic process
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: MESH:D016411
+    label: Disease
+    name: Peripheral T-cell lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB06176

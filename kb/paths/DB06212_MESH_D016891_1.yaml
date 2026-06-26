@@ -1,0 +1,63 @@
+comment: This disease is also known as Polycystic kidney disease adult type as per
+  the original file. Tolvaptan is also known as aquaretic (https://en.wikipedia.org/wiki/Aquaretic).
+  Note that hyponatremia corresponds to the state where water content is relatively
+  large for the sodium content available (https://pubmed.ncbi.nlm.nih.gov/19322975/),
+  which is possibly due to increased water reabsorption.
+directed: true
+graph:
+  _id: DB06212_MESH_D016891_1
+  disease: Polycystic Kidney, Autosomal Dominant
+  disease_mesh: MESH:D016891
+  drug: tolvaptan
+  drug_mesh: MESH:C116664
+  drugbank: DB:DB06212
+links:
+  - key: negatively regulates
+    source: MESH:C116664
+    target: UniProt:P30518
+  - key: participates in
+    source: UniProt:P30518
+    target: reactome:R-HSA-418555
+  - key: increases abundance of
+    source: reactome:R-HSA-418555
+    target: CHEBI:17489
+  - key: positively correlated with
+    source: CHEBI:17489
+    target: GO:0008283
+  - key: positively correlated with
+    source: CHEBI:17489
+    target: HP:0000107
+  - key: manifestation of
+    source: HP:0000107
+    target: MESH:D016891
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D016891
+multigraph: true
+nodes:
+  - id: MESH:C116664
+    label: Drug
+    name: tolvaptan
+  - id: UniProt:P30518
+    label: Protein
+    name: Vasopressin V2 receptor
+  - id: reactome:R-HSA-418555
+    label: Pathway
+    name: G alpha (s) signalling events
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3,5-cyclic AMP
+  - id: HP:0000107
+    label: PhenotypicFeature
+    name: Renal cyst
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: MESH:D016891
+    label: Disease
+    name: Polycystic Kidney, Autosomal Dominant
+references:
+  - https://go.drugbank.com/drugs/DB06212#mechanism-of-action
+  - https://pubmed.ncbi.nlm.nih.gov/20868352/
+  - https://en.wikipedia.org/wiki/Autosomal_dominant_polycystic_kidney_disease#Aquaretic_medication
+  - https://en.wikipedia.org/wiki/Vasopressin_receptor_antagonist#Polycystic_kidney_disease

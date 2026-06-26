@@ -1,0 +1,68 @@
+comment: The anticonvulsant properties of nitrazepam and other benzodiazepines may
+  be in part or entirely due to binding to voltage-dependent sodium  channels rather
+  than benzodiazepine receptors (https://en.wikipedia.org/wiki/Nitrazepam#Pharmacology),
+  so both classes of targets have been annotated here. Although the parmachological
+  action on UniProt:P35498 is unknown (https://go.drugbank.com/drugs/DB01595#BE0000141)
+  it's believed that reduced sodium currents due to mutations in the gene that codes
+  for UniProt:P35498 may cause hyper-excitability in GABAergic inhibitory interneurons,
+  which would lead to seizures. In mouse models, a dramatic loss of sodium current
+  in hippocampal GABAergic inhibitory interneurons would mean hypofunction of inhibitory
+  circuits, leading to hyperexcitability of neuronal networks and result in epilepsy
+  seizures (https://pubmed.ncbi.nlm.nih.gov/16921370/).
+directed: true
+graph:
+  _id: DB01595_MESH_D004831_1
+  disease: Myoclonic seizure
+  disease_mesh: MESH:D004831
+  drug: nitrazepam
+  drug_mesh: MESH:D009567
+  drugbank: DB:DB01595
+links:
+  - key: positively regulates
+    source: MESH:D009567
+    target: InterPro:IPR006028
+  - key: regulates
+    source: MESH:D009567
+    target: UniProt:P35498
+  - key: regulates
+    source: UniProt:P35498
+    target: GO:0019228
+  - key: located in
+    source: GO:0019228
+    target: CL:0011005
+  - key: negatively correlated with
+    source: CL:0011005
+    target: HP:0020219
+  - key: negatively regulates
+    source: InterPro:IPR006028
+    target: HP:0020219
+  - key: superclass of
+    source: HP:0020219
+    target: MESH:D004831
+multigraph: true
+nodes:
+  - id: MESH:D009567
+    label: Drug
+    name: nitrazepam
+  - id: InterPro:IPR006028
+    label: GeneFamily
+    name: Gamma-aminobutyric acid A receptor/Glycine receptor alpha
+  - id: UniProt:P35498
+    label: Protein
+    name: sodium voltage-gated channel alpha subunit 1
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: neuronal action potential
+  - id: CL:0011005
+    label: Cell
+    name: GABAergic interneuron
+  - id: HP:0020219
+    label: PhenotypicFeature
+    name: Motor seizure
+  - id: MESH:D004831
+    label: Disease
+    name: Myoclonic seizure
+references:
+  - https://go.drugbank.com/drugs/DB01595
+  - https://pubmed.ncbi.nlm.nih.gov/17505554/
+  - https://en.wikipedia.org/wiki/Nav1.1#Function

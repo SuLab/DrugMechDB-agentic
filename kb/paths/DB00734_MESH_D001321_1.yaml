@@ -1,0 +1,63 @@
+directed: true
+graph:
+  _id: DB00734_MESH_D001321_1
+  disease: Autistic Disorder
+  disease_mesh: MESH:D001321
+  drug: risperidone
+  drug_mesh: MESH:D018967
+  drugbank: DB:DB00734
+links:
+  - key: decreases activity of
+    source: MESH:D018967
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:D018967
+    target: UniProt:P28223
+  - key: participates in
+    source: UniProt:P14416
+    target: GO:0061527
+  - key: participates in
+    source: UniProt:P28223
+    target: GO:0060096
+  - key: regulates
+    source: GO:0061527
+    target: HP:0000750
+  - key: positively correlated with
+    source: GO:0060096
+    target: MESH:D012701
+  - key: manifestation of
+    source: HP:0000750
+    target: MESH:D001321
+  - key: positively correlated with
+    source: MESH:D012701
+    target: MESH:D001321
+multigraph: true
+nodes:
+  - id: MESH:D018967
+    label: Drug
+    name: risperidone
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: dopamine secretion, neurotransmission
+  - id: GO:0060096
+    label: BiologicalProcess
+    name: serotonin secretion, neurotransmission
+  - id: HP:0000750
+    label: PhenotypicFeature
+    name: Delayed speech and language development
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: MESH:D001321
+    label: Disease
+    name: Autistic Disorder
+references:
+  - https://go.drugbank.com/drugs/DB00734#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P14416#function
+  - https://www.uniprot.org/uniprot/P28223#function

@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00218_MESH_D007710_1
+  disease: Klebsiella Infections
+  disease_mesh: MESH:D007710
+  drug: moxifloxacin
+  drug_mesh: MESH:D000077266
+  drugbank: DB:DB00218
+links:
+  - key: decreases activity of
+    source: MESH:D000077266
+    target: UniProt:A6TBT6
+  - key: decreases activity of
+    source: MESH:D000077266
+    target: UniProt:A6TE12
+  - key: positively regulates
+    source: UniProt:A6TBT6
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:A6TE12
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:570
+  - key: causes
+    source: taxonomy:570
+    target: MESH:D007710
+multigraph: true
+nodes:
+  - id: MESH:D000077266
+    label: Drug
+    name: moxifloxacin
+  - id: UniProt:A6TBT6
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:A6TE12
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:570
+    label: OrganismTaxon
+    name: Klebsiella
+  - id: MESH:D007710
+    label: Disease
+    name: Klebsiella Infections
+references:
+  - https://go.drugbank.com/drugs/DB00218#mechanism-of-action
+  - https://www.uniprot.org/uniprot/A6TBT6#function
+  - https://www.uniprot.org/uniprot/A6TE12#function
+  - https://en.wikipedia.org/wiki/Klebsiella#In_humans

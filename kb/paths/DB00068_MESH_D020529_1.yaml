@@ -1,0 +1,80 @@
+directed: true
+graph:
+  _id: DB00068_MESH_D020529_1
+  disease: Relapsing remitting multiple sclerosis
+  disease_mesh: MESH:D020529
+  drug: Interferon beta-1b
+  drug_mesh: MESH:D000068576
+  drugbank: DB:DB00068
+links:
+  - key: increases activity of
+    source: MESH:D000068576
+    target: UniProt:P17181
+  - key: negatively regulates
+    source: UniProt:P17181
+    target: GO:0006954
+  - key: negatively regulates
+    source: UniProt:P17181
+    target: GO:0042100
+  - key: negatively regulates
+    source: UniProt:P17181
+    target: GO:0050798
+  - key: negatively regulates
+    source: UniProt:P17181
+    target: GO:0019882
+  - key: increases activity of
+    source: MESH:D000068576
+    target: UniProt:P48551
+  - key: negatively regulates
+    source: UniProt:P48551
+    target: GO:0006954
+  - key: negatively regulates
+    source: UniProt:P48551
+    target: GO:0042100
+  - key: negatively regulates
+    source: UniProt:P48551
+    target: GO:0050798
+  - key: negatively regulates
+    source: UniProt:P48551
+    target: GO:0019882
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D020529
+  - key: positively correlated with
+    source: GO:0042100
+    target: MESH:D020529
+  - key: positively correlated with
+    source: GO:0050798
+    target: MESH:D020529
+  - key: positively correlated with
+    source: GO:0019882
+    target: MESH:D020529
+multigraph: true
+nodes:
+  - id: MESH:D000068576
+    label: Drug
+    name: Interferon beta-1b
+  - id: UniProt:P17181
+    label: Protein
+    name: Interferon alpha/beta receptor 1
+  - id: UniProt:P48551
+    label: Protein
+    name: Interferon alpha/beta receptor 2
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: GO:0042100
+    label: BiologicalProcess
+    name: B cell proliferation
+  - id: GO:0050798
+    label: BiologicalProcess
+    name: Activated T cell proliferation
+  - id: GO:0019882
+    label: BiologicalProcess
+    name: Antigen processing and presentation
+  - id: MESH:D020529
+    label: Disease
+    name: Relapsing remitting multiple sclerosis
+references:
+  - https://go.drugbank.com/drugs/DB00068
+  - https://en.wikipedia.org/wiki/Interferon_beta-1a

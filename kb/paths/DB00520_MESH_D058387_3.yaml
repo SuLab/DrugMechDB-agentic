@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00520_MESH_D058387_3
+  disease: Candidemia
+  disease_mesh: MESH:D058387
+  drug: Caspofungin
+  drug_mesh: MESH:D000077336
+  drugbank: DB:DB00520
+links:
+  - key: decreases activity of
+    source: MESH:D000077336
+    target: InterPro:IPR003440
+  - key: increases abundance of
+    source: InterPro:IPR003440
+    target: MESH:D005936
+  - key: positively correlated with
+    source: MESH:D005936
+    target: GO:0009272
+  - key: in taxon
+    source: GO:0009272
+    target: taxonomy:1535326
+  - key: causes
+    source: taxonomy:1535326
+    target: MESH:D058387
+multigraph: true
+nodes:
+  - id: MESH:D000077336
+    label: Drug
+    name: Caspofungin
+  - id: InterPro:IPR003440
+    label: Protein
+    name: 1,3-Beta-glucan synthase
+  - id: MESH:D005936
+    label: ChemicalSubstance
+    name: Beta(1,3)-D-glucan
+  - id: GO:0009272
+    label: CellularComponent
+    name: Fungal-type cell wall biogenesis
+  - id: taxonomy:1535326
+    label: OrganismTaxon
+    name: Candida
+  - id: MESH:D058387
+    label: Disease
+    name: Candidemia
+references:
+  - https://go.drugbank.com/drugs/DB00520
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Caspofungin#section=Pharmacology-and-Biochemistry

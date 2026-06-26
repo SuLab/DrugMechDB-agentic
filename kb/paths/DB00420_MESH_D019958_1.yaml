@@ -1,0 +1,60 @@
+comment: Promazine is a phenothiazine drug that is uesd in short-term treatment of
+  disturbed behavior and as an antiemetic. Promazine is currently not approved for
+  human use in the United States.
+directed: true
+graph:
+  _id: DB00420_MESH_D019958_1
+  disease: Attention Deficit and Disruptive Behavior Disorders
+  disease_mesh: MESH:D019958
+  drug: promazine
+  drug_mesh: MESH:D011395
+  drugbank: DB:DB00420
+links:
+  - key: decreases activity of
+    source: MESH:D011395
+    target: UniProt:P14416
+  - key: positively regulates
+    source: UniProt:P14416
+    target: GO:0035240
+  - key: positively correlated with
+    source: GO:0035240
+    target: MESH:D004298
+  - key: contributes to
+    source: MESH:D004298
+    target: HP:0008760
+  - key: contributes to
+    source: MESH:D004298
+    target: HP:0000708
+  - key: manifestation of
+    source: HP:0008760
+    target: MESH:D019958
+  - key: manifestation of
+    source: HP:0000708
+    target: MESH:D019958
+multigraph: true
+nodes:
+  - id: MESH:D011395
+    label: Drug
+    name: promazine
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: GO:0035240
+    label: MolecularActivity
+    name: dopamine binding
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: HP:0008760
+    label: PhenotypicFeature
+    name: Violent behavior
+  - id: HP:0000708
+    label: PhenotypicFeature
+    name: Behavioral abnormality
+  - id: MESH:D019958
+    label: Disease
+    name: Attention Deficit and Disruptive Behavior Disorders
+references:
+  - https://go.drugbank.com/drugs/DB00420#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P14416#function
+  - https://en.wikipedia.org/wiki/DSM-IV_codes#Attention-deficit_and_disruptive_behavior_disorders

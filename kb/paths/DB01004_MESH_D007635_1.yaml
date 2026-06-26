@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB01004_MESH_D007635_1
+  disease: Herpes simplex dendritic keratitis
+  disease_mesh: MESH:D007635
+  drug: Ganciclovir
+  drug_mesh: MESH:D015774
+  drugbank: DB:DB01004
+links:
+  - key: disrupts
+    source: MESH:D015774
+    target: MESH:D004247
+  - key: decreases activity of
+    source: MESH:D015774
+    target: UniProt:P04293
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0019079
+  - key: positively regulates
+    source: UniProt:P04293
+    target: GO:0019079
+  - key: in taxon
+    source: GO:0019079
+    target: taxonomy:10298
+  - key: causes
+    source: taxonomy:10298
+    target: MESH:D007635
+multigraph: true
+nodes:
+  - id: MESH:D015774
+    label: Drug
+    name: Ganciclovir
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: UniProt:P04293
+    label: Protein
+    name: DNA polymerase catalytic subunit (Human herpesvirus 1)
+  - id: GO:0019079
+    label: BiologicalProcess
+    name: Viral genome replication
+  - id: taxonomy:10298
+    label: OrganismTaxon
+    name: Human herpesvirus type 1
+  - id: MESH:D007635
+    label: Disease
+    name: Herpes simplex dendritic keratitis
+references:
+  - https://go.drugbank.com/drugs/DB01004#BE0000308
+  - https://en.wikipedia.org/wiki/Cytomegalovirus_retinitis

@@ -1,0 +1,35 @@
+comment: MESH:D014987 is denoted as Xerostomia in MESH.
+directed: true
+graph:
+  _id: DB01085_MESH_D014987_1
+  disease: Aptyalism
+  disease_mesh: MESH:D014987
+  drug: pilocarpine
+  drug_mesh: MESH:D010862
+  drugbank: DB:DB01085
+links:
+  - key: increases activity of
+    source: MESH:D010862
+    target: InterPro:IPR000995
+  - key: increases abundance of
+    source: InterPro:IPR000995
+    target: GO:0046541
+  - key: negatively correlated with
+    source: GO:0046541
+    target: MESH:D014987
+multigraph: true
+nodes:
+  - id: MESH:D010862
+    label: Drug
+    name: pilocarpine
+  - id: InterPro:IPR000995
+    label: GeneFamily
+    name: Muscarinic acetylcholine receptor family
+  - id: GO:0046541
+    label: BiologicalProcess
+    name: saliva secretion
+  - id: MESH:D014987
+    label: Disease
+    name: Aptyalism
+references:
+  - https://go.drugbank.com/drugs/DB01085

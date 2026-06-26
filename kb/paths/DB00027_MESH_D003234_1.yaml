@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00027_MESH_D003234_1
+  disease: Conjunctivitis, Bacterial
+  disease_mesh: MESH:D003234
+  drug: Gramicidin
+  drug_mesh: MESH:D006096
+  drugbank: DB:DB00027
+links:
+  - key: negatively regulates
+    source: MESH:D006096
+    target: GO:0030313
+  - key: participates in
+    source: GO:0030313
+    target: GO:0090559
+  - key: participates in
+    source: GO:0090559
+    target: GO:0022803
+  - key: occurs in
+    source: GO:0022803
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D003234
+multigraph: true
+nodes:
+  - id: MESH:D006096
+    label: Drug
+    name: Gramicidin
+  - id: GO:0030313
+    label: CellularComponent
+    name: cell envelope
+  - id: GO:0090559
+    label: BiologicalProcess
+    name: regulation of membrane permeability
+  - id: GO:0022803
+    label: MolecularActivity
+    name: passive transmembrane transporter activity
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D003234
+    label: Disease
+    name: Conjunctivitis, Bacterial
+references:
+  - https://go.drugbank.com/drugs/DB00027#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Gramicidin
+  - https://en.wikipedia.org/wiki/Conjunctivitis

@@ -1,0 +1,36 @@
+comment: Ambrisentan is known to be teratogenic (https://en.wikipedia.org/wiki/Ambrisentan#Birth_defects).
+directed: true
+graph:
+  _id: DB06403_MESH_D000081029_1
+  disease: Pulmonary arterial hypertension
+  disease_mesh: MESH:D000081029
+  drug: ambrisentan
+  drug_mesh: MESH:C467894
+  drugbank: DB:DB06403
+links:
+  - key: negatively regulates
+    source: MESH:C467894
+    target: InterPro:IPR000499
+  - key: positively regulates
+    source: InterPro:IPR000499
+    target: GO:0014824
+  - key: positively correlated with
+    source: GO:0014824
+    target: MESH:D000081029
+multigraph: true
+nodes:
+  - id: MESH:C467894
+    label: Drug
+    name: ambrisentan
+  - id: InterPro:IPR000499
+    label: GeneFamily
+    name: Endothelin receptor family
+  - id: GO:0014824
+    label: BiologicalProcess
+    name: artery smooth muscle contraction
+  - id: MESH:D000081029
+    label: Disease
+    name: Pulmonary arterial hypertension
+references:
+  - https://go.drugbank.com/drugs/DB06403
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1111/

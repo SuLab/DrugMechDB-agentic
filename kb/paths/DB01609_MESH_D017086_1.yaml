@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB01609_MESH_D017086_1
+  disease: Beta Thalassemia
+  disease_mesh: MESH:D017086
+  drug: deferasirox
+  drug_mesh: MESH:C415250
+  drugbank: DB:DB01609
+links:
+  - key: decreases abundance of
+    source: MESH:C415250
+    target: MESH:D007501
+  - key: correlated with
+    source: MESH:D007501
+    target: HP:0012465
+  - key: phenotype of
+    source: HP:0012465
+    target: MESH:D017086
+multigraph: true
+nodes:
+  - id: MESH:C415250
+    label: Drug
+    name: Deferasirox
+  - id: MESH:D007501
+    label: ChemicalSubstance
+    name: Iron
+  - id: HP:0012465
+    label: PhenotypicFeature
+    name: Elevated hepatic iron concentration
+  - id: MESH:D017086
+    label: Disease
+    name: Beta Thalassemia
+references:
+  - https://go.drugbank.com/drugs/DB01609
+  - https://en.wikipedia.org/wiki/Beta_thalassemia#Signs_and_symptoms

@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB06761_MESH_D012127_1
+  disease: Respiratory distress syndrome in the newborn
+  disease_mesh: MESH:D012127
+  drug: beractant
+  drug_mesh: MESH:C072197
+  drugbank: DB:DB06761
+links:
+  - key: chemically similar to
+    source: MESH:C072197
+    target: UBERON:0008826
+  - key: decreases activity of
+    source: UBERON:0008826
+    target: GO:0050828
+  - key: located in
+    source: GO:0050828
+    target: UBERON:0002299
+  - key: increases activity of
+    source: UBERON:0002299
+    target: GO:0043576
+  - key: correlated with
+    source: GO:0043576
+    target: MESH:D012127
+multigraph: true
+nodes:
+  - id: MESH:C072197
+    label: Drug
+    name: beractant
+  - id: UBERON:0008826
+    label: GrossAnatomicalStructure
+    name: pulmonary surfactant
+  - id: GO:0050828
+    label: BiologicalProcess
+    name: Surface tension at the air-liquid interface
+  - id: UBERON:0002299
+    label: GrossAnatomicalStructure
+    name: Alveolus of lung
+  - id: GO:0043576
+    label: BiologicalProcess
+    name: Respiratory gaseous exchange
+  - id: MESH:D012127
+    label: Disease
+    name: Respiratory distress syndrome in the newborn
+references:
+  - https://go.drugbank.com/drugs/DB06761

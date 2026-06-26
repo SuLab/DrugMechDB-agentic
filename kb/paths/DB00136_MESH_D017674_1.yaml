@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00136_MESH_D017674_1
+  disease: Hypophosphatemia
+  disease_mesh: MESH:D017674
+  drug: calcitriol
+  drug_mesh: MESH:D002117
+  drugbank: DB:DB00136
+links:
+  - key: increases activity of
+    source: MESH:D002117
+    target: UniProt:P11473
+  - key: positively regulates
+    source: UniProt:P11473
+    target: GO:0060558
+  - key: positively correlated with
+    source: GO:0060558
+    target: GO:0055074
+  - key: positively correlated with
+    source: GO:0055074
+    target: GO:0055062
+  - key: negatively correlated with
+    source: GO:0055062
+    target: MESH:D017674
+multigraph: true
+nodes:
+  - id: MESH:D002117
+    label: Drug
+    name: calcitriol
+  - id: UniProt:P11473
+    label: Protein
+    name: Vitamin D3 receptor
+  - id: GO:0060558
+    label: BiologicalProcess
+    name: regulation of calcidiol 1-monooxygenase activity
+  - id: GO:0055074
+    label: BiologicalProcess
+    name: calcium ion homeostasis
+  - id: GO:0055062
+    label: BiologicalProcess
+    name: phosphate ion homeostasis
+  - id: MESH:D017674
+    label: Disease
+    name: Hypophosphatemia
+references:
+  - https://en.wikipedia.org/wiki/Calcitriol#Mechanism_of_action
+  - https://pubmed.ncbi.nlm.nih.gov/23713873/
+  - https://www.targetvalidation.org/evidence/ENSG00000111424/HP_0002148?view=sec:known_drug
+  - https://en.wikipedia.org/wiki/Hypophosphatemia#Causes
+  - https://go.drugbank.com/drugs/DB00136#description

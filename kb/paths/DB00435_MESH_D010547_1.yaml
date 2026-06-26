@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00435_MESH_D010547_1
+  disease: Persistent Fetal Circulation Syndrome
+  disease_mesh: MESH:D010547
+  drug: Nitric Oxide
+  drug_mesh: MESH:D009569
+  drugbank: DB:DB00435
+links:
+  - key: increases activity of
+    source: MESH:D009569
+    target: InterPro:IPR001054
+  - key: positively regulates
+    source: InterPro:IPR001054
+    target: GO:0006182
+  - key: increases abundance of
+    source: GO:0006182
+    target: MESH:D006152
+  - key: positively regulates
+    source: MESH:D006152
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: MESH:D010547
+multigraph: true
+nodes:
+  - id: MESH:D009569
+    label: Drug
+    name: Nitric Oxide
+  - id: InterPro:IPR001054
+    label: GeneFamily
+    name: Adenylyl cyclase class-3/4/guanylyl cyclase
+  - id: GO:0006182
+    label: BiologicalProcess
+    name: cGMP biosynthetic process
+  - id: MESH:D006152
+    label: ChemicalSubstance
+    name: Cyclic GMP
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: MESH:D010547
+    label: Disease
+    name: Persistent Fetal Circulation Syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00435#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Guanylate_cyclase
+  - https://pubmed.ncbi.nlm.nih.gov/16291255/
+  - https://en.wikipedia.org/wiki/Persistent_fetal_circulation

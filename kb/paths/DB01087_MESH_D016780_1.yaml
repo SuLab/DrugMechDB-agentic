@@ -1,0 +1,42 @@
+comment: Primaquine's mechanism of action is not well understood
+directed: true
+graph:
+  _id: DB01087_MESH_D016780_1
+  disease: Vivax malaria
+  disease_mesh: MESH:D016780
+  drug: primaquine
+  drug_mesh: MESH:D011319
+  drugbank: DB:DB01087
+links:
+  - key: positively regulates
+    source: MESH:D011319
+    target: GO:0006979
+  - key: negatively regulates
+    source: GO:0006979
+    target: GO:0042775
+  - key: occurs in
+    source: GO:0042775
+    target: taxonomy:5855
+  - key: causes
+    source: taxonomy:5855
+    target: MESH:D016780
+multigraph: true
+nodes:
+  - id: MESH:D011319
+    label: Drug
+    name: primaquine
+  - id: GO:0006979
+    label: BiologicalProcess
+    name: response to oxidative stress
+  - id: GO:0042775
+    label: BiologicalProcess
+    name: mitochondrial ATP synthesis coupled electron transport
+  - id: taxonomy:5855
+    label: OrganismTaxon
+    name: Plasmodium vivax
+  - id: MESH:D016780
+    label: Disease
+    name: Vivax malaria
+references:
+  - https://go.drugbank.com/drugs/DB01087#BE0004805
+  - https://en.wikipedia.org/wiki/Primaquine#Mechanism_of_action

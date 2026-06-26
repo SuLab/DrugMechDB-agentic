@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB11582_MESH_D009128_1
+  disease: Muscle Spasticity
+  disease_mesh: MESH:D009128
+  drug: thiocolchicoside
+  drug_mesh: MESH:C004280
+  drugbank: DB:DB11582
+links:
+  - key: positively regulates
+    source: MESH:C004280
+    target: InterPro:IPR006028
+  - key: positively correlated with
+    source: InterPro:IPR006028
+    target: MESH:D005680
+  - key: positively correlated with
+    source: MESH:D005680
+    target: GO:0061534
+  - key: positively regulates
+    source: GO:0061534
+    target: GO:0090075
+  - key: negatively correlated with
+    source: GO:0090075
+    target: MESH:D009128
+multigraph: true
+nodes:
+  - id: MESH:C004280
+    label: Drug
+    name: Thiocolchicoside
+  - id: InterPro:IPR006028
+    label: GeneFamily
+    name: Gamma-aminobutyric acid A receptor/Glycine receptor alpha
+  - id: MESH:D005680
+    label: ChemicalSubstance
+    name: Gamma-Aminobutyric Acid
+  - id: GO:0061534
+    label: BiologicalProcess
+    name: Gamma-aminobutyric acid secretion, neurotransmission
+  - id: GO:0090075
+    label: BiologicalProcess
+    name: Relaxation of muscle
+  - id: MESH:D009128
+    label: Disease
+    name: Muscle Spasticity
+references:
+  - https://go.drugbank.com/drugs/DB11582#BE0004797

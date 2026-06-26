@@ -1,0 +1,38 @@
+comment: Tipiracil may also play its anti-neoplastic role indirectly when admnistered
+  in combination with Trifluridine (DB:DB00432). In this case, tipiracil will prevent
+  trifluridine breakdown, thus increasing its bioavailability and boosting its systemiic
+  presence (https://en.wikipedia.org/wiki/Trifluridine/tipiracil).
+directed: true
+graph:
+  _id: DB09343_MESH_D003110_1
+  disease: Malignant tumor of colon
+  disease_mesh: MESH:D003110
+  drug: tipiracil
+  drug_mesh: MESH:C000613754
+  drugbank: DB:DB09343
+links:
+  - key: decreases activity of
+    source: MESH:C000613754
+    target: UniProt:P19971
+  - key: positively regulates
+    source: UniProt:P19971
+    target: GO:0001525
+  - key: positively correlated with
+    source: GO:0001525
+    target: MESH:D003110
+multigraph: true
+nodes:
+  - id: MESH:C000613754
+    label: Drug
+    name: tipiracil
+  - id: UniProt:P19971
+    label: Protein
+    name: Thymidine phosphorylase
+  - id: GO:0001525
+    label: BiologicalProcess
+    name: angiogenesis
+  - id: MESH:D003110
+    label: Disease
+    name: Malignant tumor of colon
+references:
+  - https://go.drugbank.com/drugs/DB09343

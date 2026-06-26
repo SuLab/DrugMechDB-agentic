@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00421_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: spironolactone
+  drug_mesh: MESH:D013148
+  drugbank: DB:DB00421
+links:
+  - key: negatively regulates
+    source: MESH:D013148
+    target: UniProt:P08235
+  - key: positively correlated with
+    source: UniProt:P08235
+    target: MESH:D000450
+  - key: contributes to
+    source: MESH:D000450
+    target: GO:0070294
+  - key: positively correlated with
+    source: GO:0070294
+    target: GO:0003092
+  - key: contributes to
+    source: GO:0003092
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D013148
+    label: Drug
+    name: spironolactone
+  - id: UniProt:P08235
+    label: Protein
+    name: Mineralocorticoid receptor
+  - id: MESH:D000450
+    label: ChemicalSubstance
+    name: aldosterone
+  - id: GO:0070294
+    label: BiologicalProcess
+    name: renal sodium ion absorption
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: renal water retention
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00421
+  - https://en.wikipedia.org/wiki/Hypertension

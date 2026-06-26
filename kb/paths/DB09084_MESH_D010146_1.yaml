@@ -1,0 +1,63 @@
+comment: Unlike other NSAIDs, it does not inhibit cyclooxygenase or lipooxygenase
+  (https://en.wikipedia.org/wiki/Benzydamine#Pharmacology).
+directed: true
+graph:
+  _id: DB09084_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: benzydamine
+  drug_mesh: MESH:D001591
+  drugbank: DB:DB09084
+links:
+  - key: negatively correlated with
+    source: MESH:D001591
+    target: UniProt:P01375
+  - key: negatively correlated with
+    source: MESH:D001591
+    target: UniProt:P01584
+  - key: positively correlated with
+    source: UniProt:P01375
+    target: GO:0006954
+  - key: positively correlated with
+    source: UniProt:P01584
+    target: GO:0006954
+  - key: negatively correlated with
+    source: MESH:D001591
+    target: GO:0043312
+  - key: positively correlated with
+    source: GO:0043312
+    target: GO:0006954
+  - key: negatively correlated with
+    source: MESH:D001591
+    target: MESH:D013373
+  - key: positively correlated with
+    source: MESH:D013373
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:D001591
+    label: Drug
+    name: benzydamine
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: GO:0043312
+    label: BiologicalProcess
+    name: neutrophil degranulation
+  - id: MESH:D013373
+    label: ChemicalSubstance
+    name: Substance P
+  - id: UniProt:P01375
+    label: Protein
+    name: Tumor necrosis factor
+  - id: UniProt:P01584
+    label: Protein
+    name: Interleukin-1 beta
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+references:
+  - https://go.drugbank.com/drugs/DB09084

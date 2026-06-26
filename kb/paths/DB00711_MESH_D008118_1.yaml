@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00711_MESH_D008118_1
+  disease: Infection by Loa loa
+  disease_mesh: MESH:D008118
+  drug: diethylcarbamazine
+  drug_mesh: MESH:D004049
+  drugbank: DB:DB00711
+links:
+  - key: negatively regulates
+    source: MESH:D004049
+    target: GO:0019369
+  - key: regulates
+    source: GO:0019369
+    target: GO:0005886
+  - key: in taxon
+    source: GO:0005886
+    target: taxonomy:100942
+  - key: causes
+    source: taxonomy:100942
+    target: MESH:D008118
+multigraph: true
+nodes:
+  - id: MESH:D004049
+    label: Drug
+    name: Diethylcarbamazine
+  - id: GO:0019369
+    label: BiologicalProcess
+    name: Arachidonic acid metabolic process
+  - id: GO:0005886
+    label: CellularComponent
+    name: Plasma membrane
+  - id: taxonomy:100942
+    label: OrganismTaxon
+    name: Chrysops sp.
+  - id: MESH:D008118
+    label: Disease
+    name: Infection by Loa loa
+references:
+  - https://go.drugbank.com/drugs/DB00711
+  - https://en.wikipedia.org/wiki/Loa_loa_filariasis#Cause

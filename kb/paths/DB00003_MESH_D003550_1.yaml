@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00003_MESH_D003550_1
+  disease: Cystic fibrosis
+  disease_mesh: MESH:D003550
+  drug: Dornase alfa
+  drug_mesh: MESH:C568813
+  drugbank: DB:DB00003
+links:
+  - key: positively regulates
+    source: MESH:C568813
+    target: GO:0000737
+  - key: disrupts
+    source: GO:0000737
+    target: MESH:D004247
+  - key: positively correlated with
+    source: MESH:D004247
+    target: UBERON:0016553
+  - key: positively correlated with
+    source: UBERON:0016553
+    target: MESH:D003550
+multigraph: true
+nodes:
+  - id: MESH:C568813
+    label: Drug
+    name: Dornase alfa
+  - id: GO:0000737
+    label: BiologicalProcess
+    name: DNA catabolic process, endonucleolytic
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: UBERON:0016553
+    label: GrossAnatomicalStructure
+    name: Respiratory system mucus
+  - id: MESH:D003550
+    label: Disease
+    name: Cystic fibrosis
+references:
+  - https://go.drugbank.com/drugs/DB00003
+  - https://en.wikipedia.org/wiki/Dornase_alfa

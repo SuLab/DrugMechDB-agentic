@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB04854_MESH_D033461_1
+  disease: Hyperuricemia
+  disease_mesh: MESH:D033461
+  drug: Febuxostat
+  drug_mesh: MESH:D000069465
+  drugbank: DB:DB04854
+links:
+  - key: decreases activity of
+    source: MESH:D000069465
+    target: UniProt:P47989
+  - key: positively regulates
+    source: UniProt:P47989
+    target: GO:0004854
+  - key: increases abundance of
+    source: GO:0004854
+    target: MESH:D014527
+  - key: positively correlated with
+    source: MESH:D014527
+    target: MESH:D033461
+multigraph: true
+nodes:
+  - id: MESH:D000069465
+    label: Drug
+    name: Febuxostat
+  - id: UniProt:P47989
+    label: Protein
+    name: Xanthine dehydrogenase/oxidase
+  - id: GO:0004854
+    label: MolecularActivity
+    name: xanthine dehydrogenase activity
+  - id: MESH:D014527
+    label: ChemicalSubstance
+    name: Uric Acid
+  - id: MESH:D033461
+    label: Disease
+    name: Hyperuricemia
+references:
+  - https://go.drugbank.com/drugs/DB04854#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Febuxostat
+  - https://www.uniprot.org/uniprot/P47989#function
+  - https://en.wikipedia.org/wiki/Hyperuricemia

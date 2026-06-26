@@ -1,0 +1,101 @@
+directed: true
+graph:
+  _id: DB00819_MESH_D000532_1
+  disease: Anoxia due to high altitude
+  disease_mesh: MESH:D000532
+  drug: acetazolamide
+  drug_mesh: MESH:D000086
+  drugbank: DB:DB00819
+links:
+  - key: negatively regulates
+    source: MESH:D000086
+    target: UniProt:P00915
+  - key: negatively regulates
+    source: MESH:D000086
+    target: UniProt:Q9ULX7
+  - key: negatively regulates
+    source: MESH:D000086
+    target: UniProt:P07451
+  - key: negatively regulates
+    source: MESH:D000086
+    target: UniProt:P00918
+  - key: negatively regulates
+    source: MESH:D000086
+    target: UniProt:P22748
+  - key: negatively regulates
+    source: MESH:D000086
+    target: UniProt:P43166
+  - key: negatively regulates
+    source: MESH:D000086
+    target: UniProt:O43570
+  - key: positively regulates
+    source: UniProt:P00915
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:Q9ULX7
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:P07451
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:P00918
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:P22748
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:P43166
+    target: GO:0015701
+  - key: positively regulates
+    source: UniProt:O43570
+    target: GO:0015701
+  - key: has participant
+    source: GO:0015701
+    target: MESH:D002245
+  - key: correlated with
+    source: MESH:D002245
+    target: HP:0001950
+  - key: causes
+    source: HP:0001950
+    target: MESH:D000532
+multigraph: true
+nodes:
+  - id: MESH:D000086
+    label: Drug
+    name: Acetazolamide
+  - id: UniProt:P00915
+    label: Protein
+    name: Carbonic anhydrase 1
+  - id: UniProt:P00918
+    label: Protein
+    name: Carbonic anhydrase 2
+  - id: UniProt:P22748
+    label: Protein
+    name: Carbonic anhydrase 4
+  - id: UniProt:P43166
+    label: Protein
+    name: Carbonic anhydrase 7
+  - id: UniProt:O43570
+    label: Protein
+    name: Carbonic anhydrase 12
+  - id: UniProt:Q9ULX7
+    label: Protein
+    name: Carbonic anhydrase 14
+  - id: UniProt:P07451
+    label: Protein
+    name: Carbonic anhydrase 3
+  - id: GO:0015701
+    label: BiologicalProcess
+    name: bicarbonate transport
+  - id: MESH:D002245
+    label: ChemicalSubstance
+    name: Carbon Dioxide
+  - id: HP:0001950
+    label: PhenotypicFeature
+    name: Respiratory alkalosis
+  - id: MESH:D000532
+    label: Disease
+    name: Anoxia due to high altitude
+references:
+  - https://go.drugbank.com/drugs/DB00819#BE0003634
+  - https://en.wikipedia.org/wiki/Acetazolamide

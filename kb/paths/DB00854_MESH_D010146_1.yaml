@@ -1,0 +1,77 @@
+directed: true
+graph:
+  _id: DB00854_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: levorphanol
+  drug_mesh: MESH:D007981
+  drugbank: DB:DB00854
+links:
+  - key: increases activity of
+    source: MESH:D007981
+    target: UniProt:P35372
+  - key: positively regulates
+    source: UniProt:P35372
+    target: reactome:R-HSA-111885
+  - key: negatively regulates
+    source: reactome:R-HSA-111885
+    target: GO:1990793
+  - key: negatively regulates
+    source: reactome:R-HSA-111885
+    target: GO:0061535
+  - key: positively regulates
+    source: reactome:R-HSA-111885
+    target: UniProt:Q14654
+  - key: participates in
+    source: UniProt:Q14654
+    target: GO:0060081
+  - key: negatively regulates
+    source: GO:0060081
+    target: GO:0099610
+  - key: located in
+    source: GO:1990793
+    target: CL:0000198
+  - key: located in
+    source: GO:0061535
+    target: CL:0000198
+  - key: positively regulates
+    source: GO:0099610
+    target: CL:0000198
+  - key: positively correlated with
+    source: CL:0000198
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:D007981
+    label: Drug
+    name: levorphanol
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu-type opioid receptor
+  - id: reactome:R-HSA-111885
+    label: Pathway
+    name: Opioid Signalling
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: Membrane hyperpolarization
+  - id: UniProt:Q14654
+    label: Protein
+    name: ATP-sensitive inward rectifier potassium channel 11
+  - id: GO:1990793
+    label: BiologicalProcess
+    name: Substance P secretion, neurotransmission
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: Glutamate secretion, neurotransmission
+  - id: GO:0099610
+    label: BiologicalProcess
+    name: Action potential initiation
+  - id: CL:0000198
+    label: Cell
+    name: nociceptor
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+references:
+  - https://go.drugbank.com/drugs/DB00854
+  - https://en.wikipedia.org/wiki/Opioid_receptor

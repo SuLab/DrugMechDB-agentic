@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01208_MESH_D061387_1
+  disease: Chlamydial pneumonia
+  disease_mesh: MESH:D061387
+  drug: Sparfloxacin
+  drug_mesh: MESH:C061363
+  drugbank: DB:DB01208
+links:
+  - key: decreases activity of
+    source: MESH:C061363
+    target: UniProt:Q9Z7I9
+  - key: decreases activity of
+    source: MESH:C061363
+    target: UniProt:Q54A16
+  - key: participates in
+    source: UniProt:Q9Z7I9
+    target: GO:0044787
+  - key: participates in
+    source: UniProt:Q54A16
+    target: GO:0044787
+  - key: occurs in
+    source: GO:0044787
+    target: taxonomy:83558
+  - key: causes
+    source: taxonomy:83558
+    target: MESH:D061387
+multigraph: true
+nodes:
+  - id: MESH:C061363
+    label: Drug
+    name: Sparfloxacin
+  - id: UniProt:Q9Z7I9
+    label: Protein
+    name: DNA topoisomerase 4 subunit A (Chlamydial pneumoniae)
+  - id: UniProt:Q54A16
+    label: Protein
+    name: DNA gyrase subunit A (Chlamydial pneumoniae)
+  - id: GO:0044787
+    label: BiologicalProcess
+    name: bacterial-type DNA replication
+  - id: taxonomy:83558
+    label: OrganismTaxon
+    name: Chlamydial pneumoniae
+  - id: MESH:D061387
+    label: Disease
+    name: Chlamydial pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB01208#mechanism-of-action

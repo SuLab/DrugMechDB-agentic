@@ -1,0 +1,53 @@
+comment: Simvastatin is a prodrug in which the 6-membered lactone ring of simvastatin
+  is hydrolyzed to generate the simvastatin hydroxy acid (beta,delta-dihydroxy acid),
+  an active metabolite in the body.
+directed: true
+graph:
+  _id: DB00641_MESH_D015228_1
+  disease: Hypertriglyceridemia
+  disease_mesh: MESH:D015228
+  drug: Simvastatin
+  drug_mesh: MESH:D019821
+  drugbank: DB:DB00641
+links:
+  - key: has metabolite
+    source: MESH:D019821
+    target: CHEBI:169041
+  - key: increases activity of
+    source: CHEBI:169041
+    target: UniProt:P06858
+  - key: positively regulates
+    source: UniProt:P06858
+    target: GO:0019433
+  - key: decreases abundance of
+    source: GO:0019433
+    target: MESH:D014280
+  - key: positively correlated with
+    source: MESH:D014280
+    target: MESH:D015228
+multigraph: true
+nodes:
+  - id: MESH:D019821
+    label: Drug
+    name: Simvastatin
+  - id: CHEBI:169041
+    label: ChemicalSubstance
+    name: simvastatin hydroxy acid
+  - id: UniProt:P06858
+    label: Protein
+    name: Lipoprotein lipase
+  - id: GO:0019433
+    label: BiologicalProcess
+    name: triglyceride catabolic process
+  - id: MESH:D014280
+    label: ChemicalSubstance
+    name: Triglycerides
+  - id: MESH:D015228
+    label: Disease
+    name: Hypertriglyceridemia
+references:
+  - https://go.drugbank.com/drugs/DB00641#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Simvastatin#Pharmacology
+  - https://www.uniprot.org/uniprot/P06858#function
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1760655/
+  - https://en.wikipedia.org/wiki/Hypertriglyceridemia

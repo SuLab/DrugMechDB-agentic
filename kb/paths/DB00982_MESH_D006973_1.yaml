@@ -1,0 +1,24 @@
+comment: Isotretinoin is a retinoid used to treat severe recalcitrant acne. No MoA
+  found on isotretinoin treating hypertensive disorder.
+directed: true
+graph:
+  _id: DB00982_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: isotretinoin
+  drug_mesh: MESH:D015474
+  drugbank: DB:DB00982
+links:
+  - key: treats
+    source: MESH:D015474
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D015474
+    label: Drug
+    name: Isotretinoin
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00982

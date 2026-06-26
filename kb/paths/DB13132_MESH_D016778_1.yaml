@@ -1,0 +1,46 @@
+comment: The exact mechanism of artemisinin action is not completely understood, It
+  was proposed to generate free-radicals due to its unique structure endoperoxide
+  bridge. The MoA proposed here is the one of the drug target identified for artemisinin
+  mode of action with solid experimental evidence.
+directed: true
+graph:
+  _id: DB13132_MESH_D016778_1
+  disease: Falciparum malaria
+  disease_mesh: MESH:D016778
+  drug: artemisinin
+  drug_mesh: MESH:C031327
+  drugbank: DB:DB13132
+links:
+  - key: has metabolite
+    source: MESH:C031327
+    target: CHEBI:207229
+  - key: decreases activity of
+    source: CHEBI:207229
+    target: UniProt:Q8I3Z5
+  - key: part of
+    source: UniProt:Q8I3Z5
+    target: taxonomy:5833
+  - key: causes
+    source: taxonomy:5833
+    target: MESH:D016778
+multigraph: true
+nodes:
+  - id: MESH:C031327
+    label: Drug
+    name: artemisinin
+  - id: CHEBI:207229
+    label: ChemicalSubstance
+    name: dihydroartemisinin
+  - id: UniProt:Q8I3Z5
+    label: Protein
+    name: Translationally controlled tumor protein (TCTP) homolog
+  - id: taxonomy:5833
+    label: OrganismTaxon
+    name: Plasmodium falciparum
+  - id: MESH:D016778
+    label: Disease
+    name: Falciparum malaria
+references:
+  - https://go.drugbank.com/drugs/DB13132
+  - https://link.springer.com/article/10.1007%2Fs00709-015-0805-6
+  - https://en.wikipedia.org/wiki/Artemisinin

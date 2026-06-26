@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01118_MESH_D014693_1
+  disease: Ventricular fibrillation
+  disease_mesh: MESH:D014693
+  drug: amiodarone
+  drug_mesh: MESH:D000638
+  drugbank: DB:DB01118
+links:
+  - key: negatively regulates
+    source: MESH:D000638
+    target: InterPro:IPR003938
+  - key: regulates
+    source: InterPro:IPR003938
+    target: GO:0086013
+  - key: affects risk for
+    source: GO:0086013
+    target: HP:0011675
+  - key: superclass of
+    source: HP:0011675
+    target: MESH:D014693
+multigraph: true
+nodes:
+  - id: MESH:D000638
+    label: Drug
+    name: amiodarone
+  - id: InterPro:IPR003938
+    label: GeneFamily
+    name: Potassium channel, voltage-dependent, EAG/ELK/ERG
+  - id: GO:0086013
+    label: BiologicalProcess
+    name: membrane repolarization during cardiac muscle cell action potential
+  - id: HP:0011675
+    label: PhenotypicFeature
+    name: Arrhythmia
+  - id: MESH:D014693
+    label: Disease
+    name: Ventricular fibrillation
+references:
+  - https://go.drugbank.com/drugs/DB01118

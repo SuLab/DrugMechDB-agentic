@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00603_MESH_D016889_1
+  disease: Endometrial carcinoma
+  disease_mesh: MESH:D016889
+  drug: Medroxyprogesterone
+  drug_mesh: MESH:D008525
+  drugbank: DB:DB00603
+links:
+  - key: increases activity of
+    source: DB:DB00603
+    target: UniProt:P06401
+  - key: participates in
+    source: UniProt:P06401
+    target: GO:0050847
+  - key: negatively regulates
+    source: GO:0050847
+    target: GO:0008283
+  - key: located in
+    source: GO:0008283
+    target: UBERON:0001295
+  - key: positively correlated with
+    source: UBERON:0001295
+    target: MESH:D016889
+multigraph: true
+nodes:
+  - id: DB:DB00603
+    label: Drug
+    name: Medroxyprogesterone
+  - id: UniProt:P06401
+    label: Protein
+    name: Progesterone receptor
+  - id: GO:0050847
+    label: BiologicalProcess
+    name: Progesterone receptor signaling pathway
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: UBERON:0001295
+    label: GrossAnatomicalStructure
+    name: Endometrium
+  - id: MESH:D016889
+    label: Disease
+    name: Endometrial carcinoma
+references:
+  - https://go.drugbank.com/drugs/DB00603

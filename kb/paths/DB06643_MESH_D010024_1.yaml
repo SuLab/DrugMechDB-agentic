@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB06643_MESH_D010024_1
+  disease: Osteoporosis
+  disease_mesh: MESH:D010024
+  drug: denosumab
+  drug_mesh: MESH:D000069448
+  drugbank: DB:DB06643
+links:
+  - key: disrupts
+    source: MESH:D000069448
+    target: UniProt:O14788
+  - key: positively regulates
+    source: UniProt:O14788
+    target: GO:0030316
+  - key: positively correlated with
+    source: GO:0030316
+    target: GO:0045453
+  - key: positively correlated with
+    source: GO:0045453
+    target: MESH:D010024
+multigraph: true
+nodes:
+  - id: MESH:D000069448
+    label: Drug
+    name: denosumab
+  - id: UniProt:O14788
+    label: Protein
+    name: Tumor necrosis factor ligand superfamily member 11
+  - id: GO:0030316
+    label: BiologicalProcess
+    name: osteoclast differentiation
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: bone resorption
+  - id: MESH:D010024
+    label: Disease
+    name: Osteoporosis
+references:
+  - https://go.drugbank.com/drugs/DB06643
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237023/

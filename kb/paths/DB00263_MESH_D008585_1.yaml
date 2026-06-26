@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00263_MESH_D008585_1
+  disease: Meningococcal meningitis
+  disease_mesh: MESH:D008585
+  drug: sulfafurazole
+  drug_mesh: MESH:D013444
+  drugbank: DB:DB00263
+links:
+  - key: negatively regulates
+    source: MESH:D013444
+    target: InterPro:IPR006390
+  - key: positively regulates
+    source: InterPro:IPR006390
+    target: GO:0046656
+  - key: positively correlated with
+    source: GO:0046656
+    target: GO:0032774
+  - key: in taxon
+    source: GO:0032774
+    target: taxonomy:487
+  - key: causes
+    source: taxonomy:487
+    target: MESH:D008585
+multigraph: true
+nodes:
+  - id: MESH:D013444
+    label: Drug
+    name: sulfafurazole
+  - id: InterPro:IPR006390
+    label: GeneFamily
+    name: Dihydropteroate synthase
+  - id: GO:0046656
+    label: BiologicalProcess
+    name: folic acid biosynthetic process
+  - id: GO:0032774
+    label: BiologicalProcess
+    name: RNA biosynthetic process
+  - id: taxonomy:487
+    label: OrganismTaxon
+    name: Neisseria meningitidis
+  - id: MESH:D008585
+    label: Disease
+    name: Meningococcal meningitis
+references:
+  - https://go.drugbank.com/drugs/DB00263

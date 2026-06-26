@@ -1,0 +1,64 @@
+directed: true
+graph:
+  _id: DB00575_MESH_D006973_1
+  disease: Hypertension
+  disease_mesh: MESH:D006973
+  drug: Clonidine
+  drug_mesh: MESH:D003000
+  drugbank: DB:DB00575
+links:
+  - key: increases activity of
+    source: MESH:D003000
+    target: UniProt:P08913
+  - key: increases activity of
+    source: MESH:D003000
+    target: UniProt:P18089
+  - key: increases activity of
+    source: MESH:D003000
+    target: UniProt:P18825
+  - key: negatively regulates
+    source: UniProt:P08913
+    target: GO:0048243
+  - key: negatively regulates
+    source: UniProt:P18089
+    target: GO:0048243
+  - key: negatively regulates
+    source: UniProt:P18825
+    target: GO:0048243
+  - key: participates in
+    source: GO:0048243
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D003000
+    label: Drug
+    name: Clonidine
+  - id: UniProt:P08913
+    label: Protein
+    name: Alpha-2A adrenergic receptor
+  - id: UniProt:P18089
+    label: Protein
+    name: Alpha-2B adrenergic receptor
+  - id: UniProt:P18825
+    label: Protein
+    name: Alpha-2C adrenergic receptor
+  - id: GO:0048243
+    label: BiologicalProcess
+    name: norepinephrine secretion
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertension
+references:
+  - https://go.drugbank.com/drugs/DB00575#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Clonidine#Pharmacology
+  - https://www.uniprot.org/uniprot/P08913#function
+  - https://www.uniprot.org/uniprot/P18089#function
+  - https://www.uniprot.org/uniprot/P18825#function
+  - https://en.wikipedia.org/wiki/Alpha-2_adrenergic_receptor
+  - https://en.wikipedia.org/wiki/Hypertension

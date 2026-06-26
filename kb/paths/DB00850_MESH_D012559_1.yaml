@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB00850_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: perphenazine
+  drug_mesh: MESH:D010546
+  drugbank: DB:DB00850
+links:
+  - key: decreases activity of
+    source: MESH:D010546
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:D010546
+    target: UniProt:P21728
+  - key: positively regulates
+    source: UniProt:P14416
+    target: GO:0014046
+  - key: positively regulates
+    source: UniProt:P21728
+    target: GO:0014046
+  - key: increases abundance of
+    source: GO:0014046
+    target: CHEBI:18243
+  - key: located in
+    source: CHEBI:18243
+    target: UBERON:0001910
+  - key: correlated with
+    source: UBERON:0001910
+    target: HP:0000746
+  - key: manifestation of
+    source: HP:0000746
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:D010546
+    label: Drug
+    name: perphenazine
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P21728
+    label: Protein
+    name: D(1A) dopamine receptor
+  - id: GO:0014046
+    label: BiologicalProcess
+    name: dopamine secretion
+  - id: CHEBI:18243
+    label: ChemicalSubstance
+    name: dopamine
+  - id: UBERON:0001910
+    label: GrossAnatomicalStructure
+    name: medial forebrain bundle
+  - id: HP:0000746
+    label: PhenotypicFeature
+    name: Delusions
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB00850#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Perphenazine
+  - https://en.wikipedia.org/wiki/Antipsychotic#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Mesolimbic_pathway#Relation_to_neurological_and_psychological_disorders
+comment: this drug may bind to calmodulin therefore having an anti-neoplasmic effect
+  (https://pubmed.ncbi.nlm.nih.gov/28062709/). For schizophrenia, the dopamine neurons
+  are located in the mesolimbic dopaminergic system (BTO:0005591), which is a component
+  pathway of the medial forebrain bundle (UBERON:0001910. See https://en.wikipedia.org/wiki/Medial_forebrain_bundle#Anatomy)

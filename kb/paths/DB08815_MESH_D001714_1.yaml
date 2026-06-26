@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB08815_MESH_D001714_1
+  disease: Bipolar affective disorder, current episode depression
+  disease_mesh: MESH:D001714
+  drug: lurasidone
+  drug_mesh: MESH:D000069056
+  drugbank: DB:DB08815
+links:
+  - key: decreases activity of
+    source: MESH:D000069056
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:D000069056
+    target: UniProt:P28223
+  - key: positively regulates
+    source: UniProt:P14416
+    target: GO:0014046
+  - key: positively regulates
+    source: UniProt:P28223
+    target: GO:0014046
+  - key: positively correlated with
+    source: GO:0014046
+    target: HP:0100754
+  - key: manifestation of
+    source: HP:0100754
+    target: MESH:D001714
+multigraph: true
+nodes:
+  - alt_names:
+      - Lurasidone Hydrochloride
+    id: MESH:D000069056
+    label: Drug
+    name: lurasidone
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: GO:0014046
+    label: BiologicalProcess
+    name: dopamine secretion
+  - id: HP:0100754
+    label: PhenotypicFeature
+    name: Mania
+  - alt_names:
+      - Bipolar Disorder
+    id: MESH:D001714
+    label: Disease
+    name: Bipolar affective disorder, current episode depression
+references:
+  - https://go.drugbank.com/drugs/DB08815
+  - https://en.wikipedia.org/wiki/Bipolar_disorder

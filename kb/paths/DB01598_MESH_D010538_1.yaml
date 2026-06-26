@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01598_MESH_D010538_1
+  disease: Peritonitis
+  disease_mesh: MESH:D010538
+  drug: imipenem
+  drug_mesh: MESH:D015378
+  drugbank: DB:DB01598
+links:
+  - key: decreases activity of
+    source: MESH:D015378
+    target: UniProt:P0AD65
+  - key: participates in
+    source: UniProt:P0AD65
+    target: GO:0009252
+  - key: occurs in
+    source: GO:0009252
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D010538
+multigraph: true
+nodes:
+  - id: MESH:D015378
+    label: Drug
+    name: imipenem
+  - id: UniProt:P0AD65
+    label: Protein
+    name: Penicillin-binding proteins
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: Bacterial Cell Wall Synthesis
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D010538
+    label: Disease
+    name: Peritonitis

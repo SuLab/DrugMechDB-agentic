@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00112_MESH_D005909_1
+  disease: Glioblastoma multiforme
+  disease_mesh: MESH:D005909
+  drug: Bevacizumab
+  drug_mesh: MESH:D000068258
+  drugbank: DB:DB00112
+links:
+  - key: decreases activity of
+    source: MESH:D000068258
+    target: UniProt:P15692
+  - key: participates in
+    source: UniProt:P15692
+    target: reactome:R-HSA-194138
+  - key: positively correlated with
+    source: reactome:R-HSA-194138
+    target: MESH:D005909
+multigraph: true
+nodes:
+  - id: MESH:D000068258
+    label: Drug
+    name: Bevacizumab
+  - id: UniProt:P15692
+    label: Protein
+    name: Vascular endothelial growth factor A
+  - id: reactome:R-HSA-194138
+    label: Pathway
+    name: Signaling by Vascular Epithelial Growth Factors (VEGF)
+  - id: MESH:D005909
+    label: Disease
+    name: Glioblastoma multiforme
+references:
+  - https://go.drugbank.com/drugs/DB00112
+  - https://en.wikipedia.org/wiki/Glioblastoma

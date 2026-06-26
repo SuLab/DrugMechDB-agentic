@@ -1,0 +1,49 @@
+comment: Rilpivirine is a non-nucleoside reverse transcriptase inhibitor used in combination
+  with other antiretrovirals to specifically treat human immunodeficiency virus type
+  1 (HIV-1).
+directed: true
+graph:
+  _id: DB08864_MESH_D015658_1
+  disease: Human immunodeficiency virus infection
+  disease_mesh: MESH:D015658
+  drug: rilpivirine
+  drug_mesh: MESH:D000068696
+  drugbank: DB:DB08864
+links:
+  - key: decreases activity of
+    source: MESH:D000068696
+    target: UniProt:Q72547
+  - key: positively regulates
+    source: UniProt:Q72547
+    target: GO:0003964
+  - key: precedes
+    source: GO:0003964
+    target: GO:0019079
+  - key: in taxon
+    source: GO:0019079
+    target: taxonomy:12721
+  - key: causes
+    source: taxonomy:12721
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:D000068696
+    label: Drug
+    name: Rilpivirine
+  - id: UniProt:Q72547
+    label: Protein
+    name: Reverse transcriptase/RNaseH (Human immunodeficiency virus 1)
+  - id: GO:0003964
+    label: BiologicalProcess
+    name: RNA-directed DNA polymerase activity
+  - id: taxonomy:12721
+    label: OrganismTaxon
+    name: Human immunodeficiency virus
+  - id: GO:0019079
+    label: BiologicalProcess
+    name: Viral genome replication
+  - id: MESH:D015658
+    label: Disease
+    name: Human immunodeficiency virus infection
+references:
+  - https://go.drugbank.com/drugs/DB08864

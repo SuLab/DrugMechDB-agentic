@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB08897_MESH_D029424_1
+  disease: Chronic obstructive lung disease
+  disease_mesh: MESH:D029424
+  drug: Aclidinium bromide
+  drug_mesh: MESH:C542859
+  drugbank: DB:DB08897
+links:
+  - key: decreases activity of
+    source: MESH:C542859
+    target: UniProt:P20309
+  - key: positively regulates
+    source: UniProt:P20309
+    target: HP:4000007
+  - key: positively correlated with
+    source: HP:4000007
+    target: GO:0006954
+  - key: contributes to
+    source: GO:0006954
+    target: MESH:D029424
+multigraph: true
+nodes:
+  - id: MESH:C542859
+    label: Drug
+    name: Aclidinium bromide
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: HP:4000007
+    label: PhenotypicFeature
+    name: Bronchoconstriction
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D029424
+    label: Disease
+    name: Chronic obstructive lung disease
+references:
+  - https://go.drugbank.com/drugs/DB08897#BE0000045

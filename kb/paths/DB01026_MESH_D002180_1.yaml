@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01026_MESH_D002180_1
+  disease: Candidiasis, Oral
+  disease_mesh: MESH:D002180
+  drug: ketoconazole
+  drug_mesh: MESH:D007654
+  drugbank: DB:DB01026
+links:
+  - key: decreases activity of
+    source: MESH:D007654
+    target: UniProt:P10613
+  - key: positively regulates
+    source: UniProt:P10613
+    target: GO:0006696
+  - key: positively correlated with
+    source: GO:0006696
+    target: GO:0042546
+  - key: occurs in
+    source: GO:0042546
+    target: taxonomy:5476
+  - key: causes
+    source: taxonomy:5476
+    target: MESH:D002180
+multigraph: true
+nodes:
+  - id: MESH:D007654
+    label: Drug
+    name: ketoconazole
+  - id: UniProt:P10613
+    label: Protein
+    name: Lanosterol 14-alpha demethylase
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: ergosterol biosynthetic process
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: cell wall biogenesis
+  - id: taxonomy:5476
+    label: OrganismTaxon
+    name: Candida albicans
+  - id: MESH:D002180
+    label: Disease
+    name: Candidiasis, Oral
+references:
+  - https://go.drugbank.com/drugs/DB01026#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22KETOCONAZOLE%22
+  - https://www.uniprot.org/uniprot/P10613#function
+  - https://en.wikipedia.org/wiki/Oral_candidiasis

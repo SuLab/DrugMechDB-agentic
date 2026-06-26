@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB04575_MESH_D059268_1
+  disease: Atrophic vaginitis
+  disease_mesh: MESH:D059268
+  drug: quinestrol
+  drug_mesh: MESH:D011800
+  drugbank: DB:DB04575
+links:
+  - key: positively regulates
+    source: MESH:D011800
+    target: UniProt:P03372
+  - key: participates in
+    source: UniProt:P03372
+    target: reactome:R-HSA-9018519
+  - key: negatively correlated with
+    source: reactome:R-HSA-9018519
+    target: HP:0031088
+  - key: negatively correlated with
+    source: reactome:R-HSA-9018519
+    target: HP:0030683
+  - key: manifestation of
+    source: HP:0030683
+    target: MESH:D059268
+  - key: manifestation of
+    source: HP:0031088
+    target: MESH:D059268
+multigraph: true
+nodes:
+  - id: MESH:D011800
+    label: Drug
+    name: quinestrol
+  - id: UniProt:P03372
+    label: Protein
+    name: Estrogen receptor
+  - id: reactome:R-HSA-9018519
+    label: Pathway
+    name: Estrogen-dependent gene expression
+  - id: HP:0030683
+    label: PhenotypicFeature
+    name: Vaginitis
+  - id: HP:0031088
+    label: PhenotypicFeature
+    name: Vaginal dryness
+  - id: MESH:D059268
+    label: Disease
+    name: Atrophic vaginitis
+references:
+  - https://go.drugbank.com/drugs/DB04575

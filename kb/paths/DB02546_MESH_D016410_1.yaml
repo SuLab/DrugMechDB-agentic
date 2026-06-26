@@ -1,0 +1,85 @@
+directed: true
+graph:
+  _id: DB02546_MESH_D016410_1
+  disease: Primary cutaneous T-cell lymphoma
+  disease_mesh: MESH:D016410
+  drug: vorinostat
+  drug_mesh: MESH:C111237
+  drugbank: DB:DB02546
+links:
+  - key: decreases activity of
+    source: MESH:C111237
+    target: UniProt:Q13547
+  - key: decreases activity of
+    source: MESH:C111237
+    target: UniProt:Q92769
+  - key: decreases activity of
+    source: MESH:C111237
+    target: UniProt:O15379
+  - key: decreases activity of
+    source: MESH:C111237
+    target: UniProt:Q9UBN7
+  - key: increases abundance of
+    source: UniProt:Q13547
+    target: GO:0070577
+  - key: increases abundance of
+    source: UniProt:Q92769
+    target: GO:0070577
+  - key: increases abundance of
+    source: UniProt:O15379
+    target: GO:0070577
+  - key: increases abundance of
+    source: UniProt:Q9UBN7
+    target: GO:0070577
+  - key: decreases activity of
+    source: GO:0070577
+    target: HP:0031377
+  - key: positively regulates
+    source: GO:0070577
+    target: GO:0071158
+  - key: positively regulates
+    source: GO:0070577
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D016410
+  - key: negatively correlated with
+    source: GO:0071158
+    target: MESH:D016410
+  - key: correlated with
+    source: HP:0031377
+    target: MESH:D016410
+multigraph: true
+nodes:
+  - id: MESH:C111237
+    label: Drug
+    name: vorinostat
+  - id: UniProt:Q13547
+    label: Protein
+    name: Histone deacetylase 1
+  - id: UniProt:Q92769
+    label: Protein
+    name: Histone deacetylase 2
+  - id: UniProt:O15379
+    label: Protein
+    name: Histone deacetylase 3
+  - id: UniProt:Q9UBN7
+    label: Protein
+    name: Histone deacetylase 6
+  - id: GO:0070577
+    label: ChemicalSubstance
+    name: acetylated histones
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: tumor cell proliferation
+  - id: GO:0071158
+    label: BiologicalProcess
+    name: cell cycle arrest
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptosis
+  - id: MESH:D016410
+    label: Disease
+    name: Primary cutaneous T-cell lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB02546#BE0002365

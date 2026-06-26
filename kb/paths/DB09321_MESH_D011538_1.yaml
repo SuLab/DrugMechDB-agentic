@@ -1,0 +1,39 @@
+directed: true
+graph:
+  _id: DB09321_MESH_D011538_1
+  disease: Pruritus ani
+  disease_mesh: MESH:D011538
+  drug: zinc oxide
+  drug_mesh: MESH:D015034
+  drugbank: DB:DB09321
+links:
+  - key: decreases abundance of
+    source: MESH:D015034
+    target: taxonomy:4751
+  - key: negatively regulates
+    source: MESH:D015034
+    target: GO:0006954
+  - key: causes
+    source: taxonomy:4751
+    target: MESH:D011538
+  - key: contributes to
+    source: GO:0006954
+    target: MESH:D011538
+multigraph: true
+nodes:
+  - id: MESH:D015034
+    label: Drug
+    name: Zinc oxide
+  - id: taxonomy:4751
+    label: OrganismTaxon
+    name: Fungi
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammation
+  - id: MESH:D011538
+    label: Disease
+    name: Pruritus ani
+references:
+  - https://go.drugbank.com/drugs/DB09321
+  - https://pubmed.ncbi.nlm.nih.gov/30299956/
+  - https://en.wikipedia.org/wiki/Pruritus_ani

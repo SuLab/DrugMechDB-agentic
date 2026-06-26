@@ -1,0 +1,106 @@
+directed: true
+graph:
+  _id: DB01209_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: dezocine
+  drug_mesh: MESH:C010827
+  drugbank: DB:DB01209
+links:
+  - key: increases activity of
+    source: MESH:C010827
+    target: UniProt:P35372
+  - key: decreases activity of
+    source: MESH:C010827
+    target: UniProt:P41145
+  - key: positively regulates
+    source: UniProt:P35372
+    target: reactome:R-HSA-372790
+  - key: positively regulates
+    source: UniProt:P41145
+    target: reactome:R-HSA-372790
+  - key: decreases activity of
+    source: reactome:R-HSA-372790
+    target: UniProt:B7Z2C7
+  - key: increases abundance of
+    source: UniProt:B7Z2C7
+    target: CHEBI:17489
+  - key: negatively regulates
+    source: CHEBI:17489
+    target: UniProt:Q14654
+  - key: positively correlated with
+    source: CHEBI:17489
+    target: GO:0070509
+  - key: participates in
+    source: UniProt:Q14654
+    target: GO:0060081
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:1990793
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0061535
+  - key: negatively regulates
+    source: GO:0060081
+    target: GO:0099610
+  - key: located in
+    source: GO:1990793
+    target: CL:0000198
+  - key: located in
+    source: GO:0061535
+    target: CL:0000198
+  - key: positively regulates
+    source: GO:0099610
+    target: CL:0000198
+  - key: positively correlated with
+    source: CL:0000198
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:C010827
+    label: Drug
+    name: Dezocine
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu-type opioid receptor
+  - id: UniProt:P41145
+    label: Protein
+    name: Kappa-type opioid receptor
+  - id: reactome:R-HSA-372790
+    label: Pathway
+    name: Signaling by GPCR
+  - id: UniProt:B7Z2C7
+    label: Protein
+    name: Adenylate cyclase
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: UniProt:Q14654
+    label: Protein
+    name: ATP-sensitive inward rectifier potassium channel 11
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: transmembrane calcium influx
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: membrane hyperpolarization
+  - id: GO:1990793
+    label: BiologicalProcess
+    name: substance P secretion, neurotransmission
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: glutamate secretion, neurotransmission
+  - id: GO:0099610
+    label: BiologicalProcess
+    name: action potential initiation
+  - id: CL:0000198
+    label: Cell
+    name: nociceptor
+  - id: MESH:D010146
+    label: Disease
+    name: pain
+references:
+  - https://go.drugbank.com/drugs/DB00813
+  - https://en.wikipedia.org/wiki/Opioid_receptor
+  - https://pubmed.ncbi.nlm.nih.gov/15625131/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1621137/

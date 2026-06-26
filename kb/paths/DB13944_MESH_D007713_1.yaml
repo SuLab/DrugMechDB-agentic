@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB13944_MESH_D007713_1
+  disease: Klinefelter's syndrome, XXY
+  disease_mesh: MESH:D007713
+  drug: Testosterone enantate
+  drug_mesh: MESH:C004648
+  drugbank: DB:DB13944
+links:
+  - key: increases activity of
+    source: MESH:C004648
+    target: UniProt:P10275
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0030521
+  - key: positively regulates
+    source: GO:0030521
+    target: GO:0003006
+  - key: positively regulates
+    source: GO:0030521
+    target: GO:0048808
+  - key: negatively correlated with
+    source: GO:0048808
+    target: MESH:D007713
+  - key: negatively correlated with
+    source: GO:0003006
+    target: HP:0003251
+  - key: positively correlated with
+    source: HP:0003251
+    target: MESH:D007713
+multigraph: true
+nodes:
+  - id: MESH:C004648
+    label: Drug
+    name: Testosterone enantate
+  - id: UniProt:P10275
+    label: Protein
+    name: Androgen receptor
+  - id: GO:0030521
+    label: BiologicalProcess
+    name: Androgen receptor signaling pathway
+  - id: GO:0003006
+    label: BiologicalProcess
+    name: Developmental process involved in reproduction
+  - id: HP:0003251
+    label: PhenotypicFeature
+    name: Male infertility
+  - id: GO:0048808
+    label: BiologicalProcess
+    name: Male genitalia morphogenesis
+  - id: MESH:D007713
+    label: Disease
+    name: Klinefelter's syndrome, XXY
+references:
+  - https://en.wikipedia.org/wiki/Klinefelter_syndrome
+  - https://go.drugbank.com/drugs/DB13944

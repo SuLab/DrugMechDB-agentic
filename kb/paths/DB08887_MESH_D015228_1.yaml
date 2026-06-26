@@ -1,0 +1,71 @@
+comment: Icosapent ethyl is an ethyl ester of eicosapentaenoic acid, which is used
+  to treat hypertriglyceridemia.
+directed: true
+graph:
+  _id: DB08887_MESH_D015228_1
+  disease: Hypertriglyceridemia
+  disease_mesh: MESH:D015228
+  drug: Icosapent ethyl
+  drugbank: DB:DB08887
+links:
+  - key: positively regulates
+    source: DB:DB08887
+    target: GO:0006635
+  - key: negatively regulates
+    source: DB:DB08887
+    target: GO:0008610
+  - key: decreases activity of
+    source: DB:DB08887
+    target: UniProt:O75907
+  - key: increases activity of
+    source: DB:DB08887
+    target: UniProt:P06858
+  - key: negatively correlated with
+    source: GO:0006635
+    target: GO:0019915
+  - key: positively correlated with
+    source: GO:0008610
+    target: GO:0019915
+  - key: positively regulates
+    source: UniProt:O75907
+    target: GO:0019915
+  - key: negatively regulates
+    source: UniProt:P06858
+    target: GO:0019915
+  - key: positively correlated with
+    source: GO:0019915
+    target: MESH:D014280
+  - key: positively correlated with
+    source: MESH:D014280
+    target: MESH:D015228
+multigraph: true
+nodes:
+  - id: DB:DB08887
+    label: Drug
+    name: Icosapent ethyl
+  - id: GO:0006635
+    label: BiologicalProcess
+    name: fatty acid beta-oxidation
+  - id: GO:0008610
+    label: BiologicalProcess
+    name: lipid biosynthetic process
+  - id: UniProt:O75907
+    label: Protein
+    name: Diacylglycerol O-acyltransferase 1
+  - id: UniProt:P06858
+    label: Protein
+    name: Lipoprotein lipase
+  - id: GO:0019915
+    label: BiologicalProcess
+    name: lipid storage
+  - id: MESH:D014280
+    label: ChemicalSubstance
+    name: Triglycerides
+  - id: MESH:D015228
+    label: Disease
+    name: Hypertriglyceridemia
+references:
+  - https://go.drugbank.com/drugs/DB08887#mechanism-of-action
+  - https://www.uniprot.org/uniprot/O75907#function
+  - https://www.uniprot.org/uniprot/P06858#function
+  - https://en.wikipedia.org/wiki/Hypertriglyceridemia

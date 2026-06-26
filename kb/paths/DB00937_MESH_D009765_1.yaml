@@ -1,0 +1,75 @@
+directed: true
+graph:
+  _id: DB00937_MESH_D009765_1
+  disease: Obesity
+  disease_mesh: MESH:D009765
+  drug: diethylpropion
+  drug_mesh: MESH:D004053
+  drugbank: DB:DB00937
+links:
+  - key: decreases activity of
+    source: MESH:D004053
+    target: UniProt:P23975
+  - key: decreases activity of
+    source: MESH:D004053
+    target: UniProt:Q01959
+  - key: participates in
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: participates in
+    source: UniProt:Q01959
+    target: GO:0090494
+  - key: decreases abundance of
+    source: GO:0051620
+    target: MESH:D009638
+  - key: decreases abundance of
+    source: GO:0090494
+    target: MESH:D004298
+  - key: negatively correlated with
+    source: MESH:D009638
+    target: MESH:D009478
+  - key: negatively correlated with
+    source: MESH:D004298
+    target: MESH:D009478
+  - key: positively regulates
+    source: MESH:D009478
+    target: HP:0002591
+  - key: contributes to
+    source: HP:0002591
+    target: MESH:D009765
+multigraph: true
+nodes:
+  - id: MESH:D004053
+    label: Drug
+    name: diethylpropion
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: UniProt:Q01959
+    label: Protein
+    name: Sodium-dependent dopamine transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: norepinephrine uptake
+  - id: GO:0090494
+    label: BiologicalProcess
+    name: dopamine uptake
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: MESH:D009478
+    label: ChemicalSubstance
+    name: Neuropeptide Y
+  - id: HP:0002591
+    label: PhenotypicFeature
+    name: Polyphagia
+  - id: MESH:D009765
+    label: Disease
+    name: Obesity
+references:
+  - https://go.drugbank.com/drugs/DB00937#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P23975#function
+  - https://www.uniprot.org/uniprot/Q01959#function

@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB09036_MESH_D005871_1
+  disease: Angiofollicular lymph node hyperplasia
+  disease_mesh: MESH:D005871
+  drug: Siltuximab
+  drug_mesh: MESH:C504234
+  drugbank: DB:DB09036
+links:
+  - key: decreases activity of
+    source: MESH:C504234
+    target: UniProt:P05231
+  - key: positively correlated with
+    source: UniProt:P05231
+    target: MESH:D005871
+multigraph: true
+nodes:
+  - id: MESH:C504234
+    label: Drug
+    name: Siltuximab
+  - id: UniProt:P05231
+    label: Protein
+    name: Interleukin-6
+  - id: MESH:D005871
+    label: Disease
+    name: Angiofollicular lymph node hyperplasia
+references:
+  - https://go.drugbank.com/drugs/DB09036

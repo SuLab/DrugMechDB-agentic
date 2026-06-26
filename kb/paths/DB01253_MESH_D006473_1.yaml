@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB01253_MESH_D006473_1
+  disease: Postpartum hemorrhage
+  disease_mesh: MESH:D006473
+  drug: ergometrine
+  drug_mesh: MESH:D004874
+  drugbank: DB:DB01253
+links:
+  - key: increases activity of
+    source: MESH:D004874
+    target: UniProt:P35348
+  - key: located in
+    source: UniProt:P35348
+    target: UBERON:0001135
+  - key: location of
+    source: UBERON:0001135
+    target: UBERON:0000995
+  - key: increases activity of
+    source: UBERON:0000995
+    target: GO:0070471
+  - key: negatively correlated with
+    source: GO:0070471
+    target: MESH:D006473
+multigraph: true
+nodes:
+  - id: MESH:D004874
+    label: Drug
+    name: ergometrine
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UBERON:0001135
+    label: GrossAnatomicalStructure
+    name: smooth muscle
+  - id: UBERON:0000995
+    label: GrossAnatomicalStructure
+    name: uterus
+  - id: GO:0070471
+    label: BiologicalProcess
+    name: uterine smooth muscle contraction
+  - id: MESH:D006473
+    label: Disease
+    name: Postpartum hemorrhage
+references:
+  - https://go.drugbank.com/drugs/DB01253#BE0000501

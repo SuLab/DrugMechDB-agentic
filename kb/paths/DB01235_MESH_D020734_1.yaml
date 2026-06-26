@@ -1,0 +1,85 @@
+directed: true
+graph:
+  _id: DB01235_MESH_D020734_1
+  disease: Parkinsonism
+  disease_mesh: MESH:D020734
+  drug: melevodopa
+  drug_mesh: MESH:C035420
+  drugbank: DB:DB01235
+links:
+  - key: increases activity of
+    source: MESH:C035420
+    target: UniProt:P21728
+  - key: increases activity of
+    source: MESH:C035420
+    target: UniProt:P21918
+  - key: increases activity of
+    source: MESH:C035420
+    target: UniProt:P14416
+  - key: increases activity of
+    source: MESH:C035420
+    target: UniProt:P35462
+  - key: increases activity of
+    source: MESH:C035420
+    target: UniProt:P21917
+  - key: positively correlated with
+    source: UniProt:P21917
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P21728
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P21728
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P21918
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P35462
+    target: MESH:D004298
+  - key: participates in
+    source: MESH:D004298
+    target: GO:0061527
+  - key: negatively correlated with
+    source: GO:0061527
+    target: HP:0100022
+  - key: manifestation of
+    source: HP:0100022
+    target: MESH:D020734
+multigraph: true
+nodes:
+  - id: MESH:C035420
+    label: Drug
+    name: Melevodopa
+  - id: UniProt:P21728
+    label: Protein
+    name: D(1A) dopamine receptor
+  - id: UniProt:P21918
+    label: Protein
+    name: D(1B) dopamine receptor
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P35462
+    label: Protein
+    name: D(3) dopamine receptor
+  - id: UniProt:P21917
+    label: Protein
+    name: D(4) dopamine receptor
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: HP:0100022
+    label: PhenotypicFeature
+    name: Abnormality of movement
+  - id: MESH:D020734
+    label: Disease
+    name: Parkinsonism
+references:
+  - https://go.drugbank.com/drugs/DB01235#BE0000145

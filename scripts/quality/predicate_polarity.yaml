@@ -1,0 +1,155 @@
+# Predicate polarity lexicon — foundation of the deterministic post-QC structural checks.
+#
+# STATUS: draft proposal. The `confidence: review` rows need a human sign-off
+# before this is treated as authoritative. The `confidence: high` rows cover the predicates
+# that account for the large majority of edges in the corpus and are unambiguous.
+#
+# PURPOSE: assign each of the 67 Biolink predicates in src/drugmechdb/schema/biolink_predicates.yaml
+# a DIRECTION OF INFLUENCE so a path's net effect on the disease can be computed deterministically
+# (no LLM). See docs/path_quality_framework.md §3-4.
+#
+# `sign` = effect of the edge's SUBJECT on its OBJECT, read along the edge direction (source->target):
+#    +1  subject increases / activates / brings about the object
+#    -1  subject decreases / inhibits / removes the object
+#     0  no inherent direction of influence (contextual, structural, binding, undirected)
+#
+# Net polarity of a drug->disease path = product of the signs of its directional edges
+# (sign 0 edges are skipped). A correct therapeutic mechanism must net to -1 (disease decreased).
+#
+# `role` groups predicates so the topology checker can reason about them:
+#    regulatory      directional mechanistic step (activity/abundance/expression/etc.)
+#    causal          causes / contributes to / produces / has output
+#    correlation     correlated-with family (carries direction but is weaker than causal)
+#    clinical_outcome drug<->disease outcome assertion (treats/prevents/...) — usually a SHORTCUT
+#    contextual      location / taxon / temporal / participation / binding — neutral scaffolding
+#    structural      part-of / subclass / similarity — neutral, ontological
+#    derivation      metabolite / derives / produced-by — biochemical lineage
+#    reverse         causal arrow points OPPOSITE the edge direction (caused by, affected by, ...)
+#
+# `confidence`: high | review   (review = best-guess sign, needs human confirmation)
+
+predicates:
+
+  # ── High-frequency, unambiguous (cover most edges) ──────────────────────────
+  positively regulates:        {sign: +1, role: regulatory, confidence: high}
+  positively correlated with:  {sign: +1, role: correlation, confidence: high}
+  decreases activity of:       {sign: -1, role: regulatory, confidence: high}
+  increases activity of:       {sign: +1, role: regulatory, confidence: high}
+  negatively regulates:        {sign: -1, role: regulatory, confidence: high}
+  causes:                      {sign: +1, role: causal, confidence: high}
+  negatively correlated with:  {sign: -1, role: correlation, confidence: high}
+  increases abundance of:      {sign: +1, role: regulatory, confidence: high}
+  contributes to:              {sign: +1, role: causal, confidence: high}
+  decreases abundance of:      {sign: -1, role: regulatory, confidence: high}
+  increases expression of:     {sign: +1, role: regulatory, confidence: high}
+  decreases expression of:     {sign: -1, role: regulatory, confidence: high}
+  increases degradation of:    {sign: -1, role: regulatory, confidence: high, note: "more degradation => less of the object"}
+  decreases synthesis of:      {sign: -1, role: regulatory, confidence: high}
+  decreases uptake of:         {sign: -1, role: regulatory, confidence: high}
+  increases stability of:      {sign: +1, role: regulatory, confidence: high}
+  increases transport of:      {sign: +1, role: regulatory, confidence: review, note: "effect on the transported object's level"}
+  produces:                    {sign: +1, role: causal, confidence: high}
+  disrupts:                    {sign: -1, role: regulatory, confidence: high}
+
+  # ── Clinical-outcome (drug<->disease level): valid sign, but usually a SHORTCUT edge ──
+  treats:                      {sign: -1, role: clinical_outcome, confidence: high}
+  prevents:                    {sign: -1, role: clinical_outcome, confidence: high}
+  ameliorates:                 {sign: -1, role: clinical_outcome, confidence: high}
+  exacerbates:                 {sign: +1, role: clinical_outcome, confidence: high}
+  contraindicated for:         {sign:  0, role: clinical_outcome, confidence: review, note: "not a mechanistic step; flag if present"}
+  affects risk for:            {sign:  0, role: clinical_outcome, confidence: review, note: "direction unspecified"}
+  predisposes:                 {sign: +1, role: clinical_outcome, confidence: review}
+
+  # ── Neutral scaffolding (skipped in polarity; presence is fine) ─────────────
+  participates in:             {sign: 0, role: contextual, confidence: high}
+  occurs in:                   {sign: 0, role: contextual, confidence: high}
+  in taxon:                    {sign: 0, role: contextual, confidence: high}
+  located in:                  {sign: 0, role: contextual, confidence: high}
+  location of:                 {sign: 0, role: contextual, confidence: high}
+  expressed in:                {sign: 0, role: contextual, confidence: high}
+  precedes:                    {sign: 0, role: contextual, confidence: high}
+  capable of:                  {sign: 0, role: contextual, confidence: high}
+  actively involved in:        {sign: 0, role: contextual, confidence: high}
+  has participant:             {sign: 0, role: contextual, confidence: high}
+  has output:                  {sign: +1, role: causal, confidence: review, note: "process -> output produced"}
+  molecularly interacts with:  {sign: 0, role: contextual, confidence: high, note: "binding; no direction"}
+  directly interacts with:     {sign: 0, role: contextual, confidence: high}
+  physically interacts with:   {sign: 0, role: contextual, confidence: high}
+  interacts with:              {sign: 0, role: contextual, confidence: high}
+  in complex with:             {sign: 0, role: contextual, confidence: high}
+  coexists with:               {sign: 0, role: contextual, confidence: high}
+
+  # ── Structural / ontological (neutral; usually shouldn't appear mid-mechanism) ──
+  part of:                     {sign: 0, role: structural, confidence: high}
+  has part:                    {sign: 0, role: structural, confidence: high}
+  subclass of:                 {sign: 0, role: structural, confidence: high}
+  superclass of:               {sign: 0, role: structural, confidence: high}
+  chemically similar to:       {sign: 0, role: structural, confidence: high}
+  similar to:                  {sign: 0, role: structural, confidence: high}
+  has active ingredient:       {sign: 0, role: structural, confidence: high}
+
+  # ── Correlation / phenotype (directional but weak) ─────────────────────────
+  correlated with:             {sign: 0, role: correlation, confidence: review, note: "undirected; ambiguous sign"}
+  has phenotype:               {sign: +1, role: correlation, confidence: review}
+  manifestation of:            {sign: +1, role: correlation, confidence: review, note: "phenotype/sign manifests disease"}
+  phenotype of:                {sign: +1, role: reverse, confidence: review}
+  regulates:                   {sign: 0, role: regulatory, confidence: review, note: "direction unspecified; flag for tightening"}
+
+  # ── Biochemical derivation / lineage ────────────────────────────────────────
+  has metabolite:              {sign: +1, role: derivation, confidence: review}
+  is metabolite of:            {sign: +1, role: reverse, confidence: review}
+  produced by:                 {sign: +1, role: reverse, confidence: review}
+  derives into:                {sign: +1, role: derivation, confidence: review}
+  derives from:                {sign: +1, role: reverse, confidence: review}
+  expresses:                   {sign: +1, role: regulatory, confidence: review}
+  enables:                     {sign: +1, role: causal, confidence: review}
+
+  # ── Reverse-direction (causal arrow opposite the edge) — flag for re-orientation ──
+  caused by:                   {sign: +1, role: reverse, confidence: review}
+  affected by:                 {sign: 0, role: reverse, confidence: review, note: "direction + sign unspecified"}
+  disrupted by:                {sign: -1, role: reverse, confidence: review}
+
+  # ── Response modifiers ──────────────────────────────────────────────────────
+  increases response to:       {sign: +1, role: regulatory, confidence: review}
+  decreases response to:       {sign: -1, role: regulatory, confidence: review}
+
+# ── Predicate orientation (derived by the checker from role+sign; documented here) ──
+# forward : sign applies along source->target  (most regulatory/causal/correlation)
+# reverse : causal arrow is target->source     (role: reverse) -> polarity INDETERMINATE
+# neutral : sign 0, skipped                     (role: contextual/structural)
+# opaque  : directional but unknown sign        (sign 0 + role regulatory/correlation/clinical) -> INDETERMINATE
+# Indeterminate edges are NOT silently composed — the path is marked needs-review instead.
+
+# ── Node-type groups for predicate domain/range checks (Biolink-style) ──────────
+type_groups:
+  CHEM:            [Drug, ChemicalSubstance]
+  DISEASE_LIKE:    [Disease, PhenotypicFeature]
+  MOLECULAR:       [Protein, GeneFamily, MacromolecularComplex, ChemicalSubstance, MolecularActivity]
+  GENE_PRODUCT:    [Protein, GeneFamily, MacromolecularComplex, ChemicalSubstance]
+  ACTIVITY_BEARING: [Protein, GeneFamily, MacromolecularComplex, MolecularActivity, Pathway, BiologicalProcess]
+  LOCATION:        [CellularComponent, GrossAnatomicalStructure, Cell, OrganismTaxon, Pathway]
+
+# ── Predicate domain/range constraints (CONSERVATIVE — only flag clear violations) ──
+# A constraint fires only when BOTH endpoint node types are known AND violated.
+# Absent predicate => unconstrained (no flag). subj_in / obj_in reference type_groups
+# or literal Biolink node types.
+type_constraints:
+  treats:               {subj_in: CHEM,  obj_in: DISEASE_LIKE}
+  prevents:             {subj_in: CHEM,  obj_in: DISEASE_LIKE}
+  ameliorates:          {subj_in: CHEM,  obj_in: DISEASE_LIKE}
+  exacerbates:          {subj_in: CHEM,  obj_in: DISEASE_LIKE}
+  contraindicated for:  {subj_in: CHEM,  obj_in: DISEASE_LIKE}
+  in taxon:             {obj_in: [OrganismTaxon]}
+  decreases activity of: {obj_in: ACTIVITY_BEARING}
+  increases activity of: {obj_in: ACTIVITY_BEARING}
+  decreases abundance of: {obj_in: MOLECULAR}
+  increases abundance of: {obj_in: MOLECULAR}
+  increases degradation of: {obj_in: MOLECULAR}
+  decreases synthesis of: {obj_in: MOLECULAR}
+  increases expression of: {obj_in: GENE_PRODUCT}
+  decreases expression of: {obj_in: GENE_PRODUCT}
+  has phenotype:        {obj_in: [PhenotypicFeature]}
+  has metabolite:       {subj_in: CHEM,  obj_in: [ChemicalSubstance, Drug]}
+  occurs in:            {obj_in: LOCATION}
+  located in:           {obj_in: LOCATION}
+  expressed in:         {obj_in: LOCATION}

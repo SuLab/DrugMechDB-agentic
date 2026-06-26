@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00973_MESH_D006949_1
+  disease: Hyperlipidemia
+  disease_mesh: MESH:D006949
+  drug: ezetimibe
+  drug_mesh: MESH:D000069438
+  drugbank: DB:DB00973
+links:
+  - key: negatively regulates
+    source: MESH:D000069438
+    target: UniProt:Q9UHC9
+  - key: positively regulates
+    source: UniProt:Q9UHC9
+    target: GO:0098856
+  - key: increases abundance of
+    source: GO:0098856
+    target: CHEBI:18059
+  - key: positively correlated with
+    source: CHEBI:18059
+    target: MESH:D006949
+multigraph: true
+nodes:
+  - id: MESH:D000069438
+    label: Drug
+    name: ezetimibe
+  - id: UniProt:Q9UHC9
+    label: Protein
+    name: NPC1-like intracellular cholesterol transporter 1
+  - id: GO:0098856
+    label: BiologicalProcess
+    name: intestinal lipid absorption
+  - id: CHEBI:18059
+    label: ChemicalSubstance
+    name: lipid
+  - id: MESH:D006949
+    label: Disease
+    name: Hyperlipidemia
+references:
+  - https://pharos.nih.gov/ligands/ezetimibe
+  - https://pubchem.ncbi.nlm.nih.gov/compound/150311#section=Mechanism-of-Action

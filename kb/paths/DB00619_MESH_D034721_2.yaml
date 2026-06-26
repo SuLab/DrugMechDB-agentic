@@ -1,0 +1,66 @@
+directed: true
+graph:
+  _id: DB00619_MESH_D034721_2
+  disease: Mastocytosis, Systemic
+  disease_mesh: MESH:D034721
+  drug: imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+links:
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: UniProt:P10721
+  - key: positively regulates
+    source: UniProt:P10721
+    target: GO:0038109
+  - key: positively correlated with
+    source: GO:0038109
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0038109
+    target: MESH:D002470
+  - key: positively correlated with
+    source: GO:0038109
+    target: GO:0030154
+  - key: increases abundance of
+    source: GO:0008283
+    target: MESH:D008407
+  - key: correlated with
+    source: MESH:D008407
+    target: MESH:D034721
+  - key: positively correlated with
+    source: MESH:D002470
+    target: MESH:D034721
+  - key: positively correlated with
+    source: GO:0030154
+    target: MESH:D034721
+multigraph: true
+nodes:
+  - id: MESH:D000068877
+    label: Drug
+    name: imatinib
+  - id: UniProt:P10721
+    label: Protein
+    name: Mast/stem cell growth factor receptor Kit
+  - id: GO:0038109
+    label: BiologicalProcess
+    name: Kit signaling pathway
+  - id: GO:0030154
+    label: BiologicalProcess
+    name: cell differentiation
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: MESH:D002470
+    label: BiologicalProcess
+    name: Cell Survival
+  - id: MESH:D008407
+    label: Cell
+    name: Mast Cells
+  - id: MESH:D034721
+    label: Disease
+    name: Mastocytosis, Systemic
+references:
+  - https://www.cancer.gov/publications/dictionaries/cancer-drug/def/imatinib-mesylate
+  - https://go.drugbank.com/drugs/DB00619#BE0000453
+comment: The disease is denoted Systemic mast cell disease in the original file.

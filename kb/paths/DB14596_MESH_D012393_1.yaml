@@ -1,0 +1,26 @@
+comment: Contraindicated; steroids can cause Rosacea https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3088930/
+  Please note that original DrugBank ID was DB00873 for drug loteprednol, however
+  the loteprednol etabonate has been annotated in DrugBank under DB14596.
+directed: true
+graph:
+  _id: DB14596_MESH_D012393_1
+  disease: Rosacea
+  disease_mesh: MESH:D012393
+  drug: loteprednol etabonate
+  drug_mesh: MESH:D000069559
+  drugbank: DB:DB14596
+links:
+  - key: treats
+    source: MESH:D000069559
+    target: MESH:D012393
+multigraph: true
+nodes:
+  - id: MESH:D000069559
+    label: Drug
+    name: Loteprednol etabonate
+  - id: MESH:D012393
+    label: Disease
+    name: Rosacea
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/26280139/
+  - https://go.drugbank.com/drugs/DB14596

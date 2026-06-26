@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00850_MESH_D012559_2
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: prochlorperazine
+  drug_mesh: MESH:D011346
+  drugbank: DB:DB00850
+links:
+  - key: decreases activity of
+    source: MESH:D011346
+    target: UniProt:P14416
+  - key: positively regulates
+    source: UniProt:P14416
+    target: GO:0014046
+  - key: increases abundance of
+    source: GO:0014046
+    target: CHEBI:18243
+  - key: positively correlated with
+    source: CHEBI:18243
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:D011346
+    label: Drug
+    name: prochlorperazine
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: GO:0014046
+    label: BiologicalProcess
+    name: dopamine secretion
+  - id: CHEBI:18243
+    label: ChemicalSubstance
+    name: dopamine
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB00433#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Prochlorperazine#Pharmacology
+  - https://en.wikipedia.org/wiki/Antipsychotic#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Mesolimbic_pathway#Relation_to_neurological_and_psychological_disorders

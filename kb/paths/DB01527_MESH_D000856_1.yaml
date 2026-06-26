@@ -1,0 +1,22 @@
+directed: true
+graph:
+  _id: DB01527_MESH_D000856_1
+  disease: Anorexia nervosa
+  disease_mesh: MESH:D000856
+  drug: clortermine
+  drugbank: DB:DB01527
+links:
+  - key: treats
+    source: DB:DB01527
+    target: MESH:D000856
+  - key: contraindicated for
+    source: DB:DB01527
+    target: MESH:D000856
+multigraph: true
+nodes:
+  - id: DB:DB01527
+    label: Drug
+    name: clortermine
+  - id: MESH:D000856
+    label: Disease
+    name: Anorexia nervosa

@@ -1,0 +1,37 @@
+directed: true
+graph:
+  _id: DB00908_MESH_D008288_1
+  disease: Malaria
+  disease_mesh: MESH:D008288
+  drug: quinidine
+  drug_mesh: MESH:D011802
+  drugbank: DB:DB00908
+links:
+  - key: molecularly interacts with
+    source: MESH:D011802
+    target: MESH:D006418
+  - key: disrupts
+    source: MESH:D006418
+    target: taxonomy:5820
+  - key: causes
+    source: taxonomy:5820
+    target: MESH:D008288
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C016713
+      - MESH:C047144
+    id: MESH:D011802
+    label: Drug
+    name: quinidine
+  - id: MESH:D006418
+    label: ChemicalSubstance
+    name: Heme
+  - id: taxonomy:5820
+    label: OrganismTaxon
+    name: Plasmodium sp.
+  - id: MESH:D008288
+    label: Disease
+    name: Malaria
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/441074

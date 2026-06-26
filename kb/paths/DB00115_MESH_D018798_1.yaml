@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00115_MESH_D018798_1
+  disease: Iron deficiency anemia
+  disease_mesh: MESH:D018798
+  drug: cyanocobalamin
+  drugbank: DB:DB00115
+links:
+  - key: negatively correlated with
+    source: DB:DB00115
+    target: MESH:D014806
+  - key: positively correlated with
+    source: MESH:D014806
+    target: MESH:D008286
+  - key: negatively correlated with
+    source: MESH:D008286
+    target: GO:005507
+  - key: negatively correlated with
+    source: GO:005507
+    target: MESH:D018798
+multigraph: true
+nodes:
+  - id: DB:DB00115
+    label: Drug
+    name: cyanocobalamin
+  - id: MESH:D014806
+    label: Disease
+    name: Vitamin B 12 Deficiency
+  - id: MESH:D008286
+    label: Disease
+    name: Malabsorption Syndromes
+  - id: GO:005507
+    label: BiologicalProcess
+    name: iron ion homeostasis
+  - id: MESH:D018798
+    label: Disease
+    name: Iron deficiency anemia
+references:
+  - https://go.drugbank.com/drugs/DB00115#BE0000777
+  - https://en.wikipedia.org/wiki/Iron-deficiency_anemia

@@ -1,0 +1,77 @@
+directed: true
+graph:
+  _id: DB00279_MESH_D003409_1
+  disease: Congenital hypothyroidism
+  disease_mesh: MESH:D003409
+  drug: Liothyronine
+  drug_mesh: MESH:D014284
+  drugbank: DB:DB00279
+links:
+  - key: increases activity of
+    source: MESH:D014284
+    target: UniProt:P10827
+  - key: increases activity of
+    source: MESH:D014284
+    target: UniProt:P10828
+  - key: positively regulates
+    source: UniProt:P10827
+    target: GO:0002154
+  - key: positively regulates
+    source: UniProt:P10828
+    target: GO:0002154
+  - key: negatively correlated with
+    source: GO:0002154
+    target: HP:0001508
+  - key: negatively correlated with
+    source: GO:0002154
+    target: HP:0001252
+  - key: negatively correlated with
+    source: GO:0002154
+    target: HP:0002045
+  - key: negatively correlated with
+    source: GO:0002154
+    target: HP:0001249
+  - key: positively correlated with
+    source: HP:0001508
+    target: MESH:D003409
+  - key: positively correlated with
+    source: HP:0001249
+    target: MESH:D003409
+  - key: positively correlated with
+    source: HP:0001252
+    target: MESH:D003409
+  - key: positively correlated with
+    source: HP:0002045
+    target: MESH:D003409
+multigraph: true
+nodes:
+  - id: MESH:D014284
+    label: Drug
+    name: Liothyronine
+  - id: UniProt:P10827
+    label: Protein
+    name: Thyroid hormone receptor alpha
+  - id: UniProt:P10828
+    label: Protein
+    name: Thyroid hormone receptor beta
+  - id: GO:0002154
+    label: BiologicalProcess
+    name: Thyroid hormone mediated signaling pathway
+  - id: HP:0001508
+    label: PhenotypicFeature
+    name: Failure to thrive
+  - id: HP:0001252
+    label: PhenotypicFeature
+    name: Hypotonia
+  - id: HP:0002045
+    label: PhenotypicFeature
+    name: Hypothermia
+  - id: HP:0001249
+    label: PhenotypicFeature
+    name: Intellectual disability
+  - id: MESH:D003409
+    label: Disease
+    name: Congenital hypothyroidism
+references:
+  - https://go.drugbank.com/drugs/DB00279#BE0000687
+  - https://en.wikipedia.org/wiki/Congenital_hypothyroidism#Signs_and_symptoms

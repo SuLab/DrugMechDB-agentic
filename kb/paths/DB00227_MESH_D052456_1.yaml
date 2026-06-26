@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00227_MESH_D052456_1
+  disease: Hypoalphalipoproteinemia
+  disease_mesh: MESH:D052456
+  drug: lovastatin
+  drug_mesh: MESH:D008148
+  drugbank: DB:DB00227
+links:
+  - key: has metabolite
+    source: MESH:D008148
+    target: DB:DBMET01698
+  - key: decreases activity of
+    source: DB:DBMET01698
+    target: UniProt:P04035
+  - key: positively regulates
+    source: UniProt:P04035
+    target: GO:0008610
+  - key: correlated with
+    source: GO:0008610
+    target: GO:0008654
+  - key: increases abundance of
+    source: GO:0008654
+    target: MESH:D008075
+  - key: positively correlated with
+    source: MESH:D008075
+    target: MESH:D052456
+multigraph: true
+nodes:
+  - id: MESH:D008148
+    label: Drug
+    name: lovastatin
+  - id: DB:DBMET01698
+    label: ChemicalSubstance
+    name: 6'beta-Hydroxylovastatin
+  - id: UniProt:P04035
+    label: Protein
+    name: 3-hydroxy-3-methylglutaryl-coenzyme A reductase
+  - id: GO:0008610
+    label: BiologicalProcess
+    name: lipid biosynthetic process
+  - id: GO:0008654
+    label: BiologicalProcess
+    name: phospholipid biosynthetic process
+  - id: MESH:D008075
+    label: ChemicalSubstance
+    name: Lipoproteins, HDL
+  - id: MESH:D052456
+    label: Disease
+    name: Hypoalphalipoproteinemia
+references:
+  - https://go.drugbank.com/drugs/DB00227#BE0000574
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL503/
+  - https://en.wikipedia.org/wiki/Lovastatin#Mechanism_of_action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/53232#section=Metabolism-Metabolites

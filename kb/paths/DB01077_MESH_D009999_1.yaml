@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB01077_MESH_D009999_1
+  disease: Heterotopic ossification
+  disease_mesh: MESH:D009999
+  drug: etidronic acid
+  drug_mesh: MESH:D012968
+  drugbank: DB:DB01077
+links:
+  - key: prevents
+    source: MESH:D012968
+    target: GO:0001503
+  - key: correlated with
+    source: GO:0001503
+    target: HP:0011849
+  - key: manifestation of
+    source: HP:0011849
+    target: MESH:D009999
+multigraph: true
+nodes:
+  - id: MESH:D012968
+    label: Drug
+    name: etidronic acid
+  - id: GO:0001503
+    label: BiologicalProcess
+    name: ossification
+  - id: HP:0011849
+    label: PhenotypicFeature
+    name: Abnormal bone ossification
+  - id: MESH:D009999
+    label: Disease
+    name: Heterotopic ossification
+references:
+  - https://en.wikipedia.org/wiki/Etidronic_acid#Medical

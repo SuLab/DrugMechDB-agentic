@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00525_MESH_D014010_1
+  disease: Pityriasis versicolor
+  disease_mesh: MESH:D014010
+  drug: tolnaftate
+  drug_mesh: MESH:D014047
+  drugbank: DB:DB00525
+links:
+  - key: decreases activity of
+    source: MESH:D014047
+    target: InterPro:IPR040125
+  - key: positively regulates
+    source: InterPro:IPR040125
+    target: GO:0006696
+  - key: increases abundance of
+    source: GO:0006696
+    target: MESH:D004875
+  - key: participates in
+    source: MESH:D004875
+    target: GO:0042546
+  - key: occurs in
+    source: GO:0042546
+    target: taxonomy:76773
+  - key: causes
+    source: taxonomy:76773
+    target: MESH:D014010
+multigraph: true
+nodes:
+  - id: MESH:D014047
+    label: Drug
+    name: Tolnaftate
+  - id: InterPro:IPR040125
+    label: GeneFamily
+    name: Squalene monooxygenase
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: Ergosterol biosynthetic process
+  - id: MESH:D004875
+    label: ChemicalSubstance
+    name: Ergosterol
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: Cell wall biogenesis
+  - id: taxonomy:76773
+    label: OrganismTaxon
+    name: Malassezia globosa
+  - id: MESH:D014010
+    label: Disease
+    name: Pityriasis versicolor
+references:
+  - https://go.drugbank.com/drugs/DB00525#BE0004670

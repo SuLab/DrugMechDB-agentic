@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00525_MESH_D014006_1
+  disease: Tinea capitis
+  disease_mesh: MESH:D014006
+  drug: tolnaftate
+  drug_mesh: MESH:D014047
+  drugbank: DB:DB00525
+links:
+  - key: decreases activity of
+    source: MESH:D014047
+    target: InterPro:IPR040125
+  - key: positively regulates
+    source: InterPro:IPR040125
+    target: GO:0006696
+  - key: increases abundance of
+    source: GO:0006696
+    target: CHEBI:16933
+  - key: located in
+    source: CHEBI:16933
+    target: GO:0030445
+  - key: in taxon
+    source: GO:0030445
+    target: taxonomy:5550
+  - key: causes
+    source: taxonomy:5550
+    target: MESH:D014006
+multigraph: true
+nodes:
+  - id: MESH:D014047
+    label: Drug
+    name: Tolnaftate
+  - id: InterPro:IPR040125
+    label: GeneFamily
+    name: Squalene monooxygenase
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: Ergosterol biosynthetic process
+  - id: CHEBI:16933
+    label: ChemicalSubstance
+    name: Ergosterol
+  - id: GO:0030445
+    label: CellularComponent
+    name: Yeast-form cell wall
+  - id: taxonomy:5550
+    label: OrganismTaxon
+    name: Trichophyton sp
+  - id: MESH:D014006
+    label: Disease
+    name: Tinea capitis
+references:
+  - https://go.drugbank.com/drugs/DB00525#BE0004670

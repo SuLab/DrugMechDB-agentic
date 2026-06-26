@@ -1,0 +1,42 @@
+comment: This drug can also inhbit human proteins and affect with the mammalian cell
+  division/replication, which make them an attractive antitumour agent (https://pubmed.ncbi.nlm.nih.gov/11102564/).
+directed: true
+graph:
+  _id: DB01179_MESH_D003218_1
+  disease: Condyloma acuminatum
+  disease_mesh: MESH:D003218
+  drug: podophyllotoxin
+  drug_mesh: MESH:D011034
+  drugbank: DB:DB01179
+links:
+  - key: negatively regulates
+    source: MESH:D011034
+    target: UniProt:P03120
+  - key: positively regulates
+    source: UniProt:P03120
+    target: GO:0039693
+  - key: in taxon
+    source: GO:0039693
+    target: taxonomy:10566
+  - key: causes
+    source: taxonomy:10566
+    target: MESH:D003218
+multigraph: true
+nodes:
+  - id: MESH:D011034
+    label: Drug
+    name: podophyllotoxin
+  - id: UniProt:P03120
+    label: Protein
+    name: Regulatory protein E2
+  - id: GO:0039693
+    label: BiologicalProcess
+    name: viral DNA genome replication
+  - id: taxonomy:10566
+    label: OrganismTaxon
+    name: Human papillomavirus
+  - id: MESH:D003218
+    label: Disease
+    name: Condyloma acuminatum
+references:
+  - https://drugcentral.org/drugcard/3481?q=Podofilox

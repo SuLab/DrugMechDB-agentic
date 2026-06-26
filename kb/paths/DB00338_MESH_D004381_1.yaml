@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00338_MESH_D004381_1
+  disease: Duodenal ulcer disease
+  disease_mesh: MESH:D004381
+  drug: omeprazole
+  drug_mesh: MESH:D009853
+  drugbank: DB:DB00338
+links:
+  - key: decreases activity of
+    source: MESH:D009853
+    target: UniProt:P20648
+  - key: positively regulates
+    source: UniProt:P20648
+    target: GO:0001696
+  - key: increases abundance of
+    source: GO:0001696
+    target: MESH:D005744
+  - key: positively regulates
+    source: MESH:D005744
+    target: InterPro:IPR034162
+  - key: contributes to
+    source: InterPro:IPR034162
+    target: MESH:D004381
+multigraph: true
+nodes:
+  - id: MESH:D009853
+    label: Drug
+    name: Omeprazole
+  - id: UniProt:P20648
+    label: Protein
+    name: Potassium-transporting ATPase alpha chain 1
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: Gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: InterPro:IPR034162
+    label: GeneFamily
+    name: Pepsin catalytic domain
+  - id: MESH:D004381
+    label: Disease
+    name: Duodenal ulcer disease
+references:
+  - https://go.drugbank.com/drugs/DB00338
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6034668/

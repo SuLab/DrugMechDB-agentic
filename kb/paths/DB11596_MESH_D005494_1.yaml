@@ -1,0 +1,30 @@
+directed: true
+graph:
+  _id: DB11596_MESH_D005494_1
+  disease: Folic acid deficiency
+  disease_mesh: MESH:D005494
+  drug: levofolinic acid
+  drug_mesh: MESH:D058766
+  drugbank: DB:DB11596
+links:
+  - key: produces
+    source: MESH:D058766
+    target: DB:DB04789
+  - key: negatively correlated with
+    source: DB:DB04789
+    target: MESH:D005494
+multigraph: true
+nodes:
+  - alt_names:
+      - Levoleucovorin
+    id: MESH:D058766
+    label: Drug
+    name: levofolinic acid
+  - id: DB:DB04789
+    label: ChemicalSubstance
+    name: 5-methyltetrahydrofolic acid
+  - id: MESH:D005494
+    label: Disease
+    name: Folic acid deficiency
+references:
+  - https://go.drugbank.com/drugs/DB11596

@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00529_MESH_D017726_1
+  disease: Cytomegalovirus Retinitis
+  disease_mesh: MESH:D017726
+  drug: foscarnet
+  drug_mesh: MESH:D017245
+  drugbank: DB:DB00529
+links:
+  - key: decreases activity of
+    source: MESH:D017245
+    target: UniProt:P08546
+  - key: participates in
+    source: UniProt:P08546
+    target: GO:0039693
+  - key: occurs in
+    source: GO:0039693
+    target: taxonomy:10358
+  - key: causes
+    source: taxonomy:10358
+    target: MESH:D017726
+multigraph: true
+nodes:
+  - id: MESH:D017245
+    label: Drug
+    name: foscarnet
+  - id: UniProt:P08546
+    label: Protein
+    name: viral DNA Polymerase
+  - id: GO:0039693
+    label: BiologicalProcess
+    name: viral DNA replication
+  - id: taxonomy:10358
+    label: OrganismTaxon
+    name: Cytomegalovirus
+  - id: MESH:D017726
+    label: Disease
+    name: Cytomegalovirus Retinitis

@@ -1,0 +1,64 @@
+directed: true
+graph:
+  _id: DB01064_MESH_D002303_1
+  disease: Low cardiac output syndrome
+  disease_mesh: MESH:D002303
+  drug: Isoprenaline
+  drug_mesh: MESH:D007545
+  drugbank: DB:DB01064
+links:
+  - key: increases activity of
+    source: MESH:D007545
+    target: UniProt:P08588
+  - key: increases activity of
+    source: MESH:D007545
+    target: UniProt:P07550
+  - key: increases activity of
+    source: MESH:D007545
+    target: UniProt:P13945
+  - key: increases activity of
+    source: UniProt:P08588
+    target: UniProt:B7Z2C7
+  - key: increases activity of
+    source: UniProt:P07550
+    target: UniProt:B7Z2C7
+  - key: increases activity of
+    source: UniProt:P13945
+    target: UniProt:B7Z2C7
+  - key: increases abundance of
+    source: UniProt:B7Z2C7
+    target: CHEBI:17489
+  - key: positively regulates
+    source: CHEBI:17489
+    target: GO:0060047
+  - key: negatively correlated with
+    source: GO:0060047
+    target: MESH:D002303
+multigraph: true
+nodes:
+  - id: MESH:D007545
+    label: Drug
+    name: Isoprenaline
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: UniProt:P13945
+    label: Protein
+    name: Beta-3 adrenergic receptor
+  - id: UniProt:B7Z2C7
+    label: Protein
+    name: Adenylate cyclase
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: GO:0060047
+    label: BiologicalProcess
+    name: Heart contraction
+  - id: MESH:D002303
+    label: Disease
+    name: Low cardiac output syndrome
+references:
+  - https://go.drugbank.com/drugs/DB01064#BE0000172

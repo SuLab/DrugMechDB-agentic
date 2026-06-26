@@ -1,0 +1,30 @@
+comment: Colesevelamid is a type of ion exchange resin (MESH:D007475).
+directed: true
+graph:
+  _id: DB00930_MESH_D006937_1
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+  drug: colesevelam
+  drug_mesh: MESH:D000069472
+  drugbank: DB:DB00930
+links:
+  - key: decreases abundance of
+    source: MESH:D000069472
+    target: CHEBI:47774
+  - key: positively correlated with
+    source: CHEBI:47774
+    target: MESH:D006937
+multigraph: true
+nodes:
+  - id: MESH:D000069472
+    label: Drug
+    name: colesevelam
+  - id: CHEBI:47774
+    label: ChemicalSubstance
+    name: low-density lipoprotein cholesterol
+  - id: MESH:D006937
+    label: Disease
+    name: Hypercholesterolemia
+references:
+  - https://go.drugbank.com/drugs/DB00930
+  - https://en.wikipedia.org/wiki/Colesevelam

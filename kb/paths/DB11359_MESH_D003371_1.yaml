@@ -1,0 +1,35 @@
+comment: Expectorants increase airway water or the volume of airway secretions (https://en.wikipedia.org/wiki/Mucoactive_agent).
+directed: true
+graph:
+  _id: DB11359_MESH_D003371_1
+  disease: Cough
+  disease_mesh: MESH:D003371
+  drug: guaiacol
+  drug_mesh: MESH:D006139
+  drugbank: DB:DB11359
+links:
+  - key: subclass of
+    source: MESH:D006139
+    target: CHEBI:77035
+  - key: negatively correlated with
+    source: CHEBI:77035
+    target: HP:0006536
+  - key: positively correlated with
+    source: HP:0006536
+    target: MESH:D003371
+multigraph: true
+nodes:
+  - id: MESH:D006139
+    label: Drug
+    name: guaiacol
+  - id: CHEBI:77035
+    label: ChemicalSubstance
+    name: expectorant
+  - id: HP:0006536
+    label: PhenotypicFeature
+    name: Airway obstruction
+  - id: MESH:D003371
+    label: Disease
+    name: Cough
+references:
+  - https://go.drugbank.com/drugs/DB11359

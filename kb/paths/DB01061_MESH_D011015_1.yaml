@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01061_MESH_D011015_1
+  disease: Aspiration pneumonia
+  disease_mesh: MESH:D011015
+  drug: Azlocillin
+  drug_mesh: MESH:D001390
+  drugbank: DB:DB01061
+links:
+  - key: decreases activity of
+    source: MESH:D001390
+    target: InterPro:IPR005311
+  - key: positively regulates
+    source: InterPro:IPR005311
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: positively correlated with
+    source: GO:0009273
+    target: GO:0051301
+  - key: in taxon
+    source: GO:0051301
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D011015
+multigraph: true
+nodes:
+  - id: MESH:D001390
+    label: Drug
+    name: Azlocillin
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: Peptidoglycan biosynthetic process
+  - id: InterPro:IPR005311
+    label: GeneFamily
+    name: Penicillin binding proteins
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: Peptidoglycan-based cell wall biogenesis
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: Cell division
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D011015
+    label: Disease
+    name: Aspiration pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB01061
+  - https://en.wikipedia.org/wiki/Aspiration_pneumonia

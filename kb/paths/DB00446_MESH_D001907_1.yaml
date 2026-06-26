@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00446_MESH_D001907_1
+  disease: Boutonneuse fever
+  disease_mesh: MESH:D001907
+  drug: chloramphenicol
+  drug_mesh: MESH:D002701
+  drugbank: DB:DB00446
+links:
+  - key: negatively regulates
+    source: MESH:D002701
+    target: InterPro:IPR000114
+  - key: positively regulates
+    source: InterPro:IPR000114
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:781
+  - key: causes
+    source: taxonomy:781
+    target: MESH:D001907
+multigraph: true
+nodes:
+  - id: MESH:D002701
+    label: Drug
+    name: chloramphenicol
+  - id: InterPro:IPR000114
+    label: GeneFamily
+    name: Ribosomal protein L16
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:781
+    label: OrganismTaxon
+    name: Rickettsia conorii
+  - id: MESH:D001907
+    label: Disease
+    name: Boutonneuse fever
+references:
+  - https://go.drugbank.com/drugs/DB00446

@@ -1,0 +1,51 @@
+comment: Doxycycline is a second-generation tetracycline that is used to treat a wide
+  variety of bacterial infections.
+directed: true
+graph:
+  _id: DB00254_MESH_D002771_1
+  disease: Cholera
+  disease_mesh: MESH:D002771
+  drug: doxycycline
+  drug_mesh: MESH:D004318
+  drugbank: DB:DB00254
+links:
+  - key: negatively regulates
+    source: MESH:D004318
+    target: MESH:D012336
+  - key: located in
+    source: MESH:D012336
+    target: GO:0015935
+  - key: participates in
+    source: GO:0015935
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:666
+  - key: causes
+    source: taxonomy:666
+    target: MESH:D002771
+multigraph: true
+nodes:
+  - id: MESH:D004318
+    label: Drug
+    name: doxycycline
+  - id: MESH:D012336
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 16S
+  - id: GO:0015935
+    label: CellularComponent
+    name: small ribosomal subunit
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:666
+    label: OrganismTaxon
+    name: Vibrio cholerae
+  - id: MESH:D002771
+    label: Disease
+    name: Cholera
+references:
+  - https://go.drugbank.com/drugs/DB00254#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22DOXYCYCLINE%22
+  - https://en.wikipedia.org/wiki/Prokaryotic_small_ribosomal_subunit
+  - https://en.wikipedia.org/wiki/Cholera

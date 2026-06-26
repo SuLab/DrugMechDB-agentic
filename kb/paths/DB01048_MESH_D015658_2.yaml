@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01048_MESH_D015658_2
+  disease: Human immunodeficiency virus infection
+  disease_mesh: MESH:D015658
+  drug: abacavir
+  drug_mesh: MESH:C106538
+  drugbank: DB:DB01048
+links:
+  - key: produces
+    source: MESH:C106538
+    target: CHEBI:64174
+  - key: decreases activity of
+    source: CHEBI:64174
+    target: UniProt:Q72547
+  - key: positively regulates
+    source: UniProt:Q72547
+    target: GO:0003964
+  - key: positively correlated with
+    source: GO:0003964
+    target: GO:0019079
+  - key: in taxon
+    source: GO:0019079
+    target: taxonomy:11676
+  - key: causes
+    source: taxonomy:11676
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:C106538
+    label: Drug
+    name: abacavir
+  - id: CHEBI:64174
+    label: ChemicalSubstance
+    name: carbovir triphosphate
+  - id: UniProt:Q72547
+    label: Protein
+    name: Reverse transcriptase/RNaseH
+  - id: GO:0003964
+    label: MolecularActivity
+    name: RNA-directed DNA polymerase activity
+  - id: GO:0019079
+    label: BiologicalProcess
+    name: viral genome replication
+  - id: taxonomy:11676
+    label: OrganismTaxon
+    name: Human immunodeficiency virus 1
+  - id: MESH:D015658
+    label: Disease
+    name: Human immunodeficiency virus infection
+references:
+  - https://go.drugbank.com/drugs/DB01048#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Abacavir#Mechanism_of_action

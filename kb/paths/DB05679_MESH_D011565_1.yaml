@@ -1,0 +1,53 @@
+comment: This drug binds to the p-40 subunit (UniProt:P29460) of both IL-12 (UniProt:P29459)
+  and IL-23 (UniProt:Q9NPF7) so that they subsequently cannot bind to their receptors
+  (https://en.wikipedia.org/wiki/Ustekinumab#Mechanism_of_action).
+directed: true
+graph:
+  _id: DB05679_MESH_D011565_1
+  disease: Psoriasis
+  disease_mesh: MESH:D011565
+  drug: ustekinumab
+  drug_mesh: MESH:D000069549
+  drugbank: DB:DB05679
+links:
+  - key: decreases activity of
+    source: MESH:D000069549
+    target: UniProt:P29460
+  - key: positively regulates
+    source: UniProt:P29460
+    target: GO:0035722
+  - key: positively regulates
+    source: UniProt:P29460
+    target: GO:0038155
+  - key: positively regulates
+    source: GO:0035722
+    target: GO:0006954
+  - key: positively regulates
+    source: GO:0038155
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D011565
+multigraph: true
+nodes:
+  - id: MESH:D000069549
+    label: Drug
+    name: ustekinumab
+  - id: UniProt:P29460
+    label: Protein
+    name: Interleukin-12 subunit beta
+  - id: GO:0035722
+    label: BiologicalProcess
+    name: interleukin-12-mediated signaling pathway
+  - id: GO:0038155
+    label: BiologicalProcess
+    name: interleukin-23-mediated signaling pathway
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D011565
+    label: Disease
+    name: Psoriasis
+references:
+  - https://go.drugbank.com/drugs/DB05679
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201835/

@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00788_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: naproxen
+  drug_mesh: MESH:D009288
+  drugbank: DB:DB00788
+links:
+  - key: decreases activity of
+    source: MESH:D009288
+    target: UniProt:P35354
+  - key: increases abundance of
+    source: UniProt:P35354
+    target: MESH:D011453
+  - key: participates in
+    source: MESH:D011453
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:D009288
+    label: Drug
+    name: naproxen
+  - id: UniProt:P35354
+    label: Protein
+    name: Cox-2
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammation
+  - id: MESH:D010146
+    label: Disease
+    name: Pain

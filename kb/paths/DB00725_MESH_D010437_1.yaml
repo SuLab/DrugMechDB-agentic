@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00725_MESH_D010437_1
+  disease: Peptic ulcer
+  disease_mesh: MESH:D010437
+  drug: methylhomatropine
+  drug_mesh: MESH:C056244
+  drugbank: DB:DB00725
+links:
+  - key: negatively regulates
+    source: MESH:C056244
+    target: UniProt:P11229
+  - key: negatively regulates
+    source: MESH:C056244
+    target: UniProt:P08912
+  - key: participates in
+    source: UniProt:P11229
+    target: GO:0007197
+  - key: participates in
+    source: UniProt:P08912
+    target: GO:0007197
+  - key: increases abundance of
+    source: GO:0007197
+    target: MESH:D005744
+  - key: contributes to
+    source: MESH:D005744
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - alt_names:
+      - Homatropine methylbromide
+    id: MESH:C056244
+    label: Drug
+    name: methylhomatropine
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: UniProt:P08912
+    label: Protein
+    name: Muscarinic acetylcholine receptor M5
+  - id: GO:0007197
+    label: BiologicalProcess
+    name: adenylate cyclase-inhibiting G protein-coupled acetylcholine receptor signaling
+      pathway
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+references:
+  - https://go.drugbank.com/drugs/DB00725
+  - https://en.wikipedia.org/wiki/Homatropine_methylbromide
+  - https://pubmed.ncbi.nlm.nih.gov/2865092/
+  - https://en.wikipedia.org/wiki/Muscarinic_antagonist#Comparison_table

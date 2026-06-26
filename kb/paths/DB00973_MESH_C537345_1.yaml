@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00973_MESH_C537345_1
+  disease: Sitosterolemia
+  disease_mesh: MESH:C537345
+  drug: ezetimibe
+  drug_mesh: MESH:D000069438
+  drugbank: DB:DB00973
+links:
+  - key: negatively regulates
+    source: MESH:D000069438
+    target: UniProt:Q9UHC9
+  - key: positively regulates
+    source: UniProt:Q9UHC9
+    target: GO:0098856
+  - key: increases abundance of
+    source: GO:0098856
+    target: CHEBI:26125
+  - key: positively correlated with
+    source: CHEBI:26125
+    target: HP:0033341
+  - key: manifestation of
+    source: HP:0033341
+    target: MESH:C537345
+multigraph: true
+nodes:
+  - id: MESH:D000069438
+    label: Drug
+    name: ezetimibe
+  - id: UniProt:Q9UHC9
+    label: Protein
+    name: NPC1-like intracellular cholesterol transporter 1
+  - id: GO:0098856
+    label: BiologicalProcess
+    name: intestinal lipid absorption
+  - id: CHEBI:26125
+    label: ChemicalSubstance
+    name: phytosterols
+  - id: HP:0033341
+    label: PhenotypicFeature
+    name: Elevated circulating sitosterol concentration
+  - id: MESH:C537345
+    label: Disease
+    name: Sitosterolemia
+references:
+  - https://pharos.nih.gov/ligands/ezetimibe
+  - https://pubchem.ncbi.nlm.nih.gov/compound/150311#section=Mechanism-of-Action
+  - https://en.wikipedia.org/wiki/Sitosterolemia#Signs_and_symptoms

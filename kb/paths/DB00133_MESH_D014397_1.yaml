@@ -1,0 +1,25 @@
+comment: In the DrugCentral serine is indicated for Pulmonary tuberculosis, however
+  no literature evidences found about the mechanism of action of serine treating pulmonary
+  tuberculosis.
+directed: true
+graph:
+  _id: DB00133_MESH_D014397_1
+  disease: Pulmonary tuberculosis
+  disease_mesh: MESH:D014397
+  drug: serine
+  drug_mesh: MESH:D012694
+  drugbank: DB:DB00133
+links:
+  - key: treats
+    source: MESH:D012694
+    target: MESH:D014397
+multigraph: true
+nodes:
+  - id: MESH:D012694
+    label: Drug
+    name: Serine
+  - id: MESH:D014397
+    label: Disease
+    name: Pulmonary tuberculosis
+references:
+  - https://go.drugbank.com/drugs/DB00133

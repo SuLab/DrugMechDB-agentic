@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00618_MESH_D000073605_1
+  disease: Rickettsialpox
+  disease_mesh: MESH:D000073605
+  drug: demeclocycline
+  drug_mesh: MESH:D003707
+  drugbank: DB:DB00618
+links:
+  - key: decreases activity of
+    source: MESH:D003707
+    target: UniProt:P0A7S3
+  - key: decreases activity of
+    source: MESH:D003707
+    target: UniProt:P0A7J3
+  - key: participates in
+    source: UniProt:P0A7S3
+    target: GO:0006412
+  - key: participates in
+    source: UniProt:P0A7J3
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:786
+  - key: causes
+    source: taxonomy:786
+    target: MESH:D000073605
+multigraph: true
+nodes:
+  - id: MESH:D003707
+    label: Drug
+    name: demeclocycline
+  - id: UniProt:P0A7S3
+    label: Protein
+    name: 30S Ribosomal Subunit
+  - id: UniProt:P0A7J3
+    label: Protein
+    name: 50S Ribosomal Subunit
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Bacterial Translation
+  - id: taxonomy:786
+    label: OrganismTaxon
+    name: Rickettsia akari
+  - id: MESH:D000073605
+    label: Disease
+    name: Rickettsialpox

@@ -1,0 +1,64 @@
+directed: true
+graph:
+  _id: DB01166_MESH_D007383_1
+  disease: Intermittent claudication
+  disease_mesh: MESH:D007383
+  drug: cilostazol
+  drug_mesh: MESH:C045645
+  drugbank: DB:DB01166
+links:
+  - key: negatively regulates
+    source: MESH:C045645
+    target: UniProt:Q14432
+  - key: positively regulates
+    source: UniProt:Q14432
+    target: GO:0004115
+  - key: decreases abundance of
+    source: GO:0004115
+    target: CHEBI:17489
+  - key: increases activity of
+    source: CHEBI:17489
+    target: MESH:D017868
+  - key: positively correlated with
+    source: MESH:D017868
+    target: GO:0042311
+  - key: negatively correlated with
+    source: MESH:D017868
+    target: GO:0070527
+  - key: negatively correlated with
+    source: GO:0042311
+    target: MESH:D007383
+  - key: positively correlated with
+    source: GO:0070527
+    target: MESH:D007383
+multigraph: true
+nodes:
+  - id: MESH:C045645
+    label: Drug
+    name: cilostazol
+  - id: UniProt:Q14432
+    label: Protein
+    name: cGMP-inhibited 3',5'-cyclic phosphodiesterase A
+  - id: GO:0004115
+    label: MolecularActivity
+    name: 3',5'-cyclic-AMP phosphodiesterase activity
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: MESH:D017868
+    label: GeneFamily
+    name: Cyclic AMP-Dependent Protein Kinases
+  - id: GO:0070527
+    label: BiologicalProcess
+    name: platelet aggregation
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: MESH:D007383
+    label: Disease
+    name: Intermittent claudication
+references:
+  - https://go.drugbank.com/drugs/DB01166#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Cilostazol#Mechanism
+  - https://www.sciencedirect.com/science/article/pii/S1078588402917958
+  - https://www.jvascsurg.org/article/0741-5214(86)90027-3/fulltext

@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00427_MESH_D003139_1
+  disease: Common cold
+  disease_mesh: MESH:D003139
+  drug: triprolidine
+  drug_mesh: MESH:D014311
+  drugbank: DB:DB00427
+links:
+  - key: decreases activity of
+    source: MESH:D014311
+    target: UniProt:P35367
+  - key: positively regulates
+    source: UniProt:P35367
+    target: GO:0006954
+  - key: caused by
+    source: GO:0006954
+    target: taxonomy:12059
+  - key: causes
+    source: taxonomy:12059
+    target: MESH:D003139
+multigraph: true
+nodes:
+  - id: MESH:D014311
+    label: Drug
+    name: triprolidine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: taxonomy:12059
+    label: OrganismTaxon
+    name: Enterovirus
+  - id: MESH:D003139
+    label: Disease
+    name: Common cold
+references:
+  - https://go.drugbank.com/drugs/DB00427
+  - https://en.wikipedia.org/wiki/Common_cold#Viruses

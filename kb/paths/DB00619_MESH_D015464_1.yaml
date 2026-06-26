@@ -1,0 +1,26 @@
+directed: true
+graph:
+  _id: DB00619_MESH_D015464_1
+  disease: CML (ph+)
+  disease_mesh: MESH:D015464
+  drug: imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+links:
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: UniProt:P00519
+  - key: causes
+    source: UniProt:P00519
+    target: MESH:D015464
+multigraph: true
+nodes:
+  - id: MESH:D000068877
+    label: Drug
+    name: imatinib
+  - id: UniProt:P00519
+    label: Protein
+    name: BCR/ABL
+  - id: MESH:D015464
+    label: Disease
+    name: CML (ph+)

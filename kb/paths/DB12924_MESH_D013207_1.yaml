@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB12924_MESH_D013207_1
+  disease: Staphylococcal infection of skin
+  disease_mesh: MESH:D013207
+  drug: Ozenoxacin
+  drug_mesh: MESH:C000592413
+  drugbank: DB:DB12924
+links:
+  - key: decreases activity of
+    source: MESH:C000592413
+    target: UniProt:P0C1U9
+  - key: decreases activity of
+    source: MESH:C000592413
+    target: UniProt:Q2FKQ0
+  - key: participates in
+    source: UniProt:P0C1U9
+    target: GO:0044787
+  - key: participates in
+    source: UniProt:Q2FKQ0
+    target: GO:0044787
+  - key: occurs in
+    source: GO:0044787
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D013207
+multigraph: true
+nodes:
+  - id: MESH:C000592413
+    label: Drug
+    name: Ozenoxacin
+  - id: UniProt:P0C1U9
+    label: Protein
+    name: DNA topoisomerase 4 subunit A (Staphylococcus aureus)
+  - id: UniProt:Q2FKQ0
+    label: Protein
+    name: DNA gyrase subunit A (Staphylococcus aureus)
+  - id: GO:0044787
+    label: BiologicalProcess
+    name: Bacterial-type DNA replication
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D013207
+    label: Disease
+    name: Staphylococcal infection of skin
+references:
+  - https://go.drugbank.com/drugs/DB12924

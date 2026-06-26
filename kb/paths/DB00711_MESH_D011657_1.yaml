@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00711_MESH_D011657_1
+  disease: Eosinophilic asthma
+  disease_mesh: MESH:D011657
+  drug: diethylcarbamazine
+  drug_mesh: MESH:D004049
+  drugbank: DB:DB00711
+links:
+  - key: decreases activity of
+    source: MESH:D004049
+    target: UniProt:P09917
+  - key: decreases activity of
+    source: MESH:D004049
+    target: UniProt:P23219
+  - key: increases abundance of
+    source: UniProt:P09917
+    target: MESH:D015289
+  - key: increases abundance of
+    source: UniProt:P23219
+    target: MESH:D011453
+  - key: positively regulates
+    source: MESH:D015289
+    target: GO:0006954
+  - key: positively regulates
+    source: MESH:D011453
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D011657
+multigraph: true
+nodes:
+  - id: MESH:D004049
+    label: Drug
+    name: Diethylcarbamazine
+  - id: UniProt:P09917
+    label: Protein
+    name: Polyunsaturated fatty acid 5-lipoxygenase
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: MESH:D015289
+    label: ChemicalSubstance
+    name: Leukotrienes
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D011657
+    label: Disease
+    name: Eosinophilic asthma
+references:
+  - https://go.drugbank.com/drugs/DB00711

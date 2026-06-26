@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00335_MESH_D000787_1
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: atenolol
+  drug_mesh: MESH:D001262
+  drugbank: DB:DB00335
+links:
+  - key: decreases activity of
+    source: MESH:D001262
+    target: UniProt:P08588
+  - key: positively regulates
+    source: UniProt:P08588
+    target: UniProt:P00797
+  - key: positively regulates
+    source: UniProt:P08588
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P00797
+    target: GO:0042310
+  - key: negatively correlated with
+    source: GO:0042310
+    target: GO:0060087
+  - key: ameliorates
+    source: GO:0060087
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:D001262
+    label: Drug
+    name: Atenolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P00797
+    label: Protein
+    name: Renin
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: GO:0060087
+    label: BiologicalProcess
+    name: Relaxation of vascular associated smooth muscle
+  - id: MESH:D000787
+    label: Disease
+    name: Angina pectoris
+references:
+  - https://go.drugbank.com/drugs/DB00335
+  - https://en.wikipedia.org/wiki/Atenolol

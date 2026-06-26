@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB00250_MESH_D003874_1
+  disease: Dermatitis herpetiformis
+  disease_mesh: MESH:D003874
+  drug: dapsone
+  drug_mesh: MESH:D003622
+  drugbank: DB:DB00250
+links:
+  - key: negatively regulates
+    source: MESH:D003622
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D003874
+multigraph: true
+nodes:
+  - id: MESH:D003622
+    label: Drug
+    name: dapsone
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D003874
+    label: Disease
+    name: Dermatitis herpetiformis
+references:
+  - https://go.drugbank.com/drugs/DB00250
+  - https://en.wikipedia.org/wiki/Dermatitis_herpetiformis

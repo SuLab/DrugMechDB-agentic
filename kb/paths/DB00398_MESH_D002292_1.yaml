@@ -1,0 +1,136 @@
+directed: true
+graph:
+  _id: DB00398_MESH_D002292_1
+  disease: Renal cell carcinoma
+  disease_mesh: MESH:D002292
+  drug: sorafenib
+  drug_mesh: MESH:C471405
+  drugbank: DB:DB00398
+links:
+  - key: decreases activity of
+    source: MESH:C471405
+    target: InterPro:IPR011009
+  - key: positively correlated with
+    source: InterPro:IPR011009
+    target: UniProt:P04049
+  - key: positively correlated with
+    source: InterPro:IPR011009
+    target: UniProt:P09619
+  - key: positively correlated with
+    source: InterPro:IPR011009
+    target: UniProt:P17948
+  - key: positively correlated with
+    source: InterPro:IPR011009
+    target: UniProt:P15056
+  - key: positively correlated with
+    source: InterPro:IPR011009
+    target: UniProt:P35916
+  - key: positively correlated with
+    source: InterPro:IPR011009
+    target: UniProt:P35968
+  - key: positively correlated with
+    source: InterPro:IPR011009
+    target: UniProt:P36888
+  - key: positively correlated with
+    source: InterPro:IPR011009
+    target: UniProt:P10721
+  - key: positively correlated with
+    source: InterPro:IPR011009
+    target: UniProt:P07949
+  - key: positively correlated with
+    source: InterPro:IPR011009
+    target: UniProt:P11362
+  - key: participates in
+    source: UniProt:P15056
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P35916
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P35968
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P36888
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P10721
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P11362
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P04049
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P07949
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P09619
+    target: reactome:R-HSA-9006934
+  - key: participates in
+    source: UniProt:P17948
+    target: reactome:R-HSA-9006934
+  - key: contributes to
+    source: reactome:R-HSA-9006934
+    target: GO:0008284
+  - key: contributes to
+    source: reactome:R-HSA-9006934
+    target: GO:0045766
+  - key: causes
+    source: GO:0008284
+    target: MESH:D002292
+  - key: causes
+    source: GO:0045766
+    target: MESH:D002292
+multigraph: true
+nodes:
+  - id: MESH:C471405
+    label: Drug
+    name: Sorafenib
+  - id: InterPro:IPR011009
+    label: GeneFamily
+    name: Protein kinase-like domain superfamily
+  - id: UniProt:P04049
+    label: Protein
+    name: RAF proto-oncogene serine/threonine-protein kinase
+  - id: UniProt:P09619
+    label: Protein
+    name: Platelet-derived growth factor receptor beta
+  - id: UniProt:P17948
+    label: Protein
+    name: Vascular endothelial growth factor receptor 1
+  - id: UniProt:P15056
+    label: Protein
+    name: Serine/threonine-protein kinase B-raf
+  - id: UniProt:P35916
+    label: Protein
+    name: Vascular endothelial growth factor receptor 3
+  - id: UniProt:P35968
+    label: Protein
+    name: Vascular endothelial growth factor receptor 2
+  - id: UniProt:P36888
+    label: Protein
+    name: Receptor-type tyrosine-protein kinase FLT3
+  - id: UniProt:P10721
+    label: Protein
+    name: Mast/stem cell growth factor receptor Kit
+  - id: UniProt:P11362
+    label: Protein
+    name: Fibroblast growth factor receptor 1
+  - id: UniProt:P07949
+    label: Protein
+    name: Proto-oncogene tyrosine-protein kinase receptor Ret
+  - id: reactome:R-HSA-9006934
+    label: Pathway
+    name: Signaling by Receptor Tyrosine Kinases
+  - id: GO:0008284
+    label: BiologicalProcess
+    name: Positive regulation of cell population proliferation
+  - id: GO:0045766
+    label: BiologicalProcess
+    name: Positive regulation of angiogenesis
+  - id: MESH:D002292
+    label: Disease
+    name: Renal cell carcinoma
+references:
+  - https://go.drugbank.com/drugs/DB00398

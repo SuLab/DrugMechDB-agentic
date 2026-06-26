@@ -1,0 +1,31 @@
+comment: Please note that the MESH ID has changed for sodium citrate and current ID
+  is D000077559 (previously used MESH IDs were MESH:C102006,MESH:C514290).
+directed: true
+graph:
+  _id: DB09154_MESH_D003371_1
+  disease: Cough
+  disease_mesh: MESH:D003371
+  drug: sodium citrate
+  drug_mesh: MESH:D000077559
+  drugbank: DB:DB09154
+links:
+  - key: disrupts
+    source: MESH:D000077559
+    target: UBERON:0000912
+  - key: positively correlated with
+    source: UBERON:0000912
+    target: MESH:D003371
+multigraph: true
+nodes:
+  - id: MESH:D000077559
+    label: Drug
+    name: Sodium citrate
+  - id: UBERON:0000912
+    label: GrossAnatomicalStructure
+    name: Mucus
+  - id: MESH:D003371
+    label: Disease
+    name: Cough
+references:
+  - https://go.drugbank.com/drugs/DB09154
+  - https://en.wikipedia.org/wiki/Mucoactive_agent

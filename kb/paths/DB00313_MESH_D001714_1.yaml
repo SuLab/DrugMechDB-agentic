@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00313_MESH_D001714_1
+  disease: Bipolar disorder
+  disease_mesh: MESH:D001714
+  drug: valproic acid
+  drug_mesh: MESH:D014635
+  drugbank: DB:DB00313
+links:
+  - key: decreases activity of
+    source: MESH:D014635
+    target: InterPro:IPR002587
+  - key: decreases activity of
+    source: InterPro:IPR002587
+    target: UniProt:P29218
+  - key: decreases abundance of
+    source: UniProt:P29218
+    target: MESH:D007294
+  - key: correlated with
+    source: MESH:D007294
+    target: MESH:D001714
+multigraph: true
+nodes:
+  - id: MESH:D014635
+    label: Drug
+    name: valproic acid
+  - id: InterPro:IPR002587
+    label: GeneFamily
+    name: myo-inositol-1-phophate synthetase
+  - id: UniProt:P29218
+    label: Protein
+    name: inositol monophosphatase
+  - id: MESH:D007294
+    label: ChemicalSubstance
+    name: inositol
+  - id: MESH:D001714
+    label: Disease
+    name: Bipolar disorder
+references:
+  - https://go.drugbank.com/drugs/DB00313#mechanismofaction

@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB06774_MESH_D051474_1
+  disease: Postherpetic neuralgia
+  disease_mesh: MESH:D051474
+  drug: Capsaicin
+  drug_mesh: MESH:D002211
+  drugbank: DB:DB06774
+links:
+  - key: increases activity of
+    source: MESH:D002211
+    target: UniProt:Q8NER1
+  - key: decreases abundance of
+    source: MESH:D002211
+    target: MESH:D013373
+  - key: positively regulates
+    source: UniProt:Q8NER1
+    target: GO:0070509
+  - key: positively correlated with
+    source: MESH:D013373
+    target: MESH:D010146
+  - key: disrupts
+    source: GO:0070509
+    target: GO:0005739
+  - key: located in
+    source: GO:0005739
+    target: CL:0000198
+  - key: positively regulates
+    source: CL:0000198
+    target: MESH:D010146
+  - key: manifestation of
+    source: MESH:D010146
+    target: MESH:D051474
+multigraph: true
+nodes:
+  - id: MESH:D002211
+    label: Drug
+    name: Capsaicin
+  - id: UniProt:Q8NER1
+    label: Protein
+    name: Transient receptor potential cation channel subfamily V member 1
+  - id: MESH:D013373
+    label: ChemicalSubstance
+    name: Substance P
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Calcium ion import
+  - id: GO:0005739
+    label: CellularComponent
+    name: Mitochondrion
+  - id: CL:0000198
+    label: Cell
+    name: Pain receptor cell
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+  - id: MESH:D051474
+    label: Disease
+    name: Postherpetic neuralgia
+references:
+  - https://go.drugbank.com/drugs/DB06774#BE0001023
+  - https://pubmed.ncbi.nlm.nih.gov/21852280/

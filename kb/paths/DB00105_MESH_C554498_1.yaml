@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB00105_MESH_C554498_1
+  disease: Kaposi's sarcoma associated with AIDS
+  disease_mesh: MESH:C554498
+  drug: interferon alfa-2b
+  drug_mesh: MESH:C554127
+  drugbank: DB:DB00105
+links:
+  - key: molecularly interacts with
+    source: MESH:C554127
+    target: UniProt:P48551
+  - key: molecularly interacts with
+    source: MESH:C554127
+    target: UniProt:P17181
+  - key: positively regulates
+    source: UniProt:P48551
+    target: GO:0007259
+  - key: positively regulates
+    source: UniProt:P17181
+    target: GO:0007259
+  - key: positively correlated with
+    source: GO:0007259
+    target: reactome:R-HSA-1169410
+  - key: disrupts
+    source: reactome:R-HSA-1169410
+    target: taxonomy:37296
+  - key: causes
+    source: taxonomy:37296
+    target: MESH:C554498
+multigraph: true
+nodes:
+  - id: MESH:C554127
+    label: Drug
+    name: interferon alfa-2b
+  - id: UniProt:P48551
+    label: Protein
+    name: Interferon alpha/beta receptor 2
+  - id: UniProt:P17181
+    label: Protein
+    name: Interferon alpha/beta receptor 1
+  - id: GO:0007259
+    label: BiologicalProcess
+    name: receptor signaling pathway via JAK-STAT
+  - id: reactome:R-HSA-1169410
+    label: Pathway
+    name: Antiviral mechanism by IFN-stimulated genes
+  - id: taxonomy:37296
+    label: OrganismTaxon
+    name: Human gammaherpesvirus 8
+  - id: MESH:C554498
+    label: Disease
+    name: Kaposi's sarcoma associated with AIDS
+references:
+  - https://go.drugbank.com/drugs/DB00105
+  - https://en.wikipedia.org/wiki/Kaposi%27s_sarcoma#Cause

@@ -1,0 +1,54 @@
+comment: The drug tinoridine is in clinical trial phase 4.
+directed: true
+graph:
+  _id: DB13001_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: tinoridine
+  drug_mesh: MESH:C100290
+  drugbank: DB:DB13001
+links:
+  - key: decreases activity of
+    source: MESH:C100290
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:C100290
+    target: UniProt:P35354
+  - key: positively regulates
+    source: UniProt:P23219
+    target: reactome:R-HSA-2162123
+  - key: positively regulates
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:C100290
+    label: Drug
+    name: tinoridine
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+references:
+  - https://go.drugbank.com/drugs/DB13001#mechanism-of-action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Tinoridine#section=Pharmacology-and-Biochemistry
+  - https://www.uniprot.org/uniprot/P23219#function
+  - https://www.uniprot.org/uniprot/P35354#function
+  - https://en.wikipedia.org/wiki/Pain

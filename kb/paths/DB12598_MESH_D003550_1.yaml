@@ -1,0 +1,43 @@
+comment: Nafamostat mesilate is expected to work by reducing ENaC activity, stimulating
+  the clearance of mucus and relieving the symptoms of the disease.
+directed: true
+graph:
+  _id: DB12598_MESH_D003550_1
+  disease: Cystic fibrosis
+  disease_mesh: MESH:D003550
+  drug: nafamostat
+  drug_mesh: MESH:C032855
+  drugbank: DB:DB12598
+links:
+  - key: decreases activity of
+    source: MESH:C032855
+    target: InterPro:IPR001873
+  - key: positively regulates
+    source: InterPro:IPR001873
+    target: GO:0070254
+  - key: positively correlated with
+    source: GO:0070254
+    target: HP:0006536
+  - key: manifestation of
+    source: HP:0006536
+    target: MESH:D003550
+multigraph: true
+nodes:
+  - id: MESH:C032855
+    label: Drug
+    name: nafamostat
+  - id: InterPro:IPR001873
+    label: GeneFamily
+    name: Epithelial sodium channel
+  - id: GO:0070254
+    label: BiologicalProcess
+    name: mucus secretion
+  - id: HP:0006536
+    label: PhenotypicFeature
+    name: Airway obstruction
+  - id: MESH:D003550
+    label: Disease
+    name: Cystic fibrosis
+references:
+  - https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu310782
+  - https://pubchem.ncbi.nlm.nih.gov/compound/4413

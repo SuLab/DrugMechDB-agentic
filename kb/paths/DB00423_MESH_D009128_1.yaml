@@ -1,0 +1,30 @@
+comment: Methacarbamol is a skeletal muscle relaxant with an unknown mechanism of
+  action
+directed: true
+graph:
+  _id: DB00423_MESH_D009128_1
+  disease: Spasticity
+  disease_mesh: MESH:D009128
+  drug: methocarbamol
+  drug_mesh: MESH:D008721
+  drugbank: DB:DB00423
+links:
+  - key: causes
+    source: MESH:D008721
+    target: GO:0090075
+  - key: negatively correlated with
+    source: GO:0090075
+    target: MESH:D009128
+multigraph: true
+nodes:
+  - id: MESH:D008721
+    label: Drug
+    name: Methacarbamol
+  - id: GO:0090075
+    label: BiologicalProcess
+    name: Relaxation of muscle
+  - id: MESH:D009128
+    label: Disease
+    name: Spasticity
+references:
+  - https://go.drugbank.com/drugs/DB00423

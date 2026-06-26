@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB01234_MESH_D065631_1
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: dexamethasone
+  drug_mesh: MESH:D003907
+  drugbank: DB:DB01234
+links:
+  - key: positively regulates
+    source: MESH:D003907
+    target: UniProt:P04150
+  - key: increases abundance of
+    source: UniProt:P04150
+    target: InterPro:IPR001464
+  - key: negatively regulates
+    source: InterPro:IPR001464
+    target: InterPro:IPR001211
+  - key: positively correlated with
+    source: InterPro:IPR001211
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: MESH:D003907
+    label: Drug
+    name: dexamethasone
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: InterPro:IPR001464
+    label: GeneFamily
+    name: Annexin
+  - id: InterPro:IPR001211
+    label: GeneFamily
+    name: Phospholipase A2
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB01234
+  - https://en.wikipedia.org/wiki/Dexamethasone#Anti-inflammatory

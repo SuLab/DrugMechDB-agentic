@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00257_MESH_D012628_1
+  disease: Seborrheic dermatitis
+  disease_mesh: MESH:D012628
+  drug: sulfur
+  drug_mesh: MESH:D013455
+  drugbank: DB:DB00257
+links:
+  - key: precedes
+    source: MESH:D013455
+    target: CHEBI:16136
+  - key: subclass of
+    source: CHEBI:16136
+    target: MESH:D007641
+  - key: subclass of
+    source: CHEBI:16136
+    target: MESH:D000935
+  - key: disrupts
+    source: MESH:D000935
+    target: taxonomy:55193
+  - key: causes
+    source: taxonomy:55193
+    target: MESH:D012628
+  - key: negatively correlated with
+    source: MESH:D007641
+    target: MESH:D012628
+multigraph: true
+nodes:
+  - id: MESH:D013455
+    label: Drug
+    name: sulfur
+  - id: CHEBI:16136
+    label: ChemicalSubstance
+    name: hydrogen sulfide
+  - id: MESH:D000935
+    label: Drug
+    name: Antifungal Agents
+  - id: MESH:D007641
+    label: Drug
+    name: Keratolytic Agents
+  - id: taxonomy:55193
+    label: OrganismTaxon
+    name: Malassezia
+  - id: MESH:D012628
+    label: Disease
+    name: Seborrheic dermatitis
+references:
+  - https://go.drugbank.com/drugs/DB09353#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Seborrhoeic_dermatitis#Causes

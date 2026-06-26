@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00468_MESH_D016778_2
+  disease: Malaria, Falciparum
+  disease_mesh: MESH:D016778
+  drug: Quinine
+  drug_mesh: MESH:D011803
+  drugbank: DB:DB00468
+links:
+  - key: negatively regulates
+    source: MESH:D011803
+    target: GO:0006412
+  - key: negatively regulates
+    source: MESH:D011803
+    target: GO:0071897
+  - key: negatively regulates
+    source: MESH:D011803
+    target: reactome:R-HSA-70171
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:5833
+  - key: occurs in
+    source: GO:0071897
+    target: taxonomy:5833
+  - key: occurs in
+    source: reactome:R-HSA-70171
+    target: taxonomy:5833
+  - key: causes
+    source: taxonomy:5833
+    target: MESH:D016778
+multigraph: true
+nodes:
+  - id: MESH:D011803
+    label: Drug
+    name: Quinine
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: GO:0071897
+    label: BiologicalProcess
+    name: DNA biosynthetic process
+  - id: reactome:R-HSA-70171
+    label: Pathway
+    name: Glycolysis
+  - id: taxonomy:5833
+    label: OrganismTaxon
+    name: Plasmodium falciparum
+  - id: MESH:D016778
+    label: Disease
+    name: Malaria, Falciparum
+references:
+  - https://go.drugbank.com/drugs/DB00468#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Quinine#Mechanism_of_action
+  - https://www.drugs.com/monograph/quinine.html
+  - https://en.wikipedia.org/wiki/Malaria

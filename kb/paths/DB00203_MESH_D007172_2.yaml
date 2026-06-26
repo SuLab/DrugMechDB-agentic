@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00203_MESH_D007172_2
+  disease: Impotence
+  disease_mesh: MESH:D007172
+  drug: Sildenafil
+  drug_mesh: MESH:D000068677
+  drugbank: DB:DB00203
+links:
+  - key: decreases activity of
+    source: MESH:D000068677
+    target: UniProt:O76074
+  - key: decreases abundance of
+    source: UniProt:O76074
+    target: CHEBI:16356
+  - key: positively regulates
+    source: CHEBI:16356
+    target: GO:0044557
+  - key: positively regulates
+    source: GO:0044557
+    target: GO:0008015
+  - key: positively correlated with
+    source: GO:0008015
+    target: GO:0043084
+  - key: negatively correlated with
+    source: GO:0043084
+    target: MESH:D007172
+multigraph: true
+nodes:
+  - id: MESH:D000068677
+    label: Drug
+    name: Sildenafil
+  - id: UniProt:O76074
+    label: Protein
+    name: cGMP-specific 3',5'-cyclic phosphodiesterase
+  - id: CHEBI:16356
+    label: ChemicalSubstance
+    name: 3',5'-cyclic GMP
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: Relaxation of smooth muscle
+  - id: GO:0008015
+    label: BiologicalProcess
+    name: Blood circulation
+  - id: GO:0043084
+    label: BiologicalProcess
+    name: Penile erection
+  - id: MESH:D007172
+    label: Disease
+    name: Impotence
+references:
+  - https://go.drugbank.com/drugs/DB00203#BE0000182

@@ -1,0 +1,74 @@
+comment: Primidone MoA is unknown. Its major metabolite are, phenobarbital and Phenylethylmalonamide,
+  which are likely contributes to primidone's effects in many forms of epilepsy.
+directed: true
+graph:
+  _id: DB00794_MESH_D004830_1
+  disease: Tonic-clonic epilepsy
+  disease_mesh: MESH:D004830
+  drug: primidone
+  drug_mesh: MESH:D011324
+  drugbank: DB:DB00794
+links:
+  - key: has metabolite
+    source: MESH:D011324
+    target: CHEBI:8069
+  - key: has metabolite
+    source: MESH:D011324
+    target: CHEBI:8097
+  - key: increases activity of
+    source: CHEBI:8069
+    target: InterPro:IPR006028
+  - key: increases activity of
+    source: CHEBI:8097
+    target: InterPro:IPR006028
+  - key: positively regulates
+    source: InterPro:IPR006028
+    target: GO:0022851
+  - key: participates in
+    source: InterPro:IPR006028
+    target: GO:0022851
+  - key: positively correlated with
+    source: GO:0022851
+    target: GO:0060081
+  - key: negatively regulates
+    source: GO:0060081
+    target: GO:0019228
+  - key: contributes to
+    source: GO:0019228
+    target: GO:0050806
+  - key: positively correlated with
+    source: GO:0050806
+    target: MESH:D004830
+multigraph: true
+nodes:
+  - id: MESH:D011324
+    label: Drug
+    name: primidone
+  - id: CHEBI:8069
+    label: ChemicalSubstance
+    name: phenobarbital
+  - id: CHEBI:8097
+    label: ChemicalSubstance
+    name: Phenylethylmalonamide
+  - id: InterPro:IPR006028
+    label: GeneFamily
+    name: Gamma-aminobutyric acid A receptor/Glycine receptor alpha
+  - id: GO:0022851
+    label: MolecularActivity
+    name: GABA-gated chloride ion channel activity
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: membrane hyperpolarization
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: neuronal action potential
+  - id: GO:0050806
+    label: BiologicalProcess
+    name: positive regulation of synaptic transmission
+  - id: MESH:D004830
+    label: Disease
+    name: Tonic-clonic epilepsy
+references:
+  - https://go.drugbank.com/drugs/DB00794
+  - https://en.wikipedia.org/wiki/Primidone#Mechanism_of_action
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL856/

@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01580_MESH_D001007_1
+  disease: Anxiety
+  disease_mesh: MESH:D001007
+  drug: oxprenolol
+  drug_mesh: MESH:D010096
+  drugbank: DB:DB01580
+links:
+  - key: decreases activity of
+    source: MESH:D010096
+    target: UniProt:P08588
+  - key: decreases activity of
+    source: MESH:D010096
+    target: UniProt:P07550
+  - key: positively correlated with
+    source: UniProt:P08588
+    target: MESH:D004837
+  - key: positively correlated with
+    source: UniProt:P07550
+    target: MESH:D004837
+  - key: positively correlated with
+    source: MESH:D004837
+    target: HP:0100852
+  - key: manifestation of
+    source: HP:0100852
+    target: MESH:D001007
+multigraph: true
+nodes:
+  - id: MESH:D010096
+    label: Drug
+    name: Oxprenolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: HP:0100852
+    label: PhenotypicFeature
+    name: Abnormal fear/anxiety-related behavior
+  - id: MESH:D004837
+    label: ChemicalSubstance
+    name: Epinephrine
+  - id: MESH:D001007
+    label: Disease
+    name: Anxiety
+references:
+  - https://go.drugbank.com/drugs/DB01580#BE0000172

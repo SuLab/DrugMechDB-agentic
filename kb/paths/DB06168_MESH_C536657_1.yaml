@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB06168_MESH_C536657_1
+  disease: TNF receptor-associated periodic fever syndrome (TRAPS)
+  disease_mesh: MESH:C536657
+  drug: canakinumab
+  drug_mesh: MESH:C541220
+  drugbank: DB:DB06168
+links:
+  - key: decreases activity of
+    source: MESH:C541220
+    target: UniProt:P01584
+  - key: positively regulates
+    source: UniProt:P01584
+    target: HP:0001945
+  - key: positively regulates
+    source: UniProt:P01584
+    target: GO:0006954
+  - key: manifestation of
+    source: HP:0001945
+    target: MESH:C536657
+  - key: has phenotype
+    source: GO:0006954
+    target: HP:0002829
+  - key: manifestation of
+    source: HP:0002829
+    target: MESH:C536657
+multigraph: true
+nodes:
+  - id: MESH:C541220
+    label: Drug
+    name: Canakinumab
+  - id: UniProt:P01584
+    label: Protein
+    name: Interleukin-1 beta
+  - id: HP:0001945
+    label: PhenotypicFeature
+    name: Fever
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Arthralgia
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:C536657
+    label: Drug
+    name: TNF receptor-associated periodic fever syndrome (TRAPS)
+references:
+  - https://go.drugbank.com/drugs/DB06168
+  - https://en.wikipedia.org/wiki/TNF_receptor_associated_periodic_syndrome

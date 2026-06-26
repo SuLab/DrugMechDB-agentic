@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00446_MESH_D014435_1
+  disease: Typhoid fever
+  disease_mesh: MESH:D014435
+  drug: chloramphenicol
+  drug_mesh: MESH:D002701
+  drugbank: DB:DB00446
+links:
+  - key: negatively regulates
+    source: MESH:D002701
+    target: UniProt:Q8XET6
+  - key: positively regulates
+    source: UniProt:Q8XET6
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:90370
+  - key: causes
+    source: taxonomy:90370
+    target: MESH:D014435
+multigraph: true
+nodes:
+  - id: MESH:D002701
+    label: Drug
+    name: chloramphenicol
+  - id: UniProt:Q8XET6
+    label: Protein
+    name: 50S ribosomal protein L16
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:90370
+    label: OrganismTaxon
+    name: Salmonella enterica subsp. enterica serovar Typhi
+  - id: MESH:D014435
+    label: Disease
+    name: Typhoid fever
+references:
+  - https://go.drugbank.com/drugs/DB00446

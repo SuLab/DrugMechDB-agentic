@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00371_MESH_D001007_1
+  disease: Anxiety
+  disease_mesh: MESH:D001007
+  drug: meprobamate
+  drug_mesh: MESH:D008620
+  drugbank: DB:DB00371
+links:
+  - key: increases activity of
+    source: MESH:D008620
+    target: InterPro:IPR006028
+  - key: positively regulates
+    source: InterPro:IPR006028
+    target: GO:0007214
+  - key: negatively regulates
+    source: GO:0007214
+    target: HP:0100852
+  - key: negatively regulates
+    source: GO:0007214
+    target: MESH:D007319
+  - key: positively correlated with
+    source: HP:0100852
+    target: MESH:D001007
+  - key: positively correlated with
+    source: MESH:D007319
+    target: MESH:D001007
+multigraph: true
+nodes:
+  - id: MESH:D008620
+    label: Drug
+    name: Meprobamate
+  - id: InterPro:IPR006028
+    label: GeneFamily
+    name: Gamma-aminobutyric acid A receptor/Glycine receptor alpha
+  - id: GO:0007214
+    label: BiologicalProcess
+    name: Gamma-aminobutyric acid signaling pathway
+  - id: HP:0100852
+    label: PhenotypicFeature
+    name: Abnormal fear/anxiety-related behavior
+  - id: MESH:D007319
+    label: Disease
+    name: Sleeplessness
+  - id: MESH:D001007
+    label: Disease
+    name: Anxiety
+references:
+  - https://go.drugbank.com/drugs/DB00371

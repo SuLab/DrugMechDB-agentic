@@ -1,0 +1,38 @@
+comment: phenylacetate conjugates with glutamine to form phenylacetylglutamine, which
+  is excreted by the kidneys
+directed: true
+graph:
+  _id: DB09269_MESH_D022124_1
+  disease: Hyperammonemia
+  disease_mesh: MESH:D022124
+  drug: phenylacetic acid
+  drug_mesh: MESH:C025136
+  drugbank: DB:DB09269
+links:
+  - key: part of
+    source: MESH:C025136
+    target: MESH:C003089
+  - key: decreases abundance of
+    source: MESH:C003089
+    target: MESH:D000641
+  - key: contributes to
+    source: MESH:D000641
+    target: MESH:D022124
+multigraph: true
+nodes:
+  - id: MESH:C025136
+    label: Drug
+    name: phenylacetic acid
+  - id: MESH:C003089
+    label: ChemicalSubstance
+    name: phenylacetylglutamine
+  - id: MESH:D000641
+    label: ChemicalSubstance
+    name: Ammonia
+  - id: MESH:D022124
+    label: Disease
+    name: Hyperammonemia
+references:
+  - https://go.drugbank.com/drugs/DB09269#mechanismofaction
+  - https://www.accessdata.fda.gov/drugsatfda_docs/label/2005/020645lbl.pdf
+  - https://en.wikipedia.org/wiki/Hyperammonemia#Treatment

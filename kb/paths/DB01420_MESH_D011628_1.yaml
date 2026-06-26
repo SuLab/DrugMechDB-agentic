@@ -1,0 +1,41 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB01420_MESH_D011628_1
+  disease: Delayed puberty
+  disease_mesh: MESH:D011628
+  drug: Testosterone propionate
+  drug_mesh: MESH:D043343
+  drugbank: DB:DB01420
+links:
+  - key: increases activity of
+    source: MESH:D043343
+    target: UniProt:P10275
+  - key: positively regulates
+    source: UniProt:P10275
+    target: GO:0030521
+  - key: positively regulates
+    source: GO:0030521
+    target: GO:0003006
+  - key: negatively correlated with
+    source: GO:0003006
+    target: MESH:D011628
+multigraph: true
+nodes:
+  - id: MESH:D043343
+    label: Drug
+    name: Testosterone propionate
+  - id: UniProt:P10275
+    label: Protein
+    name: Androgen receptor
+  - id: GO:0030521
+    label: BiologicalProcess
+    name: Androgen receptor signaling pathway
+  - id: GO:0003006
+    label: BiologicalProcess
+    name: Developmental process involved in reproduction
+  - id: MESH:D011628
+    label: Disease
+    name: Delayed puberty
+references:
+  - https://go.drugbank.com/drugs/DB01420

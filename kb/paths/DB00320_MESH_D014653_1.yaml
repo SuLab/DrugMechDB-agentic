@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB00320_MESH_D014653_1
+  disease: Vascular headache
+  disease_mesh: MESH:D014653
+  drug: dihydroergotamine
+  drug_mesh: MESH:D004087
+  drugbank: DB:DB00320
+links:
+  - key: increases activity of
+    source: MESH:D004087
+    target: UniProt:P28221
+  - key: increases activity of
+    source: MESH:D004087
+    target: UniProt:P28222
+  - key: positively regulates
+    source: UniProt:P28221
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P28222
+    target: GO:0042310
+  - key: negatively regulates
+    source: UniProt:P28222
+    target: GO:1990793
+  - key: negatively regulates
+    source: UniProt:P28221
+    target: GO:1990793
+  - key: treats
+    source: GO:0042310
+    target: MESH:D014653
+  - key: positively correlated with
+    source: GO:1990793
+    target: MESH:D010146
+  - key: positively correlated with
+    source: MESH:D010146
+    target: MESH:D014653
+multigraph: true
+nodes:
+  - id: MESH:D004087
+    label: Drug
+    name: Dihydroergotamine
+  - id: UniProt:P28221
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1D
+  - id: UniProt:P28222
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1B
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: GO:1990793
+    label: BiologicalProcess
+    name: Substance P secretion, neurotransmission
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+  - id: MESH:D014653
+    label: Disease
+    name: Vascular headache
+references:
+  - https://jamanetwork.com/journals/jamaneurology/fullarticle/782346
+  - https://go.drugbank.com/drugs/DB00320#BE0000797

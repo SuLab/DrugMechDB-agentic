@@ -1,0 +1,51 @@
+comment: Brentuximab vedotin is anantibody-drug conjugate that combines an anti-CD30
+  antibody with the drug monomethyl auristatin E (MMAE)
+directed: true
+graph:
+  _id: DB08870_MESH_D006689_1
+  disease: Hodgkin's disease
+  disease_mesh: MESH:D006689
+  drug: brentuximab vedotin
+  drug_mesh: MESH:C547738
+  drugbank: DB:DB08870
+links:
+  - key: molecularly interacts with
+    source: MESH:C547738
+    target: UniProt:P28908
+  - key: expressed in
+    source: UniProt:P28908
+    target: CL:0001063
+  - key: coexists with
+    source: MESH:C547738
+    target: MESH:C495575
+  - key: causes
+    source: MESH:C495575
+    target: GO:0008219
+  - key: enables
+    source: CL:0001063
+    target: GO:0008219
+  - key: negatively correlated with
+    source: GO:0008219
+    target: MESH:D006689
+multigraph: true
+nodes:
+  - id: MESH:C547738
+    label: Drug
+    name: brentuximab vedotin
+  - id: UniProt:P28908
+    label: Protein
+    name: Tumor necrosis factor receptor superfamily member 8
+  - id: CL:0001063
+    label: Cell
+    name: tumor cell
+  - id: MESH:C495575
+    label: ChemicalSubstance
+    name: monomethyl auristatin E
+  - id: GO:0008219
+    label: BiologicalProcess
+    name: Cell death
+  - id: MESH:D006689
+    label: Disease
+    name: Hodgkin's disease
+references:
+  - https://go.drugbank.com/drugs/DB08870

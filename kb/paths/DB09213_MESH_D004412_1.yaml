@@ -1,0 +1,60 @@
+comment: Dexibuprofen is an active enantiomer of ibuprofen.
+directed: true
+graph:
+  _id: DB09213_MESH_D004412_1
+  disease: Dysmenorrhea
+  disease_mesh: MESH:D004412
+  drug: dexibuprofen
+  drug_mesh: MESH:C539402
+  drugbank: DB:DB09213
+links:
+  - key: decreases activity of
+    source: MESH:C539402
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:C539402
+    target: UniProt:P35354
+  - key: participates in
+    source: UniProt:P23219
+    target: reactome:R-HSA-2162123
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0012531
+  - key: manifestation of
+    source: HP:0012531
+    target: MESH:D004412
+multigraph: true
+nodes:
+  - id: MESH:C539402
+    label: Drug
+    name: dexibuprofen
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: HP:0012531
+    label: PhenotypicFeature
+    name: Pain
+  - id: MESH:D004412
+    label: Disease
+    name: Dysmenorrhea
+references:
+  - https://go.drugbank.com/drugs/DB09213#BE0000262
+  - https://go.drugbank.com/drugs/DB09213#BE0000017
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL175/
+  - https://en.wikipedia.org/wiki/Ibuprofen#Pharmacology
+  - https://en.wikipedia.org/wiki/Fever#PGE2_release

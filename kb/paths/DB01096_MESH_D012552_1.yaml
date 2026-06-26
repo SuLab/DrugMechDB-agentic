@@ -1,0 +1,37 @@
+comment: Oxamniquine is an anthelmintic with schistosomicidal activity against Schistosoma
+  mansoni, but not against other Schistosoma sp.
+directed: true
+graph:
+  _id: DB01096_MESH_D012552_1
+  disease: Infection by Schistosoma
+  disease_mesh: MESH:D012552
+  drug: oxamniquine
+  drug_mesh: MESH:D010073
+  drugbank: DB:DB01096
+links:
+  - key: disrupts
+    source: MESH:D010073
+    target: CHEBI:16991
+  - key: in taxon
+    source: CHEBI:16991
+    target: taxonomy:6183
+  - key: causes
+    source: taxonomy:6183
+    target: MESH:D012552
+multigraph: true
+nodes:
+  - id: MESH:D010073
+    label: Drug
+    name: oxamniquine
+  - id: CHEBI:16991
+    label: ChemicalSubstance
+    name: deoxyribonucleic acid
+  - id: taxonomy:6183
+    label: OrganismTaxon
+    name: Schistosoma mansoni
+  - id: MESH:D012552
+    label: Disease
+    name: Infection by Schistosoma
+references:
+  - https://go.drugbank.com/drugs/DB01096
+  - https://en.wikipedia.org/wiki/Oxamniquine#Mechanism_of_action

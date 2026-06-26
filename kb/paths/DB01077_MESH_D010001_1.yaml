@@ -1,0 +1,92 @@
+comment: Etidronate is a weak inhibitor of proton transport in animal models (https://pubmed.ncbi.nlm.nih.gov/8889850/).
+directed: true
+graph:
+  _id: DB01077_MESH_D010001_1
+  disease: Osteitis deformans
+  disease_mesh: MESH:D010001
+  drug: etidronic acid
+  drug_mesh: MESH:D012968
+  drugbank: DB:DB01077
+links:
+  - key: negatively correlated with
+    source: MESH:D012968
+    target: GO:0140603
+  - key: increases activity of
+    source: GO:0140603
+    target: CL:0000092
+  - key: negatively regulates
+    source: MESH:D012968
+    target: UniProt:P38606
+  - key: positively regulates
+    source: UniProt:P38606
+    target: GO:1902600
+  - key: positively correlated with
+    source: GO:1902600
+    target: GO:0045453
+  - key: positively regulates
+    source: MESH:D012968
+    target: GO:0006915
+  - key: decreases abundance of
+    source: GO:0006915
+    target: CL:0000092
+  - key: positively regulates
+    source: CL:0000092
+    target: GO:0045453
+  - key: positively correlated with
+    source: GO:0045453
+    target: MESH:D010001
+  - key: molecularly interacts with
+    source: MESH:D012968
+    target: CHEBI:52255
+  - key: positively correlated with
+    source: CHEBI:52255
+    target: GO:0001503
+  - key: positively correlated with
+    source: CHEBI:52255
+    target: GO:1990523
+  - key: negatively correlated with
+    source: GO:1990523
+    target: MESH:D010001
+  - key: negatively correlated with
+    source: GO:0001503
+    target: MESH:D010001
+multigraph: true
+nodes:
+  - id: MESH:D012968
+    label: Drug
+    name: etidronic acid
+  - id: GO:0140603
+    label: MolecularActivity
+    name: ATP hydrolysis activity
+  - id: UniProt:P38606
+    label: Protein
+    name: V-type proton ATPase catalytic subunit A
+  - id: GO:1902600
+    label: BiologicalProcess
+    name: proton transmembrane transport
+  - id: CHEBI:52255
+    label: ChemicalSubstance
+    name: hydroxylapatite
+  - id: CL:0000092
+    label: Cell
+    name: osteoclast
+  - id: GO:0045453
+    label: BiologicalProcess
+    name: bone resorption
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: GO:0001503
+    label: BiologicalProcess
+    name: ossification
+  - id: GO:1990523
+    label: BiologicalProcess
+    name: bone regeneration
+  - id: MESH:D010001
+    label: Disease
+    name: Osteitis deformans
+references:
+  - https://go.drugbank.com/drugs/DB01077#mechanism-of-action
+  - https://drugs.ncats.io/drug/M2F465ROXU
+  - https://www.caymanchem.com/product/20769/etidronate-(sodium-salt)
+  - https://en.wikipedia.org/wiki/Etidronic_acid#Medical

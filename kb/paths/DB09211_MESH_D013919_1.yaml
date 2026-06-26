@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB09211_MESH_D013919_1
+  disease: Thromboangiitis obliterans
+  disease_mesh: MESH:D013919
+  drug: Limaprost
+  drug_mesh: MESH:C525749,MESH:C025090,MESH:C059238
+  drugbank: DB:DB09211
+links:
+  - key: increases activity of
+    source: DB:DB09211
+    target: UniProt:P43116
+  - key: positively regulates
+    source: UniProt:P43116
+    target: reactome:R-HSA-372790
+  - key: increases activity of
+    source: reactome:R-HSA-372790
+    target: UniProt:B7Z2C7
+  - key: increases abundance of
+    source: UniProt:B7Z2C7
+    target: CHEBI:17489
+  - key: positively regulates
+    source: CHEBI:17489
+    target: GO:0044557
+  - key: negatively correlated with
+    source: GO:0044557
+    target: MESH:D014661
+  - key: positively correlated with
+    source: MESH:D014661
+    target: MESH:D013919
+multigraph: true
+nodes:
+  - id: DB:DB09211
+    label: Drug
+    name: Limaprost
+  - id: UniProt:P43116
+    label: Protein
+    name: Prostaglandin E2 receptor EP2 subtype
+  - id: reactome:R-HSA-372790
+    label: Pathway
+    name: Signaling by GPCR
+  - id: UniProt:B7Z2C7
+    label: Protein
+    name: Adenylate cyclase
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: Relaxation of smooth muscle
+  - id: MESH:D014661
+    label: Disease
+    name: Vasoconstriction
+  - id: MESH:D013919
+    label: Disease
+    name: Thromboangiitis obliterans
+references:
+  - https://go.drugbank.com/drugs/DB09211
+  - https://en.wikipedia.org/wiki/Thromboangiitis_obliterans

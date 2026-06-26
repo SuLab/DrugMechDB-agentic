@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01591_MESH_D053202_1
+  disease: Urge incontinence of urine
+  disease_mesh: MESH:D053202
+  drug: solifenacin
+  drug_mesh: MESH:D000069464
+  drugbank: DB:DB01591
+links:
+  - key: negatively regulates
+    source: MESH:D000069464
+    target: UniProt:P20309
+  - key: negatively regulates
+    source: MESH:D000069464
+    target: UniProt:P08172
+  - key: positively regulates
+    source: UniProt:P20309
+    target: GO:0014832
+  - key: positively regulates
+    source: UniProt:P08172
+    target: GO:0014832
+  - key: positively correlated with
+    source: GO:0014832
+    target: GO:0060073
+  - key: positively correlated with
+    source: GO:0060073
+    target: MESH:D053202
+multigraph: true
+nodes:
+  - id: MESH:D000069464
+    label: Drug
+    name: solifenacin
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: UniProt:P08172
+    label: Protein
+    name: Muscarinic acetylcholine receptor M2
+  - id: GO:0014832
+    label: BiologicalProcess
+    name: urinary bladder smooth muscle contraction
+  - id: GO:0060073
+    label: BiologicalProcess
+    name: micturition
+  - id: MESH:D053202
+    label: Disease
+    name: Urge incontinence of urine
+references:
+  - https://go.drugbank.com/drugs/DB01591

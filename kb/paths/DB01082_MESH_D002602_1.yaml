@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB01082_MESH_D002602_1
+  disease: Chancroid
+  disease_mesh: MESH:D002602
+  drug: Streptomycin
+  drug_mesh: MESH:D013307
+  drugbank: DB:DB01082
+links:
+  - key: decreases activity of
+    source: MESH:D013307
+    target: MESH:D012336
+  - key: decreases activity of
+    source: MESH:D013307
+    target: MESH:D012338
+  - key: located in
+    source: MESH:D012336
+    target: GO:0015935
+  - key: located in
+    source: MESH:D012338
+    target: GO:0015934
+  - key: participates in
+    source: GO:0015935
+    target: GO:0006412
+  - key: participates in
+    source: GO:0015934
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:730
+  - key: causes
+    source: taxonomy:730
+    target: MESH:D002602
+multigraph: true
+nodes:
+  - id: MESH:D013307
+    label: Drug
+    name: Streptomycin
+  - id: MESH:D012336
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 16S
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: GO:0015935
+    label: CellularComponent
+    name: small ribosomal subunit
+  - id: GO:0015934
+    label: CellularComponent
+    name: large ribosomal subunit
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:730
+    label: OrganismTaxon
+    name: Haemophilus ducreyi
+  - id: MESH:D002602
+    label: Disease
+    name: Chancroid
+references:
+  - https://go.drugbank.com/drugs/DB01082#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Chancroid

@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB09046_MESH_C562448_1
+  disease: Acquired partial lipodystrophy
+  disease_mesh: MESH:C562448
+  drug: Metreleptin
+  drug_mesh: MESH:C415771
+  drugbank: DB:DB09046
+links:
+  - key: increases activity of
+    source: MESH:C415771
+    target: UniProt:P48357
+  - key: positively correlated with
+    source: UniProt:P48357
+    target: MESH:D020738
+  - key: produced by
+    source: MESH:D020738
+    target: UBERON:0001013
+  - key: negatively correlated with
+    source: UBERON:0001013
+    target: MESH:C562448
+multigraph: true
+nodes:
+  - id: MESH:C415771
+    label: Drug
+    name: Metreleptin
+  - id: UniProt:P48357
+    label: Protein
+    name: Leptin receptor
+  - id: MESH:D020738
+    label: ChemicalSubstance
+    name: Leptin
+  - id: UBERON:0001013
+    label: GrossAnatomicalStructure
+    name: Adipose tissue
+  - id: MESH:C562448
+    label: Disease
+    name: Acquired partial lipodystrophy
+references:
+  - https://go.drugbank.com/drugs/DB09046#BE0003376
+  - https://en.wikipedia.org/wiki/Lipodystrophy

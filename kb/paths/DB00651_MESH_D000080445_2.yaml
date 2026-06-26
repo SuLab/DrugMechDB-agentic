@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00651_MESH_D000080445_2
+  disease: Asthma-Chronic Obstructive Pulmonary Disease Overlap Syndrome
+  disease_mesh: MESH:D000080445
+  drug: Dyphylline
+  drug_mesh: MESH:D004400
+  drugbank: DB:DB00651
+links:
+  - key: decreases activity of
+    source: MESH:D004400
+    target: InterPro:IPR001634
+  - key: negatively regulates
+    source: InterPro:IPR001634
+    target: GO:0004016
+  - key: increases abundance of
+    source: GO:0004016
+    target: MESH:D000242
+  - key: positively regulates
+    source: MESH:D000242
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: MESH:D000080445
+multigraph: true
+nodes:
+  - id: MESH:D004400
+    label: Drug
+    name: Dyphylline
+  - id: InterPro:IPR001634
+    label: GeneFamily
+    name: Adenosine receptor
+  - id: GO:0004016
+    label: MolecularActivity
+    name: adenylate cyclase activity
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: Cyclic AMP
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: MESH:D000080445
+    label: Disease
+    name: Asthma-Chronic Obstructive Pulmonary Disease Overlap Syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00651#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Asthma
+  - https://en.wikipedia.org/wiki/Chronic_obstructive_pulmonary_disease

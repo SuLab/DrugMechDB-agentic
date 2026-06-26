@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00515_MESH_D010051_1
+  disease: Ovarian Cancer
+  disease_mesh: MESH:D010051
+  drug: cisplatin
+  drug_mesh: MESH:D002945
+  drugbank: DB:DB00515
+links:
+  - key: negatively regulates
+    source: MESH:D002945
+    target: GO:0090592
+  - key: negatively regulates
+    source: MESH:D002945
+    target: GO:0006351
+  - key: disrupts
+    source: MESH:D002945
+    target: MESH:D004247
+  - key: part of
+    source: GO:0090592
+    target: HP:0031377
+  - key: part of
+    source: GO:0006351
+    target: HP:0031377
+  - key: participates in
+    source: MESH:D004247
+    target: HP:0031377
+  - key: positively correlated with
+    source: HP:0031377
+    target: MESH:D010051
+multigraph: true
+nodes:
+  - id: MESH:D002945
+    label: Drug
+    name: Cisplatin
+  - id: GO:0090592
+    label: BiologicalProcess
+    name: DNA synthesis involved in DNA replication
+  - id: GO:0006351
+    label: BiologicalProcess
+    name: Transcription, DNA-templated
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D010051
+    label: Disease
+    name: Ovarian Cancer
+references:
+  - https://go.drugbank.com/drugs/DB00515

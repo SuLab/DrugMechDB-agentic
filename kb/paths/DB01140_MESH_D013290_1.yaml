@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB01140_MESH_D013290_1
+  disease: Streptococcal Infections
+  disease_mesh: MESH:D013290
+  drug: Cefadroxil
+  drug_mesh: MESH:D002434
+  drugbank: DB:DB01140
+links:
+  - key: decreases activity of
+    source: MESH:D002434
+    target: InterPro:IPR001460
+  - key: participates in
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:1301
+  - key: causes
+    source: taxonomy:1301
+    target: MESH:D013290
+multigraph: true
+nodes:
+  - id: MESH:D002434
+    label: Drug
+    name: Cefadroxil
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:1301
+    label: OrganismTaxon
+    name: Streptococcus
+  - id: MESH:D013290
+    label: Disease
+    name: Streptococcal Infections
+references:
+  - https://go.drugbank.com/drugs/DB01140#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Group_A_streptococcal_infection
+  - https://en.wikipedia.org/wiki/Group_B_streptococcal_infection

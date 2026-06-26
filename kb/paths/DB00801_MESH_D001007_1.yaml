@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00801_MESH_D001007_1
+  disease: Anxiety
+  disease_mesh: MESH:D001007
+  drug: halazepam
+  drug_mesh: MESH:C010175
+  drugbank: DB:DB00801
+links:
+  - key: positively regulates
+    source: MESH:C010175
+    target: MESH:D018079
+  - key: positively regulates
+    source: MESH:D018079
+    target: GO:0006821
+  - key: positively correlated with
+    source: GO:0006821
+    target: GO:0060081
+  - key: negatively correlated with
+    source: GO:0060081
+    target: MESH:D000071080
+  - key: positively correlated with
+    source: MESH:D000071080
+    target: MESH:D001007
+multigraph: true
+nodes:
+  - id: MESH:C010175
+    label: Drug
+    name: halazepam
+  - id: MESH:D018079
+    label: GeneFamily
+    name: Receptors, GABA
+  - id: GO:0006821
+    label: BiologicalProcess
+    name: chloride transport
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: membrane hyperpolarization
+  - id: MESH:D000071080
+    label: BiologicalProcess
+    name: Cortical Excitability
+  - id: MESH:D001007
+    label: Disease
+    name: Anxiety
+references:
+  - https://go.drugbank.com/drugs/DB00801
+  - https://pubchem.ncbi.nlm.nih.gov/compound/31640#section=Pharmacology-and-Biochemistry

@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB09321_MESH_D002179_1
+  disease: Candidiasis of skin
+  disease_mesh: MESH:D002179
+  drug: zinc oxide
+  drug_mesh: MESH:D015034
+  drugbank: DB:DB09321
+links:
+  - key: decreases abundance of
+    source: MESH:D015034
+    target: taxonomy:4751
+  - key: causes
+    source: taxonomy:4751
+    target: MESH:D002179
+multigraph: true
+nodes:
+  - id: MESH:D015034
+    label: Drug
+    name: Zinc oxide
+  - id: taxonomy:4751
+    label: OrganismTaxon
+    name: Fungi
+  - id: MESH:D002179
+    label: Disease
+    name: Candidiasis of skin
+references:
+  - https://go.drugbank.com/drugs/DB09321
+  - https://pubmed.ncbi.nlm.nih.gov/30299956/

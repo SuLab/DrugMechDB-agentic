@@ -1,0 +1,77 @@
+comment: The disease is also known as Sore throat symptom as per the original file.
+directed: true
+graph:
+  _id: DB06742_MESH_D010612_1
+  disease: Pharyngitis
+  disease_mesh: MESH:D010612
+  drug: ambroxol
+  drug_mesh: MESH:D000551
+  drugbank: DB:DB06742
+links:
+  - key: negatively regulates
+    source: MESH:D000551
+    target: GO:0038060
+  - key: positively correlated with
+    source: GO:0038060
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0033050
+  - key: negatively regulates
+    source: MESH:D000551
+    target: Pfam:PF06512
+  - key: positively correlated with
+    source: Pfam:PF06512
+    target: GO:0006954
+  - key: increases abundance of
+    source: GO:0038060
+    target: UBERON:0016552
+  - key: positively correlated with
+    source: UBERON:0016552
+    target: HP:0031602
+  - key: positively correlated with
+    source: HP:0031602
+    target: HP:0033050
+  - key: positively correlated with
+    source: Pfam:PF06512
+    target: HP:0012531
+  - key: positively correlated with
+    source: HP:0012531
+    target: HP:0033050
+  - key: manifestation of
+    source: HP:0033050
+    target: MESH:D010612
+multigraph: true
+nodes:
+  - id: MESH:D000551
+    label: Drug
+    name: ambroxol
+  - id: GO:0038060
+    label: BiologicalProcess
+    name: nitric oxide-cGMP-mediated signaling pathway
+  - id: HP:0012531
+    label: PhenotypicFeature
+    name: Pain
+  - id: UBERON:0016552
+    label: GrossAnatomicalStructure
+    name: phlegm
+  - id: HP:0031602
+    label: PhenotypicFeature
+    name: Abnormal mucociliary clearance
+  - id: Pfam:PF06512
+    label: GeneFamily
+    name: Sodium ion transport-associated
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0033050
+    label: PhenotypicFeature
+    name: Pharyngalgia
+  - id: MESH:D010612
+    label: Disease
+    name: Pharyngitis
+references:
+  - https://en.wikipedia.org/wiki/Ambroxol#Mechanism_of_action
+  - https://go.drugbank.com/drugs/DB06742#mechanism-of-action
+  - https://pubmed.ncbi.nlm.nih.gov/28937232/
+  - https://en.wikipedia.org/wiki/Sore_throat#Diagnosis

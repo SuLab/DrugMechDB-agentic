@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB09561_MESH_D017674_1
+  disease: Hypophosphatemia
+  disease_mesh: MESH:D017674
+  drug: sodium glycerophosphate
+  drug_mesh: MESH:C029620
+  drugbank: DB:DB09561
+links:
+  - key: increases abundance of
+    source: MESH:C029620
+    target: CHEBI:24838
+  - key: correlated with
+    source: CHEBI:24838
+    target: HP:0100529
+  - key: superclass of
+    source: HP:0100529
+    target: MESH:D017674
+multigraph: true
+nodes:
+  - id: MESH:C029620
+    label: Drug
+    name: sodium glycerophosphate
+  - id: CHEBI:24838
+    label: ChemicalSubstance
+    name: inorganic phosphate
+  - id: HP:0100529
+    label: PhenotypicFeature
+    name: Abnormal blood phosphate concentration
+  - id: MESH:D017674
+    label: Disease
+    name: Hypophosphatemia
+references:
+  - https://go.drugbank.com/drugs/DB09561

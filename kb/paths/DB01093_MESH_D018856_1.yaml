@@ -1,0 +1,45 @@
+directed: true
+graph:
+  _id: DB01093_MESH_D018856_1
+  disease: Cystitis, Interstitial
+  disease_mesh: MESH:D018856
+  drug: dimethyl sulfoxide
+  drug_mesh: MESH:D004121
+  drugbank: DB:DB01093
+links:
+  - key: negatively correlated with
+    source: MESH:D004121
+    target: GO:0006954
+  - key: negatively correlated with
+    source: MESH:D004121
+    target: HP:0012531
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0100577
+  - key: positively correlated with
+    source: HP:0012531
+    target: HP:0100577
+  - key: manifestation of
+    source: HP:0100577
+    target: MESH:D018856
+multigraph: true
+nodes:
+  - id: MESH:D004121
+    label: Drug
+    name: dimethyl sulfoxide
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0012531
+    label: PhenotypicFeature
+    name: Pain
+  - id: HP:0100577
+    label: PhenotypicFeature
+    name: Urinary bladder inflammation
+  - id: MESH:D018856
+    label: Disease
+    name: Cystitis, Interstitial
+references:
+  - https://go.drugbank.com/drugs/DB01093
+comment: The disease is denoted as Ulcerative cystitis in the original file as per
+  DrugCentral.

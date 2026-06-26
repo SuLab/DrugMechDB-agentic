@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00774_MESH_D004487_1
+  disease: Edema
+  disease_mesh: MESH:D004487
+  drug: hydroflumethiazide
+  drug_mesh: MESH:D006857
+  drugbank: DB:DB00774
+links:
+  - key: decreases activity of
+    source: MESH:D006857
+    target: UniProt:P55017
+  - key: positively regulates
+    source: UniProt:P55017
+    target: GO:0070294
+  - key: positively correlated with
+    source: GO:0070294
+    target: GO:0003092
+  - key: positively correlated with
+    source: GO:0003092
+    target: MESH:D004487
+multigraph: true
+nodes:
+  - id: MESH:D006857
+    label: Drug
+    name: hydroflumethiazide
+  - id: UniProt:P55017
+    label: Protein
+    name: Solute carrier family 12 member 3
+  - id: GO:0070294
+    label: BiologicalProcess
+    name: renal sodium ion absorption
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: renal water retention
+  - id: MESH:D004487
+    label: Disease
+    name: Edema
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1763/

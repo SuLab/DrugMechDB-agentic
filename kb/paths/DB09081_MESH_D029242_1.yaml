@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB09081_MESH_D029242_1
+  disease: Leber's optic atrophy
+  disease_mesh: MESH:D029242
+  drug: Idebenone
+  drug_mesh: MESH:C036619
+  drugbank: DB:DB09081
+links:
+  - key: positively regulates
+    source: MESH:C036619
+    target: GO:0022900
+  - key: has participant
+    source: GO:0022900
+    target: GO:0005747
+  - key: disrupted by
+    source: GO:0005747
+    target: MESH:D029242
+multigraph: true
+nodes:
+  - id: MESH:C036619
+    label: Drug
+    name: Idebenone
+  - id: GO:0022900
+    label: BiologicalProcess
+    name: Electron transport chain
+  - id: GO:0005747
+    label: CellularComponent
+    name: Mitochondrial respiratory chain complex I
+  - id: MESH:D029242
+    label: Disease
+    name: Leber's optic atrophy
+references:
+  - https://go.drugbank.com/drugs/DB09081
+  - https://en.wikipedia.org/wiki/Leber%27s_hereditary_optic_neuropathy

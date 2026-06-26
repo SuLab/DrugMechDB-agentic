@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00040_MESH_D007003_1
+  disease: Hypoglycemic disorder
+  disease_mesh: MESH:D007003
+  drug: glucagon
+  drug_mesh: MESH:D005934
+  drugbank: DB:DB00040
+links:
+  - key: increases activity of
+    source: MESH:D005934
+    target: UniProt:P47871
+  - key: positively regulates
+    source: UniProt:P47871
+    target: GO:0071377
+  - key: positively regulates
+    source: GO:0071377
+    target: GO:0042593
+  - key: negatively correlated with
+    source: GO:0042593
+    target: MESH:D007003
+multigraph: true
+nodes:
+  - id: MESH:D005934
+    label: Drug
+    name: Glucagon
+  - id: UniProt:P47871
+    label: Protein
+    name: Glucagon receptor
+  - id: GO:0071377
+    label: BiologicalProcess
+    name: Cellular response to glucagon stimulus
+  - id: GO:0042593
+    label: BiologicalProcess
+    name: Glucose homeostasis
+  - id: MESH:D007003
+    label: Disease
+    name: Hypoglycemic disorder
+references:
+  - https://go.drugbank.com/drugs/DB00040

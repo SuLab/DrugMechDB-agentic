@@ -1,0 +1,81 @@
+comment: The majority of Gastrointestinal stromal tumor patients have mutations on
+  the KIT or PDGFRA genes (95% of all patients).
+directed: true
+graph:
+  _id: DB00619_MESH_D046152_1
+  disease: Gastrointestinal stromal tumor
+  disease_mesh: MESH:D046152
+  drug: imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+links:
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: UniProt:P10721
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: UniProt:P16234
+  - key: positively regulates
+    source: UniProt:P16234
+    target: GO:0035790
+  - key: positively correlated with
+    source: GO:0035790
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0035790
+    target: MESH:D002470
+  - key: positively regulates
+    source: UniProt:P10721
+    target: GO:0038109
+  - key: positively correlated with
+    source: GO:0038109
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0038109
+    target: MESH:D002470
+  - key: positively correlated with
+    source: GO:0038109
+    target: GO:0030154
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D046152
+  - key: positively correlated with
+    source: MESH:D002470
+    target: MESH:D046152
+  - key: positively correlated with
+    source: GO:0030154
+    target: MESH:D046152
+multigraph: true
+nodes:
+  - id: MESH:D000068877
+    label: Drug
+    name: imatinib
+  - id: UniProt:P10721
+    label: Protein
+    name: Mast/stem cell growth factor receptor Kit
+  - id: UniProt:P16234
+    label: Protein
+    name: Platelet-derived growth factor receptor alpha
+  - id: GO:0035790
+    label: BiologicalProcess
+    name: platelet-derived growth factor receptor-alpha signaling pathway
+  - id: GO:0038109
+    label: BiologicalProcess
+    name: Kit signaling pathway
+  - id: GO:0030154
+    label: BiologicalProcess
+    name: cell differentiation
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: MESH:D002470
+    label: BiologicalProcess
+    name: Cell Survival
+  - id: MESH:D046152
+    label: Disease
+    name: Gastrointestinal stromal tumor
+references:
+  - https://www.cancer.gov/publications/dictionaries/cancer-drug/def/imatinib-mesylate
+  - https://en.wikipedia.org/wiki/Imatinib#Gastrointestinal_stromal_tumors
+  - https://go.drugbank.com/drugs/DB00619#BE0000453
+  - https://go.drugbank.com/drugs/DB00619#BE0000852

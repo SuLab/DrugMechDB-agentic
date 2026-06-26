@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB04920_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: clevidipine
+  drug_mesh: MESH:C118563
+  drugbank: DB:DB04920
+links:
+  - key: negatively regulates
+    source: MESH:C118563
+    target: MESH:D020746
+  - key: positively regulates
+    source: MESH:D020746
+    target: GO:0006816
+  - key: positively regulates
+    source: GO:0006816
+    target: GO:0014829
+  - key: contributes to
+    source: GO:0014829
+    target: MESH:D014655
+  - key: positively correlated with
+    source: MESH:D014655
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C118563
+    label: Drug
+    name: clevidipine
+  - id: MESH:D020746
+    label: GeneFamily
+    name: Calcium Channels, L-Type
+  - id: GO:0014829
+    label: BiologicalProcess
+    name: vascular associated smooth muscle contraction
+  - id: GO:0006816
+    label: BiologicalProcess
+    name: calcium ion transport
+  - id: MESH:D014655
+    label: BiologicalProcess
+    name: Vascular Resistance
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB04920#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Clevidipine#Basic_chemical_and_pharmacological_properties

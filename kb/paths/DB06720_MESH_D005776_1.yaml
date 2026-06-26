@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB06720_MESH_D005776_1
+  disease: Chronic non-neuropathic Gaucher's disease
+  disease_mesh: MESH:D005776
+  drug: Velaglucerase alfa
+  drugbank: DB:DB06720
+links:
+  - key: decreases abundance of
+    source: DB:DB06720
+    target: MESH:D005963
+  - key: causes
+    source: MESH:D005963
+    target: MESH:D005776
+multigraph: true
+nodes:
+  - id: DB:DB06720
+    label: Drug
+    name: Velaglucerase alfa
+  - id: MESH:D005963
+    label: ChemicalSubstance
+    name: Glucosylceramides
+  - id: MESH:D005776
+    label: Disease
+    name: Chronic non-neuropathic Gaucher's disease
+references:
+  - https://en.wikipedia.org/wiki/Gaucher%27s_disease
+  - https://go.drugbank.com/drugs/DB06720

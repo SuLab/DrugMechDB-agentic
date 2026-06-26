@@ -1,0 +1,101 @@
+directed: true
+graph:
+  _id: DB01177_MESH_D015470_1
+  disease: Acute myeloid leukemia, disease
+  disease_mesh: MESH:D015470
+  drug: idarubicin
+  drug_mesh: MESH:D015255
+  drugbank: DB:DB01177
+links:
+  - key: contributes to
+    source: MESH:D015255
+    target: GO:0001207
+  - key: negatively correlated with
+    source: GO:0001207
+    target: GO:0009299
+  - key: positively correlated with
+    source: GO:0009299
+    target: HP:0031377
+  - key: negatively regulates
+    source: MESH:D015255
+    target: GO:0140014
+  - key: positively correlated with
+    source: GO:0140014
+    target: HP:0031377
+  - key: positively correlated with
+    source: HP:0031377
+    target: MESH:D015470
+  - key: decreases abundance of
+    source: MESH:D015255
+    target: GO:0032993
+  - key: has participant
+    source: GO:0032993
+    target: UniProt:P11388
+  - key: positively correlated with
+    source: UniProt:P11388
+    target: GO:0006260
+  - key: increases abundance of
+    source: MESH:D015255
+    target: MESH:D005609
+  - key: positively correlated with
+    source: MESH:D005609
+    target: MESH:D004249
+  - key: positively correlated with
+    source: MESH:D004249
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D015470
+  - key: positively correlated with
+    source: GO:0006260
+    target: HP:0031377
+  - key: positively correlated with
+    source: GO:0006260
+    target: GO:0140014
+  - key: positively correlated with
+    source: GO:0140014
+    target: HP:0031377
+  - key: manifestation of
+    source: HP:0031377
+    target: MESH:D015470
+multigraph: true
+nodes:
+  - id: MESH:D015255
+    label: Drug
+    name: idarubicin
+  - id: GO:0001207
+    label: BiologicalProcess
+    name: histone displacement
+  - id: GO:0009299
+    label: BiologicalProcess
+    name: mRNA transcription
+  - id: UniProt:P11388
+    label: Protein
+    name: DNA topoisomerase 2-alpha
+  - id: GO:0032993
+    label: CellularComponent
+    name: protein-DNA complex
+  - id: MESH:D005609
+    label: ChemicalSubstance
+    name: Free Radicals
+  - id: MESH:D004249
+    label: BiologicalProcess
+    name: DNA Damage
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: GO:0140014
+    label: BiologicalProcess
+    name: mitotic nuclear division
+  - id: MESH:D015470
+    label: Disease
+    name: Acute myeloid leukemia, disease
+references:
+  - https://go.drugbank.com/drugs/DB01177
+  - https://en.wikipedia.org/wiki/Idarubicin

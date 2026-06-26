@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00595_MESH_D011778_1
+  disease: Q fever
+  disease_mesh: MESH:D011778
+  drug: oxytetracycline
+  drug_mesh: MESH:D010118
+  drugbank: DB:DB00595
+links:
+  - key: decreases activity of
+    source: MESH:D010118
+    target: UniProt:Q83EQ3
+  - key: decreases activity of
+    source: MESH:D010118
+    target: UniProt:Q83AX9
+  - key: positively regulates
+    source: UniProt:Q83EQ3
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:Q83AX9
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:777
+  - key: causes
+    source: taxonomy:777
+    target: MESH:D011778
+multigraph: true
+nodes:
+  - id: MESH:D010118
+    label: Drug
+    name: oxytetracycline
+  - id: UniProt:Q83EQ3
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:Q83AX9
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:777
+    label: OrganismTaxon
+    name: Coxiella burnetii
+  - id: MESH:D011778
+    label: Disease
+    name: Q fever
+references:
+  - https://go.drugbank.com/drugs/DB00595#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q83EQ3#function
+  - https://www.uniprot.org/uniprot/Q83AX9#function
+  - https://en.wikipedia.org/wiki/Q_fever

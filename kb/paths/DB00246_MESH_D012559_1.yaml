@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB00246_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: ziprasidone
+  drug_mesh: MESH:C092292
+  drugbank: DB:DB00246
+links:
+  - key: decreases activity of
+    source: MESH:C092292
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:C092292
+    target: UniProt:P28223
+  - key: participates in
+    source: UniProt:P14416
+    target: GO:0061527
+  - key: participates in
+    source: UniProt:P28223
+    target: GO:0060096
+  - key: positively regulates
+    source: GO:0061527
+    target: HP:0000738
+  - key: positively correlated with
+    source: GO:0060096
+    target: MESH:D012701
+  - key: manifestation of
+    source: HP:0000738
+    target: MESH:D012559
+  - key: positively correlated with
+    source: MESH:D012701
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:C092292
+    label: Drug
+    name: ziprasidone
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: dopamine secretion, neurotransmission
+  - id: GO:0060096
+    label: BiologicalProcess
+    name: serotonin secretion, neurotransmission
+  - id: HP:0000738
+    label: PhenotypicFeature
+    name: Hallucinations
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB00246#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Ziprasidone
+  - https://www.uniprot.org/uniprot/P14416#function
+  - https://www.uniprot.org/uniprot/P28223#function
+  - https://en.wikipedia.org/wiki/Schizophrenia

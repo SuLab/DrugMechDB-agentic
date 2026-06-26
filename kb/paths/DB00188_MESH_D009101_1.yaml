@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB00188_MESH_D009101_1
+  disease: Multiple myeloma
+  disease_mesh: MESH:D009101
+  drug: Bortezomib
+  drug_mesh: MESH:D000069286
+  drugbank: DB:DB00188
+links:
+  - key: decreases activity of
+    source: MESH:D000069286
+    target: UniProt:P28074
+  - key: decreases activity of
+    source: MESH:D000069286
+    target: UniProt:P20618
+  - key: decreases activity of
+    source: MESH:D000069286
+    target: GO:0071159
+  - key: participates in
+    source: UniProt:P28074
+    target: GO:0043161
+  - key: participates in
+    source: UniProt:P20618
+    target: GO:0043161
+  - key: negatively regulates
+    source: GO:0071159
+    target: GO:0006915
+  - key: negatively regulates
+    source: GO:0043161
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D009101
+multigraph: true
+nodes:
+  - id: MESH:D000069286
+    label: Drug
+    name: Bortezomib
+  - id: UniProt:P28074
+    label: Protein
+    name: Proteasome subunit beta type-5
+  - id: UniProt:P20618
+    label: Protein
+    name: Proteasome subunit beta type-1
+  - id: GO:0071159
+    label: CellularComponent
+    name: NF-kappaB complex
+  - id: GO:0043161
+    label: BiologicalProcess
+    name: Proteasome-mediated ubiquitin-dependent protein catabolic process
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: Apoptotic process
+  - id: MESH:D009101
+    label: Disease
+    name: Multiple myeloma
+references:
+  - https://en.wikipedia.org/wiki/Bortezomib
+  - https://go.drugbank.com/drugs/DB00188

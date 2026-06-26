@@ -1,0 +1,23 @@
+directed: true
+graph:
+  _id: DB01229_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: paclitaxel
+  drug_mesh: MESH:D017239,MESH:D000068196
+  drugbank: DB:DB01229
+links:
+  - key: contraindicated for
+    source: DB:DB01229
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: DB:DB01229
+    label: Drug
+    name: Paclitaxel
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://www.accessdata.fda.gov/drugsatfda_docs/label/2011/020262s049lbl.pdf
+  - https://go.drugbank.com/drugs/DB01229

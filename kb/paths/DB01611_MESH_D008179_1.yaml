@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB01611_MESH_D008179_1
+  disease: Discoid lupus erythematosus
+  disease_mesh: MESH:D008179
+  drug: hydroxychloroquine
+  drug_mesh: MESH:D006886
+  drugbank: DB:DB01611
+links:
+  - key: negatively correlated with
+    source: MESH:D006886
+    target: InterPro:IPR035897
+  - key: positively correlated with
+    source: InterPro:IPR035897
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0000988
+  - key: manifestation of
+    source: HP:0000988
+    target: MESH:D008179
+multigraph: true
+nodes:
+  - id: MESH:D006886
+    label: Drug
+    name: hydroxychloroquine
+  - id: InterPro:IPR035897
+    label: GeneFamily
+    name: Toll/interleukin-1 receptor homology (TIR) domain superfamily
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0000988
+    label: PhenotypicFeature
+    name: Skin rash
+  - id: MESH:D008179
+    label: Disease
+    name: Discoid lupus erythematosus
+references:
+  - https://go.drugbank.com/drugs/DB01611
+  - https://en.wikipedia.org/wiki/Hydroxychloroquine#Mechanism_of_action

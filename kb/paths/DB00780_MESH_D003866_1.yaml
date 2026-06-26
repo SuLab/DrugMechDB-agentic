@@ -1,0 +1,88 @@
+directed: true
+graph:
+  _id: DB00780_MESH_D003866_1
+  disease: Depressive disorder
+  disease_mesh: MESH:D003866
+  drug: phenelzine
+  drug_mesh: MESH:D010624
+  drugbank: DB:DB00780
+links:
+  - key: negatively regulates
+    source: MESH:D010624
+    target: UniProt:P27338
+  - key: negatively regulates
+    source: MESH:D010624
+    target: UniProt:P21397
+  - key: positively regulates
+    source: UniProt:P27338
+    target: GO:0042402
+  - key: positively regulates
+    source: UniProt:P21397
+    target: GO:0042402
+  - key: decreases abundance of
+    source: GO:0042402
+    target: MESH:D012701
+  - key: decreases abundance of
+    source: GO:0042402
+    target: MESH:D009638
+  - key: decreases abundance of
+    source: GO:0042402
+    target: CHEBI:18243
+  - key: positively correlated with
+    source: MESH:D012701
+    target: GO:0099153
+  - key: positively correlated with
+    source: CHEBI:18243
+    target: GO:0061527
+  - key: positively correlated with
+    source: MESH:D009638
+    target: GO:0099155
+  - key: negatively correlated with
+    source: GO:0099153
+    target: MESH:D003866
+  - key: negatively correlated with
+    source: GO:0099155
+    target: MESH:D003866
+  - key: negatively correlated with
+    source: GO:0061527
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:D010624
+    label: Drug
+    name: Phenelzine
+  - id: UniProt:P21397
+    label: Protein
+    name: Amine oxidase [flavin-containing] A
+  - id: UniProt:P27338
+    label: Protein
+    name: Amine oxidase [flavin-containing] B
+  - id: GO:0042402
+    label: BiologicalProcess
+    name: Cellular biogenic amine catabolic process
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: GO:0099153
+    label: BiologicalProcess
+    name: Synaptic transmission, serotonergic
+  - id: GO:0099155
+    label: BiologicalProcess
+    name: Synaptic transmission, noradrenergic
+  - id: CHEBI:18243
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive disorder
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/26104056/
+  - https://www.ncbi.nlm.nih.gov/books/NBK539848/
+  - https://pubmed.ncbi.nlm.nih.gov/12369606/
+  - https://go.drugbank.com/drugs/DB00780

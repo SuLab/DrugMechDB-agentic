@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00701_MESH_D015658_1
+  disease: Human immunodeficiency virus infection
+  disease_mesh: MESH:D015658
+  drug: amprenavir
+  drug_mesh: MESH:C095108
+  drugbank: DB:DB00701
+links:
+  - key: decreases activity of
+    source: MESH:C095108
+    target: UniProt:Q72874
+  - key: increases activity of
+    source: UniProt:Q72874
+    target: UniProt:P04585
+  - key: participates in
+    source: UniProt:P04585
+    target: GO:0019068
+  - key: in taxon
+    source: GO:0019068
+    target: taxonomy:11676
+  - key: causes
+    source: taxonomy:11676
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:C095108
+    label: Drug
+    name: Amprenavir
+  - id: UniProt:Q72874
+    label: Protein
+    name: Protease
+  - id: UniProt:P04585
+    label: Protein
+    name: Gag-Pol polyprotein
+  - id: GO:0019068
+    label: BiologicalProcess
+    name: Virion assembly
+  - id: taxonomy:11676
+    label: OrganismTaxon
+    name: Human immunodeficiency virus 1
+  - id: MESH:D015658
+    label: Disease
+    name: Human immunodeficiency virus infection
+references:
+  - https://go.drugbank.com/drugs/DB00701#BE0004854

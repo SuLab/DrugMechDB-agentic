@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00618_MESH_D012373_1
+  disease: Rocky Mountain Spotted Fever
+  disease_mesh: MESH:D012373
+  drug: demeclocycline
+  drug_mesh: MESH:D003707
+  drugbank: DB:DB00618
+links:
+  - key: decreases activity of
+    source: MESH:D003707
+    target: GO:0015935
+  - key: decreases activity of
+    source: MESH:D003707
+    target: GO:0015934
+  - key: part of
+    source: GO:0015935
+    target: GO:0005840
+  - key: part of
+    source: GO:0015934
+    target: GO:0005840
+  - key: positively regulates
+    source: GO:0005840
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:783
+  - key: causes
+    source: taxonomy:783
+    target: MESH:D012373
+multigraph: true
+nodes:
+  - id: MESH:D003707
+    label: Drug
+    name: demeclocycline
+  - id: GO:0015935
+    label: CellularComponent
+    name: small ribosomal subunit
+  - id: GO:0015934
+    label: CellularComponent
+    name: large ribosomal subunit
+  - id: GO:0005840
+    label: CellularComponent
+    name: ribosome
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:783
+    label: OrganismTaxon
+    name: Rickettsia rickettsii
+  - id: MESH:D012373
+    label: Disease
+    name: Rocky Mountain Spotted Fever
+references:
+  - https://go.drugbank.com/drugs/DB00618#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Prokaryotic_small_ribosomal_subunit
+  - https://en.wikipedia.org/wiki/Prokaryotic_large_ribosomal_subunit
+  - https://en.wikipedia.org/wiki/Rocky_Mountain_spotted_fever

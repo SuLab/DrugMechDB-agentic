@@ -1,0 +1,22 @@
+directed: true
+graph:
+  _id: DB00874_MESH_D005334_1
+  disease: Fever
+  disease_mesh: MESH:D005334
+  drug: guaifenesin
+  drug_mesh: MESH:D006140
+  drugbank: DB:DB00874
+links:
+  - key: treats
+    source: MESH:D006140
+    target: MESH:D005334
+multigraph: true
+nodes:
+  - id: MESH:D006140
+    label: Drug
+    name: Guaifenesin
+  - id: MESH:D005334
+    label: Disease
+    name: Fever
+references:
+  - https://go.drugbank.com/drugs/DB00874

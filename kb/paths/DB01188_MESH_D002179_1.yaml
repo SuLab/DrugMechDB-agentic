@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB01188_MESH_D002179_1
+  disease: Candidiasis of skin
+  disease_mesh: MESH:D002179
+  drug: ciclopirox
+  drug_mesh: MESH:C011585
+  drugbank: DB:DB01188
+links:
+  - key: disrupts
+    source: MESH:C011585
+    target: GO:0005886
+  - key: capable of
+    source: MESH:C011585
+    target: GO:0046911
+  - key: occurs in
+    source: GO:0005886
+    target: taxonomy:1535326
+  - key: contributes to
+    source: GO:0046911
+    target: GO:0004857
+  - key: occurs in
+    source: GO:0004857
+    target: taxonomy:1535326
+  - key: causes
+    source: taxonomy:1535326
+    target: MESH:D002179
+multigraph: true
+nodes:
+  - id: MESH:C011585
+    label: Drug
+    name: ciclopirox
+  - id: GO:0005886
+    label: CellularComponent
+    name: plasma membrane
+  - id: GO:0046911
+    label: MolecularActivity
+    name: metal chelating activity
+  - id: taxonomy:1535326
+    label: OrganismTaxon
+    name: Candida
+  - id: GO:0004857
+    label: MolecularActivity
+    name: metalloenzyme inhibitor activity
+  - id: MESH:D002179
+    label: Disease
+    name: Candidiasis of skin
+references:
+  - https://go.drugbank.com/drugs/DB01188
+  - https://en.wikipedia.org/wiki/Candidiasis

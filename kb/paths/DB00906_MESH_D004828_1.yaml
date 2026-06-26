@@ -1,0 +1,36 @@
+comment: Epilepsies, Partial is the disease name in MESH but known as Simple partial
+  seizure in the original pre-curated file.
+directed: true
+graph:
+  _id: DB00906_MESH_D004828_1
+  disease: Epilepsies, Partial
+  disease_mesh: MESH:D004828
+  drug: tiagabine
+  drug_mesh: MESH:C059205
+  drugbank: DB:DB00906
+links:
+  - key: decreases activity of
+    source: MESH:C059205
+    target: UniProt:P30531
+  - key: positively regulates
+    source: UniProt:P30531
+    target: GO:0051936
+  - key: positively correlated with
+    source: GO:0051936
+    target: MESH:D004828
+multigraph: true
+nodes:
+  - id: MESH:C059205
+    label: Drug
+    name: tiagabine
+  - id: UniProt:P30531
+    label: GeneFamily
+    name: Sodium- and chloride-dependent GABA transporter 1
+  - id: GO:0051936
+    label: BiologicalProcess
+    name: gamma-aminobutyric acid reuptake
+  - id: MESH:D004828
+    label: Disease
+    name: Epilepsies, Partial
+references:
+  - https://go.drugbank.com/drugs/DB00906#mechanism-of-action

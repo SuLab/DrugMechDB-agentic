@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01623_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: thiothixene
+  drug_mesh: MESH:D013888
+  drugbank: DB:DB01623
+links:
+  - key: decreases activity of
+    source: MESH:D013888
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:D013888
+    target: UniProt:P28223
+  - key: participates in
+    source: UniProt:P14416
+    target: GO:1903350
+  - key: participates in
+    source: UniProt:P28223
+    target: GO:1904014
+  - key: correlated with
+    source: GO:1903350
+    target: MESH:D012559
+  - key: correlated with
+    source: GO:1904014
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:D013888
+    label: Drug
+    name: Thiothixene
+  - id: UniProt:P14416
+    label: Protein
+    name: Dopamine D2 receptor
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: GO:1903350
+    label: BiologicalProcess
+    name: response to dopamine
+  - id: GO:1904014
+    label: BiologicalProcess
+    name: response to serotonin
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB01623
+  - https://pubmed.ncbi.nlm.nih.gov/27189524/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4255483/
+  - https://en.wikipedia.org/wiki/Tiotixene
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201/

@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB03255_MESH_D011537_1
+  disease: Itching of skin
+  disease_mesh: MESH:D011537
+  drug: phenol
+  drug_mesh: MESH:D019800
+  drugbank: DB:DB03255
+links:
+  - key: subclass of
+    source: MESH:D019800
+    target: MESH:D000982
+  - key: subclass of
+    source: MESH:D019800
+    target: MESH:D000890
+  - key: ameliorates
+    source: MESH:D000982
+    target: MESH:D011537
+  - key: ameliorates
+    source: MESH:D000890
+    target: MESH:D011537
+multigraph: true
+nodes:
+  - id: MESH:D019800
+    label: Drug
+    name: phenol
+  - id: MESH:D000982
+    label: ChemicalSubstance
+    name: Antipruritics
+  - id: MESH:D000890
+    label: ChemicalSubstance
+    name: Anti-Infective Agents
+  - id: MESH:D011537
+    label: Disease
+    name: Itching of skin
+references:
+  - https://go.drugbank.com/drugs/DB03255#indication
+  - https://www.genome.jp/dbget-bin/www_bget?drug:D00033
+  - https://pubchem.ncbi.nlm.nih.gov/compound/996#section=Pharmacology
+comment: Term MESH:D011537 is also known as pruritus.

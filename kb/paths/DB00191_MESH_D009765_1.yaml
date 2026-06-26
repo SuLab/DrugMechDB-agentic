@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00191_MESH_D009765_1
+  disease: Obesity
+  disease_mesh: MESH:D009765
+  drug: phentermine
+  drug_mesh: MESH:D010645
+  drugbank: DB:DB00191
+links:
+  - key: decreases activity of
+    source: MESH:D010645
+    target: UniProt:P23975
+  - key: decreases activity of
+    source: MESH:D010645
+    target: UniProt:P01303
+  - key: participates in
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: negatively correlated with
+    source: UniProt:P01303
+    target: HP:0004396
+  - key: decreases abundance of
+    source: GO:0051620
+    target: MESH:D009638
+  - key: positively correlated with
+    source: MESH:D009638
+    target: HP:0004396
+  - key: negatively correlated with
+    source: HP:0004396
+    target: MESH:D009765
+multigraph: true
+nodes:
+  - id: MESH:D010645
+    label: Drug
+    name: Phentermine
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: UniProt:P01303
+    label: Protein
+    name: Pro-neuropeptide Y
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: Norepinephrine uptake
+  - id: HP:0004396
+    label: PhenotypicFeature
+    name: Poor appetite
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: MESH:D009765
+    label: Disease
+    name: Obesity
+references:
+  - https://go.drugbank.com/drugs/DB00191#BE0000486

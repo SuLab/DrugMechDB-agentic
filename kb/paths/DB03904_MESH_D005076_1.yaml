@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB03904_MESH_D005076_1
+  disease: Eruption of skin
+  disease_mesh: MESH:D005076
+  drug: Carbamide
+  drug_mesh: MESH:D014508
+  drugbank: DB:DB03904
+links:
+  - key: subclass of
+    source: MESH:D014508
+    target: MESH:D058427
+  - key: positively regulates
+    source: MESH:D058427
+    target: GO:0061436
+  - key: treats
+    source: GO:0061436
+    target: MESH:D005076
+multigraph: true
+nodes:
+  - id: MESH:D014508
+    label: Drug
+    name: Carbamide
+  - id: MESH:D058427
+    label: ChemicalSubstance
+    name: Humectant
+  - id: GO:0061436
+    label: BiologicalProcess
+    name: Establishment of skin barrier
+  - id: MESH:D005076
+    label: Disease
+    name: Eruption of skin
+references:
+  - https://go.drugbank.com/drugs/DB03904

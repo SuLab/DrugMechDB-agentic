@@ -1,0 +1,50 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB05521_MESH_D019698_1
+  disease: Chronic hepatitis C
+  disease_mesh: MESH:D019698
+  drug: Telaprevir
+  drug_mesh: MESH:C486464
+  drugbank: DB:DB05521
+links:
+  - key: decreases activity of
+    source: MESH:C486464
+    target: UniProt:B0B3C9
+  - key: positively regulates
+    source: UniProt:B0B3C9
+    target: GO:0039694
+  - key: capable of
+    source: UniProt:B0B3C9
+    target: GO:0008236
+  - key: in taxon
+    source: GO:0039694
+    target: taxonomy:11103
+  - key: in taxon
+    source: GO:0008236
+    target: taxonomy:11103
+  - key: causes
+    source: taxonomy:11103
+    target: MESH:D019698
+multigraph: true
+nodes:
+  - id: MESH:C486464
+    label: Drug
+    name: Telaprevir
+  - id: UniProt:B0B3C9
+    label: Protein
+    name: Genome polyprotein
+  - id: GO:0039694
+    label: BiologicalProcess
+    name: Viral RNA genome replication
+  - id: GO:0008236
+    label: MolecularActivity
+    name: Serine-type peptidase activity
+  - id: taxonomy:11103
+    label: OrganismTaxon
+    name: Hepacivirus C
+  - id: MESH:D019698
+    label: Disease
+    name: Chronic hepatitis C
+references:
+  - https://go.drugbank.com/drugs/DB05521

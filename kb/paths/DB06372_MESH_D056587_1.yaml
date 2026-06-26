@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB06372_MESH_D056587_1
+  disease: Cryopyrin associated periodic syndrome
+  disease_mesh: MESH:D056587
+  drug: rilonacept
+  drug_mesh: MESH:C531377
+  drugbank: DB:DB06372
+links:
+  - key: decreases activity of
+    source: MESH:C531377
+    target: UniProt:P01584
+  - key: decreases activity of
+    source: MESH:C531377
+    target: UniProt:P01583
+  - key: decreases activity of
+    source: MESH:C531377
+    target: UniProt:P18510
+  - key: participates in
+    source: UniProt:P01584
+    target: GO:0070498
+  - key: participates in
+    source: UniProt:P01583
+    target: GO:0070498
+  - key: participates in
+    source: UniProt:P18510
+    target: GO:0070498
+  - key: positively regulates
+    source: GO:0070498
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D056587
+multigraph: true
+nodes:
+  - id: MESH:C531377
+    label: Drug
+    name: rilonacept
+  - id: UniProt:P01584
+    label: Protein
+    name: Interleukin-1 beta
+  - id: UniProt:P01583
+    label: Protein
+    name: Interleukin-1 alpha
+  - id: UniProt:P18510
+    label: Protein
+    name: Interleukin-1 receptor antagonist protein
+  - id: GO:0070498
+    label: BiologicalProcess
+    name: interleukin-1-mediated signaling pathway
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammation
+  - id: MESH:D056587
+    label: Disease
+    name: Cryopyrin associated periodic syndrome
+references:
+  - https://go.drugbank.com/drugs/DB06372

@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB08949_MESH_D010383_2
+  disease: Pellagra
+  disease_mesh: MESH:D010383
+  drug: inositol nicotinate
+  drug_mesh: MESH:C005193
+  drugbank: DB:DB08949
+links:
+  - key: increases abundance of
+    source: MESH:C005193
+    target: MESH:D009539
+  - key: negatively correlated with
+    source: MESH:D009539
+    target: HP:0100497
+  - key: positively correlated with
+    source: HP:0100497
+    target: MESH:D010383
+multigraph: true
+nodes:
+  - id: MESH:C005193
+    label: Drug
+    name: inositol nicotinate
+  - id: MESH:D009539
+    label: ChemicalSubstance
+    name: Nicotinic Acids
+  - id: HP:0100497
+    label: PhenotypicFeature
+    name: Vitamin B3 deficiency
+  - id: MESH:D010383
+    label: Disease
+    name: Pellagra
+references:
+  - https://go.drugbank.com/drugs/DB08949#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Inositol_nicotinate
+  - https://en.wikipedia.org/wiki/Pellagra

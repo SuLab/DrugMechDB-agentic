@@ -1,0 +1,37 @@
+comment: Withdrawn. This annotation is for higher concentrations of metharbital which
+  can inhibit the calcium-dependent release of neurotransmitters such as glutamate.
+directed: true
+graph:
+  _id: DB00463_MESH_D004827_2
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+  drug: metharbital
+  drug_mesh: MESH:C084822
+  drugbank: DB:DB00463
+links:
+  - key: negatively regulates
+    source: MESH:C084822
+    target: GO:0005245
+  - key: positively regulates
+    source: GO:0005245
+    target: GO:0061535
+  - key: positively correlated with
+    source: GO:0061535
+    target: MESH:D004827
+multigraph: true
+nodes:
+  - id: MESH:C084822
+    label: Drug
+    name: Metharbital
+  - id: GO:0005245
+    label: BiologicalProcess
+    name: Voltage-gated calcium channel activity
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: Glutamate secretion, neurotransmission
+  - id: MESH:D004827
+    label: Disease
+    name: Epilepsy
+references:
+  - https://go.drugbank.com/drugs/DB00463
+  - https://en.wikipedia.org/wiki/Barbiturate#Mechanism_of_action

@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB02703_MESH_D002771_1
+  disease: Cholera
+  disease_mesh: MESH:D002771
+  drug: fusidic acid
+  drug_mesh: MESH:D005672
+  drugbank: DB:DB02703
+links:
+  - key: decreases activity of
+    source: MESH:D005672
+    target: UniProt:Q9KUZ7
+  - key: positively regulates
+    source: UniProt:Q9KUZ7
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:666
+  - key: causes
+    source: taxonomy:666
+    target: MESH:D002771
+multigraph: true
+nodes:
+  - id: MESH:D005672
+    label: Drug
+    name: fusidic acid
+  - id: UniProt:Q9KUZ7
+    label: Protein
+    name: Elongation factor G 1
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:666
+    label: OrganismTaxon
+    name: Vibrio cholerae
+  - id: MESH:D002771
+    label: Disease
+    name: Cholera
+references:
+  - https://go.drugbank.com/drugs/DB02703#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Fusidic_acid
+  - https://www.uniprot.org/uniprot/Q9KUZ7#function
+  - https://en.wikipedia.org/wiki/Cholera

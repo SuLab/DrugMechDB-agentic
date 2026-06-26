@@ -1,0 +1,74 @@
+directed: true
+graph:
+  _id: DB08895_MESH_D001172_1
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: tofacitinib
+  drug_mesh: MESH:C479163
+  drugbank: DB:DB08895
+links:
+  - key: decreases activity of
+    source: MESH:C479163
+    target: UniProt:P23458
+  - key: positively regulates
+    source: UniProt:P23458
+    target: GO:0007259
+  - key: decreases activity of
+    source: MESH:C479163
+    target: UniProt:P52333
+  - key: positively regulates
+    source: UniProt:P52333
+    target: GO:0007259
+  - key: participates in
+    source: GO:0007259
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: InterPro:IPR000975
+  - key: positively correlated with
+    source: GO:0006954
+    target: UniProt:P05231
+  - key: positively correlated with
+    source: GO:0006954
+    target: GO:0032640
+  - key: positively correlated with
+    source: InterPro:IPR000975
+    target: MESH:D001172
+  - key: positively correlated with
+    source: UniProt:P05231
+    target: MESH:D001172
+  - key: positively correlated with
+    source: GO:0032640
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:C479163
+    label: Drug
+    name: Tofacitinib
+  - id: UniProt:P23458
+    label: Protein
+    name: Tyrosine-protein kinase JAK1
+  - id: UniProt:P52333
+    label: Protein
+    name: Tyrosine-protein kinase JAK3
+  - id: GO:0007259
+    label: BiologicalProcess
+    name: Receptor signaling pathway via JAK-STAT
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: InterPro:IPR000975
+    label: GeneFamily
+    name: Interleukin-1 family
+  - id: UniProt:P05231
+    label: Protein
+    name: Interleukin-6
+  - id: GO:0032640
+    label: BiologicalProcess
+    name: BiologicalProcess
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB08895#BE0004145
+  - https://en.wikipedia.org/wiki/Rheumatoid_arthritis#Pathophysiology

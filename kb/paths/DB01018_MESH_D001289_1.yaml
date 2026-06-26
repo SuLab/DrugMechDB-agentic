@@ -1,0 +1,30 @@
+comment: The link between guanfacine’s molecular mechanism and it’s effect on the
+  treatment of ADHD has not been determined
+directed: true
+graph:
+  _id: DB01018_MESH_D001289_1
+  disease: Attention deficit hyperactivity disorder
+  disease_mesh: MESH:D001289
+  drug: guanfacine
+  drug_mesh: MESH:D016316
+  drugbank: DB:DB01018
+links:
+  - key: increases activity of
+    source: MESH:D016316
+    target: UniProt:P08913
+  - key: treats
+    source: UniProt:P08913
+    target: MESH:D001289
+multigraph: true
+nodes:
+  - id: MESH:D016316
+    label: Drug
+    name: Guanfacine
+  - id: UniProt:P08913
+    label: Protein
+    name: Alpha-2A adrenergic receptor
+  - id: MESH:D001289
+    label: Disease
+    name: Attention deficit hyperactivity disorder
+references:
+  - https://go.drugbank.com/drugs/DB01018

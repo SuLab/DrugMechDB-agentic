@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB09303_MESH_D006937_1
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+  drug: Evolocumab
+  drug_mesh: MESH:C577155
+  drugbank: DB:DB09303
+links:
+  - key: decreases activity of
+    source: MESH:C577155
+    target: UniProt:Q8NBP7
+  - key: decreases activity of
+    source: UniProt:Q8NBP7
+    target: UniProt:P01130
+  - key: decreases abundance of
+    source: UniProt:P01130
+    target: MESH:D008077
+  - key: positively correlated with
+    source: MESH:D008077
+    target: MESH:D006937
+multigraph: true
+nodes:
+  - id: MESH:C577155
+    label: Drug
+    name: Evolocumab
+  - id: UniProt:Q8NBP7
+    label: Protein
+    name: Proprotein convertase subtilisin/kexin type 9
+  - id: UniProt:P01130
+    label: Protein
+    name: Low-density lipoprotein receptor
+  - id: MESH:D008077
+    label: ChemicalSubstance
+    name: Lipoproteins, LDL
+  - id: MESH:D006937
+    label: Disease
+    name: Hypercholesterolemia
+references:
+  - https://en.wikipedia.org/wiki/Evolocumab
+  - https://go.drugbank.com/drugs/DB09303
+  - https://en.wikipedia.org/wiki/LDL_receptor#Function

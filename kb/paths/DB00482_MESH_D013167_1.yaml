@@ -1,0 +1,64 @@
+directed: true
+graph:
+  _id: DB00482_MESH_D013167_1
+  disease: Ankylosing spondylitis
+  disease_mesh: MESH:D013167
+  drug: celecoxib
+  drug_mesh: MESH:D000068579
+  drugbank: DB:DB00482
+links:
+  - key: decreases activity of
+    source: MESH:D000068579
+    target: UniProt:P35354
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: MESH:D011453
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0002829
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0001386
+  - key: positively correlated with
+    source: MESH:D011453
+    target: HP:0001369
+  - key: manifestation of
+    source: HP:0001369
+    target: MESH:D013167
+  - key: manifestation of
+    source: HP:0001386
+    target: MESH:D013167
+  - key: manifestation of
+    source: HP:0002829
+    target: MESH:D013167
+multigraph: true
+nodes:
+  - id: MESH:D000068579
+    label: Drug
+    name: celecoxib
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: MESH:D011453
+    label: ChemicalSubstance
+    name: Prostaglandins
+  - id: HP:0001369
+    label: PhenotypicFeature
+    name: Arthritis
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Arthralgia
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: MESH:D013167
+    label: Disease
+    name: Ankylosing spondylitis
+references:
+  - https://go.drugbank.com/drugs/DB00482

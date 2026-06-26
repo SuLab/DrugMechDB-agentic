@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DB00752_MESH_D003865_1
+  disease: Major depressive disorder
+  disease_mesh: MESH:D003865
+  drug: Tranylcypromine
+  drug_mesh: MESH:D014191
+  drugbank: DB:DB00752
+links:
+  - key: decreases activity of
+    source: MESH:D014191
+    target: UniProt:P27338
+  - key: decreases activity of
+    source: MESH:D014191
+    target: UniProt:P21397
+  - key: negatively regulates
+    source: UniProt:P21397
+    target: MESH:D009638
+  - key: negatively regulates
+    source: UniProt:P21397
+    target: MESH:D004298
+  - key: negatively correlated with
+    source: MESH:D009638
+    target: MESH:D003865
+  - key: negatively regulates
+    source: UniProt:P21397
+    target: MESH:D012701
+  - key: negatively correlated with
+    source: MESH:D012701
+    target: MESH:D003865
+  - key: negatively regulates
+    source: UniProt:P27338
+    target: MESH:D004298
+  - key: negatively correlated with
+    source: MESH:D004298
+    target: MESH:D003865
+multigraph: true
+nodes:
+  - id: MESH:D014191
+    label: Drug
+    name: Tranylcypromine
+  - id: UniProt:P27338
+    label: Protein
+    name: Amine oxidase [flavin-containing] B
+  - id: UniProt:P21397
+    label: Protein
+    name: Amine oxidase [flavin-containing] A
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: MESH:D003865
+    label: Disease
+    name: Major depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00752

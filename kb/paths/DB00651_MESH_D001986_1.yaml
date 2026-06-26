@@ -1,0 +1,72 @@
+directed: true
+graph:
+  _id: DB00651_MESH_D001986_1
+  disease: Bronchial Spasm
+  disease_mesh: MESH:D001986
+  drug: Dyphylline
+  drug_mesh: MESH:D004400
+  drugbank: DB:DB00651
+links:
+  - key: decreases activity of
+    source: MESH:D004400
+    target: UniProt:P27815
+  - key: decreases activity of
+    source: MESH:D004400
+    target: UniProt:Q07343
+  - key: decreases activity of
+    source: MESH:D004400
+    target: UniProt:Q08493
+  - key: decreases activity of
+    source: MESH:D004400
+    target: UniProt:Q08499
+  - key: decreases abundance of
+    source: UniProt:P27815
+    target: MESH:D000242
+  - key: decreases abundance of
+    source: UniProt:Q07343
+    target: MESH:D000242
+  - key: decreases abundance of
+    source: UniProt:Q08493
+    target: MESH:D000242
+  - key: decreases abundance of
+    source: UniProt:Q08499
+    target: MESH:D000242
+  - key: positively regulates
+    source: MESH:D000242
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: MESH:D001986
+multigraph: true
+nodes:
+  - id: MESH:D004400
+    label: Drug
+    name: Dyphylline
+  - id: UniProt:P27815
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4A
+  - id: UniProt:Q07343
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4B
+  - id: UniProt:Q08493
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4C
+  - id: UniProt:Q08499
+    label: Protein
+    name: cAMP-specific 3',5'-cyclic phosphodiesterase 4D
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: Cyclic AMP
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: MESH:D001986
+    label: Disease
+    name: Bronchial Spasm
+references:
+  - https://go.drugbank.com/drugs/DB00651#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P27815#function
+  - https://www.uniprot.org/uniprot/Q07343#function
+  - https://www.uniprot.org/uniprot/Q08493#function
+  - https://www.uniprot.org/uniprot/Q08499#function
+  - https://en.wikipedia.org/wiki/Bronchospasm

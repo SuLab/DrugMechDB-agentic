@@ -1,0 +1,72 @@
+directed: true
+multigraph: true
+graph:
+  _id: P06_DB00675_MESH_D001943
+  drug: Tamoxifen
+  drug_mesh: MESH:D013629
+  drugbank: DB:DB00675
+  disease: Breast Neoplasms
+  disease_mesh: MESH:D001943
+nodes:
+  - id: MESH:D013629
+    name: Tamoxifen
+    label: Drug
+  - id: UniProt:P03372
+    name: Estrogen receptor
+    label: Protein
+  - id: GO:0008283
+    name: cell population proliferation
+    label: BiologicalProcess
+  - id: MESH:D001943
+    name: Breast Neoplasms
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D013629
+    target: UniProt:P03372
+    evidence:
+      - reference: PMID:41173946
+        snippet: "Endoxifen is a potent antiestrogen that binds and blocks estrogen receptor alpha (ERα) and estrogen receptor beta (ERβ)."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Endoxifen is the active metabolite of tamoxifen; as a potent antiestrogen it binds and blocks the estrogen receptor, decreasing its transcriptional activity — the established mechanism by which tamoxifen acts on the estrogen receptor."
+      - reference: PMID:42249585
+        snippet: "Estrogen receptor-positive (ER+) tumors are treated with endocrine therapies such as tamoxifen or aromatase inhibitors (AI), aimed at disrupting estrogen signaling."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Tamoxifen is an endocrine therapy that acts by disrupting estrogen signaling through the estrogen receptor, i.e. decreasing receptor activity."
+  - key: positively regulates
+    source: UniProt:P03372
+    target: GO:0008283
+    evidence:
+      - reference: PMID:42210419
+        snippet: "Estrogen receptor alpha (ERα) plays a crucial role in the proliferation and survival of ER-positive breast cancer cells, and tamoxifen (TAM) remains the mainstay of endocrine therapy."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Estrogen receptor alpha signaling drives (positively regulates) the proliferation of ER-positive breast cancer cells; blocking it with tamoxifen removes this proliferative drive."
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D001943
+    evidence:
+      - reference: PMID:42210419
+        snippet: "Estrogen receptor alpha (ERα) plays a crucial role in the proliferation and survival of ER-positive breast cancer cells, and tamoxifen (TAM) remains the mainstay of endocrine therapy."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Sustained cell proliferation of ER-positive breast cancer cells is the hallmark driving the breast neoplasm; proliferation is positively correlated with the malignant disease state."
+  - key: treats
+    source: MESH:D013629
+    target: MESH:D001943
+    evidence:
+      - reference: PMID:42249585
+        snippet: "Estrogen receptor-positive (ER+) tumors are treated with endocrine therapies such as tamoxifen or aromatase inhibitors (AI), aimed at disrupting estrogen signaling."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Tamoxifen is the mainstay endocrine therapy used to treat estrogen receptor-positive breast tumors by disrupting estrogen signaling that drives tumor proliferation."
+      - reference: PMID:42049437
+        snippet: "primary endocrine therapy with tamoxifen was initiated. The patient demonstrated clinical regression within three months and tolerated therapy well."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Clinical case of ER-positive breast cancer in which tamoxifen monotherapy produced clinical regression, demonstrating tamoxifen treats the disease."
+references:
+  - https://go.drugbank.com/drugs/DB00675#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P03372#function

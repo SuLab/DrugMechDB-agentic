@@ -1,0 +1,44 @@
+comment: The disease is known as Chagas Disease in MESH (MESH:D014355). The drug is
+  metabolized by nitoreductases (https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/213464s000lbl.pdf)
+  rather than nitoreductases being the target of this drug (https://go.drugbank.com/drugs/DB11820#BE0010011).
+directed: true
+graph:
+  _id: DB11820_MESH_D014355_1
+  disease: Infection by Trypanosoma cruzi
+  disease_mesh: MESH:D014355
+  drug: nifurtimox
+  drug_mesh: MESH:D009547
+  drugbank: DB:DB11820
+links:
+  - key: produces
+    source: MESH:D009547
+    target: CHEBI:26523
+  - key: disrupts
+    source: CHEBI:26523
+    target: CHEBI:16991
+  - key: in taxon
+    source: CHEBI:16991
+    target: taxonomy:5693
+  - key: causes
+    source: taxonomy:5693
+    target: MESH:D014355
+multigraph: true
+nodes:
+  - id: MESH:D009547
+    label: Drug
+    name: nifurtimox
+  - id: CHEBI:26523
+    label: ChemicalSubstance
+    name: reactive oxygen species
+  - id: CHEBI:16991
+    label: ChemicalSubstance
+    name: deoxyribonucleic acid
+  - id: taxonomy:5693
+    label: OrganismTaxon
+    name: Trypanosoma cruzi
+  - id: MESH:D014355
+    label: Disease
+    name: Infection by Trypanosoma cruzi
+references:
+  - https://en.wikipedia.org/wiki/Nifurtimox#Mechanism_of_action
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL290960/

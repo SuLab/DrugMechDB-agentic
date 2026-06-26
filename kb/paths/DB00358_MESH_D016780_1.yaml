@@ -1,0 +1,42 @@
+comment: The mechanism of action of mefloquine is not completely understood. Some
+  studies suggest that mefloquine specifically targets the 80S ribosome.
+directed: true
+graph:
+  _id: DB00358_MESH_D016780_1
+  disease: Vivax malaria
+  disease_mesh: MESH:D016780
+  drug: mefloquine
+  drug_mesh: MESH:D015767
+  drugbank: DB:DB00358
+links:
+  - key: decreases activity of
+    source: MESH:D015767
+    target: GO:0005840
+  - key: positively regulates
+    source: GO:0005840
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:5855
+  - key: causes
+    source: taxonomy:5855
+    target: MESH:D016780
+multigraph: true
+nodes:
+  - id: MESH:D015767
+    label: Drug
+    name: Mefloquine
+  - id: GO:0005840
+    label: CellularComponent
+    name: Ribosome
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: taxonomy:5855
+    label: OrganismTaxon
+    name: Plasmodium vivax
+  - id: MESH:D016780
+    label: Disease
+    name: Vivax malaria
+references:
+  - https://go.drugbank.com/drugs/DB00358

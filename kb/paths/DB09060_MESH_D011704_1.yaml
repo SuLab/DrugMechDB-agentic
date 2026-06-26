@@ -1,0 +1,64 @@
+comment: This antibiotic inhbits beta-lactamases, enzymes that break antibiotics and
+  therefore provide resistance to ampicillin and related beta-lacam antibiotics. Avibactam
+  therefore is useful to treat infections caused by bacteria that are multi-resistant
+  to β-lactam antibiotics. The majority of cases of pyelonephritis are caused by E.coli
+  (https://en.wikipedia.org/wiki/Pyelonephritis#Causes), hence using this species
+  in the indication path here.
+directed: true
+graph:
+  _id: DB09060_MESH_D011704_1
+  disease: Pyelonephritis
+  disease_mesh: MESH:D011704
+  drug: avibactam
+  drug_mesh: MESH:C543519
+  drugbank: DB:DB09060
+links:
+  - key: negatively regulates
+    source: MESH:C543519
+    target: UniProt:P0A9Z7
+  - key: negatively regulates
+    source: MESH:C543519
+    target: UniProt:P0AD63
+  - key: negatively regulates
+    source: MESH:C543519
+    target: UniProt:P62593
+  - key: positively regulates
+    source: UniProt:P0A9Z7
+    target: GO:0008800
+  - key: positively regulates
+    source: UniProt:P0AD63
+    target: GO:0008800
+  - key: positively regulates
+    source: UniProt:P62593
+    target: GO:0008800
+  - key: in taxon
+    source: GO:0008800
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D011704
+multigraph: true
+nodes:
+  - id: MESH:C543519
+    label: Drug
+    name: avibactam
+  - id: UniProt:P0A9Z7
+    label: Protein
+    name: Beta-lactamase SHV-2
+  - id: UniProt:P0AD63
+    label: Protein
+    name: Beta-lactamase SHV-1
+  - id: UniProt:P62593
+    label: Protein
+    name: Beta-lactamase TEM
+  - id: GO:0008800
+    label: MolecularActivity
+    name: beta-lactamase activity
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D011704
+    label: Disease
+    name: Pyelonephritis
+references:
+  - https://go.drugbank.com/drugs/DB09060#mechanism-of-action

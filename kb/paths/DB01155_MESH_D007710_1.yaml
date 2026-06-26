@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01155_MESH_D007710_1
+  disease: Pneumonia due to Klebsiella pneumoniae
+  disease_mesh: MESH:D007710
+  drug: gemifloxacin
+  drug_mesh: MESH:C103274
+  drugbank: DB:DB01155
+links:
+  - key: decreases activity of
+    source: MESH:C103274
+    target: UniProt:A0A0C4MI94
+  - key: decreases activity of
+    source: MESH:C103274
+    target: UniProt:A0A443X2G9
+  - key: participates in
+    source: UniProt:A0A0C4MI94
+    target: GO:0044787
+  - key: participates in
+    source: UniProt:A0A443X2G9
+    target: GO:0044787
+  - key: occurs in
+    source: GO:0044787
+    target: taxonomy:573
+  - key: causes
+    source: taxonomy:573
+    target: MESH:D007710
+multigraph: true
+nodes:
+  - id: MESH:C103274
+    label: Drug
+    name: Gemifloxacin
+  - id: UniProt:A0A0C4MI94
+    label: Protein
+    name: DNA topoisomerase 4 subunit A (Klebsiella pneumoniae)
+  - id: UniProt:A0A443X2G9
+    label: Protein
+    name: DNA gyrase subunit A (Klebsiella pneumoniae)
+  - id: GO:0044787
+    label: BiologicalProcess
+    name: Bacterial-type DNA replication
+  - id: taxonomy:573
+    label: OrganismTaxon
+    name: Klebsiella pneumoniae
+  - id: MESH:D007710
+    label: Disease
+    name: Pneumonia due to Klebsiella pneumoniae
+references:
+  - https://go.drugbank.com/drugs/DB01155

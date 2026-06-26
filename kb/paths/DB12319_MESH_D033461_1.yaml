@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB12319_MESH_D033461_1
+  disease: Hyperuricemia
+  disease_mesh: MESH:D033461
+  drug: benzbromarone
+  drug_mesh: MESH:D001553
+  drugbank: DB:DB12319
+links:
+  - key: negatively regulates
+    source: MESH:D001553
+    target: UniProt:Q96S37
+  - key: positively regulates
+    source: UniProt:Q96S37
+    target: GO:0015747
+  - key: precedes
+    source: GO:0015747
+    target: GO:0097744
+  - key: negatively correlated with
+    source: GO:0097744
+    target: MESH:D033461
+multigraph: true
+nodes:
+  - id: MESH:D001553
+    label: Drug
+    name: benzbromarone
+  - id: UniProt:Q96S37
+    label: Protein
+    name: Solute carrier family 22 member 12
+  - id: GO:0015747
+    label: BiologicalProcess
+    name: urate transport
+  - id: GO:0097744
+    label: BiologicalProcess
+    name: urate salt excretion
+  - id: MESH:D033461
+    label: Disease
+    name: Hyperuricemia
+references:
+  - https://www.targetvalidation.org/summary?drug=CHEMBL388590
+  - https://en.wikipedia.org/wiki/SLC22A12#Clinical_significance
+  - https://en.wikipedia.org/wiki/Uricosuric#Pharmacology
+  - https://en.wikipedia.org/wiki/Hyperuricemia#Uricosurics

@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01097_MESH_D015535_1
+  disease: Psoriasis with arthropathy
+  disease_mesh: MESH:D015535
+  drug: leflunomide
+  drug_mesh: MESH:C045463
+  drugbank: DB:DB01097
+links:
+  - key: has metabolite
+    source: MESH:C045463
+    target: MESH:C527525
+  - key: decreases activity of
+    source: MESH:C527525
+    target: UniProt:Q02127
+  - key: positively regulates
+    source: UniProt:Q02127
+    target: GO:0006221
+  - key: positively correlated with
+    source: GO:0006221
+    target: GO:0090592
+  - key: positively correlated with
+    source: GO:0090592
+    target: GO:0050798
+  - key: positively correlated with
+    source: GO:0050798
+    target: MESH:D015535
+multigraph: true
+nodes:
+  - id: MESH:C045463
+    label: Drug
+    name: Leflunomide
+  - id: MESH:C527525
+    label: Drug
+    name: Teriflunomide
+  - id: UniProt:Q02127
+    label: Protein
+    name: Dihydroorotate dehydrogenase (quinone), mitochondrial
+  - id: GO:0006221
+    label: BiologicalProcess
+    name: Pyrimidine nucleotide biosynthetic process
+  - id: GO:0090592
+    label: BiologicalProcess
+    name: DNA synthesis involved in DNA replication
+  - id: GO:0050798
+    label: BiologicalProcess
+    name: Activated T cell proliferation
+  - id: MESH:D015535
+    label: Disease
+    name: Psoriasis with arthropathy
+references:
+  - https://en.wikipedia.org/wiki/Leflunomide
+  - https://go.drugbank.com/drugs/DB01097

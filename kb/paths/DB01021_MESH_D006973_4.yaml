@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB01021_MESH_D006973_4
+  disease: Hypertension
+  disease_mesh: MESH:D006973
+  drug: Trichlormethiazide
+  drug_mesh: MESH:D014237
+  drugbank: DB:DB01021
+links:
+  - key: decreases activity of
+    source: MESH:D014237
+    target: UniProt:P55017
+  - key: increases activity of
+    source: UniProt:P55017
+    target: GO:0070294
+  - key: increases abundance of
+    source: GO:0070294
+    target: MESH:D012964
+  - key: positively correlated with
+    source: MESH:D012964
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D014237
+    label: Drug
+    name: Trichlormethiazide
+  - id: UniProt:P55017
+    label: Protein
+    name: Solute carrier family 12 member 3
+  - id: GO:0070294
+    label: BiologicalProcess
+    name: Renal sodium ion absorption
+  - id: MESH:D012964
+    label: ChemicalSubstance
+    name: Sodium
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertension
+references:
+  - https://go.drugbank.com/drugs/DB01021
+  - https://en.wikipedia.org/wiki/Thiazide
+  - https://en.wikipedia.org/wiki/Trichlormethiazide

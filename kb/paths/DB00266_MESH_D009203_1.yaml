@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00266_MESH_D009203_1
+  disease: Myocardial infarction
+  disease_mesh: MESH:D009203
+  drug: dicoumarol
+  drug_mesh: MESH:D001728
+  drugbank: DB:DB00266
+links:
+  - key: decreases activity of
+    source: MESH:D001728
+    target: UniProt:Q9BQB6
+  - key: participates in
+    source: UniProt:Q9BQB6
+    target: GO:0042373
+  - key: produces
+    source: GO:0042373
+    target: MESH:D014812
+  - key: positively correlated with
+    source: MESH:D014812
+    target: GO:0072378
+  - key: positively correlated with
+    source: GO:0072378
+    target: UBERON:0010210
+  - key: affects risk for
+    source: UBERON:0010210
+    target: MESH:D009203
+multigraph: true
+nodes:
+  - id: MESH:D001728
+    label: Drug
+    name: dicoumarol
+  - id: UniProt:Q9BQB6
+    label: Protein
+    name: Vitamin K epoxide reductase complex subunit 1
+  - id: GO:0042373
+    label: BiologicalProcess
+    name: Vitamin K metabolic process
+  - id: MESH:D014812
+    label: ChemicalSubstance
+    name: vitamin k
+  - id: GO:0072378
+    label: BiologicalProcess
+    name: blood coagulation, fibrin clot formation
+  - id: UBERON:0010210
+    label: GrossAnatomicalStructure
+    name: Blood clot
+  - id: MESH:D009203
+    label: Disease
+    name: Myocardial infarction
+references:
+  - https://go.drugbank.com/drugs/DB00266
+  - https://en.wikipedia.org/wiki/Dicoumarol

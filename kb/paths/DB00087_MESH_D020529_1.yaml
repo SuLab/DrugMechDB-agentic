@@ -1,0 +1,56 @@
+comment: NCIT:C38439 = mature lymphocytes could replace both B and T cell. Would have
+  been an ideal node for this pair but could not be validated.
+directed: true
+graph:
+  _id: DB00087_MESH_D020529_1
+  disease: Relapsing remitting multiple sclerosis
+  disease_mesh: MESH:D020529
+  drug: alemtuzumab
+  drug_mesh: MESH:C096529
+  drugbank: DB:DB00087
+links:
+  - key: molecularly interacts with
+    source: MESH:C096529
+    target: UniProt:P31358
+  - key: positively regulates
+    source: UniProt:P31358
+    target: GO:0006959
+  - key: positively regulates
+    source: GO:0006959
+    target: GO:0001788
+  - key: precedes
+    source: GO:0001788
+    target: GO:0008219
+  - key: decreases abundance of
+    source: GO:0008219
+    target: CL:0001063
+  - key: manifestation of
+    source: CL:0001063
+    target: MESH:D020529
+multigraph: true
+nodes:
+  - id: MESH:C096529
+    label: Drug
+    name: alemtuzumab
+  - id: UniProt:P31358
+    label: Protein
+    name: CAMPATH-1 antigen
+  - id: GO:0006959
+    label: BiologicalProcess
+    name: humoral immune response
+  - id: GO:0001788
+    label: BiologicalProcess
+    name: antibody-dependent cellular cytotoxicity
+  - id: GO:0008219
+    label: BiologicalProcess
+    name: Cell death
+  - id: CL:0001063
+    label: Cell
+    name: tumor cell
+  - id: MESH:D020529
+    label: Disease
+    name: Relapsing remitting multiple sclerosis
+references:
+  - https://go.drugbank.com/drugs/DB00087
+  - https://en.wikipedia.org/wiki/Alemtuzumab
+  - https://en.wikipedia.org/wiki/Antibody-dependent_cellular_cytotoxicity

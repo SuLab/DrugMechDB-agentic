@@ -1,0 +1,25 @@
+comment: Premature ejaculation is treated with combination of lidocaine and prilocaine
+  cream.
+directed: true
+graph:
+  _id: DB00750_MESH_D061686_1
+  disease: Premature ejaculation
+  disease_mesh: MESH:D061686
+  drug: prilocaine
+  drug_mesh: MESH:D011318
+  drugbank: DB:DB00750
+links:
+  - key: treats
+    source: MESH:D011318
+    target: MESH:D061686
+multigraph: true
+nodes:
+  - id: MESH:D011318
+    label: Drug
+    name: Prilocaine
+  - id: MESH:D061686
+    label: Disease
+    name: Premature ejaculation
+references:
+  - https://go.drugbank.com/drugs/DB00750
+  - https://pubmed.ncbi.nlm.nih.gov/12472618/

@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01220_MESH_D006501_1
+  disease: Hepatic encephalopathy
+  disease_mesh: MESH:D006501
+  drug: rifaximin
+  drug_mesh: MESH:C042734
+  drugbank: DB:DB01220
+links:
+  - key: decreases activity of
+    source: MESH:C042734
+    target: UniProt:P0A8V2
+  - key: positively regulates
+    source: UniProt:P0A8V2
+    target: GO:0003899
+  - key: positively correlated with
+    source: GO:0003899
+    target: GO:0006351
+  - key: in taxon
+    source: GO:0006351
+    target: taxonomy:2
+  - key: produces
+    source: taxonomy:2
+    target: MESH:D000641
+  - key: contributes to
+    source: MESH:D000641
+    target: MESH:D006501
+multigraph: true
+nodes:
+  - id: MESH:C042734
+    label: Drug
+    name: Rifaximin
+  - id: UniProt:P0A8V2
+    label: Protein
+    name: DNA-directed RNA polymerase subunit beta
+  - id: GO:0003899
+    label: MolecularActivity
+    name: DNA-directed 5'-3' RNA polymerase activity
+  - id: GO:0006351
+    label: BiologicalProcess
+    name: Transcription, DNA-templated
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D000641
+    label: ChemicalSubstance
+    name: Ammonia
+  - id: MESH:D006501
+    label: Disease
+    name: Hepatic encephalopathy
+references:
+  - https://go.drugbank.com/drugs/DB01220
+  - https://en.wikipedia.org/wiki/Hepatic_encephalopathy#Causes

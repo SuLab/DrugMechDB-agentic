@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DrugMechDB · Drug → disease mechanism paths</title>
+<link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+<div class="mock-banner">MOCKUP · DrugMechDB website revamp · sample data, not final — for design review</div>
+
+<nav class="nav"><div class="container nav-inner">
+  <a class="brand" href="index.html"><span class="mark">D</span>DrugMech<span class="tail">DB</span></a>
+  <div class="nav-links">
+    <a href="browse.html">Browse</a>
+    <a href="embeddings.html">Embeddings</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="docs.html">Docs</a>
+    <div class="nav-search"><span>⌕</span><input placeholder="Search drugs, diseases, targets…"></div>
+  </div>
+</div></nav>
+
+<div class="container">
+  <section class="hero">
+    <div class="eyebrow">Su Lab · Biolink · Translator</div>
+    <h1>The mechanism behind every <span class="accent">drug → disease</span> indication.</h1>
+    <p class="lead">DrugMechDB is an expert-curated, machine-validated knowledge base of directed mechanism paths — from a drug, through its molecular targets and biological processes, to the disease it treats.</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="browse.html">Browse paths →</a>
+      <a class="btn" href="record.html">See an example path</a>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="num">4,846</div><div class="lbl">mechanism paths</div></div>
+      <div class="stat"><div class="num">~2,400</div><div class="lbl">drugs</div></div>
+      <div class="stat"><div class="num">~1,900</div><div class="lbl">diseases</div></div>
+      <div class="stat"><div class="num">14</div><div class="lbl">Biolink entity types</div></div>
+      <div class="stat"><div class="num">CC0</div><div class="lbl">openly licensed</div></div>
+    </div>
+  </section>
+
+  <section class="entry-grid" id="explorer">
+    <a class="entry" href="browse.html"><div class="ico">⌕</div><h3>Browse paths</h3><p>Search and filter all mechanism paths by drug, disease, target, or node type.</p></a>
+    <a class="entry" href="record.html"><div class="ico">⊹</div><h3>Pathograph explorer</h3><p>Interactive drug→disease mechanism graphs — clickable, zoomable, evidence-linked.</p></a>
+    <a class="entry" href="embeddings.html"><div class="ico">◵</div><h3>Embeddings map</h3><p>A 2-D landscape of mechanisms — find drugs that work in similar ways.</p></a>
+    <a class="entry" href="dashboard.html"><div class="ico">▦</div><h3>Curation dashboard</h3><p>Coverage, quality, and provenance across the whole corpus.</p></a>
+  </section>
+
+  <section class="walk">
+    <h2>How a mechanism path works</h2>
+    <p class="sub">Example: Vinblastine for malignant tumor of testis — each step is a curated, Biolink-typed relationship.</p>
+    <div class="flow">
+      <div class="node">Vinblastine<small>Drug</small></div>
+      <div class="arrow">→<small>decreases activity of</small></div>
+      <div class="node">Tubulin<small>Protein</small></div>
+      <div class="arrow">→<small>part of</small></div>
+      <div class="node">Mitotic division<small>Process</small></div>
+      <div class="arrow">→<small>correlates with</small></div>
+      <div class="node">Testicular tumor<small>Disease</small></div>
+    </div>
+    <div class="snippet" style="margin-top:22px">“Vinblastine binds to tubulin dimers, inhibiting assembly of microtubules.” <span class="src-badge drugbank" style="margin-left:8px">DrugBank · MoA</span></div>
+  </section>
+</div>
+
+<footer class="footer"><div class="container footer-inner">
+  <div>DrugMechDB · Su Lab · curated under the Biolink Model · CC0</div>
+  <div class="links"><a href="#">GitHub</a><a href="#">DOI</a><a href="#">Translator</a><a href="#">API</a></div>
+</div></footer>
+</body>
+</html>

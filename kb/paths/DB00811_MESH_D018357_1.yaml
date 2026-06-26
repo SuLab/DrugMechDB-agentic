@@ -1,0 +1,83 @@
+directed: true
+graph:
+  _id: DB00811_MESH_D018357_1
+  disease: Respiratory syncytial virus infection
+  disease_mesh: MESH:D018357
+  drug: ribavirin
+  drug_mesh: MESH:D012254
+  drugbank: DB:DB00811
+links:
+  - key: decreases activity of
+    source: MESH:D012254
+    target: UniProt:Q96885
+  - key: negatively regulates
+    source: MESH:D012254
+    target: InterPro:IPR019602
+  - key: decreases activity of
+    source: MESH:D012254
+    target: UniProt:P20839
+  - key: participates in
+    source: UniProt:Q96885
+    target: GO:0039694
+  - key: participates in
+    source: InterPro:IPR019602
+    target: GO:0004484
+  - key: positively correlated with
+    source: UniProt:P20839
+    target: GO:0006183
+  - key: occurs in
+    source: GO:0039694
+    target: taxonomy:12814
+  - key: occurs in
+    source: GO:0004484
+    target: taxonomy:12814
+  - key: produces
+    source: GO:0006183
+    target: MESH:D006160
+  - key: participates in
+    source: MESH:D006160
+    target: GO:0039694
+  - key: occurs in
+    source: GO:0039694
+    target: taxonomy:12814
+  - key: causes
+    source: taxonomy:12814
+    target: MESH:D018357
+multigraph: true
+nodes:
+  - id: MESH:D012254
+    label: Drug
+    name: ribavirin
+  - id: UniProt:Q96885
+    label: Protein
+    name: RNA-directed RNA polymerase (Hepatitis C virus)
+  - id: InterPro:IPR019602
+    label: GeneFamily
+    name: mRNA capping enzyme, large subunit, ATPase/guanylyltransferase, virus
+  - id: UniProt:P20839
+    label: Protein
+    name: Inosine-5'-monophosphate dehydrogenase 1
+  - id: GO:0039694
+    label: BiologicalProcess
+    name: viral RNA genome replication
+  - id: GO:0004484
+    label: BiologicalProcess
+    name: mRNA capping enzyme activity
+  - id: GO:0006183
+    label: BiologicalProcess
+    name: GTP biosynthetic process
+  - id: taxonomy:12814
+    label: OrganismTaxon
+    name: Respiratory syncytial virus
+  - id: MESH:D006160
+    label: ChemicalSubstance
+    name: Guanosine Triphosphate (GTP)
+  - id: MESH:D018357
+    label: Disease
+    name: Respiratory syncytial virus infection
+  - id: GO:0039694
+    label: BiologicalProcess
+    name: viral RNA genome replication
+references:
+  - https://go.drugbank.com/drugs/DB00811
+  - https://en.wikipedia.org/wiki/Respiratory_syncytial_virus

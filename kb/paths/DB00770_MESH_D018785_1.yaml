@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00770_MESH_D018785_1
+  disease: Congenital atresia of tricuspid valve
+  disease_mesh: MESH:D018785
+  drug: alprostadil
+  drug_mesh: MESH:D000527
+  drugbank: DB:DB00770
+links:
+  - key: increases activity of
+    source: MESH:D000527
+    target: UniProt:P43116
+  - key: positively regulates
+    source: UniProt:P43116
+    target: GO:0007189
+  - key: positively regulates
+    source: GO:0007189
+    target: GO:0044557
+  - key: positively correlated with
+    source: GO:0044557
+    target: HP:0001643
+  - key: negatively correlated with
+    source: HP:0001643
+    target: MESH:D018785
+multigraph: true
+nodes:
+  - id: MESH:D000527
+    label: Drug
+    name: Alprostadil
+  - id: UniProt:P43116
+    label: Protein
+    name: Prostaglandin E2 receptor EP2 subtype
+  - id: GO:0007189
+    label: BiologicalProcess
+    name: Adenylate cyclase-activating G protein-coupled receptor signaling pathway
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: Relaxation of smooth muscle
+  - id: HP:0001643
+    label: PhenotypicFeature
+    name: Patent ductus arteriosus
+  - id: MESH:D018785
+    label: Disease
+    name: Congenital atresia of tricuspid valve
+references:
+  - https://go.drugbank.com/drugs/DB00770
+  - https://en.wikipedia.org/wiki/Prostaglandin_E1
+  - https://en.wikipedia.org/wiki/Tricuspid_atresia

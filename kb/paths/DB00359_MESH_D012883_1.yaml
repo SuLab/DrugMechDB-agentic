@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB00359_MESH_D012883_1
+  disease: Skin ulcer
+  disease_mesh: MESH:D012883
+  drug: sulfadiazine
+  drug_mesh: MESH:D013411
+  drugbank: DB:DB00359
+links:
+  - key: disrupts
+    source: MESH:D013411
+    target: GO:0005618
+  - key: in taxon
+    source: GO:0005618
+    target: taxonomy:2
+  - key: positively correlated with
+    source: taxonomy:2
+    target: MESH:D012883
+multigraph: true
+nodes:
+  - id: MESH:D013411
+    label: Drug
+    name: sulfadiazine
+  - id: GO:0005618
+    label: CellularComponent
+    name: cell wall
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D012883
+    label: Disease
+    name: Skin ulcer
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/28639707/
+  - https://en.wikipedia.org/wiki/Ulcer_(dermatology)#Causes
+  - https://pubmed.ncbi.nlm.nih.gov/7014694/

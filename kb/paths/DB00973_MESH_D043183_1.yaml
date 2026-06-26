@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00973_MESH_D043183_1
+  disease: Irritable bowel syndrome
+  disease_mesh: MESH:D043183
+  drug: chlordiazepoxide
+  drug_mesh: MESH:D002707
+  drugbank: DB:DB00973
+links:
+  - key: negatively correlated with
+    source: MESH:D002707
+    target: HP:0003394
+  - key: positively correlated with
+    source: HP:0003394
+    target: HP:0032155
+  - key: correlated with
+    source: HP:0032155
+    target: HP:0002579
+  - key: manifestation of
+    source: HP:0002579
+    target: MESH:D043183
+multigraph: true
+nodes:
+  - id: MESH:D002707
+    label: Drug
+    name: chlordiazepoxide
+  - id: HP:0003394
+    label: PhenotypicFeature
+    name: Muscle spasm
+  - id: HP:0032155
+    label: PhenotypicFeature
+    name: Abdominal cramps
+  - id: HP:0002579
+    label: PhenotypicFeature
+    name: Gastrointestinal dysmotility
+  - id: MESH:D043183
+    label: Disease
+    name: Irritable bowel syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00475
+  - https://en.wikipedia.org/wiki/Chlordiazepoxide/clidinium_bromide
+comment: The drug when in combination with clinidium (DB:DB00771, brand name Librax,
+  https://go.drugbank.com/unearth/q?utf8=%E2%9C%93&searcher=drugs&query=Librax) helps
+  to relieve stomach spasms and abdominal cramps, some of the symptoms of irritable
+  bowel syndrome. Clinidium (an anticholinergic agent) is the compound that ameliorates
+  these symptoms.

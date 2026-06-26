@@ -1,0 +1,87 @@
+comment: Azathioprine is a prodrug of 6-mercaptopurine
+directed: true
+graph:
+  _id: DB00993_MESH_D001172_1
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: azathioprine
+  drug_mesh: MESH:D001379
+  drugbank: DB:DB00993
+links:
+  - key: has metabolite
+    source: MESH:D001379
+    target: MESH:C032827
+  - key: decreases activity of
+    source: MESH:C032827
+    target: UniProt:P63000
+  - key: increases activity of
+    source: UniProt:P63000
+    target: UniProt:Q07817-1
+  - key: negatively regulates
+    source: UniProt:Q07817-1
+    target: GO:0006915
+  - key: negatively regulates
+    source: GO:0006915
+    target: CL:0000084
+  - key: positively regulates
+    source: CL:0000084
+    target: GO:0006955
+  - key: negatively regulates
+    source: MESH:D001379
+    target: GO:0042451
+  - key: occurs in
+    source: GO:0042451
+    target: CL:0000738
+  - key: positively regulates
+    source: CL:0000738
+    target: GO:0006955
+  - key: positively regulates
+    source: GO:0006955
+    target: GO:0006955
+  - key: disrupts
+    source: MESH:D001379
+    target: MESH:D004247
+  - key: occurs in
+    source: MESH:D004247
+    target: CL:0000738
+  - key: positively correlated with
+    source: GO:0006955
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:D001379
+    label: Drug
+    name: Azathioprine
+  - id: MESH:C032827
+    label: ChemicalSubstance
+    name: 6-thioguanosine 5'-triphosphate
+  - id: UniProt:P63000
+    label: Protein
+    name: Ras-related C3 botulinum toxin substrate 1
+  - id: UniProt:Q07817-1
+    label: Protein
+    name: Bcl-xL
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: Apoptotic process
+  - id: CL:0000084
+    label: Cell
+    name: T cell
+  - id: GO:0006955
+    label: BiologicalProcess
+    name: Immune response
+  - id: GO:0042451
+    label: BiologicalProcess
+    name: Purine nucleoside biosynthetic process
+  - id: CL:0000738
+    label: Cell
+    name: Leukocyte
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://en.wikipedia.org/wiki/Azathioprine
+  - https://go.drugbank.com/drugs/DB00993

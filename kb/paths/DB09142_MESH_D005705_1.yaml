@@ -1,0 +1,26 @@
+directed: true
+graph:
+  _id: DB09142_MESH_D005705_1
+  disease: GallBladder Diseases (Diagnostic)
+  disease_mesh: MESH:D005705
+  drug: sincalide
+  drug_mesh: MESH:D012844
+  drugbank: DB:DB09142
+links:
+  - key: positively regulates
+    source: MESH:D012844
+    target: GO:0032782
+  - key: negatively correlated with
+    source: GO:0032782
+    target: MESH:D005705
+multigraph: true
+nodes:
+  - id: MESH:D012844
+    label: Drug
+    name: sincalide
+  - id: GO:0032782
+    label: BiologicalProcess
+    name: Bile acid secretion
+  - id: MESH:D005705
+    label: Disease
+    name: Gallbladder Diseases (Diagnostic)

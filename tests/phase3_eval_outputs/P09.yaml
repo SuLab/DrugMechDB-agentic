@@ -1,0 +1,102 @@
+directed: true
+multigraph: true
+graph:
+  _id: P09_DB00563_MESH_D054198
+  drug: methotrexate
+  drug_mesh: MESH:D008727
+  drugbank: DB:DB00563
+  disease: Acute Lymphoblastic Leukemia
+  disease_mesh: MESH:D054198
+nodes:
+  - id: MESH:D008727
+    name: methotrexate
+    label: Drug
+  - id: UniProt:P00374
+    name: Dihydrofolate reductase
+    label: Protein
+  - id: GO:0046654
+    name: tetrahydrofolate biosynthetic process
+    label: BiologicalProcess
+  - id: GO:0071897
+    name: DNA biosynthetic process
+    label: BiologicalProcess
+  - id: GO:0008283
+    name: cell population proliferation
+    label: BiologicalProcess
+  - id: MESH:D054198
+    name: Acute Lymphoblastic Leukemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D008727
+    target: UniProt:P00374
+    evidence:
+      - reference: PMID:40088855
+        snippet: MTX acts as a folate antagonist by inhibiting dihydrofolate reductase (DHFR), an enzyme essential for the synthesis of tetrahydrofolate.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Review paper confirms methotrexate's primary mechanism is inhibition of DHFR, thereby decreasing its catalytic activity.
+      - reference: PMID:25136372
+        snippet: MTX competitively inhibits dihydrofolate reductase (DHFR), an enzyme that participates in the tetrahydrofolate synthesis so as to inhibit purine synthesis.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Confirms competitive inhibition of DHFR by MTX, reducing the enzyme's activity in tetrahydrofolate synthesis.
+  - key: positively regulates
+    source: UniProt:P00374
+    target: GO:0046654
+    evidence:
+      - reference: PMID:40088855
+        snippet: MTX acts as a folate antagonist by inhibiting dihydrofolate reductase (DHFR), an enzyme essential for the synthesis of tetrahydrofolate.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: DHFR is identified as essential for the tetrahydrofolate biosynthetic process; inhibiting DHFR blocks this process, confirming DHFR positively regulates it.
+      - reference: PMID:25136372
+        snippet: MTX competitively inhibits dihydrofolate reductase (DHFR), an enzyme that participates in the tetrahydrofolate synthesis so as to inhibit purine synthesis.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: DHFR participates in tetrahydrofolate synthesis, confirming its positive regulatory role in that biosynthetic process.
+  - key: positively regulates
+    source: GO:0046654
+    target: GO:0071897
+    evidence:
+      - reference: PMID:17333344
+        snippet: Folates play a key role in one-carbon metabolism essential for the biosynthesis of purines, thymidylate and hence DNA replication.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Tetrahydrofolate (reduced folate) drives one-carbon metabolism required for thymidylate and purine synthesis, which are needed for DNA replication (DNA biosynthetic process).
+      - reference: PMID:36532750
+        snippet: the mechanism of action is to inhibit DNA synthesis, repair and cell proliferation by decreasing the activities of several folate-dependent enzymes.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Decreasing folate-dependent enzyme activities (including the tetrahydrofolate biosynthetic pathway) impairs DNA synthesis, confirming folate metabolism positively regulates the DNA biosynthetic process.
+  - key: positively regulates
+    source: GO:0071897
+    target: GO:0008283
+    evidence:
+      - reference: PMID:40088855
+        snippet: This disruption impairs DNA synthesis, repair, and cellular replication, particularly affecting rapidly dividing cells.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: DNA synthesis is required for cellular replication (cell population proliferation); disrupting DNA synthesis halts proliferation, confirming that the DNA biosynthetic process positively regulates cell population proliferation.
+      - reference: PMID:36532750
+        snippet: the mechanism of action is to inhibit DNA synthesis, repair and cell proliferation by decreasing the activities of several folate-dependent enzymes.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: DNA synthesis inhibition leads directly to inhibition of cell proliferation, confirming the positive regulatory relationship between DNA biosynthetic process and cell population proliferation.
+  - key: contributes to
+    source: GO:0008283
+    target: MESH:D054198
+    evidence:
+      - reference: PMID:25136372
+        snippet: Acute lymphoblastic leukemia (ALL) is a cancer that immature white blood cells continuously overproduce in the bone marrow.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: ALL is characterized by uncontrolled proliferation (overproduction) of immature white blood cells, confirming that cell population proliferation contributes to the disease state.
+      - reference: PMID:40088855
+        snippet: Methotrexate (MTX) is a critical antimetabolite drug in treating various pediatric diseases, including acute lymphoblastic leukemia (ALL), non-Hodgkin lymphoma (NHL), brain tumors, osteosarcoma, inflammatory myofibroblastic tumor (IMT), juvenile scleroderma (JS), and juvenile idiopathic arthritis (JIA).
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: MTX's efficacy against ALL as an antimetabolite (which blocks cell proliferation) supports that cell population proliferation is a key contributor to ALL.
+references:
+  - https://go.drugbank.com/drugs/DB00563#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P00374#function

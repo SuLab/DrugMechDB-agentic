@@ -1,0 +1,72 @@
+directed: true
+graph:
+  _id: DB11817_MESH_D001172_1
+  disease: Arthritis, Rheumatoid
+  disease_mesh: MESH:D001172
+  drug: baricitinib
+  drug_mesh: MESH:C000596027
+  drugbank: DB:DB11817
+links:
+  - key: decreases activity of
+    source: MESH:C000596027
+    target: UniProt:P23458
+  - key: decreases activity of
+    source: MESH:C000596027
+    target: UniProt:O60674
+  - key: decreases activity of
+    source: MESH:C000596027
+    target: UniProt:P52333
+  - key: decreases activity of
+    source: MESH:C000596027
+    target: UniProt:P29597
+  - key: positively regulates
+    source: UniProt:P23458
+    target: GO:0019221
+  - key: positively regulates
+    source: UniProt:O60674
+    target: GO:0019221
+  - key: positively regulates
+    source: UniProt:P52333
+    target: GO:0019221
+  - key: positively regulates
+    source: UniProt:P29597
+    target: GO:0019221
+  - key: positively correlated with
+    source: GO:0019221
+    target: GO:0006954
+  - key: contributes to
+    source: GO:0006954
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:C000596027
+    label: Drug
+    name: baricitinib
+  - id: UniProt:P23458
+    label: Protein
+    name: Tyrosine-protein kinase JAK1
+  - id: UniProt:O60674
+    label: Protein
+    name: Tyrosine-protein kinase JAK2
+  - id: UniProt:P52333
+    label: Protein
+    name: Tyrosine-protein kinase JAK3
+  - id: UniProt:P29597
+    label: Protein
+    name: Non-receptor tyrosine-protein kinase TYK2
+  - id: GO:0019221
+    label: BiologicalProcess
+    name: cytokine-mediated signaling pathway
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D001172
+    label: Disease
+    name: Arthritis, Rheumatoid
+references:
+  - https://go.drugbank.com/drugs/DB11817#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P23458#function
+  - https://www.uniprot.org/uniprot/O60674#function
+  - https://www.uniprot.org/uniprot/P52333#function
+  - https://www.uniprot.org/uniprot/P29597#function
+  - https://en.wikipedia.org/wiki/Rheumatoid_arthritis

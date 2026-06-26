@@ -1,0 +1,54 @@
+comment: Ciprofloxacin is a second generation fluoroquinolone that is used to treat
+  a wide variety of bacterial susceptible infections.
+directed: true
+graph:
+  _id: DB00537_MESH_D014435_1
+  disease: Typhoid Fever
+  disease_mesh: MESH:D014435
+  drug: ciprofloxacin
+  drug_mesh: MESH:D002939
+  drugbank: DB:DB00537
+links:
+  - key: decreases activity of
+    source: MESH:D002939
+    target: UniProt:A0A717UR96
+  - key: decreases activity of
+    source: MESH:D002939
+    target: UniProt:A0A715KJC7
+  - key: positively regulates
+    source: UniProt:A0A717UR96
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:A0A715KJC7
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:90370
+  - key: causes
+    source: taxonomy:90370
+    target: MESH:D014435
+multigraph: true
+nodes:
+  - id: MESH:D002939
+    label: Drug
+    name: ciprofloxacin
+  - id: UniProt:A0A717UR96
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:A0A715KJC7
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:90370
+    label: OrganismTaxon
+    name: Salmonella enterica subsp. enterica serovar Typhi
+  - id: MESH:D014435
+    label: Disease
+    name: Typhoid Fever
+references:
+  - https://go.drugbank.com/drugs/DB00537#mechanism-of-action
+  - https://www.uniprot.org/uniprot/A0A717UR96#function
+  - https://www.uniprot.org/uniprot/A0A715KJC7#function
+  - https://en.wikipedia.org/wiki/Typhoid_fever

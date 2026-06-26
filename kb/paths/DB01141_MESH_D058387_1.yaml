@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB01141_MESH_D058387_1
+  disease: Candidemia
+  disease_mesh: MESH:D058387
+  drug: micafungin
+  drug_mesh: MESH:C121905
+  drugbank: DB:DB01141
+links:
+  - key: negatively regulates
+    source: MESH:C121905
+    target: UniProt:A2QLK4
+  - key: negatively correlated with
+    source: UniProt:A2QLK4
+    target: GO:0060636
+  - key: disrupts
+    source: GO:0060636
+    target: GO:0030445
+  - key: in taxon
+    source: GO:0030445
+    target: taxonomy:4751
+  - key: causes
+    source: taxonomy:4751
+    target: MESH:D058387
+multigraph: true
+nodes:
+  - id: MESH:C121905
+    label: Drug
+    name: micafungin
+  - id: UniProt:A2QLK4
+    label: Protein
+    name: 1,3-beta-glucan synthase component FKS1
+  - id: GO:0060636
+    label: BiologicalProcess
+    name: negative regulation of (1->3)-beta-D-glucan biosynthetic process
+  - id: GO:0030445
+    label: CellularComponent
+    name: yeast-form cell wall
+  - id: taxonomy:4751
+    label: OrganismTaxon
+    name: Candida
+  - id: MESH:D058387
+    label: Disease
+    name: Candidemia
+references:
+  - https://go.drugbank.com/drugs/DB01141#mechanism-of-action

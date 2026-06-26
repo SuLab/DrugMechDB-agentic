@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB01195_MESH_D001281_1
+  disease: Atrial Fibrillation
+  disease_mesh: MESH:D001281
+  drug: Flecainide
+  drug_mesh: MESH:D005424
+  drugbank: DB:DB01195
+links:
+  - key: decreases activity of
+    source: MESH:D005424
+    target: UniProt:P35499
+  - key: decreases activity of
+    source: MESH:D005424
+    target: UniProt:Q14524
+  - key: positively regulates
+    source: UniProt:P35499
+    target: GO:0086060
+  - key: positively regulates
+    source: UniProt:Q14524
+    target: GO:0086060
+  - key: positively regulates
+    source: GO:0086060
+    target: GO:0061337
+  - key: positively correlated with
+    source: GO:0061337
+    target: GO:0060047
+  - key: positively correlated with
+    source: GO:0060047
+    target: HP:0001649
+  - key: manifestation of
+    source: HP:0001649
+    target: MESH:D001281
+multigraph: true
+nodes:
+  - id: MESH:D005424
+    label: Drug
+    name: Flecainide
+  - id: UniProt:P35499
+    label: Protein
+    name: Sodium channel protein type 4 subunit alpha
+  - id: UniProt:Q14524
+    label: Protein
+    name: Sodium channel protein type 5 subunit alpha
+  - id: GO:0086060
+    label: MolecularActivity
+    name: voltage-gated sodium channel activity involved in AV node cell action potential
+  - id: GO:0061337
+    label: BiologicalProcess
+    name: cardiac conduction
+  - id: GO:0060047
+    label: BiologicalProcess
+    name: heart contraction
+  - id: HP:0001649
+    label: PhenotypicFeature
+    name: Tachycardia
+  - id: MESH:D001281
+    label: Disease
+    name: Atrial Fibrillation
+references:
+  - https://go.drugbank.com/drugs/DB01195#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Flecainide#Mechanism_of_action
+  - https://www.uniprot.org/uniprot/P35499#function
+  - https://www.uniprot.org/uniprot/Q14524#function
+  - https://en.wikipedia.org/wiki/Atrial_fibrillation

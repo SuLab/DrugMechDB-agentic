@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00259_MESH_D002181_1
+  disease: Candidal vulvovaginitis
+  disease_mesh: MESH:D002181
+  drug: sulfanilamide
+  drug_mesh: MESH:C036944
+  drugbank: DB:DB00259
+links:
+  - key: decreases activity of
+    source: MESH:C036944
+    target: Pfam:PF00809
+  - key: positively correlated with
+    source: Pfam:PF00809
+    target: GO:0046656
+  - key: in taxon
+    source: GO:0046656
+    target: taxonomy:5476
+  - key: causes
+    source: taxonomy:5476
+    target: MESH:D002181
+multigraph: true
+nodes:
+  - id: MESH:C036944
+    label: Drug
+    name: Sulfanilamide
+  - id: Pfam:PF00809
+    label: GeneFamily
+    name: Dihydropteroate synthase
+  - id: GO:0046656
+    label: BiologicalProcess
+    name: Folic acid biosynthetic process
+  - id: taxonomy:5476
+    label: OrganismTaxon
+    name: Candida albicans
+  - id: MESH:D002181
+    label: Disease
+    name: Candidal vulvovaginitis
+references:
+  - https://go.drugbank.com/drugs/DB00259

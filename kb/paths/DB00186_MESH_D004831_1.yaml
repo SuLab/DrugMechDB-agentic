@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00186_MESH_D004831_1
+  disease: Myoclonic seizure
+  disease_mesh: MESH:D004831
+  drug: lorazepam
+  drug_mesh: MESH:D008140
+  drugbank: DB:DB00186
+links:
+  - key: positively regulates
+    source: MESH:D008140
+    target: InterPro:IPR006028
+  - key: positively regulates
+    source: InterPro:IPR006028
+    target: GO:0022851
+  - key: positively correlated with
+    source: GO:0022851
+    target: GO:0060081
+  - key: negatively regulates
+    source: GO:0060081
+    target: GO:0019228
+  - key: contributes to
+    source: GO:0019228
+    target: GO:0050806
+  - key: positively correlated with
+    source: GO:0050806
+    target: MESH:D004831
+multigraph: true
+nodes:
+  - id: MESH:D008140
+    label: Drug
+    name: Lorazepam
+  - id: InterPro:IPR006028
+    label: GeneFamily
+    name: Gamma-aminobutyric acid A receptor/Glycine receptor alpha
+  - id: GO:0022851
+    label: MolecularActivity
+    name: GABA-gated chloride ion channel activity
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: Membrane hyperpolarization
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: Neuronal action potential
+  - id: GO:0050806
+    label: BiologicalProcess
+    name: Positive regulation of synaptic transmission
+  - id: MESH:D004831
+    label: Disease
+    name: Myoclonic seizure
+references:
+  - https://go.drugbank.com/drugs/DB00186#BE0004797

@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DB00260_MESH_D014397_1
+  disease: Pulmonary tuberculosis
+  disease_mesh: MESH:D014397
+  drug: Cycloserine
+  drug_mesh: MESH:D003523
+  drugbank: DB:DB00260
+links:
+  - key: decreases activity of
+    source: MESH:D003523
+    target: UniProt:P9WP31
+  - key: decreases activity of
+    source: MESH:D003523
+    target: UniProt:P9WQA9
+  - key: positively regulates
+    source: UniProt:P9WP31
+    target: GO:0009252
+  - key: positively regulates
+    source: UniProt:P9WQA9
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: positively correlated with
+    source: GO:0009273
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:1773
+  - key: causes
+    source: taxonomy:1773
+    target: MESH:D014397
+multigraph: true
+nodes:
+  - id: MESH:D003523
+    label: Drug
+    name: Cycloserine
+  - id: UniProt:P9WP31
+    label: Protein
+    name: D-alanine--D-alanine ligase (Mycobacterium tuberculosis)
+  - id: UniProt:P9WQA9
+    label: Protein
+    name: Alanine racemase (Mycobacterium tuberculosis)
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: Peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: Peptidoglycan-based cell wall biogenesis
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: Cell division
+  - id: taxonomy:1773
+    label: OrganismTaxon
+    name: Mycobacterium tuberculosis
+  - id: MESH:D014397
+    label: Disease
+    name: Pulmonary tuberculosis
+references:
+  - https://go.drugbank.com/drugs/DB00260

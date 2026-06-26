@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00405_MESH_D006255_1
+  disease: Seasonal allergic rhinitis
+  disease_mesh: MESH:D006255
+  drug: Dexbrompheniramine
+  drug_mesh: MESH:C015121
+  drugbank: DB:DB00405
+links:
+  - key: decreases activity of
+    source: MESH:C015121
+    target: UniProt:P35367
+  - key: positively regulates
+    source: UniProt:P35367
+    target: reactome:R-HSA-388396
+  - key: increases activity of
+    source: reactome:R-HSA-388396
+    target: UniProt:P19838
+  - key: positively regulates
+    source: UniProt:P19838
+    target: GO:0006954
+  - key: located in
+    source: GO:0006954
+    target: UBERON:0010061
+  - key: affected by
+    source: UBERON:0010061
+    target: MESH:D006255
+multigraph: true
+nodes:
+  - id: MESH:C015121
+    label: Drug
+    name: Dexbrompheniramine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: reactome:R-HSA-388396
+    label: Pathway
+    name: GPCR downstream signalling
+  - id: UniProt:P19838
+    label: Protein
+    name: Nuclear factor NF-kappa-B p105 subunit
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: UBERON:0010061
+    label: GrossAnatomicalStructure
+    name: Nasopharynx cavity
+  - id: MESH:D006255
+    label: Disease
+    name: Seasonal allergic rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB00405

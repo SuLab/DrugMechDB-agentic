@@ -1,0 +1,42 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB00574_MESH_D009765_1
+  disease: Obesity
+  disease_mesh: MESH:D009765
+  drug: Fenfluramine
+  drug_mesh: MESH:D005277
+  drugbank: DB:DB00574
+links:
+  - key: increases activity of
+    source: MESH:D005277
+    target: UniProt:P28221
+  - key: positively correlated with
+    source: UniProt:P28221
+    target: MESH:D012701
+  - key: negatively regulates
+    source: MESH:D012701
+    target: GO:0032100
+  - key: positively correlated with
+    source: GO:0032100
+    target: MESH:D009765
+multigraph: true
+nodes:
+  - id: MESH:D005277
+    label: Drug
+    name: Fenfluramine
+  - id: UniProt:P28221
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1D
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: GO:0032100
+    label: BiologicalProcess
+    name: Appetite stimulation
+  - id: MESH:D009765
+    label: Disease
+    name: Obesity
+references:
+  - https://go.drugbank.com/drugs/DB00574
+  - https://pubmed.ncbi.nlm.nih.gov/2692639/

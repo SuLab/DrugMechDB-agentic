@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00218_MESH_D011019_1
+  disease: Pneumonia, Mycoplasma
+  disease_mesh: MESH:D011019
+  drug: moxifloxacin
+  drug_mesh: MESH:D000077266
+  drugbank: DB:DB00218
+links:
+  - key: decreases activity of
+    source: MESH:D000077266
+    target: UniProt:P22446
+  - key: decreases activity of
+    source: MESH:D000077266
+    target: UniProt:P75352
+  - key: positively regulates
+    source: UniProt:P22446
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:P75352
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:2104
+  - key: causes
+    source: taxonomy:2104
+    target: MESH:D011019
+multigraph: true
+nodes:
+  - id: MESH:D000077266
+    label: Drug
+    name: moxifloxacin
+  - id: UniProt:P22446
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:P75352
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:2104
+    label: OrganismTaxon
+    name: Mycoplasma pneumoniae
+  - id: MESH:D011019
+    label: Disease
+    name: Pneumonia, Mycoplasma
+references:
+  - https://go.drugbank.com/drugs/DB00218#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P22446#function
+  - https://www.uniprot.org/uniprot/P75352#function
+  - https://en.wikipedia.org/wiki/Mycoplasma_pneumonia

@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB01100_MESH_D005879_1
+  disease: Tourette’s Disorder
+  disease_mesh: MESH:D005879
+  drug: pimozide
+  drug_mesh: MESH:D010868
+  drugbank: DB:DB01100
+links:
+  - key: decreases activity of
+    source: MESH:D010868
+    target: UniProt:P14416
+  - key: caused by
+    source: UniProt:P14416
+    target: GO:0014046
+  - key: has phenotype
+    source: GO:0014046
+    target: HP:0100033
+  - key: manifestation of
+    source: HP:0100033
+    target: MESH:D005879
+multigraph: true
+nodes:
+  - id: MESH:D010868
+    label: Drug
+    name: pimozide
+  - id: UniProt:P14416
+    label: Protein
+    name: Dopamine D2 Receptor
+  - id: GO:0014046
+    label: BiologicalProcess
+    name: Dopamine Release
+  - id: HP:0100033
+    label: PhenotypicFeature
+    name: tics
+  - id: MESH:D005879
+    label: Disease
+    name: Tourette’s Disorder

@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB00847_MESH_D003554_1
+  disease: Cystinosis
+  disease_mesh: MESH:D003554
+  drug: mercaptamine
+  drug_mesh: MESH:D003543
+  drugbank: DB:DB00847
+links:
+  - key: decreases abundance of
+    source: MESH:D003543
+    target: CHEBI:17376
+  - key: positively correlated with
+    source: CHEBI:17376
+    target: MESH:D003554
+multigraph: true
+nodes:
+  - id: MESH:D003543
+    label: Drug
+    name: mercaptamine
+  - id: CHEBI:17376
+    label: ChemicalSubstance
+    name: cystine
+  - id: MESH:D003554
+    label: Disease
+    name: Cystinosis
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/6058#section=Mechanism-of-Action

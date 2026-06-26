@@ -1,0 +1,66 @@
+comment: Ethambutol is indicated in combination with other anti-tuberculosis drugs
+  in the treatment of pulmonary tuberculosis
+directed: true
+graph:
+  _id: DB00330_MESH_D014397_1
+  disease: Pulmonary tuberculosis
+  disease_mesh: MESH:D014397
+  drug: Ethambutol
+  drug_mesh: MESH:D004977
+  drugbank: DB:DB00330
+links:
+  - key: decreases activity of
+    source: MESH:D004977
+    target: UniProt:P9WNL5
+  - key: decreases activity of
+    source: MESH:D004977
+    target: UniProt:P9WNL7
+  - key: decreases activity of
+    source: MESH:D004977
+    target: UniProt:P9WNL9
+  - key: positively regulates
+    source: UniProt:P9WNL5
+    target: GO:0071766
+  - key: positively regulates
+    source: UniProt:P9WNL7
+    target: GO:0071766
+  - key: positively regulates
+    source: UniProt:P9WNL9
+    target: GO:0071766
+  - key: positively correlated with
+    source: GO:0071766
+    target: GO:0051301
+  - key: in taxon
+    source: GO:0051301
+    target: taxonomy:1773
+  - key: causes
+    source: taxonomy:1773
+    target: MESH:D014397
+multigraph: true
+nodes:
+  - id: MESH:D004977
+    label: Drug
+    name: Ethambutol
+  - id: UniProt:P9WNL5
+    label: Protein
+    name: Probable arabinosyltransferase C
+  - id: UniProt:P9WNL7
+    label: Protein
+    name: Probable arabinosyltransferase B
+  - id: UniProt:P9WNL9
+    label: Protein
+    name: Probable arabinosyltransferase A
+  - id: GO:0071766
+    label: BiologicalProcess
+    name: Actinobacterium-type cell wall biogenesis
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: Cell division
+  - id: taxonomy:1773
+    label: OrganismTaxon
+    name: Mycobacterium tuberculosis
+  - id: MESH:D014397
+    label: Disease
+    name: Pulmonary tuberculosis
+references:
+  - https://go.drugbank.com/drugs/DB00330

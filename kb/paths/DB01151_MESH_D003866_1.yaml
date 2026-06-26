@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB01151_MESH_D003866_1
+  disease: Depressive disorder
+  disease_mesh: MESH:D003866
+  drug: desipramine
+  drug_mesh: MESH:D003891
+  drugbank: DB:DB01151
+links:
+  - key: negatively regulates
+    source: MESH:D003891
+    target: UniProt:P23975
+  - key: positively regulates
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: positively correlated with
+    source: GO:0051620
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:D003891
+    label: Drug
+    name: desipramine
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: norepinephrine uptake
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive disorder
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL72/
+  - https://en.wikipedia.org/wiki/Desipramine#Pharmacodynamics

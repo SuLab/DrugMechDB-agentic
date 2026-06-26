@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00843_MESH_D000544_1
+  disease: Alzheimer's disease
+  disease_mesh: MESH:D000544
+  drug: donepezil
+  drug_mesh: MESH:C076946
+  drugbank: DB:DB00843
+links:
+  - key: decreases activity of
+    source: MESH:C076946
+    target: UniProt:P22303
+  - key: increases abundance of
+    source: UniProt:P22303
+    target: MESH:D000109
+  - key: located in
+    source: MESH:D000109
+    target: GO:0045202
+  - key: participates in
+    source: GO:0045202
+    target: GO:0007271
+  - key: positively correlated with
+    source: GO:0007271
+    target: GO:0007613
+  - key: prevents
+    source: GO:0007613
+    target: MESH:D000544
+multigraph: true
+nodes:
+  - id: MESH:C076946
+    label: Drug
+    name: donepezil
+  - id: UniProt:P22303
+    label: Protein
+    name: acetylcholinesterase
+  - id: MESH:D000109
+    label: ChemicalSubstance
+    name: acetylcholine
+  - id: GO:0045202
+    label: CellularComponent
+    name: synapse
+  - id: GO:0007271
+    label: BiologicalProcess
+    name: synaptic transmission, cholinergic
+  - id: GO:0007613
+    label: BiologicalProcess
+    name: memory
+  - id: MESH:D000544
+    label: Disease
+    name: Alzheimer's disease
+references:
+  - https://go.drugbank.com/drugs/DB00843#BE0000426
+  - https://en.wikipedia.org/wiki/Donepezil

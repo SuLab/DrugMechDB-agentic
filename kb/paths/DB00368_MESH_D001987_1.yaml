@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00368_MESH_D001987_1
+  disease: Bronchiectasis
+  disease_mesh: MESH:D001987
+  drug: norepinephrine
+  drug_mesh: MESH:D009638
+  drugbank: DB:DB00368
+links:
+  - key: positively regulates
+    source: MESH:D009638
+    target: UniProt:P07550
+  - key: negatively regulates
+    source: UniProt:P07550
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0031245
+  - key: manifestation of
+    source: HP:0031245
+    target: MESH:D001987
+multigraph: true
+nodes:
+  - id: MESH:D009638
+    label: Drug
+    name: norepinephrine
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0031245
+    label: PhenotypicFeature
+    name: Productive cough
+  - id: MESH:D001987
+    label: Disease
+    name: Bronchiectasis
+references:
+  - https://go.drugbank.com/drugs/DB00668#BE0000694
+  - https://pubchem.ncbi.nlm.nih.gov/compound/439260#section=Pharmacology

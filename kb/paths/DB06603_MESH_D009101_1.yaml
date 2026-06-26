@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB06603_MESH_D009101_1
+  disease: Multiple myeloma
+  disease_mesh: MESH:D009101
+  drug: Panobinostat
+  drug_mesh: MESH:C496932
+  drugbank: DB:DB06603
+links:
+  - key: decreases activity of
+    source: MESH:C496932
+    target: InterPro:IPR003084
+  - key: positively regulates
+    source: InterPro:IPR003084
+    target: GO:0016575
+  - key: negatively correlated with
+    source: GO:0016575
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D009101
+  - key: positively correlated with
+    source: GO:0016575
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D009101
+multigraph: true
+nodes:
+  - id: MESH:C496932
+    label: Drug
+    name: Panobinostat
+  - id: InterPro:IPR003084
+    label: GeneFamily
+    name: Histone deacetylase
+  - id: GO:0016575
+    label: BiologicalProcess
+    name: Histone deacetylation
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: Apoptotic process
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: MESH:D009101
+    label: Disease
+    name: Multiple myeloma
+references:
+  - https://go.drugbank.com/drugs/DB06603#BE0008667

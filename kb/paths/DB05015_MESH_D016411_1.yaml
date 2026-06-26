@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB05015_MESH_D016411_1
+  disease: Lymphoma, T-Cell, Peripheral
+  disease_mesh: MESH:D016411
+  drug: belinostat
+  drug_mesh: MESH:C487081
+  drugbank: DB:DB05015
+links:
+  - key: decreases activity of
+    source: MESH:C487081
+    target: InterPro:IPR017320
+  - key: positively regulates
+    source: InterPro:IPR017320
+    target: GO:0016575
+  - key: positively correlated with
+    source: GO:0016575
+    target: HP:0031377
+  - key: positively correlated with
+    source: HP:0031377
+    target: MESH:D016411
+multigraph: true
+nodes:
+  - id: MESH:C487081
+    label: Drug
+    name: belinostat
+  - id: InterPro:IPR017320
+    label: GeneFamily
+    name: Histone deacetylase class II, eukaryotic-type
+  - id: GO:0016575
+    label: BiologicalProcess
+    name: histone deacetylation
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D016411
+    label: Disease
+    name: Lymphoma, T-Cell, Peripheral
+references:
+  - https://go.drugbank.com/drugs/DB05015#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Belinostat
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5543853/
+  - https://en.wikipedia.org/wiki/Peripheral_T-cell_lymphoma

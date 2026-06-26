@@ -1,0 +1,44 @@
+comment: Beclomethasone dipropionate is a prodrug, giving rise to Beclomethasone (MESH:D001507),
+  also known as Beclomethasone 17-monopropionate (https://pubchem.ncbi.nlm.nih.gov/compound/17-BMP).
+directed: true
+graph:
+  _id: DB00394_MESH_D065631_1
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: Beclomethasone dipropionate
+  drugbank: DB:DB00394
+links:
+  - key: has metabolite
+    source: DB:DB00394
+    target: CHEBI:3001
+  - key: positively regulates
+    source: CHEBI:3001
+    target: UniProt:P04150
+  - key: negatively regulates
+    source: UniProt:P04150
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: DB:DB00394
+    label: Drug
+    name: Beclomethasone dipropionate
+  - alt_names:
+      - Beclomethasone 17-monopropionate
+    id: CHEBI:3001
+    label: ChemicalSubstance
+    name: beclomethasone
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB00394
+  - https://en.wikipedia.org/wiki/Beclometasone#Pharmacology

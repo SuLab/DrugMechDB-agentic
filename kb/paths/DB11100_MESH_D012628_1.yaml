@@ -1,0 +1,26 @@
+directed: true
+graph:
+  _id: DB11100_MESH_D012628_1
+  disease: Seborrheic dermatitis
+  disease_mesh: MESH:D012628
+  drug: allantoin
+  drug_mesh: MESH:D000481
+  drugbank: DB:DB11100
+links:
+  - key: positively regulates
+    source: MESH:D000481
+    target: GO:0042060
+  - key: prevents
+    source: GO:0042060
+    target: MESH:D012628
+multigraph: true
+nodes:
+  - id: MESH:D000481
+    label: Drug
+    name: allantoin
+  - id: GO:0042060
+    label: BiologicalProcess
+    name: fibroblast proliferation
+  - id: MESH:D012628
+    label: Disease
+    name: Seborrheic dermatitis

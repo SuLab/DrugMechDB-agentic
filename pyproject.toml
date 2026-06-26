@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "drugmechdb"
+version = "2.0.0"
+description = "Drug Mechanism Database — AI curation platform"
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+  "linkml-runtime>=1.9.4",
+  "linkml-reference-validator>=0.1.8",
+  "linkml-term-validator>=0.4.0rc5",
+  "pyyaml>=6.0",
+  "httpx>=0.25.0",
+  "typer>=0.9.0",
+  "certifi>=2024.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "linkml>=1.9.3",
+  "pytest>=7.4.0",
+  "oaklib>=0.6.0",
+]
+# LLM SDKs for the semantic judge layer (scripts/quality/judge/). Optional: the
+# grounding tools and the whole pipeline run without these (StubBackend / --no-llm);
+# install to enable the live AnthropicBackend / OpenAIBackend.
+judge = [
+  "anthropic>=0.40.0",
+  "openai>=1.40.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/drugmechdb"]

@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB00552_MESH_D007943_1
+  disease: Hairy cell leukemia
+  disease_mesh: MESH:D007943
+  drug: pentostatin
+  drug_mesh: MESH:D015649
+  drugbank: DB:DB00552
+links:
+  - key: decreases activity of
+    source: MESH:D015649
+    target: UniProt:P00813
+  - key: negatively regulates
+    source: MESH:D015649
+    target: GO:0032774
+  - key: positively correlated with
+    source: GO:0032774
+    target: GO:0046651
+  - key: positively regulates
+    source: UniProt:P00813
+    target: GO:0046061
+  - key: decreases abundance of
+    source: GO:0046061
+    target: CHEBI:16284
+  - key: negatively correlated with
+    source: CHEBI:16284
+    target: GO:0006260
+  - key: positively correlated with
+    source: GO:0006260
+    target: GO:0046651
+  - key: positively correlated with
+    source: GO:0046651
+    target: MESH:D007943
+multigraph: true
+nodes:
+  - id: MESH:D015649
+    label: Drug
+    name: pentostatin
+  - id: UniProt:P00813
+    label: Protein
+    name: Adenosine deaminase
+  - id: GO:0046061
+    label: BiologicalProcess
+    name: dATP catabolic process
+  - id: GO:0032774
+    label: BiologicalProcess
+    name: RNA biosynthetic process
+  - id: CHEBI:16284
+    label: ChemicalSubstance
+    name: dATP
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: GO:0046651
+    label: BiologicalProcess
+    name: lymphocyte proliferation
+  - id: MESH:D007943
+    label: Disease
+    name: Hairy cell leukemia
+references:
+  - https://go.drugbank.com/drugs/DB00552
+  - https://pubchem.ncbi.nlm.nih.gov/compound/439693#section=Mechanism-of-Action

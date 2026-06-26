@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00344_MESH_D003865_1
+  disease: Major depressive disorder
+  disease_mesh: MESH:D003865
+  drug: protriptyline
+  drug_mesh: MESH:D011530
+  drugbank: DB:DB00344
+links:
+  - key: decreases activity of
+    source: MESH:D011530
+    target: UniProt:P23975
+  - key: decreases abundance of
+    source: UniProt:P23975
+    target: MESH:D009638
+  - key: participates in
+    source: MESH:D009638
+    target: GO:0023041
+  - key: negatively correlated with
+    source: GO:0023041
+    target: MESH:D003865
+multigraph: true
+nodes:
+  - id: MESH:D011530
+    label: Drug
+    name: protriptyline
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium dependent noradrenaline transporter
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: noradrenaline
+  - id: GO:0023041
+    label: BiologicalProcess
+    name: Neuronal activation
+  - id: MESH:D003865
+    label: Disease
+    name: Major depressive disorder

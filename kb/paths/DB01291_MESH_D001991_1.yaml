@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01291_MESH_D001991_1
+  disease: Bronchitis
+  disease_mesh: MESH:D001991
+  drug: pirbuterol
+  drug_mesh: MESH:C009118
+  drugbank: DB:DB01291
+links:
+  - key: increases activity of
+    source: MESH:C009118
+    target: UniProt:P07550
+  - key: increases activity of
+    source: UniProt:P07550
+    target: InterPro:IPR030672
+  - key: increases abundance of
+    source: InterPro:IPR030672
+    target: MESH:D000242
+  - key: negatively correlated with
+    source: MESH:D000242
+    target: GO:0006939
+  - key: occurs in
+    source: GO:0006939
+    target: UBERON:0002185
+  - key: affected by
+    source: UBERON:0002185
+    target: MESH:D001991
+multigraph: true
+nodes:
+  - id: MESH:C009118
+    label: Drug
+    name: Pirbuterol
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: InterPro:IPR030672
+    label: GeneFamily
+    name: Adenylate cyclase
+  - id: MESH:D000242
+    label: ChemicalSubstance
+    name: Cyclic AMP
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: Smooth muscle contraction
+  - id: UBERON:0002185
+    label: GrossAnatomicalStructure
+    name: Bronchus
+  - id: MESH:D001991
+    label: Disease
+    name: Bronchitis
+references:
+  - https://go.drugbank.com/drugs/DB01291

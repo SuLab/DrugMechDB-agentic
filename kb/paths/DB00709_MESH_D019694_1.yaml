@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00709_MESH_D019694_1
+  disease: Chronic type B viral hepatitis
+  disease_mesh: MESH:D019694
+  drug: lamivudine
+  drug_mesh: MESH:D019259
+  drugbank: DB:DB00709
+links:
+  - key: increases abundance of
+    source: MESH:D019259
+    target: MESH:C417268
+  - key: decreases activity of
+    source: MESH:C417268
+    target: UniProt:Q05486
+  - key: positively regulates
+    source: UniProt:Q05486
+    target: GO:0003964
+  - key: positively correlated with
+    source: GO:0003964
+    target: GO:0019079
+  - key: in taxon
+    source: GO:0019079
+    target: taxonomy:10407
+  - key: causes
+    source: taxonomy:10407
+    target: MESH:D019694
+multigraph: true
+nodes:
+  - id: MESH:D019259
+    label: Drug
+    name: lamivudine
+  - id: MESH:C417268
+    label: ChemicalSubstance
+    name: lamivudine triphosphate
+  - id: UniProt:Q05486
+    label: Protein
+    name: Protein P
+  - id: GO:0003964
+    label: MolecularActivity
+    name: RNA-directed DNA polymerase activity
+  - id: GO:0019079
+    label: BiologicalProcess
+    name: viral genome replication
+  - id: taxonomy:10407
+    label: OrganismTaxon
+    name: Hepatitis B virus
+  - id: MESH:D019694
+    label: Disease
+    name: Chronic type B viral hepatitis
+references:
+  - https://go.drugbank.com/drugs/DB00709#BE0004136

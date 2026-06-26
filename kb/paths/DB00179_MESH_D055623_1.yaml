@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00179_MESH_D055623_1
+  disease: Actinic keratosis
+  disease_mesh: MESH:D055623
+  drug: masoprocol
+  drug_mesh: MESH:D009637
+  drugbank: DB:DB00179
+links:
+  - key: decreases activity of
+    source: MESH:D009637
+    target: UniProt:P42345
+  - key: positively regulates
+    source: UniProt:P42345
+    target: reactome:R-HSA-166208
+  - key: positively correlated with
+    source: reactome:R-HSA-166208
+    target: HP:0031377
+  - key: causes
+    source: HP:0031377
+    target: MESH:D055623
+multigraph: true
+nodes:
+  - id: MESH:D009637
+    label: Drug
+    name: masoprocol
+  - id: UniProt:P42345
+    label: Protein
+    name: Serine/threonine-protein kinase mTOR
+  - id: reactome:R-HSA-166208
+    label: Pathway
+    name: mTORC1-mediated signalling
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D055623
+    label: Disease
+    name: Actinic keratosis
+references:
+  - https://go.drugbank.com/drugs/DB00179
+  - http://europepmc.org/article/MED/23053656

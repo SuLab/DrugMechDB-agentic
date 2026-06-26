@@ -1,0 +1,37 @@
+comment: There is an evidence indicating that levonorgestrel activates progesteron
+  receptor https://pubmed.ncbi.nlm.nih.gov/16112947/
+directed: true
+graph:
+  _id: DB00367_MESH_D008595_2
+  disease: Menorrhagia
+  disease_mesh: MESH:D008595
+  drug: Levonorgestrel
+  drug_mesh: MESH:D016912
+  drugbank: DB:DB00367
+links:
+  - key: increases activity of
+    source: MESH:D016912
+    target: UniProt:P06401
+  - key: negatively regulates
+    source: UniProt:P06401
+    target: GO:0050673
+  - key: positively correlated with
+    source: GO:0050673
+    target: MESH:D008595
+multigraph: true
+nodes:
+  - id: MESH:D016912
+    label: Drug
+    name: Levonorgestrel
+  - id: UniProt:P06401
+    label: Protein
+    name: Progesterone receptor
+  - id: GO:0050673
+    label: BiologicalProcess
+    name: Epithelial cell proliferation
+  - id: MESH:D008595
+    label: Disease
+    name: Menorrhagia
+references:
+  - https://go.drugbank.com/drugs/DB00367#BE0000557
+  - https://pubmed.ncbi.nlm.nih.gov/8671392/

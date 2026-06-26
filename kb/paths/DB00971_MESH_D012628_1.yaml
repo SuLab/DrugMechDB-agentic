@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB00971_MESH_D012628_1
+  disease: Seborrheic dermatitis
+  disease_mesh: MESH:D012628
+  drug: Selenium sulfide
+  drug_mesh: MESH:C025698
+  drugbank: DB:DB00971
+links:
+  - key: disrupts
+    source: MESH:C025698
+    target: taxonomy:5519
+  - key: causes
+    source: taxonomy:5519
+    target: MESH:D012628
+multigraph: true
+nodes:
+  - id: MESH:C025698
+    label: Drug
+    name: Selenium sulfide
+  - id: taxonomy:5519
+    label: OrganismTaxon
+    name: Malassezia
+  - id: MESH:D012628
+    label: Drug
+    name: Seborrheic dermatitis
+references:
+  - https://go.drugbank.com/drugs/DB00971

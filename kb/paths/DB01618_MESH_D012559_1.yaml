@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB01618_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: molindone
+  drug_mesh: MESH:D008972
+  drugbank: DB:DB01618
+links:
+  - key: decreases activity of
+    source: DB:DB01618
+    target: UniProt:P14416
+  - key: molecularly interacts with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: participates in
+    source: MESH:D004298
+    target: GO:0061527
+  - key: positively correlated with
+    source: GO:0061527
+    target: HP:0000738
+  - key: manifestation of
+    source: HP:0000738
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: DB:DB01618
+    label: Drug
+    name: Molindone
+  - id: UniProt:P14416
+    label: Protein
+    name: Dopamine D2 receptor
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: HP:0000738
+    label: PhenotypicFeature
+    name: Hallucinations
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB01618
+  - https://en.wikipedia.org/wiki/Schizophrenia#Positive_symptoms
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2996210/

@@ -1,0 +1,24 @@
+comment: Contraindicated
+directed: true
+graph:
+  _id: DB00324_MESH_D003320_1
+  disease: Corneal ulcer
+  disease_mesh: MESH:D003320
+  drug: fluorometholone
+  drug_mesh: MESH:D005469
+  drugbank: DB:DB00324
+links:
+  - key: treats
+    source: MESH:D005469
+    target: MESH:D003320
+multigraph: true
+nodes:
+  - id: MESH:D005469
+    label: Drug
+    name: Fluorometholone
+  - id: MESH:D003320
+    label: Disease
+    name: Corneal ulcer
+references:
+  - https://apps.who.int/iris/bitstream/handle/10665/205174/B3516.pdf;jsessionid=7C257D725E19F6E2772D2896910031BF?sequence=1
+  - https://go.drugbank.com/drugs/DB00324

@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00035_MESH_D006467_1
+  disease: Hereditary factor VIII deficiency disease
+  disease_mesh: MESH:D006467
+  drug: desmopressin
+  drug_mesh: MESH:D003894
+  drugbank: DB:DB00035
+links:
+  - key: increases activity of
+    source: MESH:D003894
+    target: UniProt:P30518
+  - key: positively regulates
+    source: UniProt:P30518
+    target: GO:1904116
+  - key: increases abundance of
+    source: GO:1904116
+    target: UniProt:P00451
+  - key: positively regulates
+    source: UniProt:P00451
+    target: GO:0007596
+  - key: negatively correlated with
+    source: GO:0007596
+    target: MESH:D006467
+multigraph: true
+nodes:
+  - id: MESH:D003894
+    label: Drug
+    name: Desmopressin
+  - id: UniProt:P30518
+    label: Protein
+    name: Vasopressin V2 receptor
+  - id: GO:1904116
+    label: BiologicalProcess
+    name: Response to vasopressin
+  - id: GO:1904116
+    label: BiologicalProcess
+    name: Response to vasopressin
+  - id: UniProt:P00451
+    label: Protein
+    name: Factor VIII
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: Blood coagulation
+  - id: MESH:D006467
+    label: Disease
+    name: Hereditary factor VIII deficiency disease
+references:
+  - https://go.drugbank.com/drugs/DB00035
+  - https://en.wikipedia.org/wiki/Desmopressin#Mechanism_of_action

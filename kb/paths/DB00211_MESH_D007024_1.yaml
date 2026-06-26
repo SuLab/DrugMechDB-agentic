@@ -1,0 +1,57 @@
+comment: Midodrine is a prodrug, i.e., the therapeutic effect of orally administered
+  midodrine is due to the major metabolite desglymidodrine
+directed: true
+graph:
+  _id: DB00211_MESH_D007024_1
+  disease: Orthostatic hypotension
+  disease_mesh: MESH:D007024
+  drug: Midodrine
+  drug_mesh: MESH:D008879
+  drugbank: DB:DB00211
+links:
+  - key: has metabolite
+    source: MESH:D008879
+    target: CHEBI:73248
+  - key: increases activity of
+    source: CHEBI:73248
+    target: UniProt:P35348
+  - key: increases activity of
+    source: CHEBI:73248
+    target: UniProt:P35368
+  - key: positively regulates
+    source: UniProt:P35348
+    target: GO:0006939
+  - key: positively regulates
+    source: UniProt:P35368
+    target: GO:0006939
+  - key: positively regulates
+    source: GO:0006939
+    target: HP:0032263
+  - key: negatively correlated with
+    source: HP:0032263
+    target: MESH:D007024
+multigraph: true
+nodes:
+  - id: MESH:D008879
+    label: Drug
+    name: Midodrine
+  - id: CHEBI:73248
+    label: ChemicalSubstance
+    name: Deglymidodrine
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P35368
+    label: Protein
+    name: Alpha-1B adrenergic receptor
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: Smooth muscle contraction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D007024
+    label: Disease
+    name: Orthostatic hypotension
+references:
+  - https://go.drugbank.com/drugs/DB00211#BE0000501

@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB06820_MESH_D014008_1
+  disease: Tinea pedis
+  disease_mesh: MESH:D014008
+  drug: sulconazole
+  drug_mesh: MESH:C033308
+  drugbank: DB:DB06820
+links:
+  - key: negatively regulates
+    source: MESH:C033308
+    target: UniProt:P10613
+  - key: positively regulates
+    source: UniProt:P10613
+    target: GO:0006696
+  - key: in taxon
+    source: GO:0006696
+    target: taxonomy:237561
+  - key: causes
+    source: taxonomy:237561
+    target: MESH:D014008
+multigraph: true
+nodes:
+  - id: MESH:C033308
+    label: Drug
+    name: sulconazole
+  - id: UniProt:P10613
+    label: Protein
+    name: Lanosterol 14-alpha demethylase
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: ergosterol biosynthetic process
+  - id: taxonomy:237561
+    label: OrganismTaxon
+    name: Candida albicans SC5314
+  - id: MESH:D014008
+    label: Disease
+    name: Tinea pedis
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1221/

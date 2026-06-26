@@ -1,0 +1,110 @@
+directed: true
+graph:
+  _id: DB00242_MESH_D007943_1
+  disease: Hairy cell leukemia
+  disease_mesh: MESH:D007943
+  drug: cladribine
+  drug_mesh: MESH:D017338
+  drugbank: DB:DB00242
+links:
+  - key: has metabolite
+    source: MESH:D017338
+    target: CHEBI:172731
+  - key: decreases activity of
+    source: CHEBI:172731
+    target: UniProt:P23921
+  - key: decreases activity of
+    source: CHEBI:172731
+    target: UniProt:Q7LG56
+  - key: decreases activity of
+    source: CHEBI:172731
+    target: UniProt:P31350
+  - key: decreases activity of
+    source: CHEBI:172731
+    target: UniProt:P09884
+  - key: decreases activity of
+    source: CHEBI:172731
+    target: UniProt:P56282
+  - key: decreases activity of
+    source: CHEBI:172731
+    target: UniProt:Q9NRF9
+  - key: decreases activity of
+    source: CHEBI:172731
+    target: UniProt:Q9NR33
+  - key: disrupts
+    source: CHEBI:172731
+    target: MESH:D004247
+  - key: positively correlated with
+    source: UniProt:P31350
+    target: GO:0006260
+  - key: positively correlated with
+    source: UniProt:P23921
+    target: GO:0006260
+  - key: positively correlated with
+    source: UniProt:Q7LG56
+    target: GO:0006260
+  - key: positively correlated with
+    source: UniProt:P09884
+    target: GO:0006260
+  - key: positively correlated with
+    source: UniProt:P56282
+    target: GO:0006260
+  - key: positively correlated with
+    source: UniProt:Q9NRF9
+    target: GO:0006260
+  - key: positively correlated with
+    source: UniProt:Q9NR33
+    target: GO:0006260
+  - key: precedes
+    source: GO:0006260
+    target: HP:0031378
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006260
+  - key: phenotype of
+    source: HP:0031378
+    target: MESH:D007943
+multigraph: true
+nodes:
+  - id: MESH:D017338
+    label: Drug
+    name: Cladribine
+  - id: CHEBI:172731
+    label: ChemicalSubstance
+    name: 2-Chloro-2'-deoxyadenosine-5'-triphosphate
+  - id: UniProt:P23921
+    label: Protein
+    name: Ribonucleoside-diphosphate reductase large subunit
+  - id: UniProt:Q7LG56
+    label: Protein
+    name: Ribonucleoside-diphosphate reductase subunit M2 B
+  - id: UniProt:P31350
+    label: Protein
+    name: Ribonucleoside-diphosphate reductase subunit M2
+  - id: UniProt:P09884
+    label: Protein
+    name: DNA polymerase alpha catalytic subunit
+  - id: UniProt:P56282
+    label: Protein
+    name: DNA polymerase epsilon subunit 2
+  - id: UniProt:Q9NRF9
+    label: Protein
+    name: DNA polymerase epsilon subunit 3
+  - id: UniProt:Q9NR33
+    label: Protein
+    name: DNA polymerase epsilon subunit 4
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: HP:0031378
+    label: PhenotypicFeature
+    name: Abnormal lymphocyte proliferation
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: MESH:D007943
+    label: Disease
+    name: Hairy cell leukemia
+references:
+  - https://go.drugbank.com/drugs/DB00242#BE0000546
+  - https://en.wikipedia.org/wiki/Cladribine

@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01152_MESH_D002181_1
+  disease: Candidiasis of vagina
+  disease_mesh: MESH:D002181
+  drug: candicidin
+  drug_mesh: MESH:D002174
+  drugbank: DB:DB01152
+links:
+  - key: negatively regulates
+    source: MESH:D002174
+    target: CHEBI:16933
+  - key: located in
+    source: CHEBI:16933
+    target: GO:0030445
+  - key: in taxon
+    source: GO:0030445
+    target: taxonomy:237561
+  - key: causes
+    source: taxonomy:237561
+    target: MESH:D002181
+multigraph: true
+nodes:
+  - id: MESH:D002174
+    label: Drug
+    name: Candicidin
+  - id: CHEBI:16933
+    label: ChemicalSubstance
+    name: Ergosterol
+  - id: GO:0030445
+    label: CellularComponent
+    name: Yeast-form cell wall
+  - id: taxonomy:237561
+    label: OrganismTaxon
+    name: Candida albicans SC5314
+  - id: MESH:D002181
+    label: Disease
+    name: Candidiasis of vagina
+references:
+  - https://go.drugbank.com/drugs/DB01152

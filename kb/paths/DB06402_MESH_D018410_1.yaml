@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB06402_MESH_D018410_1
+  disease: Bacterial pneumonia
+  disease_mesh: MESH:D018410
+  drug: telavancin
+  drug_mesh: MESH:C487637
+  drugbank: DB:DB06402
+links:
+  - key: negatively regulates
+    source: MESH:C487637
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:2
+  - key: disrupts
+    source: MESH:C487637
+    target: GO:0030322
+  - key: in taxon
+    source: GO:0030322
+    target: taxonomy:2
+  - key: negatively regulates
+    source: MESH:C487637
+    target: GO:0090559
+  - key: in taxon
+    source: GO:0090559
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D018410
+multigraph: true
+nodes:
+  - id: MESH:C487637
+    label: Drug
+    name: Telavancin
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: Peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: GO:0030322
+    label: BiologicalProcess
+    name: Stabilization of membrane potential
+  - id: GO:0090559
+    label: BiologicalProcess
+    name: Regulation of membrane permeability
+  - id: MESH:D018410
+    label: Disease
+    name: Bacterial pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB06402

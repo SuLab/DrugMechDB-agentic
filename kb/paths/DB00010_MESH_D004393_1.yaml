@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00010_MESH_D004393_1
+  disease: Pituitary dwarfism
+  disease_mesh: MESH:D004393
+  drug: sermorelin
+  drug_mesh: MESH:D017337
+  drugbank: DB:DB00010
+links:
+  - key: increases activity of
+    source: MESH:D017337
+    target: UniProt:Q02643
+  - key: increases activity of
+    source: UniProt:Q02643
+    target: UniProt:P01241
+  - key: participates in
+    source: UniProt:P01241
+    target: GO:0060396
+  - key: increases activity of
+    source: GO:0060396
+    target: UniProt:P05019
+  - key: positively regulates
+    source: UniProt:P05019
+    target: GO:0035264
+  - key: negatively correlated with
+    source: GO:0035264
+    target: MESH:D004393
+multigraph: true
+nodes:
+  - id: MESH:D017337
+    label: Drug
+    name: Sermorelin
+  - id: UniProt:Q02643
+    label: Protein
+    name: Growth hormone-releasing hormone receptor
+  - id: UniProt:P01241
+    label: Protein
+    name: Somatotropin
+  - id: GO:0060396
+    label: BiologicalProcess
+    name: Growth hormone receptor signaling pathway
+  - id: UniProt:P05019
+    label: Protein
+    name: Insulin-like growth factor I
+  - id: GO:0035264
+    label: BiologicalProcess
+    name: Multicellular organism growth
+  - id: MESH:D004393
+    label: Disease
+    name: Pituitary dwarfism
+references:
+  - https://go.drugbank.com/drugs/DB00010#BE0000625

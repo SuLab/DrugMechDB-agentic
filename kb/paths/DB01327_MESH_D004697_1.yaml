@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01327_MESH_D004697_1
+  disease: Bacterial endocarditis
+  disease_mesh: MESH:D004697
+  drug: Cefazolin
+  drug_mesh: MESH:D002437
+  drugbank: DB:DB01327
+links:
+  - key: decreases activity of
+    source: MESH:D002437
+    target: InterPro:IPR001460
+  - key: positively regulates
+    source: InterPro:IPR001460
+    target: GO:0018104
+  - key: positively regulates
+    source: GO:0018104
+    target: GO:0009273
+  - key: has output
+    source: GO:0009273
+    target: GO:0005618
+  - key: occurs in
+    source: GO:0005618
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D004697
+multigraph: true
+nodes:
+  - id: MESH:D002437
+    label: Drug
+    name: Cefazolin
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0018104
+    label: BiologicalProcess
+    name: Cross-linking of the peptidoglycan
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: Peptidoglycan-based cell wall biogenesis
+  - id: GO:0005618
+    label: CellularComponent
+    name: Cell wall
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D004697
+    label: Disease
+    name: Bacterial endocarditis
+references:
+  - https://go.drugbank.com/drugs/DB01327
+  - https://en.wikipedia.org/wiki/Infective_endocarditis#Bacterial

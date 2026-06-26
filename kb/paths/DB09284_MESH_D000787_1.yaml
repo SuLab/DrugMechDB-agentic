@@ -1,0 +1,37 @@
+comment: Imolamine is a coronary vasodilator, that is used in the treatment of angina
+  pectoris.
+directed: true
+graph:
+  _id: DB09284_MESH_D000787_1
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: imolamine
+  drug_mesh: MESH:C002787
+  drugbank: DB:DB09284
+links:
+  - key: positively regulates
+    source: MESH:C002787
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: MESH:D017202
+  - key: contributes to
+    source: MESH:D017202
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:C002787
+    label: Drug
+    name: imolamine
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: MESH:D017202
+    label: Disease
+    name: Myocardial Ischemia
+  - id: MESH:D000787
+    label: Disease
+    name: Angina Pectoris
+references:
+  - https://drugs.ncats.io/drug/K5F4RU5VQJ
+  - https://en.wikipedia.org/wiki/Angina

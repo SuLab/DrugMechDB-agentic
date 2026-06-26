@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00477_MESH_D017118_1
+  disease: Acute intermittent porphyria
+  disease_mesh: MESH:D017118
+  drug: chlorpromazine
+  drug_mesh: MESH:D002746
+  drugbank: DB:DB00477
+links:
+  - key: decreases activity of
+    source: MESH:D002746
+    target: UniProt:P14416
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: CHEBI:18243
+  - key: correlated with
+    source: CHEBI:18243
+    target: GO:0032225
+  - key: located in
+    source: GO:0032225
+    target: UBERON:0001017
+  - key: prevents
+    source: UBERON:0001017
+    target: HP:0033400
+  - key: correlated with
+    source: HP:0033400
+    target: MESH:D017118
+multigraph: true
+nodes:
+  - id: MESH:D002746
+    label: Drug
+    name: chlorpromazine
+  - id: UniProt:P14416
+    label: Protein
+    name: dopamine D2 receptor
+  - id: CHEBI:18243
+    label: ChemicalSubstance
+    name: dopamine
+  - id: GO:0032225
+    label: BiologicalProcess
+    name: regulation of synaptic transmission, dopaminergic
+  - id: UBERON:0001017
+    label: GrossAnatomicalStructure
+    name: central nervous system
+  - id: HP:0033400
+    label: PhenotypicFeature
+    name: Acute abdomen
+  - id: MESH:D017118
+    label: Disease
+    name: Acute intermittent porphyria
+references:
+  - https://go.drugbank.com/drugs/DB00477

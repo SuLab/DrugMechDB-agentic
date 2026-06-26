@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB00989_MESH_D000544_1
+  disease: Alzheimer Disease
+  disease_mesh: MESH:D000544
+  drug: rivastigmine
+  drug_mesh: MESH:D000068836
+  drugbank: DB:DB00989
+links:
+  - key: decreases activity of
+    source: MESH:D000068836
+    target: UniProt:P22303
+  - key: decreases activity of
+    source: MESH:D000068836
+    target: MESH:D002091
+  - key: participates in
+    source: UniProt:P22303
+    target: GO:0001507
+  - key: participates in
+    source: MESH:D002091
+    target: GO:0001507
+  - key: decreases abundance of
+    source: GO:0001507
+    target: MESH:D000109
+  - key: negatively correlated with
+    source: MESH:D000109
+    target: MESH:D000544
+multigraph: true
+nodes:
+  - id: MESH:D000068836
+    label: Drug
+    name: rivastigmine
+  - id: UniProt:P22303
+    label: Protein
+    name: Acetylcholinesterase
+  - id: MESH:D002091
+    label: ChemicalSubstance
+    name: Butyrylcholinesterase
+  - id: GO:0001507
+    label: BiologicalProcess
+    name: acetylcholine catabolic process in synaptic cleft
+  - id: MESH:D000109
+    label: ChemicalSubstance
+    name: Acetylcholine
+  - id: MESH:D000544
+    label: Disease
+    name: Alzheimer Disease
+references:
+  - https://go.drugbank.com/drugs/DB00989#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P22303#function
+  - https://en.wikipedia.org/wiki/Alzheimer%27s_disease

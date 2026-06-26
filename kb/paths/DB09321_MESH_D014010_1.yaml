@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB09321_MESH_D014010_1
+  disease: Pityriasis versicolor
+  disease_mesh: MESH:D014010
+  drug: zinc oxide
+  drug_mesh: MESH:D015034
+  drugbank: DB:DB09321
+links:
+  - key: decreases abundance of
+    source: MESH:D015034
+    target: taxonomy:4751
+  - key: negatively regulates
+    source: MESH:D015034
+    target: GO:0006954
+  - key: causes
+    source: taxonomy:4751
+    target: MESH:D014010
+  - key: occurs in
+    source: GO:0006954
+    target: MESH:D014010
+multigraph: true
+nodes:
+  - id: MESH:D015034
+    label: Drug
+    name: Zinc oxide
+  - id: taxonomy:4751
+    label: OrganismTaxon
+    name: Fungi
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammation
+  - id: MESH:D014010
+    label: Disease
+    name: Pityriasis versicolor
+references:
+  - https://go.drugbank.com/drugs/DB09321
+  - https://pubmed.ncbi.nlm.nih.gov/30299956/

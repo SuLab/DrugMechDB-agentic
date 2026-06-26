@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB08795_MESH_D012141_1
+  disease: Respiratory tract infection
+  disease_mesh: MESH:D012141
+  drug: azidocillin
+  drug_mesh: MESH:C100243
+  drugbank: DB:DB08795
+links:
+  - key: decreases activity of
+    source: MESH:C100243
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:1314
+  - key: causes
+    source: taxonomy:1314
+    target: MESH:D012141
+multigraph: true
+nodes:
+  - id: MESH:C100243
+    label: Drug
+    name: azidocillin
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding protein transpeptidase domain
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:1314
+    label: OrganismTaxon
+    name: Streptococcus pyogenes
+  - id: MESH:D012141
+    label: Disease
+    name: Respiratory tract infection
+references:
+  - https://go.drugbank.com/drugs/DB08795

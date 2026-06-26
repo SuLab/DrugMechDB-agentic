@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01330_MESH_D004927_1
+  disease: Infection due to Escherichia coli
+  disease_mesh: MESH:D004927
+  drug: cefotetan
+  drug_mesh: MESH:D015313
+  drugbank: DB:DB01330
+links:
+  - key: decreases activity of
+    source: MESH:D015313
+    target: UniProt:Q8DR59
+  - key: positively regulates
+    source: UniProt:Q8DR59
+    target: GO:0009252
+  - key: in taxon
+    source: GO:0009252
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D004927
+multigraph: true
+nodes:
+  - id: MESH:D015313
+    label: Drug
+    name: cefotetan
+  - id: UniProt:Q8DR59
+    label: Protein
+    name: Penicillin-binding protein 1A
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D004927
+    label: Disease
+    name: Infection due to Escherichia coli
+references:
+  - https://go.drugbank.com/drugs/DB01330

@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00511_MESH_D006333_1
+  disease: Congestive heart failure
+  disease_mesh: MESH:D006333
+  drug: acetyldigitoxin
+  drug_mesh: MESH:D000112
+  drugbank: DB:DB00511
+links:
+  - key: negatively regulates
+    source: MESH:D000112
+    target: UniProt:P05023
+  - key: positively regulates
+    source: UniProt:P05023
+    target: GO:0006814
+  - key: correlated with
+    source: GO:0006814
+    target: GO:0060048
+  - key: correlated with
+    source: GO:0060048
+    target: HP:0005110
+  - key: positively correlated with
+    source: HP:0005110
+    target: MESH:D006333
+multigraph: true
+nodes:
+  - id: MESH:D000112
+    label: Drug
+    name: acetyldigitoxin
+  - id: UniProt:P05023
+    label: Protein
+    name: Sodium/potassium-transporting ATPase subunit alpha-1
+  - id: GO:0006814
+    label: BiologicalProcess
+    name: sodium ion transport
+  - id: GO:0060048
+    label: BiologicalProcess
+    name: cardiac muscle contraction
+  - id: HP:0005110
+    label: PhenotypicFeature
+    name: Atrial fibrillation
+  - id: MESH:D006333
+    label: Disease
+    name: Congestive heart failure
+references:
+  - https://go.drugbank.com/drugs/DB00511
+  - https://en.wikipedia.org/wiki/Acetyldigitoxin
+  - https://en.wikipedia.org/wiki/Cardiac_glycoside#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Heart_failure#Causes

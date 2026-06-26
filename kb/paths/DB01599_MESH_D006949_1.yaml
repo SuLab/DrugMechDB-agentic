@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01599_MESH_D006949_1
+  disease: Hyperlipidemia
+  disease_mesh: MESH:D006949
+  drug: probucol
+  drug_mesh: MESH:D011341
+  drugbank: DB:DB01599
+links:
+  - key: negatively regulates
+    source: MESH:D011341
+    target: GO:0008610
+  - key: increases abundance of
+    source: GO:0008610
+    target: CHEBI:18059
+  - key: decreases activity of
+    source: MESH:D011341
+    target: UniProt:O95477
+  - key: positively regulates
+    source: UniProt:O95477
+    target: GO:0140353
+  - key: increases abundance of
+    source: GO:0140353
+    target: CHEBI:18059
+  - key: positively correlated with
+    source: CHEBI:18059
+    target: MESH:D006949
+multigraph: true
+nodes:
+  - id: MESH:D011341
+    label: Drug
+    name: probucol
+  - id: UniProt:O95477
+    label: Protein
+    name: Phospholipid-transporting ATPase ABCA1
+  - id: GO:0008610
+    label: BiologicalProcess
+    name: lipid biosynthetic process
+  - id: GO:0140353
+    label: BiologicalProcess
+    name: lipid export from cell
+  - id: CHEBI:18059
+    label: ChemicalSubstance
+    name: lipid
+  - id: MESH:D006949
+    label: Disease
+    name: Hyperlipidemia
+references:
+  - https://go.drugbank.com/drugs/DB01599

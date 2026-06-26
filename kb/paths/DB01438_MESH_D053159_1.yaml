@@ -1,0 +1,41 @@
+comment: UniProt:P35498 is considered a potential target according to DrugBank.
+directed: true
+graph:
+  _id: DB01438_MESH_D053159_1
+  disease: Dysuria
+  disease_mesh: MESH:D053159
+  drug: Phenazopyridine
+  drug_mesh: MESH:D010621
+  drugbank: DB:DB01438
+links:
+  - key: disrupts
+    source: MESH:D010621
+    target: UniProt:P35498
+  - key: regulates
+    source: UniProt:P35498
+    target: GO:0019233
+  - key: correlated with
+    source: GO:0019233
+    target: HP:0012531
+  - key: manifestation of
+    source: HP:0012531
+    target: MESH:D053159
+multigraph: true
+nodes:
+  - id: MESH:D010621
+    label: Drug
+    name: Phenazopyridine
+  - id: UniProt:P35498
+    label: Protein
+    name: Sodium channel protein type 1 subunit alpha
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: sensory perception of pain
+  - id: HP:0012531
+    label: PhenotypicFeature
+    name: Pain
+  - id: MESH:D053159
+    label: Disease
+    name: Dysuria
+references:
+  - https://go.drugbank.com/drugs/DB01438

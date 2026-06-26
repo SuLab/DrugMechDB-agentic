@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB05311_MESH_D054179_1
+  disease: Hereditary angioneurotic edema
+  disease_mesh: MESH:D054179
+  drug: ecallantide
+  drug_mesh: MESH:C511194
+  drugbank: DB:DB05311
+links:
+  - key: decreases activity of
+    source: MESH:C511194
+    target: UniProt:P03952
+  - key: increases abundance of
+    source: UniProt:P03952
+    target: MESH:D001920
+  - key: contributes to
+    source: MESH:D001920
+    target: GO:0043117
+  - key: contributes to
+    source: MESH:D001920
+    target: GO:0006954
+  - key: contributes to
+    source: GO:0043117
+    target: HP:0000969
+  - key: contributes to
+    source: GO:0006954
+    target: HP:0012531
+  - key: manifestation of
+    source: HP:0000969
+    target: MESH:D054179
+  - key: manifestation of
+    source: HP:0012531
+    target: MESH:D054179
+multigraph: true
+nodes:
+  - id: MESH:C511194
+    label: Drug
+    name: Ecallantide
+  - id: UniProt:P03952
+    label: Protein
+    name: Plasma kallikrein
+  - id: MESH:D001920
+    label: ChemicalSubstance
+    name: Bradykinin
+  - id: GO:0043117
+    label: BiologicalProcess
+    name: Positive regulation of vascular permeability
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: HP:0000969
+    label: PhenotypicFeature
+    name: Edema
+  - id: HP:0012531
+    label: PhenotypicFeature
+    name: Pain
+  - id: MESH:D054179
+    label: Disease
+    name: Hereditary angioneurotic edema
+references:
+  - https://go.drugbank.com/drugs/DB05311#BE0002440
+  - https://en.wikipedia.org/wiki/Kinin%E2%80%93kallikrein_system

@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB00608_MESH_D001172_1
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: chloroquine
+  drug_mesh: MESH:D002738
+  drugbank: DB:DB00608
+links:
+  - key: negatively correlated with
+    source: MESH:D002738
+    target: UniProt:Q9NR96
+  - key: positively correlated with
+    source: UniProt:Q9NR96
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0001386
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0002829
+  - key: manifestation of
+    source: HP:0001386
+    target: MESH:D001172
+  - key: manifestation of
+    source: HP:0002829
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C023676
+    id: MESH:D002738
+    label: Drug
+    name: chloroquine
+  - id: UniProt:Q9NR96
+    label: Protein
+    name: Toll-like receptor 9
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Arthralgia
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB00608

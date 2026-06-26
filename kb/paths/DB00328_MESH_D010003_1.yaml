@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00328_MESH_D010003_1
+  disease: Osteoarthritis
+  disease_mesh: MESH:D010003
+  drug: indomethacin
+  drug_mesh: MESH:D007213
+  drugbank: DB:DB00328
+links:
+  - key: negatively regulates
+    source: MESH:D007213
+    target: UniProt:P23219
+  - key: negatively regulates
+    source: MESH:D007213
+    target: UniProt:P35354
+  - key: participates in
+    source: UniProt:P23219
+    target: reactome:R-HSA-2162123
+  - key: participates in
+    source: UniProt:P35354
+    target: reactome:R-HSA-2162123
+  - key: increases abundance of
+    source: reactome:R-HSA-2162123
+    target: CHEBI:26333
+  - key: positively correlated with
+    source: CHEBI:26333
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D010003
+multigraph: true
+nodes:
+  - id: MESH:D007213
+    label: Drug
+    name: indomethacin
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: reactome:R-HSA-2162123
+    label: Pathway
+    name: Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+  - id: CHEBI:26333
+    label: ChemicalSubstance
+    name: prostaglandin
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D010003
+    label: Disease
+    name: Osteoarthritis
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL6/

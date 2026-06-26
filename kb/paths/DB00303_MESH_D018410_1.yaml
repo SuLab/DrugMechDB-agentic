@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00303_MESH_D018410_1
+  disease: Bacterial pneumonia
+  disease_mesh: MESH:D018410
+  drug: ertapenem
+  drug_mesh: MESH:D000077727
+  drugbank: DB:DB00303
+links:
+  - key: decreases activity of
+    source: MESH:D000077727
+    target: UniProt:P44469
+  - key: participates in
+    source: UniProt:P44469
+    target: GO:0009252
+  - key: occurs in
+    source: GO:0009252
+    target: taxonomy:727
+  - key: causes
+    source: taxonomy:727
+    target: MESH:D018410
+multigraph: true
+nodes:
+  - id: MESH:D000077727
+    label: Drug
+    name: ertapenem
+  - id: UniProt:P44469
+    label: Protein
+    name: Penicillin-binding proteins
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: Bacterial Cell Wall Synthesis
+  - id: taxonomy:727
+    label: OrganismTaxon
+    name: Haemophilus influenzae
+  - id: MESH:D018410
+    label: Disease
+    name: Bacterial pneumonia

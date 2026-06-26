@@ -1,0 +1,32 @@
+comment: The exact mechanism of action and the target of this drug is unknown. It's
+  been withdrawn in most countries in the early 1970s.
+directed: true
+graph:
+  _id: DB04823_MESH_D003248_1
+  disease: Constipation
+  disease_mesh: MESH:D003248
+  drug: oxyphenisatine
+  drugbank: DB:DB04823
+links:
+  - key: positively regulates
+    source: DB:DB04823
+    target: GO:0120054
+  - key: negatively correlated with
+    source: GO:0120054
+    target: MESH:D003248
+multigraph: true
+nodes:
+  - alt_names:
+      - oxyphenisatin
+    id: DB:DB04823
+    label: Drug
+    name: oxyphenisatine
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: intestinal motility
+  - id: MESH:D003248
+    label: Disease
+    name: Constipation
+references:
+  - https://go.drugbank.com/drugs/DB04823
+  - https://pubchem.ncbi.nlm.nih.gov/compound/31315#section=Pharmacology-and-Biochemistry

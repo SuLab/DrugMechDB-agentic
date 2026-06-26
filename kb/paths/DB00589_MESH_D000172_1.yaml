@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00589_MESH_D000172_1
+  disease: Acromegaly
+  disease_mesh: MESH:D000172
+  drug: Lisuride
+  drug_mesh: MESH:D008090
+  drugbank: DB:DB00589
+links:
+  - key: increases activity of
+    source: MESH:D008090
+    target: UniProt:P14416
+  - key: participates in
+    source: UniProt:P14416
+    target: GO:0007195
+  - key: negatively regulates
+    source: GO:0007195
+    target: GO:0030252
+  - key: increases abundance of
+    source: GO:0030252
+    target: MESH:D013006
+  - key: causes
+    source: MESH:D013006
+    target: MESH:D000172
+multigraph: true
+nodes:
+  - id: MESH:D008090
+    label: Drug
+    name: Lisuride
+  - id: UniProt:P14416
+    label: Protein
+    name: D2 dopamine receptor
+  - id: GO:0007195
+    label: BiologicalProcess
+    name: Adenylate cyclase-inhibiting dopamine receptor signaling pathway
+  - id: GO:0030252
+    label: BiologicalProcess
+    name: Growth hormone secretion
+  - id: MESH:D013006
+    label: ChemicalSubstance
+    name: Growth Hormone
+  - id: MESH:D000172
+    label: Disease
+    name: Acromegaly
+references:
+  - https://go.drugbank.com/drugs/DB00589
+  - https://link.springer.com/article/10.1007/s11102-016-0778-2

@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB09069_MESH_D000787_1
+  disease: Angina Pectoris
+  disease_mesh: MESH:D000787
+  drug: trimetazidine
+  drug_mesh: MESH:D014292
+  drugbank: DB:DB09069
+links:
+  - key: decreases activity of
+    source: MESH:D014292
+    target: UniProt:P42765
+  - key: participates in
+    source: UniProt:P42765
+    target: GO:0006695
+  - key: increases abundance of
+    source: GO:0006695
+    target: MESH:D002784
+  - key: positively correlated with
+    source: MESH:D002784
+    target: HP:0002621
+  - key: contributes to
+    source: HP:0002621
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:D014292
+    label: Drug
+    name: trimetazidine
+  - id: UniProt:P42765
+    label: Protein
+    name: 3-ketoacyl-CoA thiolase, mitochondrial
+  - id: GO:0006695
+    label: BiologicalProcess
+    name: cholesterol biosynthetic process
+  - id: MESH:D002784
+    label: ChemicalSubstance
+    name: Cholesterol
+  - id: HP:0002621
+    label: PhenotypicFeature
+    name: Atherosclerosis
+  - id: MESH:D000787
+    label: Disease
+    name: Angina Pectoris
+references:
+  - https://go.drugbank.com/drugs/DB09069#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P42765#function
+  - https://en.wikipedia.org/wiki/Angina
+  - https://en.wikipedia.org/wiki/Atherosclerosis

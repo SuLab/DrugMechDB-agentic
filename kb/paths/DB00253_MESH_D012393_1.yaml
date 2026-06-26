@@ -1,0 +1,24 @@
+comment: Contraindicated; steroids can cause Rosacea
+directed: true
+graph:
+  _id: DB00253_MESH_D012393_1
+  disease: Rosacea
+  disease_mesh: MESH:D012393
+  drug: medrysone
+  drug_mesh: MESH:C100283
+  drugbank: DB:DB00253
+links:
+  - key: treats
+    source: MESH:C100283
+    target: MESH:D012393
+multigraph: true
+nodes:
+  - id: MESH:C100283
+    label: Drug
+    name: medrysone
+  - id: MESH:D012393
+    label: Disease
+    name: Rosacea
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/26280139/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3088930/

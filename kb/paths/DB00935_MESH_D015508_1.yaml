@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB00935_MESH_D015508_1
+  disease: Nasal Congestion
+  disease_mesh: MESH:D015508
+  drug: oxymetazoline
+  drug_mesh: MESH:D010109
+  drugbank: DB:DB00935
+links:
+  - key: increases activity of
+    source: MESH:D010109
+    target: UniProt:P35348
+  - key: positively regulates
+    source: UniProt:P35348
+    target: GO:0042310
+  - key: prevents
+    source: GO:0042310
+    target: MESH:D015508
+multigraph: true
+nodes:
+  - id: MESH:D010109
+    label: Drug
+    name: oxymetazoline
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1a adrenergic receptor
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: MESH:D015508
+    label: Disease
+    name: Nasal Congestion

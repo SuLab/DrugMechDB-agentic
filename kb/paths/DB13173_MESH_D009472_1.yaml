@@ -1,0 +1,62 @@
+directed: true
+graph:
+  _id: DB13173_MESH_D009472_1
+  disease: Late-infantile neuronal ceroid lipofuscinosis
+  disease_mesh: MESH:D009472
+  drug: cerliponase alfa
+  drug_mesh: MESH:C000621431
+  drugbank: DB:DB13173
+links:
+  - key: chemically similar to
+    source: MESH:C000621431
+    target: UniProt:O14773
+  - key: participates in
+    source: UniProt:O14773
+    target: GO:0034701
+  - key: molecularly interacts with
+    source: UniProt:O14773
+    target: UniProt:P11717
+  - key: positively regulates
+    source: UniProt:P11717
+    target: GO:0007041
+  - key: occurs in
+    source: GO:0007041
+    target: GO:0005764
+  - key: participates in
+    source: GO:0005764
+    target: GO:0034701
+  - key: decreases abundance of
+    source: GO:0034701
+    target: MESH:C051596
+  - key: positively correlated with
+    source: MESH:C051596
+    target: MESH:D009472
+multigraph: true
+nodes:
+  - id: MESH:C000621431
+    label: Drug
+    name: cerliponase alfa
+  - id: UniProt:O14773
+    label: Protein
+    name: Tripeptidyl-peptidase 1
+  - id: UniProt:P11717
+    label: Protein
+    name: Cation-independent mannose-6-phosphate receptor
+  - id: GO:0007041
+    label: BiologicalProcess
+    name: lysosomal transport
+  - id: GO:0005764
+    label: CellularComponent
+    name: lysosome
+  - id: GO:0034701
+    label: MolecularActivity
+    name: tripeptidase activity
+  - id: MESH:C051596
+    label: ChemicalSubstance
+    name: lipopigments
+  - id: MESH:D009472
+    label: Disease
+    name: Late-infantile neuronal ceroid lipofuscinosis
+references:
+  - https://go.drugbank.com/drugs/DB13173
+  - https://en.wikipedia.org/wiki/Cerliponase_alfa

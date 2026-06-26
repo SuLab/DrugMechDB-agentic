@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00916_MESH_D018805_1
+  disease: Bacterial septicemia
+  disease_mesh: MESH:D018805
+  drug: metronidazole
+  drug_mesh: MESH:D008795
+  drugbank: DB:DB00916
+links:
+  - key: increases abundance of
+    source: MESH:D008795
+    target: MESH:C029371
+  - key: negatively regulates
+    source: MESH:C029371
+    target: GO:0003676
+  - key: occurs in
+    source: GO:0003676
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D018805
+multigraph: true
+nodes:
+  - id: MESH:D008795
+    label: Drug
+    name: metronidazole
+  - id: MESH:C029371
+    label: ChemicalSubstance
+    name: hydroxyethyl oxamic acid
+  - id: GO:0003676
+    label: BiologicalProcess
+    name: bacterial Nucleic Acid synthesis
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D018805
+    label: Disease
+    name: Bacterial septicemia

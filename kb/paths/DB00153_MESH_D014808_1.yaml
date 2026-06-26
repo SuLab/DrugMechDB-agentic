@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00153_MESH_D014808_1
+  disease: Vitamin D deficiency
+  disease_mesh: MESH:D014808
+  drug: ergocalciferol
+  drugbank: DB:DB00153
+links:
+  - key: has metabolite
+    source: DB:DB00153
+    target: CHEBI:86320
+  - key: increases activity of
+    source: CHEBI:86320
+    target: UniProt:P11473
+  - key: positively regulates
+    source: UniProt:P11473
+    target: GO:0070561
+  - key: negatively correlated with
+    source: GO:0070561
+    target: MESH:D014808
+multigraph: true
+nodes:
+  - id: DB:DB00153
+    label: Drug
+    name: ergocalciferol
+  - id: CHEBI:86320
+    label: ChemicalSubstance
+    name: 1α,25-dihydroxyvitamin D2
+  - id: UniProt:P11473
+    label: Protein
+    name: Vitamin D3 receptor
+  - id: GO:0070561
+    label: BiologicalProcess
+    name: vitamin D receptor signaling pathway
+  - id: MESH:D014808
+    label: Disease
+    name: Vitamin D deficiency
+references:
+  - https://go.drugbank.com/drugs/DB00153
+  - https://en.wikipedia.org/wiki/Ergocalciferol#Mechanism
+  - https://pubchem.ncbi.nlm.nih.gov/compound/5280793#section=Mechanism-of-Action

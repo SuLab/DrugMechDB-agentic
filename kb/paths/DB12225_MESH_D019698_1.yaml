@@ -1,0 +1,46 @@
+comment: No mechanism of action available either in DrugBank (https://go.drugbank.com/drugs/DB12225#mechanism-of-action)
+  or ChEMBL (https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3126842/) as
+  per 02032021.
+directed: true
+graph:
+  _id: DB12225_MESH_D019698_1
+  disease: Chronic hepatitis C
+  disease_mesh: MESH:D019698
+  drug: beclabuvir
+  drug_mesh: MESH:C587012
+  drugbank: DB:DB12225
+links:
+  - key: negatively regulates
+    source: MESH:C587012
+    target: UniProt:P27958
+  - key: positively regulates
+    source: UniProt:P27958
+    target: GO:0039694
+  - key: in taxon
+    source: GO:0039694
+    target: taxonomy:63746
+  - key: causes
+    source: taxonomy:63746
+    target: MESH:D019698
+multigraph: true
+nodes:
+  - id: MESH:C587012
+    label: Drug
+    name: beclabuvir
+  - id: UniProt:P27958
+    label: Protein
+    name: Genome polyprotein
+  - id: GO:0039694
+    label: BiologicalProcess
+    name: viral RNA genome replication
+  - id: taxonomy:63746
+    label: OrganismTaxon
+    name: Hepatitis C virus (isolate H77)
+  - id: MESH:D019698
+    label: Disease
+    name: Chronic hepatitis C
+references:
+  - https://en.wikipedia.org/wiki/Beclabuvir
+  - https://pubchem.ncbi.nlm.nih.gov/compound/56934415#section=Pharmacology-and-Biochemistry
+  - https://www.kegg.jp/entry/D10610
+  - https://en.wikipedia.org/wiki/Hepatitis_C_virus#Molecular_biology

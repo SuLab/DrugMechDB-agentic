@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00218_MESH_D010930_1
+  disease: Plague
+  disease_mesh: MESH:D010930
+  drug: moxifloxacin
+  drug_mesh: MESH:D000077266
+  drugbank: DB:DB00218
+links:
+  - key: decreases activity of
+    source: MESH:D000077266
+    target: UniProt:A0A0E1NU92
+  - key: decreases activity of
+    source: MESH:D000077266
+    target: UniProt:A0A0E1NWQ7
+  - key: positively regulates
+    source: UniProt:A0A0E1NU92
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:A0A0E1NWQ7
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:632
+  - key: causes
+    source: taxonomy:632
+    target: MESH:D010930
+multigraph: true
+nodes:
+  - id: MESH:D000077266
+    label: Drug
+    name: moxifloxacin
+  - id: UniProt:A0A0E1NU92
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:A0A0E1NWQ7
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:632
+    label: OrganismTaxon
+    name: Yersinia pestis
+  - id: MESH:D010930
+    label: Disease
+    name: Plague
+references:
+  - https://go.drugbank.com/drugs/DB00218#mechanism-of-action
+  - https://www.uniprot.org/uniprot/A0A0E1NU92#function
+  - https://www.uniprot.org/uniprot/A0A0E1NWQ7#function
+  - https://en.wikipedia.org/wiki/Plague_(disease)

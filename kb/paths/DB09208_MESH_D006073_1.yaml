@@ -1,0 +1,37 @@
+comment: This drug converts uric acid into allantoin, therefore it clears uric acid
+  from the blood (whose elevated levels - Hyperuricemia - can lead to gout).
+directed: true
+graph:
+  _id: DB09208_MESH_D006073_1
+  disease: Gout
+  disease_mesh: MESH:D006073
+  drug: pegloticase
+  drug_mesh: MESH:C031545
+  drugbank: DB:DB09208
+links:
+  - key: decreases abundance of
+    source: MESH:C031545
+    target: CHEBI:27226
+  - key: positively correlated with
+    source: CHEBI:27226
+    target: HP:0002149
+  - key: manifestation of
+    source: HP:0002149
+    target: MESH:D006073
+multigraph: true
+nodes:
+  - id: MESH:C031545
+    label: Drug
+    name: pegloticase
+  - id: CHEBI:27226
+    label: ChemicalSubstance
+    name: uric acid
+  - id: HP:0002149
+    label: PhenotypicFeature
+    name: Hyperuricemia
+  - id: MESH:D006073
+    label: Disease
+    name: Gout
+references:
+  - https://go.drugbank.com/drugs/DB09208#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Pegloticase#Mechanism_of_action

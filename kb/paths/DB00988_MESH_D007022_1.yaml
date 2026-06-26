@@ -1,0 +1,53 @@
+comment: Dopamine binds to alpha-1 and beta-1 adrenergic receptors. Alpha-1 adrenergic
+  receptor stimulation on vascular smooth muscle leads to vasoconstriction and results
+  in an increase in systemic vascular resistance (https://pubchem.ncbi.nlm.nih.gov/compound/681).
+directed: true
+graph:
+  _id: DB00988_MESH_D007022_1
+  disease: Low blood pressure
+  disease_mesh: MESH:D007022
+  drug: dopamine
+  drug_mesh: MESH:D004298
+  drugbank: DB:DB00988
+links:
+  - key: increases activity of
+    source: MESH:D004298
+    target: UniProt:P35348
+  - key: positively regulates
+    source: UniProt:P35348
+    target: GO:0042310
+  - key: negatively correlated with
+    source: GO:0042310
+    target: MESH:D007022
+  - key: increases activity of
+    source: MESH:D004298
+    target: UniProt:P08588
+  - key: positively regulates
+    source: UniProt:P08588
+    target: GO:0060048
+  - key: negatively correlated with
+    source: GO:0060048
+    target: MESH:D007022
+multigraph: true
+nodes:
+  - id: MESH:D004298
+    label: Drug
+    name: dopamine
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: GO:0060048
+    label: BiologicalProcess
+    name: cardiac muscle contraction
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: MESH:D007022
+    label: Disease
+    name: Low blood pressure
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL59/
+  - https://en.wikipedia.org/wiki/Dopamine#Medical_uses

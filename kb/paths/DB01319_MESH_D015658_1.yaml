@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01319_MESH_D015658_1
+  disease: Human immunodeficiency virus infection
+  disease_mesh: MESH:D015658
+  drug: fosamprenavir
+  drug_mesh: MESH:C426859
+  drugbank: DB:DB01319
+links:
+  - key: increases abundance of
+    source: MESH:C426859
+    target: CHEBI:40050
+  - key: decreases activity of
+    source: CHEBI:40050
+    target: UniProt:Q72874
+  - key: increases activity of
+    source: UniProt:Q72874
+    target: UniProt:P04591
+  - key: participates in
+    source: UniProt:P04591
+    target: GO:0019068
+  - key: in taxon
+    source: GO:0019068
+    target: taxonomy:11676
+  - key: causes
+    source: taxonomy:11676
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:C426859
+    label: Drug
+    name: fosamprenavir
+  - id: CHEBI:40050
+    label: ChemicalSubstance
+    name: amprenavir
+  - id: UniProt:Q72874
+    label: Protein
+    name: HIV-1 protease
+  - id: UniProt:P04591
+    label: Protein
+    name: Gag polyprotein
+  - id: GO:0019068
+    label: BiologicalProcess
+    name: virion assembly
+  - id: taxonomy:11676
+    label: OrganismTaxon
+    name: Human immunodeficiency virus 1
+  - id: MESH:D015658
+    label: Disease
+    name: Human immunodeficiency virus infection
+references:
+  - https://go.drugbank.com/drugs/DB01319#BE0004854

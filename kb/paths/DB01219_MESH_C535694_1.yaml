@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01219_MESH_C535694_1
+  disease: Malignant hyperthermia
+  disease_mesh: MESH:C535694
+  drug: dantrolene
+  drug_mesh: MESH:D003620
+  drugbank: DB:DB01219
+links:
+  - key: negatively regulates
+    source: MESH:D003620
+    target: UniProt:P21817
+  - key: part of
+    source: UniProt:P21817
+    target: GO:1990425
+  - key: participates in
+    source: GO:1990425
+    target: GO:0005219
+  - key: participates in
+    source: GO:0005219
+    target: GO:0032470
+  - key: participates in
+    source: GO:0032470
+    target: GO:0006936
+  - key: regulates
+    source: GO:0006936
+    target: MESH:C535694
+multigraph: true
+nodes:
+  - id: MESH:D003620
+    label: Drug
+    name: Dantrolene
+  - id: UniProt:P21817
+    label: Protein
+    name: Ryanodine receptor 1
+  - id: GO:1990425
+    label: CellularComponent
+    name: Ryanodine receptor complex
+  - id: GO:0005219
+    label: MolecularActivity
+    name: ryanodine-sensitive calcium-release channel activity
+  - id: GO:0032470
+    label: BiologicalProcess
+    name: positive regulation of endoplasmic reticulum calcium ion concentration
+  - id: GO:0006936
+    label: BiologicalProcess
+    name: muscle contraction
+  - id: MESH:C535694
+    label: Disease
+    name: Malignant hyperthermia
+references:
+  - https://go.drugbank.com/drugs/DB01219#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Malignant_hyperthermia#Disease_mechanism

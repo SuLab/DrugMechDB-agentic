@@ -1,0 +1,48 @@
+comment: DrugBank has this drug as a beta 1 antagonist but data elsewhere does not
+  seem to support the anatagonism role (e.g. https://www.drugs.com/pro/terbutaline.html#s-34090-1,
+  https://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1760 https://www.genome.jp/dbget-bin/www_bget?cpd:C07129)
+directed: true
+graph:
+  _id: DB00871_MESH_D015352_1
+  disease: Tear film insufficiency
+  disease_mesh: MESH:D015352
+  drug: terbutaline
+  drug_mesh: MESH:D013726
+  drugbank: DB:DB00871
+links:
+  - key: positively regulates
+    source: MESH:D013726
+    target: UniProt:P13945
+  - key: positively regulates
+    source: MESH:D013726
+    target: UniProt:P07550
+  - key: positively correlated with
+    source: UniProt:P13945
+    target: GO:0050728
+  - key: positively correlated with
+    source: UniProt:P07550
+    target: GO:0050728
+  - key: negatively correlated with
+    source: GO:0050728
+    target: MESH:D015352
+multigraph: true
+nodes:
+  - id: MESH:D013726
+    label: Drug
+    name: terbutaline
+  - id: UniProt:P13945
+    label: Protein
+    name: Beta-3 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: GO:0050728
+    label: BiologicalProcess
+    name: negative regulation of inflammatory response
+  - id: MESH:D015352
+    label: Disease
+    name: Tear film insufficiency
+references:
+  - https://go.drugbank.com/drugs/DB00871#mechanism-of-action
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5345890/
+  - https://europepmc.org/article/MED/23360156

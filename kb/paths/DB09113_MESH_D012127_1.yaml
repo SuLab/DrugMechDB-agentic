@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB09113_MESH_D012127_1
+  disease: Respiratory distress syndrome in the newborn
+  disease_mesh: MESH:D012127
+  drug: poractant alfa
+  drug_mesh: MESH:C068291
+  drugbank: DB:DB09113
+links:
+  - key: positively regulates
+    source: MESH:C068291
+    target: GO:0043129
+  - key: negatively correlated with
+    source: GO:0043129
+    target: MESH:D012127
+multigraph: true
+nodes:
+  - id: MESH:C068291
+    label: Drug
+    name: Poractant alfa
+  - id: GO:0043129
+    label: BiologicalProcess
+    name: Surfactant homeostasis
+  - id: MESH:D012127
+    label: Disease
+    name: Respiratory distress syndrome in the newborn
+references:
+  - https://en.wikipedia.org/wiki/Infant_respiratory_distress_syndrome
+  - https://go.drugbank.com/drugs/DB09113

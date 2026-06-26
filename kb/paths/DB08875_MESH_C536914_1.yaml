@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB08875_MESH_C536914_1
+  disease: Medullary thyroid carcinoma
+  disease_mesh: MESH:C536914
+  drug: cabozantinib
+  drug_mesh: MESH:C558660
+  drugbank: DB:DB08875
+links:
+  - key: decreases activity of
+    source: MESH:C558660
+    target: UniProt:P08581
+  - key: decreases activity of
+    source: MESH:C558660
+    target: UniProt:P35968
+  - key: decreases activity of
+    source: MESH:C558660
+    target: UniProt:P07949
+  - key: positively regulates
+    source: UniProt:P08581
+    target: GO:0007169
+  - key: positively regulates
+    source: UniProt:P35968
+    target: GO:0007169
+  - key: positively regulates
+    source: UniProt:P07949
+    target: GO:0007169
+  - key: positively correlated with
+    source: GO:0007169
+    target: GO:0001525
+  - key: positively correlated with
+    source: GO:0007169
+    target: HP:0031377
+  - key: occurs in
+    source: GO:0001525
+    target: MESH:C536914
+  - key: phenotype of
+    source: HP:0031377
+    target: MESH:C536914
+multigraph: true
+nodes:
+  - id: MESH:C558660
+    label: Drug
+    name: Cabozantinib
+  - id: UniProt:P08581
+    label: Protein
+    name: Hepatocyte growth factor receptor
+  - id: UniProt:P35968
+    label: Protein
+    name: Vascular endothelial growth factor receptor 2
+  - id: UniProt:P07949
+    label: Protein
+    name: Proto-oncogene tyrosine-protein kinase receptor Ret
+  - id: GO:0007169
+    label: BiologicalProcess
+    name: Transmembrane receptor protein tyrosine kinase signaling pathway
+  - id: GO:0001525
+    label: BiologicalProcess
+    name: Angiogenesis
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:C536914
+    label: Disease
+    name: Medullary thyroid carcinoma
+references:
+  - https://go.drugbank.com/drugs/DB08875#BE0000915
+  - https://en.wikipedia.org/wiki/Cabozantinib

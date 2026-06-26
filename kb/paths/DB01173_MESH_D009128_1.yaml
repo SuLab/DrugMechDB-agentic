@@ -1,0 +1,63 @@
+directed: true
+graph:
+  _id: DB01173_MESH_D009128_1
+  disease: Spasticity
+  disease_mesh: MESH:D009128
+  drug: Orphenadrine
+  drug_mesh: MESH:D009966
+  drugbank: DB:DB01173
+links:
+  - key: decreases activity of
+    source: MESH:D009966
+    target: UniProt:O15399
+  - key: decreases activity of
+    source: MESH:D009966
+    target: UniProt:Q05586
+  - key: decreases activity of
+    source: MESH:D009966
+    target: UniProt:O60391
+  - key: decreases activity of
+    source: MESH:D009966
+    target: UniProt:Q8TCU5
+  - key: positively correlated with
+    source: UniProt:O15399
+    target: GO:0035249
+  - key: positively correlated with
+    source: UniProt:Q05586
+    target: GO:0035249
+  - key: positively correlated with
+    source: UniProt:O60391
+    target: GO:0035249
+  - key: positively correlated with
+    source: UniProt:Q8TCU5
+    target: GO:0035249
+  - key: positively correlated with
+    source: GO:0035249
+    target: MESH:D009128
+multigraph: true
+nodes:
+  - id: MESH:D009966
+    label: Drug
+    name: Orphenadrine
+  - id: UniProt:O15399
+    label: Protein
+    name: Glutamate receptor ionotropic, NMDA 2D
+  - id: UniProt:Q05586
+    label: Protein
+    name: Glutamate receptor ionotropic, NMDA 1
+  - id: UniProt:O60391
+    label: Protein
+    name: Glutamate receptor ionotropic, NMDA 3B
+  - id: UniProt:Q8TCU5
+    label: Protein
+    name: Glutamate receptor ionotropic, NMDA 3A
+  - id: GO:0035249
+    label: BiologicalProcess
+    name: Synaptic transmission, glutamatergic
+  - id: MESH:D009128
+    label: Disease
+    name: Spasticity
+references:
+  - https://go.drugbank.com/drugs/DB01173#BE0000396
+  - https://pubmed.ncbi.nlm.nih.gov/1337136/
+  - https://en.wikipedia.org/wiki/Orphenadrine

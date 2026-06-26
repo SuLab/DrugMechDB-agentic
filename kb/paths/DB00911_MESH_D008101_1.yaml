@@ -1,0 +1,42 @@
+comment: Tinidazole is a prodrug
+directed: true
+graph:
+  _id: DB00911_MESH_D008101_1
+  disease: Amebic liver abscess
+  disease_mesh: MESH:D008101
+  drug: Tinidazole
+  drug_mesh: MESH:D014011
+  drugbank: DB:DB00911
+links:
+  - key: positively regulates
+    source: MESH:D014011
+    target: GO:0000305
+  - key: disrupts
+    source: GO:0000305
+    target: MESH:D004247
+  - key: in taxon
+    source: MESH:D004247
+    target: taxonomy:5759
+  - key: causes
+    source: taxonomy:5759
+    target: MESH:D008101
+multigraph: true
+nodes:
+  - id: MESH:D014011
+    label: Drug
+    name: Tinidazole
+  - id: GO:0000305
+    label: BiologicalProcess
+    name: Response to oxygen radical
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: taxonomy:5759
+    label: OrganismTaxon
+    name: Entamoeba histolytica
+  - id: MESH:D008101
+    label: Disease
+    name: Amebic liver abscess
+references:
+  - https://go.drugbank.com/drugs/DB00911
+  - https://en.wikipedia.org/wiki/Amoebic_liver_abscess

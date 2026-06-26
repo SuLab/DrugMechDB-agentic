@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB09449_MESH_D003248_1
+  disease: Constipation
+  disease_mesh: MESH:D003248
+  drug: Sodium phosphate
+  drug_mesh: MESH:C018279
+  drugbank: DB:DB09449
+links:
+  - key: positively regulates
+    source: MESH:C018279
+    target: GO:0120054
+  - key: negatively correlated with
+    source: GO:0120054
+    target: MESH:D003248
+multigraph: true
+nodes:
+  - id: MESH:C018279
+    label: Drug
+    name: Sodium phosphate
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: Intestinal motility
+  - id: MESH:D003248
+    label: Disease
+    name: Constipation
+references:
+  - https://go.drugbank.com/drugs/DB09449

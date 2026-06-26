@@ -1,0 +1,39 @@
+directed: true
+graph:
+  _id: DB08874_MESH_D003015_1
+  disease: Clostridium difficile infection
+  disease_mesh: MESH:D003015
+  drug: Fidaxomicin
+  drugbank: DB:DB08874
+links:
+  - key: decreases activity of
+    source: DB:DB08874
+    target: UniProt:Q18BX5
+  - key: participates in
+    source: UniProt:Q18BX5
+    target: GO:0006352
+  - key: in taxon
+    source: GO:0006352
+    target: taxonomy:1496
+  - key: causes
+    source: taxonomy:1496
+    target: MESH:D003015
+multigraph: true
+nodes:
+  - id: DB:DB08874
+    label: Drug
+    name: Fidaxomicin
+  - id: UniProt:Q18BX5
+    label: Protein
+    name: RNA polymerase sigma factor SigA
+  - id: GO:0006352
+    label: BiologicalProcess
+    name: DNA-templated transcription initiation
+  - id: taxonomy:1496
+    label: OrganismTaxon
+    name: Clostridioides difficile
+  - id: MESH:D003015
+    label: Disease
+    name: Clostridium difficile infection
+references:
+  - https://go.drugbank.com/drugs/DB08874#mechanismofaction

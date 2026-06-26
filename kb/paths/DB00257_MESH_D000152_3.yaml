@@ -1,0 +1,57 @@
+comment: Sulfur's usefulness as a topical remedy for acne dates back to at least the
+  reign of Cleopatra i.e. 69–30 BCE (https://en.wikipedia.org/wiki/Acne#History).
+directed: true
+graph:
+  _id: DB00257_MESH_D000152_3
+  disease: Acne vulgaris
+  disease_mesh: MESH:D000152
+  drug: sulfur
+  drug_mesh: MESH:D013455
+  drugbank: DB:DB00257
+links:
+  - key: precedes
+    source: MESH:D013455
+    target: CHEBI:16136
+  - key: subclass of
+    source: CHEBI:16136
+    target: MESH:D007641
+  - key: subclass of
+    source: CHEBI:16136
+    target: MESH:D000900
+  - key: disrupts
+    source: MESH:D000900
+    target: taxonomy:1747
+  - key: decreases abundance of
+    source: MESH:D007641
+    target: HP:0025249
+  - key: causes
+    source: taxonomy:1747
+    target: MESH:D000152
+  - key: positively correlated with
+    source: HP:0025249
+    target: MESH:D000152
+multigraph: true
+nodes:
+  - id: MESH:D013455
+    label: Drug
+    name: sulfur
+  - id: CHEBI:16136
+    label: ChemicalSubstance
+    name: hydrogen sulfide
+  - id: MESH:D000900
+    label: Drug
+    name: Anti-Bacterial Agents
+  - id: MESH:D007641
+    label: Drug
+    name: Keratolytic Agents
+  - id: HP:0025249
+    label: PhenotypicFeature
+    name: Comedo
+  - id: taxonomy:1747
+    label: OrganismTaxon
+    name: Cutibacterium acnes
+  - id: MESH:D000152
+    label: Disease
+    name: Acne vulgaris
+references:
+  - https://go.drugbank.com/drugs/DB09353#mechanism-of-action

@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB08865_MESH_D002289_2
+  disease: Carcinoma, Non-Small-Cell Lung
+  disease_mesh: MESH:D002289
+  drug: Crizotinib
+  drug_mesh: MESH:D000077547
+  drugbank: DB:DB08865
+links:
+  - key: decreases activity of
+    source: MESH:D000077547
+    target: UniProt:P08922
+  - key: positively regulates
+    source: UniProt:P08922
+    target: GO:0008283
+  - key: contributes to
+    source: GO:0008283
+    target: MESH:D002289
+multigraph: true
+nodes:
+  - id: MESH:D000077547
+    label: Drug
+    name: Crizotinib
+  - id: UniProt:P08922
+    label: Protein
+    name: Proto-oncogene tyrosine-protein kinase ROS
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: MESH:D002289
+    label: Disease
+    name: Carcinoma, Non-Small-Cell Lung
+references:
+  - https://go.drugbank.com/drugs/DB08865#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P08922#function
+  - https://en.wikipedia.org/wiki/Non-small-cell_lung_cancer

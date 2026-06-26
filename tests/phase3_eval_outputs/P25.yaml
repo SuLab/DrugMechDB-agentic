@@ -1,0 +1,85 @@
+directed: true
+multigraph: true
+graph:
+  _id: P25_DB00051_MESH_D011565
+  drug: Adalimumab
+  drug_mesh: MESH:D000068879
+  drugbank: DB:DB00051
+  disease: Psoriasis
+  disease_mesh: MESH:D011565
+nodes:
+  - id: MESH:D000068879
+    name: Adalimumab
+    label: Drug
+  - id: UniProt:P01375
+    name: Tumor necrosis factor
+    label: Protein
+  - id: GO:0038061
+    name: NIK/NF-kappaB signaling
+    label: BiologicalProcess
+  - id: GO:0006954
+    name: Inflammatory response
+    label: BiologicalProcess
+  - id: MESH:D011565
+    name: Psoriasis
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000068879
+    target: UniProt:P01375
+    evidence:
+      - reference: PMID:15046527
+        snippet: "Adalimumab (Humira) is a recombinant, fully human IgG1 monoclonal antibody that binds specifically to tumor necrosis factor (TNF)-alpha, thereby neutralizing the activity of the cytokine."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Pharmacology review confirming adalimumab binds TNF-alpha and neutralizes the cytokine's biological activity, directly decreasing its function."
+      - reference: PMID:17223742
+        snippet: "Adalimumab is a fully human monoclonal antibody that binds specifically to TNF-alpha, thereby neutralising its activity."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Expert review confirming adalimumab is a fully human anti-TNF-alpha monoclonal antibody that neutralizes TNF-alpha activity."
+  - key: positively regulates
+    source: UniProt:P01375
+    target: GO:0038061
+    evidence:
+      - reference: PMID:34362923
+        snippet: "Enhanced NF-κBp65 phosphorylation, induced by TNF and LPS in type-2 dendritic cells (DC) before therapy, significantly correlates with lack of clinical response after 12 weeks of treatment."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "TNF induces NF-κBp65 phosphorylation (activation of NIK/NF-kappaB signaling) in immune cells; this is established in psoriasis patients prior to adalimumab therapy."
+      - reference: PMID:30321197
+        snippet: "suggesting that rhodomyrtone acts by modulating MAP kinase and NF-κB signaling pathways, rhodomyrtone inhibited TNF-induced ERK, JNK, p38, and NF-κBp65 phosphorylation."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "TNF induces NF-κBp65 phosphorylation in keratinocytes, demonstrating that TNF-alpha positively regulates NIK/NF-kappaB signaling in psoriasis-relevant cells."
+  - key: positively regulates
+    source: GO:0038061
+    target: GO:0006954
+    evidence:
+      - reference: PMID:36903321
+        snippet: "acenocoumarol attenuates the macrophage secretion of TNF-α, IL-6, IL-1β, and NO, inducing iNOS and COX-2 expression via the inhibition of the NF-κB and MAPK signaling pathways."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "NF-κB signaling drives secretion of pro-inflammatory cytokines (TNF-α, IL-6, IL-1β) and mediators (iNOS, COX-2), confirming NF-kappaB positively regulates the inflammatory response."
+      - reference: PMID:34929480
+        snippet: "POH significantly decreased the intracellular ROS levels and inhibited the phosphorylation of NF-κB and STAT3 in in-vitro."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Inhibiting NF-κB phosphorylation in keratinocytes reduces pro-inflammatory cytokines (TNF-α, IL-6, IL-1β) and inflammatory proteins, confirming NF-κB positively drives the inflammatory response in psoriasis."
+  - key: causes
+    source: GO:0006954
+    target: MESH:D011565
+    evidence:
+      - reference: PMID:40243475
+        snippet: "Psoriasis is a chronic immune-mediated skin disease characterized by cytokine dysregulation. Pro-inflammatory mediators, including tumor necrosis factor-alpha (TNF-α), interleukin (IL)-17, and IL-23, play pivotal roles in the pathogenesis of psoriasis."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Psoriasis is defined by a chronic inflammatory response driven by pro-inflammatory mediators; the inflammatory response is the direct pathological driver (cause) of the disease."
+      - reference: PMID:41196583
+        snippet: "Psoriasis is characterized by increased levels of pro-inflammatory cytokines, including TNF-α, IL-1β, IL-17A, and NF-κB, as well as keratinocyte hyperproliferation and epidermal thickening."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Psoriasis is characterized by a state of elevated pro-inflammatory cytokines (hallmarks of inflammatory response) alongside the resulting keratinocyte hyperproliferation, confirming the inflammatory response causes psoriasis."
+references:
+  - https://go.drugbank.com/drugs/DB00051#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P01375#function

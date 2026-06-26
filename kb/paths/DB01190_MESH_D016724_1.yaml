@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB01190_MESH_D016724_1
+  disease: Empyema of pleura
+  disease_mesh: MESH:D016724
+  drug: clindamycin phosphate
+  drug_mesh: MESH:C007084
+  drugbank: DB:DB01190
+links:
+  - key: decreases activity of
+    source: MESH:C007084
+    target: MESH:D012338
+  - key: part of
+    source: MESH:D012338
+    target: MESH:D054681
+  - key: part of
+    source: MESH:D054681
+    target: GO:0005840
+  - key: participates in
+    source: GO:0005840
+    target: GO:0000048
+  - key: positively correlated with
+    source: GO:0000048
+    target: GO:0006412
+  - key: positively correlated with
+    source: GO:0006412
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D016724
+multigraph: true
+nodes:
+  - id: MESH:C007084
+    label: Drug
+    name: clindamycin phosphate
+  - id: MESH:D054681
+    label: Protein
+    name: 50S Ribosome Subunits, Large, Bacterial
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: GO:0005840
+    label: CellularComponent
+    name: Ribosome
+  - id: GO:0000048
+    label: MolecularActivity
+    name: peptidyltransferase activity
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Bacterial translation
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D016724
+    label: Disease
+    name: Empyema of pleura
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1753/
+  - https://go.drugbank.com/drugs/DB01190
+  - https://pubchem.ncbi.nlm.nih.gov/compound/446598
+  - https://en.wikipedia.org/wiki/Clindamycin
+  - https://www.healthline.com/health/empyema

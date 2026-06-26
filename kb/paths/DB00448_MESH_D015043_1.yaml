@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB00448_MESH_D015043_1
+  disease: Zollinger-Ellison syndrome
+  disease_mesh: MESH:D015043
+  drug: lansoprazole
+  drug_mesh: MESH:D064747
+  drugbank: DB:DB00448
+links:
+  - key: decreases activity of
+    source: MESH:D064747
+    target: UniProt:P20648
+  - key: positively regulates
+    source: UniProt:P20648
+    target: GO:0001696
+  - key: positively correlated with
+    source: GO:0001696
+    target: HP:0004398
+  - key: positively correlated with
+    source: GO:0001696
+    target: HP:0002588
+  - key: manifestation of
+    source: HP:0002588
+    target: MESH:D015043
+  - key: manifestation of
+    source: HP:0004398
+    target: MESH:D015043
+multigraph: true
+nodes:
+  - id: MESH:D064747
+    label: Drug
+    name: lansoprazole
+  - id: UniProt:P20648
+    label: Protein
+    name: Potassium-transporting ATPase alpha chain 1
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: Gastric acid secretion
+  - id: HP:0004398
+    label: PhenotypicFeature
+    name: Peptic Ulcer
+  - id: HP:0002588
+    label: PhenotypicFeature
+    name: Duodenal ulcer
+  - id: MESH:D015043
+    label: Disease
+    name: Zollinger-Ellison syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00448
+  - https://en.wikipedia.org/wiki/Zollinger%E2%80%93Ellison_syndrome#Pathophysiology
+  - https://en.wikipedia.org/wiki/Zollinger%E2%80%93Ellison_syndrome#Treatment

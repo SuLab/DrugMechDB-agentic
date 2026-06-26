@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB00686_MESH_D018856_1
+  disease: Ulcerative cystitis
+  disease_mesh: MESH:D018856
+  drug: pentosan polysulfate
+  drug_mesh: MESH:D010426
+  drugbank: DB:DB00686
+links:
+  - key: positively regulates
+    source: MESH:D010426
+    target: GO:0061028
+  - key: negatively correlated with
+    source: GO:0061028
+    target: MESH:D018856
+multigraph: true
+nodes:
+  - id: MESH:D010426
+    label: Drug
+    name: Pentosan polysulfate
+  - id: GO:0061028
+    label: BiologicalProcess
+    name: Establishment of endothelial barrier
+  - id: MESH:D018856
+    label: Disease
+    name: Ulcerative cystitis
+references:
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1476002/
+  - https://en.wikipedia.org/wiki/Pentosan

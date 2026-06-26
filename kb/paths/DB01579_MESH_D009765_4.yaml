@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01579_MESH_D009765_4
+  disease: Obesity
+  disease_mesh: MESH:D009765
+  drug: phendimetrazine
+  drug_mesh: MESH:C100294
+  drugbank: DB:DB01579
+links:
+  - key: decreases activity of
+    source: MESH:C100294
+    target: UniProt:P23975
+  - key: positively regulates
+    source: UniProt:P23975
+    target: GO:0015874
+  - key: decreases abundance of
+    source: GO:0015874
+    target: MESH:D009638
+  - key: positively correlated with
+    source: MESH:D009638
+    target: HP:0004396
+  - key: negatively correlated with
+    source: HP:0004396
+    target: MESH:D009765
+multigraph: true
+nodes:
+  - id: MESH:C100294
+    label: Drug
+    name: phendimetrazine
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0015874
+    label: BiologicalProcess
+    name: norepinephrine transport
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: HP:0004396
+    label: PhenotypicFeature
+    name: Poor appetite
+  - id: MESH:D009765
+    label: Disease
+    name: Obesity
+references:
+  - https://go.drugbank.com/drugs/DB01579#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Phendimetrazine
+  - https://www.uniprot.org/uniprot/P23975#function
+  - https://en.wikipedia.org/wiki/Obesity

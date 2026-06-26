@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01059_MESH_D004405_1
+  disease: Shigellosis
+  disease_mesh: MESH:D004405
+  drug: norfloxacin
+  drug_mesh: MESH:D009643
+  drugbank: DB:DB01059
+links:
+  - key: decreases activity of
+    source: MESH:D009643
+    target: UniProt:P43702
+  - key: negatively regulates
+    source: MESH:D009643
+    target: GO:0003746
+  - key: participates in
+    source: UniProt:P43702
+    target: GO:0006260
+  - key: precedes
+    source: GO:0003746
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:622
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:622
+  - key: causes
+    source: taxonomy:622
+    target: MESH:D004405
+multigraph: true
+nodes:
+  - id: MESH:D009643
+    label: Drug
+    name: norfloxacin
+  - id: UniProt:P43702
+    label: Protein
+    name: topoisomerases II, IV
+  - id: GO:0003746
+    label: MolecularActivity
+    name: Translocation of EF-G
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Bacterial Protein Synthesis
+  - id: taxonomy:622
+    label: OrganismTaxon
+    name: Shigella dysenteriae
+  - id: MESH:D004405
+    label: Disease
+    name: Shigellosis

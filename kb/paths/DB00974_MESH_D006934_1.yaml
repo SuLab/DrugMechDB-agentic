@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB00974_MESH_D006934_1
+  disease: Hypercalcemia
+  disease_mesh: MESH:D006934
+  drug: edetic acid
+  drug_mesh: MESH:D004492
+  drugbank: DB:DB00974
+links:
+  - key: decreases abundance of
+    source: MESH:D004492
+    target: CHEBI:29108
+  - key: located in
+    source: CHEBI:29108
+    target: UBERON:0001977
+  - key: location of
+    source: UBERON:0001977
+    target: MESH:D006934
+multigraph: true
+nodes:
+  - id: MESH:D004492
+    label: Drug
+    name: edetic acid
+  - id: CHEBI:29108
+    label: ChemicalSubstance
+    name: calcium(2+)
+  - id: UBERON:0001977
+    label: GrossAnatomicalStructure
+    name: blood serum
+  - id: MESH:D006934
+    label: Disease
+    name: Hypercalcemia
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/6049#section=Mechanism-of-Action

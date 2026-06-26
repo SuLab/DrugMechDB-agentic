@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB01136_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: Carvedilol
+  drug_mesh: MESH:C043211
+  drugbank: DB:DB01136
+links:
+  - key: decreases activity of
+    source: MESH:C043211
+    target: UniProt:P08588
+  - key: decreases activity of
+    source: MESH:C043211
+    target: UniProt:P35348
+  - key: positively regulates
+    source: UniProt:P08588
+    target: UniProt:P00797
+  - key: positively regulates
+    source: UniProt:P35348
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P00797
+    target: GO:0042310
+  - key: positively regulates
+    source: GO:0042310
+    target: GO:0008217
+  - key: positively correlated with
+    source: GO:0008217
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C043211
+    label: Drug
+    name: Carvedilol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: UniProt:P00797
+    label: Protein
+    name: Renin
+  - id: GO:0008217
+    label: BiologicalProcess
+    name: Blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB01136#BE0000172

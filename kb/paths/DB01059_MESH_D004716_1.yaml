@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01059_MESH_D004716_1
+  disease: Endometritis
+  disease_mesh: MESH:D004716
+  drug: norfloxacin
+  drug_mesh: MESH:D009643
+  drugbank: DB:DB01059
+links:
+  - key: decreases activity of
+    source: MESH:D009643
+    target: UniProt:O84192
+  - key: decreases activity of
+    source: MESH:D009643
+    target: UniProt:G4NN22
+  - key: positively regulates
+    source: UniProt:O84192
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:G4NN22
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:810
+  - key: causes
+    source: taxonomy:810
+    target: MESH:D004716
+multigraph: true
+nodes:
+  - id: MESH:D009643
+    label: Drug
+    name: norfloxacin
+  - id: UniProt:O84192
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:G4NN22
+    label: Protein
+    name: DNA topoisomerase 1
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:810
+    label: OrganismTaxon
+    name: Chlamydia
+  - id: MESH:D004716
+    label: Disease
+    name: Endometritis
+references:
+  - https://go.drugbank.com/drugs/DB01059#mechanism-of-action
+  - https://www.uniprot.org/uniprot/O84192#function
+  - https://www.uniprot.org/uniprot/G4NN22#function
+  - https://medlineplus.gov/ency/article/001484.htm
+  - https://en.wikipedia.org/wiki/Endometritis

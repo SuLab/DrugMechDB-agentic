@@ -1,0 +1,66 @@
+directed: true
+graph:
+  _id: DB00755_MESH_D008548_1
+  disease: Chloasma
+  disease_mesh: MESH:D008548
+  drug: tretinoin
+  drug_mesh: MESH:D014212
+  drugbank: DB:DB00755
+links:
+  - key: increases activity of
+    source: MESH:D014212
+    target: UniProt:P10276
+  - key: increases activity of
+    source: MESH:D014212
+    target: UniProt:P13631
+  - key: increases activity of
+    source: MESH:D014212
+    target: UniProt:P10826
+  - key: negatively correlated with
+    source: UniProt:P10276
+    target: GO:0008283
+  - key: negatively correlated with
+    source: UniProt:P13631
+    target: GO:0008283
+  - key: negatively correlated with
+    source: UniProt:P10826
+    target: GO:0008283
+  - key: correlated with
+    source: GO:0008283
+    target: GO:0043476
+  - key: positively correlated with
+    source: GO:0043476
+    target: HP:0000953
+  - key: manifestation of
+    source: HP:0000953
+    target: MESH:D008548
+multigraph: true
+nodes:
+  - id: MESH:D014212
+    label: Drug
+    name: tretinoin
+  - id: UniProt:P10276
+    label: Protein
+    name: Retinoic acid receptor alpha
+  - id: UniProt:P10826
+    label: Protein
+    name: Retinoic acid receptor beta
+  - id: UniProt:P13631
+    label: Protein
+    name: Retinoic acid receptor gamma
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: GO:0043476
+    label: BiologicalProcess
+    name: pigment accumulation
+  - id: HP:0000953
+    label: PhenotypicFeature
+    name: Hyperpigmentation of the skin
+  - id: MESH:D008548
+    label: Disease
+    name: Chloasma
+references:
+  - https://go.drugbank.com/drugs/DB00755
+  - https://en.wikipedia.org/wiki/Tretinoin#Side_effects
+  - https://en.wikipedia.org/wiki/Melasma#Signs_and_symptoms

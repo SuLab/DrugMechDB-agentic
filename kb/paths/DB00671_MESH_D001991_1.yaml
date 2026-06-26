@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00671_MESH_D001991_1
+  disease: Bronchitis
+  disease_mesh: MESH:D001991
+  drug: Cefixime
+  drug_mesh: MESH:D020682
+  drugbank: DB:DB00671
+links:
+  - key: decreases activity of
+    source: MESH:D020682
+    target: UniProt:P44469
+  - key: positively regulates
+    source: UniProt:P44469
+    target: GO:0009273
+  - key: positively regulates
+    source: GO:0009273
+    target: GO:0042546
+  - key: occurs in
+    source: GO:0042546
+    target: taxonomy:1213463
+  - key: causes
+    source: taxonomy:1213463
+    target: MESH:D001991
+multigraph: true
+nodes:
+  - id: MESH:D020682
+    label: Drug
+    name: Cefixime
+  - id: UniProt:P44469
+    label: Protein
+    name: Peptidoglycan D,D-transpeptidase MrdA
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: cell wall biogenesis
+  - id: taxonomy:1213463
+    label: OrganismTaxon
+    name: Mycoplasma pneumoniae 19294
+  - id: MESH:D001991
+    label: Disease
+    name: Bronchitis
+references:
+  - https://go.drugbank.com/drugs/DB00671#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P44469#function
+  - https://en.wikipedia.org/wiki/Bronchitis

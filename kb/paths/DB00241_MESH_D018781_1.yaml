@@ -1,0 +1,89 @@
+directed: true
+graph:
+  _id: DB00241_MESH_D018781_1
+  disease: Tension-type headache
+  disease_mesh: MESH:D018781
+  drug: butalbital
+  drug_mesh: MESH:C004470
+  drugbank: DB:DB00241
+links:
+  - key: increases activity of
+    source: MESH:C004470
+    target: UniProt:P14867
+  - key: increases activity of
+    source: MESH:C004470
+    target: UniProt:P47869
+  - key: increases activity of
+    source: MESH:C004470
+    target: UniProt:P34903
+  - key: increases activity of
+    source: MESH:C004470
+    target: UniProt:P48169
+  - key: increases activity of
+    source: MESH:C004470
+    target: UniProt:P31644
+  - key: positively regulates
+    source: UniProt:P14867
+    target: GO:0022851
+  - key: positively regulates
+    source: UniProt:P47869
+    target: GO:0022851
+  - key: positively regulates
+    source: UniProt:P34903
+    target: GO:0022851
+  - key: positively regulates
+    source: UniProt:P48169
+    target: GO:0022851
+  - key: positively regulates
+    source: UniProt:P31644
+    target: GO:0022851
+  - key: positively correlated with
+    source: GO:0022851
+    target: GO:0060081
+  - key: negatively regulates
+    source: GO:0060081
+    target: GO:0019228
+  - key: contributes to
+    source: GO:0019228
+    target: GO:0050806
+  - key: positively correlated with
+    source: GO:0050806
+    target: MESH:D018781
+multigraph: true
+nodes:
+  - id: MESH:C004470
+    label: Drug
+    name: Butalbital
+  - id: UniProt:P14867
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-1
+  - id: UniProt:P47869
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-2
+  - id: UniProt:P34903
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-3
+  - id: UniProt:P48169
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-4
+  - id: UniProt:P31644
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-5
+  - id: GO:0022851
+    label: MolecularActivity
+    name: GABA-gated chloride ion channel activity
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: Membrane hyperpolarization
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: Neuronal action potential
+  - id: GO:0050806
+    label: BiologicalProcess
+    name: Positive regulation of synaptic transmission
+  - id: MESH:D018781
+    label: Disease
+    name: Tension-type headache
+references:
+  - https://go.drugbank.com/drugs/DB00241
+  - https://en.wikipedia.org/wiki/Tension_headache

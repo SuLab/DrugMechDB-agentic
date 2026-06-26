@@ -1,0 +1,43 @@
+comment: Bromazine is a brominated form of diphenhydramine (https://en.wikipedia.org/wiki/Bromazine).
+directed: true
+graph:
+  _id: DB01237_MESH_D003371_1
+  disease: Cough
+  disease_mesh: MESH:D003371
+  drug: bromazine
+  drug_mesh: MESH:C011410
+  drugbank: DB:DB01237
+links:
+  - key: decreases activity of
+    source: MESH:C011410
+    target: UniProt:P35367
+  - key: positively correlated with
+    source: UniProt:P35367
+    target: GO:0071420
+  - key: positively correlated with
+    source: GO:0071420
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D003371
+multigraph: true
+nodes:
+  - id: MESH:C011410
+    label: Drug
+    name: bromazine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: GO:0071420
+    label: BiologicalProcess
+    name: cellular response to histamine
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D003371
+    label: Disease
+    name: Cough
+references:
+  - https://go.drugbank.com/drugs/DB01237
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201245/
+  - https://en.wikipedia.org/wiki/Diphenhydramine#Pharmacodynamics

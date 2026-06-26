@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB13179_MESH_D011018_1
+  disease: Pneumococcal pneumonia
+  disease_mesh: MESH:D011018
+  drug: troleandomycin
+  drug_mesh: MESH:D014217
+  drugbank: DB:DB13179
+links:
+  - key: disrupts
+    source: MESH:D014217
+    target: MESH:D054681
+  - key: location of
+    source: MESH:D054681
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D011018
+multigraph: true
+nodes:
+  - id: MESH:D014217
+    label: Drug
+    name: troleandomycin
+  - id: MESH:D054681
+    label: ChemicalSubstance
+    name: Ribosome Subunits, Large, Bacterial
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D011018
+    label: Disease
+    name: Pneumococcal pneumonia
+references:
+  - https://en.wikipedia.org/wiki/Troleandomycin
+  - https://pubchem.ncbi.nlm.nih.gov/compound/202225#section=Mechanism-of-Action

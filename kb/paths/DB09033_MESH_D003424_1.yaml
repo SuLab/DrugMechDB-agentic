@@ -1,0 +1,59 @@
+directed: true
+graph:
+  _id: DB09033_MESH_D003424_1
+  disease: Crohn's disease
+  disease_mesh: MESH:D003424
+  drug: Vedolizumab
+  drug_mesh: MESH:C543529
+  drugbank: DB:DB09033
+links:
+  - key: decreases activity of
+    source: MESH:C543529
+    target: UniProt:P13612
+  - key: decreases activity of
+    source: MESH:C543529
+    target: UniProt:P26010
+  - key: positively regulates
+    source: UniProt:P13612
+    target: UniProt:Q13477
+  - key: positively regulates
+    source: UniProt:P26010
+    target: UniProt:Q13477
+  - key: positively regulates
+    source: UniProt:Q13477
+    target: GO:0072676
+  - key: positively regulates
+    source: UniProt:Q13477
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0072676
+    target: MESH:D003424
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D003424
+multigraph: true
+nodes:
+  - id: MESH:C543529
+    label: Drug
+    name: Vedolizumab
+  - id: UniProt:P13612
+    label: Protein
+    name: Integrin alpha-4
+  - id: UniProt:P26010
+    label: Protein
+    name: Integrin beta-7
+  - id: UniProt:Q13477
+    label: Protein
+    name: Mucosal addressin cell adhesion molecule 1
+  - id: GO:0072676
+    label: BiologicalProcess
+    name: Lymphocyte migration
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D003424
+    label: Disease
+    name: Crohn's disease
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/25952593/
+  - https://go.drugbank.com/drugs/DB09033#BE0000590

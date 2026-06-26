@@ -1,0 +1,120 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB00463_MESH_D004827_1
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+  drug: metharbital
+  drug_mesh: MESH:C084822
+  drugbank: DB:DB00463
+links:
+  - key: positively regulates
+    source: MESH:C084822
+    target: UniProt:P14867
+  - key: positively regulates
+    source: MESH:C084822
+    target: UniProt:P47869
+  - key: positively regulates
+    source: MESH:C084822
+    target: UniProt:P34903
+  - key: positively regulates
+    source: MESH:C084822
+    target: UniProt:P48169
+  - key: positively regulates
+    source: MESH:C084822
+    target: UniProt:P31644
+  - key: positively regulates
+    source: MESH:C084822
+    target: UniProt:Q16445
+  - key: positively regulates
+    source: UniProt:Q16445
+    target: GO:0022851
+  - key: positively regulates
+    source: UniProt:P14867
+    target: GO:0022851
+  - key: positively regulates
+    source: UniProt:P47869
+    target: GO:0022851
+  - key: positively regulates
+    source: UniProt:P34903
+    target: GO:0022851
+  - key: positively regulates
+    source: UniProt:P48169
+    target: GO:0022851
+  - key: positively regulates
+    source: UniProt:P31644
+    target: GO:0022851
+  - key: positively correlated with
+    source: GO:0022851
+    target: GO:0060081
+  - key: negatively regulates
+    source: GO:0060081
+    target: GO:0019228
+  - key: contributes to
+    source: GO:0019228
+    target: GO:0050806
+  - key: positively correlated with
+    source: GO:0050806
+    target: MESH:D004827
+  - key: decreases activity of
+    source: MESH:C084822
+    target: InterPro:IPR001320
+  - key: molecularly interacts with
+    source: InterPro:IPR001320
+    target: MESH:D018698
+  - key: positively correlated with
+    source: MESH:D018698
+    target: GO:0061535
+  - key: positively correlated with
+    source: GO:0061535
+    target: MESH:D004827
+multigraph: true
+nodes:
+  - id: MESH:C084822
+    label: Drug
+    name: Metharbital
+  - id: UniProt:P14867
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-1
+  - id: UniProt:P47869
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-2
+  - id: UniProt:P34903
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-3
+  - id: UniProt:P48169
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-4
+  - id: UniProt:P31644
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-5
+  - id: UniProt:Q16445
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit alpha-6
+  - id: GO:0022851
+    label: MolecularActivity
+    name: GABA-gated chloride ion channel activity
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: Membrane hyperpolarization
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: Neuronal action potential
+  - id: GO:0050806
+    label: BiologicalProcess
+    name: Positive regulation of synaptic transmission
+  - id: InterPro:IPR001320
+    label: GeneFamily
+    name: Ionotropic glutamate receptor
+  - id: MESH:D018698
+    label: ChemicalSubstance
+    name: Glutamic Acid
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: Glutamate secretion, neurotransmission
+  - id: MESH:D004827
+    label: Disease
+    name: Epilepsy
+references:
+  - https://go.drugbank.com/drugs/DB00463
+  - https://en.wikipedia.org/wiki/Barbiturate#Mechanism_of_action

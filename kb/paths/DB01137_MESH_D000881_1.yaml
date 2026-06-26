@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB01137_MESH_D000881_1
+  disease: Anthrax
+  disease_mesh: MESH:D000881
+  drug: levofloxacin
+  drug_mesh: MESH:D064704
+  drugbank: DB:DB01137
+links:
+  - key: negatively regulates
+    source: MESH:D064704
+    target: InterPro:IPR035516
+  - key: negatively regulates
+    source: MESH:D064704
+    target: InterPro:IPR013760
+  - key: positively regulates
+    source: InterPro:IPR035516
+    target: GO:0006260
+  - key: positively regulates
+    source: InterPro:IPR013760
+    target: GO:0006260
+  - key: in taxon
+    source: GO:0006260
+    target: taxonomy:1392
+  - key: causes
+    source: taxonomy:1392
+    target: MESH:D000881
+multigraph: true
+nodes:
+  - id: MESH:D064704
+    label: Drug
+    name: levofloxacin
+  - id: InterPro:IPR035516
+    label: GeneFamily
+    name: DNA gyrase/topoisomerase IV, subunit A, C-terminal
+  - id: InterPro:IPR013760
+    label: GeneFamily
+    name: DNA topoisomerase, type IIA-like domain superfamily
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: Bacterial DNA replication
+  - id: taxonomy:1392
+    label: OrganismTaxon
+    name: Bacillus anthracis
+  - id: MESH:D000881
+    label: Disease
+    name: Anthrax
+references:
+  - https://go.drugbank.com/drugs/DB01137#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Anthrax#Bacteria
+  - https://en.wikipedia.org/wiki/Levofloxacin#Mechanism_of_action

@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00218_MESH_D061387_1
+  disease: Chlamydial Pneumonia
+  disease_mesh: MESH:D061387
+  drug: moxifloxacin
+  drug_mesh: MESH:D000077266
+  drugbank: DB:DB00218
+links:
+  - key: decreases activity of
+    source: MESH:D000077266
+    target: UniProt:Q9Z8R4
+  - key: decreases activity of
+    source: MESH:D000077266
+    target: UniProt:Q9Z7D7
+  - key: positively regulates
+    source: UniProt:Q9Z8R4
+    target: GO:0006260
+  - key: positively regulates
+    source: UniProt:Q9Z7D7
+    target: GO:0006260
+  - key: occurs in
+    source: GO:0006260
+    target: taxonomy:83558
+  - key: causes
+    source: taxonomy:83558
+    target: MESH:D061387
+multigraph: true
+nodes:
+  - id: MESH:D000077266
+    label: Drug
+    name: moxifloxacin
+  - id: UniProt:Q9Z8R4
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:Q9Z7D7
+    label: Protein
+    name: DNA topoisomerase 1
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: taxonomy:83558
+    label: OrganismTaxon
+    name: Chlamydia pneumoniae
+  - id: MESH:D061387
+    label: Disease
+    name: Chlamydial Pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB00218#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q9Z8R4#function
+  - https://www.uniprot.org/uniprot/Q9Z7D7#function
+  - https://en.wikipedia.org/wiki/Chlamydia

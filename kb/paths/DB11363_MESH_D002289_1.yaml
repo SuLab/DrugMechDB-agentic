@@ -1,0 +1,64 @@
+comment: Alectinib  is specifically used in the treatment of non-small cell lung cancer
+  (NSCLC) expressing the ALK-EML4 (echinoderm microtubule-associated protein-like
+  4) fusion protein that causes proliferation of NSCLC cells.
+directed: true
+graph:
+  _id: DB11363_MESH_D002289_1
+  disease: Non-small cell lung cancer
+  disease_mesh: MESH:D002289
+  drug: alectinib
+  drug_mesh: MESH:C582670
+  drugbank: DB:DB11363
+links:
+  - key: decreases activity of
+    source: MESH:C582670
+    target: UniProt:Q9UM73
+  - key: positively regulates
+    source: UniProt:Q9UM73
+    target: reactome:R-HSA-9701898
+  - key: positively regulates
+    source: UniProt:Q9UM73
+    target: reactome:R-HSA-109704
+  - key: negatively regulates
+    source: reactome:R-HSA-9701898
+    target: GO:1904019
+  - key: positively regulates
+    source: reactome:R-HSA-109704
+    target: GO:0050673
+  - key: occurs in
+    source: GO:1904019
+    target: UBERON:0002048
+  - key: occurs in
+    source: GO:0050673
+    target: UBERON:0002048
+  - key: location of
+    source: UBERON:0002048
+    target: MESH:D002289
+multigraph: true
+nodes:
+  - id: MESH:C582670
+    label: Drug
+    name: Alectinib
+  - id: UniProt:Q9UM73
+    label: Protein
+    name: ALK tyrosine kinase receptor
+  - id: reactome:R-HSA-9701898
+    label: Pathway
+    name: STAT3 nuclear events downstream of ALK signalingS
+  - id: reactome:R-HSA-109704
+    label: Pathway
+    name: PI3K Cascade
+  - id: GO:1904019
+    label: BiologicalProcess
+    name: Epithelial cell apoptotic process
+  - id: GO:0050673
+    label: BiologicalProcess
+    name: Epithelial cell proliferation
+  - id: UBERON:0002048
+    label: GrossAnatomicalStructure
+    name: Lung
+  - id: MESH:D002289
+    label: Disease
+    name: Non-small cell lung cancer
+references:
+  - https://go.drugbank.com/drugs/DB11363

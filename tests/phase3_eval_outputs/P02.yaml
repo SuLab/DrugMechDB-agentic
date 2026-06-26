@@ -1,0 +1,80 @@
+directed: true
+multigraph: true
+graph:
+  _id: P02_DB01076_MESH_D006937
+  drug: Atorvastatin
+  drug_mesh: MESH:D000069059
+  drugbank: DB:DB01076
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+nodes:
+  - id: MESH:D000069059
+    name: Atorvastatin
+    label: Drug
+  - id: UniProt:P04035
+    name: 3-hydroxy-3-methylglutaryl-coenzyme A reductase
+    label: Protein
+  - id: GO:0006695
+    name: cholesterol biosynthetic process
+    label: BiologicalProcess
+  - id: MESH:D002784
+    name: Cholesterol
+    label: ChemicalSubstance
+  - id: MESH:D006937
+    name: Hypercholesterolemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000069059
+    target: UniProt:P04035
+    evidence:
+      - reference: PMID:21182938
+        snippet: "Atorvastatin is a selective HMG-CoA reductase competitive inhibitor, used for the treatment of hyperlipidaemia."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Atorvastatin is a selective competitive inhibitor of HMG-CoA reductase, decreasing the enzyme's catalytic activity (stated in a rat pharmacokinetic study)."
+      - reference: PMID:9825877
+        snippet: "Atorvastatin calcium, a synthetic stereoisomer of a pentasubstituted pyrrole, prevents the conversion of HMG-CoA by competitive and selective inhibition of HMG-CoA reductase."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Pharmacology review confirming atorvastatin acts by competitive and selective inhibition of HMG-CoA reductase, blocking conversion of its HMG-CoA substrate."
+  - key: positively regulates
+    source: UniProt:P04035
+    target: GO:0006695
+    evidence:
+      - reference: PMID:42015365
+        snippet: "Functional assays revealed that atorvastatin-mediated HMG-CoA reductase inhibition, the rate limiting enzyme in cholesterol biosynthesis, prevents cholesterol buildup and lipid droplet formation in macrophages."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "HMG-CoA reductase is identified as the rate-limiting enzyme of cholesterol biosynthesis; its catalytic activity drives (positively regulates) the cholesterol biosynthetic process."
+      - reference: PMID:42112329
+        snippet: "Atorvastatin, a widely used statin, primarily functions by inhibiting 3-hydroxy-3-methylglutaryl-coenzyme A (HMG-CoA) reductase, the rate-limiting enzyme in the mevalonate pathway, thereby lowering cholesterol."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "HMG-CoA reductase is the rate-limiting enzyme of the mevalonate pathway (cholesterol biosynthesis); inhibiting it lowers cholesterol, confirming the enzyme positively regulates the biosynthetic process."
+  - key: increases abundance of
+    source: GO:0006695
+    target: MESH:D002784
+    evidence:
+      - reference: PMID:42015365
+        snippet: "Functional assays revealed that atorvastatin-mediated HMG-CoA reductase inhibition, the rate limiting enzyme in cholesterol biosynthesis, prevents cholesterol buildup and lipid droplet formation in macrophages."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Blocking the cholesterol biosynthetic process (via HMG-CoA reductase inhibition) prevents cholesterol buildup — i.e. the biosynthetic process increases cellular cholesterol abundance."
+      - reference: PMID:42112329
+        snippet: "Atorvastatin, a widely used statin, primarily functions by inhibiting 3-hydroxy-3-methylglutaryl-coenzyme A (HMG-CoA) reductase, the rate-limiting enzyme in the mevalonate pathway, thereby lowering cholesterol."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Inhibiting the rate-limiting step of the cholesterol biosynthetic (mevalonate) pathway lowers cholesterol, confirming the pathway's output is cholesterol."
+  - key: contributes to
+    source: MESH:D002784
+    target: MESH:D006937
+    evidence:
+      - reference: PMID:9825877
+        snippet: "Like other statins, atorvastatin reduces low-density-lipoprotein cholesterol (LDL-C) and total cholesterol in patients with hypercholesterolemia."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Elevated total/LDL cholesterol is the defining feature of hypercholesterolemia; reducing cholesterol in patients with hypercholesterolemia treats the disease, confirming cholesterol contributes to the disease state."
+references:
+  - https://go.drugbank.com/drugs/DB01076#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P04035#function

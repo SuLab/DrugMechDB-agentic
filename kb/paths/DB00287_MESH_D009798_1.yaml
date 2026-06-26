@@ -1,0 +1,49 @@
+comment: Travoprost, an isopropyl ester prodrug,that is rapidly hydrolyzed by esterases
+  in the cornea to its biologically active free acid.
+directed: true
+graph:
+  _id: DB00287_MESH_D009798_1
+  disease: Ocular hypertension
+  disease_mesh: MESH:D009798
+  drug: Travoprost
+  drug_mesh: MESH:D000069557
+  drugbank: DB:DB00287
+links:
+  - key: increases activity of
+    source: MESH:D000069557
+    target: UniProt:P43088
+  - key: positively regulates
+    source: UniProt:P43088
+    target: GO:0008237
+  - key: decreases abundance of
+    source: GO:0008237
+    target: GO:0031012
+  - key: positively correlated with
+    source: GO:0031012
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: MESH:D009798
+multigraph: true
+nodes:
+  - id: MESH:D000069557
+    label: Drug
+    name: Travoprost
+  - id: UniProt:P43088
+    label: Protein
+    name: Prostaglandin F2-alpha receptor
+  - id: GO:0008237
+    label: BiologicalProcess
+    name: Metallopeptidase activity
+  - id: GO:0031012
+    label: CellularComponent
+    name: Extracellular matrix
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: Aqueous humor of eyeball
+  - id: MESH:D009798
+    label: Disease
+    name: Ocular hypertension
+references:
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3991965/
+  - https://go.drugbank.com/drugs/DB00287

@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB01279_MESH_D009087_1
+  disease: Maroteaux-Lamy syndrome
+  disease_mesh: MESH:D009087
+  drug: galsulfase
+  drug_mesh: MESH:C508864
+  drugbank: DB:DB01279
+links:
+  - key: participates in
+    source: MESH:C508864
+    target: GO:0003943
+  - key: decreases abundance of
+    source: GO:0003943
+    target: MESH:D006025
+  - key: occurs in
+    source: MESH:D006025
+    target: GO:0005764
+  - key: positively correlated with
+    source: GO:0005764
+    target: MESH:D016464
+  - key: positively correlated with
+    source: MESH:D016464
+    target: MESH:D009087
+multigraph: true
+nodes:
+  - id: MESH:C508864
+    label: Drug
+    name: Galsulfase
+  - id: GO:0003943
+    label: BiologicalProcess
+    name: N-acetylgalactosamine-4-sulfatase activity
+  - id: MESH:D006025
+    label: ChemicalSubstance
+    name: Glycosaminoglycans
+  - id: GO:0005764
+    label: CellularComponent
+    name: Lysosome
+  - id: MESH:D016464
+    label: Disease
+    name: Lysosomal Storage Diseases
+  - id: MESH:D009087
+    label: Disease
+    name: Maroteaux-Lamy syndrome
+references:
+  - https://go.drugbank.com/drugs/DB01279
+  - https://en.wikipedia.org/wiki/Maroteaux%E2%80%93Lamy_syndrome#Treatment

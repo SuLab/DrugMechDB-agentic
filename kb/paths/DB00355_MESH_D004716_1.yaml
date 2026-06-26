@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00355_MESH_D004716_1
+  disease: Endometritis
+  disease_mesh: MESH:D004716
+  drug: Aztreonam
+  drug_mesh: MESH:D001398
+  drugbank: DB:DB00355
+links:
+  - key: decreases activity of
+    source: MESH:D001398
+    target: InterPro:IPR001460
+  - key: positively regulates
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:813
+  - key: causes
+    source: taxonomy:813
+    target: MESH:D004716
+multigraph: true
+nodes:
+  - id: MESH:D001398
+    label: Drug
+    name: Aztreonam
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:813
+    label: OrganismTaxon
+    name: Chlamydia trachomatis
+  - id: MESH:D004716
+    label: Disease
+    name: Endometritis
+references:
+  - https://go.drugbank.com/drugs/DB00355#mechanism-of-action
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1045915/
+  - https://en.wikipedia.org/wiki/Endometritis

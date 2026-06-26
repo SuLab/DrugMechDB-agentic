@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB01029_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: irbesartan
+  drug_mesh: MESH:C081309
+  drugbank: DB:DB01029
+links:
+  - key: decreases activity of
+    source: MESH:C081309
+    target: UniProt:P30556
+  - key: positively correlated with
+    source: UniProt:P30556
+    target: MESH:D000804
+  - key: causes
+    source: MESH:D000804
+    target: MESH:D014661
+  - key: contributes to
+    source: MESH:D014661
+    target: GO:0045777
+  - key: affects risk for
+    source: GO:0045777
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C081309
+    label: Drug
+    name: Irbesartan
+  - id: UniProt:P30556
+    label: Protein
+    name: Type-1 angiotensin II receptor
+  - id: MESH:D000804
+    label: ChemicalSubstance
+    name: Angiotensin II
+  - id: MESH:D014661
+    label: Disease
+    name: Vasoconstriction
+  - id: GO:0045777
+    label: BiologicalProcess
+    name: Up regulation of blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB01029#BE0000062

@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00986_MESH_D012798_1
+  disease: Excessive salivation
+  disease_mesh: MESH:D012798
+  drug: Glycopyrronium bromide
+  drug_mesh: MESH:D006024
+  drugbank: DB:DB00986
+links:
+  - key: decreases activity of
+    source: MESH:D006024
+    target: UniProt:P20309
+  - key: decreases activity of
+    source: MESH:D006024
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:P20309
+    target: UBERON:0001044
+  - key: positively regulates
+    source: UniProt:P11229
+    target: UBERON:0001044
+  - key: positively regulates
+    source: UBERON:0001044
+    target: GO:0046541
+  - key: positively correlated with
+    source: GO:0046541
+    target: MESH:D012798
+multigraph: true
+nodes:
+  - id: MESH:D006024
+    label: Drug
+    name: Glycopyrronium bromide
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: UBERON:0001044
+    label: GrossAnatomicalStructure
+    name: Saliva-secreting gland
+  - id: GO:0046541
+    label: BiologicalProcess
+    name: Saliva secretion
+  - id: MESH:D012798
+    label: Disease
+    name: Excessive salivation
+references:
+  - https://go.drugbank.com/drugs/DB00986

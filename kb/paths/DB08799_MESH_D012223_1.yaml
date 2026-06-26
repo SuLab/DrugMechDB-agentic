@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB08799_MESH_D012223_1
+  disease: Vasomotor rhinitis
+  disease_mesh: MESH:D012223
+  drug: antazoline
+  drug_mesh: MESH:D000865
+  drugbank: DB:DB08799
+links:
+  - key: decreases activity of
+    source: MESH:D000865
+    target: UniProt:P35367
+  - key: participates in
+    source: UniProt:P35367
+    target: GO:0034776
+  - key: causes
+    source: GO:0034776
+    target: MESH:D012223
+multigraph: true
+nodes:
+  - id: MESH:D000865
+    label: Drug
+    name: antazoline
+  - id: UniProt:P35367
+    label: Protein
+    name: histamine H1 Receptor
+  - id: GO:0034776
+    label: BiologicalProcess
+    name: histamine response
+  - id: MESH:D012223
+    label: Disease
+    name: Vasomotor rhinitis

@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00303_MESH_D011018_1
+  disease: Pneumococcal pneumonia
+  disease_mesh: MESH:D011018
+  drug: ertapenem
+  drug_mesh: MESH:C446479
+  drugbank: DB:DB00303
+links:
+  - key: negatively regulates
+    source: MESH:C446479
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: in taxon
+    source: GO:0009252
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D011018
+multigraph: true
+nodes:
+  - id: MESH:C446479
+    label: Drug
+    name: ertapenem
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding proteins
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D011018
+    label: Disease
+    name: Pneumococcal pneumonia
+references:
+  - https://en.wikipedia.org/wiki/Ertapenem#Mechanism_of_action
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1359/

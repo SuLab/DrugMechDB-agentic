@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB00066_MESH_D016649_1
+  disease: primary ovarian failure
+  disease_mesh: MESH:D016649
+  drug: follitropin
+  drug_mesh: MESH:D005640
+  drugbank: DB:DB00066
+links:
+  - key: increases activity of
+    source: MESH:D005640
+    target: UniProt:P23945
+  - key: positively regulates
+    source: UniProt:P23945
+    target: GO:0030728
+  - key: negatively correlated with
+    source: GO:0030728
+    target: MESH:D016649
+multigraph: true
+nodes:
+  - id: MESH:D005640
+    label: Drug
+    name: follitropin
+  - id: UniProt:P23945
+    label: Protein
+    name: Human follicle stimulating hormone receptor
+  - id: GO:0030728
+    label: BiologicalProcess
+    name: ovulation
+  - id: MESH:D016649
+    label: Disease
+    name: primary ovarian failure

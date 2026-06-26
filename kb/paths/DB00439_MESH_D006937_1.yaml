@@ -1,0 +1,41 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB00439_MESH_D006937_1
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+  drug: Cerivastatin
+  drug_mesh: MESH:C086276
+  drugbank: DB:DB00439
+links:
+  - key: decreases activity of
+    source: MESH:C086276
+    target: UniProt:P04035
+  - key: positively regulates
+    source: UniProt:P04035
+    target: GO:0006695
+  - key: increases abundance of
+    source: GO:0006695
+    target: MESH:D002784
+  - key: positively correlated with
+    source: MESH:D002784
+    target: MESH:D006937
+multigraph: true
+nodes:
+  - id: MESH:C086276
+    label: Drug
+    name: Cerivastatin
+  - id: UniProt:P04035
+    label: Protein
+    name: 3-hydroxy-3-methylglutaryl-coenzyme A reductase
+  - id: GO:0006695
+    label: BiologicalProcess
+    name: Cholesterol biosynthetic process
+  - id: MESH:D002784
+    label: ChemicalSubstance
+    name: Cholesterol
+  - id: MESH:D006937
+    label: Disease
+    name: Hypercholesterolemia
+references:
+  - https://go.drugbank.com/drugs/DB00439

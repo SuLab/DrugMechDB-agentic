@@ -1,0 +1,23 @@
+comment: No evidence found for MoA of citric acid treating pain.
+directed: true
+graph:
+  _id: DB04272_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: citric acid
+  drug_mesh: MESH:D019343
+  drugbank: DB:DB04272
+links:
+  - key: treats
+    source: MESH:D019343
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:D019343
+    label: Drug
+    name: Citric acid
+  - id: MESH:D010146
+    label: Disease
+    name: Pain
+references:
+  - https://go.drugbank.com/drugs/DB04272

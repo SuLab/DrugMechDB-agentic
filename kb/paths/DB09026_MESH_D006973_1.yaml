@@ -1,0 +1,67 @@
+directed: true
+graph:
+  _id: DB09026_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: aliskiren
+  drug_mesh: MESH:C446481
+  drugbank: DB:DB09026
+links:
+  - key: decreases activity of
+    source: MESH:C446481
+    target: UniProt:P00797
+  - key: positively regulates
+    source: UniProt:P00797
+    target: MESH:D000803
+  - key: positively regulates
+    source: MESH:D000803
+    target: MESH:D000804
+  - key: positively regulates
+    source: MESH:D000804
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: MESH:D006973
+  - key: positively regulates
+    source: MESH:D000804
+    target: GO:0070294
+  - key: positively correlated with
+    source: GO:0070294
+    target: GO:0003092
+  - key: contributes to
+    source: GO:0003092
+    target: GO:0045777
+  - key: affects risk for
+    source: GO:0045777
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C446481
+    label: Drug
+    name: Aliskiren
+  - id: UniProt:P00797
+    label: Protein
+    name: Renin
+  - id: MESH:D000803
+    label: ChemicalSubstance
+    name: Angiotensin I
+  - id: MESH:D000804
+    label: ChemicalSubstance
+    name: Angiotensin II
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: GO:0070294
+    label: BiologicalProcess
+    name: Renal sodium ion absorption
+  - id: GO:0003092
+    label: BiologicalProcess
+    name: Renal water retention
+  - id: GO:0045777
+    label: BiologicalProcess
+    name: Positive regulation of blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB09026

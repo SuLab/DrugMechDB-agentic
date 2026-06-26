@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00655_MESH_D000152_1
+  disease: Acne vulgaris
+  disease_mesh: MESH:D000152
+  drug: estrone
+  drug_mesh: MESH:D004970
+  drugbank: DB:DB00655
+links:
+  - key: increases abundance of
+    source: MESH:D004970
+    target: UniProt:P04278
+  - key: located in
+    source: UniProt:P04278
+    target: UBERON:0002107
+  - key: negatively regulates
+    source: UBERON:0002107
+    target: MESH:D013739
+  - key: decreases abundance of
+    source: CL:0000317
+    target: MESH:D012629
+  - key: located in
+    source: MESH:D013739
+    target: CL:0000317
+  - key: treats
+    source: MESH:D012629
+    target: MESH:D000152
+multigraph: true
+nodes:
+  - id: MESH:D004970
+    label: Drug
+    name: estrone
+  - id: UniProt:P04278
+    label: Protein
+    name: sex hormone binidng globulin
+  - id: UBERON:0002107
+    label: GrossAnatomicalStructure
+    name: liver
+  - id: MESH:D013739
+    label: ChemicalSubstance
+    name: testosterone
+  - id: MESH:D012629
+    label: ChemicalSubstance
+    name: sebum
+  - id: CL:0000317
+    label: GrossAnatomicalStructure
+    name: sebocyte
+  - id: MESH:D000152
+    label: Disease
+    name: acne vulgaris
+references:
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5015761/

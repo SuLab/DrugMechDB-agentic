@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB01241_MESH_D015228_1
+  disease: Hypertriglyceridemia
+  disease_mesh: MESH:D015228
+  drug: gemfibrozil
+  drug_mesh: MESH:D015248
+  drugbank: DB:DB01241
+links:
+  - key: increases activity of
+    source: MESH:D015248
+    target: UniProt:Q07869
+  - key: increases activity of
+    source: UniProt:Q07869
+    target: UniProt:P06858
+  - key: positively regulates
+    source: UniProt:P06858
+    target: GO:0016042
+  - key: decreases abundance of
+    source: GO:0016042
+    target: MESH:D014280
+  - key: positively correlated with
+    source: MESH:D014280
+    target: MESH:D015228
+multigraph: true
+nodes:
+  - id: MESH:D015248
+    label: Drug
+    name: Gemfibrozil
+  - id: UniProt:Q07869
+    label: Protein
+    name: Peroxisome proliferator-activated receptor alpha
+  - id: UniProt:P06858
+    label: Protein
+    name: Lipoprotein lipase
+  - id: GO:0016042
+    label: BiologicalProcess
+    name: Lipid catabolic process
+  - id: MESH:D014280
+    label: ChemicalSubstance
+    name: Triglycerides
+  - id: MESH:D015228
+    label: Disease
+    name: Hypertriglyceridemia
+references:
+  - https://go.drugbank.com/drugs/DB01241
+  - https://en.wikipedia.org/wiki/Hypertriglyceridemia

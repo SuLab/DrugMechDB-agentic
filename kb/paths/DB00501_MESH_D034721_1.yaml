@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00501_MESH_D034721_1
+  disease: Mastocytosis, Systemic
+  disease_mesh: MESH:D034721
+  drug: Cimetidine
+  drug_mesh: MESH:D002927
+  drugbank: DB:DB00501
+links:
+  - key: decreases activity of
+    source: MESH:D002927
+    target: UniProt:P25021
+  - key: positively regulates
+    source: UniProt:P25021
+    target: GO:0004969
+  - key: positively correlated with
+    source: GO:0004969
+    target: GO:0002553
+  - key: positively regulates
+    source: GO:0002553
+    target: HP:0001025
+  - key: positively regulates
+    source: GO:0002553
+    target: HP:0012531
+  - key: manifestation of
+    source: HP:0001025
+    target: MESH:D034721
+  - key: manifestation of
+    source: HP:0012531
+    target: MESH:D034721
+multigraph: true
+nodes:
+  - id: MESH:D002927
+    label: Drug
+    name: Cimetidine
+  - id: UniProt:P25021
+    label: Protein
+    name: Histamine H2 receptor
+  - id: GO:0004969
+    label: MolecularActivity
+    name: histamine receptor activity
+  - id: GO:0002553
+    label: BiologicalProcess
+    name: histamine secretion by mast cell
+  - id: HP:0001025
+    label: PhenotypicFeature
+    name: Urticaria
+  - id: HP:0012531
+    label: PhenotypicFeature
+    name: Pain
+  - id: MESH:D034721
+    label: Disease
+    name: Mastocytosis, Systemic
+references:
+  - https://go.drugbank.com/drugs/DB00501#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Cimetidine
+  - https://www.uniprot.org/uniprot/P25021#function
+  - https://en.wikipedia.org/wiki/Mastocytosis#Systemic_mastocytosis_(SM)

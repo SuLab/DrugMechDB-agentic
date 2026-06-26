@@ -1,0 +1,20 @@
+directed: true
+graph:
+  _id: DB11254_MESH_D014010_1
+  disease: Pityriasis versicolor
+  disease_mesh: MESH:D014010
+  drug: acrisorcin
+  drug_mesh: MESH:D000585, MESH:D006604
+  drugbank: DB:DB11254
+links:
+  - key: treats
+    source: DB:DB11254
+    target: MESH:D014010
+multigraph: true
+nodes:
+  - id: DB:DB11254
+    label: Drug
+    name: acrisorcin
+  - id: MESH:D014010
+    label: Disease
+    name: Pityriasis versicolor

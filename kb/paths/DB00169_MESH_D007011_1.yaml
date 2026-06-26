@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00169_MESH_D007011_1
+  disease: Hypoparathyroidism
+  disease_mesh: MESH:D007011
+  drug: Colecalciferol
+  drug_mesh: MESH:D002762
+  drugbank: DB:DB00169
+links:
+  - key: increases activity of
+    source: MESH:D002762
+    target: UniProt:P11473
+  - key: positively regulates
+    source: UniProt:P11473
+    target: GO:0033280
+  - key: positively regulates
+    source: GO:0033280
+    target: GO:0070509
+  - key: negatively correlated with
+    source: GO:0070509
+    target: HP:0002901
+  - key: positively correlated with
+    source: HP:0002901
+    target: MESH:D007011
+multigraph: true
+nodes:
+  - id: MESH:D002762
+    label: Drug
+    name: Colecalciferol
+  - id: UniProt:P11473
+    label: Protein
+    name: Vitamin D3 receptor
+  - id: GO:0033280
+    label: BiologicalProcess
+    name: Response to vitamin D
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Calcium ion import
+  - id: HP:0002901
+    label: PhenotypicFeature
+    name: Hypocalcemia
+  - id: MESH:D007011
+    label: Disease
+    name: Hypoparathyroidism
+references:
+  - https://go.drugbank.com/drugs/DB00169
+  - https://en.wikipedia.org/wiki/Hypoparathyroidism#Treatment
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3257679/

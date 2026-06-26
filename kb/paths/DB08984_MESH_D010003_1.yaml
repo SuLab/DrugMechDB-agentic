@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB08984_MESH_D010003_1
+  disease: Osteoarthritis
+  disease_mesh: MESH:D010003
+  drug: etofenamate
+  drug_mesh: MESH:C015207
+  drugbank: DB:DB08984
+links:
+  - key: subclass of
+    source: MESH:C015207
+    target: CHEBI:35475
+  - key: negatively regulates
+    source: CHEBI:35475
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0002829
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0001386
+  - key: positively correlated with
+    source: HP:0002829
+    target: MESH:D010003
+  - key: positively correlated with
+    source: HP:0001386
+    target: MESH:D010003
+multigraph: true
+nodes:
+  - id: MESH:C015207
+    label: Drug
+    name: etofenamate
+  - id: CHEBI:35475
+    label: ChemicalSubstance
+    name: non-steroidal anti-inflammatory drug
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Arthralgia
+  - id: MESH:D010003
+    label: Disease
+    name: Osteoarthritis
+references:
+  - https://go.drugbank.com/drugs/DB08984
+  - https://en.wikipedia.org/wiki/Etofenamate

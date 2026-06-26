@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01155_MESH_D011019_1
+  disease: Pneumonia due to Mycoplasma pneumoniae
+  disease_mesh: MESH:D011019
+  drug: gemifloxacin
+  drug_mesh: MESH:C103274
+  drugbank: DB:DB01155
+links:
+  - key: decreases activity of
+    source: MESH:C103274
+    target: UniProt:P75352
+  - key: decreases activity of
+    source: MESH:C103274
+    target: UniProt:P22446
+  - key: participates in
+    source: UniProt:P75352
+    target: GO:0044787
+  - key: participates in
+    source: UniProt:P22446
+    target: GO:0044787
+  - key: occurs in
+    source: GO:0044787
+    target: taxonomy:2104
+  - key: causes
+    source: taxonomy:2104
+    target: MESH:D011019
+multigraph: true
+nodes:
+  - id: MESH:C103274
+    label: Drug
+    name: Gemifloxacin
+  - id: UniProt:P75352
+    label: Protein
+    name: DNA topoisomerase 4 subunit A (Mycoplasma pneumoniae)
+  - id: UniProt:P22446
+    label: Protein
+    name: DNA gyrase subunit A (Mycoplasma pneumoniae)
+  - id: GO:0044787
+    label: BiologicalProcess
+    name: Bacterial-type DNA replication
+  - id: taxonomy:2104
+    label: OrganismTaxon
+    name: Mycoplasma pneumoniae
+  - id: MESH:D011019
+    label: Disease
+    name: Pneumonia due to Mycoplasma pneumoniae
+references:
+  - https://go.drugbank.com/drugs/DB01155

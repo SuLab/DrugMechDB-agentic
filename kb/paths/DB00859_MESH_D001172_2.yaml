@@ -1,0 +1,48 @@
+comment: Mechanism of action of penicillamine wrt to Rheumatoid arthritis is unknown
+directed: true
+graph:
+  _id: DB00859_MESH_D001172_2
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: penicillamine
+  drug_mesh: MESH:D010396
+  drugbank: DB:DB00859
+links:
+  - key: capable of
+    source: MESH:D010396
+    target: GO:0046911
+  - key: decreases activity of
+    source: GO:0046911
+    target: CL:0000084
+  - key: participates in
+    source: CL:0000084
+    target: GO:0006955
+  - key: positively correlated with
+    source: GO:0006955
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:D010396
+    label: Drug
+    name: penicillamine
+  - id: GO:0046911
+    label: MolecularActivity
+    name: metal chelating activity
+  - id: CL:0000084
+    label: Cell
+    name: T cell
+  - id: GO:0006955
+    label: BiologicalProcess
+    name: Immune response
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammation
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB00859
+  - https://www.sciencedirect.com/science/article/pii/B9780080280240500165

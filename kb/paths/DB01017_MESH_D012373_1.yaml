@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01017_MESH_D012373_1
+  disease: Rocky Mountain Spotted Fever
+  disease_mesh: MESH:D012373
+  drug: minocycline
+  drug_mesh: MESH:D008911
+  drugbank: DB:DB01017
+links:
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:B0BX57
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:B0BWQ1
+  - key: positively regulates
+    source: UniProt:B0BX57
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:B0BWQ1
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:783
+  - key: causes
+    source: taxonomy:783
+    target: MESH:D012373
+multigraph: true
+nodes:
+  - id: MESH:D008911
+    label: Drug
+    name: minocycline
+  - id: UniProt:B0BX57
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:B0BWQ1
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:783
+    label: OrganismTaxon
+    name: Rickettsia rickettsii
+  - id: MESH:D012373
+    label: Disease
+    name: Rocky Mountain Spotted Fever
+references:
+  - https://go.drugbank.com/drugs/DB01017#mechanism-of-action
+  - https://www.uniprot.org/uniprot/B0BX57#function
+  - https://www.uniprot.org/uniprot/B0BWQ1#function
+  - https://en.wikipedia.org/wiki/Rocky_Mountain_spotted_fever

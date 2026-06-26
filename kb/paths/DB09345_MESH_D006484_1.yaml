@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DB09345_MESH_D006484_1
+  disease: Hemorrhoids
+  disease_mesh: MESH:D006484
+  drug: pramocaine
+  drug_mesh: MESH:C005548
+  drugbank: DB:DB09345
+links:
+  - key: negatively regulates
+    source: MESH:C005548
+    target: InterPro:IPR001696
+  - key: positively regulates
+    source: InterPro:IPR001696
+    target: GO:0006814
+  - key: positively correlated with
+    source: GO:0006814
+    target: GO:0086010
+  - key: regulates
+    source: GO:0086010
+    target: GO:0007600
+  - key: correlated with
+    source: GO:0007600
+    target: HP:0000989
+  - key: correlated with
+    source: GO:0007600
+    target: HP:0500005
+  - key: manifestation of
+    source: HP:0000989
+    target: MESH:D006484
+  - key: manifestation of
+    source: HP:0500005
+    target: MESH:D006484
+multigraph: true
+nodes:
+  - id: MESH:C005548
+    label: Drug
+    name: pramocaine
+  - id: InterPro:IPR001696
+    label: GeneFamily
+    name: Voltage gated sodium channel, alpha subunit
+  - id: GO:0006814
+    label: BiologicalProcess
+    name: sodium ion transport
+  - id: GO:0086010
+    label: BiologicalProcess
+    name: membrane depolarization during action potential
+  - id: GO:0007600
+    label: BiologicalProcess
+    name: sensory perception
+  - id: HP:0000989
+    label: PhenotypicFeature
+    name: Pruritus
+  - id: HP:0500005
+    label: PhenotypicFeature
+    name: Anal pain
+  - id: MESH:D006484
+    label: Disease
+    name: Hemorrhoids
+references:
+  - https://go.drugbank.com/drugs/DB09345

@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01127_MESH_D014008_1
+  disease: Tinea Pedis
+  disease_mesh: MESH:D014008
+  drug: econazole
+  drug_mesh: MESH:D004464
+  drugbank: DB:DB01127
+links:
+  - key: decreases activity of
+    source: MESH:D004464
+    target: UniProt:P10613
+  - key: positively regulates
+    source: UniProt:P10613
+    target: GO:0006696
+  - key: produces
+    source: GO:0006696
+    target: MESH:D004875
+  - key: located in
+    source: MESH:D004875
+    target: GO:0005886
+  - key: in taxon
+    source: GO:0005886
+    target: taxonomy:5551
+  - key: causes
+    source: taxonomy:5551
+    target: MESH:D014008
+multigraph: true
+nodes:
+  - id: MESH:D004464
+    label: Drug
+    name: econazole
+  - id: UniProt:P10613
+    label: Protein
+    name: Lanosterol 14-alpha demethylase
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: ergosterol biosynthetic process
+  - id: MESH:D004875
+    label: ChemicalSubstance
+    name: Ergosterol
+  - id: GO:0005886
+    label: CellularComponent
+    name: plasma membrane
+  - id: taxonomy:5551
+    label: OrganismTaxon
+    name: Trichophyton rubrum
+  - id: MESH:D014008
+    label: Disease
+    name: Tinea Pedis
+references:
+  - https://go.drugbank.com/drugs/DB01127#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Athlete%27s_foot

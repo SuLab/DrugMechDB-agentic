@@ -1,0 +1,65 @@
+comment: The disease is denoted Menopausal flushing in the original file. Note that
+  a combination therapy of estradiol and drospirenone would be more effective at reducing
+  the frequency of hot flushes and other menopausal symptoms, than a mono-therapy
+  relying on progestin only. Also, since many progestogens have off-target effects
+  including estrogenic effects, the improvement in hot flashes maybe due to the drug
+  binding to estrogen receptors instead. Note the term Vasomotor System (https://en.wikipedia.org/wiki/Vasomotor_center)
+  does not seem to be represented in other ontologies.
+directed: true
+graph:
+  _id: DB01395_MESH_D019584_1
+  disease: Hot Flashes
+  disease_mesh: MESH:D019584
+  drug: drospirenone
+  drug_mesh: MESH:C035144
+  drugbank: DB:DB01395
+links:
+  - key: positively regulates
+    source: MESH:C035144
+    target: UniProt:P06401
+  - key: decreases abundance of
+    source: UniProt:P06401
+    target: Pfam:PF00446
+  - key: positively correlated with
+    source: Pfam:PF00446
+    target: MESH:D019584
+  - key: correlated with
+    source: UniProt:P06401
+    target: MESH:D014666
+  - key: positively regulates
+    source: MESH:D014666
+    target: GO:0001659
+  - key: negatively correlated with
+    source: GO:0001659
+    target: HP:0005968
+  - key: positively correlated with
+    source: HP:0005968
+    target: MESH:D019584
+multigraph: true
+nodes:
+  - id: MESH:C035144
+    label: Drug
+    name: drospirenone
+  - id: UniProt:P06401
+    label: Protein
+    name: Progesterone receptor
+  - id: Pfam:PF00446
+    label: GeneFamily
+    name: Gonadotropin-releasing hormone
+  - id: MESH:D014666
+    label: GrossAnatomicalStructure
+    name: Vasomotor System
+  - id: GO:0001659
+    label: BiologicalProcess
+    name: temperature homeostasis
+  - id: HP:0005968
+    label: PhenotypicFeature
+    name: Temperature instability
+  - id: MESH:D019584
+    label: Disease
+    name: Hot Flashes
+references:
+  - https://go.drugbank.com/drugs/DB01395#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Progestogen_(medication)#Pharmacodynamics
+  - https://www.tandfonline.com/doi/full/10.1080/13697137.2018.1472567
+  - https://journals.lww.com/co-endocrinology/Abstract/2015/12000/Progesterone_or_progestin_as_menopausal_ovarian.13.aspx

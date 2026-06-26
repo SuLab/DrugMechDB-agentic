@@ -1,0 +1,67 @@
+directed: true
+graph:
+  _id: DB00568_MESH_D009325_1
+  disease: Nausea
+  disease_mesh: MESH:D009325
+  drug: Cinnarizine
+  drug_mesh: MESH:D002936
+  drugbank: DB:DB00568
+links:
+  - key: negatively regulates
+    source: MESH:D002936
+    target: InterPro:IPR005446
+  - key: negatively regulates
+    source: MESH:D002936
+    target: InterPro:IPR005445
+  - key: decreases activity of
+    source: MESH:D002936
+    target: UniProt:P35367
+  - key: positively regulates
+    source: InterPro:IPR005446
+    target: GO:0070588
+  - key: positively regulates
+    source: InterPro:IPR005445
+    target: GO:0070588
+  - key: positively regulates
+    source: UniProt:P35367
+    target: GO:0014829
+  - key: positively correlated with
+    source: GO:0070588
+    target: GO:0014829
+  - key: occurs in
+    source: GO:0014829
+    target: UBERON:0002282
+  - key: correlated with
+    source: UBERON:0002282
+    target: MESH:D009325
+multigraph: true
+nodes:
+  - id: MESH:D002936
+    label: Drug
+    name: Cinnarizine
+  - id: InterPro:IPR005446
+    label: GeneFamily
+    name: Voltage-dependent calcium channel, L-type, alpha-1 subunit
+  - id: InterPro:IPR005445
+    label: GeneFamily
+    name: Voltage-dependent calcium channel, T-type, alpha-1 subunit
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: GO:0070588
+    label: BiologicalProcess
+    name: calcium ion transmembrane transport
+  - id: GO:0014829
+    label: BiologicalProcess
+    name: vascular associated smooth muscle contraction
+  - id: UBERON:0002282
+    label: GrossAnatomicalStructure
+    name: stria vascularis of cochlear duct
+  - id: MESH:D009325
+    label: Disease
+    name: Nausea
+references:
+  - https://go.drugbank.com/drugs/DB00568#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Cinnarizine
+  - https://www.uniprot.org/uniprot/P35367#function
+  - https://en.wikipedia.org/wiki/Nausea

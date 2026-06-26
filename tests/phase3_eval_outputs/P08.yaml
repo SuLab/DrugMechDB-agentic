@@ -1,0 +1,65 @@
+directed: true
+multigraph: true
+graph:
+  _id: P08_DB00002_MESH_D015179
+  drug: Cetuximab
+  drug_mesh: MESH:D000068818
+  drugbank: DB:DB00002
+  disease: Colorectal Neoplasms
+  disease_mesh: MESH:D015179
+nodes:
+  - id: MESH:D000068818
+    name: Cetuximab
+    label: Drug
+  - id: UniProt:P00533
+    name: Epidermal growth factor receptor
+    label: Protein
+  - id: GO:0000165
+    name: MAPK cascade
+    label: BiologicalProcess
+  - id: GO:0008283
+    name: cell population proliferation
+    label: BiologicalProcess
+  - id: MESH:D015179
+    name: Colorectal Neoplasms
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000068818
+    target: UniProt:P00533
+    evidence:
+      - reference: PMID:16736979
+        snippet: Monoclonal antibodies bind to the extracellular domain of EGFR, preventing ligand binding and interrupting the signaling cascade.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Cetuximab is a monoclonal antibody that binds the EGFR extracellular domain, blocking ligand-induced receptor activation and thereby decreasing EGFR signaling activity.
+  - key: positively regulates
+    source: UniProt:P00533
+    target: GO:0000165
+    evidence:
+      - reference: PMID:33184860
+        snippet: EGFR transactivation resulted in the activation of ERK1/2 and AKT.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Activated EGFR drives phosphorylation of ERK1/2 (the terminal kinases of the MAPK cascade), demonstrating that EGFR positively regulates the MAPK cascade in colorectal cancer cells.
+  - key: positively regulates
+    source: GO:0000165
+    target: GO:0008283
+    evidence:
+      - reference: PMID:30273442
+        snippet: The Ras/mitogen-activated protein kinase (MAPK) pathway controls fundamental cellular processes such as proliferation, differentiation, and apoptosis.
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: MAPK pathway activity drives epithelial cell proliferation; loss of ERK1/2 negative regulation (DUSP6 KO) increases proliferation, confirming MAPK positively regulates cell population proliferation.
+  - key: contributes to
+    source: GO:0008283
+    target: MESH:D015179
+    evidence:
+      - reference: PMID:41361128
+        snippet: These mechanisms not only promote uncontrolled proliferation but also reinforce therapeutic resistance by dynamically modifying the tumor microenvironment (TME).
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Dysregulated signaling pathways in GI/colorectal cancers promote uncontrolled cell proliferation, which is a hallmark mechanism contributing to colorectal cancer progression.
+references:
+  - https://go.drugbank.com/drugs/DB00002#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P00533#function

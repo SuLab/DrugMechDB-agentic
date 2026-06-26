@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00760_MESH_D016920_2
+  disease: Bacterial meningitis
+  disease_mesh: MESH:D016920
+  drug: meropenem
+  drug_mesh: MESH:C059500
+  drugbank: DB:DB00760
+links:
+  - key: decreases activity of
+    source: MESH:C059500
+    target: UniProt:P0A0Z5
+  - key: positively regulates
+    source: UniProt:P0A0Z5
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: part of
+    source: GO:0009273
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:487
+  - key: causes
+    source: taxonomy:487
+    target: MESH:D016920
+multigraph: true
+nodes:
+  - id: MESH:C059500
+    label: Drug
+    name: meropenem
+  - id: UniProt:P0A0Z5
+    label: Protein
+    name: Penicillin-binding protein 1A (Neisseria meningitidis)
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: taxonomy:487
+    label: OrganismTaxon
+    name: Neisseria meningitidis
+  - id: MESH:D016920
+    label: Disease
+    name: Bacterial meningitis
+references:
+  - https://go.drugbank.com/drugs/DB00760#BE0000744
+  - https://en.wikipedia.org/wiki/Meningitis#Bacterial

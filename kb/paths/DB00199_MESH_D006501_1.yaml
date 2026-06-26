@@ -1,0 +1,44 @@
+comment: Erythromycin ethylsuccinate is an ester of erythromycin suitable for oral
+  administration, that is used to treat or prevent infections caused by bacteria.
+directed: true
+graph:
+  _id: DB00199_MESH_D006501_1
+  disease: Hepatic Encephalopathy
+  disease_mesh: MESH:D006501
+  drug: erythromycin ethylsuccinate
+  drug_mesh: MESH:D015643
+  drugbank: DB:DB00199
+links:
+  - key: negatively regulates
+    source: MESH:D015643
+    target: MESH:D012338
+  - key: participates in
+    source: MESH:D012338
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D006501
+multigraph: true
+nodes:
+  - id: MESH:D015643
+    label: Drug
+    name: erythromycin ethylsuccinate
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D006501
+    label: Disease
+    name: Hepatic Encephalopathy
+references:
+  - https://go.drugbank.com/drugs/DB00199#mechanism-of-action
+  - https://www.rxlist.com/erythromycin-ethylsuccinate-drug.htm
+  - https://en.wikipedia.org/wiki/Hepatic_encephalopathy

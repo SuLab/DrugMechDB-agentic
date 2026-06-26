@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01005_MESH_D000755_1
+  disease: Anemia, Sickle Cell
+  disease_mesh: MESH:D000755
+  drug: hydroxycarbamide
+  drug_mesh: MESH:D006918
+  drugbank: DB:DB01005
+links:
+  - key: decreases activity of
+    source: MESH:D006918
+    target: UniProt:P23921
+  - key: positively regulates
+    source: UniProt:P23921
+    target: GO:0090592
+  - key: positively correlated with
+    source: GO:0090592
+    target: HP:0031377
+  - key: causes
+    source: HP:0031377
+    target: MESH:D000755
+multigraph: true
+nodes:
+  - id: MESH:D006918
+    label: Drug
+    name: Hydroxycarbamide
+  - id: UniProt:P23921
+    label: Protein
+    name: Ribonucleoside-diphosphate reductase large subunit
+  - id: GO:0090592
+    label: BiologicalProcess
+    name: DNA synthesis involved in DNA replication
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D000755
+    label: Disease
+    name: Anemia, Sickle Cell
+references:
+  - https://go.drugbank.com/drugs/DB01005

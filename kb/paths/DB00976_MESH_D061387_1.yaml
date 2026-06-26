@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB00976_MESH_D061387_1
+  disease: Chlamydial pneumonia
+  disease_mesh: MESH:D061387
+  drug: telithromycin
+  drug_mesh: MESH:C106791
+  drugbank: DB:DB00976
+links:
+  - key: disrupts
+    source: MESH:C106791
+    target: MESH:D012338
+  - key: negatively regulates
+    source: MESH:C106791
+    target: GO:0000028
+  - key: positively correlated with
+    source: GO:0000028
+    target: GO:0043043
+  - key: location of
+    source: MESH:D012338
+    target: GO:0043043
+  - key: in taxon
+    source: GO:0043043
+    target: taxonomy:83558
+  - key: causes
+    source: taxonomy:83558
+    target: MESH:D061387
+multigraph: true
+nodes:
+  - id: MESH:C106791
+    label: Drug
+    name: telithromycin
+  - id: MESH:D012338
+    label: CellularComponent
+    name: RNA, Ribosomal, 23S
+  - id: GO:0000028
+    label: BiologicalProcess
+    name: ribosomal small subunit assembly
+  - id: GO:0043043
+    label: BiologicalProcess
+    name: peptide biosynthetic process
+  - id: taxonomy:83558
+    label: OrganismTaxon
+    name: Chlamydia pneumoniae
+  - id: MESH:D061387
+    label: Disease
+    name: Chlamydial pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB00976
+  - https://pubchem.ncbi.nlm.nih.gov/compound/3002190#section=Mechanism-of-Action
+  - https://en.wikipedia.org/wiki/Telithromycin#Mechanism_of_action

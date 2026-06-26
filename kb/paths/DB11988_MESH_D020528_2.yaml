@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB11988_MESH_D020528_2
+  disease: Primary progressive multiple sclerosis
+  disease_mesh: MESH:D020528
+  drug: ocrelizumab
+  drug_mesh: MESH:C533411
+  drugbank: DB:DB11988
+links:
+  - key: positively regulates
+    source: MESH:C533411
+    target: GO:0001788
+  - key: precedes
+    source: GO:0001788
+    target: GO:0001783
+  - key: negatively correlated with
+    source: GO:0001783
+    target: MESH:D020528
+multigraph: true
+nodes:
+  - id: MESH:C533411
+    label: Drug
+    name: Ocrelizumab
+  - id: GO:0001788
+    label: BiologicalProcess
+    name: Antibody-dependent cellular cytotoxicity
+  - id: GO:0001783
+    label: BiologicalProcess
+    name: B cell apoptotic process
+  - id: MESH:D020528
+    label: Disease
+    name: Primary progressive multiple sclerosis
+references:
+  - https://go.drugbank.com/drugs/DB11988

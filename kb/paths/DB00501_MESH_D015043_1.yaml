@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00501_MESH_D015043_1
+  disease: Zollinger-Ellison Syndrome
+  disease_mesh: MESH:D015043
+  drug: Cimetidine
+  drug_mesh: MESH:D002927
+  drugbank: DB:DB00501
+links:
+  - key: decreases activity of
+    source: MESH:D002927
+    target: UniProt:P25021
+  - key: positively regulates
+    source: UniProt:P25021
+    target: GO:0001696
+  - key: increases abundance of
+    source: GO:0001696
+    target: MESH:D005744
+  - key: contributes to
+    source: MESH:D005744
+    target: HP:0004398
+  - key: manifestation of
+    source: HP:0004398
+    target: MESH:D015043
+multigraph: true
+nodes:
+  - id: MESH:D002927
+    label: Drug
+    name: Cimetidine
+  - id: UniProt:P25021
+    label: Protein
+    name: Histamine H2 receptor
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: HP:0004398
+    label: PhenotypicFeature
+    name: Peptic ulcer
+  - id: MESH:D015043
+    label: Disease
+    name: Zollinger-Ellison Syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00501#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Cimetidine
+  - https://www.uniprot.org/uniprot/P25021#function
+  - https://en.wikipedia.org/wiki/Zollinger%E2%80%93Ellison_syndrome

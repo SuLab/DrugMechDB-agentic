@@ -1,0 +1,77 @@
+directed: true
+multigraph: true
+graph:
+  _id: P10_DB00072_MESH_D001943
+  drug: Trastuzumab
+  drug_mesh: MESH:D000068878
+  drugbank: DB:DB00072
+  disease: Breast Neoplasms
+  disease_mesh: MESH:D001943
+nodes:
+  - id: MESH:D000068878
+    name: Trastuzumab
+    label: Drug
+  - id: UniProt:P04626
+    name: Receptor tyrosine-protein kinase erbB-2
+    label: Protein
+  - id: GO:0008283
+    name: cell population proliferation
+    label: BiologicalProcess
+  - id: MESH:D001943
+    name: Breast Neoplasms
+    label: Disease
+links:
+  - key: molecularly interacts with
+    source: MESH:D000068878
+    target: UniProt:P04626
+    evidence:
+      - reference: PMID:29490608
+        snippet: Trastuzumab bound to HER2 specifically and with high affinity.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Direct binding of trastuzumab to HER2 was demonstrated in CHO cells expressing human HER2, confirming that trastuzumab molecularly interacts with the ERBB2/HER2 receptor.
+  - key: decreases activity of
+    source: MESH:D000068878
+    target: UniProt:P04626
+    evidence:
+      - reference: PMID:24835103
+        snippet: Overexpression of CHK mimics trastuzumab treatment to mediate ErbB2-Y1248 phosphorylation, Akt downregulation, and growth inhibition of trastuzumab-sensitive breast cancer cells.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Trastuzumab binding to ERBB2 leads to downstream Akt downregulation and growth inhibition, indicating that trastuzumab decreases the effective oncogenic activity of the ERBB2 receptor in HER2-positive breast cancer cells.
+      - reference: PMID:19934303
+        snippet: Trastuzumab partially decreased PI3K but not mTOR activity.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Trastuzumab reduces PI3K activity downstream of ERBB2, supporting that it decreases ERBB2-mediated signaling activity.
+  - key: positively regulates
+    source: UniProt:P04626
+    target: GO:0008283
+    evidence:
+      - reference: PMID:31656036
+        snippet: HER2 is a receptor tyrosine kinase that activates downstream signalling pathways involved in cellular survival, growth and proliferation.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: ERBB2/HER2 is described as directly activating downstream signaling that drives cell growth and proliferation, establishing ERBB2 as a positive regulator of cell population proliferation.
+      - reference: PMID:23982598
+        snippet: Inhibition of HER2 signalling results in a reduction of tumour cell proliferation, invasiveness and survival.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: The inverse relationship is stated directly — blocking HER2 signaling reduces tumour cell proliferation — confirming that HER2 signalling positively regulates tumour cell proliferation.
+  - key: contributes to
+    source: GO:0008283
+    target: MESH:D001943
+    evidence:
+      - reference: PMID:41310794
+        snippet: HER2 overexpression reverses the proliferation inhibition caused by CAND1 loss both in vitro and in vivo.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: HER2-driven cell proliferation restores tumor growth in HER2-positive breast cancer models both in vitro and in vivo, demonstrating that cell population proliferation is a key contributor to HER2-positive breast cancer progression.
+      - reference: PMID:31656036
+        snippet: Amplification of the gene and subsequent overexpression of the HER2 protein lead to increased activation of downstream signalling and are implicated in several cancer types.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: HER2 amplification leads to increased downstream signaling including cell proliferation, which is implicated in breast cancer (among other cancer types), supporting that cell proliferation contributes to HER2-positive breast cancer.
+references:
+  - https://go.drugbank.com/drugs/DB00072#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P04626#function

@@ -1,0 +1,49 @@
+comment: exact MoA is unknown
+directed: true
+graph:
+  _id: DB06708_MESH_D016778_1
+  disease: Falciparum malaria
+  disease_mesh: MESH:D016778
+  drug: lumefantrine
+  drug_mesh: MESH:C102070
+  drugbank: DB:DB06708
+links:
+  - key: negatively regulates
+    source: MESH:C102070
+    target: UniProt:Q8IL04
+  - key: positively correlated with
+    source: UniProt:Q8IL04
+    target: GO:0042167
+  - key: decreases abundance of
+    source: GO:0042167
+    target: MESH:D006418
+  - key: disrupts
+    source: MESH:D006418
+    target: taxonomy:5833
+  - key: causes
+    source: taxonomy:5833
+    target: MESH:D016778
+multigraph: true
+nodes:
+  - id: MESH:C102070
+    label: Drug
+    name: lumefantrine
+  - id: UniProt:Q8IL04
+    label: Protein
+    name: Heme ligase
+  - id: GO:0042167
+    label: BiologicalProcess
+    name: heme catabolic process
+  - id: MESH:D006418
+    label: ChemicalSubstance
+    name: Heme
+  - id: taxonomy:5833
+    label: OrganismTaxon
+    name: Plasmodium falciparum
+  - id: MESH:D016778
+    label: Disease
+    name: Falciparum malaria
+references:
+  - https://go.drugbank.com/drugs/DB06708#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q8IL04#function
+  - https://en.wikipedia.org/wiki/Heme#In_health_and_disease

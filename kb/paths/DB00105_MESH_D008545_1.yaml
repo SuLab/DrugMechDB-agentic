@@ -1,0 +1,72 @@
+comment: The precise mechanisms of action of interferons have not been fully elucidated
+  but appear to be complex, and the resultant activities appear to be substantially
+  interrelated.
+directed: true
+graph:
+  _id: DB00105_MESH_D008545_1
+  disease: Malignant melanoma
+  disease_mesh: MESH:D008545
+  drug: interferon alfa-2b
+  drug_mesh: MESH:C554127
+  drugbank: DB:DB00105
+links:
+  - key: molecularly interacts with
+    source: MESH:C554127
+    target: UniProt:P48551
+  - key: molecularly interacts with
+    source: MESH:C554127
+    target: UniProt:P17181
+  - key: negatively regulates
+    source: UniProt:P48551
+    target: GO:0097325
+  - key: negatively regulates
+    source: UniProt:P17181
+    target: GO:0097325
+  - key: positively regulates
+    source: UniProt:P48551
+    target: GO:0006915
+  - key: positively regulates
+    source: UniProt:P17181
+    target: GO:0006915
+  - key: decreases abundance of
+    source: UniProt:P48551
+    target: MESH:D015513
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D008545
+  - key: decreases abundance of
+    source: UniProt:P17181
+    target: MESH:D015513
+  - key: positively correlated with
+    source: MESH:D015513
+    target: MESH:D008545
+  - key: positively correlated with
+    source: GO:0097325
+    target: MESH:D008545
+multigraph: true
+nodes:
+  - id: MESH:C554127
+    label: Drug
+    name: interferon alfa-2b
+  - id: UniProt:P48551
+    label: Protein
+    name: Interferon alpha/beta receptor 2
+  - id: UniProt:P17181
+    label: Protein
+    name: Interferon alpha/beta receptor 1
+  - id: GO:0097325
+    label: BiologicalProcess
+    name: melanocyte proliferation
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: MESH:D015513
+    label: Protein
+    name: Oncogene Proteins
+  - id: MESH:D008545
+    label: Disease
+    name: Malignant melanoma
+references:
+  - https://go.drugbank.com/drugs/DB00105
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Interferon-alfa-2B#section=Mechanism-of-Action
+  - https://en.wikipedia.org/wiki/Melanoma

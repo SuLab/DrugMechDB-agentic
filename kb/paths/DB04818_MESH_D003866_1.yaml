@@ -1,0 +1,90 @@
+comment: Iproniazid is withdrawn in USA due to interactions with tyrosine in food
+  products.
+directed: true
+graph:
+  _id: DB04818_MESH_D003866_1
+  disease: Depressive Disorder
+  disease_mesh: MESH:D003866
+  drug: Iproniazid
+  drug_mesh: MESH:D007490
+  drugbank: DB:DB04818
+links:
+  - key: decreases activity of
+    source: MESH:D007490
+    target: UniProt:P21397
+  - key: decreases activity of
+    source: MESH:D007490
+    target: UniProt:P27338
+  - key: has metabolite
+    source: MESH:D007490
+    target: MESH:C044821
+  - key: decreases activity of
+    source: MESH:C044821
+    target: UniProt:P21397
+  - key: decreases activity of
+    source: MESH:C044821
+    target: UniProt:P27338
+  - key: positively regulates
+    source: UniProt:P21397
+    target: GO:0042429
+  - key: positively regulates
+    source: UniProt:P21397
+    target: GO:0042420
+  - key: positively regulates
+    source: UniProt:P27338
+    target: GO:0042420
+  - key: decreases abundance of
+    source: GO:0042429
+    target: MESH:D012701
+  - key: decreases abundance of
+    source: GO:0042420
+    target: MESH:D004298
+  - key: negatively correlated with
+    source: MESH:D012701
+    target: HP:0000716
+  - key: negatively correlated with
+    source: MESH:D004298
+    target: HP:0000716
+  - key: manifestation of
+    source: HP:0000716
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:D007490
+    label: Drug
+    name: Iproniazid
+  - id: UniProt:P21397
+    label: Protein
+    name: Amine oxidase [flavin-containing] A
+  - id: UniProt:P27338
+    label: Protein
+    name: Amine oxidase [flavin-containing] B
+  - id: MESH:C044821
+    label: ChemicalSubstance
+    name: 1-isopropylhydrazine
+  - id: GO:0042429
+    label: BiologicalProcess
+    name: serotonin catabolic process
+  - id: GO:0042420
+    label: BiologicalProcess
+    name: dopamine catabolic process
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: HP:0000716
+    label: PhenotypicFeature
+    name: Depression
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive Disorder
+references:
+  - https://go.drugbank.com/drugs/DB04818#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Iproniazid#Reactions_and_mechanism_of_action
+  - https://en.wikipedia.org/wiki/Monoamine_oxidase_inhibitor#Mechanism_of_action
+  - https://www.uniprot.org/uniprot/P21397#function
+  - https://www.uniprot.org/uniprot/P27338#function
+  - https://en.wikipedia.org/wiki/Depression_(mood)
+  - https://en.wikipedia.org/wiki/Major_depressive_disorder

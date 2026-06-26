@@ -1,0 +1,69 @@
+directed: true
+graph:
+  _id: DB01359_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: penbutolol
+  drug_mesh: MESH:D010394
+  drugbank: DB:DB01359
+links:
+  - key: decreases activity of
+    source: MESH:D010394
+    target: UniProt:P08588
+  - key: located in
+    source: UniProt:P08588
+    target: UBERON:0000948
+  - key: positively regulates
+    source: UBERON:0000948
+    target: HP:0033533
+  - key: positively regulates
+    source: UniProt:P08588
+    target: UniProt:P00797
+  - key: located in
+    source: UniProt:P00797
+    target: UBERON:0002113
+  - key: positively regulates
+    source: UBERON:0002113
+    target: GO:0042310
+  - key: positively regulates
+    source: GO:0042310
+    target: GO:0008217
+  - key: positively correlated with
+    source: HP:0033533
+    target: GO:0008217
+  - key: positively correlated with
+    source: GO:0008217
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D010394
+    label: Drug
+    name: penbutolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UBERON:0000948
+    label: GrossAnatomicalStructure
+    name: Heart
+  - id: HP:0033533
+    label: PhenotypicFeature
+    name: Increased cardiac output
+  - id: UniProt:P00797
+    label: Protein
+    name: Renin
+  - id: UBERON:0002113
+    label: GrossAnatomicalStructure
+    name: Kidney
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: GO:0008217
+    label: BiologicalProcess
+    name: Blood Pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB01359#BE0000172
+  - https://en.wikipedia.org/wiki/Penbutolol
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Penbutolol

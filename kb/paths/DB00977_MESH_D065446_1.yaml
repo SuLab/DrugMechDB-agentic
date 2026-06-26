@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00977_MESH_D065446_1
+  disease: Premenstrual dysphoric disorder
+  disease_mesh: MESH:D065446
+  drug: Ethinylestradiol
+  drug_mesh: MESH:D004997
+  drugbank: DB:DB00977
+links:
+  - key: increases activity of
+    source: MESH:D004997
+    target: UniProt:P03372
+  - key: participates in
+    source: UniProt:P03372
+    target: GO:0043627
+  - key: increases abundance of
+    source: GO:0043627
+    target: MESH:D012701
+  - key: negatively correlated with
+    source: MESH:D012701
+    target: MESH:D019964
+  - key: positively correlated with
+    source: MESH:D019964
+    target: MESH:D065446
+multigraph: true
+nodes:
+  - id: MESH:D004997
+    label: Drug
+    name: Ethinylestradiol
+  - id: UniProt:P03372
+    label: Protein
+    name: Estrogen receptor alpha
+  - id: GO:0043627
+    label: BiologicalProcess
+    name: Response to estrogen
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: MESH:D019964
+    label: Disease
+    name: Mood Disorders
+  - id: MESH:D065446
+    label: Disease
+    name: Premenstrual dysphoric disorder
+references:
+  - https://go.drugbank.com/drugs/DB00977
+  - https://pubmed.ncbi.nlm.nih.gov/29876339/
+  - https://en.wikipedia.org/wiki/Premenstrual_dysphoric_disorder

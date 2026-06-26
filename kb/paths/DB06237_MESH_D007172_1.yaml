@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB06237_MESH_D007172_1
+  disease: Erectile Dysfunction
+  disease_mesh: MESH:D007172
+  drug: avanafil
+  drug_mesh: MESH:C553414
+  drugbank: DB:DB06237
+links:
+  - key: decreases activity of
+    source: MESH:C553414
+    target: UniProt:O76074
+  - key: positively regulates
+    source: UniProt:O76074
+    target: GO:0046069
+  - key: decreases abundance of
+    source: GO:0046069
+    target: MESH:D006152
+  - key: positively regulates
+    source: MESH:D006152
+    target: GO:0044557
+  - key: positively correlated with
+    source: GO:0044557
+    target: GO:0008015
+  - key: negatively correlated with
+    source: GO:0008015
+    target: MESH:D007172
+multigraph: true
+nodes:
+  - id: MESH:C553414
+    label: Drug
+    name: avanafil
+  - id: UniProt:O76074
+    label: Protein
+    name: cGMP-specific 3',5'-cyclic phosphodiesterase
+  - id: GO:0046069
+    label: BiologicalProcess
+    name: cGMP catabolic process
+  - id: MESH:D006152
+    label: ChemicalSubstance
+    name: Cyclic GMP
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: relaxation of smooth muscle
+  - id: GO:0008015
+    label: BiologicalProcess
+    name: blood circulation
+  - id: MESH:D007172
+    label: Disease
+    name: Erectile Dysfunction
+references:
+  - https://go.drugbank.com/drugs/DB06237#mechanism-of-action
+  - https://www.uniprot.org/uniprot/O76074#function
+  - https://en.wikipedia.org/wiki/Erectile_dysfunction

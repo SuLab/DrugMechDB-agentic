@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01413_MESH_D013290_1
+  disease: Streptococcus pyogenes infection
+  disease_mesh: MESH:D013290
+  drug: Cefepime
+  drug_mesh: MESH:C043266
+  drugbank: DB:DB01413
+links:
+  - key: negatively regulates
+    source: MESH:C043266
+    target: UniProt:Q54906
+  - key: positively regulates
+    source: UniProt:Q54906
+    target: GO:0071972
+  - key: participates in
+    source: GO:0071972
+    target: GO:0018104
+  - key: correlated with
+    source: GO:0018104
+    target: GO:0031504
+  - key: in taxon
+    source: GO:0031504
+    target: taxonomy:1314
+  - key: causes
+    source: taxonomy:1314
+    target: MESH:D013290
+multigraph: true
+nodes:
+  - id: MESH:C043266
+    label: Drug
+    name: Cefepime
+  - id: UniProt:Q54906
+    label: Protein
+    name: Penicillin-binding protein (Streptococcus pyogenes)
+  - id: GO:0071972
+    label: MolecularActivity
+    name: peptidoglycan L,D-transpeptidase activity
+  - id: GO:0018104
+    label: BiologicalProcess
+    name: peptidoglycan-protein cross-linking
+  - id: GO:0031504
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall organization
+  - id: taxonomy:1314
+    label: OrganismTaxon
+    name: Streptococcus pyogenes
+  - id: MESH:D013290
+    label: Disease
+    name: Streptococcus pyogenes infection
+references:
+  - https://go.drugbank.com/drugs/DB01413#mechanism-of-action

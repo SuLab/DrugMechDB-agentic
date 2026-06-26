@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB00595_MESH_D013587_1
+  disease: Syphilis
+  disease_mesh: MESH:D013587
+  drug: oxytetracycline
+  drug_mesh: MESH:D010118
+  drugbank: DB:DB00595
+links:
+  - key: decreases activity of
+    source: MESH:D010118
+    target: UniProt:O83328
+  - key: decreases activity of
+    source: MESH:D010118
+    target: UniProt:O83987
+  - key: positively regulates
+    source: UniProt:O83328
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:O83987
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:160
+  - key: causes
+    source: taxonomy:160
+    target: MESH:D013587
+multigraph: true
+nodes:
+  - id: MESH:D010118
+    label: Drug
+    name: oxytetracycline
+  - id: UniProt:O83328
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:O83987
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:160
+    label: OrganismTaxon
+    name: Treponema pallidum
+  - id: MESH:D013587
+    label: Disease
+    name: Syphilis
+references:
+  - https://go.drugbank.com/drugs/DB00595#mechanism-of-action
+  - https://www.uniprot.org/uniprot/O83328#function
+  - https://www.uniprot.org/uniprot/O83987#function
+  - https://en.wikipedia.org/wiki/Syphilis

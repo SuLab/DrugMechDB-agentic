@@ -1,0 +1,83 @@
+comment: Levosimendan has not been approved for use in the U.S. or Canada.  It has
+  been reported that levosimendan may act preferentially as a Ca2+ sensitizer at lower
+  concentrations, whereas at higher concentrations its action as a PDE-III inhibitor
+  becomes more prominent in experimental animals and humans.
+directed: true
+graph:
+  _id: DB00922_MESH_D006333_2
+  disease: Congestive heart failure
+  disease_mesh: MESH:D006333
+  drug: levosimendan
+  drug_mesh: MESH:C076731
+  drugbank: DB:DB00922
+links:
+  - key: decreases activity of
+    source: MESH:C076731
+    target: UniProt:Q14432
+  - key: decreases abundance of
+    source: UniProt:Q14432
+    target: CHEBI:17489
+  - key: positively regulates
+    source: CHEBI:17489
+    target: GO:0004679
+  - key: positively regulates
+    source: GO:0004679
+    target: GO:0005262
+  - key: positively regulates
+    source: GO:0005262
+    target: GO:0070509
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0060047
+  - key: negatively correlated with
+    source: GO:0060047
+    target: MESH:D006333
+  - key: positively regulates
+    source: CHEBI:17489
+    target: GO:0044557
+  - key: positively regulates
+    source: GO:0044557
+    target: GO:0042311
+  - key: negatively correlated with
+    source: GO:0042311
+    target: HP:0000822
+  - key: affects risk for
+    source: HP:0000822
+    target: MESH:D006333
+multigraph: true
+nodes:
+  - id: MESH:C076731
+    label: Drug
+    name: Levosimendan
+  - id: UniProt:Q14432
+    label: Protein
+    name: cGMP-inhibited 3',5'-cyclic phosphodiesterase A
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: GO:0004679
+    label: MolecularActivity
+    name: AMP-activated protein kinase activity
+  - id: GO:0005262
+    label: MolecularActivity
+    name: Calcium channel activity
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Calcium ion import
+  - id: GO:0060047
+    label: BiologicalProcess
+    name: Heart contraction
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: Relaxation of smooth muscle
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: Vasodilation
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: Hypertension
+  - id: MESH:D006333
+    label: Disease
+    name: Congestive heart failure
+references:
+  - https://go.drugbank.com/drugs/DB00922

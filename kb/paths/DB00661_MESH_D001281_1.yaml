@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00661_MESH_D001281_1
+  disease: Atrial fibrillation
+  disease_mesh: MESH:D001281
+  drug: verapamil
+  drug_mesh: MESH:D014700
+  drugbank: DB:DB00661
+links:
+  - key: decreases activity of
+    source: MESH:D014700
+    target: InterPro:IPR005446
+  - key: positively regulates
+    source: InterPro:IPR005446
+    target: GO:0061337
+  - key: positively correlated with
+    source: GO:0061337
+    target: GO:0060047
+  - key: positively correlated with
+    source: GO:0060047
+    target: HP:0001692
+  - key: manifestation of
+    source: HP:0001692
+    target: MESH:D001281
+multigraph: true
+nodes:
+  - id: MESH:D014700
+    label: Drug
+    name: verapamil
+  - id: InterPro:IPR005446
+    label: GeneFamily
+    name: Voltage-dependent calcium channel, L-type, alpha-1 subunit
+  - id: GO:0061337
+    label: BiologicalProcess
+    name: cardiac conduction
+  - id: GO:0060047
+    label: BiologicalProcess
+    name: heart contraction
+  - id: HP:0001692
+    label: PhenotypicFeature
+    name: Atrial arrhythmia
+  - id: MESH:D001281
+    label: Disease
+    name: Atrial fibrillation
+references:
+  - https://go.drugbank.com/drugs/DB00661#mechanism-of-action
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL6966/
+  - https://en.wikipedia.org/wiki/Verapamil#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Antiarrhythmic_agent#Class_IV_agents
+  - https://en.wikipedia.org/wiki/Atrial_fibrillation#Rate_control

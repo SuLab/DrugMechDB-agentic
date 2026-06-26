@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01202_MESH_D004828_1
+  disease: Simple partial seizure
+  disease_mesh: MESH:D004828
+  drug: levetiracetam
+  drug_mesh: MESH:C026098
+  drugbank: DB:DB01202
+links:
+  - key: positively regulates
+    source: MESH:C026098
+    target: UniProt:Q7L0J3
+  - key: increases activity of
+    source: UniProt:Q7L0J3
+    target: GO:0098982
+  - key: negatively correlated with
+    source: GO:0098982
+    target: MESH:D004828
+  - key: negatively regulates
+    source: MESH:C026098
+    target: UniProt:Q00975
+  - key: positively regulates
+    source: UniProt:Q00975
+    target: GO:0007269
+  - key: positively correlated with
+    source: GO:0007269
+    target: MESH:D004828
+multigraph: true
+nodes:
+  - id: MESH:C026098
+    label: Drug
+    name: levetiracetam
+  - id: UniProt:Q7L0J3
+    label: Protein
+    name: Synaptic vesicle glycoprotein 2A
+  - id: UniProt:Q00975
+    label: Protein
+    name: Voltage-dependent N-type calcium channel subunit alpha-1B
+  - id: GO:0007269
+    label: BiologicalProcess
+    name: neurotransmitter secretion
+  - id: GO:0098982
+    label: BiologicalProcess
+    name: GABA-ergic synapse
+  - id: MESH:D004828
+    label: Disease
+    name: Simple partial seizure
+references:
+  - https://go.drugbank.com/drugs/DB01202

@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00107_MESH_D006473_1
+  disease: Postpartum hemorrhage
+  disease_mesh: MESH:D006473
+  drug: oxytocin
+  drug_mesh: MESH:D010121
+  drugbank: DB:DB00107
+links:
+  - key: increases activity of
+    source: MESH:D010121
+    target: UniProt:P30559
+  - key: participates in
+    source: UniProt:P30559
+    target: GO:0004990
+  - key: positively regulates
+    source: GO:0004990
+    target: GO:0070509
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0004687
+  - key: positively regulates
+    source: GO:0004687
+    target: GO:0070471
+  - key: negatively correlated with
+    source: GO:0070471
+    target: MESH:D006473
+multigraph: true
+nodes:
+  - id: MESH:D010121
+    label: Drug
+    name: oxytocin
+  - id: UniProt:P30559
+    label: Protein
+    name: Oxytocin receptor
+  - id: GO:0004990
+    label: MolecularActivity
+    name: oxytocin receptor activity
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: transmembrane calcium influx
+  - id: GO:0004687
+    label: MolecularActivity
+    name: myosin light chain kinase activity
+  - id: GO:0070471
+    label: BiologicalProcess
+    name: uterine smooth muscle contraction
+  - id: MESH:D006473
+    label: Disease
+    name: Postpartum hemorrhage
+references:
+  - https://go.drugbank.com/drugs/DB00107
+  - https://en.wikipedia.org/wiki/Postpartum_bleeding

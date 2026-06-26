@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB01148_MESH_D014549_1
+  disease: Urinary incontinence
+  disease_mesh: MESH:D014549
+  drug: flavoxate
+  drug_mesh: MESH:D005422
+  drugbank: DB:DB01148
+links:
+  - key: negatively regulates
+    source: MESH:D005422
+    target: InterPro:IPR000995
+  - key: negatively regulates
+    source: InterPro:IPR000995
+    target: GO:0014832
+  - key: positively correlated with
+    source: GO:0014832
+    target: GO:0060073
+  - key: positively correlated with
+    source: GO:0060073
+    target: MESH:D014549
+multigraph: true
+nodes:
+  - id: MESH:D005422
+    label: Drug
+    name: Flavoxate
+  - id: InterPro:IPR000995
+    label: GeneFamily
+    name: Muscarinic acetylcholine receptor family
+  - id: GO:0014832
+    label: BiologicalProcess
+    name: Urinary bladder smooth muscle contraction
+  - id: GO:0060073
+    label: BiologicalProcess
+    name: Micturition
+  - id: MESH:D014549
+    label: Disease
+    name: Urinary incontinence
+references:
+  - https://en.wikipedia.org/wiki/Urinary_incontinence
+  - https://go.drugbank.com/drugs/DB01148

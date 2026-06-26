@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00411_MESH_D005902_1
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: carbachol
+  drug_mesh: MESH:D002217
+  drugbank: DB:DB00411
+links:
+  - key: increases activity of
+    source: MESH:D002217
+    target: InterPro:IPR000995
+  - key: participates in
+    source: InterPro:IPR000995
+    target: reactome:R-HSA-390648
+  - key: positively correlated with
+    source: reactome:R-HSA-390648
+    target: GO:0006939
+  - key: correlated with
+    source: GO:0006939
+    target: HP:0000616
+  - key: negatively correlated with
+    source: HP:0000616
+    target: HP:0007906
+  - key: positively correlated with
+    source: HP:0007906
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:D002217
+    label: Drug
+    name: carbachol
+  - id: InterPro:IPR000995
+    label: GeneFamily
+    name: Muscarinic acetylcholine receptor family
+  - id: reactome:R-HSA-390648
+    label: Pathway
+    name: Muscarinic acetylcholine receptors
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: HP:0000616
+    label: PhenotypicFeature
+    name: Miosis
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Ocular Hypertension
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - https://go.drugbank.com/drugs/DB00411#mechanism-of-action
+  - https://pubchem.ncbi.nlm.nih.gov/compound/2551#section=Pharmacology-and-Biochemistry
+  - https://en.wikipedia.org/wiki/Carbachol#Chemistry_and_pharmacology
+  - https://www.kegg.jp/entry/D00524

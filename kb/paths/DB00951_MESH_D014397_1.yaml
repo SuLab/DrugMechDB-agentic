@@ -1,0 +1,54 @@
+comment: Isoniazid is a prodrug and must be activated by a bacterial catalase-peroxidase
+  enzyme in Mycobacterium tuberculosis.
+directed: true
+graph:
+  _id: DB00951_MESH_D014397_1
+  disease: Pulmonary tuberculosis
+  disease_mesh: MESH:D014397
+  drug: isoniazid
+  drug_mesh: MESH:D007538
+  drugbank: DB:DB00951
+links:
+  - key: decreases activity of
+    source: MESH:D007538
+    target: UniProt:P9WGR1
+  - key: positively regulates
+    source: UniProt:P9WGR1
+    target: GO:0071768
+  - key: increases abundance of
+    source: GO:0071768
+    target: MESH:D009171
+  - key: participates in
+    source: MESH:D009171
+    target: GO:0071766
+  - key: in taxon
+    source: GO:0071766
+    target: taxonomy:1773
+  - key: causes
+    source: taxonomy:1773
+    target: MESH:D014397
+multigraph: true
+nodes:
+  - id: MESH:D007538
+    label: Drug
+    name: Isoniazid
+  - id: UniProt:P9WGR1
+    label: Protein
+    name: Enoyl-[acyl-carrier-protein] reductase [NADH] (Mycobacterium tuberculosis)
+  - id: GO:0071768
+    label: BiologicalProcess
+    name: Mycolic acid biosynthetic process
+  - id: MESH:D009171
+    label: ChemicalSubstance
+    name: Mycolic Acids
+  - id: GO:0071766
+    label: BiologicalProcess
+    name: Actinobacterium-type cell wall biogenesis
+  - id: taxonomy:1773
+    label: OrganismTaxon
+    name: Mycobacterium tuberculosis
+  - id: MESH:D014397
+    label: Disease
+    name: Pulmonary tuberculosis
+references:
+  - https://go.drugbank.com/drugs/DB00951

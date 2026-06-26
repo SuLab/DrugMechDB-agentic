@@ -1,0 +1,32 @@
+comment: There is very little information on this drug; it's known that is part of
+  a class of antithyroid preparations. It's in Phase 0 of clinical trials, aka research/experimental
+  phase as per Jun 2021.
+directed: true
+graph:
+  _id: DB07637_MESH_D006980_1
+  disease: Hyperthyroidism
+  disease_mesh: MESH:D006980
+  drug: dibromotyrosine
+  drugbank: DB:DB07637
+links:
+  - key: negatively regulates
+    source: DB:DB07637
+    target: GO:0006590
+  - key: positively correlated with
+    source: GO:0006590
+    target: MESH:D006980
+multigraph: true
+nodes:
+  - id: DB:DB07637
+    label: Drug
+    name: dibromotyrosine
+  - id: GO:0006590
+    label: BiologicalProcess
+    name: thyroid hormone generation
+  - id: MESH:D006980
+    label: Disease
+    name: Hyperthyroidism
+references:
+  - https://go.drugbank.com/drugs/DB07637
+  - https://en.wikipedia.org/wiki/Dibromotyrosine
+  - https://en.wikipedia.org/wiki/Antithyroid_agent#Mechanism_of_action

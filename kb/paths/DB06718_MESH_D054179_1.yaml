@@ -1,0 +1,74 @@
+comment: Both DrugBank (https://go.drugbank.com/drugs/DB06718#mechanism-of-action)
+  and ChEMBL (https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2079587/) have
+  this drug modulating target AR (UniProt:P10275) but that's not the mechanism of
+  action for this indication (MESH:D054179).
+directed: true
+graph:
+  _id: DB06718_MESH_D054179_1
+  disease: Hereditary angioneurotic edema
+  disease_mesh: MESH:D054179
+  drug: stanozolol
+  drug_mesh: MESH:D013197
+  drugbank: DB:DB06718
+links:
+  - key: positively regulates
+    source: MESH:D013197
+    target: UniProt:P05155
+  - key: negatively regulates
+    source: UniProt:P05155
+    target: GO:0006956
+  - key: positively correlated with
+    source: GO:0006956
+    target: Pfam:PF06753
+  - key: negatively correlated with
+    source: UniProt:P05155
+    target: MESH:D007610
+  - key: positively correlated with
+    source: MESH:D007610
+    target: Pfam:PF06753
+  - key: positively correlated with
+    source: Pfam:PF06753
+    target: MESH:D002199
+  - key: positively correlated with
+    source: Pfam:PF06753
+    target: GO:0042311
+  - key: positively correlated with
+    source: MESH:D002199
+    target: MESH:D054179
+  - key: positively correlated with
+    source: GO:0042311
+    target: MESH:D054179
+multigraph: true
+nodes:
+  - id: MESH:D013197
+    label: Drug
+    name: stanozolol
+  - id: UniProt:P05155
+    label: Protein
+    name: Plasma protease C1 inhibitor
+  - id: GO:0006956
+    label: BiologicalProcess
+    name: complement activation
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: MESH:D007610
+    label: GeneFamily
+    name: Kallikreins
+  - id: Pfam:PF06753
+    label: GeneFamily
+    name: Bradykinin
+  - id: MESH:D002199
+    label: BiologicalProcess
+    name: Capillary Permeability
+  - id: MESH:D054179
+    label: Disease
+    name: Hereditary angioneurotic edema
+references:
+  - https://en.wikipedia.org/wiki/C1-inhibitor
+  - https://en.wikipedia.org/wiki/Bradykinin
+  - https://en.wikipedia.org/wiki/Kallikrein
+  - https://en.wikipedia.org/wiki/Kinin%E2%80%93kallikrein_system#C1-INH_Involvement
+  - https://en.wikipedia.org/wiki/Hereditary_angioedema
+  - https://en.wikipedia.org/wiki/Complement_system#Regulation
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3666183/

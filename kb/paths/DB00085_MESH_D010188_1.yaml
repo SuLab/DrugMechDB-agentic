@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00085_MESH_D010188_1
+  disease: Exocrine pancreatic insufficiency
+  disease_mesh: MESH:D010188
+  drug: pancrelipase
+  drug_mesh: MESH:D020799,MESH:D010194
+  drugbank: DB:DB00085
+links:
+  - key: positively regulates
+    source: DB:DB00085
+    target: GO:0044245
+  - key: negatively correlated with
+    source: GO:0044245
+    target: MESH:D010188
+  - key: positively regulates
+    source: DB:DB00085
+    target: GO:0044256
+  - key: negatively correlated with
+    source: GO:0044256
+    target: MESH:D010188
+  - key: positively regulates
+    source: DB:DB00085
+    target: GO:0044241
+  - key: negatively correlated with
+    source: GO:0044241
+    target: MESH:D010188
+multigraph: true
+nodes:
+  - id: DB:DB00085
+    label: Drug
+    name: Pancrelipase
+  - id: GO:0044245
+    label: BiologicalProcess
+    name: Polysaccharide digestion
+  - id: GO:0044256
+    label: BiologicalProcess
+    name: Protein digestion
+  - id: GO:0044241
+    label: BiologicalProcess
+    name: Lipid digestion
+  - id: MESH:D010188
+    label: Disease
+    name: Exocrine pancreatic insufficiency
+references:
+  - https://en.wikipedia.org/wiki/Exocrine_pancreatic_insufficiency
+  - https://go.drugbank.com/drugs/DB00085

@@ -1,0 +1,37 @@
+comment: No direct evidence available that support voglibose MoA for Gaucher Disease.
+  However there is a hypothesis that the combination of small α-glucosidase inhibitors
+  as pharmacological chaperones (PCs) with enzyme replacement therapy (ERT) has been
+  shown to have a synergic effect in improved enzyme activity and reduction of toxic
+  metabolites in Pompe's disease or Gaucher disease.
+directed: true
+graph:
+  _id: DB04878_MESH_D005776_1
+  disease: Glucosylceramide beta-glucosidase deficiency
+  disease_mesh: MESH:D005776
+  drug: voglibose
+  drug_mesh: MESH:C102817
+  drugbank: DB:DB04878
+links:
+  - key: increases degradation of
+    source: MESH:C102817
+    target: MESH:D005963
+  - key: causes
+    source: MESH:D005963
+    target: MESH:D005776
+multigraph: true
+nodes:
+  - id: MESH:C102817
+    label: Drug
+    name: voglibose
+  - id: MESH:D005963
+    label: ChemicalSubstance
+    name: Glucosylceramides
+  - alt_names:
+      - Gaucher Disease
+    id: MESH:D005776
+    label: Disease
+    name: Glucosylceramide beta-glucosidase deficiency
+references:
+  - https://go.drugbank.com/drugs/DB04878
+  - https://academic.oup.com/glycob/article/13/10/93R/554319
+  - https://bit.ly/3EEGL6O

@@ -1,0 +1,36 @@
+comment: The drug is no longer FDA approved (https://en.wikipedia.org/wiki/Tocolytic#Types_of_agents).
+directed: true
+graph:
+  _id: DB00867_MESH_D007752_1
+  disease: Premature labor
+  disease_mesh: MESH:D007752
+  drug: ritodrine
+  drug_mesh: MESH:D012312
+  drugbank: DB:DB00867
+links:
+  - key: positively regulates
+    source: MESH:D012312
+    target: UniProt:P07550
+  - key: positively regulates
+    source: UniProt:P07550
+    target: GO:0044558
+  - key: negatively correlated with
+    source: GO:0044558
+    target: MESH:D007752
+multigraph: true
+nodes:
+  - id: MESH:D012312
+    label: Drug
+    name: ritodrine
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: GO:0044558
+    label: BiologicalProcess
+    name: uterine smooth muscle relaxation
+  - id: MESH:D007752
+    label: Disease
+    name: Premature labor
+references:
+  - https://go.drugbank.com/drugs/DB00867#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Ritodrine

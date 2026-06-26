@@ -1,0 +1,23 @@
+comment: Mechanism of action of diloxanide is unknown
+directed: true
+graph:
+  _id: DB08792_MESH_D000562_1
+  disease: Amebiasis
+  disease_mesh: MESH:D000562
+  drug: diloxanide furoate
+  drug_mesh: MESH:C004932
+  drugbank: DB:DB08792
+links:
+  - key: treats
+    source: MESH:C004932
+    target: MESH:D000562
+multigraph: true
+nodes:
+  - id: MESH:C004932
+    label: Drug
+    name: diloxanide furoate
+  - id: MESH:D000562
+    label: Disease
+    name: Amebiasis
+references:
+  - https://go.drugbank.com/drugs/DB14638

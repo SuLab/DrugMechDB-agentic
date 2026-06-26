@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB01592_MESH_D018798_1
+  disease: Iron deficiency anemia
+  disease_mesh: MESH:D018798
+  drug: iron
+  drug_mesh: MESH:D007501
+  drugbank: DB:DB01592
+links:
+  - key: increases abundance of
+    source: MESH:D007501
+    target: CHEBI:18248
+  - key: correlated with
+    source: CHEBI:18248
+    target: GO:0055072
+  - key: negatively correlated with
+    source: GO:0055072
+    target: MESH:D018798
+multigraph: true
+nodes:
+  - id: MESH:D007501
+    label: Drug
+    name: iron
+  - id: CHEBI:18248
+    label: ChemicalSubstance
+    name: iron atom
+  - id: GO:0055072
+    label: BiologicalProcess
+    name: iron ion homeostasis
+  - id: MESH:D018798
+    label: Disease
+    name: Iron deficiency anemia
+references:
+  - https://go.drugbank.com/drugs/DB01592
+  - https://pubchem.ncbi.nlm.nih.gov/compound/23925

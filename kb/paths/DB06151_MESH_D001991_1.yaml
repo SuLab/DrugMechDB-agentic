@@ -1,0 +1,39 @@
+comment: Acetylcysteine serves as a prodrug to L-cysteine, a precursor to the biologic
+  antioxidant glutathione
+directed: true
+graph:
+  _id: DB06151_MESH_D001991_1
+  disease: Bronchitis
+  disease_mesh: MESH:D001991
+  drug: Acetylcysteine
+  drug_mesh: MESH:D000111
+  drugbank: DB:DB06151
+links:
+  - key: disrupts
+    source: MESH:D000111
+    target: GO:0042710
+  - key: caused by
+    source: GO:0042710
+    target: taxonomy:727
+  - key: causes
+    source: taxonomy:727
+    target: MESH:D001991
+multigraph: true
+nodes:
+  - id: MESH:D000111
+    label: Drug
+    name: Acetylcysteine
+  - id: GO:0042710
+    label: BiologicalProcess
+    name: Biofilm formation
+  - id: taxonomy:727
+    label: OrganismTaxon
+    name: Haemophilus influenzae
+  - id: MESH:D001991
+    label: Disease
+    name: Bronchitis
+references:
+  - https://go.drugbank.com/drugs/DB06151
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Cysteine
+  - DOI:https://doi.org/10.1016/j.rmed.2016.06.015
+  - DOI:10.2217/fmb.10.125

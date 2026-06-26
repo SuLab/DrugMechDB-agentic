@@ -1,0 +1,39 @@
+comment: Phytomenadione promotes calcification of bones and teeth and can be supplemented
+  together with calcium sources in cases of hypocalcemia. Additionally phytomenadione
+  may prevent arterial calcification in case of calcium supplementation https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4566462/
+directed: true
+graph:
+  _id: DB01022_MESH_D006996_1
+  disease: Hypocalcemia
+  disease_mesh: MESH:D006996
+  drug: Phytomenadione
+  drug_mesh: MESH:D014812
+  drugbank: DB:DB01022
+links:
+  - key: increases activity of
+    source: MESH:D014812
+    target: UniProt:P02818
+  - key: positively regulates
+    source: UniProt:P02818
+    target: GO:0030282
+  - key: negatively correlated with
+    source: GO:0030282
+    target: MESH:D006996
+multigraph: true
+nodes:
+  - id: MESH:D014812
+    label: Drug
+    name: Phytomenadione
+  - id: UniProt:P02818
+    label: Protein
+    name: Osteocalcin
+  - id: GO:0030282
+    label: BiologicalProcess
+    name: Bone mineralization
+  - id: MESH:D006996
+    label: Disease
+    name: Hypocalcemia
+references:
+  - https://go.drugbank.com/drugs/DB01022
+  - https://pubmed.ncbi.nlm.nih.gov/3530901/
+  - https://en.wikipedia.org/wiki/Hypocalcemia

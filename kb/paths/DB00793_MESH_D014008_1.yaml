@@ -1,0 +1,38 @@
+comment: Haloprogin is no longer available in the United States and has been discontinued.
+  Withdrawn. The mechanism of action is unknown, but is thought to be via inhibition
+  of oxygen uptake and disruption of yeast membrane structure and function.
+directed: true
+graph:
+  _id: DB00793_MESH_D014008_1
+  disease: Tinea pedis
+  disease_mesh: MESH:D014008
+  drug: haloprogin
+  drug_mesh: MESH:C100276
+  drugbank: DB:DB00793
+links:
+  - key: disrupts
+    source: MESH:C100276
+    target: GO:0005886
+  - key: in taxon
+    source: GO:0005886
+    target: taxonomy:4751
+  - key: causes
+    source: taxonomy:4751
+    target: MESH:D014008
+multigraph: true
+nodes:
+  - id: MESH:C100276
+    label: Drug
+    name: Haloprogin
+  - id: GO:0005886
+    label: CellularComponent
+    name: Plasma membrane
+  - id: taxonomy:4751
+    label: OrganismTaxon
+    name: Fungi
+  - id: MESH:D014008
+    label: Disease
+    name: Tinea pedis
+references:
+  - https://go.drugbank.com/drugs/DB00793
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1289

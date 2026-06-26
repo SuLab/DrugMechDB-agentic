@@ -1,0 +1,51 @@
+comment: Ozagrel is in phase III trial.
+directed: true
+graph:
+  _id: DB12017_MESH_D001249_1
+  disease: Asthma
+  disease_mesh: MESH:D001249
+  drug: ozagrel
+  drug_mesh: MESH:C034364
+  drugbank: DB:DB12017
+links:
+  - key: decreases activity of
+    source: MESH:C034364
+    target: UniProt:P24557
+  - key: increases abundance of
+    source: UniProt:P24557
+    target: MESH:D013928
+  - key: positively regulates
+    source: MESH:D013928
+    target: GO:0042310
+  - key: contributes to
+    source: GO:0042310
+    target: HP:0025428
+  - key: phenotype of
+    source: HP:0025428
+    target: MESH:D001249
+multigraph: true
+nodes:
+  - id: MESH:C034364
+    label: Drug
+    name: ozagrel
+  - id: UniProt:P24557
+    label: Protein
+    name: Thromboxane-A synthase
+  - id: MESH:D013928
+    label: ChemicalSubstance
+    name: Thromboxane A2
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0025428
+    label: PhenotypicFeature
+    name: Bronchospasm
+  - id: MESH:D001249
+    label: Disease
+    name: Asthma
+references:
+  - https://go.drugbank.com/drugs/DB12017#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22OZAGREL%22
+  - https://www.uniprot.org/uniprot/P24557#function
+  - https://en.wikipedia.org/wiki/Bronchospasm
+  - https://en.wikipedia.org/wiki/Asthma

@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB00988_MESH_D002303_1
+  disease: Low cardiac output syndrome
+  disease_mesh: MESH:D002303
+  drug: dopamine
+  drug_mesh: MESH:D004298
+  drugbank: DB:DB00988
+links:
+  - key: increases activity of
+    source: MESH:D004298
+    target: UniProt:P08588
+  - key: positively regulates
+    source: UniProt:P08588
+    target: GO:0060048
+  - key: negatively correlated with
+    source: GO:0060048
+    target: MESH:D002303
+multigraph: true
+nodes:
+  - id: MESH:D004298
+    label: Drug
+    name: dopamine
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: GO:0060048
+    label: BiologicalProcess
+    name: cardiac muscle contraction
+  - id: MESH:D002303
+    label: Disease
+    name: Low cardiac output syndrome
+references:
+  - https://pubchem.ncbi.nlm.nih.gov/compound/681
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL59/
+  - https://en.wikipedia.org/wiki/Dopamine#Medical_uses

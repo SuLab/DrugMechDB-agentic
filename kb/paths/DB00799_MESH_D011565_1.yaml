@@ -1,0 +1,106 @@
+comment: MESH:D057705 refers to the movement of leukocytes (the term NCIT:C91439 would
+  have been better suited here but could not be validated)
+directed: true
+graph:
+  _id: DB00799_MESH_D011565_1
+  disease: Psoriasis
+  disease_mesh: MESH:D011565
+  drug: tazarotene
+  drug_mesh: MESH:C086827
+  drugbank: DB:DB00799
+links:
+  - key: increases activity of
+    source: MESH:C086827
+    target: UniProt:P10276
+  - key: increases activity of
+    source: MESH:C086827
+    target: UniProt:P28702
+  - key: increases activity of
+    source: MESH:C086827
+    target: UniProt:P13631
+  - key: increases activity of
+    source: MESH:C086827
+    target: UniProt:P10826
+  - key: negatively correlated with
+    source: UniProt:P10276
+    target: GO:0043616
+  - key: negatively correlated with
+    source: UniProt:P28702
+    target: GO:0043616
+  - key: negatively correlated with
+    source: UniProt:P13631
+    target: GO:0043616
+  - key: negatively correlated with
+    source: UniProt:P10826
+    target: GO:0043616
+  - key: negatively correlated with
+    source: UniProt:P10276
+    target: MESH:D057705
+  - key: negatively correlated with
+    source: UniProt:P28702
+    target: MESH:D057705
+  - key: negatively correlated with
+    source: UniProt:P13631
+    target: MESH:D057705
+  - key: negatively correlated with
+    source: UniProt:P10826
+    target: MESH:D057705
+  - key: negatively correlated with
+    source: UniProt:P10276
+    target: MESH:D003873
+  - key: negatively correlated with
+    source: UniProt:P28702
+    target: MESH:D003873
+  - key: negatively correlated with
+    source: UniProt:P13631
+    target: MESH:D003873
+  - key: negatively correlated with
+    source: UniProt:P10826
+    target: MESH:D003873
+  - key: positively correlated with
+    source: MESH:D057705
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0043616
+    target: MESH:D011565
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D011565
+  - key: positively correlated with
+    source: MESH:D003873
+    target: MESH:D011565
+multigraph: true
+nodes:
+  - id: MESH:C086827
+    label: Drug
+    name: tazarotene
+  - id: UniProt:P10276
+    label: Protein
+    name: Retinoic acid receptor alpha
+  - id: UniProt:P10826
+    label: Protein
+    name: Retinoic acid receptor beta
+  - id: UniProt:P28702
+    label: Protein
+    name: Retinoic acid receptor RXR-beta
+  - id: UniProt:P13631
+    label: Protein
+    name: Retinoic acid receptor gamma
+  - id: MESH:D003873
+    label: PhenotypicFeature
+    name: Dermatitis, Exfoliative
+  - id: GO:0043616
+    label: BiologicalProcess
+    name: keratinocyte proliferation
+  - id: MESH:D057705
+    label: BiologicalProcess
+    name: Transendothelial Migration Pathway
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D011565
+    label: Disease
+    name: Psoriasis
+references:
+  - https://www.hindawi.com/journals/mi/2018/3067126/
+  - https://go.drugbank.com/drugs/DB00799#mechanism-of-action

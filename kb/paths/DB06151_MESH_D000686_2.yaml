@@ -1,0 +1,40 @@
+comment: It's not clear how (or if at all) acetylcysteine can be used in the treatment
+  of Amyloidosis. If so, it could be due to as a precursor in the formation of glutathione
+  (https://en.wikipedia.org/wiki/Acetylcysteine#Chemistry), which in turn could have
+  a role in depleting the occurrence of protein aggregation (https://pubmed.ncbi.nlm.nih.gov/15857408/,
+  https://pubmed.ncbi.nlm.nih.gov/33758187/).
+directed: true
+graph:
+  _id: DB06151_MESH_D000686_2
+  disease: Amyloidosis
+  disease_mesh: MESH:D000686
+  drug: acetylcysteine
+  drug_mesh: MESH:D000111
+  drugbank: DB:DB06151
+links:
+  - key: has metabolite
+    source: MESH:D000111
+    target: CHEBI:15356
+  - key: positively correlated with
+    source: CHEBI:15356
+    target: CHEBI:16856
+  - key: negatively correlated with
+    source: CHEBI:16856
+    target: MESH:D000686
+multigraph: true
+nodes:
+  - id: MESH:D000111
+    label: Drug
+    name: acetylcysteine
+  - id: CHEBI:15356
+    label: ChemicalSubstance
+    name: cysteine
+  - id: CHEBI:16856
+    label: ChemicalSubstance
+    name: glutathione
+  - id: MESH:D000686
+    label: Disease
+    name: Amyloidosis
+references:
+  - https://en.wikipedia.org/wiki/Acetylcysteine#Pharmacodynamics
+  - https://pubchem.ncbi.nlm.nih.gov/compound/12035#section=Mechanism-of-Action

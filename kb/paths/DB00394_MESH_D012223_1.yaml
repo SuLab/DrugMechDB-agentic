@@ -1,0 +1,44 @@
+comment: Beclomethasone dipropionate is a prodrug, giving rise to Beclomethasone (MESH:D001507),
+  also known as Beclomethasone 17-monopropionate (https://pubchem.ncbi.nlm.nih.gov/compound/17-BMP).
+directed: true
+graph:
+  _id: DB00394_MESH_D012223_1
+  disease: Vasomotor rhinitis
+  disease_mesh: MESH:D012223
+  drug: Beclomethasone dipropionate
+  drugbank: DB:DB00394
+links:
+  - key: has metabolite
+    source: DB:DB00394
+    target: CHEBI:3001
+  - key: positively regulates
+    source: CHEBI:3001
+    target: UniProt:P04150
+  - key: negatively regulates
+    source: UniProt:P04150
+    target: GO:0042311
+  - key: positively correlated with
+    source: GO:0042311
+    target: MESH:D012223
+multigraph: true
+nodes:
+  - id: DB:DB00394
+    label: Drug
+    name: Beclomethasone dipropionate
+  - alt_names:
+      - Beclomethasone 17-monopropionate
+    id: CHEBI:3001
+    label: ChemicalSubstance
+    name: beclomethasone
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: MESH:D012223
+    label: Disease
+    name: Vasomotor rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB00394
+  - https://en.wikipedia.org/wiki/Corticosteroid#Classes

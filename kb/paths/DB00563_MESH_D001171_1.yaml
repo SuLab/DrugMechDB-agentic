@@ -1,0 +1,72 @@
+directed: true
+graph:
+  _id: DB00563_MESH_D001171_1
+  disease: Juvenile rheumatoid arthritis
+  disease_mesh: MESH:D001171
+  drug: methotrexate
+  drug_mesh: MESH:D008727
+  drugbank: DB:DB00563
+links:
+  - key: has metabolite
+    source: MESH:D008727
+    target: CHEBI:93775
+  - key: decreases activity of
+    source: CHEBI:93775
+    target: UniProt:P31939
+  - key: increases abundance of
+    source: UniProt:P31939
+    target: CHEBI:18406
+  - key: decreases activity of
+    source: CHEBI:18406
+    target: UniProt:P00813
+  - key: decreases abundance of
+    source: UniProt:P00813
+    target: CHEBI:16335
+  - key: increases activity of
+    source: CHEBI:16335
+    target: InterPro:IPR001634
+  - key: located in
+    source: InterPro:IPR001634
+    target: CL:0000542
+  - key: causes
+    source: CL:0000542
+    target: GO:0006954
+  - key: correlated with
+    source: GO:0006954
+    target: MESH:D001171
+multigraph: true
+nodes:
+  - id: MESH:D008727
+    label: Drug
+    name: methotrexate
+  - id: CHEBI:93775
+    label: ChemicalSubstance
+    name: Methotrexate polyglutamate
+  - id: UniProt:P31939
+    label: Protein
+    name: Bifunctional purine biosynthesis protein PURH
+  - id: CHEBI:18406
+    label: ChemicalSubstance
+    name: AICA ribonucleotide
+  - id: UniProt:P00813
+    label: Protein
+    name: Adenosine deaminase
+  - id: CHEBI:16335
+    label: ChemicalSubstance
+    name: Adenosine
+  - id: InterPro:IPR001634
+    label: GeneFamily
+    name: Adenosine receptors
+  - id: CL:0000542
+    label: Cell
+    name: Lymphocyte
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D001171
+    label: Disease
+    name: Juvenile rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB00563#BE0000330
+  - https://en.wikipedia.org/wiki/Methotrexate
+  - https://www.sciencedirect.com/science/article/pii/S1297319X18301817

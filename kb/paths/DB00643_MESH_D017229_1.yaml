@@ -1,0 +1,76 @@
+directed: true
+graph:
+  _id: DB00643_MESH_D017229_1
+  disease: Enterobiasis
+  disease_mesh: MESH:D017229
+  drug: mebendazole
+  drug_mesh: MESH:D008463
+  drugbank: DB:DB00643
+links:
+  - key: decreases activity of
+    source: MESH:D008463
+    target: UniProt:Q71U36
+  - key: decreases activity of
+    source: MESH:D008463
+    target: UniProt:P68371
+  - key: disrupts
+    source: MESH:D008463
+    target: GO:0046323
+  - key: participates in
+    source: UniProt:Q71U36
+    target: GO:0046785
+  - key: participates in
+    source: UniProt:P68371
+    target: GO:0046785
+  - key: positively correlated with
+    source: GO:0046323
+    target: GO:0042773
+  - key: occurs in
+    source: GO:0042773
+    target: taxonomy:51028
+  - key: precedes
+    source: GO:0046785
+    target: GO:0140014
+  - key: part of
+    source: GO:0140014
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:51028
+  - key: causes
+    source: taxonomy:51028
+    target: MESH:D017229
+multigraph: true
+nodes:
+  - id: MESH:D008463
+    label: Drug
+    name: Mebendazole
+  - id: UniProt:Q71U36
+    label: Protein
+    name: Tubulin alpha-1A chain
+  - id: UniProt:P68371
+    label: Protein
+    name: Tubulin beta-4B chain
+  - id: GO:0046323
+    label: BiologicalProcess
+    name: Glucose import
+  - id: GO:0046785
+    label: BiologicalProcess
+    name: Microtubule assembly
+  - id: GO:0042773
+    label: BiologicalProcess
+    name: ATP synthesis coupled electron transport
+  - id: GO:0140014
+    label: BiologicalProcess
+    name: Mitosis
+  - id: taxonomy:51028
+    label: OrganismTaxon
+    name: Enterobius vermicularis
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: Cell division
+  - id: MESH:D017229
+    label: Disease
+    name: Enterobiasis
+references:
+  - https://go.drugbank.com/drugs/DB00643#BE0001340

@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01085_MESH_D005902_1
+  disease: Open-angle glaucoma
+  disease_mesh: MESH:D005902
+  drug: pilocarpine
+  drug_mesh: MESH:D010862
+  drugbank: DB:DB01085
+links:
+  - key: increases activity of
+    source: MESH:D010862
+    target: InterPro:IPR000995
+  - key: positively regulates
+    source: InterPro:IPR000995
+    target: GO:0006939
+  - key: regulates
+    source: GO:0006939
+    target: UBERON:0005969
+  - key: positively regulates
+    source: UBERON:0005969
+    target: UBERON:0003956
+  - key: negatively correlated with
+    source: UBERON:0003956
+    target: HP:0007906
+  - key: manifestation of
+    source: HP:0007906
+    target: MESH:D005902
+multigraph: true
+nodes:
+  - id: MESH:D010862
+    label: Drug
+    name: pilocarpine
+  - id: InterPro:IPR000995
+    label: GeneFamily
+    name: Muscarinic acetylcholine receptor family
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: UBERON:0005969
+    label: GrossAnatomicalStructure
+    name: eye trabecular meshwork
+  - id: UBERON:0003956
+    label: GrossAnatomicalStructure
+    name: aqueous drainage system
+  - id: HP:0007906
+    label: PhenotypicFeature
+    name: Ocular Hypertension
+  - id: MESH:D005902
+    label: Disease
+    name: Open-angle glaucoma
+references:
+  - https://go.drugbank.com/drugs/DB01085

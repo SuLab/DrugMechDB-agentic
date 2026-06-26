@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01155_MESH_D061387_1
+  disease: Chlamydial pneumonia
+  disease_mesh: MESH:D061387
+  drug: gemifloxacin
+  drug_mesh: MESH:C103274
+  drugbank: DB:DB01155
+links:
+  - key: decreases activity of
+    source: MESH:C103274
+    target: InterPro:IPR005742
+  - key: decreases activity of
+    source: MESH:C103274
+    target: UniProt:Q9Z8R4
+  - key: participates in
+    source: InterPro:IPR005742
+    target: GO:0044787
+  - key: participates in
+    source: UniProt:Q9Z8R4
+    target: GO:0044787
+  - key: occurs in
+    source: GO:0044787
+    target: taxonomy:83558
+  - key: causes
+    source: taxonomy:83558
+    target: MESH:D061387
+multigraph: true
+nodes:
+  - id: MESH:C103274
+    label: Drug
+    name: Gemifloxacin
+  - id: InterPro:IPR005742
+    label: GeneFamily
+    name: DNA topoisomerase IV, subunit A, Gram-negative
+  - id: UniProt:Q9Z8R4
+    label: Protein
+    name: DNA gyrase subunit A (Chlamydia pneumoniae)
+  - id: GO:0044787
+    label: BiologicalProcess
+    name: Bacterial-type DNA replication
+  - id: taxonomy:83558
+    label: OrganismTaxon
+    name: Chlamydia pneumoniae
+  - id: MESH:D061387
+    label: Disease
+    name: Chlamydial pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB01155

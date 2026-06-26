@@ -1,0 +1,64 @@
+directed: true
+graph:
+  _id: DB01196_MESH_D011471_1
+  disease: Neoplasm of prostate
+  disease_mesh: MESH:D011471
+  drug: Estramustine
+  drug_mesh: MESH:D004961
+  drugbank: DB:DB01196
+links:
+  - key: decreases activity of
+    source: MESH:D004961
+    target: UniProt:P11137
+  - key: decreases activity of
+    source: MESH:D004961
+    target: UniProt:P78559
+  - key: disrupts
+    source: MESH:D004961
+    target: MESH:D004247
+  - key: positively correlated with
+    source: UniProt:P11137
+    target: GO:0005874
+  - key: positively correlated with
+    source: UniProt:P78559
+    target: GO:0005874
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0140014
+  - key: positively regulates
+    source: GO:0005874
+    target: GO:0140014
+  - key: positively correlated with
+    source: GO:0140014
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D011471
+multigraph: true
+nodes:
+  - id: MESH:D004961
+    label: Drug
+    name: Estramustine
+  - id: UniProt:P11137
+    label: Protein
+    name: Microtubule-associated protein 2
+  - id: UniProt:P78559
+    label: Protein
+    name: Microtubule-associated protein 1A
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0005874
+    label: CellularComponent
+    name: Microtubule
+  - id: GO:0140014
+    label: BiologicalProcess
+    name: Mitotic nuclear division
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: MESH:D011471
+    label: Disease
+    name: Neoplasm of prostate
+references:
+  - https://go.drugbank.com/drugs/DB01196#BE0001100

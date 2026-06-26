@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB00013_MESH_D011655_1
+  disease: Pulmonary thromboembolism
+  disease_mesh: MESH:D011655
+  drug: urokinase
+  drug_mesh: MESH:D014568
+  drugbank: DB:DB00013
+links:
+  - key: positively regulates
+    source: MESH:D014568
+    target: UniProt:P00747
+  - key: positively regulates
+    source: UniProt:P00747
+    target: GO:0042730
+  - key: negatively correlated with
+    source: GO:0042730
+    target: MESH:D011655
+multigraph: true
+nodes:
+  - id: MESH:D014568
+    label: Drug
+    name: urokinase
+  - id: UniProt:P00747
+    label: Protein
+    name: Plasminogen
+  - id: GO:0042730
+    label: BiologicalProcess
+    name: fibrinolysis
+  - id: MESH:D011655
+    label: Disease
+    name: Pulmonary thromboembolism
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201420/
+  - https://go.drugbank.com/drugs/DB00013

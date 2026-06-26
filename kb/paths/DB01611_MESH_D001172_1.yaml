@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB01611_MESH_D001172_1
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: hydroxychloroquine
+  drug_mesh: MESH:D006886
+  drugbank: DB:DB01611
+links:
+  - key: negatively correlated with
+    source: MESH:D006886
+    target: InterPro:IPR035897
+  - key: positively correlated with
+    source: InterPro:IPR035897
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0002829
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0001386
+  - key: positively correlated with
+    source: HP:0002829
+    target: MESH:D001172
+  - key: positively correlated with
+    source: HP:0001386
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:D006886
+    label: Drug
+    name: hydroxychloroquine
+  - id: InterPro:IPR035897
+    label: GeneFamily
+    name: Toll/interleukin-1 receptor homology (TIR) domain superfamily
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0002829
+    label: PhenotypicFeature
+    name: Joint pain
+  - id: HP:0001386
+    label: PhenotypicFeature
+    name: Joint swelling
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB01611
+  - https://en.wikipedia.org/wiki/Hydroxychloroquine#Mechanism_of_action

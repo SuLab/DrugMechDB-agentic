@@ -1,0 +1,70 @@
+comment: MESH:C061212 is not an alternative MESH ID for this drug (https://meshb.nlm.nih.gov/record/ui?ui=C061212).
+directed: true
+graph:
+  _id: DB01057_MESH_D000080362_1
+  disease: Stargardt's disease
+  disease_mesh: MESH:D000080362
+  drug: Echothiophate Iodide
+  drug_mesh: MESH:D004456
+  drugbank: DB:DB01057
+links:
+  - key: decreases activity of
+    source: MESH:D004456
+    target: UniProt:P22303
+  - key: decreases activity of
+    source: MESH:D004456
+    target: UniProt:P06276
+  - key: positively regulates
+    source: UniProt:P06276
+    target: GO:0003990
+  - key: decreases abundance of
+    source: GO:0003990
+    target: MESH:D000109
+  - key: positively regulates
+    source: UniProt:P22303
+    target: GO:0006581
+  - key: decreases abundance of
+    source: GO:0006581
+    target: MESH:D000109
+  - key: positively correlated with
+    source: MESH:D000109
+    target: HP:0000616
+  - key: negatively correlated with
+    source: HP:0000616
+    target: HP:0007663
+  - key: manifestation of
+    source: HP:0007663
+    target: MESH:D000080362
+multigraph: true
+nodes:
+  - id: MESH:D004456
+    label: Drug
+    name: Echothiophate Iodide
+  - id: UniProt:P22303
+    label: Protein
+    name: Acetylcholinesterase
+  - id: UniProt:P06276
+    label: Protein
+    name: Cholinesterase
+  - id: GO:0003990
+    label: MolecularActivity
+    name: acetylcholinesterase activity
+  - id: GO:0006581
+    label: BiologicalProcess
+    name: acetylcholine catabolic process
+  - id: MESH:D000109
+    label: ChemicalSubstance
+    name: Acetylcholine
+  - id: HP:0000616
+    label: PhenotypicFeature
+    name: Miosis
+  - id: HP:0007663
+    label: PhenotypicFeature
+    name: Reduced visual acuity
+  - id: MESH:D000080362
+    label: Disease
+    name: Stargardt's disease
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201341/
+  - https://go.drugbank.com/drugs/DB01057#BE0002180
+  - https://patents.google.com/patent/US7915312B2/en

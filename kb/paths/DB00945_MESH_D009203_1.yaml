@@ -1,0 +1,64 @@
+directed: true
+graph:
+  _id: DB00945_MESH_D009203_1
+  disease: Myocardial Infarction
+  disease_mesh: MESH:D009203
+  drug: Aspirin
+  drug_mesh: MESH:D001241
+  drugbank: DB:DB00945
+links:
+  - key: decreases activity of
+    source: MESH:D001241
+    target: UniProt:P23219
+  - key: decreases activity of
+    source: MESH:D001241
+    target: UniProt:P35354
+  - key: positively regulates
+    source: UniProt:P23219
+    target: GO:0001516
+  - key: positively regulates
+    source: UniProt:P35354
+    target: GO:0001516
+  - key: positively correlated with
+    source: GO:0001516
+    target: MESH:D013928
+  - key: positively regulates
+    source: MESH:D013928
+    target: GO:0070527
+  - key: positively correlated with
+    source: GO:0070527
+    target: GO:0007596
+  - key: contributes to
+    source: GO:0007596
+    target: MESH:D009203
+multigraph: true
+nodes:
+  - id: MESH:D001241
+    label: Drug
+    name: Aspirin
+  - id: UniProt:P23219
+    label: Protein
+    name: Prostaglandin G/H synthase 1
+  - id: UniProt:P35354
+    label: Protein
+    name: Prostaglandin G/H synthase 2
+  - id: GO:0001516
+    label: BiologicalProcess
+    name: prostaglandin biosynthetic process
+  - id: MESH:D013928
+    label: ChemicalSubstance
+    name: Thromboxane A2
+  - id: GO:0070527
+    label: BiologicalProcess
+    name: platelet aggregation
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: blood coagulation
+  - id: MESH:D009203
+    label: Disease
+    name: Myocardial Infarction
+references:
+  - https://go.drugbank.com/drugs/DB00945#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P23219#function
+  - https://www.uniprot.org/uniprot/P35354#function
+  - https://en.wikipedia.org/wiki/Myocardial_infarction

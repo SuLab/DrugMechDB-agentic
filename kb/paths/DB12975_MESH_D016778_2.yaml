@@ -1,0 +1,49 @@
+comment: Hemin (MESH:D006427) and heme (MESH:D006418) are related substances resulting
+  from the parasite hemoglobin catabolism. Heme is bound to iron whereas hemin is
+  the hydroxide counterpart of heme. Both are cytotoxic. Hemin is also known as hematin.
+directed: true
+graph:
+  _id: DB12975_MESH_D016778_2
+  disease: Malaria, Falciparum
+  disease_mesh: MESH:D016778
+  drug: Pyronaridine
+  drug_mesh: MESH:C027871
+  drugbank: DB:DB12975
+links:
+  - key: molecularly interacts with
+    source: MESH:C027871
+    target: MESH:D006427
+  - key: disrupts
+    source: MESH:D006427
+    target: CL:0000232
+  - key: location of
+    source: CL:0000232
+    target: GO:0019954
+  - key: in taxon
+    source: GO:0019954
+    target: taxonomy:5833
+  - key: causes
+    source: taxonomy:5833
+    target: MESH:D016778
+multigraph: true
+nodes:
+  - id: MESH:C027871
+    label: Drug
+    name: Pyronaridine
+  - id: MESH:D006427
+    label: ChemicalSubstance
+    name: Hemin
+  - id: CL:0000232
+    label: Cell
+    name: erythrocyte
+  - id: GO:0019954
+    label: BiologicalProcess
+    name: asexual reproduction
+  - id: taxonomy:5833
+    label: OrganismTaxon
+    name: Plasmodium falciparum
+  - id: MESH:D016778
+    label: Disease
+    name: Malaria, Falciparum
+references:
+  - https://www.ema.europa.eu/en/documents/medicine-outside-eu/pyramax-product-information_en.pdf

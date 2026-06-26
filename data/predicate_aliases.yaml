@@ -1,0 +1,30 @@
+# data/predicate_aliases.yaml
+#
+# Hand-curated mapping from legacy or informal predicate surface forms to the
+# canonical BiolinkPredicate enum value declared in:
+#   src/drugmechdb/schema/biolink_predicates.yaml
+#
+# This file is the landing zone for lexical drift — cases where a curator or
+# the AI agent produces a predicate whose words differ from the canonical form,
+# not just its case or whitespace.
+#
+# Trivial normalizations (case, internal whitespace, `biolink:` prefix,
+# underscore↔space, leading/trailing whitespace) are handled by
+# scripts/canonicalize_predicates.py BEFORE this map is consulted, so do NOT
+# add entries that only differ by those.
+#
+# Current state: the as-of-May-2026 corpus contains 67 distinct edge `key`
+# values, all of which are already members of the BiolinkPredicate enum.
+# This file is intentionally empty of aliases at Phase 1.5 close; Phase 2
+# will grow it as agent-generated paths surface new surface forms.
+#
+# Format:
+#   aliases:
+#     <legacy or informal form>: <canonical BiolinkPredicate value>
+#
+# Example (illustrative; not active):
+#   aliases:
+#     "associated with": "correlated with"
+#     "is a": "subclass of"
+
+aliases: {}

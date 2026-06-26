@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB08933_MESH_D014008_1
+  disease: Tinea pedis
+  disease_mesh: MESH:D014008
+  drug: luliconazole
+  drug_mesh: MESH:C112528
+  drugbank: DB:DB08933
+links:
+  - key: negatively regulates
+    source: MESH:C112528
+    target: InterPro:IPR001128
+  - key: positively regulates
+    source: InterPro:IPR001128
+    target: GO:0006696
+  - key: in taxon
+    source: GO:0006696
+    target: taxonomy:5551
+  - key: causes
+    source: taxonomy:5551
+    target: MESH:D014008
+multigraph: true
+nodes:
+  - id: MESH:C112528
+    label: Drug
+    name: luliconazole
+  - id: InterPro:IPR001128
+    label: GeneFamily
+    name: Cytochrome P450
+  - id: GO:0006696
+    label: BiologicalProcess
+    name: ergosterol biosynthetic process
+  - id: taxonomy:5551
+    label: OrganismTaxon
+    name: Trichophyton rubrum
+  - id: MESH:D014008
+    label: Disease
+    name: Tinea pedis
+references:
+  - https://go.drugbank.com/drugs/DB08933
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105689/
+  - https://en.wikipedia.org/wiki/Antifungal#Azoles

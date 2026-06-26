@@ -1,0 +1,61 @@
+directed: true
+graph:
+  _id: DB00047_MESH_D003922_1
+  disease: Diabetes Mellitus, Type 1
+  disease_mesh: MESH:D003922
+  drug: Insulin Glargine
+  drug_mesh: MESH:D000069036
+  drugbank: DB:DB00047
+links:
+  - key: increases activity of
+    source: MESH:D000069036
+    target: UniProt:P06213
+  - key: positively regulates
+    source: UniProt:P06213
+    target: reactome:R-HSA-74751
+  - key: positively regulates
+    source: reactome:R-HSA-74751
+    target: reactome:R-HSA-198203
+  - key: regulates
+    source: reactome:R-HSA-198203
+    target: UniProt:P14672
+  - key: participates in
+    source: UniProt:P14672
+    target: GO:0046323
+  - key: decreases abundance of
+    source: GO:0046323
+    target: MESH:D001786
+  - key: positively correlated with
+    source: MESH:D001786
+    target: MESH:D003922
+multigraph: true
+nodes:
+  - id: MESH:D000069036
+    label: Drug
+    name: Insulin Glargine
+  - id: UniProt:P06213
+    label: Protein
+    name: Insulin receptor
+  - id: reactome:R-HSA-74751
+    label: Pathway
+    name: Insulin receptor signalling cascade
+  - id: reactome:R-HSA-198203
+    label: Pathway
+    name: PI3K/AKT activation
+  - id: UniProt:P14672
+    label: Protein
+    name: Solute carrier family 2, facilitated glucose transporter member 4
+  - id: GO:0046323
+    label: BiologicalProcess
+    name: glucose import
+  - id: MESH:D001786
+    label: ChemicalSubstance
+    name: Blood Glucose
+  - id: MESH:D003922
+    label: Disease
+    name: Diabetes Mellitus, Type 1
+references:
+  - https://go.drugbank.com/drugs/DB00047#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P06213#function
+  - https://www.uniprot.org/uniprot/P14672#function
+  - https://en.wikipedia.org/wiki/Type_1_diabetes

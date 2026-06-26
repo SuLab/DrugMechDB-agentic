@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00199_MESH_D008088_1
+  disease: Listeriosis
+  disease_mesh: MESH:D008088
+  drug: erythromycin
+  drug_mesh: MESH:D004917
+  drugbank: DB:DB00199
+links:
+  - key: decreases abundance of
+    source: MESH:D004917
+    target: MESH:D012338
+  - key: participates in
+    source: MESH:D012338
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:1637
+  - key: causes
+    source: taxonomy:1637
+    target: MESH:D008088
+multigraph: true
+nodes:
+  - id: MESH:D004917
+    label: Drug
+    name: erythromycin
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: 23S Ribosomal RNA
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Bacterial Translation
+  - id: taxonomy:1637
+    label: OrganismTaxon
+    name: Listeria spp.
+  - id: MESH:D008088
+    label: Disease
+    name: Listeriosis

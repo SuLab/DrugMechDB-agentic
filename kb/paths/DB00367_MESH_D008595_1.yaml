@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00367_MESH_D008595_1
+  disease: Menorrhagia
+  disease_mesh: MESH:D008595
+  drug: levonorgestrel
+  drug_mesh: MESH:D016912
+  drugbank: DB:DB00367
+links:
+  - key: increases activity of
+    source: MESH:D016912
+    target: UniProt:P06401
+  - key: decreases abundance of
+    source: UniProt:P06401
+    target: UniProt:P01148
+  - key: negatively regulates
+    source: UniProt:P01148
+    target: GO:0032275
+  - key: correlated with
+    source: GO:0032275
+    target: MESH:D008595
+multigraph: true
+nodes:
+  - id: MESH:D016912
+    label: Drug
+    name: levonorgestrel
+  - id: UniProt:P06401
+    label: Protein
+    name: progesterone receptor
+  - id: UniProt:P01148
+    label: Protein
+    name: gonadotropin releasing hormone
+  - id: GO:0032275
+    label: BiologicalProcess
+    name: Luteinizing hormone secretion
+  - id: MESH:D008595
+    label: Disease
+    name: Menorrhagia

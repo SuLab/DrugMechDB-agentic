@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB02659_MESH_D003248_1
+  disease: Constipation
+  disease_mesh: MESH:D003248
+  drug: cholic acid
+  drug_mesh: MESH:D019826
+  drugbank: DB:DB02659
+links:
+  - key: positively regulates
+    source: MESH:D019826
+    target: GO:0030432
+  - key: negatively correlated with
+    source: GO:0030432
+    target: MESH:D003248
+multigraph: true
+nodes:
+  - id: MESH:D019826
+    label: Drug
+    name: cholic acid
+  - id: GO:0030432
+    label: BiologicalProcess
+    name: peristalsis
+  - id: MESH:D003248
+    label: Disease
+    name: Constipation
+references:
+  - https://go.drugbank.com/drugs/DB02659
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4015201/

@@ -1,0 +1,37 @@
+directed: true
+graph:
+  _id: DB00340_MESH_D020734_1
+  disease: Parkinsonism
+  disease_mesh: MESH:D020734
+  drug: Metixene
+  drug_mesh: MESH:C005111
+  drugbank: DB:DB00340
+links:
+  - key: negatively regulates
+    source: MESH:C005111
+    target: reactome:R-HSA-390648
+  - key: positively regulates
+    source: reactome:R-HSA-390648
+    target: GO:0007271
+  - key: positively correlated with
+    source: GO:0007271
+    target: MESH:D020734
+multigraph: true
+nodes:
+  - id: MESH:C005111
+    label: Drug
+    name: Metixene
+  - id: reactome:R-HSA-390648
+    label: Pathway
+    name: Muscarinic acetylcholine receptors
+  - id: GO:0007271
+    label: BiologicalProcess
+    name: Synaptic transmission, cholinergic
+  - id: MESH:D020734
+    label: Disease
+    name: Parkinsonism
+references:
+  - https://go.drugbank.com/drugs/DB00340
+comment: Parkinsonian syndromes are often the consequence of a disturbed balance between
+  cholinergic and dopaminergic neurotransmission in the basal ganglia caused by a
+  decrease in dopamine. Metixene restores the physiological equilibrium.

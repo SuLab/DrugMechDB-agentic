@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00985_MESH_D014717_1
+  disease: Vertigo
+  disease_mesh: MESH:D014717
+  drug: dimenhydrinate
+  drug_mesh: MESH:D004111
+  drugbank: DB:DB00985
+links:
+  - key: decreases activity of
+    source: MESH:D004111
+    target: UniProt:P35367
+  - key: positively regulates
+    source: UniProt:P35367
+    target: GO:0007271
+  - key: positively correlated with
+    source: GO:0007271
+    target: HP:0002017
+  - key: manifestation of
+    source: HP:0002017
+    target: MESH:D014717
+multigraph: true
+nodes:
+  - id: MESH:D004111
+    label: Drug
+    name: dimenhydrinate
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: GO:0007271
+    label: BiologicalProcess
+    name: synaptic transmission, cholinergic
+  - id: HP:0002017
+    label: PhenotypicFeature
+    name: Nausea and vomiting
+  - id: MESH:D014717
+    label: Disease
+    name: Vertigo
+references:
+  - https://go.drugbank.com/drugs/DB00985

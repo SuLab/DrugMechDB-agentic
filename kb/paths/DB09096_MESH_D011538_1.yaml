@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB09096_MESH_D011538_1
+  disease: Pruritus ani
+  disease_mesh: MESH:D011538
+  drug: benzoyl peroxide
+  drug_mesh: MESH:D001585
+  drugbank: DB:DB09096
+links:
+  - key: negatively regulates
+    source: MESH:D001585
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D011538
+multigraph: true
+nodes:
+  - id: MESH:D001585
+    label: Drug
+    name: Benzoyl peroxide
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammatory response
+  - id: MESH:D011538
+    label: Disease
+    name: Pruritus ani
+references:
+  - https://go.drugbank.com/drugs/DB09096
+  - https://en.wikipedia.org/wiki/Benzoyl_peroxide#Mechanism_of_action

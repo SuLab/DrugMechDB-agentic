@@ -1,0 +1,57 @@
+directed: true
+graph:
+  _id: DB00508_MESH_D011618_5
+  disease: Psychotic Disorders
+  disease_mesh: MESH:D011618
+  drug: Triflupromazine
+  drug_mesh: MESH:D014273
+  drugbank: DB:DB00508
+links:
+  - key: decreases activity of
+    source: MESH:D014273
+    target: UniProt:P41595
+  - key: positively regulates
+    source: UniProt:P41595
+    target: GO:0001820
+  - key: positively correlated with
+    source: GO:0001820
+    target: MESH:D012701
+  - key: contributes to
+    source: MESH:D012701
+    target: HP:0000738
+  - key: contributes to
+    source: MESH:D012701
+    target: HP:0000746
+  - key: manifestation of
+    source: HP:0000738
+    target: MESH:D011618
+  - key: manifestation of
+    source: HP:0000746
+    target: MESH:D011618
+multigraph: true
+nodes:
+  - id: MESH:D014273
+    label: Drug
+    name: Triflupromazine
+  - id: UniProt:P41595
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2B
+  - id: GO:0001820
+    label: BiologicalProcess
+    name: serotonin secretion
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: HP:0000738
+    label: PhenotypicFeature
+    name: Hallucinations
+  - id: HP:0000746
+    label: PhenotypicFeature
+    name: Delusions
+  - id: MESH:D011618
+    label: Disease
+    name: Psychotic Disorders
+references:
+  - https://go.drugbank.com/drugs/DB00508#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P41595#function
+  - https://en.wikipedia.org/wiki/Psychosis

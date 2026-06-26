@@ -1,0 +1,110 @@
+directed: true
+graph:
+  _id: DB08890_MESH_D043183_1
+  disease: Irritable bowel syndrome
+  disease_mesh: MESH:D043183
+  drug: linaclotide
+  drug_mesh: MESH:C523483
+  drugbank: DB:DB08890
+links:
+  - key: positively regulates
+    source: MESH:C523483
+    target: UniProt:P25092
+  - key: positively regulates
+    source: UniProt:P25092
+    target: GO:0006182
+  - key: increases activity of
+    source: GO:0006182
+    target: UBERON:0025525
+  - key: negatively correlated with
+    source: UBERON:0025525
+    target: HP:0030895
+  - key: decreases activity of
+    source: GO:0006182
+    target: UBERON:0001800
+  - key: positively correlated with
+    source: UBERON:0001800
+    target: HP:0012531
+  - key: manifestation of
+    source: HP:0030895
+    target: MESH:D043183
+  - key: manifestation of
+    source: HP:0012531
+    target: MESH:D043183
+  - key: positively correlated with
+    source: GO:0006182
+    target: GO:0015701
+  - key: positively correlated with
+    source: GO:0006182
+    target: GO:0006821
+  - key: positively correlated with
+    source: GO:0006182
+    target: GO:0006833
+  - key: positively correlated with
+    source: GO:0015701
+    target: MESH:D007419
+  - key: positively correlated with
+    source: GO:0006821
+    target: MESH:D007419
+  - key: positively correlated with
+    source: GO:0006833
+    target: MESH:D007419
+  - key: positively correlated with
+    source: GO:0015701
+    target: GO:0120054
+  - key: positively correlated with
+    source: GO:0006821
+    target: GO:0120054
+  - key: positively correlated with
+    source: GO:0006833
+    target: GO:0120054
+  - key: negatively correlated with
+    source: GO:0120054
+    target: MESH:D043183
+  - key: negatively correlated with
+    source: MESH:D007419
+    target: MESH:D043183
+multigraph: true
+nodes:
+  - id: MESH:C523483
+    label: Drug
+    name: linaclotide
+  - id: UniProt:P25092
+    label: Protein
+    name: Heat-stable enterotoxin receptor
+  - id: GO:0006182
+    label: BiologicalProcess
+    name: cGMP biosynthetic process
+  - id: GO:0015701
+    label: BiologicalProcess
+    name: bicarbonate transport
+  - id: GO:0006821
+    label: BiologicalProcess
+    name: chloride transport
+  - id: GO:0006833
+    label: BiologicalProcess
+    name: water transport
+  - id: MESH:D007419
+    label: ChemicalSubstance
+    name: Intestinal Secretions
+  - id: GO:0120054
+    label: BiologicalProcess
+    name: intestinal motility
+  - id: UBERON:0001800
+    label: GrossAnatomicalStructure
+    name: sensory ganglion
+  - id: UBERON:0025525
+    label: GrossAnatomicalStructure
+    name: motor system
+  - id: HP:0030895
+    label: PhenotypicFeature
+    name: Abnormal gastrointestinal motility
+  - id: HP:0012531
+    label: PhenotypicFeature
+    name: Pain
+  - id: MESH:D043183
+    label: Disease
+    name: Irritable bowel syndrome
+references:
+  - https://go.drugbank.com/drugs/DB08890#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Linaclotide#Pharmacology

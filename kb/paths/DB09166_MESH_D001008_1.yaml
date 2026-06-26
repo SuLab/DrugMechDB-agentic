@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB09166_MESH_D001008_1
+  disease: Anxiety disorders
+  disease_mesh: MESH:D001008
+  drug: etizolam
+  drug_mesh: MESH:C044610
+  drugbank: DB:DB09166
+links:
+  - key: increases activity of
+    source: MESH:C044610
+    target: UniProt:P14867
+  - key: capable of
+    source: UniProt:P14867
+    target: GO:0022851
+  - key: correlated with
+    source: GO:0022851
+    target: MESH:D001008
+multigraph: true
+nodes:
+  - id: MESH:C044610
+    label: Drug
+    name: etizolam
+  - id: UniProt:P14867
+    label: Protein
+    name: GABA-A receptor alpha 1
+  - id: GO:0022851
+    label: MolecularActivity
+    name: GABA-A receptor activity
+  - id: MESH:D001008
+    label: Disease
+    name: Anxiety disorders

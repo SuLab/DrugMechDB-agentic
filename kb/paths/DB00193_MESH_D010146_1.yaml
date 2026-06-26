@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB00193_MESH_D010146_1
+  disease: Pain
+  disease_mesh: MESH:D010146
+  drug: tramadol
+  drug_mesh: MESH:D014147
+  drugbank: DB:DB00193
+links:
+  - key: increases activity of
+    source: MESH:D014147
+    target: UniProt:P35372
+  - key: negatively regulates
+    source: UniProt:P35372
+    target: GO:0019233
+  - key: causes
+    source: GO:0019233
+    target: MESH:D010146
+multigraph: true
+nodes:
+  - id: MESH:D014147
+    label: Drug
+    name: tramadol
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu-type opioid receptor
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: sensory perception
+  - id: MESH:D010146
+    label: Disease
+    name: Pain

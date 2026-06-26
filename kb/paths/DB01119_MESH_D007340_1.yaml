@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01119_MESH_D007340_1
+  disease: Insulinoma
+  disease_mesh: MESH:D007340
+  drug: diazoxide
+  drug_mesh: MESH:D003981
+  drugbank: DB:DB01119
+links:
+  - key: increases activity of
+    source: MESH:D003981
+    target: UniProt:Q14654
+  - key: participates in
+    source: UniProt:Q14654
+    target: GO:0060081
+  - key: negatively regulates
+    source: GO:0060081
+    target: GO:0070509
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0030073
+  - key: contributes to
+    source: GO:0030073
+    target: MESH:D006946
+  - key: manifestation of
+    source: MESH:D006946
+    target: MESH:D007340
+multigraph: true
+nodes:
+  - id: MESH:D003981
+    label: Drug
+    name: diazoxide
+  - id: UniProt:Q14654
+    label: Protein
+    name: ATP-sensitive inward rectifier potassium channel 11
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: membrane hyperpolarization
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: transmembrane calcium influx
+  - id: GO:0030073
+    label: BiologicalProcess
+    name: insulin secretion
+  - id: MESH:D006946
+    label: Disease
+    name: Hyperinsulinism
+  - id: MESH:D007340
+    label: Disease
+    name: Insulinoma
+references:
+  - https://go.drugbank.com/drugs/DB01119#BE0000708
+  - https://en.wikipedia.org/wiki/Insulinoma

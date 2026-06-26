@@ -1,0 +1,67 @@
+directed: true
+graph:
+  _id: DB00509_MESH_D006949_1
+  disease: Hyperlipidemias
+  disease_mesh: MESH:D006949
+  drug: dextrothyroxine
+  drug_mesh: MESH:D003918
+  drugbank: DB:DB00509
+links:
+  - key: increases activity of
+    source: MESH:D003918
+    target: UniProt:P10827
+  - key: increases activity of
+    source: MESH:D003918
+    target: UniProt:P10828
+  - key: positively correlated with
+    source: UniProt:P10827
+    target: GO:0006707
+  - key: increases activity of
+    source: UniProt:P10828
+    target: UniProt:P01130
+  - key: positively correlated with
+    source: UniProt:P01130
+    target: GO:0043691
+  - key: positively correlated with
+    source: UniProt:P01130
+    target: GO:0034381
+  - key: negatively correlated with
+    source: GO:0006707
+    target: MESH:D006949
+  - key: negatively correlated with
+    source: GO:0043691
+    target: MESH:D006949
+  - key: negatively correlated with
+    source: GO:0034381
+    target: MESH:D006949
+multigraph: true
+nodes:
+  - id: MESH:D003918
+    label: Drug
+    name: dextrothyroxine
+  - id: UniProt:P10827
+    label: Protein
+    name: Thyroid hormone receptor alpha
+  - id: UniProt:P10828
+    label: Protein
+    name: Thyroid hormone receptor beta
+  - id: GO:0006707
+    label: BiologicalProcess
+    name: cholesterol catabolic process
+  - id: UniProt:P01130
+    label: Protein
+    name: Low-density lipoprotein receptor
+  - id: GO:0043691
+    label: BiologicalProcess
+    name: reverse cholesterol transport
+  - id: GO:0034381
+    label: BiologicalProcess
+    name: plasma lipoprotein particle clearance
+  - id: MESH:D006949
+    label: Disease
+    name: Hyperlipidemias
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/9440092/
+  - https://pubmed.ncbi.nlm.nih.gov/20935564/
+  - https://go.drugbank.com/drugs/DB00509#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Triiodothyronine#Lipids

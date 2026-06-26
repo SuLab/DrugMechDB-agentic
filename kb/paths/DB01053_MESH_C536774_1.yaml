@@ -1,0 +1,50 @@
+comment: Benzylpenicillin (penicillin G) is a derivative of penicillin that is used
+  in the form of its sodium or potassium salts in the treatment of various bacterial
+  infections.
+directed: true
+graph:
+  _id: DB01053_MESH_C536774_1
+  disease: Syphilis, tertiary
+  disease_mesh: MESH:C536774
+  drug: benzylpenicillin
+  drug_mesh: MESH:D010400
+  drugbank: DB:DB01053
+links:
+  - key: decreases activity of
+    source: MESH:D010400
+    target: InterPro:IPR001460
+  - key: participates in
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: occurs in
+    source: GO:0009273
+    target: taxonomy:160
+  - key: causes
+    source: taxonomy:160
+    target: MESH:C536774
+multigraph: true
+nodes:
+  - id: MESH:D010400
+    label: Drug
+    name: benzylpenicillin
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:160
+    label: OrganismTaxon
+    name: Treponema pallidum
+  - id: MESH:C536774
+    label: Disease
+    name: Syphilis, tertiary
+references:
+  - https://go.drugbank.com/drugs/DB01053#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Syphilis#Tertiary

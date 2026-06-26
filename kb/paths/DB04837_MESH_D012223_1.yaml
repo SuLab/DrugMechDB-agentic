@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB04837_MESH_D012223_1
+  disease: Vasomotor rhinitis
+  disease_mesh: MESH:D012223
+  drug: Clofedanol
+  drug_mesh: MESH:C010432
+  drugbank: DB:DB04837
+links:
+  - key: negatively regulates
+    source: MESH:C010432
+    target: UniProt:P35367
+  - key: positively correlated with
+    source: UniProt:P35367
+    target: MESH:D006632
+  - key: increases abundance of
+    source: MESH:D006632
+    target: MESH:D013373
+  - key: participates in
+    source: MESH:D013373
+    target: MESH:D020078
+  - key: contributes to
+    source: MESH:D020078
+    target: MESH:D012223
+multigraph: true
+nodes:
+  - id: MESH:C010432
+    label: Drug
+    name: Clofedanol
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: MESH:D006632
+    label: ChemicalSubstance
+    name: Histamine
+  - id: MESH:D013373
+    label: ChemicalSubstance
+    name: Substance P
+  - id: MESH:D020078
+    label: Disease
+    name: Neurogenic Inflammation
+  - id: MESH:D012223
+    label: Disease
+    name: Vasomotor rhinitis
+references:
+  - https://en.wikipedia.org/wiki/Rhinitis#Nonallergic_rhinitis
+  - https://go.drugbank.com/drugs/DB04837
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3764847/

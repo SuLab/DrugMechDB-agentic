@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB09039_MESH_D005776_1
+  disease: Gaucher Disease
+  disease_mesh: MESH:D005776
+  drug: eliglustat
+  drug_mesh: MESH:C522917
+  drugbank: DB:DB09039
+links:
+  - key: decreases activity of
+    source: MESH:C522917
+    target: UniProt:Q16739
+  - key: participates in
+    source: UniProt:Q16739
+    target: GO:0006679
+  - key: increases abundance of
+    source: GO:0006679
+    target: MESH:D005963
+  - key: contributes to
+    source: MESH:D005963
+    target: MESH:D005776
+multigraph: true
+nodes:
+  - id: MESH:C522917
+    label: Drug
+    name: eliglustat
+  - id: UniProt:Q16739
+    label: Protein
+    name: Ceramide glucosyltransferase
+  - id: GO:0006679
+    label: BiologicalProcess
+    name: glucosylceramide biosynthetic process
+  - id: MESH:D005963
+    label: ChemicalSubstance
+    name: Glucosylceramides
+  - id: MESH:D005776
+    label: Disease
+    name: Gaucher Disease
+references:
+  - https://go.drugbank.com/drugs/DB09039

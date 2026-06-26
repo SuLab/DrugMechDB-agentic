@@ -1,0 +1,31 @@
+comment: Morphine and other opioids all seem to cause hyperthermia.
+directed: true
+graph:
+  _id: DB00318_MESH_D005334_1
+  disease: Fever
+  disease_mesh: MESH:D005334
+  drug: codeine
+  drug_mesh: MESH:D003061
+  drugbank: DB:DB00318
+links:
+  - key: has metabolite
+    source: MESH:D003061
+    target: MESH:D009020
+  - key: contraindicated for
+    source: MESH:D009020
+    target: MESH:D005334
+multigraph: true
+nodes:
+  - id: MESH:D003061
+    label: Drug
+    name: codeine
+  - id: MESH:D009020
+    label: ChemicalSubstance
+    name: morphine
+  - id: MESH:D005334
+    label: Disease
+    name: Fever
+references:
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5806778/
+  - https://pubmed.ncbi.nlm.nih.gov/223174/
+  - https://link.springer.com/chapter/10.1007/978-3-0348-7429-8_61

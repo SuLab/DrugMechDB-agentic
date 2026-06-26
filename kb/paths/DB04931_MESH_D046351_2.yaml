@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB04931_MESH_D046351_2
+  disease: Erythropoietic protoporphyria
+  disease_mesh: MESH:D046351
+  drug: Afamelanotide
+  drug_mesh: MESH:C534526
+  drugbank: DB:DB04931
+links:
+  - key: increases activity of
+    source: MESH:C534526
+    target: UniProt:Q01726
+  - key: participates in
+    source: UniProt:Q01726
+    target: GO:0004977
+  - key: positively regulates
+    source: GO:0004977
+    target: GO:0042438
+  - key: positively correlated with
+    source: GO:0042438
+    target: GO:0009650
+  - key: negatively correlated with
+    source: GO:0009650
+    target: HP:0000992
+  - key: manifestation of
+    source: HP:0000992
+    target: MESH:D046351
+multigraph: true
+nodes:
+  - id: MESH:C534526
+    label: Drug
+    name: Afamelanotide
+  - id: UniProt:Q01726
+    label: Protein
+    name: Melanocyte-stimulating hormone receptor
+  - id: GO:0004977
+    label: MolecularActivity
+    name: Melanocortin receptor activity
+  - id: GO:0042438
+    label: BiologicalProcess
+    name: Melanin biosynthetic process
+  - id: GO:0009650
+    label: BiologicalProcess
+    name: UV protection
+  - id: HP:0000992
+    label: PhenotypicFeature
+    name: Cutaneous photosensitivity
+  - id: MESH:D046351
+    label: Drug
+    name: Erythropoietic protoporphyria
+references:
+  - https://go.drugbank.com/drugs/DB04931#BE0002447
+  - https://en.wikipedia.org/wiki/Erythropoietic_protoporphyria

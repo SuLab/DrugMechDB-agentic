@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00312_MESH_D004827_1
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+  drug: pentobarbital
+  drug_mesh: MESH:D010424
+  drugbank: DB:DB00312
+links:
+  - key: increases activity of
+    source: MESH:D010424
+    target: InterPro:IPR006028
+  - key: positively regulates
+    source: InterPro:IPR006028
+    target: GO:0022851
+  - key: positively correlated with
+    source: GO:0022851
+    target: GO:0060081
+  - key: negatively correlated with
+    source: GO:0060081
+    target: GO:0061535
+  - key: correlated with
+    source: GO:0061535
+    target: HP:0001250
+  - key: manifestation of
+    source: HP:0001250
+    target: MESH:D004827
+multigraph: true
+nodes:
+  - id: MESH:D010424
+    label: Drug
+    name: pentobarbital
+  - id: InterPro:IPR006028
+    label: GeneFamily
+    name: Gamma-aminobutyric acid A receptor/Glycine receptor alpha
+  - id: GO:0022851
+    label: MolecularActivity
+    name: GABA-gated chloride ion channel activity
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: membrane hyperpolarization
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: glutamate secretion, neurotransmission
+  - id: HP:0001250
+    label: PhenotypicFeature
+    name: Seizure
+  - id: MESH:D004827
+    label: Disease
+    name: Epilepsy
+references:
+  - https://go.drugbank.com/drugs/DB00312
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL448/

@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB01004_MESH_D017726_1
+  disease: Cytomegaloviral retinitis
+  disease_mesh: MESH:D017726
+  drug: Ganciclovir
+  drug_mesh: MESH:D015774
+  drugbank: DB:DB01004
+links:
+  - key: disrupts
+    source: MESH:D015774
+    target: MESH:D004247
+  - key: decreases activity of
+    source: MESH:D015774
+    target: UniProt:P08546
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0019079
+  - key: positively regulates
+    source: UniProt:P08546
+    target: GO:0019079
+  - key: in taxon
+    source: GO:0019079
+    target: taxonomy:10359
+  - key: causes
+    source: taxonomy:10359
+    target: MESH:D017726
+multigraph: true
+nodes:
+  - id: MESH:D015774
+    label: Drug
+    name: Ganciclovir
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: UniProt:P08546
+    label: Protein
+    name: DNA polymerase catalytic subunit (Human cytomegalovirus)
+  - id: GO:0019079
+    label: BiologicalProcess
+    name: Viral genome replication
+  - id: taxonomy:10359
+    label: OrganismTaxon
+    name: Human cytomegalovirus
+  - id: MESH:D017726
+    label: Disease
+    name: Cytomegaloviral retinitis
+references:
+  - https://go.drugbank.com/drugs/DB01004#BE0000308
+  - https://en.wikipedia.org/wiki/Cytomegalovirus_retinitis

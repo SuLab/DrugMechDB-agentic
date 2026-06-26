@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB11783_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: imidapril
+  drug_mesh: MESH:C065166
+  drugbank: DB:DB11783
+links:
+  - key: produces
+    source: MESH:C065166
+    target: MESH:C078006
+  - key: decreases activity of
+    source: MESH:C078006
+    target: UniProt:P12821
+  - key: positively regulates
+    source: UniProt:P12821
+    target: GO:0002003
+  - key: positively regulates
+    source: GO:0002003
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C065166
+    label: Drug
+    name: imidapril
+  - id: MESH:C078006
+    label: Drug
+    name: imidaprilat
+  - id: UniProt:P12821
+    label: Protein
+    name: Angiotensin-converting enzyme
+  - id: GO:0002003
+    label: BiologicalProcess
+    name: angiotensin maturation
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL317094/
+  - https://en.wikipedia.org/wiki/ACE_inhibitor#Effects

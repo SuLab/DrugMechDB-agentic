@@ -1,0 +1,45 @@
+comment: Dihydrocodeine is a semi-synthetic opioid analgesic prescribed for pain or
+  severe dyspnea, or as an antitussive, either alone or compounded with paracetamol
+  (acetaminophen) (as in co-dydramol) or aspirin.
+directed: true
+graph:
+  _id: DB01551_MESH_D003371_1
+  disease: Cough
+  disease_mesh: MESH:D003371
+  drug: dihydrocodeine
+  drug_mesh: MESH:C014481
+  drugbank: DB:DB01551
+links:
+  - key: has metabolite
+    source: MESH:C014481
+    target: CHEBI:4575
+  - key: increases activity of
+    source: CHEBI:4575
+    target: UniProt:P35372
+  - key: negatively correlated with
+    source: UniProt:P35372
+    target: GO:0060004
+  - key: positively correlated with
+    source: GO:0060004
+    target: MESH:D003371
+multigraph: true
+nodes:
+  - id: MESH:C014481
+    label: Drug
+    name: dihydrocodeine
+  - id: CHEBI:4575
+    label: ChemicalSubstance
+    name: Dihydromorphine
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu opioid receptor
+  - id: GO:0060004
+    label: BiologicalProcess
+    name: reflex
+  - id: MESH:D003371
+    label: Disease
+    name: Cough
+references:
+  - https://go.drugbank.com/drugs/DB01551
+  - https://en.wikipedia.org/wiki/Dihydrocodeine
+  - https://pubmed.ncbi.nlm.nih.gov/25801029/

@@ -1,0 +1,1184 @@
+{
+  "prefixes": {
+    "DB": {
+      "unique_ids": 98,
+      "occurrences": 220,
+      "checked": 93,
+      "coverage_pct": 94.9,
+      "bucket_counts": {
+        "synonym": 4,
+        "match_preferred": 81,
+        "substantive_drift": 8,
+        "uncheckable": 5
+      },
+      "bucket_occurrences": {
+        "synonym": 5,
+        "match_preferred": 191,
+        "substantive_drift": 13,
+        "uncheckable": 11
+      }
+    },
+    "InterPro": {
+      "unique_ids": 103,
+      "occurrences": 879,
+      "checked": 103,
+      "coverage_pct": 100.0,
+      "bucket_counts": {
+        "match_preferred": 72,
+        "substantive_drift": 23,
+        "unresolvable": 4,
+        "deprecated": 4
+      },
+      "bucket_occurrences": {
+        "match_preferred": 798,
+        "substantive_drift": 60,
+        "unresolvable": 13,
+        "deprecated": 8
+      }
+    },
+    "MESH": {
+      "unique_ids": 2539,
+      "occurrences": 11633,
+      "checked": 2539,
+      "coverage_pct": 100.0,
+      "bucket_counts": {
+        "match_preferred": 2085,
+        "synonym": 219,
+        "substantive_drift": 142,
+        "deprecated": 93
+      },
+      "bucket_occurrences": {
+        "match_preferred": 10549,
+        "synonym": 596,
+        "substantive_drift": 284,
+        "deprecated": 204
+      }
+    },
+    "Pfam": {
+      "unique_ids": 16,
+      "occurrences": 112,
+      "checked": 16,
+      "coverage_pct": 100.0,
+      "bucket_counts": {
+        "match_preferred": 13,
+        "substantive_drift": 3
+      },
+      "bucket_occurrences": {
+        "match_preferred": 99,
+        "substantive_drift": 13
+      }
+    },
+    "TIGR": {
+      "unique_ids": 1,
+      "occurrences": 3,
+      "checked": 1,
+      "coverage_pct": 100.0,
+      "bucket_counts": {
+        "substantive_drift": 1
+      },
+      "bucket_occurrences": {
+        "substantive_drift": 3
+      }
+    },
+    "UniProt": {
+      "unique_ids": 776,
+      "occurrences": 7055,
+      "checked": 776,
+      "coverage_pct": 100.0,
+      "bucket_counts": {
+        "unresolvable": 3,
+        "substantive_drift": 90,
+        "match_preferred": 605,
+        "deprecated": 22,
+        "synonym": 56
+      },
+      "bucket_occurrences": {
+        "unresolvable": 3,
+        "substantive_drift": 171,
+        "match_preferred": 6702,
+        "deprecated": 33,
+        "synonym": 146
+      }
+    },
+    "reactome": {
+      "unique_ids": 81,
+      "occurrences": 329,
+      "checked": 81,
+      "coverage_pct": 100.0,
+      "bucket_counts": {
+        "match_preferred": 65,
+        "substantive_drift": 8,
+        "unresolvable": 8
+      },
+      "bucket_occurrences": {
+        "match_preferred": 297,
+        "substantive_drift": 18,
+        "unresolvable": 14
+      }
+    }
+  },
+  "examples": {
+    "DB": {
+      "deprecated": [],
+      "substantive_drift": [
+        {
+          "id": "DB:DB09281",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "Magnesium silicate"
+          ],
+          "preferred": "Magnesium trisilicate",
+          "note": null,
+          "uses": 4
+        },
+        {
+          "id": "DB:DB05812",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "abiraterone acetate"
+          ],
+          "preferred": "Abiraterone",
+          "note": null,
+          "uses": 3
+        },
+        {
+          "id": "DB:DB00603",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "Medroxyprogesterone"
+          ],
+          "preferred": "Medroxyprogesterone acetate",
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "DB:DB00624",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "Testosterone cypionate"
+          ],
+          "preferred": "Testosterone",
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "DB:DB00856",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "chlorphenesin carbamate"
+          ],
+          "preferred": "Chlorphenesin",
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "DB:DB05768",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "Asfotase alfa"
+          ],
+          "preferred": "Alkaline Phosphatase",
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "DB:DB06718",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "menadiol sodium diphosphate"
+          ],
+          "preferred": "Stanozolol",
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "DB:DB11254",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "acrisorcin"
+          ],
+          "preferred": "Hexylresorcinol",
+          "note": null,
+          "uses": 1
+        }
+      ],
+      "unresolvable": []
+    },
+    "InterPro": {
+      "deprecated": [
+        {
+          "id": "InterPro:IPR015680",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Glutamate-Gated Chloride Channel"
+          ],
+          "preferred": "Glutamate-Gated Chloride Channel",
+          "note": "deleted 2022-08-26T00:00:00.000Z",
+          "uses": 3
+        },
+        {
+          "id": "InterPro:IPR028809",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Neuronal Voltage gated sodium channels"
+          ],
+          "preferred": "Voltage gated sodium channel, alpha-10 subunit",
+          "note": "deleted 2022-11-25T00:00:00.000Z",
+          "uses": 2
+        },
+        {
+          "id": "InterPro:IPR043371",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "cAMP-specific 3',5'-cyclic phosphodiesterase 4"
+          ],
+          "preferred": "cAMP-specific 3',5'-cyclic phosphodiesterase 4",
+          "note": "deleted 2022-11-25T00:00:00.000Z",
+          "uses": 2
+        },
+        {
+          "id": "InterPro:IPR017320",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Histone deacetylase class II, eukaryotic-type"
+          ],
+          "preferred": "Histone deacetylase class II, eukaryotic-type",
+          "note": "deleted 2023-10-13T00:00:00.000Z",
+          "uses": 1
+        }
+      ],
+      "substantive_drift": [
+        {
+          "id": "InterPro:IPR000235",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "30S ribosomal protein S5/S7"
+          ],
+          "preferred": "Small ribosomal subunit protein uS7",
+          "note": null,
+          "uses": 23
+        },
+        {
+          "id": "InterPro:IPR000114",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Ribosomal protein L16"
+          ],
+          "preferred": "Large ribosomal subunit protein uL16, bacteria",
+          "note": null,
+          "uses": 6
+        },
+        {
+          "id": "InterPro:IPR005025",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "NADPH-dependent FMN reductase-like"
+          ],
+          "preferred": "NADPH-dependent FMN reductase-like domain",
+          "note": null,
+          "uses": 5
+        },
+        {
+          "id": "InterPro:IPR001320",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Ionotropic glutamate receptor"
+          ],
+          "preferred": "Ionotropic glutamate receptor, C-terminal",
+          "note": null,
+          "uses": 2
+        },
+        {
+          "id": "InterPro:IPR003084",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Histone deacetylase"
+          ],
+          "preferred": "Class I/II Histone deacetylase HDAC",
+          "note": null,
+          "uses": 2
+        },
+        {
+          "id": "InterPro:IPR010526",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Sodium ion transport-associated"
+          ],
+          "preferred": "Sodium ion transport-associated domain",
+          "note": null,
+          "uses": 2
+        },
+        {
+          "id": "InterPro:IPR019602",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "mRNA capping enzyme, large subunit, ATPase/guanylyltransferase, virus"
+          ],
+          "preferred": "mRNA capping enzyme catalytic subunit, RNA triphosphatase domain, virus",
+          "note": null,
+          "uses": 2
+        },
+        {
+          "id": "InterPro:IPR022423",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Neurohypophysial hormone"
+          ],
+          "preferred": "Neurohypophysial hormone, conserved site",
+          "note": null,
+          "uses": 2
+        }
+      ],
+      "unresolvable": [
+        {
+          "id": "InterPro:SSF50353",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Cytokine"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 9
+        },
+        {
+          "id": "InterPro:cd15058",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "beta adrenergic receptors (adenoceptors), member of the class A family of seven-transmembrane G protein-coupled receptors"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 2
+        },
+        {
+          "id": "InterPro:IPR001128\ufeff",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Cytochrome P450"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "InterPro:PR001696",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Voltage gated sodium channel, alpha subunit"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 1
+        }
+      ]
+    },
+    "MESH": {
+      "deprecated": [
+        {
+          "id": "MESH:C047781",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "lamotrigine"
+          ],
+          "preferred": "[OBSOLETE] lamotrigine",
+          "note": "http://id.nlm.nih.gov/mesh/D014227",
+          "uses": 8
+        },
+        {
+          "id": "MESH:C053267",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "cefpodoxime proxetil"
+          ],
+          "preferred": "[OBSOLETE] cefpodoxime proxetil",
+          "note": "http://id.nlm.nih.gov/mesh/D015296Q000031",
+          "uses": 7
+        },
+        {
+          "id": "MESH:C078049",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "Gatifloxacin"
+          ],
+          "preferred": "[OBSOLETE] gatifloxacin",
+          "note": "http://id.nlm.nih.gov/mesh/D024841",
+          "uses": 7
+        },
+        {
+          "id": "MESH:C554127",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "interferon alfa-2b"
+          ],
+          "preferred": "[OBSOLETE] interferon alfa-2b",
+          "note": "http://id.nlm.nih.gov/mesh/D016898",
+          "uses": 7
+        },
+        {
+          "id": "MESH:C059500",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "meropenem"
+          ],
+          "preferred": "[OBSOLETE] meropenem",
+          "note": "http://id.nlm.nih.gov/mesh/D013845",
+          "uses": 6
+        },
+        {
+          "id": "MESH:C011585",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "ciclopirox"
+          ],
+          "preferred": "[OBSOLETE] ciclopirox",
+          "note": "http://id.nlm.nih.gov/mesh/D011728",
+          "uses": 5
+        },
+        {
+          "id": "MESH:C043265",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "tazobactam"
+          ],
+          "preferred": "[OBSOLETE] tazobactam",
+          "note": "http://id.nlm.nih.gov/mesh/D010397Q000031",
+          "uses": 5
+        },
+        {
+          "id": "MESH:C043266",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "Cefepime"
+          ],
+          "preferred": "[OBSOLETE] cefepime",
+          "note": "http://id.nlm.nih.gov/mesh/D002511",
+          "uses": 5
+        }
+      ],
+      "substantive_drift": [
+        {
+          "id": "MESH:D010402",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "Procaine benzylpenicillin"
+          ],
+          "preferred": "Penicillin G Procaine",
+          "note": null,
+          "uses": 20
+        },
+        {
+          "id": "MESH:D011471",
+          "labels": [
+            "Disease"
+          ],
+          "stored": [
+            "Malignant tumor of prostate"
+          ],
+          "preferred": "Prostatic Neoplasms",
+          "note": null,
+          "uses": 12
+        },
+        {
+          "id": "MESH:C064466",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "Ulobetasol propionate"
+          ],
+          "preferred": "halobetasol",
+          "note": null,
+          "uses": 9
+        },
+        {
+          "id": "MESH:D005443",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "Flumetasone"
+          ],
+          "preferred": "Flumethasone",
+          "note": null,
+          "uses": 9
+        },
+        {
+          "id": "MESH:D005478",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "Fludroxycortide"
+          ],
+          "preferred": "Flurandrenolone",
+          "note": null,
+          "uses": 9
+        },
+        {
+          "id": "MESH:D015464",
+          "labels": [
+            "Disease"
+          ],
+          "stored": [
+            "CML (ph+)"
+          ],
+          "preferred": "Leukemia, Myelogenous, Chronic, BCR-ABL Positive",
+          "note": null,
+          "uses": 8
+        },
+        {
+          "id": "MESH:D002762",
+          "labels": [
+            "Drug"
+          ],
+          "stored": [
+            "Colecalciferol"
+          ],
+          "preferred": "Cholecalciferol",
+          "note": null,
+          "uses": 7
+        },
+        {
+          "id": "MESH:D000072861",
+          "labels": [
+            "Disease"
+          ],
+          "stored": [
+            "Social phobia"
+          ],
+          "preferred": "Phobia, Social",
+          "note": null,
+          "uses": 6
+        }
+      ],
+      "unresolvable": []
+    },
+    "Pfam": {
+      "deprecated": [],
+      "substantive_drift": [
+        {
+          "id": "Pfam:PF00809",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Dihydropteroate synthase"
+          ],
+          "preferred": "Pterin binding enzyme",
+          "note": null,
+          "uses": 11
+        },
+        {
+          "id": "Pfam:PF01007",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Inward-rectifier potassium ion channel"
+          ],
+          "preferred": "Inward rectifier potassium channel transmembrane domain",
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "Pfam:PF02898",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Nitric oxide synthase"
+          ],
+          "preferred": "Nitric oxide synthase, oxygenase domain",
+          "note": null,
+          "uses": 1
+        }
+      ],
+      "unresolvable": []
+    },
+    "TIGR": {
+      "deprecated": [],
+      "substantive_drift": [
+        {
+          "id": "TIGR:02074",
+          "labels": [
+            "GeneFamily"
+          ],
+          "stored": [
+            "Penicillin-binding protein 1A"
+          ],
+          "preferred": "PBP1A family penicillin-binding protein",
+          "note": null,
+          "uses": 3
+        }
+      ],
+      "unresolvable": []
+    },
+    "UniProt": {
+      "deprecated": [
+        {
+          "id": "UniProt:A0A156J405",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "DNA topoisomerase 4 subunit A"
+          ],
+          "preferred": null,
+          "note": "DELETED:",
+          "uses": 2
+        },
+        {
+          "id": "UniProt:D0RGV5",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "30S ribosomal protein S9"
+          ],
+          "preferred": null,
+          "note": "DELETED:",
+          "uses": 2
+        },
+        {
+          "id": "UniProt:D0RGZ2",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "30S ribosomal protein S4"
+          ],
+          "preferred": null,
+          "note": "DELETED:",
+          "uses": 2
+        },
+        {
+          "id": "UniProt:D8GUW8",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "DNA gyrase subunit A"
+          ],
+          "preferred": null,
+          "note": "DELETED:",
+          "uses": 2
+        },
+        {
+          "id": "UniProt:D8H6M3",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "DNA topoisomerase 4 subunit A"
+          ],
+          "preferred": null,
+          "note": "DELETED:",
+          "uses": 2
+        },
+        {
+          "id": "UniProt:R4Y7H5",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "DNA gyrase subunit A"
+          ],
+          "preferred": null,
+          "note": "DELETED:",
+          "uses": 2
+        },
+        {
+          "id": "UniProt:R4YE07",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "DNA topoisomerase 4 subunit A"
+          ],
+          "preferred": null,
+          "note": "DELETED:",
+          "uses": 2
+        },
+        {
+          "id": "UniProt:S2ZP52",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "30S ribosomal protein S4"
+          ],
+          "preferred": null,
+          "note": "DELETED:",
+          "uses": 2
+        }
+      ],
+      "substantive_drift": [
+        {
+          "id": "UniProt:Q72874",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "HIV-1 protease"
+          ],
+          "preferred": "Pol polyprotein",
+          "note": null,
+          "uses": 10
+        },
+        {
+          "id": "UniProt:P27815",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "cAMP-specific 3',5'-cyclic phosphodiesterase 4A"
+          ],
+          "preferred": "3',5'-cyclic-AMP phosphodiesterase 4A",
+          "note": null,
+          "uses": 8
+        },
+        {
+          "id": "UniProt:Q07343",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "cAMP-specific 3',5'-cyclic phosphodiesterase 4B"
+          ],
+          "preferred": "3',5'-cyclic-AMP phosphodiesterase 4B",
+          "note": null,
+          "uses": 8
+        },
+        {
+          "id": "UniProt:Q08493",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "cAMP-specific 3',5'-cyclic phosphodiesterase 4C"
+          ],
+          "preferred": "3',5'-cyclic-AMP phosphodiesterase 4C",
+          "note": null,
+          "uses": 7
+        },
+        {
+          "id": "UniProt:Q08499",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "cAMP-specific 3',5'-cyclic phosphodiesterase 4D"
+          ],
+          "preferred": "3',5'-cyclic-AMP phosphodiesterase 4D",
+          "note": null,
+          "uses": 7
+        },
+        {
+          "id": "UniProt:P15692",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "Vascular endothelial growth factor A"
+          ],
+          "preferred": "Vascular endothelial growth factor A, long form",
+          "note": null,
+          "uses": 4
+        },
+        {
+          "id": "UniProt:Q2FKQ0",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "DNA gyrase subunit A (Staphylococcus aureus)"
+          ],
+          "preferred": "DNA gyrase subunit A",
+          "note": null,
+          "uses": 4
+        },
+        {
+          "id": "UniProt:O43451",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "Maltase-glucoamylase, intestinal"
+          ],
+          "preferred": "Maltase-glucoamylase",
+          "note": null,
+          "uses": 3
+        }
+      ],
+      "unresolvable": [
+        {
+          "id": "UniProt:41972",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "Isoleucine--tRNA ligase"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "UniProt:P3535",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "Prostaglandin G/H synthase 2"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "UniProt:P4984",
+          "labels": [
+            "Protein"
+          ],
+          "stored": [
+            "Glycogen synthase kinase-3 beta"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 1
+        }
+      ]
+    },
+    "reactome": {
+      "deprecated": [],
+      "substantive_drift": [
+        {
+          "id": "reactome:R-HSA-1169410",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "Antiviral mechanism by IFN-stimulated genes"
+          ],
+          "preferred": "Antimicrobial mechanism of IFN-stimulated genes",
+          "note": null,
+          "uses": 6
+        },
+        {
+          "id": "reactome:R-HSA-2454202",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "Allergen dependent IgE bound FCERI aggregation"
+          ],
+          "preferred": "Fc epsilon receptor (FCERI) signaling",
+          "note": null,
+          "uses": 6
+        },
+        {
+          "id": "reactome:R-HSA-194138",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "Signaling by Vascular Epithelial Growth Factors (VEGF)"
+          ],
+          "preferred": "Signaling by VEGF",
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "reactome:R-HSA-2022377",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "Renin-angiotensin-aldosterone system"
+          ],
+          "preferred": "Metabolism of Angiotensinogen to Angiotensins",
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "reactome:R-HSA-211976",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "sterol metabolism"
+          ],
+          "preferred": "Endogenous sterols",
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "reactome:R-HSA-556833",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "glycerolipids metabolism"
+          ],
+          "preferred": "Metabolism of lipids",
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "reactome:R-HSA-5668541",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "TNFRSF mediated non-canonical NF-kB pathway"
+          ],
+          "preferred": "TNFR2 non-canonical NF-kB pathway",
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "reactome:R-HSA-5684996",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "ERK1/ERK2 pathway"
+          ],
+          "preferred": "MAPK1/MAPK3 signaling",
+          "note": null,
+          "uses": 1
+        }
+      ],
+      "unresolvable": [
+        {
+          "id": "reactome:R-HSA-140834",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "Extrinsic Pathway of Fibrin Clot Formation"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 4
+        },
+        {
+          "id": "reactome:R-HSA-416476\ufeff",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "G alpha (q) signalling events"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 2
+        },
+        {
+          "id": "reactome:R-HSA-416482\ufeff",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "G alpha (12/13) signalling events"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 2
+        },
+        {
+          "id": "reactome:R-HSA-8932339",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "ROS sensing by NFE2L2"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 2
+        },
+        {
+          "id": "reactome:R-HSA-140877",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "Formation of Fibrin Clot (Clotting Cascade)"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "reactome:R-HSA-418555\ufeff",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "G alpha (s) signalling events"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "reactome:R-HSA-629587\ufeff",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "Highly sodium permeable postsynaptic acetylcholine nicotinic receptors"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 1
+        },
+        {
+          "id": "reactome:R-HSA-629594\ufeff",
+          "labels": [
+            "Pathway"
+          ],
+          "stored": [
+            "Highly calcium permeable postsynaptic nicotinic acetylcholine receptors"
+          ],
+          "preferred": null,
+          "note": null,
+          "uses": 1
+        }
+      ]
+    }
+  },
+  "grand": {
+    "unique_ids": 3614,
+    "checked": 3609,
+    "coverage_pct": 99.9
+  },
+  "data_hygiene_nonascii_ids": [
+    {
+      "id": "InterPro:IPR001128\ufeff",
+      "prefix": "InterPro",
+      "codepoints": [
+        "0xfeff"
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "reactome:R-HSA-416476\ufeff",
+      "prefix": "reactome",
+      "codepoints": [
+        "0xfeff"
+      ],
+      "occurrences": 2
+    },
+    {
+      "id": "reactome:R-HSA-416482\ufeff",
+      "prefix": "reactome",
+      "codepoints": [
+        "0xfeff"
+      ],
+      "occurrences": 2
+    },
+    {
+      "id": "reactome:R-HSA-418555\ufeff",
+      "prefix": "reactome",
+      "codepoints": [
+        "0xfeff"
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "reactome:R-HSA-629587\ufeff",
+      "prefix": "reactome",
+      "codepoints": [
+        "0xfeff"
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "reactome:R-HSA-629594\ufeff",
+      "prefix": "reactome",
+      "codepoints": [
+        "0xfeff"
+      ],
+      "occurrences": 1
+    }
+  ],
+  "whole_node_layer": {
+    "total_unique_ids": 5128,
+    "obo_checked_unique": 1514,
+    "nonobo_checked_unique": 3609,
+    "now_checked_unique": 5123,
+    "now_coverage_pct": 99.9,
+    "deprecated_obsolete": 159,
+    "unresolvable": 19,
+    "substantive_name_drift": 375,
+    "uncheckable": 5
+  }
+}

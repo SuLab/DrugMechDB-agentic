@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB13139_MESH_D001986_1
+  disease: Bronchospasm
+  disease_mesh: MESH:D001986
+  drug: levosalbutamol
+  drug_mesh: MESH:D064412
+  drugbank: DB:DB13139
+links:
+  - key: increases activity of
+    source: MESH:D064412
+    target: UniProt:P07550
+  - key: positively regulates
+    source: UniProt:P07550
+    target: UniProt:B7Z2C7
+  - key: increases abundance of
+    source: UniProt:B7Z2C7
+    target: CHEBI:17489
+  - key: increases activity of
+    source: CHEBI:17489
+    target: UniProt:P17612
+  - key: positively regulates
+    source: UniProt:P17612
+    target: GO:0044557
+  - key: negatively regulates
+    source: UniProt:P17612
+    target: GO:0070509
+  - key: located in
+    source: GO:0044557
+    target: UBERON:0002185
+  - key: located in
+    source: GO:0070509
+    target: UBERON:0002185
+  - key: correlated with
+    source: UBERON:0002185
+    target: MESH:D001986
+multigraph: true
+nodes:
+  - id: MESH:D064412
+    label: Drug
+    name: levosalbutamol
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: UniProt:B7Z2C7
+    label: Protein
+    name: Adenylate cyclase
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: UniProt:P17612
+    label: Protein
+    name: cAMP-dependent protein kinase catalytic subunit alpha
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: smooth muscle relaxation
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: transmembrane calcium influx
+  - id: UBERON:0002185
+    label: GrossAnatomicalStructure
+    name: bronchus
+  - id: MESH:D001986
+    label: Disease
+    name: Bronchospasm
+references:
+  - https://go.drugbank.com/drugs/DB13139
+  - https://en.wikipedia.org/wiki/Levosalbutamol#:~:text=Mechanism%20of%20action,-Activation%20of%20%CE%B2&text=Levosalbutamol%20relaxes%20the%20smooth%20muscles,mast%20cells%20in%20the%20airways

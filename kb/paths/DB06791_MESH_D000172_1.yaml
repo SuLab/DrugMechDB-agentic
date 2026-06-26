@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB06791_MESH_D000172_1
+  disease: Acromegaly
+  disease_mesh: MESH:D000172
+  drug: lanreotide
+  drug_mesh: MESH:C060347
+  drugbank: DB:DB06791
+links:
+  - key: chemically similar to
+    source: MESH:C060347
+    target: MESH:D013004
+  - key: increases activity of
+    source: MESH:D013004
+    target: UniProt:P30874
+  - key: increases activity of
+    source: MESH:D013004
+    target: UniProt:P35346
+  - key: participates in
+    source: UniProt:P30874
+    target: GO:0038169
+  - key: participates in
+    source: UniProt:P35346
+    target: GO:0038169
+  - key: negatively regulates
+    source: GO:0038169
+    target: MESH:D000172
+multigraph: true
+nodes:
+  - id: MESH:C060347
+    label: Drug
+    name: lanreotide
+  - id: MESH:D013004
+    label: ChemicalSubstance
+    name: Somatostatin
+  - id: UniProt:P30874
+    label: Protein
+    name: Somatostatin receptor type 2
+  - id: UniProt:P35346
+    label: Protein
+    name: Somatostatin receptor type 5
+  - id: GO:0038169
+    label: BiologicalProcess
+    name: Somatostatin receptor signaling pathway
+  - id: MESH:D000172
+    label: Disease
+    name: Acromegaly
+references:
+  - https://go.drugbank.com/drugs/DB06791
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201185/
+  - https://en.wikipedia.org/wiki/Lanreotide

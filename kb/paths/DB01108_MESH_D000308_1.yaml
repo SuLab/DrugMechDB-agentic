@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB01108_MESH_D000308_1
+  disease: Adrenocortical Hyperfunction
+  disease_mesh: MESH:D000308
+  drug: trilostane
+  drug_mesh: MESH:C009954
+  drugbank: DB:DB01108
+links:
+  - key: decreases activity of
+    source: MESH:C009954
+    target: UniProt:P14060
+  - key: decreases activity of
+    source: MESH:C009954
+    target: UniProt:P26439
+  - key: positively regulates
+    source: UniProt:P14060
+    target: GO:0006694
+  - key: positively regulates
+    source: UniProt:P26439
+    target: GO:0006694
+  - key: increases abundance of
+    source: GO:0006694
+    target: MESH:D013256
+  - key: has part
+    source: MESH:D013256
+    target: MESH:D000450
+  - key: positively correlated with
+    source: MESH:D000450
+    target: MESH:D000308
+multigraph: true
+nodes:
+  - id: MESH:C009954
+    label: Drug
+    name: trilostane
+  - id: UniProt:P14060
+    label: Protein
+    name: 3 beta-hydroxysteroid dehydrogenase/Delta 5-->4-isomerase type 1
+  - id: UniProt:P26439
+    label: Protein
+    name: 3 beta-hydroxysteroid dehydrogenase/Delta 5-->4-isomerase type 2
+  - id: GO:0006694
+    label: BiologicalProcess
+    name: steroid biosynthetic process
+  - id: MESH:D013256
+    label: ChemicalSubstance
+    name: Steroids
+  - id: MESH:D000450
+    label: ChemicalSubstance
+    name: Aldosterone
+  - id: MESH:D000308
+    label: Disease
+    name: Adrenocortical Hyperfunction
+references:
+  - https://go.drugbank.com/drugs/DB01108#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P14060#function
+  - https://www.uniprot.org/uniprot/P26439#function
+  - https://en.wikipedia.org/wiki/Adrenocortical_hyperfunction

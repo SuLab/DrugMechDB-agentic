@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB00209_MESH_D053202_2
+  disease: Urge incontinence of urine
+  disease_mesh: MESH:D053202
+  drug: trospium
+  drug_mesh: MESH:C003330
+  drugbank: DB:DB00209
+links:
+  - key: decreases activity of
+    source: MESH:C003330
+    target: UniProt:P20309
+  - key: participates in
+    source: UniProt:P20309
+    target: GO:1905144
+  - key: positively regulates
+    source: GO:1905144
+    target: GO:0014832
+  - key: located in
+    source: GO:0014832
+    target: UBERON:0001255
+  - key: correlated with
+    source: UBERON:0001255
+    target: GO:0060073
+  - key: correlated with
+    source: GO:0060073
+    target: MESH:D053202
+multigraph: true
+nodes:
+  - id: MESH:C003330
+    label: Drug
+    name: trospium
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:1905144
+    label: BiologicalProcess
+    name: response to acetylcholine
+  - id: GO:0014832
+    label: BiologicalProcess
+    name: Urinary bladder smooth muscle contraction
+  - id: UBERON:0001255
+    label: GrossAnatomicalStructure
+    name: urinary bladder
+  - id: GO:0014832
+    label: BiologicalProcess
+    name: Urinary bladder smooth muscle contraction
+  - id: GO:0060073
+    label: BiologicalProcess
+    name: micturition
+  - id: MESH:D053202
+    label: Disease
+    name: Urge incontinence of urine
+references:
+  - https://go.drugbank.com/drugs/DB00209#BE0000045
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1906583/

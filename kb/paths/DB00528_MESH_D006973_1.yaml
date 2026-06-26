@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB00528_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: lercanidipine
+  drug_mesh: MESH:C060343
+  drugbank: DB:DB00528
+links:
+  - key: decreases activity of
+    source: MESH:C060343
+    target: UniProt:Q06432
+  - key: participates in
+    source: UniProt:Q06432
+    target: GO:0070509
+  - key: contributes to
+    source: GO:0070509
+    target: GO:0044557
+  - key: located in
+    source: GO:0044557
+    target: UBERON:0001981
+  - key: positively regulates
+    source: UBERON:0001981
+    target: GO:0008217
+  - key: positively correlated with
+    source: GO:0008217
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:C060343
+    label: Drug
+    name: lercanidipine
+  - id: UniProt:Q06432
+    label: Protein
+    name: Voltage-dependent calcium channel gamma-1 subunit
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Transmembrane calcium influx
+  - id: GO:0044557
+    label: BiologicalProcess
+    name: smooth muscle relaxation
+  - id: UBERON:0001981
+    label: GrossAnatomicalStructure
+    name: blood vessel
+  - id: GO:0008217
+    label: BiologicalProcess
+    name: Blood Pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00528#BE0000679
+  - https://en.wikipedia.org/wiki/Lercanidipine

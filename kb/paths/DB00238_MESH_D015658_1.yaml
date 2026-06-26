@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB00238_MESH_D015658_1
+  disease: HIV Infections
+  disease_mesh: MESH:D015658
+  drug: nevirapine
+  drug_mesh: MESH:D019829
+  drugbank: DB:DB00238
+links:
+  - key: decreases activity of
+    source: MESH:D019829
+    target: UniProt:Q72547
+  - key: positively regulates
+    source: UniProt:Q72547
+    target: GO:0001171
+  - key: positively correlated with
+    source: GO:0001171
+    target: GO:0019079
+  - key: in taxon
+    source: GO:0019079
+    target: taxonomy:11676
+  - key: causes
+    source: taxonomy:11676
+    target: MESH:D015658
+multigraph: true
+nodes:
+  - id: MESH:D019829
+    label: Drug
+    name: nevirapine
+  - id: UniProt:Q72547
+    label: Protein
+    name: Reverse transcriptase/RNaseH
+  - id: GO:0001171
+    label: BiologicalProcess
+    name: reverse transcription
+  - id: GO:0019079
+    label: BiologicalProcess
+    name: viral genome replication
+  - id: taxonomy:11676
+    label: OrganismTaxon
+    name: Human immunodeficiency virus 1
+  - id: MESH:D015658
+    label: Disease
+    name: HIV Infections
+references:
+  - https://go.drugbank.com/drugs/DB00238#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q72547#function
+  - https://en.wikipedia.org/wiki/HIV/AIDS

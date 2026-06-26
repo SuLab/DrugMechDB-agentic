@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB00791_MESH_D008228_1
+  disease: Non-Hodgkin's lymphoma
+  disease_mesh: MESH:D008228
+  drug: uracil mustard
+  drug_mesh: MESH:D014499
+  drugbank: DB:DB00791
+links:
+  - key: molecularly interacts with
+    source: MESH:D014499
+    target: CHEBI:16235
+  - key: molecularly interacts with
+    source: MESH:D014499
+    target: CHEBI:16040
+  - key: participates in
+    source: CHEBI:16235
+    target: GO:0071897
+  - key: participates in
+    source: CHEBI:16040
+    target: GO:0071897
+  - key: correlated with
+    source: GO:0071897
+    target: GO:0008283
+  - key: located in
+    source: GO:0008283
+    target: CL:0001064
+  - key: positively correlated with
+    source: CL:0001064
+    target: MESH:D008228
+multigraph: true
+nodes:
+  - id: MESH:D014499
+    label: Drug
+    name: uracil mustard
+  - id: CHEBI:16235
+    label: ChemicalSubstance
+    name: guanine
+  - id: CHEBI:16040
+    label: ChemicalSubstance
+    name: cytosine
+  - id: GO:0071897
+    label: BiologicalProcess
+    name: DNA biosynthetic process
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: CL:0001064
+    label: Cell
+    name: cancer cell
+  - id: MESH:D008228
+    label: Disease
+    name: Non-Hodgkin's lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB00791#BE0004796
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Uracil-mustard

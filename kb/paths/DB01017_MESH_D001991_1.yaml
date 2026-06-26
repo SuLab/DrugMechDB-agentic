@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB01017_MESH_D001991_1
+  disease: Bronchitis
+  disease_mesh: MESH:D001991
+  drug: minocycline
+  drug_mesh: MESH:D008911
+  drugbank: DB:DB01017
+links:
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:P46775
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:P75179
+  - key: positively regulates
+    source: UniProt:P46775
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:P75179
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:2104
+  - key: causes
+    source: taxonomy:2104
+    target: MESH:D001991
+multigraph: true
+nodes:
+  - id: MESH:D008911
+    label: Drug
+    name: minocycline
+  - id: UniProt:P46775
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:P75179
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:2104
+    label: OrganismTaxon
+    name: Mycoplasma pneumoniae
+  - id: MESH:D001991
+    label: Disease
+    name: Bronchitis
+references:
+  - https://go.drugbank.com/drugs/DB01017#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P46775#function
+  - https://www.uniprot.org/uniprot/P75179#function
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2278319/
+  - https://en.wikipedia.org/wiki/Bronchitis

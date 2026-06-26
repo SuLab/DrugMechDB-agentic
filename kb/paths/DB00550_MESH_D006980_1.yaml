@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB00550_MESH_D006980_1
+  disease: Hyperthyroidism
+  disease_mesh: MESH:D006980
+  drug: propylthiouracil
+  drug_mesh: MESH:D011441
+  drugbank: DB:DB00550
+links:
+  - key: decreases activity of
+    source: MESH:D011441
+    target: UniProt:P07202
+  - key: participates in
+    source: UniProt:P07202
+    target: GO:0006590
+  - key: positively correlated with
+    source: GO:0006590
+    target: MESH:D006980
+multigraph: true
+nodes:
+  - id: MESH:D011441
+    label: Drug
+    name: propylthiouracil
+  - id: UniProt:P07202
+    label: Protein
+    name: Thyroid peroxidase
+  - id: GO:0006590
+    label: BiologicalProcess
+    name: thyroid hormone generation
+  - id: MESH:D006980
+    label: Disease
+    name: Hyperthyroidism
+references:
+  - https://go.drugbank.com/drugs/DB00550

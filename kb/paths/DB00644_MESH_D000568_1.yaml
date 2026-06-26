@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB00644_MESH_D000568_1
+  disease: Amenorrhea
+  disease_mesh: MESH:D000568
+  drug: Gonadotropin-Releasing Hormone
+  drug_mesh: MESH:D007987
+  drugbank: DB:DB00644
+links:
+  - key: increases activity of
+    source: MESH:D007987
+    target: UniProt:P30968
+  - key: positively regulates
+    source: UniProt:P30968
+    target: GO:0032274
+  - key: positively correlated with
+    source: GO:0032274
+    target: MESH:D005640
+  - key: positively correlated with
+    source: GO:0032274
+    target: MESH:D007986
+  - key: negatively correlated with
+    source: MESH:D005640
+    target: MESH:D000568
+  - key: negatively correlated with
+    source: MESH:D007986
+    target: MESH:D000568
+multigraph: true
+nodes:
+  - id: MESH:D007987
+    label: Drug
+    name: Gonadotropin-Releasing Hormone
+  - id: UniProt:P30968
+    label: Protein
+    name: Gonadotropin-releasing hormone receptor
+  - id: GO:0032274
+    label: BiologicalProcess
+    name: gonadotropin secretion
+  - id: MESH:D005640
+    label: ChemicalSubstance
+    name: Follicle Stimulating Hormone
+  - id: MESH:D007986
+    label: ChemicalSubstance
+    name: Luteinizing Hormone
+  - id: MESH:D000568
+    label: Disease
+    name: Amenorrhea
+references:
+  - https://go.drugbank.com/drugs/DB00644#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P30968#function
+  - https://en.wikipedia.org/wiki/Amenorrhea

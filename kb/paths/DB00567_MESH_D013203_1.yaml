@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00567_MESH_D013203_1
+  disease: Infection due to Staphylococcus aureus
+  disease_mesh: MESH:D013203
+  drug: cefalexin
+  drug_mesh: MESH:D002506
+  drugbank: DB:DB00567
+links:
+  - key: decreases activity of
+    source: MESH:D002506
+    target: InterPro:IPR001460
+  - key: positively regulates
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: in taxon
+    source: GO:0009252
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D013203
+multigraph: true
+nodes:
+  - id: MESH:D002506
+    label: Drug
+    name: cefalexin
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D013203
+    label: Disease
+    name: Infection due to Staphylococcus aureus
+references:
+  - https://go.drugbank.com/drugs/DB00567
+  - https://en.wikipedia.org/wiki/Cefalexin#Mechanism_of_action

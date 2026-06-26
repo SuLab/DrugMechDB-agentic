@@ -1,0 +1,63 @@
+comment: Norgestimate is formulated with ethinylestradiol as a combined oral contraceptive.
+  The norgestimate on it's own is not sufficient for a therapeutic effect.
+directed: true
+graph:
+  _id: DB00957_MESH_D000152_1
+  disease: Acne vulgaris
+  disease_mesh: MESH:D000152
+  drug: norgestimate
+  drug_mesh: MESH:C017576
+  drugbank: DB:DB00957
+links:
+  - key: negatively regulates
+    source: MESH:C017576
+    target: UBERON:0004092
+  - key: positively regulates
+    source: UBERON:0004092
+    target: GO:0006702
+  - key: increases abundance of
+    source: GO:0006702
+    target: MESH:D000728
+  - key: positively regulates
+    source: MESH:D000728
+    target: CL:0000317
+  - key: positively regulates
+    source: MESH:C017576
+    target: MESH:D012738
+  - key: decreases abundance of
+    source: MESH:D012738
+    target: MESH:D013739
+  - key: positively regulates
+    source: MESH:D013739
+    target: CL:0000317
+  - key: positively correlated with
+    source: CL:0000317
+    target: MESH:D000152
+multigraph: true
+nodes:
+  - id: MESH:C017576
+    label: Drug
+    name: Norgestimate
+  - id: UBERON:0004092
+    label: GrossAnatomicalStructure
+    name: Hypothalamus-pituitary axis
+  - id: GO:0006702
+    label: BiologicalProcess
+    name: Androgen biosynthetic process
+  - id: MESH:D000728
+    label: ChemicalSubstance
+    name: Androgens
+  - id: CL:0000317
+    label: Cell
+    name: Sebum secreting cell
+  - id: MESH:D012738
+    label: ChemicalSubstance
+    name: Sex Hormone-Binding Globulin
+  - id: MESH:D013739
+    label: ChemicalSubstance
+    name: Testosterone
+  - id: MESH:D000152
+    label: Disease
+    name: Acne vulgaris
+references:
+  - https://go.drugbank.com/drugs/DB00957#BE0000123

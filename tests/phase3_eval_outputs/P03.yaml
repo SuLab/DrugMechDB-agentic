@@ -1,0 +1,63 @@
+directed: true
+multigraph: true
+graph:
+  _id: P03_DB00722_MESH_D006973
+  drug: Lisinopril
+  drug_mesh: MESH:D017706
+  drugbank: DB:DB00722
+  disease: Hypertension
+  disease_mesh: MESH:D006973
+nodes:
+  - id: MESH:D017706
+    name: Lisinopril
+    label: Drug
+  - id: UniProt:P12821
+    name: Angiotensin-converting enzyme
+    label: Protein
+  - id: MESH:D000804
+    name: Angiotensin II
+    label: ChemicalSubstance
+  - id: MESH:D006973
+    name: Hypertension
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D017706
+    target: UniProt:P12821
+    evidence:
+      - reference: PMID:41534066
+        snippet: "we treated flies with the angiotensin-converting enzyme (ACE) inhibitor lisinopril."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Lisinopril is identified as an angiotensin-converting enzyme (ACE) inhibitor, i.e. it decreases the catalytic activity of ACE."
+      - reference: PMID:41532628
+        snippet: "lisinopril suppressed Ang II"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "In spontaneously hypertensive rats, lisinopril suppressed angiotensin II, the functional readout of decreased ACE activity (ACE is the enzyme that produces Ang II)."
+  - key: produces
+    source: UniProt:P12821
+    target: MESH:D000804
+    evidence:
+      - reference: PMID:41154607
+        snippet: "controls blood pressure through Angiotensin II, an octapeptide hormone generated from Angiotensin I by Angiotensin-Converting Enzyme (ACE)"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Angiotensin-Converting Enzyme generates the octapeptide hormone Angiotensin II from Angiotensin I, i.e. ACE produces angiotensin II."
+      - reference: PMID:42244833
+        snippet: "ATII is converted from angiotensin I by the action of the angiotensin-converting enzyme (ACE)."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Angiotensin II (ATII) is produced from angiotensin I by the action of ACE, confirming ACE produces angiotensin II."
+  - key: causes
+    source: MESH:D000804
+    target: MESH:D006973
+    evidence:
+      - reference: PMID:41185995
+        snippet: "Ang II (angiotensin II) causes hypertension and vascular inflammation both directly and indirectly via cytokines"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Angiotensin II causes hypertension, the terminal disease node; reducing Ang II (via lisinopril's ACE inhibition) therefore lowers blood pressure."
+references:
+  - https://go.drugbank.com/drugs/DB00722#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P12821#function

@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB01611_MESH_D008180_1
+  disease: Systemic lupus erythematosus
+  disease_mesh: MESH:D008180
+  drug: hydroxychloroquine
+  drug_mesh: MESH:D006886
+  drugbank: DB:DB01611
+links:
+  - key: negatively correlated with
+    source: MESH:D006886
+    target: InterPro:IPR035897
+  - key: positively correlated with
+    source: InterPro:IPR035897
+    target: GO:0006954
+  - key: contributes to
+    source: GO:0006954
+    target: HP:0002960
+  - key: correlated with
+    source: HP:0002960
+    target: MESH:D008180
+multigraph: true
+nodes:
+  - id: MESH:D006886
+    label: Drug
+    name: hydroxychloroquine
+  - id: InterPro:IPR035897
+    label: GeneFamily
+    name: Toll/interleukin-1 receptor homology (TIR) domain superfamily
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0002960
+    label: PhenotypicFeature
+    name: Autoimmunity
+  - id: MESH:D008180
+    label: Disease
+    name: Systemic lupus erythematosus
+references:
+  - https://go.drugbank.com/drugs/DB01611
+  - https://en.wikipedia.org/wiki/Hydroxychloroquine#Mechanism_of_action

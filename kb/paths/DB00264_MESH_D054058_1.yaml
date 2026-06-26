@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00264_MESH_D054058_1
+  disease: Acute coronary syndrome
+  disease_mesh: MESH:D054058
+  drug: metoprolol
+  drug_mesh: MESH:D008790
+  drugbank: DB:DB00264
+links:
+  - key: decreases activity of
+    source: MESH:D008790
+    target: UniProt:P08588
+  - key: positively regulates
+    source: UniProt:P08588
+    target: GO:0014808
+  - key: positively regulates
+    source: UniProt:P08588
+    target: GO:1990454
+  - key: positively regulates
+    source: GO:0014808
+    target: GO:0061337
+  - key: positively regulates
+    source: GO:1990454
+    target: GO:0061337
+  - key: positively correlated with
+    source: GO:0061337
+    target: HP:0031546
+  - key: positively correlated with
+    source: HP:0031546
+    target: MESH:D054058
+multigraph: true
+nodes:
+  - id: MESH:D008790
+    label: Drug
+    name: Metoprolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: GO:0014808
+    label: BiologicalProcess
+    name: Release of sequestered calcium ion into cytosol by sarcoplasmic reticulum
+  - id: GO:1990454
+    label: CellularComponent
+    name: L-type voltage-gated calcium channel complex
+  - id: HP:0031546
+    label: PhenotypicFeature
+    name: Cardiac conduction abnormality
+  - id: GO:0061337
+    label: BiologicalProcess
+    name: Cardiac conduction
+  - id: MESH:D054058
+    label: Disease
+    name: Acute coronary syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00264

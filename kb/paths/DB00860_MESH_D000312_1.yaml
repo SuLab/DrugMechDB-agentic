@@ -1,0 +1,25 @@
+comment: Adrenal Hyperplasia, Congenital is a group of inherited disorders of the
+  adrenal glands which is caused by the defects in the synthesis of hydrocortisone.
+directed: true
+graph:
+  _id: DB00860_MESH_D000312_1
+  disease: Adrenal Hyperplasia, Congenital
+  disease_mesh: MESH:D000312
+  drug: prednisolone
+  drug_mesh: MESH:D011239
+  drugbank: DB:DB00860
+links:
+  - key: treats
+    source: MESH:D011239
+    target: MESH:D000312
+multigraph: true
+nodes:
+  - id: MESH:D011239
+    label: Drug
+    name: prednisolone
+  - id: MESH:D000312
+    label: Disease
+    name: Adrenal Hyperplasia, Congenital
+references:
+  - https://go.drugbank.com/drugs/DB00860#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Congenital_adrenal_hyperplasia

@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00291_MESH_D008224_1
+  disease: Follicular non-Hodgkin's lymphoma
+  disease_mesh: MESH:D008224
+  drug: Chlorambucil
+  drug_mesh: MESH:D002699
+  drugbank: DB:DB00291
+links:
+  - key: disrupts
+    source: MESH:D002699
+    target: MESH:D004247
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006260
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006351
+  - key: part of
+    source: GO:0006260
+    target: GO:0042100
+  - key: part of
+    source: GO:0006351
+    target: GO:0042100
+  - key: positively correlated with
+    source: GO:0042100
+    target: MESH:D008224
+multigraph: true
+nodes:
+  - id: MESH:D002699
+    label: Drug
+    name: Chlorambucil
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: GO:0006351
+    label: BiologicalProcess
+    name: Transcription, DNA-templated
+  - id: GO:0042100
+    label: BiologicalProcess
+    name: B cell proliferation
+  - id: MESH:D008224
+    label: Disease
+    name: Follicular non-Hodgkin's lymphoma
+references:
+  - https://go.drugbank.com/drugs/DB00291
+  - https://en.wikipedia.org/wiki/Follicular_lymphoma

@@ -1,0 +1,97 @@
+directed: true
+graph:
+  _id: DB00598_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: labetalol
+  drug_mesh: MESH:D007741
+  drugbank: DB:DB00598
+links:
+  - key: negatively regulates
+    source: MESH:D007741
+    target: UniProt:P08588
+  - key: negatively regulates
+    source: MESH:D007741
+    target: UniProt:P07550
+  - key: negatively regulates
+    source: MESH:D007741
+    target: UniProt:P35348
+  - key: negatively regulates
+    source: MESH:D007741
+    target: UniProt:P35368
+  - key: negatively regulates
+    source: MESH:D007741
+    target: UniProt:P25100
+  - key: participates in
+    source: UniProt:P08588
+    target: reactome:R-HSA-418555
+  - key: participates in
+    source: UniProt:P07550
+    target: reactome:R-HSA-418555
+  - key: participates in
+    source: UniProt:P35348
+    target: reactome:R-HSA-416476
+  - key: participates in
+    source: UniProt:P35368
+    target: reactome:R-HSA-416476
+  - key: participates in
+    source: UniProt:P25100
+    target: reactome:R-HSA-416476
+  - key: positively correlated with
+    source: reactome:R-HSA-418555
+    target: GO:0060047
+  - key: positively correlated with
+    source: reactome:R-HSA-416476
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0060047
+    target: HP:0032263
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: manifestation of
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D007741
+    label: Drug
+    name: labetalol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P35368
+    label: Protein
+    name: Alpha-1B adrenergic receptor
+  - id: UniProt:P25100
+    label: Protein
+    name: Alpha-1D adrenergic receptor
+  - id: reactome:R-HSA-418555
+    label: Pathway
+    name: G alpha (s) signalling events
+  - id: reactome:R-HSA-416476
+    label: Pathway
+    name: G alpha (q) signalling events
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: GO:0060047
+    label: BiologicalProcess
+    name: heart contraction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00598
+comment: Antagonism of beta-2-adrenergic receptors may lead to some of the side effects
+  of labetalol (e.g. bronchospasms); however this may be slightly attenuated by alpha-1-adrenergic
+  antagonism (https://pubmed.ncbi.nlm.nih.gov/6354658/).

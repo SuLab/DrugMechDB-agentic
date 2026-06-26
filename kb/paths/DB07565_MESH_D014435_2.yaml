@@ -1,0 +1,47 @@
+comment: Chloramphenicol succinate is an ester prodrug of chloramphenicol.
+directed: true
+graph:
+  _id: DB07565_MESH_D014435_2
+  disease: Typhoid fever
+  disease_mesh: MESH:D014435
+  drug: chloramphenicol succinate
+  drug_mesh: MESH:C026016
+  drugbank: DB:DB07565
+links:
+  - key: has metabolite
+    source: MESH:C026016
+    target: MESH:D002701
+  - key: decreases activity of
+    source: MESH:D002701
+    target: UniProt:Q8XET6
+  - key: positively regulates
+    source: UniProt:Q8XET6
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:90370
+  - key: causes
+    source: taxonomy:90370
+    target: MESH:D014435
+multigraph: true
+nodes:
+  - id: MESH:C026016
+    label: Drug
+    name: Chloramphenicol succinate
+  - id: MESH:D002701
+    label: ChemicalSubstance
+    name: Chloramphenicol
+  - id: UniProt:Q8XET6
+    label: Protein
+    name: 50S ribosomal protein L16 (Salmonella typhi)
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: taxonomy:90370
+    label: OrganismTaxon
+    name: Salmonella enterica subsp. enterica serovar Typhi
+  - id: MESH:D014435
+    label: Disease
+    name: Typhoid fever
+references:
+  - https://go.drugbank.com/drugs/DB07565

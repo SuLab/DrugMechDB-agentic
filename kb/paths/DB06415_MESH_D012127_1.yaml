@@ -1,0 +1,32 @@
+comment: Calfactant adsorbs rapidly to the surface of the alveolar air-fluid interface
+  and modifies surface tension to a minimum of less than 3 mN/m. It acts in a manner
+  similar to natural lung surfactant, thus preventing or treating respiratory distress
+  syndrome.
+directed: true
+graph:
+  _id: DB06415_MESH_D012127_1
+  disease: Respiratory distress syndrome in the newborn
+  disease_mesh: MESH:D012127
+  drug: Calfactant
+  drug_mesh: MESH:C117342
+  drugbank: DB:DB06415
+links:
+  - key: capable of
+    source: MESH:C117342
+    target: GO:0043129
+  - key: negatively correlated with
+    source: GO:0043129
+    target: MESH:D012127
+multigraph: true
+nodes:
+  - id: MESH:C117342
+    label: Drug
+    name: Calfactant
+  - id: GO:0043129
+    label: BiologicalProcess
+    name: Surfactant homeostasis
+  - id: MESH:D012127
+    label: Disease
+    name: Respiratory distress syndrome in the newborn
+references:
+  - https://go.drugbank.com/drugs/DB06415

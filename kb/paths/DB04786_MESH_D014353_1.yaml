@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB04786_MESH_D014353_1
+  disease: African trypanosomiasis
+  disease_mesh: MESH:D014353
+  drug: suramin
+  drug_mesh: MESH:D013498
+  drugbank: DB:DB04786
+links:
+  - key: negatively regulates
+    source: MESH:D013498
+    target: reactome:R-HSA-70171
+  - key: positively regulates
+    source: reactome:R-HSA-70171
+    target: GO:0006754
+  - key: in taxon
+    source: GO:0006754
+    target: taxonomy:5691
+  - key: causes
+    source: taxonomy:5691
+    target: MESH:D014353
+multigraph: true
+nodes:
+  - id: MESH:D013498
+    label: Drug
+    name: Suramin
+  - id: reactome:R-HSA-70171
+    label: Pathway
+    name: Glycolysis
+  - id: GO:0006754
+    label: BiologicalProcess
+    name: ATP biosynthetic process
+  - id: taxonomy:5691
+    label: OrganismTaxon
+    name: Trypanosoma brucei
+  - id: MESH:D014353
+    label: Disease
+    name: African trypanosomiasis
+references:
+  - https://aac.asm.org/content/64/3/e01168-19
+  - https://go.drugbank.com/drugs/DB04786

@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00848_MESH_D001196_1
+  disease: Ascariasis
+  disease_mesh: MESH:D001196
+  drug: Levamisole
+  drug_mesh: MESH:D007978
+  drugbank: DB:DB00848
+links:
+  - key: increases activity of
+    source: MESH:D007978
+    target: UniProt:F1L348
+  - key: increases activity of
+    source: MESH:D007978
+    target: UniProt:F1KYN0
+  - key: positively regulates
+    source: UniProt:F1L348
+    target: HP:0001257
+  - key: positively regulates
+    source: UniProt:F1KYN0
+    target: HP:0001257
+  - key: negatively correlated with
+    source: HP:0001257
+    target: GO:0022414
+  - key: occurs in
+    source: GO:0022414
+    target: taxonomy:6252
+  - key: causes
+    source: taxonomy:6252
+    target: MESH:D001196
+multigraph: true
+nodes:
+  - id: MESH:D007978
+    label: Drug
+    name: Levamisole
+  - id: UniProt:F1L348
+    label: Protein
+    name: Acetylcholine receptor subunit alpha-type unc-38
+  - id: UniProt:F1KYN0
+    label: Protein
+    name: Acetylcholine receptor subunit beta-type unc-29
+  - id: HP:0001257
+    label: PhenotypicFeature
+    name: Spasticity
+  - id: GO:0022414
+    label: BiologicalProcess
+    name: reproductive process
+  - id: taxonomy:6252
+    label: OrganismTaxon
+    name: Ascaris lumbricoides
+  - id: MESH:D001196
+    label: Disease
+    name: Ascariasis
+references:
+  - https://go.drugbank.com/drugs/DB00848#mechanism-of-action
+  - https://www.uniprot.org/uniprot/F1L348#function
+  - https://www.uniprot.org/uniprot/F1KYN0#function
+  - https://en.wikipedia.org/wiki/Ascariasis

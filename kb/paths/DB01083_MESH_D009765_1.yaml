@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB01083_MESH_D009765_1
+  disease: Obesity
+  disease_mesh: MESH:D009765
+  drug: orlistat
+  drug_mesh: MESH:C055122
+  drugbank: DB:DB01083
+links:
+  - key: negatively regulates
+    source: MESH:C055122
+    target: UniProt:P07098
+  - key: negatively regulates
+    source: MESH:C055122
+    target: UniProt:P16233
+  - key: positively regulates
+    source: UniProt:P07098
+    target: GO:0044241
+  - key: positively regulates
+    source: UniProt:P16233
+    target: GO:0044241
+  - key: positively correlated with
+    source: GO:0044241
+    target: HP:0004324
+  - key: superclass of
+    source: HP:0004324
+    target: MESH:D009765
+multigraph: true
+nodes:
+  - id: MESH:C055122
+    label: Drug
+    name: orlistat
+  - id: UniProt:P07098
+    label: Protein
+    name: Gastric triacylglycerol lipase
+  - id: UniProt:P16233
+    label: Protein
+    name: Pancreatic triacylglycerol lipase
+  - id: GO:0044241
+    label: BiologicalProcess
+    name: lipid digestion
+  - id: HP:0004324
+    label: PhenotypicFeature
+    name: Increased body weight
+  - id: MESH:D009765
+    label: Disease
+    name: Obesity
+references:
+  - https://go.drugbank.com/drugs/DB01083

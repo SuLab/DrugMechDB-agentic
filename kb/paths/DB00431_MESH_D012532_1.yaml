@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00431_MESH_D012532_1
+  disease: Infestation by Sarcoptes scabiei var hominis
+  disease_mesh: MESH:D012532
+  drug: lindane
+  drug_mesh: MESH:D001556
+  drugbank: DB:DB00431
+links:
+  - key: decreases activity of
+    source: MESH:D001556
+    target: UniProt:A0A132A3X0
+  - key: positively regulates
+    source: UniProt:A0A132A3X0
+    target: GO:0007214
+  - key: negatively correlated with
+    source: GO:0007214
+    target: HP:0002069
+  - key: in taxon
+    source: HP:0002069
+    target: taxonomy:52283
+  - key: causes
+    source: taxonomy:52283
+    target: MESH:D012532
+multigraph: true
+nodes:
+  - id: MESH:D001556
+    label: Drug
+    name: Lindane
+  - id: UniProt:A0A132A3X0
+    label: Protein
+    name: Gamma-aminobutyric acid receptor subunit beta-like protein 1 (Sarcoptes
+      scabiei)
+  - id: GO:0007214
+    label: BiologicalProcess
+    name: Gamma-aminobutyric acid signaling pathway
+  - id: HP:0002069
+    label: PhenotypicFeature
+    name: Bilateral tonic-clonic seizure
+  - id: taxonomy:52283
+    label: OrganismTaxon
+    name: Sarcoptes scabiei
+  - id: MESH:D012532
+    label: Disease
+    name: Infestation by Sarcoptes scabiei var hominis
+references:
+  - https://go.drugbank.com/drugs/DB00431

@@ -1,0 +1,117 @@
+directed: true
+graph:
+  _id: DB00480_MESH_D009101_1
+  disease: Multiple myeloma
+  disease_mesh: MESH:D009101
+  drug: lenalidomide
+  drug_mesh: MESH:C467567
+  drugbank: DB:DB00480
+links:
+  - key: negatively regulates
+    source: MESH:C467567
+    target: GO:0001525
+  - key: positively correlated with
+    source: GO:0001525
+    target: MESH:D009101
+  - key: molecularly interacts with
+    source: MESH:C467567
+    target: UniProt:Q96SW2
+  - key: increases degradation of
+    source: UniProt:Q96SW2
+    target: UniProt:Q13422
+  - key: increases degradation of
+    source: UniProt:Q96SW2
+    target: UniProt:Q9UKT9
+  - key: positively correlated with
+    source: UniProt:Q13422
+    target: MESH:D009101
+  - key: positively correlated with
+    source: UniProt:Q9UKT9
+    target: MESH:D009101
+  - key: positively regulates
+    source: MESH:C467567
+    target: GO:0042098
+  - key: negatively correlated with
+    source: GO:0042098
+    target: MESH:D009101
+  - key: positively regulates
+    source: MESH:C467567
+    target: GO:0030101
+  - key: treats
+    source: GO:0030101
+    target: MESH:D009101
+  - key: positively regulates
+    source: MESH:C467567
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D009101
+  - key: negatively regulates
+    source: MESH:C467567
+    target: GO:0071349
+  - key: positively correlated with
+    source: GO:0071349
+    target: MESH:D009101
+  - key: decreases activity of
+    source: MESH:C467567
+    target: UniProt:P01375
+  - key: positively correlated with
+    source: UniProt:P01375
+    target: MESH:D009101
+  - key: negatively regulates
+    source: MESH:C467567
+    target: GO:0071347
+  - key: negatively regulates
+    source: MESH:C467567
+    target: GO:0071354
+  - key: positively correlated with
+    source: GO:0071347
+    target: MESH:D009101
+  - key: positively correlated with
+    source: GO:0071354
+    target: MESH:D009101
+multigraph: true
+nodes:
+  - id: MESH:C467567
+    label: Drug
+    name: Lenalidomide
+  - id: GO:0001525
+    label: BiologicalProcess
+    name: Angiogenesis
+  - id: UniProt:Q96SW2
+    label: Protein
+    name: Protein cereblon
+  - id: UniProt:Q13422
+    label: Protein
+    name: DNA-binding protein Ikaros
+  - id: UniProt:Q9UKT9
+    label: Protein
+    name: Zinc finger protein Aiolos
+  - id: GO:0042098
+    label: BiologicalProcess
+    name: T cell proliferation
+  - id: GO:0030101
+    label: BiologicalProcess
+    name: Natural killer cell activation
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: Apoptotic process
+  - id: GO:0071349
+    label: BiologicalProcess
+    name: Cellular response to interleukin-12
+  - id: UniProt:P01375
+    label: Protein
+    name: Tumor necrosis factor
+  - id: GO:0071347
+    label: BiologicalProcess
+    name: Cellular response to interleukin-1
+  - id: GO:0071354
+    label: BiologicalProcess
+    name: Cellular response to interleukin-6
+  - id: MESH:D009101
+    label: Disease
+    name: Multiple myeloma
+references:
+  - https://en.wikipedia.org/wiki/Lenalidomide
+  - https://go.drugbank.com/drugs/DB00480
+  - https://jhoonline.biomedcentral.com/articles/10.1186/1756-8722-2-36

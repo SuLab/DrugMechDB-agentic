@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB00771_MESH_D043183_1
+  disease: Irritable bowel syndrome
+  disease_mesh: MESH:D043183
+  drug: clidinium
+  drug_mesh: MESH:C054940
+  drugbank: DB:DB00771
+links:
+  - key: negatively regulates
+    source: MESH:C054940
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0006939
+  - key: positively correlated with
+    source: GO:0006939
+    target: MESH:D013035
+  - key: increases abundance of
+    source: MESH:D013035
+    target: HP:0032155
+  - key: correlated with
+    source: HP:0032155
+    target: HP:0002579
+  - key: manifestation of
+    source: HP:0002579
+    target: MESH:D043183
+multigraph: true
+nodes:
+  - id: MESH:C054940
+    label: Drug
+    name: clidinium
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: HP:0032155
+    label: PhenotypicFeature
+    name: Abdominal cramps
+  - id: MESH:D013035
+    label: BiologicalProcess
+    name: Spasm
+  - id: HP:0002579
+    label: PhenotypicFeature
+    name: Gastrointestinal dysmotility
+  - id: MESH:D043183
+    label: Disease
+    name: Irritable bowel syndrome
+references:
+  - https://go.drugbank.com/drugs/DB00771#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Clidinium_bromide#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Irritable_bowel_syndrome#Medication

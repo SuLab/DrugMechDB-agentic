@@ -1,0 +1,105 @@
+directed: true
+graph:
+  _id: DB00696_MESH_D003027_1
+  disease: Cluster headache syndrome
+  disease_mesh: MESH:D003027
+  drug: ergotamine
+  drug_mesh: MESH:D004878
+  drugbank: DB:DB00696
+links:
+  - key: positively regulates
+    source: MESH:D004878
+    target: UniProt:P35348
+  - key: positively regulates
+    source: MESH:D004878
+    target: UniProt:P08913
+  - key: positively regulates
+    source: MESH:D004878
+    target: UniProt:P18825
+  - key: positively regulates
+    source: MESH:D004878
+    target: UniProt:P25100
+  - key: positively regulates
+    source: MESH:D004878
+    target: UniProt:P35368
+  - key: positively regulates
+    source: MESH:D004878
+    target: UniProt:P18089
+  - key: positively regulates
+    source: UniProt:P35348
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P08913
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P18825
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P25100
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P35368
+    target: GO:0042310
+  - key: positively regulates
+    source: UniProt:P18089
+    target: GO:0042310
+  - key: negatively correlated with
+    source: GO:0042310
+    target: MESH:D003027
+  - key: positively regulates
+    source: MESH:D004878
+    target: UniProt:P28221
+  - key: positively regulates
+    source: UniProt:P28221
+    target: GO:0042310
+  - key: decreases abundance of
+    source: UniProt:P28221
+    target: MESH:D013373
+  - key: positively correlated with
+    source: MESH:D013373
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D003027
+multigraph: true
+nodes:
+  - id: MESH:D004878
+    label: Drug
+    name: ergotamine
+  - id: UniProt:P28221
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1D
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P08913
+    label: Protein
+    name: Alpha-2A adrenergic receptor
+  - id: UniProt:P18825
+    label: Protein
+    name: Alpha-2C adrenergic receptor
+  - id: UniProt:P25100
+    label: Protein
+    name: Alpha-1D adrenergic receptor
+  - id: UniProt:P35368
+    label: Protein
+    name: Alpha-1B adrenergic receptor
+  - id: UniProt:P18089
+    label: Protein
+    name: Alpha-2B adrenergic receptor
+  - id: MESH:D013373
+    label: ChemicalSubstance
+    name: Substance P
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: MESH:D003027
+    label: Disease
+    name: Cluster headache syndrome
+references:
+  - https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2095203/
+  - https://pubchem.ncbi.nlm.nih.gov/compound/8223#section=Mechanism-of-Action
+  - https://en.wikipedia.org/wiki/Migraine#Management

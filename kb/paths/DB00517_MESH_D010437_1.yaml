@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB00517_MESH_D010437_1
+  disease: Peptic Ulcer
+  disease_mesh: MESH:D010437
+  drug: octatropine methylbromide
+  drug_mesh: MESH:C100237
+  drugbank: DB:DB00517
+links:
+  - key: decreases activity of
+    source: MESH:C100237
+    target: UniProt:P11229
+  - key: decreases activity of
+    source: MESH:C100237
+    target: UniProt:P08172
+  - key: decreases activity of
+    source: MESH:C100237
+    target: UniProt:P20309
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0095500
+  - key: positively regulates
+    source: UniProt:P08172
+    target: GO:0095500
+  - key: positively regulates
+    source: UniProt:P20309
+    target: GO:0095500
+  - key: positively correlated with
+    source: GO:0095500
+    target: MESH:D000109
+  - key: positively correlated with
+    source: MESH:D000109
+    target: GO:0001696
+  - key: contributes to
+    source: GO:0001696
+    target: MESH:D010437
+multigraph: true
+nodes:
+  - id: MESH:C100237
+    label: Drug
+    name: octatropine methylbromide
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: UniProt:P08172
+    label: Protein
+    name: Muscarinic acetylcholine receptor M2
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:0095500
+    label: BiologicalProcess
+    name: acetylcholine receptor signaling pathway
+  - id: MESH:D000109
+    label: ChemicalSubstance
+    name: Acetylcholine
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: gastric acid secretion
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic Ulcer
+references:
+  - https://go.drugbank.com/drugs/DB00517#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P11229#function
+  - https://www.uniprot.org/uniprot/P08172#function
+  - https://www.uniprot.org/uniprot/P20309#function
+  - https://en.wikipedia.org/wiki/Peptic_ulcer_disease

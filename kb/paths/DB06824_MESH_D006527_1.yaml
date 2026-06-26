@@ -1,0 +1,29 @@
+directed: true
+graph:
+  _id: DB06824_MESH_D006527_1
+  disease: Hepatolenticular Degeneration
+  disease_mesh: MESH:D006527
+  drug: Trientine
+  drug_mesh: MESH:D014266
+  drugbank: DB:DB06824
+links:
+  - key: disrupts
+    source: MESH:D014266
+    target: MESH:D003300
+  - key: positively correlated with
+    source: MESH:D003300
+    target: MESH:D006527
+multigraph: true
+nodes:
+  - id: MESH:D014266
+    label: Drug
+    name: Trientine
+  - id: MESH:D003300
+    label: ChemicalSubstance
+    name: Copper
+  - id: MESH:D006527
+    label: Disease
+    name: Hepatolenticular Degeneration
+references:
+  - https://go.drugbank.com/drugs/DB06824#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Wilson%27s_disease

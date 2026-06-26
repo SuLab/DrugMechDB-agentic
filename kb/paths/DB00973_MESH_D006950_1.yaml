@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB00973_MESH_D006950_1
+  disease: Mixed hyperlipidemia
+  disease_mesh: MESH:D006950
+  drug: ezetimibe
+  drug_mesh: MESH:D000069438
+  drugbank: DB:DB00973
+links:
+  - key: negatively regulates
+    source: MESH:D000069438
+    target: UniProt:Q9UHC9
+  - key: positively regulates
+    source: UniProt:Q9UHC9
+    target: GO:0098856
+  - key: increases abundance of
+    source: GO:0098856
+    target: CHEBI:16113
+  - key: increases abundance of
+    source: GO:0098856
+    target: CHEBI:17855
+  - key: positively correlated with
+    source: CHEBI:17855
+    target: MESH:D006950
+  - key: positively correlated with
+    source: CHEBI:16113
+    target: MESH:D006950
+multigraph: true
+nodes:
+  - id: MESH:D000069438
+    label: Drug
+    name: ezetimibe
+  - id: UniProt:Q9UHC9
+    label: Protein
+    name: NPC1-like intracellular cholesterol transporter 1
+  - id: GO:0098856
+    label: BiologicalProcess
+    name: intestinal lipid absorption
+  - id: CHEBI:16113
+    label: ChemicalSubstance
+    name: cholesterol
+  - id: CHEBI:17855
+    label: ChemicalSubstance
+    name: triglyceride
+  - id: MESH:D006950
+    label: Disease
+    name: Mixed hyperlipidemia
+references:
+  - https://pharos.nih.gov/ligands/ezetimibe
+  - https://pubchem.ncbi.nlm.nih.gov/compound/150311#section=Mechanism-of-Action
+comment: MESH:D006950 is known as Hyperlipidemia, Familial Combined in MESH.

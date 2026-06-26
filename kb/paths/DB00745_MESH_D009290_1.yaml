@@ -1,0 +1,66 @@
+directed: true
+graph:
+  _id: DB00745_MESH_D009290_1
+  disease: Narcolepsy
+  disease_mesh: MESH:D009290
+  drug: Modafinil
+  drug_mesh: MESH:C048833
+  drugbank: DB:DB00745
+links:
+  - key: decreases activity of
+    source: MESH:C048833
+    target: UniProt:Q01959
+  - key: increases abundance of
+    source: MESH:C048833
+    target: MESH:D006632
+  - key: increases abundance of
+    source: MESH:C048833
+    target: UniProt:O43612
+  - key: decreases abundance of
+    source: UniProt:Q01959
+    target: MESH:D004298
+  - key: positively correlated with
+    source: MESH:D006632
+    target: GO:0042746
+  - key: positively correlated with
+    source: UniProt:O43612
+    target: GO:0042746
+  - key: negatively correlated with
+    source: GO:0042746
+    target: MESH:D009290
+  - key: participates in
+    source: MESH:D004298
+    target: GO:0061527
+  - key: disrupted by
+    source: GO:0061527
+    target: MESH:D009290
+multigraph: true
+nodes:
+  - id: MESH:C048833
+    label: Drug
+    name: Modafinil
+  - id: UniProt:Q01959
+    label: Protein
+    name: Sodium-dependent dopamine transporter
+  - id: MESH:D006632
+    label: ChemicalSubstance
+    name: Histamine
+  - id: UniProt:O43612
+    label: Protein
+    name: Orexin
+  - id: GO:0042746
+    label: BiologicalProcess
+    name: Circadian sleep/wake cycle, wakefulness
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D009290
+    label: Disease
+    name: Narcolepsy
+references:
+  - https://en.wikipedia.org/wiki/Modafinil#Pharmacology
+  - https://go.drugbank.com/drugs/DB00745
+  - https://pubmed.ncbi.nlm.nih.gov/29616340/

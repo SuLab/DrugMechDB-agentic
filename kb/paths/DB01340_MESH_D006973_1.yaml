@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01340_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: cilazapril
+  drug_mesh: MESH:C045980,MESH:D017315
+  drugbank: DB:DB01340
+links:
+  - key: decreases activity of
+    source: DB:DB01340
+    target: UniProt:P12821
+  - key: increases abundance of
+    source: UniProt:P12821
+    target: MESH:D000804
+  - key: causes
+    source: MESH:D000804
+    target: MESH:D014661
+  - key: contributes to
+    source: MESH:D014661
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: DB:DB01340
+    label: Drug
+    name: cilazapril
+  - id: UniProt:P12821
+    label: Protein
+    name: Angiotensin-converting enzyme
+  - id: MESH:D000804
+    label: ChemicalSubstance
+    name: Angiotensin II
+  - id: MESH:D014661
+    label: Disease
+    name: vasoconstriction
+  - id: MESH:D006973
+    label: Disease
+    name: hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB01340

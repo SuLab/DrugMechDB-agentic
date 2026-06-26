@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00966_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: telmisartan
+  drug_mesh: MESH:C084178
+  drugbank: DB:DB00966
+links:
+  - key: increases activity of
+    source: DB:DB00966
+    target: UniProt:P30556
+  - key: increases activity of
+    source: DB:DB00966
+    target: UniProt:P37231
+  - key: negatively correlated with
+    source: UniProt:P37231
+    target: GO:0045777
+  - key: positively correlated with
+    source: UniProt:P30556
+    target: MESH:D000804
+  - key: positively regulates
+    source: MESH:D000804
+    target: MESH:D014661
+  - key: positively correlated with
+    source: MESH:D014661
+    target: GO:0045777
+  - key: positively correlated with
+    source: GO:0045777
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: DB:DB00966
+    label: Drug
+    name: Telmisartan
+  - id: UniProt:P37231
+    label: Protein
+    name: Peroxisome proliferator-activated receptor gamma
+  - id: UniProt:P30556
+    label: Protein
+    name: Type-1 angiotensin II receptor
+  - id: MESH:D000804
+    label: ChemicalSubstance
+    name: Angiotensin II
+  - id: MESH:D014661
+    label: Disease
+    name: Vasoconstriction
+  - id: GO:0045777
+    label: BiologicalProcess
+    name: Positive regulation of blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00966#BE0000215

@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00343_MESH_D000788_1
+  disease: Prinzmetal angina
+  disease_mesh: MESH:D000788
+  drug: diltiazem
+  drug_mesh: MESH:D004110
+  drugbank: DB:DB00343
+links:
+  - key: decreases activity of
+    source: MESH:D004110
+    target: UniProt:Q13936
+  - key: decreases activity of
+    source: MESH:D004110
+    target: UniProt:Q06432
+  - key: positively regulates
+    source: UniProt:Q13936
+    target: GO:0060402
+  - key: positively regulates
+    source: UniProt:Q06432
+    target: GO:0060402
+  - key: positively correlated with
+    source: GO:0060402
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0033401
+  - key: positively correlated with
+    source: HP:0033401
+    target: MESH:D000788
+multigraph: true
+nodes:
+  - id: MESH:D004110
+    label: Drug
+    name: diltiazem
+  - id: UniProt:Q13936
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1C
+  - id: UniProt:Q06432
+    label: Protein
+    name: Voltage-dependent calcium channel gamma-1 subunit
+  - id: GO:0060402
+    label: BiologicalProcess
+    name: calcium ion transport into cytosol
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0033401
+    label: PhenotypicFeature
+    name: Tissue ischemia
+  - id: MESH:D000788
+    label: Disease
+    name: Prinzmetal angina
+references:
+  - https://go.drugbank.com/drugs/DB00343

@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01206_MESH_D001932_1
+  disease: Neoplasm of brain
+  disease_mesh: MESH:D001932
+  drug: lomustine
+  drug_mesh: MESH:D008130
+  drugbank: DB:DB01206
+links:
+  - key: disrupts
+    source: MESH:D008130
+    target: MESH:D004247
+  - key: participates in
+    source: MESH:D004247
+    target: GO:0006260
+  - key: precedes
+    source: GO:0006260
+    target: HP:0031377
+  - key: positively correlated with
+    source: HP:0031377
+    target: MESH:D001932
+multigraph: true
+nodes:
+  - id: MESH:D008130
+    label: Drug
+    name: Lomustine
+  - id: MESH:D004247
+    label: ChemicalSubstance
+    name: DNA
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D001932
+    label: Disease
+    name: Neoplasm of brain
+references:
+  - https://go.drugbank.com/drugs/DB01206

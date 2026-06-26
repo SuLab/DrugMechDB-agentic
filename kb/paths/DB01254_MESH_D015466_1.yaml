@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB01254_MESH_D015466_1
+  disease: Chronic phase chronic myeloid leukemia
+  disease_mesh: MESH:D015466
+  drug: dasatinib
+  drug_mesh: MESH:D000069439
+  drugbank: DB:DB01254
+links:
+  - key: decreases activity of
+    source: MESH:D000069439
+    target: UniProt:P00519
+  - key: positively regulates
+    source: UniProt:P00519
+    target: GO:0004714
+  - key: positively regulates
+    source: GO:0004714
+    target: HP:0031377
+  - key: positively correlated with
+    source: HP:0031377
+    target: MESH:D015466
+multigraph: true
+nodes:
+  - id: MESH:D000069439
+    label: Drug
+    name: Dasatinib
+  - id: UniProt:P00519
+    label: Protein
+    name: Tyrosine-protein kinase ABL1
+  - id: GO:0004714
+    label: MolecularActivity
+    name: Transmembrane receptor protein tyrosine kinase activity
+  - id: HP:0031377
+    label: PhenotypicFeature
+    name: Abnormal cell proliferation
+  - id: MESH:D015466
+    label: Disease
+    name: Chronic phase chronic myeloid leukemia
+references:
+  - https://go.drugbank.com/drugs/DB01254
+  - https://en.wikipedia.org/wiki/Chronic_myelogenous_leukemia

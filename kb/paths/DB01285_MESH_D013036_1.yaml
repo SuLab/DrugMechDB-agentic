@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB01285_MESH_D013036_1
+  disease: West syndrome
+  disease_mesh: MESH:D013036
+  drug: corticotropin
+  drugbank: DB:DB01285
+links:
+  - key: positively regulates
+    source: DB:DB01285
+    target: UniProt:Q01718
+  - key: decreases expression of
+    source: UniProt:Q01718
+    target: CHEBI:65312
+  - key: positively correlated with
+    source: CHEBI:65312
+    target: HP:0001250
+  - key: negatively correlated with
+    source: UniProt:Q01718
+    target: HP:0012469
+  - key: manifestation of
+    source: HP:0001250
+    target: MESH:D013036
+  - key: manifestation of
+    source: HP:0012469
+    target: MESH:D013036
+multigraph: true
+nodes:
+  - id: DB:DB01285
+    label: Drug
+    name: corticotropin
+  - id: UniProt:Q01718
+    label: Protein
+    name: Adrenocorticotropic hormone receptor
+  - id: CHEBI:65312
+    label: ChemicalSubstance
+    name: corticotropin-releasing hormone (human)
+  - id: HP:0001250
+    label: PhenotypicFeature
+    name: Seizure
+  - id: HP:0012469
+    label: PhenotypicFeature
+    name: Infantile spasms
+  - id: MESH:D013036
+    label: Disease
+    name: West syndrome
+references:
+  - https://go.drugbank.com/drugs/DB01285#BE0000848
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201610/
+  - https://en.wikipedia.org/wiki/Adrenocorticotropic_hormone_(medication)#Medical_uses
+  - https://pubmed.ncbi.nlm.nih.gov/11701250/
+  - https://pubmed.ncbi.nlm.nih.gov/23606552/
+  - https://pubmed.ncbi.nlm.nih.gov/16781824/
+  - https://pubmed.ncbi.nlm.nih.gov/11261504/

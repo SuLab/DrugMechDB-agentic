@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00136_MESH_D012080_1
+  disease: Renal osteodystrophy
+  disease_mesh: MESH:D012080
+  drug: calcitriol
+  drug_mesh: MESH:D002117
+  drugbank: DB:DB00136
+links:
+  - key: increases activity of
+    source: MESH:D002117
+    target: UniProt:P11473
+  - key: positively regulates
+    source: UniProt:P11473
+    target: GO:0060558
+  - key: positively correlated with
+    source: GO:0060558
+    target: GO:0055074
+  - key: negatively correlated with
+    source: GO:0055074
+    target: HP:0004363
+  - key: positively correlated with
+    source: HP:0004363
+    target: MESH:D012080
+multigraph: true
+nodes:
+  - id: MESH:D002117
+    label: Drug
+    name: calcitriol
+  - id: UniProt:P11473
+    label: Protein
+    name: Vitamin D3 receptor
+  - id: GO:0060558
+    label: BiologicalProcess
+    name: regulation of calcidiol 1-monooxygenase activity
+  - id: GO:0055074
+    label: BiologicalProcess
+    name: calcium ion homeostasis
+  - id: HP:0004363
+    label: PhenotypicFeature
+    name: Abnormal circulating calcium concentration
+  - id: MESH:D012080
+    label: Disease
+    name: Renal osteodystrophy
+references:
+  - https://en.wikipedia.org/wiki/Calcitriol#Mechanism_of_action
+  - https://pubmed.ncbi.nlm.nih.gov/23713873/
+  - https://pubmed.ncbi.nlm.nih.gov/16970258/
+  - https://go.drugbank.com/drugs/DB00136#description
+  - https://en.wikipedia.org/wiki/Renal_osteodystrophy#Pathogenesis

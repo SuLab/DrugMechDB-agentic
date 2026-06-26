@@ -1,0 +1,97 @@
+directed: true
+multigraph: true
+graph:
+  _id: P24_DB00688_MESH_D008181
+  drug: Mycophenolate Mofetil
+  drug_mesh: MESH:D000077732
+  drugbank: DB:DB00688
+  disease: Lupus Nephritis
+  disease_mesh: MESH:D008181
+nodes:
+  - id: MESH:D000077732
+    name: Mycophenolate Mofetil
+    label: Drug
+  - id: CHEBI:168618
+    name: Mycophenolic acid
+    label: ChemicalSubstance
+  - id: UniProt:P12268
+    name: Inosine-5'-monophosphate dehydrogenase 2
+    label: Protein
+  - id: GO:0006177
+    name: GMP biosynthetic process
+    label: BiologicalProcess
+  - id: GO:0046651
+    name: lymphocyte proliferation
+    label: BiologicalProcess
+  - id: MESH:D008181
+    name: Lupus Nephritis
+    label: Disease
+links:
+  - key: has metabolite
+    source: MESH:D000077732
+    target: CHEBI:168618
+    evidence:
+      - reference: PMID:20823294
+        snippet: Mycophenolate mofetil (MMF) is the ester prodrug of the immunosuppressant agent mycophenolic acid (MPA) and is rapidly activated by esterases after oral administration.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Confirms MMF is a prodrug of MPA, hydrolyzed by esterases to release the active metabolite MPA.
+  - key: decreases activity of
+    source: CHEBI:168618
+    target: UniProt:P12268
+    evidence:
+      - reference: PMID:19834629
+        snippet: Mycophenolic acid (MPA) is a potent, selective, noncompetitive and reversible inhibitor of inosine-5'-monophosphate deshydrogenase (IMPDH).
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: MPA directly and selectively inhibits IMPDH2, decreasing its enzymatic activity.
+      - reference: PMID:40142133
+        snippet: MPA effectively inhibited IMPDH activity in a dose-dependent manner, with 94-96% inhibition at concentrations of 100 μM and above.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: In vitro demonstration of MPA dose-dependently inhibiting IMPDH activity, supporting decreases activity of edge.
+  - key: positively regulates
+    source: UniProt:P12268
+    target: GO:0006177
+    evidence:
+      - reference: PMID:12944494
+        snippet: Inosine 5'-monophosphate dehydrogenase (IMPDH) is the critical, rate-limiting enzyme in the de novo biosynthesis pathway for guanine nucleotides.
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: IMPDH is the rate-limiting enzyme for de novo guanine nucleotide (GMP) biosynthesis; its activity positively regulates the GMP biosynthetic process.
+      - reference: PMID:19753127
+        snippet: Mycophenolic acid (MPA) blocks the key enzyme inosine monophosphate dehydrogenase and the production of guanosine nucleotides required for DNA synthesis.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Blocking IMPDH prevents guanosine nucleotide production, confirming IMPDH positively regulates GMP biosynthesis.
+  - key: positively regulates
+    source: GO:0006177
+    target: GO:0046651
+    evidence:
+      - reference: PMID:16051207
+        snippet: The mechanism of action of mycophenolic acid (MPA) has been described as a blockade of inosine 5'-monophosphate dehydrogenase (IMPDH) and is thought to selectively influence T- and B-lymphocytes due to their strong dependency on guanine nucleotides synthesized via the de novo purine synthesis pathway.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: T and B lymphocytes depend on the de novo guanine nucleotide synthesis pathway for proliferation; GMP biosynthesis positively regulates lymphocyte proliferation.
+      - reference: PMID:19753127
+        snippet: The description more than 30 years ago of the role of de novo purine synthesis in T and B lymphocytes clonal proliferation opened the possibility for selective immunosuppression by targeting specific enzymatic pathways.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: De novo purine (guanosine) synthesis is required for T and B lymphocyte clonal proliferation, supporting that GMP biosynthesis positively regulates lymphocyte proliferation.
+  - key: contributes to
+    source: GO:0046651
+    target: MESH:D008181
+    evidence:
+      - reference: PMID:22571761
+        snippet: The thorough inhibition of B cell activation and plasma cell formation by MMF might explain the favorable outcomes of previous clinical trials in patients with SLE, since enhanced B cell proliferation is a hallmark of this disease.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Enhanced B cell proliferation is a hallmark of SLE/lupus nephritis; inhibiting it with MMF leads to favorable clinical outcomes, confirming lymphocyte proliferation contributes to lupus nephritis.
+      - reference: PMID:21187439
+        snippet: The most prevalent severe manifestation of systemic lupus erythematosus is nephritis, which is characterized by immune complex deposition, inflammation, and scarring in glomeruli and the tubulointerstitium.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Lupus nephritis is the most prevalent severe manifestation of SLE, driven by immune complex deposition from dysregulated lymphocyte activity.
+references:
+  - https://go.drugbank.com/drugs/DB00688#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P12268

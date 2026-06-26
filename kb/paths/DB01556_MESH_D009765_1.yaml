@@ -1,0 +1,42 @@
+comment: Withdrawn
+directed: true
+graph:
+  _id: DB01556_MESH_D009765_1
+  disease: Obesity
+  disease_mesh: MESH:D009765
+  drug: chlorphentermine
+  drug_mesh: MESH:D002745
+  drugbank: DB:DB01556
+links:
+  - key: molecularly interacts with
+    source: MESH:D002745
+    target: UniProt:P31645
+  - key: positively regulates
+    source: UniProt:P31645
+    target: GO:0001820
+  - key: positively correlated with
+    source: GO:0001820
+    target: HP:0004396
+  - key: negatively correlated with
+    source: HP:0004396
+    target: MESH:D009765
+multigraph: true
+nodes:
+  - id: MESH:D002745
+    label: Drug
+    name: chlorphentermine
+  - id: UniProt:P31645
+    label: Protein
+    name: Sodium-dependent serotonin transporter
+  - id: GO:0001820
+    label: BiologicalProcess
+    name: serotonin secretion
+  - id: HP:0004396
+    label: PhenotypicFeature
+    name: Poor appetite
+  - id: MESH:D009765
+    label: Disease
+    name: Obesity
+references:
+  - https://en.wikipedia.org/wiki/Chlorphentermine
+  - https://en.wikipedia.org/wiki/Serotonin_releasing_agent#Pharmaceutical_drugs

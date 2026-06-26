@@ -1,0 +1,41 @@
+comment: this drug is a partial agonist at postsynaptic 5-HT1A receptors (https://en.wikipedia.org/wiki/5-HT1A_receptor#Partial_agonists)
+  and are sometimes used in low doses as augmentation to SSRIs (https://en.wikipedia.org/wiki/5-HT1A_receptor#Neuromodulation).
+directed: true
+graph:
+  _id: DB06684_MESH_D003865_2
+  disease: Major depressive disorder
+  disease_mesh: MESH:D003865
+  drug: vilazodone
+  drug_mesh: MESH:D000069503
+  drugbank: DB:DB06684
+links:
+  - key: positively regulates
+    source: MESH:D000069503
+    target: UniProt:P08908
+  - key: positively regulates
+    source: UniProt:P08908
+    target: GO:0060096
+  - key: negatively correlated with
+    source: GO:0060096
+    target: MESH:D003865
+multigraph: true
+nodes:
+  - id: MESH:D000069503
+    label: Drug
+    name: vilazodone
+  - id: UniProt:P08908
+    label: Protein
+    name: 5-hydroxytryptamine receptor 1A
+  - id: GO:0060096
+    label: BiologicalProcess
+    name: serotonin secretion, neurotransmission
+  - id: MESH:D003865
+    label: Disease
+    name: Major depressive disorder
+references:
+  - https://go.drugbank.com/drugs/DB06684#mechanism-of-action
+  - https://go.drugbank.com/drugs/DB06684#BE0000291
+  - https://en.wikipedia.org/wiki/5-HT1A_receptor
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4841022/
+  - https://en.wikipedia.org/wiki/5-HT1A_receptor#cite_note-pmid2883013-21
+  - https://pubmed.ncbi.nlm.nih.gov/12559651/

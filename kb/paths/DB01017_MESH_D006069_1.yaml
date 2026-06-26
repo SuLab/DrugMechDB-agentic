@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01017_MESH_D006069_1
+  disease: Gonorrhea
+  disease_mesh: MESH:D006069
+  drug: minocycline
+  drug_mesh: MESH:D008911
+  drugbank: DB:DB01017
+links:
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:Q5F5V1
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:Q5F5A4
+  - key: positively regulates
+    source: UniProt:Q5F5V1
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:Q5F5A4
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:485
+  - key: causes
+    source: taxonomy:485
+    target: MESH:D006069
+multigraph: true
+nodes:
+  - id: MESH:D008911
+    label: Drug
+    name: minocycline
+  - id: UniProt:Q5F5V1
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:Q5F5A4
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:485
+    label: OrganismTaxon
+    name: Neisseria gonorrhoeae
+  - id: MESH:D006069
+    label: Disease
+    name: Gonorrhea
+references:
+  - https://go.drugbank.com/drugs/DB01017#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q5F5V1#function
+  - https://www.uniprot.org/uniprot/Q5F5A4#function
+  - https://en.wikipedia.org/wiki/Gonorrhea

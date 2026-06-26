@@ -1,0 +1,66 @@
+directed: true
+graph:
+  _id: DB00387_MESH_D020734_1
+  disease: Parkinsonism
+  disease_mesh: MESH:D020734
+  drug: procyclidine
+  drug_mesh: MESH:D011352
+  drugbank: DB:DB00387
+links:
+  - key: negatively regulates
+    source: MESH:D011352
+    target: UniProt:P11229
+  - key: negatively regulates
+    source: MESH:D011352
+    target: UniProt:P08172
+  - key: negatively regulates
+    source: MESH:D011352
+    target: UniProt:P08173
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0007271
+  - key: positively regulates
+    source: UniProt:P08172
+    target: GO:0007271
+  - key: positively regulates
+    source: UniProt:P08173
+    target: GO:0007271
+  - key: positively correlated with
+    source: GO:0007271
+    target: HP:0100022
+  - key: manifestation of
+    source: HP:0100022
+    target: HP:0001300
+  - key: manifestation of
+    source: HP:0001300
+    target: MESH:D020734
+multigraph: true
+nodes:
+  - id: MESH:D011352
+    label: Drug
+    name: Procyclidine
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: UniProt:P08172
+    label: Protein
+    name: Muscarinic acetylcholine receptor M2
+  - id: UniProt:P08173
+    label: Protein
+    name: Muscarinic acetylcholine receptor M4
+  - id: GO:0007271
+    label: BiologicalProcess
+    name: Synaptic transmission, cholinergic
+  - id: HP:0100022
+    label: PhenotypicFeature
+    name: Abnormality of movement
+  - id: HP:0001300
+    label: PhenotypicFeature
+    name: Parkinsonism
+  - id: MESH:D020734
+    label: Disease
+    name: Parkinsonism
+references:
+  - https://go.drugbank.com/drugs/DB00387#BE0000560
+comment: Withdrawn. Procyclidine acts by blocking central cholinergic receptors, and
+  thus balancing cholinergic and dopaminergic activity in the basal ganglia.

@@ -1,0 +1,148 @@
+directed: true
+graph:
+  _id: DB00799_MESH_D000152_1
+  disease: Acne vulgaris
+  disease_mesh: MESH:D000152
+  drug: tazarotene
+  drug_mesh: MESH:C086827
+  drugbank: DB:DB00799
+links:
+  - key: increases activity of
+    source: MESH:C086827
+    target: UniProt:P10276
+  - key: increases activity of
+    source: MESH:C086827
+    target: UniProt:P28702
+  - key: increases activity of
+    source: MESH:C086827
+    target: UniProt:P13631
+  - key: increases activity of
+    source: MESH:C086827
+    target: UniProt:P10826
+  - key: negatively correlated with
+    source: UniProt:P10276
+    target: UniProt:P00533
+  - key: negatively correlated with
+    source: UniProt:P28702
+    target: UniProt:P00533
+  - key: negatively correlated with
+    source: UniProt:P13631
+    target: UniProt:P00533
+  - key: negatively correlated with
+    source: UniProt:P10826
+    target: UniProt:P00533
+  - key: negatively correlated with
+    source: UniProt:P10276
+    target: MESH:D053536
+  - key: negatively correlated with
+    source: UniProt:P28702
+    target: MESH:D053536
+  - key: negatively correlated with
+    source: UniProt:P13631
+    target: MESH:D053536
+  - key: negatively correlated with
+    source: UniProt:P10826
+    target: MESH:D053536
+  - key: negatively correlated with
+    source: UniProt:P10276
+    target: MESH:D053553
+  - key: negatively correlated with
+    source: UniProt:P28702
+    target: MESH:D053553
+  - key: negatively correlated with
+    source: UniProt:P13631
+    target: MESH:D053553
+  - key: negatively correlated with
+    source: UniProt:P10826
+    target: MESH:D053553
+  - key: negatively correlated with
+    source: UniProt:P10276
+    target: MESH:D020782
+  - key: negatively correlated with
+    source: UniProt:P28702
+    target: MESH:D020782
+  - key: negatively correlated with
+    source: UniProt:P13631
+    target: MESH:D020782
+  - key: negatively correlated with
+    source: UniProt:P10826
+    target: MESH:D020782
+  - key: negatively correlated with
+    source: UniProt:P10276
+    target: reactome:R-HSA-181438
+  - key: negatively correlated with
+    source: UniProt:P28702
+    target: reactome:R-HSA-181438
+  - key: negatively correlated with
+    source: UniProt:P13631
+    target: reactome:R-HSA-181438
+  - key: negatively correlated with
+    source: UniProt:P10826
+    target: reactome:R-HSA-181438
+  - key: positively correlated with
+    source: reactome:R-HSA-181438
+    target: GO:0006954
+  - key: positively correlated with
+    source: UniProt:P00533
+    target: GO:0006954
+  - key: positively correlated with
+    source: MESH:D053536
+    target: HP:0025249
+  - key: positively correlated with
+    source: MESH:D053553
+    target: HP:0025249
+  - key: positively correlated with
+    source: HP:0025249
+    target: MESH:D000152
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D000152
+  - key: positively correlated with
+    source: MESH:D020782
+    target: MESH:D000152
+multigraph: true
+nodes:
+  - id: MESH:C086827
+    label: Drug
+    name: tazarotene
+  - id: UniProt:P10276
+    label: Protein
+    name: Retinoic acid receptor alpha
+  - id: UniProt:P10826
+    label: Protein
+    name: Retinoic acid receptor beta
+  - id: UniProt:P28702
+    label: Protein
+    name: Retinoic acid receptor RXR-beta
+  - id: UniProt:P13631
+    label: Protein
+    name: Retinoic acid receptor gamma
+  - id: MESH:D053536
+    label: Protein
+    name: Keratin-16
+  - id: MESH:D053553
+    label: Protein
+    name: Keratin-6
+  - id: MESH:D020782
+    label: Protein
+    name: Matrix Metalloproteinases
+  - id: UniProt:P00533
+    label: Protein
+    name: Epidermal growth factor receptor
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0025249
+    label: PhenotypicFeature
+    name: Comedo
+  - id: reactome:R-HSA-181438
+    label: Pathway
+    name: Toll Like Receptor 2 (TLR2) Cascade
+  - id: MESH:D000152
+    label: Disease
+    name: Acne vulgaris
+references:
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4043801/#__sec2title
+  - https://go.drugbank.com/drugs/DB00799#mechanism-of-action
+  - https://pubmed.ncbi.nlm.nih.gov/28585191/
+  - https://europepmc.org/article/med/32100454

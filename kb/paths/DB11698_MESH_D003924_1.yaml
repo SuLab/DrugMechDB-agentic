@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB11698_MESH_D003924_1
+  disease: Diabetes mellitus type 2
+  disease_mesh: MESH:D003924
+  drug: ipragliflozin
+  drug_mesh: MESH:C572941
+  drugbank: DB:DB11698
+links:
+  - key: decreases activity of
+    source: MESH:C572941
+    target: UniProt:P31639
+  - key: participates in
+    source: UniProt:P31639
+    target: reactome:R-HSA-189200
+  - key: regulates
+    source: reactome:R-HSA-189200
+    target: GO:0035623
+  - key: positively correlated with
+    source: GO:0035623
+    target: MESH:D003924
+multigraph: true
+nodes:
+  - id: MESH:C572941
+    label: Drug
+    name: ipragliflozin
+  - id: UniProt:P31639
+    label: Protein
+    name: Sodium/glucose cotransporter 2
+  - id: reactome:R-HSA-189200
+    label: Pathway
+    name: Cellular hexose transport
+  - id: GO:0035623
+    label: BiologicalProcess
+    name: renal glucose absorption
+  - id: MESH:D003924
+    label: Disease
+    name: Diabetes mellitus type 2
+references:
+  - https://en.wikipedia.org/wiki/Ipragliflozin
+  - https://pubchem.ncbi.nlm.nih.gov/compound/10453870#section=Pharmacology-and-Biochemistry

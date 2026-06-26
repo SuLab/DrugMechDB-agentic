@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00447_MESH_D013290_1
+  disease: Streptococcal Infections
+  disease_mesh: MESH:D013290
+  drug: loracarbef
+  drug_mesh: MESH:C054920
+  drugbank: DB:DB00447
+links:
+  - key: decreases activity of
+    source: MESH:C054920
+    target: InterPro:IPR005311
+  - key: positively regulates
+    source: InterPro:IPR005311
+    target: GO:0018104
+  - key: positively correlated with
+    source: GO:0018104
+    target: GO:0042546
+  - key: in taxon
+    source: GO:0042546
+    target: taxonomy:1301
+  - key: causes
+    source: taxonomy:1301
+    target: MESH:D013290
+multigraph: true
+nodes:
+  - id: MESH:C054920
+    label: Drug
+    name: loracarbef
+  - id: InterPro:IPR005311
+    label: GeneFamily
+    name: Penicillin-binding protein, dimerisation domain
+  - id: GO:0018104
+    label: BiologicalProcess
+    name: peptidoglycan-protein cross-linking
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: cell wall biogenesis
+  - id: taxonomy:1301
+    label: OrganismTaxon
+    name: Streptococcus
+  - id: MESH:D013290
+    label: Disease
+    name: Streptococcal Infections
+references:
+  - https://go.drugbank.com/drugs/DB00447#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Loracarbef
+  - https://en.wikipedia.org/wiki/Group_A_streptococcal_infection
+  - https://en.wikipedia.org/wiki/Group_B_streptococcal_infection

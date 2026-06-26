@@ -1,0 +1,94 @@
+comment: It is proposed that PARP inhibition specifically targets tumor cells with
+  preexisting HRD (homologous recombination deficiency), such as those cells possessing
+  mutations in the BRCA1 or BRCA2 genes (https://pubmed.ncbi.nlm.nih.gov/28790837/).
+  This drug is a potent vasodilator and it's believed that by dilating tumor-supplying
+  vessels, tumor oxygenation will improve, which in turn it would improve radiotherapy,
+  or increase anticancer drug delivery, as well as improve delivery of PARP inhibitor
+  drugs (rucaparib and others) to the tumor, with consequent increased intra-tumoral
+  PARP inhibition (https://pubmed.ncbi.nlm.nih.gov/25689628/).
+directed: true
+graph:
+  _id: DB12332_MESH_D010051_1
+  disease: Malignant tumor of ovary
+  disease_mesh: MESH:D010051
+  drug: rucaparib
+  drug_mesh: MESH:C531549
+  drugbank: DB:DB12332
+links:
+  - key: negatively correlated with
+    source: MESH:C531549
+    target: GO:0016477
+  - key: positively correlated with
+    source: GO:0016477
+    target: MESH:D010051
+  - key: negatively regulates
+    source: MESH:C531549
+    target: UniProt:P09874
+  - key: negatively regulates
+    source: MESH:C531549
+    target: UniProt:Q9Y6F1
+  - key: negatively regulates
+    source: MESH:C531549
+    target: UniProt:Q9UGN5
+  - key: positively regulates
+    source: UniProt:P09874
+    target: GO:0000724
+  - key: positively regulates
+    source: UniProt:Q9Y6F1
+    target: GO:0000724
+  - key: positively regulates
+    source: UniProt:Q9UGN5
+    target: GO:0006302
+  - key: positively correlated with
+    source: GO:0000724
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0006302
+    target: GO:0006260
+  - key: negatively correlated with
+    source: GO:0006260
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0006915
+    target: MESH:D010051
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D010051
+multigraph: true
+nodes:
+  - id: MESH:C531549
+    label: Drug
+    name: rucaparib
+  - id: UniProt:P09874
+    label: Protein
+    name: Poly [ADP-ribose] polymerase 1
+  - id: UniProt:Q9Y6F1
+    label: Protein
+    name: Protein mono-ADP-ribosyltransferase PARP3
+  - id: UniProt:Q9UGN5
+    label: Protein
+    name: Poly [ADP-ribose] polymerase 2
+  - id: GO:0000724
+    label: BiologicalProcess
+    name: double-strand break repair via homologous recombination
+  - id: GO:0006302
+    label: BiologicalProcess
+    name: double-strand break repair
+  - id: GO:0006260
+    label: BiologicalProcess
+    name: DNA replication
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: cell population proliferation
+  - id: GO:0016477
+    label: BiologicalProcess
+    name: cell migration
+  - id: MESH:D010051
+    label: Disease
+    name: Malignant tumor of ovary
+references:
+  - https://go.drugbank.com/drugs/DB12332
+  - https://en.wikipedia.org/wiki/Rucaparib#Mechanism_of_action

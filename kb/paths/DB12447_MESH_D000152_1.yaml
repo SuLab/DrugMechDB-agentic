@@ -1,0 +1,68 @@
+directed: true
+graph:
+  _id: DB12447_MESH_D000152_1
+  disease: Acne vulgaris
+  disease_mesh: MESH:D000152
+  drug: nadifloxacin
+  drug_mesh: MESH:C062127
+  drugbank: DB:DB12447
+links:
+  - key: negatively correlated with
+    source: MESH:C062127
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: MESH:D000152
+  - key: negatively correlated with
+    source: MESH:C062127
+    target: UBERON:0001866
+  - key: positively correlated with
+    source: UBERON:0001866
+    target: MESH:D000152
+  - key: decreases activity of
+    source: MESH:C062127
+    target: InterPro:IPR002205
+  - key: decreases activity of
+    source: MESH:C062127
+    target: InterPro:IPR013759
+  - key: regulates
+    source: InterPro:IPR013759
+    target: GO:0006265
+  - key: regulates
+    source: InterPro:IPR002205
+    target: GO:0006265
+  - key: in taxon
+    source: GO:0006265
+    target: taxonomy:1747
+  - key: causes
+    source: taxonomy:1747
+    target: MESH:D000152
+multigraph: true
+nodes:
+  - id: MESH:C062127
+    label: Drug
+    name: nadifloxacin
+  - id: InterPro:IPR013759
+    label: GeneFamily
+    name: DNA topoisomerase, type IIA, subunit B, C-terminal
+  - id: InterPro:IPR002205
+    label: GeneFamily
+    name: DNA topoisomerase, type IIA, subunit A/C-terminal
+  - id: GO:0006265
+    label: BiologicalProcess
+    name: DNA topological change
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: UBERON:0001866
+    label: GrossAnatomicalStructure
+    name: sebum
+  - id: taxonomy:1747
+    label: OrganismTaxon
+    name: Cutibacterium acnes
+  - id: MESH:D000152
+    label: Disease
+    name: Acne vulgaris
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL363449/
+  - https://en.wikipedia.org/wiki/Nadifloxacin#Mechanism_of_action

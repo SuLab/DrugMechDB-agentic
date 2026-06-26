@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00200_MESH_D000752_1
+  disease: Pernicious anemia
+  disease_mesh: MESH:D000752
+  drug: hydroxocobalamin
+  drug_mesh: MESH:D006879
+  drugbank: DB:DB00200
+links:
+  - key: increases abundance of
+    source: MESH:D006879
+    target: CHEBI:30411
+  - key: negatively correlated with
+    source: CHEBI:30411
+    target: HP:0001889
+  - key: negatively correlated with
+    source: CHEBI:30411
+    target: HP:0020060
+  - key: manifestation of
+    source: HP:0020060
+    target: MESH:D000752
+  - key: manifestation of
+    source: HP:0001889
+    target: MESH:D000752
+multigraph: true
+nodes:
+  - id: MESH:D006879
+    label: Drug
+    name: hydroxocobalamin
+  - id: CHEBI:30411
+    label: ChemicalSubstance
+    name: cobalamin
+  - id: HP:0001889
+    label: PhenotypicFeature
+    name: Megaloblastic anemia
+  - id: HP:0020060
+    label: PhenotypicFeature
+    name: Decreased red blood cell count
+  - id: MESH:D000752
+    label: Disease
+    name: Pernicious anemia
+references:
+  - https://go.drugbank.com/drugs/DB00200
+  - https://en.wikipedia.org/wiki/Hydroxocobalamin#Mechanism_of_action
+  - https://en.wikipedia.org/wiki/Vitamin_B12_deficiency_anemia#Diagnosis
+  - https://en.wikipedia.org/wiki/Megaloblastic_anemia

@@ -1,0 +1,54 @@
+directed: true
+graph:
+  _id: DB01147_MESH_D013203_1
+  disease: Staphylococcal Infections
+  disease_mesh: MESH:D013203
+  drug: Cloxacillin
+  drug_mesh: MESH:D003023
+  drugbank: DB:DB01147
+links:
+  - key: decreases activity of
+    source: MESH:D003023
+    target: InterPro:IPR005311
+  - key: positively regulates
+    source: InterPro:IPR005311
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0009273
+  - key: positively correlated with
+    source: GO:0009273
+    target: GO:0051301
+  - key: occurs in
+    source: GO:0051301
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D013203
+multigraph: true
+nodes:
+  - id: MESH:D003023
+    label: Drug
+    name: Cloxacillin
+  - id: InterPro:IPR005311
+    label: GeneFamily
+    name: Penicillin-binding protein, dimerisation domain
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: GO:0051301
+    label: BiologicalProcess
+    name: cell division
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D013203
+    label: Disease
+    name: Staphylococcal Infections
+references:
+  - https://go.drugbank.com/drugs/DB01147#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Cloxacillin
+  - https://en.wikipedia.org/wiki/Staphylococcal_infection

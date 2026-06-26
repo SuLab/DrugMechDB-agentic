@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB01611_MESH_D016780_1
+  disease: Vivax malaria
+  disease_mesh: MESH:D016780
+  drug: hydroxychloroquine
+  drug_mesh: MESH:D006886
+  drugbank: DB:DB01611
+links:
+  - key: molecularly interacts with
+    source: MESH:D006886
+    target: MESH:D006418
+  - key: molecularly interacts with
+    source: MESH:D006886
+    target: CHEBI:36161
+  - key: disrupts
+    source: CHEBI:36161
+    target: taxonomy:5855
+  - key: disrupts
+    source: MESH:D006418
+    target: taxonomy:5855
+  - key: causes
+    source: taxonomy:5855
+    target: MESH:D016780
+multigraph: true
+nodes:
+  - id: MESH:D006886
+    label: Drug
+    name: hydroxychloroquine
+  - id: MESH:D006418
+    label: ChemicalSubstance
+    name: Heme
+  - id: CHEBI:36161
+    label: ChemicalSubstance
+    name: hematin
+  - id: taxonomy:5855
+    label: OrganismTaxon
+    name: Plasmodium vivax
+  - id: MESH:D016780
+    label: Disease
+    name: Vivax malaria
+references:
+  - https://en.wikipedia.org/wiki/Hydroxychloroquine#Mechanism_of_action
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1535/

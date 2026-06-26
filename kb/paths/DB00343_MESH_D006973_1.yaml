@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB00343_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: diltiazem
+  drug_mesh: MESH:D004110
+  drugbank: DB:DB00343
+links:
+  - key: decreases activity of
+    source: MESH:D004110
+    target: UniProt:Q13936
+  - key: decreases activity of
+    source: MESH:D004110
+    target: UniProt:Q06432
+  - key: positively regulates
+    source: UniProt:Q13936
+    target: GO:0060402
+  - key: positively regulates
+    source: UniProt:Q06432
+    target: GO:0060402
+  - key: positively correlated with
+    source: GO:0060402
+    target: GO:0042310
+  - key: positively correlated with
+    source: GO:0042310
+    target: HP:0032263
+  - key: positively correlated with
+    source: HP:0032263
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: MESH:D004110
+    label: Drug
+    name: diltiazem
+  - id: UniProt:Q13936
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1C
+  - id: UniProt:Q06432
+    label: Protein
+    name: Voltage-dependent calcium channel gamma-1 subunit
+  - id: GO:0060402
+    label: BiologicalProcess
+    name: calcium ion transport into cytosol
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: vasoconstriction
+  - id: HP:0032263
+    label: PhenotypicFeature
+    name: Increased blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00343

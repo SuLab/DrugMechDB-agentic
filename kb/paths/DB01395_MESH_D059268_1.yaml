@@ -1,0 +1,56 @@
+comment: Note that the combination therapy of estradiol and drospirenone would be
+  more effective at treating atrophic vaginitis, than a mono-therapy relying on progestin
+  only. Also, since many progestogens have off-target effects including estrogenic
+  effects, the improvement in hot flashes maybe due to the drug binding to estrogen
+  receptors instead.
+directed: true
+graph:
+  _id: DB01395_MESH_D059268_1
+  disease: Atrophic vaginitis
+  disease_mesh: MESH:D059268
+  drug: drospirenone
+  drug_mesh: MESH:C035144
+  drugbank: DB:DB01395
+links:
+  - key: positively regulates
+    source: MESH:C035144
+    target: UniProt:P06401
+  - key: participates in
+    source: UniProt:P06401
+    target: reactome:R-HSA-9018519
+  - key: negatively correlated with
+    source: reactome:R-HSA-9018519
+    target: HP:0031088
+  - key: negatively correlated with
+    source: reactome:R-HSA-9018519
+    target: HP:0030683
+  - key: manifestation of
+    source: HP:0030683
+    target: MESH:D059268
+  - key: manifestation of
+    source: HP:0031088
+    target: MESH:D059268
+multigraph: true
+nodes:
+  - id: MESH:C035144
+    label: Drug
+    name: drospirenone
+  - id: UniProt:P06401
+    label: Protein
+    name: Progesterone receptor
+  - id: reactome:R-HSA-9018519
+    label: Pathway
+    name: Estrogen-dependent gene expression
+  - id: HP:0030683
+    label: PhenotypicFeature
+    name: Vaginitis
+  - id: HP:0031088
+    label: PhenotypicFeature
+    name: Vaginal dryness
+  - id: MESH:D059268
+    label: Disease
+    name: Atrophic vaginitis
+references:
+  - https://go.drugbank.com/drugs/DB01395#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Antimineralocorticoid#Mechanism_of_action
+  - https://pubmed.ncbi.nlm.nih.gov/18472980/

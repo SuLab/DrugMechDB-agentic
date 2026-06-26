@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB09051_MESH_D009085_1
+  disease: Mucopolysaccharidosis IV
+  disease_mesh: MESH:D009085
+  drug: GALNS protein, human
+  drug_mesh: MESH:C102295
+  drugbank: DB:DB09051
+links:
+  - key: positively regulates
+    source: MESH:C102295
+    target: GO:0043890
+  - key: positively regulates
+    source: GO:0043890
+    target: GO:0006027
+  - key: decreases abundance of
+    source: GO:0006027
+    target: MESH:D006025
+  - key: positively correlated with
+    source: MESH:D006025
+    target: MESH:D009085
+multigraph: true
+nodes:
+  - id: MESH:C102295
+    label: Drug
+    name: GALNS protein, human
+  - id: GO:0043890
+    label: MolecularActivity
+    name: N-acetylgalactosamine-6-sulfatase activity
+  - id: GO:0006027
+    label: BiologicalProcess
+    name: glycosaminoglycan catabolic process
+  - id: MESH:D006025
+    label: ChemicalSubstance
+    name: Glycosaminoglycans
+  - id: MESH:D009085
+    label: Disease
+    name: Mucopolysaccharidosis IV
+references:
+  - https://go.drugbank.com/drugs/DB09051#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Morquio_syndrome

@@ -1,0 +1,24 @@
+comment: The exact mechanism of action of vitamin E for the treatment of symptoms
+  and signs of disorders caused by severe deficiency in vitamin E is unknown.
+directed: true
+graph:
+  _id: DB00163_MESH_D014811_1
+  disease: Vitamin E deficiency
+  disease_mesh: MESH:D014811
+  drug: Vitamin E
+  drug_mesh: MESH:D014810
+  drugbank: DB:DB00163
+links:
+  - key: treats
+    source: MESH:D014810
+    target: MESH:D014811
+multigraph: true
+nodes:
+  - id: MESH:D014810
+    label: Drug
+    name: Vitamin E
+  - id: MESH:D014811
+    label: Disease
+    name: Vitamin E deficiency
+references:
+  - https://go.drugbank.com/drugs/DB00163

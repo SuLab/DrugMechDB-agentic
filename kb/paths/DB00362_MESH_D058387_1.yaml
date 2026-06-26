@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00362_MESH_D058387_1
+  disease: Candidemia
+  disease_mesh: MESH:D058387
+  drug: anidulafungin
+  drug_mesh: MESH:C102786
+  drugbank: DB:DB00362
+links:
+  - key: negatively regulates
+    source: MESH:C102786
+    target: InterPro:IPR026899
+  - key: positively regulates
+    source: InterPro:IPR026899
+    target: GO:0006075
+  - key: in taxon
+    source: GO:0006075
+    target: taxonomy:237561
+  - key: causes
+    source: taxonomy:237561
+    target: MESH:D058387
+multigraph: true
+nodes:
+  - id: MESH:C102786
+    label: Drug
+    name: anidulafungin
+  - id: InterPro:IPR026899
+    label: GeneFamily
+    name: 1,3-beta-glucan synthase subunit FKS1-like, domain-1
+  - id: GO:0006075
+    label: BiologicalProcess
+    name: (1->3)-beta-D-glucan biosynthetic process
+  - id: taxonomy:237561
+    label: OrganismTaxon
+    name: Candida albicans SC5314
+  - id: MESH:D058387
+    label: Disease
+    name: Candidemia
+references:
+  - https://go.drugbank.com/drugs/DB00362
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL264241/

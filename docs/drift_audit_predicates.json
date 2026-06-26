@@ -1,0 +1,683 @@
+{
+  "biolink_model_version": "4.2.2",
+  "bmt_version": "1.4.8",
+  "biolink_model_pkg_version": "4.4.2",
+  "total_predicates": 67,
+  "status_tally": {
+    "not_in_biolink": 18,
+    "current": 46,
+    "renamed": 3
+  },
+  "results": [
+    {
+      "label": "positively regulates",
+      "enum_meaning": "biolink:positively_regulates",
+      "corpus_uses": 6630,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "positively correlated with",
+      "enum_meaning": "biolink:positively_correlated_with",
+      "corpus_uses": 5454,
+      "biolink_status": "current",
+      "biolink_canonical_name": "positively correlated with",
+      "biolink_slot_uri": "biolink:positively_correlated_with",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "decreases activity of",
+      "enum_meaning": "biolink:decreases_activity_of",
+      "corpus_uses": 4561,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "increases activity of",
+      "enum_meaning": "biolink:increases_activity_of",
+      "corpus_uses": 1974,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "negatively regulates",
+      "enum_meaning": "biolink:negatively_regulates",
+      "corpus_uses": 1913,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "causes",
+      "enum_meaning": "biolink:causes",
+      "corpus_uses": 1660,
+      "biolink_status": "current",
+      "biolink_canonical_name": "causes",
+      "biolink_slot_uri": "biolink:causes",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "participates in",
+      "enum_meaning": "biolink:participates_in",
+      "corpus_uses": 1622,
+      "biolink_status": "current",
+      "biolink_canonical_name": "participates in",
+      "biolink_slot_uri": "biolink:participates_in",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "negatively correlated with",
+      "enum_meaning": "biolink:negatively_correlated_with",
+      "corpus_uses": 1178,
+      "biolink_status": "current",
+      "biolink_canonical_name": "negatively correlated with",
+      "biolink_slot_uri": "biolink:negatively_correlated_with",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "increases abundance of",
+      "enum_meaning": "biolink:increases_abundance_of",
+      "corpus_uses": 1028,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "occurs in",
+      "enum_meaning": "biolink:occurs_in",
+      "corpus_uses": 892,
+      "biolink_status": "current",
+      "biolink_canonical_name": "occurs in",
+      "biolink_slot_uri": "biolink:occurs_in",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "manifestation of",
+      "enum_meaning": "biolink:manifestation_of",
+      "corpus_uses": 776,
+      "biolink_status": "current",
+      "biolink_canonical_name": "manifestation of",
+      "biolink_slot_uri": "biolink:manifestation_of",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "in taxon",
+      "enum_meaning": "biolink:in_taxon",
+      "corpus_uses": 664,
+      "biolink_status": "current",
+      "biolink_canonical_name": "in taxon",
+      "biolink_slot_uri": "biolink:in_taxon",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "contributes to",
+      "enum_meaning": "biolink:contributes_to",
+      "corpus_uses": 578,
+      "biolink_status": "current",
+      "biolink_canonical_name": "contributes to",
+      "biolink_slot_uri": "biolink:contributes_to",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "located in",
+      "enum_meaning": "biolink:located_in",
+      "corpus_uses": 566,
+      "biolink_status": "current",
+      "biolink_canonical_name": "located in",
+      "biolink_slot_uri": "biolink:located_in",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "decreases abundance of",
+      "enum_meaning": "biolink:decreases_abundance_of",
+      "corpus_uses": 476,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "correlated with",
+      "enum_meaning": "biolink:correlated_with",
+      "corpus_uses": 294,
+      "biolink_status": "current",
+      "biolink_canonical_name": "correlated with",
+      "biolink_slot_uri": "biolink:correlated_with",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "location of",
+      "enum_meaning": "biolink:location_of",
+      "corpus_uses": 280,
+      "biolink_status": "current",
+      "biolink_canonical_name": "location of",
+      "biolink_slot_uri": "biolink:location_of",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "has metabolite",
+      "enum_meaning": "biolink:has_metabolite",
+      "corpus_uses": 257,
+      "biolink_status": "current",
+      "biolink_canonical_name": "has metabolite",
+      "biolink_slot_uri": "biolink:has_metabolite",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "disrupts",
+      "enum_meaning": "biolink:disrupts",
+      "corpus_uses": 235,
+      "biolink_status": "current",
+      "biolink_canonical_name": "disrupts",
+      "biolink_slot_uri": "biolink:disrupts",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "part of",
+      "enum_meaning": "biolink:part_of",
+      "corpus_uses": 233,
+      "biolink_status": "current",
+      "biolink_canonical_name": "part of",
+      "biolink_slot_uri": "biolink:part_of",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "treats",
+      "enum_meaning": "biolink:treats",
+      "corpus_uses": 167,
+      "biolink_status": "current",
+      "biolink_canonical_name": "treats",
+      "biolink_slot_uri": "biolink:treats",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "produces",
+      "enum_meaning": "biolink:produces",
+      "corpus_uses": 129,
+      "biolink_status": "current",
+      "biolink_canonical_name": "produces",
+      "biolink_slot_uri": "biolink:produces",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "regulates",
+      "enum_meaning": "biolink:regulates",
+      "corpus_uses": 117,
+      "biolink_status": "current",
+      "biolink_canonical_name": "regulates",
+      "biolink_slot_uri": "biolink:regulates",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "molecularly interacts with",
+      "enum_meaning": "biolink:molecularly_interacts_with",
+      "corpus_uses": 109,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "has phenotype",
+      "enum_meaning": "biolink:has_phenotype",
+      "corpus_uses": 102,
+      "biolink_status": "current",
+      "biolink_canonical_name": "has phenotype",
+      "biolink_slot_uri": "biolink:has_phenotype",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "precedes",
+      "enum_meaning": "biolink:precedes",
+      "corpus_uses": 93,
+      "biolink_status": "current",
+      "biolink_canonical_name": "precedes",
+      "biolink_slot_uri": "biolink:precedes",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "affects risk for",
+      "enum_meaning": "biolink:affects_risk_for",
+      "corpus_uses": 82,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "has output",
+      "enum_meaning": "biolink:has_output",
+      "corpus_uses": 72,
+      "biolink_status": "current",
+      "biolink_canonical_name": "has output",
+      "biolink_slot_uri": "biolink:has_output",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "subclass of",
+      "enum_meaning": "biolink:subclass_of",
+      "corpus_uses": 58,
+      "biolink_status": "current",
+      "biolink_canonical_name": "subclass of",
+      "biolink_slot_uri": "biolink:subclass_of",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "caused by",
+      "enum_meaning": "biolink:caused_by",
+      "corpus_uses": 46,
+      "biolink_status": "current",
+      "biolink_canonical_name": "caused by",
+      "biolink_slot_uri": "biolink:caused_by",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "prevents",
+      "enum_meaning": "biolink:prevents",
+      "corpus_uses": 44,
+      "biolink_status": "renamed",
+      "biolink_canonical_name": "preventative for condition",
+      "biolink_slot_uri": "biolink:preventative_for_condition",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "affected by",
+      "enum_meaning": "biolink:affected_by",
+      "corpus_uses": 44,
+      "biolink_status": "current",
+      "biolink_canonical_name": "affected by",
+      "biolink_slot_uri": "biolink:affected_by",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "disrupted by",
+      "enum_meaning": "biolink:disrupted_by",
+      "corpus_uses": 40,
+      "biolink_status": "current",
+      "biolink_canonical_name": "disrupted by",
+      "biolink_slot_uri": "biolink:disrupted_by",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "phenotype of",
+      "enum_meaning": "biolink:phenotype_of",
+      "corpus_uses": 39,
+      "biolink_status": "current",
+      "biolink_canonical_name": "phenotype of",
+      "biolink_slot_uri": "biolink:phenotype_of",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "capable of",
+      "enum_meaning": "biolink:capable_of",
+      "corpus_uses": 37,
+      "biolink_status": "current",
+      "biolink_canonical_name": "capable of",
+      "biolink_slot_uri": "biolink:capable_of",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "chemically similar to",
+      "enum_meaning": "biolink:chemically_similar_to",
+      "corpus_uses": 29,
+      "biolink_status": "current",
+      "biolink_canonical_name": "chemically similar to",
+      "biolink_slot_uri": "biolink:chemically_similar_to",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "has participant",
+      "enum_meaning": "biolink:has_participant",
+      "corpus_uses": 16,
+      "biolink_status": "current",
+      "biolink_canonical_name": "has participant",
+      "biolink_slot_uri": "biolink:has_participant",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "expressed in",
+      "enum_meaning": "biolink:expressed_in",
+      "corpus_uses": 15,
+      "biolink_status": "current",
+      "biolink_canonical_name": "expressed in",
+      "biolink_slot_uri": "biolink:expressed_in",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "ameliorates",
+      "enum_meaning": "biolink:ameliorates",
+      "corpus_uses": 12,
+      "biolink_status": "renamed",
+      "biolink_canonical_name": "ameliorates condition",
+      "biolink_slot_uri": "biolink:ameliorates_condition",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "superclass of",
+      "enum_meaning": "biolink:superclass_of",
+      "corpus_uses": 12,
+      "biolink_status": "current",
+      "biolink_canonical_name": "superclass of",
+      "biolink_slot_uri": "biolink:superclass_of",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "produced by",
+      "enum_meaning": "biolink:produced_by",
+      "corpus_uses": 11,
+      "biolink_status": "current",
+      "biolink_canonical_name": "produced by",
+      "biolink_slot_uri": "biolink:produced_by",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "actively involved in",
+      "enum_meaning": "biolink:actively_involved_in",
+      "corpus_uses": 11,
+      "biolink_status": "current",
+      "biolink_canonical_name": "actively involved in",
+      "biolink_slot_uri": "biolink:actively_involved_in",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "derives into",
+      "enum_meaning": "biolink:derives_into",
+      "corpus_uses": 10,
+      "biolink_status": "current",
+      "biolink_canonical_name": "derives into",
+      "biolink_slot_uri": "biolink:derives_into",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "increases degradation of",
+      "enum_meaning": "biolink:increases_degradation_of",
+      "corpus_uses": 9,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "contraindicated for",
+      "enum_meaning": "biolink:contraindicated_for",
+      "corpus_uses": 8,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "has active ingredient",
+      "enum_meaning": "biolink:has_active_ingredient",
+      "corpus_uses": 7,
+      "biolink_status": "current",
+      "biolink_canonical_name": "has active ingredient",
+      "biolink_slot_uri": "biolink:has_active_ingredient",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "increases transport of",
+      "enum_meaning": "biolink:increases_transport_of",
+      "corpus_uses": 7,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "in complex with",
+      "enum_meaning": "biolink:in_complex_with",
+      "corpus_uses": 6,
+      "biolink_status": "current",
+      "biolink_canonical_name": "in complex with",
+      "biolink_slot_uri": "biolink:in_complex_with",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "directly interacts with",
+      "enum_meaning": "biolink:directly_interacts_with",
+      "corpus_uses": 5,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "increases stability of",
+      "enum_meaning": "biolink:increases_stability_of",
+      "corpus_uses": 4,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "derives from",
+      "enum_meaning": "biolink:derives_from",
+      "corpus_uses": 4,
+      "biolink_status": "current",
+      "biolink_canonical_name": "derives from",
+      "biolink_slot_uri": "biolink:derives_from",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "exacerbates",
+      "enum_meaning": null,
+      "corpus_uses": 3,
+      "biolink_status": "renamed",
+      "biolink_canonical_name": "exacerbates condition",
+      "biolink_slot_uri": "biolink:exacerbates_condition",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "interacts with",
+      "enum_meaning": "biolink:interacts_with",
+      "corpus_uses": 3,
+      "biolink_status": "current",
+      "biolink_canonical_name": "interacts with",
+      "biolink_slot_uri": "biolink:interacts_with",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "is metabolite of",
+      "enum_meaning": "biolink:is_metabolite_of",
+      "corpus_uses": 3,
+      "biolink_status": "current",
+      "biolink_canonical_name": "is metabolite of",
+      "biolink_slot_uri": "biolink:is_metabolite_of",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "enables",
+      "enum_meaning": "biolink:enables",
+      "corpus_uses": 2,
+      "biolink_status": "current",
+      "biolink_canonical_name": "enables",
+      "biolink_slot_uri": "biolink:enables",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "decreases synthesis of",
+      "enum_meaning": "biolink:decreases_synthesis_of",
+      "corpus_uses": 2,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "coexists with",
+      "enum_meaning": "biolink:coexists_with",
+      "corpus_uses": 2,
+      "biolink_status": "current",
+      "biolink_canonical_name": "coexists with",
+      "biolink_slot_uri": "biolink:coexists_with",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "expresses",
+      "enum_meaning": "biolink:expresses",
+      "corpus_uses": 1,
+      "biolink_status": "current",
+      "biolink_canonical_name": "expresses",
+      "biolink_slot_uri": "biolink:expresses",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "decreases response to",
+      "enum_meaning": "biolink:decreases_response_to",
+      "corpus_uses": 1,
+      "biolink_status": "current",
+      "biolink_canonical_name": "decreases response to",
+      "biolink_slot_uri": "biolink:decreases_response_to",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "has part",
+      "enum_meaning": "biolink:has_part",
+      "corpus_uses": 1,
+      "biolink_status": "current",
+      "biolink_canonical_name": "has part",
+      "biolink_slot_uri": "biolink:has_part",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "increases expression of",
+      "enum_meaning": "biolink:increases_expression_of",
+      "corpus_uses": 1,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "predisposes",
+      "enum_meaning": "biolink:predisposes",
+      "corpus_uses": 1,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "increases response to",
+      "enum_meaning": "biolink:increases_response_to",
+      "corpus_uses": 1,
+      "biolink_status": "current",
+      "biolink_canonical_name": "increases response to",
+      "biolink_slot_uri": "biolink:increases_response_to",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "similar to",
+      "enum_meaning": "biolink:similar_to",
+      "corpus_uses": 1,
+      "biolink_status": "current",
+      "biolink_canonical_name": "similar to",
+      "biolink_slot_uri": "biolink:similar_to",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "decreases expression of",
+      "enum_meaning": "biolink:decreases_expression_of",
+      "corpus_uses": 1,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    },
+    {
+      "label": "physically interacts with",
+      "enum_meaning": "biolink:physically_interacts_with",
+      "corpus_uses": 1,
+      "biolink_status": "current",
+      "biolink_canonical_name": "physically interacts with",
+      "biolink_slot_uri": "biolink:physically_interacts_with",
+      "deprecated": false,
+      "is_predicate": true
+    },
+    {
+      "label": "decreases uptake of",
+      "enum_meaning": "biolink:decreases_uptake_of",
+      "corpus_uses": 1,
+      "biolink_status": "not_in_biolink",
+      "biolink_canonical_name": null,
+      "biolink_slot_uri": null,
+      "deprecated": false,
+      "is_predicate": false
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB08826_MESH_D019190_1
+  disease: Iron overload
+  disease_mesh: MESH:D019190
+  drug: deferiprone
+  drug_mesh: MESH:C044919
+  drugbank: DB:DB08826
+links:
+  - key: molecularly interacts with
+    source: MESH:C044919
+    target: CHEBI:29034
+  - key: capable of
+    source: MESH:C044919
+    target: GO:0046911
+  - key: decreases abundance of
+    source: GO:0046911
+    target: CHEBI:29034
+  - key: located in
+    source: CHEBI:29034
+    target: CHEBI:35143
+  - key: correlated with
+    source: CHEBI:35143
+    target: MESH:D019190
+multigraph: true
+nodes:
+  - id: MESH:C044919
+    label: Drug
+    name: deferiprone
+  - id: CHEBI:29034
+    label: ChemicalSubstance
+    name: iron(3+)
+  - id: GO:0046911
+    label: MolecularActivity
+    name: metal chelating activity
+  - id: CHEBI:35143
+    label: ChemicalSubstance
+    name: hemoglobin
+  - id: MESH:D019190
+    label: Disease
+    name: Iron overload
+references:
+  - https://go.drugbank.com/drugs/DB08826
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Deferiprone

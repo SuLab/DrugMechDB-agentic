@@ -1,0 +1,23 @@
+directed: true
+graph:
+  _id: DB03793_MESH_D012594_1
+  disease: Scleroderma, Localized
+  disease_mesh: MESH:D012594
+  drug: Benzoic Acid
+  drug_mesh: MESH:D019817
+  drugbank: DB:DB03793
+links:
+  - key: treats
+    source: MESH:D019817
+    target: MESH:D012594
+multigraph: true
+nodes:
+  - id: MESH:D019817
+    label: Drug
+    name: Benzoic Acid
+  - id: MESH:D012594
+    label: Disease
+    name: Scleroderma, Localized
+references:
+  - https://go.drugbank.com/drugs/DB03793#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Scleroderma

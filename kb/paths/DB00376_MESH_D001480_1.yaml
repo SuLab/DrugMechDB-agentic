@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB00376_MESH_D001480_1
+  disease: Extrapyramidal disease
+  disease_mesh: MESH:D001480
+  drug: trihexyphenidyl
+  drug_mesh: MESH:D014282
+  drugbank: DB:DB00376
+links:
+  - key: negatively regulates
+    source: MESH:D014282
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0007274
+  - key: precedes
+    source: GO:0007274
+    target: HP:0002071
+  - key: manifestation of
+    source: HP:0002071
+    target: MESH:D001480
+multigraph: true
+nodes:
+  - id: MESH:D014282
+    label: Drug
+    name: trihexyphenidyl
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: GO:0007274
+    label: BiologicalProcess
+    name: neuromuscular synaptic transmission
+  - id: HP:0002071
+    label: PhenotypicFeature
+    name: Abnormality of extrapyramidal motor function
+  - id: MESH:D001480
+    label: Disease
+    name: Extrapyramidal disease
+references:
+  - https://go.drugbank.com/drugs/DB00376#BE0000092
+  - https://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1490
+  - https://en.wikipedia.org/wiki/Trihexyphenidyl#Pharmacology

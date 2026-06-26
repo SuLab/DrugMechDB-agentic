@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB00567_MESH_D011472_1
+  disease: Prostatitis
+  disease_mesh: MESH:D011472
+  drug: cefalexin
+  drug_mesh: MESH:D002506
+  drugbank: DB:DB00567
+links:
+  - key: decreases activity of
+    source: MESH:D002506
+    target: UniProt:Q8DR59
+  - key: positively regulates
+    source: UniProt:Q8DR59
+    target: GO:0009252
+  - key: in taxon
+    source: GO:0009252
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D011472
+multigraph: true
+nodes:
+  - id: MESH:D002506
+    label: Drug
+    name: cefalexin
+  - id: UniProt:Q8DR59
+    label: Protein
+    name: Penicillin-binding protein 1A
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D011472
+    label: Disease
+    name: Prostatitis
+references:
+  - https://go.drugbank.com/drugs/DB00567
+  - https://en.wikipedia.org/wiki/Cefalexin#Mechanism_of_action
+  - https://medlineplus.gov/ency/article/000519.htm

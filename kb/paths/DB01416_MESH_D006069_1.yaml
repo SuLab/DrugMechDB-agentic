@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB01416_MESH_D006069_1
+  disease: Gonorrhea
+  disease_mesh: MESH:D006069
+  drug: cefpodoxime proxetil
+  drug_mesh: MESH:C053267
+  drugbank: DB:DB01416
+links:
+  - key: decreases activity of
+    source: MESH:C053267
+    target: InterPro:IPR012338
+  - key: decreases activity of
+    source: MESH:C053267
+    target: InterPro:IPR037532
+  - key: positively regulates
+    source: InterPro:IPR012338
+    target: GO:0009252
+  - key: positively regulates
+    source: InterPro:IPR037532
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0071555
+  - key: in taxon
+    source: GO:0071555
+    target: taxonomy:485
+  - key: causes
+    source: taxonomy:485
+    target: MESH:D006069
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C053268
+    id: MESH:C053267
+    label: Drug
+    name: cefpodoxime proxetil
+  - id: InterPro:IPR012338
+    label: GeneFamily
+    name: Beta-lactamase/transpeptidase-like
+  - id: InterPro:IPR037532
+    label: GeneFamily
+    name: Peptidoglycan D,D-transpeptidase FtsI
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0071555
+    label: BiologicalProcess
+    name: cell wall organization
+  - id: taxonomy:485
+    label: OrganismTaxon
+    name: Neisseria gonorrhoeae
+  - id: MESH:D006069
+    label: Disease
+    name: Gonorrhea
+references:
+  - https://go.drugbank.com/drugs/DB01416#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Gonorrhea#Cause

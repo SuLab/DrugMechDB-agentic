@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB09321_MESH_D011537_1
+  disease: Itching of skin
+  disease_mesh: MESH:D011537
+  drug: zinc oxide
+  drug_mesh: MESH:D015034
+  drugbank: DB:DB09321
+links:
+  - key: negatively regulates
+    source: MESH:D015034
+    target: GO:0043303
+  - key: precedes
+    source: GO:0043303
+    target: GO:0001821
+  - key: contributes to
+    source: GO:0001821
+    target: MESH:D011537
+multigraph: true
+nodes:
+  - id: MESH:D015034
+    label: Drug
+    name: Zinc oxide
+  - id: GO:0043303
+    label: BiologicalProcess
+    name: Mast cell degranulation
+  - id: GO:0001821
+    label: BiologicalProcess
+    name: Histamine secretion
+  - id: MESH:D011537
+    label: Disease
+    name: Itching of skin
+references:
+  - https://go.drugbank.com/drugs/DB09321
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4120804/

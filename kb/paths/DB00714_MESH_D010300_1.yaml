@@ -1,0 +1,71 @@
+directed: true
+graph:
+  _id: DB00714_MESH_D010300_1
+  disease: Parkinson's disease
+  disease_mesh: MESH:D010300
+  drug: Apomorphine
+  drug_mesh: MESH:D001058
+  drugbank: DB:DB00714
+links:
+  - key: positively regulates
+    source: MESH:D001058
+    target: UniProt:P14416
+  - key: positively regulates
+    source: MESH:D001058
+    target: UniProt:P35462
+  - key: positively regulates
+    source: MESH:D001058
+    target: UniProt:P21917
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P35462
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P21917
+    target: MESH:D004298
+  - key: located in
+    source: MESH:D004298
+    target: UBERON:0035999
+  - key: located in
+    source: UBERON:0035999
+    target: UBERON:0002038
+  - key: part of
+    source: UBERON:0002038
+    target: UBERON:0014169
+  - key: disrupted by
+    source: UBERON:0014169
+    target: MESH:D010300
+multigraph: true
+nodes:
+  - id: MESH:D001058
+    label: Drug
+    name: Apomorphine
+  - id: UniProt:P14416
+    label: Protein
+    name: Dopamine D2 receptor
+  - id: UniProt:P35462
+    label: Protein
+    name: Dopamine D3 receptor
+  - id: UniProt:P21917
+    label: Protein
+    name: Dopamine D4 receptor
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: UBERON:0035999
+    label: GrossAnatomicalStructure
+    name: Dopaminergic cell groups
+  - id: UBERON:0002038
+    label: GrossAnatomicalStructure
+    name: Substantia nigra
+  - id: UBERON:0014169
+    label: GrossAnatomicalStructure
+    name: Nigrostriatal tract
+  - id: MESH:D010300
+    label: Disease
+    name: Parkinson's disease
+references:
+  - https://go.drugbank.com/drugs/DB00714
+  - https://en.wikipedia.org/wiki/Apomorphine#Pharmacology

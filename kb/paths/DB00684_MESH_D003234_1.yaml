@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00684_MESH_D003234_1
+  disease: Conjunctivitis, Bacterial
+  disease_mesh: MESH:D003234
+  drug: tobramycin
+  drug_mesh: MESH:D014031
+  drugbank: DB:DB00684
+links:
+  - key: negatively regulates
+    source: MESH:D014031
+    target: MESH:D012336
+  - key: negatively regulates
+    source: MESH:D014031
+    target: MESH:D012338
+  - key: located in
+    source: MESH:D012336
+    target: GO:0005840
+  - key: located in
+    source: MESH:D012338
+    target: GO:0005840
+  - key: positively regulates
+    source: GO:0005840
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:2
+  - key: causes
+    source: taxonomy:2
+    target: MESH:D003234
+multigraph: true
+nodes:
+  - id: MESH:D014031
+    label: Drug
+    name: tobramycin
+  - id: MESH:D012336
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 16S
+  - id: MESH:D012338
+    label: ChemicalSubstance
+    name: RNA, Ribosomal, 23S
+  - id: GO:0005840
+    label: CellularComponent
+    name: ribosome
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:2
+    label: OrganismTaxon
+    name: Bacteria
+  - id: MESH:D003234
+    label: Disease
+    name: Conjunctivitis, Bacterial
+references:
+  - https://go.drugbank.com/drugs/DB00684#mechanism-of-action
+  - https://en.wikipedia.org/wiki/16S_ribosomal_RNA
+  - https://en.wikipedia.org/wiki/23S_ribosomal_RNA
+  - https://en.wikipedia.org/wiki/Conjunctivitis#Bacterial

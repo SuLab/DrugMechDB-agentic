@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01413_MESH_D018410_1
+  disease: Bacterial pneumonia
+  disease_mesh: MESH:D018410
+  drug: Cefepime
+  drug_mesh: MESH:C043266
+  drugbank: DB:DB01413
+links:
+  - key: negatively regulates
+    source: MESH:C043266
+    target: UniProt:P0A3M6
+  - key: positively regulates
+    source: UniProt:P0A3M6
+    target: GO:0071972
+  - key: participates in
+    source: GO:0071972
+    target: GO:0018104
+  - key: correlated with
+    source: GO:0018104
+    target: GO:0031504
+  - key: in taxon
+    source: GO:0031504
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D018410
+multigraph: true
+nodes:
+  - id: MESH:C043266
+    label: Drug
+    name: Cefepime
+  - id: UniProt:P0A3M6
+    label: Protein
+    name: Penicillin-binding protein 2B
+  - id: GO:0071972
+    label: MolecularActivity
+    name: peptidoglycan L,D-transpeptidase activity
+  - id: GO:0018104
+    label: BiologicalProcess
+    name: peptidoglycan-protein cross-linking
+  - id: GO:0031504
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall organization
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D018410
+    label: Disease
+    name: Bacterial pneumonia
+references:
+  - https://go.drugbank.com/drugs/DB01413#mechanism-of-action

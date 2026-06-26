@@ -1,0 +1,79 @@
+directed: true
+graph:
+  _id: DB00204_MESH_D001281_1
+  disease: Atrial fibrillation
+  disease_mesh: MESH:D001281
+  drug: dofetilide
+  drug_mesh: MESH:C063533
+  drugbank: DB:DB00204
+links:
+  - key: negatively regulates
+    source: MESH:C063533
+    target: UniProt:Q12809
+  - key: negatively regulates
+    source: MESH:C063533
+    target: UniProt:O95069
+  - key: negatively regulates
+    source: MESH:C063533
+    target: UniProt:Q14500
+  - key: participates in
+    source: UniProt:Q12809
+    target: reactome:R-HSA-5576890
+  - key: regulates
+    source: UniProt:O95069
+    target: GO:0030322
+  - key: positively regulates
+    source: UniProt:Q14500
+    target: GO:0061337
+  - key: negatively correlated with
+    source: reactome:R-HSA-5576890
+    target: MESH:D012032
+  - key: negatively correlated with
+    source: GO:0030322
+    target: MESH:D012032
+  - key: negatively correlated with
+    source: GO:0061337
+    target: MESH:D012032
+  - key: negatively correlated with
+    source: MESH:D012032
+    target: HP:0001692
+  - key: manifestation of
+    source: HP:0001692
+    target: MESH:D001281
+multigraph: true
+nodes:
+  - id: MESH:C063533
+    label: Drug
+    name: dofetilide
+  - id: UniProt:Q12809
+    label: Protein
+    name: Potassium voltage-gated channel subfamily H member 2
+  - id: UniProt:O95069
+    label: Protein
+    name: Potassium channel subfamily K member 2
+  - id: UniProt:Q14500
+    label: Protein
+    name: ATP-sensitive inward rectifier potassium channel 12
+  - id: GO:0030322
+    label: BiologicalProcess
+    name: stabilization of membrane potential
+  - id: GO:0061337
+    label: BiologicalProcess
+    name: cardiac conduction
+  - id: reactome:R-HSA-5576890
+    label: Pathway
+    name: Phase 3 - rapid repolarisation
+  - id: MESH:D012032
+    label: BiologicalProcess
+    name: Refractory Period, Electrophysiological
+  - id: HP:0001692
+    label: PhenotypicFeature
+    name: Atrial arrhythmia
+  - id: MESH:D001281
+    label: Disease
+    name: Atrial fibrillation
+references:
+  - https://go.drugbank.com/drugs/DB00204#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Dofetilide#Mechanism_of_action
+  - https://www.cvpharmacology.com/antiarrhy/potassium-blockers
+  - https://pubmed.ncbi.nlm.nih.gov/10907968/

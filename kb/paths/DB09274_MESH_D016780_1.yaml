@@ -1,0 +1,39 @@
+comment: MESH:D016780 was initially denoted as Vivax malaria in the original xls file
+  but the name on the MESH website, Malaria, Vivax, is the one used here.
+directed: true
+graph:
+  _id: DB09274_MESH_D016780_1
+  disease: Malaria, Vivax
+  disease_mesh: MESH:D016780
+  drug: Artesunate
+  drug_mesh: MESH:D000077332
+  drugbank: DB:DB09274
+links:
+  - key: negatively regulates
+    source: MESH:D000077332
+    target: Pfam:PF06589
+  - key: in taxon
+    source: Pfam:PF06589
+    target: taxonomy:5855
+  - key: causes
+    source: taxonomy:5855
+    target: MESH:D016780
+multigraph: true
+nodes:
+  - alt_ids:
+      - MESH:C111789
+    id: MESH:D000077332
+    label: Drug
+    name: Artesunate
+  - id: Pfam:PF06589
+    label: GeneFamily
+    name: Circumsporozoite-related antigen (CRA)
+  - id: taxonomy:5855
+    label: OrganismTaxon
+    name: Plasmodium vivax
+  - id: MESH:D016780
+    label: Disease
+    name: Malaria, Vivax
+references:
+  - https://go.drugbank.com/drugs/DB09274#pharmacodynamics
+  - https://pubchem.ncbi.nlm.nih.gov/compound/6917864#section=Pharmacology-and-Biochemistry

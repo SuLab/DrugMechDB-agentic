@@ -1,0 +1,63 @@
+directed: true
+graph:
+  _id: DB00408_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: loxapine
+  drug_mesh: MESH:D008152
+  drugbank: DB:DB00408
+links:
+  - key: decreases activity of
+    source: MESH:D008152
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:D008152
+    target: UniProt:P28223
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P28223
+    target: MESH:D012701
+  - key: positively correlated with
+    source: MESH:D004298
+    target: GO:0061527
+  - key: positively correlated with
+    source: MESH:D012701
+    target: GO:0060096
+  - key: correlated with
+    source: GO:0060096
+    target: MESH:D012559
+  - key: correlated with
+    source: GO:0061527
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:D008152
+    label: Drug
+    name: loxapine
+  - id: UniProt:P14416
+    label: Protein
+    name: Dopamine D2 receptor
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: dopamine
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: serotonin
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: dopamine secretion, neurotransmission
+  - id: GO:0060096
+    label: BiologicalProcess
+    name: Serotonin secretion, neurotransmission
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia
+references:
+  - https://go.drugbank.com/drugs/DB00408#BE0000756
+  - https://pubmed.ncbi.nlm.nih.gov/27189524/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4255483/

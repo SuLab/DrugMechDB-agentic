@@ -1,0 +1,25 @@
+comment: Please note that there appears to be no connection between thiamin and cobalamin
+  deficiency
+directed: true
+graph:
+  _id: DB00152_MESH_D014806_1
+  disease: Cobalamin deficiency
+  disease_mesh: MESH:D014806
+  drug: Thiamine
+  drug_mesh: MESH:D013831
+  drugbank: DB:DB00152
+links:
+  - key: treats
+    source: MESH:D013831
+    target: MESH:D014806
+multigraph: true
+nodes:
+  - id: MESH:D013831
+    label: Drug
+    name: Thiamine
+  - id: MESH:D014806
+    label: Disease
+    name: Cobalamin deficiency
+references:
+  - https://go.drugbank.com/drugs/DB00152
+  - https://drugcentral.org/drugcard/2832?q=thiamine

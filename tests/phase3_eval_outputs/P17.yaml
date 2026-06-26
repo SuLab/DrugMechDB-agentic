@@ -1,0 +1,102 @@
+directed: true
+multigraph: true
+graph:
+  _id: P17_DB00472_MESH_D003865
+  drug: Fluoxetine
+  drug_mesh: MESH:D005473
+  drugbank: DB:DB00472
+  disease: Major depressive disorder
+  disease_mesh: MESH:D003865
+nodes:
+  - id: MESH:D005473
+    name: Fluoxetine
+    label: Drug
+  - id: UniProt:P31645
+    name: Sodium-dependent serotonin transporter
+    label: Protein
+  - id: GO:0051610
+    name: Serotonin uptake
+    label: BiologicalProcess
+  - id: MESH:D012701
+    name: Serotonin
+    label: ChemicalSubstance
+  - id: GO:0060096
+    name: Serotonin secretion, neurotransmission
+    label: BiologicalProcess
+  - id: MESH:D003865
+    name: Major depressive disorder
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D005473
+    target: UniProt:P31645
+    evidence:
+      - reference: PMID:31480244
+        snippet: Their primary mechanism of action is considered to be the increased synaptic concentration of serotonin through blockade of the serotonin transporter (SERT).
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Fluoxetine, as an SSRI, blocks SERT — decreasing the transporter's activity of removing serotonin from the synapse.
+      - reference: PMID:24516100
+        snippet: We show that fluoxetine binds within the central substrate site of human SERT
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Fluoxetine binds the central substrate site of SERT, competitively blocking its serotonin uptake activity.
+  - key: positively regulates
+    source: UniProt:P31645
+    target: GO:0051610
+    evidence:
+      - reference: PMID:26019340
+        snippet: Serotonergic neurotransmission is terminated by reuptake of extracellular serotonin (5-HT) by the high-affinity serotonin transporter (SERT).
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: SERT is the primary transporter that mediates serotonin reuptake; its activity drives the serotonin uptake process.
+      - reference: PMID:25652393
+        snippet: The serotonin transporter (SERT), which is responsible for the reuptake of serotonin from the synaptic cleft into the neuron
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: SERT is responsible for serotonin reuptake from the synaptic cleft — confirming it positively regulates the serotonin uptake process.
+  - key: decreases abundance of
+    source: GO:0051610
+    target: MESH:D012701
+    evidence:
+      - reference: PMID:23796482
+        snippet: SSRIs act specifically on synaptic serotonin concentrations by blocking its reuptake in the presynapse and increasing levels in the presynaptic membrane.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: By blocking serotonin reuptake, SSRIs increase synaptic serotonin — confirming that the reuptake process (GO:0051610) normally decreases synaptic serotonin abundance.
+      - reference: PMID:31480244
+        snippet: by virtue of its inhibition at SERT, fluoxetine increases extracellular serotonin levels
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Blocking the serotonin uptake process raises extracellular serotonin, confirming that serotonin uptake normally decreases serotonin abundance.
+  - key: positively correlated with
+    source: MESH:D012701
+    target: GO:0060096
+    evidence:
+      - reference: PMID:26019340
+        snippet: Serotonergic neurotransmission is terminated by reuptake of extracellular serotonin (5-HT) by the high-affinity serotonin transporter (SERT).
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Extracellular serotonin drives serotonergic neurotransmission; its removal terminates signaling, confirming serotonin abundance is positively correlated with serotonergic neurotransmission.
+      - reference: PMID:35090949
+        snippet: swimming behavior has been associated with an increase in serotonergic neurotransmission
+        supports: PARTIAL
+        evidence_source: MODEL_ORGANISM
+        explanation: Increased serotonin availability (via FLX-mediated reuptake block) is associated with increased serotonergic neurotransmission in animal models.
+  - key: treats
+    source: GO:0060096
+    target: MESH:D003865
+    evidence:
+      - reference: PMID:34658805
+        snippet: synaptic deficiencies of monoaminergic neurotransmitters play a causative role in this neuropsychiatric disorder, and that boosting monoamines with drugs such as SSRIs, SNRIs, TCAs, and MAOIs has antidepressant effects
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Deficient serotonergic (monoaminergic) neurotransmission underlies MDD; boosting it via SSRIs treats the disorder.
+      - reference: PMID:31480244
+        snippet: Major depressive disorder is one of the most common neuropsychiatric disorders worldwide. The treatment of choice that shows good efficacy in mood stabilization is based on selective serotonin reuptake inhibitors (SSRIs).
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: SSRIs, which work by increasing serotonergic neurotransmission, are the established treatment for MDD.
+references:
+  - https://go.drugbank.com/drugs/DB00472#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P31645

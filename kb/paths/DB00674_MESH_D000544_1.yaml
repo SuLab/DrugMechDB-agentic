@@ -1,0 +1,51 @@
+comment: The cause of cognitive impairment in Alzheimer's Disease is not fully understood.
+  It's khown that acetylcholine producing neurons degenerate and it's believed that
+  this cholinergic loss is correlated with cognitive impairment and a density of amyloid
+  plaques (https://pubchem.ncbi.nlm.nih.gov/compound/9651#section=Mechanism-of-Action).
+directed: true
+graph:
+  _id: DB00674_MESH_D000544_1
+  disease: Alzheimer's disease
+  disease_mesh: MESH:D000544
+  drug: galantamine
+  drug_mesh: MESH:D005702
+  drugbank: DB:DB00674
+links:
+  - key: decreases activity of
+    source: MESH:D005702
+    target: UniProt:P22303
+  - key: positively regulates
+    source: UniProt:P22303
+    target: GO:0006581
+  - key: decreases abundance of
+    source: GO:0006581
+    target: CHEBI:15355
+  - key: negatively correlated with
+    source: CHEBI:15355
+    target: HP:0100543
+  - key: manifestation of
+    source: HP:0100543
+    target: MESH:D000544
+multigraph: true
+nodes:
+  - id: MESH:D005702
+    label: Drug
+    name: galantamine
+  - id: UniProt:P22303
+    label: Protein
+    name: Acetylcholinesterase
+  - id: GO:0006581
+    label: BiologicalProcess
+    name: acetylcholine catabolic process
+  - id: CHEBI:15355
+    label: ChemicalSubstance
+    name: acetylcholine
+  - id: HP:0100543
+    label: PhenotypicFeature
+    name: Cognitive impairment
+  - id: MESH:D000544
+    label: Disease
+    name: Alzheimer's disease
+references:
+  - https://go.drugbank.com/drugs/DB00674#BE0000426
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL659/

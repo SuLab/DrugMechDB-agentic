@@ -1,0 +1,37 @@
+comment: Eteplirsen is indicated for treatment of certain individuals with Duchenne
+  muscular dystrophy. Its use is limited to those with a confirmed mutation of the
+  DMD gene which would benefit from exon 51 skipping.
+directed: true
+graph:
+  _id: DB06014_MESH_D020388_1
+  disease: Duchenne muscular dystrophy
+  disease_mesh: MESH:D020388
+  drug: eteplirsen
+  drug_mesh: MESH:C000611335
+  drugbank: DB:DB06014
+links:
+  - key: positively regulates
+    source: MESH:C000611335
+    target: GO:0010467
+  - key: positively regulates
+    source: GO:0010467
+    target: UniProt:P11532
+  - key: disrupted by
+    source: UniProt:P11532
+    target: MESH:D020388
+multigraph: true
+nodes:
+  - id: MESH:C000611335
+    label: Drug
+    name: Eteplirsen
+  - id: GO:0010467
+    label: BiologicalProcess
+    name: Gene expression
+  - id: UniProt:P11532
+    label: Protein
+    name: Dystrophin
+  - id: MESH:D020388
+    label: Disease
+    name: Duchenne muscular dystrophy
+references:
+  - https://go.drugbank.com/drugs/DB06014

@@ -1,0 +1,24 @@
+comment: Phenylephrine is used as a diagnostic aid and it causes mydriasis (dilated
+  pupils).
+directed: true
+graph:
+  _id: DB00388_MESH_D015878_1
+  disease: Mydriasis
+  disease_mesh: MESH:D015878
+  drug: phenylephrine
+  drug_mesh: MESH:D010656
+  drugbank: DB:DB00388
+links:
+  - key: causes
+    source: MESH:D010656
+    target: MESH:D015878
+multigraph: true
+nodes:
+  - id: MESH:D010656
+    label: Drug
+    name: phenylephrine
+  - id: MESH:D015878
+    label: Disease
+    name: Mydriasis
+references:
+  - https://go.drugbank.com/drugs/DB00388#mechanism-of-action

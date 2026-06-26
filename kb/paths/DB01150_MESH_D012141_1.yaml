@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB01150_MESH_D012141_1
+  disease: Respiratory Tract Infections
+  disease_mesh: MESH:D012141
+  drug: cefprozil
+  drug_mesh: MESH:C052018
+  drugbank: DB:DB01150
+links:
+  - key: decreases activity of
+    source: MESH:C052018
+    target: InterPro:IPR001460
+  - key: increases activity of
+    source: MESH:C052018
+    target: UniProt:P06653
+  - key: participates in
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0042546
+  - key: negatively regulates
+    source: UniProt:P06653
+    target: GO:0042546
+  - key: occurs in
+    source: GO:0042546
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D012141
+multigraph: true
+nodes:
+  - id: MESH:C052018
+    label: Drug
+    name: cefprozil
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: UniProt:P06653
+    label: Protein
+    name: Autolysin
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: cell wall biogenesis
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - id: MESH:D012141
+    label: Disease
+    name: Respiratory Tract Infections
+references:
+  - https://go.drugbank.com/drugs/DB01150#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P06653#function
+  - https://en.wikipedia.org/wiki/Autolysin
+  - https://en.wikipedia.org/wiki/Respiratory_tract_infection

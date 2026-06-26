@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB01333_MESH_D013290_1
+  disease: Streptococcus pyogenes infection
+  disease_mesh: MESH:D013290
+  drug: cefradine
+  drug_mesh: MESH:D002515
+  drugbank: DB:DB01333
+links:
+  - key: negatively regulates
+    source: MESH:D002515
+    target: InterPro:IPR001460
+  - key: positively correlated with
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0071555
+  - key: in taxon
+    source: GO:0071555
+    target: taxonomy:1314
+  - key: causes
+    source: taxonomy:1314
+    target: MESH:D013290
+multigraph: true
+nodes:
+  - id: MESH:D002515
+    label: Drug
+    name: Cefradine
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: Peptidoglycan biosynthetic process
+  - id: GO:0071555
+    label: BiologicalProcess
+    name: Cell wall organization
+  - id: taxonomy:1314
+    label: OrganismTaxon
+    name: Streptococcus pyogenes
+  - id: MESH:D013290
+    label: Disease
+    name: Streptococcus pyogenes infection
+references:
+  - https://go.drugbank.com/drugs/DB01333

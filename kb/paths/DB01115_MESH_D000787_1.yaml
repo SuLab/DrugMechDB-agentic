@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB01115_MESH_D000787_1
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: Nifedipine
+  drug_mesh: MESH:D009543
+  drugbank: DB:DB01115
+links:
+  - key: decreases activity of
+    source: MESH:D009543
+    target: UniProt:Q13936
+  - key: participates in
+    source: UniProt:Q13936
+    target: GO:0070509
+  - key: contributes to
+    source: GO:0070509
+    target: GO:0045907
+  - key: negatively regulates
+    source: GO:0045907
+    target: GO:0008015
+  - key: negatively correlated with
+    source: GO:0008015
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:D009543
+    label: Drug
+    name: Nifedipine
+  - id: UniProt:Q13936
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1C
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Transmembrane calcium influx
+  - id: GO:0045907
+    label: BiologicalProcess
+    name: Positive regulation of vasoconstriction
+  - id: GO:0008015
+    label: BiologicalProcess
+    name: Blood circulation
+  - id: MESH:D000787
+    label: Disease
+    name: Angina pectoris
+references:
+  - https://go.drugbank.com/drugs/DB01115#BE0000430
+  - https://en.wikipedia.org/wiki/Angina

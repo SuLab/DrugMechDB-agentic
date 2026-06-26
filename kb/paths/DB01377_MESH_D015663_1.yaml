@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB01377_MESH_D015663_1
+  disease: Postmenopausal osteoporosis
+  disease_mesh: MESH:D015663
+  drug: magnesium oxide
+  drug_mesh: MESH:D008277
+  drugbank: DB:DB01377
+links:
+  - key: increases abundance of
+    source: MESH:D008277
+    target: MESH:D008274
+  - key: regulates
+    source: MESH:D008274
+    target: GO:0035898
+  - key: positively regulates
+    source: GO:0035898
+    target: GO:0055074
+  - key: negatively correlated with
+    source: GO:0055074
+    target: MESH:D015663
+multigraph: true
+nodes:
+  - id: MESH:D008277
+    label: Drug
+    name: Magnesium oxide
+  - id: MESH:D008274
+    label: ChemicalSubstance
+    name: Magnesium
+  - id: GO:0035898
+    label: BiologicalProcess
+    name: Parathyroid hormone secretion
+  - id: GO:0055074
+    label: BiologicalProcess
+    name: Calcium ion homeostasis
+  - id: MESH:D015663
+    label: Disease
+    name: Postmenopausal osteoporosis
+references:
+  - https://go.drugbank.com/drugs/DB01377

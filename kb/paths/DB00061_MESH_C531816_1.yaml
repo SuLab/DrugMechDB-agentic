@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00061_MESH_C531816_1
+  disease: Adenosine deaminase deficiency
+  disease_mesh: MESH:C531816
+  drug: pegademase
+  drug_mesh: MESH:C051409
+  drugbank: DB:DB00061
+links:
+  - key: decreases abundance of
+    source: MESH:C051409
+    target: CHEBI:17256
+  - key: disrupts
+    source: CHEBI:17256
+    target: CL:0000084
+  - key: positively correlated with
+    source: CL:0000084
+    target: GO:0002456
+  - key: negatively correlated with
+    source: GO:0002456
+    target: MESH:C531816
+multigraph: true
+nodes:
+  - id: MESH:C051409
+    label: Drug
+    name: Pegademase
+  - id: CHEBI:17256
+    label: ChemicalSubstance
+    name: 2'-deoxyadenosine
+  - id: CL:0000084
+    label: Cell
+    name: T cell
+  - id: GO:0002456
+    label: BiologicalProcess
+    name: T cell mediated immunity
+  - id: MESH:C531816
+    label: Disease
+    name: Adenosine deaminase deficiency
+references:
+  - https://go.drugbank.com/drugs/DB00061
+  - https://en.wikipedia.org/wiki/Adenosine_deaminase_deficiency

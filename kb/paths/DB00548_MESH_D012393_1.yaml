@@ -1,0 +1,43 @@
+directed: true
+graph:
+  _id: DB00548_MESH_D012393_1
+  disease: Rosacea
+  disease_mesh: MESH:D012393
+  drug: azelaic acid
+  drug_mesh: MESH:C010038
+  drugbank: DB:DB00548
+links:
+  - key: negatively regulates
+    source: MESH:C010038
+    target: MESH:D017382
+  - key: positively regulates
+    source: MESH:D017382
+    target: GO:0006954
+  - key: positively correlated with
+    source: GO:0006954
+    target: HP:0010783
+  - key: positively correlated with
+    source: HP:0010783
+    target: MESH:D012393
+multigraph: true
+nodes:
+  - id: MESH:C010038
+    label: Drug
+    name: azelaic acid
+  - id: MESH:D017382
+    label: ChemicalSubstance
+    name: Reactive Oxygen Species
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: HP:0010783
+    label: PhenotypicFeature
+    name: Erythema
+  - id: MESH:D012393
+    label: Disease
+    name: Rosacea
+references:
+  - https://go.drugbank.com/drugs/DB00548#mechanism-of-action
+  - https://www.hindawi.com/journals/omcl/2020/1295984/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2958186/
+  - https://en.wikipedia.org/wiki/Rosacea

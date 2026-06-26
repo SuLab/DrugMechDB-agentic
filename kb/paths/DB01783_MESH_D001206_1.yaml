@@ -1,0 +1,24 @@
+comment: No evidence found to support Ascorbic acid deficiency treatment with  calcium
+  pantothenate.
+directed: true
+graph:
+  _id: DB01783_MESH_D001206_1
+  disease: Ascorbic acid deficiency
+  disease_mesh: MESH:D001206
+  drug: calcium pantothenate
+  drug_mesh: MESH:D010205
+  drugbank: DB:DB01783
+links:
+  - key: treats
+    source: MESH:D010205
+    target: MESH:D001206
+multigraph: true
+nodes:
+  - id: MESH:D010205
+    label: Drug
+    name: Calcium pantothenate
+  - id: MESH:D001206
+    label: Disease
+    name: Ascorbic acid deficiency
+references:
+  - https://go.drugbank.com/drugs/DB01783

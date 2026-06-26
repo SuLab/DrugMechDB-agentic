@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB01234_MESH_D000224_1
+  disease: Primary adrenocortical insufficiency
+  disease_mesh: MESH:D000224
+  drug: dexamethasone
+  drug_mesh: MESH:D003907
+  drugbank: DB:DB01234
+links:
+  - key: positively regulates
+    source: MESH:D003907
+    target: UniProt:P04150
+  - key: positively correlated with
+    source: UniProt:P04150
+    target: GO:0034651
+  - key: positively correlated with
+    source: UniProt:P04150
+    target: GO:0032342
+  - key: negatively correlated with
+    source: GO:0034651
+    target: MESH:D000224
+  - key: negatively correlated with
+    source: GO:0032342
+    target: MESH:D000224
+multigraph: true
+nodes:
+  - id: MESH:D003907
+    label: Drug
+    name: dexamethasone
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: GO:0034651
+    label: BiologicalProcess
+    name: cortisol biosynthetic process
+  - id: GO:0032342
+    label: BiologicalProcess
+    name: aldosterone biosynthetic process
+  - alt_names:
+      - Addison Disease
+    id: MESH:D000224
+    label: Disease
+    name: Primary adrenocortical insufficiency
+references:
+  - https://go.drugbank.com/drugs/DB01234
+  - https://en.wikipedia.org/wiki/Addison%27s_disease

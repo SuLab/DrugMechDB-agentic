@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB00243_MESH_D000787_1
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: ranolazine
+  drug_mesh: MESH:D000069458
+  drugbank: DB:DB00243
+links:
+  - key: decreases activity of
+    source: MESH:D000069458
+    target: InterPro:IPR010526
+  - key: positively regulates
+    source: InterPro:IPR010526
+    target: GO:0060402
+  - key: correlated with
+    source: GO:0060402
+    target: HP:0005162
+  - key: positively correlated with
+    source: HP:0005162
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:D000069458
+    label: Drug
+    name: ranolazine
+  - id: InterPro:IPR010526
+    label: GeneFamily
+    name: Sodium ion transport-associated
+  - id: GO:0060402
+    label: BiologicalProcess
+    name: calcium ion transport into cytosol
+  - id: HP:0005162
+    label: PhenotypicFeature
+    name: Abnormal left ventricular function
+  - id: MESH:D000787
+    label: Disease
+    name: Angina pectoris
+references:
+  - https://go.drugbank.com/drugs/DB00243#BE0004901
+  - https://pubchem.ncbi.nlm.nih.gov/compound/56959#section=Mechanism-of-Action
+  - https://pubmed.ncbi.nlm.nih.gov/26979079/

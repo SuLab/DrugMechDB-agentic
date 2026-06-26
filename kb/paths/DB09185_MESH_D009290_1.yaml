@@ -1,0 +1,57 @@
+directed: true
+graph:
+  _id: DB09185_MESH_D009290_1
+  disease: Cataplexy and narcolepsy
+  disease_mesh: MESH:D009290
+  drug: Viloxazine
+  drug_mesh: MESH:D014745
+  drugbank: DB:DB09185
+links:
+  - key: decreases activity of
+    source: MESH:D014745
+    target: UniProt:P23975
+  - key: positively regulates
+    source: UniProt:P23975
+    target: GO:0051620
+  - key: decreases abundance of
+    source: GO:0051620
+    target: MESH:D009638
+  - key: negatively regulates
+    source: MESH:D009638
+    target: GO:0030431
+  - key: negatively regulates
+    source: MESH:D009638
+    target: HP:0002524
+  - key: positively correlated with
+    source: GO:0030431
+    target: MESH:D009290
+  - key: positively correlated with
+    source: HP:0002524
+    target: MESH:D009290
+multigraph: true
+nodes:
+  - id: MESH:D014745
+    label: Drug
+    name: Viloxazine
+  - id: UniProt:P23975
+    label: Protein
+    name: Sodium-dependent noradrenaline transporter
+  - id: GO:0051620
+    label: BiologicalProcess
+    name: Noradrenaline uptake
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Noradrenaline
+  - id: GO:0030431
+    label: BiologicalProcess
+    name: Sleep
+  - id: HP:0002524
+    label: PhenotypicFeature
+    name: Cataplexy
+  - id: MESH:D009290
+    label: Disease
+    name: Cataplexy and narcolepsy
+references:
+  - https://en.wikipedia.org/wiki/Cataplexywithdrawn
+  - https://go.drugbank.com/drugs/DB09185
+  - https://pubmed.ncbi.nlm.nih.gov/3704453/

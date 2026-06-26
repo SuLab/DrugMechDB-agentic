@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00585_MESH_D005764_1
+  disease: Gastroesophageal reflux disease
+  disease_mesh: MESH:D005764
+  drug: nizatidine
+  drug_mesh: MESH:D016567
+  drugbank: DB:DB00585
+links:
+  - key: decreases activity of
+    source: MESH:D016567
+    target: UniProt:P25021
+  - key: positively regulates
+    source: UniProt:P25021
+    target: GO:0001696
+  - key: increases abundance of
+    source: GO:0001696
+    target: MESH:D005744
+  - key: contributes to
+    source: MESH:D005744
+    target: MESH:D005764
+multigraph: true
+nodes:
+  - id: MESH:D016567
+    label: Drug
+    name: nizatidine
+  - id: UniProt:P25021
+    label: Protein
+    name: Histamine H2 receptor
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: Gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric acid
+  - id: MESH:D005764
+    label: Disease
+    name: Gastroesophageal reflux disease
+references:
+  - https://go.drugbank.com/drugs/DB00585

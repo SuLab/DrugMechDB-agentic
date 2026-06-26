@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00588_MESH_D001991_1
+  disease: Bronchitis
+  disease_mesh: MESH:D001991
+  drug: fluticasone propionate
+  drug_mesh: MESH:D000068298
+  drugbank: DB:DB00588
+links:
+  - key: increases activity of
+    source: MESH:D000068298
+    target: UniProt:P04150
+  - key: decreases abundance of
+    source: UniProt:P04150
+    target: UniProt:P47712
+  - key: increases abundance of
+    source: UniProt:P04150
+    target: UniProt:P22301
+  - key: positively regulates
+    source: UniProt:P47712
+    target: GO:0006954
+  - key: negatively regulates
+    source: UniProt:P22301
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D001991
+multigraph: true
+nodes:
+  - id: MESH:D000068298
+    label: Drug
+    name: fluticasone propionate
+  - id: UniProt:P04150
+    label: Protein
+    name: Glucocorticoid receptor
+  - id: UniProt:P47712
+    label: Protein
+    name: Phospholipase A2
+  - id: UniProt:P22301
+    label: Protein
+    name: IL-10
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: Inflammation
+  - id: MESH:D001991
+    label: Disease
+    name: Bronchitis

@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00796_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: candesartan cilexetil
+  drug_mesh: MESH:C077793,MESH:C081643
+  drugbank: DB:DB00796
+links:
+  - key: negatively regulates
+    source: DB:DB00796
+    target: UniProt:P30556
+  - key: positively correlated with
+    source: UniProt:P30556
+    target: MESH:D000804
+  - key: positively regulates
+    source: MESH:D000804
+    target: MESH:D014661
+  - key: positively correlated with
+    source: MESH:D014661
+    target: GO:0045777
+  - key: positively correlated with
+    source: GO:0045777
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: DB:DB00796
+    label: Drug
+    name: Candesartan cilexetil
+  - id: UniProt:P30556
+    label: Protein
+    name: Type-1 angiotensin II receptor
+  - id: MESH:D000804
+    label: ChemicalSubstance
+    name: Angiotensin II
+  - id: MESH:D014661
+    label: Disease
+    name: Vasoconstriction
+  - id: GO:0045777
+    label: BiologicalProcess
+    name: Positive regulation of blood pressure
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB00796

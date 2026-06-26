@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB08931_MESH_D000081029_1
+  disease: Pulmonary arterial hypertension
+  disease_mesh: MESH:D000081029
+  drug: riociguat
+  drug_mesh: MESH:C542595
+  drugbank: DB:DB08931
+links:
+  - key: increases activity of
+    source: MESH:C542595
+    target: UniProt:P33402
+  - key: increases abundance of
+    source: UniProt:P33402
+    target: CHEBI:16356
+  - key: participates in
+    source: CHEBI:16356
+    target: GO:0038060
+  - key: contributes to
+    source: GO:0038060
+    target: GO:0042311
+  - key: contributes to
+    source: GO:0042311
+    target: GO:0060087
+  - key: prevents
+    source: GO:0060087
+    target: MESH:D000081029
+multigraph: true
+nodes:
+  - id: MESH:C542595
+    label: Drug
+    name: riociguat
+  - id: UniProt:P33402
+    label: Protein
+    name: Guanylate cyclase soluble subunit alpha-2
+  - id: CHEBI:16356
+    label: ChemicalSubstance
+    name: cyclic guanosine 3',5' monophosphate
+  - id: GO:0038060
+    label: BiologicalProcess
+    name: nitric oxide-cGMP-mediated signaling pathway
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: GO:0060087
+    label: BiologicalProcess
+    name: vasular smooth muscle relaxation
+  - id: MESH:D000081029
+    label: Disease
+    name: Pulmonary arterial hypertension
+references:
+  - https://go.drugbank.com/drugs/DB08931
+  - https://pubmed.ncbi.nlm.nih.gov/27263466/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4218670/
+  - https://pubmed.ncbi.nlm.nih.gov/19263460/

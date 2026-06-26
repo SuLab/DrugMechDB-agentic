@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB06691_MESH_D004412_1
+  disease: Dysmenorrhea
+  disease_mesh: MESH:D004412
+  drug: mepyramine
+  drug_mesh: MESH:D011738
+  drugbank: DB:DB06691
+links:
+  - key: negatively regulates
+    source: MESH:D011738
+    target: UniProt:P35367
+  - key: expressed in
+    source: UniProt:P35367
+    target: CL:0000198
+  - key: contributes to
+    source: CL:0000198
+    target: GO:0019233
+  - key: occurs in
+    source: GO:0019233
+    target: MESH:D004412
+multigraph: true
+nodes:
+  - id: MESH:D011738
+    label: Drug
+    name: mepyramine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: CL:0000198
+    label: Cell
+    name: Nociceptors
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: sensory perception of pain
+  - id: MESH:D004412
+    label: Disease
+    name: Dysmenorrhea
+references:
+  - https://go.drugbank.com/drugs/DB06691#BE0000442
+  - https://pubmed.ncbi.nlm.nih.gov/31046146/

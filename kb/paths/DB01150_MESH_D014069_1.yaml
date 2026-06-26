@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB01150_MESH_D014069_1
+  disease: Tonsillitis
+  disease_mesh: MESH:D014069
+  drug: cefprozil
+  drug_mesh: MESH:C052018
+  drugbank: DB:DB01150
+links:
+  - key: decreases activity of
+    source: MESH:C052018
+    target: InterPro:IPR001460
+  - key: increases activity of
+    source: MESH:C052018
+    target: UniProt:J7M8X7
+  - key: participates in
+    source: InterPro:IPR001460
+    target: GO:0009252
+  - key: positively regulates
+    source: GO:0009252
+    target: GO:0042546
+  - key: negatively regulates
+    source: UniProt:J7M8X7
+    target: GO:0042546
+  - key: occurs in
+    source: GO:0042546
+    target: taxonomy:1314
+  - key: causes
+    source: taxonomy:1314
+    target: MESH:D014069
+multigraph: true
+nodes:
+  - id: MESH:C052018
+    label: Drug
+    name: cefprozil
+  - id: InterPro:IPR001460
+    label: GeneFamily
+    name: Penicillin-binding protein, transpeptidase
+  - id: UniProt:J7M8X7
+    label: Protein
+    name: Autolysin
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0042546
+    label: BiologicalProcess
+    name: cell wall biogenesis
+  - id: taxonomy:1314
+    label: OrganismTaxon
+    name: Streptococcus pyogenes
+  - id: MESH:D014069
+    label: Disease
+    name: Tonsillitis
+references:
+  - https://go.drugbank.com/drugs/DB01150#mechanism-of-action
+  - https://www.uniprot.org/uniprot/J7M8X7#function
+  - https://en.wikipedia.org/wiki/Autolysin
+  - https://en.wikipedia.org/wiki/Tonsillitis

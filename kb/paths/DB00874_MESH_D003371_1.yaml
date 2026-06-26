@@ -1,0 +1,34 @@
+directed: true
+graph:
+  _id: DB00874_MESH_D003371_1
+  disease: Cough
+  disease_mesh: MESH:D003371
+  drug: guaifenesin
+  drug_mesh: MESH:D006140
+  drugbank: DB:DB00874
+links:
+  - key: positively regulates
+    source: MESH:D006140
+    target: HP:0031245
+  - key: decreases abundance of
+    source: HP:0031245
+    target: UBERON:0016553
+  - key: positively correlated with
+    source: UBERON:0016553
+    target: MESH:D003371
+multigraph: true
+nodes:
+  - id: MESH:D006140
+    label: Drug
+    name: Guaifenesin
+  - id: HP:0031245
+    label: PhenotypicFeature
+    name: Productive cough
+  - id: UBERON:0016553
+    label: GrossAnatomicalStructure
+    name: Respiratory system mucus
+  - id: MESH:D003371
+    label: Disease
+    name: Cough
+references:
+  - https://go.drugbank.com/drugs/DB00874#BE0004956

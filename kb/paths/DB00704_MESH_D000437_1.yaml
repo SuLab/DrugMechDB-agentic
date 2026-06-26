@@ -1,0 +1,66 @@
+directed: true
+graph:
+  _id: DB00704_MESH_D000437_1
+  disease: Alcoholism
+  disease_mesh: MESH:D000437
+  drug: Naltrexone
+  drug_mesh: MESH:D009270
+  drugbank: DB:DB00704
+links:
+  - key: decreases activity of
+    source: MESH:D009270
+    target: UniProt:P41145
+  - key: molecularly interacts with
+    source: UniProt:P41145
+    target: UniProt:P01213
+  - key: positively correlated with
+    source: UniProt:P01213
+    target: HP:0030858
+  - key: decreases activity of
+    source: MESH:D009270
+    target: UniProt:P41143
+  - key: positively correlated with
+    source: UniProt:P41143
+    target: GO:0061527
+  - key: decreases activity of
+    source: MESH:D009270
+    target: UniProt:P35372
+  - key: positively correlated with
+    source: UniProt:P35372
+    target: GO:0061527
+  - key: positively correlated with
+    source: GO:0061527
+    target: HP:0030858
+  - key: phenotype of
+    source: HP:0030858
+    target: MESH:D000437
+multigraph: true
+nodes:
+  - id: MESH:D009270
+    label: Drug
+    name: Naltrexone
+  - id: UniProt:P41145
+    label: Protein
+    name: Kappa-type opioid receptor
+  - id: UniProt:P01213
+    label: Protein
+    name: Proenkephalin-B
+  - id: HP:0030858
+    label: PhenotypicFeature
+    name: Addictive behavior
+  - id: UniProt:P41143
+    label: Protein
+    name: Delta-type opioid receptor
+  - id: UniProt:P35372
+    label: Protein
+    name: Mu-type opioid receptor
+  - id: GO:0061527
+    label: BiologicalProcess
+    name: Dopamine secretion, neurotransmission
+  - id: MESH:D000437
+    label: Disease
+    name: Alcoholism
+references:
+  - https://go.drugbank.com/drugs/DB00704
+  - https://en.wikipedia.org/wiki/Naltrexone#Pharmacology
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2565602/

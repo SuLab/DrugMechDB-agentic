@@ -1,0 +1,84 @@
+comment: Scopolamine is only valid for a treatment of cough related to asthma
+directed: true
+graph:
+  _id: DB00747_MESH_D003371_1
+  disease: Cough
+  disease_mesh: MESH:D003371
+  drug: scopolamine
+  drug_mesh: MESH:D012601
+  drugbank: DB:DB00747
+links:
+  - key: decreases activity of
+    source: MESH:D012601
+    target: UniProt:P11229
+  - key: decreases activity of
+    source: MESH:D012601
+    target: UniProt:P08172
+  - key: decreases activity of
+    source: MESH:D012601
+    target: UniProt:P20309
+  - key: decreases activity of
+    source: MESH:D012601
+    target: UniProt:P08173
+  - key: decreases activity of
+    source: MESH:D012601
+    target: UniProt:P08912
+  - key: participates in
+    source: UniProt:P11229
+    target: GO:1905144
+  - key: participates in
+    source: UniProt:P08172
+    target: GO:1905144
+  - key: participates in
+    source: UniProt:P20309
+    target: GO:1905144
+  - key: participates in
+    source: UniProt:P08173
+    target: GO:1905144
+  - key: participates in
+    source: UniProt:P08912
+    target: GO:1905144
+  - key: positively regulates
+    source: GO:1905144
+    target: MESH:D016084
+  - key: positively correlated with
+    source: MESH:D016084
+    target: MESH:D001249
+  - key: positively correlated with
+    source: MESH:D001249
+    target: MESH:D003371
+multigraph: true
+nodes:
+  - id: MESH:D012601
+    label: Drug
+    name: Scopolamine
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: UniProt:P08172
+    label: Protein
+    name: Muscarinic acetylcholine receptor M2
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: UniProt:P08173
+    label: Protein
+    name: Muscarinic acetylcholine receptor M4
+  - id: UniProt:P08912
+    label: Protein
+    name: Muscarinic acetylcholine receptor M5
+  - id: GO:1905144
+    label: BiologicalProcess
+    name: Response to acetylcholine
+  - id: MESH:D016084
+    label: Disease
+    name: Bronchoconstriction
+  - id: MESH:D001249
+    label: Disease
+    name: Asthma
+  - id: MESH:D003371
+    label: Disease
+    name: Cough
+references:
+  - https://go.drugbank.com/drugs/DB00747
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2785753/

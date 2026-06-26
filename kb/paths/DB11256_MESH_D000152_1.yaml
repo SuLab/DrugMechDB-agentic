@@ -1,0 +1,28 @@
+comment: Levomefolic acid can be found in contraceptive pills as a source of folic
+  acid to help to prevent spinal cord birth defects in an unborn baby. There has not
+  been any evidence to support that levomefolic acid on its own is an indication for
+  acne vulgaris. When combined with hormones such as progestin and estrogen (birth
+  pill) it can be used to treat moderate acne as well as premenstrual dysphoric disorder
+  (https://www.webmd.com/drugs/2/drug-154717/beyaz-oral/details), but not on its own.
+directed: true
+graph:
+  _id: DB11256_MESH_D000152_1
+  disease: Acne vulgaris
+  disease_mesh: MESH:D000152
+  drug: levomefolic acid
+  drug_mesh: MESH:C569381
+  drugbank: DB:DB11256
+links:
+  - key: treats
+    source: MESH:C569381
+    target: MESH:D000152
+multigraph: true
+nodes:
+  - id: MESH:C569381
+    label: Drug
+    name: levomefolic acid
+  - id: MESH:D000152
+    label: Disease
+    name: Acne vulgaris
+references:
+  - https://www.accessdata.fda.gov/drugsatfda_docs/nda/2010/022532Orig1s000CrossR.pdf

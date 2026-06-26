@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00359_MESH_D014125_1
+  disease: Congenital toxoplasmosis
+  disease_mesh: MESH:D014125
+  drug: sulfadiazine
+  drug_mesh: MESH:D013411
+  drugbank: DB:DB00359
+links:
+  - key: negatively regulates
+    source: MESH:D013411
+    target: InterPro:IPR006390
+  - key: positively regulates
+    source: InterPro:IPR006390
+    target: GO:0046656
+  - key: in taxon
+    source: GO:0046656
+    target: taxonomy:5811
+  - key: causes
+    source: taxonomy:5811
+    target: MESH:D014125
+multigraph: true
+nodes:
+  - id: MESH:D013411
+    label: Drug
+    name: sulfadiazine
+  - id: InterPro:IPR006390
+    label: GeneFamily
+    name: Dihydropteroate synthase domain
+  - id: GO:0046656
+    label: BiologicalProcess
+    name: folic acid biosynthetic process
+  - id: taxonomy:5811
+    label: OrganismTaxon
+    name: Toxoplasma gondii
+  - id: MESH:D014125
+    label: Disease
+    name: Congenital toxoplasmosis
+references:
+  - https://go.drugbank.com/drugs/DB00359
+  - https://en.wikipedia.org/wiki/Sulfadiazine#Mechanism_of_action

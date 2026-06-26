@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB08822_MESH_D006973_1
+  disease: Hypertensive disorder
+  disease_mesh: MESH:D006973
+  drug: azilsartan medoxomil
+  drug_mesh: MESH:C521273,MESH:C557413
+  drugbank: DB:DB08822
+links:
+  - key: negatively regulates
+    source: DB:DB08822
+    target: UniProt:P30556
+  - key: positively correlated with
+    source: UniProt:P30556
+    target: MESH:D000804
+  - key: causes
+    source: MESH:D000804
+    target: MESH:D014661
+  - key: causes
+    source: MESH:D014661
+    target: MESH:D006973
+multigraph: true
+nodes:
+  - id: DB:DB08822
+    label: Drug
+    name: azilsartan medoxomil
+  - id: UniProt:P30556
+    label: Protein
+    name: Type-1 angiotensin II receptor
+  - id: MESH:D000804
+    label: ChemicalSubstance
+    name: Angiotensin II
+  - id: MESH:D014661
+    label: Disease
+    name: Vasoconstriction
+  - id: MESH:D006973
+    label: Disease
+    name: Hypertensive disorder
+references:
+  - https://go.drugbank.com/drugs/DB08822#BE0000062

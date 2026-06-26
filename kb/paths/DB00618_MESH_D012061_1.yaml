@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00618_MESH_D012061_1
+  disease: Relapsing Fever
+  disease_mesh: MESH:D012061
+  drug: demeclocycline
+  drug_mesh: MESH:D003707
+  drugbank: DB:DB00618
+links:
+  - key: decreases activity of
+    source: MESH:D003707
+    target: GO:0015935
+  - key: decreases activity of
+    source: MESH:D003707
+    target: GO:0015934
+  - key: part of
+    source: GO:0015935
+    target: GO:0005840
+  - key: part of
+    source: GO:0015934
+    target: GO:0005840
+  - key: positively regulates
+    source: GO:0005840
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:138
+  - key: causes
+    source: taxonomy:138
+    target: MESH:D012061
+multigraph: true
+nodes:
+  - id: MESH:D003707
+    label: Drug
+    name: demeclocycline
+  - id: GO:0015935
+    label: CellularComponent
+    name: small ribosomal subunit
+  - id: GO:0015934
+    label: CellularComponent
+    name: large ribosomal subunit
+  - id: GO:0005840
+    label: CellularComponent
+    name: ribosome
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:138
+    label: OrganismTaxon
+    name: Borrelia
+  - id: MESH:D012061
+    label: Disease
+    name: Relapsing Fever
+references:
+  - https://go.drugbank.com/drugs/DB00618#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Prokaryotic_small_ribosomal_subunit
+  - https://en.wikipedia.org/wiki/Prokaryotic_large_ribosomal_subunit
+  - https://en.wikipedia.org/wiki/Relapsing_fever

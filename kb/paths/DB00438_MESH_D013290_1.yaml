@@ -1,0 +1,47 @@
+directed: true
+graph:
+  _id: DB00438_MESH_D013290_1
+  disease: Streptococcus pyogenes infection
+  disease_mesh: MESH:D013290
+  drug: ceftazidime
+  drug_mesh: MESH:D002442
+  drugbank: DB:DB00438
+links:
+  - key: negatively regulates
+    source: MESH:D002442
+    target: Pfam:PF00905
+  - key: positively regulates
+    source: Pfam:PF00905
+    target: GO:0009252
+  - key: positively correlated with
+    source: GO:0009252
+    target: GO:0009273
+  - key: in taxon
+    source: GO:0009273
+    target: taxonomy:1314
+  - key: causes
+    source: taxonomy:1314
+    target: MESH:D013290
+multigraph: true
+nodes:
+  - id: MESH:D002442
+    label: Drug
+    name: ceftazidime
+  - id: Pfam:PF00905
+    label: GeneFamily
+    name: Penicillin binding protein transpeptidase domain
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: GO:0009273
+    label: BiologicalProcess
+    name: peptidoglycan-based cell wall biogenesis
+  - id: taxonomy:1314
+    label: OrganismTaxon
+    name: Streptococcus pyogenes
+  - id: MESH:D013290
+    label: Disease
+    name: Streptococcus pyogenes infection
+references:
+  - https://go.drugbank.com/drugs/DB00438
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL44354/

@@ -1,0 +1,41 @@
+directed: true
+graph:
+  _id: DB00634_MESH_D012628_1
+  disease: Seborrheic dermatitis
+  disease_mesh: MESH:D012628
+  drug: sulfacetamide
+  drug_mesh: MESH:D013409
+  drugbank: DB:DB00634
+links:
+  - key: decreases activity of
+    source: MESH:D013409
+    target: Pfam:PF00809
+  - key: positively correlated with
+    source: Pfam:PF00809
+    target: GO:0046656
+  - key: in taxon
+    source: GO:0046656
+    target: taxonomy:55193
+  - key: causes
+    source: taxonomy:55193
+    target: MESH:D012628
+multigraph: true
+nodes:
+  - id: MESH:D013409
+    label: Drug
+    name: sulfacetamide
+  - id: Pfam:PF00809
+    label: GeneFamily
+    name: Dihydropteroate synthase
+  - id: GO:0046656
+    label: BiologicalProcess
+    name: folic acid biosynthetic process
+  - id: taxonomy:55193
+    label: OrganismTaxon
+    name: Malassezia sp.
+  - id: MESH:D012628
+    label: Disease
+    name: Seborrheic dermatitis
+references:
+  - https://go.drugbank.com/drugs/DB00634#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Sulfacetamide#Efficacy

@@ -1,0 +1,413 @@
+id: https://w3id.org/sulab/drugmechdb
+name: drugmechdb
+title: DrugMechDB — Drug Mechanism Database Schema
+description: >-
+  LinkML schema for DrugMechDB, a curated database of mechanistic paths from
+  drugs to diseases via chains of Biolink-typed biological entities and
+  relationships. Every path is a directed, multigraph-compatible graph
+  conforming to the Biolink Model.
+license: MIT
+see_also:
+  - https://sulab.github.io/DrugMechDB/
+
+imports:
+  - linkml:types
+  - biolink_nodes
+  - biolink_predicates
+
+prefixes:
+  linkml:     https://w3id.org/linkml/
+  drugmechdb: https://w3id.org/sulab/drugmechdb/
+  biolink:    https://w3id.org/biolink/vocab/
+
+  # Vocabularies recognised by linkml-reference-validator for Layer 4 wiring
+  oa:         http://www.w3.org/ns/oa#
+  dcterms:    http://purl.org/dc/terms/
+
+  # Node ontology namespaces — canonical prefixes
+  MESH:       http://id.nlm.nih.gov/mesh/
+  UniProt:    https://www.uniprot.org/uniprot/
+  GO:         http://purl.obolibrary.org/obo/GO_
+  HP:         http://purl.obolibrary.org/obo/HP_
+  CL:         http://purl.obolibrary.org/obo/CL_
+  UBERON:     http://purl.obolibrary.org/obo/UBERON_
+  CHEBI:      http://purl.obolibrary.org/obo/CHEBI_
+  NCBITaxon:  http://purl.obolibrary.org/obo/NCBITaxon_
+  PR:         http://purl.obolibrary.org/obo/PR_
+  InterPro:   https://www.ebi.ac.uk/interpro/entry/InterPro/
+  REACT:      https://reactome.org/content/detail/
+
+  # Legacy / non-canonical prefixes present in existing data
+  DB:         https://go.drugbank.com/drugs/          # DrugBank IDs
+  taxonomy:   http://purl.obolibrary.org/obo/NCBITaxon_  # legacy OrganismTaxon prefix
+  reactome:   https://reactome.org/content/detail/       # legacy Pathway prefix
+  Pfam:       https://www.ebi.ac.uk/interpro/entry/pfam/ # legacy GeneFamily prefix
+  TIGR:       https://www.ncbi.nlm.nih.gov/genome/annotation_prok/evidence/
+
+  # Evidence
+  PMID:       https://pubmed.ncbi.nlm.nih.gov/
+
+  # XML Schema
+  xsd:        http://www.w3.org/2001/XMLSchema#
+
+default_prefix: drugmechdb
+default_range: string
+
+# ── Custom scalar types ───────────────────────────────────────────────────────
+
+types:
+  PMID:
+    description: A PubMed identifier in CURIE form.
+    base: str
+    uri: xsd:string
+    pattern: "^PMID:\\d+$"
+
+# ── Enumerations ──────────────────────────────────────────────────────────────
+
+enums:
+  EvidenceSupportEnum:
+    description: The level of support an evidence item provides for an edge claim.
+    permissible_values:
+      SUPPORT:
+        title: Supports
+        description: The cited evidence directly supports the claim.
+      REFUTE:
+        title: Refutes
+        description: The cited evidence directly contradicts the claim.
+      PARTIAL:
+        title: Partially supports
+        description: The cited evidence partially or indirectly supports the claim.
+      NO_EVIDENCE:
+        title: No evidence
+        description: The cited reference does not contain evidence relevant to the claim.
+      WRONG_STATEMENT:
+        title: Wrong statement
+        description: >-
+          The annotated claim contains a demonstrable factual error.
+          The cited evidence documents the correct information.
+
+  EvidenceSourceEnum:
+    description: The type of evidence presented in the cited publication.
+    permissible_values:
+      HUMAN_CLINICAL:
+        title: Human clinical
+        description: >-
+          Human clinical observations: patients, cohorts, case reports,
+          clinical trials, epidemiology.
+      MODEL_ORGANISM:
+        title: Model organism
+        description: >-
+          In vivo animal evidence: mouse, rat, zebrafish, primate, or
+          veterinary case series.
+      IN_VITRO:
+        title: In vitro / ex vivo
+        description: >-
+          In vitro or ex vivo assays: cell culture, organoids, tissue slices,
+          biochemical assays.
+      COMPUTATIONAL:
+        title: Computational
+        description: >-
+          In silico or modelling studies: docking, simulation, ML predictions,
+          network inference.
+      OTHER:
+        title: Other
+        description: Evidence not fitting the categories above.
+
+# ── Slots ─────────────────────────────────────────────────────────────────────
+
+slots:
+
+  # ── MechanisticPath top-level slots ────────────────────────────────────────
+
+  directed:
+    range: boolean
+    description: >-
+      Whether this is a directed graph. Always true for DrugMechDB paths.
+    ifabsent: "true"
+
+  multigraph:
+    range: boolean
+    description: >-
+      Whether multiple edges between the same node pair are permitted.
+      Always true for DrugMechDB paths.
+    ifabsent: "true"
+
+  graph:
+    range: PathMetadata
+    inlined: true
+    description: Graph-level metadata (drug, disease, and identifier fields).
+
+  nodes:
+    range: PathNode
+    multivalued: true
+    inlined_as_list: true
+    description: Typed biomedical entity nodes in this path.
+
+  links:
+    range: PathEdge
+    multivalued: true
+    inlined_as_list: true
+    description: Directed Biolink-compliant edges in this path.
+
+  references:
+    range: uri
+    multivalued: true
+    description: >-
+      Source URLs supporting this path (DrugBank, UniProt, Wikipedia, etc.).
+      Normalises the legacy single-valued reference field.
+
+  comment:
+    range: string
+    description: >-
+      Free-text curator notes for this path.
+      Normalises legacy comment/comments/commments/comemnt fields.
+
+  # ── PathMetadata slots ──────────────────────────────────────────────────────
+
+  _id:
+    range: string
+    identifier: true
+    description: >-
+      Stable identifier matching the filename stem.
+      Format: {DrugBankID}_{DiseaseMESH}_{index}
+      Example: DB00619_MESH_D015464_1
+
+  drug:
+    range: string
+    description: Human-readable drug name.
+
+  drug_mesh:
+    range: uriorcurie
+    description: >-
+      MESH CURIE for the drug.
+      Example: MESH:D000068877
+
+  drugbank:
+    range: uriorcurie
+    description: >-
+      DrugBank CURIE for the drug.
+      Example: DB:DB00619
+
+  disease:
+    range: string
+    description: Human-readable disease name.
+
+  disease_mesh:
+    range: uriorcurie
+    description: >-
+      MESH CURIE for the disease.
+      Example: MESH:D015464
+
+  # ── PathNode slots ──────────────────────────────────────────────────────────
+
+  id:
+    range: uriorcurie
+    identifier: true
+    description: >-
+      Ontology-bound identifier for this node.
+      The prefix must correspond to the canonical ontology for the node label
+      (see BiolinkNodeType descriptions). Legacy prefixes (taxonomy, reactome,
+      Pfam, TIGR) are accepted but flagged during term validation.
+
+  name:
+    range: string
+    description: >-
+      Human-readable name for this node.
+      Should match the canonical label in the node's source ontology.
+      Name drift (label changes in the ontology) is surfaced by term validation.
+
+  label:
+    range: BiolinkNodeType
+    description: Biolink node type classifying this entity.
+
+  alt_names:
+    range: string
+    multivalued: true
+    description: >-
+      Alternative names or synonyms for this node.
+      Normalises the legacy alt_name / alt_names / alt-name fields.
+
+  alt_ids:
+    range: uriorcurie
+    multivalued: true
+    description: >-
+      Alternative ontology identifiers for this node.
+      Normalises the legacy alt_ids / all_id fields.
+
+  # ── PathEdge slots ──────────────────────────────────────────────────────────
+
+  source:
+    range: uriorcurie
+    description: Identifier of the source node for this directed edge.
+
+  target:
+    range: uriorcurie
+    description: Identifier of the target node for this directed edge.
+
+  key:
+    range: BiolinkPredicate
+    description: >-
+      Biolink predicate describing the relationship from source to target.
+      Must be a value from the BiolinkPredicate enum.
+
+  evidence:
+    range: EvidenceItem
+    multivalued: true
+    inlined_as_list: true
+    description: >-
+      Literature evidence supporting this edge.
+      Optional for legacy entries curated before the AI platform launch.
+      Required for all new entries submitted through the AI curation pipeline.
+
+  # ── EvidenceItem slots ──────────────────────────────────────────────────────
+
+  reference:
+    range: PMID
+    slot_uri: dcterms:references
+    description: >-
+      PubMed identifier for the cited source.
+      Format: PMID:xxxxxxxx
+
+  snippet:
+    range: string
+    slot_uri: oa:exact
+    description: >-
+      Verbatim text from the cited PubMed abstract.
+      Must be an exact substring of the abstract — no paraphrasing.
+      Validated by linkml-reference-validator.
+
+  supports:
+    range: EvidenceSupportEnum
+    description: The level of support this evidence provides.
+
+  evidence_source:
+    range: EvidenceSourceEnum
+    description: >-
+      The type of evidence presented in the cited publication.
+      Describes the publication's methodology, not the curation method.
+
+  explanation:
+    range: string
+    description: >-
+      Optional curator commentary explaining why this evidence supports
+      or refutes the edge claim.
+
+# ── Classes ───────────────────────────────────────────────────────────────────
+
+classes:
+
+  MechanisticPath:
+    tree_root: true
+    description: >-
+      A curated, Biolink-compliant directed graph representing the mechanistic
+      path from a drug to a disease via a chain of biological entities and
+      typed relationships.
+    slots:
+      - directed
+      - multigraph
+      - graph
+      - nodes
+      - links
+      - references
+      - comment
+    slot_usage:
+      graph:
+        required: true
+      nodes:
+        required: true
+        minimum_cardinality: 2
+      links:
+        required: true
+        minimum_cardinality: 1
+
+  PathMetadata:
+    description: >-
+      Graph-level metadata identifying the drug, disease, and stable path ID.
+    slots:
+      - _id
+      - drug
+      - drug_mesh
+      - drugbank
+      - disease
+      - disease_mesh
+    slot_usage:
+      _id:
+        required: true
+      drug:
+        required: true
+      drug_mesh:
+        # Optional: a subset of paths identify the drug by DrugBank ID only
+        # (no MESH binding was found at curation time). A Phase-2 lint check
+        # enforces that at least one of drug_mesh / drugbank is present.
+        required: false
+      drugbank:
+        # Optional: a small number of paths use MESH-only drug identifiers
+        # (e.g., MESH:C-prefixed substances not present in DrugBank).
+        required: false
+      disease:
+        required: true
+      disease_mesh:
+        required: true
+
+  PathNode:
+    description: >-
+      A typed biomedical entity node in a mechanistic path.
+      The id prefix must match the canonical ontology for the label
+      (see BiolinkNodeType enum descriptions).
+    slots:
+      - id
+      - name
+      - label
+      - alt_names
+      - alt_ids
+    slot_usage:
+      id:
+        required: true
+      name:
+        required: true
+      label:
+        required: true
+
+  PathEdge:
+    description: >-
+      A directed Biolink-compliant relationship between two nodes in a path.
+      Source and target must reference node ids present in the same path.
+    slots:
+      - source
+      - target
+      - key
+      - evidence
+    slot_usage:
+      source:
+        required: true
+      target:
+        required: true
+      key:
+        required: true
+      evidence:
+        # Optional for legacy paths; required for AI-curated paths (enforced
+        # via CI profile, not schema, to allow legacy files to validate).
+        required: false
+
+  EvidenceItem:
+    description: >-
+      A piece of literature evidence supporting or refuting a specific edge
+      in a mechanistic path. The snippet must be a verbatim substring of the
+      PubMed abstract — no paraphrasing permitted.
+    slots:
+      - reference
+      - snippet
+      - supports
+      - evidence_source
+      - explanation
+    slot_usage:
+      reference:
+        required: true
+      snippet:
+        required: true
+      supports:
+        required: true
+      evidence_source:
+        required: true
+      explanation:
+        required: false

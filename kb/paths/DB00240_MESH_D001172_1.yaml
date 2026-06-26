@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00240_MESH_D001172_1
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+  drug: rituximab
+  drug_mesh: MESH:D000069283
+  drugbank: DB:DB00240
+links:
+  - key: molecularly interacts with
+    source: MESH:D000069283
+    target: UniProt:P11836
+  - key: regulates
+    source: UniProt:P11836
+    target: GO:0006959
+  - key: correlated with
+    source: GO:0006959
+    target: GO:0001788
+  - key: correlated with
+    source: GO:0006959
+    target: GO:0097278
+  - key: negatively correlated with
+    source: GO:0001788
+    target: MESH:D001172
+  - key: negatively correlated with
+    source: GO:0097278
+    target: MESH:D001172
+multigraph: true
+nodes:
+  - id: MESH:D000069283
+    label: Drug
+    name: rituximab
+  - id: UniProt:P11836
+    label: Protein
+    name: B-lymphocyte antigen CD20
+  - id: GO:0006959
+    label: BiologicalProcess
+    name: humoral immune response
+  - id: GO:0001788
+    label: BiologicalProcess
+    name: antibody-dependent cellular cytotoxicity
+  - id: GO:0097278
+    label: BiologicalProcess
+    name: complement-dependent cytotoxicity
+  - id: MESH:D001172
+    label: Disease
+    name: Rheumatoid arthritis
+references:
+  - https://go.drugbank.com/drugs/DB00073
+  - https://en.wikipedia.org/wiki/Rituximab#Mechanisms_of_action

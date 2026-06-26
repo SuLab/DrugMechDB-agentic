@@ -1,0 +1,72 @@
+directed: true
+graph:
+  _id: DB00901_MESH_D011656_1
+  disease: Pulmonary emphysema
+  disease_mesh: MESH:D011656
+  drug: bitolterol
+  drug_mesh: MESH:C011685
+  drugbank: DB:DB00901
+links:
+  - key: increases activity of
+    source: MESH:C011685
+    target: UniProt:P07550
+  - key: participates in
+    source: UniProt:P07550
+    target: GO:0071871
+  - key: positively regulates
+    source: GO:0071871
+    target: UniProt:B7Z2C7
+  - key: increases abundance of
+    source: UniProt:B7Z2C7
+    target: CHEBI:17489
+  - key: negatively regulates
+    source: CHEBI:17489
+    target: GO:0070509
+  - key: contributes to
+    source: GO:0070509
+    target: GO:0006939
+  - key: located in
+    source: GO:0006939
+    target: UBERON:0002187
+  - key: location of
+    source: UBERON:0002187
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D011656
+multigraph: true
+nodes:
+  - id: MESH:C011685
+    label: Drug
+    name: bitolterol
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: GO:0071871
+    label: BiologicalProcess
+    name: response to epinephrine
+  - id: UniProt:B7Z2C7
+    label: Protein
+    name: Adenylate cyclase
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3',5'-cyclic AMP
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: transmembrane calcium influx
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: smooth muscle contraction
+  - id: UBERON:0002187
+    label: GrossAnatomicalStructure
+    name: terminal bronchiole
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D011656
+    label: Disease
+    name: Pulmonary emphysema
+references:
+  - https://go.drugbank.com/drugs/DB00901#BE0000694
+  - https://pubmed.ncbi.nlm.nih.gov/16263481/
+  - https://en.wikipedia.org/wiki/Chronic_obstructive_pulmonary_disease

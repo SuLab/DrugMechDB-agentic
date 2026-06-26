@@ -1,0 +1,86 @@
+directed: true
+graph:
+  _id: DB00350_MESH_D000505_1
+  disease: androgenic alopecia
+  disease_mesh: MESH:D000505
+  drug: minoxidil
+  drug_mesh: MESH:D008914
+  drugbank: DB:DB00350
+links:
+  - key: positively regulates
+    source: MESH:D008914
+    target: reactome:R-HSA-5684996
+  - key: produces
+    source: MESH:D008914
+    target: CL:0000346
+  - key: positively regulates
+    source: MESH:D008914
+    target: UniProt:P48048
+  - key: negatively correlated with
+    source: CL:0000346
+    target: MESH:D000505
+  - key: contributes to
+    source: reactome:R-HSA-5684996
+    target: GO:0043066
+  - key: participates in
+    source: UniProt:P48048
+    target: GO:0060081
+  - key: located in
+    source: GO:0043066
+    target: CL:0002559
+  - key: affected by
+    source: CL:0002559
+    target: MESH:D000505
+  - key: negatively regulates
+    source: GO:0060081
+    target: GO:0070509
+  - key: negatively correlated with
+    source: GO:0070509
+    target: GO:0042311
+  - key: positively regulates
+    source: GO:0042311
+    target: GO:0008015
+  - key: positively correlated with
+    source: GO:0008015
+    target: GO:0042640
+  - key: negatively correlated with
+    source: GO:0042640
+    target: MESH:D000505
+multigraph: true
+nodes:
+  - id: MESH:D008914
+    label: Drug
+    name: minoxidil
+  - id: CL:0000346
+    label: Cell
+    name: dermal papillary cells
+  - id: reactome:R-HSA-5684996
+    label: Pathway
+    name: ERK1/ERK2 pathway
+  - id: UniProt:P48048
+    label: Protein
+    name: ATP-sensitive inward rectifier potassium channel 1
+  - id: GO:0043066
+    label: BiologicalProcess
+    name: negative regulation of apoptotic process
+  - id: CL:0002559
+    label: Cell
+    name: hair follicle cell
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: membrane hyperpolarization
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: transmembrane calcium influx
+  - id: GO:0042311
+    label: BiologicalProcess
+    name: vasodilation
+  - id: GO:0008015
+    label: BiologicalProcess
+    name: blood circulation
+  - id: GO:0042640
+    label: BiologicalProcess
+    name: hair growth
+  - id: MESH:D000505
+    label: Disease
+    name: androgenic alopecia

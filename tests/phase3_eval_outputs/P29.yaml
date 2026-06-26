@@ -1,0 +1,85 @@
+directed: true
+multigraph: true
+graph:
+  _id: P29_DB00437_MESH_D006073
+  drug: Allopurinol
+  drug_mesh: MESH:D000493
+  drugbank: DB:DB00437
+  disease: Gout
+  disease_mesh: MESH:D006073
+nodes:
+  - id: MESH:D000493
+    name: Allopurinol
+    label: Drug
+  - id: UniProt:P47989
+    name: Xanthine dehydrogenase/oxidase
+    label: Protein
+  - id: GO:0002103
+    name: uric acid biosynthetic process
+    label: BiologicalProcess
+  - id: CHEBI:27226
+    name: uric acid
+    label: ChemicalSubstance
+  - id: MESH:D006073
+    name: Gout
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000493
+    target: UniProt:P47989
+    evidence:
+      - reference: PMID:41879452
+        snippet: Allopurinol and its active metabolite, oxypurinol, reduce uric acid concentrations through xanthine oxidase inhibition by suppressing the conversion of hypoxanthine and xanthine.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Pharmacokinetic review confirming that allopurinol acts by inhibiting xanthine oxidase (XDH/XO), thereby suppressing conversion of hypoxanthine and xanthine to uric acid.
+      - reference: PMID:41330172
+        snippet: Both Feb and ALP inhibited the upregulation of xanthine dehydrogenas/xanthine oxidase (XDH/XOD), UA levels, and UA transporters (URAT1 and GLUT9) induced by MSU, with Feb having a more pronounced effect.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: In vitro study showing allopurinol (ALP) inhibits XDH/XOD activity and reduces uric acid (UA) levels in MSU-treated cells.
+  - key: positively regulates
+    source: UniProt:P47989
+    target: GO:0002103
+    evidence:
+      - reference: PMID:41729472
+        snippet: Xanthine dehydrogenase (XDH) is an enzyme that catalyzes the sequential conversion of hypoxanthine to xanthine, and of xanthine to urate.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: XDH catalyzes the final two steps of uric acid biosynthesis (hypoxanthine→xanthine→urate), directly driving the uric acid biosynthetic process.
+      - reference: PMID:41689938
+        snippet: Xanthine oxidase (XO), the rate-limiting enzyme in uric acid production, represents a core therapeutic target for gout.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: XO/XDH is identified as the rate-limiting enzyme in uric acid production, confirming it positively regulates the uric acid biosynthetic process.
+  - key: increases abundance of
+    source: GO:0002103
+    target: CHEBI:27226
+    evidence:
+      - reference: PMID:41729472
+        snippet: Xanthine dehydrogenase (XDH) is a key enzyme in urate biosynthesis, and genetic variations in its XDH gene can influence the amount or activity of the enzyme, as well as the levels of urate produced.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Urate biosynthesis driven by XDH produces uric acid (urate); increased XDH activity or expression correlates with higher urate levels, confirming the biosynthetic process increases uric acid abundance.
+      - reference: PMID:41879452
+        snippet: Allopurinol and its active metabolite, oxypurinol, reduce uric acid concentrations through xanthine oxidase inhibition by suppressing the conversion of hypoxanthine and xanthine.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Blocking xanthine oxidase (the enzyme driving the uric acid biosynthetic process) reduces uric acid concentrations, confirming the biosynthetic process is the source of uric acid abundance.
+  - key: contributes to
+    source: CHEBI:27226
+    target: MESH:D006073
+    evidence:
+      - reference: PMID:42212135
+        snippet: Gout is an aseptic inflammatory disease caused by monosodium urate (MSU) crystal deposition.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Elevated uric acid (monosodium urate) leads to crystal deposition, the direct cause of gouty inflammation, confirming uric acid contributes to gout.
+      - reference: PMID:41689938
+        snippet: Xanthine oxidase (XO), the rate-limiting enzyme in uric acid production, represents a core therapeutic target for gout.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Uric acid production (via XO) is the core driver of gout pathogenesis, confirming that uric acid contributes to gout.
+references:
+  - https://go.drugbank.com/drugs/DB00437#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P47989

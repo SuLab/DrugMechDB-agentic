@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB00602_MESH_D009855_1
+  disease: Onchocerciasis
+  disease_mesh: MESH:D009855
+  drug: ivermectin
+  drug_mesh: MESH:D007559
+  drugbank: DB:DB00602
+links:
+  - key: increases activity of
+    source: MESH:D007559
+    target: InterPro:IPR015680
+  - key: increases abundance of
+    source: InterPro:IPR015680
+    target: CHEBI:17996
+  - key: participates in
+    source: CHEBI:17996
+    target: GO:0060081
+  - key: precedes
+    source: GO:0060081
+    target: MESH:D010243
+  - key: negatively regulates
+    source: MESH:D010243
+    target: taxonomy:6282
+  - key: causes
+    source: taxonomy:6282
+    target: MESH:D009855
+multigraph: true
+nodes:
+  - id: MESH:D007559
+    label: Drug
+    name: ivermectin
+  - id: InterPro:IPR015680
+    label: GeneFamily
+    name: glutimate-gated chloride channels
+  - id: CHEBI:17996
+    label: ChemicalSubstance
+    name: chloride ion
+  - id: GO:0060081
+    label: BiologicalProcess
+    name: membrane hyperpolarization
+  - id: MESH:D010243
+    label: BiologicalProcess
+    name: Paralysis
+  - id: taxonomy:6282
+    label: OrganismTaxon
+    name: Onchocerca volvulus
+  - id: MESH:D009855
+    label: Disease
+    name: Onchocerciasis

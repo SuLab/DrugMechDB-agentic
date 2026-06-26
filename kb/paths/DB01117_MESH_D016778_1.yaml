@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB01117_MESH_D016778_1
+  disease: Falciparum malaria
+  disease_mesh: MESH:D016778
+  drug: Atovaquone
+  drug_mesh: MESH:D053626
+  drugbank: DB:DB01117
+links:
+  - key: decreases activity of
+    source: MESH:D053626
+    target: UniProt:Q02768
+  - key: decreases activity of
+    source: MESH:D053626
+    target: UniProt:Q08210
+  - key: positively regulates
+    source: UniProt:Q02768
+    target: GO:0042773
+  - key: positively regulates
+    source: UniProt:Q08210
+    target: GO:0019856
+  - key: in taxon
+    source: GO:0042773
+    target: taxonomy:5833
+  - key: in taxon
+    source: GO:0019856
+    target: taxonomy:5833
+  - key: causes
+    source: taxonomy:5833
+    target: MESH:D016778
+multigraph: true
+nodes:
+  - id: MESH:D053626
+    label: Drug
+    name: Atovaquone
+  - id: UniProt:Q02768
+    label: Protein
+    name: Cytochrome b (Plasmodium falciparum)
+  - id: UniProt:Q08210
+    label: Protein
+    name: Dihydroorotate dehydrogenase (quinone), mitochondrial
+  - id: GO:0042773
+    label: BiologicalProcess
+    name: ATP synthesis coupled electron transport
+  - id: GO:0019856
+    label: BiologicalProcess
+    name: Pyrimidine nucleobase biosynthetic process
+  - id: taxonomy:5833
+    label: OrganismTaxon
+    name: Plasmodium falciparum
+  - id: MESH:D016778
+    label: Disease
+    name: Falciparum malaria
+references:
+  - https://go.drugbank.com/drugs/DB01117#BE0004428

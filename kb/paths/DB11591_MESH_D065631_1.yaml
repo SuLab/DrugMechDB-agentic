@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB11591_MESH_D065631_1
+  disease: Allergic rhinitis
+  disease_mesh: MESH:D065631
+  drug: bilastine
+  drug_mesh: MESH:C445659
+  drugbank: DB:DB11591
+links:
+  - key: decreases activity of
+    source: MESH:C445659
+    target: UniProt:P35367
+  - key: positively regulates
+    source: UniProt:P35367
+    target: GO:0004969
+  - key: participates in
+    source: GO:0004969
+    target: GO:0071420
+  - key: positively correlated with
+    source: GO:0071420
+    target: GO:0006954
+  - key: causes
+    source: GO:0006954
+    target: MESH:D065631
+multigraph: true
+nodes:
+  - id: MESH:C445659
+    label: Drug
+    name: bilastine
+  - id: UniProt:P35367
+    label: Protein
+    name: Histamine H1 receptor
+  - id: GO:0004969
+    label: MolecularActivity
+    name: histamine receptor activity
+  - id: GO:0071420
+    label: BiologicalProcess
+    name: cellular response to histamine
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D065631
+    label: Disease
+    name: Allergic rhinitis
+references:
+  - https://go.drugbank.com/drugs/DB11591
+  - https://pubmed.ncbi.nlm.nih.gov/23956994/
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742423/
+  - https://pubmed.ncbi.nlm.nih.gov/25878559/

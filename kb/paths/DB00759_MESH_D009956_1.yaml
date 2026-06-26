@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB00759_MESH_D009956_1
+  disease: Psittacosis
+  disease_mesh: MESH:D009956
+  drug: tetracycline
+  drug_mesh: MESH:D013752
+  drugbank: DB:DB00759
+links:
+  - key: disrupts
+    source: MESH:D013752
+    target: GO:0044391
+  - key: location of
+    source: GO:0044391
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:83554
+  - key: causes
+    source: taxonomy:83554
+    target: MESH:D009956
+multigraph: true
+nodes:
+  - id: MESH:D013752
+    label: Drug
+    name: tetracycline
+  - id: GO:0044391
+    label: CellularComponent
+    name: ribosomal subunit
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:83554
+    label: OrganismTaxon
+    name: Chlamydia psittaci
+  - alt_names:
+      - Ornithosis
+    id: MESH:D009956
+    label: Disease
+    name: Psittacosis
+references:
+  - https://en.wikipedia.org/wiki/Tetracycline#Mechanism_of_action

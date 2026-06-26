@@ -1,0 +1,37 @@
+comment: Higher doses of opipramol are needed for anti-depressant effect.
+directed: true
+graph:
+  _id: DB12930_MESH_D003866_1
+  disease: Depressive disorder
+  disease_mesh: MESH:D003866
+  drug: opipramol
+  drug_mesh: MESH:D009888
+  drugbank: DB:DB12930
+links:
+  - key: increases activity of
+    source: MESH:D009888
+    target: UniProt:Q99720
+  - key: positively regulates
+    source: UniProt:Q99720
+    target: GO:0007269
+  - key: treats
+    source: GO:0007269
+    target: MESH:D003866
+multigraph: true
+nodes:
+  - id: MESH:D009888
+    label: Drug
+    name: Opipramol
+  - id: UniProt:Q99720
+    label: Protein
+    name: Sigma non-opioid intracellular receptor 1
+  - id: GO:0007269
+    label: BiologicalProcess
+    name: Neurotransmitter secretion
+  - id: MESH:D003866
+    label: Disease
+    name: Depressive disorder
+references:
+  - https://en.wikipedia.org/wiki/Opipramol
+  - https://pubmed.ncbi.nlm.nih.gov/15547785/
+  - https://www.researchgate.net/publication/259936188_OPIPRAMOL_A_NOVEL_DRUG

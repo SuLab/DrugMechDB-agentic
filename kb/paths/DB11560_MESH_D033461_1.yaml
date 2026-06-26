@@ -1,0 +1,50 @@
+directed: true
+graph:
+  _id: DB11560_MESH_D033461_1
+  disease: Hyperuricemia
+  disease_mesh: MESH:D033461
+  drug: lesinurad
+  drug_mesh: MESH:C000593471
+  drugbank: DB:DB11560
+links:
+  - key: decreases activity of
+    source: MESH:C000593471
+    target: UniProt:Q96S37
+  - key: negatively correlated with
+    source: UniProt:Q96S37
+    target: GO:0097744
+  - key: decreases activity of
+    source: GO:0097744
+    target: MESH:D014527
+  - key: decreases activity of
+    source: MESH:C000593471
+    target: UniProt:Q9NSA0
+  - key: negatively correlated with
+    source: UniProt:Q9NSA0
+    target: GO:0097744
+  - key: positively correlated with
+    source: MESH:D014527
+    target: MESH:D033461
+multigraph: true
+nodes:
+  - id: MESH:C000593471
+    label: Drug
+    name: Lesinurad
+  - id: UniProt:Q96S37
+    label: Protein
+    name: Solute carrier family 22 member 12
+  - id: GO:0097744
+    label: BiologicalProcess
+    name: Urate salt excretion
+  - id: MESH:D014527
+    label: ChemicalSubstance
+    name: Uric Acid
+  - id: UniProt:Q9NSA0
+    label: Protein
+    name: Solute carrier family 22 member 11
+  - id: MESH:D033461
+    label: Disease
+    name: Hyperuricemia
+references:
+  - https://go.drugbank.com/drugs/DB11560#BE0000879
+  - https://en.wikipedia.org/wiki/Lesinurad#Mechanism_of_action

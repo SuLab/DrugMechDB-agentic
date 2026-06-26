@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00825_MESH_D001416_1
+  disease: Backache
+  disease_mesh: MESH:D001416
+  drug: levomenthol
+  drug_mesh: MESH:D008610
+  drugbank: DB:DB00825
+links:
+  - key: increases activity of
+    source: MESH:D008610
+    target: UniProt:Q7Z2W7
+  - key: increases activity of
+    source: MESH:D008610
+    target: UniProt:O75762
+  - key: increases activity of
+    source: MESH:D008610
+    target: UniProt:Q8NET8
+  - key: positively correlated with
+    source: UniProt:Q7Z2W7
+    target: GO:0062035
+  - key: positively correlated with
+    source: UniProt:O75762
+    target: GO:0062035
+  - key: positively correlated with
+    source: UniProt:Q8NET8
+    target: GO:0062035
+  - key: negatively correlated with
+    source: GO:0062035
+    target: GO:0019233
+  - key: occurs in
+    source: GO:0019233
+    target: MESH:D001416
+multigraph: true
+nodes:
+  - id: MESH:D008610
+    label: Drug
+    name: Levomenthol
+  - id: UniProt:Q7Z2W7
+    label: Protein
+    name: Transient receptor potential cation channel subfamily M member 8
+  - id: UniProt:O75762
+    label: Protein
+    name: Transient receptor potential cation channel subfamily A member 1
+  - id: UniProt:Q8NET8
+    label: Protein
+    name: Transient receptor potential cation channel subfamily V member 3
+  - id: GO:0062035
+    label: BiologicalProcess
+    name: Sensory perception of cold stimulus
+  - id: GO:0019233
+    label: BiologicalProcess
+    name: Sensory perception of pain
+  - id: MESH:D001416
+    label: Disease
+    name: Backache
+references:
+  - https://go.drugbank.com/drugs/DB00825

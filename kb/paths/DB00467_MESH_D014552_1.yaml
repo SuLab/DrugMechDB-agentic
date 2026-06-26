@@ -1,0 +1,70 @@
+comment: Note that UniProt:Q5EP76 is not a reviewed UniProt annotation, rather unreviewed
+  (protein inferred from homology).
+directed: true
+graph:
+  _id: DB00467_MESH_D014552_1
+  disease: Urinary tract infectious disease
+  disease_mesh: MESH:D014552
+  drug: enoxacin
+  drug_mesh: MESH:D015365
+  drugbank: DB:DB00467
+links:
+  - key: decreases activity of
+    source: MESH:D015365
+    target: UniProt:P48374
+  - key: decreases activity of
+    source: MESH:D015365
+    target: UniProt:Q5EP76
+  - key: decreases activity of
+    source: MESH:D015365
+    target: UniProt:P48371
+  - key: decreases activity of
+    source: MESH:D015365
+    target: UniProt:P22118
+  - key: positively regulates
+    source: UniProt:P48374
+    target: GO:0006265
+  - key: positively regulates
+    source: UniProt:Q5EP76
+    target: GO:0006265
+  - key: positively regulates
+    source: UniProt:P48371
+    target: GO:0006265
+  - key: positively regulates
+    source: UniProt:P22118
+    target: GO:0006265
+  - key: in taxon
+    source: GO:0006265
+    target: taxonomy:562
+  - key: causes
+    source: taxonomy:562
+    target: MESH:D014552
+multigraph: true
+nodes:
+  - id: MESH:D015365
+    label: Drug
+    name: enoxacin
+  - id: UniProt:P48374
+    label: Protein
+    name: DNA topoisomerase 4 subunit A
+  - id: UniProt:Q5EP76
+    label: Protein
+    name: DNA topoisomerase
+  - id: UniProt:P48371
+    label: Protein
+    name: DNA gyrase subunit A
+  - id: UniProt:P22118
+    label: Protein
+    name: DNA gyrase subunit B
+  - id: GO:0006265
+    label: BiologicalProcess
+    name: DNA topological change
+  - id: taxonomy:562
+    label: OrganismTaxon
+    name: Escherichia coli
+  - id: MESH:D014552
+    label: Disease
+    name: Urinary tract infectious disease
+references:
+  - https://go.drugbank.com/drugs/DB00467
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL826/

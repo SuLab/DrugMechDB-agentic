@@ -1,0 +1,32 @@
+directed: true
+graph:
+  _id: DB13676_MESH_D012559_1
+  disease: Schizophrenia
+  disease_mesh: MESH:D012559
+  drug: mosapramine
+  drug_mesh: MESH:C046384
+  drugbank: DB:DB13676
+links:
+  - key: decreases activity of
+    source: MESH:C046384
+    target: UniProt:P14416
+  - key: participates in
+    source: UniProt:P14416
+    target: reactome:R-HSA-390651
+  - key: affects risk for
+    source: reactome:R-HSA-390651
+    target: MESH:D012559
+multigraph: true
+nodes:
+  - id: MESH:C046384
+    label: Drug
+    name: mosapramine
+  - id: UniProt:P14416
+    label: Protein
+    name: Dopamine receptor D2
+  - id: reactome:R-HSA-390651
+    label: Pathway
+    name: Dopamine pathway
+  - id: MESH:D012559
+    label: Disease
+    name: Schizophrenia

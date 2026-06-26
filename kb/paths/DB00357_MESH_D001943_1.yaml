@@ -1,0 +1,38 @@
+directed: true
+graph:
+  _id: DB00357_MESH_D001943_1
+  disease: Secondary malignant neoplasm of female breast
+  disease_mesh: MESH:D001943
+  drug: aminoglutethimide
+  drug_mesh: MESH:D000616
+  drugbank: DB:DB00357
+links:
+  - key: decreases activity of
+    source: MESH:D000616
+    target: UniProt:P11511
+  - key: produces
+    source: UniProt:P11511
+    target: MESH:D004967
+  - key: positively regulates
+    source: MESH:D004967
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D001943
+multigraph: true
+nodes:
+  - id: MESH:D000616
+    label: Drug
+    name: aminoglutethimide
+  - id: UniProt:P11511
+    label: Protein
+    name: aromatase
+  - id: MESH:D004967
+    label: ChemicalSubstance
+    name: estrogen
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell proliferation
+  - id: MESH:D001943
+    label: Disease
+    name: Secondary malignant neoplasm of female breast

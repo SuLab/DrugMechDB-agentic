@@ -1,0 +1,65 @@
+directed: true
+graph:
+  _id: DB00842_MESH_D000430_1
+  disease: Alcohol withdrawal delirium
+  disease_mesh: MESH:D000430
+  drug: oxazepam
+  drug_mesh: MESH:D010076
+  drugbank: DB:DB00842
+links:
+  - key: positively regulates
+    source: MESH:D010076
+    target: GO:0016917
+  - key: positively regulates
+    source: GO:0016917
+    target: GO:0022851
+  - key: positively correlated with
+    source: GO:0016917
+    target: GO:0061534
+  - key: positively correlated with
+    source: GO:0016917
+    target: GO:0061534
+  - key: negatively regulates
+    source: GO:0022851
+    target: GO:0019228
+  - key: positively regulates
+    source: GO:0019228
+    target: GO:0061535
+  - key: negatively correlated with
+    source: GO:0061534
+    target: MESH:D000430
+  - key: positively correlated with
+    source: GO:0061535
+    target: MESH:D012640
+  - key: manifestation of
+    source: MESH:D012640
+    target: MESH:D000430
+multigraph: true
+nodes:
+  - id: MESH:D010076
+    label: Drug
+    name: Oxazepam
+  - id: GO:0016917
+    label: MolecularActivity
+    name: GABA receptor activity
+  - id: GO:0022851
+    label: BiologicalProcess
+    name: GABA-gated chloride ion channel activity
+  - id: GO:0061534
+    label: BiologicalProcess
+    name: Gamma-aminobutyric acid secretion, neurotransmission
+  - id: GO:0019228
+    label: BiologicalProcess
+    name: Neuronal action potential
+  - id: GO:0061535
+    label: BiologicalProcess
+    name: Glutamate secretion, neurotransmission
+  - id: MESH:D012640
+    label: Disease
+    name: Seizures
+  - id: MESH:D000430
+    label: Disease
+    name: Alcohol withdrawal delirium
+references:
+  - https://go.drugbank.com/drugs/DB00842
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1312739/

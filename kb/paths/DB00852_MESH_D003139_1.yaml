@@ -1,0 +1,56 @@
+directed: true
+graph:
+  _id: DB00852_MESH_D003139_1
+  disease: Common cold
+  disease_mesh: MESH:D003139
+  drug: pseudoephedrine
+  drug_mesh: MESH:D054199
+  drugbank: DB:DB00852
+links:
+  - key: increases activity of
+    source: MESH:D054199
+    target: UniProt:P35348
+  - key: increases activity of
+    source: MESH:D054199
+    target: UniProt:P07550
+  - key: negatively correlated with
+    source: UniProt:P07550
+    target: HP:4000007
+  - key: positively correlated with
+    source: HP:4000007
+    target: MESH:D003139
+  - key: positively regulates
+    source: UniProt:P35348
+    target: GO:0042310
+  - key: negatively correlated with
+    source: GO:0042310
+    target: GO:0070254
+  - key: positively correlated with
+    source: GO:0070254
+    target: MESH:D003139
+multigraph: true
+nodes:
+  - id: MESH:D054199
+    label: Drug
+    name: Pseudoephedrine
+  - id: UniProt:P35348
+    label: Protein
+    name: Alpha-1A adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: HP:4000007
+    label: PhenotypicFeature
+    name: Bronchoconstriction
+  - id: GO:0042310
+    label: BiologicalProcess
+    name: Vasoconstriction
+  - id: GO:0070254
+    label: BiologicalProcess
+    name: Mucus secretion
+  - id: MESH:D003139
+    label: Disease
+    name: Common cold
+references:
+  - https://go.drugbank.com/drugs/DB00852#BE0000694
+  - https://en.wikipedia.org/wiki/Pseudoephedrine#Mechanism_of_action

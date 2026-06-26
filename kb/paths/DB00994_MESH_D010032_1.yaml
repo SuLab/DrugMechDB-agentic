@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00994_MESH_D010032_1
+  disease: Otitis externa
+  disease_mesh: MESH:D010032
+  drug: neomycin
+  drug_mesh: MESH:D009355
+  drugbank: DB:DB00994
+links:
+  - key: decreases activity of
+    source: MESH:D009355
+    target: CHEBI:18111
+  - key: participates in
+    source: CHEBI:18111
+    target: GO:0006412
+  - key: in taxon
+    source: GO:0006412
+    target: taxonomy:1280
+  - key: causes
+    source: taxonomy:1280
+    target: MESH:D010032
+multigraph: true
+nodes:
+  - id: MESH:D009355
+    label: Drug
+    name: neomycin
+  - id: CHEBI:18111
+    label: ChemicalSubstance
+    name: ribosomal RNA
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: Translation
+  - id: taxonomy:1280
+    label: OrganismTaxon
+    name: Staphylococcus aureus
+  - id: MESH:D010032
+    label: Disease
+    name: Otitis externa
+references:
+  - https://go.drugbank.com/drugs/DB00994#mechanism-of-action

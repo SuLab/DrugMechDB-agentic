@@ -1,0 +1,53 @@
+comment: Methscopolamine is only effective for a treatment of cough related to asthma.
+directed: true
+graph:
+  _id: DB00462_MESH_D003371_1
+  disease: Cough
+  disease_mesh: MESH:D003371
+  drug: methscopolamine
+  drug_mesh: MESH:D019832
+  drugbank: DB:DB00462
+links:
+  - key: decreases activity of
+    source: MESH:D019832
+    target: UniProt:P20309
+  - key: participates in
+    source: UniProt:P20309
+    target: GO:1905144
+  - key: positively regulates
+    source: GO:1905144
+    target: GO:0006939
+  - key: located in
+    source: GO:0006939
+    target: UBERON:0002185
+  - key: location of
+    source: UBERON:0002185
+    target: MESH:D001249
+  - key: positively correlated with
+    source: MESH:D001249
+    target: MESH:D003371
+multigraph: true
+nodes:
+  - id: MESH:D019832
+    label: Drug
+    name: Methscopolamine
+  - id: UniProt:P20309
+    label: Protein
+    name: Muscarinic acetylcholine receptor M3
+  - id: GO:1905144
+    label: BiologicalProcess
+    name: Response to acetylcholine
+  - id: GO:0006939
+    label: BiologicalProcess
+    name: Smooth muscle contraction
+  - id: UBERON:0002185
+    label: GrossAnatomicalStructure
+    name: Bronchus
+  - id: MESH:D001249
+    label: Disease
+    name: Asthma
+  - id: MESH:D003371
+    label: Disease
+    name: Cough
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL376897/

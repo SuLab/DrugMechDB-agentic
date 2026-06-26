@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vinblastine → Malignant tumor of testis · DrugMechDB</title>
+<link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+<div class="mock-banner">MOCKUP · DrugMechDB website revamp · sample data, not final — for design review</div>
+
+<nav class="nav"><div class="container nav-inner">
+  <a class="brand" href="index.html"><span class="mark">D</span>DrugMech<span class="tail">DB</span></a>
+  <div class="nav-links">
+    <a href="browse.html">Browse</a>
+    <a href="embeddings.html">Embeddings</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="docs.html">Docs</a>
+    <div class="nav-search"><span>⌕</span><input placeholder="Search drugs, diseases, targets…"></div>
+  </div>
+</div></nav>
+
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="browse.html">Browse</a> / Vinblastine → Malignant tumor of testis</div>
+
+  <header class="rec-header">
+    <div class="rec-title">
+      <span class="drug" id="t-drug"></span>
+      <span class="arrow">↓</span>
+      <span class="disease" id="t-disease"></span>
+    </div>
+    <div class="rec-ids" id="ids"></div>
+    <p class="rec-summary" id="summary"></p>
+    <div class="rec-actions">
+      <button class="btn primary">↓ Download YAML</button>
+      <button class="btn">❝ Cite</button>
+      <button class="btn">↗ View source</button>
+    </div>
+  </header>
+
+  <div class="statstrip" id="statstrip"></div>
+
+  <div class="rec-main">
+
+    <!-- GRAPH -->
+    <section>
+      <div class="graph-head">
+        <div class="section-title">Mechanism pathograph</div>
+        <div class="graph-controls">
+          <button onclick="document.getElementById('graph')._reset()">⤢ Fit</button>
+          <span style="font-size:12px;color:var(--muted)">scroll to zoom · drag to pan · hover a node</span>
+        </div>
+      </div>
+      <div id="graph"></div>
+      <div class="legend" id="legend"></div>
+    </section>
+
+    <!-- CONCEPTS -->
+    <section>
+      <div class="section-title">Concepts <span class="count" id="ccount"></span></div>
+      <div class="concepts" id="concepts"></div>
+    </section>
+
+    <!-- RELATIONSHIPS -->
+    <section>
+      <div class="section-title">Relationships <span class="count" id="rcount"></span></div>
+      <div class="rels" id="rels"></div>
+    </section>
+
+    <!-- EVIDENCE -->
+    <section>
+      <div class="section-title">Evidence &amp; sources</div>
+      <div class="evidence" id="evidence"></div>
+      <div class="section-title" style="margin-top:26px">Record references</div>
+      <ul class="refs" id="refs"></ul>
+    </section>
+
+  </div>
+</div>
+
+<footer class="footer"><div class="container footer-inner">
+  <div>DrugMechDB · Su Lab · curated under the Biolink Model · CC0</div>
+  <div class="links"><a href="#">GitHub</a><a href="#">DOI</a><a href="#">Translator</a><a href="#">API</a></div>
+</div></footer>
+
+<script src="data.js"></script>
+<script src="pathograph.js"></script>
+<script>
+/* TYPE_COLOR is already defined globally by pathograph.js — reuse it. */
+const $ = id => document.getElementById(id);
+const R = window.DMDB_RECORD, byId = {};
+R.nodes.forEach(n => byId[n.id] = n);
+
+function dir(key){const k=key.toLowerCase();
+  if(/(decrease|inhibit|negativ|block|disrupt|suppress|antagon)/.test(k))return"neg";
+  if(/(increase|positiv|stimulat|induc|agonist|correlated|activat)/.test(k))return"pos";return"";}
+function curieUrl(id){return "https://identifiers.org/"+id;}
+
+// header
+$("t-drug").textContent = R.graph.drug;
+$("t-disease").textContent = R.graph.disease;
+$("summary").textContent = R.graph.summary;
+$("ids").innerHTML = [
+  ["DrugBank", R.graph.drugbank],["Drug MeSH", R.graph.drug_mesh],["Disease MeSH", R.graph.disease_mesh],["Path ID", R.graph._id]
+].map(([k,v])=>`<span class="badge">${k} <span class="mono">${v}</span></span>`).join("");
+
+// stats
+function longestPath(R){
+  const inc={},rank={},seen={};
+  R.nodes.forEach(n=>inc[n.id]=[]); R.links.forEach(l=>inc[l.target].push(l.source));
+  function r(id){ if(rank[id]!==undefined)return rank[id]; if(seen[id])return 0; seen[id]=true;
+    if(!inc[id].length)return rank[id]=0; let m=0; inc[id].forEach(p=>m=Math.max(m,r(p)+1)); return rank[id]=m; }
+  R.nodes.forEach(n=>r(n.id)); return Math.max(...Object.values(rank));
+}
+$("statstrip").innerHTML = [
+  [R.nodes.length,"concepts"],[R.links.length,"relationships"],[longestPath(R),"path length (steps)"]
+].map(([n,l])=>`<div class="item"><div class="n">${n}</div><div class="l">${l}</div></div>`).join("")
++ `<div class="item"><div class="n neg">↓</div><div class="l">net effect on disease</div></div>`;
+
+// graph
+const onClick = n => {
+  const row = document.getElementById("c-"+n.id.replace(/[:]/g,"_"));
+  if(row){ row.scrollIntoView({behavior:"smooth",block:"center"}); row.classList.remove("flash"); void row.offsetWidth; row.classList.add("flash"); }
+};
+const {types} = renderPathograph("graph", R, onClick);
+$("legend").innerHTML = types.map(t=>`<span class="li"><span class="dot" style="background:${TYPE_COLOR[t]}"></span>${t}</span>`).join("");
+
+// concepts
+$("ccount").textContent = R.nodes.length;
+$("concepts").innerHTML = R.nodes.map(n=>{
+  const c = TYPE_COLOR[n.label]||"#6b7280";
+  return `<div class="concept" id="c-${n.id.replace(/[:]/g,"_")}">
+    <span class="swatch" style="background:${c}"></span>
+    <div><div class="c-name">${n.name}</div>
+    <div class="c-meta"><a href="${curieUrl(n.id)}" class="mono" target="_blank">${n.id}</a> · <span class="c-type" style="color:${c}">${n.label}</span></div></div>
+  </div>`;
+}).join("");
+
+// relationships
+$("rcount").textContent = R.links.length;
+$("rels").innerHTML = R.links.map(l=>{
+  const d = dir(l.key);
+  return `<div class="rel"><span class="subj">${byId[l.source].name}</span>
+    <span class="pred ${d}">${l.key}</span>
+    <span class="obj">${byId[l.target].name}</span></div>`;
+}).join("");
+
+// evidence
+const withEv = R.links.filter(l=>l.evidence);
+$("evidence").innerHTML = withEv.length ? withEv.map(l=>{
+  const e=l.evidence;
+  const href = e.source_type==="pubmed" ? `https://pubmed.ncbi.nlm.nih.gov/${e.ref}/`
+             : e.source_type==="drugbank" ? `https://go.drugbank.com/drugs/${e.ref}#mechanism-of-action` : "#";
+  const lbl = e.source_type==="pubmed" ? `PMID ${e.ref}` : e.source;
+  return `<details class="ev"><summary><span class="caret">▸</span> ${byId[l.source].name} → ${byId[l.target].name}
+    <span class="pred ${dir(l.key)}" style="margin-left:auto">${l.key}</span></summary>
+    <div class="ev-body"><div class="snippet">“${e.snippet}”</div>
+    <div class="ev-src"><a class="src-badge ${e.source_type}" href="${href}" target="_blank" rel="noopener">${lbl} ↗</a></div></div></details>`;
+}).join("") : `<p style="padding:0 18px;color:var(--muted)">This legacy record carries record-level sources (below). Per-edge evidence is added during AI re-curation.</p>`;
+
+// references
+$("refs").innerHTML = R.references.map(r=>`<li><span class="src-badge ${r.type}">${r.type}</span> <a href="${r.url}" target="_blank">${r.label}</a></li>`).join("");
+</script>
+</body>
+</html>

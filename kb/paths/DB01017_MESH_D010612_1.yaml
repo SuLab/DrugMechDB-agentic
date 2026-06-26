@@ -1,0 +1,52 @@
+directed: true
+graph:
+  _id: DB01017_MESH_D010612_1
+  disease: Pharyngitis
+  disease_mesh: MESH:D010612
+  drug: minocycline
+  drug_mesh: MESH:D008911
+  drugbank: DB:DB01017
+links:
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:A2RGZ8
+  - key: decreases activity of
+    source: MESH:D008911
+    target: UniProt:A2RGF8
+  - key: positively regulates
+    source: UniProt:A2RGZ8
+    target: GO:0006412
+  - key: positively regulates
+    source: UniProt:A2RGF8
+    target: GO:0006412
+  - key: occurs in
+    source: GO:0006412
+    target: taxonomy:1314
+  - key: causes
+    source: taxonomy:1314
+    target: MESH:D010612
+multigraph: true
+nodes:
+  - id: MESH:D008911
+    label: Drug
+    name: minocycline
+  - id: UniProt:A2RGZ8
+    label: Protein
+    name: 30S ribosomal protein S4
+  - id: UniProt:A2RGF8
+    label: Protein
+    name: 30S ribosomal protein S9
+  - id: GO:0006412
+    label: BiologicalProcess
+    name: translation
+  - id: taxonomy:1314
+    label: OrganismTaxon
+    name: Streptococcus pyogenes
+  - id: MESH:D010612
+    label: Disease
+    name: Pharyngitis
+references:
+  - https://go.drugbank.com/drugs/DB01017#mechanism-of-action
+  - https://www.uniprot.org/uniprot/A2RGZ8#function
+  - https://www.uniprot.org/uniprot/A2RGF8#function
+  - https://en.wikipedia.org/wiki/Pharyngitis

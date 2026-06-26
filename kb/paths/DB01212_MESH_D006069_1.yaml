@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB01212_MESH_D006069_1
+  disease: Gonorrhea
+  disease_mesh: MESH:D006069
+  drug: Ceftriaxone
+  drug_mesh: MESH:D002443
+  drugbank: DB:DB01212
+links:
+  - key: decreases activity of
+    source: MESH:D002443
+    target: UniProt:P0A3M6
+  - key: positively regulates
+    source: UniProt:P0A3M6
+    target: GO:0009252
+  - key: occurs in
+    source: GO:0009252
+    target: taxonomy:485
+  - key: causes
+    source: taxonomy:485
+    target: MESH:D006069
+multigraph: true
+nodes:
+  - id: MESH:D002443
+    label: Drug
+    name: Ceftriaxone
+  - id: UniProt:P0A3M6
+    label: Protein
+    name: Penicillin-binding protein 2B
+  - id: GO:0009252
+    label: BiologicalProcess
+    name: peptidoglycan biosynthetic process
+  - id: taxonomy:485
+    label: OrganismTaxon
+    name: Neisseria gonorrhoeae
+  - id: MESH:D006069
+    label: Disease
+    name: Gonorrhea
+references:
+  - https://go.drugbank.com/drugs/DB01212#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P0A3M6#function
+  - https://en.wikipedia.org/wiki/Gonorrhea

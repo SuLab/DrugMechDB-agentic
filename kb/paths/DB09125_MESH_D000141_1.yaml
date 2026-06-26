@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB09125_MESH_D000141_1
+  disease: Renal tubular acidosis
+  disease_mesh: MESH:D000141
+  drug: potassium citrate
+  drug_mesh: MESH:D019357
+  drugbank: DB:DB09125
+links:
+  - key: increases abundance of
+    source: MESH:D019357
+    target: MESH:D011188
+  - key: negatively correlated with
+    source: MESH:D011188
+    target: MESH:D006859
+  - key: positively correlated with
+    source: MESH:D006859
+    target: MESH:D000141
+multigraph: true
+nodes:
+  - id: MESH:D019357
+    label: Drug
+    name: potassium citrate
+  - id: MESH:D011188
+    label: ChemicalSubstance
+    name: Potassium
+  - id: MESH:D006859
+    label: ChemicalSubstance
+    name: Hydrogen
+  - id: MESH:D000141
+    label: Disease
+    name: Renal tubular acidosis
+references:
+  - https://go.drugbank.com/drugs/DB09125
+  - https://en.wikipedia.org/wiki/Renal_tubular_acidosis
+  - https://en.wikipedia.org/wiki/Acidosis

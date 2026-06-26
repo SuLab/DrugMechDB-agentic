@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB00979_MESH_D015878_1
+  disease: Mydriasis
+  disease_mesh: MESH:D015878
+  drug: Cyclopentolate
+  drug_mesh: MESH:D003519
+  drugbank: DB:DB00979
+links:
+  - key: decreases activity of
+    source: MESH:D003519
+    target: UniProt:P11229
+  - key: positively regulates
+    source: UniProt:P11229
+    target: GO:0090075
+  - key: occurs in
+    source: GO:0090075
+    target: UBERON:0001605
+  - key: occurs in
+    source: GO:0090075
+    target: UBERON:0001607
+  - key: location of
+    source: UBERON:0001605
+    target: MESH:D015878
+  - key: location of
+    source: UBERON:0001607
+    target: MESH:D015878
+multigraph: true
+nodes:
+  - id: MESH:D003519
+    label: Drug
+    name: Cyclopentolate
+  - id: UniProt:P11229
+    label: Protein
+    name: Muscarinic acetylcholine receptor M1
+  - id: GO:0090075
+    label: BiologicalProcess
+    name: relaxation of muscle
+  - id: UBERON:0001605
+    label: GrossAnatomicalStructure
+    name: ciliary muscle
+  - id: UBERON:0001607
+    label: GrossAnatomicalStructure
+    name: sphincter pupillae
+  - id: MESH:D015878
+    label: Disease
+    name: Mydriasis
+references:
+  - https://go.drugbank.com/drugs/DB00979#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P11229#function
+  - https://en.wikipedia.org/wiki/Mydriasis

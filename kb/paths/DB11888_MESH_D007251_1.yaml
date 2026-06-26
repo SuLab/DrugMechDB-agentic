@@ -1,0 +1,48 @@
+directed: true
+graph:
+  _id: DB11888_MESH_D007251_1
+  disease: Influenza
+  disease_mesh: MESH:D007251
+  drug: laninamivir octanoate hydrate
+  drug_mesh: MESH:C546918
+  drugbank: DB:DB11888
+links:
+  - key: has metabolite
+    source: MESH:C546918
+    target: DB:DB12791
+  - key: decreases activity of
+    source: DB:DB12791
+    target: UniProt:P03468
+  - key: positively regulates
+    source: UniProt:P03468
+    target: GO:0019076
+  - key: in taxon
+    source: GO:0019076
+    target: taxonomy:11320
+  - key: causes
+    source: taxonomy:11320
+    target: MESH:D007251
+multigraph: true
+nodes:
+  - id: MESH:C546918
+    label: Drug
+    name: Laninamivir octanoate hydrate
+  - id: DB:DB12791
+    label: Drug
+    name: Laninamivir
+  - id: UniProt:P03468
+    label: Protein
+    name: Neuraminidase
+  - id: GO:0019076
+    label: BiologicalProcess
+    name: Viral release from host cell
+  - id: taxonomy:11320
+    label: OrganismTaxon
+    name: Influenza A virus
+  - id: MESH:D007251
+    label: Disease
+    name: Influenza
+references:
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL467058/
+  - https://en.wikipedia.org/wiki/Discovery_and_development_of_neuraminidase_inhibitors#Laninamivir
+  - https://go.drugbank.com/drugs/DB11888

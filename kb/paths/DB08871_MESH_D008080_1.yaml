@@ -1,0 +1,53 @@
+directed: true
+graph:
+  _id: DB08871_MESH_D008080_1
+  disease: Liposarcoma
+  disease_mesh: MESH:D008080
+  drug: eribulin
+  drug_mesh: MESH:C490954
+  drugbank: DB:DB08871
+links:
+  - key: negatively regulates
+    source: MESH:C490954
+    target: PR:000028799
+  - key: positively regulates
+    source: PR:000028799
+    target: GO:0000278
+  - key: positively regulates
+    source: PR:000028799
+    target: GO:0051225
+  - key: negatively correlated with
+    source: GO:0000278
+    target: GO:0006915
+  - key: negatively correlated with
+    source: GO:0051225
+    target: GO:0006915
+  - key: positively correlated with
+    source: GO:0006915
+    target: MESH:D008080
+multigraph: true
+nodes:
+  - id: MESH:C490954
+    label: Drug
+    name: eribulin
+  - id: PR:000028799
+    label: MacromolecularComplex
+    name: Tubulin
+  - id: GO:0000278
+    label: BiologicalProcess
+    name: mitotic cell cycle
+  - id: GO:0051225
+    label: BiologicalProcess
+    name: spindle assembly
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: MESH:D008080
+    label: Disease
+    name: Liposarcoma
+references:
+  - https://alpha.targetvalidation.org/drug/CHEMBL1683590
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1683590/
+  - https://en.wikipedia.org/wiki/Eribulin#Structure_and_mechanism
+  - https://en.wikipedia.org/wiki/Microtubule#Tubulin-binding_drugs_and_chemical_effects
+  - https://go.drugbank.com/drugs/DB08871#mechanism-of-action

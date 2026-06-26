@@ -1,0 +1,46 @@
+directed: true
+graph:
+  _id: DB00213_MESH_D009377_1
+  disease: Multiple endocrine adenomas
+  disease_mesh: MESH:D009377
+  drug: Pantoprazole
+  drug_mesh: MESH:C064276
+  drugbank: DB:DB00213
+links:
+  - key: decreases activity of
+    source: MESH:C064276
+    target: UniProt:P20648
+  - key: positively regulates
+    source: UniProt:P20648
+    target: GO:0001696
+  - key: increases abundance of
+    source: GO:0001696
+    target: MESH:D005744
+  - key: positively correlated with
+    source: MESH:D005744
+    target: MESH:D010437
+  - key: manifestation of
+    source: MESH:D010437
+    target: MESH:D009377
+multigraph: true
+nodes:
+  - id: MESH:C064276
+    label: Drug
+    name: Pantoprazole
+  - id: UniProt:P20648
+    label: Protein
+    name: Potassium-transporting ATPase alpha chain 1
+  - id: GO:0001696
+    label: BiologicalProcess
+    name: Gastric acid secretion
+  - id: MESH:D005744
+    label: ChemicalSubstance
+    name: Gastric Acid
+  - id: MESH:D010437
+    label: Disease
+    name: Peptic ulcer
+  - id: MESH:D009377
+    label: Disease
+    name: Multiple endocrine adenomas
+references:
+  - https://go.drugbank.com/drugs/DB00213#BE0000349

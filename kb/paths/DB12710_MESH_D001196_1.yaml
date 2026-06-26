@@ -1,0 +1,24 @@
+comment: No evidence found to support perazine treatment for ascariasis.
+directed: true
+graph:
+  _id: DB12710_MESH_D001196_1
+  disease: Ascariasis
+  disease_mesh: MESH:D001196
+  drug: perazine
+  drug_mesh: MESH:D010464
+  drugbank: DB:DB12710
+links:
+  - key: treats
+    source: MESH:D010464
+    target: MESH:D001196
+multigraph: true
+nodes:
+  - id: MESH:D010464
+    label: Drug
+    name: Perazine
+  - id: MESH:D001196
+    label: Disease
+    name: Ascariasis
+references:
+  - https://drugs.ncats.io/drug/8915147A2B
+  - https://go.drugbank.com/drugs/DB12710

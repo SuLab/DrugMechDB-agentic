@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB01106_MESH_D003233_3
+  disease: Conjunctivitis, Allergic
+  disease_mesh: MESH:D003233
+  drug: levocabastine
+  drug_mesh: MESH:C047340
+  drugbank: DB:DB01106
+links:
+  - key: decreases activity of
+    source: MESH:C047340
+    target: UniProt:O95665
+  - key: positively correlated with
+    source: UniProt:O95665
+    target: MESH:D009496
+  - key: positively regulates
+    source: MESH:D009496
+    target: GO:0001821
+  - key: contributes to
+    source: GO:0001821
+    target: MESH:D003233
+multigraph: true
+nodes:
+  - id: MESH:C047340
+    label: Drug
+    name: levocabastine
+  - id: UniProt:O95665
+    label: Protein
+    name: Neurotensin receptor type 2
+  - id: MESH:D009496
+    label: ChemicalSubstance
+    name: Neurotensin
+  - id: GO:0001821
+    label: BiologicalProcess
+    name: histamine secretion
+  - id: MESH:D003233
+    label: Disease
+    name: Conjunctivitis, Allergic
+references:
+  - https://go.drugbank.com/drugs/DB01106#mechanism-of-action
+  - https://www.uniprot.org/uniprot/O95665#function
+  - https://en.wikipedia.org/wiki/Allergic_conjunctivitis

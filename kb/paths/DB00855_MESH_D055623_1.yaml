@@ -1,0 +1,42 @@
+directed: true
+graph:
+  _id: DB00855_MESH_D055623_1
+  disease: Actinic keratosis
+  disease_mesh: MESH:D055623
+  drug: Aminolevulinic acid
+  drug_mesh: MESH:D000622
+  drugbank: DB:DB00855
+links:
+  - key: subclass of
+    source: MESH:D000622
+    target: MESH:D017319
+  - key: positively correlated with
+    source: MESH:D017319
+    target: MESH:D005609
+  - key: disrupts
+    source: MESH:D005609
+    target: HP:0011355
+  - key: positively correlated with
+    source: HP:0011355
+    target: MESH:D055623
+multigraph: true
+nodes:
+  - id: MESH:D000622
+    label: Drug
+    name: Aminolevulinic acid
+  - id: MESH:D017319
+    label: ChemicalSubstance
+    name: Photosensitizing Agents
+  - id: MESH:D005609
+    label: ChemicalSubstance
+    name: Free Radicals
+  - id: HP:0011355
+    label: PhenotypicFeature
+    name: Localized skin lesion
+  - id: MESH:D055623
+    label: Disease
+    name: Actinic keratosis
+references:
+  - https://en.wikipedia.org/wiki/Aminolevulinic_acid#Medical_uses
+  - https://en.wikipedia.org/wiki/Actinic_keratosis#Procedures
+  - https://en.wikipedia.org/wiki/Photodynamic_therapy#Photosensitizers

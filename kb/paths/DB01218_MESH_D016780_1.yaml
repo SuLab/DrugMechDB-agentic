@@ -1,0 +1,37 @@
+comment: Mechanism of action is unknown (https://en.wikipedia.org/wiki/Halofantrine#Pharmacology).
+  Halofantrine is never used to prevent malaria, rather for treatment only due to
+  its toxicity.
+directed: true
+graph:
+  _id: DB01218_MESH_D016780_1
+  disease: Vivax malaria
+  disease_mesh: MESH:D016780
+  drug: halofantrine
+  drug_mesh: MESH:C023768
+  drugbank: DB:DB01218
+links:
+  - key: molecularly interacts with
+    source: MESH:C023768
+    target: CHEBI:15430
+  - key: disrupts
+    source: CHEBI:15430
+    target: taxonomy:5855
+  - key: causes
+    source: taxonomy:5855
+    target: MESH:D016780
+multigraph: true
+nodes:
+  - id: MESH:C023768
+    label: Drug
+    name: halofantrine
+  - id: CHEBI:15430
+    label: ChemicalSubstance
+    name: protoporphyrin
+  - id: taxonomy:5855
+    label: OrganismTaxon
+    name: Plasmodium vivax
+  - id: MESH:D016780
+    label: Disease
+    name: Vivax malaria
+references:
+  - https://go.drugbank.com/drugs/DB01218

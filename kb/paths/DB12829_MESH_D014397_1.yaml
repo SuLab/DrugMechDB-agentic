@@ -1,0 +1,45 @@
+comment: The biological target of thioacetazone has not been identified yet, and its
+  exact mechanism of action remains unknown.
+directed: true
+graph:
+  _id: DB12829_MESH_D014397_1
+  disease: Pulmonary tuberculosis
+  disease_mesh: MESH:D014397
+  drug: thioacetazone
+  drug_mesh: MESH:C107057
+  drugbank: DB:DB12829
+links:
+  - key: negatively regulates
+    source: MESH:C107057
+    target: GO:0071768
+  - key: part of
+    source: GO:0071768
+    target: GO:0071766
+  - key: in taxon
+    source: GO:0071766
+    target: taxonomy:1773
+  - key: causes
+    source: taxonomy:1773
+    target: MESH:D014397
+multigraph: true
+nodes:
+  - alt_names:
+      - Amithiozone
+    id: MESH:C107057
+    label: Drug
+    name: thioacetazone
+  - id: GO:0071768
+    label: BiologicalProcess
+    name: mycolic acid biosynthetic process
+  - id: GO:0071766
+    label: BiologicalProcess
+    name: Actinobacterium-type cell wall biogenesis
+  - id: taxonomy:1773
+    label: OrganismTaxon
+    name: Mycobacterium tuberculosis
+  - id: MESH:D014397
+    label: Disease
+    name: Pulmonary tuberculosis
+references:
+  - https://en.wikipedia.org/wiki/Thioacetazone
+  - https://en.wikipedia.org/wiki/Mycolic_acid

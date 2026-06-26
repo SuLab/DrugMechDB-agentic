@@ -1,0 +1,49 @@
+directed: true
+graph:
+  _id: DB00195_MESH_D009798_1
+  disease: Ocular hypertension
+  disease_mesh: MESH:D009798
+  drug: betaxolol
+  drug_mesh: MESH:D015784
+  drugbank: DB:DB00195
+links:
+  - key: decreases activity of
+    source: MESH:D015784
+    target: UniProt:P08588
+  - key: participates in
+    source: UniProt:P08588
+    target: reactome:R-HSA-418555
+  - key: increases abundance of
+    source: reactome:R-HSA-418555
+    target: CHEBI:17489
+  - key: positively correlated with
+    source: CHEBI:17489
+    target: UBERON:0001796
+  - key: positively correlated with
+    source: UBERON:0001796
+    target: MESH:D009798
+multigraph: true
+nodes:
+  - id: MESH:D015784
+    label: Drug
+    name: betaxolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: reactome:R-HSA-418555
+    label: Pathway
+    name: G alpha (s) signalling events
+  - id: CHEBI:17489
+    label: ChemicalSubstance
+    name: 3,5-cyclic AMP
+  - id: UBERON:0001796
+    label: GrossAnatomicalStructure
+    name: aqueous humor of eyeball
+  - id: MESH:D009798
+    label: Disease
+    name: Ocular Hypertension
+references:
+  - https://go.drugbank.com/drugs/DB00195#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Betaxolol
+  - https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL423/
+  - https://pubchem.ncbi.nlm.nih.gov/compound/2369#section=Pharmacology-and-Biochemistry

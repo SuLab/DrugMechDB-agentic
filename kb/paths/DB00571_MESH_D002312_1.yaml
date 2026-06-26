@@ -1,0 +1,72 @@
+directed: true
+graph:
+  _id: DB00571_MESH_D002312_1
+  disease: Cardiomyopathy, Hypertrophic
+  disease_mesh: MESH:D002312
+  drug: Propranolol
+  drug_mesh: MESH:D011433
+  drugbank: DB:DB00571
+links:
+  - key: decreases activity of
+    source: MESH:D011433
+    target: UniProt:P08588
+  - key: decreases activity of
+    source: MESH:D011433
+    target: UniProt:P07550
+  - key: positively correlated with
+    source: UniProt:P08588
+    target: MESH:D004837
+  - key: positively correlated with
+    source: UniProt:P08588
+    target: MESH:D009638
+  - key: positively correlated with
+    source: UniProt:P07550
+    target: MESH:D004837
+  - key: positively correlated with
+    source: UniProt:P07550
+    target: MESH:D009638
+  - key: positively correlated with
+    source: MESH:D004837
+    target: HP:0000822
+  - key: positively correlated with
+    source: MESH:D009638
+    target: HP:0000822
+  - key: contributes to
+    source: HP:0000822
+    target: HP:0001714
+  - key: manifestation of
+    source: HP:0001714
+    target: MESH:D002312
+multigraph: true
+nodes:
+  - id: MESH:D011433
+    label: Drug
+    name: Propranolol
+  - id: UniProt:P08588
+    label: Protein
+    name: Beta-1 adrenergic receptor
+  - id: UniProt:P07550
+    label: Protein
+    name: Beta-2 adrenergic receptor
+  - id: MESH:D004837
+    label: ChemicalSubstance
+    name: Epinephrine
+  - id: MESH:D009638
+    label: ChemicalSubstance
+    name: Norepinephrine
+  - id: HP:0000822
+    label: PhenotypicFeature
+    name: Hypertension
+  - id: HP:0001714
+    label: PhenotypicFeature
+    name: Ventricular hypertrophy
+  - id: MESH:D002312
+    label: Disease
+    name: Cardiomyopathy, Hypertrophic
+references:
+  - https://go.drugbank.com/drugs/DB00571#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Propranolol#Pharmacology
+  - https://www.uniprot.org/uniprot/P08588#function
+  - https://www.uniprot.org/uniprot/P07550#function
+  - https://www.sciencedirect.com/science/article/pii/S0735109701014334
+  - https://en.wikipedia.org/wiki/Hypertrophic_cardiomyopathy

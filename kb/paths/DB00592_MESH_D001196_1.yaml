@@ -1,0 +1,40 @@
+directed: true
+graph:
+  _id: DB00592_MESH_D001196_1
+  disease: Ascariasis
+  disease_mesh: MESH:D001196
+  drug: Piperazine
+  drugbank: DB:DB00592
+links:
+  - key: increases activity of
+    source: DB:DB00592
+    target: InterPro:IPR002289
+  - key: participates in
+    source: InterPro:IPR002289
+    target: HP:0003470
+  - key: in taxon
+    source: HP:0003470
+    target: taxonomy:6252
+  - key: causes
+    source: taxonomy:6252
+    target: MESH:D001196
+multigraph: true
+nodes:
+  - id: DB:DB00592
+    label: Drug
+    name: Piperazine
+  - id: InterPro:IPR002289
+    label: GeneFamily
+    name: Gamma-aminobutyric-acid A receptor, beta subunit
+  - id: HP:0003470
+    label: PhenotypicFeature
+    name: Paralysis
+  - id: taxonomy:6252
+    label: OrganismTaxon
+    name: Ascaris lumbricoides
+  - id: MESH:D001196
+    label: Disease
+    name: Ascariasis
+references:
+  - https://go.drugbank.com/drugs/DB00592
+  - https://drugs.ncats.io/drug/1RTM4PAL0V

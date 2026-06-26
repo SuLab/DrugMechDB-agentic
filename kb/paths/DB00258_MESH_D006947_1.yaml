@@ -1,0 +1,39 @@
+comment: For the management hyperkalemia management a calcium chloride or a calcium
+  gluconate soluion is usually used.
+directed: true
+graph:
+  _id: DB00258_MESH_D006947_1
+  disease: Hyperkalemia
+  disease_mesh: MESH:D006947
+  drug: calcium acetate
+  drug_mesh: MESH:C120662
+  drugbank: DB:DB00258
+links:
+  - key: capable of
+    source: MESH:C120662
+    target: GO:0030322
+  - key: located in
+    source: GO:0030322
+    target: UBERON:0001133
+  - key: affected by
+    source: UBERON:0001133
+    target: MESH:D006947
+multigraph: true
+nodes:
+  - id: MESH:C120662
+    label: Drug
+    name: Calcium acetate
+  - id: GO:0030322
+    label: BiologicalProcess
+    name: Stabilization of membrane potential
+  - id: UBERON:0001133
+    label: GrossAnatomicalStructure
+    name: Cardiac muscle
+  - id: MESH:D006947
+    label: Disease
+    name: Hyperkalemia
+references:
+  - https://go.drugbank.com/drugs/DB01164#mechanismofaction
+  - https://www.aafp.org/afp/2015/0915/p487.html
+  - https://en.wikipedia.org/wiki/Hyperkalemia
+  - https://pubchem.ncbi.nlm.nih.gov/compound/Calcium-dichloride#section=Pharmacology-and-Biochemistry

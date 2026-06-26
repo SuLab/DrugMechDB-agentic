@@ -1,0 +1,35 @@
+directed: true
+graph:
+  _id: DB05578_MESH_D002289_1
+  disease: Non-small cell lung cancer
+  disease_mesh: MESH:D002289
+  drug: ramucirumab
+  drug_mesh: MESH:C543333
+  drugbank: DB:DB05578
+links:
+  - key: decreases activity of
+    source: MESH:C543333
+    target: UniProt:P35968
+  - key: positively regulates
+    source: UniProt:P35968
+    target: GO:0001525
+  - key: positively correlated with
+    source: GO:0001525
+    target: MESH:D002289
+multigraph: true
+nodes:
+  - id: MESH:C543333
+    label: Drug
+    name: ramucirumab
+  - id: UniProt:P35968
+    label: Protein
+    name: Vascular endothelial growth factor receptor 2
+  - id: GO:0001525
+    label: BiologicalProcess
+    name: angiogenesis
+  - id: MESH:D002289
+    label: Disease
+    name: Non-small cell lung cancer
+references:
+  - https://go.drugbank.com/drugs/DB05578
+  - https://en.wikipedia.org/wiki/Ramucirumab#Mechanism_of_action

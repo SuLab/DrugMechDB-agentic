@@ -1,0 +1,26 @@
+comment: Adrenal Insufficiency is a disorder of the adrenal glands, the pitutary gland
+  or the hypothalamus which is caused by the defects in the synthesis of adrenal corticosteroids.
+directed: true
+graph:
+  _id: DB00443_MESH_D000309_1
+  disease: Adrenal Insufficiency
+  disease_mesh: MESH:D000309
+  drug: betamethasone acetate
+  drug_mesh: MESH:C580789
+  drugbank: DB:DB00443
+links:
+  - key: treats
+    source: MESH:C580789
+    target: MESH:D000309
+multigraph: true
+nodes:
+  - id: MESH:C580789
+    label: Drug
+    name: betamethasone acetate
+  - id: MESH:D000309
+    label: Disease
+    name: Adrenal Insufficiency
+references:
+  - https://go.drugbank.com/drugs/DB00443#mechanism-of-action
+  - https://drugs.ncats.io/drug/9842X06Q6M
+  - https://en.wikipedia.org/wiki/Adrenal_insufficiency

@@ -1,0 +1,36 @@
+directed: true
+graph:
+  _id: DB11152_MESH_D003218_1
+  disease: Condylomata Acuminata
+  disease_mesh: MESH:D003218
+  drug: Trichloroacetic Acid
+  drug_mesh: MESH:D014238
+  drugbank: DB:DB11152
+links:
+  - key: positively regulates
+    source: MESH:D014238
+    target: GO:0006915
+  - key: occurs in
+    source: GO:0006915
+    target: taxonomy:10566
+  - key: causes
+    source: taxonomy:10566
+    target: MESH:D003218
+multigraph: true
+nodes:
+  - id: MESH:D014238
+    label: Drug
+    name: Trichloroacetic Acid
+  - id: GO:0006915
+    label: BiologicalProcess
+    name: apoptotic process
+  - id: taxonomy:10566
+    label: OrganismTaxon
+    name: Human papillomavirus
+  - id: MESH:D003218
+    label: Disease
+    name: Condylomata Acuminata
+references:
+  - https://go.drugbank.com/drugs/DB11152#mechanism-of-action
+  - https://en.wikipedia.org/wiki/Trichloroacetic_acid#Use
+  - https://en.wikipedia.org/wiki/Genital_wart

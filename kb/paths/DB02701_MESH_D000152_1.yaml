@@ -1,0 +1,55 @@
+directed: true
+graph:
+  _id: DB02701_MESH_D000152_1
+  disease: Acne vulgaris
+  disease_mesh: MESH:D000152
+  drug: nicotinamide
+  drug_mesh: MESH:D009536
+  drugbank: DB:DB02701
+links:
+  - key: decreases activity of
+    source: MESH:D009536
+    target: reactome:R-HSA-181438
+  - key: part of
+    source: reactome:R-HSA-181438
+    target: GO:0006954
+  - key: caused by
+    source: GO:0006954
+    target: taxonomy:1747
+  - key: positively correlated with
+    source: taxonomy:1747
+    target: MESH:D000152
+  - key: decreases abundance of
+    source: MESH:D009536
+    target: UBERON:0001866
+  - key: positively correlated with
+    source: UBERON:0001866
+    target: HP:0025249
+  - key: positively correlated with
+    source: HP:0025249
+    target: MESH:D000152
+multigraph: true
+nodes:
+  - id: MESH:D009536
+    label: Drug
+    name: nicotinamide
+  - id: UBERON:0001866
+    label: GrossAnatomicalStructure
+    name: sebum
+  - id: HP:0025249
+    label: PhenotypicFeature
+    name: Comedo
+  - id: reactome:R-HSA-181438
+    label: Pathway
+    name: Toll Like Receptor 2 (TLR2) Cascade
+  - id: taxonomy:1747
+    label: OrganismTaxon
+    name: Cutibacterium acnes
+  - id: GO:0006954
+    label: BiologicalProcess
+    name: inflammatory response
+  - id: MESH:D000152
+    label: Disease
+    name: Acne vulgaris
+references:
+  - https://en.wikipedia.org/wiki/Nicotinamide#Acne

@@ -1,0 +1,27 @@
+directed: true
+graph:
+  _id: DB11606_MESH_C536392_1
+  disease: Acquired factor VIII deficiency disease
+  disease_mesh: MESH:C536392
+  drug: Susoctocog alfa
+  drugbank: DB:DB11606
+links:
+  - key: participates in
+    source: DB:DB11606
+    target: GO:0007596
+  - key: negatively correlated with
+    source: GO:0007596
+    target: MESH:C536392
+multigraph: true
+nodes:
+  - id: DB:DB11606
+    label: Drug
+    name: Susoctocog alfa
+  - id: GO:0007596
+    label: BiologicalProcess
+    name: Blood coagulation
+  - id: MESH:C536392
+    label: Disease
+    name: Acquired factor VIII deficiency disease
+references:
+  - https://go.drugbank.com/drugs/DB11606

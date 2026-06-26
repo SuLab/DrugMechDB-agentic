@@ -1,0 +1,68 @@
+directed: true
+multigraph: true
+graph:
+  _id: P05_DB00758_MESH_D020521
+  drug: Clopidogrel
+  drug_mesh: MESH:D000077144
+  drugbank: DB:DB00758
+  disease: Stroke
+  disease_mesh: MESH:D020521
+nodes:
+  - id: MESH:D000077144
+    name: Clopidogrel
+    label: Drug
+  - id: UniProt:Q9H244
+    name: P2Y purinoceptor 12
+    label: Protein
+  - id: GO:0070527
+    name: platelet aggregation
+    label: BiologicalProcess
+  - id: MESH:D020521
+    name: Stroke
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000077144
+    target: UniProt:Q9H244
+    evidence:
+      - reference: PMID:27386066
+        snippet: "Clopidogrel is a prodrug that converts in the liver to an active thiol metabolite, which irreversibly inhibits the platelet P2Y12 adenosine diphosphate receptor."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Clopidogrel is a prodrug whose active thiol metabolite irreversibly inhibits the platelet P2Y12 ADP receptor, decreasing the receptor's activity."
+      - reference: PMID:40195768
+        snippet: "The pharmacological activity of clopidogrel and prasugrel is mediated by sulfhydryl-containing active metabolites, which form disulfide bonds with P2Y12 receptors on the surface of platelets to inhibit their aggregation."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Clopidogrel's active metabolite forms disulfide bonds with platelet P2Y12 receptors, irreversibly inhibiting the receptor and thereby its downstream aggregation function."
+  - key: positively regulates
+    source: UniProt:Q9H244
+    target: GO:0070527
+    evidence:
+      - reference: PMID:15955565
+        snippet: "The ATP-gated channel P2X1 and the 2 G protein-coupled P2Y1 and P2Y12 ADP receptors selectively contribute to platelet aggregation."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "The P2Y12 ADP receptor selectively contributes to (positively regulates) platelet aggregation, per a pharmacology review of platelet P2 receptors."
+      - reference: PMID:15955565
+        snippet: "the P2Y12 receptor is responsible for the completion and amplification of the response to ADP and to all platelet agonists, including thromboxane A2 (TXA2), thrombin, and collagen."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "P2Y12 drives the completion and amplification of platelet activation to ADP and all platelet agonists, establishing it as a positive regulator of platelet aggregation."
+  - key: contributes to
+    source: GO:0070527
+    target: MESH:D020521
+    evidence:
+      - reference: PMID:41896895
+        snippet: "Platelets bind to collagen, leading to platelet activation, aggregation, and thrombus formation."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Platelet aggregation leads to thrombus formation, the proximate cause of ischemic stroke; the review frames atherosclerosis-driven platelet aggregation as a cause of ischemic stroke."
+      - reference: PMID:29157825
+        snippet: "Platelet activation and subsequent accumulation at sites of vascular injury perform a central role in thrombus formation, which is believed to be the trigger of several cardiovascular diseases, such as atherosclerosis, myocardial infarction and strokes."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Platelet activation/aggregation drives thrombus formation, identified as the trigger of strokes, so platelet aggregation contributes to stroke."
+references:
+  - https://go.drugbank.com/drugs/DB00758#mechanism-of-action
+  - https://www.uniprot.org/uniprot/Q9H244#function

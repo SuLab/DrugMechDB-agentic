@@ -1,0 +1,86 @@
+directed: true
+graph:
+  _id: DB00570_MESH_D009182_2
+  disease: Mycosis fungoides
+  disease_mesh: MESH:D009182
+  drug: vinblastine
+  drug_mesh: MESH:D014747
+  drugbank: DB:DB00570
+links:
+  - key: decreases activity of
+    source: MESH:D014747
+    target: UniProt:Q71U36
+  - key: decreases activity of
+    source: MESH:D014747
+    target: UniProt:P07437
+  - key: decreases activity of
+    source: MESH:D014747
+    target: UniProt:Q9UJT1
+  - key: decreases activity of
+    source: MESH:D014747
+    target: UniProt:P23258
+  - key: decreases activity of
+    source: MESH:D014747
+    target: UniProt:Q9UJT0
+  - key: part of
+    source: UniProt:Q71U36
+    target: GO:1902850
+  - key: part of
+    source: UniProt:Q71U36
+    target: GO:1902850
+  - key: part of
+    source: UniProt:P07437
+    target: GO:1902850
+  - key: part of
+    source: UniProt:Q9UJT1
+    target: GO:1902850
+  - key: part of
+    source: UniProt:P23258
+    target: GO:1902850
+  - key: part of
+    source: UniProt:Q9UJT0
+    target: GO:1902850
+  - key: positively regulates
+    source: GO:1902850
+    target: GO:0140014
+  - key: positively regulates
+    source: GO:0140014
+    target: GO:0008283
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D009182
+multigraph: true
+nodes:
+  - id: MESH:D014747
+    label: Drug
+    name: vinblastine
+  - id: UniProt:Q71U36
+    label: Protein
+    name: Tubulin alpha-1A chain
+  - id: UniProt:P07437
+    label: Protein
+    name: Tubulin beta chain
+  - id: UniProt:Q9UJT1
+    label: Protein
+    name: Tubulin delta chain
+  - id: UniProt:P23258
+    label: Protein
+    name: Tubulin gamma-1 chain
+  - id: UniProt:Q9UJT0
+    label: Protein
+    name: Tubulin epsilon chain
+  - id: GO:1902850
+    label: BiologicalProcess
+    name: Microtubule cytoskeleton organization involved in mitosis
+  - id: GO:0140014
+    label: BiologicalProcess
+    name: Mitotic nuclear division
+  - id: GO:0008283
+    label: BiologicalProcess
+    name: Cell population proliferation
+  - id: MESH:D009182
+    label: Disease
+    name: Mycosis fungoides
+references:
+  - https://go.drugbank.com/drugs/DB00570#BE0001340
+  - https://en.wikipedia.org/wiki/Vinblastine

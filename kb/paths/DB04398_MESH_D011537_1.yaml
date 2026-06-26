@@ -1,0 +1,28 @@
+directed: true
+graph:
+  _id: DB04398_MESH_D011537_1
+  disease: Itching of skin
+  disease_mesh: MESH:D011537
+  drug: lactic acid
+  drug_mesh: MESH:D019344
+  drugbank: DB:DB04398
+links:
+  - key: subclass of
+    source: MESH:D019344
+    target: CHEBI:59683
+  - key: negatively correlated with
+    source: CHEBI:59683
+    target: MESH:D011537
+multigraph: true
+nodes:
+  - id: MESH:D019344
+    label: Drug
+    name: lactic acid
+  - id: CHEBI:59683
+    label: ChemicalSubstance
+    name: antipruritic drug
+  - id: MESH:D011537
+    label: Disease
+    name: Itching of skin
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/15027519/

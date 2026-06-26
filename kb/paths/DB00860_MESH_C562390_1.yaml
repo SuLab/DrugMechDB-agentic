@@ -1,0 +1,51 @@
+directed: true
+graph:
+  _id: DB00860_MESH_C562390_1
+  disease: Humoral Hypercalcemia Of Malignancy
+  disease_mesh: MESH:C562390
+  drug: prednisolone
+  drug_mesh: MESH:D011239
+  drugbank: DB:DB00860
+links:
+  - key: decreases activity of
+    source: MESH:D011239
+    target: UniProt:O15528
+  - key: participates in
+    source: UniProt:O15528
+    target: GO:0006816
+  - key: positively correlated with
+    source: GO:0006816
+    target: HP:0003072
+  - key: caused by
+    source: HP:0003072
+    target: MESH:D044162
+  - key: contributes to
+    source: MESH:D044162
+    target: MESH:C562390
+multigraph: true
+nodes:
+  - id: MESH:D011239
+    label: Drug
+    name: prednisolone
+  - id: UniProt:O15528
+    label: Protein
+    name: 25-hydroxyvitamin D-1 alpha hydroxylase, mitochondrial
+  - id: GO:0006816
+    label: BiologicalProcess
+    name: calcium ion transport
+  - id: HP:0003072
+    label: PhenotypicFeature
+    name: Hypercalcemia
+  - id: MESH:D044162
+    label: ChemicalSubstance
+    name: Parathyroid Hormone-Related Protein
+  - id: MESH:C562390
+    label: Disease
+    name: Humoral Hypercalcemia Of Malignancy
+references:
+  - https://go.drugbank.com/drugs/DB00860#mechanism-of-action
+  - https://www.uniprot.org/uniprot/O15528#function
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4675637/
+  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5442343/
+  - https://en.wikipedia.org/wiki/Parathyroid_hormone-related_protein
+  - https://en.wikipedia.org/wiki/Parathyroid_hormone-related_protein#Humoral_hypercalcemia_of_malignancy

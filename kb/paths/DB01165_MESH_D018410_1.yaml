@@ -1,0 +1,44 @@
+directed: true
+graph:
+  _id: DB01165_MESH_D018410_1
+  disease: Pneumonia, Bacterial
+  disease_mesh: MESH:D018410
+  drug: ofloxacin
+  drug_mesh: MESH:D015242
+  drugbank: DB:DB01165
+links:
+  - key: negatively regulates
+    source: MESH:D015242
+    target: InterPro:IPR013759
+  - key: positively regulates
+    source: InterPro:IPR013759
+    target: GO:0006265
+  - key: in taxon
+    source: GO:0006265
+    target: taxonomy:1313
+  - key: causes
+    source: taxonomy:1313
+    target: MESH:D018410
+multigraph: true
+nodes:
+  - id: MESH:D015242
+    label: Drug
+    name: ofloxacin
+  - id: InterPro:IPR013759
+    label: GeneFamily
+    name: DNA topoisomerase, type IIA, subunit B, C-terminal
+  - id: GO:0006265
+    label: BiologicalProcess
+    name: DNA topological change
+  - id: taxonomy:1313
+    label: OrganismTaxon
+    name: Streptococcus pneumoniae
+  - alt_names:
+      - Bacterial pneumonia
+    id: MESH:D018410
+    label: Disease
+    name: Pneumonia, Bacterial
+references:
+  - https://en.wikipedia.org/wiki/Ofloxacin#Mode_of_action
+  - https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2311224/
+  - https://go.drugbank.com/drugs/DB01165

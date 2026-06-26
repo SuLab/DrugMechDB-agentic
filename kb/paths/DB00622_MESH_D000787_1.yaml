@@ -1,0 +1,73 @@
+directed: true
+graph:
+  _id: DB00622_MESH_D000787_1
+  disease: Angina pectoris
+  disease_mesh: MESH:D000787
+  drug: nicardipine
+  drug_mesh: MESH:D009529
+  drugbank: DB:DB00622
+links:
+  - key: decreases activity of
+    source: MESH:D009529
+    target: UniProt:Q13936
+  - key: decreases activity of
+    source: MESH:D009529
+    target: UniProt:Q08289
+  - key: decreases activity of
+    source: MESH:D009529
+    target: UniProt:P54289
+  - key: decreases activity of
+    source: MESH:D009529
+    target: UniProt:Q01668
+  - key: participates in
+    source: UniProt:Q13936
+    target: GO:0070509
+  - key: participates in
+    source: UniProt:Q08289
+    target: GO:0070509
+  - key: participates in
+    source: UniProt:P54289
+    target: GO:0070509
+  - key: participates in
+    source: UniProt:Q01668
+    target: GO:0070509
+  - key: contributes to
+    source: GO:0070509
+    target: GO:0045907
+  - key: negatively regulates
+    source: GO:0045907
+    target: GO:0008015
+  - key: negatively correlated with
+    source: GO:0008015
+    target: MESH:D000787
+multigraph: true
+nodes:
+  - id: MESH:D009529
+    label: Drug
+    name: Nicardipine
+  - id: UniProt:Q13936
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1C
+  - id: UniProt:Q08289
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit beta-2
+  - id: UniProt:P54289
+    label: Protein
+    name: Voltage-dependent calcium channel subunit alpha-2/delta-1
+  - id: UniProt:Q01668
+    label: Protein
+    name: Voltage-dependent L-type calcium channel subunit alpha-1D
+  - id: GO:0070509
+    label: BiologicalProcess
+    name: Transmembrane calcium influx
+  - id: GO:0045907
+    label: BiologicalProcess
+    name: Positive regulation of vasoconstriction
+  - id: GO:0008015
+    label: BiologicalProcess
+    name: Blood circulation
+  - id: MESH:D000787
+    label: Disease
+    name: Angina pectoris
+references:
+  - https://go.drugbank.com/drugs/DB00622#BE0000430

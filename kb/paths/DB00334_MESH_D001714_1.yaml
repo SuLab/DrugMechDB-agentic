@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00334_MESH_D001714_1
+  disease: Bipolar Disorder
+  disease_mesh: MESH:D001714
+  drug: Olanzapine
+  drug_mesh: MESH:D000077152
+  drugbank: DB:DB00334
+links:
+  - key: decreases activity of
+    source: MESH:D000077152
+    target: UniProt:P14416
+  - key: decreases activity of
+    source: MESH:D000077152
+    target: UniProt:P28223
+  - key: positively correlated with
+    source: UniProt:P14416
+    target: MESH:D004298
+  - key: positively correlated with
+    source: UniProt:P28223
+    target: MESH:D012701
+  - key: correlated with
+    source: MESH:D004298
+    target: HP:0000716
+  - key: correlated with
+    source: MESH:D012701
+    target: HP:0000716
+  - key: contributes to
+    source: HP:0000716
+    target: MESH:D001714
+multigraph: true
+nodes:
+  - id: MESH:D000077152
+    label: Drug
+    name: Olanzapine
+  - id: UniProt:P14416
+    label: Protein
+    name: D(2) dopamine receptor
+  - id: UniProt:P28223
+    label: Protein
+    name: 5-hydroxytryptamine receptor 2A
+  - id: MESH:D004298
+    label: ChemicalSubstance
+    name: Dopamine
+  - id: MESH:D012701
+    label: ChemicalSubstance
+    name: Serotonin
+  - id: HP:0000716
+    label: PhenotypicFeature
+    name: Depression
+  - id: MESH:D001714
+    label: Disease
+    name: Bipolar Disorder
+references:
+  - https://go.drugbank.com/drugs/DB00334#mechanism-of-action
+  - https://www.uniprot.org/uniprot/P14416#function
+  - https://www.uniprot.org/uniprot/P28223#function
+  - https://en.wikipedia.org/wiki/Bipolar_disorder

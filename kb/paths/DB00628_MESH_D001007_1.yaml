@@ -1,0 +1,58 @@
+directed: true
+graph:
+  _id: DB00628_MESH_D001007_1
+  disease: Anxiety
+  disease_mesh: MESH:D001007
+  drug: Clorazepate Dipotassium
+  drug_mesh: MESH:D003009
+  drugbank: DB:DB00628
+links:
+  - key: has metabolite
+    source: MESH:D003009
+    target: MESH:D003708
+  - key: increases activity of
+    source: MESH:D003708
+    target: InterPro:IPR006028
+  - key: positively regulates
+    source: InterPro:IPR006028
+    target: GO:0007214
+  - key: negatively regulates
+    source: GO:0007214
+    target: HP:0100852
+  - key: negatively regulates
+    source: GO:0007214
+    target: MESH:D007319
+  - key: positively correlated with
+    source: HP:0100852
+    target: MESH:D001007
+  - key: positively correlated with
+    source: MESH:D007319
+    target: MESH:D001007
+multigraph: true
+nodes:
+  - id: MESH:D003009
+    label: Drug
+    name: Clorazepate Dipotassium
+  - id: MESH:D003708
+    label: ChemicalSubstance
+    name: Nordazepam
+  - id: InterPro:IPR006028
+    label: GeneFamily
+    name: Gamma-aminobutyric acid A receptor/Glycine receptor alpha
+  - id: GO:0007214
+    label: BiologicalProcess
+    name: gamma-aminobutyric acid signaling pathway
+  - id: HP:0100852
+    label: PhenotypicFeature
+    name: Abnormal fear/anxiety-related behavior
+  - id: MESH:D007319
+    label: Disease
+    name: Sleep Initiation and Maintenance Disorders
+  - id: MESH:D001007
+    label: Disease
+    name: Anxiety
+references:
+  - https://go.drugbank.com/drugs/DB00628#mechanism-of-action
+  - https://drugs.ncats.io/substances?q=%22CLORAZEPATE%22
+  - https://en.wikipedia.org/wiki/Clorazepate#Pharmacology
+  - https://en.wikipedia.org/wiki/Anxiety
