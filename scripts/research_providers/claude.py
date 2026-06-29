@@ -25,7 +25,7 @@ import re
 
 from .base import BaseProvider, ResearchDossier
 
-DEFAULT_MODEL = "claude-opus-4-5"
+DEFAULT_MODEL = "claude-opus-4-8"
 DEFAULT_MAX_USES = 8           # web_search calls per research run
 DEFAULT_MAX_TOKENS = 4096
 

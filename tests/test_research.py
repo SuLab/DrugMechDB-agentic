@@ -67,7 +67,7 @@ def test_write_load_roundtrip(monkeypatch, tmp_path) -> None:
     monkeypatch.setattr(cache_mod, "CACHE_DIR", tmp_path)
     d = ResearchDossier(
         provider="claude",
-        model="claude-opus-4-5",
+        model="claude-opus-4-8",
         drug="Aspirin",
         disease="Myocardial Infarction",
         query="a test query",

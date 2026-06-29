@@ -37,6 +37,7 @@ Usage:
     python scripts/pubmed_fetch.py probe  PMID:35569550                    # full-text availability
     python scripts/pubmed_fetch.py fetch  PMID:35569550 --fulltext         # escalate to full text
     python scripts/pubmed_fetch.py info   PMID:35569550                    # show cached state
+    python scripts/pubmed_fetch.py strip-fulltext --all                    # revert full_text -> abstract (pre-PR)
 """
 
 from __future__ import annotations
@@ -56,8 +57,16 @@ import urllib.request
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
+import yaml
+
 REPO = Path(__file__).resolve().parent.parent
 CACHE_DIR = REPO / "references_cache"
+
+# Separates the prepended PubMed abstract from the open-access full-text body
+# inside a full_text cache file. It lives in the `## Content` body (so the
+# verbatim matcher still sees one searchable blob) and lets `strip-fulltext`
+# cleanly revert a file to abstract-only, keeping all metadata, before a PR.
+FULLTEXT_MARKER = "## Full Text"
 
 EUTILS_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 EUROPEPMC_BASE = "https://www.ebi.ac.uk/europepmc/webservices/rest"
@@ -248,6 +257,8 @@ def _write_cache(
         lines.append(f"year: '{record['year']}'")
     if record.get("doi"):
         lines.append(f"doi: {record['doi']}")
+    if record.get("pmcid"):
+        lines.append(f"pmcid: {record['pmcid']}")
     if record.get("retracted"):
         lines.append("retracted: true")
     if record.get("corrections_in"):
@@ -566,6 +577,55 @@ def _fetch_efetch_pmc(pmcid: str) -> str | None:
         return None
 
 
+def _assemble_fulltext(pmid_bare: str) -> dict:
+    """Probe + fetch + normalize open-access full text for one PMID, IN MEMORY.
+
+    Does NOT touch the cache — both the cache-writing path (`fetch_fulltext_one`)
+    and the no-write critic path (`fetch_fulltext_text`) build on this. The PubMed
+    abstract is prepended, separated from the body by FULLTEXT_MARKER, so the cache
+    file supersets the abstract tier (prior abstract-grounded snippets keep
+    validating) and the abstract can be cleanly recovered on strip.
+    Precedence: Europe PMC -> PubTator3 -> efetch-pmc. Returns a dict with
+    `body`/`source`/`license`/`pmcid`/`meta`/`content_hash`, or `{'error': ...}`.
+    """
+    pr = probe(pmid_bare)
+    if pr.get("error"):
+        return {"error": f"probe failed: {pr['error']}"}
+    if not pr.get("fulltext_available"):
+        return {"error": "no open-access full text available",
+                "pmcid": pr.get("pmcid"), "is_open_access": pr.get("is_open_access")}
+
+    pmcid = pr.get("pmcid")
+    body = None
+    source = None
+    if pmcid:
+        body = _fetch_jats_europepmc(pmcid)
+        source = "europepmc" if body else None
+    if not body:
+        body = _fetch_pubtator3(pmid_bare)
+        source = "pubtator3" if body else None
+    if not body and pmcid:
+        body = _fetch_efetch_pmc(pmcid)
+        source = "efetch_pmc" if body else None
+
+    if not body or len(body) < 200:
+        return {"error": "full-text fetch returned no usable body", "pmcid": pmcid}
+
+    meta = _fetch_pubmed_record(pmid_bare) or {"pmid": pmid_bare}
+    abstract = meta.get("abstract")
+    full_body = (abstract + "\n\n" + FULLTEXT_MARKER + "\n\n" + body) if abstract else body
+    return {
+        "body": full_body,
+        "fulltext_only": body,
+        "abstract": abstract,
+        "source": source,
+        "license": pr.get("license"),
+        "pmcid": pmcid,
+        "meta": meta,
+        "content_hash": hashlib.sha256(full_body.encode("utf-8")).hexdigest()[:16],
+    }
+
+
 def fetch_fulltext_one(pmid: str, force: bool = False, offline: bool = False) -> dict:
     """Escalate to open-access full text. Writes an in-place full_text cache with
     the PubMed abstract prepended. Precedence: Europe PMC -> PubTator3 -> efetch-pmc."""
@@ -580,42 +640,121 @@ def fetch_fulltext_one(pmid: str, force: bool = False, offline: bool = False) ->
             return {"pmid": bare, "cached": True, "stale": True, "path": str(cache_file)}
         return {"pmid": bare, "error": "offline and not cached"}
 
-    pr = probe(bare)
-    if pr.get("error"):
-        return {"pmid": bare, "error": f"probe failed: {pr['error']}"}
-    if not pr.get("fulltext_available"):
-        return {"pmid": bare, "error": "no open-access full text available",
-                "pmcid": pr.get("pmcid"), "is_open_access": pr.get("is_open_access")}
+    asm = _assemble_fulltext(bare)
+    if asm.get("error"):
+        return {"pmid": bare, **{k: asm[k] for k in ("error", "pmcid", "is_open_access") if k in asm}}
 
-    pmcid = pr.get("pmcid")
-    body = None
-    source = None
-    if pmcid:
-        body = _fetch_jats_europepmc(pmcid)
-        source = "europepmc" if body else None
-    if not body:
-        body = _fetch_pubtator3(bare)
-        source = "pubtator3" if body else None
-    if not body and pmcid:
-        body = _fetch_efetch_pmc(pmcid)
-        source = "efetch_pmc" if body else None
+    meta = asm["meta"]
+    meta["fulltext_source"] = asm["source"]
+    meta["license"] = asm["license"]
+    meta["content_hash"] = asm["content_hash"]
+    if asm.get("pmcid"):
+        meta["pmcid"] = asm["pmcid"]
 
-    if not body or len(body) < 200:
-        return {"pmid": bare, "error": "full-text fetch returned no usable body", "pmcid": pmcid}
-
-    # Fetch the canonical PubMed record so the full-text file supersets the
-    # abstract tier (prior abstract-grounded snippets keep validating).
-    meta = _fetch_pubmed_record(bare) or {"pmid": bare}
-    abstract = meta.get("abstract")
-    full_body = (abstract + "\n\n" + body) if abstract else body
-    meta["fulltext_source"] = source
-    meta["license"] = pr.get("license")
-    meta["content_hash"] = hashlib.sha256(full_body.encode("utf-8")).hexdigest()[:16]
-
-    written = _write_cache(bare, meta, content_type="full_text", body=full_body)
+    written = _write_cache(bare, meta, content_type="full_text", body=asm["body"])
     return {"pmid": bare, "cached": False, "path": str(written),
-            "content_type": "full_text", "fulltext_source": source,
-            "license": pr.get("license"), "retracted": meta.get("retracted", False)}
+            "content_type": "full_text", "fulltext_source": asm["source"],
+            "license": asm["license"], "retracted": meta.get("retracted", False)}
+
+
+# ---------------------------------------------------------------------------
+# In-memory readers (NO cache write) — for the semantic critic, whose independent
+# reading must never land in the committed references_cache/ (it would bias the
+# curator and bloat the repo). These return text to the caller and persist nothing.
+# ---------------------------------------------------------------------------
+
+def fetch_abstract_text(pmid: str) -> dict:
+    """In-memory PubMed abstract for one PMID. NEVER writes the cache."""
+    bare = _normalize_pmid(pmid)
+    rec = _fetch_pubmed_record(bare)
+    if rec is None:
+        return {"pmid": bare, "error": "fetch failed or no record returned by PubMed"}
+    return {"pmid": bare, "title": rec.get("title"), "abstract": rec.get("abstract"),
+            "journal": rec.get("journal"), "year": rec.get("year"),
+            "authors": rec.get("authors"), "doi": rec.get("doi"),
+            "retracted": rec.get("retracted", False)}
+
+
+def fetch_fulltext_text(pmid: str) -> dict:
+    """In-memory open-access full text for one PMID. NEVER writes the cache."""
+    bare = _normalize_pmid(pmid)
+    asm = _assemble_fulltext(bare)
+    if asm.get("error"):
+        return {"pmid": bare, "error": asm["error"], "pmcid": asm.get("pmcid")}
+    meta = asm.get("meta") or {}
+    return {"pmid": bare, "title": meta.get("title"), "body": asm["body"],
+            "source": asm["source"], "license": asm["license"],
+            "retracted": meta.get("retracted", False)}
+
+
+# ---------------------------------------------------------------------------
+# strip-fulltext: revert a full_text cache to abstract-only, KEEPING metadata.
+# Run before opening a PR so the committed corpus never carries full-text bodies
+# (verbatim is enforced once at curation; CI re-checks the source-free layers).
+# ---------------------------------------------------------------------------
+
+def _parse_frontmatter(path: Path) -> dict:
+    """Parse the YAML frontmatter block of a cache file into a dict."""
+    try:
+        text = path.read_text(encoding="utf-8")
+    except Exception:
+        return {}
+    if not text.startswith("---"):
+        return {}
+    try:
+        return yaml.safe_load(text.split("---", 2)[1]) or {}
+    except Exception:
+        return {}
+
+
+def strip_fulltext_one(pmid: str, *, offline: bool = False) -> dict:
+    """Revert one full_text cache file to abstract-only.
+
+    Drops everything from FULLTEXT_MARKER onward plus the full-text-only metadata
+    (fulltext_source, license, content_hash) while preserving title/authors/journal/
+    year/doi/pmcid/retraction. No-op for abstract-only (or missing) files. For legacy
+    full_text files written before the marker existed, the abstract is recovered by
+    re-fetching the PubMed record (skipped offline)."""
+    bare = _normalize_pmid(pmid)
+    path = cache_path(bare)
+    if not path.exists():
+        return {"pmid": bare, "skipped": "not cached"}
+
+    fm = _parse_frontmatter(path)
+    if fm.get("content_type") != "full_text":
+        return {"pmid": bare, "skipped": "not full_text"}
+
+    text = path.read_text(encoding="utf-8")
+    body = text.split("## Content", 1)[1].strip() if "## Content" in text else ""
+    if FULLTEXT_MARKER in body:
+        abstract = body.split(FULLTEXT_MARKER, 1)[0].strip()
+    else:
+        # Legacy full_text with no marker: recover the abstract from PubMed.
+        if offline:
+            return {"pmid": bare, "skipped": "legacy full_text, no marker, offline — left as-is"}
+        rec = _fetch_pubmed_record(bare)
+        abstract = (rec or {}).get("abstract") or ""
+
+    record = {
+        "title": fm.get("title"), "authors": fm.get("authors"),
+        "journal": fm.get("journal"), "year": fm.get("year"),
+        "doi": fm.get("doi"), "pmcid": fm.get("pmcid"),
+        "retracted": fm.get("retracted"), "corrections_in": fm.get("corrections_in"),
+        "abstract": abstract,
+    }
+    _write_cache(bare, record, content_type="abstract", body=abstract or None)
+    return {"pmid": bare, "stripped": True, "path": str(path),
+            "had_abstract": bool(abstract)}
+
+
+def strip_all_fulltext(*, offline: bool = False) -> list[dict]:
+    """Strip every full_text cache file in references_cache/ to abstract-only."""
+    out = []
+    for f in sorted(CACHE_DIR.glob("PMID_*.md")):
+        if _cache_content_type(f) == "full_text":
+            bare = f.stem.replace("PMID_", "")
+            out.append(strip_fulltext_one(bare, offline=offline))
+    return out
 
 
 def search(query: str, retmax: int = 20) -> list[str]:
@@ -671,6 +810,16 @@ def main() -> int:
     p_info.add_argument("pmid")
     p_info.add_argument("--json", action="store_true")
 
+    p_strip = sub.add_parser(
+        "strip-fulltext",
+        help="Revert full_text cache(s) to abstract-only, keeping metadata (run pre-PR)")
+    p_strip.add_argument("pmids", nargs="*", help="PMIDs to strip; omit and pass --all for every full_text file")
+    p_strip.add_argument("--all", action="store_true", dest="all_ft",
+                         help="Strip every full_text file in references_cache/")
+    p_strip.add_argument("--offline", action="store_true",
+                         help="Don't re-fetch to recover abstracts for marker-less legacy files")
+    p_strip.add_argument("--json", action="store_true")
+
     args = parser.parse_args()
 
     if args.cmd == "search":
@@ -720,6 +869,23 @@ def main() -> int:
             print(json.dumps(out, indent=2))
         else:
             print(out)
+        return 0
+
+    if args.cmd == "strip-fulltext":
+        if args.all_ft:
+            results = strip_all_fulltext(offline=args.offline)
+        elif args.pmids:
+            results = [strip_fulltext_one(p, offline=args.offline) for p in args.pmids]
+        else:
+            parser.error("strip-fulltext needs PMIDs or --all")
+        if args.json:
+            print(json.dumps(results, indent=2))
+        else:
+            for r in results:
+                if r.get("stripped"):
+                    print(f"STRIPPED PMID:{r['pmid']}  (abstract kept: {r['had_abstract']})")
+                else:
+                    print(f"SKIPPED  PMID:{r['pmid']}  ({r.get('skipped')})")
         return 0
 
     parser.error("unknown cmd")

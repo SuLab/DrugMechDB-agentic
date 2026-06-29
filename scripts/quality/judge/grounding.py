@@ -72,9 +72,15 @@ def _cache_put(key: str, value: dict) -> None:
 
 # ── read_source ───────────────────────────────────────────────────────────────
 
-def read_source(reference: str, snippet: str | None = None, window: int = 400) -> str:
+def read_source(reference: str, snippet: str | None = None, window: int = 400,
+                allow_network: bool = True) -> str:
     """Return the cited source's content + whether `snippet` is verbatim-present
-    (under Layer-4 normalization) and its surrounding context."""
+    (under Layer-4 normalization) and its surrounding context.
+
+    `allow_network=False` makes this a pure read of the committed references_cache/
+    (no fetch_one fallback, which would WRITE the cache). The semantic critic uses
+    this mode to verify the curator's own snippet without ever writing the curator's
+    cache — its independent reading goes through the in-memory tools below instead."""
     try:
         bare = pf._normalize_pmid(reference)
     except Exception:
@@ -82,6 +88,10 @@ def read_source(reference: str, snippet: str | None = None, window: int = 400) -
 
     cache_file = pf.cache_path(bare)
     if not cache_file.exists():
+        if not allow_network:
+            return (f"read_source: PMID:{bare} is not in the committed references_cache/. "
+                    "The critic does not fetch into the curator's cache; use read_abstract / "
+                    "read_fulltext for independent reading instead.")
         # Best-effort fetch (abstract tier). May fail offline / paywalled.
         res = pf.fetch_one(reference)
         if res.get("error") and not cache_file.exists():
@@ -224,6 +234,59 @@ def _chembl_target_name(target_chembl_id: str) -> str | None:
     return pref
 
 
+# ── independent in-memory reading (for the semantic critic) ─────────────────────
+#
+# These let the critic widen its knowledge BEYOND the curator's cited papers, from
+# real retrieved text (never its own training). Crucially they read IN MEMORY and
+# NEVER write references_cache/ — so the critic can never bias or pollute the
+# curator's committed evidence base. Nothing here is persisted to the repo.
+
+def search_pubmed(query: str, max_results: int = 10) -> str:
+    """PubMed search for papers the curator may not have cited. Returns PMIDs only;
+    read the relevant ones with read_abstract / read_fulltext. Writes nothing."""
+    try:
+        ids = pf.search(query, retmax=max_results)
+    except Exception as e:
+        return f"search_pubmed: lookup failed ({e}); try a different query or abstain."
+    if not ids:
+        return f"search_pubmed: no results for {query!r}."
+    return (f"PubMed results for {query!r} ({len(ids)}): "
+            + ", ".join(f"PMID:{i}" for i in ids)
+            + "\nRead the ones relevant to the edge under review with read_abstract / read_fulltext.")
+
+
+def read_abstract(reference: str) -> str:
+    """In-memory PubMed abstract for any PMID (independent of the curator's cache).
+    Use to corroborate or challenge an edge with evidence the curator did not cite."""
+    try:
+        bare = pf._normalize_pmid(reference)
+    except Exception:
+        return f"read_abstract: '{reference}' is not a PMID."
+    r = pf.fetch_abstract_text(bare)
+    if r.get("error"):
+        return f"read_abstract PMID:{bare}: {r['error']}"
+    head = f"PMID:{bare}  {r.get('title')}  ({r.get('journal')}, {r.get('year')})"
+    if r.get("retracted"):
+        head += "  [RETRACTED — do not rely on this]"
+    return head + "\n\n" + (r.get("abstract") or "(no abstract available)")
+
+
+def read_fulltext(reference: str, max_chars: int = 6000) -> str:
+    """In-memory open-access full text for any PMID (independent of the curator's
+    cache). Use when an abstract is insufficient to judge the edge. Writes nothing."""
+    try:
+        bare = pf._normalize_pmid(reference)
+    except Exception:
+        return f"read_fulltext: '{reference}' is not a PMID."
+    r = pf.fetch_fulltext_text(bare)
+    if r.get("error"):
+        return f"read_fulltext PMID:{bare}: {r['error']} (fall back to read_abstract or abstain)."
+    body = r.get("body") or ""
+    tail = "" if len(body) <= max_chars else f"\n[...truncated at {max_chars} chars...]"
+    flag = "  [RETRACTED — do not rely on this]" if r.get("retracted") else ""
+    return f"PMID:{bare}  {r.get('title')}  (full text via {r.get('source')}){flag}\n\n" + body[:max_chars] + tail
+
+
 # ── tool registry helpers (consumed by runner.py) ──────────────────────────────
 
 def default_tools() -> list:
@@ -261,5 +324,95 @@ def default_tools() -> list:
                 "required": ["drug"],
             },
             fn=lambda a: chembl_get_mechanism(a.get("drug", "")),
+        ),
+    ]
+
+
+def critic_tools() -> list:
+    """Tool set for the semantic critic (runs after deterministic QC passes).
+
+    Differs from default_tools() in two firewall-critical ways:
+      - read_source is READ-ONLY (allow_network=False): the critic verifies the
+        curator's own snippet against the committed cache but never fetches into /
+        writes that cache.
+      - it adds search_pubmed / read_abstract / read_fulltext, which read IN MEMORY
+        and persist nothing — the critic's independent reading can never land in the
+        repo or bias the curator. cite-or-abstain still holds: a judgment must rest on
+        ChEMBL or on a source the critic actually retrieved here, or it abstains.
+    """
+    from .backends import Tool
+    return [
+        Tool(
+            name="read_source",
+            description=(
+                "Read the CURATOR'S cited source (by PMID) from the committed cache and check "
+                "whether a snippet is verbatim-present (Layer-4 normalization), with surrounding "
+                "context. Read-only: confirms the curator's evidence; does NOT fetch new papers."
+            ),
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "reference": {"type": "string", "description": "PMID curie, e.g. 'PMID:12345678'"},
+                    "snippet": {"type": "string", "description": "the snippet text to locate (optional)"},
+                },
+                "required": ["reference"],
+            },
+            fn=lambda a: read_source(a.get("reference", ""), a.get("snippet"), allow_network=False),
+        ),
+        Tool(
+            name="chembl_get_mechanism",
+            description=(
+                "ChEMBL's expert-curated drug->target->action mechanism records for a drug name. "
+                "The strongest INDEPENDENT grounding for a Drug->protein-target edge."
+            ),
+            input_schema={
+                "type": "object",
+                "properties": {"drug": {"type": "string", "description": "drug name or synonym"}},
+                "required": ["drug"],
+            },
+            fn=lambda a: chembl_get_mechanism(a.get("drug", "")),
+        ),
+        Tool(
+            name="search_pubmed",
+            description=(
+                "Search PubMed for papers BEYOND the curator's cited set, to corroborate or "
+                "challenge an edge or the overall mechanism. Returns PMIDs; read them with "
+                "read_abstract / read_fulltext. Reads in memory; writes nothing."
+            ),
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "query": {"type": "string", "description": "PubMed query string"},
+                    "max_results": {"type": "integer", "description": "cap on PMIDs (default 10)"},
+                },
+                "required": ["query"],
+            },
+            fn=lambda a: search_pubmed(a.get("query", ""), int(a.get("max_results", 10) or 10)),
+        ),
+        Tool(
+            name="read_abstract",
+            description=(
+                "Read any PMID's abstract IN MEMORY (independent of the curator's cache). Use to "
+                "ground a judgment in evidence the curator did not cite. Writes nothing."
+            ),
+            input_schema={
+                "type": "object",
+                "properties": {"reference": {"type": "string", "description": "PMID curie"}},
+                "required": ["reference"],
+            },
+            fn=lambda a: read_abstract(a.get("reference", "")),
+        ),
+        Tool(
+            name="read_fulltext",
+            description=(
+                "Read any PMID's open-access FULL TEXT in memory (independent of the curator's "
+                "cache) when an abstract is insufficient. Writes nothing."
+            ),
+            input_schema={
+                "type": "object",
+                "properties": {"reference": {"type": "string", "description": "PMID curie"}},
+                "required": ["reference"],
+            },
+            fn=lambda a: read_fulltext(a.get("reference", "")),
         ),
     ]

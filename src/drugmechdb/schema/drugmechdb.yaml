@@ -113,6 +113,32 @@ enums:
         title: Other
         description: Evidence not fitting the categories above.
 
+  ReviewVerdictEnum:
+    description: >-
+      The semantic critic's disposition for a reviewed path. The critic is a
+      grounded, cite-or-abstain reviewer that runs after the deterministic QC
+      gate passes; it proposes, the curator/human disposes.
+    permissible_values:
+      ACCEPT:
+        title: Accept
+        description: The path's evidence and mechanism are coherent; no re-curation needed.
+      RE_CURATE:
+        title: Re-curate
+        description: >-
+          One or more edges are flagged (the snippet does not establish the edge, or
+          the chain conflicts with independent sources). Send back to /curate. The
+          critic states WHAT is wrong, never which source to use.
+      ESCALATE:
+        title: Escalate to human
+        description: >-
+          Re-curation was attempted up to the round cap and the conflict persists,
+          or the issue is curator territory. Hold for human review.
+      ABSTAIN:
+        title: Abstain
+        description: >-
+          The critic could not independently ground a judgment (no external referent
+          available). No verdict is asserted.
+
 # ── Slots ─────────────────────────────────────────────────────────────────────
 
 slots:
@@ -292,6 +318,82 @@ slots:
       Optional curator commentary explaining why this evidence supports
       or refutes the edge claim.
 
+  # ── SemanticReview slots (committed critic-provenance sidecar) ───────────────
+
+  record_id:
+    range: string
+    description: The _id of the MechanisticPath this review pertains to.
+
+  reviewed_at:
+    range: string
+    description: ISO-8601 UTC timestamp when the semantic critic ran.
+
+  critic_model:
+    range: string
+    description: Model id of the semantic critic (e.g. claude-opus-4-8).
+
+  critic_provider:
+    range: string
+    description: Backend provider of the critic (e.g. anthropic).
+
+  rounds:
+    range: integer
+    description: Which curate↔critic round produced this review (1-based).
+
+  overall_verdict:
+    range: ReviewVerdictEnum
+    description: The critic's disposition for the whole path.
+
+  overall_summary:
+    range: string
+    description: One-paragraph rationale for the overall verdict.
+
+  consulted_independent_sources:
+    range: string
+    multivalued: true
+    description: >-
+      Identifiers (PMID / DOI / ChEMBL) the critic retrieved that the curator did
+      NOT cite. This is the audit trail proving the critic grounded its judgment in
+      evidence BEYOND the curator's papers (independence by grounding, not vendor).
+      The source bodies are never committed — only these identifiers.
+
+  edge_reviews:
+    range: EdgeReview
+    multivalued: true
+    inlined_as_list: true
+    description: Per-edge findings from the critic.
+
+  # ── EdgeReview slots ─────────────────────────────────────────────────────────
+
+  edge:
+    range: string
+    description: The reviewed edge, rendered "Subject --predicate--> Object".
+
+  rederived_supports:
+    range: EvidenceSupportEnum
+    description: The support level the critic re-derived independently of the curator's label.
+
+  agrees_with_curator:
+    range: boolean
+    description: Whether the critic's re-derived support matches the curator's asserted support.
+
+  issue:
+    range: string
+    description: >-
+      Plain description of what is wrong with this edge (the flag shown to the
+      curation agent). States the problem, NOT the fix and NOT which source to use —
+      so re-curation re-sources independently.
+
+  grounding:
+    range: string
+    description: >-
+      The independent referent the critic used to judge this edge (audit detail in
+      the sidecar; deliberately NOT surfaced to the curation agent).
+
+  confidence:
+    range: string
+    description: The critic's confidence in this edge finding (high / medium / low).
+
 # ── Classes ───────────────────────────────────────────────────────────────────
 
 classes:
@@ -411,3 +513,43 @@ classes:
         required: true
       explanation:
         required: false
+
+  SemanticReview:
+    description: >-
+      Committed provenance for one run of the semantic critic over a MechanisticPath.
+      Lives in a sidecar document (provenance/<record_id>.semantic_review.yaml), NOT
+      inside the canonical kb/paths record, so the gold path stays deterministic. It
+      records what the critic concluded and every independent source it consulted —
+      the paper bodies themselves are read in-memory and never committed.
+    slots:
+      - record_id
+      - reviewed_at
+      - critic_model
+      - critic_provider
+      - rounds
+      - overall_verdict
+      - overall_summary
+      - consulted_independent_sources
+      - edge_reviews
+    slot_usage:
+      record_id:
+        required: true
+      overall_verdict:
+        required: true
+
+  EdgeReview:
+    description: >-
+      The semantic critic's finding for a single edge: its independently re-derived
+      support level, whether that agrees with the curator, and — when flagged — a
+      plain description of the problem (no fix, no source named).
+    slots:
+      - edge
+      - reference
+      - rederived_supports
+      - agrees_with_curator
+      - issue
+      - grounding
+      - confidence
+    slot_usage:
+      edge:
+        required: true

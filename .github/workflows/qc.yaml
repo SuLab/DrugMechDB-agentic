@@ -1,16 +1,26 @@
 name: QC gate
 
-# Run the 4-layer QC gate (scripts/qc.py) on the
-# kb/paths/*.yaml files changed by a PR, and block merge on failure.
+# Deterministic, offline QC gate (scripts/qc.py) for path records.
 #
-# Scope (intentionally narrow until the choices here are confirmed with the maintainers):
-#   - Triggers only on PRs targeting the default branch that touch kb/paths/.
-#   - Validates only the *changed* path files, not the whole 4,846-record corpus.
-#   - Layer 4 runs with --offline: PubMed snippets are checked against the
-#     committed references_cache/ (deterministic, no network/secrets/rate-limits).
-#     Convention: a PR adding evidence must commit its references_cache/ entry.
-#   - A failing gate can be overridden by a maintainer applying the
-#     `validation-override` label to the PR.
+# What CI checks (and, deliberately, what it does NOT):
+#   - Layers run: 1 (schema), 2 (node ontology), 3 (predicate enum).
+#   - Layer 4 (verbatim snippet check) is SKIPPED via --no-verbatim. Verbatim is
+#     enforced once, at curation time, against the full-text-bearing cache; the
+#     full text is then deleted before the PR, so the committed corpus no longer
+#     carries the bodies needed to re-run it. The remaining layers are source-free
+#     and fully reproducible offline.
+#   - The semantic critic does NOT run in CI: it is non-deterministic and its
+#     source papers are read in-memory at curation time and never committed.
+#
+# Two scopes:
+#   - "Changed paths" (BLOCKING): every record a PR adds/modifies must pass
+#     layers 1-3. Because those layers are per-record (no cross-file coupling),
+#     this strict gate guarantees a PR can never introduce a new layer-1/2/3
+#     failure — the corpus failure count can only go down over time.
+#   - "Corpus health" (NON-BLOCKING): runs layers 1-3 over all kb/paths so
+#     maintainers can watch the pre-existing legacy debt (known node-ontology
+#     mismatches) trend toward zero. Once it reaches zero this can be promoted
+#     to a blocking full-corpus gate.
 
 on:
   pull_request:
@@ -29,7 +39,7 @@ permissions:
 
 jobs:
   qc-gate:
-    name: QC gate on changed paths
+    name: QC gate (changed paths, blocking)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout (full history for base..head diff)
@@ -44,13 +54,11 @@ jobs:
           cache: pip
 
       - name: Install project + dev tools
-        # Option-A pyproject layout means the documented extras install works
-        # on the runner's default pip — no special pip version required.
         run: |
           python -m pip install --upgrade pip
           pip install -e ".[dev]"
 
-      - name: QC gate
+      - name: QC gate (changed paths)
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
@@ -70,12 +78,13 @@ jobs:
             exit 0
           fi
 
-          echo "Validating ${#FILES[@]} changed path file(s):"
+          echo "Validating ${#FILES[@]} changed path file(s) on layers 1-3 (no verbatim):"
           printf '  %s\n' "${FILES[@]}"
           echo
 
           set +e
-          python scripts/qc.py --offline "${FILES[@]}"
+          # --no-verbatim: skip Layer 4 (full text is deleted before the PR).
+          python scripts/qc.py --no-verbatim --offline "${FILES[@]}"
           code=$?
           set -e
 
@@ -87,5 +96,15 @@ jobs:
             echo "::error::QC gate failed (exit $code). Fix the flagged path(s), or apply the 'validation-override' label (maintainer approval) to bypass."
             exit "$code"
           fi
-
           echo "QC gate passed."
+
+      - name: Corpus health (all paths, non-blocking)
+        if: always()
+        run: |
+          set +e
+          echo "Layers 1-3 (no verbatim) over the full corpus — informational only."
+          echo "Pre-existing legacy node-ontology debt is expected here and does NOT block the PR;"
+          echo "the changed-paths gate above guarantees this PR adds none."
+          python scripts/qc.py --no-verbatim --offline kb/paths/
+          echo "(corpus-health step is non-blocking)"
+          exit 0

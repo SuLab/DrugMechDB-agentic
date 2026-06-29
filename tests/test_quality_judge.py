@@ -222,7 +222,7 @@ def _mock_tool():
 
 
 def test_anthropic_backend_tool_loop_monkeypatched(monkeypatch):
-    import anthropic
+    anthropic = pytest.importorskip("anthropic", reason="install the 'judge' extra to test the live backend")
     from judge.backends import AnthropicBackend
 
     class FakeMessages:
@@ -248,7 +248,7 @@ def test_anthropic_backend_tool_loop_monkeypatched(monkeypatch):
 
 
 def test_openai_backend_tool_loop_monkeypatched(monkeypatch):
-    import openai
+    openai = pytest.importorskip("openai", reason="install the 'judge' extra to test the live backend")
     from judge.backends import OpenAIBackend
 
     class FakeCompletions:

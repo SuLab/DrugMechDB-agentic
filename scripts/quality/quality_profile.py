@@ -50,25 +50,28 @@ def _py() -> str:
 # ── backend selection (independence: different family than the curator) ─────────
 
 def make_backend(provider: str | None = None) -> tuple[Backend | None, str]:
-    """Pick a judge backend. Returns (backend, note). Curator defaults to Claude, so we
-    prefer OpenAI for cross-family independence; fall back to a non-Opus Claude model with
-    a reduced-independence note; None when no key is available."""
+    """Pick a judge backend. Returns (backend, note); None when no key is available.
+
+    The project runs Anthropic-only, so the judge defaults to Claude Opus. Independence
+    from the curator comes from grounding — the judge must cite an external referent
+    (ChEMBL or the source text) or abstain — not from using a different model vendor;
+    judging on a different model than the curator (e.g. an Opus judge over a
+    Sonnet-curated path) adds a further decorrelation boost. OpenAI stays available as an
+    explicit opt-in (DMDB_JUDGE_PROVIDER=openai) for cross-family checking."""
     from judge.backends import AnthropicBackend, OpenAIBackend
     prov = provider or os.environ.get("DMDB_JUDGE_PROVIDER")
     has_a = bool(os.environ.get("ANTHROPIC_API_KEY"))
     has_o = bool(os.environ.get("OPENAI_API_KEY"))
 
-    if prov == "openai" or (prov is None and has_o):
+    if prov == "openai":
         if not has_o:
             return None, "OPENAI_API_KEY not set"
-        return OpenAIBackend(os.environ.get("DMDB_JUDGE_MODEL", "gpt-5")), "judge=openai (cross-family vs Claude curator)"
+        return OpenAIBackend(os.environ.get("DMDB_JUDGE_MODEL", "gpt-5")), "judge=openai (cross-family, explicit opt-in)"
     if prov == "anthropic" or (prov is None and has_a):
         if not has_a:
             return None, "ANTHROPIC_API_KEY not set"
-        model = os.environ.get("DMDB_JUDGE_MODEL", "claude-sonnet-4-6")
-        note = ("judge=anthropic; shares the curator's family — independence reduced. "
-                "Set OPENAI_API_KEY + DMDB_JUDGE_PROVIDER=openai for cross-family checking.")
-        return AnthropicBackend(model), note
+        model = os.environ.get("DMDB_JUDGE_MODEL", "claude-opus-4-8")
+        return AnthropicBackend(model), "judge=anthropic Opus; independence via grounding + cite-or-abstain"
     return None, "no judge API key (ANTHROPIC_API_KEY / OPENAI_API_KEY) — semantic layers not run"
 
 

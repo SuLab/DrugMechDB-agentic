@@ -1,12 +1,12 @@
 ---
-description: Curate a new DrugMechDB mechanistic path for a (Drug, Disease) pair. Optionally seed with an external research agent.
-argument-hint: <Drug> for <Disease> [using <provider>]
+description: Curate a new DrugMechDB mechanistic path for a (Drug, Disease) pair from PubMed evidence.
+argument-hint: <Drug> for <Disease>
 allowed-tools: Read, Edit, Write, Bash, Glob, Grep
 ---
 
 # /curate — Curate a new DrugMechDB mechanistic path
 
-**You are curating a single new mechanistic path connecting `$ARGUMENTS` in DrugMechDB.** The output is one YAML file under `kb/paths/` that passes all four QC layers under the `ai_curated` profile.
+**You are curating a single new mechanistic path connecting `$ARGUMENTS` in DrugMechDB.** The output is one YAML file under `kb/paths/` that (a) passes all four QC layers under the `ai_curated` profile and then (b) clears the **semantic critic** — an independent, grounded reviewer that runs after QC. Only after both pass do you delete the full text and open the PR.
 
 **Before doing anything else, read `AGENTS.md`** at the repo root. It defines the schema contract, ontology table, predicate vocabulary, evidence rules, and tool surface limits. The instructions below are a workflow on top of those rules — when in doubt, the rules in AGENTS.md win.
 
@@ -16,71 +16,40 @@ Follow these steps in order. Don't skip steps.
 
 ### 1. Parse the request
 
-The invocation has two shapes:
-
-- `/curate <Drug> for <Disease>` — direct PubMed-only curation. Skip step 4 (research provider).
-- `/curate <Drug> for <Disease> using <provider>` — seed the curation with an external research agent before hitting PubMed. `<provider>` is one of the names returned by `python scripts/research.py list`. Currently implemented: `claude`, `openai`. Stubs (raise NotImplementedError when invoked): `perplexity`, `asta`.
-
-Extract `Drug`, `Disease`, and `<provider>` (if given). Print all three back so the user can correct typos before you spend tokens.
+Extract `Drug` and `Disease` from `$ARGUMENTS` (e.g. `/curate Aspirin for Myocardial Infarction`). Print both back so the user can correct typos before you spend tokens.
 
 ### 2. Resolve identifiers
 
 - Drug → look up DrugBank ID (`DB:DB…`) and MESH ID (`MESH:D…` or `MESH:C…`). At least one must be available; both is better. Search `kb/paths/_index.yaml` first — if the drug is already in DrugMechDB, the IDs are right there.
-- Disease → MESH ID (`MESH:D…`). MONDO is not yet wired in v3.
+- Disease → MESH ID (`MESH:D…`).
 
-If you can't find either drug ID or the disease MESH, stop and ask the user.
+If you can't find either the drug ID or the disease MESH, stop and ask the user.
 
 ### 3. Pick the file index
 
 ```
-grep -l "_{drugbank}_{disease_mesh}_" kb/paths/ 2>/dev/null | wc -l
+ls kb/paths/ | grep "{drugbank}_{disease_mesh}_"
 ```
 
-If existing siblings are `_1`, `_2`, your new file is the next free index.
+If existing siblings are `_1`, `_2`, your new file is the next free index. Filename: `kb/paths/{drugbank_id}_{disease_mesh}_{N}.yaml`, e.g. `kb/paths/DB00945_MESH_D009203_3.yaml`. The graph `_id` matches the filename stem.
 
-Path filename: `kb/paths/{drugbank_id}_{disease_mesh}_{N}.yaml`, e.g. `kb/paths/DB00945_MESH_D009203_3.yaml`. The graph `_id` matches the filename stem.
+### 4. Find sources via PubMed
 
-### 4. (Optional) Run the external research agent
+You have **no web access** — your only sanctioned source of evidence is `scripts/pubmed_fetch.py` (NCBI / Europe PMC / PubTator3). Finding the right sources is your own job:
 
-**Skip this step if the user did not specify `using <provider>`.**
+1. **Brainstorm the established mechanism** from your own knowledge to form good search queries — but **do not cite PMIDs from memory.** Use your mechanistic understanding to choose search terms, never to invent a citation.
+2. **Search PubMed for real papers:**
+   ```
+   .venv-py310/bin/python scripts/pubmed_fetch.py search "{drug} {disease} mechanism" --max 30
+   ```
+   Run several searches with different terms (the drug's target, each intermediate step, the pathway) — iterate your queries when a result set is too narrow or off-topic. Favor mechanism-focused papers; avoid pure clinical-outcome trials unless they describe the MOA.
+3. **Fetch the abstracts you'll use:**
+   ```
+   .venv-py310/bin/python scripts/pubmed_fetch.py fetch PMID:xxx PMID:yyy …
+   ```
+   Abstracts land in `references_cache/PMID_*.md`. **Read each one fully** before drafting — extracting the right verbatim snippet later depends on having the abstract in your context now.
 
-If a provider was specified, run it now to seed step 5 with candidate PMIDs and a proposed mechanism topology:
-
-```
-.venv-py310/bin/python scripts/research.py run {provider} "{Drug}" "{Disease}"
-```
-
-The script writes a dossier to `research/{drug_slug}_{disease_slug}-{provider}.md` and prints the cached/fetched status. If a fresh cached dossier already exists (default TTL: 30 days), the run is a no-op and exits cleanly — that is the expected behavior, not an error.
-
-If the script reports `ERROR` (missing env var, unimplemented stub, network failure), surface that to the user and either:
-- Stop and ask whether to proceed without external research, or
-- Fall back automatically by treating step 4 as skipped (your judgment; favor stopping if the user explicitly requested a specific provider).
-
-**Read the dossier.** The frontmatter's `candidate_pmids` list is the starting set for step 5. The body's "Proposed mechanism summary" and "Mechanism graph proposal (advisory)" sections give topology hints — but they are **advisory only**.
-
-**The hard contract:** snippets in the dossier are NOT trustworthy. They were produced by an external agent that may paraphrase, summarize, or hallucinate. The only acceptable source for an `EvidenceItem.snippet` is the cached PubMed abstract fetched in step 5. If the dossier says PMID:23422285 contains the sentence "X acetylates COX-1", you must still fetch PMID:23422285 via `pubmed_fetch.py` and locate that exact sentence in the cached abstract before using it. If the sentence isn't there verbatim, find a different sentence (or a different PMID).
-
-### 5. Fetch PMID abstracts via PubMed
-
-Use the `scripts/pubmed_fetch.py` wrapper — this is the **only** sanctioned external source for evidence in v3, regardless of whether step 4 ran.
-
-If step 4 produced a dossier, start with the PMIDs it proposed:
-
-```
-.venv-py310/bin/python scripts/pubmed_fetch.py fetch PMID:xxx PMID:yyy …
-```
-
-Then expand with your own searches if the dossier's set is too narrow:
-
-```
-.venv-py310/bin/python scripts/pubmed_fetch.py search "{drug} {disease} mechanism" --max 30
-```
-
-If step 4 was skipped, run the search step yourself and pick 5–15 PMIDs that look mechanism-focused (avoid clinical trial outcome papers unless they describe MOA), then fetch them.
-
-Abstracts land in `references_cache/PMID_*.md`. **Read each one fully** before drafting — extracting the right verbatim snippet later depends on having the abstract in your context now. Drop dossier-proposed PMIDs that turn out to be irrelevant or unsupportive after you read them; the dossier is not authoritative.
-
-### 5.5 Escalate to full text only when an abstract is insufficient
+### 5. Escalate to full text only when an abstract is insufficient
 
 For an edge where no cached **abstract** has a verbatim supporting sentence, decide — per edge — whether to read full text. Don't read full text by default; it's slower and usually unnecessary.
 
@@ -95,7 +64,6 @@ For an edge where no cached **abstract** has a verbatim supporting sentence, dec
    .venv-py310/bin/python scripts/pubmed_fetch.py fetch PMID:xxx --fulltext
    ```
    This upgrades `references_cache/PMID_xxx.md` to `content_type: full_text` (abstract prepended). Re-read it, then snippet from the body. Cap with `--max-fulltext N` so you don't over-read.
-4. If full text still has no verbatim supporting sentence, record `NO_EVIDENCE` or drop the edge — never paraphrase.
 
 See AGENTS.md §4.4 for the `...`/`[...]` operators and the read-the-context guards (negation, wrong-drug, no bibliography matches).
 
@@ -103,16 +71,20 @@ See AGENTS.md §4.4 for the `...`/`[...]` operators and the read-the-context gua
 
 - Start the path at the drug node (`label: Drug`, prefix `MESH` or `DB`).
 - Walk through 2–6 intermediate biological entities (proteins, pathways, processes, phenotypes) toward the disease node (`label: Disease`, prefix `MESH`).
-- If step 4 ran, the dossier's mechanism graph proposal can suggest topology, but verify each step against an actual cached abstract before committing it. If a proposed edge can't be supported by a verbatim snippet, drop or reshape it.
 - Each edge:
   - `key`: pick from the canonical 67 in `src/drugmechdb/schema/biolink_predicates.yaml`.
   - `evidence`: ≥1 `EvidenceItem` with:
     - `reference: PMID:xxxxxxxx`
-    - `snippet:` **verbatim** substring of the cached source (abstract, or full text if you escalated in step 5.5) — copy/paste from `references_cache/`, never from the dossier.
-    - `supports: SUPPORT` (the default) or `PARTIAL` if the abstract is about a closely-related-but-different claim.
+    - `snippet:` **verbatim** substring of the cached source (abstract, or full text if you escalated) — copy/paste from `references_cache/`, never typed from memory.
+    - `supports: SUPPORT` (default) or `PARTIAL` if the abstract is about a closely-related-but-different claim.
     - `evidence_source: HUMAN_CLINICAL | MODEL_ORGANISM | IN_VITRO | COMPUTATIONAL | OTHER` — describes the cited paper's methodology, not yours.
 
-If you can't find a verbatim sentence for an edge, **drop the edge** (or pick a different intermediate node whose evidence you do have).
+**When an edge has no verbatim-supporting sentence**, in priority order:
+1. **Re-source** — try a different sentence, a different PMID, or escalate to full text (step 5) for that edge.
+2. **Retain-but-flag (essential edge).** If the edge is needed to keep the path connected drug→disease and you still can't find a verbatim snippet, **keep the edge** with `supports: NO_EVIDENCE` and an `explanation` naming the most-relevant papers that corroborate it. This holds the whole path out of the `ai_curated` profile and flags it for the QC judge / reviewer — it does **not** silently pass.
+3. **Drop — only if redundant.** Remove an edge *only* when it is a redundant shortcut or a non-converging branch whose removal leaves the path still connected.
+
+**Never** re-route to a different mechanism just to find something that connects (that invents an unproven path), **never** fabricate or paraphrase a snippet, and **never** ship a disconnected path.
 
 ### 7. Canonicalize predicates
 
@@ -133,33 +105,64 @@ All four layers must pass:
 - **Layer 1** (schema) — required fields present, types correct
 - **Layer 2** (node ontology) — every CURIE prefix matches its node label
 - **Layer 3** (predicate) — every edge key is in the enum
-- **Layer 4** (reference) — every snippet is verbatim in the cached abstract
+- **Layer 4** (reference) — every snippet is verbatim in the cached source
 
 ### 9. Iterate up to 3 times
 
 If any layer fails, look at the report, fix, and re-run. Maximum **3 retries** per AGENTS.md §5.
 
-If you exhaust the budget, write the final state of the file anyway and report **explicitly** in your summary:
+If you exhaust the budget, write the final state of the file anyway and report **explicitly**, with enough detail for a reviewer to act without re-deriving the problem:
 
-> Unresolved validation failures after 3 retries: Layer N — {error}
+> Unresolved validation failures after 3 retries:
+> - Layer N ({layer name}) — {exact validator error message}
+> - Offending edge: {source} --{key}--> {target}
+> - What you tried: {the snippet(s) / PMID(s) attempted}
+> - Suggested fix (if known): {e.g. the validator's fuzzy-match suggestion, or "needs a different source"}
 
-The user / curator decides whether to merge or fix manually.
+The user / curator (or the PR reviewer) decides whether to merge or fix manually.
 
-### 10. Report back
+### 10. Semantic critic gate (after QC passes)
+
+Once all four QC layers pass, the path is well-formed and every snippet is verbatim — but that is not yet *scientifically* vetted. Run the semantic critic:
+
+```
+.venv-py310/bin/python scripts/quality/critic.py {your_file} --round {N}
+```
+
+The critic re-derives each edge's support **independently** — grounding in ChEMBL and in papers it retrieves *itself*, i.e. evidence beyond the ones you cited — and judges the chain as a whole. It reads everything in memory and writes nothing to `references_cache/`; its audit (every source it consulted) lands in `provenance/{_id}.semantic_review.yaml`. It reports one verdict:
+
+- **ACCEPT** → proceed to step 11.
+- **RE_CURATE** → the critic prints **flagged edges** with *what* is wrong (it will **not** tell you which paper to use or the fix). Treat each flag as a fresh sourcing problem: go back to **step 6**, re-source/redraft the flagged edge(s) from PubMed yourself, re-run QC (step 8), then re-run the critic with `--round {N+1}`. **Cap: 3 rounds** (`--max-rounds 3`).
+- **ESCALATE / ABSTAIN** → the round cap was reached, a factual contradiction was found, or the critic couldn't independently ground a judgment. For each unresolved edge, set `supports: NO_EVIDENCE` with an `explanation`, and hand off to a human reviewer (do **not** open a clean PR).
+
+Never invent a different mechanism to satisfy a flag — re-source the *same* claim, or escalate.
+
+### 11. Delete full text, then open the PR
+
+The full text was only ever needed to verify snippets and ground the critic. Both are done, so it must not enter the committed repo:
+
+```
+.venv-py310/bin/python scripts/pubmed_fetch.py strip-fulltext --all
+```
+
+This reverts every `full_text` cache file to abstract-only, **keeping the abstract and all metadata** (title, authors, journal, year, DOI, PMCID, license). Re-run QC once more (`--no-verbatim` is what CI will use; locally a full `qc.py --profile ai_curated` should still pass on the abstracts). Then open the PR (`/create-pr`). CI re-checks Layers 1–3 on the committed corpus; it does **not** re-run verbatim (the source is gone) or the semantic critic (non-deterministic, already run here).
+
+### 12. Report back
 
 Final message to the user must include:
 
 - Path file written: `kb/paths/...`
 - Number of nodes, edges, and distinct PMIDs cited
 - Final QC result per layer
-- Retry count
-- **Research provider used** (if any) — and of the dossier's candidate PMIDs, how many were ultimately cited vs. dropped. This is how we measure provider quality over time.
-- If any layer is still failing: which layer, what error, what you tried
+- QC retry count **and** semantic-critic verdict + round count
+- The `provenance/{_id}.semantic_review.yaml` path and how many independent sources the critic consulted
+- Any edges left at `supports: NO_EVIDENCE` (flagged for review), and why
+- If anything is still failing or escalated: what, and what you tried
 
 ## Constraints
 
-- File writes: `kb/paths/`, `references_cache/`, and `research/` only. **Don't** modify the schema, scripts, or other paths.
-- Bash: only the commands listed in AGENTS.md §6 (which includes `scripts/research.py`).
-- Network: PubMed abstracts + open-access full text via `scripts/pubmed_fetch.py` (it contacts NCBI, Europe PMC, and PubTator3 — see AGENTS.md §6). External research providers via `scripts/research.py` (provider-specific API calls, only when explicitly invoked). **No WebFetch** to arbitrary domains.
-- The research dossier is **advisory**. Snippets, claims, and PMIDs from the dossier are all unverified until you confirm them against the cached PubMed abstract. Treat the dossier the way a careful reviewer treats a literature search result, not the way a citation manager treats a curated entry.
+- Direct file writes: `kb/paths/` only. `references_cache/` is written by `scripts/pubmed_fetch.py` (never hand-edit it — a pre-edit hook blocks that, which is what makes the verbatim check trustworthy), and `provenance/*.semantic_review.yaml` is written by `scripts/quality/critic.py` (never hand-edit it — it is the critic's audit trail). **Don't** modify the schema, scripts, or other paths.
+- You do **not** run the semantic critic's reasoning yourself. It is a separate, independent reviewer (`critic.py`); your job is to act on its flags by re-sourcing — never to argue with it or to read its sidecar to find the fix.
+- Bash: only the commands listed in AGENTS.md §6.
+- Network: PubMed abstracts + open-access full text via `scripts/pubmed_fetch.py` (it contacts NCBI, Europe PMC, and PubTator3 — see AGENTS.md §6). Your own PubMed search is the source-finding channel — **no WebFetch** and no other external calls.
 - If you find yourself wanting to paraphrase an abstract sentence to make a snippet "cleaner," stop — pick a different sentence instead. Layer 4 will reject paraphrases.

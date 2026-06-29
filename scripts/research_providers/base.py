@@ -18,7 +18,7 @@ class ResearchDossier:
     """
 
     provider: str                                # e.g. "claude"
-    model: str                                   # e.g. "claude-opus-4-7"
+    model: str                                   # e.g. "claude-opus-4-8"
     drug: str
     disease: str
     query: str                                   # the actual query string passed to the provider

@@ -126,6 +126,14 @@ def main() -> int:
         help="Layer 4 only: verify snippets against the committed references_cache/ "
         "without fetching PubMed (deterministic CI / reproducible runs).",
     )
+    parser.add_argument(
+        "--no-verbatim",
+        action="store_true",
+        help="Skip Layer 4 (verbatim reference check) entirely, regardless of profile. "
+        "Used by CI: verbatim is enforced once at curation time (full text is deleted "
+        "before the PR), so the committed corpus is re-checked only on the offline, "
+        "source-free layers (schema / ontology / predicate).",
+    )
     args = parser.parse_args()
 
     files = iter_files(args.targets)
@@ -153,6 +161,14 @@ def main() -> int:
                 if layer not in seen:
                     seen.append(layer)
         layers = sorted(seen)
+
+    # --no-verbatim drops Layer 4 from the run set, even for ai_curated files and
+    # even if `--layer 4` was passed (the explicit skip wins). The verbatim guarantee
+    # is established once at curation time against the full-text-bearing cache; by the
+    # time the corpus is committed the full text is gone, so CI re-checks only the
+    # source-free layers.
+    if args.no_verbatim:
+        layers = [n for n in layers if n != 4]
 
     results: list[dict] = []
     overall_fail = False

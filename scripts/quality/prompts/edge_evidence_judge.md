@@ -30,15 +30,23 @@ the curator's own labels were not there.
 4. **The snippet's words must be about the edge's entities and relation — not merely topically
    related.** A snippet about a metabolite, a downstream readout, or a different disease context is
    NOT support for this edge even if it is verbatim and on-topic.
+5. **Independence is mandatory, not optional.** Before you assert `SUPPORT`, or assert a
+   disagreement with the curator, you MUST have consulted at least one source the curator did **not**
+   cite — `chembl_get_mechanism`, or a paper you retrieved yourself via `search_pubmed` +
+   `read_abstract`/`read_fulltext`. A verdict that rests *only* on re-reading the curator's own
+   snippet is not independent — if no independent referent is available for an edge, `abstain`.
 
 ### Tools available (use them; they are your authority)
-- `ChEMBL.get_mechanism` — independent, curated drug→target→action records. For an edge whose
+- `chembl_get_mechanism(drug)` — independent, curated drug→target→action records. For an edge whose
   subject is a Drug and object is its target, this is the strongest possible grounding.
-- `PubMed` (`get_article_metadata`, `get_full_text_article`) — confirm the snippet exists in the
-  cited PMID and read surrounding context for scope/modality.
-- OAK / ontology lookup — confirm an entity's identity and synonyms (subject/object grounding).
-Prefer an **independent** source (ChEMBL, ontology) over the cited snippet when one exists — that
-breaks any shared bias with the curator.
+- `read_source(reference, snippet)` — read the **curator's** cited PMID from the committed cache and
+  confirm the snippet is verbatim-present, with surrounding context (scope/modality). Read-only.
+- `search_pubmed(query)` — find papers **beyond** the curator's set; returns PMIDs.
+- `read_abstract(reference)` / `read_fulltext(reference)` — read any PMID **in memory** (independent
+  of the curator's cache) to corroborate or challenge the edge. These never write anything.
+Prefer an **independent** source (ChEMBL, or a paper you retrieved) over the cited snippet — that is
+what breaks shared bias with the curator. Your independent reading is ephemeral: it informs your
+judgment and is recorded only as a list of consulted IDs; you never author DrugMechDB evidence.
 
 ### Input you receive (JSON)
 ```json
@@ -109,13 +117,21 @@ For each evidence item, decide each check as `pass` / `fail` / `abstain`, with a
       "agrees_with_curator": false,
       "independent_grounding": {"source":"ChEMBL.get_mechanism(CHEMBL83)","record":"target CHEMBL206 (ESR1), MODULATOR, direct_interaction=true"},
       "confidence": "high",
-      "note": "Tamoxifen→ESR1 is independently confirmed by ChEMBL; but THIS snippet is about endoxifen, so it only partially supports the tamoxifen edge."
+      "note": "Tamoxifen→ESR1 is independently confirmed by ChEMBL; but THIS snippet is about endoxifen, so it only partially supports the tamoxifen edge.",
+      "issue_for_curator": "The cited snippet describes the active metabolite of the drug, not the drug itself, so it does not establish this edge as written. Re-source with evidence about the drug entity."
     }
   ],
   "edge_supported": true,
   "edge_basis": "independent ChEMBL mechanism record, not the cited snippet"
 }
 ```
+
+**`issue_for_curator`** — include this ONLY when `rederived_supports` is not `SUPPORT`. It is the
+*only* part of your verdict shown to the curation agent, so it must obey the **flags-not-fixes
+firewall**: state *what* is wrong with the edge in terms of its own entities and the failed check,
+and **never name a PMID, a database, a specific replacement source, or the corrected fact**. The
+curator must re-source independently. (Your `note`/`basis`/`independent_grounding` stay in the audit
+sidecar and are NOT shown to the curator.) For a clean `SUPPORT`, omit the field.
 
 `edge_supported` = is the edge itself defensible (possibly via independent grounding even when the
 *cited* evidence is weak)? Keep it separate from per-snippet verdicts — an edge can be true while
