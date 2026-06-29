@@ -28,6 +28,7 @@ on:
       - main
     paths:
       - 'kb/paths/**'
+      - 'references_cache/**'
 
 # Cancel superseded runs on the same PR.
 concurrency:
@@ -46,6 +47,21 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: No full text in the repo (full text is curation-only, deleted pre-PR)
+        run: |
+          set -euo pipefail
+          # Full text is ephemeral: it grounds curation + the semantic critic, then is
+          # stripped to abstract-only before the PR (pubmed_fetch.py strip-fulltext).
+          # The committed cache must therefore never carry a full_text body. This guard
+          # enforces that invariant regardless of whether the strip step was run.
+          hits=$(grep -rl '^content_type: full_text' references_cache/ 2>/dev/null || true)
+          if [ -n "$hits" ]; then
+            echo "::error::These committed cache files still contain full text (run 'python scripts/pubmed_fetch.py strip-fulltext --all' before the PR):"
+            printf '  %s\n' $hits
+            exit 1
+          fi
+          echo "OK: no full_text cache files committed."
 
       - name: Set up Python 3.10
         uses: actions/setup-python@v5

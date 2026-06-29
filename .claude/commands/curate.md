@@ -119,7 +119,7 @@ If you exhaust the budget, write the final state of the file anyway and report *
 > - What you tried: {the snippet(s) / PMID(s) attempted}
 > - Suggested fix (if known): {e.g. the validator's fuzzy-match suggestion, or "needs a different source"}
 
-The user / curator (or the PR reviewer) decides whether to merge or fix manually.
+This is an **escalation**: do not keep retrying. Go to **step 11** (which deletes full text) and open a PR flagged for human review with this report in the body — the user / curator (or the PR reviewer) decides whether to merge or fix manually.
 
 ### 10. Semantic critic gate (after QC passes)
 
@@ -131,21 +131,29 @@ Once all four QC layers pass, the path is well-formed and every snippet is verba
 
 The critic re-derives each edge's support **independently** — grounding in ChEMBL and in papers it retrieves *itself*, i.e. evidence beyond the ones you cited — and judges the chain as a whole. It reads everything in memory and writes nothing to `references_cache/`; its audit (every source it consulted) lands in `provenance/{_id}.semantic_review.yaml`. It reports one verdict:
 
-- **ACCEPT** → proceed to step 11.
-- **RE_CURATE** → the critic prints **flagged edges** with *what* is wrong (it will **not** tell you which paper to use or the fix). Treat each flag as a fresh sourcing problem: go back to **step 6**, re-source/redraft the flagged edge(s) from PubMed yourself, re-run QC (step 8), then re-run the critic with `--round {N+1}`. **Cap: 3 rounds** (`--max-rounds 3`).
-- **ESCALATE / ABSTAIN** → the round cap was reached, a factual contradiction was found, or the critic couldn't independently ground a judgment. For each unresolved edge, set `supports: NO_EVIDENCE` with an `explanation`, and hand off to a human reviewer (do **not** open a clean PR).
+- **ACCEPT** → proceed to step 11 (clean PR).
+- **RE_CURATE** → the critic prints **flagged edges** with *what* is wrong (it will **not** tell you which paper to use or the fix). Treat each flag as a fresh sourcing problem: go back to **step 6**, re-source/redraft the flagged edge(s) from PubMed yourself, re-run QC (step 8), then re-run the critic with `--round {N+1}`. **Cap: 3 rounds** (`--max-rounds 3`). Full text stays in the cache while you are still looping — you need it to re-source.
+- **ESCALATE / ABSTAIN** → the round cap was reached, a factual contradiction was found, or the critic couldn't independently ground a judgment. For each unresolved edge, set `supports: NO_EVIDENCE` with an `explanation`, then proceed to **step 11** — which still deletes the full text — and open the PR **flagged for human review** (not auto-mergeable). Escalation does not mean "skip the cleanup": full text is deleted on every terminal outcome.
 
 Never invent a different mechanism to satisfy a flag — re-source the *same* claim, or escalate.
 
-### 11. Delete full text, then open the PR
+### 11. Finalize — delete full text, then open the PR (every terminal outcome)
 
-The full text was only ever needed to verify snippets and ground the critic. Both are done, so it must not enter the committed repo:
+This step runs for **all** terminal outcomes: a clean ACCEPT, a QC-exhausted escalation (step 9), or a critic ESCALATE/ABSTAIN (step 10). Full text was only ever needed to verify snippets and ground the critic; both are done, so it must not enter the committed repo:
 
 ```
 .venv-py310/bin/python scripts/pubmed_fetch.py strip-fulltext --all
 ```
 
-This reverts every `full_text` cache file to abstract-only, **keeping the abstract and all metadata** (title, authors, journal, year, DOI, PMCID, license). Re-run QC once more (`--no-verbatim` is what CI will use; locally a full `qc.py --profile ai_curated` should still pass on the abstracts). Then open the PR (`/create-pr`). CI re-checks Layers 1–3 on the committed corpus; it does **not** re-run verbatim (the source is gone) or the semantic critic (non-deterministic, already run here).
+This reverts every `full_text` cache file to abstract-only, **keeping the abstract and all metadata** (title, authors, journal, year, DOI, PMCID, license) plus the verified snippet in the record and the critic's sidecar — i.e. all the *details* of every paper survive; only the body is dropped.
+
+Then re-validate **exactly as CI will** — full text is gone, so use `--no-verbatim` (a full `qc.py --profile ai_curated` would now fail on any full-text-sourced snippet, since verbatim can't be re-checked without the body; that's expected, and verbatim was already enforced at curation):
+
+```
+.venv-py310/bin/python scripts/qc.py --no-verbatim --offline {your_file}
+```
+
+Then open the PR via `/create-pr` (clean on ACCEPT; flagged for human review on escalation). CI re-checks Layers 1–3 on the committed corpus and **guards that no `full_text` cache was committed**; it does not re-run verbatim (the source is gone) or the semantic critic (non-deterministic, already run here).
 
 ### 12. Report back
 

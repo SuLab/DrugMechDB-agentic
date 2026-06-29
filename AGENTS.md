@@ -221,6 +221,7 @@ The `/curate` and `/backfill` skills follow this exact sequence. Deviation is th
 7. **Iterate up to 3 times.** If validation fails, fix and re-run. If you've used all 3 retries:
    - Write the final state anyway and surface a `## Unresolved validation failures` section listing, per failure: the failing layer + exact error, the offending edge (`source --key--> target`), what you tried, and any suggested fix.
    - This is the surfacing rule from PRD §5.1.3 — don't hide failures.
+   - This is an **escalation**: stop retrying and go to **step 9** (which deletes full text) to open a PR flagged for human review.
 
 8. **Semantic critic gate (after QC passes).** Deterministic QC proves the path is *well-formed and verbatim*; it does not prove the mechanism is *scientifically* right. Run the critic:
    ```
@@ -229,15 +230,15 @@ The `/curate` and `/backfill` skills follow this exact sequence. Deviation is th
    It re-derives each edge's support **independently** — grounding in ChEMBL and in papers it retrieves *itself* (evidence beyond what you cited) — and judges the chain as a whole. It reads everything **in memory**, writes nothing to `references_cache/`, and records its audit (every source consulted) in `provenance/{_id}.semantic_review.yaml`.
    - **ACCEPT** → go to step 9.
    - **RE_CURATE** → the critic prints flagged edges stating *what* is wrong, deliberately **not** the fix or which source to use. Re-source the flagged edge(s) yourself (back to step 4), re-canonicalize, re-run QC (step 6), then re-run the critic with `--round {N+1}`. Cap: **3 rounds**.
-   - **ESCALATE / ABSTAIN** → round cap reached, a factual contradiction (`REFUTE`/`WRONG_STATEMENT`) was found, or the critic couldn't independently ground a judgment. Set the unresolved edge(s) to `supports: NO_EVIDENCE` with an `explanation` and hand off to a human — do not open a clean PR.
+   - **ESCALATE / ABSTAIN** → round cap reached, a factual contradiction (`REFUTE`/`WRONG_STATEMENT`) was found, or the critic couldn't independently ground a judgment. Set the unresolved edge(s) to `supports: NO_EVIDENCE` with an `explanation`, then go to **step 9** (which still deletes full text) and open the PR **flagged for human review** — not a clean/auto-mergeable PR.
 
    The critic is an **independent** reviewer. Do not argue with it, and do not read its sidecar to find the fix — that would defeat the firewall (its broad reading must never leak into the curated evidence). Act on the *flag*, re-source independently.
 
-9. **Delete full text, then open the PR.** Full text was only needed to verify snippets and ground the critic; both are done. Strip it so it never enters the committed repo:
+9. **Finalize — delete full text, then open the PR (every terminal outcome).** This runs on *all* terminal outcomes: a clean ACCEPT, a QC-exhausted escalation (step 7), or a critic ESCALATE/ABSTAIN (step 8). Full text was only needed to verify snippets and ground the critic; both are done. Strip it so it never enters the committed repo — full text persists in the cache **only while you are still looping** (re-curating), never at handoff:
    ```
    .venv-py310/bin/python scripts/pubmed_fetch.py strip-fulltext --all
    ```
-   This reverts every `full_text` cache to abstract-only, keeping the abstract and all metadata. Then open the PR. CI re-runs Layers 1–3 on the committed corpus (`qc.py --no-verbatim`); it does **not** re-run verbatim (the source body is gone — the guarantee was established here, once) or the semantic critic (non-deterministic, already run here).
+   This reverts every `full_text` cache to abstract-only, keeping the abstract, all metadata, the verified snippet, and the critic sidecar — every paper's *details* survive; only the body is dropped. Re-validate with `qc.py --no-verbatim` (verbatim can't re-run without the body; it was enforced at curation). Then open the PR (clean on ACCEPT; flagged for human review on escalation). CI re-runs Layers 1–3 on the committed corpus, **guards that no `full_text` cache was committed**, and does **not** re-run verbatim (source body gone) or the semantic critic (non-deterministic, already run here).
 
 ---
 
