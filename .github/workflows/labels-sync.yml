@@ -4,12 +4,15 @@ name: Sync labels
 # .github/labels.yml, so /create-pr can apply them without a manual
 # `gh label create`. Runs when labels.yml changes on main, or on demand.
 
+# DISABLED for now: the auto-trigger is removed so this never runs on push.
+# It needs the repo's Actions token to have write permission to manage labels
+# (Settings → Actions → General → Workflow permissions → "Read and write").
+# When ready, restore the push trigger below and let it run:
+#   push:
+#     branches: [main]
+#     paths: ['.github/labels.yml']
+# Until then it is manual-only (Actions tab → Sync labels → Run workflow).
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/labels.yml'
   workflow_dispatch:
 
 permissions:
