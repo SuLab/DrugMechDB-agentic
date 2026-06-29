@@ -1,0 +1,45 @@
+name: Sync labels
+
+# Keep the repository's labels in sync with the source of truth in
+# .github/labels.yml, so /create-pr can apply them without a manual
+# `gh label create`. Runs when labels.yml changes on main, or on demand.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/labels.yml'
+  workflow_dispatch:
+
+permissions:
+  issues: write       # label management goes through the issues API
+  contents: read
+
+jobs:
+  sync-labels:
+    name: Sync labels from .github/labels.yml
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create/update each label (idempotent)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python -m pip install --quiet pyyaml
+          # Flatten labels.yml to name<TAB>color<TAB>description (whitespace-collapsed).
+          python - <<'PY' > labels.tsv
+          import yaml
+          for l in yaml.safe_load(open(".github/labels.yml")) or []:
+              desc = " ".join((l.get("description") or "").split())
+              print(f"{l['name']}\t{l['color']}\t{desc}")
+          PY
+          while IFS=$'\t' read -r name color desc; do
+            [ -z "$name" ] && continue
+            echo "syncing label: $name"
+            gh label create "$name" --color "$color" --description "$desc" \
+              --force --repo "$GITHUB_REPOSITORY"
+          done < labels.tsv
+          echo "labels synced."

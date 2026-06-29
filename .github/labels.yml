@@ -5,15 +5,9 @@
 # deterministically by scripts/pr_labels.py from the record + the critic sidecar;
 # backfill / new-path is set from git context (modified vs added file).
 #
-# Create them once in the repo (idempotent):
-#   while IFS=$'\t' read -r name color desc; do
-#     gh label create "$name" --color "$color" --description "$desc" --force
-#   done < <(python - <<'PY'
-#   import yaml,sys
-#   for l in yaml.safe_load(open('.github/labels.yml')):
-#       print(f"{l['name']}\t{l['color']}\t{l['description']}")
-#   PY
-#   )
+# The `Sync labels` workflow (.github/workflows/labels-sync.yml) creates/updates
+# these in the repo automatically whenever this file changes on main (or on a manual
+# workflow_dispatch), so no one has to run `gh label create` by hand.
 
 - name: ai-curated
   color: "0e8a16"   # green
