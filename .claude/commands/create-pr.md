@@ -57,20 +57,33 @@ PR flagged for human review instead of a clean one.
    git push -u origin curate/<drug>-<disease>
    ```
 
-6. **Open the PR** with `gh pr create`. Base branch = the team's integration branch
-   (**confirm the base branch with the maintainers**; don't assume). Body should state:
+6. **Derive the scenario labels.** Don't hand-pick labels — they are derived from machine
+   signals so they're consistent:
+   ```bash
+   # content labels: ai-curated | needs-human-review (+ full-text-sourced)
+   CONTENT_LABELS=$(python scripts/pr_labels.py kb/paths/<file>.yaml)
+   # origin label from git: a NEW file -> new-path, a MODIFIED file -> backfill
+   git diff --name-status origin/main -- kb/paths/<file>.yaml   # A=new-path, M=backfill
+   ```
+   The label set + colors live in `.github/labels.yml`; ensure they exist in the repo
+   (`gh label create <name> --color <c> --description <d> --force`, idempotent) before applying.
+
+7. **Open the PR** with `gh pr create --label …` (one `--label` per derived label).
+   Base branch = the team's integration branch (**confirm the base branch with the
+   maintainers**; don't assume). Body should state:
    - the (drug, disease) pair and `_id`;
    - node/edge count and the path shape (drug→target→…→disease);
    - profile (legacy / ai_curated) and QC result (Layers 1–3 green; verbatim done at curation);
    - the semantic-critic verdict + how many independent sources it consulted;
-   - PMIDs cited (for ai_curated) and the sourcing basis.
+   - PMIDs cited (for ai_curated) and the sourcing basis;
+   - if `full-text-sourced`: note which edges drew on full text (now stripped) so a reviewer can spot-check.
 
-   **If the critic verdict was ESCALATE/ABSTAIN, or any edge is `NO_EVIDENCE`:** mark the
-   PR for human review (open as a draft or add a `needs-human-review` label) and say so in
-   the body — it is **not** auto-mergeable. The point of this PR is to get the unresolved
-   issue in front of a human, with the full text already stripped.
+   **If the labels include `needs-human-review`** (critic ESCALATE/ABSTAIN, QC exhausted, or
+   any `NO_EVIDENCE` edge): also open the PR as a **draft** and say so in the body — it is
+   **not** auto-mergeable. The point is to get the unresolved issue in front of a human, with
+   the full text already stripped.
 
-7. **Report** the PR URL and a one-line summary back to the user.
+8. **Report** the PR URL, the applied labels, and a one-line summary back to the user.
 
 ## Guardrails
 

@@ -113,6 +113,23 @@ enums:
         title: Other
         description: Evidence not fitting the categories above.
 
+  EvidenceSourceTierEnum:
+    description: >-
+      Which tier of the cited source the snippet was copied from.
+    permissible_values:
+      ABSTRACT:
+        title: Abstract
+        description: >-
+          The snippet is from the PubMed abstract — committed in references_cache/
+          and re-verifiable verbatim at any time. This is the default tier.
+      FULL_TEXT:
+        title: Full text
+        description: >-
+          The snippet is from the open-access full-text body (the abstract was
+          insufficient for this edge). The body is deleted before the PR, so a
+          FULL_TEXT snippet was verified verbatim ONCE at curation and cannot be
+          re-checked by CI. Surfaced to reviewers via the `full-text-sourced` PR label.
+
   ReviewVerdictEnum:
     description: >-
       The semantic critic's disposition for a reviewed path. The critic is a
@@ -318,6 +335,15 @@ slots:
       Optional curator commentary explaining why this evidence supports
       or refutes the edge claim.
 
+  source_tier:
+    range: EvidenceSourceTierEnum
+    description: >-
+      Which tier of the cited source the snippet was taken from (abstract vs the
+      open-access full-text body). Optional; absent is treated as ABSTRACT. A
+      FULL_TEXT value durably records that this snippet's evidence came from a
+      full-text body that is no longer present in the repo (stripped pre-PR), and
+      drives the `full-text-sourced` PR label so reviewers can spot-check it.
+
   # ── SemanticReview slots (committed critic-provenance sidecar) ───────────────
 
   record_id:
@@ -502,6 +528,7 @@ classes:
       - supports
       - evidence_source
       - explanation
+      - source_tier
     slot_usage:
       reference:
         required: true
@@ -512,6 +539,8 @@ classes:
       evidence_source:
         required: true
       explanation:
+        required: false
+      source_tier:
         required: false
 
   SemanticReview:

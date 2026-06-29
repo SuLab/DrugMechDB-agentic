@@ -1,0 +1,42 @@
+# PR scenario labels for DrugMechDB-agentic path work.
+#
+# `/create-pr` applies these so each PR is tailored to its outcome. The content
+# labels (ai-curated / needs-human-review / full-text-sourced) are derived
+# deterministically by scripts/pr_labels.py from the record + the critic sidecar;
+# backfill / new-path is set from git context (modified vs added file).
+#
+# Create them once in the repo (idempotent):
+#   while IFS=$'\t' read -r name color desc; do
+#     gh label create "$name" --color "$color" --description "$desc" --force
+#   done < <(python - <<'PY'
+#   import yaml,sys
+#   for l in yaml.safe_load(open('.github/labels.yml')):
+#       print(f"{l['name']}\t{l['color']}\t{l['description']}")
+#   PY
+#   )
+
+- name: ai-curated
+  color: "0e8a16"   # green
+  description: Clean AI-curated path — semantic critic ACCEPTed, no held-back edges. Auto-merge candidate.
+
+- name: needs-human-review
+  color: "d93f0b"   # orange-red
+  description: Critic escalated/abstained, QC was exhausted, or an edge is NO_EVIDENCE. Not auto-mergeable.
+
+- name: full-text-sourced
+  color: "5319e7"   # purple
+  description: >-
+    At least one snippet was taken from open-access full text (now stripped), so it is
+    not CI-verbatim-checkable. Verified once at curation; reviewer may spot-check.
+
+- name: backfill
+  color: "1d76db"   # blue
+  description: Adds evidence to an existing legacy path (topology unchanged).
+
+- name: new-path
+  color: "c5def5"   # light blue
+  description: A newly curated (drug, disease) mechanistic path.
+
+- name: validation-override
+  color: "fbca04"   # yellow
+  description: Maintainer override — merge despite a red QC gate (use sparingly).

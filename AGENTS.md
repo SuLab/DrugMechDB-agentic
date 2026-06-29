@@ -60,6 +60,7 @@ links:                                            # ≥1 edge
         supports: SUPPORT                         # required: SUPPORT | REFUTE | PARTIAL | NO_EVIDENCE | WRONG_STATEMENT
         evidence_source: HUMAN_CLINICAL           # required: HUMAN_CLINICAL | MODEL_ORGANISM | IN_VITRO | COMPUTATIONAL | OTHER
         explanation: "Optional curator commentary."  # optional
+        source_tier: FULL_TEXT                    # optional: set ONLY when the snippet came from escalated full text (else omit = abstract)
 references:                                       # optional — secondary URLs (DrugBank, Wikipedia, etc.)
   - https://...
 ```
@@ -160,7 +161,7 @@ Reading full text costs tokens and time, so **default to the abstract** and esca
 2. **If not, triage before escalating** — two cheap checks decide whether full text is worth fetching:
    - *On-topic?* Is the paper actually about this edge (abstract discusses the drug/target/mechanism but doesn't state this specific step)? If it's simply the wrong source, **pick a different PMID** — don't read its body.
    - *Available?* `pubmed_fetch.py probe PMID:x --json` — one metadata call, no download. `fulltext_available: true` (open-access only) → escalate. If `error` is set, that's *unknown* (network) — retry, don't read it as "unavailable."
-3. **Escalate only when on-topic AND available:** `pubmed_fetch.py fetch PMID:x --fulltext` upgrades that PMID's cache to `content_type: full_text` (abstract prepended). Re-read it and snippet from the body. `--max-fulltext N` caps escalations per run.
+3. **Escalate only when on-topic AND available:** `pubmed_fetch.py fetch PMID:x --fulltext` upgrades that PMID's cache to `content_type: full_text` (abstract prepended). Re-read it and snippet from the body. `--max-fulltext N` caps escalations per run. **When you snippet from the body, set `source_tier: FULL_TEXT` on that `EvidenceItem`** — it's the durable record that this snippet came from a body that gets stripped pre-PR, and it drives the `full-text-sourced` PR label.
 4. **If full text still doesn't support the edge**, record `NO_EVIDENCE` or drop it — never paraphrase.
 
 **Operators (full text, sparingly).** When an unavoidable inline-citation artifact splits the sentence you want, the matcher's `...` quotes the two clean halves: `snippet: "aspirin acetylates ... cyclooxygenase 1"`; `[...]` drops an editorial insert. Prefer a single contiguous sentence when one exists.

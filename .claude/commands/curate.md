@@ -78,6 +78,7 @@ See AGENTS.md §4.4 for the `...`/`[...]` operators and the read-the-context gua
     - `snippet:` **verbatim** substring of the cached source (abstract, or full text if you escalated) — copy/paste from `references_cache/`, never typed from memory.
     - `supports: SUPPORT` (default) or `PARTIAL` if the abstract is about a closely-related-but-different claim.
     - `evidence_source: HUMAN_CLINICAL | MODEL_ORGANISM | IN_VITRO | COMPUTATIONAL | OTHER` — describes the cited paper's methodology, not yours.
+    - `source_tier: FULL_TEXT` **if you took this snippet from escalated full text** (step 5); otherwise omit it (abstract is the default). This is durable provenance: the full-text body is deleted before the PR, so this field is what tells reviewers (via the `full-text-sourced` label) that this snippet isn't CI-verbatim-checkable.
 
 **When an edge has no verbatim-supporting sentence**, in priority order:
 1. **Re-source** — try a different sentence, a different PMID, or escalate to full text (step 5) for that edge.
