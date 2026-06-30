@@ -1,0 +1,76 @@
+directed: true
+multigraph: true
+graph:
+  _id: P05_DB00758_MESH_D020521
+  drug: Clopidogrel
+  drug_mesh: MESH:D000077144
+  drugbank: DB:DB00758
+  disease: Stroke
+  disease_mesh: MESH:D020521
+nodes:
+  - id: DB:DB00758
+    name: Clopidogrel
+    label: Drug
+  - id: UniProt:P33261
+    name: Cytochrome P450 2C19 (CYP2C19)
+    label: Protein
+  - id: UniProt:Q9H244
+    name: P2Y purinoceptor 12 (P2Y12 receptor)
+    label: Protein
+  - id: GO:0070527
+    name: platelet aggregation
+    label: BiologicalProcess
+  - id: GO:0007596
+    name: blood coagulation
+    label: BiologicalProcess
+  - id: MESH:D020521
+    name: Stroke
+    label: Disease
+links:
+  - key: increases activity of
+    source: UniProt:P33261
+    target: DB:DB00758
+    evidence:
+      - reference: PMID:41265989
+        snippet: "The CYP2C19 enzyme metabolizes clopidogrel, a prodrug, to its active form."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: CYP2C19 activates the clopidogrel prodrug to its active metabolite.
+  - key: decreases activity of
+    source: DB:DB00758
+    target: UniProt:Q9H244
+    evidence:
+      - reference: PMID:22221409
+        snippet: "Clopidogrel is an antithrombotic prodrug, whose active metabolite inhibits platelet function by irreversibly binding to the platelet receptor for adenosine diphosphate, P2Y(12)."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: The active metabolite of clopidogrel irreversibly binds and inhibits the P2Y12 ADP receptor.
+  - key: participates in
+    source: UniProt:Q9H244
+    target: GO:0070527
+    evidence:
+      - reference: PMID:39940972
+        snippet: "A key component of thrombotic events is the activation and aggregation of platelets, of which the P2Y1 and P2Y12 receptors play a crucial role in this process."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: The P2Y12 receptor mediates platelet aggregation.
+  - key: positively regulates
+    source: GO:0070527
+    target: GO:0007596
+    evidence:
+      - reference: PMID:37066902
+        snippet: "its surface membrane protein GPIIb/IIIa receptors activate platelets through fibrinogen to form platelet-platelet aggregates, and further activation of active substances such as ADP and TXA2 released by platelet alpha particles, which contribute to the formation of irreversible platelet aggregation."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Platelet aggregation drives thrombus formation and coagulation.
+  - key: causes
+    source: GO:0007596
+    target: MESH:D020521
+    evidence:
+      - reference: PMID:33039767
+        snippet: "cerebellar ischemic lesions secondary to thrombus formation in dolichoectatic basilar artery."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Thrombus formation causes ischemic stroke lesions.
+references:
+  - https://go.drugbank.com/drugs/DB00758

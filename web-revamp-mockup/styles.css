@@ -176,19 +176,37 @@ h1,h2,h3 { line-height: 1.25; margin: 0; letter-spacing: -.01em; }
 .pred.neg::before { content: "↓ "; }
 .pred.pos::before { content: "↑ "; }
 
-/* evidence */
+/* evidence — per-edge EvidenceItem cards with full paper credentials */
 .evidence { }
 details.ev { border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 8px; overflow: hidden; }
-details.ev summary { padding: 13px 16px; cursor: pointer; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 10px; list-style: none; }
+details.ev[data-flag] { border-left: 3px solid #a14d52; }   /* functional flag — reuses the neg color, not a new accent */
+details.ev summary { padding: 13px 16px; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 10px; list-style: none; }
 details.ev summary::-webkit-details-marker { display: none; }
-details.ev summary .caret { color: var(--faint); transition: .15s; }
+details.ev summary .caret { color: var(--faint); transition: .15s; flex: none; }
 details.ev[open] summary .caret { transform: rotate(90deg); }
-.ev-body { padding: 0 16px 16px; }
+.ev-edge { font-weight: 600; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ev-count { margin-left: auto; font-size: 12px; color: var(--muted); white-space: nowrap; }
+.ev-body { padding: 4px 16px 16px; }
+.ev-item { padding: 14px 0; border-top: 1px solid var(--line-2); }
+.ev-item:first-child { border-top: none; padding-top: 6px; }
+.ev-badges { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 9px; }
+.verdict { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; padding: 2px 9px; border-radius: var(--radius-sm); border: 1px solid var(--line); color: var(--muted); text-transform: uppercase; letter-spacing: .03em; }
+.verdict.v-ok { color: var(--ink-2); border-color: var(--ink-2); }
+.verdict.v-partial { color: var(--muted); }
+.verdict.v-flag { color: #a14d52; border-color: #a14d52; }
 .snippet { border-left: 2px solid var(--line); padding: 8px 14px; color: var(--ink-2); font-style: italic; font-size: 14px; }
-.ev-src { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.ev-explain { font-size: 13px; color: var(--muted); margin-top: 8px; }
+.ev-cred { margin-top: 11px; padding-top: 11px; border-top: 1px solid var(--line-2); }
+.cred-title { font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.cred-meta { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.cred-links { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 7px; font-size: 12.5px; }
+.cred-lic { font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 1px 8px; }
 .src-badge { font-size: 11.5px; font-weight: 500; padding: 3px 10px; border-radius: var(--radius-sm); border: 1px solid var(--line); color: var(--muted); }
 .refs { list-style: none; padding: 0; margin: 12px 0 0; }
 .refs li { font-size: 14px; margin: 6px 0; display: flex; gap: 8px; align-items: center; }
+
+/* inline raw-record (YAML) viewer */
+.rawyaml { font-family: var(--mono); font-size: 12.5px; line-height: 1.55; background: var(--line-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; overflow: auto; max-height: 480px; white-space: pre; color: var(--ink-2); margin: 0; }
 
 /* ============================================================
    BROWSE
@@ -214,6 +232,15 @@ details.ev[open] summary .caret { transform: rotate(90deg); }
 .result .r-path { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
 .mini-node { font-size: 11px; font-weight: 600; color: #fff; padding: 2px 8px; border-radius: 4px; }
 .mini-ar { color: var(--faint); font-size: 11px; }
+
+/* browse: sort control, clear link, match highlight */
+.results-head .rh-right { display: flex; align-items: center; gap: 16px; }
+.sort-wrap { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 13px; }
+.sort-select { font: inherit; font-size: 13px; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 5px 9px; color: var(--ink-2); background: var(--surface); cursor: pointer; }
+.sort-select:hover { border-color: var(--ink); }
+.clear-link { font-size: 13px; color: var(--muted); }
+.clear-link:hover { color: var(--ink); }
+mark { background: var(--line-2); color: var(--ink); border-bottom: 2px solid var(--accent); border-radius: 2px 2px 0 0; padding: 0 1px; }
 
 /* ---------- footer ---------- */
 .footer { border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; color: var(--muted); font-size: 13px; }

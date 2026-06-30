@@ -1,0 +1,53 @@
+[
+  {
+    "pair_id": "P02",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 18,
+    "wall_seconds": 158.3,
+    "usage": {
+      "input_tokens": 386310,
+      "output_tokens": 8212,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.1368,
+    "n_tool_calls": 30,
+    "tool_call_counts": {
+      "pubmed_search": 8,
+      "pubmed_fetch": 3,
+      "read_reference": 12,
+      "write_path_yaml": 3,
+      "canonicalize_predicates": 2,
+      "run_qc": 2
+    },
+    "output_written": true,
+    "final_text_tail": "biosynthetic process (GO:0006695)\n3. cholesterol biosynthetic process \u2014`positively regulates`\u2192 LDL receptor (UniProt:P01130) *(lowered intracellular cholesterol \u2192 SREBP activation \u2192 LDLR over-expression)*\n4. LDL receptor \u2014`negatively regulates`\u2192 Lipoproteins, LDL (MESH:D008078) *(increased LDL clearance lowers plasma LDL-C)*\n5. Lipoproteins, LDL \u2014`causes`\u2192 Hypercholesterolemia (MESH:D006937)\n\n### QC layer-by-layer (final run)\n- **Layer 1 (schema):** PASS\n- **Layer 2 (node ontology):** PASS \u2014 0 legacy-prefix warnings\n- **Layer 3 (predicates):** PASS \u2014 all 5 keys in the 67-predicate enum\n- **Layer 4 (verbatim references):** PASS \u2014 every snippet verified as a verbatim substring of its cached PMID abstract\n\n### PMIDs cited\n- **PMID:14747768** \u2014 statins inhibit HMG-CoA reductase / decrease cholesterol synthesis; SREBP-driven LDLR over-expression; increased LDL clearance lowering plasma LDL-C (edges 1, 3, 4)\n- **PMID:12486413** \u2014 structural basis of statin (incl. atorvastatin) blocking the HMG-CoA binding site (edge 1, corroborating)\n- **PMID:12539819** \u2014 HMG-CoA reductase as the rate-limiting enzyme in cholesterol biosynthesis (edge 2)\n- **PMID:36209894** \u2014 elevated plasma LDL-C levels (edge 5)\n\n**Unresolved validation failures:** none. Overall QC = PASS.\n\nNote: per the environment constraints, the semantic critic step (critic.py) was not run, and no full-text escalation was used (all snippets came from abstracts, so no `source_tier: FULL_TEXT` flags and no strip-fulltext needed)."
+  },
+  {
+    "pair_id": "P11",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 19,
+    "wall_seconds": 170.2,
+    "usage": {
+      "input_tokens": 430941,
+      "output_tokens": 7873,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.3515,
+    "n_tool_calls": 29,
+    "tool_call_counts": {
+      "pubmed_search": 8,
+      "pubmed_fetch": 3,
+      "read_reference": 11,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "ite:\n- `binds` is **not** in the BiolinkPredicate enum (Layer 1 + Layer 3 failure) \u2192 replaced the drug\u2192protein binding edge with `decreases activity of`, attaching both binding/inhibition snippets to it.\n- The PMID:20150242 \"occurs in\" snippet was drawn from the article **title** wording and failed verbatim matching (Layer 4) \u2192 re-sourced that edge to PMID:30555440 with an abstract-body snippet.\n\n### PMIDs cited\n- **PMID:36572148** \u2014 rifampicin binds and inhibits the RpoB \u03b2 subunit of RNA polymerase\n- **PMID:25288092** \u2014 rifampin binds the RpoB \u03b2 subunit of RNA polymerase in *M. tuberculosis*\n- **PMID:20150242** \u2014 RpoB is the RNA polymerase subunit underlying Rif-mediated transcription inhibition\n- **PMID:30555440** \u2014 transcriptional profiling of rifampin-resistant *M. tuberculosis* isolates (transcription occurs in *M. tuberculosis*)\n- **PMID:33199626** \u2014 rifampicin is a first-line therapeutic to treat TB; TB is caused by *M. tuberculosis*\n\n### Unresolved validation failures\nNone. All four QC layers pass. One edge (`occurs in`) carries `supports: PARTIAL` with an explanation, since its snippet evidences transcription occurring in *M. tuberculosis* clinical isolates rather than the exact GO-process-in-taxon claim; the edge is essential to keep the chain connected and is honestly flagged as PARTIAL rather than overstated as SUPPORT.\n\nNote: per AGENTS.md, the semantic critic step (critic.py) and full-text strip were not run, as those tools are not available in this environment."
+  }
+]

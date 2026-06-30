@@ -1,0 +1,82 @@
+directed: true
+multigraph: true
+graph:
+  _id: P10_DB00072_MESH_D001943
+  drug: Trastuzumab
+  drug_mesh: MESH:D000068878
+  drugbank: DB:DB00072
+  disease: HER2-positive Breast Cancer
+  disease_mesh: MESH:D001943
+nodes:
+  - id: DB:DB00072
+    name: Trastuzumab
+    label: Drug
+  - id: UniProt:P04626
+    name: Receptor tyrosine-protein kinase erbB-2 (HER2)
+    label: Protein
+  - id: GO:0043491
+    name: phosphatidylinositol 3-kinase/protein kinase B signal transduction
+    label: BiologicalProcess
+  - id: GO:0008283
+    name: cell population proliferation
+    label: BiologicalProcess
+  - id: MESH:D001943
+    name: HER2-positive Breast Cancer
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00072
+    target: UniProt:P04626
+    evidence:
+      - reference: PMID:14617784
+        snippet: "Exposure of the cells to trastuzumab down-regulated the levels of HER2 and reduced phosphorylation levels of Akt and MAPK in MCF7HER2 cells"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Trastuzumab, directed against the HER2 extracellular domain (PMID:24462377), down-regulates HER2 and reduces downstream phosphorylation."
+  - key: positively regulates
+    source: UniProt:P04626
+    target: GO:0043491
+    evidence:
+      - reference: PMID:14617784
+        snippet: "MCF7HER2 cells showed increased phosphorylation of at least two important HER2 downstream molecules, protein kinase B/Akt and mitogen-activated protein kinase (MAPK)"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "High HER2 increases phosphorylation of downstream Akt, indicating HER2 positively regulates PI3K/Akt signaling."
+  - key: decreases activity of
+    source: DB:DB00072
+    target: GO:0043491
+    evidence:
+      - reference: PMID:14617784
+        snippet: "Exposure of the cells to trastuzumab down-regulated the levels of HER2 and reduced phosphorylation levels of Akt and MAPK in MCF7HER2 cells"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Trastuzumab reduces Akt phosphorylation, decreasing PI3K/Akt signal transduction."
+  - key: positively regulates
+    source: GO:0043491
+    target: GO:0008283
+    evidence:
+      - reference: PMID:33795719
+        snippet: "enhancing DNA synthesis through the PI3K-AKT signaling in human breast cancer T47D cells"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "PI3K-AKT signaling promotes DNA synthesis and proliferation of breast cancer cells."
+  - key: negatively regulates
+    source: DB:DB00072
+    target: GO:0008283
+    evidence:
+      - reference: PMID:14617784
+        snippet: "trastuzumab (Herceptin), a humanized monoclonal antibody that may inhibit breast cancer cell proliferation"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Trastuzumab inhibits breast cancer cell proliferation."
+  - key: treats
+    source: DB:DB00072
+    target: MESH:D001943
+    evidence:
+      - reference: PMID:24462377
+        snippet: "Two compounds have been registered for HER-2-positive tumour treatment: trastuzumab, a humanised antibody directed against the HER-2 extracellular domain"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Trastuzumab is registered for treatment of HER2-positive tumours/breast cancer."
+references:
+  - https://go.drugbank.com/drugs/DB00072

@@ -1,0 +1,81 @@
+directed: true
+multigraph: true
+graph:
+  _id: P01_DB00945_MESH_D009203
+  drug: Aspirin
+  drug_mesh: MESH:D001241
+  drugbank: DB:DB00945
+  disease: Myocardial Infarction
+  disease_mesh: MESH:D009203
+nodes:
+  - id: MESH:D001241
+    name: Aspirin
+    label: Drug
+  - id: UniProt:P23219
+    name: Cyclooxygenase-1
+    label: Protein
+  - id: MESH:D013931
+    name: Thromboxane A2
+    label: ChemicalSubstance
+  - id: GO:0070527
+    name: platelet aggregation
+    label: BiologicalProcess
+  - id: MESH:D009203
+    name: Myocardial Infarction
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D001241
+    target: UniProt:P23219
+    evidence:
+      - reference: PMID:18855644
+        snippet: Aspirin works by irreversibly acetylating the cyclooxygenase (COX-1) enzyme, thus suppressing the production of thromboxane A(2) (TxA(2)) and inhibiting platelet activation and aggregation.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Directly states aspirin irreversibly acetylates COX-1, decreasing its activity.
+      - reference: PMID:26139061
+        snippet: Inactivation of platelet cyclooxygenase (COX)-1 by low-dose aspirin leads to long-lasting suppression of thromboxane (TX) A2 production and TXA2-mediated platelet activation and aggregation.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: States that aspirin inactivates COX-1, confirming decreases activity of relationship.
+  - key: positively regulates
+    source: UniProt:P23219
+    target: MESH:D013931
+    evidence:
+      - reference: PMID:11552047
+        snippet: Cox-1 catalyzes the synthesis of thromboxane A2 (Tx-A2), which causes platelet activation, vasoconstriction, and smooth muscle proliferation.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Directly states COX-1 catalyzes synthesis of TXA2, establishing COX-1 positively regulates TXA2 production.
+      - reference: PMID:19110389
+        snippet: Aspirin irreversibly inhibits cyclooxygenase (COX) 1 involved in the platelet production of thromboxane (TX) A(2), an inducer of vasoconstriction and a platelet activating agent.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: States COX-1 is involved in platelet production of TXA2, supporting positive regulation.
+  - key: positively regulates
+    source: MESH:D013931
+    target: GO:0070527
+    evidence:
+      - reference: PMID:32721526
+        snippet: Thromboxane A2 (TXA2) is implicated in graft failure by inducing vasoconstriction and platelet aggregation.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Directly states TXA2 induces platelet aggregation, supporting positive regulation.
+      - reference: PMID:19110389
+        snippet: Aspirin irreversibly inhibits cyclooxygenase (COX) 1 involved in the platelet production of thromboxane (TX) A(2), an inducer of vasoconstriction and a platelet activating agent.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Describes TXA2 as a platelet activating agent, supporting its role in positively regulating platelet aggregation.
+  - key: contributes to
+    source: GO:0070527
+    target: MESH:D009203
+    evidence:
+      - reference: PMID:24558405
+        snippet: Excessive aggregation of platelets at the site of plaque rupture on the coronary artery led to the formation of thrombus which is reported to precipitate acute myocardial infarction (AMI).
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Directly states platelet aggregation at plaque rupture precipitates acute myocardial infarction.
+references:
+  - https://www.drugbank.ca/drugs/DB00945
+  - https://meshb.nlm.nih.gov/record/ui?ui=D001241
+  - https://meshb.nlm.nih.gov/record/ui?ui=D009203

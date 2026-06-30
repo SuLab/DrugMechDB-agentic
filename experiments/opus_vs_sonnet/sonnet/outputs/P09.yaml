@@ -1,0 +1,89 @@
+directed: true
+multigraph: true
+graph:
+  _id: P09_DB00563_MESH_D054198
+  drug: Methotrexate
+  drug_mesh: MESH:D008727
+  drugbank: DB:DB00563
+  disease: Acute Lymphoblastic Leukemia
+  disease_mesh: MESH:D054198
+nodes:
+  - id: MESH:D008727
+    name: Methotrexate
+    label: Drug
+  - id: UniProt:P00374
+    name: Dihydrofolate reductase
+    label: Protein
+  - id: GO:0006231
+    name: dTMP biosynthetic process
+    label: BiologicalProcess
+  - id: GO:0071897
+    name: DNA biosynthetic process
+    label: BiologicalProcess
+  - id: MESH:D054198
+    name: Acute Lymphoblastic Leukemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D008727
+    target: UniProt:P00374
+    evidence:
+      - reference: PMID:37941559
+        snippet: Working by inhibiting dihydrofolate reductase and thereby preventing eventual formation of tetrahydrofolate, methotrexate inhibits synthesis of purines and thymidylate, therefore disabling a malignant cell's ability to replicate.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Methotrexate directly inhibits DHFR, preventing tetrahydrofolate formation.
+      - reference: PMID:19959110
+        snippet: the role of dihydrofolate reductase (DHFR), the principal target of aminopterin, has been studied extensively
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: DHFR is established as the principal target of antifolates including methotrexate.
+  - key: participates in
+    source: UniProt:P00374
+    target: GO:0006231
+    evidence:
+      - reference: PMID:10623528
+        snippet: Dihydrofolate reductase (DHFR) catalyzes the NADPH-dependent reduction of dihydrofolate to tetrahydrofolate and is essential for the synthesis of thymidylate, purines and several amino acids.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: DHFR provides the tetrahydrofolate cofactor required for thymidylate (dTMP) biosynthesis.
+  - key: participates in
+    source: GO:0006231
+    target: GO:0071897
+    evidence:
+      - reference: PMID:14529544
+        snippet: inhibition of both dTMP synthesis and de novo purine synthesis, secondary to DHFR inhibition, led to DNA synthesis inhibition and subsequent cell death
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: dTMP biosynthesis is required for DNA synthesis; inhibiting dTMP synthesis directly inhibits DNA replication.
+  - key: negatively regulates
+    source: MESH:D008727
+    target: GO:0071897
+    evidence:
+      - reference: PMID:37941559
+        snippet: methotrexate inhibits synthesis of purines and thymidylate, therefore disabling a malignant cell's ability to replicate.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Methotrexate ultimately inhibits DNA synthesis through its effect on folate-dependent nucleotide biosynthesis.
+      - reference: PMID:10623528
+        snippet: Inhibition of the enzyme's activity leads to arrest of DNA synthesis and cell death.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: DHFR inhibition by methotrexate arrests DNA synthesis and leads to cell death.
+  - key: treats
+    source: MESH:D008727
+    target: MESH:D054198
+    evidence:
+      - reference: PMID:19959110
+        snippet: Aminopterin was the first drug reported to cause remissions in children with acute lymphocytic leukaemia, and methotrexate (MTX), the antifolate that has supplemented aminopterin in the clinic
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Methotrexate is an established treatment for acute lymphoblastic leukemia, having replaced aminopterin in clinical practice.
+      - reference: PMID:30706807
+        snippet: MTX acts on a variety of target enzymes in the folates cycle, as well as being transported out and into of the cell by several transmembrane proteins.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Methotrexate is a pivotal drug in ALL treatment protocols.
+references:
+  - https://www.drugbank.ca/drugs/DB00563
+  - https://www.ncbi.nlm.nih.gov/books/NBK8000/

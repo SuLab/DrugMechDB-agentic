@@ -1,0 +1,89 @@
+directed: true
+multigraph: true
+graph:
+  _id: P07_DB00619_MESH_D015464
+  drug: Imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+  disease: Chronic Myeloid Leukemia
+  disease_mesh: MESH:D015464
+nodes:
+  - id: MESH:D000068877
+    name: Imatinib
+    label: Drug
+  - id: UniProt:P00519
+    name: BCR-ABL fusion protein
+    label: Protein
+  - id: GO:0008283
+    name: cell proliferation
+    label: BiologicalProcess
+  - id: GO:0006915
+    name: apoptotic process
+    label: BiologicalProcess
+  - id: MESH:D015464
+    name: Chronic Myeloid Leukemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: UniProt:P00519
+    evidence:
+      - reference: PMID:38280275
+        snippet: imatinib, effectively target BCR-ABL's tyrosine kinase activity by binding near the active site, disrupting ATP binding, and inhibiting downstream protein phosphorylation
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+      - reference: PMID:11831067
+        snippet: STI571 was shown to be a competitive inhibitor at the ATP-binding site of the Bcr-Abl tyrosine kinase
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: positively regulates
+    source: UniProt:P00519
+    target: GO:0008283
+    evidence:
+      - reference: PMID:16113647
+        snippet: constitutive activation of Abl tyrosine kinase, which in turn induces growth-factor-independent proliferation and cell survival
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+      - reference: PMID:35313299
+        snippet: Chronic myeloid leukaemia (CML) is a myeloproliferative neoplasm characterized by constitutive activity of the tyrosine kinase BCR-ABL1
+        supports: PARTIAL
+        evidence_source: HUMAN_CLINICAL
+  - key: negatively regulates
+    source: UniProt:P00519
+    target: GO:0006915
+    evidence:
+      - reference: PMID:16113647
+        snippet: Bcr-Abl-expressing cells are resistant to growth inhibition and apoptosis mediated by transforming growth factor-beta
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+      - reference: PMID:9111865
+        snippet: The identification of various genetic abnormalities which influence apoptosis in leukaemic cells (e.g., mutant p53, Bcr-Abl and over-expression of Bcl-2), suggests that the acquisition of an anti-apoptotic lesions is an important event in the multi-step evolution of hematological malignancies
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: contributes to
+    source: GO:0008283
+    target: MESH:D015464
+    evidence:
+      - reference: PMID:38280275
+        snippet: In CML, the BCR-ABL fusion protein disrupts the first exon of Abl, leading to sustained activation of tyrosine kinase and resistance to deactivation mechanisms
+        supports: PARTIAL
+        evidence_source: HUMAN_CLINICAL
+      - reference: PMID:11831067
+        snippet: In vitro studies and studies in animal models have shown, that Bcr-Abl is the molecular cause CML
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+  - key: contributes to
+    source: GO:0006915
+    target: MESH:D015464
+    evidence:
+      - reference: PMID:9111865
+        snippet: ineffective apoptosis has been associated with the development of inflammation, autoimmunity and hematological malignancies
+        supports: PARTIAL
+        evidence_source: OTHER
+      - reference: PMID:22207735
+        snippet: SIRT1 activation promotes CML cell survival and proliferation associated with deacetylation of multiple SIRT1 substrates
+        supports: PARTIAL
+        evidence_source: IN_VITRO
+references:
+  - https://www.drugbank.ca/drugs/DB00619
+  - https://www.ncbi.nlm.nih.gov/mesh/D015464

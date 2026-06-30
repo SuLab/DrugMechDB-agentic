@@ -1,0 +1,94 @@
+directed: true
+multigraph: true
+graph:
+  _id: P09_DB00563_MESH_D054198
+  drug: methotrexate
+  drug_mesh: MESH:D008727
+  drugbank: DB:DB00563
+  disease: Acute lymphoblastic leukemia
+  disease_mesh: MESH:D054198
+nodes:
+  - id: DB:DB00563
+    name: methotrexate
+    label: Drug
+  - id: UniProt:P00374
+    name: Dihydrofolate reductase
+    label: Protein
+  - id: GO:0046654
+    name: tetrahydrofolate biosynthetic process
+    label: BiologicalProcess
+  - id: GO:0006164
+    name: purine nucleotide biosynthetic process
+    label: BiologicalProcess
+  - id: UniProt:P04818
+    name: Thymidylate synthase
+    label: Protein
+  - id: GO:0071897
+    name: DNA biosynthetic process
+    label: BiologicalProcess
+  - id: MESH:D054198
+    name: Acute lymphoblastic leukemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00563
+    target: UniProt:P00374
+    evidence:
+      - reference: PMID:25136372
+        snippet: "MTX competitively inhibits dihydrofolate reductase (DHFR), an enzyme that participates in the tetrahydrofolate synthesis so as to inhibit purine synthesis."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Review of MTX mechanism in childhood ALL treatment."
+  - key: participates in
+    source: UniProt:P00374
+    target: GO:0046654
+    evidence:
+      - reference: PMID:25136372
+        snippet: "MTX competitively inhibits dihydrofolate reductase (DHFR), an enzyme that participates in the tetrahydrofolate synthesis so as to inhibit purine synthesis."
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: positively regulates
+    source: GO:0046654
+    target: GO:0006164
+    evidence:
+      - reference: PMID:25136372
+        snippet: "MTX competitively inhibits dihydrofolate reductase (DHFR), an enzyme that participates in the tetrahydrofolate synthesis so as to inhibit purine synthesis."
+        supports: SUPPORT
+        explanation: "Tetrahydrofolate synthesis is required for purine synthesis; inhibiting DHFR (and thus tetrahydrofolate synthesis) inhibits purine synthesis."
+        evidence_source: OTHER
+  - key: positively regulates
+    source: GO:0006164
+    target: GO:0071897
+    evidence:
+      - reference: PMID:25136372
+        snippet: "Therefore, MTX can inhibit the synthesis of DNA."
+        supports: SUPPORT
+        explanation: "Purine synthesis supplies nucleotides for DNA synthesis; MTX-mediated inhibition of purine synthesis contributes to inhibition of DNA synthesis."
+        evidence_source: OTHER
+  - key: decreases activity of
+    source: DB:DB00563
+    target: UniProt:P04818
+    evidence:
+      - reference: PMID:25136372
+        snippet: "its downstream metabolite methotrexate polyglutamates (MTX-PGs) inhibit the thymidylate synthase (TS)."
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: positively regulates
+    source: UniProt:P04818
+    target: GO:0071897
+    evidence:
+      - reference: PMID:26273805
+        snippet: "These drugs inhibit DNA synthesis by targeting the enzymes dihydrofolate reductase (DHFR) and/or thymidylate synthase (TYMS)."
+        supports: SUPPORT
+        explanation: "Thymidylate synthase activity is required for DNA synthesis; antifolate inhibition of TYMS inhibits DNA synthesis."
+        evidence_source: IN_VITRO
+  - key: treats
+    source: DB:DB00563
+    target: MESH:D054198
+    evidence:
+      - reference: PMID:25136372
+        snippet: "In particular, for the treatment of childhood acute lymphoblastic leukemia, it had significant effect."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+references:
+  - https://go.drugbank.com/drugs/DB00563

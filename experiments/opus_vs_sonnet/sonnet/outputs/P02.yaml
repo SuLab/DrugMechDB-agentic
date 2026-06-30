@@ -1,0 +1,70 @@
+directed: true
+multigraph: true
+graph:
+  _id: P02_DB01076_MESH_D006937
+  drug: atorvastatin
+  drug_mesh: MESH:D000069059
+  drugbank: DB:DB01076
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+nodes:
+  - id: MESH:D000069059
+    name: atorvastatin
+    label: Drug
+  - id: UniProt:P04035
+    name: HMG-CoA reductase
+    label: Protein
+  - id: GO:0006695
+    name: cholesterol biosynthetic process
+    label: BiologicalProcess
+  - id: UniProt:P01130
+    name: LDL receptor
+    label: Protein
+  - id: MESH:D006937
+    name: Hypercholesterolemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000069059
+    target: UniProt:P04035
+    evidence:
+      - reference: PMID:42112329
+        snippet: Atorvastatin, a widely used statin, primarily functions by inhibiting 3-hydroxy-3-methylglutaryl-coenzyme A (HMG-CoA) reductase, the rate-limiting enzyme in the mevalonate pathway, thereby lowering cholesterol.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Directly states atorvastatin inhibits HMG-CoA reductase (HMGCR).
+      - reference: PMID:12486413
+        snippet: HMGR is the target of compounds (HMGR inhibitors, commonly referred to as statins) that are very effective in lowering serum cholesterol levels. These inhibitors have K(i) values in the nanomolar range and are widely prescribed in the treatment of hypercholesterolemia.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Confirms statins including atorvastatin inhibit HMGCR with nanomolar Ki values.
+  - key: participates in
+    source: UniProt:P04035
+    target: GO:0006695
+    evidence:
+      - reference: PMID:12486413
+        snippet: 3-hydroxy-3-methylglutaryl coenzyme A (HMG-CoA) reductase (HMGR) catalyzes the committed step in cholesterol biosynthesis.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: HMG-CoA reductase catalyzes the committed (rate-limiting) step in the cholesterol biosynthetic process.
+  - key: negatively regulates
+    source: GO:0006695
+    target: UniProt:P01130
+    evidence:
+      - reference: PMID:17910517
+        snippet: By inhibiting 3-hydroxy-3-methylglutaryl coenzyme-A (HMG-CoA) reductase, the statins reduce hepatocyte cholesterol levels, which results in up-regulation of low-density lipoprotein (LDL) receptors and, consequently, increased clearance of LDL-cholesterol (LDL-C) from the plasma.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Reduced cholesterol biosynthesis (via HMGCR inhibition) leads to LDL receptor upregulation, demonstrating that the cholesterol biosynthetic process negatively regulates LDL receptor expression.
+  - key: negatively regulates
+    source: UniProt:P01130
+    target: MESH:D006937
+    evidence:
+      - reference: PMID:23074505
+        snippet: The reduced number or absence of functional LDL receptors results in impaired hepatic clearance of circulating low-density lipoprotein cholesterol (LDL-C) particles, which results in extremely high levels of LDL-C in the bloodstream.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Loss of LDL receptor function causes hypercholesterolemia (extremely high LDL-C), demonstrating that the LDL receptor negatively regulates hypercholesterolemia.
+references:
+  - https://www.drugbank.ca/drugs/DB01076
+  - https://meshb.nlm.nih.gov/record/ui?ui=D006937

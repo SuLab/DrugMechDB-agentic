@@ -1,0 +1,64 @@
+directed: true
+multigraph: true
+graph:
+  _id: P06_DB00675_MESH_D001943
+  drug: Tamoxifen
+  drug_mesh: MESH:D013629
+  drugbank: DB:DB00675
+  disease: Breast Cancer
+  disease_mesh: MESH:D001943
+nodes:
+  - id: DB:DB00675
+    name: Tamoxifen
+    label: Drug
+  - id: CHEBI:71176
+    name: Endoxifen
+    label: ChemicalSubstance
+  - id: UniProt:P03372
+    name: Estrogen receptor alpha
+    label: Protein
+  - id: GO:0008283
+    name: cell population proliferation
+    label: BiologicalProcess
+  - id: MESH:D001943
+    name: Breast Cancer
+    label: Disease
+links:
+  - key: has metabolite
+    source: DB:DB00675
+    target: CHEBI:71176
+    evidence:
+      - reference: PMID:22041137
+        snippet: "Tamoxifen requires metabolic activation by cytochrome P450 (CYP) enzymes for formation of active metabolites, 4-hydroxytamoxifen and endoxifen, which have 30- to 100-fold greater affinity to the estrogen receptor and the potency to suppress estrogen-dependent breast cancer cell proliferation."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Tamoxifen is metabolized by CYP enzymes to its active metabolite endoxifen."
+  - key: decreases activity of
+    source: CHEBI:71176
+    target: UniProt:P03372
+    evidence:
+      - reference: PMID:19244106
+        snippet: "endoxifen blocks ERalpha transcriptional activity and inhibits estrogen-induced breast cancer cell proliferation even in the presence of tamoxifen, N-desmethyl-tamoxifen, and 4-hydroxytamoxifen."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Endoxifen is a potent antiestrogen that blocks ERalpha transcriptional activity and targets it for degradation, after binding the receptor with high affinity."
+  - key: positively regulates
+    source: UniProt:P03372
+    target: GO:0008283
+    evidence:
+      - reference: PMID:32130619
+        snippet: "G1T48 is a potent and efficacious inhibitor of estrogen-mediated transcription and proliferation in ER-positive breast cancer cells, similar to the pure antiestrogen fulvestrant."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Estrogen receptor signaling mediates (drives) proliferation in ER-positive breast cancer cells; inhibiting ER inhibits proliferation."
+  - key: participates in
+    source: GO:0008283
+    target: MESH:D001943
+    evidence:
+      - reference: PMID:38901667
+        snippet: "Knockdown of FOXK2 significantly inhibited breast cancer cell proliferation, migration, anchorage-independent growth, and delayed tumor growth in a xenograft mouse model."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Breast cancer cell proliferation drives tumor growth in breast cancer."
+references:
+  - https://go.drugbank.com/drugs/DB00675

@@ -1,0 +1,75 @@
+directed: true
+multigraph: true
+graph:
+  _id: P06_DB00675_MESH_D001943
+  drug: Tamoxifen
+  drug_mesh: MESH:D013629
+  drugbank: DB:DB00675
+  disease: Breast Cancer
+  disease_mesh: MESH:D001943
+nodes:
+  - id: MESH:D013629
+    name: Tamoxifen
+    label: Drug
+  - id: CHEBI:44616
+    name: 4-Hydroxytamoxifen
+    label: ChemicalSubstance
+  - id: UniProt:P03372
+    name: Estrogen receptor alpha
+    label: Protein
+  - id: GO:0008283
+    name: cell proliferation
+    label: BiologicalProcess
+  - id: MESH:D001943
+    name: Breast Cancer
+    label: Disease
+links:
+  - key: has metabolite
+    source: MESH:D013629
+    target: CHEBI:44616
+    evidence:
+      - reference: PMID:19574470
+        snippet: Tamoxifen requires enzymatic activation by cytochrome P450 (CYP) enzymes for the formation of active metabolites 4-hydroxytamoxifen and endoxifen.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Tamoxifen is metabolised by CYP enzymes to form the active metabolite 4-hydroxytamoxifen.
+  - key: decreases activity of
+    source: CHEBI:44616
+    target: UniProt:P03372
+    evidence:
+      - reference: PMID:19574470
+        snippet: both metabolites have an approximately 100-fold greater affinity for the estrogen receptor and the ability to inhibit cell proliferation
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: 4-Hydroxytamoxifen binds estrogen receptor alpha with ~100-fold greater affinity than tamoxifen and inhibits its activity.
+      - reference: PMID:22041137
+        snippet: 4-hydroxytamoxifen and endoxifen, which have 30- to 100-fold greater affinity to the estrogen receptor and the potency to suppress estrogen-dependent breast cancer cell proliferation
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Active tamoxifen metabolites including 4-hydroxytamoxifen have high affinity for the estrogen receptor and suppress its proliferative activity.
+  - key: positively regulates
+    source: UniProt:P03372
+    target: GO:0008283
+    evidence:
+      - reference: PMID:19369047
+        snippet: About two thirds of breast cancers in women are hormone-dependent and require estrogen for growth, its effects being mainly mediated through estrogen receptor alpha (ERalpha).
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Estrogen receptor alpha mediates estrogen-driven growth of hormone-dependent breast cancer cells.
+      - reference: PMID:20103625
+        snippet: RBCK1 regulates cell cycle progression and proliferation of ERalpha-positive breast cancer cells by supporting transcription of ERalpha and cyclin B1
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: ERα supports cell cycle progression and proliferation in ER-positive breast cancer cells.
+  - key: contributes to
+    source: GO:0008283
+    target: MESH:D001943
+    evidence:
+      - reference: PMID:33190190
+        snippet: inhibit tumor cell proliferation by targeting ER signaling
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Endocrine therapies treat breast cancer by inhibiting tumor cell proliferation, demonstrating that cell proliferation contributes to breast cancer.
+references:
+  - https://www.drugbank.ca/drugs/DB00675
+  - https://www.ncbi.nlm.nih.gov/mesh/D013629

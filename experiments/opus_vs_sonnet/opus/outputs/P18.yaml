@@ -1,0 +1,74 @@
+directed: true
+multigraph: true
+graph:
+  _id: P18_DB01356_MESH_D001714
+  drug: Lithium
+  drug_mesh: MESH:D008094
+  drugbank: DB:DB01356
+  disease: Bipolar Disorder
+  disease_mesh: MESH:D001714
+nodes:
+  - id: DB:DB01356
+    name: Lithium
+    label: Drug
+  - id: UniProt:P49841
+    name: Glycogen synthase kinase-3 beta
+    label: Protein
+  - id: UniProt:P35222
+    name: Catenin beta-1
+    label: Protein
+  - id: GO:0006915
+    name: apoptotic process
+    label: BiologicalProcess
+  - id: MESH:D001714
+    name: Bipolar Disorder
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB01356
+    target: UniProt:P49841
+    evidence:
+      - reference: PMID:8710892
+        snippet: "Lithium potently inhibits GSK-3 beta activity (Ki = 2 mM), but is not a general inhibitor of other protein kinases."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Lithium directly inhibits GSK-3 beta enzymatic activity."
+      - reference: PMID:29232923
+        snippet: "the direct inhibition on glycogen synthase kinase 3β"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Review identifying direct GSK-3 beta inhibition as a mechanism of lithium in bipolar disorder."
+  - key: negatively regulates
+    source: UniProt:P49841
+    target: UniProt:P35222
+    evidence:
+      - reference: PMID:37011015
+        snippet: "Glycogen Synthase Kinase 3β (GSK3 β) phosphorylates and degrades catenin via the downstream Wnt signalling pathway"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "GSK-3 beta phosphorylates and degrades beta-catenin; its inhibition stabilizes beta-catenin."
+      - reference: PMID:30336136
+        snippet: "lithium chloride inhibited glycogen synthase kinase-3β activation, which on one hand, suppressed downstream CRMP-2/NR2B, thus diminishing the excitotoxic index level; and on the other, stabilized β-catenin"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "GSK-3 beta inhibition by lithium stabilizes beta-catenin."
+  - key: negatively regulates
+    source: UniProt:P35222
+    target: GO:0006915
+    evidence:
+      - reference: PMID:30336136
+        snippet: "stabilized β-catenin, thus modulating its downstream apoptosis-related factors such as NF-κB, Bcl-2 and Bax"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Stabilized beta-catenin modulates apoptosis-related factors and is paralleled by decreased neuronal death."
+  - key: contributes to
+    source: GO:0006915
+    target: MESH:D001714
+    evidence:
+      - reference: PMID:34357564
+        snippet: "Li+'s neuroprotective properties are related to its modulation of nerve growth factors, inflammation, mitochondrial function, oxidative stress, and programmed cell death mechanisms such as autophagy and apoptosis."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Apoptotic (programmed cell death) mechanisms underlie the neuroprotective action of lithium relevant to bipolar disorder pathology."
+references:
+  - https://go.drugbank.com/drugs/DB01356

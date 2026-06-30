@@ -1,0 +1,82 @@
+directed: true
+multigraph: true
+graph:
+  _id: P08_DB00002_MESH_D015179
+  drug: Cetuximab
+  drug_mesh: MESH:D000068818
+  drugbank: DB:DB00002
+  disease: Colorectal Cancer
+  disease_mesh: MESH:D015179
+nodes:
+  - id: DB:DB00002
+    name: Cetuximab
+    label: Drug
+  - id: UniProt:P00533
+    name: Epidermal growth factor receptor
+    label: Protein
+  - id: GO:0000165
+    name: MAPK cascade
+    label: BiologicalProcess
+  - id: GO:0008283
+    name: cell population proliferation
+    label: BiologicalProcess
+  - id: MESH:D015179
+    name: Colorectal Cancer
+    label: Disease
+links:
+  - key: physically interacts with
+    source: DB:DB00002
+    target: UniProt:P00533
+    evidence:
+      - reference: PMID:19892771
+        snippet: "the blocking of EGFR ligand binding using antibodies directed against the extracellular domain of the receptor (e.g., cetuximab)"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Cetuximab is an antibody directed against the extracellular ligand-binding domain of EGFR."
+  - key: decreases activity of
+    source: DB:DB00002
+    target: UniProt:P00533
+    evidence:
+      - reference: PMID:18813952
+        snippet: "the effect of epidermal growth factor receptor (EGFR) blockade on cell survival and on downstream signalling pathways using the monoclonal antibody cetuximab"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Cetuximab produces EGFR blockade affecting downstream signalling pathways in colon cancer cell lines."
+  - key: positively regulates
+    source: UniProt:P00533
+    target: GO:0000165
+    evidence:
+      - reference: PMID:33184860
+        snippet: "It activates the downstream signal pathway AKT-MTOR and RAS-MAPK, increases proliferation, migration, and invasion"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "EGFR activation drives the downstream RAS-MAPK signaling pathway in colorectal cancer cells."
+  - key: positively regulates
+    source: GO:0000165
+    target: GO:0008283
+    evidence:
+      - reference: PMID:32098826
+        snippet: "Reduced NF1 expression permitted sustained signaling through the MAPK pathway to promote cell proliferation in the presence of EGFR inhibition"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Signaling through the MAPK pathway promotes cell proliferation in colorectal cancer cells."
+  - key: positively correlated with
+    source: GO:0008283
+    target: MESH:D015179
+    evidence:
+      - reference: PMID:33184860
+        snippet: "treatment with morphine could activate MOR and lead to the promotion of proliferation, migration, and invasion in HCT116 and DLD1 colorectal cancer (CRC) cells"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Proliferation drives the malignant phenotype of colorectal cancer cells."
+  - key: treats
+    source: DB:DB00002
+    target: MESH:D015179
+    evidence:
+      - reference: PMID:26437179
+        snippet: "Anti-EGFR monoclonal antibodies such as cetuximab (CTX) have been approved for the treatment of various malignancies, including colorectal cancer (CRC) with wild-type KRAS"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Cetuximab is an approved anti-EGFR antibody for the treatment of colorectal cancer."
+references:
+  - https://go.drugbank.com/drugs/DB00002

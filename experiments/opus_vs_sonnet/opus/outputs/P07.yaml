@@ -1,0 +1,54 @@
+directed: true
+multigraph: true
+graph:
+  _id: P07_DB00619_MESH_D015464
+  drug: Imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+  disease: Chronic Myeloid Leukemia
+  disease_mesh: MESH:D015464
+nodes:
+  - id: DB:DB00619
+    name: Imatinib
+    label: Drug
+  - id: UniProt:P00519
+    name: BCR-ABL tyrosine kinase (ABL1)
+    label: Protein
+  - id: MESH:D015464
+    name: Chronic Myeloid Leukemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00619
+    target: UniProt:P00519
+    evidence:
+      - reference: PMID:11831067
+        snippet: "STI571 was shown to be a competitive inhibitor at the ATP-binding site of the Bcr-Abl tyrosine kinase"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Imatinib (STI571) is a competitive inhibitor at the ATP-binding site of the BCR-ABL tyrosine kinase, decreasing its activity."
+      - reference: PMID:36882601
+        snippet: "CML can be effectively treated using tyrosine kinase inhibitors (TKIs) such as imatinib, which prevent phosphorylation of downstream targets by blockade of the BCR-ABL kinase"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Imatinib blocks the BCR-ABL kinase, preventing phosphorylation of downstream targets."
+  - key: causes
+    source: UniProt:P00519
+    target: MESH:D015464
+    evidence:
+      - reference: PMID:36882601
+        snippet: "This fusion gene encodes a constitutively active tyrosine kinase, which results in malignant transformation of the cells"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "The constitutively active BCR-ABL tyrosine kinase results in malignant transformation underlying CML."
+  - key: treats
+    source: DB:DB00619
+    target: MESH:D015464
+    evidence:
+      - reference: PMID:36882601
+        snippet: "Since 2001, CML can be effectively treated using tyrosine kinase inhibitors (TKIs) such as imatinib"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Imatinib effectively treats CML."
+references:
+  - https://go.drugbank.com/drugs/DB00619

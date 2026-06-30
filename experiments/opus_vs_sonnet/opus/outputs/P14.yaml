@@ -1,0 +1,62 @@
+directed: true
+multigraph: true
+graph:
+  _id: P14_DB00198_MESH_D007251
+  drug: Oseltamivir
+  drug_mesh: MESH:D053139
+  drugbank: DB:DB00198
+  disease: Influenza
+  disease_mesh: MESH:D007251
+nodes:
+  - id: DB:DB00198
+    name: Oseltamivir
+    label: Drug
+  - id: MESH:C111791
+    name: Oseltamivir carboxylate
+    label: ChemicalSubstance
+  - id: UniProt:P03468
+    name: Neuraminidase
+    label: Protein
+  - id: GO:0019076
+    name: viral release from host cell
+    label: BiologicalProcess
+  - id: MESH:D007251
+    name: Influenza
+    label: Disease
+links:
+  - key: has metabolite
+    source: DB:DB00198
+    target: MESH:C111791
+    evidence:
+      - reference: PMID:23436258
+        snippet: "Oseltamivir is a prodrug for the active carboxylate metabolite."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: decreases activity of
+    source: MESH:C111791
+    target: UniProt:P03468
+    evidence:
+      - reference: PMID:39151273
+        snippet: "citrus-derived flavanones displayed comparable or even more potent in vitro inhibitory activity than oseltamivir carboxylate against NA"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Oseltamivir carboxylate is the reference neuraminidase (NA) inhibitor; the comparison establishes its inhibitory activity against NA."
+  - key: participates in
+    source: UniProt:P03468
+    target: GO:0019076
+    evidence:
+      - reference: PMID:36382275
+        snippet: "Neuraminidase, an exo-glycosidase displayed on the surface of influenza virions, is responsible for the release of the virions and their spread in the infected host."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: contributes to
+    source: GO:0019076
+    target: MESH:D007251
+    evidence:
+      - reference: PMID:36382275
+        snippet: "Neuraminidase, an exo-glycosidase displayed on the surface of influenza virions, is responsible for the release of the virions and their spread in the infected host."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Release and spread of virions in the infected host drives propagation of influenza A virus infection."
+references:
+  - https://go.drugbank.com/drugs/DB00198

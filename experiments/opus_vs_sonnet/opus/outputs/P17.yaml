@@ -1,0 +1,52 @@
+directed: true
+multigraph: true
+graph:
+  _id: P17_DB00472_MESH_D003865
+  drug: fluoxetine
+  drug_mesh: MESH:D005473
+  drugbank: DB:DB00472
+  disease: Major Depressive Disorder
+  disease_mesh: MESH:D003865
+nodes:
+  - id: DB:DB00472
+    name: Fluoxetine
+    label: Drug
+  - id: UniProt:P31645
+    name: Sodium-dependent serotonin transporter
+    label: Protein
+  - id: MESH:D012701
+    name: Serotonin
+    label: ChemicalSubstance
+  - id: MESH:D003865
+    name: Major Depressive Disorder
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00472
+    target: UniProt:P31645
+    evidence:
+      - reference: PMID:20739712
+        snippet: "Fluoxetine acts primarily as an inhibitor of the serotonin reuptake transporter (SERT) to block the removal of serotonin from the synaptic cleft, thereby enhancing serotonin signals."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Fluoxetine inhibits (decreases the activity of) the serotonin transporter SERT."
+  - key: negatively regulates
+    source: UniProt:P31645
+    target: MESH:D012701
+    evidence:
+      - reference: PMID:20739712
+        snippet: "Fluoxetine acts primarily as an inhibitor of the serotonin reuptake transporter (SERT) to block the removal of serotonin from the synaptic cleft, thereby enhancing serotonin signals."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "SERT removes serotonin from the synaptic cleft, lowering extracellular serotonin; inhibiting it enhances serotonin signals."
+  - key: treats
+    source: MESH:D012701
+    target: MESH:D003865
+    evidence:
+      - reference: PMID:33845072
+        snippet: "Selective serotonin reuptake inhibitors (SSRIs) are designed to improve mood by raising extracellular serotonin levels through the blockade of the serotonin transporter."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Raised extracellular serotonin levels mediate the mood-improving (antidepressant) effect of SSRIs in major depressive disorder."
+references:
+  - https://go.drugbank.com/drugs/DB00472

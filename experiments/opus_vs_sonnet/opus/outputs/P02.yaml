@@ -1,0 +1,73 @@
+directed: true
+multigraph: true
+graph:
+  _id: P02_DB01076_MESH_D006937
+  drug: Atorvastatin
+  drug_mesh: MESH:D000069059
+  drugbank: DB:DB01076
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+nodes:
+  - id: MESH:D000069059
+    name: Atorvastatin
+    label: Drug
+  - id: UniProt:P04035
+    name: 3-hydroxy-3-methylglutaryl-coenzyme A reductase
+    label: Protein
+  - id: GO:0006695
+    name: cholesterol biosynthetic process
+    label: BiologicalProcess
+  - id: UniProt:P01130
+    name: Low-density lipoprotein receptor
+    label: Protein
+  - id: MESH:D008078
+    name: Low-density lipoprotein cholesterol
+    label: ChemicalSubstance
+  - id: MESH:D006937
+    name: Hypercholesterolemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000069059
+    target: UniProt:P04035
+    evidence:
+      - reference: PMID:9409231
+        snippet: "Inhibition of HMG-CoA reductase by atorvastatin decreases both VLDL and LDL apolipoprotein B production in miniature pigs."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+  - key: participates in
+    source: UniProt:P04035
+    target: GO:0006695
+    evidence:
+      - reference: PMID:34207840
+        snippet: "their ability to inhibit HMG-CoA reductase, the rate-limiting enzyme of de novo cholesterol synthesis"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: negatively regulates
+    source: UniProt:P04035
+    target: UniProt:P01130
+    evidence:
+      - reference: PMID:16633945
+        snippet: "Through inhibition of HMG-CoA reductase, they restrict the rate-limiting step of cholesterol synthesis, which leads to upregulation of LDL receptors on the cell membrane and thus reduction of atherogenic LDLs."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Inhibiting HMG-CoA reductase leads to upregulation of LDL receptors, i.e. the enzyme's activity negatively regulates LDL receptor expression."
+  - key: decreases activity of
+    source: UniProt:P01130
+    target: MESH:D008078
+    evidence:
+      - reference: PMID:16633945
+        snippet: "which leads to upregulation of LDL receptors on the cell membrane and thus reduction of atherogenic LDLs"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Upregulated LDL receptors clear LDL from plasma, reducing atherogenic LDL cholesterol."
+  - key: treats
+    source: MESH:D000069059
+    target: MESH:D006937
+    evidence:
+      - reference: PMID:34207840
+        snippet: "Statins have been widely used for the treatment of hypercholesterolemia due to their ability to inhibit HMG-CoA reductase"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+references:
+  - https://go.drugbank.com/drugs/DB01076

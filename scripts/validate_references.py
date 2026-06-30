@@ -41,7 +41,7 @@ import yaml
 REPO = Path(__file__).resolve().parent.parent
 PATHS_DIR = REPO / "kb" / "paths"
 SCHEMA = REPO / "src" / "drugmechdb" / "schema" / "drugmechdb.yaml"
-CACHE_DIR = REPO / "references_cache"
+CACHE_DIR = Path(os.environ["DMDB_CACHE_DIR"]).resolve() if os.environ.get("DMDB_CACHE_DIR") else REPO / "references_cache"
 VALIDATOR_BIN = REPO / ".venv-py310" / "bin" / "linkml-reference-validator"
 
 

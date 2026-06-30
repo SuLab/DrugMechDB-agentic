@@ -1,0 +1,61 @@
+directed: true
+multigraph: true
+graph:
+  _id: P04_DB00264_MESH_D006333
+  drug: metoprolol
+  drug_mesh: MESH:D008790
+  drugbank: DB:DB00264
+  disease: Heart failure
+  disease_mesh: MESH:D006333
+nodes:
+  - id: DB:DB00264
+    name: metoprolol
+    label: Drug
+  - id: UniProt:P08588
+    name: Beta-1 adrenergic receptor
+    label: Protein
+  - id: GO:0010659
+    name: cardiac muscle cell apoptotic process
+    label: BiologicalProcess
+  - id: MESH:D006333
+    name: Heart failure
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00264
+    target: UniProt:P08588
+    evidence:
+      - reference: PMID:24667281
+        snippet: "We tested the efficiency of a combination of oral β1-adrenergic receptor blocker metoprolol and subcutaneous BNP infusion in decompensated heart failure."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Metoprolol is described as a β1-adrenergic receptor blocker, i.e. it decreases the activity of the β1-adrenergic receptor."
+  - key: positively regulates
+    source: UniProt:P08588
+    target: GO:0010659
+    evidence:
+      - reference: PMID:21776383
+        snippet: "Specifically, β(1)-AR and β(2)-AR coupled to Gαs exert a proapoptotic action, while β(2)-AR coupled to Gi exerts an antiapoptotic action."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "β1-adrenergic receptor (β1-AR) signaling exerts a proapoptotic action on cardiac myocytes, positively regulating cardiac muscle cell apoptosis."
+  - key: contributes to
+    source: GO:0010659
+    target: MESH:D006333
+    evidence:
+      - reference: PMID:26746354
+        snippet: "Cardiomyocyte apoptosis contributes to ischemic cardiac injury and the development of heart failure."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Cardiomyocyte (cardiac muscle cell) apoptosis contributes to the development of heart failure."
+  - key: treats
+    source: DB:DB00264
+    target: MESH:D006333
+    evidence:
+      - reference: PMID:10376614
+        snippet: "Metoprolol CR/XL once daily in addition to optimum standard therapy improved survival."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "In the MERIT-HF randomised controlled trial in chronic heart failure patients, metoprolol CR/XL improved survival, treating heart failure."
+references:
+  - https://go.drugbank.com/drugs/DB00264

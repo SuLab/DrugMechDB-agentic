@@ -60,7 +60,10 @@ from xml.etree import ElementTree as ET
 import yaml
 
 REPO = Path(__file__).resolve().parent.parent
-CACHE_DIR = REPO / "references_cache"
+# CACHE_DIR defaults to the committed references_cache/, but can be redirected
+# via DMDB_CACHE_DIR for isolated runs (e.g. per-arm experiment caches). The
+# override is backward-compatible: unset = original behavior.
+CACHE_DIR = Path(os.environ["DMDB_CACHE_DIR"]).resolve() if os.environ.get("DMDB_CACHE_DIR") else REPO / "references_cache"
 
 # Separates the prepended PubMed abstract from the open-access full-text body
 # inside a full_text cache file. It lives in the `## Content` body (so the

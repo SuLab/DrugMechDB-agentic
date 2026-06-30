@@ -1,0 +1,73 @@
+directed: true
+multigraph: true
+graph:
+  _id: P12_DB00951_MESH_D014397
+  drug: Isoniazid
+  drug_mesh: MESH:D007538
+  drugbank: DB:DB00951
+  disease: Pulmonary Tuberculosis
+  disease_mesh: MESH:D014397
+nodes:
+  - id: MESH:D007538
+    name: Isoniazid
+    label: Drug
+  - id: UniProt:P9WIE5
+    name: Catalase-peroxidase KatG
+    label: Protein
+  - id: UniProt:P9WGR1
+    name: Enoyl-[acyl-carrier-protein] reductase [NADH] InhA
+    label: Protein
+  - id: GO:0071768
+    name: mycolic acid biosynthetic process
+    label: BiologicalProcess
+  - id: MESH:D014397
+    name: Pulmonary Tuberculosis
+    label: Disease
+links:
+  - key: increases activity of
+    source: MESH:D007538
+    target: UniProt:P9WIE5
+    evidence:
+      - reference: PMID:26104204
+        snippet: "INH is activated by the catalase-peroxidase KatG, while ETH is activated by the monooxygenase EthA."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "KatG activates the isoniazid prodrug into its reactive species."
+  - key: decreases activity of
+    source: MESH:D007538
+    target: UniProt:P9WGR1
+    evidence:
+      - reference: PMID:26104204
+        snippet: "The resulting active species reacts with NAD+ to form an INH-NAD or ETH-NAD adduct, which inhibits the enoyl ACP reductase InhA, leading to mycolic acid biosynthesis inhibition and mycobacterial cell death."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "The INH-NAD adduct inhibits InhA enoyl-ACP reductase."
+  - key: participates in
+    source: UniProt:P9WGR1
+    target: GO:0071768
+    evidence:
+      - reference: PMID:16842188
+        snippet: "InhA is a member of the mycobacterial Type II fatty acid biosynthesis system, which elongates acyl fatty acid precursors of mycolic acids."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "InhA participates in mycolic acid biosynthesis."
+  - key: disrupts
+    source: MESH:D007538
+    target: GO:0071768
+    evidence:
+      - reference: PMID:26104204
+        snippet: "which inhibits the enoyl ACP reductase InhA, leading to mycolic acid biosynthesis inhibition and mycobacterial cell death"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Inhibition of InhA by isoniazid disrupts mycolic acid biosynthesis."
+  - key: treats
+    source: MESH:D007538
+    target: MESH:D014397
+    evidence:
+      - reference: PMID:37476899
+        snippet: "isoniazid (H) is an important first-line agent in tuberculosis (TB) treatment"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Isoniazid is a first-line agent in the treatment of pulmonary tuberculosis."
+references:
+  - https://go.drugbank.com/drugs/DB00951

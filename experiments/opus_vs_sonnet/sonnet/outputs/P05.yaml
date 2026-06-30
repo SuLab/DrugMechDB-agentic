@@ -1,0 +1,79 @@
+directed: true
+multigraph: true
+graph:
+  _id: P05_DB00758_MESH_D020521
+  drug: Clopidogrel
+  drug_mesh: MESH:D000077144
+  drugbank: DB:DB00758
+  disease: Stroke
+  disease_mesh: MESH:D020521
+nodes:
+  - id: MESH:D000077144
+    name: Clopidogrel
+    label: Drug
+  - id: CHEBI:174738
+    name: Clopidogrel active metabolite
+    label: ChemicalSubstance
+  - id: UniProt:Q9H244
+    name: P2Y12 receptor
+    label: Protein
+  - id: GO:0070527
+    name: platelet aggregation
+    label: BiologicalProcess
+  - id: MESH:D020521
+    name: Stroke
+    label: Disease
+links:
+  - key: has metabolite
+    source: MESH:D000077144
+    target: CHEBI:174738
+    evidence:
+      - reference: PMID:22221409
+        snippet: Clopidogrel is an antithrombotic prodrug, whose active metabolite inhibits platelet function by irreversibly binding to the platelet receptor for adenosine diphosphate, P2Y(12).
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Establishes that clopidogrel is a prodrug that generates an active metabolite responsible for its antiplatelet effect.
+  - key: decreases activity of
+    source: CHEBI:174738
+    target: UniProt:Q9H244
+    evidence:
+      - reference: PMID:23885646
+        snippet: Clopidogrel is a thienopyridine that selectively and irreversibly inhibits the ADP purinergic receptor P2Y12 and the subsequent ADP-mediated platelet activation.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Directly states clopidogrel (via its active metabolite) irreversibly inhibits the P2Y12 receptor.
+      - reference: PMID:22221409
+        snippet: Clopidogrel is an antithrombotic prodrug, whose active metabolite inhibits platelet function by irreversibly binding to the platelet receptor for adenosine diphosphate, P2Y(12).
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: positively regulates
+    source: UniProt:Q9H244
+    target: GO:0070527
+    evidence:
+      - reference: PMID:29439388
+        snippet: Adenosine diphosphate (ADP) is the major platelet agonist, which is important in the shape changes, stability, and growth of the thrombus.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: P2Y12 is an ADP receptor; ADP acting through P2Y12 positively regulates platelet aggregation. The pharmacologic blockade of P2Y12 reduces platelet aggregation (per the same paper).
+      - reference: PMID:23885646
+        snippet: Clopidogrel is a thienopyridine that selectively and irreversibly inhibits the ADP purinergic receptor P2Y12 and the subsequent ADP-mediated platelet activation.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Shows that P2Y12 mediates ADP-driven platelet activation, supporting that P2Y12 positively regulates platelet aggregation.
+  - key: contributes to
+    source: GO:0070527
+    target: MESH:D020521
+    evidence:
+      - reference: PMID:22393298
+        snippet: Platelet activation and aggregation play a seminal role in the arterial thrombus formation that precipitates acute manifestations of atherothrombotic disease.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Establishes platelet aggregation as contributing to arterial thrombus formation, which causes ischemic stroke (an atherothrombotic disease manifestation).
+      - reference: PMID:35094598
+        snippet: An abundance of evidence supports aspirin and clopidogrel use for secondary stroke prevention.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Clinical evidence that antiplatelet therapy (clopidogrel) prevents stroke, implicating platelet aggregation in stroke pathogenesis.
+references:
+  - https://www.drugbank.ca/drugs/DB00758
+  - https://pubchem.ncbi.nlm.nih.gov/compound/60606

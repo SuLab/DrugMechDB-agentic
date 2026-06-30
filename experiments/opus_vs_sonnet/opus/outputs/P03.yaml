@@ -1,0 +1,85 @@
+directed: true
+multigraph: true
+graph:
+  _id: P03_DB00722_MESH_D006973
+  drug: Lisinopril
+  drug_mesh: MESH:D017706
+  drugbank: DB:DB00722
+  disease: Hypertension
+  disease_mesh: MESH:D006973
+nodes:
+  - id: MESH:D017706
+    name: Lisinopril
+    label: Drug
+  - id: UniProt:P12821
+    name: Angiotensin-converting enzyme
+    label: Protein
+  - id: MESH:D000804
+    name: Angiotensin II
+    label: ChemicalSubstance
+  - id: UniProt:P30556
+    name: Type-1 angiotensin II receptor
+    label: Protein
+  - id: GO:0042310
+    name: vasoconstriction
+    label: BiologicalProcess
+  - id: MESH:D006973
+    name: Hypertension
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D017706
+    target: UniProt:P12821
+    evidence:
+      - reference: PMID:33048477
+        snippet: "Lisinopril, a highly hydrophilic long-acting angiotensin-converting enzyme inhibitor, is frequently prescribed for the treatment of hypertension and congestive heart failure."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Lisinopril is identified as an angiotensin-converting enzyme inhibitor, i.e. it decreases ACE activity."
+  - key: positively regulates
+    source: UniProt:P12821
+    target: MESH:D000804
+    evidence:
+      - reference: PMID:27992423
+        snippet: "The angiotensin-I converting enzyme (ACE) plays a central role in the renin-angiotensin system, acting by converting the hormone angiotensin-I to the active peptide angiotensin-II (Ang-II)."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "ACE converts angiotensin-I into angiotensin-II, increasing angiotensin II formation."
+  - key: increases activity of
+    source: MESH:D000804
+    target: UniProt:P30556
+    evidence:
+      - reference: PMID:29556787
+        snippet: "Ang II and AVP, acting on AT1R and V1aR, respectively, exert vasoconstriction, increase cardiac contractility, stimulate the sympathoadrenal system, and elevate blood pressure."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Angiotensin II acts on AT1 receptors (AT1R), activating the receptor."
+  - key: positively regulates
+    source: UniProt:P30556
+    target: GO:0042310
+    evidence:
+      - reference: PMID:29556787
+        snippet: "Ang II and AVP, acting on AT1R and V1aR, respectively, exert vasoconstriction, increase cardiac contractility, stimulate the sympathoadrenal system, and elevate blood pressure."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Angiotensin II acting on AT1R exerts vasoconstriction."
+  - key: causes
+    source: GO:0042310
+    target: MESH:D006973
+    evidence:
+      - reference: PMID:33972750
+        snippet: "SNX1 impairment increases arterial AT1R expression, leading to increased vasoconstriction and blood pressure."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Increased vasoconstriction leads to increased blood pressure, i.e. hypertension."
+  - key: treats
+    source: MESH:D017706
+    target: MESH:D006973
+    evidence:
+      - reference: PMID:33048477
+        snippet: "Lisinopril, a highly hydrophilic long-acting angiotensin-converting enzyme inhibitor, is frequently prescribed for the treatment of hypertension and congestive heart failure."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Lisinopril is prescribed for the treatment of hypertension."
+references:
+  - https://go.drugbank.com/drugs/DB00722

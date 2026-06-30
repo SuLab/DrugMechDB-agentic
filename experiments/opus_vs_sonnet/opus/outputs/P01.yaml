@@ -1,0 +1,68 @@
+directed: true
+multigraph: true
+graph:
+  _id: P01_DB00945_MESH_D009203
+  drug: Aspirin
+  drug_mesh: MESH:D001241
+  drugbank: DB:DB00945
+  disease: Myocardial infarction
+  disease_mesh: MESH:D009203
+nodes:
+  - id: MESH:D001241
+    name: Aspirin
+    label: Drug
+  - id: UniProt:P23219
+    name: Prostaglandin G/H synthase 1 (Cyclooxygenase-1, COX-1)
+    label: Protein
+  - id: CHEBI:50124
+    name: Thromboxane A2
+    label: ChemicalSubstance
+  - id: GO:0070527
+    name: platelet aggregation
+    label: BiologicalProcess
+  - id: MESH:D009203
+    name: Myocardial infarction
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D001241
+    target: UniProt:P23219
+    evidence:
+      - reference: PMID:18612540
+        snippet: "Aspirin prevents thrombotic events by inhibiting platelet cyclooxygenase-1 (COX-1), thus reducing thromboxane A2 formation and platelet aggregation."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Aspirin irreversibly acetylates and inhibits platelet COX-1."
+      - reference: PMID:24942808
+        snippet: "the acetylation of platelet cyclooxygenase (COX)-1 at serine-529 is the direct mechanism of action of low-dose aspirin"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: positively regulates
+    source: UniProt:P23219
+    target: CHEBI:50124
+    evidence:
+      - reference: PMID:18612540
+        snippet: "Aspirin prevents thrombotic events by inhibiting platelet cyclooxygenase-1 (COX-1), thus reducing thromboxane A2 formation and platelet aggregation."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "COX-1 activity drives thromboxane A2 formation; inhibiting COX-1 reduces thromboxane A2."
+  - key: positively regulates
+    source: CHEBI:50124
+    target: GO:0070527
+    evidence:
+      - reference: PMID:17073586
+        snippet: "Various platelet agonists like adenosine diphosphate (ADP), thrombin and thromboxane A2 (TXA2) activate platelets by acting via their respective surface receptors"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Thromboxane A2 is a platelet agonist that activates platelets to form stable platelet aggregates."
+  - key: contributes to
+    source: GO:0070527
+    target: MESH:D009203
+    evidence:
+      - reference: PMID:17073586
+        snippet: "Platelet activation and aggregation is an integral component of the pathophysiology that leads to thrombotic and ischemic diseases such as cerebral stroke, peripheral vascular disease and myocardial infarction."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Platelet aggregation drives coronary thrombosis and the pathophysiology leading to myocardial infarction."
+references:
+  - https://go.drugbank.com/drugs/DB00945

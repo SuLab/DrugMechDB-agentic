@@ -1,0 +1,82 @@
+directed: true
+multigraph: true
+graph:
+  _id: P15_DB00787_MESH_D006561
+  drug: Acyclovir
+  drug_mesh: MESH:D000212
+  drugbank: DB:DB00787
+  disease: Herpes Simplex
+  disease_mesh: MESH:D006561
+nodes:
+  - id: MESH:D000212
+    name: Acyclovir
+    label: Drug
+  - id: MESH:C025643
+    name: Acyclovir triphosphate
+    label: ChemicalSubstance
+  - id: UniProt:P03176
+    name: Herpes simplex virus type 1 thymidine kinase
+    label: Protein
+  - id: UniProt:P04293
+    name: Herpes simplex virus type 1 DNA polymerase
+    label: Protein
+  - id: GO:0006260
+    name: DNA replication
+    label: BiologicalProcess
+  - id: NCBITaxon:10298
+    name: Human herpesvirus 1
+    label: OrganismTaxon
+  - id: MESH:D006561
+    name: Herpes Simplex
+    label: Disease
+links:
+  - key: has metabolite
+    source: MESH:D000212
+    target: MESH:C025643
+    evidence:
+      - reference: PMID:6313600
+        snippet: "Acyclovir monophosphate is subsequently converted to a triphosphate which is a more potent inhibitor of herpes virus DNA polymerases than of cellular DNA polymerases."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: participates in
+    source: UniProt:P03176
+    target: GO:0006260
+    evidence:
+      - reference: PMID:6313600
+        snippet: "This selectivity is due to the initial activation of the drug by phosphorylation by a herpes virus-specified thymidine kinase."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: decreases activity of
+    source: MESH:C025643
+    target: UniProt:P04293
+    evidence:
+      - reference: PMID:6291456
+        snippet: "HSV-1 DNA polymerase was the most sensitive to inhibition by acyclovir triphosphate (ACVTP)."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: participates in
+    source: UniProt:P04293
+    target: GO:0006260
+    evidence:
+      - reference: PMID:6291456
+        snippet: "it appeared to act as a chain terminator in DNA replication catalyzed by either HSV-1 DNA polymerase or DNA polymerase alpha"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: occurs in
+    source: GO:0006260
+    target: NCBITaxon:10298
+    evidence:
+      - reference: PMID:6291456
+        snippet: "it appeared to act as a chain terminator in DNA replication catalyzed by either HSV-1 DNA polymerase or DNA polymerase alpha"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: causes
+    source: NCBITaxon:10298
+    target: MESH:D006561
+    evidence:
+      - reference: PMID:23389903
+        snippet: "Herpes simplex virus (HSV) is a significant human pathogen causing mucocutaneous lesions primarily in the oral or genital mucosa."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+references:
+  - https://go.drugbank.com/drugs/DB00787

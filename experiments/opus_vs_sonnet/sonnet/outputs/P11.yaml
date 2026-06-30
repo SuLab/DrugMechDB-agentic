@@ -1,0 +1,78 @@
+directed: true
+multigraph: true
+graph:
+  _id: P11_DB01045_MESH_D014397
+  drug: Rifampicin
+  drug_mesh: MESH:D012293
+  drugbank: DB:DB01045
+  disease: Pulmonary Tuberculosis
+  disease_mesh: MESH:D014397
+nodes:
+  - id: MESH:D012293
+    name: Rifampicin
+    label: Drug
+  - id: UniProt:P9WKP4
+    name: DNA-directed RNA polymerase subunit beta
+    label: Protein
+  - id: GO:0006351
+    name: DNA-templated transcription
+    label: BiologicalProcess
+  - id: MESH:D014397
+    name: Pulmonary Tuberculosis
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D012293
+    target: UniProt:P9WKP4
+    evidence:
+      - reference: PMID:33877820
+        snippet: Rifamycins act by binding to the β-subunit of bacterial RNA polymerase, inhibiting transcription, which results in cell death.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Rifampicin (a rifamycin) binds to and inhibits the beta-subunit of bacterial RNA polymerase (RpoB, UniProt:P9WKP4 in M. tuberculosis).
+      - reference: PMID:28392175
+        snippet: Rif functions by a steric-occlusion mechanism that prevents extension of RNA.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Structural studies confirm rifampin binding to and inhibiting the function of M. tuberculosis RNAP, whose beta subunit is RpoB.
+  - key: participates in
+    source: UniProt:P9WKP4
+    target: GO:0006351
+    evidence:
+      - reference: PMID:33877820
+        snippet: Rifamycins act by binding to the β-subunit of bacterial RNA polymerase, inhibiting transcription, which results in cell death.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: The RNA polymerase beta subunit (RpoB) is a core catalytic component of the bacterial RNA polymerase complex that carries out DNA-templated transcription.
+      - reference: PMID:28392175
+        snippet: Rif functions by a steric-occlusion mechanism that prevents extension of RNA.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: RpoB is the subunit through which RNA extension (transcription) occurs; rifampicin blocks this activity by steric occlusion.
+  - key: negatively regulates
+    source: MESH:D012293
+    target: GO:0006351
+    evidence:
+      - reference: PMID:41339746
+        snippet: Rifampicin, a cornerstone of first-line therapy, inhibits transcription during promoter escape
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Rifampicin negatively regulates bacterial DNA-templated transcription by blocking the RNA polymerase during promoter escape.
+      - reference: PMID:33877820
+        snippet: Rifamycins act by binding to the β-subunit of bacterial RNA polymerase, inhibiting transcription, which results in cell death.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: treats
+    source: MESH:D012293
+    target: MESH:D014397
+    evidence:
+      - reference: PMID:33877820
+        snippet: These antibiotics are primarily used to treat mycobacterial infections, including tuberculosis.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Rifampicin (a rifamycin antibiotic) is used to treat tuberculosis, including pulmonary tuberculosis.
+      - reference: PMID:28392175
+        snippet: Mtb RNA polymerase (RNAP) is the target of the first-line antituberculosis drug rifampin (Rif).
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Rifampin (rifampicin) is a first-line antituberculosis drug used to treat pulmonary tuberculosis caused by M. tuberculosis.

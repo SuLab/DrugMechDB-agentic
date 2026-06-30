@@ -1,0 +1,70 @@
+directed: true
+multigraph: true
+graph:
+  _id: P11_DB01045_MESH_D014397
+  drug: Rifampicin
+  drug_mesh: MESH:D012293
+  drugbank: DB:DB01045
+  disease: Pulmonary Tuberculosis
+  disease_mesh: MESH:D014397
+nodes:
+  - id: DB:DB01045
+    name: Rifampicin
+    label: Drug
+  - id: UniProt:P9WGY9
+    name: DNA-directed RNA polymerase subunit beta (RpoB)
+    label: Protein
+  - id: GO:0006351
+    name: DNA-templated transcription
+    label: BiologicalProcess
+  - id: NCBITaxon:1773
+    name: Mycobacterium tuberculosis
+    label: OrganismTaxon
+  - id: MESH:D014397
+    name: Pulmonary Tuberculosis
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB01045
+    target: UniProt:P9WGY9
+    evidence:
+      - reference: PMID:25288092
+        snippet: "rifampin (RIF) binds to the beta subunit of the RNA polymerase (RpoB) of Mycobacterium tuberculosis"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Rifampin binds the RpoB beta subunit, inhibiting the RNA polymerase enzyme."
+  - key: decreases activity of
+    source: DB:DB01045
+    target: GO:0006351
+    evidence:
+      - reference: PMID:31269464
+        snippet: "The antimicrobial activity of RIF is attributed to its ability to inhibit transcription by binding to the β subunit of bacterial RNA polymerase (encoded by rpoB)."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: occurs in
+    source: GO:0006351
+    target: NCBITaxon:1773
+    evidence:
+      - reference: PMID:25288092
+        snippet: "rifampin (RIF) binds to the beta subunit of the RNA polymerase (RpoB) of Mycobacterium tuberculosis"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "RpoB-containing RNA polymerase performs DNA-templated transcription in M. tuberculosis."
+  - key: negatively regulates
+    source: DB:DB01045
+    target: NCBITaxon:1773
+    evidence:
+      - reference: PMID:25288092
+        snippet: "M. tuberculosis killing by RIF stimulated an increase in the rate of formation of the CPH radical"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: causes
+    source: NCBITaxon:1773
+    target: MESH:D014397
+    evidence:
+      - reference: PMID:40916634
+        snippet: "Tuberculosis, caused by Mycobacterium tuberculosis, persists as a significant worldwide health issue"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+references:
+  - https://go.drugbank.com/drugs/DB01045

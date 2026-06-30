@@ -1,0 +1,72 @@
+directed: true
+multigraph: true
+graph:
+  _id: P08_DB00002_MESH_D015179
+  drug: Cetuximab
+  drug_mesh: MESH:D000068818
+  drugbank: DB:DB00002
+  disease: Colorectal Cancer
+  disease_mesh: MESH:D015179
+nodes:
+  - id: MESH:D000068818
+    name: Cetuximab
+    label: Drug
+  - id: UniProt:P00533
+    name: Epidermal growth factor receptor
+    label: Protein
+  - id: GO:0008283
+    name: cell population proliferation
+    label: BiologicalProcess
+  - id: MESH:D015179
+    name: Colorectal Cancer
+    label: Disease
+links:
+  - key: molecularly interacts with
+    source: MESH:D000068818
+    target: UniProt:P00533
+    evidence:
+      - reference: PMID:20088790
+        snippet: Cetuximab (IMC-C225, Erbitux ImClone Systems Inc, New York, NY) is a recombinant, human/mouse chimeric monoclonal antibody (MAb) that binds specifically to the extracellular domain of the human epidermal growth factor receptor (EGFR) on both normal and tumor cells, and competitively inhibits the binding of epidermal growth factor (EGF) as well as other ligands.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Cetuximab binds specifically to the extracellular domain of EGFR (UniProt:P00533).
+  - key: decreases activity of
+    source: MESH:D000068818
+    target: UniProt:P00533
+    evidence:
+      - reference: PMID:20088790
+        snippet: Cetuximab binding to the EGFR blocks phosphorylation and activation of receptor-associated kinases and their associated downstream signalling (MAPK, PI3K/Akt, Jak/Stat pathways) resulting in inhibition of many cellular processes such as induction of apoptosis, cell growth, decreased Matrix Metallo-Proteinase (MMPs) and vascular endothelial growth factor (VEGF) production.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Cetuximab binding blocks EGFR phosphorylation and downstream kinase activation, thereby decreasing EGFR signaling activity.
+  - key: positively regulates
+    source: UniProt:P00533
+    target: GO:0008283
+    evidence:
+      - reference: PMID:15341677
+        snippet: When activated, EGFR phosphorylates and activates other intracellular proteins that affect cell signaling pathways, cellular proliferation, control of apoptosis and angiogenesis.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Activated EGFR drives cellular proliferation through downstream signaling cascades.
+      - reference: PMID:19747140
+        snippet: EGFR signaling pathway is implicated in the control of cell survival, proliferation, metastasis and angiogenesis.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: EGFR positively regulates cell proliferation as part of its canonical signaling activity.
+  - key: contributes to
+    source: GO:0008283
+    target: MESH:D015179
+    evidence:
+      - reference: PMID:15717942
+        snippet: The strategy of using monoclonal antibodies (mAbs) to block ligand binding to the extracellular domain of the EGFR has led to the development of therapeutics that robustly arrest malignant cell proliferation and, in some cases, induce profound tumor regression.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Blocking EGFR-driven malignant cell proliferation produces tumor regression, indicating that cell proliferation contributes to colorectal cancer progression.
+      - reference: PMID:33989949
+        snippet: cetuximab inhibits the EGFR signaling pathway, inhibiting proliferation and inducing apoptosis.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Inhibiting proliferation by cetuximab is associated with anti-tumor effects in colorectal cancer.
+references:
+  - https://www.drugbank.ca/drugs/DB00002
+  - https://www.ncbi.nlm.nih.gov/mesh/D000068818

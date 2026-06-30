@@ -32,9 +32,9 @@
     <div class="rec-ids" id="ids"></div>
     <p class="rec-summary" id="summary"></p>
     <div class="rec-actions">
-      <button class="btn primary">↓ Download YAML</button>
-      <button class="btn">❝ Cite</button>
-      <button class="btn">↗ View source</button>
+      <button class="btn primary" id="btn-dl">↓ Download YAML</button>
+      <button class="btn" id="btn-cite">❝ Cite</button>
+      <button class="btn" id="btn-src">↗ View source</button>
     </div>
   </header>
 
@@ -75,6 +75,12 @@
       <ul class="refs" id="refs"></ul>
     </section>
 
+    <!-- RAW SOURCE (collapsible, toggled by "View source") -->
+    <section id="rawrec" hidden>
+      <div class="section-title">Source record <span class="count">YAML</span></div>
+      <pre class="rawyaml" id="rawyaml"></pre>
+    </section>
+
   </div>
 </div>
 
@@ -112,10 +118,14 @@ function longestPath(R){
     if(!inc[id].length)return rank[id]=0; let m=0; inc[id].forEach(p=>m=Math.max(m,r(p)+1)); return rank[id]=m; }
   R.nodes.forEach(n=>r(n.id)); return Math.max(...Object.values(rank));
 }
+const evEdges = R.links.filter(l=>Array.isArray(l.evidence)&&l.evidence.length).length;
+const flaggedEdges = R.links.filter(l=>Array.isArray(l.evidence)&&l.evidence.some(it=>it.supports&&it.supports!=="SUPPORT")).length;
 $("statstrip").innerHTML = [
-  [R.nodes.length,"concepts"],[R.links.length,"relationships"],[longestPath(R),"path length (steps)"]
+  [R.nodes.length,"concepts"],[R.links.length,"relationships"],[longestPath(R),"path length (steps)"],
+  [`${evEdges}/${R.links.length}`,"edges sourced"]
 ].map(([n,l])=>`<div class="item"><div class="n">${n}</div><div class="l">${l}</div></div>`).join("")
-+ `<div class="item"><div class="n neg">↓</div><div class="l">net effect on disease</div></div>`;
++ `<div class="item"><div class="n neg">↓</div><div class="l">net effect on disease</div></div>`
++ (flaggedEdges?`<div class="item"><div class="n" style="color:#a14d52">${flaggedEdges}</div><div class="l">flagged for review</div></div>`:"");
 
 // graph
 const onClick = n => {
@@ -145,21 +155,119 @@ $("rels").innerHTML = R.links.map(l=>{
     <span class="obj">${byId[l.target].name}</span></div>`;
 }).join("");
 
-// evidence
-const withEv = R.links.filter(l=>l.evidence);
+// evidence — per-edge EvidenceItem cards with the full paper-credential block
+const VERDICT = {
+  SUPPORT:         {g:"✓", t:"Support",         c:"ok"},
+  PARTIAL:         {g:"◐", t:"Partial",         c:"partial"},
+  NO_EVIDENCE:     {g:"○", t:"No evidence",     c:"flag"},
+  REFUTE:          {g:"✗", t:"Refutes",         c:"flag"},
+  WRONG_STATEMENT: {g:"⚠", t:"Wrong statement", c:"flag"},
+};
+const SRC_LABEL = { HUMAN_CLINICAL:"clinical", MODEL_ORGANISM:"model organism",
+                    IN_VITRO:"in vitro", COMPUTATIONAL:"computational", OTHER:"other" };
+const pmidOf = r => (r||"").replace("PMID:","");
+function refUrl(it){
+  if(it.source_type==="pubmed")   return "https://pubmed.ncbi.nlm.nih.gov/"+pmidOf(it.reference)+"/";
+  if(it.source_type==="drugbank") return "https://go.drugbank.com/drugs/"+it.reference+"#mechanism-of-action";
+  return "#";
+}
+function evItem(it){
+  const v = VERDICT[it.supports] || {g:"•", t:it.supports||"", c:""};
+  const badges = [
+    `<span class="verdict v-${v.c}">${v.g} ${v.t}</span>`,
+    it.evidence_source ? `<span class="badge">${SRC_LABEL[it.evidence_source]||it.evidence_source.toLowerCase()}</span>` : "",
+    it.source_tier==="FULL_TEXT" ? `<span class="badge">full text</span>` : "",
+  ].filter(Boolean).join("");
+  let cred;
+  if(it.paper){
+    const p = it.paper;
+    const links = [
+      it.source_type==="pubmed" ? `<a href="${refUrl(it)}" target="_blank" rel="noopener">PMID ${pmidOf(it.reference)} ↗</a>` : "",
+      p.doi   ? `<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener">DOI ↗</a>` : "",
+      p.pmcid ? `<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/${p.pmcid}/" target="_blank" rel="noopener">${p.pmcid} ↗</a>` : "",
+      p.license ? `<span class="cred-lic">${p.license}</span>` : "",
+    ].filter(Boolean).join("");
+    cred = `<div class="ev-cred">
+      <div class="cred-title">${p.title}</div>
+      <div class="cred-meta">${(p.authors||[]).join(", ")}${p.authors&&p.authors.length?" · ":""}${p.journal||""}${p.year?" · "+p.year:""}</div>
+      <div class="cred-links">${links}</div></div>`;
+  } else {
+    cred = `<div class="ev-cred"><div class="cred-links"><a href="${refUrl(it)}" target="_blank" rel="noopener">DrugBank — Mechanism of action ↗</a></div></div>`;
+  }
+  return `<div class="ev-item">
+    <div class="ev-badges">${badges}</div>
+    <div class="snippet">“${it.snippet}”</div>
+    ${it.explanation ? `<div class="ev-explain">${it.explanation}</div>` : ""}
+    ${cred}</div>`;
+}
+const withEv = R.links.filter(l => Array.isArray(l.evidence) && l.evidence.length);
 $("evidence").innerHTML = withEv.length ? withEv.map(l=>{
-  const e=l.evidence;
-  const href = e.source_type==="pubmed" ? `https://pubmed.ncbi.nlm.nih.gov/${e.ref}/`
-             : e.source_type==="drugbank" ? `https://go.drugbank.com/drugs/${e.ref}#mechanism-of-action` : "#";
-  const lbl = e.source_type==="pubmed" ? `PMID ${e.ref}` : e.source;
-  return `<details class="ev"><summary><span class="caret">▸</span> ${byId[l.source].name} → ${byId[l.target].name}
-    <span class="pred ${dir(l.key)}" style="margin-left:auto">${l.key}</span></summary>
-    <div class="ev-body"><div class="snippet">“${e.snippet}”</div>
-    <div class="ev-src"><a class="src-badge ${e.source_type}" href="${href}" target="_blank" rel="noopener">${lbl} ↗</a></div></div></details>`;
-}).join("") : `<p style="padding:0 18px;color:var(--muted)">This legacy record carries record-level sources (below). Per-edge evidence is added during AI re-curation.</p>`;
+  const items = l.evidence;
+  const flagged = items.some(it => it.supports && it.supports!=="SUPPORT");
+  return `<details class="ev"${flagged?' data-flag="1"':''}><summary><span class="caret">▸</span>
+    <span class="ev-edge">${byId[l.source].name} <span class="pred ${dir(l.key)}">${l.key}</span> ${byId[l.target].name}</span>
+    <span class="ev-count">${items.length} ref${items.length>1?"s":""}${flagged?" · ⚑ flagged":""}</span></summary>
+    <div class="ev-body">${items.map(evItem).join("")}</div></details>`;
+}).join("") : `<p style="padding:0;color:var(--muted)">This legacy record carries record-level sources (below). Per-edge evidence is added during AI re-curation.</p>`;
 
 // references
 $("refs").innerHTML = R.references.map(r=>`<li><span class="src-badge ${r.type}">${r.type}</span> <a href="${r.url}" target="_blank">${r.label}</a></li>`).join("");
+
+/* ---- source record: minimal YAML serializer + action buttons ---- */
+function toYaml(v, ind){
+  ind = ind || 0;
+  const pad = "  ".repeat(ind);
+  const scalar = x => {
+    if (x === null || x === undefined) return "null";
+    if (typeof x === "number" || typeof x === "boolean") return String(x);
+    const s = String(x);
+    return (/^\s|\s$|[:#\[\]{}&*!|>'"%@`,]|^$/.test(s) || /^(true|false|null|yes|no|~)$/i.test(s) || /^[\d.+-]/.test(s))
+      ? JSON.stringify(s) : s;
+  };
+  if (v === null || typeof v !== "object") return scalar(v);
+  if (Array.isArray(v)) {
+    if (!v.length) return "[]";
+    return v.map(item => {
+      if (item !== null && typeof item === "object") {
+        const lines = toYaml(item, ind + 1).split("\n");
+        const first = lines[0].slice((ind + 1) * 2);
+        return pad + "- " + first + (lines.length > 1 ? "\n" + lines.slice(1).join("\n") : "");
+      }
+      return pad + "- " + scalar(item);
+    }).join("\n");
+  }
+  const keys = Object.keys(v);
+  if (!keys.length) return "{}";
+  return keys.map(k => {
+    const val = v[k];
+    const nonEmpty = val !== null && typeof val === "object" && (Array.isArray(val) ? val.length : Object.keys(val).length);
+    return nonEmpty ? pad + k + ":\n" + toYaml(val, ind + 1) : pad + k + ": " + scalar(val);
+  }).join("\n");
+}
+const recordYaml = () => toYaml({
+  directed: true, multigraph: true,
+  graph: R.graph, nodes: R.nodes, links: R.links, references: R.references
+});
+
+$("btn-src").onclick = () => {
+  const sec = $("rawrec");
+  if (sec.hidden) { $("rawyaml").textContent = recordYaml(); sec.hidden = false;
+    sec.scrollIntoView({behavior:"smooth", block:"start"}); $("btn-src").textContent = "✕ Hide source"; }
+  else { sec.hidden = true; $("btn-src").textContent = "↗ View source"; }
+};
+$("btn-dl").onclick = () => {
+  const blob = new Blob([recordYaml() + "\n"], {type:"text/yaml"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = R.graph._id + ".yaml"; a.click();
+  URL.revokeObjectURL(a.href);
+};
+$("btn-cite").onclick = () => {
+  const g = R.graph, y = new Date().getFullYear();
+  const cite = `DrugMechDB (${y}). ${g.drug} → ${g.disease} mechanism path [${g._id}]. Su Lab. CC0. https://github.com/SuLab/DrugMechDB-agentic`;
+  navigator.clipboard?.writeText(cite);
+  const b = $("btn-cite"), t = b.textContent; b.textContent = "✓ Citation copied";
+  setTimeout(()=>{ b.textContent = t; }, 1600);
+};
 </script>
 </body>
 </html>

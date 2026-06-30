@@ -1,0 +1,77 @@
+directed: true
+multigraph: true
+graph:
+  _id: P04_DB00264_MESH_D006333
+  drug: Metoprolol
+  drug_mesh: MESH:D008790
+  drugbank: DB:DB00264
+  disease: Heart Failure
+  disease_mesh: MESH:D006333
+nodes:
+  - id: MESH:D008790
+    name: Metoprolol
+    label: Drug
+  - id: UniProt:P08588
+    name: Beta-1 adrenergic receptor
+    label: Protein
+  - id: GO:0006915
+    name: apoptotic process
+    label: BiologicalProcess
+  - id: MESH:D006333
+    name: Heart Failure
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D008790
+    target: UniProt:P08588
+    evidence:
+      - reference: PMID:23300817
+        snippet: This effect could be blocked by the selective β(1)-adrenergic receptor antagonist metoprolol, PKA inhibitor H89, and p38 MAPK inhibitor SB203580.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Metoprolol is identified as a selective beta-1 adrenergic receptor antagonist, blocking (decreasing) receptor activity.
+      - reference: PMID:20888833
+        snippet: prolonged treatment with of β(2) AR agonist, fenoterol, in combination with a β(1) AR blocker, metoprolol, is more effective than β(1) AR blocker alone
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: Metoprolol is a beta-1 adrenergic receptor blocker, decreasing receptor activity.
+  - key: positively regulates
+    source: UniProt:P08588
+    target: GO:0006915
+    evidence:
+      - reference: PMID:20888833
+        snippet: selective stimulation of β(1) AR activates the proapoptotic signaling pathways, while selective stimulation of β(2) AR is antiapoptotic
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Activation of beta-1 adrenergic receptor triggers pro-apoptotic signaling pathways in cardiomyocytes.
+      - reference: PMID:23104882
+        snippet: PKA inhibition protected myocytes from death induced by β1-adrenergic receptor agonists by preventing cytosolic and sarcoplasmic reticulum Ca(2+) overload and calcium/calmodulin-dependent kinase II activation.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Beta-1 adrenergic receptor agonists drive myocyte death through PKA and CaMKII pathways.
+  - key: contributes to
+    source: GO:0006915
+    target: MESH:D006333
+    evidence:
+      - reference: PMID:20888833
+        snippet: Loss of cardiomyocytes due to apoptosis is one mechanism that undoubtedly contributes to cardiac remodeling and functional deterioration associated with dilated cardiomyopathy (DCM).
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Cardiomyocyte apoptosis contributes to progressive cardiac remodeling and functional deterioration seen in heart failure.
+  - key: treats
+    source: MESH:D008790
+    target: MESH:D006333
+    evidence:
+      - reference: PMID:11181074
+        snippet: Selective beta(1)-blockade with high dose of metoprolol initiated in the early postinfarct phase improves myocardial energy metabolism and function and prevents overactivation of sympathetic system.
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: Metoprolol treatment improves cardiac function and energy metabolism in a heart failure model.
+      - reference: PMID:26488593
+        snippet: Several well designed, large scale randomized clinical trials including CIBS-II (bisoprolol), MERIT-HF (metoprolol succinate), and Copernicus (carvedilol) among others, have been conducted in patients with HFRef and demonstrated an improvement in cardiac mortality and morbidity.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Multiple large clinical trials demonstrate that metoprolol succinate improves cardiac mortality and morbidity in heart failure.
+references:
+  - https://www.drugbank.ca/drugs/DB00264
+  - https://meshb.nlm.nih.gov/record/ui?ui=D006333

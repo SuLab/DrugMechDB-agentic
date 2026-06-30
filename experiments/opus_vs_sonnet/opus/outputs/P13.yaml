@@ -1,0 +1,68 @@
+directed: true
+multigraph: true
+graph:
+  _id: P13_DB00512_MESH_D055624
+  drug: Vancomycin
+  drug_mesh: MESH:D014640
+  drugbank: DB:DB00512
+  disease: Methicillin-Resistant Staphylococcus aureus Infection
+  disease_mesh: MESH:D055624
+nodes:
+  - id: MESH:D014640
+    name: Vancomycin
+    label: Drug
+  - id: CHEBI:73835
+    name: D-alanyl-D-alanine
+    label: ChemicalSubstance
+  - id: GO:0009252
+    name: peptidoglycan biosynthetic process
+    label: BiologicalProcess
+  - id: NCBITaxon:1280
+    name: Staphylococcus aureus
+    label: OrganismTaxon
+  - id: MESH:D055624
+    name: Methicillin-Resistant Staphylococcus aureus Infection
+    label: Disease
+links:
+  - key: physically interacts with
+    source: MESH:D014640
+    target: CHEBI:73835
+    evidence:
+      - reference: PMID:27663982
+        snippet: "This is achieved primarily through binding to the d-alanyl-d-alanine terminus of the lipid II bacterial cell-wall precursor, preventing cross-linking of the peptidoglycan layer."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: disrupts
+    source: CHEBI:73835
+    target: GO:0009252
+    evidence:
+      - reference: PMID:24685455
+        snippet: "bind to d-alanyl-d-alanine stem termini on the peptidoglycan precursors of the cell wall. This binding inhibits cross-linking between the peptides and subsequently prevents cell wall synthesis."
+        supports: SUPPORT
+        evidence_source: COMPUTATIONAL
+  - key: occurs in
+    source: GO:0009252
+    target: NCBITaxon:1280
+    evidence:
+      - reference: PMID:17316058
+        snippet: "The clinically important vancomycin antibiotic inhibits the growth of pathogens such as Staphylococcus aureus by blocking cell wall synthesis through specific recognition of nascent peptidoglycan terminating in D-Ala-D-Ala."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: causes
+    source: NCBITaxon:1280
+    target: MESH:D055624
+    evidence:
+      - reference: PMID:34508427
+        snippet: "Staphylococcus aureus is both a frequent commensal and a leading cause of endocarditis, bacteremia, osteomyelitis and skin and soft tissue infections and device-related infections."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: treats
+    source: MESH:D014640
+    target: MESH:D055624
+    evidence:
+      - reference: PMID:17724497
+        snippet: "vancomycin, the gold standard in the treatment of MRSA"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+references:
+  - https://go.drugbank.com/drugs/DB00512

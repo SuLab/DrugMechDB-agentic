@@ -1,0 +1,70 @@
+directed: true
+multigraph: true
+graph:
+  _id: P12_DB00951_MESH_D014397
+  drug: Isoniazid
+  drug_mesh: MESH:D007538
+  drugbank: DB:DB00951
+  disease: Pulmonary Tuberculosis
+  disease_mesh: MESH:D014397
+nodes:
+  - id: MESH:D007538
+    name: Isoniazid
+    label: Drug
+  - id: UniProt:P0A5Q9
+    name: InhA
+    label: Protein
+  - id: GO:0001560
+    name: mycolic acid biosynthetic process
+    label: BiologicalProcess
+  - id: NCBITaxon:1773
+    name: Mycobacterium tuberculosis
+    label: OrganismTaxon
+  - id: MESH:D014397
+    name: Pulmonary Tuberculosis
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D007538
+    target: UniProt:P0A5Q9
+    evidence:
+      - reference: PMID:9949810
+        snippet: A reactive form of isoniazid inhibits InhA by reacting with the NAD(H) cofactor bound to the enzyme active site forming a covalent adduct (isonicotinic acyl NADH) that is apt to bind with high affinity.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Isoniazid is a prodrug activated by the mycobacterial catalase-peroxidase KatG; the resulting isonicotinoyl-NAD adduct inhibits InhA (enoyl-ACP reductase).
+      - reference: PMID:29765372
+        snippet: This isonicotinyl-NAD adduct inhibits the activity of 2-trans-enoyl-ACP(CoA) reductase (InhA), which plays a role in mycolic acid biosynthesis.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: participates in
+    source: UniProt:P0A5Q9
+    target: GO:0001560
+    evidence:
+      - reference: PMID:21143326
+        snippet: InhA, an essential enzyme of the mycolic acid biosynthetic pathway and the primary target of the anti-tubercular drug isoniazid
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: InhA is an enoyl-ACP reductase essential for the mycolic acid biosynthetic pathway.
+      - reference: PMID:16842188
+        snippet: InhA is a member of the mycobacterial Type II fatty acid biosynthesis system, which elongates acyl fatty acid precursors of mycolic acids.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: occurs in
+    source: GO:0001560
+    target: NCBITaxon:1773
+    evidence:
+      - reference: PMID:34634381
+        snippet: Mycobacterium tuberculosis has a complex cell wall containing mycolic acids (MA), which play an important role in pathogenesis, virulence, and survival by protecting the cell against harsh environments.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Mycolic acid biosynthesis is an essential process unique to Mycobacterium tuberculosis; disrupting it kills the bacterium.
+  - key: causes
+    source: NCBITaxon:1773
+    target: MESH:D014397
+    evidence:
+      - reference: PMID:16842188
+        snippet: Tuberculosis (TB) remains the leading cause of mortality due to a bacterial pathogen, Mycobacterium tuberculosis.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Mycobacterium tuberculosis is the causative agent of tuberculosis, including pulmonary tuberculosis.

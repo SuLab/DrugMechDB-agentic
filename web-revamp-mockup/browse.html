@@ -42,7 +42,21 @@
     <main>
       <div class="browse-search"><span style="color:var(--muted)">⌕</span>
         <input id="q" placeholder="Search drug, disease, or target protein…" autofocus></div>
-      <div class="results-head"><span id="rcount"></span><span>Sorted by relevance</span></div>
+      <div class="results-head">
+        <span id="rcount"></span>
+        <span class="rh-right">
+          <a href="#" id="clear" class="clear-link" hidden>Clear all</a>
+          <label class="sort-wrap">Sort
+            <select id="sort" class="sort-select">
+              <option value="relevance">Relevance</option>
+              <option value="drug_az">Drug A–Z</option>
+              <option value="drug_za">Drug Z–A</option>
+              <option value="len_asc">Path length ↑</option>
+              <option value="len_desc">Path length ↓</option>
+            </select>
+          </label>
+        </span>
+      </div>
       <div id="results"></div>
     </main>
 
@@ -86,24 +100,83 @@ document.querySelectorAll(".facet input").forEach(cb=>cb.addEventListener("chang
   render();
 }));
 document.getElementById("q").addEventListener("input", render);
+document.getElementById("sort").addEventListener("change", render);
+document.getElementById("clear").addEventListener("click", e=>{
+  e.preventDefault();
+  Object.values(sel).forEach(s=>s.clear());
+  document.querySelectorAll(".facet input").forEach(cb=>cb.checked=false);
+  document.getElementById("q").value = "";
+  document.getElementById("sort").value = "relevance";
+  render();
+});
+
+/* --- field-boosted, prefix-aware search (zero-dependency) --- */
+const FIELD_BOOST = { drug:10, disease:8, target:4, area:2, id:1 };
+const norm = s => (s||"").toLowerCase();
+function termScore(term, r){
+  const fields = { drug:r.drug, disease:r.disease, target:r.target, area:r.area, id:r.id };
+  let best = 0;
+  for(const f in fields){
+    const val = norm(fields[f]); if(!val) continue;
+    const b = FIELD_BOOST[f] || 1;
+    let s = 0;
+    if(val === term) s = b*5;                                              // exact field
+    else if(val.startsWith(term)) s = b*3;                                 // field prefix
+    else if(val.split(/[^a-z0-9]+/).some(w=>w.startsWith(term))) s = b*2;  // word prefix
+    else if(val.includes(term)) s = b;                                     // substring
+    if(s>best) best = s;
+  }
+  if(!best && r.types.some(t=>norm(t).includes(term))) best = 0.5;         // node-type match
+  return best;
+}
+function score(q, r){                       // AND across terms; 0 if any term unmatched
+  let total = 0;
+  for(const t of q.split(/\s+/).filter(Boolean)){
+    const s = termScore(t, r); if(s===0) return 0; total += s;
+  }
+  return total;
+}
+const CMP = {
+  relevance: (a,b)=> b._score - a._score || a.drug.localeCompare(b.drug),
+  drug_az:   (a,b)=> a.drug.localeCompare(b.drug),
+  drug_za:   (a,b)=> b.drug.localeCompare(a.drug),
+  len_asc:   (a,b)=> a.steps - b.steps || a.drug.localeCompare(b.drug),
+  len_desc:  (a,b)=> b.steps - a.steps || a.drug.localeCompare(b.drug),
+};
+const esc = s => (s||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const escRe = s => s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+function hl(text, terms){
+  let out = esc(text);
+  terms.filter(t=>t.length>=2).forEach(t=>{ out = out.replace(new RegExp("("+escRe(t)+")","ig"), "<mark>$1</mark>"); });
+  return out;
+}
 
 function render(){
-  const q = document.getElementById("q").value.toLowerCase().trim();
-  const out = IDX.filter(r=>{
-    if(q && !(`${r.drug} ${r.disease} ${r.target}`.toLowerCase().includes(q))) return false;
+  const q = norm(document.getElementById("q").value).trim();
+  const terms = q.split(/\s+/).filter(Boolean);
+  const sortKey = document.getElementById("sort").value;
+  const anyFilter = q || sel.area.size || sel.type.size || sel.len.size || sortKey!=="relevance";
+  document.getElementById("clear").hidden = !anyFilter;
+
+  let out = IDX.filter(r=>{
     if(sel.area.size && !sel.area.has(r.area)) return false;
     if(sel.type.size && ![...sel.type].every(t=>r.types.includes(t))) return false;
     if(sel.len.size && !sel.len.has(lenBucket(r.steps))) return false;
     return true;
   });
+  if(q) out = out.map(r=>({...r, _score: score(q,r)})).filter(r=>r._score>0);
+  // when not searching, "Relevance" has no signal → fall back to A–Z
+  const key = (sortKey==="relevance" && !q) ? "drug_az" : sortKey;
+  out.sort(CMP[key]);
+
   document.getElementById("rcount").textContent = `${out.length} of ${IDX.length} paths`;
   document.getElementById("results").innerHTML = out.map(r=>{
     const preview = r.types.map((t,i)=>
       `<span class="mini-node" style="background:${TYPE_COLOR[t]||'#6b7280'}">${t.replace(/([a-z])([A-Z])/g,'$1 $2')}</span>`+
       (i<r.types.length-1?'<span class="mini-ar">→</span>':'')).join("");
     return `<a class="result" href="record.html">
-      <div class="r-title"><span class="drug">${r.drug}</span> <span class="ar">↓</span> <span class="disease">${r.disease}</span></div>
-      <div class="r-meta">${r.area} · target: ${r.target} · ${r.steps} steps · <span class="mono">${r.id}</span></div>
+      <div class="r-title"><span class="drug">${hl(r.drug,terms)}</span> <span class="ar">↓</span> <span class="disease">${hl(r.disease,terms)}</span></div>
+      <div class="r-meta">${esc(r.area)} · target: ${hl(r.target||'',terms)} · ${r.steps} steps · <span class="mono">${esc(r.id)}</span></div>
       <div class="r-path">${preview}</div></a>`;
   }).join("") || `<div class="card" style="padding:40px;text-align:center;color:var(--muted)">No paths match these filters.</div>`;
 }

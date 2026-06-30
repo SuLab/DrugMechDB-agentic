@@ -1,0 +1,54 @@
+[
+  {
+    "pair_id": "P02",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 29,
+    "wall_seconds": 212.3,
+    "usage": {
+      "input_tokens": 660823,
+      "output_tokens": 7107,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.0891,
+    "n_tool_calls": 52,
+    "tool_call_counts": {
+      "pubmed_search": 18,
+      "pubmed_fetch": 8,
+      "read_reference": 22,
+      "write_path_yaml": 1,
+      "canonicalize_predicates": 1,
+      "run_qc": 1,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "rings of cached abstracts) | \u2705 PASS |\n\n**Overall: PASS** \u2014 No retries needed (0/3 retries used).\n\n---\n\n### Mechanistic Path (6 nodes, 5 edges)\n\n```\nAtorvastatin\n  --[decreases activity of]--> HMG-CoA reductase (HMGCR / UniProt:P04035)\n  --[participates in]--> cholesterol biosynthetic process (GO:0006695)\n  --[negatively regulates]--> LDL receptor (UniProt:P01130)\n  --[negatively regulates]--> Lipoproteins, LDL (MESH:D008077)\n  --[causes]--> Hypercholesterolemia (MESH:D006937)\n```\n\n**Mechanistic rationale:** Atorvastatin competitively inhibits HMGCR (the rate-limiting enzyme of the mevalonate/cholesterol biosynthetic pathway). Reduced HMGCR activity lowers intracellular cholesterol synthesis, which via SREBP-2 activation secondarily upregulates hepatic LDL receptor expression. The upregulated LDLR increases endocytic clearance of circulating LDL particles from the bloodstream. Reduced circulating LDL addresses the hallmark of hypercholesterolemia.\n\n---\n\n### PMIDs Cited\n\n| PMID | Role |\n|------|------|\n| **PMID:35894149** | Statin competitive inhibition of HMG-CoA reductase; reduced mevalonate/cholesterol biosynthesis |\n| **PMID:12793598** | Reduced hepatic cholesterol synthesis \u2192 secondary LDLR upregulation (SREBP mechanism) |\n| **PMID:30953636** | LDLR-mediated endocytosis and clearance of circulating LDL particles |\n| **PMID:27005486** | Elevated LDL as driver of hypercholesterolemia |\n\n---\n\n### Unresolved Validation Failures\n**None.** All layers passed on the first attempt."
+  },
+  {
+    "pair_id": "P11",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 36,
+    "wall_seconds": 246.9,
+    "usage": {
+      "input_tokens": 829672,
+      "output_tokens": 8099,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.6105,
+    "n_tool_calls": 57,
+    "tool_call_counts": {
+      "pubmed_search": 17,
+      "pubmed_fetch": 9,
+      "read_reference": 25,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 1,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "\n\n### Graph Summary\n- **4 nodes**, **4 edges**\n- Drug \u2192 Protein \u2192 BiologicalProcess \u2192 Disease\n\n### Mechanistic Path\n```\nRifampicin (MESH:D012293)\n  --[decreases activity of]--> DNA-directed RNA polymerase subunit beta (UniProt:P9WKP4)\n  --[participates in]--> DNA-templated transcription (GO:0006351)\n  \nRifampicin (MESH:D012293)\n  --[negatively regulates]--> DNA-templated transcription (GO:0006351)\n  \nRifampicin (MESH:D012293)\n  --[treats]--> Pulmonary Tuberculosis (MESH:D014397)\n```\n\n### QC Results (first attempt \u2014 no retries needed)\n| Layer | Result |\n|---|---|\n| Layer 1 \u2014 LinkML schema | \u2705 PASS |\n| Layer 2 \u2014 Node ontology | \u2705 PASS |\n| Layer 3 \u2014 Predicate vocabulary | \u2705 PASS |\n| Layer 4 \u2014 Verbatim reference snippets | \u2705 PASS |\n| **Overall** | **\u2705 PASS** |\n\n### Retry Count\n**0 retries** \u2014 passed on first attempt.\n\n### PMIDs Cited\n| PMID | Role |\n|---|---|\n| **PMID:33877820** | Surette et al. (2021), *Accounts Chem Res* \u2014 \"Rifamycins act by binding to the \u03b2-subunit of bacterial RNA polymerase, inhibiting transcription, which results in cell death.\" |\n| **PMID:28392175** | Lin et al. (2017), *Molecular Cell* \u2014 Crystal structures of Mtb RNAP with rifampin; \"Rif functions by a steric-occlusion mechanism that prevents extension of RNA.\" |\n| **PMID:41339746** | Bosch et al. (2026), *Nature Microbiology* \u2014 \"Rifampicin, a cornerstone of first-line therapy, inhibits transcription during promoter escape\" |\n\n### Unresolved Validation Failures\n**None.** All four QC layers passed cleanly."
+  }
+]

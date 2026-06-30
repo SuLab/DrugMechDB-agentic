@@ -1,0 +1,65 @@
+directed: true
+multigraph: true
+graph:
+  _id: P16_DB01235_MESH_D010300
+  drug: Levodopa
+  drug_mesh: MESH:D007980
+  drugbank: DB:DB01235
+  disease: Parkinson's Disease
+  disease_mesh: MESH:D010300
+nodes:
+  - id: DB:DB01235
+    name: Levodopa
+    label: Drug
+  - id: MESH:D004298
+    name: Dopamine
+    label: ChemicalSubstance
+  - id: UBERON:0002435
+    name: Striatum
+    label: GrossAnatomicalStructure
+  - id: MESH:D010300
+    name: Parkinson's Disease
+    label: Disease
+links:
+  - key: has metabolite
+    source: DB:DB01235
+    target: MESH:D004298
+    evidence:
+      - reference: PMID:23020119
+        snippet: "L-Dopa is converted to DA"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Aromatic L-amino acid decarboxylase converts levodopa to dopamine after it crosses the blood-brain barrier."
+      - reference: PMID:11215754
+        snippet: "Aromatic L-amino acid decarboxylase (AAAD) converts L-DOPA to dopamine."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+  - key: located in
+    source: MESH:D004298
+    target: UBERON:0002435
+    evidence:
+      - reference: PMID:23020119
+        snippet: "decreased levels of the neurotransmitter dopamine (DA) in the striatum of the brain"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Dopamine acts in the striatum; PD reflects its deficiency there, which levodopa-derived dopamine replenishes."
+  - key: located in
+    source: MESH:D010300
+    target: UBERON:0002435
+    evidence:
+      - reference: PMID:29971496
+        snippet: "Unilateral arm UPDRS bradykinesia scores were associated with DAT uptake in the contralateral putamen."
+        supports: PARTIAL
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Parkinsonian motor deficits localize to nigrostriatal dopamine loss in the striatum (putamen)."
+  - key: treats
+    source: DB:DB01235
+    target: MESH:D010300
+    evidence:
+      - reference: PMID:23020119
+        snippet: "Levodopa (L-Dopa) crosses the blood-brain barrier and its administration replenishes the loss of DA in dopaminergic neurons in PD patients."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "By replenishing striatal dopamine, levodopa is the cornerstone treatment for Parkinson's disease."
+references:
+  - https://go.drugbank.com/drugs/DB01235
