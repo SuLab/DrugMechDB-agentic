@@ -30,12 +30,12 @@
 </div></nav>
 
 <div class="container">
-  <header class="rec-header" style="border-bottom:none">
+  <header class="rec-header" style="border-bottom:none" data-reveal>
     <div class="rec-title">Documentation</div>
     <p class="rec-summary" style="margin-top:10px">How DrugMechDB is structured, curated, validated, and reused.</p>
   </header>
 
-  <div class="doc-list">
+  <div class="doc-list" data-reveal-group>
     <a class="doc-row" href="#record"><span class="dt">Data format &amp; schema</span><span class="dd">The record structure, 14 node types, and Biolink predicate vocabulary (LinkML).</span><span class="ar">→</span></a>
     <a class="doc-row" href="#"><span class="dt">Curation guide</span><span class="dd">How a mechanism path is built, step by step, with path-quality conventions.</span><span class="ar">→</span></a>
     <a class="doc-row" href="#"><span class="dt">Sourcing policy</span><span class="dd">Established, already-asserted mechanisms only — DrugBank MoA, GO, UniProt, Reactome, reviews.</span><span class="ar">→</span></a>
@@ -45,7 +45,7 @@
     <a class="doc-row" href="#"><span class="dt">Changelog</span><span class="dd">Release history and what changed between versions.</span><span class="ar">→</span></a>
   </div>
 
-  <section id="record">
+  <section id="record" data-reveal>
     <div class="section-title">Anatomy of a record</div>
     <p class="rec-summary">Each path is a directed drug→…→disease multigraph. Nodes are CURIE-identified and Biolink-typed; edges are Biolink predicates joined by node id. Newer records carry per-edge evidence.</p>
 <pre class="code"><span class="k">graph</span>:
@@ -71,5 +71,6 @@ directed: true     multigraph: true</pre>
   <div>DrugMechDB · Su Lab · curated under the Biolink Model · CC0</div>
   <div class="links"><a href="#">GitHub</a><a href="#">DOI</a><a href="#">Translator</a></div>
 </div></footer>
+<script src="reveal.js"></script>
 </body>
 </html>

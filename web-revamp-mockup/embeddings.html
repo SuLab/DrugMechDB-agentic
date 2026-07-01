@@ -33,12 +33,12 @@
 </div></nav>
 
 <div class="container">
-  <header class="rec-header" style="border-bottom:none">
+  <header class="rec-header" style="border-bottom:none" data-reveal>
     <div class="rec-title">Embeddings explorer</div>
     <p class="rec-summary" style="margin-top:10px">A 2-D map where each point is a mechanism path; nearby points share targets, processes, or disease biology. Find drugs that work in similar ways.</p>
   </header>
 
-  <div class="emb-layout">
+  <div class="emb-layout" data-reveal>
     <aside>
       <div class="ctrl"><h4>Embedding basis</h4>
         <select id="basis"><option>Whole mechanism path</option><option>Drug target</option><option>Biological process</option><option>Disease biology</option></select>
@@ -132,5 +132,6 @@ document.getElementById("colorby").addEventListener("change",render);
 document.getElementById("q").addEventListener("input",render);
 render();
 </script>
+<script src="reveal.js"></script>
 </body>
 </html>
