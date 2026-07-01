@@ -257,3 +257,39 @@ mark { background: var(--line-2); color: var(--ink); border-bottom: 2px solid va
   .entry { border-left: none; border-top: 1px solid var(--line); padding-left: 24px; }
   .entry:first-child { padding-left: 24px; }
 }
+
+/* ============================================================
+   MOTION — scroll reveals + interaction feedback
+   transform/opacity only (GPU-cheap) · ease-out entrances ·
+   honors prefers-reduced-motion · no infinite/decorative motion.
+   The .reveal hidden state is applied by reveal.js, so content is
+   fully visible without JS or when motion is reduced.
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .55s cubic-bezier(.16,1,.3,1),
+              transform .55s cubic-bezier(.16,1,.3,1);
+  will-change: opacity, transform;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+/* keyboard focus ring — single accent color, never a bare outline removal.
+   Also gives touch/keyboard users a non-hover affordance. */
+:where(a, button, input, select, summary, .entry, .result, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* smooth state changes + subtle press feedback (tap works where hover can't) */
+.btn, .entry, .result, .graph-controls button, .sort-select, .nav-links a {
+  transition: border-color .15s ease, color .15s ease, opacity .15s ease, transform .08s ease;
+}
+.btn:active, .entry:active, .result:active, .graph-controls button:active { transform: translateY(1px); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .reveal.in { opacity: 1; transform: none; transition: none; }
+  * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+}

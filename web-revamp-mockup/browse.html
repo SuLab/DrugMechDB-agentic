@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Browse paths · DrugMechDB</title>
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 <div class="mock-banner">MOCKUP · DrugMechDB website revamp · sample data, not final — navigation is search-driven (no giant sidebar)</div>
@@ -23,7 +23,7 @@
   <div class="browse-layout">
 
     <!-- FACETS -->
-    <aside class="facets">
+    <aside class="facets" data-reveal>
       <div class="facet">
         <h4>Disease area</h4>
         <div id="f-area"></div>
@@ -40,7 +40,7 @@
 
     <!-- RESULTS -->
     <main>
-      <div class="browse-search"><span style="color:var(--muted)">⌕</span>
+      <div class="browse-search" data-reveal><span style="color:var(--muted)">⌕</span>
         <input id="q" placeholder="Search drug, disease, or target protein…" autofocus></div>
       <div class="results-head">
         <span id="rcount"></span>
@@ -57,7 +57,7 @@
           </label>
         </span>
       </div>
-      <div id="results"></div>
+      <div id="results" data-reveal-group></div>
     </main>
 
   </div>
@@ -182,5 +182,6 @@ function render(){
 }
 render();
 </script>
+<script src="reveal.js"></script>
 </body>
 </html>

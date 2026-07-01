@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DrugMechDB · Drug → disease mechanism paths</title>
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 <div class="mock-banner">MOCKUP · DrugMechDB website revamp · sample data, not final — for design review</div>
@@ -21,7 +21,7 @@
 </div></nav>
 
 <div class="container">
-  <section class="hero">
+  <section class="hero" data-reveal-group>
     <div class="eyebrow">Su Lab · Biolink · Translator</div>
     <h1>The mechanism behind every <span class="accent">drug → disease</span> indication.</h1>
     <p class="lead">DrugMechDB is an expert-curated, machine-validated knowledge base of directed mechanism paths — from a drug, through its molecular targets and biological processes, to the disease it treats.</p>
@@ -38,17 +38,17 @@
     </div>
   </section>
 
-  <section class="entry-grid" id="explorer">
+  <section class="entry-grid" id="explorer" data-reveal-group>
     <a class="entry" href="browse.html"><div class="ico">⌕</div><h3>Browse paths</h3><p>Search and filter all mechanism paths by drug, disease, target, or node type.</p></a>
     <a class="entry" href="record.html"><div class="ico">⊹</div><h3>Pathograph explorer</h3><p>Interactive drug→disease mechanism graphs — clickable, zoomable, evidence-linked.</p></a>
     <a class="entry" href="embeddings.html"><div class="ico">◵</div><h3>Embeddings map</h3><p>A 2-D landscape of mechanisms — find drugs that work in similar ways.</p></a>
     <a class="entry" href="dashboard.html"><div class="ico">▦</div><h3>Curation dashboard</h3><p>Coverage, quality, and provenance across the whole corpus.</p></a>
   </section>
 
-  <section class="walk">
+  <section class="walk" data-reveal>
     <h2>How a mechanism path works</h2>
     <p class="sub">Example: Vinblastine for malignant tumor of testis — each step is a curated, Biolink-typed relationship.</p>
-    <div class="flow">
+    <div class="flow" data-reveal-group>
       <div class="node">Vinblastine<small>Drug</small></div>
       <div class="arrow">→<small>decreases activity of</small></div>
       <div class="node">Tubulin<small>Protein</small></div>
@@ -65,5 +65,6 @@
   <div>DrugMechDB · Su Lab · curated under the Biolink Model · CC0</div>
   <div class="links"><a href="#">GitHub</a><a href="#">DOI</a><a href="#">Translator</a><a href="#">API</a></div>
 </div></footer>
+<script src="reveal.js"></script>
 </body>
 </html>
