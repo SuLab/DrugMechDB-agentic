@@ -234,6 +234,7 @@ def run_pair(client, model: str, pair: dict, arm_cache: Path, out_path: Path) ->
              "cache_read_input_tokens": 0, "cache_creation_input_tokens": 0}
     calls = []
     stopped = "final"
+    final_text = ""   # ensure defined even if the API call raises before a final turn
     t0 = time.time()
 
     for i in range(MAX_ITERS):
@@ -335,6 +336,10 @@ def main() -> int:
     results = []
     for pair in pairs:
         out_path = out_dir / f"{pair['id']}.yaml"
+        # Idempotent resume: skip pairs already curated in a prior (possibly crashed) run.
+        if out_path.exists() and out_path.stat().st_size > 0:
+            print(f"[{args.arm}/{args.model}] skip {pair['id']} (output exists)", flush=True)
+            continue
         print(f"[{args.arm}/{args.model}] curating {pair['id']} "
               f"({pair['drug']} -> {pair['disease']}) ...", flush=True)
         r = run_pair(client, args.model, pair, arm_cache, out_path)
@@ -343,7 +348,18 @@ def main() -> int:
               f"wall={r['wall_seconds']}s cost=${r['est_cost_usd']} "
               f"written={r['output_written']}", flush=True)
 
+    # Merge with any prior summary so a resumed run keeps earlier pairs' metrics.
     summary = arm_dir / "run_summary.json"
+    prior = []
+    if summary.exists():
+        try:
+            prior = json.loads(summary.read_text())
+        except Exception:
+            prior = []
+    done_now = {r["pair_id"] for r in results}
+    merged = [p for p in prior if p.get("pair_id") not in done_now] + results
+    merged.sort(key=lambda r: r.get("pair_id", ""))
+    results = merged
     summary.write_text(json.dumps(results, indent=2))
     print(f"\nWrote {summary.relative_to(REPO)}")
     tot = sum(r["est_cost_usd"] for r in results)
