@@ -1,0 +1,82 @@
+directed: true
+multigraph: true
+graph:
+  _id: P21_DB00563_MESH_D001172
+  drug: Methotrexate
+  drug_mesh: MESH:D008727
+  drugbank: DB:DB00563
+  disease: Rheumatoid Arthritis
+  disease_mesh: MESH:D001172
+nodes:
+  - id: MESH:D008727
+    name: Methotrexate
+    label: Drug
+  - id: UniProt:P00374
+    name: Dihydrofolate reductase
+    label: Protein
+  - id: UniProt:P31939
+    name: 5-aminoimidazole-4-carboxamide ribonucleotide formyltransferase/IMP cyclohydrolase
+    label: Protein
+  - id: MESH:D000241
+    name: Adenosine
+    label: ChemicalSubstance
+  - id: UniProt:P29274
+    name: Adenosine receptor A2a
+    label: Protein
+  - id: MESH:D001172
+    name: Rheumatoid Arthritis
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D008727
+    target: UniProt:P00374
+    evidence:
+      - reference: PMID:16280378
+        snippet: Methotrexate (MTX), a synthetic folate analog, is a tight-binding inhibitor of dihydrofolate reductase (DHFR), a key enzyme for the biosynthesis of purines, thymidylate, and several amino acids.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: decreases activity of
+    source: MESH:D008727
+    target: UniProt:P31939
+    evidence:
+      - reference: PMID:7510620
+        snippet: The polyglutamated derivatives of methotrexate are potent inhibitors of various enzymes, including dihydrofolate reductase and 5-aminoimidazole-4-carboxamide ribonucleotide transformylase.
+        supports: SUPPORT
+        evidence_source: OTHER
+      - reference: PMID:23464989
+        snippet: intracellular MTX polyglutamates inhibit AICAR transformylase (ATIC) activity and thereby promote adenosine release
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: negatively regulates
+    source: UniProt:P31939
+    target: MESH:D000241
+    evidence:
+      - reference: PMID:23464989
+        snippet: ATIC activity was inhibited following MTX treatment in DF from BALBc mice
+        supports: PARTIAL
+        evidence_source: IN_VITRO
+        explanation: ATIC normally consumes AICAR in purine synthesis; its inhibition leads to AICAR accumulation and downstream adenosine release. The snippet confirms ATIC inhibition by MTX treatment; increased adenosine production was also demonstrated in the same paper.
+      - reference: PMID:15476202
+        snippet: The blockade of purine nucleotide biosynthesis by MTX at the AICA ribonucleotide transformylase-catalyzed step may be related to the efficacy of MTX, and this blockade is effectively relieved by folinic acid, but not by folic acid, supplementation.
+        supports: PARTIAL
+        evidence_source: HUMAN_CLINICAL
+        explanation: ATIC inhibition (blockade at AICA ribonucleotide transformylase step) leads to AICAR accumulation and adenosine release; this sentence describes the blockade and its clinical significance.
+  - key: positively regulates
+    source: MESH:D000241
+    target: UniProt:P29274
+    evidence:
+      - reference: PMID:12528125
+        snippet: adenosine, acting at one or more of its receptors, mediates the antiinflammatory effects of methotrexate in animal models of both acute and chronic inflammation
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+  - key: treats
+    source: UniProt:P29274
+    target: MESH:D001172
+    evidence:
+      - reference: PMID:12528125
+        snippet: these results provide strong evidence that adenosine, acting at either or both of these receptors, mediates the antiinflammatory effects of methotrexate and its analog MX-68
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+references:
+  - https://www.drugbank.ca/drugs/DB00563
+  - https://www.ncbi.nlm.nih.gov/mesh/D001172

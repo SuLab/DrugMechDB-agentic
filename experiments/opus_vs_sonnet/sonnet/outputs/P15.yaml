@@ -1,0 +1,75 @@
+directed: true
+multigraph: true
+graph:
+  _id: P15_DB00787_MESH_D006561
+  drug: Acyclovir
+  drug_mesh: MESH:D000212
+  drugbank: DB:DB00787
+  disease: Herpes Simplex
+  disease_mesh: MESH:D006561
+nodes:
+  - id: MESH:D000212
+    name: Acyclovir
+    label: Drug
+  - id: CHEBI:16624
+    name: Acyclovir triphosphate
+    label: ChemicalSubstance
+  - id: UniProt:P04293
+    name: DNA polymerase (HSV-1 UL30)
+    label: Protein
+  - id: GO:0039693
+    name: viral DNA genome replication
+    label: BiologicalProcess
+  - id: MESH:D006561
+    name: Herpes Simplex
+    label: Disease
+links:
+  - key: has metabolite
+    source: MESH:D000212
+    target: CHEBI:16624
+    evidence:
+      - reference: PMID:6313600
+        snippet: Acyclovir monophosphate is subsequently converted to a triphosphate which is a more potent inhibitor of herpes virus DNA polymerases than of cellular DNA polymerases.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Acyclovir is phosphorylated by viral thymidine kinase to the monophosphate, which is then converted by cellular kinases to the active triphosphate metabolite.
+  - key: decreases activity of
+    source: CHEBI:16624
+    target: UniProt:P04293
+    evidence:
+      - reference: PMID:6291456
+        snippet: ACVTP inhibition was competitive with dGTP with Ki values of 0.03, 0.15, 9.8 and 11.9 microM for HSV-1 DNA polymerase, DNA polymerase alpha, EBV DNA polymerase and DNA polymerase beta, respectively.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Acyclovir triphosphate (ACVTP) potently and competitively inhibits HSV-1 DNA polymerase UL30 with respect to dGTP.
+      - reference: PMID:26836009
+        snippet: the ability of acyclovir and Foscarnet to block dNTP polymerization without impacting exonuclease activity raises the possibility that their effects on herpes replication may involve both direct inhibition of dNTP polymerization and exonuclease-mediated destruction of herpes DNA.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Acyclovir triphosphate blocks dNTP polymerization by the HSV-1 DNA polymerase UL30 (encoded by UL30 gene).
+  - key: participates in
+    source: UniProt:P04293
+    target: GO:0039693
+    evidence:
+      - reference: PMID:6291456
+        snippet: it appeared to act as a chain terminator in DNA replication catalyzed by either HSV-1 DNA polymerase or DNA polymerase alpha.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: HSV-1 DNA polymerase catalyzes viral DNA genome replication; acyclovir triphosphate terminates DNA chains during this process.
+      - reference: PMID:29896665
+        snippet: Acyclovir and penciclovir are phosphorylated by viral thymidine kinase and are incorporated into the DNA chain by viral DNA polymerase, resulting in chain termination.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: The viral DNA polymerase participates in viral genome replication and incorporates acyclovir triphosphate causing chain termination.
+  - key: causes
+    source: GO:0039693
+    target: MESH:D006561
+    evidence:
+      - reference: PMID:33705354
+        snippet: Anti-HSV-1 drugs, such as acyclovir, target thymidine kinase and viral DNA polymerase.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Viral DNA genome replication is essential for HSV pathogenesis; inhibiting it (via acyclovir targeting TK and DNA polymerase) treats Herpes Simplex disease.
+references:
+  - https://www.drugbank.ca/drugs/DB00787
+  - https://pubchem.ncbi.nlm.nih.gov/compound/2022

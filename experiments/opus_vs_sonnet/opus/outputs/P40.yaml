@@ -1,0 +1,83 @@
+directed: true
+multigraph: true
+graph:
+  _id: P40_DB00043_MESH_D001249
+  drug: omalizumab
+  drug_mesh: MESH:D000069444
+  drugbank: DB:DB00043
+  disease: Asthma
+  disease_mesh: MESH:D001249
+nodes:
+  - id: DB:DB00043
+    name: Omalizumab
+    label: Drug
+  - id: UniProt:P01854
+    name: Immunoglobulin heavy constant epsilon (IgE)
+    label: Protein
+  - id: UniProt:P12319
+    name: High affinity immunoglobulin epsilon receptor subunit alpha (FcepsilonRI)
+    label: Protein
+  - id: CL:0000097
+    name: Mast cell
+    label: Cell
+  - id: GO:0043303
+    name: Mast cell degranulation
+    label: BiologicalProcess
+  - id: MESH:D001249
+    name: Asthma
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00043
+    target: UniProt:P01854
+    evidence:
+      - reference: PMID:12110823
+        snippet: "Omalizumab (Xolair; formerly rhuMAb-E25) binds to circulating IgE, thus preventing induction of the allergic process."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Omalizumab binds and sequesters free IgE, neutralizing its function."
+  - key: decreases activity of
+    source: UniProt:P01854
+    target: UniProt:P12319
+    evidence:
+      - reference: PMID:16318424
+        snippet: "The humanised monoclonal IgE antibody Xolair (omalizumab) complexes with free circulating IgE, thereby preventing binding of IgE to FcepsilonRI receptors on immune cells."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "By sequestering free IgE, omalizumab prevents IgE from engaging and activating FcepsilonRI."
+  - key: located in
+    source: UniProt:P12319
+    target: CL:0000097
+    evidence:
+      - reference: PMID:16750976
+        snippet: "can block IgE's binding to high-affinity IgE Fc receptors (FcepsilonRI) on mast cells and basophils"
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: negatively regulates
+    source: UniProt:P12319
+    target: GO:0043303
+    evidence:
+      - reference: PMID:26509363
+        snippet: "We found that OmAb dissociates pre-bound IgE from mast cells and basophils, resulting in a reduction of proximal phosphorylation-mediated signalling events (Syk, PLCγ, and LAT) and in a decrease in degranulation and leukotriene synthesis."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Loss of IgE-FcepsilonRI signalling reduces mast cell degranulation."
+  - key: causes
+    source: GO:0043303
+    target: MESH:D001249
+    evidence:
+      - reference: PMID:12110823
+        snippet: "coupling between IgE and FcepsilonRI receptors on mast cells leads to release of proinflammatory mediators and a subsequent influx of inflammatory cells to the affected organ"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Mast cell mediator release drives the allergic inflammation underlying asthma."
+  - key: treats
+    source: DB:DB00043
+    target: MESH:D001249
+    evidence:
+      - reference: PMID:16318424
+        snippet: "Omalizumab effectively alleviates the signs and symptoms of asthma."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+references:
+  - https://go.drugbank.com/drugs/DB00043

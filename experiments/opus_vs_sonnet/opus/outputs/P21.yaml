@@ -1,0 +1,85 @@
+directed: true
+multigraph: true
+graph:
+  _id: P21_DB00563_MESH_D001172
+  drug: Methotrexate
+  drug_mesh: MESH:D008727
+  drugbank: DB:DB00563
+  disease: Rheumatoid Arthritis
+  disease_mesh: MESH:D001172
+nodes:
+  - id: MESH:D008727
+    name: Methotrexate
+    label: Drug
+  - id: UniProt:P31939
+    name: Bifunctional purine biosynthesis protein ATIC (AICAR transformylase)
+    label: Protein
+  - id: CHEBI:16335
+    name: Adenosine
+    label: ChemicalSubstance
+  - id: UniProt:P29274
+    name: Adenosine receptor A2a (ADORA2A)
+    label: Protein
+  - id: UniProt:P08254
+    name: Stromelysin-1 (MMP-3)
+    label: Protein
+  - id: MESH:D001172
+    name: Rheumatoid Arthritis
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D008727
+    target: UniProt:P31939
+    evidence:
+      - reference: PMID:23464989
+        snippet: "intracellular MTX polyglutamates inhibit AICAR transformylase (ATIC) activity and thereby promote adenosine release"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Methotrexate (as polyglutamates) inhibits ATIC enzymatic activity."
+  - key: positively regulates
+    source: UniProt:P31939
+    target: CHEBI:16335
+    evidence:
+      - reference: PMID:23464989
+        snippet: "intracellular MTX polyglutamates inhibit AICAR transformylase (ATIC) activity and thereby promote adenosine release"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Inhibition of ATIC promotes release of adenosine; ATIC inhibition is the upstream driver of adenosine accumulation."
+  - key: increases activity of
+    source: CHEBI:16335
+    target: UniProt:P29274
+    evidence:
+      - reference: PMID:35410356
+        snippet: "adenosine signaling via A2A AdoRs, adenylyl cyclase, and cAMP reduces TNFα-induced MMP-3 production by interfering with p38 MAPK/ATF-2 activity"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Adenosine activates A2A adenosine receptor signaling in rheumatoid synoviocytes."
+  - key: decreases activity of
+    source: UniProt:P29274
+    target: UniProt:P08254
+    evidence:
+      - reference: PMID:35410356
+        snippet: "adenosine signaling via A2A AdoRs, adenylyl cyclase, and cAMP reduces TNFα-induced MMP-3 production by interfering with p38 MAPK/ATF-2 activity"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "A2A receptor activation reduces TNFα-induced MMP-3 production by rheumatoid synovial cells."
+  - key: contributes to
+    source: UniProt:P08254
+    target: MESH:D001172
+    evidence:
+      - reference: PMID:35410356
+        snippet: "matrix metalloproteinase 3 (MMP-3) is released by fibroblast-like synoviocytes in response to inflammatory signaling"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "MMP-3 released by rheumatoid synoviocytes mediates the inflammatory tissue destruction of rheumatoid arthritis; reducing it is the therapeutic endpoint."
+  - key: treats
+    source: MESH:D008727
+    target: MESH:D001172
+    evidence:
+      - reference: PMID:15914465
+        snippet: "Methotrexate administered weekly in low doses is a mainstay in the therapy of rheumatoid arthritis."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Low-dose methotrexate is a mainstay treatment of rheumatoid arthritis."
+references:
+  - https://go.drugbank.com/drugs/DB00563

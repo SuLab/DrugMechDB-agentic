@@ -1,0 +1,915 @@
+{
+  "opus": {
+    "model": "claude-opus-4-8",
+    "pairs": [
+      {
+        "pair": "P01",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P02",
+        "written": true,
+        "stopped": "final",
+        "iters": 18,
+        "wall": 158.3,
+        "cost": 2.1368,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P03",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P04",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P05",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P06",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P07",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P08",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P09",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "7/7",
+        "full_pass": true
+      },
+      {
+        "pair": "P10",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P11",
+        "written": true,
+        "stopped": "final",
+        "iters": 19,
+        "wall": 170.2,
+        "cost": 2.3515,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P12",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P13",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P14",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P15",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P16",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P17",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "3/3",
+        "full_pass": true
+      },
+      {
+        "pair": "P18",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P19",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "7/7",
+        "full_pass": true
+      },
+      {
+        "pair": "P20",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P21",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P22",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P23",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "3/3",
+        "full_pass": true
+      },
+      {
+        "pair": "P24",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P25",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "3/3",
+        "full_pass": true
+      },
+      {
+        "pair": "P26",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P27",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P28",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P29",
+        "written": true,
+        "stopped": "final",
+        "iters": 14,
+        "wall": 124.8,
+        "cost": 1.2809,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P30",
+        "written": true,
+        "stopped": "final",
+        "iters": 18,
+        "wall": 133.9,
+        "cost": 1.7252,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P31",
+        "written": true,
+        "stopped": "final",
+        "iters": 12,
+        "wall": 124.4,
+        "cost": 0.8856,
+        "l123_fail": [],
+        "l4": "7/7",
+        "full_pass": true
+      },
+      {
+        "pair": "P32",
+        "written": true,
+        "stopped": "final",
+        "iters": 10,
+        "wall": 84.7,
+        "cost": 0.5298,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P33",
+        "written": true,
+        "stopped": "final",
+        "iters": 23,
+        "wall": 185.3,
+        "cost": 2.4128,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P34",
+        "written": true,
+        "stopped": "final",
+        "iters": 17,
+        "wall": 147.8,
+        "cost": 1.4659,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P35",
+        "written": true,
+        "stopped": "final",
+        "iters": 21,
+        "wall": 176.7,
+        "cost": 2.267,
+        "l123_fail": [],
+        "l4": "7/7",
+        "full_pass": true
+      },
+      {
+        "pair": "P36",
+        "written": true,
+        "stopped": "final",
+        "iters": 14,
+        "wall": 92.7,
+        "cost": 0.749,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P37",
+        "written": true,
+        "stopped": "final",
+        "iters": 20,
+        "wall": 152.0,
+        "cost": 1.9336,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P38",
+        "written": true,
+        "stopped": "final",
+        "iters": 12,
+        "wall": 88.0,
+        "cost": 0.8198,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P39",
+        "written": true,
+        "stopped": "final",
+        "iters": 24,
+        "wall": 211.7,
+        "cost": 2.9211,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P40",
+        "written": true,
+        "stopped": "final",
+        "iters": 13,
+        "wall": 99.0,
+        "cost": 0.8286,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      }
+    ]
+  },
+  "sonnet": {
+    "model": "claude-sonnet-4-6",
+    "pairs": [
+      {
+        "pair": "P01",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "7/7",
+        "full_pass": true
+      },
+      {
+        "pair": "P02",
+        "written": true,
+        "stopped": "final",
+        "iters": 29,
+        "wall": 212.3,
+        "cost": 2.0891,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P03",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "8/8",
+        "full_pass": true
+      },
+      {
+        "pair": "P04",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "7/7",
+        "full_pass": true
+      },
+      {
+        "pair": "P05",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "7/7",
+        "full_pass": true
+      },
+      {
+        "pair": "P06",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P07",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "10/10",
+        "full_pass": true
+      },
+      {
+        "pair": "P08",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P09",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "8/8",
+        "full_pass": true
+      },
+      {
+        "pair": "P10",
+        "written": true,
+        "stopped": "final",
+        "iters": 31,
+        "wall": 221.8,
+        "cost": 1.9836,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P11",
+        "written": true,
+        "stopped": "final",
+        "iters": 36,
+        "wall": 246.9,
+        "cost": 2.6105,
+        "l123_fail": [],
+        "l4": "8/8",
+        "full_pass": true
+      },
+      {
+        "pair": "P12",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P13",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [
+          1,
+          3
+        ],
+        "l4": "4/4",
+        "full_pass": false
+      },
+      {
+        "pair": "P14",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "8/8",
+        "full_pass": true
+      },
+      {
+        "pair": "P15",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P16",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "7/7",
+        "full_pass": true
+      },
+      {
+        "pair": "P17",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "5/5",
+        "full_pass": true
+      },
+      {
+        "pair": "P18",
+        "written": true,
+        "stopped": "MISSING",
+        "iters": null,
+        "wall": null,
+        "cost": null,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P19",
+        "written": true,
+        "stopped": "final",
+        "iters": 40,
+        "wall": 258.1,
+        "cost": 2.156,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P20",
+        "written": true,
+        "stopped": "final",
+        "iters": 34,
+        "wall": 185.7,
+        "cost": 1.8604,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P21",
+        "written": true,
+        "stopped": "final",
+        "iters": 38,
+        "wall": 187.3,
+        "cost": 2.1812,
+        "l123_fail": [],
+        "l4": "7/7",
+        "full_pass": true
+      },
+      {
+        "pair": "P22",
+        "written": false,
+        "stopped": "max_iters",
+        "iters": 40,
+        "wall": 158.7,
+        "cost": 2.2829,
+        "l123_fail": [
+          1,
+          2,
+          3
+        ],
+        "l4": "0/0",
+        "full_pass": false
+      },
+      {
+        "pair": "P23",
+        "written": true,
+        "stopped": "final",
+        "iters": 29,
+        "wall": 161.3,
+        "cost": 1.3106,
+        "l123_fail": [],
+        "l4": "10/10",
+        "full_pass": true
+      },
+      {
+        "pair": "P24",
+        "written": true,
+        "stopped": "final",
+        "iters": 36,
+        "wall": 187.4,
+        "cost": 1.6429,
+        "l123_fail": [],
+        "l4": "7/7",
+        "full_pass": true
+      },
+      {
+        "pair": "P25",
+        "written": true,
+        "stopped": "final",
+        "iters": 39,
+        "wall": 190.1,
+        "cost": 2.1804,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P26",
+        "written": true,
+        "stopped": "final",
+        "iters": 38,
+        "wall": 204.4,
+        "cost": 1.8803,
+        "l123_fail": [],
+        "l4": "8/8",
+        "full_pass": true
+      },
+      {
+        "pair": "P27",
+        "written": false,
+        "stopped": "max_iters",
+        "iters": 40,
+        "wall": 164.3,
+        "cost": 2.5808,
+        "l123_fail": [
+          1,
+          2,
+          3
+        ],
+        "l4": "0/0",
+        "full_pass": false
+      },
+      {
+        "pair": "P28",
+        "written": false,
+        "stopped": "max_iters",
+        "iters": 40,
+        "wall": 141.6,
+        "cost": 2.6407,
+        "l123_fail": [
+          1,
+          2,
+          3
+        ],
+        "l4": "0/0",
+        "full_pass": false
+      },
+      {
+        "pair": "P29",
+        "written": true,
+        "stopped": "final",
+        "iters": 32,
+        "wall": 142.3,
+        "cost": 1.4374,
+        "l123_fail": [],
+        "l4": "3/3",
+        "full_pass": true
+      },
+      {
+        "pair": "P30",
+        "written": true,
+        "stopped": "final",
+        "iters": 25,
+        "wall": 126.4,
+        "cost": 1.0751,
+        "l123_fail": [],
+        "l4": "7/7",
+        "full_pass": true
+      },
+      {
+        "pair": "P31",
+        "written": true,
+        "stopped": "final",
+        "iters": 33,
+        "wall": 178.4,
+        "cost": 1.6544,
+        "l123_fail": [],
+        "l4": "7/7",
+        "full_pass": true
+      },
+      {
+        "pair": "P32",
+        "written": true,
+        "stopped": "final",
+        "iters": 21,
+        "wall": 114.5,
+        "cost": 0.8177,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P33",
+        "written": false,
+        "stopped": "max_iters",
+        "iters": 40,
+        "wall": 164.3,
+        "cost": 1.9312,
+        "l123_fail": [
+          1,
+          2,
+          3
+        ],
+        "l4": "0/0",
+        "full_pass": false
+      },
+      {
+        "pair": "P34",
+        "written": true,
+        "stopped": "final",
+        "iters": 37,
+        "wall": 250.1,
+        "cost": 1.8342,
+        "l123_fail": [],
+        "l4": "5/6",
+        "full_pass": false
+      },
+      {
+        "pair": "P35",
+        "written": true,
+        "stopped": "final",
+        "iters": 36,
+        "wall": 235.7,
+        "cost": 2.0461,
+        "l123_fail": [],
+        "l4": "8/8",
+        "full_pass": true
+      },
+      {
+        "pair": "P36",
+        "written": true,
+        "stopped": "final",
+        "iters": 35,
+        "wall": 219.7,
+        "cost": 1.9612,
+        "l123_fail": [],
+        "l4": "7/7",
+        "full_pass": true
+      },
+      {
+        "pair": "P37",
+        "written": true,
+        "stopped": "final",
+        "iters": 35,
+        "wall": 199.7,
+        "cost": 1.9484,
+        "l123_fail": [],
+        "l4": "4/4",
+        "full_pass": true
+      },
+      {
+        "pair": "P38",
+        "written": true,
+        "stopped": "final",
+        "iters": 39,
+        "wall": 232.4,
+        "cost": 2.8741,
+        "l123_fail": [],
+        "l4": "6/6",
+        "full_pass": true
+      },
+      {
+        "pair": "P39",
+        "written": false,
+        "stopped": "max_iters",
+        "iters": 40,
+        "wall": 133.9,
+        "cost": 2.2885,
+        "l123_fail": [
+          1,
+          2,
+          3
+        ],
+        "l4": "0/0",
+        "full_pass": false
+      },
+      {
+        "pair": "P40",
+        "written": true,
+        "stopped": "final",
+        "iters": 24,
+        "wall": 199.7,
+        "cost": 1.1045,
+        "l123_fail": [],
+        "l4": "4/5",
+        "full_pass": false
+      }
+    ]
+  }
+}

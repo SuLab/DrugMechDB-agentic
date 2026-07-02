@@ -1,0 +1,80 @@
+directed: true
+multigraph: true
+graph:
+  _id: P30_DB09038_MESH_D003924
+  drug: Empagliflozin
+  drug_mesh: MESH:C000591311
+  drugbank: DB:DB09038
+  disease: Type 2 Diabetes Mellitus
+  disease_mesh: MESH:D003924
+nodes:
+  - id: MESH:C000591311
+    name: Empagliflozin
+    label: Drug
+  - id: UniProt:P31639
+    name: Sodium/glucose cotransporter 2 (SGLT2)
+    label: Protein
+  - id: GO:0070293
+    name: renal glucose absorption
+    label: BiologicalProcess
+  - id: HP:0003074
+    name: Hyperglycemia
+    label: PhenotypicFeature
+  - id: MESH:D003924
+    name: Type 2 Diabetes Mellitus
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:C000591311
+    target: UniProt:P31639
+    evidence:
+      - reference: PMID:26638450
+        snippet: Empagliflozin is a new inhibitor of sodiumglucose cotransporters type 2 (SGLT2) for the treatment of type 2 diabetes mellitus (T2DM). Its specific action inhibits glucose reabsorption in renal tubules and thus promotes glucosuria.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Empagliflozin directly inhibits the SGLT2 cotransporter, reducing its activity.
+      - reference: PMID:32006266
+        snippet: By inhibiting these proteins, SGLT2 inhibitors increase urinary glucose excretion (UGE) that leads to fall in plasma glucose concentrations and improvement in all glycemic parameters.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Confirms SGLT2 inhibition as the mechanism of action of empagliflozin.
+  - key: positively regulates
+    source: UniProt:P31639
+    target: GO:0070293
+    evidence:
+      - reference: PMID:33409652
+        snippet: Inhibitors of sodium/glucose co-transporter 2 (SGLT2) are currently in clinical use for type 2 diabetes (T2D) treatment due to their anti-hyperglycemic effect exerted by the inhibition of glucose reabsorption in the kidney.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: SGLT2 drives renal glucose reabsorption; its inhibition reduces this process.
+      - reference: PMID:25805666
+        snippet: SGLT2 cotransporters are responsible for reabsorption of 90 % of the glucose filtered by the kidney.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: SGLT2 is the primary transporter responsible for renal glucose reabsorption.
+  - key: negatively regulates
+    source: GO:0070293
+    target: HP:0003074
+    evidence:
+      - reference: PMID:26513131
+        snippet: These agents reduce hyperglycemia by decreasing the renal glucose threshold and thereby increasing urinary glucose excretion.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Reduced renal glucose reabsorption increases urinary glucose excretion and lowers plasma glucose, thereby reducing hyperglycemia.
+      - reference: PMID:29963920
+        snippet: Sodium-glucose cotransporter 2 inhibitors medications lower plasma glucose by inhibiting glucose reabsorption in the proximal tubule of the kidney independent of insulin.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Inhibiting renal glucose reabsorption lowers plasma glucose (reduces hyperglycemia).
+  - key: manifestation of
+    source: HP:0003074
+    target: MESH:D003924
+    evidence:
+      - reference: PMID:32006266
+        snippet: In type 2 diabetes, the maladaptive upregulation of sodium-glucose cotransporter 2 (SGLT2) protein expression and activity contribute to the maintenance of hyperglycemia.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Hyperglycemia is a cardinal manifestation of type 2 diabetes mellitus.
+references:
+  - https://www.drugbank.ca/drugs/DB09038
+  - https://meshb.nlm.nih.gov/record/ui?ui=D003924

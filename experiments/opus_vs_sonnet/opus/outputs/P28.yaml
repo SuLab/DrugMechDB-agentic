@@ -1,0 +1,64 @@
+directed: true
+multigraph: true
+graph:
+  _id: P28_DB00451_MESH_D007037
+  drug: Levothyroxine
+  drug_mesh: MESH:D013974
+  drugbank: DB:DB00451
+  disease: Hypothyroidism
+  disease_mesh: MESH:D007037
+nodes:
+  - id: DB:DB00451
+    name: Levothyroxine
+    label: Drug
+  - id: MESH:D014284
+    name: Triiodothyronine
+    label: ChemicalSubstance
+  - id: UniProt:P10828
+    name: Thyroid hormone receptor beta
+    label: Protein
+  - id: GO:0006355
+    name: regulation of DNA-templated transcription
+    label: BiologicalProcess
+  - id: MESH:D007037
+    name: Hypothyroidism
+    label: Disease
+links:
+  - key: has metabolite
+    source: DB:DB00451
+    target: MESH:D014284
+    evidence:
+      - reference: PMID:40077932
+        snippet: "The standard treatment involves synthetic levothyroxine (LT4) monotherapy, which alleviates symptoms by converting to the active hormone, T3."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Levothyroxine (LT4) is converted to the active hormone triiodothyronine (T3)."
+  - key: increases activity of
+    source: MESH:D014284
+    target: UniProt:P10828
+    evidence:
+      - reference: PMID:23307792
+        snippet: "a T(3)-bound TRβ1/RXRα heterodimer inhibits SRE-binding protein-1c-induced transcriptional activity"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "T3 binds and forms the active liganded thyroid hormone receptor beta 1 (TRβ1)/RXRα heterodimer."
+  - key: participates in
+    source: UniProt:P10828
+    target: GO:0006355
+    evidence:
+      - reference: PMID:23307792
+        snippet: "Promoter analysis revealed that T(3) decreases the basal transcriptional activity of the CYP27B1 gene through thyroid hormone receptors (TRα and TRβ1) and the retinoid X receptor α (RXRα) in renal proximal tubular cells."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Liganded thyroid hormone receptor beta regulates transcriptional activity of target genes."
+  - key: treats
+    source: GO:0006355
+    target: MESH:D007037
+    evidence:
+      - reference: PMID:40077932
+        snippet: "The standard treatment involves synthetic levothyroxine (LT4) monotherapy, which alleviates symptoms by converting to the active hormone, T3."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Restoration of thyroid hormone-dependent gene transcription alleviates hypothyroidism symptoms."
+references:
+  - https://go.drugbank.com/drugs/DB00451

@@ -1,0 +1,81 @@
+directed: true
+multigraph: true
+graph:
+  _id: P16_DB01235_MESH_D010300
+  drug: Levodopa
+  drug_mesh: MESH:D007980
+  drugbank: DB:DB01235
+  disease: Parkinson's Disease
+  disease_mesh: MESH:D010300
+nodes:
+  - id: MESH:D007980
+    name: Levodopa
+    label: Drug
+  - id: UniProt:P20711
+    name: Aromatic-L-amino-acid decarboxylase
+    label: Protein
+  - id: MESH:D004298
+    name: Dopamine
+    label: ChemicalSubstance
+  - id: UniProt:P14416
+    name: D(2) dopamine receptor
+    label: Protein
+  - id: MESH:D010300
+    name: Parkinson's Disease
+    label: Disease
+links:
+  - key: increases activity of
+    source: MESH:D007980
+    target: UniProt:P20711
+    evidence:
+      - reference: PMID:28166239
+        snippet: aromatic L-amino acid decarboxylase (AADC) is the rate-limiting enzyme in the conversion of L-DOPA (Sinemet) to dopamine (DA)
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: >
+          Levodopa is the substrate for AADC (DDC), the enzyme that converts it to dopamine.
+          The enzyme activity is the key step in levodopa's mechanism.
+  - key: has metabolite
+    source: MESH:D007980
+    target: MESH:D004298
+    evidence:
+      - reference: PMID:30077198
+        snippet: Replenishment of dopamine by oral supplementation of its precursor, the levodopa (L-DOPA), remains the primary mode of treatment of PD
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Levodopa is converted to dopamine in the brain, replenishing dopamine levels in Parkinson's disease patients.
+      - reference: PMID:16829205
+        snippet: Dopamine, the major neurotransmitter depleted in Parkinson disease, can be synthesized and regulated in vivo with a combination of intrastriatal AAV-hAADC gene therapy and administration of the dopamine precursor l-Dopa.
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: Confirms levodopa is a dopamine precursor and its conversion to dopamine is central to its therapeutic effect.
+  - key: increases activity of
+    source: MESH:D004298
+    target: UniProt:P14416
+    evidence:
+      - reference: PMID:22133327
+        snippet: Although the resulting dopamine deficiency is the cause of the typical motor features of Parkinson's disease (bradykinesia, rigidity, tremor)
+        supports: PARTIAL
+        evidence_source: HUMAN_CLINICAL
+        explanation: >
+          Dopamine deficiency underlies Parkinson's motor symptoms; replenishment of dopamine
+          (from levodopa) restores stimulation of dopamine receptors including DRD2, which modulates motor control.
+      - reference: PMID:36403747
+        snippet: a decrease in dopamine levels in the striatum causes abnormal circuit activity in the basal ganglia, resulting in increased output via the substantia nigra pars reticulata (SNr)
+        supports: PARTIAL
+        evidence_source: MODEL_ORGANISM
+        explanation: Depletion of dopamine disrupts basal ganglia activity; restoration of dopamine by levodopa acts through dopamine receptors to normalize this circuit.
+  - key: treats
+    source: MESH:D007980
+    target: MESH:D010300
+    evidence:
+      - reference: PMID:34268560
+        snippet: l-DOPA treatment ameliorated PD signs, particularly akinesia/bradykinesia, and normalized cortically evoked responses in both the GPi and GPe
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: L-DOPA directly ameliorates the motor signs of Parkinson's disease by restoring dopaminergic signaling in the basal ganglia.
+      - reference: PMID:17894650
+        snippet: The most effective treatment for this disease continues to be the dopamine replacement therapy with levodopa together with an inhibitor of aromatic amino acid decarboxylase (AADC)
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Levodopa is the gold-standard treatment for Parkinson's disease.

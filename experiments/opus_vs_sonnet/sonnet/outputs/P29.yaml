@@ -1,0 +1,53 @@
+directed: true
+multigraph: true
+graph:
+  _id: P29_DB00437_MESH_D006073
+  drug: Allopurinol
+  drug_mesh: MESH:D000493
+  drugbank: DB:DB00437
+  disease: Gout
+  disease_mesh: MESH:D006073
+nodes:
+  - id: MESH:D000493
+    name: Allopurinol
+    label: Drug
+  - id: UniProt:P47989
+    name: Xanthine oxidoreductase
+    label: Protein
+  - id: MESH:D014527
+    name: Uric Acid
+    label: ChemicalSubstance
+  - id: MESH:D006073
+    name: Gout
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000493
+    target: UniProt:P47989
+    evidence:
+      - reference: PMID:39149682
+        snippet: Allopurinol lowers urate production through the inhibition of xanthine oxidase.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Allopurinol directly inhibits xanthine oxidase, reducing urate production.
+  - key: positively regulates
+    source: UniProt:P47989
+    target: MESH:D014527
+    evidence:
+      - reference: PMID:28478180
+        snippet: Xanthine oxidase (XO), a versatile metalloflavoprotein enzyme, catalyzes the oxidative hydroxylation of hypoxanthine and xanthine to uric acid in purine catabolism while simultaneously producing reactive oxygen species.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Xanthine oxidase catalyzes the final steps of purine catabolism, producing uric acid from hypoxanthine and xanthine.
+  - key: causes
+    source: MESH:D014527
+    target: MESH:D006073
+    evidence:
+      - reference: PMID:33671646
+        snippet: It results from sustained hyperuricemia that leads to monosodium urate crystal deposition in joint structures and soft tissue.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Elevated uric acid (hyperuricemia) leads to monosodium urate crystal deposition in joints, causing gout.
+references:
+  - https://www.drugbank.ca/drugs/DB00437
+  - https://meshb.nlm.nih.gov/record/ui?ui=D006073

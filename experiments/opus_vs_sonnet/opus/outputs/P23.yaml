@@ -1,0 +1,52 @@
+directed: true
+multigraph: true
+graph:
+  _id: P23_DB01611_MESH_D008180
+  drug: Hydroxychloroquine
+  drug_mesh: MESH:D006886
+  drugbank: DB:DB01611
+  disease: Systemic Lupus Erythematosus
+  disease_mesh: MESH:D008180
+nodes:
+  - id: DB:DB01611
+    name: Hydroxychloroquine
+    label: Drug
+  - id: UniProt:Q9NYK1
+    name: Toll-like receptor 7
+    label: Protein
+  - id: GO:0032606
+    name: type I interferon production
+    label: BiologicalProcess
+  - id: MESH:D008180
+    name: Systemic Lupus Erythematosus
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB01611
+    target: UniProt:Q9NYK1
+    evidence:
+      - reference: PMID:34580855
+        snippet: "HCQ treatment of fresh PBMCs, CAL-1 leukemic, and primary human pDCs inhibits TLR7 cleavage and results in accumulation of full-length protein. As a consequence, we observe an inhibition of pDC activation in response to TLR7 stimulation"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Hydroxychloroquine inhibits the proteolytic maturation of TLR7 and thereby reduces TLR7-driven activation."
+  - key: positively regulates
+    source: UniProt:Q9NYK1
+    target: GO:0032606
+    evidence:
+      - reference: PMID:34512664
+        snippet: "Plasmacytoid dendritic cells (pDCs) produce type I interferon (IFN-I) during HIV-1 infection in response to TLR7 stimulation."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "TLR7 stimulation drives type I interferon production by plasmacytoid dendritic cells."
+  - key: contributes to
+    source: GO:0032606
+    target: MESH:D008180
+    evidence:
+      - reference: PMID:23445195
+        snippet: "interferon signaling is essential for the initiation and/or progression of lupus in several experimental models."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Type I interferon signaling drives the initiation and progression of lupus."
+references:
+  - https://go.drugbank.com/drugs/DB01611

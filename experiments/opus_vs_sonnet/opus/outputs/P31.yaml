@@ -1,0 +1,86 @@
+directed: true
+multigraph: true
+graph:
+  _id: P31_DB00067_MESH_D006467
+  drug: Vasopressin
+  drug_mesh: MESH:C016671
+  drugbank: DB:DB00067
+  disease: Hemophilia A
+  disease_mesh: MESH:D006467
+nodes:
+  - id: DB:DB00067
+    name: Vasopressin
+    label: Drug
+  - id: UniProt:P30518
+    name: Vasopressin V2 receptor
+    label: Protein
+  - id: GO:0061156
+    name: von Willebrand factor secretion
+    label: BiologicalProcess
+  - id: UniProt:P04275
+    name: von Willebrand factor
+    label: Protein
+  - id: UniProt:P00451
+    name: Coagulation factor VIII
+    label: Protein
+  - id: MESH:D006467
+    name: Hemophilia A
+    label: Disease
+links:
+  - key: increases activity of
+    source: DB:DB00067
+    target: UniProt:P30518
+    evidence:
+      - reference: PMID:10880054
+        snippet: "We tested the hypothesis that DDAVP induces vWF secretion by binding to V2R and activating cAMP-mediated signaling in endothelial cells."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "DDAVP (desmopressin), a vasopressin analogue, acts as a specific agonist at the vasopressin V2 receptor."
+  - key: positively regulates
+    source: UniProt:P30518
+    target: GO:0061156
+    evidence:
+      - reference: PMID:10880054
+        snippet: "These results indicate that vasopressin induces cAMP-mediated vWF secretion by a direct effect on endothelial cells."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "V2 receptor activation drives cAMP-mediated von Willebrand factor secretion from endothelial cells."
+  - key: positively regulates
+    source: GO:0061156
+    target: UniProt:P04275
+    evidence:
+      - reference: PMID:10880054
+        snippet: "Vasopressin and its analogue 1-deamino-8-D-arginine vasopressin (DDAVP) are known to raise plasma von Willebrand factor (vWF) levels."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Secretion of von Willebrand factor from endothelial stores raises circulating plasma vWF levels."
+  - key: increases activity of
+    source: UniProt:P04275
+    target: UniProt:P00451
+    evidence:
+      - reference: PMID:12826528
+        snippet: "recent biochemical investigations have confirmed that VWF is a key partner for FVIII, playing significant roles in FVIII function, its production and its stabilization"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "von Willebrand factor binds and stabilizes coagulation factor VIII in plasma, sustaining functional FVIII levels."
+      - reference: PMID:28581694
+        snippet: "VWF serving as the carrier for FVIII. VWF indirectly influences secondary hemostasis by stabilizing FVIII and transporting it to the site of primary hemostasis."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "By stabilizing and carrying factor VIII, von Willebrand factor sustains functional plasma FVIII levels."
+  - key: treats
+    source: UniProt:P00451
+    target: MESH:D006467
+    evidence:
+      - reference: PMID:23265678
+        snippet: "Desmopressin is a synthetic vasopressin analog that increases the plasma levels of coagulation factor VIII, von Willebrand factor, and tissue plasminogen activator."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Raising plasma coagulation factor VIII corrects the FVIII deficiency underlying hemophilia A."
+      - reference: PMID:23265678
+        snippet: "has been approved for use in the prevention and treatment of hemorrhagic events during surgery in patients with hemophilia A"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Vasopressin analogue desmopressin is approved to treat bleeding in hemophilia A via increased factor VIII."
+references:
+  - https://go.drugbank.com/drugs/DB00067

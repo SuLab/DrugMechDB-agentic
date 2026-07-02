@@ -1,0 +1,58 @@
+directed: true
+multigraph: true
+graph:
+  _id: P25_DB00051_MESH_D011565
+  drug: Adalimumab
+  drug_mesh: MESH:D000068879
+  drugbank: DB:DB00051
+  disease: Psoriasis
+  disease_mesh: MESH:D011565
+nodes:
+  - id: MESH:D000068879
+    name: Adalimumab
+    label: Drug
+  - id: UniProt:P01375
+    name: Tumor necrosis factor
+    label: Protein
+  - id: GO:0007249
+    name: I-kappaB kinase/NF-kappaB signaling
+    label: BiologicalProcess
+  - id: MESH:D011565
+    name: Psoriasis
+    label: Disease
+links:
+  - key: molecularly interacts with
+    source: MESH:D000068879
+    target: UniProt:P01375
+    evidence:
+      - reference: PMID:19799828
+        snippet: Adalimumab, a fully human monoclonal antibody, binds to and neutralizes tumor necrosis factor.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: decreases activity of
+    source: MESH:D000068879
+    target: UniProt:P01375
+    evidence:
+      - reference: PMID:21573251
+        snippet: Adalimumab is a fully recombinant human immunoglobulin G1 monoclonal antibody that specifically binds with high affinity to human TNF-α and inhibits its binding to TNF receptors.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: positively regulates
+    source: UniProt:P01375
+    target: GO:0007249
+    evidence:
+      - reference: PMID:17302610
+        snippet: TNF-alpha and NF-kappaB expressions were significantly higher in psoriatic epidermis than in normal epidermis (p < 0.05).
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: positively regulates
+    source: GO:0007249
+    target: MESH:D011565
+    evidence:
+      - reference: PMID:35213752
+        snippet: disease-relevant changes in morphology, gene transcription and cytokine production were robustly attenuated by pharmacologically blocking TNFα/IL-17A-induced NF-κB activation with IKK-2 inhibitor IV.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+references:
+  - https://www.drugbank.ca/drugs/DB00051
+  - https://www.ncbi.nlm.nih.gov/mesh/D011565

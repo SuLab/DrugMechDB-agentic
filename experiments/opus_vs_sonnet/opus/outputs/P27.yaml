@@ -1,0 +1,76 @@
+directed: true
+multigraph: true
+graph:
+  _id: P27_DB00030_MESH_D003922
+  drug: Insulin
+  drug_mesh: MESH:D007328
+  drugbank: DB:DB00030
+  disease: Type 1 Diabetes Mellitus
+  disease_mesh: MESH:D003922
+nodes:
+  - id: MESH:D007328
+    name: Insulin
+    label: Drug
+  - id: UniProt:P06213
+    name: Insulin receptor
+    label: Protein
+  - id: UniProt:P14672
+    name: Solute carrier family 2, facilitated glucose transporter member 4 (GLUT4)
+    label: Protein
+  - id: GO:0046323
+    name: glucose import
+    label: BiologicalProcess
+  - id: HP:0003074
+    name: Hyperglycemia
+    label: PhenotypicFeature
+  - id: MESH:D003922
+    name: Type 1 Diabetes Mellitus
+    label: Disease
+links:
+  - key: increases activity of
+    source: MESH:D007328
+    target: UniProt:P06213
+    evidence:
+      - reference: PMID:37779149
+        snippet: "The binding of insulin to the insulin receptor (IR) triggers a cascade of receptor conformational changes and autophosphorylation, leading to the activation of metabolic and mitogenic pathways."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Insulin binds the insulin receptor and triggers its autophosphorylation/activation."
+  - key: positively regulates
+    source: UniProt:P06213
+    target: UniProt:P14672
+    evidence:
+      - reference: PMID:16702775
+        snippet: "This insulin-induced redistribution of GLUT4 protein is achieved through a series of highly organized membrane trafficking events, orchestrated by insulin receptor signals."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Insulin receptor signals drive GLUT4 redistribution (translocation) to the plasma membrane."
+  - key: participates in
+    source: UniProt:P14672
+    target: GO:0046323
+    evidence:
+      - reference: PMID:16702775
+        snippet: "insulin-stimulated glucose uptake is dependent upon translocation of the insulin-responsive glucose transporter GLUT4 from intracellular storage compartments to the plasma membrane"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "GLUT4 at the plasma membrane mediates insulin-stimulated glucose uptake/import."
+  - key: negatively regulates
+    source: GO:0046323
+    target: HP:0003074
+    evidence:
+      - reference: PMID:27521155
+        snippet: "The enhanced disposal of glucose by the peripheral tissue is an important mechanism to regulate hyperglycemia."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Enhanced glucose uptake/disposal by peripheral tissues reduces hyperglycemia."
+  - key: manifestation of
+    source: HP:0003074
+    target: MESH:D003922
+    evidence:
+      - reference: PMID:40163169
+        snippet: "This well-characterized T1D model develops insulin deficiency with chronic hyperglycemia"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Chronic hyperglycemia is a defining feature of type 1 diabetes."
+references:
+  - https://go.drugbank.com/drugs/DB00030

@@ -1,0 +1,65 @@
+directed: true
+multigraph: true
+graph:
+  _id: P10_DB00072_MESH_D001943
+  drug: Trastuzumab
+  drug_mesh: MESH:D000068878
+  drugbank: DB:DB00072
+  disease: HER2-positive Breast Cancer
+  disease_mesh: MESH:D001943
+nodes:
+  - id: MESH:D000068878
+    name: Trastuzumab
+    label: Drug
+  - id: UniProt:P04626
+    name: HER2
+    label: Protein
+  - id: UniProt:P31749
+    name: AKT1
+    label: Protein
+  - id: GO:0008283
+    name: cell proliferation
+    label: BiologicalProcess
+  - id: MESH:D001943
+    name: HER2-positive Breast Cancer
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000068878
+    target: UniProt:P04626
+    evidence:
+      - reference: PMID:19884552
+        snippet: At least five potential extracellular and intracellular antitumor mechanisms of trastuzumab have been identified in the preclinical setting. These include activation of antibody-dependent cellular cytotoxicity, inhibition of extracellular domain cleavage, abrogation of intracellular signaling, reduction of angiogenesis, and decreased DNA repair.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Trastuzumab abrogates intracellular signaling downstream of HER2, effectively decreasing HER2-mediated signaling activity.
+  - key: positively regulates
+    source: UniProt:P04626
+    target: UniProt:P31749
+    evidence:
+      - reference: PMID:12853564
+        snippet: ErbB3's role, which is to couple active ErbB2 to the phosphatidylinositol 3-kinase/protein kinase B pathway. Thus, the ErbB2/ErbB3 dimer functions as an oncogenic unit to drive breast tumor cell proliferation.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: HER2 (ErbB2) activates the PI3K/AKT (protein kinase B) pathway, demonstrating HER2 positively regulates AKT1 signaling.
+  - key: positively regulates
+    source: UniProt:P31749
+    target: GO:0008283
+    evidence:
+      - reference: PMID:42207644
+        snippet: Functionally, AKT1 glutarylation inhibits cell proliferation and tumor growth, whereas GCDH promotes these oncogenic functions by suppressing glutarylation.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: AKT1 activity promotes cell proliferation; glutarylation-mediated inhibition of AKT1 blocks proliferation, confirming AKT1 positively regulates cell proliferation.
+  - key: contributes to
+    source: GO:0008283
+    target: MESH:D001943
+    evidence:
+      - reference: PMID:22865781
+        snippet: Approximately 15%-23% of breast cancers overexpress human epidermal growth factor receptor 2 (HER2), which leads to the activation of signaling pathways that stimulate cell proliferation and survival.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: HER2 overexpression-driven cell proliferation contributes to the development and progression of HER2-positive breast cancer.
+references:
+  - https://www.drugbank.ca/drugs/DB00072
+  - https://go.drugbank.com/drugs/DB00072

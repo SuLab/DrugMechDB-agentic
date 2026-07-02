@@ -1,0 +1,61 @@
+directed: true
+multigraph: true
+graph:
+  _id: P32_DB00126_MESH_D001206
+  drug: Ascorbic acid
+  drug_mesh: MESH:D001205
+  drugbank: DB:DB00126
+  disease: Ascorbic acid deficiency
+  disease_mesh: MESH:D001206
+nodes:
+  - id: MESH:D001205
+    name: Ascorbic acid
+    label: Drug
+  - id: UniProt:P13674
+    name: Prolyl 4-hydroxylase subunit alpha-1
+    label: Protein
+  - id: GO:0032964
+    name: collagen biosynthetic process
+    label: BiologicalProcess
+  - id: MESH:D001206
+    name: Ascorbic acid deficiency
+    label: Disease
+links:
+  - key: positively regulates
+    source: MESH:D001205
+    target: UniProt:P13674
+    evidence:
+      - reference: PMID:23228664
+        snippet: "Ascorbic acid (AA) is essential for collagen biosynthesis as a cofactor for prolyl and lysyl hydroxylase"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Ascorbic acid acts as a cofactor for prolyl hydroxylase, enabling its enzymatic activity."
+  - key: participates in
+    source: UniProt:P13674
+    target: GO:0032964
+    evidence:
+      - reference: PMID:21346252
+        snippet: "Prolyl-4-hydroxylation is necessary for proper structural assembly of collagens"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Prolyl 4-hydroxylase catalyzes proline hydroxylation required for collagen assembly/biosynthesis."
+  - key: manifestation of
+    source: GO:0032964
+    target: MESH:D001206
+    evidence:
+      - reference: PMID:21346252
+        snippet: "vitamin C deficiency is known to cause the collagen-disassembly disease scurvy"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Ascorbic acid deficiency (scurvy) is a collagen-disassembly disease, i.e. impaired collagen biosynthesis is a manifestation of the deficiency."
+  - key: treats
+    source: MESH:D001205
+    target: MESH:D001206
+    evidence:
+      - reference: PMID:32238982
+        snippet: "Deficiency in vitamin C results in the potentially fatal disease scurvy, which can be cured only by administering vitamin C."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Administration of ascorbic acid cures the deficiency disease."
+references:
+  - https://go.drugbank.com/drugs/DB00126

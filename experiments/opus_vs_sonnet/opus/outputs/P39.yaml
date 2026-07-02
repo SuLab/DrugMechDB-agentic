@@ -1,0 +1,74 @@
+directed: true
+multigraph: true
+graph:
+  _id: P39_DB00046_MESH_D003922
+  drug: Insulin lispro
+  drug_mesh: MESH:D061268
+  drugbank: DB:DB00046
+  disease: Type 1 Diabetes Mellitus
+  disease_mesh: MESH:D003922
+nodes:
+  - id: DB:DB00046
+    name: Insulin lispro
+    label: Drug
+  - id: UniProt:P06213
+    name: Insulin receptor
+    label: Protein
+  - id: GO:0046323
+    name: glucose import
+    label: BiologicalProcess
+  - id: HP:0003074
+    name: Hyperglycemia
+    label: PhenotypicFeature
+  - id: MESH:D003922
+    name: Type 1 Diabetes Mellitus
+    label: Disease
+links:
+  - key: increases activity of
+    source: DB:DB00046
+    target: UniProt:P06213
+    evidence:
+      - reference: PMID:9410552
+        snippet: "The affinity in vitro was identical to that of insulin for its receptor."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Insulin lispro (created by inverting lysine and proline at B28/B29) binds the insulin receptor with affinity identical to native insulin, acting as a full receptor agonist."
+      - reference: PMID:11712394
+        snippet: "the binding causes conformational changes in the receptor molecule"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Ligand binding to the insulin receptor alpha subunits triggers conformational changes that stimulate autophosphorylation and promote the receptor's kinase activity."
+  - key: positively regulates
+    source: UniProt:P06213
+    target: GO:0046323
+    evidence:
+      - reference: PMID:25325535
+        snippet: "insulin promotes membrane trafficking of the glucose transporter GLUT4 from GLUT4 storage vesicles to the plasma membrane, thereby facilitating the uptake of glucose from the circulation"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Activation of the insulin receptor by insulin drives GLUT4 translocation to the plasma membrane, promoting glucose import into muscle and adipose tissue."
+      - reference: PMID:33274014
+        snippet: "insulin-induced GLUT4 translocation from intracellular compartments to the cell membrane, which increases the overall rate of glucose flux into a cell"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Insulin receptor signaling increases glucose flux into cells via GLUT4 translocation."
+  - key: negatively regulates
+    source: GO:0046323
+    target: HP:0003074
+    evidence:
+      - reference: PMID:34240660
+        snippet: "glucose uptake into skeletal muscle and lower blood glucose levels"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Increased glucose uptake into tissues lowers blood glucose levels, opposing hyperglycemia."
+  - key: manifestation of
+    source: HP:0003074
+    target: MESH:D003922
+    evidence:
+      - reference: PMID:40969771
+        snippet: "Type 1 diabetes (T1D) is an organ-specific autoimmune disease characterized by the immune-mediated destruction of pancreatic β cells, leading to absolute insulin deficiency and chronic hyperglycemia."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Chronic hyperglycemia is a defining manifestation of Type 1 Diabetes Mellitus resulting from insulin deficiency; insulin lispro replaces the deficient insulin to correct it."
+references:
+  - https://go.drugbank.com/drugs/DB00046

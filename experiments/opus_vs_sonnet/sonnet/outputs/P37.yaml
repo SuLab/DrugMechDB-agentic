@@ -1,0 +1,64 @@
+directed: true
+multigraph: true
+graph:
+  _id: P37_DB00186_MESH_D001007
+  drug: Lorazepam
+  drug_mesh: MESH:D008140
+  drugbank: DB:DB00186
+  disease: Anxiety
+  disease_mesh: MESH:D001007
+nodes:
+  - id: MESH:D008140
+    name: Lorazepam
+    label: Drug
+  - id: UniProt:P14867
+    name: Gamma-aminobutyric acid receptor subunit alpha-1
+    label: Protein
+  - id: GO:0005254
+    name: chloride channel activity
+    label: MolecularActivity
+  - id: GO:0060081
+    name: membrane hyperpolarization
+    label: BiologicalProcess
+  - id: MESH:D001007
+    name: Anxiety
+    label: Disease
+links:
+  - key: increases activity of
+    source: MESH:D008140
+    target: UniProt:P14867
+    evidence:
+      - reference: PMID:12805666
+        snippet: Benzodiazepines bind to a site on the GABA(A) receptor which is different from the GABA binding site, thus increasing the chloride current.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Lorazepam is a benzodiazepine that binds allosterically to the GABA-A receptor and increases its activity (chloride current).
+  - key: increases activity of
+    source: UniProt:P14867
+    target: GO:0005254
+    evidence:
+      - reference: PMID:12805666
+        snippet: Synaptically released GABA binds to postsynaptic GABAA receptors, thus causing an influx of negatively charged chloride ions into the postsynaptic neuron.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: GABA-A receptor activation increases chloride ion influx through the receptor's integral chloride channel.
+  - key: causes
+    source: GO:0005254
+    target: GO:0060081
+    evidence:
+      - reference: PMID:12805666
+        snippet: This leads to a hyperpolarization and thus functional inhibition of the postsynaptic cell.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Chloride influx through the GABA-A channel causes membrane hyperpolarization of the postsynaptic neuron.
+  - key: negatively regulates
+    source: GO:0060081
+    target: MESH:D001007
+    evidence:
+      - reference: PMID:29628509
+        snippet: Inhibitory neurotransmission plays a key role in anxiety disorders, as evidenced by the anxiolytic effect of the benzodiazepine class of γ-aminobutyric acid (GABA) receptor agonists
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Membrane hyperpolarization (inhibitory neurotransmission) via GABA-A receptor activation reduces anxiety.
+references:
+  - https://www.drugbank.ca/drugs/DB00186

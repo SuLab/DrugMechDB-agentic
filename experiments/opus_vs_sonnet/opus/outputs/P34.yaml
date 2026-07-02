@@ -1,0 +1,73 @@
+directed: true
+multigraph: true
+graph:
+  _id: P34_DB00004_MESH_D016410
+  drug: Denileukin diftitox
+  drug_mesh: MESH:C078456
+  drugbank: DB:DB00004
+  disease: Primary cutaneous T-cell lymphoma
+  disease_mesh: MESH:D016410
+nodes:
+  - id: DB:DB00004
+    name: Denileukin diftitox
+    label: Drug
+  - id: UniProt:P01589
+    name: Interleukin-2 receptor subunit alpha
+    label: Protein
+  - id: GO:0006412
+    name: translation
+    label: BiologicalProcess
+  - id: GO:0006915
+    name: apoptotic process
+    label: BiologicalProcess
+  - id: CL:0000084
+    name: T cell
+    label: Cell
+  - id: MESH:D016410
+    name: Primary cutaneous T-cell lymphoma
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00004
+    target: UniProt:P01589
+    evidence:
+      - reference: PMID:24462799
+        snippet: "both monovalent and bivalent human IL-2 fusion toxins are capable of blocking the binding of biotinylated human IL-2 to human CD25 by flow cytometry"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Denileukin diftitox (the monovalent human IL-2 fusion toxin, Ontak) binds CD25 (IL-2R alpha) and blocks IL-2 binding to the receptor."
+  - key: negatively regulates
+    source: DB:DB00004
+    target: GO:0006412
+    evidence:
+      - reference: PMID:11707818
+        snippet: "The ADP-ribosyltransferase activity of diphtheria toxin is cleaved in the endosome and is translocated into the cytosol where it inhibits protein synthesis, leading to apoptosis."
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: positively regulates
+    source: GO:0006412
+    target: GO:0006915
+    evidence:
+      - reference: PMID:11707818
+        snippet: "where it inhibits protein synthesis, leading to apoptosis"
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: occurs in
+    source: GO:0006915
+    target: CL:0000084
+    evidence:
+      - reference: PMID:36047157
+        snippet: "DD binds to IL-2 receptor (IL-2R) expressed on tumor cells and is taken up into the cells. Subsequently, DT fragments with adenosine diphosphate ribosylation enzyme inhibit protein synthesis, then ultimately trigger cell death."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Protein synthesis inhibition triggers death of the IL-2R-bearing malignant T cells."
+  - key: treats
+    source: DB:DB00004
+    target: MESH:D016410
+    evidence:
+      - reference: PMID:16410787
+        snippet: "Denileukin diftitox was approved for the treatment of cutaneous T-cell lymphomas (CTCLs) with CD25+ expression."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+references:
+  - https://go.drugbank.com/drugs/DB00004

@@ -1,0 +1,98 @@
+directed: true
+multigraph: true
+graph:
+  _id: P35_DB00008_MESH_D019698
+  drug: Peginterferon alfa-2a
+  drug_mesh: MESH:C100416
+  drugbank: DB:DB00008
+  disease: Chronic hepatitis C
+  disease_mesh: MESH:D019698
+nodes:
+  - id: DB:DB00008
+    name: Peginterferon alfa-2a
+    label: Drug
+  - id: UniProt:P48551
+    name: Interferon alpha/beta receptor 2
+    label: Protein
+  - id: UniProt:P29597
+    name: Non-receptor tyrosine-protein kinase TYK2
+    label: Protein
+  - id: UniProt:P42224
+    name: Signal transducer and activator of transcription 1-alpha/beta
+    label: Protein
+  - id: GO:0051607
+    name: defense response to virus
+    label: BiologicalProcess
+  - id: NCBITaxon:11103
+    name: Hepacivirus C
+    label: OrganismTaxon
+  - id: MESH:D019698
+    name: Chronic hepatitis C
+    label: Disease
+links:
+  - key: increases activity of
+    source: DB:DB00008
+    target: UniProt:P48551
+    evidence:
+      - reference: PMID:16324217
+        snippet: "When IFN-alpha binds its receptor, two receptor associated tyrosine kinases, Tyk2 and Jak1 become activated by phosphorylation"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Peginterferon alfa-2a is a pegylated interferon alpha-2 that binds and activates the type I interferon receptor (IFNAR).
+        source_tier: FULL_TEXT
+  - key: increases activity of
+    source: UniProt:P48551
+    target: UniProt:P29597
+    evidence:
+      - reference: PMID:16324217
+        snippet: "When IFN-alpha binds its receptor, two receptor associated tyrosine kinases, Tyk2 and Jak1 become activated by phosphorylation"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        source_tier: FULL_TEXT
+  - key: increases activity of
+    source: UniProt:P29597
+    target: UniProt:P42224
+    evidence:
+      - reference: PMID:16324217
+        snippet: "Tyk2 and Jak1 become activated by phosphorylation, and phosphorylate Stat1 and Stat2 on conserved tyrosine residues"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        source_tier: FULL_TEXT
+  - key: contributes to
+    source: UniProt:P42224
+    target: GO:0051607
+    evidence:
+      - reference: PMID:16324217
+        snippet: "Stat1 and Stat2 combine with the IRF-9 protein to form the transcription factor interferon stimulated gene factor 3 (ISGF-3), which binds to the interferon stimulated response element (ISRE), and induces transcription of IFN-alpha-induced genes (ISG). The ISGs mediate the antiviral effects of IFN"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        source_tier: FULL_TEXT
+  - key: disrupts
+    source: GO:0051607
+    target: NCBITaxon:11103
+    evidence:
+      - reference: PMID:16324217
+        snippet: "IFN induced a significant 66-fold inhibition of HCV RNA at this time point"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: The interferon-induced antiviral state inhibits hepatitis C virus replication.
+        source_tier: FULL_TEXT
+  - key: causes
+    source: NCBITaxon:11103
+    target: MESH:D019698
+    evidence:
+      - reference: PMID:16324217
+        snippet: "With a propensity to progress to chronic infection, approximately 70% of patients with chronic viremia develop histological evidence of chronic liver diseases including chronic hepatitis, cirrhosis, and hepatocellular carcinoma"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        source_tier: FULL_TEXT
+  - key: treats
+    source: DB:DB00008
+    target: MESH:D019698
+    evidence:
+      - reference: PMID:12324553
+        snippet: "In patients with chronic hepatitis C, once-weekly peginterferon alfa-2a plus ribavirin was tolerated as well as interferon alfa-2b plus ribavirin and produced significant improvements in the rate of sustained virologic response"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+references:
+  - https://go.drugbank.com/drugs/DB00008

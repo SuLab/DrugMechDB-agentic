@@ -26,6 +26,32 @@
     "final_text_tail": "rings of cached abstracts) | \u2705 PASS |\n\n**Overall: PASS** \u2014 No retries needed (0/3 retries used).\n\n---\n\n### Mechanistic Path (6 nodes, 5 edges)\n\n```\nAtorvastatin\n  --[decreases activity of]--> HMG-CoA reductase (HMGCR / UniProt:P04035)\n  --[participates in]--> cholesterol biosynthetic process (GO:0006695)\n  --[negatively regulates]--> LDL receptor (UniProt:P01130)\n  --[negatively regulates]--> Lipoproteins, LDL (MESH:D008077)\n  --[causes]--> Hypercholesterolemia (MESH:D006937)\n```\n\n**Mechanistic rationale:** Atorvastatin competitively inhibits HMGCR (the rate-limiting enzyme of the mevalonate/cholesterol biosynthetic pathway). Reduced HMGCR activity lowers intracellular cholesterol synthesis, which via SREBP-2 activation secondarily upregulates hepatic LDL receptor expression. The upregulated LDLR increases endocytic clearance of circulating LDL particles from the bloodstream. Reduced circulating LDL addresses the hallmark of hypercholesterolemia.\n\n---\n\n### PMIDs Cited\n\n| PMID | Role |\n|------|------|\n| **PMID:35894149** | Statin competitive inhibition of HMG-CoA reductase; reduced mevalonate/cholesterol biosynthesis |\n| **PMID:12793598** | Reduced hepatic cholesterol synthesis \u2192 secondary LDLR upregulation (SREBP mechanism) |\n| **PMID:30953636** | LDLR-mediated endocytosis and clearance of circulating LDL particles |\n| **PMID:27005486** | Elevated LDL as driver of hypercholesterolemia |\n\n---\n\n### Unresolved Validation Failures\n**None.** All layers passed on the first attempt."
   },
   {
+    "pair_id": "P10",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 31,
+    "wall_seconds": 221.8,
+    "usage": {
+      "input_tokens": 579149,
+      "output_tokens": 10121,
+      "cache_read_input_tokens": 222060,
+      "cache_creation_input_tokens": 7402
+    },
+    "est_cost_usd": 1.9836,
+    "n_tool_calls": 55,
+    "tool_call_counts": {
+      "pubmed_search": 14,
+      "pubmed_fetch": 6,
+      "read_reference": 28,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "read_path_yaml": 1,
+      "run_qc": 2
+    },
+    "output_written": true,
+    "final_text_tail": "this environment; snippets verified manually as verbatim |\n\n### PMIDs Cited:\n- **PMID:19884552** \u2014 Spector & Blackwell (2009), JCO \u2014 trastuzumab mechanisms including \"abrogation of intracellular signaling\" (supports trastuzumab\u2192decreases activity of\u2192HER2)\n- **PMID:12853564** \u2014 Holbro et al. (2003), PNAS \u2014 ErbB2/ErbB3 dimer \"to couple active ErbB2 to the phosphatidylinositol 3-kinase/protein kinase B pathway\" (supports HER2\u2192positively regulates\u2192AKT1)\n- **PMID:42207644** \u2014 Bai et al. (2026), Cell Reports \u2014 \"AKT1 glutarylation inhibits cell proliferation and tumor growth\" (supports AKT1\u2192positively regulates\u2192cell proliferation)\n- **PMID:22865781** \u2014 Mohd Sharial et al. (2012), Ann Oncol \u2014 HER2 overexpression \"leads to the activation of signaling pathways that stimulate cell proliferation and survival\" (supports cell proliferation\u2192contributes to\u2192HER2-positive Breast Cancer)\n\n### Mechanistic Path Summary:\n**Trastuzumab \u2192 decreases activity of \u2192 HER2** \u2192 HER2 **positively regulates** \u2192 **AKT1** \u2192 AKT1 **positively regulates** \u2192 **cell proliferation** \u2192 cell proliferation **contributes to** \u2192 **HER2-positive Breast Cancer**\n\n### Unresolved Validation Failures:\n- **Layer 4** fails due to missing `linkml-reference-validator` installation in `.venv-py310` (environment infrastructure issue). All four snippets were manually verified as verbatim substrings of their respective cached PubMed abstracts. This path should be flagged for human review to re-run Layer 4 once the tool is installed."
+  },
+  {
     "pair_id": "P11",
     "model": "claude-sonnet-4-6",
     "stopped": "final",
@@ -50,5 +76,558 @@
     },
     "output_written": true,
     "final_text_tail": "\n\n### Graph Summary\n- **4 nodes**, **4 edges**\n- Drug \u2192 Protein \u2192 BiologicalProcess \u2192 Disease\n\n### Mechanistic Path\n```\nRifampicin (MESH:D012293)\n  --[decreases activity of]--> DNA-directed RNA polymerase subunit beta (UniProt:P9WKP4)\n  --[participates in]--> DNA-templated transcription (GO:0006351)\n  \nRifampicin (MESH:D012293)\n  --[negatively regulates]--> DNA-templated transcription (GO:0006351)\n  \nRifampicin (MESH:D012293)\n  --[treats]--> Pulmonary Tuberculosis (MESH:D014397)\n```\n\n### QC Results (first attempt \u2014 no retries needed)\n| Layer | Result |\n|---|---|\n| Layer 1 \u2014 LinkML schema | \u2705 PASS |\n| Layer 2 \u2014 Node ontology | \u2705 PASS |\n| Layer 3 \u2014 Predicate vocabulary | \u2705 PASS |\n| Layer 4 \u2014 Verbatim reference snippets | \u2705 PASS |\n| **Overall** | **\u2705 PASS** |\n\n### Retry Count\n**0 retries** \u2014 passed on first attempt.\n\n### PMIDs Cited\n| PMID | Role |\n|---|---|\n| **PMID:33877820** | Surette et al. (2021), *Accounts Chem Res* \u2014 \"Rifamycins act by binding to the \u03b2-subunit of bacterial RNA polymerase, inhibiting transcription, which results in cell death.\" |\n| **PMID:28392175** | Lin et al. (2017), *Molecular Cell* \u2014 Crystal structures of Mtb RNAP with rifampin; \"Rif functions by a steric-occlusion mechanism that prevents extension of RNA.\" |\n| **PMID:41339746** | Bosch et al. (2026), *Nature Microbiology* \u2014 \"Rifampicin, a cornerstone of first-line therapy, inhibits transcription during promoter escape\" |\n\n### Unresolved Validation Failures\n**None.** All four QC layers passed cleanly."
+  },
+  {
+    "pair_id": "P19",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 40,
+    "wall_seconds": 258.1,
+    "usage": {
+      "input_tokens": 631705,
+      "output_tokens": 11471,
+      "cache_read_input_tokens": 296080,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.156,
+    "n_tool_calls": 59,
+    "tool_call_counts": {
+      "pubmed_search": 19,
+      "pubmed_fetch": 6,
+      "read_reference": 24,
+      "write_path_yaml": 3,
+      "canonicalize_predicates": 3,
+      "run_qc": 3,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "ippet content failure |\n\n### Retry Count: 2\n- **Retry 1**: Fixed `binds` \u2192 valid predicate (`decreases activity of`); fixed Unicode/ASCII mismatch in snippet from PMID:27401055\n- **Retry 2**: Removed the problematic PMID:27401055 snippet from edge 1; all remaining snippets verified verbatim\n\n### PMIDs Cited\n| PMID | Used for |\n|------|----------|\n| **PMID:18590620** | Edges 1 & 4: gabapentin\u2192\u03b12\u03b4, AED neurotransmitter modulation |\n| **PMID:38794193** | Edge 1: gabapentin binds \u03b12\u03b4 \u2192 blocks Ca\u00b2\u207a influx |\n| **PMID:11804619** | Edges 2 & 3: \u03b12\u03b4 \u2192 P/Q Ca\u00b2\u207a channel, \u2192 decreased glutamate release |\n| **PMID:29793598** | Edge 3: Ca\u00b2\u207a-mediated neurotransmitter release inhibition via \u03b12\u03b4 |\n\n### Mechanistic Path Summary\n**Gabapentin \u2192 [decreases activity of] \u2192 \u03b12\u03b4-1 subunit (UniProt:P54289)**\n**\u2192 [decreases activity of] \u2192 P/Q Ca\u00b2\u207a channel \u03b11A (UniProt:O00555)**\n**\u2192 [negatively regulates] \u2192 neurotransmitter secretion (GO:0007269)**\n**\u2192 [contributes to] \u2192 Epilepsy (MESH:D004827)**\n\n### Unresolved Validation Failure\n**Layer 4** fails due to a missing `linkml-reference-validator` binary (`FileNotFoundError: /Users/.../DrugMechDB-agentic/.venv-py310/bin/linkml-reference-validator`) \u2014 this is an **environment/installation issue**, not a content error. All snippets have been manually verified as verbatim substrings of their cached PubMed abstracts. **Recommended fix**: Install `linkml-reference-validator` in the virtual environment (`pip install linkml-reference-validator`) and re-run Layer 4."
+  },
+  {
+    "pair_id": "P20",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 34,
+    "wall_seconds": 185.7,
+    "usage": {
+      "input_tokens": 557859,
+      "output_tokens": 7422,
+      "cache_read_input_tokens": 251668,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.8604,
+    "n_tool_calls": 49,
+    "tool_call_counts": {
+      "pubmed_search": 12,
+      "pubmed_fetch": 6,
+      "read_reference": 26,
+      "write_path_yaml": 1,
+      "canonicalize_predicates": 1,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "The deficiency of the cholinergic neurotransmitter known as acetylcholine (ACh) is associated with AD\"\n- **PMID:21145918** \u2014 Edge 4: \"In presenile (early onset), and in the advanced stages of late-onset Alzheimer's disease (AD), a severe loss of cortical cholinergic innervation has extensively been documented\"\n\n### QC Results (2 runs, same result)\n\n| Layer | Result | Detail |\n|-------|--------|--------|\n| Layer 1 (LinkML schema) | \u2705 PASS | 1 file passes |\n| Layer 2 (Node ontology) | \u2705 PASS | All CURIEs match canonical ontologies, 0 legacy warnings |\n| Layer 3 (Predicates) | \u2705 PASS | All 4 edge keys found in BiolinkPredicate enum |\n| Layer 4 (Verbatim references) | \u274c FAIL \u2014 environment issue | `linkml-reference-validator` binary not found in `.venv-py310/bin/`; all snippets manually verified as exact verbatim substrings |\n\n### Retry Count: 1 (path content unchanged; 2nd run confirmed same pass/fail pattern)\n\n### Unresolved Validation Failure\n**Layer 4 \u2014 `FileNotFoundError`:** The `linkml-reference-validator` executable is absent from the project's virtual environment (`.venv-py310/bin/linkml-reference-validator`). This is an **installation environment issue**, not a data quality issue. All four evidence snippets were manually confirmed as verbatim substrings of their respective cached PubMed abstracts (read via `read_reference`). To resolve: run `pip install linkml-reference-validator` inside the `.venv-py310` environment and re-run `python scripts/qc.py --profile ai_curated`."
+  },
+  {
+    "pair_id": "P21",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 38,
+    "wall_seconds": 187.3,
+    "usage": {
+      "input_tokens": 654764,
+      "output_tokens": 8838,
+      "cache_read_input_tokens": 281276,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.1812,
+    "n_tool_calls": 60,
+    "tool_call_counts": {
+      "pubmed_search": 18,
+      "pubmed_fetch": 7,
+      "read_reference": 28,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "nv-py310/bin/`; **not a content failure** |\n\n### Retry Count\n**1 retry** (after fixing `binds` \u2192 `positively regulates` on the Adenosine\u2192A2A edge)\n\n### PMIDs Cited\n| PMID | Reference |\n|------|-----------|\n| PMID:16280378 | Affleck et al. 2006 \u2014 MTX tight-binding DHFR inhibitor |\n| PMID:7510620 | Bannwarth et al. 1994 \u2014 MTX polyglutamates inhibit DHFR and AICAR transformylase |\n| PMID:23464989 | You et al. 2013 \u2014 MTX polyglutamates inhibit ATIC \u2192 adenosine release |\n| PMID:15476202 | Morgan et al. 2004 \u2014 MTX blocks AICA ribonucleotide transformylase in RA patients |\n| PMID:12528125 | Montesinos et al. 2003 \u2014 Adenosine via A2A/A3 receptors mediates MTX anti-inflammatory effects |\n\n### Path Summary\n**6 nodes, 5 edges:**\n```\nMethotrexate --[decreases activity of]--> Dihydrofolate reductase (DHFR)\nMethotrexate --[decreases activity of]--> ATIC (AICAR transformylase)\nATIC --[negatively regulates]--> Adenosine\nAdenosine --[positively regulates]--> Adenosine receptor A2a\nAdenosine receptor A2a --[treats]--> Rheumatoid Arthritis\n```\n\n### Unresolved Validation Failures\n**Layer 4** fails with a `FileNotFoundError` for `linkml-reference-validator` \u2014 this is a **tool installation issue** (binary not present in `.venv-py310/bin/`), not a content validation failure. All 7 evidence snippets have been manually verified as verbatim substrings of their respective cached PubMed abstracts. A curator should install the `linkml-reference-validator` package to enable automated Layer 4 verification."
+  },
+  {
+    "pair_id": "P22",
+    "model": "claude-sonnet-4-6",
+    "stopped": "max_iters",
+    "iters": 40,
+    "wall_seconds": 158.7,
+    "usage": {
+      "input_tokens": 706012,
+      "output_tokens": 5069,
+      "cache_read_input_tokens": 296080,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.2829,
+    "n_tool_calls": 71,
+    "tool_call_counts": {
+      "pubmed_search": 28,
+      "pubmed_fetch": 10,
+      "read_reference": 33
+    },
+    "output_written": false,
+    "final_text_tail": ""
+  },
+  {
+    "pair_id": "P23",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 29,
+    "wall_seconds": 161.3,
+    "usage": {
+      "input_tokens": 377846,
+      "output_tokens": 7509,
+      "cache_read_input_tokens": 214658,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.3106,
+    "n_tool_calls": 44,
+    "tool_call_counts": {
+      "pubmed_search": 12,
+      "pubmed_fetch": 5,
+      "read_reference": 23,
+      "write_path_yaml": 1,
+      "canonicalize_predicates": 1,
+      "run_qc": 1,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "14335 | HCQ/CQ interfere with endosomal TLR signaling \u2192 decreased type I IFN (review) |\n| PMID:26099519 | Type I IFN dysregulation is a hallmark of SLE pathogenesis (review) |\n| PMID:32185249 | Type I IFN from pDCs drives autoantibody formation in SLE; HCQ reduces type I IFNs (review) |\n\n---\n\n## Path Written\n\n**File:** `P23.yaml` (graph _id: `P23_DB01611_MESH_D008180`)\n\n**5 nodes, 5 edges:**\n1. Hydroxychloroquine (MESH:D006886) \u2192 **decreases activity of** \u2192 Toll-like receptor 7 (UniProt:Q9NYK1)\n2. Hydroxychloroquine (MESH:D006886) \u2192 **decreases activity of** \u2192 Toll-like receptor 9 (UniProt:Q9NR96)\n3. Toll-like receptor 7 (UniProt:Q9NYK1) \u2192 **positively regulates** \u2192 type I interferon production (GO:0032606)\n4. Toll-like receptor 9 (UniProt:Q9NR96) \u2192 **positively regulates** \u2192 type I interferon production (GO:0032606)\n5. type I interferon production (GO:0032606) \u2192 **contributes to** \u2192 Systemic Lupus Erythematosus (MESH:D008180)\n\n---\n\n## Unresolved Validation Failures\n\n**Layer 4 (Verbatim References):** The `linkml-reference-validator` binary is not installed at `.venv-py310/bin/linkml-reference-validator`. This is an infrastructure issue in the local environment \u2014 the validator cannot run. However, all snippets have been **manually verified** as verbatim substrings of their respective cached abstract texts (read via `read_reference`). No content-level verbatim failures were found. This requires human curator attention to install/run the validator binary for final confirmation."
+  },
+  {
+    "pair_id": "P24",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 36,
+    "wall_seconds": 187.4,
+    "usage": {
+      "input_tokens": 476997,
+      "output_tokens": 8799,
+      "cache_read_input_tokens": 266472,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.6429,
+    "n_tool_calls": 53,
+    "tool_call_counts": {
+      "pubmed_search": 19,
+      "pubmed_fetch": 6,
+      "read_reference": 21,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "s (retry 1 fixed snippet for PMID:11233304 \u2014 removed non-contiguous sentence merge; retry 2 confirmed all snippets verbatim). Layer 4 failure is an **environment infrastructure issue** (missing `linkml-reference-validator` binary), not a content failure.\n\n### PMIDs Cited\n- **PMID:19834629** \u2014 Villarroel et al. 2009, \"Mycophenolate mofetil: An update\" (edges 1 & 2)\n- **PMID:17100698** \u2014 Morath et al. 2006, \"Antifibrotic actions of mycophenolic acid\" (edge 2)\n- **PMID:11233304** \u2014 Yashima & Ohgane 2001, \"Pharmacological profiles of MMF\" (edge 3)\n- **PMID:19436616** \u2014 Dalal et al. 2009, \"MMF safety and efficacy in transplantation\" (edge 3)\n- **PMID:10361247** \u2014 Jonsson et al. 1999, \"Beneficial effect of MMF on glomerulonephritis in SLE-prone mice\" (edge 4)\n- **PMID:12538032** \u2014 Jonsson & Carlsten 2003, \"MPA inhibits IMPDH and suppresses immunoglobulin production of B cells\" (edge 4)\n\n### Unresolved Validation Failures\n**Layer 4** is technically marked FAIL, but the root cause is a **missing tool binary** (`linkml-reference-validator` not found at `.venv-py310/bin/linkml-reference-validator`), not any snippet content issue. All 7 snippets are verbatim substrings of their respective cached PubMed abstracts (manually verified by read_reference). This requires an environment fix (installing `linkml-validate` / `linkml-reference-validator` into the venv) rather than any path content correction. **Flagging for human reviewer / environment maintainer to resolve the tool installation.**"
+  },
+  {
+    "pair_id": "P25",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 39,
+    "wall_seconds": 190.1,
+    "usage": {
+      "input_tokens": 652313,
+      "output_tokens": 9123,
+      "cache_read_input_tokens": 288678,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.1804,
+    "n_tool_calls": 63,
+    "tool_call_counts": {
+      "pubmed_search": 21,
+      "pubmed_fetch": 7,
+      "read_reference": 28,
+      "write_path_yaml": 3,
+      "canonicalize_predicates": 2,
+      "run_qc": 1,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "er in psoriatic epidermis than in normal epidermis (p < 0.05).\" |\n| PMID:35213752 | \"disease-relevant changes in morphology, gene transcription and cytokine production were robustly attenuated by pharmacologically blocking TNF\u03b1/IL-17A-induced NF-\u03baB activation with IKK-2 inhibitor IV.\" |\n\n---\n\n### QC Layer-by-Layer Results (Run 1 of 1)\n\n| Layer | Result | Notes |\n|---|---|---|\n| **Layer 1** (LinkML schema) | \u2705 **PASS** | All required fields present and valid |\n| **Layer 2** (Node ontology) | \u2705 **PASS** | All CURIEs match canonical ontology (UniProt\u2192Protein, GO\u2192BiologicalProcess, MESH\u2192Drug/Disease) |\n| **Layer 3** (Predicates) | \u2705 **PASS** | All 4 edge keys are in BiolinkPredicate enum (molecularly interacts with, decreases activity of, positively regulates) |\n| **Layer 4** (Verbatim references) | \u26a0\ufe0f **INFRA FAIL** | `linkml-reference-validator` binary not installed in `.venv-py310`; all 4 snippets manually verified as verbatim substrings of their cached abstracts |\n\n### Retry Count: 1 iteration (predicate fix: `binds` \u2192 `molecularly interacts with`)\n\n### Unresolved Validation Failures\n**Layer 4:** Infrastructure failure only \u2014 `FileNotFoundError: [Errno 2] No such file or directory: '.venv-py310/bin/linkml-reference-validator'`. This is an environment setup issue, not a content failure. All four snippets were manually confirmed to be exact verbatim substrings of their respective cached PubMed abstracts via `read_reference`. The path content is sound and ready for human review."
+  },
+  {
+    "pair_id": "P26",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 38,
+    "wall_seconds": 204.4,
+    "usage": {
+      "input_tokens": 555261,
+      "output_tokens": 8676,
+      "cache_read_input_tokens": 281276,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.8803,
+    "n_tool_calls": 57,
+    "tool_call_counts": {
+      "pubmed_search": 22,
+      "pubmed_fetch": 6,
+      "read_reference": 24,
+      "write_path_yaml": 1,
+      "canonicalize_predicates": 1,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "tively regulates] \u2192 gluconeogenesis (GO:0006094)\n      \u2192 [treats] \u2192 Type 2 Diabetes Mellitus (MESH:D003924)\n```\n\n---\n\n### PMIDs Cited\n\n| PMID | Title (summary) | Used for edge |\n|------|-----------------|---------------|\n| **PMID:31886264** | Metformin on Osteoblast Differentiation in T2D | Drug \u2192 Complex I; Complex I \u2192 AMPK |\n| **PMID:19664596** | Metformin suppresses G6Pase via complex I | Drug \u2192 Complex I |\n| **PMID:23710432** | Mitochondrial inhibitor as insulin sensitizer | Complex I \u2192 AMPK |\n| **PMID:16308421** | LKB1 mediates glucose homeostasis and metformin effects | AMPK \u2192 gluconeogenesis |\n| **PMID:34502359** | Metformin effects beyond AMPK pathway (review) | AMPK \u2192 gluconeogenesis |\n| **PMID:25849133** | Metformin activates duodenal AMPK to lower HGP | gluconeogenesis \u2192 T2DM |\n| **PMID:15669880** | Oral antidiabetic agents in T2DM (clinical review) | gluconeogenesis \u2192 T2DM |\n\n---\n\n### Unresolved Validation Failures\n\n**Layer 4 \u2014 `FileNotFoundError: linkml-reference-validator`**  \n- **Cause:** The `linkml-reference-validator` executable is not present at `.venv-py310/bin/linkml-reference-validator`. This is an environment installation issue, not a content error.  \n- **All 8 snippets manually verified** as verbatim substrings in their respective cached PubMed abstracts (confirmed by `read_reference` tool).  \n- **Suggested fix:** Install linkml-reference-validator in the virtual environment: `pip install linkml-reference-validator` (or equivalent `just install` step)."
+  },
+  {
+    "pair_id": "P27",
+    "model": "claude-sonnet-4-6",
+    "stopped": "max_iters",
+    "iters": 40,
+    "wall_seconds": 164.3,
+    "usage": {
+      "input_tokens": 806584,
+      "output_tokens": 4812,
+      "cache_read_input_tokens": 296080,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.5808,
+    "n_tool_calls": 75,
+    "tool_call_counts": {
+      "pubmed_search": 21,
+      "pubmed_fetch": 12,
+      "read_reference": 42
+    },
+    "output_written": false,
+    "final_text_tail": ""
+  },
+  {
+    "pair_id": "P28",
+    "model": "claude-sonnet-4-6",
+    "stopped": "max_iters",
+    "iters": 40,
+    "wall_seconds": 141.6,
+    "usage": {
+      "input_tokens": 825795,
+      "output_tokens": 4969,
+      "cache_read_input_tokens": 296080,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.6407,
+    "n_tool_calls": 76,
+    "tool_call_counts": {
+      "pubmed_search": 24,
+      "pubmed_fetch": 11,
+      "read_reference": 41
+    },
+    "output_written": false,
+    "final_text_tail": ""
+  },
+  {
+    "pair_id": "P29",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 32,
+    "wall_seconds": 142.3,
+    "usage": {
+      "input_tokens": 425992,
+      "output_tokens": 5888,
+      "cache_read_input_tokens": 236864,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.4374,
+    "n_tool_calls": 51,
+    "tool_call_counts": {
+      "pubmed_search": 15,
+      "pubmed_fetch": 6,
+      "read_reference": 25,
+      "write_path_yaml": 1,
+      "canonicalize_predicates": 1,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "lyzes the oxidative hydroxylation of hypoxanthine and xanthine to uric acid in purine catabolism\u2026\"\n- **PMID:33671646** \u2014 Brzezi\u0144ska et al. (2021), *Nutrients*: \"It results from sustained hyperuricemia that leads to monosodium urate crystal deposition in joint structures and soft tissue.\"\n\n### QC Results (2 runs, same result)\n| Layer | Result | Note |\n|-------|--------|------|\n| Layer 1 (Schema) | \u2705 PASS | LinkML schema valid |\n| Layer 2 (Node ontology) | \u2705 PASS | All node CURIEs match canonical ontologies |\n| Layer 3 (Predicates) | \u2705 PASS | All predicates are valid BiolinkPredicate enum members |\n| Layer 4 (Verbatim references) | \u274c FAIL (infrastructure) | `linkml-reference-validator` binary missing from `.venv-py310`; all snippets manually verified as verbatim substrings of cached abstracts |\n\n### Unresolved Validation Failures\n**Layer 4** \u2014 `FileNotFoundError: [Errno 2] No such file or directory: '.venv-py310/bin/linkml-reference-validator'`\n\nThis is an **environment infrastructure failure**, not a content failure. The binary `linkml-reference-validator` is not installed in the project's Python virtual environment. All three snippets were manually verified against their cached reference texts and confirmed to be exact verbatim substrings. **Recommended fix:** Install the `linkml-reference-validator` package into `.venv-py310` (e.g., `pip install linkml-runtime` or the specific package providing that entry point). The path content itself is correct and ready for human review."
+  },
+  {
+    "pair_id": "P30",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 25,
+    "wall_seconds": 126.4,
+    "usage": {
+      "input_tokens": 310360,
+      "output_tokens": 5898,
+      "cache_read_input_tokens": 185050,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.0751,
+    "n_tool_calls": 41,
+    "tool_call_counts": {
+      "pubmed_search": 9,
+      "pubmed_fetch": 5,
+      "read_reference": 22,
+      "write_path_yaml": 1,
+      "canonicalize_predicates": 1,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "* \u2014 Scheen AJ (2015), Empagliflozin SGLT2 inhibitor review (Revue medicale de Liege)\n- **PMID:32006266** \u2014 Kuchay MS et al. (2021), Glucose Lowering Efficacy of SGLT2 Inhibitors\n- **PMID:33409652** \u2014 Hughes CB et al. (2021), SGLT2-loss of function mutation and glucose homeostasis\n- **PMID:25805666** \u2014 Scheen AJ (2015), Pharmacokinetics/Pharmacodynamics of SGLT2 Inhibitors in CKD\n- **PMID:26513131** \u2014 Scheen AJ (2015), SGLT2 inhibition: efficacy and safety\n- **PMID:29963920** \u2014 de Albuquerque Rocha N et al. (2018), Effects of SGLT2 inhibitors on the kidney\n\n### Unresolved Validation Failure\n**Layer 4** fails with `FileNotFoundError: [Errno 2] No such file or directory: '/Users/sanjanprabu/.../linkml-reference-validator'`. This is an **environment/infrastructure issue** \u2014 the `linkml-reference-validator` CLI is not installed in the Python virtual environment. All snippets have been manually verified as verbatim substrings of their cached abstracts. A curator should install the `linkml-reference-validator` package and re-run Layer 4 to confirm.\n\n### Path Summary\n**File:** `P30.yaml`  \n**Nodes:** 5 (Drug \u2192 Protein \u2192 BiologicalProcess \u2192 PhenotypicFeature \u2192 Disease)  \n**Edges:** 4  \n**Mechanistic chain:** Empagliflozin `decreases activity of` SGLT2 (UniProt:P31639) \u2192 SGLT2 `positively regulates` renal glucose absorption (GO:0070293) \u2192 renal glucose absorption `negatively regulates` Hyperglycemia (HP:0003074) \u2192 Hyperglycemia `manifestation of` Type 2 Diabetes Mellitus (MESH:D003924)"
+  },
+  {
+    "pair_id": "P31",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 33,
+    "wall_seconds": 178.4,
+    "usage": {
+      "input_tokens": 480905,
+      "output_tokens": 9229,
+      "cache_read_input_tokens": 244266,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.6544,
+    "n_tool_calls": 46,
+    "tool_call_counts": {
+      "pubmed_search": 12,
+      "pubmed_fetch": 4,
+      "read_reference": 22,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "read_path_yaml": 2,
+      "run_qc": 2
+    },
+    "output_written": true,
+    "final_text_tail": "rculating FVIII levels. Elevated FVIII treats **Hemophilia A**.\n\n### PMIDs Cited\n- **PMID:12871401** \u2014 Kaufmann & Vischer 2003 (V2R / cAMP / Weibel-Palade body mechanism)\n- **PMID:26473492** \u2014 Turner & Moake 2015 (Weibel-Palade body \u2192 VWF/FVIII; VWF stabilizes FVIII)\n- **PMID:40290674** \u2014 Alferez et al. 2025 (DDAVP releases VWF, increases circulating FVIII)\n- **PMID:20829683** \u2014 Franchini et al. 2010 (FVIII elevation \u2192 treats mild hemophilia A)\n\n### QC Results (Retry count: 1)\n\n| Layer | Result | Notes |\n|-------|--------|-------|\n| Layer 1 (Schema) | **PASS** | LinkML schema valid |\n| Layer 2 (Node ontology) | **PASS** | All CURIE prefixes match canonical ontology |\n| Layer 3 (Predicates) | **PASS** | All 6 edge keys are valid BiolinkPredicates |\n| Layer 4 (Verbatim snippets) | **FAIL** | Infrastructure error: `linkml-reference-validator` binary not found at `.venv-py310/bin/linkml-reference-validator` \u2014 **not a content failure** |\n\n### Unresolved Validation Failure\n**Layer 4 \u2014 Environment/installation issue:** `FileNotFoundError: [Errno 2] No such file or directory: '/\u2026/.venv-py310/bin/linkml-reference-validator'`. The `linkml-reference-validator` tool is not installed in the project's virtual environment. All snippets have been manually verified as exact verbatim substrings of their cached reference abstracts. **This failure requires a curator to install the `linkml-reference-validator` package** (`pip install linkml-runtime` or the appropriate package), not a content fix."
+  },
+  {
+    "pair_id": "P32",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 21,
+    "wall_seconds": 114.5,
+    "usage": {
+      "input_tokens": 230743,
+      "output_tokens": 5254,
+      "cache_read_input_tokens": 155442,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 0.8177,
+    "n_tool_calls": 37,
+    "tool_call_counts": {
+      "pubmed_search": 7,
+      "pubmed_fetch": 3,
+      "read_reference": 22,
+      "write_path_yaml": 1,
+      "canonicalize_predicates": 1,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "s** (*negatively correlated with*) \u2192 **Ascorbic acid deficiency (MESH:D001206)** \u2014 impaired collagen synthesis is the proximate cause of scurvy symptoms\n\n### PMIDs Cited\n- **PMID:17325743** \u2014 Telang et al. (2007): ascorbic acid maintains prolyl hydroxylase iron in reduced state\n- **PMID:10329688** \u2014 Walmsley et al. (1999): vitamin C is essential cofactor for prolyl 4-hydroxylase; incomplete proline hydroxylation in deficiency\n- **PMID:41980618** \u2014 Ricol et al. (2026): AA is cofactor for collagen prolyl/lysyl hydroxylases, vital for collagen stability\n- **PMID:39494043** \u2014 Saeid et al. (2024): vitamin C deficiency impairs collagen synthesis leading to typical scurvy symptoms (HUMAN_CLINICAL)\n- **PMID:32517792** \u2014 Liebling et al. (2020): scurvy is a syndrome due to defective collagen synthesis (HUMAN_CLINICAL)\n\n### Unresolved Validation Failures\n**Layer 4 \u2014 Infrastructure error:** `FileNotFoundError: [Errno 2] No such file or directory: '/Users/sanjanprabu/Documents/Personal/SCRIPPS_SRTI/Project/DrugMechDB-agentic/.venv-py310/bin/linkml-reference-validator'`\n\nThe `linkml-reference-validator` tool is not installed in the project virtual environment. This must be resolved by the maintainer (`pip install linkml` or equivalent in `.venv-py310`). All snippets used in the path have been manually verified to be exact verbatim substrings of the cached PubMed abstracts as read via `read_reference` \u2014 the path itself is ready for merge once the tool is installed and Layer 4 can be re-run."
+  },
+  {
+    "pair_id": "P33",
+    "model": "claude-sonnet-4-6",
+    "stopped": "max_iters",
+    "iters": 40,
+    "wall_seconds": 164.3,
+    "usage": {
+      "input_tokens": 586116,
+      "output_tokens": 5601,
+      "cache_read_input_tokens": 296080,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.9312,
+    "n_tool_calls": 71,
+    "tool_call_counts": {
+      "pubmed_search": 30,
+      "pubmed_fetch": 8,
+      "read_reference": 29,
+      "pubmed_probe": 4
+    },
+    "output_written": false,
+    "final_text_tail": ""
+  },
+  {
+    "pair_id": "P34",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 37,
+    "wall_seconds": 250.1,
+    "usage": {
+      "input_tokens": 527504,
+      "output_tokens": 11304,
+      "cache_read_input_tokens": 273874,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.8342,
+    "n_tool_calls": 47,
+    "tool_call_counts": {
+      "pubmed_search": 14,
+      "pubmed_fetch": 5,
+      "read_reference": 17,
+      "write_path_yaml": 3,
+      "canonicalize_predicates": 3,
+      "read_path_yaml": 2,
+      "run_qc": 3
+    },
+    "output_written": true,
+    "final_text_tail": "tion suppresses apoptosis; when blocked, apoptosis ensues] \u2190 (*treats*) \u2192 **Primary cutaneous T-cell lymphoma**\n\n### Unresolved Validation Failures\n**Layer 4**: The `linkml-reference-validator` tool is not installed in the `.venv-py310` environment. All snippets have been manually verified as verbatim substrings of their cached references:\n- PMID:36047157 abstract: \"DD binds to IL-2 receptor (IL-2R) expressed on tumor cells and is taken up into the cells.\" \u2713\n- PMID:11707818 abstract: \"DAB(389)IL-2 is internalized into IL-2 receptor-bearing cells by endocytosis.\" \u2713\n- PMID:11707818 abstract: \"The ADP-ribosyltransferase activity of diphtheria toxin is cleaved in the endosome and is translocated into the cytosol where it inhibits protein synthesis, leading to apoptosis.\" \u2713\n- PMID:19707452 full text: \"the internalized fragment A catalyzes the cleavage of nicotinamide adenine dinucleotide (NAD) to nicotinamide resulting in a transfer of ADP to elongation factor-2 (EF-2). This ADP-ribosylation of EF-2 causes inhibition of mRNA prolongation and ultimately inhibition of protein synthesis.\" \u2713\n- PMID:23853096 abstract: \"ADP(R) of eEF2 resulted in a decrease in total protein synthesis consistent with a defect in translation elongation.\" \u2713\n- PMID:19707452 full text: \"Denileukin diftitox (DD, Ontak(R)) is a targeted immunotoxin which has biological activity against malignancies expressing the IL-2 receptor. CTCL/MF has been found be particularly susceptible to treatment with this agent.\" \u2713"
+  },
+  {
+    "pair_id": "P35",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 36,
+    "wall_seconds": 235.7,
+    "usage": {
+      "input_tokens": 597314,
+      "output_tokens": 11612,
+      "cache_read_input_tokens": 266472,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.0461,
+    "n_tool_calls": 54,
+    "tool_call_counts": {
+      "pubmed_search": 17,
+      "pubmed_fetch": 6,
+      "read_reference": 22,
+      "write_path_yaml": 3,
+      "canonicalize_predicates": 3,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "nding predicates; used `increases activity of` from Drug directly to JAK1/TYK2 \u2192 Layers 1-3 pass\n\n### PMIDs Cited\n- **PMID:16324217** (Plumlee et al., 2005) \u2014 6 edges: provides verbatim mechanistic description of IFN-alpha activating JAK1/TYK2, which phosphorylate STAT1/STAT2, which form ISGF3 to induce ISG transcription\n- **PMID:16108059** (Helbig et al., 2005) \u2014 2 edges: IFN-alpha inhibits HCV replication; active ISG antiviral cellular response in chronic HCV\n\n### Mechanistic Path (8 nodes, 8 edges)\n**Peginterferon alfa-2a** \u2192 (increases activity of) \u2192 **JAK1** \u2192 (increases activity of) \u2192 **STAT1**  \n**Peginterferon alfa-2a** \u2192 (increases activity of) \u2192 **TYK2** \u2192 (increases activity of) \u2192 **STAT2**  \n**STAT1** + **STAT2** \u2192 (positively regulates) \u2192 **cellular response to interferon** (ISGF3/ISG induction)  \n**Cellular response to interferon** \u2192 (positively regulates) \u2192 **response to virus** (antiviral ISG activity)  \n**Response to virus** \u2192 (negatively regulates) \u2192 **Chronic hepatitis C**\n\n### Unresolved Validation Failures\n**Layer 4**: Tool infrastructure failure \u2014 `linkml-reference-validator` is not installed at the expected path (`.venv-py310/bin/linkml-reference-validator`). This prevents automated verbatim snippet validation. All snippets have been manually verified as exact verbatim substrings of their respective cached PubMed abstracts (confirmed by `read_reference` calls). Human curator review recommended to re-run Layer 4 after installing the validator dependency."
+  },
+  {
+    "pair_id": "P36",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 35,
+    "wall_seconds": 219.7,
+    "usage": {
+      "input_tokens": 581075,
+      "output_tokens": 9351,
+      "cache_read_input_tokens": 259070,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.9612,
+    "n_tool_calls": 59,
+    "tool_call_counts": {
+      "pubmed_search": 16,
+      "pubmed_fetch": 7,
+      "read_reference": 28,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 3,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": " **FAIL** \u2014 environment error: `linkml-reference-validator` binary missing at `.venv-py310/bin/linkml-reference-validator` |\n\n### Retry Count: 2 content iterations (3 total QC runs)\n\n### PMIDs Cited\n- **PMID:35872830** \u2014 Gramicidin A forms \u03b26.3-helix transmembrane channels for monovalent cations (IN_VITRO)\n- **PMID:29501941** \u2014 Gramicidin A inserts into membranes and forms channels that disrupt ion gradients (IN_VITRO)\n- **PMID:24356337** \u2014 Changes in membrane ion conductance lead to cell death; gramicidin channels disrupt monovalent cation balance (IN_VITRO)\n- **PMID:12429243** \u2014 Neomycin-polymyxin B-gramicidin ophthalmic solution effective for bacterial conjunctivitis (HUMAN_CLINICAL)\n- **PMID:20084257** \u2014 Polymyxin/gramicidin recommended as first-line for bacterial conjunctivitis (HUMAN_CLINICAL)\n\n### Unresolved Validation Failure\n**Layer 4 \u2014 Environment error**: `FileNotFoundError: [Errno 2] No such file or directory: '/Users/sanjanprabu/Documents/Personal/SCRIPPS_SRTI/Project/DrugMechDB-agentic/.venv-py310/bin/linkml-reference-validator'`\n\nThis is a tooling installation issue: the `linkml-reference-validator` CLI is not present in the project's virtual environment. **All snippets have been manually verified as verbatim substrings of the fetched cached abstracts** (as documented in the table above). To resolve: install `linkml-reference-validator` into the `.venv-py310` environment (e.g., `pip install linkml-runtime` or equivalent) and re-run `qc.py --profile ai_curated`."
+  },
+  {
+    "pair_id": "P37",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 35,
+    "wall_seconds": 199.7,
+    "usage": {
+      "input_tokens": 576171,
+      "output_tokens": 9479,
+      "cache_read_input_tokens": 259070,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.9484,
+    "n_tool_calls": 54,
+    "tool_call_counts": {
+      "pubmed_search": 14,
+      "pubmed_fetch": 8,
+      "read_reference": 25,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "A-A receptor alpha-1 subunit\n2. GABA-A receptor \u2192 **increases activity of** \u2192 chloride channel activity\n3. Chloride channel activity \u2192 **causes** \u2192 membrane hyperpolarization\n4. Membrane hyperpolarization \u2192 **negatively regulates** \u2192 Anxiety\n\n**PMIDs cited:**\n- **PMID:12805666** (Rudolph U, 2001, *TheScientificWorldJournal*) \u2014 supports edges 1, 2, and 3 with verbatim snippets from the abstract\n- **PMID:29628509** (Babaev et al., 2018, *Experimental & Molecular Medicine*) \u2014 supports edge 4 with a verbatim snippet from the abstract\n\n**QC results (Attempt 1 \u2014 Layer schema failure due to `binds` predicate; fixed in Attempt 2):**\n| Layer | Result |\n|---|---|\n| Layer 1 (schema) | \u2705 PASS |\n| Layer 2 (node ontology) | \u2705 PASS |\n| Layer 3 (predicates) | \u2705 PASS |\n| Layer 4 (verbatim reference) | \u274c FAIL \u2014 `linkml-reference-validator` binary not found in `.venv-py310/bin/`; this is an **infrastructure/environment issue** (missing tool install), not a content validation failure. All four snippets were manually verified as verbatim substrings of their respective fetched PubMed abstracts. |\n\n**Retry count:** 1 (first attempt used `binds` which is not in the BiolinkPredicate enum; corrected to `increases activity of` on retry)\n\n**Unresolved validation failures:** Layer 4 fails only due to the missing `linkml-reference-validator` binary in the local Python environment \u2014 no content issues. All snippets are confirmed verbatim substrings of their cached references (verified via `read_reference`)."
+  },
+  {
+    "pair_id": "P38",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 39,
+    "wall_seconds": 232.4,
+    "usage": {
+      "input_tokens": 871918,
+      "output_tokens": 11447,
+      "cache_read_input_tokens": 288678,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.8741,
+    "n_tool_calls": 71,
+    "tool_call_counts": {
+      "pubmed_search": 21,
+      "pubmed_fetch": 8,
+      "read_reference": 35,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "4035)\n  \u2192 [participates in] \u2192\ncholesterol biosynthetic process (GO:0006695)\n  \u2192 [negatively regulates] \u2192\nLDL receptor (UniProt:P01130)\n  \u2192 [negatively regulates] \u2192\nLipoproteins, LDL (MESH:D008077)\n  \u2192 [causes] \u2192\nHypercholesterolemia (MESH:D006937)\n```\n\n### PMIDs Cited\n| PMID | Reference | Used for |\n|------|-----------|----------|\n| **PMID:14651445** | Bang & Goa, *Drugs & Aging* 2003 | Pravastatin \u2192 decreases activity of \u2192 HMG-CoA reductase |\n| **PMID:1298545** | Napoli et al., *Cardiologia* 1992 | Pravastatin \u2192 HMG-CoA reductase; Cholesterol biosynthesis \u2192 LDLR (two edges) |\n| **PMID:34207840** | Rimpelov\u00e1 et al., *Molecules* 2021 | HMG-CoA reductase \u2192 participates in \u2192 cholesterol biosynthesis |\n| **PMID:30953636** | Klein-Szanto & Bassi, *Biochem Pharmacol* 2019 | LDLR \u2192 negatively regulates \u2192 LDL |\n| **PMID:42034477** | Singh et al., *J Clin Lipidology* 2026 | LDL \u2192 causes \u2192 Hypercholesterolemia |\n\n### Unresolved Validation Failure\n**Layer 4** failed due to a missing `linkml-reference-validator` binary (`FileNotFoundError: [Errno 2] No such file or directory: '.venv-py310/bin/linkml-reference-validator'`). All snippets have been manually confirmed as verbatim substrings of their respective cached PubMed abstracts. This failure requires a curator to install the `linkml-reference-validator` package in the project's virtual environment (`pip install linkml` or equivalent) to resolve CI validation. The content of the path itself is scientifically sound and evidence-grounded."
+  },
+  {
+    "pair_id": "P39",
+    "model": "claude-sonnet-4-6",
+    "stopped": "max_iters",
+    "iters": 40,
+    "wall_seconds": 133.9,
+    "usage": {
+      "input_tokens": 710107,
+      "output_tokens": 4623,
+      "cache_read_input_tokens": 296080,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.2885,
+    "n_tool_calls": 70,
+    "tool_call_counts": {
+      "pubmed_search": 23,
+      "pubmed_fetch": 11,
+      "read_reference": 36
+    },
+    "output_written": false,
+    "final_text_tail": ""
+  },
+  {
+    "pair_id": "P40",
+    "model": "claude-sonnet-4-6",
+    "stopped": "final",
+    "iters": 24,
+    "wall_seconds": 199.7,
+    "usage": {
+      "input_tokens": 304913,
+      "output_tokens": 9097,
+      "cache_read_input_tokens": 177648,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.1045,
+    "n_tool_calls": 41,
+    "tool_call_counts": {
+      "pubmed_search": 10,
+      "pubmed_fetch": 4,
+      "read_reference": 20,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "dges 1 (Omalizumab decreases activity of IgE)\n- **PMID:30069035** \u2014 Chen JB et al. (2018), *Sci Rep* \u2014 \"Structural basis for selective inhibition of IgE-receptor interactions\" \u2192 supports edge 2 (IgE positively regulates Fc\u03b5RI)\n- **PMID:26206871** \u2014 Gauvreau GM et al. (2015), *Eur Respir J* \u2014 \"Allergen-induced airway responses\" \u2192 supports edge 3 (Fc\u03b5RI positively regulates mast cell degranulation)\n- **PMID:39051334** \u2014 Vogel M & Engeroff P (2024), *Antibodies (Basel)* \u2014 \"A Comparison of Natural and Therapeutic Anti-IgE Antibodies\" \u2192 supports edge 4 (mast cell degranulation occurs in mast cells)\n- **PMID:38790633** \u2014 Jeong S et al. (2024), *Antioxidants (Basel)* \u2014 \"Hispidulin Alleviates Mast Cell-Mediated Allergic Airway Inflammation\" \u2192 supports edge 5 (mast cell degranulation contributes to asthma)\n\n### Path Summary\n**File written:** `P40.yaml`  \n**Graph ID:** `P40_DB00043_MESH_D001249`  \n**Nodes:** 6 | **Edges:** 5  \n\n**Mechanistic chain:**\n> Omalizumab \u2192 *(decreases activity of)* \u2192 IgE \u2192 *(positively regulates)* \u2192 Fc\u03b5RI (FCER1A) \u2192 *(positively regulates)* \u2192 Mast cell degranulation \u2192 *(occurs in)* \u2192 Mast cell \u2192 *(contributes to)* \u2192 Asthma\n\n### Unresolved Validation Failures\n- **Layer 4**: Infrastructure failure only \u2014 `linkml-reference-validator` is not installed at `.venv-py310/bin/linkml-reference-validator`. This is an environment setup issue, not a snippet quality issue. All 5 evidence snippets are confirmed verbatim substrings of their respective PubMed-cached abstracts."
   }
 ]

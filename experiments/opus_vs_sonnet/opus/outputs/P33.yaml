@@ -1,0 +1,74 @@
+directed: true
+multigraph: true
+graph:
+  _id: P33_DB00068_MESH_D020529
+  drug: Interferon beta-1b
+  drug_mesh: MESH:D000068576
+  drugbank: DB:DB00068
+  disease: Relapsing-remitting multiple sclerosis
+  disease_mesh: MESH:D020529
+nodes:
+  - id: DB:DB00068
+    name: Interferon beta-1b
+    label: Drug
+  - id: UniProt:P17181
+    name: Interferon alpha/beta receptor 1
+    label: Protein
+  - id: GO:0007259
+    name: cell surface receptor signaling pathway via JAK-STAT
+    label: BiologicalProcess
+  - id: UniProt:Q8NEV9
+    name: Interleukin-27 subunit alpha
+    label: Protein
+  - id: CL:0000899
+    name: T-helper 17 cell
+    label: Cell
+  - id: MESH:D020529
+    name: Relapsing-remitting multiple sclerosis
+    label: Disease
+links:
+  - key: increases activity of
+    source: DB:DB00068
+    target: UniProt:P17181
+    evidence:
+      - reference: PMID:26008745
+        snippet: "Quantitative single-molecule imaging of receptor assembly in the plasma membrane of living cells clearly identified IFN-induced dimerization of IFNAR1 and IFNAR2."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "IFN-beta engages and dimerizes the type I interferon receptor chains IFNAR1 and IFNAR2, activating the receptor; IFN-beta has ~100-fold higher binding affinity to efficiently recruit IFNAR1."
+  - key: participates in
+    source: UniProt:P17181
+    target: GO:0007259
+    evidence:
+      - reference: PMID:21106255
+        snippet: "IFNß exerts its activity through the interaction with IFNAR, through activation of the JAK/STAT pathway."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: positively regulates
+    source: DB:DB00068
+    target: UniProt:Q8NEV9
+    evidence:
+      - reference: PMID:21420486
+        snippet: "IFN-β induced IL-27 expression by DC, and neutralisation of IL-27 abrogated the suppressive effects of IFN-β on zymosan-induced IL-1 and IL-23 production and the generation of Th17 cells in vitro."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: negatively regulates
+    source: UniProt:Q8NEV9
+    target: CL:0000899
+    evidence:
+      - reference: PMID:21420486
+        snippet: "IFN-β induced IL-27 expression by DC, and neutralisation of IL-27 abrogated the suppressive effects of IFN-β on zymosan-induced IL-1 and IL-23 production and the generation of Th17 cells in vitro."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "IL-27 mediates the IFN-beta-driven suppression of Th17 cell generation; neutralising IL-27 abrogates this suppression."
+  - key: contributes to
+    source: CL:0000899
+    target: MESH:D020529
+    evidence:
+      - reference: PMID:26095162
+        snippet: "These findings suggest that the p38 signalling pathway, by modulating the Th17 differentiation and response, is involved in the pathogenesis of MS"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Th17 differentiation and response are involved in the pathogenesis of multiple sclerosis, studied here in relapsing-remitting MS patients."
+references:
+  - https://go.drugbank.com/drugs/DB00068

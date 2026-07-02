@@ -1,0 +1,72 @@
+directed: true
+multigraph: true
+graph:
+  _id: P19_DB00996_MESH_D004827
+  drug: Gabapentin
+  drug_mesh: MESH:D000077306
+  drugbank: DB:DB00996
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+nodes:
+  - id: DB:DB00996
+    name: Gabapentin
+    label: Drug
+  - id: UniProt:P54289
+    name: Voltage-dependent calcium channel subunit alpha-2/delta-1 (CACNA2D1)
+    label: Protein
+  - id: GO:0070509
+    name: calcium ion import
+    label: BiologicalProcess
+  - id: GO:0007269
+    name: neurotransmitter secretion
+    label: BiologicalProcess
+  - id: MESH:D004827
+    name: Epilepsy
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00996
+    target: UniProt:P54289
+    evidence:
+      - reference: PMID:24668130
+        snippet: "its binding to neuronal alpha-2/delta subunits of voltage-gated calcium channels (VGCCs) is critical to its mechanism of action"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+      - reference: PMID:17222465
+        snippet: "Binding of these ligands to the alpha2delta subunit is considered to explain their usefulness in treating several clinical disorders, including epilepsy"
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: negatively regulates
+    source: UniProt:P54289
+    target: GO:0070509
+    evidence:
+      - reference: PMID:32351366
+        snippet: "they exhibit a high affinity for the α2δ-1 and α2δ-2 subunits of voltage-activated calcium channels, wherein binding of gabapentinoids inhibits cellular calcium influx and attenuates neurotransmission"
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: positively regulates
+    source: GO:0070509
+    target: GO:0007269
+    evidence:
+      - reference: PMID:32351366
+        snippet: "binding of gabapentinoids inhibits cellular calcium influx and attenuates neurotransmission"
+        supports: SUPPORT
+        evidence_source: OTHER
+      - reference: PMID:17222465
+        snippet: "This modulation is characterized by a reduction of the excessive neurotransmitter release that is observed in certain neurological and psychiatric disorders"
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: treats
+    source: GO:0007269
+    target: MESH:D004827
+    evidence:
+      - reference: PMID:32351366
+        snippet: "gabapentin and pregabalin are effective at suppressing seizures and subsequently approved as a new class of antiepileptic therapy for partial-onset epilepsy"
+        supports: SUPPORT
+        evidence_source: OTHER
+      - reference: PMID:17126531
+        snippet: "possibly accounting for its actions in vivo to reduce neuronal excitability and seizures"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+references:
+  - https://go.drugbank.com/drugs/DB00996

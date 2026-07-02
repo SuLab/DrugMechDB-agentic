@@ -1,0 +1,75 @@
+directed: true
+multigraph: true
+graph:
+  _id: P34_DB00004_MESH_D016410
+  drug: Denileukin diftitox
+  drug_mesh: MESH:C078456
+  drugbank: DB:DB00004
+  disease: Primary cutaneous T-cell lymphoma
+  disease_mesh: MESH:D016410
+nodes:
+  - id: MESH:C078456
+    name: Denileukin diftitox
+    label: Drug
+  - id: UniProt:P01589
+    name: Interleukin-2 receptor subunit alpha (CD25)
+    label: Protein
+  - id: UniProt:P13639
+    name: Eukaryotic translation elongation factor 2 (EEF2)
+    label: Protein
+  - id: GO:0006412
+    name: translation
+    label: BiologicalProcess
+  - id: GO:0006915
+    name: apoptotic process
+    label: BiologicalProcess
+  - id: MESH:D016410
+    name: Primary cutaneous T-cell lymphoma
+    label: Disease
+links:
+  - key: positively regulates
+    source: MESH:C078456
+    target: UniProt:P01589
+    evidence:
+      - reference: PMID:36047157
+        snippet: DD binds to IL-2 receptor (IL-2R) expressed on tumor cells and is taken up into the cells.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+      - reference: PMID:11707818
+        snippet: DAB(389)IL-2 is internalized into IL-2 receptor-bearing cells by endocytosis.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: decreases activity of
+    source: MESH:C078456
+    target: UniProt:P13639
+    evidence:
+      - reference: PMID:19707452
+        snippet: the internalized fragment A catalyzes the cleavage of nicotinamide adenine dinucleotide (NAD) to nicotinamide resulting in a transfer of ADP to elongation factor-2 (EF-2). This ADP-ribosylation of EF-2 causes inhibition of mRNA prolongation and ultimately inhibition of protein synthesis.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        source_tier: FULL_TEXT
+  - key: negatively regulates
+    source: UniProt:P13639
+    target: GO:0006412
+    evidence:
+      - reference: PMID:23853096
+        snippet: ADP(R) of eEF2 resulted in a decrease in total protein synthesis consistent with a defect in translation elongation.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: negatively regulates
+    source: GO:0006412
+    target: GO:0006915
+    evidence:
+      - reference: PMID:11707818
+        snippet: The ADP-ribosyltransferase activity of diphtheria toxin is cleaved in the endosome and is translocated into the cytosol where it inhibits protein synthesis, leading to apoptosis.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: treats
+    source: MESH:C078456
+    target: MESH:D016410
+    evidence:
+      - reference: PMID:19707452
+        snippet: Denileukin diftitox (DD, Ontak(R)) is a targeted immunotoxin which has biological activity against malignancies expressing the IL-2 receptor. CTCL/MF has been found be particularly susceptible to treatment with this agent.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        source_tier: FULL_TEXT

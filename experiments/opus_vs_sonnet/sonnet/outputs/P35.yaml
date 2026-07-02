@@ -1,0 +1,110 @@
+directed: true
+multigraph: true
+graph:
+  _id: P35_DB00008_MESH_D019698
+  drug: Peginterferon alfa-2a
+  drug_mesh: MESH:C100416
+  drugbank: DB:DB00008
+  disease: Chronic hepatitis C
+  disease_mesh: MESH:D019698
+nodes:
+  - id: MESH:C100416
+    name: Peginterferon alfa-2a
+    label: Drug
+  - id: UniProt:P23458
+    name: JAK1
+    label: Protein
+  - id: UniProt:P29597
+    name: TYK2
+    label: Protein
+  - id: UniProt:P42224
+    name: STAT1
+    label: Protein
+  - id: UniProt:P52630
+    name: STAT2
+    label: Protein
+  - id: GO:0035458
+    name: cellular response to interferon-beta
+    label: BiologicalProcess
+  - id: GO:0009615
+    name: response to virus
+    label: BiologicalProcess
+  - id: MESH:D019698
+    name: Chronic hepatitis C
+    label: Disease
+links:
+  - key: increases activity of
+    source: MESH:C100416
+    target: UniProt:P23458
+    evidence:
+      - reference: PMID:16324217
+        snippet: When IFN-alpha binds its receptor, two receptor associated tyrosine kinases, Tyk2 and Jak1 become activated by phosphorylation
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Peginterferon alfa-2a (an IFN-alpha) activates JAK1 through receptor engagement.
+  - key: increases activity of
+    source: MESH:C100416
+    target: UniProt:P29597
+    evidence:
+      - reference: PMID:16324217
+        snippet: When IFN-alpha binds its receptor, two receptor associated tyrosine kinases, Tyk2 and Jak1 become activated by phosphorylation
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Peginterferon alfa-2a (an IFN-alpha) activates TYK2 through receptor engagement.
+  - key: increases activity of
+    source: UniProt:P23458
+    target: UniProt:P42224
+    evidence:
+      - reference: PMID:16324217
+        snippet: Tyk2 and Jak1 become activated by phosphorylation, and phosphorylate Stat1 and Stat2 on conserved tyrosine residues
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Activated JAK1 phosphorylates STAT1 on conserved tyrosine residues.
+  - key: increases activity of
+    source: UniProt:P29597
+    target: UniProt:P52630
+    evidence:
+      - reference: PMID:16324217
+        snippet: Tyk2 and Jak1 become activated by phosphorylation, and phosphorylate Stat1 and Stat2 on conserved tyrosine residues
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Activated TYK2 phosphorylates STAT2 on conserved tyrosine residues.
+  - key: positively regulates
+    source: UniProt:P42224
+    target: GO:0035458
+    evidence:
+      - reference: PMID:16324217
+        snippet: Stat1 and Stat2 combine with the IRF-9 protein to form the transcription factor interferon stimulated gene factor 3 (ISGF-3), which binds to the interferon stimulated response element (ISRE), and induces transcription of IFN-alpha-induced genes (ISG)
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: STAT1 forms ISGF3 complex that drives interferon-stimulated gene transcription, representing the cellular response to interferon.
+  - key: positively regulates
+    source: UniProt:P52630
+    target: GO:0035458
+    evidence:
+      - reference: PMID:16324217
+        snippet: Stat1 and Stat2 combine with the IRF-9 protein to form the transcription factor interferon stimulated gene factor 3 (ISGF-3), which binds to the interferon stimulated response element (ISRE), and induces transcription of IFN-alpha-induced genes (ISG)
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: STAT2 forms ISGF3 complex that drives interferon-stimulated gene transcription, representing the cellular response to interferon.
+  - key: positively regulates
+    source: GO:0035458
+    target: GO:0009615
+    evidence:
+      - reference: PMID:16108059
+        snippet: Interferon (IFN) alpha inhibits hepatitis C virus (HCV) replication both clinically and in vitro
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: IFN-alpha-induced ISG expression (cellular interferon response) leads to an antiviral response against HCV.
+  - key: negatively regulates
+    source: GO:0009615
+    target: MESH:D019698
+    evidence:
+      - reference: PMID:16108059
+        snippet: even in the face of a persistent HCV infection, there is an active ISG antiviral cellular response, highlighting the complexity of the host viral relationship
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Antiviral ISG-driven response limits HCV replication, reducing chronic hepatitis C.
+references:
+  - https://www.drugbank.ca/drugs/DB00008
+  - https://pubchem.ncbi.nlm.nih.gov/compound/peginterferon-alfa-2a

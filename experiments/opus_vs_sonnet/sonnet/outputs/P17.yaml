@@ -1,0 +1,67 @@
+directed: true
+multigraph: true
+graph:
+  _id: P17_DB00472_MESH_D003865
+  drug: fluoxetine
+  drug_mesh: MESH:D005473
+  drugbank: DB:DB00472
+  disease: Major Depressive Disorder
+  disease_mesh: MESH:D003865
+nodes:
+  - id: MESH:D005473
+    name: fluoxetine
+    label: Drug
+  - id: UniProt:P31645
+    name: Serotonin transporter
+    label: Protein
+  - id: MESH:D012701
+    name: Serotonin
+    label: ChemicalSubstance
+  - id: GO:0007210
+    name: serotonin receptor signaling pathway
+    label: BiologicalProcess
+  - id: MESH:D003865
+    name: Major Depressive Disorder
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D005473
+    target: UniProt:P31645
+    evidence:
+      - reference: PMID:31480244
+        snippet: Their primary mechanism of action is considered to be the increased synaptic concentration of serotonin through blockade of the serotonin transporter (SERT).
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Fluoxetine, as a representative SSRI, blocks SERT to increase synaptic serotonin.
+      - reference: PMID:19587851
+        snippet: The primary SSRIs pharmacological action's mechanism consists in the presynaptic inhibition on the serotonin reuptake, with an increased availability of this amine into the synaptic cleft.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: SSRIs including fluoxetine inhibit presynaptic serotonin reuptake via SERT blockade.
+  - key: negatively regulates
+    source: UniProt:P31645
+    target: MESH:D012701
+    evidence:
+      - reference: PMID:31480244
+        snippet: by virtue of its inhibition at SERT, fluoxetine increases extracellular serotonin levels
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: SERT normally removes serotonin from the synapse; its inhibition leads to increased extracellular serotonin.
+  - key: positively regulates
+    source: MESH:D012701
+    target: GO:0007210
+    evidence:
+      - reference: PMID:19587851
+        snippet: Serotonin produces its effects as a consequence of interactions with appropriate receptors.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Increased synaptic serotonin activates postsynaptic receptors, enhancing serotonin receptor signaling.
+  - key: negatively regulates
+    source: GO:0007210
+    target: MESH:D003865
+    evidence:
+      - reference: PMID:19587851
+        snippet: The increase in serotonin (5-HT) neurotransmission is considered to be one of the most efficacious medical approach to depression and its related disorders.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Enhanced serotonin receptor signaling is a key mechanism for alleviating major depressive disorder.

@@ -1,0 +1,85 @@
+directed: true
+multigraph: true
+graph:
+  _id: P26_DB00331_MESH_D003924
+  drug: Metformin
+  drug_mesh: MESH:D008687
+  drugbank: DB:DB00331
+  disease: Type 2 Diabetes Mellitus
+  disease_mesh: MESH:D003924
+nodes:
+  - id: MESH:D008687
+    name: Metformin
+    label: Drug
+  - id: UniProt:P03886
+    name: NADH-ubiquinone oxidoreductase chain 1
+    label: Protein
+  - id: UniProt:Q13131
+    name: 5'-AMP-activated protein kinase catalytic subunit alpha-1
+    label: Protein
+  - id: GO:0006094
+    name: gluconeogenesis
+    label: BiologicalProcess
+  - id: MESH:D003924
+    name: Diabetes Mellitus, Type 2
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D008687
+    target: UniProt:P03886
+    evidence:
+      - reference: PMID:31886264
+        snippet: action on complex I of the respiratory chain of mitochondria
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Metformin acts on complex I of the respiratory chain of mitochondria, establishing direct inhibition.
+      - reference: PMID:19664596
+        snippet: Both metformin and rotenone, an inhibitor of respiratory chain complex I, suppressed glucose-6-phosphatase (G6pc), a rate limiting enzyme of liver glucose production, mRNA expression in a rat hepatoma cell line accompanied by a reduction of intracellular ATP concentration and an activation of AMP-activated protein kinase (AMPK).
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Metformin behaves like an inhibitor of respiratory chain complex I.
+  - key: causes
+    source: UniProt:P03886
+    target: UniProt:Q13131
+    evidence:
+      - reference: PMID:31886264
+        snippet: These changes activate the cellular energy sensor AMP-activated protein kinase (AMPK). Thus, the increased cellular AMP/ATP ratio causes a dramatic and progressive activation
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Inhibition of complex I raises the AMP/ATP ratio, which activates AMPK.
+      - reference: PMID:23710432
+        snippet: These drugs, such as metformin and STZ, inhibit ATP synthesis in mitochondria to raise AMP/ATP ratio in the process of AMPK activation.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Complex I inhibition by metformin raises AMP/ATP ratio and activates AMPK.
+  - key: negatively regulates
+    source: UniProt:Q13131
+    target: GO:0006094
+    evidence:
+      - reference: PMID:16308421
+        snippet: TORC2 is a critical target of LKB1/AMPK signals in the regulation of gluconeogenesis. Finally, we show that metformin, one of the most widely prescribed type 2 diabetes therapeutics, requires LKB1 in the liver to lower blood glucose levels.
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: AMPK (activated via LKB1) negatively regulates gluconeogenesis via TORC2 suppression.
+      - reference: PMID:34502359
+        snippet: Metformin, which is widely prescribed for type 2 diabetes mellitus (T2DM) patients, regulates blood sugar by inhibiting hepatic gluconeogenesis and promoting insulin sensitivity to facilitate glucose uptake by cells.
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: AMPK activation by metformin is responsible for inhibiting hepatic gluconeogenesis.
+  - key: treats
+    source: GO:0006094
+    target: MESH:D003924
+    evidence:
+      - reference: PMID:25849133
+        snippet: Metformin lowers blood glucose levels by inhibiting hepatic glucose production (HGP), an effect originally postulated to be due to a hepatic AMP-activated protein kinase (AMPK)-dependent mechanism.
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: Inhibition of gluconeogenesis (hepatic glucose production) by the AMPK pathway lowers blood glucose, treating type 2 diabetes.
+      - reference: PMID:15669880
+        snippet: reduce hepatic glucose production (biguanides)
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Biguanides like metformin treat type 2 diabetes by reducing hepatic glucose production, establishing the link between gluconeogenesis inhibition and disease treatment.
+references:
+  - https://www.drugbank.ca/drugs/DB00331
+  - https://www.ncbi.nlm.nih.gov/mesh/D003924

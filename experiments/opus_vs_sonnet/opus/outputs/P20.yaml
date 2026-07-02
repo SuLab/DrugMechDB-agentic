@@ -1,0 +1,64 @@
+directed: true
+multigraph: true
+graph:
+  _id: P20_DB00843_MESH_D000544
+  drug: donepezil
+  drug_mesh: MESH:D000077856
+  drugbank: DB:DB00843
+  disease: Alzheimer's Disease
+  disease_mesh: MESH:D000544
+nodes:
+  - id: DB:DB00843
+    name: donepezil
+    label: Drug
+  - id: UniProt:P22303
+    name: Acetylcholinesterase
+    label: Protein
+  - id: MESH:D000109
+    name: Acetylcholine
+    label: ChemicalSubstance
+  - id: GO:0007268
+    name: chemical synaptic transmission
+    label: BiologicalProcess
+  - id: MESH:D000544
+    name: Alzheimer's Disease
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00843
+    target: UniProt:P22303
+    evidence:
+      - reference: PMID:23215841
+        snippet: "donepezil, a highly selective (IC(50) = 6.7 nM) centrally acting reversible acetylcholinesterase inhibitor that has been approved by FDA for treating cognitive deficit states such as in Alzheimer's disease"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Donepezil is a reversible acetylcholinesterase inhibitor, decreasing the enzyme's activity."
+  - key: negatively regulates
+    source: UniProt:P22303
+    target: MESH:D000109
+    evidence:
+      - reference: PMID:19877295
+        snippet: "Enzymatic hydrolysis of acetylcholine in the synaptic cleft is fast and quickly metabolizes to choline and acetate by acetylcholinesterase."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Acetylcholinesterase hydrolyzes acetylcholine; its inhibition by donepezil therefore raises acetylcholine levels."
+  - key: positively regulates
+    source: MESH:D000109
+    target: GO:0007268
+    evidence:
+      - reference: PMID:28777299
+        snippet: "Acetylcholine (ACh), an ubiquitous mediator substance broadly expressed in nature, acts as neurotransmitter in cholinergic synapses, generating specific communications"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Acetylcholine acts as a neurotransmitter at cholinergic synapses, mediating synaptic transmission."
+  - key: treats
+    source: GO:0007268
+    target: MESH:D000544
+    evidence:
+      - reference: PMID:40097131
+        snippet: "Cholinesterase inhibitors, such as donepezil and rivastigmine, increase acetylcholine (ACh) levels to enhance cognitive function in individuals with mild to moderate AD."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Restoring cholinergic synaptic transmission via increased acetylcholine enhances cognitive function in Alzheimer's disease."
+references:
+  - https://go.drugbank.com/drugs/DB00843

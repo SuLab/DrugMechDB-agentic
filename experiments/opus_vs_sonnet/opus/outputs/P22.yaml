@@ -1,0 +1,55 @@
+directed: true
+multigraph: true
+graph:
+  _id: P22_DB00065_MESH_D003424
+  drug: Infliximab
+  drug_mesh: MESH:D000069285
+  drugbank: DB:DB00065
+  disease: Crohn's Disease
+  disease_mesh: MESH:D003424
+nodes:
+  - id: DB:DB00065
+    name: Infliximab
+    label: Drug
+  - id: UniProt:P01375
+    name: Tumor necrosis factor
+    label: Protein
+  - id: GO:0006954
+    name: inflammatory response
+    label: BiologicalProcess
+  - id: MESH:D003424
+    name: Crohn's Disease
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00065
+    target: UniProt:P01375
+    evidence:
+      - reference: PMID:11563881
+        snippet: "Ifx bound to transmembrane TNF-alpha of activated T cells"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Infliximab binds transmembrane TNF-alpha; it is the TNF-alpha neutralizing antibody described in this study."
+      - reference: PMID:29518978
+        snippet: "These drugs block TNF\u03b1 from interacting with its receptors"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Infliximab is named among these anti-TNF drugs that block TNF from interacting with its receptors, i.e. neutralize its activity."
+  - key: positively regulates
+    source: UniProt:P01375
+    target: GO:0006954
+    evidence:
+      - reference: PMID:29518978
+        snippet: "The binding of the tumor necrosis factor \u03b1 (TNF\u03b1) to its cognate receptor initiates many immune and inflammatory processes."
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: causes
+    source: GO:0006954
+    target: MESH:D003424
+    evidence:
+      - reference: PMID:41225190
+        snippet: "Crohn's disease (CD) is a chronic inflammatory bowel disorder characterized by transmural inflammation of the gastrointestinal tract."
+        supports: SUPPORT
+        evidence_source: OTHER
+references:
+  - https://go.drugbank.com/drugs/DB00065

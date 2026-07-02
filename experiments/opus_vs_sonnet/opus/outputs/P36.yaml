@@ -1,0 +1,64 @@
+directed: true
+multigraph: true
+graph:
+  _id: P36_DB00027_MESH_D003234
+  drug: gramicidin
+  drug_mesh: MESH:D006096
+  drugbank: DB:DB00027
+  disease: Bacterial conjunctivitis
+  disease_mesh: MESH:D003234
+nodes:
+  - id: MESH:D006096
+    name: Gramicidin
+    label: Drug
+  - id: GO:0005886
+    name: plasma membrane
+    label: CellularComponent
+  - id: GO:0098655
+    name: monoatomic cation transmembrane transport
+    label: BiologicalProcess
+  - id: GO:0051899
+    name: membrane depolarization
+    label: BiologicalProcess
+  - id: MESH:D003234
+    name: Bacterial conjunctivitis
+    label: Disease
+links:
+  - key: located in
+    source: MESH:D006096
+    target: GO:0005886
+    evidence:
+      - reference: PMID:27496896
+        snippet: "Gramicidin, a channel-forming peptide causing membrane permeability to monovalent cations"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Gramicidin is a channel-forming peptide that inserts into the membrane."
+  - key: increases activity of
+    source: MESH:D006096
+    target: GO:0098655
+    evidence:
+      - reference: PMID:27496896
+        snippet: "Gramicidin, a channel-forming peptide causing membrane permeability to monovalent cations"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Gramicidin forms channels permeable to monovalent cations, increasing cation transmembrane transport."
+  - key: causes
+    source: GO:0098655
+    target: GO:0051899
+    evidence:
+      - reference: PMID:9765307
+        snippet: "Gramicidin, which generates pores that are permeable to monovalent cations, and concurrently eliminates the membrane potential"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Gramicidin cation pores collapse/eliminate the membrane potential, i.e. cause depolarization."
+  - key: treats
+    source: MESH:D006096
+    target: MESH:D003234
+    evidence:
+      - reference: PMID:6204534
+        snippet: "polymyxin B-neomycin-gramicidin (Neosporin, the control) eliminated bacteria from the eyes of patients with conjunctivitis"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Gramicidin-containing ophthalmic solution eliminated bacteria in patients with bacterial conjunctivitis."
+references:
+  - https://go.drugbank.com/drugs/DB00027

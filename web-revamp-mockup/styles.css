@@ -107,6 +107,96 @@ h1,h2,h3 { line-height: 1.25; margin: 0; letter-spacing: -.01em; }
 .flow .arrow small { display: block; font-size: 10px; }
 
 /* ============================================================
+   SCROLL-PINNED PATHWAY DEMO — "see a mechanism path unfold"
+   position:sticky pin + a scroll-fraction (scrollwalk.js). While scrolling,
+   a vertical node chain builds on the left and its evidence (bigger snippet +
+   full paper credential) cross-fades on the right. At the very end, the walk
+   fades into a large, full-width horizontal recap of the whole path. Native
+   scroll, no scroll-jacking. transform/opacity only. Collapses to a plain
+   static, single-column, everything-visible layout on short/mobile viewports
+   and under prefers-reduced-motion (see the media queries at the end).
+   ============================================================ */
+.pathwalk { margin: 48px 0; padding: 32px 0 0; border-top: 1px solid var(--line); }
+.pathwalk-head h2 { font-size: 24px; letter-spacing: -.02em; margin-bottom: 6px; }
+.pathwalk-head .sub { color: var(--muted); margin-bottom: 0; max-width: 620px; }
+
+.pathwalk-track { height: 340vh; position: relative; }
+.pathwalk-stage { position: sticky; top: 74px; height: calc(100vh - 100px); display: flex; flex-direction: column; justify-content: center; }
+.pathwalk-stage > .section-title { flex: none; }
+
+.pw-rail { display: flex; align-items: center; gap: 10px; margin: 10px 0 36px; max-width: 420px; flex: none; }
+.pw-rail .track { flex: 1; height: 3px; background: var(--line-2); border-radius: 999px; position: relative; overflow: hidden; }
+.pw-rail .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0%; background: var(--accent); border-radius: 999px; transition: width .1s linear; }
+.pw-rail .pct { font-family: var(--mono); font-size: 12px; color: var(--muted); width: 36px; text-align: right; }
+
+/* ---- the walk: vertical chain (left) + bigger evidence panel (right) ---- */
+.pw-walk { display: grid; grid-template-columns: minmax(220px, 300px) 1fr; gap: 56px; align-items: center; transition: opacity .4s ease-out; min-height: 0; }
+
+.pw-chain-vert { display: flex; flex-direction: column; }
+.pw-step { display: block; }
+.pw-vnode { padding: 15px 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); opacity: .22; transform: translateX(-10px); transition: opacity .5s cubic-bezier(.16,1,.3,1), transform .5s cubic-bezier(.16,1,.3,1), border-color .3s ease; }
+.pw-step.done .pw-vnode, .pw-step.active .pw-vnode { opacity: 1; transform: none; }
+.pw-step.active .pw-vnode { border-color: var(--ink); }
+.pw-vnode .pw-name { font-weight: 700; font-size: 15.5px; display: block; }
+.pw-vnode .pw-type { display: block; font-weight: 500; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.pw-vline { margin-left: 21px; padding: 8px 0 8px 20px; min-height: 30px; display: flex; align-items: center; border-left: 2px solid var(--line); opacity: .3; transition: opacity .4s ease-out, border-color .3s ease; }
+.pw-step.done .pw-vline, .pw-step.active .pw-vline { opacity: 1; border-left-color: var(--ink-2); }
+.pw-vline .pw-pred { font-size: 12.5px; color: var(--muted); }
+
+.pw-detail { position: relative; min-height: 220px; }
+.pw-detail-item { position: absolute; inset: 0 0 auto 0; opacity: 0; transform: translateY(8px); transition: opacity .4s ease-out, transform .4s ease-out; color: var(--ink-2); }
+.pw-detail-item.show { position: static; opacity: 1; transform: none; }
+.pw-detail-item .pw-lede { font-size: 17px; line-height: 1.6; max-width: 520px; }
+.pw-detail-item .snippet { font-size: 18px; line-height: 1.65; max-width: 560px; }
+.pw-detail-item .ev-cred { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line-2); }
+
+/* ---- the finale: full path, large, one line, breaks out of .container ---- */
+.pw-finale {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 100vw; max-width: 1320px; padding: 0 28px; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px;
+  opacity: 0; pointer-events: none; transition: opacity .5s ease-out;
+}
+.pathwalk-stage.finale .pw-walk { opacity: 0; pointer-events: none; }
+.pathwalk-stage.finale .pw-finale { opacity: 1; pointer-events: auto; }
+.pw-finale-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
+.pw-finale-chain { display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; width: 100%; }
+.pwf-node { flex: 0 1 auto; min-width: 0; max-width: 230px; padding: 18px 20px; border: 1px solid var(--ink); border-radius: var(--radius); background: var(--surface); text-align: center; }
+.pwf-node .pw-name { font-weight: 700; font-size: 16px; display: block; }
+.pwf-node .pw-type { display: block; font-weight: 500; font-size: 11.5px; color: var(--muted); margin-top: 5px; }
+.pwf-arrow { flex: 0 0 auto; color: var(--faint); font-weight: 600; font-size: 16px; padding: 0 14px; text-align: center; }
+.pwf-arrow .pw-pred { display: block; font-size: 10.5px; color: var(--muted); margin-top: 4px; font-weight: 500; }
+.pwf-net { font-size: 14px; color: var(--ink-2); }
+.pwf-net strong { color: var(--ink); }
+
+@media (max-width: 900px), (max-height: 680px) {
+  .pw-walk { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 760px), (max-height: 620px) {
+  .pathwalk-track { height: auto; }
+  .pathwalk-stage { position: static; height: auto; }
+  .pw-rail { display: none; }
+  .pw-walk { opacity: 1 !important; grid-template-columns: 1fr; gap: 8px; }
+  .pw-vnode { opacity: 1; transform: none; }
+  .pw-vline { opacity: 1; }
+  .pw-detail { min-height: 0; }
+  .pw-detail-item { position: static !important; opacity: 1 !important; transform: none !important; margin: 4px 0 20px; }
+  .pw-detail-item .snippet { font-size: 15px; }
+  .pw-finale { position: static; width: auto; max-width: none; transform: none; left: auto; padding: 28px 0 0; opacity: 1 !important; pointer-events: auto; border-top: 1px solid var(--line); margin-top: 12px; }
+  .pw-finale-chain { flex-wrap: wrap; justify-content: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pathwalk-track { height: auto; }
+  .pathwalk-stage { position: static; height: auto; }
+  .pw-rail { display: none; }
+  .pw-walk { opacity: 1 !important; }
+  .pw-vnode, .pw-vline { opacity: 1 !important; transform: none !important; }
+  .pw-detail-item { position: static !important; opacity: 1 !important; transform: none !important; margin: 4px 0 20px; }
+  .pw-finale { position: static; width: auto; max-width: none; transform: none; left: auto; padding: 28px 0 0; opacity: 1 !important; pointer-events: auto; border-top: 1px solid var(--line); margin-top: 12px; }
+  .pw-finale-chain { flex-wrap: wrap; justify-content: flex-start; }
+}
+
+/* ============================================================
    RECORD PAGE  — editorial: hairline-separated sections, not cards
    ============================================================ */
 .breadcrumb { font-size: 13px; color: var(--muted); padding: 20px 0 0; }
@@ -179,7 +269,11 @@ h1,h2,h3 { line-height: 1.25; margin: 0; letter-spacing: -.01em; }
 /* evidence — per-edge EvidenceItem cards with full paper credentials */
 .evidence { }
 details.ev { border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 8px; overflow: hidden; }
-details.ev[data-flag] { border-left: 3px solid #a14d52; }   /* functional flag — reuses the neg color, not a new accent */
+/* flagged — a dashed border (the universal "provisional/draft" line-style),
+   instead of a colored alert-bar. Meaning is carried by line-style plus the
+   existing "⚑ flagged" text in .ev-count below — never by color alone, and
+   no new accent color is introduced. */
+details.ev[data-flag] { border-style: dashed; border-color: var(--faint); }
 details.ev summary { padding: 13px 16px; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 10px; list-style: none; }
 details.ev summary::-webkit-details-marker { display: none; }
 details.ev summary .caret { color: var(--faint); transition: .15s; flex: none; }
@@ -204,6 +298,18 @@ details.ev[open] summary .caret { transform: rotate(90deg); }
 .src-badge { font-size: 11.5px; font-weight: 500; padding: 3px 10px; border-radius: var(--radius-sm); border: 1px solid var(--line); color: var(--muted); }
 .refs { list-style: none; padding: 0; margin: 12px 0 0; }
 .refs li { font-size: 14px; margin: 6px 0; display: flex; gap: 8px; align-items: center; }
+
+/* bibliography — "Papers cited" (deduped) and "Semantic validation" reuse the
+   same numbered-list skeleton; plain hairline rows, no cards, no color-coding. */
+.biblio { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.biblio-item { display: flex; gap: 14px; padding: 13px 16px; border-top: 1px solid var(--line-2); }
+.biblio-item:first-child { border-top: none; }
+.biblio-num { font-family: var(--mono); font-size: 12px; color: var(--faint); flex: none; min-width: 22px; padding-top: 2px; }
+.biblio-body { min-width: 0; }
+.biblio-body .b-title { font-weight: 600; font-size: 14px; color: var(--ink); }
+.biblio-body .b-meta { font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+.biblio-body .b-links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px; font-size: 12.5px; }
+.valid-note { font-size: 13px; color: var(--muted); margin-bottom: 14px; max-width: 720px; }
 
 /* inline raw-record (YAML) viewer */
 .rawyaml { font-family: var(--mono); font-size: 12.5px; line-height: 1.55; background: var(--line-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; overflow: auto; max-height: 480px; white-space: pre; color: var(--ink-2); margin: 0; }

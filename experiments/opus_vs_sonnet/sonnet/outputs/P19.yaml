@@ -1,0 +1,73 @@
+directed: true
+multigraph: true
+graph:
+  _id: P19_DB00996_MESH_D004827
+  drug: Gabapentin
+  drug_mesh: MESH:D000077306
+  drugbank: DB:DB00996
+  disease: Epilepsy
+  disease_mesh: MESH:D004827
+nodes:
+  - id: MESH:D000077306
+    name: Gabapentin
+    label: Drug
+  - id: UniProt:P54289
+    name: Voltage-dependent calcium channel subunit alpha-2/delta-1
+    label: Protein
+  - id: UniProt:O00555
+    name: Voltage-dependent P/Q-type calcium channel subunit alpha-1A
+    label: Protein
+  - id: GO:0007269
+    name: neurotransmitter secretion
+    label: BiologicalProcess
+  - id: MESH:D004827
+    name: Epilepsy
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000077306
+    target: UniProt:P54289
+    evidence:
+      - reference: PMID:18590620
+        snippet: alpha(2)delta, auxiliary subunits of voltage-gated calcium channels through which the gabapentinoids gabapentin and pregabalin exert their anticonvulsant and analgesic actions
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Gabapentin exerts its anticonvulsant action by binding to and modulating the alpha-2-delta auxiliary subunit of voltage-gated calcium channels.
+      - reference: PMID:38794193
+        snippet: binding to the alpha-2-delta protein subunit of voltage-gated calcium channels in the central nervous system, thereby blocking the excitatory influx of calcium
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: decreases activity of
+    source: UniProt:P54289
+    target: UniProt:O00555
+    evidence:
+      - reference: PMID:11804619
+        snippet: Gabapentin and pregabalin may bind to the Ca(2+) channel alpha 2 delta subunit to selectively attenuate depolarization-induced Ca(2+) influx of presynaptic P/Q-type Ca(2+) channels
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: The alpha-2-delta subunit modulated by gabapentin decreases activity of the P/Q-type voltage-gated calcium channel, reducing Ca2+ influx.
+  - key: negatively regulates
+    source: UniProt:O00555
+    target: GO:0007269
+    evidence:
+      - reference: PMID:11804619
+        snippet: this results in decreased glutamate/aspartate release from excitatory amino acid nerve terminals
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Reduced P/Q-type Ca2+ channel activity leads to decreased presynaptic calcium influx, which negatively regulates neurotransmitter secretion.
+      - reference: PMID:29793598
+        snippet: They inhibit calcium mediated neurotransmitter release through effects on α2δ-1 subunits
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: contributes to
+    source: GO:0007269
+    target: MESH:D004827
+    evidence:
+      - reference: PMID:18590620
+        snippet: Functionally, all of the new targets modulate neurotransmitter output at synapses, focusing attention on presynaptic terminals as critical sites of action for AEDs.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Excessive neurotransmitter secretion at synapses contributes to neuronal hyperexcitability and seizure generation in epilepsy; modulation of presynaptic neurotransmitter output is the key mechanism through which AEDs including gabapentin treat epilepsy.
+references:
+  - https://www.drugbank.ca/drugs/DB00996
+  - https://meshb.nlm.nih.gov/record/ui?ui=D004827

@@ -49,5 +49,314 @@
     },
     "output_written": true,
     "final_text_tail": "ite:\n- `binds` is **not** in the BiolinkPredicate enum (Layer 1 + Layer 3 failure) \u2192 replaced the drug\u2192protein binding edge with `decreases activity of`, attaching both binding/inhibition snippets to it.\n- The PMID:20150242 \"occurs in\" snippet was drawn from the article **title** wording and failed verbatim matching (Layer 4) \u2192 re-sourced that edge to PMID:30555440 with an abstract-body snippet.\n\n### PMIDs cited\n- **PMID:36572148** \u2014 rifampicin binds and inhibits the RpoB \u03b2 subunit of RNA polymerase\n- **PMID:25288092** \u2014 rifampin binds the RpoB \u03b2 subunit of RNA polymerase in *M. tuberculosis*\n- **PMID:20150242** \u2014 RpoB is the RNA polymerase subunit underlying Rif-mediated transcription inhibition\n- **PMID:30555440** \u2014 transcriptional profiling of rifampin-resistant *M. tuberculosis* isolates (transcription occurs in *M. tuberculosis*)\n- **PMID:33199626** \u2014 rifampicin is a first-line therapeutic to treat TB; TB is caused by *M. tuberculosis*\n\n### Unresolved validation failures\nNone. All four QC layers pass. One edge (`occurs in`) carries `supports: PARTIAL` with an explanation, since its snippet evidences transcription occurring in *M. tuberculosis* clinical isolates rather than the exact GO-process-in-taxon claim; the edge is essential to keep the chain connected and is honestly flagged as PARTIAL rather than overstated as SUPPORT.\n\nNote: per AGENTS.md, the semantic critic step (critic.py) and full-text strip were not run, as those tools are not available in this environment."
+  },
+  {
+    "pair_id": "P29",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 14,
+    "wall_seconds": 124.8,
+    "usage": {
+      "input_tokens": 197219,
+      "output_tokens": 6667,
+      "cache_read_input_tokens": 130689,
+      "cache_creation_input_tokens": 10053
+    },
+    "est_cost_usd": 1.2809,
+    "n_tool_calls": 28,
+    "tool_call_counts": {
+      "pubmed_search": 6,
+      "pubmed_fetch": 3,
+      "read_reference": 15,
+      "write_path_yaml": 1,
+      "canonicalize_predicates": 1,
+      "run_qc": 2
+    },
+    "output_written": true,
+    "final_text_tail": " the path content.\n\n## Unresolved validation failures\n\n- **Layer 4 (verbatim reference validator):** `FileNotFoundError: .../.venv-py310/bin/linkml-reference-validator`. The reference-matcher binary is **not installed** in this environment, so Layer 4 cannot execute at all. This is a tooling/infrastructure gap, not a snippet mismatch.\n  - **What I tried:** Re-ran `run_qc` twice; the traceback is identical and deterministic (missing executable, not a network/timeout error).\n  - **What I could not do:** Install or repair the validator \u2014 `scripts/` and the venv are read-only for the curation agent per AGENTS.md \u00a76.\n  - **Mitigation / confidence:** Every `snippet` was copied directly from the PubMed-cached abstracts I fetched (`read_reference`), never from memory:\n    - Edge 1 & 2 snippets are verbatim from PMID:37625592's cached abstract.\n    - Edge 3 & 4 snippets are verbatim from PMID:41863697's cached abstract.\n  - **Suggested fix for a maintainer:** install `linkml-reference-validator` into `.venv-py310`, then re-run `python scripts/qc.py --profile ai_curated P29.yaml`; Layer 4 is expected to PASS given the verbatim snippets.\n\n**Notes:** All predicates canonicalized (0 rewrites, 0 unmapped). Edges 3\u20134 use `evidence_source: OTHER` because PMID:41863697 is a review synthesizing soluble/crystalline uric-acid \u2192 NLRP3 \u2192 gouty inflammation mechanisms; reasoning is recorded in each `explanation`. Per AGENTS.md, the semantic critic step was intentionally NOT run in this environment."
+  },
+  {
+    "pair_id": "P30",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 18,
+    "wall_seconds": 133.9,
+    "usage": {
+      "input_tokens": 277210,
+      "output_tokens": 9946,
+      "cache_read_input_tokens": 180954,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.7252,
+    "n_tool_calls": 27,
+    "tool_call_counts": {
+      "pubmed_search": 5,
+      "pubmed_fetch": 3,
+      "read_reference": 12,
+      "write_path_yaml": 3,
+      "canonicalize_predicates": 2,
+      "run_qc": 2
+    },
+    "output_written": true,
+    "final_text_tail": "*QC layer-by-layer (final run):**\n- Layer 1 (schema): **PASS**\n- Layer 2 (node ontology): **PASS**\n- Layer 3 (predicates): **PASS**\n- Layer 4 (verbatim references): **FAIL \u2014 infrastructure only.** The failure is a `FileNotFoundError` for `linkml-reference-validator` (the binary is not installed in this environment), *not* a verbatim mismatch. Every snippet was copied verbatim via `read_reference` from cached PubMed abstracts and self-verified as an exact substring.\n\n**Retry count:** 2 iterations (initial draft \u2192 fixed 3 issues: removed invalid `binds` predicate/redundant edge, corrected Glycosuria to canonical HP prefix, upgraded the disease-endpoint edge to a stronger verbatim source).\n\n**PMIDs cited:** PMID:35070111, PMID:38363006, PMID:34865099, PMID:36794422, PMID:40830335\n\n**Unresolved validation failures:**\n- **Layer 4 (verbatim reference validator)** \u2014 cannot execute because `.venv-py310/bin/linkml-reference-validator` is not present in this environment. This is an environment/tooling gap, not a data defect. All five evidence snippets are verbatim substrings of fetched, cached abstracts (confirmed by manual re-check against `read_reference` output). A curator with the validator installed should re-run Layer 4 to confirm; I expect it to pass given the snippets are literal copies.\n\nPer AGENTS.md I did not run the semantic critic (critic.py is unavailable here) and did not run `strip-fulltext` since no full-text escalation was performed (all evidence came from abstracts)."
+  },
+  {
+    "pair_id": "P31",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 12,
+    "wall_seconds": 124.4,
+    "usage": {
+      "input_tokens": 122570,
+      "output_tokens": 8496,
+      "cache_read_input_tokens": 120636,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 0.8856,
+    "n_tool_calls": 22,
+    "tool_call_counts": {
+      "pubmed_search": 6,
+      "pubmed_fetch": 2,
+      "read_reference": 8,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 1,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "* \u2014 Federici, *Haematologica* 2003 (VWF as FVIII carrier/stabilizer)\n- **PMID:28581694** \u2014 Swystun et al., *JTH* 2017 (VWF stabilizes/transports FVIII)\n- **PMID:23265678** \u2014 Pape et al., 2013 (DDAVP raises FVIII; approved for hemophilia A)\n\n### Unresolved validation failures\n**Layer 4 (verbatim reference) \u2014 infrastructure failure, unfixable within my tool scope:**\n- **Failing check:** Layer 4 crashed with `FileNotFoundError: .venv-py310/bin/linkml-reference-validator` \u2014 the verbatim-matcher binary is not installed in this environment.\n- **Not a snippet problem:** This is a missing-executable error, not a verbatim mismatch. Every `snippet` in the path was copied character-for-character from cached text obtained via `read_reference` (never from memory). All four cited abstracts were fetched and read before drafting.\n- **Why I stopped:** Fixing this requires installing/repairing a repository script/binary, which is outside my write scope (scripts and env are read-only per AGENTS.md \u00a76). Re-running would deterministically reproduce the same crash, so retries would not help.\n- **Suggested fix for maintainer:** Install `linkml-reference-validator` into `.venv-py310`, then re-run `qc.py --profile ai_curated P31.yaml` to complete Layer 4. Layers 1\u20133 already pass.\n\nNote: Per AGENTS.md, the semantic critic (critic.py) and `strip-fulltext` finalization steps are out of scope for this environment; no full text was escalated (all snippets came from abstracts), so no stripping is required."
+  },
+  {
+    "pair_id": "P32",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 10,
+    "wall_seconds": 84.7,
+    "usage": {
+      "input_tokens": 66191,
+      "output_tokens": 5942,
+      "cache_read_input_tokens": 100530,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 0.5298,
+    "n_tool_calls": 14,
+    "tool_call_counts": {
+      "pubmed_search": 2,
+      "pubmed_fetch": 1,
+      "read_reference": 5,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2
+    },
+    "output_written": true,
+    "final_text_tail": "MID:32238982** \u2014 vitamin C deficiency causes scurvy, curable only by administering vitamin C (HUMAN_CLINICAL)\n\n**Manual verbatim confirmation** (each snippet is an exact substring of its cached abstract):\n1. \"Ascorbic acid (AA) is essential for collagen biosynthesis as a cofactor for prolyl and lysyl hydroxylase\" \u2713 (PMID:23228664)\n2. \"Prolyl-4-hydroxylation is necessary for proper structural assembly of collagens\" \u2713 (PMID:21346252)\n3. \"vitamin C deficiency is known to cause the collagen-disassembly disease scurvy\" \u2713 (PMID:21346252)\n4. \"Deficiency in vitamin C results in the potentially fatal disease scurvy, which can be cured only by administering vitamin C.\" \u2713 (PMID:32238982)\n\n## Unresolved validation failures\n- **Layer 4 (validate_references.py):** `FileNotFoundError: .venv-py310/bin/linkml-reference-validator` \u2014 the reference-matcher executable is not installed in this environment. The validator never ran, so this is an environment/tooling gap, not a curation defect. **Suggested fix (for a maintainer):** install `linkml-reference-validator` into `.venv-py310`, then re-run `qc.py --profile ai_curated`. All four EvidenceItem snippets have been manually verified as verbatim substrings of their cached abstracts and are expected to pass once the binary is present.\n\nPer AGENTS.md \u00a76 I cannot install binaries or edit scripts/venv, and per the environment instructions I did not run the semantic critic (critic.py unavailable). No full-text was fetched, so no strip step is required."
+  },
+  {
+    "pair_id": "P33",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 23,
+    "wall_seconds": 185.3,
+    "usage": {
+      "input_tokens": 402069,
+      "output_tokens": 11474,
+      "cache_read_input_tokens": 231219,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.4128,
+    "n_tool_calls": 36,
+    "tool_call_counts": {
+      "pubmed_search": 8,
+      "pubmed_fetch": 4,
+      "read_reference": 17,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "cal ontology\n- Layer 3 (predicate): **PASS** \u2014 all 5 keys in the 67-predicate BiolinkPredicate enum\n- Layer 4 (verbatim reference): **FAIL \u2014 infrastructure error, not a content failure.** The validator crashed with `FileNotFoundError: .venv-py310/bin/linkml-reference-validator` (the reference-matching binary is not installed in this environment). It never evaluated my snippets.\n\n**Retry count:** 2 writes/QC iterations.\n- Iteration 1 failed Layers 1 & 3 because I used `binds`, which is listed in AGENTS.md \u00a73 but is **not** in the actual schema enum. Fixed by changing the drug\u2192receptor edge to `increases activity of` (receptor activation via IFN-induced dimerization).\n- Iteration 2: Layers 1\u20133 PASS; Layer 4 blocked only by the missing binary.\n\n**Unresolved validation failures:**\n- **Layer 4 (verbatim) could not execute** \u2014 `linkml-reference-validator` binary absent from `.venv-py310/bin/`. This is an environment/tooling gap outside my writable scope (I cannot install binaries or edit scripts). I manually confirmed each snippet is an exact substring of its cached reference (PMID:26008745, PMID:21106255, PMID:21420486, PMID:26095162), so no paraphrasing was introduced. A curator should re-run Layer 4 once the validator is installed.\n\nPer AGENTS.md I did **not** run the semantic critic (not available as a tool here) and stopped after QC. No full-text escalation was used (all snippets came from abstracts), so no `source_tier: FULL_TEXT` flags and no strip-fulltext step were needed."
+  },
+  {
+    "pair_id": "P34",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 17,
+    "wall_seconds": 147.8,
+    "usage": {
+      "input_tokens": 227785,
+      "output_tokens": 9661,
+      "cache_read_input_tokens": 170901,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.4659,
+    "n_tool_calls": 25,
+    "tool_call_counts": {
+      "pubmed_search": 4,
+      "pubmed_fetch": 1,
+      "read_reference": 10,
+      "write_path_yaml": 4,
+      "canonicalize_predicates": 3,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "e a missing binary from the permitted tool surface (no writes to scripts/no package installs).\n\n**Retry count:** 2 retries used (initial draft + 2 rewrites). Attempt 1 failed on the terminal `causes` edge design; attempts 2\u20133 iterated on the target/binding predicate (`binds`\u2192`affects`\u2192`decreases activity of`) because `binds` and `affects`, though listed in AGENTS.md \u00a73 prose, are **not** members of the actual `biolink_predicates.yaml` enum in this repo. `decreases activity of` resolved cleanly and canonicalized with 0 unmapped predicates.\n\n**PMIDs cited:** PMID:24462799, PMID:11707818, PMID:36047157, PMID:16410787\n(Additional abstracts fetched/read for sourcing but not cited: 23958949, 22730534, 12443879, 12149223, 18544681, 17603081.)\n\n**Unresolved validation failures:**\n- **Layer 4 \u2014 infrastructure blocker (not a curation defect).** `run_qc` cannot execute the verbatim matcher because `linkml-reference-validator` is absent from `.venv-py310/bin/`. Suggested fix for the maintainer: install `linkml-reference-validator` into the QC virtualenv, then re-run `qc.py --profile ai_curated`. Given manual verification, I expect Layer 4 to pass once the binary is present. No paraphrasing or fabrication was introduced; no edges were flagged `NO_EVIDENCE`.\n\nPer AGENTS.md I did not run the semantic critic (not available as a tool here), and I stopped after QC. The path is content-complete and connected; the only outstanding item is the missing Layer-4 validator binary in this environment."
+  },
+  {
+    "pair_id": "P35",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 21,
+    "wall_seconds": 176.7,
+    "usage": {
+      "input_tokens": 377421,
+      "output_tokens": 10974,
+      "cache_read_input_tokens": 211113,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.267,
+    "n_tool_calls": 34,
+    "tool_call_counts": {
+      "pubmed_search": 8,
+      "pubmed_fetch": 6,
+      "read_reference": 12,
+      "pubmed_probe": 1,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": " \u2192 Layer 1/3 fail; replaced with `increases activity of` for the drug\u2192IFNAR2 activation edge, which the same snippet supports). Second run: Layers 1\u20133 all PASS.\n\n**PMIDs cited:**\n- **PMID:16324217** (Plumlee et al., *Virology Journal* 2005, open-access CC-BY) \u2014 escalated to full text; sourced the receptor-binding \u2192 TYK2/JAK1 activation \u2192 STAT1/STAT2 phosphorylation \u2192 ISGF3/ISG \u2192 antiviral \u2192 HCV-inhibition \u2192 chronic-disease chain (edges 1\u20136, all marked `source_tier: FULL_TEXT`).\n- **PMID:12324553** (Fried et al., *NEJM* 2002) \u2014 abstract; the clinical `treats` edge (edge 7).\n\n**Unresolved validation failures:**\n- **Layer 4 (verbatim):** could not execute because `linkml-reference-validator` is absent from this environment. Every snippet was hand-verified as a verbatim substring of the cached reference text during drafting (each is a contiguous sentence, or a `...`-joined pair of clean sentence halves for edge 4, all copied directly from the fetched abstracts/full text). Per AGENTS.md \u00a76 I cannot install binaries or edit scripts, so no in-scope fix exists; retrying would not change the outcome. Flag for a curator to run Layer 4 once the validator binary is available.\n\nPer instructions, I did not run the semantic critic (`critic.py` not available here). Full-text stripping (`strip-fulltext`) is a finalize-step script not exposed as a tool in this environment; the `source_tier: FULL_TEXT` markers are set so the full-text-sourced snippets are correctly labeled for the pre-PR strip."
+  },
+  {
+    "pair_id": "P36",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 14,
+    "wall_seconds": 92.7,
+    "usage": {
+      "input_tokens": 110774,
+      "output_tokens": 4989,
+      "cache_read_input_tokens": 140742,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 0.749,
+    "n_tool_calls": 24,
+    "tool_call_counts": {
+      "pubmed_search": 7,
+      "pubmed_fetch": 3,
+      "read_reference": 9,
+      "write_path_yaml": 1,
+      "canonicalize_predicates": 1,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "ICAL)\n\nAll three snippets were copied verbatim from the fetched, cached abstracts (not memory).\n\n**QC layer-by-layer result (final run):**\n| Layer | Check | Result |\n|---|---|---|\n| 1 | LinkML schema | **PASS** |\n| 2 | Node ontology | **PASS** |\n| 3 | Predicate vocabulary | **PASS** |\n| 4 | Verbatim reference | **FAIL (environmental)** |\n| Overall | | FAIL |\n\n**Retry count:** QC was run twice; the Layer 4 result was identical and deterministic, so I stopped (re-curation cannot address it).\n\n## Unresolved validation failures\n\n- **Layer 4 (validate_references.py):** Raises `FileNotFoundError: \u2026 /.venv-py310/bin/linkml-reference-validator`. The verbatim-matcher executable is **not installed in the environment**, so Layer 4 cannot execute at all. This is a tooling/environment gap, **not** a snippet mismatch, and it affects every edge (none can be checked). Per AGENTS.md \u00a76, I am not permitted to modify scripts or the venv to install the missing binary.\n  - **What I verified manually instead:** each snippet is a verbatim substring of its cached abstract (PMID:27496896 and PMID:9765307 contain the quoted sentences exactly; PMID:6204534's abstract contains my snippet as an exact prefix of \"\u2026conjunctivitis or blepharitis\u2026\").\n  - **Suggested fix for a curator:** install `linkml-reference-validator` into `.venv-py310/`, then re-run `qc.py --profile ai_curated` to complete Layer 4 verbatim confirmation.\n\nI did not run the semantic critic (not available as a tool here), per instructions."
+  },
+  {
+    "pair_id": "P37",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 20,
+    "wall_seconds": 152.0,
+    "usage": {
+      "input_tokens": 316198,
+      "output_tokens": 10085,
+      "cache_read_input_tokens": 201060,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.9336,
+    "n_tool_calls": 33,
+    "tool_call_counts": {
+      "pubmed_search": 8,
+      "pubmed_fetch": 3,
+      "read_reference": 15,
+      "write_path_yaml": 3,
+      "canonicalize_predicates": 2,
+      "run_qc": 2
+    },
+    "output_written": true,
+    "final_text_tail": "the 67-predicate enum)\n- Layer 4 (verbatim reference): **FAIL \u2014 environment error only.** The QC harness crashed with `FileNotFoundError: .venv-py310/bin/linkml-reference-validator` (the validator binary is not installed here). This is not a verbatim mismatch; I manually confirmed every snippet is an exact substring of its cached abstract.\n\n**Retry count:** 2 revisions.\n- Revision 1 fix: corrected a non-verbatim snippet on PMID:32105770 (\"GABA (GABA)\" \u2192 verbatim \"GABA) generally induces\u2026\").\n- Revision 2 fix: the initial `binds` predicate was rejected by Layer 1/Layer 3 (not present in this environment's enum despite AGENTS.md \u00a73 listing it). Consolidated the drug\u2192receptor relation into a single, better-supported `increases activity of` edge (removing the redundant `binds` edge), reflecting lorazepam's positive allosteric modulation.\n\n**PMIDs cited:** PMID:30192388, PMID:22677032, PMID:32105770, PMID:39410894\n\n**Unresolved validation failures:**\n- **Layer 4 (verbatim)** could not execute: `FileNotFoundError` for `linkml-reference-validator` \u2014 missing tool in this environment. Not fixable from the path YAML. All four snippets were verified by hand as verbatim substrings of their fetched/cached abstracts, so the underlying evidence requirement of \u00a70 is satisfied; only the automated check is unavailable. Recommend a curator re-run Layer 4 in an environment where the validator binary is installed.\n\nPer instructions, I did not run the semantic critic (not available as a tool here)."
+  },
+  {
+    "pair_id": "P38",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 12,
+    "wall_seconds": 88.0,
+    "usage": {
+      "input_tokens": 122433,
+      "output_tokens": 5894,
+      "cache_read_input_tokens": 120636,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 0.8198,
+    "n_tool_calls": 22,
+    "tool_call_counts": {
+      "pubmed_search": 5,
+      "pubmed_fetch": 2,
+      "read_reference": 10,
+      "write_path_yaml": 1,
+      "canonicalize_predicates": 1,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "\n- **Layer 3 (predicates):** PASS \u2014 all 6 edge keys in the 67-predicate BiolinkPredicate enum\n- **Layer 4 (verbatim reference):** **FAIL \u2014 environmental, not a snippet mismatch**\n- **Overall:** FAIL (due solely to Layer 4)\n\n### Unresolved validation failures\n- **Layer 4 (validate_references.py):** `FileNotFoundError: [Errno 2] No such file or directory: '.venv-py310/bin/linkml-reference-validator'`. The verbatim-matcher binary is not installed in this environment, so Layer 4 cannot execute. This is a tooling/environment gap, **not** a verbatim-matching failure \u2014 the validator never ran against my snippets.\n  - **What I tried:** re-ran QC to confirm the failure is deterministic (identical traceback both times). I cannot install the binary or edit `scripts/validate_references.py` (outside my granted write/bash surface).\n  - **Mitigation:** every `snippet` in the file was copied directly from the cached abstract via `read_reference` (never typed from memory) and is a verbatim substring of the corresponding cached reference, so I expect Layer 4 to pass once the `linkml-reference-validator` binary is available.\n  - **Suggested fix for curator:** install/restore `linkml-reference-validator` in `.venv-py310/bin/` (e.g. `pip install linkml-reference-validator` into the py310 venv), then re-run `qc.py --profile ai_curated P38.yaml`.\n\nPer AGENTS.md I did **not** run the semantic critic (critic.py is not available as a tool in this environment). No changes were made outside `kb/paths/`."
+  },
+  {
+    "pair_id": "P39",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 24,
+    "wall_seconds": 211.7,
+    "usage": {
+      "input_tokens": 497191,
+      "output_tokens": 12580,
+      "cache_read_input_tokens": 241272,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.9211,
+    "n_tool_calls": 45,
+    "tool_call_counts": {
+      "pubmed_search": 11,
+      "pubmed_fetch": 5,
+      "read_reference": 22,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": " 3 because `binds` (listed in AGENTS.md) is *not* in the actual 67-predicate enum. Per the \"schema wins\" rule I re-sourced edge 1 to `increases activity of` (insulin lispro is a full insulin-receptor agonist) and added a supporting kinase-activation snippet (PMID:11712394). Layers 1\u20133 then all passed.\n\n### PMIDs cited\n- **PMID:9410552** \u2014 insulin lispro receptor affinity identical to native insulin (IN_VITRO)\n- **PMID:11712394** \u2014 insulin receptor binding \u2192 conformational change \u2192 kinase activity (OTHER)\n- **PMID:25325535** \u2014 insulin promotes GLUT4 trafficking \u2192 glucose uptake (IN_VITRO)\n- **PMID:33274014** \u2014 insulin-induced GLUT4 translocation increases glucose flux (OTHER)\n- **PMID:34240660** \u2014 glucose uptake into skeletal muscle lowers blood glucose (MODEL_ORGANISM)\n- **PMID:40969771** \u2014 T1D leads to insulin deficiency and chronic hyperglycemia (OTHER)\n\n### Unresolved validation failures\n- **Layer 4 (verbatim matcher) could not execute** \u2014 missing `linkml-reference-validator` executable in the venv. This is an infrastructure gap for a curator to fix; it is **not** a snippet defect. I manually confirmed all six snippets are exact verbatim substrings of the cached reference text (copied via `read_reference`, never from memory). Once the validator binary is installed, Layer 4 should re-run cleanly.\n\nPer AGENTS.md I did not run the semantic critic (not available as a tool here) and stopped after QC. All snippets are verbatim; the only failure is the missing Layer-4 executable."
+  },
+  {
+    "pair_id": "P40",
+    "model": "claude-opus-4-8",
+    "stopped": "final",
+    "iters": 13,
+    "wall_seconds": 99.0,
+    "usage": {
+      "input_tokens": 119389,
+      "output_tokens": 6654,
+      "cache_read_input_tokens": 130689,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 0.8286,
+    "n_tool_calls": 18,
+    "tool_call_counts": {
+      "pubmed_search": 3,
+      "pubmed_fetch": 1,
+      "read_reference": 7,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "output_written": true,
+    "final_text_tail": "09363)\n5. Mast cell degranulation \u2014causes\u2192 Asthma (PMID:12110823)\n6. Omalizumab \u2014treats\u2192 Asthma (PMID:16318424)\n\n**QC layer-by-layer (final run):**\n- **Layer 1 (schema):** PASS\n- **Layer 2 (node ontology):** PASS (0 legacy-prefix warnings)\n- **Layer 3 (predicate vocabulary):** PASS (all 6 keys in the 67-predicate enum)\n- **Layer 4 (verbatim reference):** FAIL \u2014 **environment/tooling error only**. The validator crashed with `FileNotFoundError: .../.venv-py310/bin/linkml-reference-validator` (the binary is not installed in this environment); it did not report any snippet mismatch. All six snippets were copied verbatim from cached PubMed abstracts fetched via `pubmed_fetch`/`read_reference`.\n\n**Retry count:** 1 retry (initial draft failed Layers 1 & 3 because `binds` is not in the BiolinkPredicate enum; replaced with `decreases activity of` on retry, which passed).\n\n**PMIDs cited:** PMID:12110823, PMID:16318424, PMID:16750976, PMID:26509363\n\n**Unresolved validation failures:**\n- **Layer 4 (verbatim)** could not execute \u2014 missing `linkml-reference-validator` executable in `.venv-py310/bin/`. This is a tooling/installation gap, not a content defect. Suggested fix for the maintainer: install the `linkml-reference-validator` binary in the venv, then re-run `qc.py --profile ai_curated`. I have manually confirmed each snippet is a verbatim substring of its cited cached abstract.\n\nPer AGENTS.md I stopped after QC (did not run the semantic critic, which is not available as a tool here)."
   }
 ]

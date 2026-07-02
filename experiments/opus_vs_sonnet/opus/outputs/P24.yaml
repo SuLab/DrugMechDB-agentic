@@ -1,0 +1,77 @@
+directed: true
+multigraph: true
+graph:
+  _id: P24_DB00688_MESH_D008181
+  drug: Mycophenolate mofetil
+  drug_mesh: MESH:D000077732
+  drugbank: DB:DB00688
+  disease: Lupus Nephritis
+  disease_mesh: MESH:D008181
+nodes:
+  - id: DB:DB00688
+    name: Mycophenolate mofetil
+    label: Drug
+  - id: MESH:D015232
+    name: Mycophenolic acid
+    label: ChemicalSubstance
+  - id: UniProt:P12268
+    name: Inosine-5'-monophosphate dehydrogenase 2
+    label: Protein
+  - id: GO:0006177
+    name: GMP biosynthetic process
+    label: BiologicalProcess
+  - id: GO:0046651
+    name: lymphocyte proliferation
+    label: BiologicalProcess
+  - id: MESH:D008181
+    name: Lupus Nephritis
+    label: Disease
+links:
+  - key: has metabolite
+    source: DB:DB00688
+    target: MESH:D015232
+    evidence:
+      - reference: PMID:10878285
+        snippet: "Mycophenolate mofetil (MMF, CellCept(R)) is a prodrug of mycophenolic acid (MPA), an inhibitor of inosine monophosphate dehydrogenase (IMPDH)."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "MMF is hydrolyzed to release the active metabolite mycophenolic acid."
+  - key: decreases activity of
+    source: MESH:D015232
+    target: UniProt:P12268
+    evidence:
+      - reference: PMID:8680053
+        snippet: "release mycophenolic acid (MPA), a potent, selective, noncompetitive inhibitor of the type 2 isoform of inosine monophosphate dehydroxygenase (IMPDH) expressed in activated human T and B lymphocytes"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: participates in
+    source: UniProt:P12268
+    target: GO:0006177
+    evidence:
+      - reference: PMID:10878285
+        snippet: "an inhibitor of inosine monophosphate dehydrogenase (IMPDH). This is the rate-limiting enzyme in de novo synthesis of guanosine nucleotides."
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: negatively regulates
+    source: MESH:D015232
+    target: GO:0046651
+    evidence:
+      - reference: PMID:8680053
+        snippet: "By inhibiting IMPDH, MPA depletes the pool of dGTP required for DNA synthesis. MPA has a more potent cytostatic effect on lymphocytes than on other cell types"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+      - reference: PMID:22571761
+        snippet: "MPA abrogated in vitro proliferation of purified B cells completely but had only moderate impact on B cell survival."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: causes
+    source: GO:0046651
+    target: MESH:D008181
+    evidence:
+      - reference: PMID:22571761
+        snippet: "The thorough inhibition of B cell activation and plasma cell formation by MMF might explain the favorable outcomes of previous clinical trials in patients with SLE, since enhanced B cell proliferation is a hallmark of this disease."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Enhanced lymphocyte (B cell) proliferation drives SLE/lupus nephritis pathology; MMF acts by suppressing it."
+references:
+  - https://go.drugbank.com/drugs/DB00688

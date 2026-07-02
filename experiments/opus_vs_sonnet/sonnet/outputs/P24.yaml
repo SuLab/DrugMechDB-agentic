@@ -1,0 +1,77 @@
+directed: true
+multigraph: true
+graph:
+  _id: P24_DB00688_MESH_D008181
+  drug: Mycophenolate Mofetil
+  drug_mesh: MESH:D000077732
+  drugbank: DB:DB00688
+  disease: Lupus Nephritis
+  disease_mesh: MESH:D008181
+nodes:
+  - id: MESH:D000077732
+    name: Mycophenolate Mofetil
+    label: Drug
+  - id: MESH:D009173
+    name: Mycophenolic Acid
+    label: ChemicalSubstance
+  - id: UniProt:P12268
+    name: Inosine-5'-monophosphate dehydrogenase 2
+    label: Protein
+  - id: GO:0046651
+    name: lymphocyte proliferation
+    label: BiologicalProcess
+  - id: MESH:D008181
+    name: Lupus Nephritis
+    label: Disease
+links:
+  - key: has metabolite
+    source: MESH:D000077732
+    target: MESH:D009173
+    evidence:
+      - reference: PMID:19834629
+        snippet: Mycophenolate mofetil (MMF) is a prodrug of MPA that was developed to improve the bioavailability of MPA. After oral administration, MMF is completely metabolized to MPA.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: MMF is a prodrug that is completely hydrolyzed to the active metabolite mycophenolic acid (MPA) after oral administration.
+  - key: decreases activity of
+    source: MESH:D009173
+    target: UniProt:P12268
+    evidence:
+      - reference: PMID:19834629
+        snippet: Mycophenolic acid (MPA) is a potent, selective, noncompetitive and reversible inhibitor of inosine-5'-monophosphate deshydrogenase (IMPDH).
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: MPA is a well-characterized potent inhibitor of IMPDH (type II isoform, UniProt P12268), the rate-limiting enzyme in de novo guanosine nucleotide biosynthesis.
+      - reference: PMID:17100698
+        snippet: Mycophenolic acid (MPA) is a highly selective, non-competitive and reversible inhibitor of the inosine monophosphate dehydrogenase (IMPDH), the rate-limiting enzyme in the de novo biosynthesis of guanosine nucleotides.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: positively regulates
+    source: UniProt:P12268
+    target: GO:0046651
+    evidence:
+      - reference: PMID:11233304
+        snippet: As T and B-lymphocytes almost exclusively use the de novo pathway of purine synthesis, these cells are particularly sensitive to the inhibitory action of MMF.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: IMPDH catalyzes the rate-limiting step in de novo guanosine nucleotide synthesis, which T and B lymphocytes depend upon for proliferation; its activity thus positively regulates lymphocyte proliferation.
+      - reference: PMID:19436616
+        snippet: It preferentially inhibits denovo pathway of guanosine nucleotide synthesis in T and B-lymphocytes and prevents their proliferation, thereby suppresses both cell mediated and humoral immune responses.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: contributes to
+    source: GO:0046651
+    target: MESH:D008181
+    evidence:
+      - reference: PMID:10361247
+        snippet: the number of immunoglobulin-producing B cells and serum levels of IgG and IgG anti-dsDNA antibodies were reduced after MMF and CYC treatment. MMF treatment significantly reduced the extent of deposition of C3 in glomeruli.
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: Lymphocyte proliferation drives production of pathogenic anti-dsDNA antibodies and immune complex/complement deposition in glomeruli in lupus nephritis; inhibiting lymphocyte proliferation with MMF reduces disease severity.
+      - reference: PMID:12538032
+        snippet: since activated B lymphocytes play a central role in lupus and our results show that B cells are targets for MPA, we propose that direct effects on B cells may be an important mechanism for the ameliorating effects of MMF in SLE.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+references:
+  - https://www.drugbank.ca/drugs/DB00688
+  - https://meshb.nlm.nih.gov/record/ui?ui=D008181

@@ -1,0 +1,78 @@
+directed: true
+multigraph: true
+graph:
+  _id: P38_DB00175_MESH_D006937
+  drug: Pravastatin
+  drug_mesh: MESH:D017035
+  drugbank: DB:DB00175
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+nodes:
+  - id: MESH:D017035
+    name: Pravastatin
+    label: Drug
+  - id: UniProt:P04035
+    name: HMG-CoA reductase
+    label: Protein
+  - id: GO:0006695
+    name: cholesterol biosynthetic process
+    label: BiologicalProcess
+  - id: UniProt:P01130
+    name: LDL receptor
+    label: Protein
+  - id: MESH:D008077
+    name: Lipoproteins, LDL
+    label: ChemicalSubstance
+  - id: MESH:D006937
+    name: Hypercholesterolemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D017035
+    target: UniProt:P04035
+    evidence:
+      - reference: PMID:14651445
+        snippet: Pravastatin (Pravachol) is a competitive, reversible HMG-CoA reductase inhibitor that lowers serum cholesterol levels by inhibiting de novo cholesterol synthesis
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+      - reference: PMID:1298545
+        snippet: Pravastatin is a new drug that inhibits 3-hydroxy-3-methylglutaryl-coenzyme A reductase, the key enzyme in cholesterol synthesis.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: participates in
+    source: UniProt:P04035
+    target: GO:0006695
+    evidence:
+      - reference: PMID:34207840
+        snippet: Statins have been widely used for the treatment of hypercholesterolemia due to their ability to inhibit HMG-CoA reductase, the rate-limiting enzyme of de novo cholesterol synthesis, via the so-called mevalonate pathway.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: negatively regulates
+    source: GO:0006695
+    target: UniProt:P01130
+    evidence:
+      - reference: PMID:1298545
+        snippet: It prevents mevalonate synthesis, thus reducing cholesterol. Pravastatin also stimulates the expression of LDL receptors, leading to an activation of this specific pathway of LDL catabolism.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Inhibition of cholesterol biosynthesis (via reduced mevalonate synthesis) is linked to upregulation of LDL receptor expression, consistent with the negative feedback relationship between intracellular cholesterol levels and LDLR expression.
+  - key: negatively regulates
+    source: UniProt:P01130
+    target: MESH:D008077
+    evidence:
+      - reference: PMID:30953636
+        snippet: LDL clearance involves binding to its receptor, LDLR, which enables the internalization of the LDL particle and drives its degradation in lysosomes.
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: causes
+    source: MESH:D008077
+    target: MESH:D006937
+    evidence:
+      - reference: PMID:42034477
+        snippet: Patients with severe hypercholesterolemia (SH), defined as low-density lipoprotein cholesterol (LDL-C) ≥190 mg/dL, have elevated cardiovascular risk
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Hypercholesterolemia is defined by elevated LDL-C levels; elevated LDL is both definitional and causative of hypercholesterolemia.
+references:
+  - https://go.drugbank.com/drugs/DB00175
+  - https://meshb.nlm.nih.gov/record/ui?ui=D006937

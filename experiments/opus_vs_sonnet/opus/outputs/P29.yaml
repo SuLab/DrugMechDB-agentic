@@ -1,0 +1,64 @@
+directed: true
+multigraph: true
+graph:
+  _id: P29_DB00437_MESH_D006073
+  drug: Allopurinol
+  drug_mesh: MESH:D000493
+  drugbank: DB:DB00437
+  disease: Gout
+  disease_mesh: MESH:D006073
+nodes:
+  - id: DB:DB00437
+    name: Allopurinol
+    label: Drug
+  - id: UniProt:P47989
+    name: Xanthine dehydrogenase/oxidase
+    label: Protein
+  - id: MESH:D014527
+    name: Uric acid
+    label: ChemicalSubstance
+  - id: UniProt:Q96P20
+    name: NLRP3
+    label: Protein
+  - id: MESH:D006073
+    name: Gout
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00437
+    target: UniProt:P47989
+    evidence:
+      - reference: PMID:37625592
+        snippet: "Allopurinol, an analog of hypoxanthine, is widely used as an antigout drug, as xanthine oxidoreductase-mediated metabolism of allopurinol to oxypurinol leads to oxypurinol rotation in the enzyme active site and reduction of the molybdenum Mo(VI) active center to Mo(IV), inhibiting subsequent urate production."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Allopurinol is metabolized by xanthine oxidoreductase to oxypurinol, which inhibits the enzyme's active center."
+  - key: positively regulates
+    source: UniProt:P47989
+    target: MESH:D014527
+    evidence:
+      - reference: PMID:37625592
+        snippet: "Xanthine oxidoreductase is a metalloenzyme that catalyzes the final steps in purine metabolism by converting hypoxanthine to xanthine and then uric acid."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Xanthine oxidoreductase produces uric acid as the final step of purine metabolism."
+  - key: increases activity of
+    source: MESH:D014527
+    target: UniProt:Q96P20
+    evidence:
+      - reference: PMID:41863697
+        snippet: "Both the soluble and crystalline forms of UA act as inflammatory triggers, leading to the formation and activation of the NLRP3 inflammasome further promoting caspase 1-dependent release of the pro-inflammatory cytokines interleukin (IL)-1β and IL-18, as well as to gasdermin D-mediated pyroptotic cell death."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Uric acid, in soluble and crystalline forms, triggers formation and activation of the NLRP3 inflammasome."
+  - key: causes
+    source: UniProt:Q96P20
+    target: MESH:D006073
+    evidence:
+      - reference: PMID:41863697
+        snippet: "the NLRP3 inflammasome complex, an innate immune sentinel and nonspecific sensor of cellular perturbation, is the initiator and key participant in gouty inflammation"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "The NLRP3 inflammasome is the initiator and key participant in gouty inflammation."
+references:
+  - https://go.drugbank.com/drugs/DB00437

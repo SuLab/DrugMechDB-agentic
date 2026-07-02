@@ -85,7 +85,28 @@ window.DMDB_RECORD = {
   references: [
     { url: "https://go.drugbank.com/drugs/DB00570#BE0001340", type: "drugbank", label: "DrugBank — Mechanism of action" },
     { url: "https://en.wikipedia.org/wiki/Vinblastine", type: "wiki", label: "Wikipedia — Vinblastine" }
-  ]
+  ],
+  /* Illustrative — the semantic-validation layer is a proposed second QC gate:
+     before a curated edge is allowed to write, a stronger model re-reads each
+     cited source and confirms the snippet supports THIS exact edge, not just a
+     related step in the pathway (the failure mode per-edge evidence is prone
+     to). Static/presumptive for this mockup; a real record would populate this
+     from that pass's run log. */
+  validation: {
+    model: "Claude Opus 4.8 (fact-check pass)",
+    note: "Independent of the curating agent — re-reads the source text itself rather than trusting the curator's snippet choice.",
+    items: [
+      { edge: "Vinblastine → Tubulin alpha-1A chain", reference: "PMID:12042791", verdict: "CONFIRMED",
+        note: "Snippet is specifically about β-tubulin binding at the vinca domain — matches this exact edge and direction.",
+        paper: { title: "Vinca alkaloid binding to the colchicine domain of tubulin", journal: "Nature", year: "2005", doi: "10.1038/nature03566" } },
+      { edge: "Tubulin alpha-1A chain → Microtubule cytoskeleton organization in mitosis", reference: "PMID:18322465", verdict: "CONFIRMED",
+        note: "Cross-checked against a second review to confirm α-tubulin's structural role generalizes to this specific process, not just the spindle in general.",
+        paper: { title: "Microtubule-targeting agents and mitotic arrest", journal: "Nat Rev Cancer", year: "2004", doi: "10.1038/nrc1317" } },
+      { edge: "Cell population proliferation → Malignant tumor of testis", reference: "PMID:21376230", verdict: "FLAGGED",
+        note: "Source establishes proliferation as a cancer hallmark generally, not this neoplasm specifically — held for human review rather than silently accepted.",
+        paper: { title: "Hallmarks of cancer: the next generation", journal: "Cell", year: "2011", doi: "10.1016/j.cell.2011.02.013" } }
+    ]
+  }
 };
 
 /* Compact browse index — a few representative rows */

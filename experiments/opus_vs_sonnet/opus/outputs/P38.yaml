@@ -1,0 +1,82 @@
+directed: true
+multigraph: true
+graph:
+  _id: P38_DB00175_MESH_D006937
+  drug: pravastatin
+  drug_mesh: MESH:D017035
+  drugbank: DB:DB00175
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+nodes:
+  - id: MESH:D017035
+    name: pravastatin
+    label: Drug
+  - id: UniProt:P04035
+    name: 3-hydroxy-3-methylglutaryl-coenzyme A reductase
+    label: Protein
+  - id: GO:0006695
+    name: cholesterol biosynthetic process
+    label: BiologicalProcess
+  - id: UniProt:Q12772
+    name: Sterol regulatory element-binding protein 2
+    label: Protein
+  - id: UniProt:P01130
+    name: Low-density lipoprotein receptor
+    label: Protein
+  - id: GO:0042157
+    name: lipoprotein metabolic process
+    label: BiologicalProcess
+  - id: MESH:D006937
+    name: Hypercholesterolemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D017035
+    target: UniProt:P04035
+    evidence:
+      - reference: PMID:19787197
+        snippet: "A dozen of the synthetic compounds mimic the inhibition of purified HMG-CoA reductase activity caused by pravastatin, fluvastatin and sodium salts of lovastatin, mevastatin and simvastatin in this cell-free assay, suggesting direct interaction with the rate-limiting enzyme of cholesterol biosynthesis."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: participates in
+    source: UniProt:P04035
+    target: GO:0006695
+    evidence:
+      - reference: PMID:34207840
+        snippet: "Statins have been widely used for the treatment of hypercholesterolemia due to their ability to inhibit HMG-CoA reductase, the rate-limiting enzyme of de novo cholesterol synthesis, via the so-called mevalonate pathway."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: negatively regulates
+    source: GO:0006695
+    target: UniProt:Q12772
+    evidence:
+      - reference: PMID:27888906
+        snippet: "The decrease of the hepatic intracellular cholesterol pool produced by these drugs upregulates the activity of the SREBP2 transcription factor, which subsequently stimulates the expression of the LDL receptor gene, an effect that is followed by an increase in the serum concentration of PCSK9."
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: positively regulates
+    source: UniProt:Q12772
+    target: UniProt:P01130
+    evidence:
+      - reference: PMID:27888906
+        snippet: "The decrease of the hepatic intracellular cholesterol pool produced by these drugs upregulates the activity of the SREBP2 transcription factor, which subsequently stimulates the expression of the LDL receptor gene, an effect that is followed by an increase in the serum concentration of PCSK9."
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: participates in
+    source: UniProt:P01130
+    target: GO:0042157
+    evidence:
+      - reference: PMID:1412144
+        snippet: "Inhibition of cholesterol synthesis leads to upregulation of LDL-receptors in the liver and subsequent increased LDL clearance."
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: treats
+    source: MESH:D017035
+    target: MESH:D006937
+    evidence:
+      - reference: PMID:15293079
+        snippet: "Fluvastatin and pravastatin are efficient in lowering total and LDL cholesterol levels in HIV-positive patients receiving HAART."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+references:
+  - https://go.drugbank.com/drugs/DB00175

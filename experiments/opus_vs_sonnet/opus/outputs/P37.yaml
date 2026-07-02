@@ -1,0 +1,64 @@
+directed: true
+multigraph: true
+graph:
+  _id: P37_DB00186_MESH_D001007
+  drug: Lorazepam
+  drug_mesh: MESH:D008140
+  drugbank: DB:DB00186
+  disease: Anxiety
+  disease_mesh: MESH:D001007
+nodes:
+  - id: DB:DB00186
+    name: Lorazepam
+    label: Drug
+  - id: UniProt:P14867
+    name: Gamma-aminobutyric acid receptor subunit alpha-1
+    label: Protein
+  - id: GO:1902476
+    name: chloride transmembrane transport
+    label: BiologicalProcess
+  - id: GO:0060080
+    name: inhibitory postsynaptic potential
+    label: BiologicalProcess
+  - id: MESH:D001007
+    name: Anxiety
+    label: Disease
+links:
+  - key: increases activity of
+    source: DB:DB00186
+    target: UniProt:P14867
+    evidence:
+      - reference: PMID:30192388
+        snippet: "long-latency afferent inhibition (LAI) is reduced by the GABAA positive allosteric modulator lorazepam"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Lorazepam is a GABAA positive allosteric modulator, increasing GABAA receptor activity.
+  - key: positively regulates
+    source: UniProt:P14867
+    target: GO:1902476
+    evidence:
+      - reference: PMID:22677032
+        snippet: "pre-ictal GABA(A) receptor-mediated chloride influx"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: GABAA receptor activation mediates chloride influx across the neuronal membrane.
+  - key: causes
+    source: GO:1902476
+    target: GO:0060080
+    evidence:
+      - reference: PMID:32105770
+        snippet: "GABA) generally induces hyperpolarization and inhibition in the adult brain"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Chloride influx through GABAA receptors hyperpolarizes and inhibits neurons.
+  - key: treats
+    source: DB:DB00186
+    target: MESH:D001007
+    evidence:
+      - reference: PMID:39410894
+        snippet: "Lorazepam (LZP), a classical anti-anxiety medicine"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: Lorazepam is an established anti-anxiety medication.
+references:
+  - https://go.drugbank.com/drugs/DB00186

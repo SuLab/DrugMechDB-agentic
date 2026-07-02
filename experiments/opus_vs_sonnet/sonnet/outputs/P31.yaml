@@ -1,0 +1,93 @@
+directed: true
+multigraph: true
+graph:
+  _id: P31_DB00067_MESH_D006467
+  drug: Vasopressin
+  drug_mesh: MESH:C016671
+  drugbank: DB:DB00067
+  disease: Hemophilia A
+  disease_mesh: MESH:D006467
+nodes:
+  - id: MESH:C016671
+    name: Vasopressin
+    label: Drug
+  - id: UniProt:P30518
+    name: Vasopressin V2 receptor
+    label: Protein
+  - id: GO:0019933
+    name: cAMP-mediated signaling
+    label: BiologicalProcess
+  - id: GO:0099132
+    name: Weibel-Palade body exocytosis
+    label: BiologicalProcess
+  - id: UniProt:P04275
+    name: von Willebrand factor
+    label: Protein
+  - id: UniProt:P00451
+    name: Coagulation factor VIII
+    label: Protein
+  - id: MESH:D006467
+    name: Hemophilia A
+    label: Disease
+links:
+  - key: increases activity of
+    source: MESH:C016671
+    target: UniProt:P30518
+    evidence:
+      - reference: PMID:12871401
+        snippet: Its effect on VWF and t-PA as well as its vasodilatory effect are likely explained by a direct action on the endothelium, via activation of endothelial vasopressin V2R receptor and cAMP-mediated signaling.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: DDAVP (the synthetic vasopressin analogue) activates the endothelial vasopressin V2 receptor (AVPR2), initiating cAMP-mediated signaling.
+  - key: increases activity of
+    source: UniProt:P30518
+    target: GO:0019933
+    evidence:
+      - reference: PMID:12871401
+        snippet: via activation of endothelial vasopressin V2R receptor and cAMP-mediated signaling. This leads to exocytosis from Weibel Palade bodies where both VWF and t-PA are stored
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Activation of the V2 receptor increases cAMP-mediated signaling, which drives Weibel-Palade body exocytosis.
+  - key: positively regulates
+    source: GO:0019933
+    target: GO:0099132
+    evidence:
+      - reference: PMID:12871401
+        snippet: via activation of endothelial vasopressin V2R receptor and cAMP-mediated signaling. This leads to exocytosis from Weibel Palade bodies where both VWF and t-PA are stored
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: cAMP-mediated signaling downstream of V2 receptor activation leads to exocytosis from Weibel-Palade bodies.
+  - key: positively regulates
+    source: GO:0099132
+    target: UniProt:P04275
+    evidence:
+      - reference: PMID:26473492
+        snippet: VWF is synthesized in megakaryocytes and endothelial cells, and is stored and secreted from platelet alpha granules and Weibel-Palade bodies of endothelial cells.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Weibel-Palade body exocytosis releases stored VWF into plasma, raising circulating VWF levels.
+      - reference: PMID:40290674
+        snippet: DDAVP elicits the release of von Willebrand Factor (VWF) from endothelial cells, thereby increasing the levels of circulating VWF and coagulation factor (F)VIII.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: positively regulates
+    source: UniProt:P04275
+    target: UniProt:P00451
+    evidence:
+      - reference: PMID:26473492
+        snippet: FVIII stability and half-life is dependent on non-covalent complex formation with von Willebrand factor (VWF) to avoid proteolysis and clearance.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: VWF forms a non-covalent complex with FVIII, stabilizing it against proteolysis and prolonging its half-life in circulation.
+  - key: treats
+    source: UniProt:P00451
+    target: MESH:D006467
+    evidence:
+      - reference: PMID:20829683
+        snippet: Owing to its ability to raise plasma levels of factor VIII and von Willebrand factor levels, the synthetic vasopressin analogue desmopressin has become the mainstay of treatment for type 1 von Willebrand disease and mild hemophilia A.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Raising plasma factor VIII levels is the mechanism by which desmopressin/vasopressin treats mild hemophilia A.
+references:
+  - https://www.drugbank.ca/drugs/DB00067
+  - https://meshb.nlm.nih.gov/record/ui?ui=D006467

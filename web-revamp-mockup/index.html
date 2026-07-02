@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DrugMechDB · Drug → disease mechanism paths</title>
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 <div class="mock-banner">MOCKUP · DrugMechDB website revamp · sample data, not final — for design review</div>
@@ -45,19 +45,75 @@
     <a class="entry" href="dashboard.html"><div class="ico">▦</div><h3>Curation dashboard</h3><p>Coverage, quality, and provenance across the whole corpus.</p></a>
   </section>
 
-  <section class="walk" data-reveal>
-    <h2>How a mechanism path works</h2>
-    <p class="sub">Example: Vinblastine for malignant tumor of testis — each step is a curated, Biolink-typed relationship.</p>
-    <div class="flow" data-reveal-group>
-      <div class="node">Vinblastine<small>Drug</small></div>
-      <div class="arrow">→<small>decreases activity of</small></div>
-      <div class="node">Tubulin<small>Protein</small></div>
-      <div class="arrow">→<small>part of</small></div>
-      <div class="node">Mitotic division<small>Process</small></div>
-      <div class="arrow">→<small>correlates with</small></div>
-      <div class="node">Testicular tumor<small>Disease</small></div>
+  <section class="pathwalk" data-reveal>
+    <div class="pathwalk-head">
+      <h2>See a mechanism path unfold</h2>
+      <p class="sub">Imatinib → chronic myeloid leukemia. Scroll to walk the path node by node — the same drug→target→process→disease structure every DrugMechDB record is curated and validated against.</p>
     </div>
-    <div class="snippet" style="margin-top:22px">“Vinblastine binds to tubulin dimers, inhibiting assembly of microtubules.” <span class="src-badge drugbank" style="margin-left:8px">DrugBank · MoA</span></div>
+    <div class="pathwalk-track">
+      <div class="pathwalk-stage">
+        <!-- persistent label — stays visible for the whole pinned scroll, not just
+             before it pins, so it's always clear what you're looking at. -->
+        <div class="section-title">Pathway in action</div>
+        <div class="pw-rail"><span class="track"><span class="fill"></span></span><span class="pct">0%</span></div>
+
+        <!-- THE WALK — vertical chain (left) builds step by step; the matching
+             evidence (bigger snippet + full paper credential) cross-fades on
+             the right, one .pw-detail-item per .pw-step, same index order. -->
+        <div class="pw-walk">
+          <div class="pw-chain-vert">
+            <div class="pw-step"><div class="pw-vnode"><span class="pw-name">Imatinib</span><span class="pw-type">Drug</span></div></div>
+            <div class="pw-step"><div class="pw-vline"><span class="pw-pred">decreases activity of</span></div></div>
+            <div class="pw-step"><div class="pw-vnode"><span class="pw-name">BCR-ABL fusion protein</span><span class="pw-type">Protein</span></div></div>
+            <div class="pw-step"><div class="pw-vline"><span class="pw-pred">positively regulates</span></div></div>
+            <div class="pw-step"><div class="pw-vnode"><span class="pw-name">Cell population proliferation</span><span class="pw-type">Process</span></div></div>
+            <div class="pw-step"><div class="pw-vline"><span class="pw-pred">contributes to</span></div></div>
+            <div class="pw-step"><div class="pw-vnode"><span class="pw-name">Chronic myeloid leukemia</span><span class="pw-type">Disease</span></div></div>
+          </div>
+
+          <div class="pw-detail">
+            <div class="pw-detail-item show"><div class="pw-lede">Imatinib — a small-molecule tyrosine kinase inhibitor, the starting point of the path.</div></div>
+            <div class="pw-detail-item">
+              <div class="snippet">“Imatinib binds the ATP-binding pocket of the BCR-ABL tyrosine kinase, locking it in an inactive conformation and blocking its catalytic activity.”</div>
+              <div class="ev-cred"><div class="cred-title">DrugBank — Mechanism of action</div>
+                <div class="cred-links"><a href="https://go.drugbank.com/drugs/DB00619#mechanism-of-action" target="_blank" rel="noopener">View source ↗</a></div></div>
+            </div>
+            <div class="pw-detail-item"><div class="pw-lede">BCR-ABL — the constitutively active fusion kinase produced by the Philadelphia-chromosome translocation.</div></div>
+            <div class="pw-detail-item">
+              <div class="snippet">“The constitutively activated BCR-ABL tyrosine kinase drives the uncontrolled proliferation of myeloid progenitor cells that defines chronic myeloid leukemia.”</div>
+              <div class="ev-cred"><div class="cred-title">Efficacy and Safety of a Specific Inhibitor of the BCR-ABL Tyrosine Kinase in Chronic Myeloid Leukemia</div>
+                <div class="cred-meta">Druker BJ, et al. · New England Journal of Medicine · 2001</div>
+                <div class="cred-links"><a href="https://pubmed.ncbi.nlm.nih.gov/11287972/" target="_blank" rel="noopener">PMID 11287972 ↗</a></div></div>
+            </div>
+            <div class="pw-detail-item"><div class="pw-lede">Cell population proliferation — the unchecked growth signal BCR-ABL sustains once active.</div></div>
+            <div class="pw-detail-item">
+              <div class="snippet">“Sustained proliferation of the BCR-ABL–positive clone underlies the progressive expansion of the leukemic cell population.”</div>
+              <div class="ev-cred"><div class="cred-title">The molecular biology of chronic myeloid leukemia</div>
+                <div class="cred-meta">Deininger MW, Goldman JM, Melo JV · Blood · 2000</div>
+                <div class="cred-links"><a href="https://pubmed.ncbi.nlm.nih.gov/15618470/" target="_blank" rel="noopener">PMID 15618470 ↗</a></div></div>
+            </div>
+            <div class="pw-detail-item"><div class="pw-lede">Chronic myeloid leukemia — the malignant expansion imatinib halts by shutting down its molecular driver. Blocking BCR-ABL <strong>decreases</strong> disease progression.</div></div>
+          </div>
+        </div>
+
+        <!-- THE FINALE — reached at the end of the scroll: the whole path,
+             large, on one line, briefly breaking out of the page's normal
+             column width so every node and predicate reads clearly. -->
+        <div class="pw-finale">
+          <div class="pw-finale-label">The full path</div>
+          <div class="pw-finale-chain">
+            <div class="pwf-node"><span class="pw-name">Imatinib</span><span class="pw-type">Drug</span></div>
+            <div class="pwf-arrow">→<span class="pw-pred">decreases activity of</span></div>
+            <div class="pwf-node"><span class="pw-name">BCR-ABL fusion protein</span><span class="pw-type">Protein</span></div>
+            <div class="pwf-arrow">→<span class="pw-pred">positively regulates</span></div>
+            <div class="pwf-node"><span class="pw-name">Cell population proliferation</span><span class="pw-type">Process</span></div>
+            <div class="pwf-arrow">→<span class="pw-pred">contributes to</span></div>
+            <div class="pwf-node"><span class="pw-name">Chronic myeloid leukemia</span><span class="pw-type">Disease</span></div>
+          </div>
+          <div class="pwf-net">Net effect on disease: <strong>↓ decreased</strong></div>
+        </div>
+      </div>
+    </div>
   </section>
 </div>
 
@@ -65,6 +121,7 @@
   <div>DrugMechDB · Su Lab · curated under the Biolink Model · CC0</div>
   <div class="links"><a href="#">GitHub</a><a href="#">DOI</a><a href="#">Translator</a><a href="#">API</a></div>
 </div></footer>
+<script src="scrollwalk.js"></script>
 <script src="reveal.js"></script>
 </body>
 </html>

@@ -1,0 +1,65 @@
+directed: true
+multigraph: true
+graph:
+  _id: P32_DB00126_MESH_D001206
+  drug: Ascorbic acid
+  drug_mesh: MESH:D001205
+  drugbank: DB:DB00126
+  disease: Ascorbic acid deficiency
+  disease_mesh: MESH:D001206
+nodes:
+  - id: MESH:D001205
+    name: Ascorbic acid
+    label: Drug
+  - id: UniProt:P13674
+    name: Prolyl 4-hydroxylase subunit alpha-1
+    label: Protein
+  - id: GO:0032964
+    name: collagen biosynthetic process
+    label: BiologicalProcess
+  - id: MESH:D001206
+    name: Ascorbic acid deficiency
+    label: Disease
+links:
+  - key: increases activity of
+    source: MESH:D001205
+    target: UniProt:P13674
+    evidence:
+      - reference: PMID:17325743
+        snippet: This enzyme, in turn, requires ascorbic acid to maintain the enzyme-bound iron in its reduced state.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Ascorbic acid (vitamin C) acts as a cofactor for prolyl hydroxylase by maintaining the enzyme-bound iron in its ferrous (reduced) state, thereby sustaining enzymatic activity.
+      - reference: PMID:10329688
+        snippet: vitamin C is an essential co-factor of the enzyme prolyl 4-hydroxylase
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: participates in
+    source: UniProt:P13674
+    target: GO:0032964
+    evidence:
+      - reference: PMID:41980618
+        snippet: Ascorbic acid (AA) is known to act as a cofactor for collagen-modifying enzymes (collagen prolyl and lysyl hydroxylases) and is vital for collagen thermal stability, proper folding, and fibrillogenesis.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Prolyl 4-hydroxylase catalyzes the hydroxylation of proline residues in procollagen, an essential step in collagen biosynthesis required for thermal stability and triple helix formation.
+      - reference: PMID:10329688
+        snippet: The accumulation of these partially folded intermediates occurs during vitamin C deficiency due to incomplete proline hydroxylation, as vitamin C is an essential co-factor of the enzyme prolyl 4-hydroxylase.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: negatively correlated with
+    source: GO:0032964
+    target: MESH:D001206
+    evidence:
+      - reference: PMID:39494043
+        snippet: vitamin C deficiency, impairing collagen synthesis and leading to typical scurvy symptoms
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: Deficiency in collagen synthesis caused by insufficient ascorbic acid leads to the clinical manifestations of scurvy (ascorbic acid deficiency disease).
+      - reference: PMID:32517792
+        snippet: Severe vitamin C deficiency, or scurvy, encompasses a syndrome of multisystem abnormalities due to defective collagen synthesis and antioxidative functions.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+references:
+  - https://www.drugbank.ca/drugs/DB00126
+  - https://meshb.nlm.nih.gov/record/ui?ui=D001206

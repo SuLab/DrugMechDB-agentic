@@ -1,0 +1,76 @@
+directed: true
+multigraph: true
+graph:
+  _id: P30_DB09038_MESH_D003924
+  drug: empagliflozin
+  drug_mesh: MESH:C000591311
+  drugbank: DB:DB09038
+  disease: Type 2 Diabetes Mellitus
+  disease_mesh: MESH:D003924
+nodes:
+  - id: DB:DB09038
+    name: empagliflozin
+    label: Drug
+  - id: UniProt:P31639
+    name: Sodium/glucose cotransporter 2
+    label: Protein
+  - id: GO:0035623
+    name: renal glucose absorption
+    label: BiologicalProcess
+  - id: HP:0003076
+    name: Glycosuria
+    label: PhenotypicFeature
+  - id: MESH:D001786
+    name: Blood Glucose
+    label: ChemicalSubstance
+  - id: MESH:D003924
+    name: Type 2 Diabetes Mellitus
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB09038
+    target: UniProt:P31639
+    evidence:
+      - reference: PMID:35070111
+        snippet: "block the SGLT2 protein within the kidneys, inhibiting glucose reabsorption, and causing an associated osmotic diuresis"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "SGLT2 inhibitors (-flozin drugs, including empagliflozin) block the SGLT2 protein in the kidneys."
+  - key: participates in
+    source: UniProt:P31639
+    target: GO:0035623
+    evidence:
+      - reference: PMID:38363006
+        snippet: "the compensatory effect of SGLT1 in renal glucose reabsorption (RGR) when SGLT2 is inhibited"
+        supports: SUPPORT
+        evidence_source: COMPUTATIONAL
+        explanation: "SGLT2 mediates renal glucose reabsorption; inhibiting SGLT2 reduces this process."
+  - key: negatively regulates
+    source: GO:0035623
+    target: HP:0003076
+    evidence:
+      - reference: PMID:34865099
+        snippet: "empagliflozin lowers blood glucose via reduced tubular reabsorption of filtered glucose"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Reduced tubular reabsorption of filtered glucose causes filtered glucose to be excreted in the urine (glycosuria) instead of reabsorbed."
+  - key: negatively correlated with
+    source: HP:0003076
+    target: MESH:D001786
+    evidence:
+      - reference: PMID:36794422
+        snippet: "and glucose (from median, 0.03 [IQR, 0.02; 0.04] to 34.8 [IQR, 31.6; 40.2] %, P < .0001), and sodium fractional excretion rates (from median, 0.48 [IQR, 0.34; 0.65] to 0.71 [IQR, 0.55; 0.85] %, P = .0001), whereas plasma glucose and insulin concentrations decreased"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "As urinary glucose excretion increased after empagliflozin, plasma glucose concentrations decreased."
+  - key: manifestation of
+    source: MESH:D001786
+    target: MESH:D003924
+    evidence:
+      - reference: PMID:40830335
+        snippet: "Diabetes mellitus (DM) is a chronic metabolic disorder characterized by elevated blood glucose levels due to insulin deficiency or resistance"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Elevated blood glucose is the defining feature of type 2 diabetes mellitus; empagliflozin exerts its therapeutic effect by lowering blood glucose."
+references:
+  - https://go.drugbank.com/drugs/DB09038

@@ -1,0 +1,65 @@
+directed: true
+multigraph: true
+graph:
+  _id: P20_DB00843_MESH_D000544
+  drug: Donepezil
+  drug_mesh: MESH:D000077856
+  drugbank: DB:DB00843
+  disease: Alzheimer's Disease
+  disease_mesh: MESH:D000544
+nodes:
+  - id: MESH:D000077856
+    name: Donepezil
+    label: Drug
+  - id: UniProt:P22303
+    name: Acetylcholinesterase
+    label: Protein
+  - id: MESH:D000109
+    name: Acetylcholine
+    label: ChemicalSubstance
+  - id: GO:0007271
+    name: Synaptic transmission, cholinergic
+    label: BiologicalProcess
+  - id: MESH:D000544
+    name: Alzheimer's Disease
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000077856
+    target: UniProt:P22303
+    evidence:
+      - reference: PMID:22245562
+        snippet: blocking acetylcholinesterase (AChE) and thus increases the concentration of extracellular acetylcholine
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: Donepezil acts by blocking AChE, increasing extracellular acetylcholine concentrations.
+  - key: decreases abundance of
+    source: UniProt:P22303
+    target: MESH:D000109
+    evidence:
+      - reference: PMID:34609711
+        snippet: Acetylcholinesterase (AChE) hydrolyses ACh and inhibits the cholinergic transmission
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: AChE hydrolyzes acetylcholine, thereby reducing its availability at the synapse.
+  - key: positively regulates
+    source: MESH:D000109
+    target: GO:0007271
+    evidence:
+      - reference: PMID:34609711
+        snippet: The deficiency of the cholinergic neurotransmitter known as acetylcholine (ACh) is associated with AD
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Acetylcholine is the key neurotransmitter of cholinergic synaptic transmission; its deficiency impairs this process.
+  - key: negatively correlated with
+    source: GO:0007271
+    target: MESH:D000544
+    evidence:
+      - reference: PMID:21145918
+        snippet: In presenile (early onset), and in the advanced stages of late-onset Alzheimer's disease (AD), a severe loss of cortical cholinergic innervation has extensively been documented
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: Loss of cholinergic neurotransmission is a hallmark of Alzheimer's disease progression.
+references:
+  - https://www.drugbank.ca/drugs/DB00843
+  - https://www.ncbi.nlm.nih.gov/mesh/D000077856

@@ -1,0 +1,77 @@
+directed: true
+multigraph: true
+graph:
+  _id: P14_DB00198_MESH_D007251
+  drug: Oseltamivir
+  drug_mesh: MESH:D053139
+  drugbank: DB:DB00198
+  disease: Influenza
+  disease_mesh: MESH:D007251
+nodes:
+  - id: MESH:D053139
+    name: Oseltamivir
+    label: Drug
+  - id: CHEBI:67200
+    name: Oseltamivir carboxylate
+    label: ChemicalSubstance
+  - id: UniProt:P03472
+    name: Neuraminidase
+    label: Protein
+  - id: GO:0019076
+    name: viral release from host cell
+    label: BiologicalProcess
+  - id: MESH:D007251
+    name: Influenza
+    label: Disease
+links:
+  - key: has metabolite
+    source: MESH:D053139
+    target: CHEBI:67200
+    evidence:
+      - reference: PMID:21803598
+        snippet: Oseltamivir phosphate (OP; tamiflu) is an antiviral pro-drug, which is hydrolyzed hepatically to the active metabolite oseltamivir carboxylate (OC).
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+      - reference: PMID:27228223
+        snippet: Oseltamivir, an inactive anti-influenza virus prodrug, is activated (hydrolysed) in vivo by carboxylesterase 1 (CES1) to its active metabolite oseltamivir carboxylate.
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: decreases activity of
+    source: CHEBI:67200
+    target: UniProt:P03472
+    evidence:
+      - reference: PMID:18694948
+        snippet: Oseltamivir (Tamiflu) and zanamivir (Relenza), two extensively used clinically effective anti-influenza drugs, are viral sialidase (also known as neuraminidase) inhibitors that prevent the release of progeny virions and thereby limit the spread of infection.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+      - reference: PMID:22340192
+        snippet: Anti influenza drugs such as Oseltamivir target a highly conserved active site of NA, which comprises of 8 functional residues (R118, D151, R152, R224, E276, R292, R371 and Y406) to restrict viral release from host cells, thus inhibiting its ability to cleave sialic acid residues on the cell membrane.
+        supports: SUPPORT
+        evidence_source: COMPUTATIONAL
+  - key: positively regulates
+    source: UniProt:P03472
+    target: GO:0019076
+    evidence:
+      - reference: PMID:10711940
+        snippet: Neuraminidase promotes influenza virus release from infected cells and facilitates virus spread within the respiratory tract.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+      - reference: PMID:27845731
+        snippet: A neuraminidase located on the surface of the virus plays an important role in viral reproduction by contributing to the release of viruses from infected host cells.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: contributes to
+    source: GO:0019076
+    target: MESH:D007251
+    evidence:
+      - reference: PMID:23028967
+        snippet: Influenza virus neuraminidase (NA) cleaves terminal sialic acid residues on oligosaccharide chains that are receptors for virus binding, thus playing an important role in the release of virions from infected cells to promote the spread of cell-to-cell infection.
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+      - reference: PMID:25934861
+        snippet: Viral neuraminidase inhibitors, which inhibit viral release from the infected cell, are currently the only approved drugs for influenza
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+references:
+  - https://www.drugbank.ca/drugs/DB00198
+  - https://meshb.nlm.nih.gov/record/ui?ui=D007251
