@@ -59,7 +59,7 @@
       el.classList.toggle("show", i === activeIdx && !finale);
     });
     if (fill) fill.style.width = (p * 100).toFixed(1) + "%";
-    if (pct) pct.textContent = Math.round(p * 100) + "%";
+    if (pct) pct.textContent = "";
   }
 
   function onScroll() {

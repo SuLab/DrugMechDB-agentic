@@ -186,5 +186,53 @@ function renderPathograph(containerId, record, onNodeClick) {
   window.addEventListener("pointerup", () => { drag = null; host.classList.remove("grabbing"); });
   host._reset = fit;
 
+  // --- entrance: the path draws itself in, left→right by rank ---
+  // Web Animations API (native). Nodes fade in and edges "draw" via an animated
+  // stroke-dashoffset, staggered by column so the mechanism reads as unfolding
+  // drug→…→disease. Triggered by an IntersectionObserver on the graph host, so
+  // it plays WHEN the graph scrolls into view (not on load, while its section is
+  // still hidden by reveal.js). The hidden start-state is set inline up front so
+  // nothing flashes before the play; onfinish clears those inline styles so the
+  // hover / highlight logic is untouched afterward. Fully skipped under
+  // prefers-reduced-motion or without WAAPI/IO — the graph just renders final.
+  const reduceMo = window.matchMedia &&
+                   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduceMo && typeof svg.animate === "function" && "IntersectionObserver" in window) {
+    const COL = 130;                                   // ms of stagger per column
+    // hide up front (before paint) so the graph doesn't show before its cue
+    record.nodes.forEach(n => { nodeEls[n.id].style.opacity = "0"; });
+    labelEls.forEach(l => { l.g.style.opacity = "0"; });
+    const lens = edgeEls.map(e => {
+      let len; try { len = e.p.getTotalLength(); } catch (_) { len = 0; }
+      if (len) { e.p.setAttribute("stroke-dasharray", len); e.p.setAttribute("stroke-dashoffset", len); }
+      return len;
+    });
+    let played = false;
+    const drawIO = new IntersectionObserver(entries => {
+      entries.forEach(ent => {
+        if (!ent.isIntersecting || played) return;
+        played = true; drawIO.disconnect();
+        record.nodes.forEach(n => {
+          const a = nodeEls[n.id].animate([{ opacity: 0 }, { opacity: 1 }],
+            { duration: 360, delay: (rank[n.id] || 0) * COL, easing: "ease-out", fill: "backwards" });
+          a.onfinish = () => { nodeEls[n.id].style.opacity = ""; };
+        });
+        edgeEls.forEach((e, i) => {
+          const len = lens[i];
+          if (!len) { e.p.removeAttribute("stroke-dashoffset"); return; }
+          const a = e.p.animate([{ strokeDashoffset: len }, { strokeDashoffset: 0 }],
+            { duration: 520, delay: (rank[e.s] || 0) * COL + 130, easing: "cubic-bezier(.16,1,.3,1)", fill: "backwards" });
+          a.onfinish = () => { e.p.removeAttribute("stroke-dasharray"); e.p.removeAttribute("stroke-dashoffset"); };
+        });
+        labelEls.forEach(l => {
+          const a = l.g.animate([{ opacity: 0 }, { opacity: 1 }],
+            { duration: 300, delay: 380, easing: "ease-out", fill: "backwards" });
+          a.onfinish = () => { l.g.style.opacity = ""; };
+        });
+      });
+    }, { threshold: 0.15 });
+    drawIO.observe(host);
+  }
+
   return { types: [...new Set(record.nodes.map(n => n.label))] };
 }

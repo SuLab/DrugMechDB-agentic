@@ -46,7 +46,7 @@ h1,h2,h3 { line-height: 1.25; margin: 0; letter-spacing: -.01em; }
 }
 
 /* ---------- top navbar (flat, hairline) ---------- */
-.nav { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid var(--line); }
+.nav { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid var(--line); view-transition-name: dmdb-nav; }
 .nav-inner { display: flex; align-items: center; gap: 28px; height: 58px; }
 .brand { display: flex; align-items: center; gap: 9px; font-weight: 700; font-size: 17px; color: var(--ink); letter-spacing: -.02em; }
 .brand:hover { text-decoration: none; }
@@ -398,4 +398,22 @@ mark { background: var(--line-2); color: var(--ink); border-bottom: 2px solid va
   html { scroll-behavior: auto; }
   .reveal, .reveal.in { opacity: 1; transform: none; transition: none; }
   * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* ============================================================
+   VIEW TRANSITIONS — native cross-document page morph.
+   Same-origin navigations crossfade smoothly instead of hard-cutting; the top
+   nav is tagged as its own transition element (`dmdb-nav`) so it stays visually
+   anchored while the page body fades — app-like continuity, no JS, no library.
+   Purely progressive: browsers without the View Transition API just navigate
+   normally, and the reduced-motion rule below makes the transition instant.
+   ============================================================ */
+@view-transition { navigation: auto; }
+
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) { animation: none !important; }
 }
