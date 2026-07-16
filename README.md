@@ -1,151 +1,131 @@
-# Drug Mechanism Database (DrugMechDB)
-**DrugMechDB** is a curated database that captures mechanistic paths from a drug to a disease within a given indication. DrugMechDB provides:
-- Mechanistic paths from drug to disease via biological entities.
-- Expert curation of relationships supported by literature.
-- Graph-based representation of mechanisms suitable for computational analysis.
-- DrugMechDB leverages the [**Biolink Model**](https://biolink.github.io/biolink-model/) to ensure semantic interoperability and consistency across biomedical entities and relationships.
-  
-## 🔗 Resources
+# DrugMechDB — agentic, self-validating rebuild
 
-- **Latest Release:**  
-  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8139357.svg)](https://doi.org/10.5281/zenodo.8139357)
+**DrugMechDB** captures the mechanistic path from a drug to a disease for a given
+indication: a directed, [Biolink Model](https://biolink.github.io/biolink-model/)-typed
+graph that walks `Drug → molecular target → … → Disease` through biomedical entities.
 
-- **Publication:**  
-  *Gonzalez-Cavazos, A. C., Tanska, A., Mayers, M., Carvalho-Silva, D., Sridharan, B., Rewers, P. A., Sankarlal, U., Jagannathan, L., & Su, A. I. (2023). DrugMechDB: a curated database of drug mechanisms*
-  [Read the paper on Scientific Data](https://www.nature.com/articles/s41597-023-02534-z)
+This repository is the **agentic, self-validating rebuild** of DrugMechDB: the same
+gold-standard content (**4,846 mechanistic paths**), re-organized as one file per record
+and wrapped in a machine-checked quality gate and a curation harness. Every change is
+**additive and format-compatible** — the record format is preserved; the machinery is
+built *around* it.
 
-- **Web Interface:**  
-  Explore DrugMechDB online: [https://sulab.github.io/DrugMechDB/](https://sulab.github.io/DrugMechDB/)
+- One directed cause→effect multigraph per record, joined by CURIE identifiers.
+- A deterministic **4-layer QC gate** that is the single source of truth for validity.
+- An agentic curation harness with a **pre-edit hook** that blocks invalid writes.
+- An independent **semantic critic** that re-derives each edge's evidence.
+- Deterministic **publish** tooling that regenerates the consolidated artifacts.
 
-## Purpose
-Most drug mechanisms are described simply as a protein target, or sometimes a pathway, that then treats the disease.
-However, there are usually more steps across a biological knowledge graph required to traverse from the target through
-its mechanism to the reduction of a disease.  This database attempts to catalog a subset of known drug-disease indications
-as a path through a network of biomedical entities.
+## Resources (the published DrugMechDB)
 
-Below is a visualized example of one entry in DrugMechDB - A path from Cortisone acetate to Keratitis.
+- **Publication:** Gonzalez-Cavazos, A. C., Tanska, A., Mayers, M., Carvalho-Silva, D.,
+  Sridharan, B., Rewers, P. A., Sankarlal, U., Jagannathan, L., & Su, A. I. (2023).
+  *DrugMechDB: a curated database of drug mechanisms.* Scientific Data, 10(1), 632.
+  [Read it](https://www.nature.com/articles/s41597-023-02534-z)
+- **Release / DOI:** [10.5281/zenodo.8139357](https://doi.org/10.5281/zenodo.8139357)
 
-![Path Example](path.png)
+## Repository layout
 
+| Path | What |
+|---|---|
+| `kb/paths/*.yaml` | **Source of truth** — one record per file (4,846 records) |
+| `kb/paths/_index.yaml` | Generated index (do not hand-edit) |
+| `indication_paths.{yaml,json}` | Generated consolidated monoliths (do not hand-edit) |
+| `src/drugmechdb/schema/` | LinkML schema (`MechanisticPath`) + Biolink node/predicate vocabularies |
+| `scripts/` | QC gate, curation/evidence tools, publish + data-hygiene tooling |
+| `scripts/quality/` | Deterministic structural scorer + semantic critic |
+| `.claude/` | Agentic harness — commands, skills, and the pre-edit validation hook |
+| `AGENTS.md`, `CurationGuide.md` | The curation contract and the detailed guide |
+| `docs/PIPELINE.md` | End-to-end setup → curate → validate → publish |
 
-## Curation
+## The record format
 
-Indications were selected at random from the set contained within DrugCentral. Half were taken from the full set,
-representing a set of common drug disease pairs, and the other half were selected from a pool of less-common diseases
-to vary the targets and diseases treated.
+Each `kb/paths/{drugbank}_{disease_mesh}_{n}.yaml` is a NetworkX-style node-link graph:
 
-Paths were derived from free-text descriptions found on DrugBank, Wikipedia and within literature. Concepts within the
-text were then normalized to a concept type (Drug, Protein, Pathway, etc) and relationships between the concepts were
-determined from the source. Finally concepts were mapped to an identifier depending on the concept type according to
-the following table:
+- `graph` — indication metadata (`_id`, drug/disease names + MeSH/DrugBank ids)
+- `nodes` — each has a CURIE `id`, a Biolink `label`, and a `name`
+- `links` — edges (`key` = Biolink predicate, `source`, `target`), joined by CURIE
+- `references` — record-level sources (optional); edges may carry per-edge `evidence`
+  (an `EvidenceItem` with a verbatim PubMed `snippet`)
+- `directed: true`, `multigraph: true`
 
-|Concept Type                                                    | Identifier Source    |
-|-----------------------------------------------------------------------------------------------------|--------------------------|
-|[BiologicalProcess](https://biolink.github.io/biolink-model/docs/BiologicalProcess.html)  |  [GO](http://geneontology.org/)  |
-|[Cell](https://biolink.github.io/biolink-model/docs/Cell.html)  |  [CL](http://www.obofoundry.org/ontology/cl.html) |
-|[CellularComponent](https://biolink.github.io/biolink-model/docs/CellularComponent.html)  |  [GO](http://geneontology.org/)  |
-|[ChemicalSubstance](https://biolink.github.io/biolink-model/docs/ChemicalSubstance.html)  |  [MESH](https://meshb.nlm.nih.gov/), [CHEBI](https://www.ebi.ac.uk/chebi/) |
-|[Disease](https://biolink.github.io/biolink-model/docs/Disease.html)  |  [MESH](https://meshb.nlm.nih.gov/)  |
-|[Drug](https://biolink.github.io/biolink-model/docs/Drug.html)  |  [MESH](https://meshb.nlm.nih.gov/), [DrugBank](https://go.drugbank.com/) |
-|[GeneFamily](https://biolink.github.io/biolink-model/docs/GeneFamily.html)  |  [InterPro](https://www.ebi.ac.uk/interpro/) |
-|[GrossAnatomicalStructure](https://biolink.github.io/biolink-model/docs/GrossAnatomicalStructure.html)  |  [UBERON](https://www.ebi.ac.uk/ols/ontologies/uberon)  |
-|[MacromolecularComplex](https://biolink.github.io/biolink-model/docs/MacromolecularComplexMixin.html)  |  [PR](https://www.ebi.ac.uk/ols/ontologies/pr)  |
-|[MolecularActivity](https://biolink.github.io/biolink-model/docs/MolecularActivity.html)  |  [GO](http://geneontology.org/)  |
-|[OrganismTaxon](https://biolink.github.io/biolink-model/docs/OrganismTaxon.html)  |  [NCBITaxon](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi)  |
-|[Pathway](https://biolink.github.io/biolink-model/docs/Pathway.html)  |  [REACT](https://reactome.org/)  |
-|[PhenotypicFeature](https://biolink.github.io/biolink-model/docs/PhenotypicFeature.html)  |  [HP](https://hpo.jax.org/app/)  |
-|[Protein](https://biolink.github.io/biolink-model/docs/Protein.html)  |  [UniProt](https://www.uniprot.org/)  |
+Node CURIE prefixes are canonical per Biolink type:
 
+| Concept type | Identifier source |
+|---|---|
+| Drug | MESH, DrugBank |
+| Protein | UniProt |
+| BiologicalProcess / MolecularActivity / CellularComponent | GO |
+| ChemicalSubstance | MESH, CHEBI |
+| Disease | MESH |
+| PhenotypicFeature | HP |
+| Cell | CL |
+| GrossAnatomicalStructure | UBERON |
+| GeneFamily | InterPro |
+| MacromolecularComplex | PR |
+| OrganismTaxon | NCBITaxon |
+| Pathway | Reactome |
+
+## The QC gate
+
+`scripts/qc.py` is the single source of truth for "is this record valid." It picks a
+profile per file and runs the matching layers:
+
+| Profile | When | Layers |
+|---|---|---|
+| `legacy` | no per-edge evidence | 1, 2, 3 |
+| `ai_curated` | any edge has `evidence:` | 1, 2, 3, 4 |
+
+1. **schema** (LinkML `MechanisticPath`) · 2. **node ontology** (CURIE prefix ↔ label,
+plus an invisible/whitespace-character guard) · 3. **predicate enum** (67 Biolink
+predicates) · 4. **reference** (every snippet is verbatim in its cited source).
+
+```bash
+just qc                       # whole corpus
+just qc kb/paths/<file>.yaml  # one record
+```
+
+Exit `0` pass · `1` fail · `2` no files. The pre-edit hook
+(`.claude/hooks/validate_path_hook.py`) runs the gate before any write to `kb/paths/`
+lands and blocks invalid writes.
+
+## Curation harness
+
+- `/curate <Drug> for <Disease>` — curate a new path from cited PubMed evidence.
+- `/backfill <record>` — add per-edge evidence to an existing path.
+- After the QC gate passes, the **semantic critic** (`scripts/quality/critic.py`)
+  independently re-derives each edge's support and judges the chain.
+
+Curate only **established, already-asserted** mechanisms from sources that assert them;
+every edge's evidence snippet must be a verbatim substring of a fetched reference. See
+**`AGENTS.md`** (the contract) and **`CurationGuide.md`** (the guide).
+
+## Getting started
+
+```bash
+python3.10 -m venv .venv-py310
+.venv-py310/bin/pip install -r requirements.lock   # reproducible, pinned
+.venv-py310/bin/pip install -e . --no-deps
+just qc                                             # validate the corpus
+```
+
+Full setup and the end-to-end pipeline are in **`docs/PIPELINE.md`**.
 
 ## Contributing
 
-If you would like to contribute your own curated mechanistic paths, please do so by making pull requests
-with edits to the file `submission.yaml`.
+Curate on a feature branch, run `just qc` until it passes, then open a PR — CI enforces
+the same gate. Use targeted `git add` (the record and its cached references); never edit
+the generated `_index.yaml` or the consolidated monoliths by hand (regenerate them with
+`scripts/rebuild_monolith.py` / `just rebuild-index`).
 
-See the [Curation Guide](CurationGuide.md) for more information about contributions and [Submission Guide](SubmissionGuide.md) for
-detailed submission instructions.
+## License
 
-### Path formatting
+Code: MIT (see `LICENSE`). Curated data: CC0.
 
-Each path begins with a `-   directed: true` statment. Identifiers for concepts and concept type
-should conform to the table above.
+## Citation
 
-Paths contain the following structure:
-
-    - directed: true
-        graph:
-            disease: *name of the disease in the indication*
-            disease_mesh: *MESH Identifier for the disease (if known)*
-            drug: *name of the drug in the indication*
-            drug_mesh: *MESH Identifier for the drug (if known)*
-            drugbank: *DrugBank Identifier for the drug (if known)*
-        links:     (the edges of the path)
-        -   key: *Semantics of the relationship (ALL CAPS)*
-            source: *Identifier for source node in edge*
-            target: *Identifier for target node in edge*
-        nodes:     (the nodes in the path)
-        -   id: *Identifier for the node*
-            label: *Concept type for the node*
-            name: *Name of the node*
-        multigraph: true    (required statment for importing paths into networkx).
-
-
-## Website build guide
-
-We originally had this configured so that the ["Update Website" action](https://github.com/SuLab/DrugMechDB/actions/workflows/update-website.yaml) would build the Jekyll files and push to the `gh-pages` branch, which would then be rendered by Github Pages.  However, the web content is now too large and the build process times out.  Therefore, we have to build locally.  The protocol is as follows:
-    
-* **Execute the ["Merge Pages" action](https://github.com/SuLab/DrugMechDB/actions/workflows/merge-pages.yaml)** which will merge the `main` branch to `gh-pages`
-* **Create the `gh-pages` branch locally**
-    
-    ```
-    git clone --branch gh-pages --depth 1 git@github.com:SuLab/DrugMechDB.git DrugMechDB.gh-pages
-    cd DrugMechDB.gh-pages
-    ``` 
-    
-    or if the repo already exists locally, 
-    ```
-    cd DrugMechDB.gh-pages
-    git pull
-    ```
-* **Create the Jekyll files from `indication_paths.yaml`**
-    
-    ```
-    python parse.py
-    ```
-* **Use jekyll to render HTML output**: 
-    
-    This command can take up to ~30 mins to complete, and output HTML files will be in `_site`
-    ```
-    bundle exec jekyll build
-    ```
-* **Create the `gh-pages-html` branch locally**: 
-    
-    ```
-    cd ..
-    git clone --branch gh-pages-html git@github.com:SuLab/DrugMechDB.git DrugMechDB.gh-pages-html
-    cd DrugMechDB.gh-pages-html
-    ``` 
-    or if the repo already exists locally, 
-    
-    ```
-    cd DrugMechDB.gh-pages-html
-    git pull
-    ```
-* **Copy the new rendered files**: 
-    
-    ```
-    rm -rf *
-    cp -r ../DrugMechDB.gh-pages/_site/* .
-    ```
-* **Commit and push**: 
-    
-    ```
-    git add .
-    git commit -m 'Update website'
-    git push
-    ```
-
-### To cite the use of DrugMechDB in your work
 ```
-Gonzalez-Cavazos, A. C., Tanska, A., Mayers, M., Carvalho-Silva, D., Sridharan, B., Rewers, P. A., Sankarlal, U., Jagannathan, L. & Su, A. I. (2023). DrugMechDB: A Curated Database of Drug Mechanisms. Scientific Data, 10(1), 632.
+Gonzalez-Cavazos, A. C., Tanska, A., Mayers, M., Carvalho-Silva, D., Sridharan, B.,
+Rewers, P. A., Sankarlal, U., Jagannathan, L. & Su, A. I. (2023). DrugMechDB: A Curated
+Database of Drug Mechanisms. Scientific Data, 10(1), 632.
 ```
