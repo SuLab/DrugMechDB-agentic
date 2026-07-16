@@ -309,6 +309,14 @@ terms, If all of the relationships in a path are relationships of influence (+1 
 directions (e.g. the overall direction of influence of the path) should be negative. If the overall direction is positive, the path is
 essentially saying that the Drug is contraindicated for the disease.
 
+- **A path is one connected chain — do not add shortcut or bypass edges** The path should be a single chain of
+mechanistic steps from the Drug to the Disease, where each concept is reached from the one before it. Once the mechanism
+is worked out, do **not** add an edge directly from the Drug to the Disease, and do not add an edge from the Drug (or any
+node) to a concept that is already reached further down the chain. Such an edge is a redundant "shortcut" that skips the
+mechanism and merely restates its conclusion. The chain should reach the Disease through a mechanistic/causal predicate
+(e.g. `causes`, `contributes to`); a clinical-outcome `treats`/`prevents` edge from the Drug to the Disease belongs
+**only** to the no-mechanism single-link stub described above, never on top of a real mechanism.
+
 - **Each individual edge should stand on their own** 
 
 Again, these are not hard fast rules and there will always be exceptions. However, these are a good starting point in an attempt
@@ -329,9 +337,13 @@ drug's mechanistic details catalogued. In this instance please include a comment
  the word 'contraindication'.
 
  - **There is no information under any (reasonable) source for this indication** This happens. Some drugs just work
- without a large amount of scientific description of the mechanism of action. In  this case please provide a single-link path that
- essentially consists of a "Drug treats Disease" path that will serve as an indicator to future curators that someone has
- attemped to curate this path.
+ without a large amount of scientific description of the mechanism of action. **In this case only** — when, after a genuine
+ search, no mechanism can be sourced at all — please provide a single-link path that essentially consists of a "Drug treats
+ Disease" path that will serve as an indicator to future curators that someone has attempted to curate this path. This
+ single-link stub is the **only** situation in which a `Drug treats Disease` edge (or any clinical-outcome predicate:
+ `prevents`, `ameliorates`, etc.) is allowed, and it must stand **alone**. If you *do* find a mechanism, curate that
+ mechanistic chain and stop — **never append a `Drug treats Disease` edge on top of a worked-out mechanism.** Doing so
+ produces a redundant shortcut edge (a `clinical_shortcut` hard error) that restates the conclusion the chain already expresses.
 
 - **The Drug has Multiple MESH IDs** These Identifiers come directly from DrugCentral. It may be that the Drug product
 is a mixture of multiple compounds, therefore multiple are provided, however it may also be that one is wrong. In these cases,

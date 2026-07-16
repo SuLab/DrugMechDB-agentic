@@ -71,6 +71,7 @@ See AGENTS.md §4.4 for the `...`/`[...]` operators and the read-the-context gua
 
 - Start the path at the drug node (`label: Drug`, prefix `MESH` or `DB`).
 - Walk through 2–6 intermediate biological entities (proteins, pathways, processes, phenotypes) toward the disease node (`label: Disease`, prefix `MESH`).
+- **One connected chain — no shortcut/bypass edge** (AGENTS.md §0). The path is a single chain drug→…→disease. **Do not** add an edge straight from the drug to the disease, and **do not** add an edge from the drug (or any node) to a node already reached through intermediate steps. End the chain at the disease with a mechanistic/causal predicate (`causes`, `contributes to`, …), **never** with a clinical-outcome predicate (`treats`, `prevents`, `ameliorates`, …). Those are reserved for the no-mechanism stub. If you worked out a mechanism, curate *only* that chain — never also append a `Drug —treats→ Disease` edge. (This is the `clinical_shortcut` / `short_circuit` HARD error; the semantic critic checks for it too.)
 - Each edge:
   - `key`: pick from the canonical 67 in `src/drugmechdb/schema/biolink_predicates.yaml`.
   - `evidence`: ≥1 `EvidenceItem` with:

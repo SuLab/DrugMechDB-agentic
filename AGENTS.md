@@ -23,6 +23,17 @@ If you find yourself rewording, summarizing, or "improving" a source sentence �
 
 Never ship a disconnected path.
 
+**One connected chain — never a shortcut or bypass edge.** An AI-curated path is a *single* causal chain `Drug → molecular target → … → Disease`, where every edge is one mechanistic step and each node (other than the drug) is reached from the step before it. Once you have worked out the mechanism:
+
+1. **Do not add an edge directly from the drug to the disease.** The chain already connects them through its steps; a `Drug —…→ Disease` edge laid on top is redundant — it just restates the conclusion the chain already expresses.
+2. **Do not add an edge from the drug (or any node) to a node that is already reached through intermediate steps** — no bypass that skips part of the mechanism (a "short circuit").
+3. **End the chain at the disease with a mechanistic/causal predicate** (`causes`, `contributes to`, `manifestation of`, …), never with a clinical-outcome predicate. If your mechanism stops one step short of the disease, add the missing *mechanistic* step — do not bridge the gap with `treats`.
+4. **The clinical-outcome predicates — `treats`, `prevents`, `ameliorates`, `exacerbates`, `predisposes`, `affects risk for`, `contraindicated for` — are reserved for the no-mechanism stub only** (next paragraph). They never appear in a path that also works out a mechanism.
+
+**The single-link `Drug —treats→ Disease` path is allowed in exactly one situation:** when, after a genuine search, *no* mechanism can be sourced for the indication. It is a stub that records "someone attempted this," nothing more. It is **never** appended on top of a worked-out mechanism. Decision rule: if you found a mechanism, curate the mechanism and stop; if you truly found none, emit the single stub edge alone. Never both.
+
+These shortcut/bypass edges are hard errors in the deterministic structural checks (`clinical_shortcut`, `short_circuit`, `direct_drug_disease`) and are flagged by the semantic critic. The facts on such an edge are often true — that is not the point; the edge is structurally redundant, so it must not be emitted.
+
 **Source-finding is the curation agent's own job, but it cites only what it fetches.** Form PubMed search queries from your own mechanistic knowledge — but never cite a PMID or a snippet from memory. The only acceptable source for an `EvidenceItem.snippet` is the PubMed-cached text written by `scripts/pubmed_fetch.py`: fetch the paper, read it, copy the verbatim sentence. If the cached abstract / full text does not contain a verbatim supporting sentence, that PMID does not enter the path. (DrugMechDB runs a single Anthropic curation agent with no live web access; this PubMed-only evidence channel is what keeps it faithful to source text.)
 
 ---
@@ -289,6 +300,15 @@ If validation didn't pass on first attempt but did within the retry budget, ment
 - **Don't label MESH disease IDs as `Protein` / `GeneFamily` / `PhenotypicFeature`** unless you've confirmed that's actually what the MESH descriptor refers to. Most cases are mis-bindings that need UniProt / InterPro / HP equivalents instead.
 - **Don't write `drugbank: null` or `drug_mesh: null`.** Omit the field; the schema is now permissive (Phase 1 fix).
 - **Don't paraphrase abstracts.** Don't do it.
+- **Don't append a shortcut/bypass edge on top of a mechanism** (see §0). The most common form is a redundant `Drug —treats→ Disease` edge added *after* a complete chain, e.g.:
+  ```
+  # WRONG — 5-edge mechanism PLUS a redundant clinical-outcome shortcut:
+  Lisinopril --decreases activity of--> ACE --positively regulates--> Angiotensin II
+      --increases activity of--> AT1 receptor --positively regulates--> vasoconstriction
+      --causes--> Hypertension
+  Lisinopril --treats--> Hypertension          # ← delete this; the chain above already connects drug→disease
+  ```
+  Keep only the mechanistic chain. `treats` here is a `clinical_shortcut` HARD error. Equally wrong: bridging a mechanism that stops short of the disease with `treats` instead of the missing mechanistic step.
 
 ---
 
