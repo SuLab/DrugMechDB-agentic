@@ -44,7 +44,7 @@ nodes:
     name: Release of sequestered calcium ion into cytosol
   - id: GO:1902722
     label: BiologicalProcess
-    name: Positive regulation of prolactin secretion
+    name: Positive regulation of prolactin secretion
   - id: MESH:D006966
     label: Disease
     name: Hyperprolactinemia

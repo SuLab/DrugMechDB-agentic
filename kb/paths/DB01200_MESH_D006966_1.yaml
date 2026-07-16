@@ -41,7 +41,7 @@ nodes:
     name: dopamine
   - id: GO:1902722
     label: BiologicalProcess
-    name: positive regulation of prolactin secretion
+    name: positive regulation of prolactin secretion
   - id: MESH:D006966
     label: Disease
     name: Hyperprolactinemia

@@ -35,7 +35,7 @@ nodes:
     name: aldosterone
   - id: GO:0070294
     label: BiologicalProcess
-    name: renal sodium ion absorption
+    name: renal sodium ion absorption
   - id: GO:0003092
     label: BiologicalProcess
     name: renal water retention

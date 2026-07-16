@@ -55,13 +55,13 @@ nodes:
     name: Methylmalonyl-CoA mutase, mitochondrial
   - id: GO:0046105
     label: BiologicalProcess
-    name: thymidine biosynthetic process
+    name: thymidine biosynthetic process
   - id: CHEBI:16625
     label: ChemicalSubstance
     name: methylmalonyl-CoA
   - id: GO:0090592
     label: BiologicalProcess
-    name: DNA synthesis involved in DNA replication
+    name: DNA synthesis involved in DNA replication
   - id: HP:0002912
     label: PhenotypicFeature
     name: Methylmalonic acidemia

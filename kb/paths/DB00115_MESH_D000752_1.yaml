@@ -31,13 +31,13 @@ nodes:
     name: cyanocobalamin
   - id: UniProt:Q99707
     label: Protein
-    name: methionine synthase 
+    name: methionine synthase
   - id: GO:0046105
     label: BiologicalProcess
-    name: thymidine biosynthetic process
+    name: thymidine biosynthetic process
   - id: GO:0090592
     label: BiologicalProcess
-    name: DNA synthesis involved in DNA replication
+    name: DNA synthesis involved in DNA replication
   - id: GO:0051301
     label: BiologicalProcess
     name: cell division

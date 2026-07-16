@@ -87,6 +87,18 @@ def invisible_chars(value) -> list[str]:
             if unicodedata.category(ch) in ("Cc", "Cf", "Zs", "Zl", "Zp")]
 
 
+# Node names are human-readable and may contain ordinary spaces (U+0020), but never
+# invisible or non-standard-whitespace characters: a U+00A0 non-breaking space or a
+# zero-width char is always a copy-paste artifact that corrupts the label and can
+# defeat canonical-label matching. Ordinary spaces are allowed; everything else in
+# the control / format / space-separator categories is rejected.
+def invisible_name_chars(value) -> list[str]:
+    if not isinstance(value, str):
+        return []
+    return [f"U+{ord(ch):04X}" for ch in value
+            if ch != " " and unicodedata.category(ch) in ("Cc", "Cf", "Zs", "Zl", "Zp")]
+
+
 def iter_files(targets: Iterable[str]) -> list[Path]:
     targets = list(targets)
     if not targets:
@@ -126,6 +138,14 @@ def validate_file(path: Path) -> tuple[list[dict], list[dict]]:
                           "strip them (a zero-width char makes the ID fail to resolve while looking correct)",
             })
             continue
+
+        name_bad = invisible_name_chars(node.get("name"))
+        if name_bad:
+            failures.append({
+                "file": str(path), "node_index": i, "id": nid, "label": label,
+                "reason": f"name contains invisible/non-standard-whitespace character(s) {name_bad} "
+                          "— normalize to ordinary spaces (ordinary spaces are fine)",
+            })
 
         prefix, _ = parse_curie(nid)
 
