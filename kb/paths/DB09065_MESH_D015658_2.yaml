@@ -13,9 +13,9 @@ graph:
 links:
   - key: negatively regulates
     source: MESH:D000069547
-    target: "InterPro:IPR001128\uFEFF"
+    target: "InterPro:IPR001128"
   - key: positively regulates
-    source: "InterPro:IPR001128\uFEFF"
+    source: "InterPro:IPR001128"
     target: GO:0042178
   - key: decreases abundance of
     source: GO:0042178
@@ -28,7 +28,7 @@ nodes:
   - id: MESH:D000069547
     label: Drug
     name: cobicistat
-  - id: "InterPro:IPR001128\uFEFF"
+  - id: "InterPro:IPR001128"
     label: GeneFamily
     name: Cytochrome P450
   - id: GO:0042178

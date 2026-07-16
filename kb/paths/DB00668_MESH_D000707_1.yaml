@@ -21,36 +21,36 @@ links:
     target: UniProt:P07550
   - key: participates in
     source: UniProt:P25100
-    target: "reactome:R-HSA-416476\uFEFF"
+    target: "reactome:R-HSA-416476"
   - key: participates in
     source: UniProt:P35348
-    target: "reactome:R-HSA-416476\uFEFF"
+    target: "reactome:R-HSA-416476"
   - key: participates in
     source: UniProt:P35368
-    target: "reactome:R-HSA-416476\uFEFF"
+    target: "reactome:R-HSA-416476"
   - key: participates in
     source: UniProt:P25100
-    target: "reactome:R-HSA-416482\uFEFF"
+    target: "reactome:R-HSA-416482"
   - key: participates in
     source: UniProt:P35348
-    target: "reactome:R-HSA-416482\uFEFF"
+    target: "reactome:R-HSA-416482"
   - key: participates in
     source: UniProt:P35368
-    target: "reactome:R-HSA-416482\uFEFF"
+    target: "reactome:R-HSA-416482"
   - key: participates in
     source: UniProt:P07550
-    target: "reactome:R-HSA-418555\uFEFF"
+    target: "reactome:R-HSA-418555"
   - key: negatively correlated with
-    source: "reactome:R-HSA-418555\uFEFF"
+    source: "reactome:R-HSA-418555"
     target: GO:0006939
   - key: negatively correlated with
-    source: "reactome:R-HSA-418555\uFEFF"
+    source: "reactome:R-HSA-418555"
     target: GO:0002553
   - key: positively regulates
-    source: "reactome:R-HSA-416476\uFEFF"
+    source: "reactome:R-HSA-416476"
     target: GO:0042310
   - key: positively regulates
-    source: "reactome:R-HSA-416482\uFEFF"
+    source: "reactome:R-HSA-416482"
     target: GO:0042310
   - key: negatively correlated with
     source: GO:0042310
@@ -81,13 +81,13 @@ nodes:
   - id: UniProt:P07550
     label: Protein
     name: Beta-2 adrenergic receptor
-  - id: "reactome:R-HSA-416476\uFEFF"
+  - id: "reactome:R-HSA-416476"
     label: Pathway
     name: G alpha (q) signalling events
-  - id: "reactome:R-HSA-416482\uFEFF"
+  - id: "reactome:R-HSA-416482"
     label: Pathway
     name: G alpha (12/13) signalling events
-  - id: "reactome:R-HSA-418555\uFEFF"
+  - id: "reactome:R-HSA-418555"
     label: Pathway
     name: G alpha (s) signalling events
   - id: GO:0042310

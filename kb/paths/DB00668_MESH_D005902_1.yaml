@@ -21,27 +21,27 @@ links:
     target: UniProt:P25100
   - key: participates in
     source: UniProt:P25100
-    target: "reactome:R-HSA-416476\uFEFF"
+    target: "reactome:R-HSA-416476"
   - key: participates in
     source: UniProt:P35348
-    target: "reactome:R-HSA-416476\uFEFF"
+    target: "reactome:R-HSA-416476"
   - key: participates in
     source: UniProt:P35368
-    target: "reactome:R-HSA-416476\uFEFF"
+    target: "reactome:R-HSA-416476"
   - key: participates in
     source: UniProt:P25100
-    target: "reactome:R-HSA-416482\uFEFF"
+    target: "reactome:R-HSA-416482"
   - key: participates in
     source: UniProt:P35348
-    target: "reactome:R-HSA-416482\uFEFF"
+    target: "reactome:R-HSA-416482"
   - key: participates in
     source: UniProt:P35368
-    target: "reactome:R-HSA-416482\uFEFF"
+    target: "reactome:R-HSA-416482"
   - key: positively regulates
-    source: "reactome:R-HSA-416476\uFEFF"
+    source: "reactome:R-HSA-416476"
     target: GO:0042310
   - key: positively regulates
-    source: "reactome:R-HSA-416482\uFEFF"
+    source: "reactome:R-HSA-416482"
     target: GO:0042310
   - key: negatively correlated with
     source: GO:0042310
@@ -66,10 +66,10 @@ nodes:
   - id: UniProt:P25100
     label: Protein
     name: Alpha-1D adrenergic receptor
-  - id: "reactome:R-HSA-416476\uFEFF"
+  - id: "reactome:R-HSA-416476"
     label: Pathway
     name: G alpha (q) signalling events
-  - id: "reactome:R-HSA-416482\uFEFF"
+  - id: "reactome:R-HSA-416482"
     label: Pathway
     name: G alpha (12/13) signalling events
   - id: GO:0042310

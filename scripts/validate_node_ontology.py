@@ -28,6 +28,7 @@ import argparse
 import json
 import subprocess
 import sys
+import unicodedata
 from pathlib import Path
 from typing import Iterable
 
@@ -74,6 +75,18 @@ def parse_curie(curie: str) -> tuple[str | None, str | None]:
     return prefix, rest
 
 
+# A CURIE identifier is `prefix:reference` and must contain no whitespace and no
+# invisible characters. Control (Cc), format (Cf — e.g. U+FEFF zero-width no-break
+# space, U+200B zero-width space), and space-separator (Zs/Zl/Zp) characters can hide
+# inside an ID — often as a copy-paste artifact or a YAML `﻿` escape — leaving the
+# ID looking correct while failing to resolve. Reject them so they can't reappear.
+def invisible_chars(value) -> list[str]:
+    if not isinstance(value, str):
+        return []
+    return [f"U+{ord(ch):04X}" for ch in value
+            if unicodedata.category(ch) in ("Cc", "Cf", "Zs", "Zl", "Zp")]
+
+
 def iter_files(targets: Iterable[str]) -> list[Path]:
     targets = list(targets)
     if not targets:
@@ -104,6 +117,16 @@ def validate_file(path: Path) -> tuple[list[dict], list[dict]]:
             continue
         nid = node.get("id")
         label = node.get("label")
+
+        bad = invisible_chars(nid)
+        if bad:
+            failures.append({
+                "file": str(path), "node_index": i, "id": nid, "label": label,
+                "reason": f"identifier contains invisible/whitespace character(s) {bad} — "
+                          "strip them (a zero-width char makes the ID fail to resolve while looking correct)",
+            })
+            continue
+
         prefix, _ = parse_curie(nid)
 
         if label not in CANONICAL_PREFIXES:
@@ -128,6 +151,19 @@ def validate_file(path: Path) -> tuple[list[dict], list[dict]]:
             "file": str(path), "node_index": i, "id": nid, "label": label,
             "reason": f"prefix {prefix!r} not canonical for label {label!r} (expected one of {sorted(canonical)})",
         })
+
+    # Link endpoints are identifiers too — guard them so an invisible char can't
+    # reappear on a source/target even if it doesn't match a (clean) node id.
+    for j, edge in enumerate(doc.get("links") or []):
+        if not isinstance(edge, dict):
+            continue
+        for field in ("source", "target"):
+            bad = invisible_chars(edge.get(field))
+            if bad:
+                failures.append({
+                    "file": str(path), "node_index": None, "id": edge.get(field), "label": None,
+                    "reason": f"link[{j}] {field} identifier contains invisible/whitespace character(s) {bad}",
+                })
 
     return failures, warnings
 

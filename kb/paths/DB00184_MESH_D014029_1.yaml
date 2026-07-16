@@ -12,15 +12,15 @@ links:
     target: MESH:D011950
   - key: participates in
     source: MESH:D011950
-    target: "reactome:R-HSA-629587\uFEFF"
+    target: "reactome:R-HSA-629587"
   - key: participates in
     source: MESH:D011950
-    target: "reactome:R-HSA-629594\uFEFF"
+    target: "reactome:R-HSA-629594"
   - key: positively correlated with
-    source: "reactome:R-HSA-629587\uFEFF"
+    source: "reactome:R-HSA-629587"
     target: GO:0051899
   - key: positively correlated with
-    source: "reactome:R-HSA-629594\uFEFF"
+    source: "reactome:R-HSA-629594"
     target: GO:0051899
   - key: positively correlated with
     source: GO:0051899
@@ -41,10 +41,10 @@ nodes:
   - id: MESH:D011950
     label: GeneFamily
     name: Receptors, Cholinergic
-  - id: "reactome:R-HSA-629587\uFEFF"
+  - id: "reactome:R-HSA-629587"
     label: Pathway
     name: Highly sodium permeable postsynaptic acetylcholine nicotinic receptors
-  - id: "reactome:R-HSA-629594\uFEFF"
+  - id: "reactome:R-HSA-629594"
     label: Pathway
     name: Highly calcium permeable postsynaptic nicotinic acetylcholine receptors
   - id: GO:0051899
