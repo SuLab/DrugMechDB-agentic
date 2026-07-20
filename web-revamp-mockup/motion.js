@@ -2,8 +2,8 @@
    Zero-dependency, progressive-enhancement, reduced-motion aware. Uses only
    native browser APIs (IntersectionObserver + requestAnimationFrame + CSS
    transitions) — not a bundled animation library — consistent with this
-   codebase's zero-dependency convention (pathograph.js / reveal.js) and with
-   Su's razor. Every final value already lives in the HTML, so with JS off or
+   codebase's zero-dependency convention (pathograph.js / reveal.js) and its
+   minimal-dependency principle. Every final value already lives in the HTML, so with JS off or
    reduced-motion on, everything shows at its final state; this only ADDS the
    count-up / bar-fill motion when motion is allowed.
 
