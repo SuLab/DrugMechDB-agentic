@@ -354,7 +354,7 @@ The following are intentionally not pursued in this version and will be reconsid
 - **Off-label indication inference.** Off-label uses may be curated when explicitly requested, but the platform does not enumerate them automatically.
 - **Disease-subtype or patient-subgroup modeling.** Paths are at the disease level; subgroup-specific mechanisms are out of scope.
 - **Non-English literature.** PubMed English-language abstracts only.
-- **Sources beyond PubMed.** Preprints (bioRxiv), textbooks, and curated databases (e.g., DrugBank prose) are not sanctioned evidence sources in v3.
+- **Sources beyond PubMed — SUPERSEDED (2026-07).** Sourcing is now **source-agnostic**: any connected source that asserts the mechanism is acceptable, with a verbatim snippet and full-text bodies deleted after QC (anti-infringement). See `AGENTS.md` §4. The original v3 PubMed-only stance no longer applies.
 - **Disease ontology re-mapping (MESH→MONDO).** Discussed but deferred; current MESH-based identifiers remain canonical.
 - **Real-time interactive curation UI.** The interface is the Claude Code slash command and the resulting PR; no separate web UI in v3.
 

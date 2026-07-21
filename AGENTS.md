@@ -10,7 +10,7 @@ This file is the single source of truth for what an AI agent must do when curati
 
 ## 0. The one rule that overrides every other rule
 
-**Every edge in an AI-curated path must carry at least one `EvidenceItem` whose `snippet` is a verbatim substring of the cited source's cached text** — its PubMed **abstract** by default, or its **open-access full text** when you escalate (see §4.4). No paraphrasing. No fabrication.
+**Every edge in an AI-curated path must carry at least one `EvidenceItem` whose `snippet` is a verbatim substring of the cited source's cached text** — an **abstract** by default, or **full text** when you escalate (see §4.4), from any connected source (§4.1). No paraphrasing. No fabrication.
 
 The matcher (`linkml-reference-validator`) normalizes whitespace, case, and punctuation before comparing and supports a `...` multi-part operator — treat that as a safety net for messy full-text prose, **not** a license to paraphrase (see §4.5).
 
@@ -34,7 +34,7 @@ Never ship a disconnected path.
 
 These shortcut/bypass edges are hard errors in the deterministic structural checks (`clinical_shortcut`, `short_circuit`, `direct_drug_disease`) and are flagged by the semantic critic. The facts on such an edge are often true — that is not the point; the edge is structurally redundant, so it must not be emitted.
 
-**Source-finding is the curation agent's own job, but it cites only what it fetches.** Form PubMed search queries from your own mechanistic knowledge — but never cite a PMID or a snippet from memory. The only acceptable source for an `EvidenceItem.snippet` is the PubMed-cached text written by `scripts/pubmed_fetch.py`: fetch the paper, read it, copy the verbatim sentence. If the cached abstract / full text does not contain a verbatim supporting sentence, that PMID does not enter the path. (DrugMechDB runs a single Anthropic curation agent with no live web access; this PubMed-only evidence channel is what keeps it faithful to source text.)
+**Source-finding is the curation agent's own job, but it cites only what it fetches.** Form search queries from your own mechanistic knowledge — but never cite a reference or a snippet from memory. **Sourcing is source-agnostic (decided 2026-07):** evidence may come from any connected source/API (PubMed, preprint servers, ChEMBL, clinical trials, DrugBank Mechanism-of-Action, reviews, well-sourced references), as long as the source *asserts* the established mechanism. The only acceptable source for an `EvidenceItem.snippet` is text the agent actually fetched and cached (never memory): fetch, read, copy the verbatim sentence; if the cached source has no verbatim supporting sentence, that reference does not enter the path. **Anything beyond an abstract — a full-text body from any source — is fetched only to extract and verify the snippet + its citation metadata, then deleted once the record passes QC**, so the committed repo keeps the snippet and citation but never the copyrighted body.
 
 ---
 
@@ -140,9 +140,10 @@ Read the file; the descriptions distinguish near-synonyms (e.g. `regulates` vs `
 
 ### 4.2 What does NOT count
 
-- Preprints (bioRxiv, medRxiv) — out of scope in v3 (PRD §10).
-- Textbooks, DrugBank prose, Wikipedia. Use `references:` for these as secondary context; don't promote them to `EvidenceItem.reference`.
-- Paywalled papers whose abstract isn't published. Record `evidence_source: OTHER` with an `explanation` noting the access constraint and hold the edge back (don't include in the path); flag for curator.
+Sourcing is **source-agnostic**: preprints, DrugBank Mechanism-of-Action prose, reviews, and well-sourced references **are** acceptable evidence — provided the `snippet` is a verbatim substring of the fetched source and the source asserts the mechanism (full-text bodies are deleted after QC, §4.4). What still does **not** count:
+
+- **Memory, fabrication, or paraphrase** — a snippet typed from memory, reworded, summarized, or translated.
+- **Anything you could not fetch and cache.** If verifiable text can't be retrieved (e.g. a paywalled paper with no published abstract), record `evidence_source: OTHER` with an `explanation` noting the access constraint and hold the edge back (`supports: NO_EVIDENCE`); flag for curator — never cite it as SUPPORT.
 
 ### 4.3 Picking the right `supports` and `evidence_source`
 
@@ -179,7 +180,7 @@ Reading full text costs tokens and time, so **default to the abstract** and esca
 
 **Read the context before accepting a full-text match.** A substring hit can land in a *negated/refuted* sentence (use `REFUTE`/`WRONG_STATEMENT`/`NO_EVIDENCE`, not `SUPPORT`) or in a sentence about a *different drug* in a multi-drug paper (confirm the subject is your entity). Bibliographies and raw table cells are excluded from the cached body, so a match won't come from a reference list.
 
-**Sourcing note.** Escalation currently allows full text of *any* open-access article — broader than the conservative-sourcing rule (which favors secondary sources that *assert* an established mechanism); this policy is under review, so confirm with the maintainers before a large run. See the `dmdb-references` skill.
+**Sourcing note (decided 2026-07): source-agnostic.** Evidence may come from any connected source that *asserts* the established mechanism, provided the snippet is verbatim. Full text — any non-abstract body, from any source — is used only to extract and verify the snippet + citation metadata, then **deleted once the record passes QC**, so the repo never redistributes copyrighted text (see §4.4 and the `dmdb-references` skill). *Tooling:* the fetch wrapper (`scripts/pubmed_fetch.py`) currently covers PubMed; wiring the other sources into one fetch-and-ephemeralize layer is tracked separately.
 
 **Full text is ephemeral.** Full-text bodies exist only during curation — to verify snippets and to ground the semantic critic. They are deleted before the PR (§5 step 9, `pubmed_fetch.py strip-fulltext`), so the committed repo carries only abstracts + metadata. Don't rely on a full-text body still being present after a path is merged.
 

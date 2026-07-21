@@ -75,12 +75,18 @@ Invoke the one matching the task:
 
 ## Sourcing boundary (hard rule)
 
-Curate only **established, already-asserted** mechanisms from **secondary sources that
-assert them** (DrugBank MoA, GO, UniProt, Reactome, reviews). **No primary/experimental-
-literature reconstruction. No predicted/model-generated mechanism is ever a curation
-input.** The evidence machinery is source-agnostic; the *which-sources* policy is still
-being settled (PubMed-only vs. secondary-assertion) — see the sourcing policy in
-`AGENTS.md` and confirm before a large run.
+Curate only **established, already-asserted** mechanisms. **Sourcing is source-agnostic
+(decided 2026-07):** evidence may come from any connected source/API (PubMed, preprint
+servers, ChEMBL, clinical trials, DrugBank Mechanism-of-Action, reviews, well-sourced
+references) — what matters is that the source *asserts* the established mechanism and the
+`EvidenceItem.snippet` is a **verbatim** substring of the fetched source. **No
+predicted/model-generated mechanism is ever a curation input.**
+
+**Ephemeral full text (anti-infringement):** anything beyond an abstract — a full-text
+body from any source — is fetched only to extract and verify the verbatim snippet and its
+citation metadata; once the record passes QC that body is **deleted**, so the committed
+repo keeps the snippet + citation but never the copyrighted text. Sourcing detail lives in
+`AGENTS.md` §4.
 
 ## Git / PR practice
 
