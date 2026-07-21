@@ -69,6 +69,7 @@
 </div></footer>
 
 <script src="data.js"></script>
+<script src="dmdb-data.js"></script>
 <script>
 const TYPE_COLOR = {
   Drug:"#4f46e5", ChemicalSubstance:"#7c3aed", Protein:"#2563eb", GeneFamily:"#0ea5e9",
@@ -76,7 +77,10 @@ const TYPE_COLOR = {
   MolecularActivity:"#4d7c0f", CellularComponent:"#d97706", Cell:"#ea580c",
   GrossAnatomicalStructure:"#a16207", PhenotypicFeature:"#db2777", Disease:"#dc2626", OrganismTaxon:"#6b7280"
 };
-const IDX = window.DMDB_INDEX;
+/* Read through the DMDB data adapter — the single swap-point for real data.
+   Wrapped in an async IIFE so live mode (fetch) works with no page changes. */
+(async () => {
+const IDX = await window.DMDB.getIndex();
 const sel = { area:new Set(), type:new Set(), len:new Set() };
 
 function counts(key, val){ return IDX.filter(r => key==="type" ? r.types.includes(val) : key==="len" ? lenBucket(r.steps)===val : r[key]===val).length; }
@@ -181,6 +185,7 @@ function render(){
   }).join("") || `<div class="card" style="padding:40px;text-align:center;color:var(--muted)">No paths match these filters.</div>`;
 }
 render();
+})();
 </script>
 <script src="reveal.js"></script>
 </body>

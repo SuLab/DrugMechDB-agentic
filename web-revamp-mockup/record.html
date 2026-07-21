@@ -103,11 +103,16 @@
 </div></footer>
 
 <script src="data.js"></script>
+<script src="dmdb-data.js"></script>
 <script src="pathograph.js"></script>
 <script>
 /* TYPE_COLOR is already defined globally by pathograph.js — reuse it. */
 const $ = id => document.getElementById(id);
-const R = window.DMDB_RECORD, byId = {};
+/* Read through the DMDB data adapter — the single swap-point for real data.
+   Wrapped in an async IIFE so live mode (fetch) works with no page changes. */
+(async () => {
+const R = await window.DMDB.getRecord();
+const byId = {};
 R.nodes.forEach(n => byId[n.id] = n);
 
 function dir(key){const k=key.toLowerCase();
@@ -330,6 +335,7 @@ $("btn-cite").onclick = () => {
   const b = $("btn-cite"), t = b.textContent; b.textContent = "✓ Citation copied";
   setTimeout(()=>{ b.textContent = t; }, 1600);
 };
+})();
 </script>
 <script src="motion.js"></script>
 <script src="reveal.js"></script>
