@@ -115,6 +115,9 @@ _site
 .claude/settings.local.json
 .claude/cache/
 
+# generated, resumable campaign state (scripts/campaign_runner.py)
+_recuration_status.yaml
+
 # Quality judge local artifacts (grounding + verdict caches) — reproducible, not source
 quality_cache/
 .env
