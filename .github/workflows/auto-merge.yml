@@ -1,0 +1,249 @@
+name: Auto-merge on compliance
+
+# Auto-merge a path PR once it passes ALL gates cleanly, with a maintainer override.
+#
+# WHY: curation/backfill PRs that pass every deterministic gate need no human
+# gatekeeping — merging them by hand is pure toil. This workflow re-runs the gates
+# on the PR and, only if every one passes AND no hold label is set, merges the PR.
+#
+# THE GATES (a PR must pass all of them to be auto-merged):
+#   1. QC gate            — scripts/qc.py Layers 1-3 on the changed records
+#                           (--no-verbatim --offline; identical to qc.yaml, so a PR
+#                           that is green there is green here). ALWAYS AVAILABLE.
+#   2. Structural gate    — scripts/quality/gate.py (deterministic, --no-critic):
+#                           topology / polarity / shortcut checks. Built in parallel;
+#                           this workflow DEGRADES GRACEFULLY if the script is absent
+#                           (it is skipped with a note rather than blocking).
+#   3. Compliance score   — scripts/compliance_score.py if present, else
+#                           scripts/quality/quality_profile.py --no-llm (the "how good
+#                           is this path" profiler). Also degrades gracefully.
+#   Any gate that is present must exit 0. A gate that cannot run (exit != 0) HOLDS the
+#   PR (conservative: never auto-merge something we could not fully verify). Only a
+#   truly ABSENT optional script is skipped.
+#
+# MAINTAINER OVERRIDE (blocks auto-merge — the bot never merges these; a human does):
+#   * validation-override  — a maintainer is hand-handling a PR whose gate was forced
+#                            red-then-allowed; the bot must not auto-merge it (labels.yml:
+#                            "merge despite a red QC gate").
+#   * needs-human-review   — labels.yml marks this "Not auto-mergeable".
+#   Presence of EITHER label => decision = hold, regardless of gate results.
+#
+# DONE-WHEN (future live behavior): a fully-compliant PR (all gates green, no hold
+# label) auto-merges; a non-compliant PR, or one carrying a hold label, does not.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# DORMANT. Two independent safeties keep it from ever auto-merging until enabled:
+#   (a) trigger is workflow_dispatch ONLY (no pull_request / schedule), and
+#   (b) the `merge` job is guarded by `if:` and defaults to a DRY RUN — even a manual
+#       dispatch only reports the decision; it merges solely when a maintainer sets
+#       dry_run=false.
+#
+# INTENDED LIVE TRIGGERS (uncomment to enable; also flip the merge-job guard note):
+# on:
+#   pull_request:
+#     types: [opened, synchronize, reopened, labeled, unlabeled]
+#     branches: [main]
+#     paths:
+#       - 'kb/paths/**'
+#       - 'references_cache/**'
+#   # Re-evaluate after CI status changes so a PR merges as soon as its checks pass:
+#   check_suite:
+#     types: [completed]
+#
+# TO ENABLE (maintainer checklist):
+#   * Uncomment the live triggers above.
+#   * Settings -> Actions -> General -> Workflow permissions -> "Read and write".
+#   * (Optional, recommended) Settings -> General -> "Allow auto-merge", plus a branch
+#     protection rule on main requiring the qc.yaml check. Then the merge step can use
+#     GitHub's native queue (`gh pr merge --auto`) instead of merging directly.
+# ─────────────────────────────────────────────────────────────────────────────
+on:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "PR number to evaluate for auto-merge."
+        required: true
+      dry_run:
+        description: "true = evaluate gates and report only (default, SAFE). false = actually merge if clean."
+        required: false
+        default: "true"
+
+concurrency:
+  group: auto-merge-${{ github.event.inputs.pr_number || github.event.pull_request.number }}
+  cancel-in-progress: false
+
+# Least privilege by default; the merge job widens to what it needs.
+permissions:
+  contents: read
+
+jobs:
+  # ── 1. Evaluate every gate + hold labels; emit a merge/hold decision ───────
+  evaluate:
+    name: Evaluate compliance gates
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      decision: ${{ steps.decide.outputs.decision }}
+      reason: ${{ steps.decide.outputs.reason }}
+      pr: ${{ steps.pr.outputs.number }}
+    steps:
+      - name: Checkout (full history for base..head diff)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve PR number
+        id: pr
+        run: |
+          set -euo pipefail
+          N="${{ github.event.inputs.pr_number || github.event.pull_request.number }}"
+          if [ -z "$N" ]; then
+            echo "::error::No PR number (dispatch without pr_number, and not a pull_request event)."
+            exit 1
+          fi
+          echo "number=$N" >> "$GITHUB_OUTPUT"
+
+      - name: Check out the PR head (need the records at head)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr checkout "${{ steps.pr.outputs.number }}"
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: pip
+
+      - name: Install project + dev tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Decide (run gates + read hold labels)
+        id: decide
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ steps.pr.outputs.number }}
+        run: |
+          set -euo pipefail
+
+          emit() { echo "decision=$1" >> "$GITHUB_OUTPUT"; echo "reason=$2" >> "$GITHUB_OUTPUT";
+                   echo "DECISION: $1 — $2"; }
+
+          # ── Hold labels: a maintainer override that blocks the bot ──────────
+          LABELS=$(gh pr view "$PR" --json labels --jq '.labels[].name' || true)
+          for hold in validation-override needs-human-review; do
+            if echo "$LABELS" | grep -qx "$hold"; then
+              emit hold "hold label present: $hold (maintainer handles this PR manually)"
+              exit 0
+            fi
+          done
+
+          # ── Changed path records (added/modified/renamed; excl. generated index) ─
+          mapfile -t FILES < <(
+            gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" --paginate \
+              --jq '.[] | select(.filename | test("^kb/paths/.*\\.yaml$"))
+                        | select(.filename | endswith("_index.yaml") | not)
+                        | select(.status != "removed")
+                        | .filename'
+          )
+          if [ ${#FILES[@]} -eq 0 ]; then
+            emit hold "no kb/paths record changes to validate (nothing to auto-merge)"
+            exit 0
+          fi
+          echo "Evaluating ${#FILES[@]} changed record(s):"; printf '  %s\n' "${FILES[@]}"; echo
+
+          # ── Gate 1: QC gate (always available) ──────────────────────────────
+          set +e
+          python scripts/qc.py --no-verbatim --offline "${FILES[@]}"
+          qc=$?
+          set -e
+          if [ "$qc" -ne 0 ]; then emit hold "QC gate failed (scripts/qc.py exit $qc)"; exit 0; fi
+          echo "Gate 1 (QC): pass"
+
+          # ── Gate 2: structural gate (degrade gracefully if absent) ──────────
+          # Expected invocation: python scripts/quality/gate.py <file> --no-critic
+          #   exit 0 = PASS · 1 = RE_CURATE/ESCALATE · 2 = could not run.
+          if [ -f scripts/quality/gate.py ]; then
+            for f in "${FILES[@]}"; do
+              set +e
+              python scripts/quality/gate.py "$f" --no-critic
+              g=$?
+              set -e
+              if [ "$g" -ne 0 ]; then emit hold "structural gate failed on $f (scripts/quality/gate.py exit $g)"; exit 0; fi
+            done
+            echo "Gate 2 (structural): pass"
+          else
+            echo "::notice::Gate 2 (structural) skipped — scripts/quality/gate.py not present yet."
+          fi
+
+          # ── Gate 3: compliance score (degrade gracefully if absent) ─────────
+          # Prefer a dedicated scripts/compliance_score.py once it exists; until then
+          # use the profiler (deterministic layers only, no LLM/API key in CI).
+          #   exit 0 = no hard-gate failure · 1 = >=1 hard-gate failure.
+          if [ -f scripts/compliance_score.py ]; then
+            set +e; python scripts/compliance_score.py "${FILES[@]}"; c=$?; set -e
+            if [ "$c" -ne 0 ]; then emit hold "compliance score failed (scripts/compliance_score.py exit $c)"; exit 0; fi
+            echo "Gate 3 (compliance): pass"
+          elif [ -f scripts/quality/quality_profile.py ]; then
+            set +e; python scripts/quality/quality_profile.py --no-llm "${FILES[@]}"; c=$?; set -e
+            if [ "$c" -ne 0 ]; then emit hold "compliance score failed (scripts/quality/quality_profile.py --no-llm exit $c)"; exit 0; fi
+            echo "Gate 3 (compliance): pass"
+          else
+            echo "::notice::Gate 3 (compliance) skipped — no compliance-score script present yet."
+          fi
+
+          emit merge "all present gates passed cleanly and no hold label is set"
+
+  # ── 2. Merge (GUARDED + dry-run by default — never runs unless explicitly asked) ─
+  merge:
+    name: Merge the PR
+    needs: evaluate
+    # GUARD: merge only when the gates said "merge" AND a maintainer explicitly turned
+    # off the dry run on a manual dispatch. When the live pull_request trigger is
+    # enabled, replace the dry_run clause with `github.event_name == 'pull_request'`.
+    if: >-
+      needs.evaluate.outputs.decision == 'merge' &&
+      github.event_name == 'workflow_dispatch' &&
+      github.event.inputs.dry_run == 'false'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # perform the merge
+      pull-requests: write   # merge via the PR API / comment
+    steps:
+      - name: Merge (squash)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ needs.evaluate.outputs.pr }}
+        run: |
+          set -euo pipefail
+          echo "Auto-merging PR #$PR — ${{ needs.evaluate.outputs.reason }}"
+          # Direct squash merge (self-contained). With branch protection + "Allow
+          # auto-merge" enabled, prefer the native queue instead:  gh pr merge "$PR" --auto --squash
+          gh pr merge "$PR" --squash --delete-branch
+
+  # ── 3. Report the decision when NOT merging (dry run / hold) ───────────────
+  report:
+    name: Report decision (no merge)
+    needs: evaluate
+    if: >-
+      needs.evaluate.outputs.decision != 'merge' ||
+      github.event_name != 'workflow_dispatch' ||
+      github.event.inputs.dry_run != 'false'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Summarize
+        run: |
+          {
+            echo "### Auto-merge decision"
+            echo
+            echo "- PR: #${{ needs.evaluate.outputs.pr }}"
+            echo "- Decision: **${{ needs.evaluate.outputs.decision }}**"
+            echo "- Reason: ${{ needs.evaluate.outputs.reason }}"
+            echo
+            echo "_No merge performed (dry run or hold). Set dry_run=false on dispatch to merge a clean PR._"
+          } >> "$GITHUB_STEP_SUMMARY"
