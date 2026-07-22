@@ -1,0 +1,148 @@
+name: Biolink drift monitor
+
+# Detects when the upstream Biolink Model's predicate vocabulary has drifted from
+# the predicate set this project accepts (scripts/check_biolink_drift.py), and
+# prepares the drift for a HUMAN to review.
+#
+# CARDINAL RULES (also enforced in the script):
+#   * The report job is READ-ONLY. It never edits the committed schema or the
+#     polarity lexicon; it only produces a report artifact.
+#   * Any schema change is delivered as a HUMAN-reviewed DRAFT pull request,
+#     NEVER auto-committed and NEVER auto-merged. The draft-PR job is off by
+#     default and only runs when a maintainer explicitly opts in on dispatch.
+#   * Polarity SIGNS are never assigned automatically — drifted predicates are
+#     only listed for a human to decide.
+#
+# DORMANT: manual-dispatch only for now. A monthly schedule is provided but
+# commented out; uncomment it (and confirm the Actions token has the needed
+# scope) to let the monitor run on its own.
+on:
+  workflow_dispatch:
+    inputs:
+      biolink_ref:
+        description: "Biolink model git ref (branch/tag). Default: master (=latest)."
+        required: false
+        default: "master"
+      open_draft_pr:
+        description: "Also open a DRAFT PR with a drift-annotated enum? (draft only, never auto-merged)"
+        required: false
+        default: "false"
+  # schedule:
+  #   - cron: '0 6 1 * *'   # 06:00 UTC on the 1st of each month (future use)
+
+permissions:
+  contents: read
+
+jobs:
+  # ── 1. Drift report (read-only, always) ───────────────────────────────────
+  drift-report:
+    name: Compute + publish drift report
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: pip
+
+      - name: Install project (httpx + pyyaml)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Run the drift monitor
+        run: |
+          set -euo pipefail
+          mkdir -p drift-report   # tee opens console.txt before the script creates the dir
+          python scripts/check_biolink_drift.py \
+            --biolink-ref "${{ github.event.inputs.biolink_ref || 'master' }}" \
+            --show-added \
+            --report-dir drift-report \
+            | tee drift-report/console.txt
+          # Surface the report in the run summary for a quick glance.
+          {
+            echo '### Biolink predicate drift report'
+            echo
+            echo '```'
+            cat drift-report/biolink_drift_report.md
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload drift report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: biolink-drift-report
+          path: drift-report/
+          if-no-files-found: error
+
+  # ── 2. Draft-PR proposal (GUARDED — opt-in only, never auto-applied) ───────
+  propose-draft-pr:
+    name: Open DRAFT PR with drift-annotated enum
+    needs: drift-report
+    # GUARD: only runs when a maintainer explicitly sets open_draft_pr=true on a
+    # manual dispatch. It never runs on a schedule or by default, so nothing is
+    # ever auto-applied. The PR it opens is a DRAFT and is never auto-merged.
+    if: ${{ github.event.inputs.open_draft_pr == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # push the proposal branch
+      pull-requests: write   # open the draft PR
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: pip
+
+      - name: Install project (httpx + pyyaml)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Generate the drift-annotated enum (to a scratch path)
+        run: |
+          set -euo pipefail
+          mkdir -p .drift-proposal
+          # Emits an ANNOTATED copy of the enum: every value preserved, drift flagged
+          # inline with `# !! BIOLINK-DRIFT` markers, no predicate deleted, no polarity
+          # sign assigned. A human resolves each marker.
+          python scripts/check_biolink_drift.py \
+            --biolink-ref "${{ github.event.inputs.biolink_ref || 'master' }}" \
+            --emit-enum .drift-proposal/biolink_predicates.yaml
+
+      - name: Open a DRAFT pull request (human review required)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          BRANCH="biolink-drift/proposed-$(date +%Y%m%d%H%M%S)"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          # Stage ONLY the annotated enum proposal — never the polarity lexicon.
+          cp .drift-proposal/biolink_predicates.yaml src/drugmechdb/schema/biolink_predicates.yaml
+          git add src/drugmechdb/schema/biolink_predicates.yaml
+          git commit -m "DRAFT: Biolink predicate drift annotations (do not merge as-is)"
+          git push -u origin "$BRANCH"
+          cat > .drift-proposal/pr_body.md <<'BODY'
+          Automated **DRAFT** proposal from the Biolink drift monitor.
+
+          **Do not merge as-is.** This PR only *annotates* the predicate enum with
+          `# !! BIOLINK-DRIFT` markers where the upstream Biolink model changed. It:
+
+          - does **not** delete any predicate (that would break existing records),
+          - does **not** assign any polarity sign,
+          - is intended as a review aid for a human to work through each marker.
+
+          The locked policy is to translate legacy predicates at the publish/export
+          layer rather than migrate stored records, so most "removed" predicates should
+          stay in storage. See the drift report artifact on the triggering run and
+          docs/biolink_drift_monitor.md for how to review this.
+          BODY
+          gh pr create --draft \
+            --title "DRAFT: Biolink predicate drift — human review required" \
+            --body-file .drift-proposal/pr_body.md
