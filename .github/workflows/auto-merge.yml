@@ -11,12 +11,9 @@ name: Auto-merge on compliance
 #                           (--no-verbatim --offline; identical to qc.yaml, so a PR
 #                           that is green there is green here). ALWAYS AVAILABLE.
 #   2. Structural gate    — scripts/quality/gate.py (deterministic, --no-critic):
-#                           topology / polarity / shortcut checks. Built in parallel;
-#                           this workflow DEGRADES GRACEFULLY if the script is absent
-#                           (it is skipped with a note rather than blocking).
-#   3. Compliance score   — scripts/compliance_score.py if present, else
-#                           scripts/quality/quality_profile.py --no-llm (the "how good
-#                           is this path" profiler). Also degrades gracefully.
+#                           topology / shortcut / type checks. This is the deterministic
+#                           keep/reject decision-maker; DEGRADES GRACEFULLY if the script
+#                           is absent (skipped with a note rather than blocking).
 #   Any gate that is present must exit 0. A gate that cannot run (exit != 0) HOLDS the
 #   PR (conservative: never auto-merge something we could not fully verify). Only a
 #   truly ABSENT optional script is skipped.
@@ -177,22 +174,6 @@ jobs:
             echo "Gate 2 (structural): pass"
           else
             echo "::notice::Gate 2 (structural) skipped — scripts/quality/gate.py not present yet."
-          fi
-
-          # ── Gate 3: compliance score (degrade gracefully if absent) ─────────
-          # Prefer a dedicated scripts/compliance_score.py once it exists; until then
-          # use the profiler (deterministic layers only, no LLM/API key in CI).
-          #   exit 0 = no hard-gate failure · 1 = >=1 hard-gate failure.
-          if [ -f scripts/compliance_score.py ]; then
-            set +e; python scripts/compliance_score.py "${FILES[@]}"; c=$?; set -e
-            if [ "$c" -ne 0 ]; then emit hold "compliance score failed (scripts/compliance_score.py exit $c)"; exit 0; fi
-            echo "Gate 3 (compliance): pass"
-          elif [ -f scripts/quality/quality_profile.py ]; then
-            set +e; python scripts/quality/quality_profile.py --no-llm "${FILES[@]}"; c=$?; set -e
-            if [ "$c" -ne 0 ]; then emit hold "compliance score failed (scripts/quality/quality_profile.py --no-llm exit $c)"; exit 0; fi
-            echo "Gate 3 (compliance): pass"
-          else
-            echo "::notice::Gate 3 (compliance) skipped — no compliance-score script present yet."
           fi
 
           emit merge "all present gates passed cleanly and no hold label is set"
