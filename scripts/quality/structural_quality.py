@@ -5,21 +5,22 @@ Reads a DrugMechDB path that already passed the Layer 1-4 QC gate and computes t
 structural quality signals from docs/path_quality_framework.md §4 and the issue
 taxonomy in docs/quality_system_design.md. It is a SCORER/REPORTER, not a gate.
 
-Severity tiers:
-  HARD  a logical error a correct mechanism cannot have (high precision, act on these)
-  SOFT  a convention/prioritization signal (review, not necessarily wrong)
+Severity tiers (this module SCORES; the ENFORCED gate — scripts/quality/gate.py,
+issue #7 — decides which flags bounce a curation, driven by HARD_BLOCKING_CHECKS below):
+  HARD  a logical error a correct mechanism cannot have (high precision; hard-bounced by the gate)
+  SOFT  a convention / polarity / type signal (handed to the semantic critic or reviewed, not bounced)
   INFO  a note (e.g. relied on a review-confidence predicate sign)
 
 Checks:
   connectivity         HARD  no drug->disease path (disconnected / id mismatch)
   cycle                HARD  directed cycle (paths must be acyclic)
   duplicate_edge       HARD  identical (source,target,key) repeated
-  type_violation       HARD  predicate domain/range violated (e.g. 'decreases activity of' a Disease)
-  net_polarity         HARD  incoherent (all branches net +) or inconsistent (branches disagree)
-                       SOFT  indeterminate (reverse/opaque predicate; cannot compose safely)
   short_circuit        HARD  a <=2-edge path bypasses the >=3-edge mechanism
   clinical_shortcut    HARD  clinical-outcome edge (treats/...) used as a bypass
   direct_drug_disease  HARD  drug's only target is the disease itself
+  type_violation       SOFT  predicate domain/range violated (e.g. 'decreases activity of' a Disease)
+  net_polarity         SOFT  incoherent (all branches net +), inconsistent (branches disagree),
+                             or indeterminate (reverse/opaque predicate; cannot compose safely)
   noncanonical_start   INFO  first target is not a Protein (allowed but non-canonical)
   length_out_of_range  SOFT  outside 3-7 links
   dangling_node        SOFT  node not on any drug->disease path
@@ -52,6 +53,25 @@ LEXICON_FILE = HERE / "predicate_polarity.yaml"
 LENGTH_MIN, LENGTH_MAX = 3, 7
 CANONICAL_FIRST_TARGET = {"Protein", "GeneFamily", "MacromolecularComplex"}
 MAX_SIMPLE_PATHS = 512  # safety cap; DMDB paths are tiny so this is never approached
+
+# ── severity classification for the ENFORCED gate (issue #7) ──────────────────
+# The SINGLE point that decides which structural checks HARD-BOUNCE a curation
+# (deterministic reject, returned to the curator) versus which are SOFT (handed to
+# the semantic critic, which decides whether the flag is a real problem). The gate
+# (scripts/quality/gate.py) classifies flags by CODE membership here, so this stays
+# the one place to adjust.
+#
+# Precision of `short_circuit` and `direct_drug_disease` is under review (issue #28
+# suggests possible over-firing); this set is the single point to adjust after that
+# review.
+HARD_BLOCKING_CHECKS = frozenset({
+    "clinical_shortcut", "short_circuit", "direct_drug_disease",
+    "connectivity", "cycle", "duplicate_edge",
+})
+# SOFT structural checks routed to the semantic critic rather than hard-bounced:
+# net polarity can be indeterminate (lexicon gaps), and a predicate type violation is
+# better returned with the critic's semantic context than bounced on sight.
+SOFT_CRITIC_CHECKS = frozenset({"net_polarity", "type_violation"})
 
 
 # ── lexicon ─────────────────────────────────────────────────────────────────
@@ -195,9 +215,9 @@ def analyze(path: Path, lex: dict) -> dict:
             continue
         ls, lo = label.get(e.get("source")), label.get(e.get("target"))
         if c["subj_in"] and ls and ls not in c["subj_in"]:
-            flag("HARD", "type_violation", f"'{k}' subject is {ls} (expected {sorted(c['subj_in'])})")
+            flag("SOFT", "type_violation", f"'{k}' subject is {ls} (expected {sorted(c['subj_in'])})")
         if c["obj_in"] and lo and lo not in c["obj_in"]:
-            flag("HARD", "type_violation", f"'{k}' object is {lo} (expected {sorted(c['obj_in'])})")
+            flag("SOFT", "type_violation", f"'{k}' object is {lo} (expected {sorted(c['obj_in'])})")
 
     # net polarity over ALL paths
     pol_summary = None
@@ -217,10 +237,10 @@ def analyze(path: Path, lex: dict) -> dict:
                 pol_summary = "coherent"
             elif all(x > 0 for x in products):
                 pol_summary = "incoherent"
-                flag("HARD", "net_polarity", "every determinable branch nets POSITIVE — drug appears to NOT suppress disease")
+                flag("SOFT", "net_polarity", "every determinable branch nets POSITIVE — drug appears to NOT suppress disease")
             else:
                 pol_summary = "inconsistent"
-                flag("HARD", "net_polarity", f"branches disagree in net sign ({sum(x<0 for x in products)} negative / {sum(x>0 for x in products)} positive) — over-modeling or a sign error")
+                flag("SOFT", "net_polarity", f"branches disagree in net sign ({sum(x<0 for x in products)} negative / {sum(x>0 for x in products)} positive) — over-modeling or a sign error")
         else:
             pol_summary = "indeterminate"
             flag("SOFT", "net_polarity", f"polarity indeterminate ({indet} reverse/opaque, {allneutral} all-neutral path(s))")

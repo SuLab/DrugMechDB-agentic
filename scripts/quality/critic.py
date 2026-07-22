@@ -70,6 +70,33 @@ _ESCALATE_SUPPORTS = {"REFUTE", "WRONG_STATEMENT"}
 # Labels that mean "the evidence doesn't establish the edge" — re-source (loop).
 _RECURATE_SUPPORTS = {"PARTIAL", "NO_EVIDENCE"}
 
+# SOFT structural checks (net_polarity, type_violation) are NOT hard-bounced by the
+# deterministic gate (scripts/quality/gate.py); they are HANDED HERE so the critic can
+# decide whether the flag is a real problem and route it back to the curator with
+# semantic context. Sourced from the single classification point in structural_quality.
+_SOFT_STRUCTURAL = structural_quality.SOFT_CRITIC_CHECKS
+
+
+def _soft_structural(struct: dict) -> tuple[list[dict], bool]:
+    """Curator-facing SOFT structural flags + whether any is a DETERMINATE defect.
+
+    A `type_violation` (a predicate used off its Biolink domain/range) and an
+    `incoherent`/`inconsistent` net polarity are determinate defects: the critic must
+    not silently ACCEPT them even when the LLM judge is otherwise satisfied. An
+    `indeterminate` polarity is genuinely ambiguous, so the judge's verdict decides.
+    Messages state the structural symptom only (flags-not-fixes firewall)."""
+    polarity = struct.get("polarity")
+    flags: list[dict] = []
+    defect = False
+    for f in struct.get("flags", []):
+        code = f.get("code")
+        if code not in _SOFT_STRUCTURAL:
+            continue
+        flags.append({"flag": code, "issue": f.get("msg")})
+        if code == "type_violation" or (code == "net_polarity" and polarity in ("incoherent", "inconsistent")):
+            defect = True
+    return flags, defect
+
 
 def _curator_pmids(doc: dict) -> set[str]:
     """Every PMID the curator cited (so we can prove the critic grounded beyond them)."""
@@ -155,6 +182,7 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
                     "qc_layers": qc.get("layers")}
 
     struct = structural_quality.analyze(p, LEX)
+    soft_structural, soft_struct_defect = _soft_structural(struct)
     tools = critic_tools()
     edge_bundles = judge_edges(doc, backend, tools=tools, max_iters=max_iters, use_cache=use_cache)
     path_bundle = judge_path(doc, struct, edge_bundles, backend, tools=tools,
@@ -175,7 +203,7 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
 
     if escalate_now:
         verdict = "ESCALATE"
-    elif edge_problem or path_problem:
+    elif edge_problem or path_problem or soft_struct_defect:
         verdict = "RE_CURATE" if round_no < max_rounds else "ESCALATE"
     elif path_overall == "abstain" or all_abstain:
         verdict = "ABSTAIN"
@@ -189,6 +217,9 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
         summary_bits.append(path_summary)
     if escalate_now:
         summary_bits.append("An edge's evidence contradicts the claim (curator territory).")
+    if soft_structural:
+        summary_bits.append("SOFT structural flag(s) handed to the critic: "
+                            + ", ".join(sf["flag"] for sf in soft_structural) + ".")
     summary = " ".join(summary_bits) or "No semantic problems found."
 
     # ── write the committed provenance sidecar (full audit, no paper bodies) ──
@@ -201,6 +232,7 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
         "rounds": round_no,
         "overall_verdict": verdict,
         "overall_summary": summary,
+        "soft_structural_flags": soft_structural,
         "consulted_independent_sources": consulted,
         "edge_reviews": edge_reviews,
     }
@@ -214,6 +246,7 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
         "round": round_no,
         "max_rounds": max_rounds,
         "flags": flags,                        # agent-facing: WHAT, never the fix/source
+        "structural_flags": soft_structural,   # SOFT structural flags the critic considered
         "path_issue": path_issue if (path_problem and verdict != "ACCEPT") else None,
         "n_independent_sources": len(consulted),
         "sidecar": str(sidecar_path.relative_to(REPO)),
@@ -248,6 +281,10 @@ def _print_report(res: dict) -> None:
         for f in res["flags"]:
             print(f"  ⚑ {f['edge']}")
             print(f"      issue: {f['issue']}")
+    if res.get("structural_flags"):
+        print("\nSOFT structural flags (deterministic; the critic weighed these):")
+        for f in res["structural_flags"]:
+            print(f"  ⚑ [{f['flag']}] {f['issue']}")
     if res.get("path_issue"):
         print(f"\nPath-level issue: {res['path_issue']}")
     nxt = _NEXT_STEP.get(v, "")
