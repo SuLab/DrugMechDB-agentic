@@ -1,0 +1,99 @@
+name: Deploy site
+
+# Publish the revamped static site in web-revamp-mockup/ to GitHub Pages.
+#
+# WHY THIS APPROACH: the legacy DrugMechDB site was a heavyweight Jekyll build
+# (~30 min local build, pushed to a gh-pages-html branch) — the exact bloat the
+# revamp removes. web-revamp-mockup/ is a zero-dependency, client-rendered static
+# site (plain HTML/CSS/JS), so there is NO build step: we just publish the directory
+# via the modern GitHub Pages Actions flow (upload-pages-artifact + deploy-pages),
+# the same Pages-via-Actions model comparable documentation sites use. Serving the
+# Pages artifact does not run Jekyll, so files are published as-authored (no .nojekyll
+# needed).
+#
+# DONE-WHEN (future live behavior): a merge to main that touches web-revamp-mockup/**
+# rebuilds and redeploys the site automatically.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# DORMANT. Two independent safeties keep it from ever deploying until enabled:
+#   (a) trigger is workflow_dispatch ONLY (no push), and
+#   (b) the `deploy` job is guarded by `if:` and defaults OFF — a manual dispatch only
+#       builds+uploads the artifact (a safe dry run); it publishes solely when a
+#       maintainer sets deploy=true.
+#
+# INTENDED LIVE TRIGGER (uncomment to enable — publish on merge to main):
+# on:
+#   push:
+#     branches: [main]
+#     paths:
+#       - 'web-revamp-mockup/**'
+#   workflow_dispatch:
+#
+# TO ENABLE (maintainer checklist — one-time GitHub Pages setup):
+#   * Settings -> Pages -> Build and deployment -> Source = "GitHub Actions".
+#   * Uncomment the live `push` trigger above.
+#   * Change the deploy-job guard below to `if: github.event_name == 'push' ||
+#     (github.event_name == 'workflow_dispatch' && github.event.inputs.deploy == 'true')`.
+#   * (Optional) custom domain: add web-revamp-mockup/CNAME and set it under Settings
+#     -> Pages. The site otherwise serves at https://<org>.github.io/<repo>/.
+# ─────────────────────────────────────────────────────────────────────────────
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: "true = actually publish to GitHub Pages. false (default) = build + upload artifact only (dry run)."
+        required: false
+        default: "false"
+
+# Only one deploy at a time; do not cancel an in-flight publish.
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  # ── 1. Build the Pages artifact from web-revamp-mockup/ (always safe) ──────
+  build:
+    name: Package static site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sanity-check the site directory
+        run: |
+          set -euo pipefail
+          test -f web-revamp-mockup/index.html \
+            || { echo "::error::web-revamp-mockup/index.html not found — nothing to deploy."; exit 1; }
+          echo "Publishing $(find web-revamp-mockup -type f | wc -l) files from web-revamp-mockup/."
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact (web-revamp-mockup/)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web-revamp-mockup
+
+  # ── 2. Deploy to GitHub Pages (GUARDED — off by default) ───────────────────
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    # GUARD: publish only when a maintainer explicitly opts in on a manual dispatch.
+    # When the live `push` trigger is enabled, widen this per the maintainer checklist
+    # above so a merge to main deploys automatically.
+    if: ${{ github.event.inputs.deploy == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write          # publish to GitHub Pages
+      id-token: write       # OIDC token required by deploy-pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy artifact to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
