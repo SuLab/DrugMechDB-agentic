@@ -10,23 +10,28 @@ record gets a fresh AI-curated path). It does three jobs and nothing else:
   3. Dispatch work through a pluggable Backend and stamp provenance on each result.
 
 Backends:
-  - StubBackend  — deterministic, no API calls. Lets the whole framework (enumerate,
-                   resume, status, provenance) be exercised offline — no spend, no real
-                   curation — which is how it is tested.
-  - BatchBackend — Anthropic Message Batches API (50% cheaper, async bulk). Submits one
-                   request per work item, polls until the batch ends, and collects results
-                   keyed by custom_id.
+  - StubBackend    — deterministic, no API calls. Lets the whole framework (enumerate,
+                     resume, status, provenance) be exercised offline — no spend, no real
+                     curation — which is how it is tested.
+  - AgenticBackend — the LIVE multi-turn curation backend: dispatches
+                     scripts/curate_engine.curate_one per WorkItem over a bounded worker
+                     pool, each worker fully isolated (its own DMDB_CACHE_DIR + output
+                     path). This is what actually runs the /curate loop at corpus scale.
+  - BatchBackend   — Anthropic Message Batches API (50% cheaper, async bulk). Submits one
+                     request per work item, polls until the batch ends, and collects results
+                     keyed by custom_id.
 
 **The agentic-loop caveat (why batch is not the whole story).** `/curate` is a MULTI-TURN
-loop (search PubMed -> fetch -> draft -> QC -> iterate). The Batches API runs each request
-as a SINGLE model turn, so a batch request cannot itself execute the tool loop. The
-BatchBackend is therefore for the *batchable* single-turn step; the full interactive loop
-runs through a different backend. `build_request` / `parse_result` are injected so the unit
+loop (search -> fetch -> draft -> gate -> iterate). The Batches API runs each request as a
+SINGLE model turn, so a batch request cannot itself execute the tool loop. The full
+interactive loop runs through AgenticBackend; the BatchBackend is retained for a future
+*batchable* single-turn sub-step. `build_request` / `parse_result` are injected so the unit
 of batchable work is defined by the caller, not hard-coded here.
 
-**Safety:** this module never submits a real batch on import or by default. The CLI defaults
-to a dry-run plan; `--stub` exercises the framework offline. Submitting a real batch is an
-explicit, deliberate call (`CampaignRunner.run(BatchBackend(...))`), never the default.
+**Safety:** this module never curates or submits a real batch on import or by default. The
+CLI defaults to a dry-run plan; `--stub` exercises the framework offline. A real run is an
+explicit, deliberate call — `CampaignRunner.run(AgenticBackend(...))` (live curation) or
+`CampaignRunner.run(BatchBackend(...))` (batch) — never the default.
 """
 
 from __future__ import annotations
@@ -209,6 +214,87 @@ class BatchBackend:
         for r in self.client.messages.batches.results(batch.id):   # any order — key by custom_id
             out[r.custom_id] = parse_result(r.custom_id, r)
         return out, batch.id  # type: ignore[return-value]
+
+
+class AgenticBackend:
+    """LIVE multi-turn curation via scripts/curate_engine.curate_one, one call per
+    WorkItem, dispatched over a bounded worker pool. This is what makes a whole-corpus
+    re-curation feasible instead of sequential-for-days.
+
+    Isolation (per worker, no shared mutable state):
+      * distinct output path   <out_dir>/paths/<id>.yaml           (never kb/paths —
+        curate_engine asserts this)
+      * distinct cache dir      <out_dir>/cache/<id>/  exported as DMDB_CACHE_DIR to that
+        worker's tool subprocesses, so caches never collide
+      * a fresh message history
+
+    Parallelism is a ThreadPoolExecutor (tool calls are subprocess/IO-bound, so threads
+    give real concurrency); `workers` is bounded with a safe default.
+
+    Clients: pass `client_factory` to give each worker its own client (used by the offline
+    tests to inject a mock per worker); else one real `anthropic.Anthropic()` is built once
+    and shared across workers (thread-safe). Constructing the real client is deferred until
+    the run actually starts — importing this module never touches the SDK.
+
+    NEVER the CLI default. A real run is an explicit CampaignRunner.run(AgenticBackend(...))."""
+    name = "agentic"
+
+    def __init__(self, *, out_dir: str | Path | None = None, model: str = "claude-opus-4-8",
+                 workers: int = 4, client=None, client_factory=None,
+                 max_iters: int = 40, gate_critic: bool = False, offline: bool = False):
+        self.out_dir = Path(out_dir) if out_dir else (REPO / "_recuration_output")
+        self.model = model
+        self.workers = max(1, int(workers))
+        self._client = client
+        self._client_factory = client_factory
+        self.max_iters = max_iters
+        self.gate_critic = gate_critic
+        self.offline = offline
+        self._shared_real = None
+
+    def _client_for(self):
+        if self._client_factory is not None:
+            return self._client_factory()
+        if self._client is not None:
+            return self._client
+        if self._shared_real is None:               # real run: build once, share (thread-safe)
+            import anthropic
+            self._shared_real = anthropic.Anthropic()
+        return self._shared_real
+
+    def run(self, items, build_request=None, parse_result=None) -> dict[str, ItemResult]:
+        # build_request / parse_result are ignored (they are the BatchBackend's batchable-unit
+        # hooks); the agentic loop is defined by curate_engine, not per-request here.
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+
+        sys.path.insert(0, str(Path(__file__).resolve().parent))   # ensure scripts/ importable
+        import curate_engine
+
+        paths_dir = self.out_dir / "paths"
+        cache_root = self.out_dir / "cache"
+        run_id = uuid.uuid4().hex[:12]
+
+        def _one(w: WorkItem) -> ItemResult:
+            out_path = paths_dir / f"{w.id}.yaml"
+            cache_dir = cache_root / w.id
+            try:
+                res = curate_engine.curate_one(
+                    w, model=self.model, cache_dir=cache_dir, out_path=out_path,
+                    client=self._client_for(), max_iters=self.max_iters, run_id=run_id,
+                    offline=self.offline, gate_critic=self.gate_critic)
+                err = res.error or (None if res.ok
+                                    else f"not accepted (gate={res.gate_verdict}, wrote={res.wrote_yaml})")
+                return ItemResult(w.id, ok=res.ok, error=err)
+            except Exception as e:
+                return ItemResult(w.id, ok=False, error=f"{type(e).__name__}: {e}")
+
+        out: dict[str, ItemResult] = {}
+        with ThreadPoolExecutor(max_workers=self.workers) as ex:
+            futs = {ex.submit(_one, w): w for w in items}
+            for fut in as_completed(futs):
+                w = futs[fut]
+                out[w.id] = fut.result()
+        return out
 
 
 # ── runner ──────────────────────────────────────────────────────────────────
