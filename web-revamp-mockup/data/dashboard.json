@@ -1,0 +1,2232 @@
+{
+  "generated_at": "2026-07-22T06:54:33+00:00",
+  "generator": "scripts/compute_dashboard_metrics.py",
+  "corpus": {
+    "n_records": 4846,
+    "paths_dir": "kb/paths"
+  },
+  "totals": {
+    "measured": true,
+    "paths": 4846,
+    "drugs": 1575,
+    "diseases": 744,
+    "avg_path_length": 6.74,
+    "avg_nodes": 6.81,
+    "distinct_drug_names": 1608,
+    "distinct_disease_names": 1022,
+    "note": "drugs/diseases are distinct MeSH identifiers; avg_path_length is mean edges (links) per path."
+  },
+  "qc_compliance_by_layer": {
+    "measured": true,
+    "profile_counts": {
+      "legacy": 4846,
+      "ai_curated": 0
+    },
+    "layers": [
+      {
+        "layer": 1,
+        "name": "schema",
+        "pass": 4846,
+        "fail": 0
+      },
+      {
+        "layer": 2,
+        "name": "node ontology",
+        "pass": 4656,
+        "fail": 190,
+        "note": "1596 record(s) carry legacy-prefix warnings (not failures)."
+      },
+      {
+        "layer": 3,
+        "name": "predicate enum",
+        "pass": 4846,
+        "fail": 0
+      },
+      {
+        "layer": 4,
+        "name": "evidence",
+        "pass": 0,
+        "fail": 0,
+        "note": "ai_curated only; runs on records with per-edge evidence. 0 committed record(s) carry evidence, so Layer 4 is a no-op here."
+      }
+    ]
+  },
+  "provenance": {
+    "measured": true,
+    "by_profile": {
+      "legacy": 4846,
+      "ai_curated": 0
+    },
+    "model_provenance_measured": false,
+    "by_model": [],
+    "by_month": [],
+    "note": "Legacy vs AI-curated split computed from per-edge evidence presence. Per-record model/prompt-version/run-id/date is not captured on records yet, so by_model / by_month cannot be computed."
+  },
+  "indication_coverage": {
+    "measured": false,
+    "covered": null,
+    "total": null,
+    "pct": null,
+    "distinct_indications_in_corpus": 4662,
+    "distinct_drugs": 1575,
+    "distinct_diseases": 744,
+    "note": "Coverage vs an external approved-indication list (e.g. DrugCentral) is not computed: the external denominator is not in-repo. Only the corpus-side counts (distinct indications/drugs/diseases already having a path) are known."
+  },
+  "predicate_distribution": {
+    "measured": true,
+    "total_edges": 32641,
+    "distinct_predicates": 67,
+    "top": [
+      {
+        "predicate": "positively regulates",
+        "count": 6630
+      },
+      {
+        "predicate": "positively correlated with",
+        "count": 5454
+      },
+      {
+        "predicate": "decreases activity of",
+        "count": 4561
+      },
+      {
+        "predicate": "increases activity of",
+        "count": 1974
+      },
+      {
+        "predicate": "negatively regulates",
+        "count": 1913
+      },
+      {
+        "predicate": "causes",
+        "count": 1660
+      },
+      {
+        "predicate": "participates in",
+        "count": 1622
+      },
+      {
+        "predicate": "negatively correlated with",
+        "count": 1178
+      },
+      {
+        "predicate": "increases abundance of",
+        "count": 1028
+      },
+      {
+        "predicate": "occurs in",
+        "count": 892
+      },
+      {
+        "predicate": "manifestation of",
+        "count": 776
+      },
+      {
+        "predicate": "in taxon",
+        "count": 664
+      },
+      {
+        "predicate": "contributes to",
+        "count": 578
+      },
+      {
+        "predicate": "located in",
+        "count": 566
+      },
+      {
+        "predicate": "decreases abundance of",
+        "count": 476
+      },
+      {
+        "predicate": "correlated with",
+        "count": 294
+      },
+      {
+        "predicate": "location of",
+        "count": 280
+      },
+      {
+        "predicate": "has metabolite",
+        "count": 257
+      },
+      {
+        "predicate": "disrupts",
+        "count": 235
+      },
+      {
+        "predicate": "part of",
+        "count": 233
+      },
+      {
+        "predicate": "treats",
+        "count": 167
+      },
+      {
+        "predicate": "produces",
+        "count": 129
+      },
+      {
+        "predicate": "regulates",
+        "count": 117
+      },
+      {
+        "predicate": "molecularly interacts with",
+        "count": 109
+      },
+      {
+        "predicate": "has phenotype",
+        "count": 102
+      },
+      {
+        "predicate": "precedes",
+        "count": 93
+      },
+      {
+        "predicate": "affects risk for",
+        "count": 82
+      },
+      {
+        "predicate": "has output",
+        "count": 72
+      },
+      {
+        "predicate": "subclass of",
+        "count": 58
+      },
+      {
+        "predicate": "caused by",
+        "count": 46
+      },
+      {
+        "predicate": "prevents",
+        "count": 44
+      },
+      {
+        "predicate": "affected by",
+        "count": 44
+      },
+      {
+        "predicate": "disrupted by",
+        "count": 40
+      },
+      {
+        "predicate": "phenotype of",
+        "count": 39
+      },
+      {
+        "predicate": "capable of",
+        "count": 37
+      },
+      {
+        "predicate": "chemically similar to",
+        "count": 29
+      },
+      {
+        "predicate": "has participant",
+        "count": 16
+      },
+      {
+        "predicate": "expressed in",
+        "count": 15
+      },
+      {
+        "predicate": "superclass of",
+        "count": 12
+      },
+      {
+        "predicate": "ameliorates",
+        "count": 12
+      },
+      {
+        "predicate": "actively involved in",
+        "count": 11
+      },
+      {
+        "predicate": "produced by",
+        "count": 11
+      },
+      {
+        "predicate": "derives into",
+        "count": 10
+      },
+      {
+        "predicate": "increases degradation of",
+        "count": 9
+      },
+      {
+        "predicate": "contraindicated for",
+        "count": 8
+      },
+      {
+        "predicate": "has active ingredient",
+        "count": 7
+      },
+      {
+        "predicate": "increases transport of",
+        "count": 7
+      },
+      {
+        "predicate": "in complex with",
+        "count": 6
+      },
+      {
+        "predicate": "directly interacts with",
+        "count": 5
+      },
+      {
+        "predicate": "derives from",
+        "count": 4
+      },
+      {
+        "predicate": "increases stability of",
+        "count": 4
+      },
+      {
+        "predicate": "interacts with",
+        "count": 3
+      },
+      {
+        "predicate": "is metabolite of",
+        "count": 3
+      },
+      {
+        "predicate": "exacerbates",
+        "count": 3
+      },
+      {
+        "predicate": "coexists with",
+        "count": 2
+      },
+      {
+        "predicate": "decreases synthesis of",
+        "count": 2
+      },
+      {
+        "predicate": "enables",
+        "count": 2
+      },
+      {
+        "predicate": "physically interacts with",
+        "count": 1
+      },
+      {
+        "predicate": "decreases uptake of",
+        "count": 1
+      },
+      {
+        "predicate": "expresses",
+        "count": 1
+      },
+      {
+        "predicate": "has part",
+        "count": 1
+      },
+      {
+        "predicate": "decreases expression of",
+        "count": 1
+      },
+      {
+        "predicate": "decreases response to",
+        "count": 1
+      },
+      {
+        "predicate": "predisposes",
+        "count": 1
+      },
+      {
+        "predicate": "similar to",
+        "count": 1
+      },
+      {
+        "predicate": "increases response to",
+        "count": 1
+      },
+      {
+        "predicate": "increases expression of",
+        "count": 1
+      }
+    ]
+  },
+  "path_length_distribution": {
+    "measured": true,
+    "min": 1,
+    "max": 31,
+    "mean": 6.74,
+    "median": 6.0,
+    "bins": [
+      {
+        "length": 1,
+        "count": 82
+      },
+      {
+        "length": 2,
+        "count": 108
+      },
+      {
+        "length": 3,
+        "count": 275
+      },
+      {
+        "length": 4,
+        "count": 894
+      },
+      {
+        "length": 5,
+        "count": 910
+      },
+      {
+        "length": 6,
+        "count": 791
+      },
+      {
+        "length": 7,
+        "count": 393
+      },
+      {
+        "length": 8,
+        "count": 314
+      },
+      {
+        "length": 9,
+        "count": 200
+      },
+      {
+        "length": 10,
+        "count": 121
+      },
+      {
+        "length": 11,
+        "count": 95
+      },
+      {
+        "length": 12,
+        "count": 72
+      },
+      {
+        "length": 13,
+        "count": 321
+      },
+      {
+        "length": 14,
+        "count": 117
+      },
+      {
+        "length": 15,
+        "count": 41
+      },
+      {
+        "length": 16,
+        "count": 45
+      },
+      {
+        "length": 17,
+        "count": 22
+      },
+      {
+        "length": 18,
+        "count": 12
+      },
+      {
+        "length": 19,
+        "count": 7
+      },
+      {
+        "length": 20,
+        "count": 6
+      },
+      {
+        "length": 21,
+        "count": 5
+      },
+      {
+        "length": 22,
+        "count": 5
+      },
+      {
+        "length": 23,
+        "count": 1
+      },
+      {
+        "length": 25,
+        "count": 4
+      },
+      {
+        "length": 26,
+        "count": 2
+      },
+      {
+        "length": 27,
+        "count": 2
+      },
+      {
+        "length": 31,
+        "count": 1
+      }
+    ],
+    "in_range_3_7": {
+      "count": 3263,
+      "pct": 67.3
+    },
+    "note": "length = number of edges (links) per path; convention target is 3-7."
+  },
+  "node_type_coverage": {
+    "measured": true,
+    "types": [
+      {
+        "label": "BiologicalProcess",
+        "node_count": 7995,
+        "record_count": 4314
+      },
+      {
+        "label": "Protein",
+        "node_count": 7082,
+        "record_count": 3391
+      },
+      {
+        "label": "Disease",
+        "node_count": 4966,
+        "record_count": 4824
+      },
+      {
+        "label": "Drug",
+        "node_count": 4924,
+        "record_count": 4839
+      },
+      {
+        "label": "ChemicalSubstance",
+        "node_count": 2253,
+        "record_count": 1842
+      },
+      {
+        "label": "PhenotypicFeature",
+        "node_count": 1505,
+        "record_count": 1235
+      },
+      {
+        "label": "OrganismTaxon",
+        "node_count": 1347,
+        "record_count": 1338
+      },
+      {
+        "label": "GeneFamily",
+        "node_count": 1028,
+        "record_count": 878
+      },
+      {
+        "label": "GrossAnatomicalStructure",
+        "node_count": 518,
+        "record_count": 457
+      },
+      {
+        "label": "MolecularActivity",
+        "node_count": 453,
+        "record_count": 431
+      },
+      {
+        "label": "CellularComponent",
+        "node_count": 444,
+        "record_count": 382
+      },
+      {
+        "label": "Pathway",
+        "node_count": 306,
+        "record_count": 261
+      },
+      {
+        "label": "Cell",
+        "node_count": 184,
+        "record_count": 171
+      },
+      {
+        "label": "MacromolecularComplex",
+        "node_count": 4,
+        "record_count": 4
+      }
+    ]
+  },
+  "structural_quality": {
+    "measured": true,
+    "summary": {
+      "clean": 1824,
+      "clean_pct": 37.6,
+      "hard_clean": 4657,
+      "hard_clean_pct": 96.1,
+      "hard_flagged": 189,
+      "soft_flagged": 2150,
+      "info_flagged": 1590
+    },
+    "by_code": [
+      {
+        "severity": "SOFT",
+        "code": "length_out_of_range",
+        "record_count": 1583
+      },
+      {
+        "severity": "INFO",
+        "code": "noncanonical_start",
+        "record_count": 1008
+      },
+      {
+        "severity": "INFO",
+        "code": "review_predicate",
+        "record_count": 884
+      },
+      {
+        "severity": "SOFT",
+        "code": "net_polarity",
+        "record_count": 546
+      },
+      {
+        "severity": "SOFT",
+        "code": "type_violation",
+        "record_count": 351
+      },
+      {
+        "severity": "HARD",
+        "code": "direct_drug_disease",
+        "record_count": 91
+      },
+      {
+        "severity": "HARD",
+        "code": "short_circuit",
+        "record_count": 60
+      },
+      {
+        "severity": "HARD",
+        "code": "duplicate_edge",
+        "record_count": 39
+      },
+      {
+        "severity": "HARD",
+        "code": "cycle",
+        "record_count": 1
+      },
+      {
+        "severity": "HARD",
+        "code": "clinical_shortcut",
+        "record_count": 1
+      }
+    ],
+    "polarity": {
+      "coherent": 4300,
+      "indeterminate": 444,
+      "incoherent": 65,
+      "inconsistent": 37
+    },
+    "note": "Deterministic structural scorer (scripts/quality/structural_quality.py). record_count = records with >=1 flag of that code."
+  },
+  "records_needing_attention": {
+    "measured": true,
+    "total_flagged": 2255,
+    "total_issues": 3002,
+    "shown": 200,
+    "items": [
+      {
+        "id": "DB00038_MESH_D013921_2",
+        "file": "kb/paths/DB00038_MESH_D013921_2.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00046_MESH_D003922_1",
+        "file": "kb/paths/DB00046_MESH_D003922_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00046_MESH_D003924_1",
+        "file": "kb/paths/DB00046_MESH_D003924_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00100_MESH_D002836_1",
+        "file": "kb/paths/DB00100_MESH_D002836_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'Disease' (expected one of ['MESH'])"
+      },
+      {
+        "id": "DB00105_MESH_D007943_1",
+        "file": "kb/paths/DB00105_MESH_D007943_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB00105_MESH_D008224_1",
+        "file": "kb/paths/DB00105_MESH_D008224_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB00105_MESH_D008545_1",
+        "file": "kb/paths/DB00105_MESH_D008545_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB00115_MESH_D000752_1",
+        "file": "kb/paths/DB00115_MESH_D000752_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'HP' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00184_MESH_D014029_1",
+        "file": "kb/paths/DB00184_MESH_D014029_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00204_MESH_D001281_1",
+        "file": "kb/paths/DB00204_MESH_D001281_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00227_MESH_D001161_1",
+        "file": "kb/paths/DB00227_MESH_D001161_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00227_MESH_D006937_1",
+        "file": "kb/paths/DB00227_MESH_D006937_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00227_MESH_D006949_1",
+        "file": "kb/paths/DB00227_MESH_D006949_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00227_MESH_D006950_1",
+        "file": "kb/paths/DB00227_MESH_D006950_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00227_MESH_D015228_1",
+        "file": "kb/paths/DB00227_MESH_D015228_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00227_MESH_D052456_1",
+        "file": "kb/paths/DB00227_MESH_D052456_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00237_MESH_D053159_1",
+        "file": "kb/paths/DB00237_MESH_D053159_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'HP' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00245_MESH_D001480_1",
+        "file": "kb/paths/DB00245_MESH_D001480_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'HP' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00245_MESH_D010300_1",
+        "file": "kb/paths/DB00245_MESH_D010300_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'HP' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00245_MESH_D010301_1",
+        "file": "kb/paths/DB00245_MESH_D010301_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'HP' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00245_MESH_D020734_1",
+        "file": "kb/paths/DB00245_MESH_D020734_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'HP' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00251_MESH_D002181_1",
+        "file": "kb/paths/DB00251_MESH_D002181_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00257_MESH_D000152_1",
+        "file": "kb/paths/DB00257_MESH_D000152_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00257_MESH_D002179_1",
+        "file": "kb/paths/DB00257_MESH_D002179_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00257_MESH_D002180_1",
+        "file": "kb/paths/DB00257_MESH_D002180_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00257_MESH_D002181_1",
+        "file": "kb/paths/DB00257_MESH_D002181_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00257_MESH_D003963_1",
+        "file": "kb/paths/DB00257_MESH_D003963_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00257_MESH_D014010_1",
+        "file": "kb/paths/DB00257_MESH_D014010_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00277_MESH_D000080445_1",
+        "file": "kb/paths/DB00277_MESH_D000080445_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D000080445_1",
+        "file": "kb/paths/DB00277_MESH_D000080445_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D000080445_1",
+        "file": "kb/paths/DB00277_MESH_D000080445_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D000080445_1",
+        "file": "kb/paths/DB00277_MESH_D000080445_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00277_MESH_D001249_1",
+        "file": "kb/paths/DB00277_MESH_D001249_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D001249_1",
+        "file": "kb/paths/DB00277_MESH_D001249_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D001249_1",
+        "file": "kb/paths/DB00277_MESH_D001249_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D001249_1",
+        "file": "kb/paths/DB00277_MESH_D001249_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00277_MESH_D001986_1",
+        "file": "kb/paths/DB00277_MESH_D001986_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D001986_1",
+        "file": "kb/paths/DB00277_MESH_D001986_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D001986_1",
+        "file": "kb/paths/DB00277_MESH_D001986_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D001986_1",
+        "file": "kb/paths/DB00277_MESH_D001986_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00277_MESH_D001991_1",
+        "file": "kb/paths/DB00277_MESH_D001991_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D001991_1",
+        "file": "kb/paths/DB00277_MESH_D001991_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D001991_1",
+        "file": "kb/paths/DB00277_MESH_D001991_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D011656_1",
+        "file": "kb/paths/DB00277_MESH_D011656_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D011656_1",
+        "file": "kb/paths/DB00277_MESH_D011656_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00277_MESH_D011656_1",
+        "file": "kb/paths/DB00277_MESH_D011656_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00286_MESH_D019584_1",
+        "file": "kb/paths/DB00286_MESH_D019584_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GrossAnatomicalStructure' (expected one of ['UBERON'])"
+      },
+      {
+        "id": "DB00302_MESH_D004715_1",
+        "file": "kb/paths/DB00302_MESH_D004715_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB00302_MESH_D008595_1",
+        "file": "kb/paths/DB00302_MESH_D008595_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB00313_MESH_D004827_1",
+        "file": "kb/paths/DB00313_MESH_D004827_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00313_MESH_D004827_2",
+        "file": "kb/paths/DB00313_MESH_D004827_2.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00313_MESH_D004827_3",
+        "file": "kb/paths/DB00313_MESH_D004827_3.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00313_MESH_D004827_4",
+        "file": "kb/paths/DB00313_MESH_D004827_4.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00356_MESH_D009128_1",
+        "file": "kb/paths/DB00356_MESH_D009128_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00356_MESH_D009128_1",
+        "file": "kb/paths/DB00356_MESH_D009128_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00482_MESH_D004412_1",
+        "file": "kb/paths/DB00482_MESH_D004412_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00484_MESH_D012393_2",
+        "file": "kb/paths/DB00484_MESH_D012393_2.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00500_MESH_D001172_1",
+        "file": "kb/paths/DB00500_MESH_D001172_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00512_MESH_D000071074_1",
+        "file": "kb/paths/DB00512_MESH_D000071074_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00512_MESH_D004697_1",
+        "file": "kb/paths/DB00512_MESH_D004697_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00512_MESH_D004761_1",
+        "file": "kb/paths/DB00512_MESH_D004761_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00512_MESH_D011023_1",
+        "file": "kb/paths/DB00512_MESH_D011023_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00512_MESH_D013203_1",
+        "file": "kb/paths/DB00512_MESH_D013203_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00514_MESH_D003139_1",
+        "file": "kb/paths/DB00514_MESH_D003139_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00514_MESH_D003371_1",
+        "file": "kb/paths/DB00514_MESH_D003371_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00514_MESH_D005334_1",
+        "file": "kb/paths/DB00514_MESH_D005334_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00514_MESH_D010612_1",
+        "file": "kb/paths/DB00514_MESH_D010612_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00514_MESH_D012220_1",
+        "file": "kb/paths/DB00514_MESH_D012220_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00514_MESH_D012223_1",
+        "file": "kb/paths/DB00514_MESH_D012223_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00514_MESH_D012912_1",
+        "file": "kb/paths/DB00514_MESH_D012912_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00514_MESH_D020773_1",
+        "file": "kb/paths/DB00514_MESH_D020773_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00514_MESH_D065631_1",
+        "file": "kb/paths/DB00514_MESH_D065631_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB00520_MESH_D058387_3",
+        "file": "kb/paths/DB00520_MESH_D058387_3.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'InterPro' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB00532_MESH_D004827_1",
+        "file": "kb/paths/DB00532_MESH_D004827_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00532_MESH_D004828_1",
+        "file": "kb/paths/DB00532_MESH_D004828_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00533_MESH_D001171_1",
+        "file": "kb/paths/DB00533_MESH_D001171_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00533_MESH_D001172_1",
+        "file": "kb/paths/DB00533_MESH_D001172_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00533_MESH_D004412_1",
+        "file": "kb/paths/DB00533_MESH_D004412_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00533_MESH_D008881_1",
+        "file": "kb/paths/DB00533_MESH_D008881_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00533_MESH_D010003_1",
+        "file": "kb/paths/DB00533_MESH_D010003_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00533_MESH_D010146_1",
+        "file": "kb/paths/DB00533_MESH_D010146_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00554_MESH_D001172_1",
+        "file": "kb/paths/DB00554_MESH_D001172_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00554_MESH_D010003_1",
+        "file": "kb/paths/DB00554_MESH_D010003_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00573_MESH_D001172_1",
+        "file": "kb/paths/DB00573_MESH_D001172_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00573_MESH_D010003_1",
+        "file": "kb/paths/DB00573_MESH_D010003_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00573_MESH_D010146_1",
+        "file": "kb/paths/DB00573_MESH_D010146_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00602_MESH_D009855_1",
+        "file": "kb/paths/DB00602_MESH_D009855_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00605_MESH_D010003_1",
+        "file": "kb/paths/DB00605_MESH_D010003_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00619_MESH_D001752_1",
+        "file": "kb/paths/DB00619_MESH_D001752_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB00619_MESH_D015466_1",
+        "file": "kb/paths/DB00619_MESH_D015466_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB00619_MESH_D018223_1",
+        "file": "kb/paths/DB00619_MESH_D018223_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00619_MESH_D034721_2",
+        "file": "kb/paths/DB00619_MESH_D034721_2.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00619_MESH_D034721_2",
+        "file": "kb/paths/DB00619_MESH_D034721_2.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Cell' (expected one of ['CL'])"
+      },
+      {
+        "id": "DB00619_MESH_D046152_1",
+        "file": "kb/paths/DB00619_MESH_D046152_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00646_MESH_D002179_1",
+        "file": "kb/paths/DB00646_MESH_D002179_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00646_MESH_D002179_1",
+        "file": "kb/paths/DB00646_MESH_D002179_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00646_MESH_D002180_1",
+        "file": "kb/paths/DB00646_MESH_D002180_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00646_MESH_D002180_1",
+        "file": "kb/paths/DB00646_MESH_D002180_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00646_MESH_D002181_1",
+        "file": "kb/paths/DB00646_MESH_D002181_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00646_MESH_D002181_1",
+        "file": "kb/paths/DB00646_MESH_D002181_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00655_MESH_D000152_1",
+        "file": "kb/paths/DB00655_MESH_D000152_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'CL' not canonical for label 'GrossAnatomicalStructure' (expected one of ['UBERON'])"
+      },
+      {
+        "id": "DB00666_MESH_D011629_1",
+        "file": "kb/paths/DB00666_MESH_D011629_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00668_MESH_D005902_3",
+        "file": "kb/paths/DB00668_MESH_D005902_3.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00683_MESH_D001007_1",
+        "file": "kb/paths/DB00683_MESH_D001007_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00683_MESH_D001007_1",
+        "file": "kb/paths/DB00683_MESH_D001007_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00694_MESH_D004915_1",
+        "file": "kb/paths/DB00694_MESH_D004915_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00694_MESH_D007948_1",
+        "file": "kb/paths/DB00694_MESH_D007948_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00694_MESH_D012514_1",
+        "file": "kb/paths/DB00694_MESH_D012514_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00694_MESH_D015470_1",
+        "file": "kb/paths/DB00694_MESH_D015470_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00694_MESH_D015473_1",
+        "file": "kb/paths/DB00694_MESH_D015473_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00736_MESH_D005764_1",
+        "file": "kb/paths/DB00736_MESH_D005764_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00771_MESH_D043183_1",
+        "file": "kb/paths/DB00771_MESH_D043183_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00776_MESH_D004828_1",
+        "file": "kb/paths/DB00776_MESH_D004828_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00799_MESH_D000152_1",
+        "file": "kb/paths/DB00799_MESH_D000152_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB00799_MESH_D000152_1",
+        "file": "kb/paths/DB00799_MESH_D000152_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB00799_MESH_D000152_1",
+        "file": "kb/paths/DB00799_MESH_D000152_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB00799_MESH_D011565_1",
+        "file": "kb/paths/DB00799_MESH_D011565_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00799_MESH_D011565_1",
+        "file": "kb/paths/DB00799_MESH_D011565_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00801_MESH_D001007_1",
+        "file": "kb/paths/DB00801_MESH_D001007_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00801_MESH_D001007_1",
+        "file": "kb/paths/DB00801_MESH_D001007_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00806_MESH_D016491_1",
+        "file": "kb/paths/DB00806_MESH_D016491_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00814_MESH_D001171_1",
+        "file": "kb/paths/DB00814_MESH_D001171_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00814_MESH_D001172_1",
+        "file": "kb/paths/DB00814_MESH_D001172_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00814_MESH_D010003_1",
+        "file": "kb/paths/DB00814_MESH_D010003_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'reactome' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00820_MESH_D007172_1",
+        "file": "kb/paths/DB00820_MESH_D007172_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00906_MESH_D004828_1",
+        "file": "kb/paths/DB00906_MESH_D004828_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'UniProt' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB00956_MESH_D003139_1",
+        "file": "kb/paths/DB00956_MESH_D003139_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00956_MESH_D003371_1",
+        "file": "kb/paths/DB00956_MESH_D003371_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00956_MESH_D012220_1",
+        "file": "kb/paths/DB00956_MESH_D012220_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00956_MESH_D065631_1",
+        "file": "kb/paths/DB00956_MESH_D065631_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB00976_MESH_D011018_1",
+        "file": "kb/paths/DB00976_MESH_D011018_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'CellularComponent' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00976_MESH_D011019_1",
+        "file": "kb/paths/DB00976_MESH_D011019_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'CellularComponent' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00976_MESH_D013290_1",
+        "file": "kb/paths/DB00976_MESH_D013290_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'CellularComponent' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB00976_MESH_D061387_1",
+        "file": "kb/paths/DB00976_MESH_D061387_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'CellularComponent' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB01050_MESH_D004412_1",
+        "file": "kb/paths/DB01050_MESH_D004412_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB01081_MESH_D003967_1",
+        "file": "kb/paths/DB01081_MESH_D003967_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB01129_MESH_D005764_1",
+        "file": "kb/paths/DB01129_MESH_D005764_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB01166_MESH_D007383_1",
+        "file": "kb/paths/DB01166_MESH_D007383_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB01169_MESH_D015473_1",
+        "file": "kb/paths/DB01169_MESH_D015473_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB01169_MESH_D015479_1",
+        "file": "kb/paths/DB01169_MESH_D015479_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB01177_MESH_D015470_1",
+        "file": "kb/paths/DB01177_MESH_D015470_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB01177_MESH_D015473_1",
+        "file": "kb/paths/DB01177_MESH_D015473_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB01190_MESH_D000152_1",
+        "file": "kb/paths/DB01190_MESH_D000152_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB01190_MESH_D011015_1",
+        "file": "kb/paths/DB01190_MESH_D011015_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB01190_MESH_D016585_1",
+        "file": "kb/paths/DB01190_MESH_D016585_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB01190_MESH_D016724_1",
+        "file": "kb/paths/DB01190_MESH_D016724_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB01190_MESH_D059413_1",
+        "file": "kb/paths/DB01190_MESH_D059413_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB01244_MESH_D000787_1",
+        "file": "kb/paths/DB01244_MESH_D000787_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB01244_MESH_D000787_2",
+        "file": "kb/paths/DB01244_MESH_D000787_2.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB01244_MESH_D000787_3",
+        "file": "kb/paths/DB01244_MESH_D000787_3.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB01244_MESH_D000787_4",
+        "file": "kb/paths/DB01244_MESH_D000787_4.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB01244_MESH_D000787_5",
+        "file": "kb/paths/DB01244_MESH_D000787_5.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB01244_MESH_D000787_6",
+        "file": "kb/paths/DB01244_MESH_D000787_6.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB01244_MESH_D000787_7",
+        "file": "kb/paths/DB01244_MESH_D000787_7.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB01244_MESH_D000787_8",
+        "file": "kb/paths/DB01244_MESH_D000787_8.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB01244_MESH_D000787_8",
+        "file": "kb/paths/DB01244_MESH_D000787_8.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB01262_MESH_D015470_1",
+        "file": "kb/paths/DB01262_MESH_D015470_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB01306_MESH_D003920_1",
+        "file": "kb/paths/DB01306_MESH_D003920_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB01307_MESH_D003920_1",
+        "file": "kb/paths/DB01307_MESH_D003920_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB01356_MESH_D001171_1",
+        "file": "kb/paths/DB01356_MESH_D001171_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB01356_MESH_D001172_1",
+        "file": "kb/paths/DB01356_MESH_D001172_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB01356_MESH_D001714_1",
+        "file": "kb/paths/DB01356_MESH_D001714_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB01356_MESH_D004412_1",
+        "file": "kb/paths/DB01356_MESH_D004412_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB01356_MESH_D010003_1",
+        "file": "kb/paths/DB01356_MESH_D010003_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB01356_MESH_D010146_1",
+        "file": "kb/paths/DB01356_MESH_D010146_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB01356_MESH_D020773_1",
+        "file": "kb/paths/DB01356_MESH_D020773_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB01395_MESH_D019584_1",
+        "file": "kb/paths/DB01395_MESH_D019584_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GrossAnatomicalStructure' (expected one of ['UBERON'])"
+      },
+      {
+        "id": "DB01395_MESH_D065446_1",
+        "file": "kb/paths/DB01395_MESH_D065446_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB01588_MESH_D001007_1",
+        "file": "kb/paths/DB01588_MESH_D001007_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB02546_MESH_D016410_1",
+        "file": "kb/paths/DB02546_MESH_D016410_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'GO' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB02701_MESH_D010437_1",
+        "file": "kb/paths/DB02701_MESH_D010437_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB02701_MESH_D010437_1",
+        "file": "kb/paths/DB02701_MESH_D010437_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GrossAnatomicalStructure' (expected one of ['UBERON'])"
+      },
+      {
+        "id": "DB04575_MESH_D019584_1",
+        "file": "kb/paths/DB04575_MESH_D019584_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GrossAnatomicalStructure' (expected one of ['UBERON'])"
+      },
+      {
+        "id": "DB04868_MESH_D015466_1",
+        "file": "kb/paths/DB04868_MESH_D015466_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB04920_MESH_D006973_1",
+        "file": "kb/paths/DB04920_MESH_D006973_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB04920_MESH_D006973_1",
+        "file": "kb/paths/DB04920_MESH_D006973_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB04930_MESH_D012532_1",
+        "file": "kb/paths/DB04930_MESH_D012532_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Cell' (expected one of ['CL'])"
+      },
+      {
+        "id": "DB05016_MESH_D020388_1",
+        "file": "kb/paths/DB05016_MESH_D020388_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB06285_MESH_D015663_1",
+        "file": "kb/paths/DB06285_MESH_D015663_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'HP' not canonical for label 'Disease' (expected one of ['MESH'])"
+      },
+      {
+        "id": "DB06401_MESH_D019584_1",
+        "file": "kb/paths/DB06401_MESH_D019584_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GrossAnatomicalStructure' (expected one of ['UBERON'])"
+      },
+      {
+        "id": "DB06710_MESH_D019584_1",
+        "file": "kb/paths/DB06710_MESH_D019584_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'CHEBI' not canonical for label 'Drug' (expected one of ['DB', 'MESH'])"
+      },
+      {
+        "id": "DB06710_MESH_D019584_1",
+        "file": "kb/paths/DB06710_MESH_D019584_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GrossAnatomicalStructure' (expected one of ['UBERON'])"
+      },
+      {
+        "id": "DB06718_MESH_D010673_1",
+        "file": "kb/paths/DB06718_MESH_D010673_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB06718_MESH_D054179_1",
+        "file": "kb/paths/DB06718_MESH_D054179_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB06718_MESH_D054179_1",
+        "file": "kb/paths/DB06718_MESH_D054179_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB07615_MESH_D003876_2",
+        "file": "kb/paths/DB07615_MESH_D003876_2.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB07615_MESH_D065631_2",
+        "file": "kb/paths/DB07615_MESH_D065631_2.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB08162_MESH_D020301_1",
+        "file": "kb/paths/DB08162_MESH_D020301_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'DB' not canonical for label 'ChemicalSubstance' (expected one of ['CHEBI', 'MESH'])"
+      },
+      {
+        "id": "DB08901_MESH_D015464_1",
+        "file": "kb/paths/DB08901_MESH_D015464_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB08980_MESH_D017202_1",
+        "file": "kb/paths/DB08980_MESH_D017202_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB09030_MESH_D020521_1",
+        "file": "kb/paths/DB09030_MESH_D020521_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB09031_MESH_D007897_1",
+        "file": "kb/paths/DB09031_MESH_D007897_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB09031_MESH_D007898_1",
+        "file": "kb/paths/DB09031_MESH_D007898_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB09031_MESH_D016773_1",
+        "file": "kb/paths/DB09031_MESH_D016773_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'GeneFamily' (expected one of ['InterPro'])"
+      },
+      {
+        "id": "DB09087_MESH_D005764_1",
+        "file": "kb/paths/DB09087_MESH_D005764_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'PhenotypicFeature' (expected one of ['HP'])"
+      },
+      {
+        "id": "DB09102_MESH_D019698_1",
+        "file": "kb/paths/DB09102_MESH_D019698_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'Protein' (expected one of ['UniProt'])"
+      },
+      {
+        "id": "DB09102_MESH_D019698_1",
+        "file": "kb/paths/DB09102_MESH_D019698_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'CellularComponent' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB09102_MESH_D019698_1",
+        "file": "kb/paths/DB09102_MESH_D019698_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB09102_MESH_D019698_1",
+        "file": "kb/paths/DB09102_MESH_D019698_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      },
+      {
+        "id": "DB09118_MESH_D004831_1",
+        "file": "kb/paths/DB09118_MESH_D004831_1.yaml",
+        "layer": 2,
+        "severity": "HARD",
+        "code": "node_ontology",
+        "issue": "prefix 'MESH' not canonical for label 'BiologicalProcess' (expected one of ['GO'])"
+      }
+    ],
+    "note": "QC layer failures (schema/ontology/predicate) plus structural HARD/SOFT flags. List capped at 200; total_issues is the full count."
+  },
+  "priority_to_curate": {
+    "measured": false,
+    "items": [],
+    "note": "Prioritized (re)curation worklist needs a work queue seeded from an external approved-indication list (e.g. DrugCentral); not computed yet."
+  }
+}

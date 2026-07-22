@@ -8,11 +8,17 @@
  * flip `SOURCE` to "live" and make sure the JSON files named in `ENDPOINTS`
  * exist. No page markup changes — that is the whole point of this layer.
  *
- * The publish step (see scripts/rebuild_monolith.py and the future dashboard
- * builder) should emit exactly these JSON shapes:
+ * The publish step (see scripts/rebuild_monolith.py and
+ * scripts/compute_dashboard_metrics.py) should emit exactly these JSON shapes:
  *   - index.json      : Array of browse rows      (same shape as window.DMDB_INDEX)
  *   - records/<id>.json: one full record           (same shape as window.DMDB_RECORD)
- *   - dashboard.json   : the dashboard metrics      (same shape as SAMPLE_DASHBOARD)
+ *   - dashboard.json   : the dashboard metrics      (superset of SAMPLE_DASHBOARD)
+ *
+ * dashboard.json is built by scripts/compute_dashboard_metrics.py from the real
+ * corpus + QC gate + structural scorer. It carries every SAMPLE_DASHBOARD panel
+ * (each with its `measured` flag) plus extra computed panels (path-length
+ * distribution, node-type coverage, structural-quality rollup). Pages read only
+ * the keys they need, so the extra panels are additive and safe to ignore.
  *
  * Everything is async so the "sample" and "live" code paths are identical to the
  * caller — pages `await DMDB.getRecord(id)` today and unchanged tomorrow.
@@ -111,6 +117,8 @@
       return (r && id && r.graph && r.graph._id !== id) ? r : r;
     },
     async getDashboard() {
+      // live -> the metrics file emitted by scripts/compute_dashboard_metrics.py
+      // (ENDPOINTS.dashboard = "data/dashboard.json"); sample -> bundled placeholders.
       return SOURCE === "live" ? fetchJSON(ENDPOINTS.dashboard) : SAMPLE_DASHBOARD;
     },
   };
