@@ -34,20 +34,20 @@
 
 <div class="container">
   <header class="rec-header" style="border-bottom:none" data-reveal>
-    <div class="rec-title">Embeddings explorer</div>
+    <div class="rec-title" role="heading" aria-level="1">Embeddings explorer</div>
     <p class="rec-summary" style="margin-top:10px">A 2-D map where each point is a mechanism path; nearby points share targets, processes, or disease biology. Find drugs that work in similar ways.</p>
   </header>
 
   <div class="emb-layout" data-reveal>
     <aside>
       <div class="ctrl"><h4>Embedding basis</h4>
-        <select id="basis"><option>Whole mechanism path</option><option>Drug target</option><option>Biological process</option><option>Disease biology</option></select>
+        <select id="basis" aria-label="Embedding basis"><option>Whole mechanism path</option><option>Drug target</option><option>Biological process</option><option>Disease biology</option></select>
       </div>
       <div class="ctrl"><h4>Color by</h4>
-        <select id="colorby"><option value="area">Disease area</option><option value="target">Treatment target (symptom vs disease)</option><option value="type">Primary node type</option></select>
+        <select id="colorby" aria-label="Color by"><option value="area">Disease area</option><option value="target">Treatment target (symptom vs disease)</option><option value="type">Primary node type</option></select>
       </div>
       <div class="ctrl"><h4>Search</h4>
-        <input id="q" placeholder="Highlight a drug or disease…">
+        <input id="q" aria-label="Highlight a drug or disease" placeholder="Highlight a drug or disease…">
       </div>
       <div class="note">Production version projects real path embeddings (UMAP / t-SNE). This mock uses synthetic clusters to show the interaction model.</div>
     </aside>
@@ -128,8 +128,9 @@ function render(){
   });
   document.getElementById("emb-legend").innerHTML=legendFor(mode).map(([n,col])=>`<span class="li"><span class="dot" style="background:${col}"></span>${n}</span>`).join("");
 }
+const debounce = (fn, ms) => { let t; return function(){ clearTimeout(t); t = setTimeout(fn, ms); }; };
 document.getElementById("colorby").addEventListener("change",render);
-document.getElementById("q").addEventListener("input",render);
+document.getElementById("q").addEventListener("input",debounce(render, 160));
 render();
 </script>
 <script src="reveal.js"></script>

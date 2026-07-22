@@ -37,9 +37,9 @@
   </div>
 </div></nav>
 
-<div class="container">
+<div class="container" role="main">
   <header class="rec-header" style="border-bottom:none" data-reveal>
-    <div class="rec-title">Curation dashboard</div>
+    <div class="rec-title" role="heading" aria-level="1">Curation dashboard</div>
     <p class="rec-summary" style="margin-top:10px">Corpus health, quality, provenance and coverage across all mechanism paths.</p>
   </header>
 
@@ -53,7 +53,7 @@
   <div class="dash-grid" data-reveal-group>
 
     <section>
-      <div class="section-title">QC compliance by layer</div>
+      <div class="section-title" role="heading" aria-level="2">QC compliance by layer</div>
       <div class="bar"><span class="blab">1 · Schema</span><span class="btrack"><span class="bfill" style="width:99%"></span></span><span class="bpct">99%</span></div>
       <div class="bar"><span class="blab">2 · Node ontology</span><span class="btrack"><span class="bfill" style="width:96%"></span></span><span class="bpct">96%</span></div>
       <div class="bar"><span class="blab">3 · Predicate enum</span><span class="btrack"><span class="bfill" style="width:92%"></span></span><span class="bpct">92%</span></div>
@@ -62,7 +62,7 @@
     </section>
 
     <section>
-      <div class="section-title">Provenance</div>
+      <div class="section-title" role="heading" aria-level="2">Provenance</div>
       <div class="split">
         <div style="width:99.96%;background:var(--accent)">Legacy · 4,844</div>
         <div style="width:0.04%;background:var(--muted);min-width:34px">AI · 2</div>
@@ -70,13 +70,13 @@
       <div class="legend2"><span class="li"><span class="dot" style="background:var(--accent)"></span>Legacy curation</span><span class="li"><span class="dot" style="background:var(--muted)"></span>AI re-curated + evidence</span></div>
       <p style="font-size:13px;color:var(--muted);margin-top:14px">The 30-pair eval gates whether AI re-curation replaces legacy paths corpus-wide.</p>
 
-      <div class="section-title" style="margin-top:28px">Indication coverage</div>
+      <div class="section-title" style="margin-top:28px" role="heading" aria-level="2">Indication coverage</div>
       <div class="bar"><span class="blab">DrugCentral indications with a path</span><span class="btrack"><span class="bfill" style="width:38%"></span></span><span class="bpct">38%</span></div>
       <p style="font-size:13px;color:var(--muted);margin-top:10px">Drives the curation work queue — which approved indications still lack a mechanism.</p>
     </section>
 
     <section>
-      <div class="section-title">Treatment target <span class="proposed">proposed · derived</span></div>
+      <div class="section-title" role="heading" aria-level="2">Treatment target <span class="proposed">proposed · derived</span></div>
       <div class="split">
         <div style="width:74%;background:var(--accent)">Disease-directed · ~74%</div>
         <div style="width:26%;background:var(--muted)">Symptomatic · ~26%</div>
@@ -86,7 +86,7 @@
     </section>
 
     <section>
-      <div class="section-title">Records needing attention</div>
+      <div class="section-title" role="heading" aria-level="2">Records needing attention</div>
       <table class="mini">
         <thead><tr><th>Path</th><th>Issue</th><th>Layer</th></tr></thead>
         <tbody>

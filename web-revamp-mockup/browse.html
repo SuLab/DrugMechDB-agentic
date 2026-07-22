@@ -23,7 +23,7 @@
   <div class="browse-layout">
 
     <!-- FACETS -->
-    <aside class="facets" data-reveal>
+    <aside class="facets" data-reveal aria-label="Filters">
       <div class="facet">
         <h4>Disease area</h4>
         <div id="f-area"></div>
@@ -39,9 +39,9 @@
     </aside>
 
     <!-- RESULTS -->
-    <main>
-      <div class="browse-search" data-reveal><span style="color:var(--muted)">⌕</span>
-        <input id="q" placeholder="Search drug, disease, or target protein…" autofocus></div>
+    <main aria-label="Search results">
+      <div class="browse-search" data-reveal><span style="color:var(--muted)" aria-hidden="true">⌕</span>
+        <input id="q" aria-label="Search drug, disease, or target protein" placeholder="Search drug, disease, or target protein…" autofocus></div>
       <div class="results-head">
         <span id="rcount"></span>
         <span class="rh-right">
@@ -103,7 +103,8 @@ document.querySelectorAll(".facet input").forEach(cb=>cb.addEventListener("chang
   e.target.checked ? s.add(e.target.value) : s.delete(e.target.value);
   render();
 }));
-document.getElementById("q").addEventListener("input", render);
+const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn.apply(null, a), ms); }; };
+document.getElementById("q").addEventListener("input", debounce(render, 160));
 document.getElementById("sort").addEventListener("change", render);
 document.getElementById("clear").addEventListener("click", e=>{
   e.preventDefault();
