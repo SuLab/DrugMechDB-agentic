@@ -1,7 +1,8 @@
 # Edge-Evidence Judge — prompt spec
 
-> Operationalizes `docs/path_quality_framework.md` §3 (the atomic faithfulness ladder) and §6
-> (grounding rules). This is the per-edge semantic check the deterministic layer cannot do.
+> Operationalizes `docs/path_quality_rubric.md` §A (the atomic faithfulness ladder — the scored
+> checklist) and `docs/path_quality_framework.md` §3 / §6 (its design rationale + grounding rules).
+> This is the per-edge semantic check the deterministic layer cannot do.
 > **Run with a DIFFERENT model family than the one that curated the path** (independence).
 > Output is JSON the quality harness ingests alongside `structural_quality.py`.
 

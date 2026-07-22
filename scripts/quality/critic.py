@@ -13,6 +13,10 @@ What it does that the deterministic layer cannot:
     knowledge BEYOND the curator's cited snippets. cite-or-abstain.
   - judges the chain as a whole (accepted MoA, net direction, missing/wrong step).
 
+The criteria this scores against are the shared checklist in docs/path_quality_rubric.md
+(§A per-edge ladder, §B path validity) — the same rubric the LLM judge prompts and human
+review use; its design rationale is docs/path_quality_framework.md.
+
 Two firewalls (judge/grounding.py critic_tools):
   - it reads the curator's cited cache READ-ONLY and never writes references_cache/;
   - its independent reading is IN MEMORY and is never committed — only the list of
