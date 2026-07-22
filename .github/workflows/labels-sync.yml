@@ -1,28 +1,59 @@
 name: Sync labels
 
-# Keep the repository's labels in sync with the source of truth in
-# .github/labels.yml, so /create-pr can apply them without a manual
-# `gh label create`. Runs when labels.yml changes on main, or on demand.
-
-# DISABLED for now: the auto-trigger is removed so this never runs on push.
-# It needs the repo's Actions token to have write permission to manage labels
-# (Settings → Actions → General → Workflow permissions → "Read and write").
-# When ready, restore the push trigger below and let it run:
+# Two coordinated label jobs for DrugMechDB-agentic:
+#
+#   1. sync-label-defs    — create/update the repository's label *definitions*
+#                           from .github/labels.yml, so /create-pr can apply them
+#                           without a manual `gh label create`.
+#   2. pr-scenario-labels — keep an open PR's *scenario* labels in sync with what
+#                           its changed path records actually are, derived
+#                           deterministically by scripts/pr_labels.py + git status
+#                           (ai-curated / needs-human-review / full-text-sourced,
+#                           plus new-path vs backfill from add-vs-modify).
+#
+# The two jobs are event-gated (see the `if:` on each) so that, once live, the
+# definition sync runs on pushes to labels.yml and the scenario sync runs on PR
+# updates — a single `on:` block drives both.
+#
+# PAUSED during overnight build — restore the trigger block below to re-enable.
+# on:
 #   push:
 #     branches: [main]
-#     paths: ['.github/labels.yml']
-# Until then it is manual-only (Actions tab → Sync labels → Run workflow).
+#     paths: ['.github/labels.yml']              # -> sync-label-defs
+#   pull_request:
+#     types: [opened, synchronize, reopened]
+#     paths: ['kb/paths/**']                     # -> pr-scenario-labels
+#   workflow_dispatch:
+#     inputs:
+#       pr_number:
+#         description: "PR number to (re)label; required for the scenario-label job."
+#         required: false
+#
+# NOTE on permissions to re-enable: label + PR-label management need the repo's
+# Actions token to have write scope (Settings -> Actions -> General -> Workflow
+# permissions -> "Read and write"). Until re-enabled this is manual-only
+# (Actions tab -> Sync labels -> Run workflow).
 on:
   workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "PR number to (re)label; required for the scenario-label job."
+        required: false
 
+# Least privilege by default; each job widens only what it needs.
 permissions:
-  issues: write       # label management goes through the issues API
   contents: read
 
 jobs:
-  sync-labels:
-    name: Sync labels from .github/labels.yml
+  # ── 1. Label definitions ──────────────────────────────────────────────────
+  sync-label-defs:
+    name: Sync label definitions from .github/labels.yml
+    # Runs on a push to labels.yml (when live) or a manual dispatch — never on a PR.
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    permissions:
+      issues: write       # label management goes through the issues API
+      contents: read
     steps:
       - uses: actions/checkout@v4
 
@@ -46,3 +77,107 @@ jobs:
               --force --repo "$GITHUB_REPOSITORY"
           done < labels.tsv
           echo "labels synced."
+
+  # ── 2. PR scenario labels ─────────────────────────────────────────────────
+  pr-scenario-labels:
+    name: Sync PR scenario labels
+    # Runs on a PR update (when live) or a manual dispatch that names a PR.
+    if: >-
+      github.event_name == 'pull_request' ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.pr_number != '')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write   # add/remove the PR's scenario labels
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: pip
+
+      - name: Install pyyaml (scripts/pr_labels.py dependency)
+        run: python -m pip install --quiet pyyaml
+
+      - name: Resolve PR number
+        id: pr
+        run: |
+          set -euo pipefail
+          N="${{ github.event.inputs.pr_number || github.event.pull_request.number }}"
+          if [ -z "$N" ]; then
+            echo "::error::No PR number (dispatch without pr_number, and not a pull_request event)."
+            exit 1
+          fi
+          echo "number=$N" >> "$GITHUB_OUTPUT"
+
+      - name: Check out the PR head (need record + provenance content)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr checkout "${{ steps.pr.outputs.number }}"
+
+      - name: Derive scenario labels from changed records
+        id: derive
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ steps.pr.outputs.number }}
+        run: |
+          set -euo pipefail
+          # Changed kb/paths records + their add/modify status, from the PR files API
+          # (works identically for a live PR event and a manual dispatch).
+          mapfile -t ROWS < <(
+            gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" --paginate \
+              --jq '.[]
+                    | select(.filename | test("^kb/paths/.*\\.yaml$"))
+                    | select(.filename | endswith("_index.yaml") | not)
+                    | [.status, .filename] | @tsv'
+          )
+          if [ ${#ROWS[@]} -eq 0 ]; then
+            echo "No kb/paths record changes; nothing to label."
+            echo "labels=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          declare -A LABELS=()
+          for row in "${ROWS[@]}"; do
+            status="${row%%$'\t'*}"
+            file="${row#*$'\t'}"
+            # origin label from git status: a new file is a new path, an edit is a backfill.
+            case "$status" in
+              added|copied) LABELS[new-path]=1 ;;
+              modified|renamed|changed) LABELS[backfill]=1 ;;
+            esac
+            # content labels from the record + critic sidecar (deterministic).
+            if [ -f "$file" ]; then
+              for l in $(python scripts/pr_labels.py "$file"); do
+                LABELS[$l]=1
+              done
+            fi
+          done
+          echo "labels=${!LABELS[*]}" >> "$GITHUB_OUTPUT"
+          echo "Derived labels: ${!LABELS[*]}"
+
+      - name: Reconcile PR labels (add derived, remove stale managed)
+        if: steps.derive.outputs.labels != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ steps.pr.outputs.number }}
+          DERIVED: ${{ steps.derive.outputs.labels }}
+        run: |
+          set -euo pipefail
+          # Labels this workflow OWNS. It only ever adds/removes within this set —
+          # it never touches maintainer-applied labels such as validation-override.
+          MANAGED="ai-curated needs-human-review full-text-sourced new-path backfill"
+          CURRENT=$(gh pr view "$PR" --json labels --jq '.labels[].name')
+          args=()
+          for m in $MANAGED; do
+            want=false; for d in $DERIVED;  do [ "$d" = "$m" ] && want=true; done
+            have=false; for c in $CURRENT;  do [ "$c" = "$m" ] && have=true; done
+            if   $want && ! $have; then args+=(--add-label "$m");
+            elif ! $want && $have; then args+=(--remove-label "$m"); fi
+          done
+          if [ ${#args[@]} -eq 0 ]; then
+            echo "Scenario labels already in sync."
+            exit 0
+          fi
+          echo "Applying: ${args[*]}"
+          gh pr edit "$PR" "${args[@]}"
