@@ -329,12 +329,13 @@ We have provided in the Issues section of this repository, lists of indications 
 as well as their mapped identifiers come from [DrugCentral](https://drugcentral.org/) and therefore may contain some
 inconsistencies. The following issues may come up in the pool of indications and here are some potential solutions.
 
-- **The drug has been withdrawn** That's OK, at one point it was used for this indications and it would be good to have the
-drug's mechanistic details catalogued. In this instance please include a comment for the path that includes the word 'withdrawn'.
+### Special-case indications
 
-- **The drug is actually contraindicated for the disease** In this case, if possible, a path with mechanism of the
- contraindication would be something that could potentially be curated. Also, please provide a comment for the path that includes
- the word 'contraindication'.
+Some indications need special handling. They are managed with a consistent set of conventions, so records stay comparable across curators: a path-level `comment` flag for **withdrawn** drugs and **contraindications**; single-identifier resolution rules for **drugs with multiple MeSH IDs** and **missing identifiers**; and the single-link stub when **no mechanism** can be sourced. Handle each as follows:
+
+- **The drug has been withdrawn** That's OK — at one point it was used for this indication, and it is still worth cataloguing the drug's mechanistic details. Curate the mechanism as normal, then add a path-level `comment` (see the [Graph](#graph) section) that includes the word **`withdrawn`**.
+
+- **The drug is actually contraindicated for the disease** If possible, curate a path capturing the mechanism of the contraindication. Such a path runs the *opposite* way to a treatment: walking drug→disease, the disease ends up **increased**, so the path's net direction of influence is positive (see the logical-consistency guideline above). Mark it by adding a path-level `comment` that includes the word **`contraindication`**, so the record is not mistaken for a treatment mechanism.
 
  - **There is no information under any (reasonable) source for this indication** This happens. Some drugs just work
  without a large amount of scientific description of the mechanism of action. **In this case only** — when, after a genuine
@@ -345,17 +346,28 @@ drug's mechanistic details catalogued. In this instance please include a comment
  mechanistic chain and stop — **never append a `Drug treats Disease` edge on top of a worked-out mechanism.** Doing so
  produces a redundant shortcut edge (a `clinical_shortcut` hard error) that restates the conclusion the chain already expresses.
 
-- **The Drug has Multiple MESH IDs** These Identifiers come directly from DrugCentral. It may be that the Drug product
-is a mixture of multiple compounds, therefore multiple are provided, however it may also be that one is wrong. In these cases,
-if there is still only one Drugbank identifier, please use the Drugbank ID as the main identifier for the Drug in the paths.
+- **The drug has multiple MeSH IDs** These identifiers come directly from DrugCentral. Multiple MeSH IDs may mean the drug
+product is a mixture of several compounds, or that one of the mappings is simply wrong. A drug node must carry a **single**
+`id` (see [Nodes](#nodes)), so pick one: if there is still only one DrugBank identifier, use the DrugBank ID (`DB:...`) as the
+drug node's `id`, and record a single, confirmed `MESH:` value in `graph.drug_mesh` (drop any MeSH ID you cannot confirm rather
+than listing several). Any additional MeSH ID worth keeping may go under the node's optional `alt_ids` list. If the multiple
+MeSH IDs reflect a genuine combination of active compounds, curate the relevant compound(s) accordingly (see the prodrug FAQ below).
 
 - **The Identifier for the Drug or Disease is incorrect** Again these are sourced from DrugCentral and
 there may be some mistakes. If you encounter a mistake during curation, please feel free to provide the correct external identifier
 in your completed YAML.
 
-- **A Drug or Disease identifier is missing** All provided indications should have both a Drugbank ID for the Drug and a
-MESH ID for the disease. If the MESH ID is missing for the drug, that means that none were mapped from DrugCentral, so please
-use the Drugbank identifier instead.
+- **A drug or disease identifier is missing** Every indication should carry a DrugBank ID for the drug and a MeSH ID for the
+disease; occasionally one is absent from the DrugCentral mapping. Proceed by identifier, and never write a `null` value — omit a
+field you cannot fill:
+    - **Drug** — the record needs at least one of `graph.drug_mesh` / `graph.drugbank`. If the drug's MeSH ID is missing (none
+    were mapped from DrugCentral), use the DrugBank ID instead; if the DrugBank ID is the one missing, use the MeSH ID. The drug
+    node's `id` is whichever single identifier you have.
+    - **Disease** — `graph.disease_mesh` is required. If it is missing, resolve it yourself from [MeSH](https://meshb.nlm.nih.gov/).
+    If no MeSH descriptor genuinely exists for the disease, do **not** fabricate one — add a path `comment` noting the gap and flag
+    the indication for a curator.
+    - **Intermediate concept** — if a node along the mechanism has no identifier in its canonical ontology (see
+    [Concept Types](#concept-types)), resolve it there; if none exists, flag or escalate rather than invent an ID.
 
 ## FAQ
 
