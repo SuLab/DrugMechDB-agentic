@@ -128,6 +128,27 @@ Read the file; the descriptions distinguish near-synonyms (e.g. `regulates` vs `
 
 **You may NOT invent new predicates.** If no canonical predicate fits, escalate per PRD §7 Open Q #3 (adding to the enum requires curator approval + Biolink Model citation).
 
+### 3.1 Predicate domain/range
+
+Some predicates only make sense between certain node types. Apply each predicate to the node types it is allowed to connect, so the path is typed correctly the first time. These are exactly the `subj_in` / `obj_in` constraints the gate's `type_violation` check reads from `scripts/quality/predicate_polarity.yaml` — the table restates them, it does not add any. "Subject" is the edge `source`, "object" is the edge `target`; **any** means the lexicon does not constrain that end. A constraint is checked only when both endpoint node types are known; predicates not listed here are unconstrained.
+
+| Predicate(s) | Subject (`source`) label | Object (`target`) label |
+|---|---|---|
+| `treats`, `prevents`, `ameliorates`, `exacerbates`, `contraindicated for` | `Drug`, `ChemicalSubstance` | `Disease`, `PhenotypicFeature` |
+| `decreases activity of`, `increases activity of` | any | `Protein`, `GeneFamily`, `MacromolecularComplex`, `MolecularActivity`, `Pathway`, `BiologicalProcess` |
+| `decreases abundance of`, `increases abundance of`, `increases degradation of`, `decreases synthesis of` | any | `Protein`, `GeneFamily`, `MacromolecularComplex`, `ChemicalSubstance`, `MolecularActivity` |
+| `increases expression of`, `decreases expression of` | any | `Protein`, `GeneFamily`, `MacromolecularComplex`, `ChemicalSubstance` |
+| `has metabolite` | `Drug`, `ChemicalSubstance` | `ChemicalSubstance`, `Drug` |
+| `has phenotype` | any | `PhenotypicFeature` |
+| `in taxon` | any | `OrganismTaxon` |
+| `occurs in`, `located in`, `expressed in` | any | `CellularComponent`, `GrossAnatomicalStructure`, `Cell`, `OrganismTaxon`, `Pathway` |
+
+The activity / abundance / expression / degradation / synthesis predicates (rows 2–4) never take a `Disease` or `PhenotypicFeature` object — reach the disease with a mechanistic/causal predicate (e.g. `causes`, `contributes to`) instead, per §0.
+
+The gate enforces these: an edge whose known endpoint types fall outside the allowed set is flagged as a SOFT `type_violation` and routed to the semantic critic (§5 step 8), so a mis-typed edge is surfaced and returned for correction rather than passing silently. Getting the types right here keeps the edge from bouncing.
+
+*Deferred/tracked:* confirming that the corpus-wide `type_violation` rate drops to ~0 is a re-curation-run check to run later, not part of drafting a single path.
+
 ---
 
 ## 4. Evidence rules
