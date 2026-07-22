@@ -35,7 +35,7 @@ sys.path.insert(0, str(SCRIPTS))
 
 import curate_engine  # noqa: E402
 import campaign_runner  # noqa: E402
-from campaign_runner import WorkItem, AgenticBackend, StubBackend, BatchBackend, ItemResult  # noqa: E402
+from campaign_runner import WorkItem, AgenticBackend, StubBackend, ItemResult  # noqa: E402
 
 KB_PATHS = REPO / "kb" / "paths"
 
@@ -283,13 +283,13 @@ def test_worker_pool_parallel_isolation(tmp_path, no_real_anthropic):
     assert KB_PATHS.resolve() not in (tmp_path / "paths").resolve().parents
 
 
-# ── the batch/stub backends stay intact; CLI default is a dry run ──────────────
+# ── the stub backend stays intact; CLI default is a dry run ────────────────────
 
 def test_stub_backend_intact_and_backends_present():
     stub = StubBackend(fail_ids={"z"})
     out = stub.run([WorkItem(id="a"), WorkItem(id="z")])
     assert out["a"].ok and not out["z"].ok
-    assert BatchBackend.name == "batch" and AgenticBackend.name == "agentic"
+    assert AgenticBackend.name == "agentic"
 
 
 def test_module_import_has_no_side_effects(no_real_anthropic):

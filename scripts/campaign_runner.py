@@ -17,21 +17,14 @@ Backends:
                      scripts/curate_engine.curate_one per WorkItem over a bounded worker
                      pool, each worker fully isolated (its own DMDB_CACHE_DIR + output
                      path). This is what actually runs the /curate loop at corpus scale.
-  - BatchBackend   — Anthropic Message Batches API (50% cheaper, async bulk). Submits one
-                     request per work item, polls until the batch ends, and collects results
-                     keyed by custom_id.
 
-**The agentic-loop caveat (why batch is not the whole story).** `/curate` is a MULTI-TURN
-loop (search -> fetch -> draft -> gate -> iterate). The Batches API runs each request as a
-SINGLE model turn, so a batch request cannot itself execute the tool loop. The full
-interactive loop runs through AgenticBackend; the BatchBackend is retained for a future
-*batchable* single-turn sub-step. `build_request` / `parse_result` are injected so the unit
-of batchable work is defined by the caller, not hard-coded here.
+Curation is inherently a MULTI-TURN loop (search -> fetch -> draft -> gate -> iterate), run as
+a continuous process by AgenticBackend. (The Anthropic Batches API runs one model turn per
+request and cannot execute a multi-turn tool loop, so it is not used for curation.)
 
-**Safety:** this module never curates or submits a real batch on import or by default. The
-CLI defaults to a dry-run plan; `--stub` exercises the framework offline. A real run is an
-explicit, deliberate call — `CampaignRunner.run(AgenticBackend(...))` (live curation) or
-`CampaignRunner.run(BatchBackend(...))` (batch) — never the default.
+**Safety:** this module never curates on import or by default. The CLI defaults to a dry-run
+plan; `--stub` exercises the framework offline. A real run is an explicit, deliberate call —
+`CampaignRunner.run(AgenticBackend(...))` — never the default.
 """
 
 from __future__ import annotations
@@ -106,13 +99,12 @@ def git_sha() -> str | None:
         return None
 
 
-def make_provenance(model: str, run_id: str, batch_id: str | None = None) -> dict:
+def make_provenance(model: str, run_id: str) -> dict:
     return {
         "model": model,
         "prompt_version": prompt_version(),
         "git_sha": git_sha(),
         "run_id": run_id,
-        "batch_id": batch_id,
         "curated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
     }
 
@@ -122,7 +114,7 @@ def make_provenance(model: str, run_id: str, batch_id: str | None = None) -> dic
 @dataclass
 class StatusStore:
     path: Path = STATUS_FILE
-    records: dict = field(default_factory=dict)   # id -> {state, batch_id, provenance, error}
+    records: dict = field(default_factory=dict)   # id -> {state, provenance, error}
 
     STATES = ("pending", "submitted", "done", "failed")
 
@@ -189,33 +181,6 @@ class StubBackend:
         return out
 
 
-class BatchBackend:
-    """Anthropic Message Batches API (50% cheaper, async). Submits one request per item,
-    polls until the batch ends, and returns results keyed by custom_id. Requires the caller
-    to inject `build_request` (WorkItem -> anthropic Request) and `parse_result`
-    (custom_id, batch-result -> ItemResult), because the batchable unit of curation is a
-    product decision (see the agentic-loop caveat in the module docstring)."""
-    name = "batch"
-
-    def __init__(self, poll_seconds: int = 60):
-        import anthropic  # imported lazily so the framework loads without the SDK
-        self.client = anthropic.Anthropic()
-        self.poll_seconds = poll_seconds
-
-    def run(self, items, build_request, parse_result) -> dict[str, ItemResult]:
-        if build_request is None or parse_result is None:
-            raise ValueError("BatchBackend requires build_request and parse_result")
-        import time
-        requests = [build_request(w) for w in items]
-        batch = self.client.messages.batches.create(requests=requests)
-        while self.client.messages.batches.retrieve(batch.id).processing_status != "ended":
-            time.sleep(self.poll_seconds)
-        out: dict[str, ItemResult] = {}
-        for r in self.client.messages.batches.results(batch.id):   # any order — key by custom_id
-            out[r.custom_id] = parse_result(r.custom_id, r)
-        return out, batch.id  # type: ignore[return-value]
-
-
 class AgenticBackend:
     """LIVE multi-turn curation via scripts/curate_engine.curate_one, one call per
     WorkItem, dispatched over a bounded worker pool. This is what makes a whole-corpus
@@ -263,8 +228,8 @@ class AgenticBackend:
         return self._shared_real
 
     def run(self, items, build_request=None, parse_result=None) -> dict[str, ItemResult]:
-        # build_request / parse_result are ignored (they are the BatchBackend's batchable-unit
-        # hooks); the agentic loop is defined by curate_engine, not per-request here.
+        # build_request / parse_result are unused here (vestigial Backend-Protocol slots);
+        # the agentic loop is defined by curate_engine, not per-request.
         from concurrent.futures import ThreadPoolExecutor, as_completed
 
         sys.path.insert(0, str(Path(__file__).resolve().parent))   # ensure scripts/ importable
@@ -321,10 +286,9 @@ class CampaignRunner:
             self.status.mark(w.id, "submitted", run_id=run_id)
         self.status.save()
 
-        ran = backend.run(pending, build_request, parse_result)
-        results, batch_id = (ran if isinstance(ran, tuple) else (ran, None))
+        results = backend.run(pending, build_request, parse_result)
 
-        prov = make_provenance(self.model, run_id, batch_id)
+        prov = make_provenance(self.model, run_id)
         for w in pending:
             res = results.get(w.id)
             if res is not None and res.ok:
@@ -361,11 +325,11 @@ def main() -> int:
         print(f"[stub] processed {len(results)} · ok {ok} · status file: {STATUS_FILE.name}")
         return 0
 
-    # Default: dry-run plan. Never submits a real batch.
+    # Default: dry-run plan. Never curates.
     print(f"DRY RUN — {len(allw)} records, {len(pending)} pending (nothing submitted).")
     print("  --stub    run the framework offline (StubBackend)")
     print("  --status  show progress")
-    print("  A real batch run is an explicit CampaignRunner.run(BatchBackend(...)) call.")
+    print("  A real run is an explicit CampaignRunner.run(AgenticBackend(...)) call.")
     return 0
 
 
