@@ -44,8 +44,14 @@ prefixes:
   Pfam:       https://www.ebi.ac.uk/interpro/entry/pfam/ # legacy GeneFamily prefix
   TIGR:       https://www.ncbi.nlm.nih.gov/genome/annotation_prok/evidence/
 
-  # Evidence
-  PMID:       https://pubmed.ncbi.nlm.nih.gov/
+  # Evidence — source-agnostic (#59): any sanctioned source, verified verbatim by Layer 4
+  PMID:           https://pubmed.ncbi.nlm.nih.gov/
+  DOI:            https://doi.org/
+  ChEMBL:         https://www.ebi.ac.uk/chembl/
+  bioRxiv:        https://www.biorxiv.org/content/
+  medRxiv:        https://www.medrxiv.org/content/
+  clinicaltrials: https://clinicaltrials.gov/study/
+  DrugBank:       https://go.drugbank.com/drugs/
 
   # XML Schema
   xsd:        http://www.w3.org/2001/XMLSchema#
@@ -61,6 +67,14 @@ types:
     base: str
     uri: xsd:string
     pattern: "^PMID:\\d+$"
+
+  EvidenceReference:
+    description: >-
+      A citation identifier for an evidence source, in CURIE form. Source-agnostic
+      (#59): any sanctioned evidence source, whose snippet Layer 4 verifies verbatim.
+    base: str
+    uri: xsd:string
+    pattern: "^(PMID:\\d+|DOI:\\S+|ChEMBL:\\S+|bioRxiv:\\S+|medRxiv:\\S+|clinicaltrials:\\S+|DrugBank:\\S+)$"
 
 # ── Enumerations ──────────────────────────────────────────────────────────────
 
@@ -305,18 +319,19 @@ slots:
   # ── EvidenceItem slots ──────────────────────────────────────────────────────
 
   reference:
-    range: PMID
+    range: EvidenceReference
     slot_uri: dcterms:references
     description: >-
-      PubMed identifier for the cited source.
-      Format: PMID:xxxxxxxx
+      Citation identifier for the cited source, in CURIE form. Source-agnostic (#59):
+      PMID, DOI, ChEMBL, bioRxiv, medRxiv, clinicaltrials, or DrugBank. The snippet must
+      be a verbatim substring of the fetched source (Layer 4).
 
   snippet:
     range: string
     slot_uri: oa:exact
     description: >-
-      Verbatim text from the cited PubMed abstract.
-      Must be an exact substring of the abstract — no paraphrasing.
+      Verbatim text from the cited source (abstract or fetched body).
+      Must be an exact substring of the source — no paraphrasing.
       Validated by linkml-reference-validator.
 
   supports:
