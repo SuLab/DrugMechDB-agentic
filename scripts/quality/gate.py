@@ -19,14 +19,15 @@ curation that fails is bounced back to the curator. Two design rules the maintai
      (evidence/coverage issues never name the fix/PMID/source; a structural
      shortcut/redundancy edge MAY be named for removal — see path_coherence_judge.md).
 
-Disposition (severity is owned by structural_quality.HARD_BLOCKING_CHECKS — the single
-point to adjust; see issue #28):
+Disposition — the structural gate is BINARY (severity is owned by
+structural_quality.HARD_BLOCKING_CHECKS — the single point to adjust). There is no SOFT
+tier: every non-HARD structural check is advisory INFO and never gates.
 
-  * a QC layer failure OR a HARD structural flag        -> RE_CURATE  (deterministic bounce)
-  * only SOFT structural flags (net_polarity / type_violation) -> handed to the semantic
-    critic (scripts/quality/critic.py), which decides whether the flag is a real problem
-    and, if so, routes it back to the curator with context
-  * nothing flagged                                     -> PASS
+  * a QC layer failure OR a HARD structural flag  -> RE_CURATE  (deterministic bounce),
+    with a short correction suggestion for each HARD structural check
+  * otherwise, if a judge backend is available, the semantic critic
+    (scripts/quality/critic.py) runs as a separate step and decides ACCEPT / RE_CURATE
+  * nothing flagged and no critic                 -> PASS
 
 The curate<->critic loop is capped by the critic's own --round / --max-rounds mechanism.
 
@@ -68,15 +69,16 @@ LEX = structural_quality.load_lexicon()
 
 _LAYER_NAMES = {1: "schema", 2: "node ontology", 3: "predicate enum",
                 4: "reference (verbatim snippet)"}
-# HARD structural codes may name the offending edge / topology fix — a structural
-# defect, not a scientific spoiler (firewall exception, per path_coherence_judge.md /
-# rubric §B). Codes without a hint (connectivity, cycle) are self-explanatory.
+# Every HARD structural code carries a short correction suggestion. These name the
+# offending edge / topology fix — a structural defect, not a scientific spoiler (firewall
+# exception, per path_coherence_judge.md / rubric §B).
 _STRUCTURAL_HINT = {
-    "clinical_shortcut": "remove this redundant clinical-outcome bypass edge; keep only the mechanism chain.",
-    "short_circuit": "remove the short bypass edge / sub-path; keep only the full mechanism chain.",
-    "duplicate_edge": "remove the duplicate edge (keep a single copy).",
-    "direct_drug_disease": "the drug connects straight to the disease with no molecular entry point; "
-                           "a mechanism path must begin drug -> (a molecular target).",
+    "connectivity": "the path is disconnected — every node must lie on a drug -> disease route; "
+                    "check for a node-id mismatch or a missing edge.",
+    "cycle": "remove the cycle / self-loop; a mechanism path must be acyclic (drug -> ... -> disease).",
+    "duplicate_edge": "remove the duplicated edge (keep a single copy).",
+    "clinical_shortcut": "remove the redundant drug -> disease clinical-outcome (treats/prevents/"
+                         "ameliorates) edge; keep only the mechanism chain.",
 }
 
 
@@ -141,21 +143,19 @@ def _run_qc(path_file: Path, *, offline: bool = True) -> dict:
     return {"layers": layers, "overall_pass": overall, "failures": failures}
 
 
-def _partition_structural(struct: dict) -> tuple[list[dict], list[dict], list[dict]]:
-    """Split structural flags into (hard-bounce, soft->critic, advisory), by CODE.
+def _partition_structural(struct: dict) -> tuple[list[dict], list[dict]]:
+    """Split structural flags into (hard-bounce, advisory), by CODE.
 
-    Classification is driven by structural_quality.HARD_BLOCKING_CHECKS /
-    SOFT_CRITIC_CHECKS — the single point to adjust (issue #28)."""
-    hard, soft, advisory = [], [], []
+    The gate is binary: a flag whose CODE is in structural_quality.HARD_BLOCKING_CHECKS
+    bounces the curation; every other flag is advisory INFO and never gates. There is no
+    SOFT tier. HARD_BLOCKING_CHECKS is the single point to adjust."""
+    hard, advisory = [], []
     for f in struct.get("flags", []):
-        code = f.get("code")
-        if code in structural_quality.HARD_BLOCKING_CHECKS:
+        if f.get("code") in structural_quality.HARD_BLOCKING_CHECKS:
             hard.append(f)
-        elif code in structural_quality.SOFT_CRITIC_CHECKS:
-            soft.append(f)
         else:
             advisory.append(f)
-    return hard, soft, advisory
+    return hard, advisory
 
 
 # ── the union feedback report ─────────────────────────────────────────────────
@@ -164,11 +164,10 @@ def _partition_structural(struct: dict) -> tuple[list[dict], list[dict], list[di
 class GateFeedback:
     """The single curator-facing report combining QC + structural (+ critic)."""
     record_id: str
-    verdict: str                 # PASS | RE_CURATE | ESCALATE | ABSTAIN | PASS_SOFT_UNADJUDICATED
+    verdict: str                 # PASS | RE_CURATE | ESCALATE | ABSTAIN
     passed: bool
     qc_failures: list = dataclasses.field(default_factory=list)
     hard_structural: list = dataclasses.field(default_factory=list)
-    soft_structural: list = dataclasses.field(default_factory=list)
     advisory: list = dataclasses.field(default_factory=list)
     critic: dict | None = None
 
@@ -179,7 +178,6 @@ class GateFeedback:
             "passed": self.passed,
             "qc_failures": self.qc_failures,
             "hard_structural": self.hard_structural,
-            "soft_structural": self.soft_structural,
             "advisory": self.advisory,
             "critic": self.critic,
         }
@@ -188,14 +186,17 @@ class GateFeedback:
         out: list[str] = []
         out.append(f"=== CURATION GATE — {self.record_id} ===")
         out.append(f"Verdict: {self.verdict}   ({'PASS' if self.passed else 'BOUNCE — return to curator'})")
-        n_problems = len(self.qc_failures) + len(self.hard_structural) + len(self.soft_structural)
+        n_problems = len(self.qc_failures) + len(self.hard_structural)
         if n_problems == 0 and not self.advisory:
             out.append("No blocking problems found across the QC gate and the structural checks.")
             return "\n".join(out)
 
         out.append("")
-        out.append("All problems found (fix every item before re-submitting — the gate runs")
-        out.append("QC and the structural checks together so you see them at once):")
+        if n_problems:
+            out.append("All problems found (fix every item before re-submitting — the gate runs")
+            out.append("QC and the structural checks together so you see them at once):")
+        else:
+            out.append("No blocking problems found. Advisory notes below (not required to fix):")
 
         if self.qc_failures:
             out.append("\n-- QC gate failures (must fix; deterministic bounce) --")
@@ -213,14 +214,6 @@ class GateFeedback:
                 hint = _STRUCTURAL_HINT.get(f["code"])
                 if hint:
                     out.append(f"      -> {hint}")
-
-        if self.soft_structural:
-            if self.critic is not None:
-                out.append("\n-- SOFT structural flags (adjudicated by the semantic critic) --")
-            else:
-                out.append("\n-- SOFT structural flags (need semantic review; not auto-bounced) --")
-            for f in self.soft_structural:
-                out.append(f"  [{f['code']}] {f['msg']}")
 
         if self.critic is not None:
             out.append("\n-- Semantic critic --")
@@ -254,9 +247,11 @@ def run_gate(
     """Run the enforced gate on one path file.
 
     Returns (passed, GateFeedback). QC (Layers 1-4) and the structural checks BOTH run
-    and BOTH are always reported (structural runs even when QC fails). A QC failure or a
-    HARD structural flag is a deterministic bounce; only-SOFT structural flags are handed
-    to the semantic critic (when a judge backend is available) which decides.
+    and BOTH are always reported (structural runs even when QC fails). The structural
+    gate is binary: a QC failure or a HARD structural flag is a deterministic bounce;
+    every other structural flag is advisory INFO and never gates. When the path clears
+    QC and the HARD structural checks and a judge backend is available, the semantic
+    critic runs as a separate step and decides ACCEPT / RE_CURATE.
 
     `backend` — a judge backend (from quality_profile.make_backend); pass None (or
     run_critic=False) for a purely deterministic gate with no LLM/network dependency."""
@@ -266,17 +261,18 @@ def run_gate(
 
     qc = _run_qc(p, offline=offline)
     struct = structural_quality.analyze(p, LEX)                  # runs regardless of QC
-    hard, soft, advisory = _partition_structural(struct)
+    hard, advisory = _partition_structural(struct)
 
     hard_bounce = bool(qc["failures"]) or bool(hard)
     critic_res = None
 
     if hard_bounce:
-        # Deterministic reject. Do NOT spend judge tokens — but still surface the SOFT
-        # and advisory flags so the curator fixes everything in one pass.
+        # Deterministic reject. Do NOT spend judge tokens — but still surface the
+        # advisory flags so the curator sees everything in one pass.
         verdict, passed = "RE_CURATE", False
-    elif soft and run_critic and backend is not None:
-        # Only SOFT structural flags (and QC clean): hand to the semantic critic.
+    elif run_critic and backend is not None:
+        # QC and the HARD structural checks are clean: run the semantic critic as a
+        # separate step (independent evidence re-derivation + whole-path judgment).
         import critic as critic_mod
         critic_res = critic_mod.run_critic(
             str(p), backend, round_no=round_no, max_rounds=max_rounds,
@@ -284,11 +280,6 @@ def run_gate(
         )
         verdict = critic_res.get("verdict", "RE_CURATE")
         passed = (verdict == "ACCEPT")
-    elif soft:
-        # SOFT flags but no judge available: per the maintainer's rule SOFT never
-        # hard-bounces, so the deterministic gate PASSES but the flags are surfaced as
-        # needing semantic adjudication (a critic/human must look before merge).
-        verdict, passed = "PASS_SOFT_UNADJUDICATED", True
     else:
         verdict, passed = "PASS", True
 
@@ -298,7 +289,6 @@ def run_gate(
             "verdict": critic_res.get("verdict"),
             "summary": critic_res.get("summary"),
             "flags": critic_res.get("flags"),
-            "structural_flags": critic_res.get("structural_flags"),
             "path_issue": critic_res.get("path_issue"),
             "sidecar": critic_res.get("sidecar"),
         }
@@ -306,7 +296,7 @@ def run_gate(
     fb = GateFeedback(
         record_id=record_id, verdict=verdict, passed=passed,
         qc_failures=qc["failures"], hard_structural=hard,
-        soft_structural=soft, advisory=advisory, critic=critic_view,
+        advisory=advisory, critic=critic_view,
     )
     return passed, fb
 
@@ -319,7 +309,7 @@ def main() -> int:
     ap.add_argument("path_file", help="kb/paths/<file>.yaml to gate")
     ap.add_argument("--json", action="store_true", help="machine-readable feedback")
     ap.add_argument("--no-critic", action="store_true",
-                    help="deterministic layers only (no LLM critic on SOFT flags)")
+                    help="deterministic layers only (no LLM semantic critic step)")
     ap.add_argument("--provider", choices=("anthropic", "openai"), help="force critic provider")
     ap.add_argument("--round", type=int, default=1, dest="round_no",
                     help="which curate<->critic round this is (1-based)")
@@ -338,7 +328,7 @@ def main() -> int:
     if not args.no_critic:
         backend, note = qp.make_backend(args.provider)
         if backend is None and not args.json:
-            print(f"(note: {note}; SOFT flags will not be critic-adjudicated)\n", file=sys.stderr)
+            print(f"(note: {note}; the semantic critic step will be skipped)\n", file=sys.stderr)
 
     passed, fb = run_gate(
         args.path_file, backend=backend, run_critic=not args.no_critic,

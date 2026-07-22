@@ -80,7 +80,7 @@ def test_clean_path_passes(tmp_path):
     assert fb.verdict == "PASS"
     assert fb.qc_failures == []
     assert fb.hard_structural == []
-    assert fb.soft_structural == []
+    assert fb.advisory == []
     assert fb.record_id == "GATE_TEST_1"
     assert "No blocking problems" in fb.render()
 
@@ -88,19 +88,23 @@ def test_clean_path_passes(tmp_path):
 # ─── RE_CURATE on a HARD structural flag (QC clean) ──────────────────────────
 
 def test_hard_structural_flag_bounces(tmp_path):
-    # drug's only target is the disease itself -> direct_drug_disease (HARD).
-    # QC still passes: valid schema, canonical MESH prefixes, enum predicate.
-    doc = _doc([_node(DRUG, "Drug"), _node(DIS, "Disease")],
-               [_edge(DRUG, DIS, "causes")])
+    # a duplicated edge -> duplicate_edge (HARD), one of the four gating invariants.
+    # QC still passes: valid schema, canonical prefixes, enum predicates.
+    doc = _doc([_node(DRUG, "Drug"), _node(PROT, "Protein"), _node(DIS, "Disease")],
+               [_edge(DRUG, PROT, "decreases activity of"),
+                _edge(DRUG, PROT, "decreases activity of"),   # duplicate -> HARD
+                _edge(PROT, DIS, "causes")])
     passed, fb = _gate(_write(tmp_path, doc))
     assert passed is False
     assert fb.verdict == "RE_CURATE"
     assert fb.qc_failures == [], "QC should be clean; the bounce is purely structural"
     hard_codes = {f["code"] for f in fb.hard_structural}
-    assert "direct_drug_disease" in hard_codes
+    assert "duplicate_edge" in hard_codes
     rendered = fb.render()
     assert "HARD structural failures" in rendered
     assert "BOUNCE" in rendered
+    # the correction suggestion for the HARD check is surfaced to the curator
+    assert "remove the duplicated edge" in rendered
 
 
 # ─── UNION: both a QC failure and a structural failure are reported together ─
@@ -137,20 +141,20 @@ def test_union_reports_qc_and_structural_together(tmp_path):
     assert d["qc_failures"] and d["hard_structural"]
 
 
-# ─── a SOFT-only path is not hard-bounced (deterministic gate) ───────────────
+# ─── an advisory-only path is not bounced (binary gate) ──────────────────────
 
-def test_soft_only_is_not_hard_bounced(tmp_path):
-    # A net-positive polarity raises the SOFT net_polarity critic flag; QC is clean
-    # and no HARD flag fires. With no critic backend the deterministic gate does NOT
-    # hard-bounce (SOFT never blocks) — it passes but marks the flag unadjudicated.
+def test_advisory_only_does_not_bounce(tmp_path):
+    # A net-positive polarity raises net_polarity, now an ADVISORY (INFO) flag that
+    # never gates. QC is clean and no HARD flag fires, so the gate PASSES; the advisory
+    # flag is still surfaced in the report (dashboard / precision audit read it).
     doc = _doc([_node(DRUG, "Drug"), _node(PROT, "Protein"), _node(DIS, "Disease")],
                [_edge(DRUG, PROT, "increases activity of"),   # +1
                 _edge(PROT, DIS, "causes")])                  # +1 -> net positive
     passed, fb = _gate(_write(tmp_path, doc))
     assert fb.qc_failures == []
     assert fb.hard_structural == []
-    soft_codes = {f["code"] for f in fb.soft_structural}
-    assert "net_polarity" in soft_codes              # a SOFT-critic flag was surfaced
-    assert soft_codes <= {"net_polarity", "type_violation"}
-    assert fb.verdict == "PASS_SOFT_UNADJUDICATED"
+    advisory_codes = {f["code"] for f in fb.advisory}
+    assert "net_polarity" in advisory_codes          # surfaced as advisory, not gating
+    assert fb.verdict == "PASS"
     assert passed is True
+    assert not hasattr(fb, "soft_structural")        # the SOFT tier was removed

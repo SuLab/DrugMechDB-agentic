@@ -5,26 +5,33 @@ Reads a DrugMechDB path that already passed the Layer 1-4 QC gate and computes t
 structural quality signals from docs/path_quality_framework.md §4 and the issue
 taxonomy in docs/quality_system_design.md. It is a SCORER/REPORTER, not a gate.
 
-Severity tiers (this module SCORES; the ENFORCED gate — scripts/quality/gate.py,
-issue #7 — decides which flags bounce a curation, driven by HARD_BLOCKING_CHECKS below):
+Severity tiers (this module SCORES; the ENFORCED gate — scripts/quality/gate.py —
+decides which flags bounce a curation, driven by HARD_BLOCKING_CHECKS below):
   HARD  a logical error a correct mechanism cannot have (high precision; hard-bounced by the gate)
-  SOFT  a convention / polarity / type signal (handed to the semantic critic or reviewed, not bounced)
-  INFO  a note (e.g. relied on a review-confidence predicate sign)
+  INFO  an advisory note — a convention / polarity / type / prioritization signal that is
+        surfaced (dashboard, precision audit) but NEVER gates
+
+There is no SOFT tier. Only the four high-precision structural invariants in
+HARD_BLOCKING_CHECKS gate; every other check is advisory INFO. The checks that were
+found to over-fire on the gold-standard legacy corpus (short_circuit, direct_drug_disease,
+net_polarity, type_violation) are demoted to advisory INFO and removed from gating.
 
 Checks:
   connectivity         HARD  no drug->disease path (disconnected / id mismatch)
   cycle                HARD  directed cycle (paths must be acyclic)
   duplicate_edge       HARD  identical (source,target,key) repeated
-  short_circuit        HARD  a <=2-edge path bypasses the >=3-edge mechanism
-  clinical_shortcut    HARD  clinical-outcome edge (treats/...) used as a bypass
-  direct_drug_disease  HARD  drug's only target is the disease itself
-  type_violation       SOFT  predicate domain/range violated (e.g. 'decreases activity of' a Disease)
-  net_polarity         SOFT  incoherent (all branches net +), inconsistent (branches disagree),
+  clinical_shortcut    HARD  therapeutic clinical-outcome edge (treats/prevents/ameliorates)
+                             used as a direct drug->disease bypass of the mechanism chain
+  short_circuit        INFO  a <=2-edge path bypasses the >=3-edge mechanism (advisory; over-fires
+                             on legitimate convergent branches)
+  direct_drug_disease  INFO  drug's only target is the disease itself (advisory)
+  net_polarity         INFO  incoherent (all branches net +), inconsistent (branches disagree),
                              or indeterminate (reverse/opaque predicate; cannot compose safely)
+  type_violation       INFO  predicate domain/range violated (e.g. 'decreases activity of' a Disease)
   noncanonical_start   INFO  first target is not a Protein (allowed but non-canonical)
-  length_out_of_range  SOFT  outside 3-7 links
-  dangling_node        SOFT  node not on any drug->disease path
-  unknown_predicate    SOFT  predicate missing from the polarity lexicon
+  length_out_of_range  INFO  outside 3-7 links
+  dangling_node        INFO  node not on any drug->disease path
+  unknown_predicate    INFO  predicate missing from the polarity lexicon
   review_predicate     INFO  net polarity relied on a review-confidence sign
 
 Usage:
@@ -54,24 +61,25 @@ LENGTH_MIN, LENGTH_MAX = 3, 7
 CANONICAL_FIRST_TARGET = {"Protein", "GeneFamily", "MacromolecularComplex"}
 MAX_SIMPLE_PATHS = 512  # safety cap; DMDB paths are tiny so this is never approached
 
-# ── severity classification for the ENFORCED gate (issue #7) ──────────────────
-# The SINGLE point that decides which structural checks HARD-BOUNCE a curation
-# (deterministic reject, returned to the curator) versus which are SOFT (handed to
-# the semantic critic, which decides whether the flag is a real problem). The gate
-# (scripts/quality/gate.py) classifies flags by CODE membership here, so this stays
-# the one place to adjust.
+# ── severity classification for the ENFORCED gate ─────────────────────────────
+# The SINGLE point that decides which structural checks HARD-BOUNCE a curation. The
+# gate (scripts/quality/gate.py) is BINARY: it bounces on any QC-layer failure or any
+# flag whose CODE is in HARD_BLOCKING_CHECKS, and on nothing else. This set is limited
+# to the four high-precision structural invariants a correct mechanism can never have.
 #
-# Precision of `short_circuit` and `direct_drug_disease` is under review (issue #28
-# suggests possible over-firing); this set is the single point to adjust after that
-# review.
+# There is no SOFT tier. Every other check is advisory INFO — surfaced for the
+# dashboard / precision audit but never gating. The checks that over-fired on the
+# gold-standard legacy corpus (short_circuit, direct_drug_disease, net_polarity,
+# type_violation) are demoted to advisory INFO and removed from gating.
 HARD_BLOCKING_CHECKS = frozenset({
-    "clinical_shortcut", "short_circuit", "direct_drug_disease",
-    "connectivity", "cycle", "duplicate_edge",
+    "connectivity", "cycle", "duplicate_edge", "clinical_shortcut",
 })
-# SOFT structural checks routed to the semantic critic rather than hard-bounced:
-# net polarity can be indeterminate (lexicon gaps), and a predicate type violation is
-# better returned with the critic's semantic context than bounced on sight.
-SOFT_CRITIC_CHECKS = frozenset({"net_polarity", "type_violation"})
+
+# clinical_shortcut fires ONLY on a *therapeutic* clinical-outcome edge used as a
+# direct drug->disease bypass. Contraindication / adverse edges ('contraindicated for',
+# 'exacerbates') are documented special-case paths (see CurationGuide.md special-cases)
+# that legitimately carry a drug->disease clinical edge, so they must NOT fire it.
+THERAPEUTIC_CLINICAL_PREDICATES = frozenset({"treats", "prevents", "ameliorates"})
 
 
 # ── lexicon ─────────────────────────────────────────────────────────────────
@@ -215,9 +223,9 @@ def analyze(path: Path, lex: dict) -> dict:
             continue
         ls, lo = label.get(e.get("source")), label.get(e.get("target"))
         if c["subj_in"] and ls and ls not in c["subj_in"]:
-            flag("SOFT", "type_violation", f"'{k}' subject is {ls} (expected {sorted(c['subj_in'])})")
+            flag("INFO", "type_violation", f"'{k}' subject is {ls} (expected {sorted(c['subj_in'])})")
         if c["obj_in"] and lo and lo not in c["obj_in"]:
-            flag("SOFT", "type_violation", f"'{k}' object is {lo} (expected {sorted(c['obj_in'])})")
+            flag("INFO", "type_violation", f"'{k}' object is {lo} (expected {sorted(c['obj_in'])})")
 
     # net polarity over ALL paths
     pol_summary = None
@@ -237,13 +245,13 @@ def analyze(path: Path, lex: dict) -> dict:
                 pol_summary = "coherent"
             elif all(x > 0 for x in products):
                 pol_summary = "incoherent"
-                flag("SOFT", "net_polarity", "every determinable branch nets POSITIVE — drug appears to NOT suppress disease")
+                flag("INFO", "net_polarity", "every determinable branch nets POSITIVE — drug appears to NOT suppress disease")
             else:
                 pol_summary = "inconsistent"
-                flag("SOFT", "net_polarity", f"branches disagree in net sign ({sum(x<0 for x in products)} negative / {sum(x>0 for x in products)} positive) — over-modeling or a sign error")
+                flag("INFO", "net_polarity", f"branches disagree in net sign ({sum(x<0 for x in products)} negative / {sum(x>0 for x in products)} positive) — over-modeling or a sign error")
         else:
             pol_summary = "indeterminate"
-            flag("SOFT", "net_polarity", f"polarity indeterminate ({indet} reverse/opaque, {allneutral} all-neutral path(s))")
+            flag("INFO", "net_polarity", f"polarity indeterminate ({indet} reverse/opaque, {allneutral} all-neutral path(s))")
         if reviewed_all and pol_summary in ("coherent", "incoherent", "inconsistent"):
             flag("INFO", "review_predicate", f"polarity relied on review-confidence sign(s): {sorted(reviewed_all)}")
 
@@ -252,24 +260,23 @@ def analyze(path: Path, lex: dict) -> dict:
         lens = sorted(len(p) for p in paths)
         if lens[0] <= 2 and lens[-1] >= 3:
             short = min(paths, key=len)
-            flag("HARD", "short_circuit", f"a {lens[0]}-edge path bypasses the {lens[-1]}-edge mechanism: "
+            flag("INFO", "short_circuit", f"a {lens[0]}-edge path bypasses the {lens[-1]}-edge mechanism: "
                  + " -> ".join([short[0][0]] + [t for (_s, t, _k) in short]))
     for e in links:
-        ent = preds.get(e.get("key"), {})
-        if ent.get("role") == "clinical_outcome" and e.get("source") == drug and e.get("target") == disease and len(links) > 1:
-            flag("HARD", "clinical_shortcut", f"clinical-outcome edge '{e.get('key')}' used directly drug->disease")
+        if e.get("key") in THERAPEUTIC_CLINICAL_PREDICATES and e.get("source") == drug and e.get("target") == disease and len(links) > 1:
+            flag("HARD", "clinical_shortcut", f"therapeutic clinical-outcome edge '{e.get('key')}' used directly drug->disease")
 
     # start convention
     first_targets = [label.get(t) for (t, _k) in adj.get(drug, [])]
     if first_targets and all(lt in ("Disease", "PhenotypicFeature") for lt in first_targets):
-        flag("HARD", "direct_drug_disease", f"drug's only target(s) are {first_targets} (no molecular entry point)")
+        flag("INFO", "direct_drug_disease", f"drug's only target(s) are {first_targets} (no molecular entry point)")
     elif first_targets and not any(lt in CANONICAL_FIRST_TARGET for lt in first_targets):
         flag("INFO", "noncanonical_start", f"first target(s) {first_targets} not a Protein (allowed, non-canonical)")
 
     # length
     n = len(links)
     if not (LENGTH_MIN <= n <= LENGTH_MAX):
-        flag("SOFT", "length_out_of_range", f"{n} links (outside {LENGTH_MIN}-{LENGTH_MAX})")
+        flag("INFO", "length_out_of_range", f"{n} links (outside {LENGTH_MIN}-{LENGTH_MAX})")
 
     # dangling nodes
     if paths:
@@ -279,13 +286,15 @@ def analyze(path: Path, lex: dict) -> dict:
                 on_path.add(s); on_path.add(t)
         dangling = [nid for nid in label if nid not in on_path]
         if dangling:
-            flag("SOFT", "dangling_node", f"{len(dangling)} node(s) not on any drug->disease path: {dangling}")
+            flag("INFO", "dangling_node", f"{len(dangling)} node(s) not on any drug->disease path: {dangling}")
 
     # unknown predicate (record-level)
     unknown = sorted({e.get("key") for e in links if e.get("key") not in preds})
     if unknown:
-        flag("SOFT", "unknown_predicate", f"predicate(s) not in lexicon: {unknown}")
+        flag("INFO", "unknown_predicate", f"predicate(s) not in lexicon: {unknown}")
 
+    # "SOFT" is retained as a (now always-zero) counter for downstream consumers that
+    # still key off it; no flag is emitted at SOFT severity anymore (there is no SOFT tier).
     sev = {s: sum(1 for f in flags if f["severity"] == s) for s in ("HARD", "SOFT", "INFO")}
     try:
         rel = str(path.resolve().relative_to(REPO))

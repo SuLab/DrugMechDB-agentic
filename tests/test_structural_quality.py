@@ -2,7 +2,9 @@
 Per-check coverage for scripts/quality/structural_quality.py.
 
 structural_quality is the deterministic post-QC scorer whose flags drive the
-enforced gate (HARD_BLOCKING_CHECKS vs SOFT_CRITIC_CHECKS). Every check gets:
+enforced gate. The gate is BINARY: only the four codes in HARD_BLOCKING_CHECKS
+(connectivity, cycle, duplicate_edge, clinical_shortcut) gate; every other check is
+advisory INFO and never gates (there is no SOFT tier). Every check gets:
 
   * a POSITIVE case — a crafted path that SHOULD raise the flag, asserting the
     exact `code` and `severity`; and
@@ -139,7 +141,7 @@ def test_duplicate_edge_negative(tmp_path):
     assert ("HARD", "duplicate_edge") not in _codes(_analyze(tmp_path, _clean_doc()))
 
 
-# ─── short_circuit (HARD) ────────────────────────────────────────────────────
+# ─── short_circuit (INFO — demoted, advisory, does NOT gate) ─────────────────
 
 def test_short_circuit_positive(tmp_path):
     doc = _doc(
@@ -150,69 +152,94 @@ def test_short_circuit_positive(tmp_path):
          _edge(PROC, DIS, "causes")],                      # 3-edge full mechanism
     )
     res = _analyze(tmp_path, doc)
-    assert ("HARD", "short_circuit") in _codes(res)
+    assert ("INFO", "short_circuit") in _codes(res)
     assert res["n_paths"] >= 2
+    assert "short_circuit" not in sq.HARD_BLOCKING_CHECKS   # advisory only — never gates
 
 
 def test_short_circuit_negative(tmp_path):
-    assert ("HARD", "short_circuit") not in _codes(_analyze(tmp_path, _clean_doc()))
+    assert ("INFO", "short_circuit") not in _codes(_analyze(tmp_path, _clean_doc()))
 
 
 # ─── clinical_shortcut (HARD) ────────────────────────────────────────────────
 
+def _clinical_shortcut_doc(pred):
+    """A worked-out mechanism chain PLUS a redundant drug->disease clinical edge."""
+    return _doc([_node(DRUG, "Drug"), _node(PROT, "Protein"), _node(DIS, "Disease")],
+                [_edge(DRUG, PROT, "decreases activity of"),
+                 _edge(PROT, DIS, "causes"),
+                 _edge(DRUG, DIS, pred)])
+
+
 def test_clinical_shortcut_positive(tmp_path):
-    doc = _doc([_node(DRUG, "Drug"), _node(PROT, "Protein"), _node(DIS, "Disease")],
-               [_edge(DRUG, PROT, "decreases activity of"),
-                _edge(PROT, DIS, "causes"),
-                _edge(DRUG, DIS, "treats")])   # clinical-outcome edge drug->disease
-    res = _analyze(tmp_path, doc)
+    # a THERAPEUTIC clinical-outcome edge (treats) used directly drug->disease
+    res = _analyze(tmp_path, _clinical_shortcut_doc("treats"))
     assert ("HARD", "clinical_shortcut") in _codes(res)
     assert "treats" in _flag(res, "clinical_shortcut")["msg"]
 
 
-def test_clinical_shortcut_negative(tmp_path):
+@pytest.mark.parametrize("pred", ["treats", "prevents", "ameliorates"])
+def test_clinical_shortcut_fires_on_every_therapeutic_predicate(tmp_path, pred):
+    res = _analyze(tmp_path, _clinical_shortcut_doc(pred))
+    assert ("HARD", "clinical_shortcut") in _codes(res)
+
+
+def test_clinical_shortcut_negative_clean(tmp_path):
     assert ("HARD", "clinical_shortcut") not in _codes(_analyze(tmp_path, _clean_doc()))
 
 
-# ─── direct_drug_disease (HARD) ──────────────────────────────────────────────
+@pytest.mark.parametrize("pred", ["contraindicated for", "exacerbates"])
+def test_clinical_shortcut_not_on_contraindication_or_adverse(tmp_path, pred):
+    # A contraindication / adverse-mechanism path legitimately carries a drug->disease
+    # clinical edge (CurationGuide.md special-cases). Only THERAPEUTIC predicates
+    # (treats/prevents/ameliorates) may fire clinical_shortcut.
+    res = _analyze(tmp_path, _clinical_shortcut_doc(pred))
+    assert _flag(res, "clinical_shortcut") is None
+    assert ("HARD", "clinical_shortcut") not in _codes(res)
+
+
+# ─── direct_drug_disease (INFO — demoted, advisory, does NOT gate) ───────────
 
 def test_direct_drug_disease_positive(tmp_path):
     doc = _doc([_node(DRUG, "Drug"), _node(DIS, "Disease")],
                [_edge(DRUG, DIS, "causes")])   # drug's only target IS the disease
     res = _analyze(tmp_path, doc)
-    assert ("HARD", "direct_drug_disease") in _codes(res)
+    assert ("INFO", "direct_drug_disease") in _codes(res)
+    assert "direct_drug_disease" not in sq.HARD_BLOCKING_CHECKS   # advisory only — never gates
 
 
 def test_direct_drug_disease_negative(tmp_path):
     # clean base begins drug -> Protein, so the drug has a molecular entry point
-    assert ("HARD", "direct_drug_disease") not in _codes(_analyze(tmp_path, _clean_doc()))
+    assert ("INFO", "direct_drug_disease") not in _codes(_analyze(tmp_path, _clean_doc()))
 
 
-# ─── type_violation (SOFT) ───────────────────────────────────────────────────
+# ─── type_violation (INFO — demoted, advisory, does NOT gate) ────────────────
 
 def test_type_violation_positive(tmp_path):
     doc = _doc([_node(DRUG, "Drug"), _node(PROT, "Protein"), _node(DIS, "Disease")],
                [_edge(DRUG, PROT, "decreases activity of"),
                 _edge(PROT, DIS, "increases activity of")])   # object is a Disease, not activity-bearing
     res = _analyze(tmp_path, doc)
-    assert ("SOFT", "type_violation") in _codes(res)
+    assert ("INFO", "type_violation") in _codes(res)
     assert "Disease" in _flag(res, "type_violation")["msg"]
+    assert "type_violation" not in sq.HARD_BLOCKING_CHECKS   # advisory only — never gates
 
 
 def test_type_violation_negative(tmp_path):
-    assert ("SOFT", "type_violation") not in _codes(_analyze(tmp_path, _clean_doc()))
+    assert ("INFO", "type_violation") not in _codes(_analyze(tmp_path, _clean_doc()))
 
 
-# ─── net_polarity (SOFT) ─────────────────────────────────────────────────────
+# ─── net_polarity (INFO — demoted, advisory, does NOT gate) ──────────────────
 
 def test_net_polarity_incoherent_positive(tmp_path):
     doc = _doc([_node(DRUG, "Drug"), _node(PROT, "Protein"), _node(DIS, "Disease")],
                [_edge(DRUG, PROT, "increases activity of"),   # +1
                 _edge(PROT, DIS, "causes")])                  # +1 -> net POSITIVE
     res = _analyze(tmp_path, doc)
-    assert ("SOFT", "net_polarity") in _codes(res)
+    assert ("INFO", "net_polarity") in _codes(res)
     assert res["polarity"] == "incoherent"
     assert "POSITIVE" in _flag(res, "net_polarity")["msg"]
+    assert "net_polarity" not in sq.HARD_BLOCKING_CHECKS   # advisory only — never gates
 
 
 def test_net_polarity_indeterminate_positive(tmp_path):
@@ -220,13 +247,13 @@ def test_net_polarity_indeterminate_positive(tmp_path):
                [_edge(DRUG, PROT, "is metabolite of"),   # role: reverse -> indeterminate
                 _edge(PROT, DIS, "causes")])
     res = _analyze(tmp_path, doc)
-    assert ("SOFT", "net_polarity") in _codes(res)
+    assert ("INFO", "net_polarity") in _codes(res)
     assert res["polarity"] == "indeterminate"
 
 
 def test_net_polarity_negative(tmp_path):
     # clean base nets negative (coherent) -> no net_polarity flag
-    assert ("SOFT", "net_polarity") not in _codes(_analyze(tmp_path, _clean_doc()))
+    assert ("INFO", "net_polarity") not in _codes(_analyze(tmp_path, _clean_doc()))
 
 
 # ─── noncanonical_start (INFO) ───────────────────────────────────────────────
@@ -242,23 +269,23 @@ def test_noncanonical_start_negative(tmp_path):
     assert ("INFO", "noncanonical_start") not in _codes(_analyze(tmp_path, _clean_doc()))
 
 
-# ─── length_out_of_range (SOFT) ──────────────────────────────────────────────
+# ─── length_out_of_range (INFO — advisory) ───────────────────────────────────
 
 def test_length_out_of_range_positive(tmp_path):
     doc = _doc([_node(DRUG, "Drug"), _node(PROT, "Protein"), _node(DIS, "Disease")],
                [_edge(DRUG, PROT, "decreases activity of"),
                 _edge(PROT, DIS, "causes")])   # 2 links, below the 3-7 window
     res = _analyze(tmp_path, doc)
-    assert ("SOFT", "length_out_of_range") in _codes(res)
+    assert ("INFO", "length_out_of_range") in _codes(res)
     assert "2 links" in _flag(res, "length_out_of_range")["msg"]
 
 
 def test_length_out_of_range_negative(tmp_path):
     # clean base has 3 links (in range)
-    assert ("SOFT", "length_out_of_range") not in _codes(_analyze(tmp_path, _clean_doc()))
+    assert ("INFO", "length_out_of_range") not in _codes(_analyze(tmp_path, _clean_doc()))
 
 
-# ─── dangling_node (SOFT) ────────────────────────────────────────────────────
+# ─── dangling_node (INFO — advisory) ─────────────────────────────────────────
 
 def test_dangling_node_positive(tmp_path):
     doc = _doc(
@@ -270,15 +297,15 @@ def test_dangling_node_positive(tmp_path):
          _edge(PROT, PROT2, "positively regulates")],   # PROT2 leads nowhere -> dangling
     )
     res = _analyze(tmp_path, doc)
-    assert ("SOFT", "dangling_node") in _codes(res)
+    assert ("INFO", "dangling_node") in _codes(res)
     assert PROT2 in _flag(res, "dangling_node")["msg"]
 
 
 def test_dangling_node_negative(tmp_path):
-    assert ("SOFT", "dangling_node") not in _codes(_analyze(tmp_path, _clean_doc()))
+    assert ("INFO", "dangling_node") not in _codes(_analyze(tmp_path, _clean_doc()))
 
 
-# ─── unknown_predicate (SOFT) ────────────────────────────────────────────────
+# ─── unknown_predicate (INFO — advisory) ──────────────────────────────────────
 
 def test_unknown_predicate_positive(tmp_path):
     doc = _doc([_node(DRUG, "Drug"), _node(PROT, "Protein"), _node(PROC, "BiologicalProcess"),
@@ -287,12 +314,12 @@ def test_unknown_predicate_positive(tmp_path):
                 _edge(PROT, PROC, "positively regulates"),
                 _edge(PROC, DIS, "causes")])
     res = _analyze(tmp_path, doc)
-    assert ("SOFT", "unknown_predicate") in _codes(res)
+    assert ("INFO", "unknown_predicate") in _codes(res)
     assert "frobnicates wildly" in _flag(res, "unknown_predicate")["msg"]
 
 
 def test_unknown_predicate_negative(tmp_path):
-    assert ("SOFT", "unknown_predicate") not in _codes(_analyze(tmp_path, _clean_doc()))
+    assert ("INFO", "unknown_predicate") not in _codes(_analyze(tmp_path, _clean_doc()))
 
 
 # ─── review_predicate (INFO) ─────────────────────────────────────────────────
@@ -310,24 +337,31 @@ def test_review_predicate_negative(tmp_path):
     assert ("INFO", "review_predicate") not in _codes(_analyze(tmp_path, _clean_doc()))
 
 
-# ─── severity taxonomy is internally consistent with the gate's classifier ───
+# ─── severity taxonomy is binary and consistent with the gate's classifier ───
 
-def test_positive_flags_agree_with_gate_severity_sets(tmp_path):
-    """Every HARD flag code this module emits must be in HARD_BLOCKING_CHECKS, and
-    the two SOFT-critic codes must be in SOFT_CRITIC_CHECKS — the sets gate.py keys
-    its disposition off. A drift between severity label and set membership would be
-    a real bug; this pins them together."""
-    # one doc that triggers a representative HARD + SOFT + INFO mix
-    hard_doc = _doc([_node(DRUG, "Drug"), _node(DIS, "Disease")],
-                    [_edge(DRUG, DIS, "causes")])   # direct_drug_disease HARD
-    res = _analyze(tmp_path, hard_doc)
-    for f in res["flags"]:
-        if f["severity"] == "HARD":
-            assert f["code"] in sq.HARD_BLOCKING_CHECKS
-    # net_polarity / type_violation are the SOFT-critic set
-    assert sq.SOFT_CRITIC_CHECKS == {"net_polarity", "type_violation"}
-    tv = _analyze(tmp_path, _doc(
-        [_node(DRUG, "Drug"), _node(PROT, "Protein"), _node(DIS, "Disease")],
-        [_edge(DRUG, PROT, "decreases activity of"), _edge(PROT, DIS, "increases activity of")]))
-    assert _flag(tv, "type_violation")["severity"] == "SOFT"
-    assert "type_violation" in sq.SOFT_CRITIC_CHECKS
+def test_hard_blocking_set_is_exactly_the_four_invariants():
+    """The gate is BINARY: HARD_BLOCKING_CHECKS is EXACTLY the four high-precision
+    structural invariants, and the SOFT tier is gone entirely."""
+    assert sq.HARD_BLOCKING_CHECKS == {
+        "connectivity", "cycle", "duplicate_edge", "clinical_shortcut"}
+    assert not hasattr(sq, "SOFT_CRITIC_CHECKS"), "the SOFT tier must be removed"
+
+
+def test_emitted_hard_flags_are_all_in_the_blocking_set(tmp_path):
+    """Every flag emitted at HARD severity must be in HARD_BLOCKING_CHECKS, and the
+    demoted checks must never be HARD (they are advisory INFO). A drift between the
+    severity label the scorer emits and the set the gate keys off would be a real bug."""
+    # a doc that raises a genuine HARD flag (duplicate_edge)
+    doc = _doc([_node(DRUG, "Drug"), _node(PROT, "Protein"), _node(DIS, "Disease")],
+               [_edge(DRUG, PROT, "decreases activity of"),
+                _edge(DRUG, PROT, "decreases activity of"),   # duplicate -> HARD
+                _edge(PROT, DIS, "causes")])
+    res = _analyze(tmp_path, doc)
+    hard_codes = {f["code"] for f in res["flags"] if f["severity"] == "HARD"}
+    assert hard_codes and hard_codes <= sq.HARD_BLOCKING_CHECKS
+    # the demoted checks are advisory INFO and never in the blocking set
+    for code in ("short_circuit", "direct_drug_disease", "net_polarity", "type_violation"):
+        assert code not in sq.HARD_BLOCKING_CHECKS
+        for f in res["flags"]:
+            if f["code"] == code:
+                assert f["severity"] == "INFO"
