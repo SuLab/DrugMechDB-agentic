@@ -2,6 +2,14 @@
 Thin wrapper around NCBI E-utilities + open-access full-text sources for the
 AI curation agent.
 
+This module is the **PubMed** engine. Sourcing is source-agnostic (AGENTS.md §4),
+so evidence may also come from ChEMBL, ClinicalTrials.gov, bioRxiv/medRxiv, or
+DrugBank. Those live behind ONE unified, multi-source fetch layer that reuses
+this module's primitives and honors the SAME cache shape + ephemeral-full-text
+contract: `scripts/evidence_fetch.py` (implemented in `scripts/evidence_sources/`).
+Use the unified CLI to fetch any source (`fetch PMID:… ChEMBL:… clinicaltrials:…`);
+this module and its CLI remain the PubMed path and are unchanged.
+
 The agent never authors source text: its only input here is a PMID. This wrapper
 fetches from authoritative APIs and writes the result into
 references_cache/PMID_xxxxxxxx.md *itself*, in the markdown-with-YAML-frontmatter

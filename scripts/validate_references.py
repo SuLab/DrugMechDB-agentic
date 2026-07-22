@@ -2,8 +2,13 @@
 Layer 4 — Reference verification.
 
 For each input file that contains `evidence` items, verify that every
-EvidenceItem's `snippet` is a verbatim substring of the abstract of the
-cited PMID. Abstracts are fetched from PubMed E-utilities and cached in
+EvidenceItem's `snippet` is a verbatim substring of the cited source's cached
+text. Verification is **source-agnostic**: the cited `reference` may be a
+`PMID:` (PubMed), or any other sanctioned source (`ChEMBL:`, `clinicaltrials:`,
+`bioRxiv:`/`medRxiv:`, `DrugBank:`) fetched via the evidence-fetch layer
+(scripts/pubmed_fetch.py for PubMed; scripts/evidence_sources/ for the rest).
+The matcher resolves each reference to its `<SOURCE>_<id>.md` cache file and
+substring-checks against it regardless of source. Cached content lives in
 references_cache/ (90-day TTL by default in the linkml-reference-validator
 config).
 
@@ -125,10 +130,10 @@ def main() -> int:
                   "(legacy paths skip Layer 4 by design).")
         elif fails == 0:
             print(f"Layer 4 PASS: {len(with_evidence)} files with evidence, "
-                  f"every snippet verified as verbatim substring of its PMID abstract.")
+                  f"every snippet verified as verbatim substring of its cited source.")
         else:
             print(f"Layer 4 FAIL: {fails} / {len(with_evidence)} files have at least one snippet "
-                  "that is not a verbatim substring of its PMID abstract.")
+                  "that is not a verbatim substring of its cited source.")
             for r in per_file[:5]:
                 if r["exit_code"] != 0:
                     print(f"\n  {Path(r['file']).name}:")
