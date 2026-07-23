@@ -3,7 +3,7 @@ Phase 4b — research-agent test suite.
 
 Covers:
   - Cache layer: slugify, write+load round-trip, TTL freshness logic, short-circuit.
-  - Provider abstraction: env-var enforcement (Claude), NotImplementedError stubs (Perplexity, Asta), PMID extraction.
+  - Provider abstraction: env-var enforcement (Claude), PMID extraction. Anthropic-only.
   - CLI: list / cache-info / run subcommands work without network.
   - The provider-to-curation safety contract: the existing Layer-4 negative
     fixture (`tests/fixtures/sample_ai_curated_bad_snippet.yaml`) demonstrates
@@ -35,8 +35,6 @@ sys.path.insert(0, str(REPO / "scripts"))
 from research_providers import cache as cache_mod  # noqa: E402
 from research_providers.base import ResearchDossier  # noqa: E402
 from research_providers.claude import ClaudeProvider  # noqa: E402
-from research_providers.perplexity import PerplexityProvider  # noqa: E402
-from research_providers.asta import AstaProvider  # noqa: E402
 
 
 def _py() -> str:
@@ -136,14 +134,10 @@ def test_claude_requires_api_key(monkeypatch) -> None:
         ClaudeProvider().run("Aspirin", "Myocardial Infarction")
 
 
-def test_perplexity_is_stub() -> None:
-    with pytest.raises(NotImplementedError, match="PerplexityProvider"):
-        PerplexityProvider().run("Aspirin", "MI")
-
-
-def test_asta_is_stub() -> None:
-    with pytest.raises(NotImplementedError, match="AstaProvider"):
-        AstaProvider().run("Aspirin", "MI")
+def test_only_claude_provider_registered() -> None:
+    """The project is Anthropic-only: Claude is the sole registered provider."""
+    from research_providers import PROVIDERS
+    assert set(PROVIDERS) == {"claude"}
 
 
 def test_claude_default_model() -> None:
@@ -167,7 +161,7 @@ def test_claude_pmid_extraction_empty() -> None:
 # ─── CLI ─────────────────────────────────────────────────────────────────────
 
 
-def test_cli_list_shows_three_providers() -> None:
+def test_cli_list_shows_claude_provider() -> None:
     proc = subprocess.run(
         [_py(), str(REPO / "scripts" / "research.py"), "list"],
         capture_output=True, text=True,
@@ -175,10 +169,7 @@ def test_cli_list_shows_three_providers() -> None:
     assert proc.returncode == 0, proc.stderr
     out = proc.stdout
     assert "claude" in out
-    assert "perplexity" in out
-    assert "asta" in out
     assert "ready" in out             # claude is implemented
-    assert "stub" in out              # perplexity, asta are stubs
 
 
 def test_cli_cache_info_not_cached() -> None:
@@ -203,16 +194,6 @@ def test_cli_run_without_key_clean_error(monkeypatch) -> None:
     assert proc.returncode == 1
     assert "ANTHROPIC_API_KEY" in proc.stderr
     assert "ERROR" in proc.stderr
-
-
-def test_cli_run_perplexity_stub_error() -> None:
-    proc = subprocess.run(
-        [_py(), str(REPO / "scripts" / "research.py"),
-         "run", "perplexity", "Aspirin", "Myocardial Infarction"],
-        capture_output=True, text=True,
-    )
-    assert proc.returncode == 3                 # NotImplementedError exit code
-    assert "PerplexityProvider" in proc.stderr
 
 
 def test_cli_run_short_circuits_on_fresh_cache(monkeypatch, tmp_path) -> None:

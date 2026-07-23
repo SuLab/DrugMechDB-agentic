@@ -19,8 +19,8 @@ Examples:
 
 Environment:
   ANTHROPIC_API_KEY   required for the claude provider
-  PERPLEXITY_API_KEY  required for the perplexity provider (not yet implemented)
-  ASTA_API_KEY        required for the asta provider (not yet implemented)
+
+This project is Anthropic-only: Claude is the sole research provider.
 """
 
 from __future__ import annotations

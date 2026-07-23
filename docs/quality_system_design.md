@@ -189,9 +189,11 @@ package layout:
   + the two judges → one merged profile (`hard_gates`, `edge_faithfulness`, `path_coherence`,
   `overall`). Run via `just quality-profile <file>` (`--no-llm` for deterministic-only).
 
-The judge is chosen to be a **different model family than the curator** for independence
-(`make_backend`: prefer OpenAI vs the Claude curator; configurable via `DMDB_JUDGE_PROVIDER` /
-`DMDB_JUDGE_MODEL`). Without an API key the deterministic profile is still produced and the
+This project is Anthropic-only: the judge is a Claude model. Its independence from the curator
+comes from **grounding** (cite-or-abstain against an external referent) plus **blinding**, NOT from
+model-family diversity; running a **different Claude model** than the curator (`make_backend`,
+configurable via `DMDB_JUDGE_MODEL`) adds mild decorrelation. Without an API key the deterministic
+profile is still produced and the
 semantic section is marked `not_run` — so the layer degrades cleanly. The taxonomy statuses for
 **D2–D8, C3–C5, E1–E5** are therefore now *wired (🟡 pending calibration)* rather than ⬜.
 

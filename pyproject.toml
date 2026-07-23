@@ -26,12 +26,11 @@ dev = [
   "pytest>=7.4.0",
   "oaklib>=0.6.0",
 ]
-# LLM SDKs for the semantic judge layer (scripts/quality/judge/). Optional: the
-# grounding tools and the whole pipeline run without these (StubBackend / --no-llm);
-# install to enable the live AnthropicBackend / OpenAIBackend.
+# LLM SDK for the semantic judge layer (scripts/quality/judge/). Optional: the
+# grounding tools and the whole pipeline run without it (StubBackend / --no-llm);
+# install to enable the live AnthropicBackend. This project is Anthropic-only.
 judge = [
   "anthropic>=0.40.0",
-  "openai>=1.40.0",
 ]
 
 [tool.hatch.build.targets.wheel]

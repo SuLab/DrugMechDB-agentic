@@ -5,15 +5,14 @@ A backend takes (system prompt, user message, tools) and runs a bounded
 tool-use loop: the model may call grounding tools (executed locally), receive
 results, and iterate until it emits a final text answer (the JSON verdict).
 
-Three backends:
-  - AnthropicBackend — Anthropic Messages API tool-use loop (different family
-    than the curator when the curator is OpenAI; configurable).
-  - OpenAIBackend    — OpenAI Chat Completions tool-call loop.
+This project is Anthropic-only. Two backends:
+  - AnthropicBackend — Anthropic Messages API tool-use loop (the live judge; a
+    different Claude model than the curator gives mild decorrelation).
   - StubBackend      — deterministic, scripted; drives the *exact same* loop and
     tool execution with no network/keys, so every seam is testable offline.
 
-Live backends import their SDK lazily, so importing this module never requires
-anthropic/openai to be installed.
+The live backend imports its SDK lazily, so importing this module never requires
+anthropic to be installed.
 """
 
 from __future__ import annotations
@@ -118,48 +117,6 @@ class AnthropicBackend(Backend):
             return LoopResult(text, calls, i + 1, self.name, self.model, usage, "final")
 
         return LoopResult(text, calls, max_iters, self.name, self.model, usage, "max_iters")
-
-
-# ── OpenAI ────────────────────────────────────────────────────────────────────
-
-class OpenAIBackend(Backend):
-    name = "openai"
-
-    def __init__(self, model: str):
-        self.model = model
-
-    def run(self, system: str, user: str, tools: list[Tool], max_iters: int = 6) -> LoopResult:
-        import openai  # lazy
-
-        client = openai.OpenAI()
-        registry = {t.name: t for t in tools}
-        tool_defs = [{
-            "type": "function",
-            "function": {"name": t.name, "description": t.description, "parameters": t.input_schema},
-        } for t in tools]
-        messages = [{"role": "system", "content": system}, {"role": "user", "content": user}]
-        calls: list = []
-
-        for i in range(max_iters):
-            resp = client.chat.completions.create(model=self.model, messages=messages, tools=tool_defs)
-            msg = resp.choices[0].message
-            if msg.tool_calls:
-                messages.append({
-                    "role": "assistant",
-                    "content": msg.content or "",
-                    "tool_calls": [tc.model_dump() if hasattr(tc, "model_dump") else tc for tc in msg.tool_calls],
-                })
-                for tc in msg.tool_calls:
-                    try:
-                        args = json.loads(tc.function.arguments or "{}")
-                    except Exception:
-                        args = {}
-                    out = _execute(registry, tc.function.name, args, calls)
-                    messages.append({"role": "tool", "tool_call_id": tc.id, "content": out})
-                continue
-            return LoopResult(msg.content or "", calls, i + 1, self.name, self.model, None, "final")
-
-        return LoopResult("", calls, max_iters, self.name, self.model, None, "max_iters")
 
 
 # ── Stub (deterministic, offline) ──────────────────────────────────────────────

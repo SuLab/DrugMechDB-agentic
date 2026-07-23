@@ -17,15 +17,9 @@ from __future__ import annotations
 
 from .base import BaseProvider, ResearchDossier  # re-export
 from .claude import ClaudeProvider
-from .openai import OpenAIProvider
-from .perplexity import PerplexityProvider
-from .asta import AstaProvider
 
 PROVIDERS: dict[str, type[BaseProvider]] = {
     ClaudeProvider.name: ClaudeProvider,
-    OpenAIProvider.name: OpenAIProvider,
-    PerplexityProvider.name: PerplexityProvider,
-    AstaProvider.name: AstaProvider,
 }
 
 __all__ = ["BaseProvider", "ResearchDossier", "PROVIDERS"]

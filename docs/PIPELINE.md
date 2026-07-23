@@ -31,8 +31,8 @@ python3.10 -m venv .venv-py310
 
 - `requirements.lock` is the exact pin (regenerate with `pip freeze`); `pyproject.toml`
   holds the loose lower-bound spec. Use the lock for reproducible/CI installs.
-- Extras: `dev` (linkml, pytest, oaklib), `judge` (anthropic, openai — only needed for the
-  live semantic critic; the pipeline otherwise runs without them).
+- Extras: `dev` (linkml, pytest, oaklib), `judge` (anthropic — only needed for the
+  live semantic critic; the pipeline otherwise runs without it). Anthropic-only.
 
 Sanity check: `just env-info` and `python scripts/qc.py --help`.
 

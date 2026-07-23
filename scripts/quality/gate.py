@@ -310,7 +310,8 @@ def main() -> int:
     ap.add_argument("--json", action="store_true", help="machine-readable feedback")
     ap.add_argument("--no-critic", action="store_true",
                     help="deterministic layers only (no LLM semantic critic step)")
-    ap.add_argument("--provider", choices=("anthropic", "openai"), help="force critic provider")
+    ap.add_argument("--provider", choices=("anthropic",), default="anthropic",
+                    help="critic provider (Anthropic-only)")
     ap.add_argument("--round", type=int, default=1, dest="round_no",
                     help="which curate<->critic round this is (1-based)")
     ap.add_argument("--max-rounds", type=int, default=3,

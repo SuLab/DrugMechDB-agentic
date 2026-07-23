@@ -263,7 +263,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("path_file", help="kb/paths/<file>.yaml to review")
-    ap.add_argument("--provider", choices=("anthropic", "openai"), help="force critic provider")
+    ap.add_argument("--provider", choices=("anthropic",), default="anthropic",
+                    help="critic provider (Anthropic-only)")
     ap.add_argument("--round", type=int, default=1, dest="round_no",
                     help="which curate↔critic round this is (1-based)")
     ap.add_argument("--max-rounds", type=int, default=3,

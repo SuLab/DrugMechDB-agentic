@@ -8,15 +8,16 @@ one profile per record:
   2. Deterministic structural — scripts/quality/structural_quality.py (polarity/topology/...)
   3. Semantic LLM judges      — edge-evidence (Layer 5) + path-coherence (Layers 6/7)
 
-The semantic layer runs only when a judge backend is available (an LLM API key). It is
-chosen to be a DIFFERENT model family than the curator for independence; absent a key, the
-deterministic profile is still produced and the semantic section is marked "not run".
+The semantic layer runs only when a judge backend is available (an Anthropic API key).
+This project is Anthropic-only: the judge is a Claude model, and its independence from the
+curator comes from grounding (it must cite an external referent or abstain) plus blinding,
+not from model-family diversity. Absent a key, the deterministic profile is still produced
+and the semantic section is marked "not run".
 
 Usage:
     python scripts/quality/quality_profile.py kb/paths/<file>.yaml
     python scripts/quality/quality_profile.py <file> --json
     python scripts/quality/quality_profile.py <file> --no-llm
-    python scripts/quality/quality_profile.py <file> --provider openai
 Exit: 0 = no hard-gate failure across inputs · 1 = >=1 hard-gate failure.
 """
 
@@ -47,32 +48,27 @@ def _py() -> str:
     return str(VENV_PY) if VENV_PY.exists() else sys.executable
 
 
-# ── backend selection (independence: different family than the curator) ─────────
+# ── backend selection (Anthropic-only; independence via grounding + blinding) ───
 
 def make_backend(provider: str | None = None) -> tuple[Backend | None, str]:
     """Pick a judge backend. Returns (backend, note); None when no key is available.
 
-    The project runs Anthropic-only, so the judge defaults to Claude Opus. Independence
-    from the curator comes from grounding — the judge must cite an external referent
-    (ChEMBL or the source text) or abstain — not from using a different model vendor;
-    judging on a different model than the curator (e.g. an Opus judge over a
-    Sonnet-curated path) adds a further decorrelation boost. OpenAI stays available as an
-    explicit opt-in (DMDB_JUDGE_PROVIDER=openai) for cross-family checking."""
-    from judge.backends import AnthropicBackend, OpenAIBackend
-    prov = provider or os.environ.get("DMDB_JUDGE_PROVIDER")
+    The project is Anthropic-only, so the judge is a Claude model (default Opus).
+    Independence from the curator does NOT come from model-family diversity; it comes
+    from GROUNDING — the judge must cite an external referent (ChEMBL or the source text)
+    or abstain — plus blinding to which model produced the path. Running the judge on a
+    DIFFERENT Claude model than the curator (e.g. an Opus judge over a Sonnet-curated
+    path, via DMDB_JUDGE_MODEL) adds a mild decorrelation boost."""
+    from judge.backends import AnthropicBackend
+    prov = provider or os.environ.get("DMDB_JUDGE_PROVIDER") or "anthropic"
     has_a = bool(os.environ.get("ANTHROPIC_API_KEY"))
-    has_o = bool(os.environ.get("OPENAI_API_KEY"))
 
-    if prov == "openai":
-        if not has_o:
-            return None, "OPENAI_API_KEY not set"
-        return OpenAIBackend(os.environ.get("DMDB_JUDGE_MODEL", "gpt-5")), "judge=openai (cross-family, explicit opt-in)"
-    if prov == "anthropic" or (prov is None and has_a):
-        if not has_a:
-            return None, "ANTHROPIC_API_KEY not set"
-        model = os.environ.get("DMDB_JUDGE_MODEL", "claude-opus-4-8")
-        return AnthropicBackend(model), "judge=anthropic Opus; independence via grounding + cite-or-abstain"
-    return None, "no judge API key (ANTHROPIC_API_KEY / OPENAI_API_KEY) — semantic layers not run"
+    if prov != "anthropic":
+        return None, f"unknown judge provider {prov!r} — this project is Anthropic-only"
+    if not has_a:
+        return None, "ANTHROPIC_API_KEY not set — semantic layers not run"
+    model = os.environ.get("DMDB_JUDGE_MODEL", "claude-opus-4-8")
+    return AnthropicBackend(model), "judge=anthropic Opus; independence via grounding + cite-or-abstain + blinding"
 
 
 # ── syntactic gate ──────────────────────────────────────────────────────────
@@ -225,7 +221,8 @@ def main() -> int:
     ap.add_argument("targets", nargs="+", help="path YAML file(s) or directory")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--no-llm", action="store_true", help="deterministic layers only")
-    ap.add_argument("--provider", choices=("anthropic", "openai"), help="force judge provider")
+    ap.add_argument("--provider", choices=("anthropic",), default="anthropic",
+                    help="judge provider (Anthropic-only)")
     ap.add_argument("--max-iters", type=int, default=6)
     ap.add_argument("--no-cache", action="store_true")
     args = ap.parse_args()

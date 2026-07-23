@@ -16,7 +16,7 @@ or **abstain** to a human. It never grades from parametric memory, and it re-der
 | File | Role |
 |---|---|
 | `grounding.py` | The external referents the judge cites: `read_source` (cited PMID text + snippet context via the `pubmed_fetch` wrapper) and `chembl_get_mechanism` (ChEMBL drug→target→action; resolves salt/parent forms). Deterministic, cached (`quality_cache/grounding/`), never raises. |
-| `backends.py` | Provider-agnostic agentic **tool-loop**: `AnthropicBackend`, `OpenAIBackend`, `StubBackend` (deterministic; runs the whole pipeline offline with no key). |
+| `backends.py` | Agentic **tool-loop** (Anthropic-only): `AnthropicBackend` (the live judge) and `StubBackend` (deterministic; runs the whole pipeline offline with no key). |
 | `runner.py` | Loads a prompt's SYSTEM section, drives the loop, robustly parses the JSON verdict, caches verdicts (`quality_cache/verdicts/`). |
 | `edge_evidence_judge.py` | Builds the per-edge input the `edge_evidence_judge.md` prompt expects; returns one verdict per edge (the 8-check atomic ladder + re-derived `EvidenceSupportEnum`). |
 | `path_coherence_judge.py` | Builds the path-level input for `path_coherence_judge.md`; returns the chain verdict (accepted MoA, net effect, missing/wrong step, primacy, gold comparison). |
@@ -30,19 +30,21 @@ The orchestrator that ties everything together is one level up:
 # Deterministic layers only (always works, no key):
 just quality-profile kb/paths/<file>.yaml --no-llm
 
-# Full profile incl. semantic judges (requires an LLM API key):
-export ANTHROPIC_API_KEY=...        # or OPENAI_API_KEY (preferred for independence)
+# Full profile incl. semantic judges (requires an Anthropic API key):
+export ANTHROPIC_API_KEY=...
 just quality-profile kb/paths/<file>.yaml
 just quality-profile-json kb/paths/<file>.yaml      # machine-readable
 ```
 
-**Independence.** The curator defaults to Claude, so the judge prefers **OpenAI** for
-cross-family checking (it breaks the shared-prior problem — framework §6c). Override with
-`DMDB_JUDGE_PROVIDER=anthropic|openai` and `DMDB_JUDGE_MODEL=...`. With only an Anthropic key
-the judge runs on a non-Opus Claude model and prints a reduced-independence note. With **no**
-key, the deterministic profile is still produced and the semantic section is `not_run`.
+**Independence.** This project is Anthropic-only: the judge is a Claude model (default
+`claude-opus-4-8`). Independence from the curator comes from **grounding** — the judge must
+cite an external referent (the cited source text or ChEMBL) or **abstain** — plus **blinding**
+(it never sees which model produced a path), NOT from model-family diversity. Running the judge
+on a **different Claude model** than the curator (`DMDB_JUDGE_MODEL=...`) adds mild
+decorrelation. With **no** key, the deterministic profile is still produced and the semantic
+section is `not_run`.
 
-Install the LLM SDKs for the live path: `pip install -e ".[judge]"`.
+Install the LLM SDK for the live path: `pip install -e ".[judge]"`.
 
 ## What is NOT done yet: calibration
 
@@ -57,5 +59,5 @@ prompts emit are the calibration anchors; `quality_cache/verdicts/` preserves th
 
 `tests/test_quality_judge.py` exercises every seam offline with `StubBackend` (tool-loop,
 JSON parsing, edge/path input construction, faithfulness scoring, the full qc+structural+semantic
-merge), plus the live Anthropic/OpenAI loops via monkeypatched SDK clients (no key/network) and
+merge), plus the live Anthropic loop via a monkeypatched SDK client (no key/network) and
 network-gated live grounding (`DMDB_NETWORK_TESTS=1`).

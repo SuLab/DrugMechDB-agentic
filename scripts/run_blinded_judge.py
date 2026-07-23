@@ -23,12 +23,13 @@ BLINDING (framework §7)
          a `reveal_key`, joined back only to compute the post-scoring aggregate.
 
 INDEPENDENCE (framework §6c)
-    Verification is trustworthy because of *grounding*, not IQ, and a judge in a
-    DIFFERENT model family than the curator breaks the shared-prior problem at
-    near-zero cost. The pilot is Claude-curated, so the judge defaults to a
-    cross-family model (OpenAI) when its key is present; it falls back to
-    Anthropic Opus with an explicit reduced-independence note otherwise. Judge
-    provider/model are CLI args (`--judge-provider`, `--judge-model`).
+    Verification is trustworthy because of *grounding*, not IQ: the judge must
+    cite an external referent (the cited source text or ChEMBL) or abstain, and
+    it never sees which model produced a path (blinding, above). This project is
+    Anthropic-only, so the judge is a Claude model (default `claude-opus-4-8`).
+    Independence rests on that grounding + blinding, NOT on model-family
+    diversity; running the judge on a DIFFERENT Claude model than the curator
+    (via `--judge-model`) adds mild decorrelation.
 
 MODES (no real API call by default or in tests)
     (default)  DRY-RUN / plan — discover + blind + resolve legacy paths, print the
@@ -47,7 +48,7 @@ USAGE
     # Offline orchestration check (no API):
     python scripts/run_blinded_judge.py opus=<dir> sonnet=<dir> --stub --out-dir /tmp/bj
 
-    # Real blinded judge pass (needs OPENAI_API_KEY, cross-family default):
+    # Real blinded judge pass (needs ANTHROPIC_API_KEY):
     python scripts/run_blinded_judge.py <dir> --run --out-dir experiments/pilot/blinded
 
 Each positional INPUT is either a directory (arm label = its basename) or
@@ -220,29 +221,20 @@ def _present(v) -> bool:
 def resolve_judge(provider: str, model: str | None, curator_family: str) -> tuple[str, str | None, str, bool]:
     """Return (resolved_provider, resolved_model, note, key_available).
 
-    provider ∈ {auto, openai, anthropic}. `auto` prefers a DIFFERENT family than
-    the curator (framework §6c): OpenAI when its key exists, else Anthropic Opus
-    with a reduced-independence note.
+    This project is Anthropic-only, so the judge is always a Claude model
+    (default `claude-opus-4-8`; override with `--judge-model`). Independence from
+    the curator rests on grounding (cite-or-abstain) + blinding, NOT on
+    model-family diversity (framework §6c); running a DIFFERENT Claude model than
+    the curator adds mild decorrelation.
     """
-    has_o = bool(os.environ.get("OPENAI_API_KEY"))
     has_a = bool(os.environ.get("ANTHROPIC_API_KEY"))
     curator = (curator_family or "anthropic").lower()
 
-    if provider == "auto":
-        provider = "openai" if has_o else ("anthropic" if has_a else "openai")
-
-    if provider == "openai":
-        m = model or "gpt-5"
-        cross = curator != "openai"
-        note = (f"judge=openai:{m} — {'cross-family vs ' + curator + ' curator (framework §6c)' if cross else 'SAME family as curator (reduced independence)'}")
-        return "openai", m, note, has_o
-    # anthropic
     m = model or "claude-opus-4-8"
-    same = curator == "anthropic"
-    note = (f"judge=anthropic:{m} — "
-            + ("SAME family as the Claude curator: independence rests on grounding + cite-or-abstain, not model diversity; "
-               "prefer OpenAI (set OPENAI_API_KEY) for a cross-family check" if same
-               else f"cross-family vs {curator} curator"))
+    decorrelated = curator == "anthropic" and model is not None and m != curator
+    note = (f"judge=anthropic:{m} — independence via grounding (cite-or-abstain) + blinding, "
+            "not model-family diversity"
+            + ("; different Claude model than the curator for mild decorrelation" if decorrelated else ""))
     return "anthropic", m, note, has_a
 
 
@@ -548,8 +540,8 @@ def main(argv=None) -> int:
     ap.add_argument("--run", action="store_true", help="do the real judging (needs an API key)")
     ap.add_argument("--stub", action="store_true",
                     help="run the full orchestration with the offline StubBackend (no API, for tests/CI)")
-    ap.add_argument("--judge-provider", choices=("auto", "openai", "anthropic"), default="auto",
-                    help="judge model family; 'auto' prefers a different family than the curator (§6c)")
+    ap.add_argument("--judge-provider", choices=("anthropic",), default="anthropic",
+                    help="judge provider (Anthropic-only); the judge is a Claude model")
     ap.add_argument("--judge-model", help="override the judge model id")
     ap.add_argument("--curator-family", default="anthropic",
                     help="the pilot's curator family, for the independence note (default anthropic/Claude)")

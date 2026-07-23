@@ -182,9 +182,11 @@ not a single dependency:
 on. A judge that cannot point to external evidence **abstains and routes to a human** — it does not
 guess from memory. This also makes the judge itself auditable and calibratable.
 
-**(c) Different model family for judge vs curator.** The harness already runs multi-provider
-(`claude` / `openai` / …). Curate with one, judge with another — the cheapest possible independence
-boost; it breaks the shared-prior problem at near-zero cost.
+**(c) Independence via grounding + blinding, not model diversity.** This project is Anthropic-only,
+so both curator and judge are Claude. Independence does not rest on using a different model *family*;
+it rests on (a) grounding — the judge cites external evidence or abstains — and (b) blinding, so the
+judge never knows which model produced a path. Judging with a **different Claude model** than the
+curator (e.g. an Opus judge over a Sonnet-curated path) adds mild decorrelation on top.
 
 Net: the judge is qualified like a referee with the rulebook and instant replay — not by being a
 better athlete, but by having access to evidence and a bounded set of calls to make.

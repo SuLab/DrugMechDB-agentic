@@ -245,26 +245,3 @@ def test_anthropic_backend_tool_loop_monkeypatched(monkeypatch):
     assert res.final_text == '{"edge_supported": true}'
     assert res.iters == 2 and res.stopped == "final"
     assert res.usage["input_tokens"] == 13      # summed across turns
-
-
-def test_openai_backend_tool_loop_monkeypatched(monkeypatch):
-    openai = pytest.importorskip("openai", reason="install the 'judge' extra to test the live backend")
-    from judge.backends import OpenAIBackend
-
-    class FakeCompletions:
-        def __init__(self): self.n = 0
-        def create(self, **kw):
-            self.n += 1
-            if self.n == 1:
-                tc = _NS(id="c1", type="function",
-                         function=_NS(name="read_source", arguments='{"reference": "PMID:1"}'))
-                return _NS(choices=[_NS(message=_NS(content=None, tool_calls=[tc]))])
-            return _NS(choices=[_NS(message=_NS(content='{"edge_supported": true}', tool_calls=None))])
-
-    fake_client = _NS(chat=_NS(completions=FakeCompletions()))
-    monkeypatch.setattr(openai, "OpenAI", lambda *a, **k: fake_client)
-    hits, tool = _mock_tool()
-    res = OpenAIBackend("fake-gpt").run("sys", "user", [tool], max_iters=4)
-    assert hits["n"] == 1
-    assert res.final_text == '{"edge_supported": true}'
-    assert res.iters == 2 and res.stopped == "final"

@@ -42,11 +42,11 @@ The judge is never told which model produced which path.
 
 ## Independence (framework §6c)
 
-The pilot is Claude-curated, so `--judge-provider auto` prefers a **different model
-family** — OpenAI (`gpt-5`) when `OPENAI_API_KEY` is set — to break the shared-prior
-problem. With only an Anthropic key it falls back to `claude-opus-4-8` and prints an
-explicit *reduced-independence* note (independence then rests on grounding +
-cite-or-abstain, not model diversity). Override with `--judge-provider` / `--judge-model`.
+This project is Anthropic-only, so the judge is a Claude model (`--judge-provider anthropic`,
+default `claude-opus-4-8`). Independence from the curator rests on **grounding** (the judge
+cites an external referent or abstains) plus **blinding** (it never sees which model produced a
+path), NOT on model-family diversity. Running the judge on a **different Claude model** than the
+curator (`--judge-model`) adds mild decorrelation.
 
 ## Modes (no real API call by default)
 
@@ -66,7 +66,7 @@ python scripts/run_blinded_judge.py opus=<dir> sonnet=<dir> \
 # Offline orchestration check (no API):
 python scripts/run_blinded_judge.py opus=<dir> sonnet=<dir> --stub --out-dir /tmp/bj
 
-# Real blinded pass (cross-family default; needs OPENAI_API_KEY):
+# Real blinded pass (needs ANTHROPIC_API_KEY):
 python scripts/run_blinded_judge.py <dir> --run --out-dir experiments/<pilot>/blinded
 ```
 
