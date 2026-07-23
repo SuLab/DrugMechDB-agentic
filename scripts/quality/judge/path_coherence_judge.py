@@ -27,6 +27,7 @@ def build_path_input(
     structural_report: dict | None,
     edge_verdicts: list[dict] | None,
     gold_path: dict | None = None,
+    prior_flags: list[dict] | None = None,
 ) -> dict:
     nodes = _node_index(doc)
     g = doc.get("graph", {}) or {}
@@ -41,7 +42,7 @@ def build_path_input(
             "edge_supported": v.get("edge_supported"),
             "verdicts": v.get("verdicts"),
         })
-    return {
+    inp = {
         "graph": {
             "drug": g.get("drug"), "disease": g.get("disease"),
             "drug_mesh": g.get("drug_mesh"), "disease_mesh": g.get("disease_mesh"),
@@ -54,6 +55,11 @@ def build_path_input(
         "edge_verdicts": compact,
         "gold_path": gold_path,
     }
+    # Fix-tracking: the previous round's path-level flag(s), for independent
+    # (re-grounded) resolution re-verification. Empty on round 1.
+    if prior_flags:
+        inp["prior_round_flags"] = list(prior_flags)
+    return inp
 
 
 def judge_path(
@@ -63,10 +69,11 @@ def judge_path(
     backend: Backend,
     *,
     gold_path: dict | None = None,
+    prior_flags: list[dict] | None = None,
     tools: list[Tool] | None = None,
     max_iters: int = 6,
     use_cache: bool = True,
 ) -> dict:
     tools = tools if tools is not None else default_tools()
-    inp = build_path_input(doc, structural_report, edge_verdicts, gold_path)
+    inp = build_path_input(doc, structural_report, edge_verdicts, gold_path, prior_flags)
     return run_judge(PROMPT, inp, tools, backend, max_iters=max_iters, use_cache=use_cache)

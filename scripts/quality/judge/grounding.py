@@ -23,11 +23,14 @@ from __future__ import annotations
 import importlib.util
 import json
 import re
+import sys
+import tempfile
 import urllib.parse
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent.parent  # scripts/quality/judge -> repo root
+SCRIPTS_DIR = REPO / "scripts"
 CACHE_DIR = REPO / "quality_cache" / "grounding"
 
 # Reuse the pubmed_fetch wrapper (certifi HTTP, throttle, cache) without making
@@ -287,6 +290,116 @@ def read_fulltext(reference: str, max_chars: int = 6000) -> str:
     return f"PMID:{bare}  {r.get('title')}  (full text via {r.get('source')}){flag}\n\n" + body[:max_chars] + tail
 
 
+# ── independent in-memory reading over the SAME trusted multi-source layer ──────
+#
+# The critic must be able to ground BEYOND the curator against the full set of
+# sanctioned sources the curator itself uses (scripts/evidence_sources/): ChEMBL,
+# ClinicalTrials.gov, bioRxiv/medRxiv, DrugBank, and PubMed. These two tools reuse
+# that one layer so "what the critic may read" == "what the curator may cite".
+#
+# Firewall (identical to the PubMed readers above): reading is IN MEMORY and
+# persists NOTHING to the repo. Non-PubMed sources are fetched into a throwaway
+# temp directory that is discarded on exit (so the source-agnostic writer never
+# touches the committed references_cache/); PubMed routes to the in-memory
+# read_abstract/read_fulltext readers. There is NO web search — an untrusted open
+# web result is never a grounding referent. cite-or-abstain still holds.
+
+def _load_evidence_sources():
+    """Import scripts/evidence_sources lazily (scripts/ is not a package, so it is
+    placed on sys.path the same way critic.py / evidence_fetch.py do)."""
+    if str(SCRIPTS_DIR) not in sys.path:
+        sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_sources  # noqa: E402
+    return evidence_sources
+
+
+def _body_from_cache_text(text: str, max_chars: int) -> tuple[str, str]:
+    """Split a source-agnostic cache file into (title, body) for the model."""
+    head, _, rest = text.partition("## Content")
+    body = (rest if rest else head).strip()
+    title_m = re.search(r"^title:\s*(.+)$", head, re.M)
+    title = title_m.group(1).strip().strip('"') if title_m else "(title unknown)"
+    if len(body) > max_chars:
+        body = body[:max_chars] + f"\n[...truncated at {max_chars} chars...]"
+    return title, body
+
+
+def read_evidence(reference: str, fulltext: bool = False, max_chars: int = 6000) -> str:
+    """Read a sanctioned evidence source's content IN MEMORY, dispatched by CURIE
+    prefix through the same source-agnostic layer the curator uses.
+
+    Supports PMID / ChEMBL / clinicaltrials / bioRxiv / medRxiv / DrugBank. Use to
+    corroborate or challenge an edge (or the whole mechanism) with a trusted source
+    the curator did NOT cite. Writes nothing to the committed cache; never raises."""
+    ref = (reference or "").strip()
+    if not ref:
+        return "read_evidence: no reference given."
+    # PubMed has dedicated in-memory readers that never touch the curator's cache.
+    if ref.upper().startswith("PMID") or ref.isdigit():
+        return read_fulltext(ref) if fulltext else read_abstract(ref)
+    try:
+        es = _load_evidence_sources()
+    except Exception as e:
+        return (f"read_evidence: the evidence-source layer is unavailable ({e}); "
+                "fall back to PubMed/ChEMBL grounding or abstain.")
+    src = es.get_source(ref)
+    if src is None:
+        return (f"read_evidence: no sanctioned source owns '{ref}'. Trusted prefixes: "
+                "PMID:, ChEMBL:, clinicaltrials:, bioRxiv:, medRxiv:, DrugBank:. "
+                "(Open-web search is not a trusted grounding source.)")
+    # Fetch into a throwaway temp dir → discarded on block exit, so nothing lands
+    # in references_cache/ and the critic can never pollute the curator's evidence.
+    with tempfile.TemporaryDirectory(prefix="dmdb_critic_ev_") as tmp:
+        tmp_dir = Path(tmp)
+        try:
+            if fulltext and getattr(src, "SUPPORTS_FULLTEXT", False):
+                res = src.fetch_fulltext(ref, cache_dir=tmp_dir)
+            else:
+                res = src.fetch(ref, cache_dir=tmp_dir)
+        except Exception as e:
+            return f"read_evidence {ref}: retrieval failed ({e}); try another source or abstain."
+        if not isinstance(res, dict) or res.get("error"):
+            err = res.get("error") if isinstance(res, dict) else "unknown error"
+            return (f"read_evidence {ref}: {err}. No source text available to ground this; "
+                    "try another source or abstain.")
+        cache_file = res.get("path")
+        if not cache_file or not Path(cache_file).exists():
+            return f"read_evidence {ref}: nothing retrieved. Try another source or abstain."
+        text = Path(cache_file).read_text(encoding="utf-8")
+    norm_ref = es.common.normalize_reference_id(ref)
+    ctype = res.get("content_type", "abstract")
+    title, body = _body_from_cache_text(text, max_chars)
+    return (f"SOURCE {norm_ref}  (content_type={ctype})\nTitle: {title}\n\n{body}\n\n"
+            "(Independent trusted source the critic retrieved — cite it as grounding.)")
+
+
+def search_evidence(source: str, query: str, max_results: int = 10) -> str:
+    """Search ONE trusted source (by prefix) for candidate reference CURIEs, via the
+    same source-agnostic layer the curator uses. Read the relevant hits with
+    read_evidence. No web search; writes nothing; never raises."""
+    if not source or not query:
+        return "search_evidence: both a source prefix and a query are required."
+    try:
+        es = _load_evidence_sources()
+    except Exception as e:
+        return f"search_evidence: the evidence-source layer is unavailable ({e})."
+    src = es.REGISTRY.by_prefix(source)
+    if src is None:
+        known = ", ".join(s.PREFIX for s in es.sources())
+        return f"search_evidence: unknown source {source!r}. Trusted sources: {known}."
+    try:
+        refs = src.search(query, retmax=int(max_results or 10))
+    except NotImplementedError:
+        return (f"search_evidence: the {source} source does not support search; "
+                "fetch a known id directly with read_evidence.")
+    except Exception as e:
+        return f"search_evidence: {source} search failed ({e}); try a different query or source."
+    if not refs:
+        return f"search_evidence: no {source} results for {query!r}."
+    return (f"{source} results for {query!r} ({len(refs)}): " + ", ".join(refs)
+            + "\nRead the relevant ones with read_evidence.")
+
+
 # ── tool registry helpers (consumed by runner.py) ──────────────────────────────
 
 def default_tools() -> list:
@@ -414,5 +527,44 @@ def critic_tools() -> list:
                 "required": ["reference"],
             },
             fn=lambda a: read_fulltext(a.get("reference", "")),
+        ),
+        Tool(
+            name="search_evidence",
+            description=(
+                "Search ONE trusted source for candidate references, via the SAME "
+                "source-agnostic layer the curator uses. `source` is a prefix: PMID, ChEMBL, "
+                "clinicaltrials, bioRxiv, medRxiv, or DrugBank. Returns candidate reference "
+                "CURIEs to read with read_evidence. No web search; reads in memory; writes nothing."
+            ),
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "source": {"type": "string", "description": "source prefix, e.g. clinicaltrials / bioRxiv / ChEMBL"},
+                    "query": {"type": "string", "description": "free-text query"},
+                    "max_results": {"type": "integer", "description": "cap on candidates (default 10)"},
+                },
+                "required": ["source", "query"],
+            },
+            fn=lambda a: search_evidence(a.get("source", ""), a.get("query", ""),
+                                         int(a.get("max_results", 10) or 10)),
+        ),
+        Tool(
+            name="read_evidence",
+            description=(
+                "Read a sanctioned source's content IN MEMORY by CURIE prefix, over the SAME "
+                "trusted multi-source layer the curator uses: PMID / ChEMBL / clinicaltrials / "
+                "bioRxiv / medRxiv / DrugBank. Set fulltext=true for the ephemeral open-access "
+                "body where a source supports it. Ground BEYOND the curator with a trusted source "
+                "it did not cite. No web search; writes nothing to the committed cache."
+            ),
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "reference": {"type": "string", "description": "reference CURIE, e.g. 'clinicaltrials:NCT00000102'"},
+                    "fulltext": {"type": "boolean", "description": "escalate to ephemeral full text (default false)"},
+                },
+                "required": ["reference"],
+            },
+            fn=lambda a: read_evidence(a.get("reference", ""), bool(a.get("fulltext", False))),
         ),
     ]

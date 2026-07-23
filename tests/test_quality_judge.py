@@ -42,7 +42,7 @@ def test_extract_json_fenced_and_prose():
 
 def test_load_system_prompt_strips_heading():
     sp = load_system_prompt(EDGE_PROMPT)
-    assert "independent evidence verifier" in sp
+    assert "adversarial evidence verifier" in sp
     assert "## SYSTEM PROMPT" not in sp
 
 

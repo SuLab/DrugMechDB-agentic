@@ -38,8 +38,27 @@ def _path_context(doc: dict, nodes: dict) -> list[str]:
     return ctx
 
 
-def build_edge_inputs(doc: dict) -> list[dict]:
-    """One input object per edge, in the shape edge_evidence_judge.md expects."""
+def _edge_label(subj: dict, pred: str | None, obj: dict) -> str:
+    """The human edge string the critic uses when it records a flag — so a prior
+    round's edge flag can be matched back to the edge it was raised on."""
+    s = subj.get("name") or subj.get("id")
+    o = obj.get("name") or obj.get("id")
+    return f"{s} --{pred}--> {o}"
+
+
+def _prior_flags_for_edge(edge_label: str, prior_flags: list[dict] | None) -> list[dict]:
+    """The subset of prior-round edge flags raised on THIS edge (matched by label)."""
+    return [{"issue": f.get("issue")} for f in (prior_flags or [])
+            if f.get("edge") == edge_label]
+
+
+def build_edge_inputs(doc: dict, prior_flags: list[dict] | None = None) -> list[dict]:
+    """One input object per edge, in the shape edge_evidence_judge.md expects.
+
+    When `prior_flags` (the previous round's agent-facing edge flags) are supplied,
+    each edge that was flagged last round carries its prior flag(s) as
+    `prior_round_flags` so the judge can independently re-verify (re-grounded) whether
+    the issue is now resolved / partially resolved / unresolved."""
     nodes = _node_index(doc)
     ctx = _path_context(doc, nodes)
     inputs = []
@@ -47,7 +66,7 @@ def build_edge_inputs(doc: dict) -> list[dict]:
         subj = nodes.get(e.get("source"), {"id": e.get("source"), "name": None, "label": None})
         obj = nodes.get(e.get("target"), {"id": e.get("target"), "name": None, "label": None})
         pred = e.get("key")
-        inputs.append({
+        inp = {
             "edge": {"subject": subj, "predicate": pred, "object": obj},
             "predicate_meaning": f"The subject '{pred}' the object.",
             "path_context": ctx,
@@ -55,7 +74,11 @@ def build_edge_inputs(doc: dict) -> list[dict]:
                 {k: ev.get(k) for k in ("reference", "snippet", "supports", "evidence_source", "explanation") if k in ev}
                 for ev in (e.get("evidence") or [])
             ],
-        })
+        }
+        prior = _prior_flags_for_edge(_edge_label(subj, pred, obj), prior_flags)
+        if prior:
+            inp["prior_round_flags"] = prior
+        inputs.append(inp)
     return inputs
 
 
@@ -64,13 +87,17 @@ def judge_edges(
     backend: Backend,
     tools: list[Tool] | None = None,
     *,
+    prior_flags: list[dict] | None = None,
     max_iters: int = 6,
     use_cache: bool = True,
 ) -> list[dict]:
-    """Return a list of {edge, verdict-bundle} for every edge that has evidence."""
+    """Return a list of {edge, verdict-bundle} for every edge that has evidence.
+
+    `prior_flags` (previous round's edge flags) enables fix-tracking: a flagged edge
+    receives its prior flag(s) and the judge re-verifies resolution against evidence."""
     tools = tools if tools is not None else default_tools()
     out = []
-    for inp in build_edge_inputs(doc):
+    for inp in build_edge_inputs(doc, prior_flags):
         if not inp["evidence"]:
             out.append({
                 "edge": inp["edge"],

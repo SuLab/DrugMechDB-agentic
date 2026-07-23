@@ -9,9 +9,18 @@ Pipeline position (see .claude/commands/curate.md):
 
 What it does that the deterministic layer cannot:
   - re-derives each edge's evidence support INDEPENDENTLY, grounding in ChEMBL and in
-    papers it retrieves itself (search_pubmed / read_abstract / read_fulltext) — i.e.
-    knowledge BEYOND the curator's cited snippets. cite-or-abstain.
+    sources it retrieves itself over the SAME trusted multi-source layer the curator uses
+    (search_pubmed / read_abstract / read_fulltext, plus search_evidence / read_evidence
+    over ChEMBL / ClinicalTrials / bioRxiv / medRxiv / DrugBank) — i.e. knowledge BEYOND
+    the curator's cited snippets. cite-or-abstain; no web search.
   - judges the chain as a whole (accepted MoA, net direction, missing/wrong step).
+
+Fix-tracking (flags are stateful; judgment is not): on round > 1 the critic loads the
+PRIOR round's flags from the sidecar and hands them to the judges, which independently
+RE-GROUND whether each is resolved / partially_resolved / unresolved (never trusting that
+the fix landed), while still running the full independent review for NEW issues. The
+sidecar ACCUMULATES a per-round history, so an ESCALATE preserves what was flagged and
+tried each round for the human reviewer.
 
 The criteria this scores against are the shared checklist in docs/path_quality_rubric.md
 (§A per-edge ladder, §B path validity) — the same rubric the LLM judge prompts and human
@@ -89,7 +98,7 @@ def _consulted_independent_sources(bundles: list[dict], path_bundle: dict, curat
     for b in [*bundles, path_bundle]:
         for call in (b.get("tool_calls") or []):
             name, inp = call.get("name"), (call.get("input") or {})
-            if name in ("read_abstract", "read_fulltext"):
+            if name in ("read_abstract", "read_fulltext", "read_evidence"):
                 ref = inp.get("reference")
                 if ref:
                     found.add(str(ref))
@@ -139,6 +148,68 @@ def _flag_edges(edge_bundles: list[dict]) -> tuple[list[dict], list[dict], set[s
     return reviews, flags, labels
 
 
+# ── fix-tracking memory: flags are stateful, judgment stays stateless ──────────
+#
+# The maintainer's design: the critic re-grounds every judgment from scratch each
+# round (it never trusts that a fix landed), but the FLAGS it raised carry over.
+# When round_no > 1 the prior round's flags are loaded from the sidecar history and
+# handed to the judges, which independently re-verify — against re-read evidence —
+# whether each is now resolved / partially_resolved / unresolved.
+
+def _load_prior_rounds(sidecar_path: Path) -> list[dict]:
+    """The accumulated per-round history from a prior sidecar (empty if none)."""
+    if not sidecar_path.exists():
+        return []
+    try:
+        prev = yaml.safe_load(sidecar_path.read_text()) or {}
+    except Exception:
+        return []
+    rounds = prev.get("rounds")
+    return list(rounds) if isinstance(rounds, list) else []
+
+
+def _prior_round_flags(prior_rounds: list[dict], round_no: int) -> tuple[list[dict], str | None]:
+    """The previous round's agent-facing flags to re-verify this round.
+
+    Returns (edge_flags, path_issue) from the entry for round_no-1, falling back to
+    the latest recorded round. Empty/None when there is no prior round."""
+    if not prior_rounds:
+        return [], None
+    target = next((r for r in prior_rounds if r.get("round") == round_no - 1), None)
+    if target is None:
+        target = prior_rounds[-1]
+    return list(target.get("flags") or []), target.get("path_issue")
+
+
+def _collect_prior_flag_status(edge_bundles: list[dict], path_bundle: dict) -> list[dict]:
+    """Aggregate the judges' re-grounded resolution of each prior-round flag.
+
+    The status is JUDGED this round (the judges re-read the evidence with the prior
+    flags in their input), never inferred from memory. Each judge emits an optional
+    `prior_flag_resolution` list; this rolls them up for the critic's report + audit."""
+    _VALID = {"resolved", "partially_resolved", "unresolved"}
+    out: list[dict] = []
+
+    def _pull(v: dict, scope: str) -> None:
+        for r in (v.get("prior_flag_resolution") or []):
+            if not isinstance(r, dict):
+                continue
+            status = (r.get("status") or "").lower()
+            out.append({
+                "scope": scope,
+                "flag": r.get("flag") or r.get("prior_flag") or r.get("issue"),
+                "status": status if status in _VALID else "unresolved",
+                "basis": r.get("basis") or r.get("note"),
+            })
+
+    for b in edge_bundles:
+        if b.get("skipped"):
+            continue
+        _pull(b.get("verdict", {}) or {}, "edge")
+    _pull(path_bundle.get("verdict", {}) or {}, "path")
+    return out
+
+
 def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 3,
                max_iters: int = 6, use_cache: bool = True, require_qc: bool = True) -> dict:
     p = Path(path_file)
@@ -158,12 +229,25 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
     # flags do NOT force the critic's verdict — the critic reverts to its own edge/path
     # LLM judgment. The deterministic gate owns the (binary) structural disposition.
     struct = structural_quality.analyze(p, LEX)
+
+    # Fix-tracking: on a later round, load the flags the critic raised previously so
+    # the judges can independently re-verify (re-grounded) whether each was resolved.
+    sidecar_path = PROVENANCE_DIR / f"{record_id}.semantic_review.yaml"
+    prior_rounds = _load_prior_rounds(sidecar_path)
+    prior_edge_flags: list[dict] = []
+    prior_path_issue: str | None = None
+    if round_no > 1:
+        prior_edge_flags, prior_path_issue = _prior_round_flags(prior_rounds, round_no)
+    path_prior = [{"issue": prior_path_issue}] if prior_path_issue else None
+
     tools = critic_tools()
-    edge_bundles = judge_edges(doc, backend, tools=tools, max_iters=max_iters, use_cache=use_cache)
+    edge_bundles = judge_edges(doc, backend, tools=tools, prior_flags=prior_edge_flags or None,
+                               max_iters=max_iters, use_cache=use_cache)
     path_bundle = judge_path(doc, struct, edge_bundles, backend, tools=tools,
-                             max_iters=max_iters, use_cache=use_cache)
+                             prior_flags=path_prior, max_iters=max_iters, use_cache=use_cache)
 
     edge_reviews, flags, labels = _flag_edges(edge_bundles)
+    prior_flag_status = _collect_prior_flag_status(edge_bundles, path_bundle)
     pv = path_bundle.get("verdict", {}) or {}
     path_overall = ((pv.get("overall") or {}).get("verdict") or "").lower()
     path_issue = pv.get("issue_for_curator")
@@ -195,21 +279,45 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
     summary = " ".join(summary_bits) or "No semantic problems found."
 
     # ── write the committed provenance sidecar (full audit, no paper bodies) ──
+    # The sidecar ACCUMULATES a per-round history rather than overwriting, so on
+    # ESCALATE (max_rounds exhausted) a human sees what was flagged each round and
+    # what the curator tried in response. Re-running the same round replaces only
+    # that round's entry (idempotent).
     model = getattr(backend, "model", backend.name)
-    sidecar = {
-        "record_id": record_id,
-        "reviewed_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-        "critic_model": model,
-        "critic_provider": backend.name,
-        "rounds": round_no,
-        "overall_verdict": verdict,
-        "overall_summary": summary,
+    now_iso = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+    reported_path_issue = path_issue if (path_problem and verdict != "ACCEPT") else None
+    round_entry = {
+        "round": round_no,
+        "reviewed_at": now_iso,
+        "verdict": verdict,
+        "summary": summary,
+        "flags": flags,                        # agent-facing: WHAT, never the fix/source
+        "path_issue": reported_path_issue,
+        "prior_flag_status": prior_flag_status,   # re-grounded resolution vs the prior round
         "consulted_independent_sources": consulted,
         "edge_reviews": edge_reviews,
     }
+    history = [r for r in prior_rounds if r.get("round") != round_no] + [round_entry]
+    history.sort(key=lambda r: r.get("round", 0))
+
+    sidecar = {
+        "record_id": record_id,
+        "critic_model": model,
+        "critic_provider": backend.name,
+        "first_reviewed_at": history[0].get("reviewed_at", now_iso),
+        "last_reviewed_at": now_iso,
+        "current_round": round_no,
+        "max_rounds": max_rounds,
+        "overall_verdict": verdict,            # latest round's verdict (pr_labels.py reads this)
+        "overall_summary": summary,
+        "rounds": history,
+    }
     PROVENANCE_DIR.mkdir(parents=True, exist_ok=True)
-    sidecar_path = PROVENANCE_DIR / f"{record_id}.semantic_review.yaml"
     sidecar_path.write_text(yaml.safe_dump(sidecar, sort_keys=False, allow_unicode=True))
+    try:
+        sidecar_rel = str(sidecar_path.relative_to(REPO))
+    except ValueError:                          # dir redirected outside the repo (tests)
+        sidecar_rel = str(sidecar_path)
 
     return {
         "record_id": record_id,
@@ -217,9 +325,10 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
         "round": round_no,
         "max_rounds": max_rounds,
         "flags": flags,                        # agent-facing: WHAT, never the fix/source
-        "path_issue": path_issue if (path_problem and verdict != "ACCEPT") else None,
+        "path_issue": reported_path_issue,
+        "prior_flag_status": prior_flag_status,   # fix-tracking vs the prior round
         "n_independent_sources": len(consulted),
-        "sidecar": str(sidecar_path.relative_to(REPO)),
+        "sidecar": sidecar_rel,
         "summary": summary,
     }
 
@@ -246,6 +355,10 @@ def _print_report(res: dict) -> None:
     print(f"Verdict: {v}   (round {res['round']}/{res['max_rounds']}, "
           f"{res['n_independent_sources']} independent source(s) consulted — see {res['sidecar']})")
     print(f"Summary: {res['summary']}")
+    if res.get("prior_flag_status"):
+        print("\nPrior-round flags, re-verified against evidence this round:")
+        for r in res["prior_flag_status"]:
+            print(f"  [{r.get('status')}] ({r.get('scope')}) {r.get('flag')}")
     if res.get("flags"):
         print("\nFlagged edges (re-source these — the critic states the problem, NOT the fix or which paper to use):")
         for f in res["flags"]:
