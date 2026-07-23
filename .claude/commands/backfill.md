@@ -31,7 +31,7 @@ Read the file. Note the drug, disease, current edges, and any existing `referenc
 
 ### 2. Read existing references for context
 
-If `references:` includes DrugBank or Wikipedia URLs, those are *not* evidence — they're secondary context. But the URLs may hint at which PubMed papers describe the mechanism (DrugBank's mechanism-of-action section often lists primary citations).
+If `references:` includes secondary URLs (e.g. Wikipedia), those are *not* evidence — they're context that may hint at which PubMed papers describe the mechanism.
 
 ### 3. Research via PubMed
 

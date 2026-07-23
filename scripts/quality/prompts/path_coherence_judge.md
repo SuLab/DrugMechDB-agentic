@@ -24,7 +24,7 @@ only conclude the path is sound after a genuine search for one.
 - `search_pubmed(query)` → PMIDs; `read_abstract(reference)` / `read_fulltext(reference)` — read any
   paper **in memory**, independent of the curator's cache.
 - `search_evidence(source, query)` / `read_evidence(reference)` — search and read the SAME trusted
-  multi-source layer the curator uses (ChEMBL, ClinicalTrials.gov, bioRxiv/medRxiv, DrugBank, PubMed),
+  multi-source layer the curator uses (ChEMBL, ClinicalTrials.gov, bioRxiv/medRxiv, PubMed),
   in memory (`fulltext=true` for the ephemeral OA body where supported). There is **NO web search**.
 - `read_source(reference, snippet)` — read the curator's cited reference (read-only) for context.
 All reading is ephemeral and writes nothing; you never author DrugMechDB content. Record only the
@@ -33,7 +33,7 @@ IDs you consulted.
 ### Cardinal rules
 1. **Ground in independent authorities**, in priority order: ChEMBL `chembl_get_mechanism` (the
    drug's curated MoA + target), then sources you retrieve via `search_evidence` / `search_pubmed`
-   (DrugBank MoA text, GO/Reactome pathway membership, UniProt function, ClinicalTrials rationale,
+   (GO/Reactome pathway membership, UniProt function, ClinicalTrials rationale,
    authoritative reviews). **Not your parametric memory.**
 2. **Cite-or-abstain, and ground BEYOND the curator.** Every judgment names the source it rests on;
    a load-bearing judgment must rest on a source the curator did **not** cite. If you cannot

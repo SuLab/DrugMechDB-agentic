@@ -32,7 +32,7 @@ sys.path.insert(0, str(SCRIPTS))
 from evidence_sources import (  # noqa: E402
     common, get_source, sources, strip_all_fulltext,
     ChEMBLSource, ClinicalTrialsSource, BioRxivSource, MedRxivSource,
-    DrugBankSource, PubMedSource,
+    PubMedSource,
 )
 
 # The real Layer-4 matcher + the validator's own cache-key logic.
@@ -59,7 +59,7 @@ def _matches(snippet: str, body: str) -> bool:
 @pytest.mark.parametrize("ref", [
     "PMID:35569550", "ChEMBL:CHEMBL25", "chembl:CHEMBL25",
     "bioRxiv:10.1101/2020.05.01.072066", "medRxiv:10.1101/2021.01.01.21249100",
-    "clinicaltrials:NCT00000102", "DrugBank:DB00945",
+    "clinicaltrials:NCT00000102",
 ])
 def test_cache_key_matches_validator(ref):
     vf = ReferenceFetcher(ReferenceValidationConfig())
@@ -107,7 +107,6 @@ def test_dispatch_by_prefix():
     assert isinstance(get_source("NCT00000102"), ClinicalTrialsSource)  # bare NCT
     assert isinstance(get_source("bioRxiv:10.1101/x"), BioRxivSource)
     assert isinstance(get_source("medRxiv:10.1101/x"), MedRxivSource)
-    assert isinstance(get_source("DrugBank:DB00945"), DrugBankSource)
     assert isinstance(get_source("PMID:123"), PubMedSource)
     assert isinstance(get_source("123"), PubMedSource)  # bare digits -> PubMed
     assert get_source("bogus:xyz") is None
@@ -117,12 +116,11 @@ def test_canonical_reference():
     assert ChEMBLSource().canonical_reference("CHEMBL25") == "ChEMBL:CHEMBL25"
     assert ChEMBLSource().canonical_reference("ChEMBL:CHEMBL25") == "ChEMBL:CHEMBL25"
     assert ClinicalTrialsSource().canonical_reference("nct00000102") == "clinicaltrials:NCT00000102"
-    assert DrugBankSource().canonical_reference("db00945") == "DrugBank:DB00945"
 
 
 def test_sources_listing_nonempty():
     prefixes = {s.PREFIX for s in sources()}
-    assert {"PMID", "ChEMBL", "clinicaltrials", "bioRxiv", "medRxiv", "DrugBank"} <= prefixes
+    assert {"PMID", "ChEMBL", "clinicaltrials", "bioRxiv", "medRxiv"} <= prefixes
 
 
 # ─── 4. per-source parsing against recorded responses (offline) ──────────────
@@ -202,25 +200,6 @@ def test_biorxiv_abstract_and_ephemeral_fulltext(tmp_path, monkeypatch):
     assert _matches("The drug inhibits the enzyme", after)                 # kept
     assert not _matches("strongly inhibited by the drug in cells", after)  # ephemeral, gone
     assert len(after) < len(body)
-
-
-def test_drugbank_fixture_path(tmp_path, monkeypatch):
-    fixture = tmp_path / "db.json"
-    fixture.write_text(json.dumps({"DB00945": {
-        "name": "Acetylsalicylic acid",
-        "mechanism_of_action": "The drug irreversibly acetylates cyclooxygenase."}}))
-    monkeypatch.setenv("DMDB_DRUGBANK_FIXTURE", str(fixture))
-    # offline so the (gated) live MyChem path is skipped and the fixture is used.
-    res = DrugBankSource().fetch("DrugBank:DB00945", cache_dir=tmp_path, offline=True, force=True)
-    assert res["path"] and not res.get("error")
-    body = Path(res["path"]).read_text()
-    assert _matches("irreversibly acetylates cyclooxygenase", body)
-
-
-def test_drugbank_gated_without_fixture(tmp_path, monkeypatch):
-    monkeypatch.delenv("DMDB_DRUGBANK_FIXTURE", raising=False)
-    res = DrugBankSource().fetch("DrugBank:DB00945", cache_dir=tmp_path, offline=True, force=True)
-    assert res.get("error") and "license-gated" in res["error"]
 
 
 # ─── 5. live smoke tests (opt-in: DMDB_NETWORK_TESTS=1) ──────────────────────

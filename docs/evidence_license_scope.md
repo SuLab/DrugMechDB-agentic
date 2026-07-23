@@ -22,19 +22,17 @@
   scholarly practice. The committed `EvidenceItem` has no body field: only `reference` (CURIE),
   `snippet` (verbatim), `supports`, `evidence_source`.
 
-## Open question flagged for the maintainer (CC-BY-NC committed snippets)
+## DrugBank dropped as a source (2026-07)
 
-DrugBank Mechanism-of-Action text is **CC-BY-NC**. The default policy above allows committing a *short
-attributed snippet* from it (as a quotation). If the lab prefers a stricter line — **committed snippets
-only from OA / CC-BY sources**, with CC-BY-NC used purely to *locate* a claim which is then re-sourced
-from an open-access source — that is a one-flag tightening.
+DrugBank has been removed as an evidence source. Its Terms of Use bar creating "derivative databases"
+from its content, which is incompatible with redistributing snippets in this CC0 knowledge base. The
+agentic workflow no longer fetches DrugBank content or stores DrugBank IDs for new records. (Legacy
+records keep their DrugBank IDs as identifiers — those are accession numbers, not DrugBank content.)
 
-- **Default (recommended): snippet-as-quotation is acceptable** for any source, because only a short
-  attributed quote persists.
-- **Stricter option (maintainer's call):** restrict committed snippets to OA / CC-BY.
-
-This specific legal line is **left for the maintainer to confirm** (it ties to the DrugBank follow-up
-in #67). Regardless of which is chosen, the enforcement below already prevents body redistribution.
+The general **non-open tier** above still governs any *other* CC-BY-NC / copyrighted source: a short
+attributed snippet persists as a quotation; the full-text body is fetched only ephemerally and deleted
+post-QC. If the lab prefers a stricter line — committed snippets only from OA / CC-BY sources — that
+remains a one-flag tightening left for the maintainer to confirm.
 
 ## Enforcement
 

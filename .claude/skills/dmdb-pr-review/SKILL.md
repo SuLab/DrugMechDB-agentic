@@ -23,7 +23,7 @@ a blocker, not a nit.
 **3. Evidence & sourcing** (for `ai_curated` records — **dmdb-references**):
    - snippets are verbatim in their cited source (Layer 4 enforces this);
    - sources respect the conservative-sourcing rule: secondary sources that *assert*
-     the established mechanism (DrugBank MoA, GO, UniProt, Reactome, reviews). **No
+     the established mechanism (GO, UniProt, Reactome, reviews). **No
      primary/experimental-literature reconstruction**, **no predicted mechanisms as
      input.** Flag any path that smells like a model-generated hypothesis.
 

@@ -16,7 +16,6 @@ Sources:
   - clinicaltrials— ClinicalTrials.gov trial summaries
   - bioRxiv       — bioRxiv preprints (ephemeral OA full text)
   - medRxiv       — medRxiv preprints (ephemeral OA full text)
-  - DrugBank      — mechanism-of-action prose (license-gated; fixture-backed)
 
 CLI: `python scripts/evidence_fetch.py …` (see cli.py).
 """
@@ -31,11 +30,10 @@ from .pubmed import PubMedSource
 from .chembl import ChEMBLSource
 from .clinicaltrials import ClinicalTrialsSource
 from .biorxiv import BioRxivSource, MedRxivSource
-from .drugbank import DrugBankSource
 
 REGISTRY = SourceRegistry()
 for _src in (PubMedSource(), ChEMBLSource(), ClinicalTrialsSource(),
-             BioRxivSource(), MedRxivSource(), DrugBankSource()):
+             BioRxivSource(), MedRxivSource()):
     REGISTRY.register(_src)
 
 
@@ -73,6 +71,6 @@ def strip_all_fulltext(*, offline: bool = False, cache_dir: Path | None = None) 
 __all__ = [
     "EvidenceSource", "SourceRegistry", "REGISTRY",
     "PubMedSource", "ChEMBLSource", "ClinicalTrialsSource",
-    "BioRxivSource", "MedRxivSource", "DrugBankSource",
+    "BioRxivSource", "MedRxivSource",
     "get_source", "sources", "strip_all_fulltext", "common",
 ]

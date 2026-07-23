@@ -5,7 +5,7 @@ For each input file that contains `evidence` items, verify that every
 EvidenceItem's `snippet` is a verbatim substring of the cited source's cached
 text. Verification is **source-agnostic**: the cited `reference` may be a
 `PMID:` (PubMed), or any other sanctioned source (`ChEMBL:`, `clinicaltrials:`,
-`bioRxiv:`/`medRxiv:`, `DrugBank:`) fetched via the evidence-fetch layer
+`bioRxiv:`/`medRxiv:`) fetched via the evidence-fetch layer
 (scripts/pubmed_fetch.py for PubMed; scripts/evidence_sources/ for the rest).
 The matcher resolves each reference to its `<SOURCE>_<id>.md` cache file and
 substring-checks against it regardless of source. Cached content lives in

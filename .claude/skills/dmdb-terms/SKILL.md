@@ -39,7 +39,7 @@ failures — don't "fix" them unless you're deliberately migrating a record.
 1. **Resolve / verify an id.** Prefer **OAK** (authoritative, offline, deterministic):
    - `.venv-py310/bin/runoak -i sqlite:obo:go info GO:0006915`
    - For interactive search use the `ols-mcp` MCP (`mcp__ols-mcp__search`).
-   - For a non-OBO drug/protein *name* → id (MeSH, DrugBank, UniProt), OAK is weak;
+   - For a non-OBO drug/protein *name* → id (MeSH, UniProt), OAK is weak;
      use BioThings / the name as documented in `AGENTS.md`. **Node Normalizer is not used.**
 2. **Set `name` to the canonical label** OAK returns — not a synonym you prefer.
 3. **Check prefix↔label** against the table above.

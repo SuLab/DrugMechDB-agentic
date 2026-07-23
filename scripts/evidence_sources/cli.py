@@ -3,7 +3,7 @@ Unified evidence-fetch CLI — one interface over every sanctioned source.
 
 Mirrors `pubmed_fetch.py`'s verbs but dispatches by reference prefix, so a
 curator uses ONE command whether the evidence is a PubMed abstract, a ChEMBL
-mechanism, a ClinicalTrials.gov summary, a preprint, or DrugBank MoA text:
+mechanism, a ClinicalTrials.gov summary, or a preprint:
 
     python scripts/evidence_fetch.py sources
     python scripts/evidence_fetch.py search chembl "aspirin"

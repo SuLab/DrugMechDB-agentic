@@ -14,7 +14,8 @@ become the official next-generation DrugMechDB.
 
 ## A record (the data)
 
-`kb/paths/{drugbank}_{disease_mesh}_{n}.yaml` — keys: `directed`, `multigraph`, `graph`
+`kb/paths/{drug}_{disease_mesh}_{n}.yaml` (drug = DrugBank ID in legacy records, MeSH in
+new ones) — keys: `directed`, `multigraph`, `graph`
 (indication metadata + `_id`), `nodes` (`id` CURIE / `label` Biolink type / `name`),
 `links` (edges: `key` predicate / `source` / `target`, joined by CURIE), `references`.
 Edges may carry per-edge `evidence` (an `EvidenceItem` with a verbatim PubMed `snippet`).
@@ -77,7 +78,7 @@ Invoke the one matching the task:
 
 Curate only **established, already-asserted** mechanisms. **Sourcing is source-agnostic
 (decided 2026-07):** evidence may come from any connected source/API (PubMed, preprint
-servers, ChEMBL, clinical trials, DrugBank Mechanism-of-Action, reviews, well-sourced
+servers, ChEMBL, clinical trials, reviews, well-sourced
 references) — what matters is that the source *asserts* the established mechanism and the
 `EvidenceItem.snippet` is a **verbatim** substring of the fetched source. **No
 predicted/model-generated mechanism is ever a curation input.**

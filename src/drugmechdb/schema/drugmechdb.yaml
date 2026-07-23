@@ -51,7 +51,6 @@ prefixes:
   bioRxiv:        https://www.biorxiv.org/content/
   medRxiv:        https://www.medrxiv.org/content/
   clinicaltrials: https://clinicaltrials.gov/study/
-  DrugBank:       https://go.drugbank.com/drugs/
 
   # XML Schema
   xsd:        http://www.w3.org/2001/XMLSchema#
@@ -74,7 +73,7 @@ types:
       (#59): any sanctioned evidence source, whose snippet Layer 4 verifies verbatim.
     base: str
     uri: xsd:string
-    pattern: "^(PMID:\\d+|DOI:\\S+|ChEMBL:\\S+|bioRxiv:\\S+|medRxiv:\\S+|clinicaltrials:\\S+|DrugBank:\\S+)$"
+    pattern: "^(PMID:\\d+|DOI:\\S+|ChEMBL:\\S+|bioRxiv:\\S+|medRxiv:\\S+|clinicaltrials:\\S+)$"
 
 # ── Enumerations ──────────────────────────────────────────────────────────────
 
@@ -210,7 +209,7 @@ slots:
     range: uri
     multivalued: true
     description: >-
-      Source URLs supporting this path (DrugBank, UniProt, Wikipedia, etc.).
+      Source URLs supporting this path (UniProt, Wikipedia, etc.).
       Normalises the legacy single-valued reference field.
 
   comment:
@@ -226,8 +225,9 @@ slots:
     identifier: true
     description: >-
       Stable identifier matching the filename stem.
-      Format: {DrugBankID}_{DiseaseMESH}_{index}
-      Example: DB00619_MESH_D015464_1
+      Format: {DrugID}_{DiseaseMESH}_{index}. Legacy records key DrugID by DrugBank
+      (e.g. DB00619_MESH_D015464_1); new records key it by MeSH
+      (e.g. MESH_D013831_MESH_D001361_1).
 
   drug:
     range: string
@@ -242,7 +242,8 @@ slots:
   drugbank:
     range: uriorcurie
     description: >-
-      DrugBank CURIE for the drug.
+      DrugBank CURIE for the drug (legacy records only; retained so existing data
+      validates). New curations identify the drug by drug_mesh instead.
       Example: DB:DB00619
 
   disease:
@@ -323,7 +324,7 @@ slots:
     slot_uri: dcterms:references
     description: >-
       Citation identifier for the cited source, in CURIE form. Source-agnostic (#59):
-      PMID, DOI, ChEMBL, bioRxiv, medRxiv, clinicaltrials, or DrugBank. The snippet must
+      PMID, DOI, ChEMBL, bioRxiv, medRxiv, or clinicaltrials. The snippet must
       be a verbatim substring of the fetched source (Layer 4).
 
   snippet:

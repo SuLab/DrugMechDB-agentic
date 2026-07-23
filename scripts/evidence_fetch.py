@@ -3,7 +3,7 @@
 Launcher for the unified, source-agnostic evidence-fetch CLI.
 
 This is the one entry point for fetching + caching evidence from ANY sanctioned
-source (PubMed, ChEMBL, ClinicalTrials.gov, bioRxiv/medRxiv, DrugBank). It is the
+source (PubMed, ChEMBL, ClinicalTrials.gov, bioRxiv/medRxiv). It is the
 multi-source companion to `scripts/pubmed_fetch.py` (which remains the PubMed
 engine): every source writes the same cache shape and honors the same ephemeral
 full-text rule, so QC Layer 4 verbatim-verifies snippets source-agnostically.

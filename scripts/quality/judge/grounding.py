@@ -294,7 +294,7 @@ def read_fulltext(reference: str, max_chars: int = 6000) -> str:
 #
 # The critic must be able to ground BEYOND the curator against the full set of
 # sanctioned sources the curator itself uses (scripts/evidence_sources/): ChEMBL,
-# ClinicalTrials.gov, bioRxiv/medRxiv, DrugBank, and PubMed. These two tools reuse
+# ClinicalTrials.gov, bioRxiv/medRxiv, and PubMed. These two tools reuse
 # that one layer so "what the critic may read" == "what the curator may cite".
 #
 # Firewall (identical to the PubMed readers above): reading is IN MEMORY and
@@ -328,7 +328,7 @@ def read_evidence(reference: str, fulltext: bool = False, max_chars: int = 6000)
     """Read a sanctioned evidence source's content IN MEMORY, dispatched by CURIE
     prefix through the same source-agnostic layer the curator uses.
 
-    Supports PMID / ChEMBL / clinicaltrials / bioRxiv / medRxiv / DrugBank. Use to
+    Supports PMID / ChEMBL / clinicaltrials / bioRxiv / medRxiv. Use to
     corroborate or challenge an edge (or the whole mechanism) with a trusted source
     the curator did NOT cite. Writes nothing to the committed cache; never raises."""
     ref = (reference or "").strip()
@@ -345,7 +345,7 @@ def read_evidence(reference: str, fulltext: bool = False, max_chars: int = 6000)
     src = es.get_source(ref)
     if src is None:
         return (f"read_evidence: no sanctioned source owns '{ref}'. Trusted prefixes: "
-                "PMID:, ChEMBL:, clinicaltrials:, bioRxiv:, medRxiv:, DrugBank:. "
+                "PMID:, ChEMBL:, clinicaltrials:, bioRxiv:, medRxiv:. "
                 "(Open-web search is not a trusted grounding source.)")
     # Fetch into a throwaway temp dir → discarded on block exit, so nothing lands
     # in references_cache/ and the critic can never pollute the curator's evidence.
@@ -533,7 +533,7 @@ def critic_tools() -> list:
             description=(
                 "Search ONE trusted source for candidate references, via the SAME "
                 "source-agnostic layer the curator uses. `source` is a prefix: PMID, ChEMBL, "
-                "clinicaltrials, bioRxiv, medRxiv, or DrugBank. Returns candidate reference "
+                "clinicaltrials, bioRxiv, or medRxiv. Returns candidate reference "
                 "CURIEs to read with read_evidence. No web search; reads in memory; writes nothing."
             ),
             input_schema={
@@ -553,7 +553,7 @@ def critic_tools() -> list:
             description=(
                 "Read a sanctioned source's content IN MEMORY by CURIE prefix, over the SAME "
                 "trusted multi-source layer the curator uses: PMID / ChEMBL / clinicaltrials / "
-                "bioRxiv / medRxiv / DrugBank. Set fulltext=true for the ephemeral open-access "
+                "bioRxiv / medRxiv. Set fulltext=true for the ephemeral open-access "
                 "body where a source supports it. Ground BEYOND the curator with a trusted source "
                 "it did not cite. No web search; writes nothing to the committed cache."
             ),

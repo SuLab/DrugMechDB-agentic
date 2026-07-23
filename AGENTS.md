@@ -34,13 +34,13 @@ Never ship a disconnected path.
 
 These shortcut/bypass edges are hard errors in the deterministic structural checks (`clinical_shortcut`, `short_circuit`, `direct_drug_disease`) and are flagged by the semantic critic. The facts on such an edge are often true — that is not the point; the edge is structurally redundant, so it must not be emitted.
 
-**Source-finding is the curation agent's own job, but it cites only what it fetches.** Form search queries from your own mechanistic knowledge — but never cite a reference or a snippet from memory. **Sourcing is source-agnostic (decided 2026-07):** evidence may come from any connected source/API (PubMed, preprint servers, ChEMBL, clinical trials, DrugBank Mechanism-of-Action, reviews, well-sourced references), as long as the source *asserts* the established mechanism. The only acceptable source for an `EvidenceItem.snippet` is text the agent actually fetched and cached (never memory): fetch, read, copy the verbatim sentence; if the cached source has no verbatim supporting sentence, that reference does not enter the path. **Anything beyond an abstract — a full-text body from any source — is fetched only to extract and verify the snippet + its citation metadata, then deleted once the record passes QC**, so the committed repo keeps the snippet and citation but never the copyrighted body.
+**Source-finding is the curation agent's own job, but it cites only what it fetches.** Form search queries from your own mechanistic knowledge — but never cite a reference or a snippet from memory. **Sourcing is source-agnostic (decided 2026-07):** evidence may come from any connected source/API (PubMed, preprint servers, ChEMBL, clinical trials, reviews, well-sourced references), as long as the source *asserts* the established mechanism. The only acceptable source for an `EvidenceItem.snippet` is text the agent actually fetched and cached (never memory): fetch, read, copy the verbatim sentence; if the cached source has no verbatim supporting sentence, that reference does not enter the path. **Anything beyond an abstract — a full-text body from any source — is fetched only to extract and verify the snippet + its citation metadata, then deleted once the record passes QC**, so the committed repo keeps the snippet and citation but never the copyrighted body.
 
 ---
 
 ## 1. What you're producing
 
-A single YAML file under `kb/paths/{drugbank_id}_{disease_mesh}_{N}.yaml` (where `N` is the next available index for that drug-disease pair; check `kb/paths/_index.yaml` and existing siblings before picking).
+A single YAML file under `kb/paths/{drug_mesh}_{disease_mesh}_{N}.yaml` (where `N` is the next available index for that drug-disease pair; check `kb/paths/_index.yaml` and existing siblings before picking). Legacy records are keyed by DrugBank ID instead — do not modify them; new records are keyed by the drug's MeSH ID.
 
 The file conforms to the LinkML schema at `src/drugmechdb/schema/drugmechdb.yaml`, top class `MechanisticPath`. Read the schema if anything below conflicts with it — the schema wins.
 
@@ -50,10 +50,9 @@ The file conforms to the LinkML schema at `src/drugmechdb/schema/drugmechdb.yaml
 directed: true
 multigraph: true
 graph:
-  _id: {DrugBankID}_{DiseaseMESH}_{N}            # required, e.g. DB00945_MESH_D009203_1
+  _id: {DrugMESH}_{DiseaseMESH}_{N}              # required, e.g. MESH_D001241_MESH_D009203_1
   drug: aspirin                                   # required
-  drug_mesh: MESH:D001241                         # optional but recommended
-  drugbank: DB:DB00945                            # optional but recommended; at least one of drug_mesh / drugbank must be present
+  drug_mesh: MESH:D001241                         # required — new records identify the drug by MeSH
   disease: Myocardial infarction                  # required
   disease_mesh: MESH:D009203                      # required
 nodes:                                            # ≥2 nodes
@@ -72,7 +71,7 @@ links:                                            # ≥1 edge
         evidence_source: HUMAN_CLINICAL           # required: HUMAN_CLINICAL | MODEL_ORGANISM | IN_VITRO | COMPUTATIONAL | OTHER
         explanation: "Optional curator commentary."  # optional
         source_tier: FULL_TEXT                    # optional: set ONLY when the snippet came from escalated full text (else omit = abstract)
-references:                                       # optional — secondary URLs (DrugBank, Wikipedia, etc.)
+references:                                       # optional — secondary URLs (Wikipedia, etc.)
   - https://...
 ```
 
@@ -105,8 +104,8 @@ The CURIE prefix of every node `id` **must** match the canonical ontology for th
 
 - HPO IDs (`HP:xxxxxxx`) are phenotypes, not biological processes. `Tremor (HP:0001337)` → `PhenotypicFeature`, never `BiologicalProcess`.
 - Reactome IDs (`R-HSA-…`) are pathways. `Prostaglandin Synthesis (REACT:R-HSA-2162123)` → `Pathway`, never `BiologicalProcess`.
-- DrugBank IDs identify drugs. If you have a `DB:` ID, the label is `Drug` (unless DBMET, see below).
-- DBMET IDs are DrugBank metabolites — currently outside the canonical set. If you need to cite one, escalate; do not paper over with the wrong label.
+- DrugBank IDs (`DB:`) identify drugs in **legacy** records — label them `Drug` (unless DBMET, see below). New records identify drugs by MeSH, not DrugBank.
+- DBMET IDs are DrugBank metabolites appearing in some legacy records — outside the canonical set. If you need to cite one, escalate; do not paper over with the wrong label.
 
 ---
 
@@ -161,7 +160,7 @@ The gate enforces these: an edge whose known endpoint types fall outside the all
 
 ### 4.2 What does NOT count
 
-Sourcing is **source-agnostic**: preprints, DrugBank Mechanism-of-Action prose, reviews, and well-sourced references **are** acceptable evidence — provided the `snippet` is a verbatim substring of the fetched source and the source asserts the mechanism (full-text bodies are deleted after QC, §4.4). What still does **not** count:
+Sourcing is **source-agnostic**: preprints, reviews, and well-sourced references **are** acceptable evidence — provided the `snippet` is a verbatim substring of the fetched source and the source asserts the mechanism (full-text bodies are deleted after QC, §4.4). What still does **not** count:
 
 - **Memory, fabrication, or paraphrase** — a snippet typed from memory, reworded, summarized, or translated.
 - **Anything you could not fetch and cache.** If verifiable text can't be retrieved (e.g. a paywalled paper with no published abstract), record `evidence_source: OTHER` with an `explanation` noting the access constraint and hold the edge back (`supports: NO_EVIDENCE`); flag for curator — never cite it as SUPPORT.
@@ -219,12 +218,12 @@ Reading full text costs tokens and time, so **default to the abstract** and esca
 The `/curate` and `/backfill` skills follow this exact sequence. Deviation is the most common source of validation failure.
 
 1. **Resolve identifiers.**
-   - Drug → DrugBank ID + MESH ID. If either is missing in PubChem/DrugBank, record what you found and proceed; the schema accepts one or the other.
+   - Drug → MESH ID (via PubChem / MeSH). New records identify the drug by MeSH; do not look up or store a DrugBank ID.
    - Disease → MESH ID. MONDO is acceptable for future expansion but not yet wired in v3.
 
 2. **Decide on the next file index.**
    ```
-   grep -l "_{drugbank}_{disease_mesh}_" kb/paths/ | wc -l
+   grep -l "_{drug_mesh}_{disease_mesh}_" kb/paths/ | wc -l
    ```
    New file is `_N+1`.
 
@@ -320,7 +319,7 @@ If validation didn't pass on first attempt but did within the retry budget, ment
 - **Don't label HPO IDs as `BiologicalProcess`** (4 occurrences in legacy data; see Layer 2 gap report).
 - **Don't label Reactome IDs as `BiologicalProcess`** (23 occurrences; they're pathways).
 - **Don't label MESH disease IDs as `Protein` / `GeneFamily` / `PhenotypicFeature`** unless you've confirmed that's actually what the MESH descriptor refers to. Most cases are mis-bindings that need UniProt / InterPro / HP equivalents instead.
-- **Don't write `drugbank: null` or `drug_mesh: null`.** Omit the field; the schema is now permissive (Phase 1 fix).
+- **Don't write `drug_mesh: null`.** Omit an unknown optional field rather than writing null; the schema is permissive.
 - **Don't paraphrase abstracts.** Don't do it.
 - **Don't append a shortcut/bypass edge on top of a mechanism** (see §0). The most common form is a redundant `Drug —treats→ Disease` edge added *after* a complete chain, e.g.:
   ```

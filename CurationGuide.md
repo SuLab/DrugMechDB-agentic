@@ -143,14 +143,12 @@ Each record is to be annotated with a `reference` key linking to the data source
 Example:
 
     reference:
-    - https://go.drugbank.com/drugs/DB06708#mechanism-of-action
     - https://www.uniprot.org/uniprot/Q8IL04#function
     - https://en.wikipedia.org/wiki/Heme#In_health_and_disease
     
 #### Comment section at the bottom of the yaml file
 
     reference:
-    - https://go.drugbank.com/drugs/DB06708#mechanism-of-action
     - https://www.uniprot.org/uniprot/Q8IL04#function
     - https://en.wikipedia.org/wiki/Heme#In_health_and_disease
     comment: Lumefantrine is an antimalarial agent used in combination with artemether.
@@ -167,12 +165,10 @@ Example:
 
 ## Sources
 
-Records from DrugMechDB should be curated from secondary sources. The primary source for curation is the
-Mechanism of Action section from [DrugBank](https://go.drugbank.com/drugs/DB01380#mechanism-of-action) for
-the drug in the indication.
-
-Other acceptable sources include (but are not limited to) Review articles, Gene Ontology, UniProt, Reactome, and
-well-sourced Wikipedia articles.
+Records from DrugMechDB should be curated from sources that *assert* the established mechanism.
+Sourcing is source-agnostic: acceptable sources include (but are not limited to) PubMed, review
+articles, Gene Ontology, UniProt, Reactome, ChEMBL, ClinicalTrials.gov, and well-sourced Wikipedia
+articles. The snippet cited for each edge must be a verbatim substring of the fetched source.
 
 Primary sources, including manuscripts containing experimental results should **not** be used
 for sources in DrugMechDB. DrugMechDB should consist of highly curated and high-confidence data, therefore sources
@@ -202,7 +198,7 @@ from one of these sources cannot be found for a concept, identifiers listed on t
 |[CellularComponent](https://biolink.github.io/biolink-model/docs/CellularComponent.html)  |  [GO](http://geneontology.org/)  |
 |[ChemicalSubstance](https://biolink.github.io/biolink-model/docs/ChemicalSubstance.html)  |  [MESH](https://meshb.nlm.nih.gov/), [CHEBI](https://www.ebi.ac.uk/chebi/) |
 |[Disease](https://biolink.github.io/biolink-model/docs/Disease.html)  |  [MESH](https://meshb.nlm.nih.gov/)  |
-|[Drug](https://biolink.github.io/biolink-model/docs/Drug.html)  |  [MESH](https://meshb.nlm.nih.gov/), [DrugBank](https://go.drugbank.com/) |
+|[Drug](https://biolink.github.io/biolink-model/docs/Drug.html)  |  [MESH](https://meshb.nlm.nih.gov/) (new records; legacy records may use DrugBank `DB:`) |
 |[GeneFamily](https://biolink.github.io/biolink-model/docs/GeneFamily.html)  |  [InterPro](https://www.ebi.ac.uk/interpro/), [Pfam](https://pfam.xfam.org/) |
 |[GrossAnatomicalStructure](https://biolink.github.io/biolink-model/docs/GrossAnatomicalStructure.html)  |  [UBERON](https://www.ebi.ac.uk/ols/ontologies/uberon)  |
 |[MacromolecularComplex](https://biolink.github.io/biolink-model/docs/MacromolecularComplexMixin.html)  |  [PR](https://www.ebi.ac.uk/ols/ontologies/pr)  |
@@ -346,23 +342,20 @@ Some indications need special handling. They are managed with a consistent set o
  mechanistic chain and stop — **never append a `Drug treats Disease` edge on top of a worked-out mechanism.** Doing so
  produces a redundant shortcut edge (a `clinical_shortcut` hard error) that restates the conclusion the chain already expresses.
 
-- **The drug has multiple MeSH IDs** These identifiers come directly from DrugCentral. Multiple MeSH IDs may mean the drug
-product is a mixture of several compounds, or that one of the mappings is simply wrong. A drug node must carry a **single**
-`id` (see [Nodes](#nodes)), so pick one: if there is still only one DrugBank identifier, use the DrugBank ID (`DB:...`) as the
-drug node's `id`, and record a single, confirmed `MESH:` value in `graph.drug_mesh` (drop any MeSH ID you cannot confirm rather
-than listing several). Any additional MeSH ID worth keeping may go under the node's optional `alt_ids` list. If the multiple
-MeSH IDs reflect a genuine combination of active compounds, curate the relevant compound(s) accordingly (see the prodrug FAQ below).
+- **The drug has multiple MeSH IDs** Multiple MeSH IDs may mean the drug product is a mixture of several compounds, or that
+one of the mappings is simply wrong. A drug node must carry a **single** `id` (see [Nodes](#nodes)), so pick one confirmed
+`MESH:` value for the drug node's `id` and `graph.drug_mesh` (drop any MeSH ID you cannot confirm rather than listing several).
+Any additional MeSH ID worth keeping may go under the node's optional `alt_ids` list. If the multiple MeSH IDs reflect a genuine
+combination of active compounds, curate the relevant compound(s) accordingly (see the prodrug FAQ below).
 
 - **The Identifier for the Drug or Disease is incorrect** Again these are sourced from DrugCentral and
 there may be some mistakes. If you encounter a mistake during curation, please feel free to provide the correct external identifier
 in your completed YAML.
 
-- **A drug or disease identifier is missing** Every indication should carry a DrugBank ID for the drug and a MeSH ID for the
-disease; occasionally one is absent from the DrugCentral mapping. Proceed by identifier, and never write a `null` value — omit a
-field you cannot fill:
-    - **Drug** — the record needs at least one of `graph.drug_mesh` / `graph.drugbank`. If the drug's MeSH ID is missing (none
-    were mapped from DrugCentral), use the DrugBank ID instead; if the DrugBank ID is the one missing, use the MeSH ID. The drug
-    node's `id` is whichever single identifier you have.
+- **A drug or disease identifier is missing** Every new indication should carry a MeSH ID for the drug and a MeSH ID for the
+disease. Never write a `null` value — omit a field you cannot fill:
+    - **Drug** — new records identify the drug by `graph.drug_mesh`; the drug node's `id` is that MeSH ID. If you cannot resolve
+    a MeSH ID for the drug, flag the indication for a curator rather than inventing one.
     - **Disease** — `graph.disease_mesh` is required. If it is missing, resolve it yourself from [MeSH](https://meshb.nlm.nih.gov/).
     If no MeSH descriptor genuinely exists for the disease, do **not** fabricate one — add a path `comment` noting the gap and flag
     the indication for a curator.
@@ -414,19 +407,21 @@ choice 2, but either are fine.
 pharmacologically active drug. The way you annotate the active and inactive forms of these compounds
 (whether within the same path or as separate paths) should be assessed on a case by case basis. 
 
-You should look into the DrugBank identifiers given to these compounds.
+Look at whether the active and inactive forms are distinct, separately-identifiable compounds.
 
-If there are two DrugBank IDs, the active and inactive compounds should be annotated in different paths. These are some examples:
+If each form is its own distinct compound (a separate entity with its own MeSH ID, and often its own
+indication), the active and inactive compounds are annotated in different paths. These are some examples:
 
-    - [Testosterone](https://go.drugbank.com/drugs/DB00624) and [Testosterone propionate](https://go.drugbank.com/drugs/DB01420)
-    
-    - [Drostanolone](https://go.drugbank.com/drugs/DB00858) and [Drostanolone propionate](https://go.drugbank.com/drugs/DB14655)
-   
-If you can't find two DrugBank IDs, the active and inactive compounds should be annotated in one single path. These are some examples:
+    - Testosterone and Testosterone propionate
 
-    - [Imidapril](https://go.drugbank.com/drugs/DB11783) and Imidaprilat
-    
-    - [Vidarabine](https://go.drugbank.com/drugs/DB00194) and Vidarabine Phosphate
+    - Drostanolone and Drostanolone propionate
+
+If the inactive form is not a separately-curated compound in its own right, the active and inactive
+compounds are annotated in one single path. These are some examples:
+
+    - Imidapril and Imidaprilat
+
+    - Vidarabine and Vidarabine Phosphate
 
 The path could be represented as below:
 

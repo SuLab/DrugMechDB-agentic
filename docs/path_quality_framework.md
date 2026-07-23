@@ -164,7 +164,7 @@ not a single dependency:
    independently of the endoxifen snippet. *(It also illustrates the granularity nuance: ChEMBL's
    general label is "modulator/mixed agonist-antagonist"; "decreases activity of" is correct only
    in the breast-cancer context — a scope check, not a contradiction.)*
-2. **Other structured oracles** — DrugBank MoA, UniProt (protein function), Guide to Pharmacology;
+2. **Other structured oracles** — UniProt (protein function), Guide to Pharmacology;
    GO / Reactome for downstream pathway edges.
 3. **Entailment over the cited text** — the §3 ladder; needs no database, works for any edge with a
    snippet.

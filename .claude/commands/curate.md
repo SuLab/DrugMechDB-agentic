@@ -20,18 +20,18 @@ Extract `Drug` and `Disease` from `$ARGUMENTS` (e.g. `/curate Aspirin for Myocar
 
 ### 2. Resolve identifiers
 
-- Drug → look up DrugBank ID (`DB:DB…`) and MESH ID (`MESH:D…` or `MESH:C…`). At least one must be available; both is better. Search `kb/paths/_index.yaml` first — if the drug is already in DrugMechDB, the IDs are right there.
+- Drug → look up MESH ID (`MESH:D…` or `MESH:C…`) via PubChem / MeSH. Search `kb/paths/_index.yaml` first — if the drug is already in DrugMechDB, the ID is right there. Do not look up or store a DrugBank ID.
 - Disease → MESH ID (`MESH:D…`).
 
-If you can't find either the drug ID or the disease MESH, stop and ask the user.
+If you can't find the drug or disease MESH, stop and ask the user.
 
 ### 3. Pick the file index
 
 ```
-ls kb/paths/ | grep "{drugbank}_{disease_mesh}_"
+ls kb/paths/ | grep "{drug_mesh}_{disease_mesh}_"
 ```
 
-If existing siblings are `_1`, `_2`, your new file is the next free index. Filename: `kb/paths/{drugbank_id}_{disease_mesh}_{N}.yaml`, e.g. `kb/paths/DB00945_MESH_D009203_3.yaml`. The graph `_id` matches the filename stem.
+If existing siblings are `_1`, `_2`, your new file is the next free index. Filename: `kb/paths/{drug_mesh}_{disease_mesh}_{N}.yaml`, e.g. `kb/paths/MESH_D001241_MESH_D009203_3.yaml`. The graph `_id` matches the filename stem.
 
 ### 4. Find sources via PubMed
 

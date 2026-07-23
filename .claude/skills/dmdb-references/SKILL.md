@@ -69,7 +69,7 @@ When snippeting **full text**, read the surrounding context before setting `supp
 
 The *machinery* is source-agnostic — it verifies "snippet ⊂ cited source" regardless of
 source. The **policy** is to cite the **secondary source that asserts the established
-mechanism** (DrugBank MoA, GO, UniProt, Reactome, reviews) and to bar primary-literature
+mechanism** (GO, UniProt, Reactome, reviews) and to bar primary-literature
 reconstruction. This policy is under review — confirm it with the maintainers before a
 large backfill run. Until then, keep snippets verbatim and the `reference` honest about
 its source.

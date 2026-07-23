@@ -51,7 +51,7 @@ as if the curator's own labels were not there.
 - `read_abstract(reference)` / `read_fulltext(reference)` — read any PMID **in memory** (independent
   of the curator's cache) to corroborate or challenge the edge. These never write anything.
 - `search_evidence(source, query)` / `read_evidence(reference)` — search and read the SAME trusted
-  multi-source layer the curator uses (ChEMBL, ClinicalTrials.gov, bioRxiv/medRxiv, DrugBank, PubMed),
+  multi-source layer the curator uses (ChEMBL, ClinicalTrials.gov, bioRxiv/medRxiv, PubMed),
   in memory. Set `fulltext=true` on `read_evidence` for the ephemeral open-access body where a source
   supports it. There is **NO web search** — an untrusted open-web result is never a grounding referent.
 Prefer an **independent** source (ChEMBL, or a source you retrieved) over the cited snippet — that is

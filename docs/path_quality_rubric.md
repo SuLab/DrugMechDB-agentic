@@ -98,7 +98,7 @@ it.
 ## C. Sourcing appropriateness
 
 - **Source-agnostic** (decided 2026-07): evidence may come from any connected source that *asserts*
-  the established mechanism (PubMed, preprint servers, ChEMBL, clinical trials, DrugBank MoA text,
+  the established mechanism (PubMed, preprint servers, ChEMBL, clinical trials,
   reviews, well-sourced references). No predicted/model-generated mechanism is ever a curation
   input.
 - The `EvidenceItem.snippet` must be a **verbatim** substring of the fetched source.
