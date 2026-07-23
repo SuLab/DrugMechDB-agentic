@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T06:54:33+00:00",
+  "generated_at": "2026-07-23T01:11:04+00:00",
   "generator": "scripts/compute_dashboard_metrics.py",
   "corpus": {
     "n_records": 4846,
@@ -549,15 +549,15 @@
     "summary": {
       "clean": 1824,
       "clean_pct": 37.6,
-      "hard_clean": 4657,
-      "hard_clean_pct": 96.1,
-      "hard_flagged": 189,
-      "soft_flagged": 2150,
-      "info_flagged": 1590
+      "hard_clean": 4805,
+      "hard_clean_pct": 99.2,
+      "hard_flagged": 41,
+      "soft_flagged": 0,
+      "info_flagged": 3018
     },
     "by_code": [
       {
-        "severity": "SOFT",
+        "severity": "INFO",
         "code": "length_out_of_range",
         "record_count": 1583
       },
@@ -572,22 +572,22 @@
         "record_count": 884
       },
       {
-        "severity": "SOFT",
+        "severity": "INFO",
         "code": "net_polarity",
         "record_count": 546
       },
       {
-        "severity": "SOFT",
+        "severity": "INFO",
         "code": "type_violation",
         "record_count": 351
       },
       {
-        "severity": "HARD",
+        "severity": "INFO",
         "code": "direct_drug_disease",
         "record_count": 91
       },
       {
-        "severity": "HARD",
+        "severity": "INFO",
         "code": "short_circuit",
         "record_count": 60
       },
@@ -617,8 +617,8 @@
   },
   "records_needing_attention": {
     "measured": true,
-    "total_flagged": 2255,
-    "total_issues": 3002,
+    "total_flagged": 222,
+    "total_issues": 276,
     "shown": 200,
     "items": [
       {
