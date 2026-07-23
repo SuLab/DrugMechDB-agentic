@@ -241,7 +241,7 @@ def run_gate(
     run_critic: bool = True,
     offline: bool = True,
     round_no: int = 1,
-    max_rounds: int = 3,
+    max_rounds: int = 4,
     use_cache: bool = True,
 ) -> tuple[bool, GateFeedback]:
     """Run the enforced gate on one path file.
@@ -314,7 +314,7 @@ def main() -> int:
                     help="critic provider (Anthropic-only)")
     ap.add_argument("--round", type=int, default=1, dest="round_no",
                     help="which curate<->critic round this is (1-based)")
-    ap.add_argument("--max-rounds", type=int, default=3,
+    ap.add_argument("--max-rounds", type=int, default=4,
                     help="after this many rounds a still-flagged path ESCALATEs to human")
     ap.add_argument("--online", action="store_true",
                     help="let Layer 4 fetch PubMed (default: offline against references_cache)")

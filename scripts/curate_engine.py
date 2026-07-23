@@ -77,7 +77,9 @@ CANON = REPO / "scripts" / "canonicalize_predicates.py"
 VENV_PY = REPO / ".venv-py310" / "bin" / "python"
 
 DEFAULT_MODEL = "claude-opus-4-8"
-MAX_TOKENS = 16384          # per-turn output ceiling (safe non-streaming; mirrors run_arm)
+MAX_TOKENS = 32768          # per-turn output ceiling; safe because we STREAM (a large
+                            # non-streaming reply risks the request timeout). Raised from
+                            # 16384 after a truncation (stop_reason=max_tokens) lost a curation.
 MAX_ITERS = 40              # agentic-loop turn cap (search/fetch/draft/canon/gate cycles)
 # Draft-forcing nudges (model-neutral, lifted from run_arm): if the agent is STILL
 # researching this late in the budget without a write, nudge it to draft. A no-op for
@@ -213,7 +215,7 @@ def build_tools(cache_dir: Path, out_path: Path, *, offline: bool = False,
     specs = [
         (evidence_search, "evidence_search",
          "Search ONE evidence source for candidate reference CURIEs. Source is a prefix "
-         "like PMID / chembl / clinicaltrials / bioRxiv / DrugBank.",
+         "like PMID / chembl / clinicaltrials / bioRxiv / medRxiv.",
          {"type": "object", "properties": {
              "source": {"type": "string"},
              "query": {"type": "string"},
@@ -252,7 +254,7 @@ def build_tools(cache_dir: Path, out_path: Path, *, offline: bool = False,
         (run_gate, "run_gate",
          "Run the enforced curation gate (QC Layers 1-4 + structural checks + critic) on the "
          "written path YAML and return the union feedback. Fix every reported problem and "
-         "re-run; iterate up to 3 times on a bounce.",
+         "re-run; iterate up to 4 times on a bounce.",
          {"type": "object", "properties": {}}),
     ]
     tool_defs = [{"name": n, "description": d, "input_schema": s} for (_fn, n, d, s) in specs]
@@ -275,7 +277,7 @@ def build_system() -> str:
         "never look for or imitate an existing curation.\n\n"
         "Workflow: resolve identifiers -> search sources and fetch+read the references you will "
         "cite -> draft the path YAML and write it with write_path_yaml -> canonicalize_predicates "
-        "-> run_gate -> if it bounces, fix every reported problem and iterate (up to 3 times). "
+        "-> run_gate -> if it bounces, fix every reported problem and iterate (up to 4 times). "
         "Every evidence snippet MUST be a verbatim substring of a reference you fetched (use "
         "read_reference to copy it) — never typed from memory, never paraphrased.\n\n"
         "When finished, send a final text message reporting: the gate verdict, your retry count, "
@@ -292,11 +294,10 @@ def build_task(item) -> str:
         f"Curate a new DrugMechDB mechanistic path for **{drug}** for **{disease}**.\n\n"
         f"Known identifiers:\n"
         f"  drug_mesh    : {getattr(item, 'drug_mesh', None) or '(resolve it)'}\n"
-        f"  drugbank     : {getattr(item, 'drugbank', None) or '(resolve it)'}\n"
         f"  disease_mesh : {getattr(item, 'disease_mesh', None) or '(resolve it)'}\n\n"
         f"Write your final YAML via write_path_yaml. Set the graph `_id` to `{item_id}`. "
         f"Follow AGENTS.md exactly; cite only verbatim snippets from references you fetch. "
-        f"Iterate up to 3 times against run_gate."
+        f"Iterate up to 4 times against run_gate."
     )
 
 
@@ -441,14 +442,24 @@ def curate_one(
 
     for i in range(max_iters):
         try:
-            resp = client.messages.create(
+            # STREAM, then assemble the final message. Streaming is what makes a high
+            # max_tokens safe: a large reply generated in one non-streaming shot can hit
+            # the API request timeout. get_final_message() returns the same Message shape
+            # (.content / .stop_reason / .usage) the rest of this loop already expects.
+            with client.messages.stream(
                 model=model, max_tokens=max_tokens, system=system,
                 tools=tool_defs, messages=messages, **create_kwargs,
-            )
+            ) as stream:
+                resp = stream.get_final_message()
         except Exception as e:
             result.stopped = f"error:{type(e).__name__}"
             result.error = str(e)
             break
+
+        # A turn that still truncates (output hit max_tokens) yields an incomplete
+        # assistant message: its tool_use blocks may be half-formed, so we must NOT
+        # execute them. stop_reason != "tool_use" here, so the tool-dispatch branch
+        # below is skipped and we fall through to a clean stop recorded as "max_tokens".
 
         u = getattr(resp, "usage", None)
         if u is not None:
@@ -483,7 +494,7 @@ def curate_one(
                     results_blocks.append({"type": "text", "text": (
                         "You now have enough evidence for the edges in this mechanism. Move to "
                         "drafting: write the complete path YAML and call write_path_yaml, then "
-                        "canonicalize_predicates and run_gate, iterating up to 3 times if it bounces.")})
+                        "canonicalize_predicates and run_gate, iterating up to 4 times if it bounces.")})
             messages.append({"role": "user", "content": results_blocks})
             continue
 

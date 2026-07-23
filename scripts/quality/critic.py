@@ -11,7 +11,7 @@ What it does that the deterministic layer cannot:
   - re-derives each edge's evidence support INDEPENDENTLY, grounding in ChEMBL and in
     sources it retrieves itself over the SAME trusted multi-source layer the curator uses
     (search_pubmed / read_abstract / read_fulltext, plus search_evidence / read_evidence
-    over ChEMBL / ClinicalTrials / bioRxiv / medRxiv / DrugBank) — i.e. knowledge BEYOND
+    over ChEMBL / ClinicalTrials / bioRxiv / medRxiv) — i.e. knowledge BEYOND
     the curator's cited snippets. cite-or-abstain; no web search.
   - judges the chain as a whole (accepted MoA, net direction, missing/wrong step).
 
@@ -210,7 +210,7 @@ def _collect_prior_flag_status(edge_bundles: list[dict], path_bundle: dict) -> l
     return out
 
 
-def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 3,
+def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 4,
                max_iters: int = 6, use_cache: bool = True, require_qc: bool = True) -> dict:
     p = Path(path_file)
     doc = yaml.safe_load(p.read_text())
@@ -380,7 +380,7 @@ def main() -> int:
                     help="critic provider (Anthropic-only)")
     ap.add_argument("--round", type=int, default=1, dest="round_no",
                     help="which curate↔critic round this is (1-based)")
-    ap.add_argument("--max-rounds", type=int, default=3,
+    ap.add_argument("--max-rounds", type=int, default=4,
                     help="after this many rounds a still-flagged path ESCALATEs to human")
     ap.add_argument("--max-iters", type=int, default=6, help="tool-loop cap per judge call")
     ap.add_argument("--no-cache", action="store_true")

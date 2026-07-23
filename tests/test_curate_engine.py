@@ -96,11 +96,28 @@ class _Resp:
         self.usage = _Usage()
 
 
+class _MockStream:
+    """Mirrors `with client.messages.stream(**kw) as s: s.get_final_message()` — the
+    request work runs when the final message is pulled, inside the context manager."""
+    def __init__(self, messages, kwargs):
+        self._messages = messages
+        self._kwargs = kwargs
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+    def get_final_message(self):
+        return self._messages._next_resp(self._kwargs)
+
+
 class _MockMessages:
     def __init__(self, client):
         self._client = client
 
-    def create(self, **kwargs):
+    def _next_resp(self, kwargs):
         c = self._client
         c.calls.append(kwargs)
         if c.on_first_create is not None and not c._tripped:
@@ -110,6 +127,12 @@ class _MockMessages:
             content, stop = c._turns.pop(0)
             return _Resp(content, stop)
         return _Resp([_Block("text", text="done")], "end_turn")
+
+    def create(self, **kwargs):
+        return self._next_resp(kwargs)
+
+    def stream(self, **kwargs):
+        return _MockStream(self, kwargs)
 
 
 class MockClient:
