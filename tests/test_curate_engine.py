@@ -29,6 +29,12 @@ from pathlib import Path
 import pytest
 import yaml
 
+# The engine's live client is Anthropic (the optional [judge] extra). These tests use a
+# MOCK client, but the no-real-client guard imports `anthropic` to monkeypatch it — so
+# skip the whole module when the optional SDK isn't installed. CI installs it via
+# `.[dev,judge]`; a minimal `.[dev]`-only environment skips these instead of erroring.
+pytest.importorskip("anthropic")
+
 REPO = Path(__file__).resolve().parent.parent
 SCRIPTS = REPO / "scripts"
 sys.path.insert(0, str(SCRIPTS))
