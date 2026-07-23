@@ -140,3 +140,9 @@ images/
 audit_work/
 # Local research dossiers / large data dumps that are reproducible, not source
 *.zip
+
+# generated pilot run artifacts (scripts/run_pilot.py) — keep only the manifest
+experiments/pilot/outputs/
+experiments/pilot/cache/
+experiments/pilot/run_summary.json
+experiments/pilot/_status.yaml
