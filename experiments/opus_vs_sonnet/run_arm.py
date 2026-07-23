@@ -56,9 +56,22 @@ PAIRS_FILE = EXP_DIR / "eval_pairs.yaml"
 VENV_PY = REPO / ".venv-py310" / "bin" / "python"
 
 # Fixed, identical-for-both-arms settings. The ONLY per-arm difference is the model.
-MAX_TOKENS = 8192
+MAX_TOKENS = 16384      # per-turn output ceiling. Opus 4.8 drafts fit in 8192; Sonnet 5 is more
+                        # verbose per turn and truncates at 8192 mid-draft, so raise the ceiling.
+                        # Neutral to the comparison: it's a completion enabler, not a quality lever,
+                        # and does not change Opus (which never reached the old ceiling).
 MAX_ITERS = 40          # agentic-loop turn cap (search/fetch/draft/canon/qc cycles)
 RETRY_BUDGET = 3        # QC retries per AGENTS.md §5 (the agent self-manages within MAX_ITERS)
+
+# Draft-forcing nudge (model-neutral). If the agent is STILL researching and has not called
+# write_path_yaml by these turns, inject a reminder to stop searching and draft. This is a
+# no-op for a model that drafts early (Opus 4.8 writes by ~turn 10, never triggers it); it
+# only fires for a model that over-researches and never transitions to drafting (observed with
+# Sonnet 5, which otherwise loops on pubmed_search/fetch until it exhausts the budget or
+# refuses). The task is unchanged — same tools, token budget, iteration cap, and prompt — the
+# nudge just breaks the degenerate research loop so the model actually produces a path to score.
+DRAFT_NUDGE_TURN_1 = 15   # gentle: "you have enough evidence, move to drafting"
+DRAFT_NUDGE_TURN_2 = 25   # firm: "stop researching, write the path THIS turn"
 
 # Anthropic per-MTok pricing (claude-api skill, cached 2026-06):
 #   opus-4-8   : $5 in  / $25 out ; sonnet-4-6 : $3 in / $15 out.
@@ -67,6 +80,10 @@ PRICING = {
     "claude-opus-4-8":   {"in": 5.0,  "out": 25.0},
     "claude-opus-4-7":   {"in": 5.0,  "out": 25.0},
     "claude-sonnet-4-6": {"in": 3.0,  "out": 15.0},
+    # Sonnet 5 standard list price ($3 in / $15 out) — same rate as Sonnet 4.6, so any
+    # sonnet5-vs-sonnet cost delta is pure token efficiency. (Intro rate through 2026-08-31
+    # is $2/$10; we cost at standard because a production re-curation run would bill at standard.)
+    "claude-sonnet-5":   {"in": 3.0,  "out": 15.0},
 }
 
 
@@ -235,6 +252,8 @@ def run_pair(client, model: str, pair: dict, arm_cache: Path, out_path: Path) ->
     calls = []
     stopped = "final"
     final_text = ""   # ensure defined even if the API call raises before a final turn
+    wrote_yaml = False    # has the agent called write_path_yaml yet?
+    nudged = set()        # which draft-forcing nudges (1=gentle, 2=firm) have fired
     t0 = time.time()
 
     for i in range(MAX_ITERS):
@@ -264,6 +283,8 @@ def run_pair(client, model: str, pair: dict, arm_cache: Path, out_path: Path) ->
             messages.append({"role": "assistant", "content": asst})
             results = []
             for tu in tool_uses:
+                if tu.name == "write_path_yaml":
+                    wrote_yaml = True
                 fn = registry.get(tu.name)
                 try:
                     out = fn(tu.input or {}) if fn else f"ERROR: unknown tool {tu.name}"
@@ -271,10 +292,28 @@ def run_pair(client, model: str, pair: dict, arm_cache: Path, out_path: Path) ->
                     out = f"ERROR executing {tu.name}: {e}"
                 calls.append({"name": tu.name, "input_keys": list((tu.input or {}).keys())})
                 results.append({"type": "tool_result", "tool_use_id": tu.id, "content": str(out)})
+            # Draft-forcing nudge: only if the agent is still researching (no write yet) late in
+            # the budget. Appended as a text block on the tool-result user turn. Fires at most once
+            # per stage; a no-op for models that draft before DRAFT_NUDGE_TURN_1.
+            turns_taken = i + 1
+            if not wrote_yaml:
+                if turns_taken >= DRAFT_NUDGE_TURN_2 and 2 not in nudged:
+                    nudged.add(2)
+                    results.append({"type": "text", "text": (
+                        "STOP researching now — you have gathered enough references. THIS TURN, draft "
+                        "your best-supported mechanistic path and call write_path_yaml, then "
+                        "canonicalize_predicates and run_qc. Do not run any more searches or fetches.")})
+                elif turns_taken >= DRAFT_NUDGE_TURN_1 and 1 not in nudged:
+                    nudged.add(1)
+                    results.append({"type": "text", "text": (
+                        "You now have enough evidence for the edges in this mechanism. Move to drafting: "
+                        "write the complete path YAML and call write_path_yaml, then canonicalize_predicates "
+                        "and run_qc, iterating up to 3 times if QC fails.")})
             messages.append({"role": "user", "content": results})
             continue
 
-        # final text turn
+        # final turn (also covers stop_reason 'end_turn' / 'refusal')
+        stopped = getattr(resp, "stop_reason", "final") or "final"
         final_text = "".join(getattr(b, "text", "") for b in resp.content
                              if getattr(b, "type", None) == "text")
         break
@@ -296,6 +335,7 @@ def run_pair(client, model: str, pair: dict, arm_cache: Path, out_path: Path) ->
         "usage": usage, "est_cost_usd": round(cost, 4),
         "n_tool_calls": len(calls),
         "tool_call_counts": _count(calls),
+        "draft_nudges": sorted(nudged),
         "output_written": out_path.exists(),
         "final_text_tail": final_text[-1500:],
     }
@@ -310,8 +350,8 @@ def _count(calls):
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--arm", required=True, choices=["opus", "sonnet"])
-    ap.add_argument("--model", required=True, help="claude-opus-4-8 | claude-sonnet-4-6")
+    ap.add_argument("--arm", required=True, choices=["opus", "sonnet", "sonnet5"])
+    ap.add_argument("--model", required=True, help="claude-opus-4-8 | claude-sonnet-4-6 | claude-sonnet-5")
     ap.add_argument("--pairs", default="", help="comma-separated pair ids; empty = all")
     args = ap.parse_args()
 
