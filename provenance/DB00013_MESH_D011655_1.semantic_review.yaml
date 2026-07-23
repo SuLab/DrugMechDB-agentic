@@ -1,0 +1,85 @@
+record_id: DB00013_MESH_D011655_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T12:03:25+00:00'
+last_reviewed_at: '2026-07-23T12:03:25+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: ACCEPT
+overall_summary: 'After adversarial search for a whole-path defect, none found. This
+  is the accepted thrombolytic MoA: urokinase (uPA, per ChEMBL) activates plasminogen
+  to plasmin, plasmin degrades fibrin, fibrin composes the venous thrombus, and the
+  thrombus embolizes to cause PE. The required sign-flip (plasmin↓fibrin) is present
+  and correctly placed, so the chain nets to a decrease in disease. No missing step,
+  no off-route intermediate, no shortcut/bypass edge. Independent grounding: ChEMBL
+  CHEMBL1201420 and PMID:36603558 (thrombolytics reduce PE mortality).'
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T12:03:25+00:00'
+  verdict: ACCEPT
+  summary: 'After adversarial search for a whole-path defect, none found. This is
+    the accepted thrombolytic MoA: urokinase (uPA, per ChEMBL) activates plasminogen
+    to plasmin, plasmin degrades fibrin, fibrin composes the venous thrombus, and
+    the thrombus embolizes to cause PE. The required sign-flip (plasmin↓fibrin) is
+    present and correctly placed, so the chain nets to a decrease in disease. No missing
+    step, no off-route intermediate, no shortcut/bypass edge. Independent grounding:
+    ChEMBL CHEMBL1201420 and PMID:36603558 (thrombolytics reduce PE mortality).'
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:Urokinase
+  - ChEMBL:urokinase
+  - DrugBank:DB00013
+  - PMID:25854042
+  - PMID:32491343
+  - PMID:35652333
+  - PMID:36193902
+  - PMID:36603558
+  - PMID:36696220
+  - PMID:36942151
+  - PMID:37298257
+  - PMID:38160724
+  - PMID:42194044
+  - PMID:42293733
+  - PMID:42322918
+  - PMID:8815838
+  edge_reviews:
+  - edge: Urokinase --increases activity of--> Plasmin
+    reference: PMID:24468032
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:36942151 (Fibrinolysis: an illustrated review) and
+      PMID:37298257 \u2014 neither cited by curator", "record": "''plasminogen activators
+      (tissue-type and urokinase-type) that convert plasminogen into plasmin''; and
+      ''pro-urokinase plasminogen activator (pro-uPA), which converts plasminogen
+      to plasmin''."}'
+    confidence: high
+  - edge: Plasmin --decreases abundance of--> Fibrin
+    reference: PMID:2180114
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:42293733 (independent, not cited by curator)",
+      "record": "''Plasmin facilitates fibrinolysis by catalyzing the degradation
+      of fibrin clots.'' PMID:42194044 additionally describes ''plasmin-mediated degradation''
+      of fibrin fibers."}'
+    confidence: high
+  - edge: Fibrin --part of--> Venous thrombosis
+    reference: PMID:34261330
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:35652333 (ATVB 2022) and PMID:36696220 (JTH 2023),
+      not cited by curator", "record": "PMID:35652333 states fibrin network structure
+      is a major determinant of venous thrombus mass, composition, and stability;
+      PMID:36696220 identifies fibrin as part of the scaffolding network of venous
+      thrombi (with VWF and NETs)."}'
+    confidence: high
+  - edge: Venous thrombosis --causes--> Pulmonary thromboembolism
+    reference: PMID:34816417
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:25854042 (not cited by curator)", "record":
+      "''Deep vein thrombosis (DVT) and pulmonary embolism are two manifestations
+      of the same underlying disease'' \u2014 independently confirms DVT embolizes
+      to cause PE."}'
+    confidence: high

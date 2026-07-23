@@ -1,0 +1,43 @@
+record_id: DB01527_MESH_D000856_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T08:02:59+00:00'
+last_reviewed_at: '2026-07-23T08:02:59+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: ACCEPT
+overall_summary: No semantic problems found.
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T08:02:59+00:00'
+  verdict: ACCEPT
+  summary: No semantic problems found.
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:Clortermine
+  - ChEMBL:clortermine
+  - PMID:26578217
+  - PMID:2709326
+  - PMID:27601073
+  - PMID:32129724
+  - PMID:4606535
+  edge_reviews:
+  - edge: Clortermine --negatively regulates--> Feeding behavior
+    reference: PMID:3620005
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:2709326 (not cited by curator; read_abstract)", "record":
+      "Anorectic drugs including clortermine produced dose-dependent decreases in
+      food intake and decreased first-meal size in baboons."}'
+    confidence: high
+  - edge: Clortermine --negatively regulates--> Feeding behavior
+    reference: PMID:826970
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:2709326 (uncited; read_abstract)", "record": "Clortermine
+      specifically produced dose-dependent decreases in food intake and decreased
+      first-meal size in baboons, confirming a genuine anorectic effect beyond the
+      operant-competition readout."}'
+    confidence: medium

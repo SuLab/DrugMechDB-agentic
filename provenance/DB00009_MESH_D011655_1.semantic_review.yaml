@@ -1,0 +1,79 @@
+record_id: DB00009_MESH_D011655_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T11:32:07+00:00'
+last_reviewed_at: '2026-07-23T11:32:07+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: ACCEPT
+overall_summary: 'After adversarial search for a whole-path defect, none found. The
+  chain represents the accepted MoA of alteplase (t-PA) in PE: activation of plasmin,
+  plasmin-mediated degradation of the fibrin constituting the pulmonary embolus. Independent
+  authorities (ChEMBL, PMID:6439177/3044205/23034825) confirm the mechanism and its
+  correct net direction (disease decreased). The sign-flipping step is present and
+  correctly placed; polarity coherence is genuine. A minor sourcing caveat on the
+  fibrin→PE edge (murine/chronic-PE citations) is covered by independent human evidence
+  and does not affect path validity.'
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T11:32:07+00:00'
+  verdict: ACCEPT
+  summary: 'After adversarial search for a whole-path defect, none found. The chain
+    represents the accepted MoA of alteplase (t-PA) in PE: activation of plasmin,
+    plasmin-mediated degradation of the fibrin constituting the pulmonary embolus.
+    Independent authorities (ChEMBL, PMID:6439177/3044205/23034825) confirm the mechanism
+    and its correct net direction (disease decreased). The sign-flipping step is present
+    and correctly placed; polarity coherence is genuine. A minor sourcing caveat on
+    the fibrin→PE edge (murine/chronic-PE citations) is covered by independent human
+    evidence and does not affect path validity.'
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:Alteplase
+  - ChEMBL:alteplase
+  - DrugBank:DB00009
+  - PMID:23034825
+  - PMID:3044205
+  - PMID:32279846
+  - PMID:33537528
+  - PMID:40519879
+  - PMID:42083375
+  - PMID:42194044
+  - PMID:42476525
+  - PMID:6439177
+  - clinicaltrials:NCT02132689
+  edge_reviews:
+  - edge: Plasmin --decreases abundance of--> Fibrin
+    reference: PMID:39299257
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:42476525 (Blood Advances 2026) and PMID:42083375
+      (Blood Coag Fibrinolysis 2026), not cited by curator", "record": "PMID:42476525:
+      ''The plasminogen activation and plasmin activity (PA) system is a central mechanism
+      for degrading fibrin.'' PMID:42083375: describes plasmin-mediated fibrin degradation
+      producing FDP fragments (X, D, E, D-dimer). Both independently confirm plasmin
+      degrades fibrin into FDPs."}'
+    confidence: high
+  - edge: Fibrin --contributes to--> Pulmonary embolism
+    reference: PMID:32368694
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:32279846 (independent, not cited by curator) \u2014
+      Structure/mechanical properties of human pulmonary emboli", "record": "Human
+      pulmonary emboli are composed of fibrin fibers and RBCs; classifies emboli as
+      ''rich in fibrin'', confirming fibrin as a structural constituent of PE."}'
+    confidence: high
+  - edge: Fibrin --contributes to--> Pulmonary embolism
+    reference: PMID:8205686
+    rederived_supports: SUPPORT
+    agrees_with_curator: false
+    issue: 'Note: this citation''s primary subject is a different molecular readout;
+      the fibrin-composition statement is incidental. Consider whether a source whose
+      central finding is the fibrin composition of the embolus would be a firmer primary
+      citation, though the current descriptor is adequate and specific.'
+    grounding: '{"source": "PMID:33537528 (independent review, not cited) \u2014 Visualizing
+      thrombosis", "record": "Thrombi contain various structural forms of fibrin along
+      with platelets, leukocytes, RBCs; fibrin is a core structural component of venous/arterial
+      thrombi and emboli."}'
+    confidence: high

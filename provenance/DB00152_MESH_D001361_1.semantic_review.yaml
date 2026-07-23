@@ -1,0 +1,56 @@
+record_id: DB00152_MESH_D001361_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T09:01:04+00:00'
+last_reviewed_at: '2026-07-23T09:01:04+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: ACCEPT
+overall_summary: No semantic problems found.
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T09:01:04+00:00'
+  verdict: ACCEPT
+  summary: No semantic problems found.
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:thiamine
+  - PMID:14522735
+  - PMID:2024080
+  - PMID:21288652
+  - PMID:23357554
+  - PMID:23804074
+  - PMID:28215312
+  - PMID:29188542
+  - PMID:34542918
+  - PMID:36719404
+  - PMID:40211576
+  - PMID:40254403
+  - PMID:40271433
+  - PMID:8279670
+  edge_reviews:
+  - edge: Thiamine --has metabolite--> Thiamine pyrophosphate
+    reference: PMID:39470204
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:21288652 (Medical Hypotheses, 2011) and PMID:23804074
+      (Nature Communications, 2013) \u2014 both NOT cited by curator", "record": "PMID:21288652:
+      ''Once thiamine enters the cells it is phosphorylated by thiamine pyrophosphokinase
+      (TPPK), and converted into the coenzyme thiamine pyrophosphate (TPP), the active
+      form of thiamine.'' PMID:23804074: ''thiamine pyrophosphokinase (the enzyme
+      that converts thiamine into its active form, thiamine pyrophosphate)''. Both
+      independently confirm the thiamine\u2192TPP metabolic conversion."}'
+    confidence: high
+  - edge: Thiamine pyrophosphate --increases activity of--> Transketolase activity
+    reference: PMID:22152682
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:39470204 (independent, not cited by curator) and
+      PMID:40254403", "record": "PMID:39470204: ''thiamine pyrophosphate (TPP), an
+      essential enzyme cofactor''; transketolase is a TPP-dependent enzyme; reducing
+      TPP production inhibits it. PMID:40254403: transketolase inhibitors bind the
+      ''thiamine diphosphate cofactor subsite'', confirming TPP is the required cofactor
+      enabling transketolase activity."}'
+    confidence: high

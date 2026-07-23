@@ -1,0 +1,126 @@
+record_id: B02362_MESH_D003882_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T07:39:53+00:00'
+last_reviewed_at: '2026-07-23T07:39:53+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: RE_CURATE
+overall_summary: Although both edges are individually sourceable, the path FAILS as
+  a whole mechanism. (1) It routes the therapeutic effect through dermal-mucin/GAG
+  deposition, which independent sources describe as a SECONDARY, clinically-uncommon
+  histopathologic finding in DM — not the disease driver. (2) The accepted DM disease
+  process and its treatments operate on the autoimmune/type-I-interferon inflammatory
+  axis, which is entirely absent from the chain. (3) The all-positive polarity means
+  the chain reads as 'lower a downstream symptom' rather than a proper cause-reversing
+  mechanism, and no sign-flipping disease-driving step is present. (4) ChEMBL assigns
+  no mechanism to the drug in either free-acid or salt form. This is an off-mechanism,
+  symptom-level chain, not the accepted MoA.
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T07:39:53+00:00'
+  verdict: RE_CURATE
+  summary: Although both edges are individually sourceable, the path FAILS as a whole
+    mechanism. (1) It routes the therapeutic effect through dermal-mucin/GAG deposition,
+    which independent sources describe as a SECONDARY, clinically-uncommon histopathologic
+    finding in DM — not the disease driver. (2) The accepted DM disease process and
+    its treatments operate on the autoimmune/type-I-interferon inflammatory axis,
+    which is entirely absent from the chain. (3) The all-positive polarity means the
+    chain reads as 'lower a downstream symptom' rather than a proper cause-reversing
+    mechanism, and no sign-flipping disease-driving step is present. (4) ChEMBL assigns
+    no mechanism to the drug in either free-acid or salt form. This is an off-mechanism,
+    symptom-level chain, not the accepted MoA.
+  flags:
+  - edge: aminobenzoic acid --decreases abundance of--> Glycosaminoglycans
+    issue: The cited source describes the potassium salt form of the subject drug,
+      not the free-acid entity that the edge's subject identifier denotes; the subject
+      entity is grounded to a related-but-different chemical form. Confirm whether
+      the salt and the free-acid identifier should be reconciled, and source the free-acid
+      form specifically.
+  - edge: aminobenzoic acid --decreases abundance of--> Glycosaminoglycans
+    issue: As with the companion citation, this source studies the potassium salt
+      form of the subject drug rather than the free-acid entity denoted by the subject
+      identifier; the subject is grounded to a related salt form. Reconcile the chemical
+      form or source the free-acid entity directly.
+  - edge: Glycosaminoglycans --manifestation of--> Dermatomyositis
+    issue: This citation supports 'mucin deposition' as a feature of the disease but
+      does not itself name the subject substance, so the subject entity is only inferred,
+      not stated; additionally the source's surrounding text notes this manifestation
+      is uncommon, which the edge presents without qualification.
+  path_issue: This 2-link chain does not represent the accepted mechanism by which
+    the drug treats the disease. The intermediate the chain passes through is a secondary,
+    clinically-uncommon downstream finding of the disease rather than part of the
+    disease-driving process, and the principal pathophysiologic/therapeutic axis of
+    this disease is not represented anywhere in the path. As modeled, the chain reads
+    as merely lowering a downstream finding rather than reversing the disease mechanism,
+    and the drug's mechanism for this indication is not independently established.
+    Reconsider whether a genuine primary mechanism exists to curate; if none can be
+    sourced, this drug-disease pair may not be appropriate for a worked-out mechanistic
+    path.
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:CHEMBL1141
+  - ChEMBL:aminobenzoate potassium
+  - ChEMBL:aminobenzoic acid
+  - ChEMBL:potassium para-aminobenzoate
+  - PMID:13102356
+  - PMID:13166877
+  - PMID:13949691
+  - PMID:19614999
+  - PMID:26322557
+  - PMID:29228499
+  - PMID:316776
+  - PMID:38194097
+  - PMID:39087260
+  - PMID:42127706
+  edge_reviews:
+  - edge: aminobenzoic acid --decreases abundance of--> Glycosaminoglycans
+    reference: PMID:155125
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited source describes the potassium salt form of the subject drug,
+      not the free-acid entity that the edge's subject identifier denotes; the subject
+      entity is grounded to a related-but-different chemical form. Confirm whether
+      the salt and the free-acid identifier should be reconciled, and source the free-acid
+      form specifically.
+    grounding: '{"source": "ChEMBL mechanism lookup", "record": "''aminobenzoic acid''
+      resolves to CHEMBL542 with NO curated mechanism; ''potassium para-aminobenzoate''
+      resolves to a SEPARATE record AMINOBENZOATE POTASSIUM (CHEMBL1564391/CHEMBL1141),
+      confirming the cited compound is the salt, distinct from the free-acid edge
+      subject, and neither has a defined molecular target."}'
+    confidence: high
+  - edge: aminobenzoic acid --decreases abundance of--> Glycosaminoglycans
+    reference: PMID:1350132
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: As with the companion citation, this source studies the potassium salt
+      form of the subject drug rather than the free-acid entity denoted by the subject
+      identifier; the subject is grounded to a related salt form. Reconcile the chemical
+      form or source the free-acid entity directly.
+    grounding: '{"source": "ChEMBL mechanism lookup", "record": "AMINOBENZOATE POTASSIUM
+      is a curated entity distinct from AMINOBENZOIC ACID (CHEMBL542); confirms the
+      cited ''Potaba/para-aminobenzoate'' is the salt form, not the free-acid edge
+      subject."}'
+    confidence: high
+  - edge: Glycosaminoglycans --manifestation of--> Dermatomyositis
+    reference: PMID:17300236
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:26322557 (uncited by curator; read via read_abstract)",
+      "record": "''Dermal mucinosis is characterized by the deposition of glycosaminoglycans
+      (mucin)... secondary to several dermatoses, most notably lupus erythematous,
+      scleroderma, and dermatomyositis.'' \u2014 independently confirms GAG deposition
+      as a manifestation associated with dermatomyositis."}'
+    confidence: high
+  - edge: Glycosaminoglycans --manifestation of--> Dermatomyositis
+    reference: PMID:11328393
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: This citation supports 'mucin deposition' as a feature of the disease but
+      does not itself name the subject substance, so the subject entity is only inferred,
+      not stated; additionally the source's surrounding text notes this manifestation
+      is uncommon, which the edge presents without qualification.
+    grounding: '{"source": "PMID:26322557 (uncited)", "record": "Ties glycosaminoglycan
+      deposition specifically to dermatomyositis, filling the GAG link that this snippet
+      leaves implicit."}'
+    confidence: medium

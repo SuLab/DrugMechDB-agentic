@@ -1,0 +1,131 @@
+record_id: DB00038_MESH_D013921_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T13:03:03+00:00'
+last_reviewed_at: '2026-07-23T13:03:03+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: RE_CURATE
+overall_summary: 'The whole path is the accepted primary mechanism of oprelvekin (rhIL-11)
+  for thrombocytopenia: IL-11Rα agonism stimulates megakaryocyte differentiation/maturation
+  → platelet formation → inversely reduces the thrombocytopenic disorder. Independently
+  corroborated by ChEMBL (IL-11Rα agonist) and by BioDrugs and clinical reviews (PMID:18020592,
+  PMID:11279623, PMID:12728286) that assert megakaryocytopoiesis stimulation as the
+  predominant MoA and confirm the correct net disease-decreasing direction. No sign
+  error, no missing load-bearing step, no shortcut edge, correct polarity.'
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T13:03:03+00:00'
+  verdict: RE_CURATE
+  summary: 'The whole path is the accepted primary mechanism of oprelvekin (rhIL-11)
+    for thrombocytopenia: IL-11Rα agonism stimulates megakaryocyte differentiation/maturation
+    → platelet formation → inversely reduces the thrombocytopenic disorder. Independently
+    corroborated by ChEMBL (IL-11Rα agonist) and by BioDrugs and clinical reviews
+    (PMID:18020592, PMID:11279623, PMID:12728286) that assert megakaryocytopoiesis
+    stimulation as the predominant MoA and confirm the correct net disease-decreasing
+    direction. No sign error, no missing load-bearing step, no shortcut edge, correct
+    polarity.'
+  flags:
+  - edge: Interleukin-11 receptor subunit alpha --positively regulates--> megakaryocyte
+      differentiation
+    issue: The cited sentence establishes that megakaryocytes express a functional
+      receptor, but does not itself assert that the receptor positively regulates
+      megakaryocyte differentiation; the differentiation-promotion claim rests on
+      the paper's overall thesis rather than this span, so the receptor→differentiation
+      causal link is only indirectly supported here.
+  - edge: Interleukin-11 receptor subunit alpha --positively regulates--> megakaryocyte
+      differentiation
+    issue: The cited sentence documents activation of receptor signaling (proximal
+      phosphorylation events) in megakaryocytes but stops short of directly stating
+      that this signaling drives the megakaryocyte differentiation process; the link
+      from receptor-signaling activation to the differentiation biological process
+      is not asserted within the cited span.
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:oprelvekin
+  - DrugBank:DB00038
+  - PMID:11279623
+  - PMID:11806989
+  - PMID:12423677
+  - PMID:12728286
+  - PMID:18020592
+  - PMID:23869192
+  - PMID:31644052
+  - PMID:36064361
+  - PMID:41821003
+  - PMID:42150413
+  - PMID:42398184
+  - PMID:42453522
+  - PMID:42465034
+  - PMID:9310465
+  edge_reviews:
+  - edge: oprelvekin --increases activity of--> Interleukin-11 receptor subunit alpha
+    reference: PMID:12919066
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL chembl_get_mechanism(''oprelvekin'') = CHEMBL1201573",
+      "record": "action_type=AGONIST; target=Interleukin-11 receptor subunit alpha;
+      direct_interaction=1; moa=''Interleukin 11 receptor alpha agonist''"}'
+    confidence: high
+  - edge: oprelvekin --increases activity of--> Interleukin-11 receptor subunit alpha
+    reference: PMID:26551279
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL CHEMBL1201573 mechanism record", "record": "oprelvekin
+      is a direct agonist of Interleukin-11 receptor subunit alpha"}'
+    confidence: high
+  - edge: Interleukin-11 receptor subunit alpha --positively regulates--> megakaryocyte
+      differentiation
+    reference: PMID:9354656
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited sentence establishes that megakaryocytes express a functional
+      receptor, but does not itself assert that the receptor positively regulates
+      megakaryocyte differentiation; the differentiation-promotion claim rests on
+      the paper's overall thesis rather than this span, so the receptor→differentiation
+      causal link is only indirectly supported here.
+    grounding: '{"source": "PubMed PMID:23869192 (IJMS 2013) and PMID:12423677 (Exp
+      Hematol 2002), not cited by curator", "record": "H11 (sIL-11R\u03b1 linked to
+      IL-11 engaging gp130) enhances differentiation of CD34+ cells into megakaryocytes
+      with higher CD41a/CD61 and Mk maturation; gp130-STAT1/3 signaling promotes functional
+      maturation of megakaryocytes and IL-11 stimulation increases MK size via this
+      pathway."}'
+    confidence: high
+  - edge: Interleukin-11 receptor subunit alpha --positively regulates--> megakaryocyte
+      differentiation
+    reference: PMID:9354656
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited sentence documents activation of receptor signaling (proximal
+      phosphorylation events) in megakaryocytes but stops short of directly stating
+      that this signaling drives the megakaryocyte differentiation process; the link
+      from receptor-signaling activation to the differentiation biological process
+      is not asserted within the cited span.
+    grounding: '{"source": "PMID:12423677 (Exp Hematol 2002), not cited by curator",
+      "record": "gp130-mediated STAT1/3 activation promotes functional maturation
+      of megakaryocytes; IL-11 stimulation increases MK size via this pathway \u2014
+      directly linking IL-11 receptor/gp130-STAT3 signaling to megakaryocyte differentiation/maturation."}'
+    confidence: high
+  - edge: megakaryocyte differentiation --positively regulates--> platelet formation
+    reference: PMID:34943811
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:42150413 (in-vitro human CD34+ MK maturation)
+      and PMID:41821003 (mouse MK maturation KO model)", "record": "PMID:42150413:
+      mature MKs display proplatelet formation and drive thrombopoiesis. PMID:41821003:
+      impaired MK maturation causes ''sharp decrease in megakaryopoiesis and platelet
+      production'' \u2014 confirming positive regulation directionality."}'
+    confidence: high
+  - edge: platelet formation --negatively correlated with--> Thrombocytopenic disorder
+    reference: PMID:6683869
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:42398184 (EBioMedicine 2026) and PMID:42453522
+      (Tzu Chi Med J 2026), not cited by curator", "record": "Impaired megakaryopoiesis/thrombopoiesis
+      leads to reduced platelet counts (thrombocytopenia); ITP is defined as thrombocytopenia
+      resulting from ''increased platelet destruction, impaired platelet production,
+      or both''; pharmacologic restoration of platelet production restores platelet
+      counts \u2014 establishing the inverse correlation between platelet formation
+      and thrombocytopenic disorder."}'
+    confidence: high

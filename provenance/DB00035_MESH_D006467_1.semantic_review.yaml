@@ -1,0 +1,110 @@
+record_id: DB00035_MESH_D006467_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T12:36:25+00:00'
+last_reviewed_at: '2026-07-23T12:36:25+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: ACCEPT
+overall_summary: After adversarial search for a whole-path defect, the chain is the
+  accepted MoA. Independent authorities not cited by the curator (ChEMBL agonist record;
+  PMID:40290674, PMID:36656570, PMID:40723839, PMID:12649145) confirm desmopressin
+  as a V2R agonist that releases endothelial VWF, thereby raising circulating VWF
+  and FVIII to correct the FVIII deficiency, with VWF the main determinant of the
+  FVIII response. Polarity is coherent, net effect correctly decreases disease, chain
+  is a single connected route with no shortcut. Only caveat is a therapeutic-scope
+  nuance (efficacy limited to mild/moderate, not severe, hemophilia A), which does
+  not alter the mechanism for the indication it treats.
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T12:36:25+00:00'
+  verdict: ACCEPT
+  summary: After adversarial search for a whole-path defect, the chain is the accepted
+    MoA. Independent authorities not cited by the curator (ChEMBL agonist record;
+    PMID:40290674, PMID:36656570, PMID:40723839, PMID:12649145) confirm desmopressin
+    as a V2R agonist that releases endothelial VWF, thereby raising circulating VWF
+    and FVIII to correct the FVIII deficiency, with VWF the main determinant of the
+    FVIII response. Polarity is coherent, net effect correctly decreases disease,
+    chain is a single connected route with no shortcut. Only caveat is a therapeutic-scope
+    nuance (efficacy limited to mild/moderate, not severe, hemophilia A), which does
+    not alter the mechanism for the indication it treats.
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:desmopressin
+  - PMID:12649145
+  - PMID:20627205
+  - PMID:21711445
+  - PMID:21909383
+  - PMID:23426949
+  - PMID:24850761
+  - PMID:27472426
+  - PMID:30676281
+  - PMID:32138951
+  - PMID:33052234
+  - PMID:34818873
+  - PMID:36656570
+  - PMID:40290674
+  - PMID:40723839
+  - PMID:42467605
+  edge_reviews:
+  - edge: desmopressin --increases activity of--> Arginine vasopressin receptor 2
+    reference: PMID:8232694
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL CHEMBL1200556 (desmopressin) + PMID:32138951 (not
+      cited by curator)", "record": "ChEMBL: action_type=AGONIST, direct_interaction=1,
+      moa=''Vasopressin receptor agonist''; PMID:32138951: ''dDAVP acts as a selective
+      agonist of the arginine vasopressin type 2 receptor (AVPR2)''."}'
+    confidence: high
+  - edge: desmopressin --increases activity of--> Arginine vasopressin receptor 2
+    reference: PMID:12871401
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL CHEMBL1200556 + PMID:32138951 (uncited)", "record":
+      "Independent AGONIST/direct at vasopressin V2 receptor (AVPR2), consistent with
+      cAMP-mediated activation described in the snippet."}'
+    confidence: high
+  - edge: Arginine vasopressin receptor 2 --increases abundance of--> von Willebrand
+      factor
+    reference: PMID:12871401
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:34818873 (Haematologica 2022 first-in-human trial)
+      and PMID:30676281, neither cited by curator", "record": "PMID:34818873 states
+      ''Desmopressin-induced VWF/FVIII release''; PMID:30676281 states desmopressin
+      ''works on VWF and releases them in circulation'' \u2014 independently confirming
+      that V2R-agonist (desmopressin) stimulation increases plasma VWF, consistent
+      with the AVPR2\u2192VWF abundance edge."}'
+    confidence: high
+  - edge: von Willebrand factor --increases abundance of--> Coagulation factor VIII
+    reference: PMID:16150043
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:24850761 (Blood 2014, not cited by curator) and PMID:27472426
+      (Semin Thromb Hemost 2017)", "record": "In Vwf(-/-) mice, FVIII baseline is
+      ~5-10%; restoring VWF (D''D3 domain) raises FVIII to ~50-100%, directly demonstrating
+      VWF increases circulating FVIII abundance in vivo. PMID:27472426: ''Factor VIII
+      (FVIII) is also reduced in many patients with VWD, since VWF stabilizes and
+      protects FVIII from degradation.''"}'
+    confidence: high
+  - edge: Coagulation factor VIII --negatively correlated with--> Hereditary factor
+      VIII deficiency disease
+    reference: PMID:34349063
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:42467605 (independent, not cited by curator)", "record":
+      "''markedly reduced factor VIII activity'' defines acquired hemophilia A; recovery
+      of factor VIII activity resolved disease \u2014 confirms inverse FVIII\u2194hemophilia
+      A relationship."}'
+    confidence: high
+  - edge: Coagulation factor VIII --negatively correlated with--> Hereditary factor
+      VIII deficiency disease
+    reference: PMID:32248973
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:42467605 (independent, not cited)", "record": "Reduced
+      factor VIII activity defines hemophilia A; restoring FVIII activity resolves
+      it \u2014 inverse relationship confirmed."}'
+    confidence: high

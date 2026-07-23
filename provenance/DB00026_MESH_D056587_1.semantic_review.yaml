@@ -1,0 +1,106 @@
+record_id: DB00026_MESH_D056587_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T12:25:55+00:00'
+last_reviewed_at: '2026-07-23T12:25:55+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: RE_CURATE
+overall_summary: After adversarial search, the path is the accepted mechanism of action.
+  ChEMBL independently grounds anakinra as an IL-1 receptor antagonist; the chain
+  nets correctly (single antagonist sign-flip → reduced inflammation → reduced disease);
+  IL-1R1's positive role in inflammation and inflammation's causal role in CAPS manifestations
+  are both independently corroborated (PMID:27569535, PMID:22288581, PMID:29038114).
+  The terminal 'inflammation causes CAPS' edge is the correct effector-arm modeling
+  for an MoA path even though the ultimate cause is the NLRP3 mutation, which lies
+  off the drug's causal route. Subject-grounding weaknesses in the curator's cited
+  sources for the middle edge are remedied by independent authorities and do not affect
+  whole-path validity.
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T12:25:55+00:00'
+  verdict: RE_CURATE
+  summary: After adversarial search, the path is the accepted mechanism of action.
+    ChEMBL independently grounds anakinra as an IL-1 receptor antagonist; the chain
+    nets correctly (single antagonist sign-flip → reduced inflammation → reduced disease);
+    IL-1R1's positive role in inflammation and inflammation's causal role in CAPS
+    manifestations are both independently corroborated (PMID:27569535, PMID:22288581,
+    PMID:29038114). The terminal 'inflammation causes CAPS' edge is the correct effector-arm
+    modeling for an MoA path even though the ultimate cause is the NLRP3 mutation,
+    which lies off the drug's causal route. Subject-grounding weaknesses in the curator's
+    cited sources for the middle edge are remedied by independent authorities and
+    do not affect whole-path validity.
+  flags:
+  - edge: Interleukin-1 receptor type 1 --positively regulates--> inflammatory response
+    issue: The cited sentence supports IL-1 signaling/inhibition and inflammation
+      in CAPS generally, but does not name or make a claim specifically about the
+      IL-1 receptor type 1 as the subject that positively regulates inflammation.
+      The subject entity is not directly grounded by this snippet.
+  - edge: Interleukin-1 receptor type 1 --positively regulates--> inflammatory response
+    issue: The cited sentence places the IL-1 receptor type 1 in an inflammatory pathway,
+      but only within a narrow, disease-specific (CF airway) in-vitro context, and
+      frames the receptor as one intermediate rather than the direct positive regulator.
+      Citing it as a general mechanism over-reaches beyond the source's scope.
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:CHEMBL1959
+  - ChEMBL:anakinra
+  - DrugBank:DB00026
+  - PMID:16777343
+  - PMID:20493414
+  - PMID:23226210
+  - PMID:27569535
+  - PMID:29038114
+  - PMID:29633070
+  - PMID:30873160
+  - PMID:40410596
+  - PMID:40539069
+  - PMID:40826276
+  - PMID:41046290
+  edge_reviews:
+  - edge: Interleukin-1 receptor type 1 --positively regulates--> inflammatory response
+    reference: PMID:26140469
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited sentence supports IL-1 signaling/inhibition and inflammation
+      in CAPS generally, but does not name or make a claim specifically about the
+      IL-1 receptor type 1 as the subject that positively regulates inflammation.
+      The subject entity is not directly grounded by this snippet.
+    grounding: '{"source": "PMID:27569535 (read_abstract, not cited by curator)",
+      "record": "''IL-1R1 signaling via MyD88 is critical for the first step of inflammatory
+      response''; ''The inflammatory response is abrogated in the absence of IL-1R1''
+      \u2014 directly establishes IL-1R1 positively drives inflammatory response."}'
+    confidence: high
+  - edge: Interleukin-1 receptor type 1 --positively regulates--> inflammatory response
+    reference: PMID:31524632
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited sentence places the IL-1 receptor type 1 in an inflammatory pathway,
+      but only within a narrow, disease-specific (CF airway) in-vitro context, and
+      frames the receptor as one intermediate rather than the direct positive regulator.
+      Citing it as a general mechanism over-reaches beyond the source's scope.
+    grounding: '{"source": "PMID:30873160 (read_abstract, not cited by curator)",
+      "record": "IL-1R1 ''stimulates innate immune responses through binding'' and
+      drives NF-\u03baB pro-inflammatory responses \u2014 corroborates IL-1R1''s positive
+      role in inflammation beyond the CF-specific context."}'
+    confidence: high
+  - edge: inflammatory response --causes--> Cryopyrin-associated periodic syndrome
+    reference: PMID:22288581
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:40826276 (Nature Immunology 2025 review) and PMID:40410596
+      (Cell Mol Life Sci 2025)", "record": "NLRP3 gain-of-function causes CAPS; systemic
+      manifestations result from chronic inflammation; CAPS inflammatory episodes
+      are ''primarily driven by the production of IL-1\u03b2''. Confirms inflammation
+      is the effector responsible for disease manifestations."}'
+    confidence: high
+  - edge: inflammatory response --causes--> Cryopyrin-associated periodic syndrome
+    reference: PMID:26140469
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:40539069 (Frontiers in Immunology 2025)", "record":
+      "CAPS symptoms (recurrent fever, arthralgia, cutaneous rash, systemic manifestations,
+      end-organ damage) result from IL-1\u03b2 dysregulation and chronic inflammation
+      \u2014 corroborates inflammation causing CAPS clinical features."}'
+    confidence: high

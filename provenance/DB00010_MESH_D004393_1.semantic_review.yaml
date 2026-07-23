@@ -1,0 +1,84 @@
+record_id: DB00010_MESH_D004393_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T11:51:53+00:00'
+last_reviewed_at: '2026-07-23T11:51:53+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: ACCEPT
+overall_summary: 'Whole-path is the accepted MoA: ChEMBL independently grounds sermorelin
+  as a GHRHR agonist, GHRHR positively drives GH secretion, and GH deficiency causes
+  pituitary dwarfism (reversed by GHRH therapy). Exactly one terminal sign-flip gives
+  correct net therapeutic polarity; single connected chain, no shortcut, primary mechanism.
+  Searched for a hidden sign error, off-route intermediate, or bypass edge and found
+  none.'
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T11:51:53+00:00'
+  verdict: ACCEPT
+  summary: 'Whole-path is the accepted MoA: ChEMBL independently grounds sermorelin
+    as a GHRHR agonist, GHRHR positively drives GH secretion, and GH deficiency causes
+    pituitary dwarfism (reversed by GHRH therapy). Exactly one terminal sign-flip
+    gives correct net therapeutic polarity; single connected chain, no shortcut, primary
+    mechanism. Searched for a hidden sign error, off-route intermediate, or bypass
+    edge and found none.'
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:Sermorelin
+  - ChEMBL:sermorelin
+  - DrugBank:DB00010
+  - PMID:16135671
+  - PMID:20351314
+  - PMID:22473409
+  - PMID:27911838
+  - PMID:2879138
+  - PMID:2907992
+  - PMID:31959947
+  - PMID:34244423
+  - PMID:36062966
+  - PMID:37290420
+  - PMID:7666796
+  edge_reviews:
+  - edge: Growth hormone-releasing hormone receptor --positively regulates--> growth
+      hormone secretion
+    reference: PMID:8395283
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:16135671 (J Endocrinol 2005, not cited by curator)",
+      "record": "Human GHRH-R is a GPCR on pituitary somatotroph cells; naturally-occurring
+      loss-of-function missense mutations cause isolated GH deficiency in humans and
+      mice by abolishing GHRH signalling \u2014 independently establishes GHRHR positively
+      drives GH secretion."}'
+    confidence: high
+  - edge: Growth hormone-releasing hormone receptor --positively regulates--> growth
+      hormone secretion
+    reference: PMID:12446584
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:20351314 (Endocrinology 2010, not cited by curator)",
+      "record": "Rat pituitary cells expressing human GHRH receptor (GC-GHRHR) respond
+      to GHRH stimulation with GH secretion, confirming human GHRHR mediates GHRH-driven
+      GH secretion."}'
+    confidence: high
+  - edge: growth hormone secretion --negatively regulates--> Pituitary dwarfism
+    reference: PMID:10549302
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:36062966 (REAL4 phase-3 trial, not cited by curator)",
+      "record": "GH-derivative treatment in GH-deficient children produced ~11 cm/y
+      height velocity, restoring growth \u2014 confirming that raising GH function
+      reverses the growth/dwarf phenotype, corroborating the inverse GH-secretion\u2194dwarfism
+      relationship."}'
+    confidence: high
+  - edge: growth hormone secretion --negatively regulates--> Pituitary dwarfism
+    reference: PMID:8395283
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:8395283 abstract full context + PMID:10549302 (human)
+      which the same paper anticipates (''might explain some isolated GH deficiencies
+      in humans'')", "record": "Mouse GHRHR loss-of-function \u2192 reduced GH secretion
+      + dwarfism; the human counterpart (10549302) confirms the same mechanism in
+      humans, addressing the model-organism\u2192human generalization."}'
+    confidence: high

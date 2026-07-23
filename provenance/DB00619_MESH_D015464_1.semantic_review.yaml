@@ -1,0 +1,67 @@
+record_id: DB00619_MESH_D015464_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T10:13:46+00:00'
+last_reviewed_at: '2026-07-23T10:13:46+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: ACCEPT
+overall_summary: 'Canonical, minimal, correct MoA. Independent ChEMBL grounding confirms
+  imatinib as a direct Bcr/Abl inhibitor; independent literature confirms BCR::ABL1
+  as the CML driver. The two-step chain nets in the correct (disease-decreasing) direction
+  with no missing sign-flip, no off-route or wrong intermediate, and no shortcut edge.
+  The length_out_of_range (2 links) advisory is a false alarm: for a drug that directly
+  inhibits the disease-defining oncoprotein, two links is the faithful shortest representation,
+  and adding artificial intermediates would not improve accuracy.'
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T10:13:46+00:00'
+  verdict: ACCEPT
+  summary: 'Canonical, minimal, correct MoA. Independent ChEMBL grounding confirms
+    imatinib as a direct Bcr/Abl inhibitor; independent literature confirms BCR::ABL1
+    as the CML driver. The two-step chain nets in the correct (disease-decreasing)
+    direction with no missing sign-flip, no off-route or wrong intermediate, and no
+    shortcut edge. The length_out_of_range (2 links) advisory is a false alarm: for
+    a drug that directly inhibits the disease-defining oncoprotein, two links is the
+    faithful shortest representation, and adding artificial intermediates would not
+    improve accuracy.'
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:imatinib
+  - DrugBank:DB00619
+  - PMID:37222919
+  - PMID:38031192
+  - PMID:42093005
+  - PMID:42455913
+  - UniProt:A9UF07
+  edge_reviews:
+  - edge: imatinib --decreases activity of--> BCR/ABL fusion protein
+    reference: PMID:12200353
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL mechanism record (CHEMBL941 / CHEMBL1642)", "record":
+      "action_type=''INHIBITOR''; target=''Bcr/Abl fusion protein''; direct_interaction=1;
+      moa=''Bcr/Abl fusion protein inhibitor'' \u2014 independent expert-curated confirmation
+      of imatinib decreasing Bcr/Abl activity."}'
+    confidence: high
+  - edge: BCR/ABL fusion protein --causes--> Leukemia, Myelogenous, Chronic, BCR-ABL
+      Positive
+    reference: PMID:11287972
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:42093005 (not cited by curator; Cell Commun Signal
+      2026)", "record": "''Oncogenic tyrosine kinase activity of BCR::ABL1 is causally
+      associated with chronic phase (CP) of chronic myeloid leukemia (CML)'' \u2014
+      independently confirms the causal subject\u2192object relation."}'
+    confidence: high
+  - edge: BCR/ABL fusion protein --causes--> Leukemia, Myelogenous, Chronic, BCR-ABL
+      Positive
+    reference: PMID:42174092
+    rederived_supports: SUPPORT
+    agrees_with_curator: false
+    grounding: '{"source": "PMID:42093005 (independent)", "record": "BCR::ABL1 tyrosine
+      kinase activity ''causally associated with'' CML \u2014 supports the same causal
+      edge."}'
+    confidence: high

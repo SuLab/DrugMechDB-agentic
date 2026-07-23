@@ -1,0 +1,83 @@
+record_id: DB00843_MESH_D000544_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T10:29:11+00:00'
+last_reviewed_at: '2026-07-23T10:29:11+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: ACCEPT
+overall_summary: 'The path is the accepted, textbook primary mechanism of donepezil
+  in Alzheimer''s disease. Adversarial focus was on the sign: two consecutive ''decreases''
+  edges can signal an omitted sign-flip, but here the composition resolves correctly
+  (inhibiting the ACh-degrading enzyme raises synaptic ACh, which is inversely associated
+  with AD). Independent, non-cited authorities (PMID:42450004, PMID:41787135, PMID:17467011)
+  each corroborate the individual links and the overall therapeutic direction. No
+  missing step, wrong intermediate, shortcut, or net-direction defect found after
+  a genuine search.'
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T10:29:11+00:00'
+  verdict: ACCEPT
+  summary: 'The path is the accepted, textbook primary mechanism of donepezil in Alzheimer''s
+    disease. Adversarial focus was on the sign: two consecutive ''decreases'' edges
+    can signal an omitted sign-flip, but here the composition resolves correctly (inhibiting
+    the ACh-degrading enzyme raises synaptic ACh, which is inversely associated with
+    AD). Independent, non-cited authorities (PMID:42450004, PMID:41787135, PMID:17467011)
+    each corroborate the individual links and the overall therapeutic direction. No
+    missing step, wrong intermediate, shortcut, or net-direction defect found after
+    a genuine search.'
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:Donepezil
+  - ChEMBL:donepezil
+  - DrugBank:DB00843
+  - PMID:17467011
+  - PMID:26813123
+  - PMID:35208411
+  - PMID:38877470
+  - PMID:39533696
+  - PMID:40207817
+  - PMID:40430294
+  - PMID:41297217
+  - PMID:41787135
+  - PMID:42450004
+  edge_reviews:
+  - edge: Donepezil --decreases activity of--> Acetylcholinesterase
+    reference: PMID:39037949
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:41297217 (not cited by curator)", "record":
+      "In-vitro Ellman assay reports Ki values for AChE, using donepezil as the reference
+      AChE inhibitor benchmark \u2014 independently confirms donepezil inhibits acetylcholinesterase
+      enzyme activity."}'
+    confidence: high
+  - edge: Donepezil --decreases activity of--> Acetylcholinesterase
+    reference: PMID:34893996
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:41297217 (not cited by curator)", "record":
+      "Ellman in-vitro Ki measurements against AChE using donepezil as the standard
+      AChE inhibitor \u2014 confirms donepezil decreases AChE activity independently."}'
+    confidence: high
+  - edge: Acetylcholinesterase --decreases abundance of--> Acetylcholine
+    reference: PMID:39037949
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:26813123 (Current Neuropharmacology review) and PMID:35208411
+      (Micromachines), not cited by curator", "record": "Both explicitly state AChE
+      hydrolyzes acetylcholine in the synaptic cleft into acetate and choline, terminating
+      cholinergic signaling \u2014 an independent confirmation that AChE decreases
+      ACh abundance."}'
+    confidence: high
+  - edge: Acetylcholine --negatively correlated with--> Alzheimer's disease
+    reference: PMID:37242234
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:40207817 (review, not cited by curator)",
+      "record": "''Lower level of acetylcholine in the brain is characterized as one
+      of the prominent reasons for AD. The cholinergic hypothesis states that elevated
+      levels of acetylcholine in the brain can alleviate symptoms of AD.'' \u2014
+      explicit inverse relationship between ACh and AD."}'
+    confidence: high

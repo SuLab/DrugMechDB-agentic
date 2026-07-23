@@ -1,0 +1,101 @@
+record_id: DB01076_MESH_D006937_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T06:34:28+00:00'
+last_reviewed_at: '2026-07-23T06:34:28+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: ACCEPT
+overall_summary: 'After adversarial search for a whole-path defect, the chain holds:
+  it is a single connected chain that nets to DECREASING hypercholesterolemia, with
+  both required sign-flip steps present (HMGCR→cholesterol positive production, and
+  cholesterol⊣LDLR negative feedback). It reproduces the ChEMBL-grounded, review-confirmed
+  accepted statin MoA. The only minor nuance is the terminal ''LDL-C causes Hypercholesterolemia''
+  edge being more definitional than strictly causal, which is within DrugMechDB terminal-edge
+  convention and does not warrant revision.'
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T06:34:28+00:00'
+  verdict: ACCEPT
+  summary: 'After adversarial search for a whole-path defect, the chain holds: it
+    is a single connected chain that nets to DECREASING hypercholesterolemia, with
+    both required sign-flip steps present (HMGCR→cholesterol positive production,
+    and cholesterol⊣LDLR negative feedback). It reproduces the ChEMBL-grounded, review-confirmed
+    accepted statin MoA. The only minor nuance is the terminal ''LDL-C causes Hypercholesterolemia''
+    edge being more definitional than strictly causal, which is within DrugMechDB
+    terminal-edge convention and does not warrant revision.'
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:atorvastatin
+  - DrugBank:BE0000021
+  - DrugBank:DB01076
+  - PMID:22110652
+  - PMID:22355094
+  - PMID:24582968
+  - PMID:26598835
+  - PMID:27019638
+  - PMID:30093300
+  - PMID:38443803
+  - PMID:40593368
+  - PMID:41099993
+  - PMID:41492187
+  - PMID:42112329
+  - PMID:42166216
+  - UniProt:P01130
+  edge_reviews:
+  - edge: atorvastatin --decreases activity of--> 3-hydroxy-3-methylglutaryl-coenzyme
+      A reductase
+    reference: PMID:10582478
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL mechanism (chembl_get_mechanism)", "record": "CHEMBL1487
+      ATORVASTATIN \u2192 action_type INHIBITOR, target 3-hydroxy-3-methylglutaryl-coenzyme
+      A reductase, direct_interaction=1, moa ''HMG-CoA reductase inhibitor''"}'
+    confidence: high
+  - edge: 3-hydroxy-3-methylglutaryl-coenzyme A reductase --increases abundance of-->
+      Cholesterol
+    reference: PMID:10582478
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:24582968 (independent review, not cited by
+      curator)", "record": "''The enzyme HMG-CoA reductase (HMGCR) is the rate-limiting
+      step in cholesterol biosynthesis and catalyzes the conversion of HMG-CoA to
+      MVA'' \u2014 confirms HMGCR (P04035) drives cholesterol production. Also PMID:42112329
+      corroborates."}'
+    confidence: high
+  - edge: Cholesterol --negatively regulates--> Low-density lipoprotein receptor
+    reference: PMID:12829694
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:27019638 (review) and PMID:26598835 (review),
+      not cited by curator", "record": "PMID:27019638: ''LDLR expression is tightly
+      regulated by sterol regulatory element-binding protein-2 (SREBP-2)... a negative
+      feedback system'' for cholesterol homeostasis. PMID:26598835: ''uptake by LDL
+      receptors are tightly regulated at the transcriptional level through negative
+      feedback control, which is mediated by SREBPs... SREBP-2 is activated in a cholesterol-dependent
+      manner.''"}'
+    confidence: high
+  - edge: Low-density lipoprotein receptor --decreases abundance of--> Low-density
+      lipoprotein cholesterol
+    reference: PMID:32109664
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:41492187 (Journal of Cellular and Molecular Medicine,
+      2026) \u2014 not cited by curator", "record": "Describes LDLR-mediated endocytosis
+      of LDL; loss-of-function LDLR/LDLRAP1 variants cause elevated plasma LDL-cholesterol
+      (familial hypercholesterolemia), independently confirming that functional LDLR
+      lowers circulating LDL-C abundance."}'
+    confidence: high
+  - edge: Low-density lipoprotein cholesterol --causes--> Hypercholesterolemia
+    reference: PMID:10591675
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed (not cited by curator): PMID:30093300 (Simplified
+      Canadian Definition for FH) and PMID:38443803, PMID:41099993", "record": "FH/hypercholesterolemia
+      is ''characterized by markedly elevated low-density lipoprotein cholesterol
+      (LDL-C)''; diagnostic definitions are keyed to LDL-C thresholds (e.g., \u22658.50
+      mmol/L). Confirms elevated LDL-C is the defining/driving feature of the hypercholesterolemic
+      state, independent of the curator''s cited rabbit study."}'
+    confidence: high

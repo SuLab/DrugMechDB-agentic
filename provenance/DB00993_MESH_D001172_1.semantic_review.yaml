@@ -1,0 +1,80 @@
+record_id: DB00993_MESH_D001172_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T07:54:53+00:00'
+last_reviewed_at: '2026-07-23T07:54:53+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: ACCEPT
+overall_summary: No semantic problems found.
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T07:54:53+00:00'
+  verdict: ACCEPT
+  summary: No semantic problems found.
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:azathioprine
+  - ChEMBL:mercaptopurine
+  - DrugBank:DB00993
+  - PMID:11472413
+  - PMID:12393721
+  - PMID:12410801
+  - PMID:14723604
+  - PMID:29442
+  - PMID:37007472
+  - PMID:37259771
+  - PMID:38508217
+  - PMID:39078421
+  - PMID:39550308
+  - PMID:9012754
+  edge_reviews:
+  - edge: Azathioprine --has metabolite--> Mercaptopurine
+    reference: PMID:12697733
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:29442 (Acta Med Okayama 1978)", "record":
+      "''The enzymatic conversion of azathioprine to 6-mercaptopurine was detected...
+      Glutathione S-transferase may catalize this conversion'' \u2014 confirms azathioprine\u21926-MP
+      metabolism independently."}'
+    confidence: high
+  - edge: Azathioprine --has metabolite--> Mercaptopurine
+    reference: PMID:11683683
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:29442", "record": "Independently confirms
+      enzymatic/non-enzymatic conversion of azathioprine to 6-mercaptopurine."}'
+    confidence: high
+  - edge: purine nucleotide biosynthetic process --positively regulates--> T cell
+      proliferation
+    reference: PMID:12734342
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:11472413 and PMID:14723604 (not cited by curator)",
+      "record": "PMID:11472413: MPA inhibition of IMPDH (de novo guanosine/purine
+      synthesis) ''dramatically decreased mitogen-induced proliferation'' of lymphocytes,
+      fully neutralized by adding guanosine \u2014 confirms purine synthesis is required
+      for T/B lymphocyte proliferation. PMID:14723604: MPA ''inhibits lymphocyte IMPDH,
+      thereby drastically decreasing GTP concentrations essential to lymphocyte proliferation
+      in vitro and in vivo.''"}'
+    confidence: high
+  - edge: T cell proliferation --contributes to--> Rheumatoid arthritis
+    reference: PMID:8013988
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:9012754 (Pathogenesis of rheumatoid arthritis review,
+      not cited by curator)", "record": "''clonal expansion of CD4 T cells is a frequent
+      event in RA patients'' and ''selective proliferation of T cells in the joint,
+      reemphasizing the role of tissue-infiltrating T cells in the disease.''"}'
+    confidence: high
+  - edge: T cell proliferation --contributes to--> Rheumatoid arthritis
+    reference: PMID:29581356
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:39550308 (Metabolic checkpoints in RA review, not
+      cited by curator)", "record": "HLA class II polymorphisms ''implicating T cells
+      as pathogenic drivers''; RA CD4+ T cell ''clonal proliferation'' supports pathogenic
+      functions that ''trigger and sustain rheumatoid synovitis.''"}'
+    confidence: high

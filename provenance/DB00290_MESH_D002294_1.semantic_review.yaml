@@ -1,0 +1,95 @@
+record_id: DB00290_MESH_D002294_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-07-23T09:56:43+00:00'
+last_reviewed_at: '2026-07-23T09:56:43+00:00'
+current_round: 1
+max_rounds: 3
+overall_verdict: RE_CURATE
+overall_summary: No semantic problems found.
+rounds:
+- round: 1
+  reviewed_at: '2026-07-23T09:56:43+00:00'
+  verdict: RE_CURATE
+  summary: No semantic problems found.
+  flags:
+  - edge: apoptotic process --disrupts--> Squamous cell carcinoma
+    issue: The cited evidence is confined to a specific SCC subtype and to a cancer-stem-cell/orosphere
+      readout rather than squamous cell carcinoma as a whole, and it is stated only
+      as a hedged 'potential' in-vitro finding. The generic apoptosis-disrupts-SCC
+      edge is over-generalized from this narrow, tentative source; strengthen with
+      a source that establishes the apoptosis→SCC disruption relation as general and
+      non-hedged.
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:bleomycin
+  - DrugBank:DB00290
+  - PMID:20657939
+  - PMID:26504002
+  - PMID:28994432
+  - PMID:30885568
+  - PMID:31181289
+  - PMID:34590505
+  - PMID:35457214
+  - PMID:38874804
+  - PMID:39136058
+  - PMID:39580976
+  - PMID:39602865
+  - PMID:39822069
+  - PMID:40223283
+  - PMID:41103972
+  - PMID:42439804
+  - PMID:42456917
+  - PMID:42485993
+  - clinicaltrials:NCT00198328
+  edge_reviews:
+  - edge: bleomycin --increases abundance of--> Reactive oxygen species
+    reference: PMID:18234257
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:39822069 (ChemMedChem review, not cited by
+      curator)", "record": "States bleomycin ''binds iron cation to form a pseudoenzyme
+      that generates reactive oxygen species'' and that Fe(II) is required for its
+      anticancer activity \u2014 independently confirms bleomycin\u2192ROS generation
+      with matching polarity/direction. Further corroborated by PMID:40223283 and
+      PMID:38874804 which report bleomycin-induced ROS production."}'
+    confidence: high
+  - edge: Reactive oxygen species --causes--> DNA damage
+    reference: PMID:37491116
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:41103972 (review, AIMS Neuroscience 2025) and PMID:39580976
+      (DNA Repair 2025) \u2014 not cited by curator", "record": "PMID:41103972: ROS
+      ''can damage neuronal DNA'' and induce ''DNA damage, including genomic instability,
+      DNA strand breaks... base modifications such as 8-oxoguanine.'' PMID:39580976
+      details ROS chemistry oxidizing DNA (8-oxoguanine, strand breaks). Both establish
+      ROS\u2192DNA damage as a general, established mechanism."}'
+    confidence: high
+  - edge: DNA damage --causes--> apoptotic process
+    reference: PMID:17879944
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:35457214 (independent adverse outcome pathway review,
+      not cited by curator)", "record": "Formal AOP lists ''DNA strand breaks and
+      chromosomal aberrations'' as a key event causally leading to ''apoptosis'' as
+      a cellular key event; PMID:42456917 also reports DNA damage culminating in apoptotic/mitochondrial
+      caspase activation."}'
+    confidence: high
+  - edge: apoptotic process --disrupts--> Squamous cell carcinoma
+    reference: PMID:28459216
+    rederived_supports: PARTIAL
+    agrees_with_curator: true
+    issue: The cited evidence is confined to a specific SCC subtype and to a cancer-stem-cell/orosphere
+      readout rather than squamous cell carcinoma as a whole, and it is stated only
+      as a hedged 'potential' in-vitro finding. The generic apoptosis-disrupts-SCC
+      edge is over-generalized from this narrow, tentative source; strengthen with
+      a source that establishes the apoptosis→SCC disruption relation as general and
+      non-hedged.
+    grounding: '{"source": "PMID:34590505 (Nutrition and Cancer 2022) and PMID:26504002
+      (Anticancer Research 2015), retrieved beyond the curator''s set", "record":
+      "PMID:34590505 states apoptosis induction ''eradicated HEp-2 human larynx cancer
+      cells'' (laryngeal SCC); PMID:26504002 shows bleomycin exerts direct toxic/killing
+      effect on SCC-4 and CAL-27 SCC cell lines. Both independently corroborate that
+      apoptotic process disrupts squamous cell carcinoma."}'
+    confidence: high
