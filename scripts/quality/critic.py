@@ -55,7 +55,10 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
+import shutil
 import sys
+import tempfile
 from pathlib import Path
 
 import yaml
@@ -78,6 +81,46 @@ LEX = structural_quality.load_lexicon()
 _ESCALATE_SUPPORTS = {"REFUTE", "WRONG_STATEMENT"}
 # Labels that mean "the evidence doesn't establish the edge" — re-source (loop).
 _RECURATE_SUPPORTS = {"PARTIAL", "NO_EVIDENCE"}
+
+# Verdicts that end the curate<->critic loop for this record -> the per-curation
+# scratch dir (source cache + carry-forward store) can be deleted (full text is ephemeral).
+_TERMINAL_VERDICTS = {"ACCEPT", "ESCALATE", "ABSTAIN"}
+
+
+def _safe_name(name: str) -> str:
+    return "".join(c if c.isalnum() or c in "._-" else "_" for c in str(name)) or "record"
+
+
+def _critic_scratch(record_id: str) -> Path:
+    """Per-curation scratch dir (survives across rounds = separate process invocations).
+    Honors DMDB_CRITIC_STATE_DIR so tests can redirect it; defaults under the system temp."""
+    base = os.environ.get("DMDB_CRITIC_STATE_DIR") or str(Path(tempfile.gettempdir()) / "dmdb_critic_state")
+    return Path(base) / _safe_name(record_id)
+
+
+def _load_review_state(path: Path) -> dict:
+    """{edge_hash -> prior verdict bundle} from a previous round, for carry-forward."""
+    try:
+        data = json.loads(path.read_text()) if path.exists() else {}
+        edges = data.get("edges") if isinstance(data, dict) else None
+        return edges if isinstance(edges, dict) else {}
+    except Exception:
+        return {}
+
+
+def _save_review_state(path: Path, edge_bundles: list[dict]) -> None:
+    edges: dict = {}
+    for b in edge_bundles:
+        if b.get("skipped"):
+            continue
+        h = b.get("edge_hash")
+        if h:
+            edges[h] = {k: b.get(k) for k in ("edge", "verdict", "edge_hash") if k in b}
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps({"edges": edges}, default=str, indent=2))
+    except Exception:
+        pass
 
 
 def _curator_pmids(doc: dict) -> set[str]:
@@ -240,9 +283,19 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
         prior_edge_flags, prior_path_issue = _prior_round_flags(prior_rounds, round_no)
     path_prior = [{"issue": prior_path_issue}] if prior_path_issue else None
 
+    # Per-curation scratch: the source cache (grounding.py reads DMDB_CRITIC_CACHE_DIR) and
+    # the carry-forward store. Persists across rounds (separate process invocations); the
+    # whole dir is deleted on a terminal verdict below so cached full text stays ephemeral.
+    scratch = _critic_scratch(record_id)
+    src_cache = scratch / "sources"
+    src_cache.mkdir(parents=True, exist_ok=True)
+    os.environ["DMDB_CRITIC_CACHE_DIR"] = str(src_cache)
+    review_state_path = scratch / "review_state.json"
+    reuse_map = _load_review_state(review_state_path)
+
     tools = critic_tools()
     edge_bundles = judge_edges(doc, backend, tools=tools, prior_flags=prior_edge_flags or None,
-                               max_iters=max_iters, use_cache=use_cache)
+                               reuse_map=reuse_map, max_iters=max_iters, use_cache=use_cache)
     path_bundle = judge_path(doc, struct, edge_bundles, backend, tools=tools,
                              prior_flags=path_prior, max_iters=max_iters, use_cache=use_cache)
 
@@ -318,6 +371,12 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
         sidecar_rel = str(sidecar_path.relative_to(REPO))
     except ValueError:                          # dir redirected outside the repo (tests)
         sidecar_rel = str(sidecar_path)
+
+    # Carry-forward store for the next round; on a terminal verdict, delete the scratch
+    # dir (source cache + state) so cached full text stays ephemeral.
+    _save_review_state(review_state_path, edge_bundles)
+    if verdict in _TERMINAL_VERDICTS:
+        shutil.rmtree(scratch, ignore_errors=True)
 
     return {
         "record_id": record_id,

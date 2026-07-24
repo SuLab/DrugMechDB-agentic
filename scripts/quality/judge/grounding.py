@@ -20,8 +20,10 @@ failure they return an informative string so the model can drop a tier or abstai
 
 from __future__ import annotations
 
+import hashlib
 import importlib.util
 import json
+import os
 import re
 import sys
 import tempfile
@@ -237,6 +239,43 @@ def _chembl_target_name(target_chembl_id: str) -> str | None:
     return pref
 
 
+# ── per-curation source cache (efficiency; NOT a bias hole) ─────────────────────
+#
+# When DMDB_CRITIC_CACHE_DIR is set (by the critic, per curation), the RESULT of each
+# read is memoized to disk there, so re-reading the SAME source — across the N edge
+# judges and across re-curation rounds — costs no re-fetch or re-search. It caches the
+# critic's OWN independently-retrieved sources (never the curator's), so it does not
+# reintroduce curator bias; judgment still re-runs fresh (only retrieval is deduped).
+# The critic deletes the whole dir on a terminal verdict, so full text stays ephemeral.
+
+def _critic_cache_dir() -> Path | None:
+    d = os.environ.get("DMDB_CRITIC_CACHE_DIR")
+    return Path(d) if d else None
+
+
+def _cache_get(key: str) -> str | None:
+    d = _critic_cache_dir()
+    if d is None:
+        return None
+    f = d / (hashlib.sha256(key.encode("utf-8")).hexdigest()[:32] + ".txt")
+    try:
+        return f.read_text(encoding="utf-8") if f.exists() else None
+    except Exception:
+        return None
+
+
+def _cache_put(key: str, value: str) -> None:
+    d = _critic_cache_dir()
+    if d is None:
+        return
+    try:
+        d.mkdir(parents=True, exist_ok=True)
+        (d / (hashlib.sha256(key.encode("utf-8")).hexdigest()[:32] + ".txt")).write_text(
+            value, encoding="utf-8")
+    except Exception:
+        pass
+
+
 # ── independent in-memory reading (for the semantic critic) ─────────────────────
 #
 # These let the critic widen its knowledge BEYOND the curator's cited papers, from
@@ -261,6 +300,10 @@ def search_pubmed(query: str, max_results: int = 10) -> str:
 def read_abstract(reference: str) -> str:
     """In-memory PubMed abstract for any PMID (independent of the curator's cache).
     Use to corroborate or challenge an edge with evidence the curator did not cite."""
+    ck = f"read_abstract:{(reference or '').strip()}"
+    hit = _cache_get(ck)
+    if hit is not None:
+        return hit
     try:
         bare = pf._normalize_pmid(reference)
     except Exception:
@@ -271,12 +314,18 @@ def read_abstract(reference: str) -> str:
     head = f"PMID:{bare}  {r.get('title')}  ({r.get('journal')}, {r.get('year')})"
     if r.get("retracted"):
         head += "  [RETRACTED — do not rely on this]"
-    return head + "\n\n" + (r.get("abstract") or "(no abstract available)")
+    out = head + "\n\n" + (r.get("abstract") or "(no abstract available)")
+    _cache_put(ck, out)
+    return out
 
 
 def read_fulltext(reference: str, max_chars: int = 6000) -> str:
     """In-memory open-access full text for any PMID (independent of the curator's
     cache). Use when an abstract is insufficient to judge the edge. Writes nothing."""
+    ck = f"read_fulltext:{(reference or '').strip()}:{max_chars}"
+    hit = _cache_get(ck)
+    if hit is not None:
+        return hit
     try:
         bare = pf._normalize_pmid(reference)
     except Exception:
@@ -287,7 +336,9 @@ def read_fulltext(reference: str, max_chars: int = 6000) -> str:
     body = r.get("body") or ""
     tail = "" if len(body) <= max_chars else f"\n[...truncated at {max_chars} chars...]"
     flag = "  [RETRACTED — do not rely on this]" if r.get("retracted") else ""
-    return f"PMID:{bare}  {r.get('title')}  (full text via {r.get('source')}){flag}\n\n" + body[:max_chars] + tail
+    out = f"PMID:{bare}  {r.get('title')}  (full text via {r.get('source')}){flag}\n\n" + body[:max_chars] + tail
+    _cache_put(ck, out)
+    return out
 
 
 # ── independent in-memory reading over the SAME trusted multi-source layer ──────
@@ -337,6 +388,10 @@ def read_evidence(reference: str, fulltext: bool = False, max_chars: int = 6000)
     # PubMed has dedicated in-memory readers that never touch the curator's cache.
     if ref.upper().startswith("PMID") or ref.isdigit():
         return read_fulltext(ref) if fulltext else read_abstract(ref)
+    ck = f"read_evidence:{ref}:{fulltext}:{max_chars}"
+    hit = _cache_get(ck)
+    if hit is not None:
+        return hit
     try:
         es = _load_evidence_sources()
     except Exception as e:
@@ -369,8 +424,10 @@ def read_evidence(reference: str, fulltext: bool = False, max_chars: int = 6000)
     norm_ref = es.common.normalize_reference_id(ref)
     ctype = res.get("content_type", "abstract")
     title, body = _body_from_cache_text(text, max_chars)
-    return (f"SOURCE {norm_ref}  (content_type={ctype})\nTitle: {title}\n\n{body}\n\n"
-            "(Independent trusted source the critic retrieved — cite it as grounding.)")
+    out = (f"SOURCE {norm_ref}  (content_type={ctype})\nTitle: {title}\n\n{body}\n\n"
+           "(Independent trusted source the critic retrieved — cite it as grounding.)")
+    _cache_put(ck, out)
+    return out
 
 
 def search_evidence(source: str, query: str, max_results: int = 10) -> str:

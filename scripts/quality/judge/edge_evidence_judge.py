@@ -9,6 +9,8 @@ independently and cites grounding (or abstains).
 
 from __future__ import annotations
 
+import hashlib
+import json
 from pathlib import Path
 
 import yaml
@@ -82,20 +84,36 @@ def build_edge_inputs(doc: dict, prior_flags: list[dict] | None = None) -> list[
     return inputs
 
 
+def edge_content_hash(inp: dict) -> str:
+    """Stable hash of an edge's OWN content (subject/predicate/object + evidence) — NOT
+    its path_context. A byte-identical edge hashes the same across rounds, so an unchanged
+    edge's prior verdict can be carried forward instead of re-grounded."""
+    payload = {"edge": inp.get("edge"), "evidence": inp.get("evidence")}
+    return hashlib.sha256(
+        json.dumps(payload, sort_keys=True, default=str).encode("utf-8")).hexdigest()[:16]
+
+
 def judge_edges(
     doc: dict,
     backend: Backend,
     tools: list[Tool] | None = None,
     *,
     prior_flags: list[dict] | None = None,
+    reuse_map: dict | None = None,
     max_iters: int = 6,
     use_cache: bool = True,
 ) -> list[dict]:
     """Return a list of {edge, verdict-bundle} for every edge that has evidence.
 
     `prior_flags` (previous round's edge flags) enables fix-tracking: a flagged edge
-    receives its prior flag(s) and the judge re-verifies resolution against evidence."""
+    receives its prior flag(s) and the judge re-verifies resolution against evidence.
+
+    `reuse_map` ({edge_hash: prior verdict bundle}) enables targeted re-judgment: an edge
+    whose content is byte-identical to a prior round AND was not flagged last round is
+    carried forward (no LLM call). Changed edges, new edges, and previously-flagged edges
+    are always re-judged fresh (never trust that a fix landed)."""
     tools = tools if tools is not None else default_tools()
+    reuse_map = reuse_map or {}
     out = []
     for inp in build_edge_inputs(doc, prior_flags):
         if not inp["evidence"]:
@@ -105,8 +123,20 @@ def judge_edges(
                 "skipped": True,
             })
             continue
+        h = edge_content_hash(inp)
+        prior = reuse_map.get(h)
+        if prior is not None and not inp.get("prior_round_flags"):
+            # Unchanged edge that was clean last round -> carry its verdict forward.
+            reused = dict(prior)
+            reused["edge"] = inp["edge"]
+            reused["edge_hash"] = h
+            reused["reused"] = True
+            out.append(reused)
+            continue
         bundle = run_judge(PROMPT, inp, tools, backend, max_iters=max_iters, use_cache=use_cache)
         bundle["edge"] = inp["edge"]
+        bundle["edge_hash"] = h
+        bundle["reused"] = False
         out.append(bundle)
     return out
 

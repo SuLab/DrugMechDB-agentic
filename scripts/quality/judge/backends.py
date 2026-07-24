@@ -80,19 +80,26 @@ class AnthropicBackend(Backend):
         client = anthropic.Anthropic()
         registry = {t.name: t for t in tools}
         tool_defs = [{"name": t.name, "description": t.description, "input_schema": t.input_schema} for t in tools]
+        # Prompt caching: the judge's system prompt + tool defs are a large, byte-identical
+        # prefix reused on every turn of a judge loop AND across all N edge judges in a
+        # curation (identical prompt + tools). A cache_control breakpoint on the system block
+        # caches tools+system together — written once, then read at ~0.1x by every later
+        # turn/judge within the cache TTL.
+        system_blocks = [{"type": "text", "text": system, "cache_control": {"type": "ephemeral"}}]
         messages = [{"role": "user", "content": user}]
         calls: list = []
-        usage = {"input_tokens": 0, "output_tokens": 0}
+        usage = {"input_tokens": 0, "output_tokens": 0,
+                 "cache_read_input_tokens": 0, "cache_creation_input_tokens": 0}
 
         for i in range(max_iters):
             resp = client.messages.create(
                 model=self.model, max_tokens=self.max_tokens,
-                system=system, tools=tool_defs, messages=messages,
+                system=system_blocks, tools=tool_defs, messages=messages,
             )
             u = getattr(resp, "usage", None)
             if u is not None:
-                usage["input_tokens"] += getattr(u, "input_tokens", 0) or 0
-                usage["output_tokens"] += getattr(u, "output_tokens", 0) or 0
+                for _k in usage:
+                    usage[_k] += getattr(u, _k, 0) or 0
 
             text = "".join(getattr(b, "text", "") for b in resp.content if getattr(b, "type", None) == "text")
             tool_uses = [b for b in resp.content if getattr(b, "type", None) == "tool_use"]
