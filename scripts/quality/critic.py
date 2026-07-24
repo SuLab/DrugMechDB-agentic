@@ -191,6 +191,34 @@ def _flag_edges(edge_bundles: list[dict]) -> tuple[list[dict], list[dict], set[s
     return reviews, flags, labels
 
 
+def _affirmed_weak_edges(edge_bundles: list[dict]) -> list[dict]:
+    """Edges the critic affirms are REAL (edge_supported=true) but whose CITED evidence is
+    only PARTIAL/NO_EVIDENCE and NOT factually contradicted — the 'the pathway is right, but
+    this quote doesn't prove this edge' case. These route to escalate-with-report (after a
+    curator fix attempt), not plain re-curate. Returns [{edge, issue}]."""
+    out: list[dict] = []
+    for b in edge_bundles:
+        if b.get("skipped"):
+            continue
+        v = b.get("verdict", {}) or {}
+        if v.get("edge_supported") is not True:
+            continue                                   # not affirmed as real -> ordinary fixable flag
+        verds = v.get("verdicts") or []
+        elabels = {(verd.get("rederived_supports") or "").upper() for verd in verds}
+        if elabels & _ESCALATE_SUPPORTS:
+            continue                                   # a factual error on this edge, not a weak citation
+        if elabels & _RECURATE_SUPPORTS:
+            issue = next((verd.get("issue_for_curator") for verd in verds
+                          if (verd.get("rederived_supports") or "").upper() in _RECURATE_SUPPORTS
+                          and verd.get("issue_for_curator")), None)
+            out.append({
+                "edge": _edge_str(b.get("edge", {})),
+                "issue": issue or ("the cited quote does not independently establish this edge, "
+                                   "though the edge itself is well-supported"),
+            })
+    return out
+
+
 # ── fix-tracking memory: flags are stateful, judgment stays stateless ──────────
 #
 # The maintainer's design: the critic re-grounds every judgment from scratch each
@@ -306,17 +334,36 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
     path_issue = pv.get("issue_for_curator")
     path_summary = (pv.get("overall") or {}).get("summary") or ""
 
-    # ── derive the disposition ──────────────────────────────────────────────
+    # ── derive the disposition (escalate-last: fix everything fixable first) ──
+    affirmed_weak = _affirmed_weak_edges(edge_bundles)
+    aw_edges = {aw["edge"] for aw in affirmed_weak}
+    # A flag on an affirmed-weak edge is NOT counted as "fixable" — it's held for the
+    # escalate-with-report path once nothing else is wrong.
+    fixable_flags = [f for f in flags if f.get("edge") not in aw_edges]
+
     escalate_now = bool(labels & _ESCALATE_SUPPORTS)               # factual contradiction
-    edge_problem = bool(labels & _RECURATE_SUPPORTS) or bool(flags)
     path_problem = path_overall in ("revise", "reject")
+    fixable_problem = bool(fixable_flags) or path_problem
     all_abstain = bool(edge_reviews) and all(
         (r.get("rederived_supports") is None) for r in edge_reviews)
 
+    escalation_reason = None
     if escalate_now:
-        verdict = "ESCALATE"
-    elif edge_problem or path_problem:
+        verdict, escalation_reason = "ESCALATE", "factual_contradiction"
+    elif fixable_problem:
+        # Fix all fixable issues first; affirmed-weak edges are held (not escalated yet).
         verdict = "RE_CURATE" if round_no < max_rounds else "ESCALATE"
+        if verdict == "ESCALATE":
+            escalation_reason = "max_rounds"
+    elif affirmed_weak:
+        # Nothing else is wrong and the pathway is coherent. Give the curator ONE explicit
+        # shot to strengthen the citation (round 1); if it persists, escalate with a report.
+        # (round_no is the proxy for "after an explicit-direction cycle" — tunable to a
+        # per-edge prior-flag-persistence check if we want to be stricter.)
+        if round_no < 2:
+            verdict = "RE_CURATE"
+        else:
+            verdict, escalation_reason = "ESCALATE", "affirmed_weak_citation"
     elif path_overall == "abstain" or all_abstain:
         verdict = "ABSTAIN"
     else:
@@ -324,11 +371,36 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
 
     consulted = _consulted_independent_sources(edge_bundles, path_bundle, _curator_pmids(doc))
 
+    # ── reports: deterministic sources (from actual tool calls) + judge reasoning ──
+    escalation_report = None
+    accept_report = None
+    if verdict == "ESCALATE" and escalation_reason == "affirmed_weak_citation":
+        escalation_report = {
+            "reason": "affirmed_weak_citation",
+            "pathway_confidence": {
+                "rationale": path_summary
+                or "The path judge affirms the overall mechanism is coherent.",
+                "supporting_sources": consulted,   # deterministic: actual tool-call IDs, not prose
+            },
+            "edge_citation_gaps": [
+                {"edge": aw["edge"], "rationale": aw["issue"]} for aw in affirmed_weak
+            ],
+        }
+    elif verdict == "ACCEPT":
+        accept_report = {
+            "rationale": path_summary
+            or "The mechanism is coherent and each edge's cited evidence supports it.",
+            "supporting_sources": consulted,
+        }
+
     summary_bits = []
     if path_summary:
         summary_bits.append(path_summary)
-    if escalate_now:
+    if escalation_reason == "factual_contradiction":
         summary_bits.append("An edge's evidence contradicts the claim (curator territory).")
+    elif escalation_reason == "affirmed_weak_citation":
+        summary_bits.append("Pathway affirmed; an edge's citation is insufficient — "
+                            "escalated to a human with a report.")
     summary = " ".join(summary_bits) or "No semantic problems found."
 
     # ── write the committed provenance sidecar (full audit, no paper bodies) ──
@@ -343,6 +415,7 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
         "round": round_no,
         "reviewed_at": now_iso,
         "verdict": verdict,
+        "escalation_reason": escalation_reason,
         "summary": summary,
         "flags": flags,                        # agent-facing: WHAT, never the fix/source
         "path_issue": reported_path_issue,
@@ -350,6 +423,10 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
         "consulted_independent_sources": consulted,
         "edge_reviews": edge_reviews,
     }
+    if escalation_report is not None:
+        round_entry["escalation_report"] = escalation_report   # human-facing (names sources)
+    if accept_report is not None:
+        round_entry["accept_report"] = accept_report
     history = [r for r in prior_rounds if r.get("round") != round_no] + [round_entry]
     history.sort(key=lambda r: r.get("round", 0))
 
@@ -362,9 +439,12 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
         "current_round": round_no,
         "max_rounds": max_rounds,
         "overall_verdict": verdict,            # latest round's verdict (pr_labels.py reads this)
+        "escalation_reason": escalation_reason,
         "overall_summary": summary,
         "rounds": history,
     }
+    if escalation_report is not None:
+        sidecar["escalation_report"] = escalation_report   # top-level for the human PR reviewer
     PROVENANCE_DIR.mkdir(parents=True, exist_ok=True)
     sidecar_path.write_text(yaml.safe_dump(sidecar, sort_keys=False, allow_unicode=True))
     try:
@@ -381,12 +461,15 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
     return {
         "record_id": record_id,
         "verdict": verdict,
+        "escalation_reason": escalation_reason,
         "round": round_no,
         "max_rounds": max_rounds,
         "flags": flags,                        # agent-facing: WHAT, never the fix/source
         "path_issue": reported_path_issue,
         "prior_flag_status": prior_flag_status,   # fix-tracking vs the prior round
         "n_independent_sources": len(consulted),
+        "escalation_report": escalation_report,   # human-facing (only on affirmed_weak_citation)
+        "accept_report": accept_report,           # positive affirmation (only on ACCEPT)
         "sidecar": sidecar_rel,
         "summary": summary,
     }

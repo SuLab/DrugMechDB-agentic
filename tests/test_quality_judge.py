@@ -24,6 +24,7 @@ from judge.backends import StubBackend, Tool  # noqa: E402
 from judge.runner import extract_json, load_system_prompt, run_judge  # noqa: E402
 from judge import edge_evidence_judge as eej  # noqa: E402
 import quality_profile as qp  # noqa: E402
+import critic  # noqa: E402
 
 EDGE_PROMPT = REPO / "scripts" / "quality" / "prompts" / "edge_evidence_judge.md"
 PATH_PROMPT = REPO / "scripts" / "quality" / "prompts" / "path_coherence_judge.md"
@@ -245,3 +246,134 @@ def test_anthropic_backend_tool_loop_monkeypatched(monkeypatch):
     assert res.final_text == '{"edge_supported": true}'
     assert res.iters == 2 and res.stopped == "final"
     assert res.usage["input_tokens"] == 13      # summed across turns
+
+
+# ── critic disposition: escalate-last + reports + carry-forward (all offline) ──
+
+_TWO_EDGE_DOC = {
+    "directed": True, "multigraph": True,
+    "graph": {"_id": "TEST_CRITIC_1", "drug": "drugA", "disease": "disX",
+              "drug_mesh": "MESH:D0001", "disease_mesh": "MESH:D0002"},
+    "nodes": [
+        {"id": "MESH:D0001", "name": "drugA", "label": "Drug"},
+        {"id": "UniProt:P00001", "name": "targetB", "label": "Protein"},
+        {"id": "MESH:D0002", "name": "disX", "label": "Disease"},
+    ],
+    "links": [
+        {"key": "decreases activity of", "source": "MESH:D0001", "target": "UniProt:P00001",
+         "evidence": [{"reference": "PMID:111", "snippet": "drugA inhibits targetB",
+                       "supports": "SUPPORT", "evidence_source": "OTHER"}]},
+        {"key": "causes", "source": "UniProt:P00001", "target": "MESH:D0002",
+         "evidence": [{"reference": "PMID:222", "snippet": "targetB activity drives disX",
+                       "supports": "SUPPORT", "evidence_source": "OTHER"}]},
+    ],
+}
+
+
+def _edge_verdict(ev, support, edge_supported):
+    return {"final": json.dumps({
+        "verdicts": [{"reference": ev["reference"], "rederived_supports": support,
+                      "issue_for_curator": "the quote does not establish this edge"}],
+        "edge_supported": edge_supported})}
+
+
+def _responder_for(edge1, edge2=("SUPPORT", True), path="accept"):
+    """edge1/edge2 = (rederived_supports, edge_supported) for drugA / targetB edges."""
+    def responder(user):
+        inp = json.loads(user)
+        if "structural_report" in inp:            # path-coherence judge
+            return [{"final": json.dumps({"overall": {"verdict": path,
+                     "summary": "chain coherent; mechanism grounded in independent sources"}})}]
+        ev = inp["evidence"][0]
+        subj = (inp["edge"]["subject"]["name"] or "").lower()
+        return [_edge_verdict(ev, *(edge1 if subj == "druga" else edge2))]
+    return responder
+
+
+def _run_critic(tmp_path, monkeypatch, responder, *, round_no=1, doc=None):
+    monkeypatch.setattr(critic, "PROVENANCE_DIR", tmp_path / "prov")
+    monkeypatch.setenv("DMDB_CRITIC_STATE_DIR", str(tmp_path / "state"))
+    doc = doc or _TWO_EDGE_DOC
+    p = tmp_path / f"{doc['graph']['_id']}.yaml"
+    p.write_text(yaml.safe_dump(doc))
+    return critic.run_critic(str(p), StubBackend(responder), round_no=round_no,
+                             require_qc=False, use_cache=False)
+
+
+def test_critic_accept_produces_positive_report(tmp_path, monkeypatch):
+    res = _run_critic(tmp_path, monkeypatch, _responder_for(("SUPPORT", True)))
+    assert res["verdict"] == "ACCEPT"
+    assert res["escalation_report"] is None
+    assert res["accept_report"] and res["accept_report"]["rationale"]
+
+
+def test_affirmed_weak_round1_recurates_not_escalates(tmp_path, monkeypatch):
+    res = _run_critic(tmp_path, monkeypatch, _responder_for(("PARTIAL", True)), round_no=1)
+    assert res["verdict"] == "RE_CURATE"          # explicit direction first
+    assert res["escalation_reason"] is None and res["escalation_report"] is None
+
+
+def test_affirmed_weak_persists_round2_escalates_with_report(tmp_path, monkeypatch):
+    r = _responder_for(("PARTIAL", True))
+    _run_critic(tmp_path, monkeypatch, r, round_no=1)             # writes round-1 sidecar
+    res = _run_critic(tmp_path, monkeypatch, r, round_no=2)
+    assert res["verdict"] == "ESCALATE"
+    assert res["escalation_reason"] == "affirmed_weak_citation"
+    rep = res["escalation_report"]
+    assert rep["pathway_confidence"]["rationale"]
+    assert rep["edge_citation_gaps"] and "drugA" in rep["edge_citation_gaps"][0]["edge"]
+
+
+def test_escalate_last_holds_while_a_fixable_issue_remains(tmp_path, monkeypatch):
+    # edge1 affirmed-weak, edge2 genuinely fixable -> fix edge2 first, don't escalate yet.
+    r = _responder_for(("PARTIAL", True), edge2=("NO_EVIDENCE", False))
+    _run_critic(tmp_path, monkeypatch, r, round_no=1)
+    res = _run_critic(tmp_path, monkeypatch, r, round_no=2)
+    assert res["verdict"] == "RE_CURATE"
+    assert res["escalation_report"] is None
+
+
+def test_factual_contradiction_escalates_immediately(tmp_path, monkeypatch):
+    res = _run_critic(tmp_path, monkeypatch, _responder_for(("REFUTE", False)), round_no=1)
+    assert res["verdict"] == "ESCALATE"
+    assert res["escalation_reason"] == "factual_contradiction"
+
+
+def test_escalation_report_sources_are_deterministic_not_hallucinated(tmp_path, monkeypatch):
+    read_ev = Tool("read_evidence", "read", {"type": "object"},
+                   fn=lambda a: f"SOURCE {a.get('reference')}: canned text")
+    monkeypatch.setattr(critic, "critic_tools", lambda: [read_ev])
+    def responder(user):
+        inp = json.loads(user)
+        if "structural_report" in inp:
+            # actually consult ChEMBL:CHEMBL9 via a tool call; also NAME a fake PMID in prose
+            return [{"call": [{"name": "read_evidence", "input": {"reference": "ChEMBL:CHEMBL9"}}]},
+                    {"final": json.dumps({"overall": {"verdict": "accept",
+                     "summary": "coherent per PMID:99999 (this id is fabricated in prose only)"}})}]
+        ev = inp["evidence"][0]
+        subj = (inp["edge"]["subject"]["name"] or "").lower()
+        return [_edge_verdict(ev, *(("PARTIAL", True) if subj == "druga" else ("SUPPORT", True)))]
+    _run_critic(tmp_path, monkeypatch, responder, round_no=1)
+    res = _run_critic(tmp_path, monkeypatch, responder, round_no=2)
+    assert res["verdict"] == "ESCALATE" and res["escalation_reason"] == "affirmed_weak_citation"
+    srcs = res["escalation_report"]["pathway_confidence"]["supporting_sources"]
+    assert "ChEMBL:CHEMBL9" in srcs                       # the actually-consulted source
+    assert not any("99999" in s for s in srcs)            # the fabricated PMID never appears
+
+
+def test_carry_forward_reuses_unchanged_edge_without_calling_judge():
+    doc = {"nodes": [{"id": "A", "name": "a"}, {"id": "B", "name": "b"}],
+           "links": [{"source": "A", "target": "B", "key": "treats",
+                      "evidence": [{"reference": "PMID:1", "snippet": "x", "supports": "SUPPORT"}]}]}
+    inp0 = eej.build_edge_inputs(doc)[0]
+    h = eej.edge_content_hash(inp0)
+    reuse = {h: {"edge": inp0["edge"], "edge_hash": h,
+                 "verdict": {"edge_supported": True,
+                             "verdicts": [{"rederived_supports": "SUPPORT"}]}}}
+
+    class Boom(StubBackend):
+        def run(self, *a, **k):
+            raise AssertionError("the judge was invoked for a byte-identical, previously-clean edge")
+
+    out = eej.judge_edges(doc, Boom([]), tools=[], reuse_map=reuse, use_cache=False)
+    assert out[0]["reused"] is True and out[0]["verdict"]["edge_supported"] is True

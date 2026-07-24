@@ -165,7 +165,11 @@ sidecar and are NOT shown to the curator.) For a clean `SUPPORT`, omit the field
 
 `edge_supported` = is the edge itself defensible (possibly via independent grounding even when the
 *cited* evidence is weak)? Keep it separate from per-snippet verdicts — an edge can be true while
-its citation is bad (fixable) or false regardless of citation (must change).
+its citation is bad (fixable) or false regardless of citation (must change). **When you set
+`edge_supported: true` but `rederived_supports` is PARTIAL/NO_EVIDENCE** (the edge is real, but the
+cited quote does not establish it), make `issue_for_curator` state *specifically why the quote falls
+short* for this edge — that exact wording becomes the human's escalation report if the curator cannot
+strengthen the citation.
 
 ### Types of defect to hunt for (illustrative, NOT exhaustive)
 - **Entity substitution:** the snippet is about a metabolite, salt/parent form, paralog, class, or
