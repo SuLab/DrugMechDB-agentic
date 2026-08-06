@@ -1,0 +1,1085 @@
+{
+  "tool": "run_blinded_judge",
+  "generated_at": "2026-07-23T13:14:22+00:00",
+  "n_paths": 29,
+  "config": {
+    "seed": 1234,
+    "kb_dir": "/Users/sanjanprabu/Documents/Personal/SCRIPPS_SRTI/Project/DrugMechDB-agentic/kb/paths",
+    "eval_pairs": null,
+    "max_iters": 6,
+    "use_cache": true,
+    "tools": "critic"
+  },
+  "mode": "stub",
+  "judge": {
+    "provider": "stub",
+    "model": null,
+    "note": "STUB (offline, deterministic \u2014 NO API)"
+  },
+  "results": [
+    {
+      "blind_id": "B001",
+      "record": {
+        "drug": "calcium acetate",
+        "disease": "Hypocalcemia"
+      },
+      "n_edges": 2,
+      "n_evidence_edges": 2,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 2,
+        "n_support": 2,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 2,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "revise",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": true,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "agent_simpler_but_valid"
+    },
+    {
+      "blind_id": "B002",
+      "record": {
+        "drug": "clortermine",
+        "disease": "Anorexia"
+      },
+      "n_edges": 2,
+      "n_evidence_edges": 2,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 3,
+        "n_support": 3,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 3,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "revise",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": true,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "agent_simpler_but_valid"
+    },
+    {
+      "blind_id": "B003",
+      "record": {
+        "drug": "alteplase",
+        "disease": "Pulmonary embolism"
+      },
+      "n_edges": 4,
+      "n_evidence_edges": 4,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 6,
+        "n_support": 6,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 6,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "revise",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": true,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "agent_simpler_but_valid"
+    },
+    {
+      "blind_id": "B004",
+      "record": {
+        "drug": "cetuximab",
+        "disease": "Malignant tumor of colon"
+      },
+      "n_edges": 3,
+      "n_evidence_edges": 3,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 4,
+        "n_support": 4,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 4,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "accept",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": null
+      },
+      "gold_comparison": "agent_more_complete"
+    },
+    {
+      "blind_id": "B005",
+      "record": {
+        "drug": "Etanercept",
+        "disease": "Psoriasis with arthropathy"
+      },
+      "n_edges": 3,
+      "n_evidence_edges": 3,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 3,
+        "n_support": 3,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 3,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "accept",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": null
+      },
+      "gold_comparison": "reproduces"
+    },
+    {
+      "blind_id": "B006",
+      "record": {
+        "drug": "imatinib",
+        "disease": "Chronic myeloid leukemia, BCR-ABL positive"
+      },
+      "n_edges": 2,
+      "n_evidence_edges": 2,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 2,
+        "n_support": 2,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 2,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "reject",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "disagree"
+    },
+    {
+      "blind_id": "B007",
+      "record": {
+        "drug": "insulin human",
+        "disease": "Diabetes Mellitus, Type 1"
+      },
+      "n_edges": 4,
+      "n_evidence_edges": 4,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 7,
+        "n_support": 7,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 7,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "revise",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": true,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "agent_simpler_but_valid"
+    },
+    {
+      "blind_id": "B008",
+      "record": {
+        "drug": "bleomycin",
+        "disease": "Squamous cell carcinoma"
+      },
+      "n_edges": 4,
+      "n_evidence_edges": 4,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 4,
+        "n_support": 4,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 4,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "revise",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": true,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "agent_simpler_but_valid"
+    },
+    {
+      "blind_id": "B009",
+      "record": {
+        "drug": "imatinib",
+        "disease": "Chronic myelogenous leukemia, BCR-ABL positive"
+      },
+      "n_edges": 2,
+      "n_evidence_edges": 2,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 3,
+        "n_support": 3,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 3,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "reject",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "disagree"
+    },
+    {
+      "blind_id": "B010",
+      "record": {
+        "drug": "Thiamine",
+        "disease": "Avitaminosis"
+      },
+      "n_edges": 4,
+      "n_evidence_edges": 4,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 4,
+        "n_support": 4,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 4,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "reject",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "disagree"
+    },
+    {
+      "blind_id": "B011",
+      "record": {
+        "drug": "alteplase",
+        "disease": "Pulmonary embolism"
+      },
+      "n_edges": 3,
+      "n_evidence_edges": 3,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 5,
+        "n_support": 5,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 5,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "revise",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": true,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "agent_simpler_but_valid"
+    },
+    {
+      "blind_id": "B012",
+      "record": {
+        "drug": "sermorelin",
+        "disease": "Pituitary dwarfism"
+      },
+      "n_edges": 3,
+      "n_evidence_edges": 3,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 6,
+        "n_support": 6,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 6,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "reject",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "disagree"
+    },
+    {
+      "blind_id": "B013",
+      "record": {
+        "drug": "cetuximab",
+        "disease": "Malignant tumor of colon"
+      },
+      "n_edges": 3,
+      "n_evidence_edges": 3,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 3,
+        "n_support": 3,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 3,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "accept",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": null
+      },
+      "gold_comparison": "agent_more_complete"
+    },
+    {
+      "blind_id": "B014",
+      "record": {
+        "drug": "oprelvekin",
+        "disease": "Thrombocytopenic disorder"
+      },
+      "n_edges": 4,
+      "n_evidence_edges": 4,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 6,
+        "n_support": 6,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 6,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "accept",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": null
+      },
+      "gold_comparison": "reproduces"
+    },
+    {
+      "blind_id": "B015",
+      "record": {
+        "drug": "anakinra",
+        "disease": "Cryopyrin-associated periodic syndrome"
+      },
+      "n_edges": 3,
+      "n_evidence_edges": 3,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 5,
+        "n_support": 5,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 5,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "reject",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "disagree"
+    },
+    {
+      "blind_id": "B016",
+      "record": {
+        "drug": "Thiamine",
+        "disease": "Avitaminosis"
+      },
+      "n_edges": 1,
+      "n_evidence_edges": 1,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 1,
+        "n_support": 1,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 1,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "reject",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "disagree"
+    },
+    {
+      "blind_id": "B017",
+      "record": {
+        "drug": "azathioprine",
+        "disease": "Rheumatoid arthritis"
+      },
+      "n_edges": 4,
+      "n_evidence_edges": 4,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 8,
+        "n_support": 8,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 8,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "revise",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": true,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "agent_simpler_but_valid"
+    },
+    {
+      "blind_id": "B018",
+      "record": {
+        "drug": "alteplase",
+        "disease": "Pulmonary embolism"
+      },
+      "n_edges": 3,
+      "n_evidence_edges": 3,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 3,
+        "n_support": 3,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 3,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "revise",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": true,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "agent_simpler_but_valid"
+    },
+    {
+      "blind_id": "B019",
+      "record": {
+        "drug": "urokinase",
+        "disease": "Pulmonary thromboembolism"
+      },
+      "n_edges": 4,
+      "n_evidence_edges": 4,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 4,
+        "n_support": 4,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 4,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "reject",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "disagree"
+    },
+    {
+      "blind_id": "B020",
+      "record": {
+        "drug": "atorvastatin",
+        "disease": "Hypercholesterolemia"
+      },
+      "n_edges": 5,
+      "n_evidence_edges": 5,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 5,
+        "n_support": 5,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 5,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "revise",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": true,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "agent_simpler_but_valid"
+    },
+    {
+      "blind_id": "B021",
+      "record": {
+        "drug": "empagliflozin",
+        "disease": "Diabetes Mellitus, Type 2"
+      },
+      "n_edges": 5,
+      "n_evidence_edges": 5,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 5,
+        "n_support": 5,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 5,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "accept",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": null
+      },
+      "gold_comparison": "reproduces"
+    },
+    {
+      "blind_id": "B022",
+      "record": {
+        "drug": "imatinib",
+        "disease": "Chronic myeloid leukemia"
+      },
+      "n_edges": 3,
+      "n_evidence_edges": 3,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 3,
+        "n_support": 3,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 3,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "reject",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "disagree"
+    },
+    {
+      "blind_id": "B023",
+      "record": {
+        "drug": "aminobenzoic acid",
+        "disease": "Dermatomyositis"
+      },
+      "n_edges": 3,
+      "n_evidence_edges": 3,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 5,
+        "n_support": 5,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 5,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "revise",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": true,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "agent_simpler_but_valid"
+    },
+    {
+      "blind_id": "B024",
+      "record": {
+        "drug": "thiamine",
+        "disease": "Avitaminosis"
+      },
+      "n_edges": 3,
+      "n_evidence_edges": 3,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 3,
+        "n_support": 3,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 3,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "accept",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": null
+      },
+      "gold_comparison": "reproduces"
+    },
+    {
+      "blind_id": "B025",
+      "record": {
+        "drug": "aminobenzoic acid",
+        "disease": "Dermatomyositis"
+      },
+      "n_edges": 2,
+      "n_evidence_edges": 2,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 4,
+        "n_support": 4,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 4,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "revise",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": true,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "agent_simpler_but_valid"
+    },
+    {
+      "blind_id": "B026",
+      "record": {
+        "drug": "aminobenzoic acid",
+        "disease": "Dermatomyositis"
+      },
+      "n_edges": 2,
+      "n_evidence_edges": 2,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 4,
+        "n_support": 4,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 4,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "revise",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": true,
+        "shortcut": false,
+        "issue_for_curator": "stub: symptom-only issue"
+      },
+      "gold_comparison": "agent_simpler_but_valid"
+    },
+    {
+      "blind_id": "B027",
+      "record": {
+        "drug": "cetuximab",
+        "disease": "Malignant tumor of colon"
+      },
+      "n_edges": 3,
+      "n_evidence_edges": 3,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 3,
+        "n_support": 3,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 3,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "accept",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": null
+      },
+      "gold_comparison": "agent_more_complete"
+    },
+    {
+      "blind_id": "B028",
+      "record": {
+        "drug": "desmopressin",
+        "disease": "Hereditary factor VIII deficiency disease"
+      },
+      "n_edges": 4,
+      "n_evidence_edges": 4,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 6,
+        "n_support": 6,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 6,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "accept",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": null
+      },
+      "gold_comparison": "reproduces"
+    },
+    {
+      "blind_id": "B029",
+      "record": {
+        "drug": "donepezil",
+        "disease": "Alzheimer's disease"
+      },
+      "n_edges": 3,
+      "n_evidence_edges": 3,
+      "has_legacy": true,
+      "edge_faithfulness": {
+        "status": "run",
+        "n_evidence": 4,
+        "n_support": 4,
+        "support_fraction": 1.0,
+        "n_agree_with_curator": 4,
+        "agreement_fraction": 1.0,
+        "n_with_abstain": 0,
+        "flagged_edges": []
+      },
+      "path_coherence": {
+        "overall": "accept",
+        "mechanism_is_accepted": "yes",
+        "net_effect_correct": "yes",
+        "missing_step": false,
+        "shortcut": false,
+        "issue_for_curator": null
+      },
+      "gold_comparison": "reproduces"
+    }
+  ],
+  "reveal_key": [
+    {
+      "blind_id": "B001",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00258_MESH_D006996_1.yaml",
+      "legacy_path_id": "DB00258_MESH_D006996_1"
+    },
+    {
+      "blind_id": "B002",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB01527_MESH_D000856_1.yaml",
+      "legacy_path_id": "DB01527_MESH_D000856_1"
+    },
+    {
+      "blind_id": "B003",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00009_MESH_D011655_1__r2.yaml",
+      "legacy_path_id": "DB00009_MESH_D011655_1"
+    },
+    {
+      "blind_id": "B004",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00002_MESH_D003110_1__r2.yaml",
+      "legacy_path_id": "DB00002_MESH_D003110_1"
+    },
+    {
+      "blind_id": "B005",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00005_MESH_D015535_1.yaml",
+      "legacy_path_id": "DB00005_MESH_D015535_1"
+    },
+    {
+      "blind_id": "B006",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00619_MESH_D015464_1__r2.yaml",
+      "legacy_path_id": "DB00619_MESH_D015464_1"
+    },
+    {
+      "blind_id": "B007",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00030_MESH_D003922_1.yaml",
+      "legacy_path_id": "DB00030_MESH_D003922_1"
+    },
+    {
+      "blind_id": "B008",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00290_MESH_D002294_1.yaml",
+      "legacy_path_id": "DB00290_MESH_D002294_1"
+    },
+    {
+      "blind_id": "B009",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00619_MESH_D015464_1__r3.yaml",
+      "legacy_path_id": "DB00619_MESH_D015464_1"
+    },
+    {
+      "blind_id": "B010",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00152_MESH_D001361_1__r2.yaml",
+      "legacy_path_id": "DB00152_MESH_D001361_1"
+    },
+    {
+      "blind_id": "B011",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00009_MESH_D011655_1__r3.yaml",
+      "legacy_path_id": "DB00009_MESH_D011655_1"
+    },
+    {
+      "blind_id": "B012",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00010_MESH_D004393_1.yaml",
+      "legacy_path_id": "DB00010_MESH_D004393_1"
+    },
+    {
+      "blind_id": "B013",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00002_MESH_D003110_1__r3.yaml",
+      "legacy_path_id": "DB00002_MESH_D003110_1"
+    },
+    {
+      "blind_id": "B014",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00038_MESH_D013921_1.yaml",
+      "legacy_path_id": "DB00038_MESH_D013921_1"
+    },
+    {
+      "blind_id": "B015",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00026_MESH_D056587_1.yaml",
+      "legacy_path_id": "DB00026_MESH_D056587_1"
+    },
+    {
+      "blind_id": "B016",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00152_MESH_D001361_1.yaml",
+      "legacy_path_id": "DB00152_MESH_D001361_1"
+    },
+    {
+      "blind_id": "B017",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00993_MESH_D001172_1.yaml",
+      "legacy_path_id": "DB00993_MESH_D001172_1"
+    },
+    {
+      "blind_id": "B018",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00009_MESH_D011655_1.yaml",
+      "legacy_path_id": "DB00009_MESH_D011655_1"
+    },
+    {
+      "blind_id": "B019",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00013_MESH_D011655_1.yaml",
+      "legacy_path_id": "DB00013_MESH_D011655_1"
+    },
+    {
+      "blind_id": "B020",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB01076_MESH_D006937_1.yaml",
+      "legacy_path_id": "DB01076_MESH_D006937_1"
+    },
+    {
+      "blind_id": "B021",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB09038_MESH_D003924_1.yaml",
+      "legacy_path_id": "DB09038_MESH_D003924_1"
+    },
+    {
+      "blind_id": "B022",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00619_MESH_D015464_1.yaml",
+      "legacy_path_id": "DB00619_MESH_D015464_1"
+    },
+    {
+      "blind_id": "B023",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/B02362_MESH_D003882_1__r2.yaml",
+      "legacy_path_id": "B02362_MESH_D003882_1"
+    },
+    {
+      "blind_id": "B024",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00152_MESH_D001361_1__r3.yaml",
+      "legacy_path_id": "DB00152_MESH_D001361_1"
+    },
+    {
+      "blind_id": "B025",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/B02362_MESH_D003882_1__r3.yaml",
+      "legacy_path_id": "B02362_MESH_D003882_1"
+    },
+    {
+      "blind_id": "B026",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/B02362_MESH_D003882_1.yaml",
+      "legacy_path_id": "B02362_MESH_D003882_1"
+    },
+    {
+      "blind_id": "B027",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00002_MESH_D003110_1.yaml",
+      "legacy_path_id": "DB00002_MESH_D003110_1"
+    },
+    {
+      "blind_id": "B028",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00035_MESH_D006467_1.yaml",
+      "legacy_path_id": "DB00035_MESH_D006467_1"
+    },
+    {
+      "blind_id": "B029",
+      "arm": "outputs",
+      "source_file": "experiments/pilot/outputs/DB00843_MESH_D000544_1.yaml",
+      "legacy_path_id": "DB00843_MESH_D000544_1"
+    }
+  ],
+  "aggregate": {
+    "path_verdict_counts": {
+      "accept": 9,
+      "revise": 12,
+      "reject": 8,
+      "abstain": 0,
+      "other": 0
+    },
+    "path_verdict_counts_by_arm": {
+      "outputs": {
+        "accept": 9,
+        "revise": 12,
+        "reject": 8,
+        "abstain": 0,
+        "other": 0
+      }
+    },
+    "edge_support_fraction_mean": 1.0,
+    "gold_comparison_distribution": {
+      "reproduces": 6,
+      "agent_more_complete": 3,
+      "agent_simpler_but_valid": 12,
+      "disagree": 8,
+      "other": 0
+    },
+    "gold_comparison_distribution_by_arm": {
+      "outputs": {
+        "reproduces": 6,
+        "agent_more_complete": 3,
+        "agent_simpler_but_valid": 12,
+        "disagree": 8,
+        "other": 0
+      }
+    },
+    "agreement_with_legacy": {
+      "n_with_gold": 29,
+      "n_agree": 21,
+      "fraction": 0.724
+    },
+    "agreement_with_legacy_by_arm": {
+      "outputs": {
+        "n_with_gold": 29,
+        "n_agree": 21,
+        "fraction": 0.724
+      }
+    }
+  }
+}

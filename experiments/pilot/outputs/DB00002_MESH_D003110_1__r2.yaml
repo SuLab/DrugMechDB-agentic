@@ -1,0 +1,56 @@
+directed: true
+multigraph: true
+graph:
+  _id: DB00002_MESH_D003110_1
+  drug: cetuximab
+  drug_mesh: MESH:D000068818
+  drugbank: DB:DB00002
+  disease: Malignant tumor of colon
+  disease_mesh: MESH:D003110
+nodes:
+  - id: MESH:D000068818
+    name: Cetuximab
+    label: Drug
+  - id: UniProt:P00533
+    name: Epidermal growth factor receptor
+    label: Protein
+  - id: GO:0008283
+    name: Cell proliferation
+    label: BiologicalProcess
+  - id: MESH:D003110
+    name: Malignant tumor of colon
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000068818
+    target: UniProt:P00533
+    evidence:
+      - reference: PMID:23723688
+        snippet: "binds with high affinity to the extracellular domain of the human EGFR, blocking ligand binding, resulting in inhibition of the receptor function"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Cetuximab binds the EGFR extracellular domain and inhibits receptor function."
+      - reference: PMID:20088790
+        snippet: "Cetuximab binding to the EGFR blocks phosphorylation and activation of receptor-associated kinases and their associated downstream signalling (MAPK, PI3K/Akt, Jak/Stat pathways)"
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: positively regulates
+    source: UniProt:P00533
+    target: GO:0008283
+    evidence:
+      - reference: PMID:15717942
+        snippet: "EGFR plays a fundamental role in regulating the proliferation and survival of malignant neoplasms"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "EGFR signaling drives proliferation of malignant cells."
+  - key: contributes to
+    source: GO:0008283
+    target: MESH:D003110
+    evidence:
+      - reference: PMID:23803085
+        snippet: "cell proliferation of Ki-67 showed a significant contribution in colonic cancer progression"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Cell proliferation contributes to colonic cancer progression in an azoxymethane-induced rat model."
+references:
+  - https://go.drugbank.com/drugs/DB00002

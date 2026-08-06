@@ -1,0 +1,52 @@
+directed: true
+multigraph: true
+graph:
+  _id: DB00002_MESH_D003110_1
+  drug: cetuximab
+  drug_mesh: MESH:D000068818
+  drugbank: DB:DB00002
+  disease: Malignant tumor of colon
+  disease_mesh: MESH:D003110
+nodes:
+  - id: DB:DB00002
+    name: cetuximab
+    label: Drug
+  - id: UniProt:P00533
+    name: Epidermal growth factor receptor
+    label: Protein
+  - id: GO:0008283
+    name: cell proliferation
+    label: BiologicalProcess
+  - id: MESH:D003110
+    name: Malignant tumor of colon
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00002
+    target: UniProt:P00533
+    evidence:
+      - reference: PMID:42176792
+        snippet: "Cetuximab exerts its antitumor activity by blocking ligand-dependent EGFR signaling and by engaging immune effector mechanisms."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Cetuximab blocks ligand-dependent EGFR signaling, reducing EGFR activity."
+  - key: positively regulates
+    source: UniProt:P00533
+    target: GO:0008283
+    evidence:
+      - reference: PMID:38958494
+        snippet: "EGFR plays an essential role in cellular signaling pathways that regulate cell growth, proliferation, and survival and is often dysregulated in cancer."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "EGFR signaling drives cell growth and proliferation."
+  - key: contributes to
+    source: GO:0008283
+    target: MESH:D003110
+    evidence:
+      - reference: PMID:22114026
+        snippet: "colorectal cancers (CRC) form a group of pathologies in which early steps of development are characterized by an aberrant expression of β-catenin and an uncontrolled proliferation of epithelial cells."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Uncontrolled proliferation of epithelial cells drives colorectal cancer development."
+references:
+  - https://go.drugbank.com/drugs/DB00002

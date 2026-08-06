@@ -1,0 +1,83 @@
+directed: true
+multigraph: true
+graph:
+  _id: DB00993_MESH_D001172_1
+  drug: azathioprine
+  drug_mesh: MESH:D001379
+  drugbank: DB:DB00993
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+nodes:
+  - id: MESH:D001379
+    name: Azathioprine
+    label: Drug
+  - id: MESH:D008774
+    name: Mercaptopurine
+    label: ChemicalSubstance
+  - id: GO:0006164
+    name: purine nucleotide biosynthetic process
+    label: BiologicalProcess
+  - id: GO:0042098
+    name: T cell proliferation
+    label: BiologicalProcess
+  - id: MESH:D001172
+    name: Rheumatoid arthritis
+    label: Disease
+links:
+  - key: has metabolite
+    source: MESH:D001379
+    target: MESH:D008774
+    evidence:
+      - reference: PMID:12697733
+        snippet: "Azathioprine and its metabolite 6-mercaptopurine (6-MP) are immunosuppressive drugs that are used in organ transplantation and autoimmune and chronic inflammatory diseases such as Crohn disease."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Azathioprine is a prodrug metabolized to 6-mercaptopurine."
+      - reference: PMID:11683683
+        snippet: "The thioguanine derivative, azathioprine, is a prodrug of 6-mercaptopurine that is further metabolized by various enzymes present in the liver and gut."
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: negatively regulates
+    source: MESH:D008774
+    target: GO:0006164
+    evidence:
+      - reference: PMID:11683683
+        snippet: "The mode of action of azathioprine is thought to be multifactorial, including conversion to 6-mercaptopurine (which acts as a purine antimetabolite), possible blockade of thiol groups by alkylation, inhibition of several pathways in nucleic acid biosynthesis (preventing proliferation of cells involved in the determination and amplification of the immune response) and damage to DNA through the incorporation of thiopurine analogues."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "6-Mercaptopurine acts as a purine antimetabolite, inhibiting purine nucleotide biosynthesis."
+      - reference: PMID:10878284
+        snippet: "Azathioprine metabolites inhibit several enzymes of purine synthesis."
+        supports: SUPPORT
+        evidence_source: OTHER
+      - reference: PMID:12734342
+        snippet: "This was investigated in the present study by using well-known purine (mycophenolic acid, 6-mercaptopurine) and pyrimidine (methotrexate, 5-fluorouracil) inhibitors, which are used in neoplastic diseases or as immunosuppressive agents."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "6-Mercaptopurine is a purine synthesis inhibitor."
+  - key: positively regulates
+    source: GO:0006164
+    target: GO:0042098
+    evidence:
+      - reference: PMID:12734342
+        snippet: "We showed that synthesis of both purine and pyrimidine nucleotides is required for T cell proliferation."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "De novo purine nucleotide synthesis is required for proliferation of activated T lymphocytes."
+  - key: contributes to
+    source: GO:0042098
+    target: MESH:D001172
+    evidence:
+      - reference: PMID:8013988
+        snippet: "Two promising new therapeutic approaches are being developed, one aimed at specifically reducing the proliferation of activated T cell clones, and the second designed to modulate the activity of the cytokines involved in the inflammatory process."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Proliferation of activated T cell clones drives the inflammatory process of rheumatoid arthritis and is a therapeutic target."
+      - reference: PMID:29581356
+        snippet: "For the initiation of CIA, the Tyr181-based SH2-binding motif of ICOS that is known to activate PI3K was critical for Ab production and expansion of inflammatory T cells."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "In collagen-induced arthritis, a murine model of rheumatoid arthritis, expansion (proliferation) of inflammatory T cells is critical for disease initiation."
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/12697733/
+  - https://pubmed.ncbi.nlm.nih.gov/12734342/

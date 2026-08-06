@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-07-23T21:26:55+00:00",
+  "model": "claude-opus-4-8",
+  "mode": "run",
+  "critic": false,
+  "offline": false,
+  "plan": {
+    "pairs": 1,
+    "curations": 1,
+    "est_cost_usd_low": 2.0,
+    "est_cost_usd_high": 4.0
+  },
+  "results": [
+    {
+      "pair_id": "DB00013_MESH_D011655_1",
+      "repeat_index": 1,
+      "category": "ordinary",
+      "out_path": "experiments/pilot/outputs/DB00013_MESH_D011655_1.yaml",
+      "ok": true,
+      "gate_verdict": "PASS",
+      "gate_passed": true,
+      "stopped": "end_turn",
+      "iters": 19,
+      "wall_seconds": 393.8,
+      "est_cost_usd": 3.6576,
+      "usage": {
+        "input_tokens": 550023,
+        "output_tokens": 28663,
+        "cache_read_input_tokens": 225360,
+        "cache_creation_input_tokens": 12520
+      },
+      "tool_call_counts": {
+        "evidence_search": 11,
+        "evidence_fetch": 5,
+        "read_reference": 21,
+        "write_path_yaml": 1,
+        "canonicalize_predicates": 1,
+        "run_gate": 1
+      },
+      "output_written": true,
+      "error": null
+    }
+  ],
+  "totals": {
+    "curations": 1,
+    "executed": 1,
+    "skipped": 0,
+    "ok": 1,
+    "total_cost_usd": 3.6576,
+    "total_wall_seconds": 393.8
+  }
+}

@@ -1,0 +1,44 @@
+directed: true
+multigraph: true
+graph:
+  _id: DB01527_MESH_D000856_1
+  drug: clortermine
+  drugbank: DB:DB01527
+  disease: Anorexia
+  disease_mesh: MESH:D000856
+nodes:
+  - id: DB:DB01527
+    name: Clortermine
+    label: Drug
+  - id: GO:0007631
+    name: Feeding behavior
+    label: BiologicalProcess
+  - id: MESH:D000856
+    name: Anorexia
+    label: Disease
+links:
+  - key: negatively regulates
+    source: DB:DB01527
+    target: GO:0007631
+    evidence:
+      - reference: PMID:3620005
+        snippet: "All drugs reduced food intake in a dose-related manner."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "In rhesus monkeys the anorectics benzphetamine, chlorphentermine, clortermine, mazindol, phendimetrazine and phenmetrazine were compared; clortermine is explicitly one of the drugs that reduced food intake."
+      - reference: PMID:826970
+        snippet: "Increasing self-infused doses of all drugs produced a substantial suppression of concurrent food-maintained behavior."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Clortermine is one of the eight phenylethylamines tested in baboons whose increasing doses suppressed food-maintained behavior."
+  - key: manifestation of
+    source: GO:0007631
+    target: MESH:D000856
+    evidence:
+      - reference: PMID:8637056
+        snippet: "a reduction in food consumption (anorexia)"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "A reduction in food consumption is equated with anorexia (loss of appetite / reduced food intake); the suppressed feeding behavior is the manifestation of anorexia."
+references:
+  - https://go.drugbank.com/drugs/DB01527

@@ -1,0 +1,52 @@
+directed: true
+multigraph: true
+graph:
+  _id: DB00009_MESH_D011655_1
+  drug: alteplase
+  drug_mesh: MESH:D010959
+  drugbank: DB:DB00009
+  disease: Pulmonary embolism
+  disease_mesh: MESH:D011655
+nodes:
+  - id: DB:DB00009
+    name: alteplase
+    label: Drug
+  - id: UniProt:P00747
+    name: Plasminogen
+    label: Protein
+  - id: MESH:D005342
+    name: Fibrin
+    label: ChemicalSubstance
+  - id: MESH:D011655
+    name: Pulmonary embolism
+    label: Disease
+links:
+  - key: increases activity of
+    source: DB:DB00009
+    target: UniProt:P00747
+    evidence:
+      - reference: PMID:3044205
+        snippet: "fibrin strikingly enhances the activation rate of plasminogen by t-PA"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Alteplase is recombinant human tissue-type plasminogen activator (t-PA), which activates the zymogen plasminogen."
+  - key: decreases abundance of
+    source: UniProt:P00747
+    target: MESH:D005342
+    evidence:
+      - reference: PMID:3044205
+        snippet: "plasminogen, which can be converted to the active enzyme plasmin, which will degrade fibrin"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Activated plasminogen (plasmin) proteolytically degrades fibrin, reducing fibrin abundance in the clot."
+  - key: causes
+    source: MESH:D005342
+    target: MESH:D011655
+    evidence:
+      - reference: PMID:12845330
+        snippet: "fibrin microemboli aggregating in pulmonary vasculature"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Fibrin-rich emboli lodge in and obstruct the pulmonary vasculature, the pathologic basis of pulmonary embolism; degrading fibrin dissolves these clots."
+references:
+  - https://go.drugbank.com/drugs/DB00009

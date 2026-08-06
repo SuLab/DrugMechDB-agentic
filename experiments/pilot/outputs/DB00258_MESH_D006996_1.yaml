@@ -1,0 +1,41 @@
+directed: true
+multigraph: true
+graph:
+  _id: DB00258_MESH_D006996_1
+  drug: calcium acetate
+  drug_mesh: MESH:C120662
+  drugbank: DB:DB00258
+  disease: Hypocalcemia
+  disease_mesh: MESH:D006996
+nodes:
+  - id: MESH:C120662
+    name: calcium acetate
+    label: Drug
+  - id: MESH:D002118
+    name: Calcium
+    label: ChemicalSubstance
+  - id: MESH:D006996
+    name: Hypocalcemia
+    label: Disease
+links:
+  - key: increases abundance of
+    source: MESH:C120662
+    target: MESH:D002118
+    evidence:
+      - reference: PMID:23625273
+        snippet: "The average daily dose of calcium acetate or carbonate prescribed in the randomised controlled trials to control hyperphosphataemia in dialysis patients ranges between 1.2 and 2.3 g of elemental calcium. Such doses are greater than the recommended dietary calcium intake and can lead to a positive calcium balance."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Calcium acetate delivers elemental calcium and, at typical doses, produces a positive calcium balance, i.e., it increases the amount of calcium in the body."
+  - key: negatively correlated with
+    source: MESH:D002118
+    target: MESH:D006996
+    evidence:
+      - reference: PMID:30551988
+        snippet: "The goal of the clinical management of hypoparathyroidism is to correct acute and chronic hypocalcemia....The treatment cornerstones of chronic hypoparathyroidism are oral supplementation of calcium and/or active vitamin D"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Supplying calcium corrects hypocalcemia; increasing available calcium is inversely related to the low-serum-calcium disease state."
+references:
+  - https://www.ncbi.nlm.nih.gov/pubmed/23625273
+  - https://www.ncbi.nlm.nih.gov/pubmed/30551988

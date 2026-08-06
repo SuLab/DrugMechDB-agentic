@@ -1,0 +1,60 @@
+directed: true
+multigraph: true
+graph:
+  _id: B02362_MESH_D003882_1
+  drug: aminobenzoic acid
+  drug_mesh: MESH:D010129
+  drugbank: DB:B02362
+  disease: Dermatomyositis
+  disease_mesh: MESH:D003882
+nodes:
+  - id: MESH:D010129
+    name: aminobenzoic acid
+    label: Drug
+  - id: GO:0009411
+    name: response to UV
+    label: BiologicalProcess
+  - id: GO:0006915
+    name: apoptotic process
+    label: BiologicalProcess
+  - id: MESH:D003882
+    name: Dermatomyositis
+    label: Disease
+links:
+  - key: negatively regulates
+    source: MESH:D010129
+    target: GO:0009411
+    evidence:
+      - reference: PMID:7205025
+        snippet: "Sunscreen preparations containing various chemical UV absorbers, para-aminobenzoic acid (PABA), 2 PABA derivatives, benzophenone or a combination of these were topically applied to the backs of C3H/HeN mice prior to their being irradiated with ultraviolet light in the UVB range. In all cases this treatment was effective in preventing the pathological skin changes associated with UVB irradiation."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "para-aminobenzoic acid (aminobenzoic acid) is a UV absorber that, applied before UVB exposure, prevents the pathological skin changes caused by UVB, i.e. it blunts the skin's response to ultraviolet radiation."
+  - key: positively regulates
+    source: GO:0009411
+    target: GO:0006915
+    evidence:
+      - reference: PMID:11390206
+        snippet: "High-dose ultraviolet B (UVB) irradiation is known to induce apoptosis of keratinocytes"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Ultraviolet B irradiation directly induces apoptosis of keratinocytes."
+      - reference: PMID:9067700
+        snippet: "Irradiation with ultraviolet (UV) B light results in the formation of apoptotic keratinocytes called sunburn cells (SC)."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "UVB irradiation produces apoptotic keratinocytes (sunburn cells), so the response to ultraviolet radiation drives the apoptotic process."
+  - key: contributes to
+    source: GO:0006915
+    target: MESH:D003882
+    evidence:
+      - reference: PMID:16850099
+        snippet: "The defective regulation of apoptosis may play an important role in the development of cutaneous lesions of patients with dermatomyositis, in which the skin is a prominent target organ."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Apoptosis of epidermal keratinocytes contributes to the development of the cutaneous lesions of dermatomyositis."
+      - reference: PMID:10398142
+        snippet: "In DM and CLE skin, the number of apoptotic keratinocytes was significantly increased (p=0.008) compared with normal skin."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Apoptotic keratinocytes are significantly increased in dermatomyositis lesional skin, and this apoptosis mediates the epidermal lesions of the disease."

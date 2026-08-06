@@ -1,0 +1,28 @@
+directed: true
+multigraph: true
+graph:
+  _id: DB00152_MESH_D001361_1
+  drug: Thiamine
+  drug_mesh: MESH:D013831
+  drugbank: DB:DB00152
+  disease: Avitaminosis
+  disease_mesh: MESH:D001361
+nodes:
+  - id: MESH:D013831
+    name: Thiamine
+    label: Drug
+  - id: MESH:D001361
+    name: Avitaminosis
+    label: Disease
+links:
+  - key: treats
+    source: MESH:D013831
+    target: MESH:D001361
+    evidence:
+      - reference: PMID:19892133
+        snippet: "the therapeutic benefits of thiamin for Wernicke-Korsakoff syndrome and beriberi were demonstrated."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Historical/review narrative (Handbook of Clinical Neurology), not a primary clinical study, hence evidence_source OTHER. Thiamine is a replacement therapy whose mode of action is vitamin repletion. The assigned disease node is Avitaminosis (MESH:D001361); thiamine treats specifically the thiamine-deficiency avitaminoses (beriberi, Wernicke-Korsakoff syndrome), a subtype of avitaminosis, and cannot be narrowed further because the curated (drug, disease) pair fixes MESH:D001361. No downstream molecular mechanism distinct from replacement of the depleted vitamin can be sourced for this indication."
+references:
+  - https://www.ncbi.nlm.nih.gov/pubmed/19892133

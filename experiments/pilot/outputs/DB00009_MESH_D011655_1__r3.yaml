@@ -1,0 +1,60 @@
+directed: true
+multigraph: true
+graph:
+  _id: DB00009_MESH_D011655_1
+  drug: alteplase
+  drug_mesh: MESH:D010959
+  drugbank: DB:DB00009
+  disease: Pulmonary embolism
+  disease_mesh: MESH:D011655
+nodes:
+  - id: DB:DB00009
+    name: Alteplase
+    label: Drug
+  - id: UniProt:P00747
+    name: Plasmin
+    label: Protein
+  - id: MESH:D005341
+    name: Fibrin
+    label: ChemicalSubstance
+  - id: MESH:D011655
+    name: Pulmonary embolism
+    label: Disease
+links:
+  - key: increases activity of
+    source: DB:DB00009
+    target: UniProt:P00747
+    evidence:
+      - reference: PMID:38297113
+        snippet: "Fibrin-bound tissue plasminogen activator (tPA) converts nearby plasminogen into active plasmin"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Alteplase is recombinant human tissue plasminogen activator (tPA); it converts plasminogen into active plasmin, increasing plasmin activity."
+      - reference: PMID:26447340
+        snippet: "The therapeutic action of tissue plasminogen activator (t-PA) is a two-step process: (1) binding to lysine-rich fibrin (Km event) and (2) converting local plasminogen into plasmin (Kcat event)."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: decreases abundance of
+    source: UniProt:P00747
+    target: MESH:D005341
+    evidence:
+      - reference: PMID:39299257
+        snippet: "plasmin then converts fibrin to fibrin degradation products (FDPs)"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Plasmin proteolytically degrades fibrin into fibrin degradation products, reducing fibrin abundance."
+  - key: contributes to
+    source: MESH:D005341
+    target: MESH:D011655
+    evidence:
+      - reference: PMID:32368694
+        snippet: "deligation of suture-induced spontaneous pulmonary emboli of fibrin-rich DVT"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Pulmonary emboli are fibrin-rich thrombi; fibrin is the main structural component of the embolus obstructing the pulmonary vasculature."
+      - reference: PMID:8205686
+        snippet: "Red, fibrin-rich thrombi within the thromboendarterectomy specimens were lined with a single layer of endothelial cells exhibiting high levels of PAI-1 antigen."
+        supports: PARTIAL
+        evidence_source: HUMAN_CLINICAL
+references:
+  - https://go.drugbank.com/drugs/DB00009
