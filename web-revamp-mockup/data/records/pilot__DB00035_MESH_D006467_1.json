@@ -1,0 +1,179 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00035_MESH_D006467_1",
+    "drug": "desmopressin",
+    "drug_mesh": "MESH:D003894",
+    "drugbank": "DB:DB00035",
+    "disease": "Hereditary factor VIII deficiency disease",
+    "disease_mesh": "MESH:D006467",
+    "summary": "desmopressin → Arginine vasopressin receptor 2 → von Willebrand factor → Coagulation factor VIII → Hereditary factor VIII deficiency disease"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D003894",
+      "name": "desmopressin",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P30518",
+      "name": "Arginine vasopressin receptor 2",
+      "label": "Protein"
+    },
+    {
+      "id": "UniProt:P04275",
+      "name": "von Willebrand factor",
+      "label": "Protein"
+    },
+    {
+      "id": "UniProt:P00451",
+      "name": "Coagulation factor VIII",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D006467",
+      "name": "Hereditary factor VIII deficiency disease",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "increases activity of",
+      "source": "MESH:D003894",
+      "target": "UniProt:P30518",
+      "evidence": [
+        {
+          "reference": "PMID:8232694",
+          "snippet": "the selective V2-vasopressin receptor agonist 1-desamino-8-D-arginine vasopressin (DDAVP, 400 ng/kg in 10 min)",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Desmopressin (DDAVP) is a selective agonist of the vasopressin V2 receptor, activating the receptor.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:12871401",
+          "snippet": "a direct action on the endothelium, via activation of endothelial vasopressin V2R receptor and cAMP-mediated signaling",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "DDAVP acts via activation of the endothelial vasopressin V2 receptor.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Cellular mechanisms of the hemostatic effects of desmopressin (DDAVP).",
+            "authors": [
+              "Kaufmann JE",
+              "Vischer UM"
+            ],
+            "journal": "Journal of thrombosis and haemostasis : JTH",
+            "year": "2003",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "increases abundance of",
+      "source": "UniProt:P30518",
+      "target": "UniProt:P04275",
+      "evidence": [
+        {
+          "reference": "PMID:12871401",
+          "snippet": "activation of endothelial vasopressin V2R receptor and cAMP-mediated signaling. This leads to exocytosis from Weibel Palade bodies where both VWF and t-PA are stored",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "V2 receptor activation drives exocytosis of Weibel-Palade bodies, releasing stored von Willebrand factor and raising its plasma level.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Cellular mechanisms of the hemostatic effects of desmopressin (DDAVP).",
+            "authors": [
+              "Kaufmann JE",
+              "Vischer UM"
+            ],
+            "journal": "Journal of thrombosis and haemostasis : JTH",
+            "year": "2003",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "increases abundance of",
+      "source": "UniProt:P04275",
+      "target": "UniProt:P00451",
+      "evidence": [
+        {
+          "reference": "PMID:16150043",
+          "snippet": "von Willebrand factor (VWF), the natural stabilizing carrier protein of FVIII",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "von Willebrand factor is the stabilizing carrier of factor VIII, prolonging its half-life and thereby increasing circulating factor VIII abundance.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Extra-hepatic factor VIII expression in porcine fulminant hepatic failure.",
+            "authors": [
+              "Hollestelle MJ",
+              "Poyck PP",
+              "Hollestelle JM",
+              "Marsman HA",
+              "Mourik JA",
+              "Gulik TM"
+            ],
+            "journal": "Journal of thrombosis and haemostasis : JTH",
+            "year": "2005",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "negatively correlated with",
+      "source": "UniProt:P00451",
+      "target": "MESH:D006467",
+      "evidence": [
+        {
+          "reference": "PMID:34349063",
+          "snippet": "FVIII deficiency causes hemophilia A",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Deficiency of factor VIII causes the disease (hemophilia A / hereditary factor VIII deficiency); factor VIII levels are inversely related to disease severity, so raising factor VIII counters the deficiency.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:32248973",
+          "snippet": "for which deficiency results in the bleeding disorder hemophilia A",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Factor VIII deficiency results in hemophilia A; restoring factor VIII opposes the disease state.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00035",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00035_MESH_D006467_1",
+    "record_id": "DB00035_MESH_D006467_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00035_MESH_D006467_1.yaml",
+    "summary_generated": true
+  }
+}

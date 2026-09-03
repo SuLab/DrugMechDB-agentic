@@ -1,0 +1,100 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00619_MESH_D015464_1",
+    "drug": "imatinib",
+    "drug_mesh": "MESH:D000068877",
+    "drugbank": "DB:DB00619",
+    "disease": "Chronic myeloid leukemia",
+    "disease_mesh": "MESH:D015464",
+    "summary": "imatinib → BCR/ABL fusion protein → cell population proliferation → Chronic myeloid leukemia"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D000068877",
+      "name": "imatinib",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:A9UF07",
+      "name": "BCR/ABL fusion protein",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0008283",
+      "name": "cell population proliferation",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D015464",
+      "name": "Chronic myeloid leukemia",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "MESH:D000068877",
+      "target": "UniProt:A9UF07",
+      "evidence": [
+        {
+          "reference": "PMID:38627294",
+          "snippet": "Imatinib mesylate was the first representative BCR-ABL1 tyrosine kinase inhibitor (TKI) class for the treatment of chronic myeloid leukemia.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Imatinib is a BCR-ABL1 tyrosine kinase inhibitor, i.e. it decreases the activity of the BCR-ABL fusion kinase.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:A9UF07",
+      "target": "GO:0008283",
+      "evidence": [
+        {
+          "reference": "PMID:42174092",
+          "snippet": "This alteration gives rise to the BCR::ABL1 fusion oncogene, whose constitutive tyrosine kinase activity promotes uncontrolled proliferation and survival of leukemic cells.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "The constitutive tyrosine kinase activity of the BCR-ABL fusion promotes uncontrolled proliferation of leukemic cells.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "manifestation of",
+      "source": "GO:0008283",
+      "target": "MESH:D015464",
+      "evidence": [
+        {
+          "reference": "PMID:41353321",
+          "snippet": "Chronic myeloid leukemia (CML) is a myeloproliferative malignancy marked through the excessive proliferative growth of functional myeloid cells.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Excessive proliferative growth of myeloid cells is the defining manifestation of CML.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00619",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00619_MESH_D015464_1",
+    "record_id": "DB00619_MESH_D015464_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00619_MESH_D015464_1.yaml",
+    "summary_generated": true
+  }
+}

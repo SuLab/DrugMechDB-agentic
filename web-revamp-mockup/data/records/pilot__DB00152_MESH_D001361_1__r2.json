@@ -1,0 +1,126 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00152_MESH_D001361_1",
+    "drug": "Thiamine",
+    "drug_mesh": "MESH:D013831",
+    "drugbank": "DB:DB00152",
+    "disease": "Avitaminosis",
+    "disease_mesh": "MESH:D001361",
+    "summary": "Thiamine → Thiamine pyrophosphate → Transketolase → Carbohydrate metabolism → Avitaminosis"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D013831",
+      "name": "Thiamine",
+      "label": "Drug"
+    },
+    {
+      "id": "MESH:D013835",
+      "name": "Thiamine pyrophosphate",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "UniProt:P29401",
+      "name": "Transketolase",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0005975",
+      "name": "Carbohydrate metabolism",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D001361",
+      "name": "Avitaminosis",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "has metabolite",
+      "source": "MESH:D013831",
+      "target": "MESH:D013835",
+      "evidence": [
+        {
+          "reference": "PMID:21288652",
+          "snippet": "Once thiamine enters the cells it is phosphorylated by thiamine pyrophosphokinase (TPPK), and converted into the coenzyme thiamine pyrophosphate (TPP), the active form of thiamine.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Thiamine is phosphorylated intracellularly and converted into its active metabolite, thiamine pyrophosphate.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "increases activity of",
+      "source": "MESH:D013835",
+      "target": "UniProt:P29401",
+      "evidence": [
+        {
+          "reference": "PMID:21288652",
+          "snippet": "TPP is a relevant cofactor for transketolase (TK), α-ketoglutarate dehydrogenase (αKDH), and pyruvate dehydrogenase (PDH), all these enzymes are fundamental for glucose metabolism.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Thiamine pyrophosphate serves as the coenzyme/cofactor required for transketolase activity.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "participates in",
+      "source": "UniProt:P29401",
+      "target": "GO:0005975",
+      "evidence": [
+        {
+          "reference": "PMID:21288652",
+          "snippet": "TPP is a relevant cofactor for transketolase (TK), α-ketoglutarate dehydrogenase (αKDH), and pyruvate dehydrogenase (PDH), all these enzymes are fundamental for glucose metabolism.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Transketolase is one of the thiamine-dependent enzymes fundamental for glucose/carbohydrate metabolism.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "negatively correlated with",
+      "source": "GO:0005975",
+      "target": "MESH:D001361",
+      "evidence": [
+        {
+          "reference": "PMID:27440134",
+          "snippet": "Thiamine is an essential cofactor in carbohydrate metabolism, and deficiency can therefore cause various organ dysfunctions.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Functional thiamine-dependent carbohydrate metabolism is inversely related to the deficiency disease: it is the loss/impairment of this metabolism when thiamine is deficient (avitaminosis) that produces the organ dysfunctions constituting the disease.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21288652/",
+      "type": "other",
+      "label": "pubmed.ncbi.nlm.nih.gov — record source"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27440134/",
+      "type": "other",
+      "label": "pubmed.ncbi.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00152_MESH_D001361_1__r2",
+    "record_id": "DB00152_MESH_D001361_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00152_MESH_D001361_1__r2.yaml",
+    "summary_generated": true
+  }
+}

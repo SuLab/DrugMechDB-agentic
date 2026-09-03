@@ -1,0 +1,219 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P39_DB00046_MESH_D003922",
+    "drug": "Insulin lispro",
+    "drug_mesh": "MESH:D061268",
+    "drugbank": "DB:DB00046",
+    "disease": "Type 1 Diabetes Mellitus",
+    "disease_mesh": "MESH:D003922",
+    "summary": "Insulin lispro → Insulin receptor → glucose import → Hyperglycemia → Type 1 Diabetes Mellitus"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00046",
+      "name": "Insulin lispro",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P06213",
+      "name": "Insulin receptor",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0046323",
+      "name": "glucose import",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "HP:0003074",
+      "name": "Hyperglycemia",
+      "label": "PhenotypicFeature"
+    },
+    {
+      "id": "MESH:D003922",
+      "name": "Type 1 Diabetes Mellitus",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "increases activity of",
+      "source": "DB:DB00046",
+      "target": "UniProt:P06213",
+      "evidence": [
+        {
+          "reference": "PMID:9410552",
+          "snippet": "The affinity in vitro was identical to that of insulin for its receptor.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Insulin lispro (created by inverting lysine and proline at B28/B29) binds the insulin receptor with affinity identical to native insulin, acting as a full receptor agonist.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "[From the concept of fast acting analogs to the properties of the insulin Lispro].",
+            "authors": [
+              "Selam JL"
+            ],
+            "journal": "Diabetes & metabolism",
+            "year": "1997",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:11712394",
+          "snippet": "the binding causes conformational changes in the receptor molecule",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Ligand binding to the insulin receptor alpha subunits triggers conformational changes that stimulate autophosphorylation and promote the receptor's kinase activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "[Chemical structure, active sites and receptor binding of insulin molecule and its signal transduction].",
+            "authors": [
+              "Ishida H",
+              "Nagamatsu S"
+            ],
+            "journal": "Nihon rinsho. Japanese journal of clinical medicine",
+            "year": "2001",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:P06213",
+      "target": "GO:0046323",
+      "evidence": [
+        {
+          "reference": "PMID:25325535",
+          "snippet": "insulin promotes membrane trafficking of the glucose transporter GLUT4 from GLUT4 storage vesicles to the plasma membrane, thereby facilitating the uptake of glucose from the circulation",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Activation of the insulin receptor by insulin drives GLUT4 translocation to the plasma membrane, promoting glucose import into muscle and adipose tissue.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Molecular mechanisms for the regulation of insulin-stimulated glucose uptake by small guanosine triphosphatases in skeletal muscle and adipocytes.",
+            "authors": [
+              "Satoh T"
+            ],
+            "journal": "International journal of molecular sciences",
+            "year": "2014",
+            "doi": "10.3390/ijms151018677",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:33274014",
+          "snippet": "insulin-induced GLUT4 translocation from intracellular compartments to the cell membrane, which increases the overall rate of glucose flux into a cell",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Insulin receptor signaling increases glucose flux into cells via GLUT4 translocation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Current understanding of glucose transporter 4 expression and functional mechanisms.",
+            "authors": [
+              "Wang T",
+              "Wang J",
+              "Hu X",
+              "Huang XJ",
+              "Chen GX"
+            ],
+            "journal": "World journal of biological chemistry",
+            "year": "2020",
+            "doi": "10.4331/wjbc.v11.i3.76",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "negatively regulates",
+      "source": "GO:0046323",
+      "target": "HP:0003074",
+      "evidence": [
+        {
+          "reference": "PMID:34240660",
+          "snippet": "glucose uptake into skeletal muscle and lower blood glucose levels",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Increased glucose uptake into tissues lowers blood glucose levels, opposing hyperglycemia.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "14-Deoxy-11,12-Didehydroandrographolide Ameliorates Glucose Intolerance Enhancing the LKB1/AMPK[Formula: see text]/TBC1D1/GLUT4 Signaling Pathway and Inducing GLUT4 Expression in Myotubes and Skeletal Muscle of Obese Mice.",
+            "authors": [
+              "Chen CC",
+              "Lii CK",
+              "Lo CW",
+              "Lin YH",
+              "Yang YC",
+              "Huang CS",
+              "Chen HW"
+            ],
+            "journal": "The American journal of Chinese medicine",
+            "year": "2021",
+            "doi": "10.1142/S0192415X21500695",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "manifestation of",
+      "source": "HP:0003074",
+      "target": "MESH:D003922",
+      "evidence": [
+        {
+          "reference": "PMID:40969771",
+          "snippet": "Type 1 diabetes (T1D) is an organ-specific autoimmune disease characterized by the immune-mediated destruction of pancreatic β cells, leading to absolute insulin deficiency and chronic hyperglycemia.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Chronic hyperglycemia is a defining manifestation of Type 1 Diabetes Mellitus resulting from insulin deficiency; insulin lispro replaces the deficient insulin to correct it.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Sensing danger in the islet: the roles of pattern recognition receptors in β cells and type 1 diabetes.",
+            "authors": [
+              "Tong L",
+              "Tu Y",
+              "Huang S",
+              "Zheng P"
+            ],
+            "journal": "Frontiers in immunology",
+            "year": "2025",
+            "doi": "10.3389/fimmu.2025.1677177",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00046",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P39",
+    "record_id": "P39_DB00046_MESH_D003922",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P39.yaml",
+    "summary_generated": true
+  }
+}

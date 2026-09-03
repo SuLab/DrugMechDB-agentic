@@ -1,0 +1,120 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00013_MESH_D011655_1",
+    "drug": "urokinase",
+    "drug_mesh": "MESH:D014568",
+    "disease": "Pulmonary thromboembolism",
+    "disease_mesh": "MESH:D011655",
+    "summary": "Urokinase → Plasminogen → Fibrin → Thrombosis → Pulmonary embolism"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D014568",
+      "name": "Urokinase",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P00747",
+      "name": "Plasminogen",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D005341",
+      "name": "Fibrin",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "MESH:D013927",
+      "name": "Thrombosis",
+      "label": "Disease"
+    },
+    {
+      "id": "MESH:D011655",
+      "name": "Pulmonary embolism",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "increases activity of",
+      "source": "MESH:D014568",
+      "target": "UniProt:P00747",
+      "evidence": [
+        {
+          "reference": "PMID:3044205",
+          "snippet": "Plasminogen activation is mediated by plasminogen activators which are classified as either tissue-type plasminogen activator (t-PA) or urokinase-type plasminogen activator (u-PA).",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Urokinase (u-PA) is a plasminogen activator that activates plasminogen, converting it to active plasmin.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "decreases abundance of",
+      "source": "UniProt:P00747",
+      "target": "MESH:D005341",
+      "evidence": [
+        {
+          "reference": "PMID:3044205",
+          "snippet": "The mammalian fibrinolytic system comprises a proenzyme, plasminogen, which can be converted to the active enzyme plasmin, which will degrade fibrin.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Plasminogen, once converted to plasmin, degrades fibrin, reducing fibrin abundance.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "MESH:D005341",
+      "target": "MESH:D013927",
+      "evidence": [
+        {
+          "reference": "PMID:29225327",
+          "snippet": "Fibrin formed as a result of fibrinogen polymerization is the main protein component of a clot in a test tube and intravascular thrombi in vivo.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Fibrin is the main protein component of intravascular thrombi, contributing to thrombus formation.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "MESH:D013927",
+      "target": "MESH:D011655",
+      "evidence": [
+        {
+          "reference": "PMID:29798363",
+          "snippet": "is caused by deep vein thrombosis embolism pulmonary artery trunk or branch pulmonary disorder",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "A thrombus (deep vein thrombosis) that embolizes to the pulmonary artery causes pulmonary embolism.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/mesh/68014568",
+      "type": "other",
+      "label": "ncbi.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00013_MESH_D011655_1",
+    "record_id": "DB00013_MESH_D011655_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00013_MESH_D011655_1.yaml",
+    "summary_generated": true
+  }
+}

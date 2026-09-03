@@ -1,0 +1,212 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P13_DB00512_MESH_D055624",
+    "drug": "Vancomycin",
+    "drug_mesh": "MESH:D014640",
+    "drugbank": "DB:DB00512",
+    "disease": "Methicillin-Resistant Staphylococcus aureus Infection",
+    "disease_mesh": "MESH:D055624",
+    "summary": "Vancomycin → D-alanyl-D-alanine → peptidoglycan biosynthetic process → Staphylococcus aureus → Methicillin-Resistant Staphylococcus aureus Infection"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D014640",
+      "name": "Vancomycin",
+      "label": "Drug"
+    },
+    {
+      "id": "CHEBI:73835",
+      "name": "D-alanyl-D-alanine",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "GO:0009252",
+      "name": "peptidoglycan biosynthetic process",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "NCBITaxon:1280",
+      "name": "Staphylococcus aureus",
+      "label": "OrganismTaxon"
+    },
+    {
+      "id": "MESH:D055624",
+      "name": "Methicillin-Resistant Staphylococcus aureus Infection",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "physically interacts with",
+      "source": "MESH:D014640",
+      "target": "CHEBI:73835",
+      "evidence": [
+        {
+          "reference": "PMID:27663982",
+          "snippet": "This is achieved primarily through binding to the d-alanyl-d-alanine terminus of the lipid II bacterial cell-wall precursor, preventing cross-linking of the peptidoglycan layer.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Approved Glycopeptide Antibacterial Drugs: Mechanism of Action and Resistance.",
+            "authors": [
+              "Zeng D",
+              "Debabov D",
+              "Hartsell TL",
+              "Cano RJ",
+              "Adams S",
+              "Schuyler JA",
+              "McMillan R",
+              "Pace JL"
+            ],
+            "journal": "Cold Spring Harbor perspectives in medicine",
+            "year": "2016",
+            "doi": "10.1101/cshperspect.a026989",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "disrupts",
+      "source": "CHEBI:73835",
+      "target": "GO:0009252",
+      "evidence": [
+        {
+          "reference": "PMID:24685455",
+          "snippet": "bind to d-alanyl-d-alanine stem termini on the peptidoglycan precursors of the cell wall. This binding inhibits cross-linking between the peptides and subsequently prevents cell wall synthesis.",
+          "supports": "SUPPORT",
+          "evidence_source": "COMPUTATIONAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Molecular modeling of Gram-positive bacteria peptidoglycan layer, selected glycopeptide antibiotics and vancomycin derivatives modified with sugar moieties.",
+            "authors": [
+              "Ślusarz R",
+              "Szulc M",
+              "Madaj J"
+            ],
+            "journal": "Carbohydrate research",
+            "year": "2014",
+            "doi": "10.1016/j.carres.2014.02.002",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "occurs in",
+      "source": "GO:0009252",
+      "target": "NCBITaxon:1280",
+      "evidence": [
+        {
+          "reference": "PMID:17316058",
+          "snippet": "The clinically important vancomycin antibiotic inhibits the growth of pathogens such as Staphylococcus aureus by blocking cell wall synthesis through specific recognition of nascent peptidoglycan terminating in D-Ala-D-Ala.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Single-molecule force spectroscopy and imaging of the vancomycin/D-Ala-D-Ala interaction.",
+            "authors": [
+              "Gilbert Y",
+              "Deghorain M",
+              "Wang L",
+              "Xu B",
+              "Pollheimer PD",
+              "Gruber HJ",
+              "Errington J",
+              "Hallet B",
+              "Haulot X",
+              "Verbelen C",
+              "Hols P",
+              "Dufrêne YF"
+            ],
+            "journal": "Nano letters",
+            "year": "2007",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "NCBITaxon:1280",
+      "target": "MESH:D055624",
+      "evidence": [
+        {
+          "reference": "PMID:34508427",
+          "snippet": "Staphylococcus aureus is both a frequent commensal and a leading cause of endocarditis, bacteremia, osteomyelitis and skin and soft tissue infections and device-related infections.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Methicillin-resistant Staphylococcus aureus in Nepal.",
+            "authors": [
+              "Shrestha LB",
+              "Syangtan G",
+              "Basnet A",
+              "Acharya KP",
+              "Chand AB",
+              "Pokhrel K"
+            ],
+            "journal": "JNMA; journal of the Nepal Medical Association",
+            "year": "2021",
+            "doi": "10.31729/jnma.6251",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "treats",
+      "source": "MESH:D014640",
+      "target": "MESH:D055624",
+      "evidence": [
+        {
+          "reference": "PMID:17724497",
+          "snippet": "vancomycin, the gold standard in the treatment of MRSA",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Dalbavancin: a review.",
+            "authors": [
+              "Scheinfeld N"
+            ],
+            "journal": "Drugs of today (Barcelona, Spain : 1998)",
+            "year": "2007",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00512",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P13",
+    "record_id": "P13_DB00512_MESH_D055624",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P13.yaml",
+    "summary_generated": true
+  }
+}

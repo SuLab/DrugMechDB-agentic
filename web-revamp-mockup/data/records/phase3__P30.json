@@ -1,0 +1,256 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P30_DB09038_MESH_D003924",
+    "drug": "Empagliflozin",
+    "drug_mesh": "MESH:C000591311",
+    "drugbank": "DB:DB09038",
+    "disease": "Diabetes Mellitus, Type 2",
+    "disease_mesh": "MESH:D003924",
+    "summary": "Empagliflozin → Sodium/glucose cotransporter 2 → renal glucose absorption → Hyperglycemia → Diabetes Mellitus, Type 2"
+  },
+  "nodes": [
+    {
+      "id": "MESH:C000591311",
+      "name": "Empagliflozin",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P31639",
+      "name": "Sodium/glucose cotransporter 2",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0035623",
+      "name": "renal glucose absorption",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "HP:0003074",
+      "name": "Hyperglycemia",
+      "label": "PhenotypicFeature"
+    },
+    {
+      "id": "MESH:D003924",
+      "name": "Diabetes Mellitus, Type 2",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "MESH:C000591311",
+      "target": "UniProt:P31639",
+      "evidence": [
+        {
+          "reference": "PMID:38265382",
+          "snippet": "Empagliflozin is a selective SGLT2 inhibitor that works by constraining glucose reabsorption in the kidneys, causing increased urinary glucose elimination.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Pharmacological review confirming empagliflozin selectively inhibits SGLT2 activity, constraining its renal glucose reabsorption function.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Empagliflozin-A Sodium Glucose Co-transporter-2 Inhibitor: Overview ofits Chemistry, Pharmacology, and Toxicology.",
+            "authors": [
+              "Yadav J",
+              "Ahsan F",
+              "Panda P",
+              "Mahmood T",
+              "Ansari VA",
+              "Shamim A"
+            ],
+            "journal": "Current diabetes reviews",
+            "year": "2024",
+            "doi": "10.2174/0115733998271026231127051545",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:P31639",
+      "target": "GO:0035623",
+      "evidence": [
+        {
+          "reference": "PMID:40041732",
+          "snippet": "Sodium-glucose cotransporter-2 (SGLT-2) acts as a key element in the reabsorption of glucose in the kidney.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "SGLT2 is the key transporter driving renal glucose reabsorption; it positively regulates this biological process.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The effects of empagliflozin in patients with type 1 diabetes: Results of a 12-week, double-blind, randomized, placebo-controlled clinical trial.",
+            "authors": [
+              "Najafipour M",
+              "Najafipour F",
+              "Ostadrahimi A",
+              "Ghavami M",
+              "Razaghi Z",
+              "Tutunchi H",
+              "Mesri Alamdari N"
+            ],
+            "journal": "Health promotion perspectives",
+            "year": "2024",
+            "doi": "10.34172/hpp.42486",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:41477427",
+          "snippet": "work by blocking SGLT2 proteins in the proximal convoluted tubules of the nephrons, thereby preventing glucose reabsorption into the bloodstream.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Blocking SGLT2 prevents renal glucose reabsorption, confirming that SGLT2 positively regulates this process.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The Effects of Sodium-Glucose Co-transporter 2 Inhibitors on Cardiovascular Outcomes in Heart Failure: A Systematic Review and Meta-Analysis.",
+            "authors": [
+              "Maharaj A",
+              "Bidhesi S",
+              "Grover D",
+              "Raghunath P",
+              "Lutchmedial RN",
+              "Khan AS",
+              "Maharaj MA",
+              "Heera PV",
+              "Maharaj R",
+              "Sookhan C",
+              "Kanhai CD",
+              "Marshall C",
+              "Calder AA"
+            ],
+            "journal": "Cureus",
+            "year": "2025",
+            "doi": "10.7759/cureus.98140",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively correlated with",
+      "source": "GO:0035623",
+      "target": "HP:0003074",
+      "evidence": [
+        {
+          "reference": "PMID:33085977",
+          "snippet": "SGLT2 inhibitors are a class of oral antidiabetic drugs that lower elevated plasma glucose levels by promoting the urinary excretion of excess glucose through the inhibition of renal glucose reuptake.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Inhibiting renal glucose reabsorption lowers plasma glucose, establishing that renal glucose reabsorption is positively correlated with blood glucose / hyperglycemia.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mechanistic evaluation of the effect of sodium-dependent glucose transporter 2 inhibitors on delayed glucose absorption in patients with type 2 diabetes mellitus using a quantitative systems pharmacology model of human systemic glucose dynamics.",
+            "authors": [
+              "Mori-Anai K",
+              "Tashima Y",
+              "Nakada T",
+              "Nakamaru Y",
+              "Takahata T",
+              "Saito R"
+            ],
+            "journal": "Biopharmaceutics & drug disposition",
+            "year": "2020",
+            "doi": "10.1002/bdd.2253",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:34487707",
+          "snippet": "Ipragliflozin significantly lowered blood glucose levels in mice that had prefasted for 0, 6, or 12 h, but not 18 h or more.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "SGLT2 inhibitor-mediated reduction of renal glucose reabsorption lowers blood glucose in a blood glucose-dependent manner, supporting positive correlation between renal glucose absorption and hyperglycemia.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "SGLT2 inhibitor ipragliflozin exerts antihyperglycemic effects via the blood glucose-dependent increase in urinary glucose excretion in type 2 diabetic mice.",
+            "authors": [
+              "Tahara A"
+            ],
+            "journal": "European journal of pharmacology",
+            "year": "2021",
+            "doi": "10.1016/j.ejphar.2021.174486",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "manifestation of",
+      "source": "HP:0003074",
+      "target": "MESH:D003924",
+      "evidence": [
+        {
+          "reference": "PMID:24843435",
+          "snippet": "Diabetes mellitus is a group of diseases associated with various metabolic disorders, the main feature of which is chronic hyperglycemia due to insufficient insulin action.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Chronic hyperglycemia is the main feature (manifestation) of diabetes mellitus, including type 2 diabetes mellitus.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Report of the committee on the classification and diagnostic criteria of diabetes mellitus.",
+            "authors": [
+              "Committee of the Japan Diabetes Society on the Diagnostic Criteria of Diabetes Mellitus",
+              "Seino Y",
+              "Nanjo K",
+              "Tajima N",
+              "Kadowaki T",
+              "Kashiwagi A",
+              "Araki E",
+              "Ito C",
+              "Inagaki N",
+              "Iwamoto Y",
+              "Kasuga M",
+              "Hanafusa T",
+              "Haneda M",
+              "Ueki K"
+            ],
+            "journal": "Journal of diabetes investigation",
+            "year": "2010",
+            "doi": "10.1111/j.2040-1124.2010.00074.x",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB09038#mechanism-of-action",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    },
+    {
+      "url": "https://www.uniprot.org/uniprot/P31639#function",
+      "type": "other",
+      "label": "uniprot.org — record source"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Empagliflozin#Mechanism_of_action",
+      "type": "wiki",
+      "label": "en.wikipedia.org — record source"
+    }
+  ],
+  "site": {
+    "id": "phase3__P30",
+    "record_id": "P30_DB09038_MESH_D003924",
+    "run": "phase3",
+    "run_label": "Phase-3 eval",
+    "source_file": "tests/phase3_eval_outputs/P30.yaml",
+    "summary_generated": true
+  }
+}

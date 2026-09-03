@@ -1,0 +1,272 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P03_DB00722_MESH_D006973",
+    "drug": "Lisinopril",
+    "drug_mesh": "MESH:D017706",
+    "drugbank": "DB:DB00722",
+    "disease": "Hypertension",
+    "disease_mesh": "MESH:D006973",
+    "summary": "Lisinopril → Angiotensin-converting enzyme → Angiotensin II → Type-1 angiotensin II receptor → vasoconstriction → Hypertension"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D017706",
+      "name": "Lisinopril",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P12821",
+      "name": "Angiotensin-converting enzyme",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D000804",
+      "name": "Angiotensin II",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "UniProt:P30556",
+      "name": "Type-1 angiotensin II receptor",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0042310",
+      "name": "vasoconstriction",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D006973",
+      "name": "Hypertension",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "MESH:D017706",
+      "target": "UniProt:P12821",
+      "evidence": [
+        {
+          "reference": "PMID:33048477",
+          "snippet": "Lisinopril, a highly hydrophilic long-acting angiotensin-converting enzyme inhibitor, is frequently prescribed for the treatment of hypertension and congestive heart failure.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Lisinopril is identified as an angiotensin-converting enzyme inhibitor, i.e. it decreases ACE activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Impact of Green Tea Catechin Ingestion on the Pharmacokinetics of Lisinopril in Healthy Volunteers.",
+            "authors": [
+              "Misaka S",
+              "Ono Y",
+              "Uchida A",
+              "Ono T",
+              "Abe O",
+              "Ogata H",
+              "Sato H",
+              "Suzuki M",
+              "Onoue S",
+              "Shikama Y",
+              "Shimomura K"
+            ],
+            "journal": "Clinical and translational science",
+            "year": "2021",
+            "doi": "10.1111/cts.12905",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:P12821",
+      "target": "MESH:D000804",
+      "evidence": [
+        {
+          "reference": "PMID:27992423",
+          "snippet": "The angiotensin-I converting enzyme (ACE) plays a central role in the renin-angiotensin system, acting by converting the hormone angiotensin-I to the active peptide angiotensin-II (Ang-II).",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "ACE converts angiotensin-I into angiotensin-II, increasing angiotensin II formation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Angiotensin Converting Enzyme Regulates Cell Proliferation and Migration.",
+            "authors": [
+              "Alvarenga EC",
+              "Fonseca MC",
+              "Carvalho CC",
+              "Florentino RM",
+              "França A",
+              "Matias E",
+              "Guimarães PB",
+              "Batista C",
+              "Freire V",
+              "Carmona AK",
+              "Pesquero JB",
+              "de Paula AM",
+              "Foureaux G",
+              "Leite MF"
+            ],
+            "journal": "PloS one",
+            "year": "2016",
+            "doi": "10.1371/journal.pone.0165371",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "increases activity of",
+      "source": "MESH:D000804",
+      "target": "UniProt:P30556",
+      "evidence": [
+        {
+          "reference": "PMID:29556787",
+          "snippet": "Ang II and AVP, acting on AT1R and V1aR, respectively, exert vasoconstriction, increase cardiac contractility, stimulate the sympathoadrenal system, and elevate blood pressure.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Angiotensin II acts on AT1 receptors (AT1R), activating the receptor.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Dysregulation of the Renin-Angiotensin System and the Vasopressinergic System Interactions in Cardiovascular Disorders.",
+            "authors": [
+              "Szczepanska-Sadowska E",
+              "Czarzasta K",
+              "Cudnoch-Jedrzejewska A"
+            ],
+            "journal": "Current hypertension reports",
+            "year": "2018",
+            "doi": "10.1007/s11906-018-0823-9",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:P30556",
+      "target": "GO:0042310",
+      "evidence": [
+        {
+          "reference": "PMID:29556787",
+          "snippet": "Ang II and AVP, acting on AT1R and V1aR, respectively, exert vasoconstriction, increase cardiac contractility, stimulate the sympathoadrenal system, and elevate blood pressure.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Angiotensin II acting on AT1R exerts vasoconstriction.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Dysregulation of the Renin-Angiotensin System and the Vasopressinergic System Interactions in Cardiovascular Disorders.",
+            "authors": [
+              "Szczepanska-Sadowska E",
+              "Czarzasta K",
+              "Cudnoch-Jedrzejewska A"
+            ],
+            "journal": "Current hypertension reports",
+            "year": "2018",
+            "doi": "10.1007/s11906-018-0823-9",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "GO:0042310",
+      "target": "MESH:D006973",
+      "evidence": [
+        {
+          "reference": "PMID:33972750",
+          "snippet": "SNX1 impairment increases arterial AT1R expression, leading to increased vasoconstriction and blood pressure.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Increased vasoconstriction leads to increased blood pressure, i.e. hypertension.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Increased AT1 receptor expression mediates vasoconstriction leading to hypertension in Snx1-/- mice.",
+            "authors": [
+              "Liu C",
+              "Li X",
+              "Fu J",
+              "Chen K",
+              "Liao Q",
+              "Wang J",
+              "Chen C",
+              "Luo H",
+              "Jose PA",
+              "Yang Y",
+              "Yang J",
+              "Zeng C"
+            ],
+            "journal": "Hypertension research : official journal of the Japanese Society of Hypertension",
+            "year": "2021",
+            "doi": "10.1038/s41440-021-00661-x",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "treats",
+      "source": "MESH:D017706",
+      "target": "MESH:D006973",
+      "evidence": [
+        {
+          "reference": "PMID:33048477",
+          "snippet": "Lisinopril, a highly hydrophilic long-acting angiotensin-converting enzyme inhibitor, is frequently prescribed for the treatment of hypertension and congestive heart failure.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Lisinopril is prescribed for the treatment of hypertension.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Impact of Green Tea Catechin Ingestion on the Pharmacokinetics of Lisinopril in Healthy Volunteers.",
+            "authors": [
+              "Misaka S",
+              "Ono Y",
+              "Uchida A",
+              "Ono T",
+              "Abe O",
+              "Ogata H",
+              "Sato H",
+              "Suzuki M",
+              "Onoue S",
+              "Shikama Y",
+              "Shimomura K"
+            ],
+            "journal": "Clinical and translational science",
+            "year": "2021",
+            "doi": "10.1111/cts.12905",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00722",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P03",
+    "record_id": "P03_DB00722_MESH_D006973",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P03.yaml",
+    "summary_generated": true
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00290_MESH_D002294_1",
+    "drug": "bleomycin",
+    "drug_mesh": "MESH:D001761",
+    "drugbank": "DB:DB00290",
+    "disease": "Squamous cell carcinoma",
+    "disease_mesh": "MESH:D002294",
+    "summary": "bleomycin → Reactive oxygen species → DNA damage → apoptotic process → Squamous cell carcinoma"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D001761",
+      "name": "bleomycin",
+      "label": "Drug"
+    },
+    {
+      "id": "MESH:D017382",
+      "name": "Reactive oxygen species",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "MESH:D004249",
+      "name": "DNA damage",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "GO:0006915",
+      "name": "apoptotic process",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D002294",
+      "name": "Squamous cell carcinoma",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "increases abundance of",
+      "source": "MESH:D001761",
+      "target": "MESH:D017382",
+      "evidence": [
+        {
+          "reference": "PMID:18234257",
+          "snippet": "Bleomycin (BLM) has been found to induce 8-oxoguanine and DNA strand breaks through producing oxidative free radicals",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Bleomycin generates oxidative free radicals (reactive oxygen species) inside tumor cells.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "MESH:D017382",
+      "target": "MESH:D004249",
+      "evidence": [
+        {
+          "reference": "PMID:37491116",
+          "snippet": "reactive oxygen species (ROS) are important mediators of Pt- and BLM-induced DNA damage",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Reactive oxygen species mediate the DNA damage produced by bleomycin (BLM).",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "MESH:D004249",
+      "target": "GO:0006915",
+      "evidence": [
+        {
+          "reference": "PMID:17879944",
+          "snippet": "Bleomycin induces single- and double-stranded breaks in DNA, with consequent mitochondrial membrane aberrations that lead to the apoptotic cell death.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Bleomycin-induced DNA strand breaks (DNA damage) trigger the apoptotic cell death program in human squamous carcinoma cells.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "disrupts",
+      "source": "GO:0006915",
+      "target": "MESH:D002294",
+      "evidence": [
+        {
+          "reference": "PMID:28459216",
+          "snippet": "combating oral cancer through targeting self-renewability of orospheres via reactive oxygen species-mediated apoptosis",
+          "supports": "PARTIAL",
+          "evidence_source": "IN_VITRO",
+          "explanation": "The apoptotic process is the named effector that combats (disrupts) oral squamous cell carcinoma by eliminating its neoplastic cells. Marked PARTIAL because the direct evidence is for the oral SCC subtype, whereas the edge object is squamous cell carcinoma generally.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00290",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00290_MESH_D002294_1",
+    "record_id": "DB00290_MESH_D002294_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00290_MESH_D002294_1.yaml",
+    "summary_generated": true
+  }
+}
