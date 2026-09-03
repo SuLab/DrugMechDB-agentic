@@ -1,0 +1,108 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00843_MESH_D000544_1",
+    "drug": "donepezil",
+    "drug_mesh": "MESH:C076946",
+    "drugbank": "DB:DB00843",
+    "disease": "Alzheimer's disease",
+    "disease_mesh": "MESH:D000544",
+    "summary": "Donepezil → Acetylcholinesterase → Acetylcholine → Alzheimer's disease"
+  },
+  "nodes": [
+    {
+      "id": "MESH:C076946",
+      "name": "Donepezil",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P22303",
+      "name": "Acetylcholinesterase",
+      "label": "Protein"
+    },
+    {
+      "id": "CHEBI:15355",
+      "name": "Acetylcholine",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "MESH:D000544",
+      "name": "Alzheimer's disease",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "MESH:C076946",
+      "target": "UniProt:P22303",
+      "evidence": [
+        {
+          "reference": "PMID:39037949",
+          "snippet": "donepezil, a well-known AChE inhibitor used in Alzheimer's disease treatment",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Donepezil directly inhibits acetylcholinesterase (AChE).",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:34893996",
+          "snippet": "The most commonly used drug, donepezil, is a cholinesterase inhibitor.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "decreases abundance of",
+      "source": "UniProt:P22303",
+      "target": "CHEBI:15355",
+      "evidence": [
+        {
+          "reference": "PMID:39037949",
+          "snippet": "acetylcholinesterase (AChE) is a critical enzyme in the nervous system, responsible for breaking down the neurotransmitter acetylcholine",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "AChE degrades acetylcholine; donepezil's inhibition of AChE therefore raises synaptic acetylcholine.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "negatively correlated with",
+      "source": "CHEBI:15355",
+      "target": "MESH:D000544",
+      "evidence": [
+        {
+          "reference": "PMID:37242234",
+          "snippet": "the cholinergic hypothesis proposes that AD symptoms are a result of reduced synthesis of acetylcholine (ACh)",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Per the cholinergic hypothesis, acetylcholine is inversely related to Alzheimer's disease symptoms (reduced acetylcholine produces symptoms); donepezil raising acetylcholine therefore opposes the disease.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00843",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00843_MESH_D000544_1",
+    "record_id": "DB00843_MESH_D000544_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00843_MESH_D000544_1.yaml",
+    "summary_generated": true
+  }
+}

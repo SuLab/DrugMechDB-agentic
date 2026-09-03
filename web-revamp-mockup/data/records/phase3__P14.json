@@ -1,0 +1,347 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P14_DB00198_MESH_D007251",
+    "drug": "Oseltamivir",
+    "drug_mesh": "MESH:D053139",
+    "drugbank": "DB:DB00198",
+    "disease": "Influenza",
+    "disease_mesh": "MESH:D007251",
+    "summary": "Oseltamivir → Oseltamivir carboxylate → Neuraminidase → viral release from host cell → Influenza A virus → Influenza"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D053139",
+      "name": "Oseltamivir",
+      "label": "Drug"
+    },
+    {
+      "id": "CHEBI:64337",
+      "name": "Oseltamivir carboxylate",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "UniProt:P03472",
+      "name": "Neuraminidase",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0019076",
+      "name": "viral release from host cell",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "NCBITaxon:11520",
+      "name": "Influenza A virus",
+      "label": "OrganismTaxon"
+    },
+    {
+      "id": "MESH:D007251",
+      "name": "Influenza",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "has metabolite",
+      "source": "MESH:D053139",
+      "target": "CHEBI:64337",
+      "evidence": [
+        {
+          "reference": "PMID:16966469",
+          "snippet": "This anti-influenza viral agent is an ester prodrug, and the antiviral activity is achieved by its hydrolytic metabolite: oseltamivir carboxylate.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Oseltamivir is an ester prodrug; its active metabolite oseltamivir carboxylate is the entity responsible for antiviral activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Anti-influenza prodrug oseltamivir is activated by carboxylesterase human carboxylesterase 1, and the activation is inhibited by antiplatelet agent clopidogrel.",
+            "authors": [
+              "Shi D",
+              "Yang J",
+              "Yang D",
+              "LeCluyse EL",
+              "Black C",
+              "You L",
+              "Akhlaghi F",
+              "Yan B"
+            ],
+            "journal": "The Journal of pharmacology and experimental therapeutics",
+            "year": "2006",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:27228223",
+          "snippet": "Oseltamivir, an inactive anti-influenza virus prodrug, is activated (hydrolysed) in vivo by carboxylesterase 1 (CES1) to its active metabolite oseltamivir carboxylate.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Confirms oseltamivir is a prodrug and its active metabolite is oseltamivir carboxylate, supporting the has metabolite relationship.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Association of Oseltamivir Activation with Gender and Carboxylesterase 1 Genetic Polymorphisms.",
+            "authors": [
+              "Shi J",
+              "Wang X",
+              "Eyler RF",
+              "Liang Y",
+              "Liu L",
+              "Mueller BA",
+              "Zhu HJ"
+            ],
+            "journal": "Basic & clinical pharmacology & toxicology",
+            "year": "2016",
+            "doi": "10.1111/bcpt.12625",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "decreases activity of",
+      "source": "CHEBI:64337",
+      "target": "UniProt:P03472",
+      "evidence": [
+        {
+          "reference": "PMID:39577572",
+          "snippet": "oseltamivir carboxylate or zanamivir, a competitive inhibitor of receptor-destroying neuraminidases (NAs)",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Oseltamivir carboxylate is described as a competitive inhibitor of neuraminidases (NAs), directly supporting that it decreases NA activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Edible bird's nest: N- and O-glycan analysis and synergistic anti-avian influenza virus activity with neuraminidase inhibitors.",
+            "authors": [
+              "Sriwilaijaroen N",
+              "Hanamatsu H",
+              "Yokota I",
+              "Nishikaze T",
+              "Ijichi T",
+              "Takahashi T",
+              "Sakoda Y",
+              "Furukawa JI",
+              "Suzuki Y"
+            ],
+            "journal": "Antiviral research",
+            "year": "2024",
+            "doi": "10.1016/j.antiviral.2024.106040",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:41917408",
+          "snippet": "The neuraminidase (NA) glycoprotein of influenza virus plays a critical role in the release of progeny viruses and their spread, making it an important target for antiviral drugs.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Establishes NA as the antiviral drug target; combined with the first evidence item, confirms oseltamivir carboxylate decreases NA activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Influenza Virus Neuraminidase Glycoprotein, Its Inhibitors, and Their Resistance.",
+            "authors": [
+              "Takashita E"
+            ],
+            "journal": "Advances in experimental medicine and biology",
+            "year": "2026",
+            "doi": "10.1007/978-3-032-04153-1_24",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:P03472",
+      "target": "GO:0019076",
+      "evidence": [
+        {
+          "reference": "PMID:23349854",
+          "snippet": "HA attaches to sialic acid on host cell surface receptors to initiate virus infection while NA removes these sialic acids to facilitate release of progeny virions.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "NA facilitates (positively regulates) the release of progeny virions from infected cells by removing sialic acid receptor binding.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "NA proteins of influenza A viruses H1N1/2009, H5N1, and H9N2 show differential effects on infection initiation, virus release, and cell-cell fusion.",
+            "authors": [
+              "Chen Q",
+              "Huang S",
+              "Chen J",
+              "Zhang S",
+              "Chen Z"
+            ],
+            "journal": "PloS one",
+            "year": "2013",
+            "doi": "10.1371/journal.pone.0054334",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:23028967",
+          "snippet": "influenza virus neuraminidase (NA) cleaves terminal sialic acid residues on oligosaccharide chains that are receptors for virus binding, thus playing an important role in the release of virions from infected cells to promote the spread of cell-to-cell infection.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "NA activity directly enables virion release from infected cells, confirming NA positively regulates the viral release from host cell process.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Bacterial neuraminidase rescues influenza virus replication from inhibition by a neuraminidase inhibitor.",
+            "authors": [
+              "Nishikawa T",
+              "Shimizu K",
+              "Tanaka T",
+              "Kuroda K",
+              "Takayama T",
+              "Yamamoto T",
+              "Hanada N",
+              "Hamada Y"
+            ],
+            "journal": "PloS one",
+            "year": "2012",
+            "doi": "10.1371/journal.pone.0045371",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "in taxon",
+      "source": "GO:0019076",
+      "target": "NCBITaxon:11520",
+      "evidence": [
+        {
+          "reference": "PMID:41917408",
+          "snippet": "The neuraminidase (NA) glycoprotein of influenza virus plays a critical role in the release of progeny viruses and their spread, making it an important target for antiviral drugs.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Establishes that viral release is a process specific to influenza virus, supporting the in taxon relationship between the viral release process and Influenza A virus.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Influenza Virus Neuraminidase Glycoprotein, Its Inhibitors, and Their Resistance.",
+            "authors": [
+              "Takashita E"
+            ],
+            "journal": "Advances in experimental medicine and biology",
+            "year": "2026",
+            "doi": "10.1007/978-3-032-04153-1_24",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:23028967",
+          "snippet": "influenza virus neuraminidase (NA) cleaves terminal sialic acid residues on oligosaccharide chains that are receptors for virus binding, thus playing an important role in the release of virions from infected cells to promote the spread of cell-to-cell infection.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "The viral release process described is occurring in the context of influenza virus, supporting this process being in the Influenza A virus taxon.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Bacterial neuraminidase rescues influenza virus replication from inhibition by a neuraminidase inhibitor.",
+            "authors": [
+              "Nishikawa T",
+              "Shimizu K",
+              "Tanaka T",
+              "Kuroda K",
+              "Takayama T",
+              "Yamamoto T",
+              "Hanada N",
+              "Hamada Y"
+            ],
+            "journal": "PloS one",
+            "year": "2012",
+            "doi": "10.1371/journal.pone.0045371",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "NCBITaxon:11520",
+      "target": "MESH:D007251",
+      "evidence": [
+        {
+          "reference": "PMID:42212418",
+          "snippet": "Type A viruses caused over two-thirds of cases, with variability across WHO Regions and seasons.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Influenza A (Type A) viruses are identified as the predominant causal agents of influenza cases in global surveillance, supporting the causes relationship.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Global influenza epidemiology after 2020: patterns of circulation, epidemic timing and duration, and implications for vaccination strategies.",
+            "authors": [
+              "Del Riccio M",
+              "Caini S"
+            ],
+            "journal": "Euro surveillance : bulletin Europeen sur les maladies transmissibles = European communicable disease bulletin",
+            "year": "2026",
+            "doi": "10.2807/1560-7917.ES.2026.31.21.2500743",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:42057722",
+          "snippet": "NAIs, including oseltamivir, zanamivir, peramivir and laninamivir, block viral release, while polymerase inhibitors such as baloxavir disrupt viral RNA replication.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Reviews influenza A and B viral infections as the clinical context requiring antiviral therapy, implicitly confirming influenza A virus as causative of influenza disease.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Antiviral treatment for influenza.",
+            "authors": [
+              "Hui DS"
+            ],
+            "journal": "Philosophical transactions of the Royal Society of London. Series B, Biological sciences",
+            "year": "2026",
+            "doi": "10.1098/rstb.2024.0344",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00198#mechanism-of-action",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    },
+    {
+      "url": "https://www.uniprot.org/uniprot/P03472",
+      "type": "other",
+      "label": "uniprot.org — record source"
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/taxonomy/11520",
+      "type": "other",
+      "label": "ncbi.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "phase3__P14",
+    "record_id": "P14_DB00198_MESH_D007251",
+    "run": "phase3",
+    "run_label": "Phase-3 eval",
+    "source_file": "tests/phase3_eval_outputs/P14.yaml",
+    "summary_generated": true
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00005_MESH_D015535_1",
+    "drug": "Etanercept",
+    "drug_mesh": "MESH:D000068800",
+    "drugbank": "DB:DB00005",
+    "disease": "Psoriasis with arthropathy",
+    "disease_mesh": "MESH:D015535",
+    "summary": "Etanercept → Tumor necrosis factor → inflammatory response → Psoriasis with arthropathy"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00005",
+      "name": "Etanercept",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P01375",
+      "name": "Tumor necrosis factor",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0006954",
+      "name": "inflammatory response",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D015535",
+      "name": "Psoriasis with arthropathy",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "DB:DB00005",
+      "target": "UniProt:P01375",
+      "evidence": [
+        {
+          "reference": "PMID:22686544",
+          "snippet": "The mechanism of action of etanercept in psoriatic disease and other approved indications is mediated by the neutralization of soluble TNF-α",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Mechanism-of-action review; etanercept neutralizes soluble TNF-α, decreasing its activity.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "UniProt:P01375",
+      "target": "GO:0006954",
+      "evidence": [
+        {
+          "reference": "PMID:30293157",
+          "snippet": "Tumor necrosis factor (TNF)-α is a cytokine that plays a well-established, key role as a central mediator of inflammation and immune regulation.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "manifestation of",
+      "source": "GO:0006954",
+      "target": "MESH:D015535",
+      "evidence": [
+        {
+          "reference": "PMID:26523063",
+          "snippet": "Psoriatic arthritis (PsA) is a chronic inflammatory disease affecting peripheral and axial joints",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Joint inflammation is the defining pathological manifestation of psoriatic arthritis (psoriasis with arthropathy).",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00005",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00005_MESH_D015535_1",
+    "record_id": "DB00005_MESH_D015535_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00005_MESH_D015535_1.yaml",
+    "summary_generated": true
+  }
+}

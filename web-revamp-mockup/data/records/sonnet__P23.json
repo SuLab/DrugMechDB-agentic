@@ -1,0 +1,384 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P23_DB01611_MESH_D008180",
+    "drug": "Hydroxychloroquine",
+    "drug_mesh": "MESH:D006886",
+    "drugbank": "DB:DB01611",
+    "disease": "Systemic Lupus Erythematosus",
+    "disease_mesh": "MESH:D008180",
+    "summary": "Hydroxychloroquine → Toll-like receptor 7 → type I interferon production → Systemic Lupus Erythematosus"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D006886",
+      "name": "Hydroxychloroquine",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:Q9NYK1",
+      "name": "Toll-like receptor 7",
+      "label": "Protein"
+    },
+    {
+      "id": "UniProt:Q9NR96",
+      "name": "Toll-like receptor 9",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0032606",
+      "name": "type I interferon production",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D008180",
+      "name": "Systemic Lupus Erythematosus",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "MESH:D006886",
+      "target": "UniProt:Q9NYK1",
+      "evidence": [
+        {
+          "reference": "PMID:21398612",
+          "snippet": "We conclude that the direct binding of inhibitors to nucleic acids mask their TLR-binding epitope and may explain the efficiency of those compounds in the treatment of autoimmune diseases.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "The study demonstrates that antimalarial drugs including hydroxychloroquine inhibit endosomal TLR activation by directly binding to nucleic acids and masking their TLR-binding epitope, including TLR7.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mechanism of endosomal TLR inhibition by antimalarial drugs and imidazoquinolines.",
+            "authors": [
+              "Kuznik A",
+              "Bencina M",
+              "Svajger U",
+              "Jeras M",
+              "Rozman B",
+              "Jerala R"
+            ],
+            "journal": "Journal of immunology (Baltimore, Md. : 1950)",
+            "year": "2011",
+            "doi": "10.4049/jimmunol.1000702",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:24342772",
+          "snippet": "Our data also confirm an earlier report that this same mechanism may explain inhibition of TLR7 and 9 signaling by hydroxychloroquine (Plaquenil; Sanofi-Aventis, Bridgewater, NJ), a drug commonly prescribed to treat lupus.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Novel small molecule inhibitors of TLR7 and TLR9: mechanism of action and efficacy in vivo.",
+            "authors": [
+              "Lamphier M",
+              "Zheng W",
+              "Latz E",
+              "Spyvee M",
+              "Hansen H",
+              "Rose J",
+              "Genest M",
+              "Yang H",
+              "Shaffer C",
+              "Zhao Y",
+              "Shen Y",
+              "Liu C",
+              "Liu D",
+              "Mempel TR",
+              "Rowbottom C",
+              "Chow J",
+              "Twine NC",
+              "Yu M",
+              "Gusovsky F",
+              "Ishizaka ST"
+            ],
+            "journal": "Molecular pharmacology",
+            "year": "2014",
+            "doi": "10.1124/mol.113.089821",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "decreases activity of",
+      "source": "MESH:D006886",
+      "target": "UniProt:Q9NR96",
+      "evidence": [
+        {
+          "reference": "PMID:21398612",
+          "snippet": "Endosomal TLRs play an important role in innate immune response as well as in autoimmune processes. In the therapy of systemic lupus erythematosus, antimalarial drugs chloroquine, hydroxychloroquine, and quinacrine have been used for a long time. Their suppression of endosomal TLR activation has been attributed to the inhibition of endosomal acidification, which is a prerequisite for the activation of these receptors.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "The study demonstrates antimalarial drugs including hydroxychloroquine inhibit endosomal TLR9 activation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mechanism of endosomal TLR inhibition by antimalarial drugs and imidazoquinolines.",
+            "authors": [
+              "Kuznik A",
+              "Bencina M",
+              "Svajger U",
+              "Jeras M",
+              "Rozman B",
+              "Jerala R"
+            ],
+            "journal": "Journal of immunology (Baltimore, Md. : 1950)",
+            "year": "2011",
+            "doi": "10.4049/jimmunol.1000702",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:24342772",
+          "snippet": "Our data also confirm an earlier report that this same mechanism may explain inhibition of TLR7 and 9 signaling by hydroxychloroquine (Plaquenil; Sanofi-Aventis, Bridgewater, NJ), a drug commonly prescribed to treat lupus.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Novel small molecule inhibitors of TLR7 and TLR9: mechanism of action and efficacy in vivo.",
+            "authors": [
+              "Lamphier M",
+              "Zheng W",
+              "Latz E",
+              "Spyvee M",
+              "Hansen H",
+              "Rose J",
+              "Genest M",
+              "Yang H",
+              "Shaffer C",
+              "Zhao Y",
+              "Shen Y",
+              "Liu C",
+              "Liu D",
+              "Mempel TR",
+              "Rowbottom C",
+              "Chow J",
+              "Twine NC",
+              "Yu M",
+              "Gusovsky F",
+              "Ishizaka ST"
+            ],
+            "journal": "Molecular pharmacology",
+            "year": "2014",
+            "doi": "10.1124/mol.113.089821",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:Q9NYK1",
+      "target": "GO:0032606",
+      "evidence": [
+        {
+          "reference": "PMID:36622335",
+          "snippet": "Increased Toll-like receptor 7 (TLR-7) signaling leading to the production of type I interferon (IFN) is an important contributor to human systemic lupus erythematosus (SLE).",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "De Novo PACSIN1 Gene Variant Found in Childhood Lupus and a Role for PACSIN1/TRAF4 Complex in Toll-like Receptor 7 Activation.",
+            "authors": [
+              "Xie C",
+              "Zhou H",
+              "Athanasopoulos V",
+              "Shen Q",
+              "Zhang Y",
+              "Meng X",
+              "Burgio G",
+              "Arsov T",
+              "Lungu AC",
+              "Zhang P",
+              "Qin Y",
+              "Ma J",
+              "Wu X",
+              "Jiang X",
+              "Ding H",
+              "Meng Y",
+              "Shen N",
+              "He Y",
+              "Vinuesa CG"
+            ],
+            "journal": "Arthritis & rheumatology (Hoboken, N.J.)",
+            "year": "2023",
+            "doi": "10.1002/art.42416",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:30846987",
+          "snippet": "PDCs were the only producers of IFNα in response to CpG-A, R848, and ssRNA stimulation in PBMC cultures. CLE patients with higher levels of blood HCQ showed lower ex vivo pDC responses to CpG-A, but not R848 or ssRNA.",
+          "supports": "PARTIAL",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "CpG-A stimulates TLR9 and R848/ssRNA stimulate TLR7/8; the pDC IFNα production is shown to be downstream of TLR activation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Effect of in vivo Hydroxychloroquine and ex vivo Anti-BDCA2 mAb Treatment on pDC IFNα Production From Patients Affected With Cutaneous Lupus Erythematosus.",
+            "authors": [
+              "Gardet A",
+              "Pellerin A",
+              "McCarl CA",
+              "Diwanji R",
+              "Wang W",
+              "Donaldson D",
+              "Franchimont N",
+              "Werth VP",
+              "Rabah D"
+            ],
+            "journal": "Frontiers in immunology",
+            "year": "2019",
+            "doi": "10.3389/fimmu.2019.00275",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:Q9NR96",
+      "target": "GO:0032606",
+      "evidence": [
+        {
+          "reference": "PMID:32714335",
+          "snippet": "They are also known to interfere with endosomal Toll-like receptors signaling and cytosolic sensors of nucleic acids, which result in a decreased cellular activation and thereby a lower type I interferons and inflammatory cytokine secretion.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Blocking endosomal TLR signaling (including TLR9) reduces type I IFN production, confirming TLR9 positively regulates type I IFN production.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Beyond Anti-viral Effects of Chloroquine/Hydroxychloroquine.",
+            "authors": [
+              "Gies V",
+              "Bekaddour N",
+              "Dieudonné Y",
+              "Guffroy A",
+              "Frenger Q",
+              "Gros F",
+              "Rodero MP",
+              "Herbeuval JP",
+              "Korganow AS"
+            ],
+            "journal": "Frontiers in immunology",
+            "year": "2020",
+            "doi": "10.3389/fimmu.2020.01409",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:30846987",
+          "snippet": "Our findings reveal that clinically-relevant HCQ concentrations partially inhibit the pDC response to TLR9 and weakly affect the response to TLR7/8 stimulation.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "HCQ inhibits pDC IFNα production via TLR9, confirming TLR9 drives type I IFN production.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Effect of in vivo Hydroxychloroquine and ex vivo Anti-BDCA2 mAb Treatment on pDC IFNα Production From Patients Affected With Cutaneous Lupus Erythematosus.",
+            "authors": [
+              "Gardet A",
+              "Pellerin A",
+              "McCarl CA",
+              "Diwanji R",
+              "Wang W",
+              "Donaldson D",
+              "Franchimont N",
+              "Werth VP",
+              "Rabah D"
+            ],
+            "journal": "Frontiers in immunology",
+            "year": "2019",
+            "doi": "10.3389/fimmu.2019.00275",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0032606",
+      "target": "MESH:D008180",
+      "evidence": [
+        {
+          "reference": "PMID:26099519",
+          "snippet": "One of the most prominent features, shared by the majority of patients with SLE, is a continuous activation of the type I interferon (IFN) system, which manifests as increased serum levels of IFNα and/or an increased expression of type I IFN-induced genes, a so-called type I IFN signature.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Systemic Lupus Erythematosus--A Disease with A Dysregulated Type I Interferon System.",
+            "authors": [
+              "Hagberg N",
+              "Rönnblom L"
+            ],
+            "journal": "Scandinavian journal of immunology",
+            "year": "2015",
+            "doi": "10.1111/sji.12330",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:32185249",
+          "snippet": "Type I interferons secreted by plasmacytoid dendritic cells (pDCs) play a crucial role in the pathogenesis of systemic lupus erythematosus by driving the formation of autoantibodies against nuclear debris.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Interferon targeted therapies in systemic lupus erythematosus.",
+            "authors": [
+              "Misra DP",
+              "Negi VS"
+            ],
+            "journal": "Mediterranean journal of rheumatology",
+            "year": "2017",
+            "doi": "10.31138/mjr.28.1.13",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.drugbank.ca/drugs/DB01611",
+      "type": "drugbank",
+      "label": "drugbank.ca — record source"
+    },
+    {
+      "url": "https://meshb.nlm.nih.gov/record/ui?ui=D006886",
+      "type": "other",
+      "label": "meshb.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "sonnet__P23",
+    "record_id": "P23_DB01611_MESH_D008180",
+    "run": "sonnet",
+    "run_label": "Sonnet (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/sonnet/outputs/P23.yaml",
+    "summary_generated": true
+  }
+}

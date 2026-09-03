@@ -1,0 +1,210 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P40_DB00043_MESH_D001249",
+    "drug": "Omalizumab",
+    "drug_mesh": "MESH:D000069444",
+    "drugbank": "DB:DB00043",
+    "disease": "Asthma",
+    "disease_mesh": "MESH:D001249",
+    "summary": "Omalizumab → Immunoglobulin E → High affinity immunoglobulin epsilon receptor subunit alpha → Mast cell degranulation → Mast cell"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D000069444",
+      "name": "Omalizumab",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P01854",
+      "name": "Immunoglobulin E",
+      "label": "Protein"
+    },
+    {
+      "id": "UniProt:P12319",
+      "name": "High affinity immunoglobulin epsilon receptor subunit alpha",
+      "label": "Protein"
+    },
+    {
+      "id": "CL:0000097",
+      "name": "Mast cell",
+      "label": "Cell"
+    },
+    {
+      "id": "GO:0043303",
+      "name": "Mast cell degranulation",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D001249",
+      "name": "Asthma",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "MESH:D000069444",
+      "target": "UniProt:P01854",
+      "evidence": [
+        {
+          "reference": "PMID:16464445",
+          "snippet": "This non-anaphylactogenic anti-IgE monoclonal antibody (omalizumab) binds IgE at the same site as these antibodies bind FcepsilonRI and FcepsilonRII. Consequently, omalizumab inhibits IgE effector functions by blocking IgE binding to high-affinity receptors on IgE effector cells.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Role of anti-IgE monoclonal antibody (omalizumab) in the treatment of bronchial asthma and allergic respiratory diseases.",
+            "authors": [
+              "D'Amato G"
+            ],
+            "journal": "European journal of pharmacology",
+            "year": "2006",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:P01854",
+      "target": "UniProt:P12319",
+      "evidence": [
+        {
+          "reference": "PMID:30069035",
+          "snippet": "interaction with FcεRI on mast cells and basophils leads to immediate hypersensitivity reactions upon allergen challenge",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Structural basis for selective inhibition of immunoglobulin E-receptor interactions by an anti-IgE antibody.",
+            "authors": [
+              "Chen JB",
+              "Ramadani F",
+              "Pang MOY",
+              "Beavil RL",
+              "Holdom MD",
+              "Mitropoulou AN",
+              "Beavil AJ",
+              "Gould HJ",
+              "Chang TW",
+              "Sutton BJ",
+              "McDonnell JM",
+              "Davies AM"
+            ],
+            "journal": "Scientific reports",
+            "year": "2018",
+            "doi": "10.1038/s41598-018-29664-4",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:P12319",
+      "target": "GO:0043303",
+      "evidence": [
+        {
+          "reference": "PMID:26206871",
+          "snippet": "IgE on mast cells is cross-linked by an allergen, causing degranulation and the release of histamine, neutral proteases and chemotactic factors, and the production of newly formed mediators, such as cysteinyl leukotrienes and prostaglandin D2.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Allergen-induced airway responses.",
+            "authors": [
+              "Gauvreau GM",
+              "El-Gammal AI",
+              "O'Byrne PM"
+            ],
+            "journal": "The European respiratory journal",
+            "year": "2015",
+            "doi": "10.1183/13993003.00536-2015",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "occurs in",
+      "source": "GO:0043303",
+      "target": "CL:0000097",
+      "evidence": [
+        {
+          "reference": "PMID:39051334",
+          "snippet": "These cells display IgE on their surface, bound to the high-affinity IgE receptor FcεRI. A cross-linking antigen then triggers degranulation and the release of inflammatory mediators from the cells.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "A Comparison of Natural and Therapeutic Anti-IgE Antibodies.",
+            "authors": [
+              "Vogel M",
+              "Engeroff P"
+            ],
+            "journal": "Antibodies (Basel, Switzerland)",
+            "year": "2024",
+            "doi": "10.3390/antib13030058",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0043303",
+      "target": "MESH:D001249",
+      "evidence": [
+        {
+          "reference": "PMID:38790633",
+          "snippet": "Mast cell activation influences the pathogenesis and exacerbation of allergic asthma.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Hispidulin Alleviates Mast Cell-Mediated Allergic Airway Inflammation through FcεR1 and Nrf2/HO-1 Signaling Pathway.",
+            "authors": [
+              "Jeong S",
+              "Kim YY",
+              "Lee D",
+              "Kim SH",
+              "Lee S"
+            ],
+            "journal": "Antioxidants (Basel, Switzerland)",
+            "year": "2024",
+            "doi": "10.3390/antiox13050528",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.drugbank.ca/drugs/DB00043",
+      "type": "drugbank",
+      "label": "drugbank.ca — record source"
+    }
+  ],
+  "site": {
+    "id": "sonnet__P40",
+    "record_id": "P40_DB00043_MESH_D001249",
+    "run": "sonnet",
+    "run_label": "Sonnet (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/sonnet/outputs/P40.yaml",
+    "summary_generated": true
+  }
+}

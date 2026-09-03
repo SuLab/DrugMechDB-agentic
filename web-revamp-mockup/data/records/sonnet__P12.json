@@ -1,0 +1,234 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P12_DB00951_MESH_D014397",
+    "drug": "Isoniazid",
+    "drug_mesh": "MESH:D007538",
+    "drugbank": "DB:DB00951",
+    "disease": "Pulmonary Tuberculosis",
+    "disease_mesh": "MESH:D014397",
+    "summary": "Isoniazid → InhA → mycolic acid biosynthetic process → Mycobacterium tuberculosis → Pulmonary Tuberculosis"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D007538",
+      "name": "Isoniazid",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P0A5Q9",
+      "name": "InhA",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0001560",
+      "name": "mycolic acid biosynthetic process",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "NCBITaxon:1773",
+      "name": "Mycobacterium tuberculosis",
+      "label": "OrganismTaxon"
+    },
+    {
+      "id": "MESH:D014397",
+      "name": "Pulmonary Tuberculosis",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "MESH:D007538",
+      "target": "UniProt:P0A5Q9",
+      "evidence": [
+        {
+          "reference": "PMID:9949810",
+          "snippet": "A reactive form of isoniazid inhibits InhA by reacting with the NAD(H) cofactor bound to the enzyme active site forming a covalent adduct (isonicotinic acyl NADH) that is apt to bind with high affinity.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Isoniazid is a prodrug activated by the mycobacterial catalase-peroxidase KatG; the resulting isonicotinoyl-NAD adduct inhibits InhA (enoyl-ACP reductase).",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mechanisms for isoniazid action and resistance.",
+            "authors": [
+              "Miesel L",
+              "Rozwarski DA",
+              "Sacchettini JC",
+              "Jacobs WR"
+            ],
+            "journal": "Novartis Foundation symposium",
+            "year": "1998",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:29765372",
+          "snippet": "This isonicotinyl-NAD adduct inhibits the activity of 2-trans-enoyl-ACP(CoA) reductase (InhA), which plays a role in mycolic acid biosynthesis.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Is IQG-607 a Potential Metallodrug or Metallopro-Drug With a Defined Molecular Target in Mycobacterium tuberculosis?",
+            "authors": [
+              "Abbadi BL",
+              "Rodrigues-Junior VDS",
+              "Dadda ADS",
+              "Pissinate K",
+              "Villela AD",
+              "Campos MM",
+              "Lopes LGF",
+              "Bizarro CV",
+              "Machado P",
+              "Sousa EHS",
+              "Basso LA"
+            ],
+            "journal": "Frontiers in microbiology",
+            "year": "2018",
+            "doi": "10.3389/fmicb.2018.00880",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "participates in",
+      "source": "UniProt:P0A5Q9",
+      "target": "GO:0001560",
+      "evidence": [
+        {
+          "reference": "PMID:21143326",
+          "snippet": "InhA, an essential enzyme of the mycolic acid biosynthetic pathway and the primary target of the anti-tubercular drug isoniazid",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "InhA is an enoyl-ACP reductase essential for the mycolic acid biosynthetic pathway.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Phosphorylation of InhA inhibits mycolic acid biosynthesis and growth of Mycobacterium tuberculosis.",
+            "authors": [
+              "Molle V",
+              "Gulten G",
+              "Vilchèze C",
+              "Veyron-Churlet R",
+              "Zanella-Cléon I",
+              "Sacchettini JC",
+              "Jacobs WR",
+              "Kremer L"
+            ],
+            "journal": "Molecular microbiology",
+            "year": "2010",
+            "doi": "10.1111/j.1365-2958.2010.07446.x",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:16842188",
+          "snippet": "InhA is a member of the mycobacterial Type II fatty acid biosynthesis system, which elongates acyl fatty acid precursors of mycolic acids.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Slow-onset inhibition of 2-trans-enoyl-ACP (CoA) reductase from Mycobacterium tuberculosis by an inorganic complex.",
+            "authors": [
+              "Oliveira JS",
+              "de Sousa EH",
+              "de Souza ON",
+              "Moreira IS",
+              "Santos DS",
+              "Basso LA"
+            ],
+            "journal": "Current pharmaceutical design",
+            "year": "2006",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "occurs in",
+      "source": "GO:0001560",
+      "target": "NCBITaxon:1773",
+      "evidence": [
+        {
+          "reference": "PMID:34634381",
+          "snippet": "Mycobacterium tuberculosis has a complex cell wall containing mycolic acids (MA), which play an important role in pathogenesis, virulence, and survival by protecting the cell against harsh environments.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Mycolic acid biosynthesis is an essential process unique to Mycobacterium tuberculosis; disrupting it kills the bacterium.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Genomic characterization of variants on mycolic acid metabolism genes in Mycobacterium tuberculosis isolates from Santa Catarina, Southern Brazil.",
+            "authors": [
+              "Medeiros TF",
+              "Scheffer MC",
+              "Verza M",
+              "Salvato RS",
+              "Schörner MA",
+              "Barazzetti FH",
+              "Rovaris DB",
+              "Bazzo ML"
+            ],
+            "journal": "Infection, genetics and evolution : journal of molecular epidemiology and evolutionary genetics in infectious diseases",
+            "year": "2021",
+            "doi": "10.1016/j.meegid.2021.105107",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "NCBITaxon:1773",
+      "target": "MESH:D014397",
+      "evidence": [
+        {
+          "reference": "PMID:16842188",
+          "snippet": "Tuberculosis (TB) remains the leading cause of mortality due to a bacterial pathogen, Mycobacterium tuberculosis.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Mycobacterium tuberculosis is the causative agent of tuberculosis, including pulmonary tuberculosis.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Slow-onset inhibition of 2-trans-enoyl-ACP (CoA) reductase from Mycobacterium tuberculosis by an inorganic complex.",
+            "authors": [
+              "Oliveira JS",
+              "de Sousa EH",
+              "de Souza ON",
+              "Moreira IS",
+              "Santos DS",
+              "Basso LA"
+            ],
+            "journal": "Current pharmaceutical design",
+            "year": "2006",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [],
+  "site": {
+    "id": "sonnet__P12",
+    "record_id": "P12_DB00951_MESH_D014397",
+    "run": "sonnet",
+    "run_label": "Sonnet (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/sonnet/outputs/P12.yaml",
+    "summary_generated": true
+  }
+}
