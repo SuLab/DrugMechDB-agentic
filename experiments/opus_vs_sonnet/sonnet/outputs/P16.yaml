@@ -24,7 +24,9 @@ nodes:
     name: Parkinson's Disease
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D007980
     target: UniProt:P20711
     evidence:
@@ -49,7 +51,9 @@ links:
         supports: SUPPORT
         evidence_source: MODEL_ORGANISM
         explanation: Confirms levodopa is a dopamine precursor and its conversion to dopamine is central to its therapeutic effect.
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D004298
     target: UniProt:P14416
     evidence:

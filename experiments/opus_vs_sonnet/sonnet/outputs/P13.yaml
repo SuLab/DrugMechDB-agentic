@@ -24,7 +24,7 @@ nodes:
     name: MRSA Infection
     label: Disease
 links:
-  - key: binds
+  - key: directly physically interacts with
     source: MESH:D014640
     target: CHEBI:83419
     evidence:
@@ -33,7 +33,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Vancomycin binds the D-Ala-D-Ala terminus of the peptidoglycan precursor lipid II.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: CHEBI:83419
     target: GO:0009252
     evidence:
@@ -42,7 +43,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Vancomycin binding to Lipid II interferes with peptidoglycan layer maturation (biosynthetic process).
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0009252
     target: NCBITaxon:1280
     evidence:

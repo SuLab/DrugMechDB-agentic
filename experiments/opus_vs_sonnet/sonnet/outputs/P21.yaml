@@ -27,7 +27,9 @@ nodes:
     name: Rheumatoid Arthritis
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D008727
     target: UniProt:P00374
     evidence:
@@ -35,7 +37,9 @@ links:
         snippet: Methotrexate (MTX), a synthetic folate analog, is a tight-binding inhibitor of dihydrofolate reductase (DHFR), a key enzyme for the biosynthesis of purines, thymidylate, and several amino acids.
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D008727
     target: UniProt:P31939
     evidence:
@@ -47,7 +51,8 @@ links:
         snippet: intracellular MTX polyglutamates inhibit AICAR transformylase (ATIC) activity and thereby promote adenosine release
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:P31939
     target: MESH:D000241
     evidence:
@@ -61,7 +66,8 @@ links:
         supports: PARTIAL
         evidence_source: HUMAN_CLINICAL
         explanation: ATIC inhibition (blockade at AICA ribonucleotide transformylase step) leads to AICAR accumulation and adenosine release; this sentence describes the blockade and its clinical significance.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: MESH:D000241
     target: UniProt:P29274
     evidence:

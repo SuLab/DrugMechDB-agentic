@@ -33,7 +33,9 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: Tamoxifen is metabolised by CYP enzymes to form the active metabolite 4-hydroxytamoxifen.
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: CHEBI:44616
     target: UniProt:P03372
     evidence:
@@ -47,7 +49,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: Active tamoxifen metabolites including 4-hydroxytamoxifen have high affinity for the estrogen receptor and suppress its proliferative activity.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P03372
     target: GO:0008283
     evidence:

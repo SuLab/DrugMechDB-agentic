@@ -21,7 +21,9 @@ nodes:
     name: Malignant tumor of colon
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000068818
     target: UniProt:P00533
     evidence:

@@ -60,6 +60,14 @@ predicates:
   affects risk for:            {sign:  0, role: clinical_outcome, confidence: review, note: "direction unspecified"}
   predisposes:                 {sign: +1, role: clinical_outcome, confidence: review}
 
+  # Biolink 4.4.4 condition-scoped forms — same semantics, same signs as the removed
+  # bare verbs they replace (`prevents` -> `preventative for condition`, etc.).
+  preventative for condition:  {sign: -1, role: clinical_outcome, confidence: high}
+  ameliorates condition:       {sign: -1, role: clinical_outcome, confidence: high}
+  exacerbates condition:       {sign: +1, role: clinical_outcome, confidence: high}
+  predisposes to condition:    {sign: +1, role: clinical_outcome, confidence: review}
+  contraindicated in:          {sign:  0, role: clinical_outcome, confidence: review, note: "not a mechanistic step; flag if present"}
+
   # ── Neutral scaffolding (skipped in polarity; presence is fine) ─────────────
   participates in:             {sign: 0, role: contextual, confidence: high}
   occurs in:                   {sign: 0, role: contextual, confidence: high}
@@ -94,6 +102,15 @@ predicates:
   manifestation of:            {sign: +1, role: correlation, confidence: review, note: "phenotype/sign manifests disease"}
   phenotype of:                {sign: +1, role: reverse, confidence: review}
   regulates:                   {sign: 0, role: regulatory, confidence: review, note: "direction unspecified; flag for tightening"}
+
+  # ── Biolink 4.4.4 canonical predicates (qualifier model) ────────────────────
+  # These carry NO polarity in the predicate name — it lives in the edge's
+  # `object_direction_qualifier`. structural_quality.py resolves the sign from
+  # that qualifier (see DIRECTION_SIGN there); the sign: 0 below is the fallback
+  # for an edge that omits it, which QC Layer 3 rejects for ai_curated records.
+  affects:                     {sign: 0, role: regulatory, confidence: review, note: "polarity is in object_direction_qualifier"}
+  directly physically interacts with: {sign: 0, role: contextual, confidence: high, note: "binding; no direction"}
+  binds:                       {sign: 0, role: contextual, confidence: high, note: "binding; no direction"}
 
   # ── Biochemical derivation / lineage ────────────────────────────────────────
   has metabolite:              {sign: +1, role: derivation, confidence: review}
@@ -139,6 +156,11 @@ type_constraints:
   ameliorates:          {subj_in: CHEM,  obj_in: DISEASE_LIKE}
   exacerbates:          {subj_in: CHEM,  obj_in: DISEASE_LIKE}
   contraindicated for:  {subj_in: CHEM,  obj_in: DISEASE_LIKE}
+  preventative for condition: {subj_in: CHEM, obj_in: DISEASE_LIKE}
+  ameliorates condition:      {subj_in: CHEM, obj_in: DISEASE_LIKE}
+  exacerbates condition:      {subj_in: CHEM, obj_in: DISEASE_LIKE}
+  predisposes to condition:   {subj_in: CHEM, obj_in: DISEASE_LIKE}
+  contraindicated in:         {subj_in: CHEM, obj_in: DISEASE_LIKE}
   in taxon:             {obj_in: [OrganismTaxon]}
   decreases activity of: {obj_in: ACTIVITY_BEARING}
   increases activity of: {obj_in: ACTIVITY_BEARING}
@@ -153,3 +175,16 @@ type_constraints:
   occurs in:            {obj_in: LOCATION}
   located in:           {obj_in: LOCATION}
   expressed in:         {obj_in: LOCATION}
+
+  # ── Qualified forms (Biolink 4.4.4) ─────────────────────────────────────────
+  # After the qualifier refactor the aspect, not the predicate name, says what kind
+  # of thing the object must be. structural_quality.py looks up `<key>|<aspect>`
+  # first and falls back to the bare key, so these mirror the legacy rows above.
+  affects|activity:     {obj_in: ACTIVITY_BEARING}
+  affects|abundance:    {obj_in: MOLECULAR}
+  affects|degradation:  {obj_in: MOLECULAR}
+  affects|synthesis:    {obj_in: MOLECULAR}
+  affects|stability:    {obj_in: MOLECULAR}
+  affects|transport:    {obj_in: MOLECULAR}
+  affects|uptake:       {obj_in: MOLECULAR}
+  affects|expression:   {obj_in: GENE_PRODUCT}

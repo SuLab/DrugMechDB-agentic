@@ -21,7 +21,9 @@ nodes:
     name: Systemic Lupus Erythematosus
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D006886
     target: UniProt:Q9NR96
     evidence:
@@ -40,7 +42,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Katz and Russell review confirm that antimalarials including hydroxychloroquine act by inhibiting endosomal/intracellular TLRs, particularly TLR9."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:Q9NR96
     target: GO:0032606
     evidence:

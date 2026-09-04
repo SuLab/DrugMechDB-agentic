@@ -24,7 +24,9 @@ nodes:
     name: Hypercholesterolemia
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000069059
     target: UniProt:P04035
     evidence:
@@ -38,7 +40,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Pharmacology review confirming atorvastatin acts by competitive and selective inhibition of HMG-CoA reductase, blocking conversion of its HMG-CoA substrate."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P04035
     target: GO:0006695
     evidence:
@@ -52,7 +55,9 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "HMG-CoA reductase is the rate-limiting enzyme of the mevalonate pathway (cholesterol biosynthesis); inhibiting it lowers cholesterol, confirming the enzyme positively regulates the biosynthetic process."
-  - key: increases abundance of
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: increased
     source: GO:0006695
     target: MESH:D002784
     evidence:

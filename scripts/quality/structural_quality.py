@@ -100,6 +100,37 @@ def load_lexicon() -> dict:
     return {"predicates": preds, "constraints": constraints}
 
 
+# Biolink 4.4.4 moved polarity out of the predicate name and into the edge's
+# `object_direction_qualifier`. `regulates`/`affects` are therefore sign-0 in the
+# lexicon, and the real sign is read from the qualifier here.
+DIRECTION_SIGN = {"increased": +1, "upregulated": +1, "decreased": -1, "downregulated": -1}
+
+
+def qualified_key(edge: dict, preds: dict) -> str:
+    """The lexicon key for this edge, folding in its direction qualifier.
+
+    An edge with a qualifier gets a synthetic `<predicate>|<direction>` entry
+    registered in this record's copy of the lexicon, so every downstream lookup
+    (polarity, duplicate detection) sees the qualified sign without any of them
+    needing to know about qualifiers.
+    """
+    key = edge.get("key")
+    direction = edge.get("object_direction_qualifier")
+    if not direction:
+        return key
+    qkey = f"{key}|{direction}"
+    if qkey not in preds:
+        sign = DIRECTION_SIGN.get(direction, 0)
+        base = preds.get(key) or {}
+        preds[qkey] = {
+            "sign": sign,
+            "role": base.get("role") or "regulatory",
+            "confidence": "high" if sign else "review",
+            "note": f"sign from object_direction_qualifier={direction!r}",
+        }
+    return qkey
+
+
 def orientation(entry: dict) -> str:
     """forward | reverse | neutral | opaque — derived from role + sign."""
     role, sign = entry.get("role"), entry.get("sign", 0)
@@ -177,7 +208,8 @@ def path_polarity(path_edges, preds):
 
 
 def analyze(path: Path, lex: dict) -> dict:
-    preds, constraints = lex["predicates"], lex["constraints"]
+    # local copy: qualified `<predicate>|<direction>` entries are synthesized per record
+    preds, constraints = dict(lex["predicates"]), lex["constraints"]
     doc = yaml.safe_load(path.read_text())
     graph = doc.get("graph", {}) or {}
     nodes = doc.get("nodes", []) or []
@@ -188,7 +220,8 @@ def analyze(path: Path, lex: dict) -> dict:
     indeg, outdeg = Counter(), Counter()
     edge_counts = Counter()
     for e in links:
-        s, t, k = e.get("source"), e.get("target"), e.get("key")
+        s, t = e.get("source"), e.get("target")
+        k = qualified_key(e, preds)
         adj[s].append((t, k)); outdeg[s] += 1; indeg[t] += 1
         edge_counts[(s, t, k)] += 1
 
@@ -218,7 +251,13 @@ def analyze(path: Path, lex: dict) -> dict:
 
     # predicate domain/range
     for e in links:
-        k = e.get("key"); c = constraints.get(k)
+        # Qualified edges constrain the object by ASPECT (`affects|activity`), so try
+        # that first and fall back to the bare predicate for unqualified/legacy edges.
+        k = e.get("key")
+        aspect = e.get("object_aspect_qualifier")
+        c = constraints.get(f"{k}|{aspect}") if aspect else None
+        if c is None:
+            c = constraints.get(k)
         if not c:
             continue
         ls, lo = label.get(e.get("source")), label.get(e.get("target"))

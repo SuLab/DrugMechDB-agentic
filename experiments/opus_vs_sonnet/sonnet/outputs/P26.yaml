@@ -24,7 +24,9 @@ nodes:
     name: Diabetes Mellitus, Type 2
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D008687
     target: UniProt:P03886
     evidence:
@@ -52,7 +54,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Complex I inhibition by metformin raises AMP/ATP ratio and activates AMPK.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:Q13131
     target: GO:0006094
     evidence:

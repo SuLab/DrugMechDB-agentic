@@ -21,7 +21,8 @@ nodes:
     name: Dermatomyositis
     label: Disease
 links:
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: MESH:D010129
     target: GO:0009411
     evidence:
@@ -30,7 +31,8 @@ links:
         supports: SUPPORT
         evidence_source: MODEL_ORGANISM
         explanation: "para-aminobenzoic acid (aminobenzoic acid) is a UV absorber that, applied before UVB exposure, prevents the pathological skin changes caused by UVB, i.e. it blunts the skin's response to ultraviolet radiation."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0009411
     target: GO:0006915
     evidence:

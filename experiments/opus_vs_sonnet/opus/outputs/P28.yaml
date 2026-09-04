@@ -33,7 +33,9 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "Levothyroxine (LT4) is converted to the active hormone triiodothyronine (T3)."
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D014284
     target: UniProt:P10828
     evidence:

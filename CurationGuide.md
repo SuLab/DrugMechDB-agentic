@@ -218,6 +218,15 @@ to one of the predicates previously used, if a relationship found in the process
 any of these types listed below, a predicate may be selected
 from the [full set of biolink predicates](https://biolink.github.io/biolink-model/docs/predicates.html).
 
+> **Biolink 4.4.4 note (2026-09).** The list below is the vocabulary *found in the legacy
+> corpus* — it is v1.3.0-era, and 23 of these predicates no longer exist in Biolink. It stays
+> here because `kb/paths/` is still written in it. **New curation must not use them.** Pick a
+> predicate marked `status: current` in `src/drugmechdb/schema/biolink_predicate_status.yaml`,
+> and carry polarity in the edge's `object_aspect_qualifier` / `object_direction_qualifier`
+> rather than in the predicate name — `decreases activity of` is now
+> `affects` + `activity` + `decreased`. See AGENTS.md §3.0 for the contract and
+> `docs/biolink_version_decision.md` for why.
+
 The predicates currently found within DrugMechDB are as follows:
 
 [affects risk for](https://biolink.github.io/biolink-model/docs/affects_risk_for.html)  

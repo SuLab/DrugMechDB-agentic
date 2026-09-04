@@ -24,7 +24,9 @@ nodes:
     name: Epilepsy
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000077306
     target: UniProt:P54289
     evidence:
@@ -38,7 +40,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: The α2δ-1 protein is both the high-affinity binding site and required mediator of gabapentin's mechanism, confirming gabapentin decreases its activity.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P54289
     target: GO:0070588
     evidence:
@@ -52,7 +55,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: As a regulatory subunit of voltage-gated calcium channels, α2δ-1 positively regulates calcium ion flux across the neuronal membrane.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0070588
     target: GO:0007269
     evidence:

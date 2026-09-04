@@ -27,7 +27,9 @@ nodes:
     name: Hypercholesterolemia
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000069059
     target: UniProt:P04035
     evidence:
@@ -43,7 +45,8 @@ links:
         snippet: "their ability to inhibit HMG-CoA reductase, the rate-limiting enzyme of de novo cholesterol synthesis"
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:P04035
     target: UniProt:P01130
     evidence:
@@ -52,7 +55,9 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "Inhibiting HMG-CoA reductase leads to upregulation of LDL receptors, i.e. the enzyme's activity negatively regulates LDL receptor expression."
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: UniProt:P01130
     target: MESH:D008078
     evidence:

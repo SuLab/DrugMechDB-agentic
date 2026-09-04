@@ -24,7 +24,9 @@ nodes:
     name: Type 2 Diabetes Mellitus
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D008687
     target: UniProt:Q13131
     evidence:
@@ -33,7 +35,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Metformin directly activates AMP-activated protein kinase in hepatocytes.
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: UniProt:Q15831
     target: UniProt:Q13131
     evidence:
@@ -42,7 +46,8 @@ links:
         supports: SUPPORT
         evidence_source: MODEL_ORGANISM
         explanation: LKB1 is the upstream kinase that phosphorylates and activates AMPK in the liver, mediating the therapeutic effect of metformin.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:Q13131
     target: GO:0006094
     evidence:

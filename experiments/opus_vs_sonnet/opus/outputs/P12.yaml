@@ -24,7 +24,9 @@ nodes:
     name: Pulmonary Tuberculosis
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D007538
     target: UniProt:P9WIE5
     evidence:
@@ -33,7 +35,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "KatG activates the isoniazid prodrug into its reactive species."
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D007538
     target: UniProt:P9WGR1
     evidence:

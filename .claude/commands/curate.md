@@ -73,7 +73,8 @@ See AGENTS.md §4.4 for the `...`/`[...]` operators and the read-the-context gua
 - Walk through 2–6 intermediate biological entities (proteins, pathways, processes, phenotypes) toward the disease node (`label: Disease`, prefix `MESH`).
 - **One connected chain — no shortcut/bypass edge** (AGENTS.md §0). The path is a single chain drug→…→disease. **Do not** add an edge straight from the drug to the disease, and **do not** add an edge from the drug (or any node) to a node already reached through intermediate steps. End the chain at the disease with a mechanistic/causal predicate (`causes`, `contributes to`, …), **never** with a clinical-outcome predicate (`treats`, `prevents`, `ameliorates`, …). Those are reserved for the no-mechanism stub. If you worked out a mechanism, curate *only* that chain — never also append a `Drug —treats→ Disease` edge. (This is the `clinical_shortcut` / `short_circuit` HARD error; the semantic critic checks for it too.)
 - Each edge:
-  - `key`: pick from the canonical 67 in `src/drugmechdb/schema/biolink_predicates.yaml`.
+  - `key`: pick one marked `status: current` in `src/drugmechdb/schema/biolink_predicate_status.yaml` (47 of the 70 enum values; the other 23 are legacy-only and Layer 3 will reject them).
+  - `object_aspect_qualifier` / `object_direction_qualifier`: **required** where the predicate carries no polarity of its own — `affects` needs both, `regulates` needs a direction. This is where `decreases activity of` went: `key: affects` + `object_aspect_qualifier: activity` + `object_direction_qualifier: decreased`. See AGENTS.md §3.0.
   - `evidence`: ≥1 `EvidenceItem` with:
     - `reference: PMID:xxxxxxxx`
     - `snippet:` **verbatim** substring of the cached source (abstract, or full text if you escalated) — copy/paste from `references_cache/`, never typed from memory.

@@ -295,3 +295,53 @@ enums:
       decreases uptake of:            # 1 use
         meaning: biolink:decreases_uptake_of
         description: Subject decreases uptake of the object.
+
+      # ── Biolink 4.4.4 canonical predicates (added 2026-09) ─────────────────
+      # The qualifier refactor (v2->v4) removed the `increases/decreases <aspect>
+      # of` and `positively/negatively regulates` families. Their replacements are
+      # these canonical predicates carried with `object_aspect_qualifier` /
+      # `object_direction_qualifier` on the edge. See
+      # src/drugmechdb/schema/biolink_predicate_status.yaml for the per-predicate
+      # status and the replacement each legacy key maps to.
+
+      affects:                        # Biolink 4.4.4 canonical_predicate
+        meaning: biolink:affects
+        description: >-
+          Subject has an effect on the state or quality of the object. Carries
+          object_aspect_qualifier + object_direction_qualifier to express what
+          the legacy `increases/decreases <aspect> of` predicates asserted.
+
+      directly physically interacts with:   # Biolink 4.4.4 canonical_predicate
+        meaning: biolink:directly_physically_interacts_with
+        description: >-
+          Subject and object make direct physical contact. Replaces the removed
+          `molecularly interacts with` / `directly interacts with`.
+
+      binds:                          # Biolink 4.4.4
+        meaning: biolink:binds
+        description: >-
+          Subject binds the object through non-covalent interaction. A narrower
+          form of `directly physically interacts with`.
+
+      # Condition-scoped replacements for the removed clinical-outcome predicates.
+      # (`prevents` -> `preventative for condition`, and so on.)
+
+      preventative for condition:
+        meaning: biolink:preventative_for_condition
+        description: Subject is preventative for the object condition. Replaces the removed `prevents`.
+
+      ameliorates condition:
+        meaning: biolink:ameliorates_condition
+        description: Subject ameliorates the object condition. Replaces the removed `ameliorates`.
+
+      exacerbates condition:
+        meaning: biolink:exacerbates_condition
+        description: Subject exacerbates the object condition. Replaces the removed `exacerbates`.
+
+      predisposes to condition:
+        meaning: biolink:predisposes_to_condition
+        description: Subject predisposes to the object condition. Replaces the removed `predisposes`.
+
+      contraindicated in:
+        meaning: biolink:contraindicated_in
+        description: Subject is contraindicated in the object condition. Replaces the removed `contraindicated for`.

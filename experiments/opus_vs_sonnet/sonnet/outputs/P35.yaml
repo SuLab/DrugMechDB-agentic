@@ -33,7 +33,9 @@ nodes:
     name: Chronic hepatitis C
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:C100416
     target: UniProt:P23458
     evidence:
@@ -42,7 +44,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Peginterferon alfa-2a (an IFN-alpha) activates JAK1 through receptor engagement.
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:C100416
     target: UniProt:P29597
     evidence:
@@ -51,7 +55,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Peginterferon alfa-2a (an IFN-alpha) activates TYK2 through receptor engagement.
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: UniProt:P23458
     target: UniProt:P42224
     evidence:
@@ -60,7 +66,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Activated JAK1 phosphorylates STAT1 on conserved tyrosine residues.
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: UniProt:P29597
     target: UniProt:P52630
     evidence:
@@ -69,7 +77,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Activated TYK2 phosphorylates STAT2 on conserved tyrosine residues.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P42224
     target: GO:0035458
     evidence:
@@ -78,7 +87,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: STAT1 forms ISGF3 complex that drives interferon-stimulated gene transcription, representing the cellular response to interferon.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P52630
     target: GO:0035458
     evidence:
@@ -87,7 +97,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: STAT2 forms ISGF3 complex that drives interferon-stimulated gene transcription, representing the cellular response to interferon.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0035458
     target: GO:0009615
     evidence:
@@ -96,7 +107,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: IFN-alpha-induced ISG expression (cellular interferon response) leads to an antiviral response against HCV.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0009615
     target: MESH:D019698
     evidence:

@@ -21,7 +21,9 @@ nodes:
     name: Pulmonary embolism
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: DB:DB00009
     target: UniProt:P00747
     evidence:
@@ -34,7 +36,9 @@ links:
         snippet: "The therapeutic action of tissue plasminogen activator (t-PA) is a two-step process: (1) binding to lysine-rich fibrin (Km event) and (2) converting local plasminogen into plasmin (Kcat event)."
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: decreases abundance of
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: decreased
     source: UniProt:P00747
     target: MESH:D005341
     evidence:

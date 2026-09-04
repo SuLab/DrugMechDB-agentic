@@ -31,6 +31,14 @@ import pytest
 import yaml
 
 REPO = Path(__file__).resolve().parent.parent
+
+
+def _enum_size() -> int:
+    """Size of the committed BiolinkPredicate enum — read, never hardcoded, because
+    the enum spans two Biolink eras and grows when we adopt a new release's predicate."""
+    import yaml
+    schema = REPO / "src" / "drugmechdb" / "schema" / "biolink_predicates.yaml"
+    return len(yaml.safe_load(schema.read_text())["enums"]["BiolinkPredicate"]["permissible_values"])
 SCRIPTS = REPO / "scripts"
 VENV_PY = REPO / ".venv-py310" / "bin" / "python"
 
@@ -152,7 +160,7 @@ def test_layer3_valid_clean_record_passes(tmp_path):
     code, data, _ = _run("validate_predicates.py", str(f))
     assert code == 0, data
     assert data["failure_count"] == 0
-    assert data["enum_size"] == 67
+    assert data["enum_size"] == _enum_size()   # not a literal: the enum grows with Biolink
 
 
 def test_layer3_rejects_non_enum_predicate(tmp_path):

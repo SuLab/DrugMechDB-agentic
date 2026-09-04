@@ -30,7 +30,9 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Thiamine is the precursor metabolized to its active coenzyme form, thiamine pyrophosphate (TPP); repletion with thiamine raises TPP, the vitamin form whose depletion defines the thiamine-deficiency state."
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D013835
     target: GO:0004802
     evidence:

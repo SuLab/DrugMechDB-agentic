@@ -27,7 +27,9 @@ nodes:
     name: Hypercholesterolemia
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D017035
     target: UniProt:P04035
     evidence:
@@ -47,7 +49,8 @@ links:
         snippet: Statins have been widely used for the treatment of hypercholesterolemia due to their ability to inhibit HMG-CoA reductase, the rate-limiting enzyme of de novo cholesterol synthesis, via the so-called mevalonate pathway.
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0006695
     target: UniProt:P01130
     evidence:
@@ -56,7 +59,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: Inhibition of cholesterol biosynthesis (via reduced mevalonate synthesis) is linked to upregulation of LDL receptor expression, consistent with the negative feedback relationship between intracellular cholesterol levels and LDLR expression.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:P01130
     target: MESH:D008077
     evidence:

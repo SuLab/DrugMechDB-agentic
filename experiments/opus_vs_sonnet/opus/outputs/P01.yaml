@@ -24,7 +24,9 @@ nodes:
     name: Myocardial infarction
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D001241
     target: UniProt:P23219
     evidence:
@@ -37,7 +39,8 @@ links:
         snippet: "the acetylation of platelet cyclooxygenase (COX)-1 at serine-529 is the direct mechanism of action of low-dose aspirin"
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P23219
     target: CHEBI:50124
     evidence:
@@ -46,7 +49,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "COX-1 activity drives thromboxane A2 formation; inhibiting COX-1 reduces thromboxane A2."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: CHEBI:50124
     target: GO:0070527
     evidence:

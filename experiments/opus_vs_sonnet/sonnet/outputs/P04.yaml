@@ -21,7 +21,9 @@ nodes:
     name: Heart Failure
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D008790
     target: UniProt:P08588
     evidence:
@@ -35,7 +37,8 @@ links:
         supports: SUPPORT
         evidence_source: MODEL_ORGANISM
         explanation: Metoprolol is a beta-1 adrenergic receptor blocker, decreasing receptor activity.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P08588
     target: GO:0006915
     evidence:

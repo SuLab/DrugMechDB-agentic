@@ -36,7 +36,9 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "MMF is hydrolyzed to release the active metabolite mycophenolic acid."
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D015232
     target: UniProt:P12268
     evidence:
@@ -52,7 +54,8 @@ links:
         snippet: "an inhibitor of inosine monophosphate dehydrogenase (IMPDH). This is the rate-limiting enzyme in de novo synthesis of guanosine nucleotides."
         supports: SUPPORT
         evidence_source: OTHER
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: MESH:D015232
     target: GO:0046651
     evidence:

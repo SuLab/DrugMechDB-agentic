@@ -27,7 +27,8 @@ nodes:
     name: Primary cutaneous T-cell lymphoma
     label: Disease
 links:
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: MESH:C078456
     target: UniProt:P01589
     evidence:
@@ -39,7 +40,9 @@ links:
         snippet: DAB(389)IL-2 is internalized into IL-2 receptor-bearing cells by endocytosis.
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:C078456
     target: UniProt:P13639
     evidence:
@@ -48,7 +51,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         source_tier: FULL_TEXT
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:P13639
     target: GO:0006412
     evidence:
@@ -56,7 +60,8 @@ links:
         snippet: ADP(R) of eEF2 resulted in a decrease in total protein synthesis consistent with a defect in translation elongation.
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0006412
     target: GO:0006915
     evidence:
