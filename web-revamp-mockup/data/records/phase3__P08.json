@@ -1,0 +1,190 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P08_DB00002_MESH_D015179",
+    "drug": "Cetuximab",
+    "drug_mesh": "MESH:D000068818",
+    "drugbank": "DB:DB00002",
+    "disease": "Colorectal Neoplasms",
+    "disease_mesh": "MESH:D015179",
+    "summary": "Cetuximab → Epidermal growth factor receptor → MAPK cascade → cell population proliferation → Colorectal Neoplasms"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D000068818",
+      "name": "Cetuximab",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P00533",
+      "name": "Epidermal growth factor receptor",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0000165",
+      "name": "MAPK cascade",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "GO:0008283",
+      "name": "cell population proliferation",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D015179",
+      "name": "Colorectal Neoplasms",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D000068818",
+      "target": "UniProt:P00533",
+      "evidence": [
+        {
+          "reference": "PMID:16736979",
+          "snippet": "Monoclonal antibodies bind to the extracellular domain of EGFR, preventing ligand binding and interrupting the signaling cascade.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Cetuximab is a monoclonal antibody that binds the EGFR extracellular domain, blocking ligand-induced receptor activation and thereby decreasing EGFR signaling activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Anti-EGFR therapies: clinical experience in colorectal, lung, and head and neck cancers.",
+            "authors": [
+              "Vokes EE",
+              "Chu E"
+            ],
+            "journal": "Oncology (Williston Park, N.Y.)",
+            "year": "2006",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P00533",
+      "target": "GO:0000165",
+      "evidence": [
+        {
+          "reference": "PMID:33184860",
+          "snippet": "EGFR transactivation resulted in the activation of ERK1/2 and AKT.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Activated EGFR drives phosphorylation of ERK1/2 (the terminal kinases of the MAPK cascade), demonstrating that EGFR positively regulates the MAPK cascade in colorectal cancer cells.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Morphine promotes tumorigenesis and cetuximab resistance via EGFR signaling activation in human colorectal cancer.",
+            "authors": [
+              "Lu H",
+              "Zhang H",
+              "Weng ML",
+              "Zhang J",
+              "Jiang N",
+              "Cata JP",
+              "Ma D",
+              "Chen WK",
+              "Miao CH"
+            ],
+            "journal": "Journal of cellular physiology",
+            "year": "2021",
+            "doi": "10.1002/jcp.30161",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "GO:0000165",
+      "target": "GO:0008283",
+      "evidence": [
+        {
+          "reference": "PMID:30273442",
+          "snippet": "The Ras/mitogen-activated protein kinase (MAPK) pathway controls fundamental cellular processes such as proliferation, differentiation, and apoptosis.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "MAPK pathway activity drives epithelial cell proliferation; loss of ERK1/2 negative regulation (DUSP6 KO) increases proliferation, confirming MAPK positively regulates cell population proliferation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Dual-specificity phosphatase 6 deletion protects the colonic epithelium against inflammation and promotes both proliferation and tumorigenesis.",
+            "authors": [
+              "Beaudry K",
+              "Langlois MJ",
+              "Montagne A",
+              "Cagnol S",
+              "Carrier JC",
+              "Rivard N"
+            ],
+            "journal": "Journal of cellular physiology",
+            "year": "2019",
+            "doi": "10.1002/jcp.27420",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0008283",
+      "target": "MESH:D015179",
+      "evidence": [
+        {
+          "reference": "PMID:41361128",
+          "snippet": "These mechanisms not only promote uncontrolled proliferation but also reinforce therapeutic resistance by dynamically modifying the tumor microenvironment (TME).",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Dysregulated signaling pathways in GI/colorectal cancers promote uncontrolled cell proliferation, which is a hallmark mechanism contributing to colorectal cancer progression.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Gastrointestinal cancer: molecular pathogenesis and targeted therapy.",
+            "authors": [
+              "Jin Y",
+              "He X",
+              "Wu Y"
+            ],
+            "journal": "Molecular biomedicine",
+            "year": "2025",
+            "doi": "10.1186/s43556-025-00361-9",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00002#mechanism-of-action",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    },
+    {
+      "url": "https://www.uniprot.org/uniprot/P00533#function",
+      "type": "other",
+      "label": "uniprot.org — record source"
+    }
+  ],
+  "site": {
+    "id": "phase3__P08",
+    "record_id": "P08_DB00002_MESH_D015179",
+    "run": "phase3",
+    "run_label": "Phase-3 eval",
+    "source_file": "tests/phase3_eval_outputs/P08.yaml",
+    "summary_generated": true
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P31_DB00067_MESH_D006467",
+    "drug": "Vasopressin",
+    "drug_mesh": "MESH:C016671",
+    "drugbank": "DB:DB00067",
+    "disease": "Hemophilia A",
+    "disease_mesh": "MESH:D006467",
+    "summary": "Vasopressin → Vasopressin V2 receptor → von Willebrand factor secretion → von Willebrand factor → Coagulation factor VIII → Hemophilia A"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00067",
+      "name": "Vasopressin",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P30518",
+      "name": "Vasopressin V2 receptor",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0061156",
+      "name": "von Willebrand factor secretion",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "UniProt:P04275",
+      "name": "von Willebrand factor",
+      "label": "Protein"
+    },
+    {
+      "id": "UniProt:P00451",
+      "name": "Coagulation factor VIII",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D006467",
+      "name": "Hemophilia A",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "increased",
+      "source": "DB:DB00067",
+      "target": "UniProt:P30518",
+      "evidence": [
+        {
+          "reference": "PMID:10880054",
+          "snippet": "We tested the hypothesis that DDAVP induces vWF secretion by binding to V2R and activating cAMP-mediated signaling in endothelial cells.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "DDAVP (desmopressin), a vasopressin analogue, acts as a specific agonist at the vasopressin V2 receptor.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Vasopressin-induced von Willebrand factor secretion from endothelial cells involves V2 receptors and cAMP.",
+            "authors": [
+              "Kaufmann JE",
+              "Oksche A",
+              "Wollheim CB",
+              "Günther G",
+              "Rosenthal W",
+              "Vischer UM"
+            ],
+            "journal": "The Journal of clinical investigation",
+            "year": "2000",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P30518",
+      "target": "GO:0061156",
+      "evidence": [
+        {
+          "reference": "PMID:10880054",
+          "snippet": "These results indicate that vasopressin induces cAMP-mediated vWF secretion by a direct effect on endothelial cells.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "V2 receptor activation drives cAMP-mediated von Willebrand factor secretion from endothelial cells.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Vasopressin-induced von Willebrand factor secretion from endothelial cells involves V2 receptors and cAMP.",
+            "authors": [
+              "Kaufmann JE",
+              "Oksche A",
+              "Wollheim CB",
+              "Günther G",
+              "Rosenthal W",
+              "Vischer UM"
+            ],
+            "journal": "The Journal of clinical investigation",
+            "year": "2000",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "GO:0061156",
+      "target": "UniProt:P04275",
+      "evidence": [
+        {
+          "reference": "PMID:10880054",
+          "snippet": "Vasopressin and its analogue 1-deamino-8-D-arginine vasopressin (DDAVP) are known to raise plasma von Willebrand factor (vWF) levels.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Secretion of von Willebrand factor from endothelial stores raises circulating plasma vWF levels.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Vasopressin-induced von Willebrand factor secretion from endothelial cells involves V2 receptors and cAMP.",
+            "authors": [
+              "Kaufmann JE",
+              "Oksche A",
+              "Wollheim CB",
+              "Günther G",
+              "Rosenthal W",
+              "Vischer UM"
+            ],
+            "journal": "The Journal of clinical investigation",
+            "year": "2000",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P04275",
+      "target": "UniProt:P00451",
+      "evidence": [
+        {
+          "reference": "PMID:12826528",
+          "snippet": "recent biochemical investigations have confirmed that VWF is a key partner for FVIII, playing significant roles in FVIII function, its production and its stabilization",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "von Willebrand factor binds and stabilizes coagulation factor VIII in plasma, sustaining functional FVIII levels.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The factor VIII/von Willebrand factor complex: basic and clinical issues.",
+            "authors": [
+              "Federici AB"
+            ],
+            "journal": "Haematologica",
+            "year": "2003",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:28581694",
+          "snippet": "VWF serving as the carrier for FVIII. VWF indirectly influences secondary hemostasis by stabilizing FVIII and transporting it to the site of primary hemostasis.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "By stabilizing and carrying factor VIII, von Willebrand factor sustains functional plasma FVIII levels.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Abnormal von Willebrand factor secretion, factor VIII stabilization and thrombus dynamics in type 2N von Willebrand disease mice.",
+            "authors": [
+              "Swystun LL",
+              "Georgescu I",
+              "Mewburn J",
+              "Deforest M",
+              "Nesbitt K",
+              "Hebert K",
+              "Dwyer C",
+              "Brown C",
+              "Notley C",
+              "Lillicrap D"
+            ],
+            "journal": "Journal of thrombosis and haemostasis : JTH",
+            "year": "2017",
+            "doi": "10.1111/jth.13749",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "treats",
+      "source": "UniProt:P00451",
+      "target": "MESH:D006467",
+      "evidence": [
+        {
+          "reference": "PMID:23265678",
+          "snippet": "Desmopressin is a synthetic vasopressin analog that increases the plasma levels of coagulation factor VIII, von Willebrand factor, and tissue plasminogen activator.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Raising plasma coagulation factor VIII corrects the FVIII deficiency underlying hemophilia A.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Desmopressin-related myocardial infarction in a patient with Wegener's granulomatosis: a case report and review of the literature.",
+            "authors": [
+              "Pape E",
+              "Béné J",
+              "Buchdahl AL",
+              "Gautier S",
+              "Hatron PY",
+              "Lambert M"
+            ],
+            "journal": "Journal des maladies vasculaires",
+            "year": "2013",
+            "doi": "10.1016/j.jmv.2012.11.001",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:23265678",
+          "snippet": "has been approved for use in the prevention and treatment of hemorrhagic events during surgery in patients with hemophilia A",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Vasopressin analogue desmopressin is approved to treat bleeding in hemophilia A via increased factor VIII.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Desmopressin-related myocardial infarction in a patient with Wegener's granulomatosis: a case report and review of the literature.",
+            "authors": [
+              "Pape E",
+              "Béné J",
+              "Buchdahl AL",
+              "Gautier S",
+              "Hatron PY",
+              "Lambert M"
+            ],
+            "journal": "Journal des maladies vasculaires",
+            "year": "2013",
+            "doi": "10.1016/j.jmv.2012.11.001",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00067",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P31",
+    "record_id": "P31_DB00067_MESH_D006467",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P31.yaml",
+    "summary_generated": true
+  }
+}

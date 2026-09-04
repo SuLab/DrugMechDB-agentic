@@ -1,0 +1,139 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P23_DB01611_MESH_D008180",
+    "drug": "Hydroxychloroquine",
+    "drug_mesh": "MESH:D006886",
+    "drugbank": "DB:DB01611",
+    "disease": "Systemic Lupus Erythematosus",
+    "disease_mesh": "MESH:D008180",
+    "summary": "Hydroxychloroquine → Toll-like receptor 7 → type I interferon production → Systemic Lupus Erythematosus"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB01611",
+      "name": "Hydroxychloroquine",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:Q9NYK1",
+      "name": "Toll-like receptor 7",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0032606",
+      "name": "type I interferon production",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D008180",
+      "name": "Systemic Lupus Erythematosus",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "DB:DB01611",
+      "target": "UniProt:Q9NYK1",
+      "evidence": [
+        {
+          "reference": "PMID:34580855",
+          "snippet": "HCQ treatment of fresh PBMCs, CAL-1 leukemic, and primary human pDCs inhibits TLR7 cleavage and results in accumulation of full-length protein. As a consequence, we observe an inhibition of pDC activation in response to TLR7 stimulation",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Hydroxychloroquine inhibits the proteolytic maturation of TLR7 and thereby reduces TLR7-driven activation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Hydroxychloroquine inhibits proteolytic processing of endogenous TLR7 protein in human primary plasmacytoid dendritic cells.",
+            "authors": [
+              "Cenac C",
+              "Ducatez MF",
+              "Guéry JC"
+            ],
+            "journal": "European journal of immunology",
+            "year": "2022",
+            "doi": "10.1002/eji.202149361",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:Q9NYK1",
+      "target": "GO:0032606",
+      "evidence": [
+        {
+          "reference": "PMID:34512664",
+          "snippet": "Plasmacytoid dendritic cells (pDCs) produce type I interferon (IFN-I) during HIV-1 infection in response to TLR7 stimulation.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "TLR7 stimulation drives type I interferon production by plasmacytoid dendritic cells.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Sex Differences in Primary HIV Infection: Revisiting the Role of TLR7-Driven Type 1 IFN Production by Plasmacytoid Dendritic Cells in Women.",
+            "authors": [
+              "Guéry JC"
+            ],
+            "journal": "Frontiers in immunology",
+            "year": "2021",
+            "doi": "10.3389/fimmu.2021.729233",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0032606",
+      "target": "MESH:D008180",
+      "evidence": [
+        {
+          "reference": "PMID:23445195",
+          "snippet": "interferon signaling is essential for the initiation and/or progression of lupus in several experimental models.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Type I interferon signaling drives the initiation and progression of lupus.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Fueling autoimmunity: type I interferon in autoimmune diseases.",
+            "authors": [
+              "Di Domizio J",
+              "Cao W"
+            ],
+            "journal": "Expert review of clinical immunology",
+            "year": "2013",
+            "doi": "10.1586/eci.12.106",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB01611",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P23",
+    "record_id": "P23_DB01611_MESH_D008180",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P23.yaml",
+    "summary_generated": true
+  }
+}

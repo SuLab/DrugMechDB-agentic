@@ -1,0 +1,86 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00619_MESH_D015464_1",
+    "drug": "imatinib",
+    "drug_mesh": "MESH:D000068877",
+    "drugbank": "DB:DB00619",
+    "disease": "Chronic myeloid leukemia, BCR-ABL positive",
+    "disease_mesh": "MESH:D015464",
+    "summary": "imatinib → BCR/ABL fusion protein → Chronic myeloid leukemia, BCR-ABL positive"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D000068877",
+      "name": "imatinib",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:A9UF07",
+      "name": "BCR/ABL fusion protein",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D015464",
+      "name": "Chronic myeloid leukemia, BCR-ABL positive",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D000068877",
+      "target": "UniProt:A9UF07",
+      "evidence": [
+        {
+          "reference": "PMID:12663457",
+          "snippet": "The tyrosine kinase inhibitor STI571 (imatinib) binds competitively to the adenosine triphosphate (ATP) binding site of the ABL kinase, thereby inhibiting auto- and substrate phosphorylation of the oncogenic protein BCR-ABL and preventing the activation of downstream signaling pathways.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "STI571 is the developmental name for imatinib; the sentence states it binds the ATP site of the ABL kinase and inhibits phosphorylation of BCR-ABL.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "UniProt:A9UF07",
+      "target": "MESH:D015464",
+      "evidence": [
+        {
+          "reference": "PMID:32711219",
+          "snippet": "Chronic myeloid leukemia (CML) is a kind of myeloproliferative disorder caused by a constitutively active BCR-ABL tyrosine kinase.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Background disease-mechanism statement establishing constitutively active BCR-ABL as the cause of CML.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12663457/",
+      "type": "other",
+      "label": "pubmed.ncbi.nlm.nih.gov — record source"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32711219/",
+      "type": "other",
+      "label": "pubmed.ncbi.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00619_MESH_D015464_1__r2",
+    "record_id": "DB00619_MESH_D015464_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00619_MESH_D015464_1__r2.yaml",
+    "summary_generated": true
+  }
+}

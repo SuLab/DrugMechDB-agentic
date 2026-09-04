@@ -1,0 +1,151 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00009_MESH_D011655_1",
+    "drug": "alteplase",
+    "drug_mesh": "MESH:D010959",
+    "drugbank": "DB:DB00009",
+    "disease": "Pulmonary embolism",
+    "disease_mesh": "MESH:D011655",
+    "summary": "alteplase → Plasminogen → Fibrinolysis → Thromboembolism → Pulmonary embolism"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00009",
+      "name": "alteplase",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P00747",
+      "name": "Plasminogen",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0042730",
+      "name": "Fibrinolysis",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "HP:0001907",
+      "name": "Thromboembolism",
+      "label": "PhenotypicFeature"
+    },
+    {
+      "id": "MESH:D011655",
+      "name": "Pulmonary embolism",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "increased",
+      "source": "DB:DB00009",
+      "target": "UniProt:P00747",
+      "evidence": [
+        {
+          "reference": "PMID:3117481",
+          "snippet": "Tissue plasminogen activator (t-PA) is a serine protease that binds to fibrin-plasminogen complex, catalyzing the conversion of plasminogen to plasmin",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Alteplase is the recombinant t-PA product (rt-PA, Activase) reviewed here; t-PA catalyzes conversion of plasminogen to active plasmin.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:22079561",
+          "snippet": "the main function of tPA released from the endothelium is to convert fibrin-bound plasminogen into active plasmin, thus dissolving the fibrin meshwork of blood clots",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Alteplase is recombinant human tPA; tPA converts fibrin-bound plasminogen into active plasmin.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "participates in",
+      "source": "UniProt:P00747",
+      "target": "GO:0042730",
+      "evidence": [
+        {
+          "reference": "PMID:36942151",
+          "snippet": "convert plasminogen into plasmin to initiate fiber lysis",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Plasmin, generated from plasminogen, initiates fiber (fibrin) lysis, i.e. it drives fibrinolysis.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:3126344",
+          "snippet": "a proenzyme, plasminogen, which can be converted to the active enzyme plasmin, which will degrade fibrin",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Active plasmin derived from plasminogen degrades fibrin, the proteolytic core of fibrinolysis.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "disrupts",
+      "source": "GO:0042730",
+      "target": "HP:0001907",
+      "evidence": [
+        {
+          "reference": "PMID:36942151",
+          "snippet": "This illustrated review focuses on fibrinolysis-the degradation of blood clots or thrombi",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Fibrinolysis is the degradation of blood clots/thrombi, i.e. the process itself disrupts the thromboembolus.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "HP:0001907",
+      "target": "MESH:D011655",
+      "evidence": [
+        {
+          "reference": "PMID:38299563",
+          "snippet": "thrombus that detaches and lodges in the pulmonary circulation being a cause of APE",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "A thrombus that detaches and lodges in the pulmonary circulation (a thromboembolus) is the cause of acute pulmonary embolism (APE).",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3117481/",
+      "type": "other",
+      "label": "pubmed.ncbi.nlm.nih.gov — record source"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36942151/",
+      "type": "other",
+      "label": "pubmed.ncbi.nlm.nih.gov — record source"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38299563/",
+      "type": "other",
+      "label": "pubmed.ncbi.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00009_MESH_D011655_1__r2",
+    "record_id": "DB00009_MESH_D011655_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00009_MESH_D011655_1__r2.yaml",
+    "summary_generated": true
+  }
+}

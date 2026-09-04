@@ -1,0 +1,103 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00002_MESH_D003110_1",
+    "drug": "cetuximab",
+    "drug_mesh": "MESH:D000068818",
+    "drugbank": "DB:DB00002",
+    "disease": "Malignant tumor of colon",
+    "disease_mesh": "MESH:D003110",
+    "summary": "cetuximab → Epidermal growth factor receptor → cell population proliferation → Malignant tumor of colon"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D000068818",
+      "name": "cetuximab",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P00533",
+      "name": "Epidermal growth factor receptor",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0008283",
+      "name": "cell population proliferation",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D003110",
+      "name": "Malignant tumor of colon",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D000068818",
+      "target": "UniProt:P00533",
+      "evidence": [
+        {
+          "reference": "PMID:39000238",
+          "snippet": "Cetuximab, a mouse-human chimeric monoclonal antibody (mAb), binds to the extracellular domain of EGFR thus impairing EGFR-mediated signaling and reducing cell proliferation.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Cetuximab binds the extracellular domain of EGFR and impairs EGFR-mediated signaling, i.e. decreases EGFR activity.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P00533",
+      "target": "GO:0008283",
+      "evidence": [
+        {
+          "reference": "PMID:39000238",
+          "snippet": "Cetuximab, a mouse-human chimeric monoclonal antibody (mAb), binds to the extracellular domain of EGFR thus impairing EGFR-mediated signaling and reducing cell proliferation.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Impairing EGFR-mediated signaling reduces cell proliferation, indicating EGFR signaling positively regulates cell proliferation.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0008283",
+      "target": "MESH:D003110",
+      "evidence": [
+        {
+          "reference": "PMID:41037865",
+          "snippet": "The second deadliest cancer in the world is colorectal cancer (CRC), which is caused by the uncontrolled proliferation of epithelial cells in the colon.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Colorectal cancer is caused by the uncontrolled proliferation of epithelial cells in the colon, establishing cell proliferation as a contributor to the colonic malignancy.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00002",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00002_MESH_D003110_1",
+    "record_id": "DB00002_MESH_D003110_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00002_MESH_D003110_1.yaml",
+    "summary_generated": true
+  }
+}

@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
-<div class="mock-banner">MOCKUP · DrugMechDB website revamp · sample data, not final — navigation is search-driven (no giant sidebar)</div>
+<div class="mock-banner">LIVE · 135 AI-curated records from 4 agentic curation runs (built by scripts/build_site_data.py) · site design still a mockup</div>
 
 <nav class="nav"><div class="container nav-inner">
   <a class="brand" href="index.html"><span class="mark">D</span>DrugMech<span class="tail">DB</span></a>
@@ -24,6 +24,10 @@
 
     <!-- FACETS -->
     <aside class="facets" data-reveal aria-label="Filters">
+      <div class="facet">
+        <h4>Curation run</h4>
+        <div id="f-run"></div>
+      </div>
       <div class="facet">
         <h4>Disease area</h4>
         <div id="f-area"></div>
@@ -81,11 +85,12 @@ const TYPE_COLOR = {
    Wrapped in an async IIFE so live mode (fetch) works with no page changes. */
 (async () => {
 const IDX = await window.DMDB.getIndex();
-const sel = { area:new Set(), type:new Set(), len:new Set() };
+const sel = { run:new Set(), area:new Set(), type:new Set(), len:new Set() };
 
 function counts(key, val){ return IDX.filter(r => key==="type" ? r.types.includes(val) : key==="len" ? lenBucket(r.steps)===val : r[key]===val).length; }
 function lenBucket(s){ return s<=3?"3 or fewer":s<=5?"4–5":"6+"; }
 
+const runs  = [...new Set(IDX.map(r=>r.run))].sort();
 const areas = [...new Set(IDX.map(r=>r.area))].sort();
 const types = [...new Set(IDX.flatMap(r=>r.types))];
 const lens = ["3 or fewer","4–5","6+"];
@@ -94,6 +99,7 @@ function facet(elId, key, vals){
   document.getElementById(elId).innerHTML = vals.map(v=>
     `<label><input type="checkbox" data-k="${key}" value="${v}"> ${v} <span class="fc">${counts(key,v)}</span></label>`).join("");
 }
+facet("f-run","run",runs);
 facet("f-area","area",areas);
 facet("f-type","type",types);
 facet("f-len","len",lens);
@@ -116,10 +122,10 @@ document.getElementById("clear").addEventListener("click", e=>{
 });
 
 /* --- field-boosted, prefix-aware search (zero-dependency) --- */
-const FIELD_BOOST = { drug:10, disease:8, target:4, area:2, id:1 };
+const FIELD_BOOST = { drug:10, disease:8, target:4, area:2, run:2, id:1 };
 const norm = s => (s||"").toLowerCase();
 function termScore(term, r){
-  const fields = { drug:r.drug, disease:r.disease, target:r.target, area:r.area, id:r.id };
+  const fields = { drug:r.drug, disease:r.disease, target:r.target, area:r.area, run:r.run, id:r.record_id||r.id };
   let best = 0;
   for(const f in fields){
     const val = norm(fields[f]); if(!val) continue;
@@ -160,10 +166,11 @@ function render(){
   const q = norm(document.getElementById("q").value).trim();
   const terms = q.split(/\s+/).filter(Boolean);
   const sortKey = document.getElementById("sort").value;
-  const anyFilter = q || sel.area.size || sel.type.size || sel.len.size || sortKey!=="relevance";
+  const anyFilter = q || sel.run.size || sel.area.size || sel.type.size || sel.len.size || sortKey!=="relevance";
   document.getElementById("clear").hidden = !anyFilter;
 
   let out = IDX.filter(r=>{
+    if(sel.run.size && !sel.run.has(r.run)) return false;
     if(sel.area.size && !sel.area.has(r.area)) return false;
     if(sel.type.size && ![...sel.type].every(t=>r.types.includes(t))) return false;
     if(sel.len.size && !sel.len.has(lenBucket(r.steps))) return false;
@@ -179,9 +186,11 @@ function render(){
     const preview = r.types.map((t,i)=>
       `<span class="mini-node" style="background:${TYPE_COLOR[t]||'#6b7280'}">${t.replace(/([a-z])([A-Z])/g,'$1 $2')}</span>`+
       (i<r.types.length-1?'<span class="mini-ar">→</span>':'')).join("");
-    return `<a class="result" href="record.html">
+    const src = r.sourced!==undefined ? ` · ${r.sourced}/${r.edges} edges sourced` : "";
+    const flag = r.flagged ? ` · ⚑ ${r.flagged} flagged` : "";
+    return `<a class="result" href="record.html?id=${encodeURIComponent(r.id)}">
       <div class="r-title"><span class="drug">${hl(r.drug,terms)}</span> <span class="ar">↓</span> <span class="disease">${hl(r.disease,terms)}</span></div>
-      <div class="r-meta">${esc(r.area)} · target: ${hl(r.target||'',terms)} · ${r.steps} steps · <span class="mono">${esc(r.id)}</span></div>
+      <div class="r-meta">${esc(r.area)} · target: ${hl(r.target||'',terms)} · ${r.steps} steps${src}${flag} · <span class="mono">${esc(r.record_id||r.id)}</span> · ${esc(r.run||'')}</div>
       <div class="r-path">${preview}</div></a>`;
   }).join("") || `<div class="card" style="padding:40px;text-align:center;color:var(--muted)">No paths match these filters.</div>`;
 }

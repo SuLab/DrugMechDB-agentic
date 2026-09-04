@@ -1,0 +1,219 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P01_DB00945_MESH_D009203",
+    "drug": "Aspirin",
+    "drug_mesh": "MESH:D001241",
+    "drugbank": "DB:DB00945",
+    "disease": "Myocardial infarction",
+    "disease_mesh": "MESH:D009203",
+    "summary": "Aspirin → Prostaglandin G/H synthase 1 (Cyclooxygenase-1, COX-1) → Thromboxane A2 → platelet aggregation → Myocardial infarction"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D001241",
+      "name": "Aspirin",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P23219",
+      "name": "Prostaglandin G/H synthase 1 (Cyclooxygenase-1, COX-1)",
+      "label": "Protein"
+    },
+    {
+      "id": "CHEBI:50124",
+      "name": "Thromboxane A2",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "GO:0070527",
+      "name": "platelet aggregation",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D009203",
+      "name": "Myocardial infarction",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D001241",
+      "target": "UniProt:P23219",
+      "evidence": [
+        {
+          "reference": "PMID:18612540",
+          "snippet": "Aspirin prevents thrombotic events by inhibiting platelet cyclooxygenase-1 (COX-1), thus reducing thromboxane A2 formation and platelet aggregation.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Aspirin irreversibly acetylates and inhibits platelet COX-1.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The C50T polymorphism of the cyclooxygenase-1 gene and the risk of thrombotic events during low-dose therapy with acetyl salicylic acid.",
+            "authors": [
+              "Clappers N",
+              "van Oijen MG",
+              "Sundaresan S",
+              "Brouwer MA",
+              "Te Morsche RH",
+              "Keuper W",
+              "Peters WH",
+              "Drenth JP",
+              "Verheugt FW"
+            ],
+            "journal": "Thrombosis and haemostasis",
+            "year": "2008",
+            "doi": "10.1160/TH08-03-0172",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:24942808",
+          "snippet": "the acetylation of platelet cyclooxygenase (COX)-1 at serine-529 is the direct mechanism of action of low-dose aspirin",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Reappraisal of the clinical pharmacology of low-dose aspirin by comparing novel direct and traditional indirect biomarkers of drug action.",
+            "authors": [
+              "Patrignani P",
+              "Tacconelli S",
+              "Piazuelo E",
+              "Di Francesco L",
+              "Dovizio M",
+              "Sostres C",
+              "Marcantoni E",
+              "Guillem-Llobat P",
+              "Del Boccio P",
+              "Zucchelli M",
+              "Patrono C",
+              "Lanas A"
+            ],
+            "journal": "Journal of thrombosis and haemostasis : JTH",
+            "year": "2014",
+            "doi": "10.1111/jth.12637",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P23219",
+      "target": "CHEBI:50124",
+      "evidence": [
+        {
+          "reference": "PMID:18612540",
+          "snippet": "Aspirin prevents thrombotic events by inhibiting platelet cyclooxygenase-1 (COX-1), thus reducing thromboxane A2 formation and platelet aggregation.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "COX-1 activity drives thromboxane A2 formation; inhibiting COX-1 reduces thromboxane A2.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The C50T polymorphism of the cyclooxygenase-1 gene and the risk of thrombotic events during low-dose therapy with acetyl salicylic acid.",
+            "authors": [
+              "Clappers N",
+              "van Oijen MG",
+              "Sundaresan S",
+              "Brouwer MA",
+              "Te Morsche RH",
+              "Keuper W",
+              "Peters WH",
+              "Drenth JP",
+              "Verheugt FW"
+            ],
+            "journal": "Thrombosis and haemostasis",
+            "year": "2008",
+            "doi": "10.1160/TH08-03-0172",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "CHEBI:50124",
+      "target": "GO:0070527",
+      "evidence": [
+        {
+          "reference": "PMID:17073586",
+          "snippet": "Various platelet agonists like adenosine diphosphate (ADP), thrombin and thromboxane A2 (TXA2) activate platelets by acting via their respective surface receptors",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Thromboxane A2 is a platelet agonist that activates platelets to form stable platelet aggregates.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "G-protein dependent platelet signaling--perspectives for therapy.",
+            "authors": [
+              "Shankar H",
+              "Kahner B",
+              "Kunapuli SP"
+            ],
+            "journal": "Current drug targets",
+            "year": "2006",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0070527",
+      "target": "MESH:D009203",
+      "evidence": [
+        {
+          "reference": "PMID:17073586",
+          "snippet": "Platelet activation and aggregation is an integral component of the pathophysiology that leads to thrombotic and ischemic diseases such as cerebral stroke, peripheral vascular disease and myocardial infarction.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Platelet aggregation drives coronary thrombosis and the pathophysiology leading to myocardial infarction.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "G-protein dependent platelet signaling--perspectives for therapy.",
+            "authors": [
+              "Shankar H",
+              "Kahner B",
+              "Kunapuli SP"
+            ],
+            "journal": "Current drug targets",
+            "year": "2006",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00945",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P01",
+    "record_id": "P01_DB00945_MESH_D009203",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P01.yaml",
+    "summary_generated": true
+  }
+}
