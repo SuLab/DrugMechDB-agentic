@@ -1,0 +1,180 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P36_DB00027_MESH_D003234",
+    "drug": "gramicidin",
+    "drug_mesh": "MESH:D006096",
+    "drugbank": "DB:DB00027",
+    "disease": "Bacterial conjunctivitis",
+    "disease_mesh": "MESH:D003234",
+    "summary": "Gramicidin → monoatomic cation transmembrane transport → membrane depolarization"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D006096",
+      "name": "Gramicidin",
+      "label": "Drug"
+    },
+    {
+      "id": "GO:0005886",
+      "name": "plasma membrane",
+      "label": "CellularComponent"
+    },
+    {
+      "id": "GO:0098655",
+      "name": "monoatomic cation transmembrane transport",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "GO:0051899",
+      "name": "membrane depolarization",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D003234",
+      "name": "Bacterial conjunctivitis",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "located in",
+      "source": "MESH:D006096",
+      "target": "GO:0005886",
+      "evidence": [
+        {
+          "reference": "PMID:27496896",
+          "snippet": "Gramicidin, a channel-forming peptide causing membrane permeability to monovalent cations",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Gramicidin is a channel-forming peptide that inserts into the membrane.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Staphylococcus aureus α-toxin-mediated cation entry depolarizes membrane potential and activates p38 MAP kinase in airway epithelial cells.",
+            "authors": [
+              "Eiffler I",
+              "Behnke J",
+              "Ziesemer S",
+              "Müller C",
+              "Hildebrandt JP"
+            ],
+            "journal": "American journal of physiology. Lung cellular and molecular physiology",
+            "year": "2016",
+            "doi": "10.1152/ajplung.00090.2016",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "increased",
+      "source": "MESH:D006096",
+      "target": "GO:0098655",
+      "evidence": [
+        {
+          "reference": "PMID:27496896",
+          "snippet": "Gramicidin, a channel-forming peptide causing membrane permeability to monovalent cations",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Gramicidin forms channels permeable to monovalent cations, increasing cation transmembrane transport.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Staphylococcus aureus α-toxin-mediated cation entry depolarizes membrane potential and activates p38 MAP kinase in airway epithelial cells.",
+            "authors": [
+              "Eiffler I",
+              "Behnke J",
+              "Ziesemer S",
+              "Müller C",
+              "Hildebrandt JP"
+            ],
+            "journal": "American journal of physiology. Lung cellular and molecular physiology",
+            "year": "2016",
+            "doi": "10.1152/ajplung.00090.2016",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "GO:0098655",
+      "target": "GO:0051899",
+      "evidence": [
+        {
+          "reference": "PMID:9765307",
+          "snippet": "Gramicidin, which generates pores that are permeable to monovalent cations, and concurrently eliminates the membrane potential",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Gramicidin cation pores collapse/eliminate the membrane potential, i.e. cause depolarization.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Regulation of adenylyl cyclase by membrane potential.",
+            "authors": [
+              "Cooper DM",
+              "Schell MJ",
+              "Thorn P",
+              "Irvine RF"
+            ],
+            "journal": "The Journal of biological chemistry",
+            "year": "1998",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "treats",
+      "source": "MESH:D006096",
+      "target": "MESH:D003234",
+      "evidence": [
+        {
+          "reference": "PMID:6204534",
+          "snippet": "polymyxin B-neomycin-gramicidin (Neosporin, the control) eliminated bacteria from the eyes of patients with conjunctivitis",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Gramicidin-containing ophthalmic solution eliminated bacteria in patients with bacterial conjunctivitis.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Clinical evaluation of trimethoprim-containing ophthalmic solutions in humans.",
+            "authors": [
+              "Lamberts DW",
+              "Buka T",
+              "Knowlton GM"
+            ],
+            "journal": "American journal of ophthalmology",
+            "year": "1984",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00027",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P36",
+    "record_id": "P36_DB00027_MESH_D003234",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P36.yaml",
+    "summary_generated": true
+  }
+}

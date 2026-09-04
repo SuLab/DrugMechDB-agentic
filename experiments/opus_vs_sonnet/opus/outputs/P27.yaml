@@ -27,7 +27,9 @@ nodes:
     name: Type 1 Diabetes Mellitus
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D007328
     target: UniProt:P06213
     evidence:
@@ -36,7 +38,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Insulin binds the insulin receptor and triggers its autophosphorylation/activation."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P06213
     target: UniProt:P14672
     evidence:
@@ -54,7 +57,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "GLUT4 at the plasma membrane mediates insulin-stimulated glucose uptake/import."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0046323
     target: HP:0003074
     evidence:

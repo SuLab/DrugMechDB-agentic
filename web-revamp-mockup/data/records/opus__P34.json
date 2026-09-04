@@ -1,0 +1,215 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P34_DB00004_MESH_D016410",
+    "drug": "Denileukin diftitox",
+    "drug_mesh": "MESH:C078456",
+    "drugbank": "DB:DB00004",
+    "disease": "Primary cutaneous T-cell lymphoma",
+    "disease_mesh": "MESH:D016410",
+    "summary": "Denileukin diftitox → translation → apoptotic process → T cell"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00004",
+      "name": "Denileukin diftitox",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P01589",
+      "name": "Interleukin-2 receptor subunit alpha",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0006412",
+      "name": "translation",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "GO:0006915",
+      "name": "apoptotic process",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "CL:0000084",
+      "name": "T cell",
+      "label": "Cell"
+    },
+    {
+      "id": "MESH:D016410",
+      "name": "Primary cutaneous T-cell lymphoma",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "DB:DB00004",
+      "target": "UniProt:P01589",
+      "evidence": [
+        {
+          "reference": "PMID:24462799",
+          "snippet": "both monovalent and bivalent human IL-2 fusion toxins are capable of blocking the binding of biotinylated human IL-2 to human CD25 by flow cytometry",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Denileukin diftitox (the monovalent human IL-2 fusion toxin, Ontak) binds CD25 (IL-2R alpha) and blocks IL-2 binding to the receptor.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Diphtheria toxin-based bivalent human IL-2 fusion toxin with improved efficacy for targeting human CD25(+) cells.",
+            "authors": [
+              "Peraino JS",
+              "Zhang H",
+              "Rajasekera PV",
+              "Wei M",
+              "Madsen JC",
+              "Sachs DH",
+              "Huang CA",
+              "Wang Z"
+            ],
+            "journal": "Journal of immunological methods",
+            "year": "2014",
+            "doi": "10.1016/j.jim.2014.01.008",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "decreased",
+      "source": "DB:DB00004",
+      "target": "GO:0006412",
+      "evidence": [
+        {
+          "reference": "PMID:11707818",
+          "snippet": "The ADP-ribosyltransferase activity of diphtheria toxin is cleaved in the endosome and is translocated into the cytosol where it inhibits protein synthesis, leading to apoptosis.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "DAB(389)IL-2 (ONTAK): a novel fusion toxin therapy for lymphoma.",
+            "authors": [
+              "Foss FM"
+            ],
+            "journal": "Clinical lymphoma",
+            "year": "2000",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "GO:0006412",
+      "target": "GO:0006915",
+      "evidence": [
+        {
+          "reference": "PMID:11707818",
+          "snippet": "where it inhibits protein synthesis, leading to apoptosis",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "DAB(389)IL-2 (ONTAK): a novel fusion toxin therapy for lymphoma.",
+            "authors": [
+              "Foss FM"
+            ],
+            "journal": "Clinical lymphoma",
+            "year": "2000",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "occurs in",
+      "source": "GO:0006915",
+      "target": "CL:0000084",
+      "evidence": [
+        {
+          "reference": "PMID:36047157",
+          "snippet": "DD binds to IL-2 receptor (IL-2R) expressed on tumor cells and is taken up into the cells. Subsequently, DT fragments with adenosine diphosphate ribosylation enzyme inhibit protein synthesis, then ultimately trigger cell death.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Protein synthesis inhibition triggers death of the IL-2R-bearing malignant T cells.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "[Preclinical and clinical researches of Denileukin Diftitox (Genetical Recombination) (Remitoro®), a novel agent for T-cell lymphoma].",
+            "authors": [
+              "Shiiba H",
+              "Takechi A",
+              "Asakura S",
+              "Kawaguchi T",
+              "Sato M"
+            ],
+            "journal": "Nihon yakurigaku zasshi. Folia pharmacologica Japonica",
+            "year": "2022",
+            "doi": "10.1254/fpj.22032",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "treats",
+      "source": "DB:DB00004",
+      "target": "MESH:D016410",
+      "evidence": [
+        {
+          "reference": "PMID:16410787",
+          "snippet": "Denileukin diftitox was approved for the treatment of cutaneous T-cell lymphomas (CTCLs) with CD25+ expression.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "CD25 expression is correlated with histological grade and response to denileukin diftitox in cutaneous T-cell lymphoma.",
+            "authors": [
+              "Talpur R",
+              "Jones DM",
+              "Alencar AJ",
+              "Apisarnthanarax N",
+              "Herne KL",
+              "Yang Y",
+              "Duvic M"
+            ],
+            "journal": "The Journal of investigative dermatology",
+            "year": "2006",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00004",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P34",
+    "record_id": "P34_DB00004_MESH_D016410",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P34.yaml",
+    "summary_generated": true
+  }
+}

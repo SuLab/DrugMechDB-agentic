@@ -21,7 +21,9 @@ nodes:
     name: Ascorbic acid deficiency
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D001205
     target: UniProt:P13674
     evidence:

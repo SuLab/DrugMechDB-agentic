@@ -24,7 +24,9 @@ nodes:
     name: Pulmonary embolism
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: DB:DB00009
     target: UniProt:P00747
     evidence:

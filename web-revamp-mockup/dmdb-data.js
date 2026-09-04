@@ -27,7 +27,9 @@
   "use strict";
 
   // ── THE SWAP POINT ──────────────────────────────────────────────────────────
-  const SOURCE = "sample";               // "sample" (bundled data.js) | "live" (fetch JSON)
+  const SOURCE = "live";                 // "sample" (bundled data.js) | "live" (fetch JSON)
+  // LIVE: data/ is built from the agentic curation runs by
+  // scripts/build_site_data.py (135 records across 4 runs). Re-run it after a curation.
   const ENDPOINTS = {
     index:     "data/index.json",
     record:    (id) => `data/records/${encodeURIComponent(id)}.json`,
@@ -112,7 +114,14 @@
       return SOURCE === "live" ? fetchJSON(ENDPOINTS.index) : (window.DMDB_INDEX || []);
     },
     async getRecord(id) {
-      if (SOURCE === "live") return fetchJSON(ENDPOINTS.record(id));
+      if (SOURCE === "live") {
+        if (!id) {                                     // no ?id= -> first index row
+          const idx = await fetchJSON(ENDPOINTS.index);
+          if (!idx.length) throw new Error("DMDB: index.json is empty");
+          id = idx[0].id;
+        }
+        return fetchJSON(ENDPOINTS.record(id));
+      }
       const r = window.DMDB_RECORD || null;                 // sample ships a single record
       return (r && id && r.graph && r.graph._id !== id) ? r : r;
     },

@@ -24,7 +24,9 @@ nodes:
     name: Thrombocytopenic disorder
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: DB:DB00038
     target: UniProt:Q14626
     evidence:
@@ -37,7 +39,8 @@ links:
         snippet: "A pre-requisite for signal transduction is the initial binding of the cytokines to their unique α-receptors, IL-6R and IL-11R."
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:Q14626
     target: GO:0030219
     evidence:
@@ -51,7 +54,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Activation of IL-11 receptor signalling (gp130/STAT3) in megakaryocytes directly promotes megakaryocytopoiesis/megakaryocyte differentiation."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0030219
     target: GO:0030220
     evidence:

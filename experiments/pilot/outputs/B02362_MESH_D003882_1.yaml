@@ -18,7 +18,9 @@ nodes:
     name: Dermatomyositis
     label: Disease
 links:
-  - key: decreases abundance of
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: decreased
     source: MESH:D010129
     target: MESH:D006025
     evidence:

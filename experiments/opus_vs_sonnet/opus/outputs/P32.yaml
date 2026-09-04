@@ -21,7 +21,8 @@ nodes:
     name: Ascorbic acid deficiency
     label: Disease
 links:
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: MESH:D001205
     target: UniProt:P13674
     evidence:

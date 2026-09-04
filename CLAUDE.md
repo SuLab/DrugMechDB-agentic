@@ -21,8 +21,11 @@ new ones) — keys: `directed`, `multigraph`, `graph`
 Edges may carry per-edge `evidence` (an `EvidenceItem` with a verbatim PubMed `snippet`).
 `_index.yaml` is a **generated** aggregate — don't hand-edit it.
 
-Full structure, the 14 node types, the 67-predicate vocabulary, and the path-quality
+Full structure, the 14 node types, the predicate vocabulary, and the path-quality
 conventions are in **`AGENTS.md`** and **`CurationGuide.md`**. Read those before curating.
+The predicate enum spans two Biolink eras — new curation uses only the `status: current`
+values in `src/drugmechdb/schema/biolink_predicate_status.yaml` (pinned to Biolink 4.4.4),
+with polarity carried in edge qualifiers. See **AGENTS.md §3.0**.
 
 ## The QC gate (`scripts/qc.py`)
 
@@ -35,7 +38,8 @@ and runs the matching layers:
 | `ai_curated` | any edge has `evidence:`      | 1, 2, 3, 4  |
 
 1. **schema** (LinkML `MechanisticPath`) · 2. **node ontology** (prefix↔label) ·
-3. **predicate enum** (67 Biolink predicates) · 4. **reference** (snippet verbatim in source).
+3. **predicate enum** (era-aware: `ai_curated` records must use current-Biolink predicates)
+· 4. **reference** (snippet verbatim in source).
 
 ```bash
 just qc                       # whole corpus, auto profile

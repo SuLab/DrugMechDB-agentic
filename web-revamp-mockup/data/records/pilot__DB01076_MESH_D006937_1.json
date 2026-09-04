@@ -1,0 +1,178 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB01076_MESH_D006937_1",
+    "drug": "atorvastatin",
+    "drug_mesh": "MESH:D000069059",
+    "drugbank": "DB:DB01076",
+    "disease": "Hypercholesterolemia",
+    "disease_mesh": "MESH:D006937",
+    "summary": "atorvastatin → 3-hydroxy-3-methylglutaryl-coenzyme A reductase → Cholesterol → Low-density lipoprotein receptor → Low-density lipoprotein cholesterol → Hypercholesterolemia"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D000069059",
+      "name": "atorvastatin",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P04035",
+      "name": "3-hydroxy-3-methylglutaryl-coenzyme A reductase",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D002784",
+      "name": "Cholesterol",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "UniProt:P01130",
+      "name": "Low-density lipoprotein receptor",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D008078",
+      "name": "Low-density lipoprotein cholesterol",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "MESH:D006937",
+      "name": "Hypercholesterolemia",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D000069059",
+      "target": "UniProt:P04035",
+      "evidence": [
+        {
+          "reference": "PMID:10582478",
+          "snippet": "the inhibition of HMG Co-A reductase, the key enzyme in cholesterol synthesis, which leads to the increase of LDL receptors.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Atorvastatin's mechanism of action is inhibition of HMG-CoA reductase.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "abundance",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P04035",
+      "target": "MESH:D002784",
+      "evidence": [
+        {
+          "reference": "PMID:10582478",
+          "snippet": "HMG Co-A reductase, the key enzyme in cholesterol synthesis",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "HMG-CoA reductase is the rate-limiting enzyme of cholesterol biosynthesis, so its activity increases cellular cholesterol.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D002784",
+      "target": "UniProt:P01130",
+      "evidence": [
+        {
+          "reference": "PMID:12829694",
+          "snippet": "LDL receptor levels are subject to negative feedback regulation by cellular cholesterol through sterol regulatory element-binding protein-2 (SREBP-2).",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Cellular cholesterol negatively feedback-regulates LDL receptor levels via SREBP-2; statin-lowered cholesterol therefore raises LDL receptor expression.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Thyroid hormone regulation and cholesterol metabolism are connected through Sterol Regulatory Element-Binding Protein-2 (SREBP-2).",
+            "authors": [
+              "Shin DJ",
+              "Osborne TF"
+            ],
+            "journal": "The Journal of biological chemistry",
+            "year": "2003",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "abundance",
+      "object_direction_qualifier": "decreased",
+      "source": "UniProt:P01130",
+      "target": "MESH:D008078",
+      "evidence": [
+        {
+          "reference": "PMID:32109664",
+          "snippet": "Hepatic low density lipoprotein receptor (LDLR) pathway, as the major mechanism for clearing circulating low density lipoprotein cholesterol (LDL-C) in bloodstream, is a pivotal therapeutic target to treat hypercholesterolemia and atherosclerosis.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "The hepatic LDL receptor is the major route for clearing circulating LDL cholesterol, reducing its plasma abundance.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Hsa-miR-140-5p down-regulates LDL receptor and attenuates LDL-C uptake in human hepatocytes.",
+            "authors": [
+              "Xu Y",
+              "Gao J",
+              "Gong Y",
+              "Chen M",
+              "Chen J",
+              "Zhao W",
+              "Tan S"
+            ],
+            "journal": "Atherosclerosis",
+            "year": "2020",
+            "doi": "10.1016/j.atherosclerosis.2020.02.004",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "MESH:D008078",
+      "target": "MESH:D006937",
+      "evidence": [
+        {
+          "reference": "PMID:10591675",
+          "snippet": "marked hypercholesterolemia (up to 3- to 4-fold over nontransgenics), characterized by an increase in low density lipoprotein (LDL) cholesterol",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Elevated LDL cholesterol produces the hypercholesterolemic state.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB01076",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB01076_MESH_D006937_1",
+    "record_id": "DB01076_MESH_D006937_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB01076_MESH_D006937_1.yaml",
+    "summary_generated": true
+  }
+}

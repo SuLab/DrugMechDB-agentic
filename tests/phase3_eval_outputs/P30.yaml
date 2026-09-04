@@ -24,7 +24,9 @@ nodes:
     name: Diabetes Mellitus, Type 2
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:C000591311
     target: UniProt:P31639
     evidence:
@@ -33,7 +35,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Pharmacological review confirming empagliflozin selectively inhibits SGLT2 activity, constraining its renal glucose reabsorption function."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P31639
     target: GO:0035623
     evidence:

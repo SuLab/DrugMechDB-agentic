@@ -27,7 +27,9 @@ nodes:
     name: Primary cutaneous T-cell lymphoma
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00004
     target: UniProt:P01589
     evidence:
@@ -36,7 +38,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Denileukin diftitox (the monovalent human IL-2 fusion toxin, Ontak) binds CD25 (IL-2R alpha) and blocks IL-2 binding to the receptor."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: DB:DB00004
     target: GO:0006412
     evidence:
@@ -44,7 +47,8 @@ links:
         snippet: "The ADP-ribosyltransferase activity of diphtheria toxin is cleaved in the endosome and is translocated into the cytosol where it inhibits protein synthesis, leading to apoptosis."
         supports: SUPPORT
         evidence_source: OTHER
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0006412
     target: GO:0006915
     evidence:

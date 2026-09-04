@@ -1,0 +1,145 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00002_MESH_D003110_1",
+    "drug": "cetuximab",
+    "drug_mesh": "MESH:D000068818",
+    "drugbank": "DB:DB00002",
+    "disease": "Malignant tumor of colon",
+    "disease_mesh": "MESH:D003110",
+    "summary": "cetuximab → Epidermal growth factor receptor → cell proliferation → Malignant tumor of colon"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00002",
+      "name": "cetuximab",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P00533",
+      "name": "Epidermal growth factor receptor",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0008283",
+      "name": "cell proliferation",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D003110",
+      "name": "Malignant tumor of colon",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "DB:DB00002",
+      "target": "UniProt:P00533",
+      "evidence": [
+        {
+          "reference": "PMID:42176792",
+          "snippet": "Cetuximab exerts its antitumor activity by blocking ligand-dependent EGFR signaling and by engaging immune effector mechanisms.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Cetuximab blocks ligand-dependent EGFR signaling, reducing EGFR activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "EGFR S442 ectodomain mutation confers cetuximab resistance that can be overcome by ERBB2 blockade with trastuzumab-deruxtecan.",
+            "authors": [
+              "Harmych SJ",
+              "Joshi N",
+              "Tanaka H",
+              "Bogatcheva G",
+              "Ramirez MA",
+              "Graves-Deal R",
+              "Tydings CW",
+              "Elia MT",
+              "Mueller HRL",
+              "Silvestri IM",
+              "Ti Ning K",
+              "Wahoski CC",
+              "Sievers CK",
+              "Higginbotham JN",
+              "Irudayam MJ",
+              "Revetta FL",
+              "Zhao Z",
+              "Franklin JL",
+              "Yilma B",
+              "O'Grady TM",
+              "Fragkogianni S",
+              "Ciampricotti M",
+              "Washington MK",
+              "Guo X",
+              "Lovly CM",
+              "Walker AS",
+              "Meiler J",
+              "Mudumbi KC",
+              "Liu Q",
+              "Coffey RJ",
+              "Rosenthal E",
+              "Singh B"
+            ],
+            "journal": "Cancer letters",
+            "year": "2026",
+            "doi": "10.1016/j.canlet.2026.218607",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P00533",
+      "target": "GO:0008283",
+      "evidence": [
+        {
+          "reference": "PMID:38958494",
+          "snippet": "EGFR plays an essential role in cellular signaling pathways that regulate cell growth, proliferation, and survival and is often dysregulated in cancer.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "EGFR signaling drives cell growth and proliferation.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0008283",
+      "target": "MESH:D003110",
+      "evidence": [
+        {
+          "reference": "PMID:22114026",
+          "snippet": "colorectal cancers (CRC) form a group of pathologies in which early steps of development are characterized by an aberrant expression of β-catenin and an uncontrolled proliferation of epithelial cells.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Uncontrolled proliferation of epithelial cells drives colorectal cancer development.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00002",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00002_MESH_D003110_1__r3",
+    "record_id": "DB00002_MESH_D003110_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00002_MESH_D003110_1__r3.yaml",
+    "summary_generated": true
+  }
+}

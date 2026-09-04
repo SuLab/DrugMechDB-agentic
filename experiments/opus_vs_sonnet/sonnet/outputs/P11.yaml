@@ -21,7 +21,9 @@ nodes:
     name: Pulmonary Tuberculosis
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D012293
     target: UniProt:P9WKP4
     evidence:
@@ -49,7 +51,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: RpoB is the subunit through which RNA extension (transcription) occurs; rifampicin blocks this activity by steric occlusion.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: MESH:D012293
     target: GO:0006351
     evidence:

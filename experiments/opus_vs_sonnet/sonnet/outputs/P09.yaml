@@ -24,7 +24,9 @@ nodes:
     name: Acute Lymphoblastic Leukemia
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D008727
     target: UniProt:P00374
     evidence:
@@ -56,7 +58,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: dTMP biosynthesis is required for DNA synthesis; inhibiting dTMP synthesis directly inhibits DNA replication.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: MESH:D008727
     target: GO:0071897
     evidence:

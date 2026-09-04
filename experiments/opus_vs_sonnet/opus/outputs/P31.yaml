@@ -27,7 +27,9 @@ nodes:
     name: Hemophilia A
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: DB:DB00067
     target: UniProt:P30518
     evidence:
@@ -36,7 +38,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "DDAVP (desmopressin), a vasopressin analogue, acts as a specific agonist at the vasopressin V2 receptor."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P30518
     target: GO:0061156
     evidence:
@@ -45,7 +48,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "V2 receptor activation drives cAMP-mediated von Willebrand factor secretion from endothelial cells."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0061156
     target: UniProt:P04275
     evidence:
@@ -54,7 +58,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Secretion of von Willebrand factor from endothelial stores raises circulating plasma vWF levels."
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: UniProt:P04275
     target: UniProt:P00451
     evidence:

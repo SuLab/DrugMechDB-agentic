@@ -30,7 +30,9 @@ nodes:
     name: Hypercholesterolemia
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D017035
     target: UniProt:P04035
     evidence:
@@ -46,7 +48,8 @@ links:
         snippet: "Statins have been widely used for the treatment of hypercholesterolemia due to their ability to inhibit HMG-CoA reductase, the rate-limiting enzyme of de novo cholesterol synthesis, via the so-called mevalonate pathway."
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0006695
     target: UniProt:Q12772
     evidence:
@@ -54,7 +57,8 @@ links:
         snippet: "The decrease of the hepatic intracellular cholesterol pool produced by these drugs upregulates the activity of the SREBP2 transcription factor, which subsequently stimulates the expression of the LDL receptor gene, an effect that is followed by an increase in the serum concentration of PCSK9."
         supports: SUPPORT
         evidence_source: OTHER
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:Q12772
     target: UniProt:P01130
     evidence:

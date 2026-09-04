@@ -111,21 +111,47 @@ The CURIE prefix of every node `id` **must** match the canonical ontology for th
 
 ## 3. Predicate vocabulary
 
-Every edge `key` must be an **exact** member of the `BiolinkPredicate` enum in `src/drugmechdb/schema/biolink_predicates.yaml` (67 predicates as of May 2026). The list includes the high-frequency ones the agent will reach for first:
+Every edge `key` must be an **exact** member of the `BiolinkPredicate` enum in `src/drugmechdb/schema/biolink_predicates.yaml`. That enum spans two eras — it still accepts the v1.3.0-era vocabulary the 4,846 legacy records are written in — so membership alone is not enough. **New curation must use only the predicates marked `status: current` in `src/drugmechdb/schema/biolink_predicate_status.yaml`** (47 of 70, pinned to Biolink 4.4.4). QC Layer 3 enforces this for any record carrying evidence.
+
+The high-frequency ones you will reach for:
 
 ```
-positively regulates    negatively regulates    decreases activity of    increases activity of
-positively correlated with    negatively correlated with    causes    contributes to
-participates in    occurs in    located in    part of    manifestation of    in taxon
-treats    prevents    has metabolite    binds    affects    disrupts    affects risk for
-…
+regulates    affects    causes    contributes to    treats    prevents
+positively correlated with    negatively correlated with    manifestation of
+participates in    occurs in    located in    part of    in taxon
+has metabolite    directly physically interacts with    disrupts
 ```
 
-Read the file; the descriptions distinguish near-synonyms (e.g. `regulates` vs `positively regulates`, `correlated with` vs `causes`).
+### 3.0 Polarity lives in qualifiers, not in the predicate name
+
+Biolink's v2→v4 refactor removed `positively regulates`, `decreases activity of`, and the whole
+`increases/decreases <aspect> of` family. **Do not use them** — they are `status: legacy_only`.
+Say the same thing with a canonical predicate plus qualifiers on the edge:
+
+```yaml
+  - key: affects                              # was: decreases activity of
+    object_aspect_qualifier: activity         # activity | abundance | expression | synthesis | ...
+    object_direction_qualifier: decreased     # increased | decreased | upregulated | downregulated
+    source: MESH:D000068877
+    target: UniProt:A9UF07
+
+  - key: regulates                            # was: positively regulates
+    object_direction_qualifier: increased
+    source: UniProt:A9UF07
+    target: GO:0008283
+```
+
+`affects` requires **both** qualifiers; `regulates` requires `object_direction_qualifier`. Bare, they
+assert almost nothing, so Layer 3 rejects them without direction. The permissible values are the
+`ObjectAspectEnum` / `ObjectDirectionEnum` enums in `src/drugmechdb/schema/drugmechdb.yaml`, and
+`biolink_predicate_status.yaml` gives the exact replacement for every removed predicate.
+
+Read the enum file; the descriptions distinguish near-synonyms (e.g. `regulates` vs `affects`,
+`correlated with` vs `causes`).
 
 **You may emit predicates in casual surface forms** — `positively_regulates`, `biolink:positively_regulates`, `Positively Regulates` — and `scripts/canonicalize_predicates.py --write` will normalize them. But the **final** YAML must use the canonical form (lowercase, spaces, no prefix). Always canonicalize before validation.
 
-**You may NOT invent new predicates.** If no canonical predicate fits, escalate per PRD §7 Open Q #3 (adding to the enum requires curator approval + Biolink Model citation).
+**You may NOT invent new predicates.** If no canonical predicate fits, escalate per PRD §7 Open Q #3 (adding to the enum requires curator approval + Biolink Model citation). "Valid in Biolink" is not sufficient on its own — the predicate has to be in *our* enum and marked `current`.
 
 ### 3.1 Predicate domain/range
 
@@ -134,15 +160,15 @@ Some predicates only make sense between certain node types. Apply each predicate
 | Predicate(s) | Subject (`source`) label | Object (`target`) label |
 |---|---|---|
 | `treats`, `prevents`, `ameliorates`, `exacerbates`, `contraindicated for` | `Drug`, `ChemicalSubstance` | `Disease`, `PhenotypicFeature` |
-| `decreases activity of`, `increases activity of` | any | `Protein`, `GeneFamily`, `MacromolecularComplex`, `MolecularActivity`, `Pathway`, `BiologicalProcess` |
-| `decreases abundance of`, `increases abundance of`, `increases degradation of`, `decreases synthesis of` | any | `Protein`, `GeneFamily`, `MacromolecularComplex`, `ChemicalSubstance`, `MolecularActivity` |
-| `increases expression of`, `decreases expression of` | any | `Protein`, `GeneFamily`, `MacromolecularComplex`, `ChemicalSubstance` |
+| `affects` + aspect `activity` | any | `Protein`, `GeneFamily`, `MacromolecularComplex`, `MolecularActivity`, `Pathway`, `BiologicalProcess` |
+| `affects` + aspect `abundance`, `degradation`, `synthesis`, `stability`, `transport`, `uptake` | any | `Protein`, `GeneFamily`, `MacromolecularComplex`, `ChemicalSubstance`, `MolecularActivity` |
+| `affects` + aspect `expression` | any | `Protein`, `GeneFamily`, `MacromolecularComplex`, `ChemicalSubstance` |
 | `has metabolite` | `Drug`, `ChemicalSubstance` | `ChemicalSubstance`, `Drug` |
 | `has phenotype` | any | `PhenotypicFeature` |
 | `in taxon` | any | `OrganismTaxon` |
 | `occurs in`, `located in`, `expressed in` | any | `CellularComponent`, `GrossAnatomicalStructure`, `Cell`, `OrganismTaxon`, `Pathway` |
 
-The activity / abundance / expression / degradation / synthesis predicates (rows 2–4) never take a `Disease` or `PhenotypicFeature` object — reach the disease with a mechanistic/causal predicate (e.g. `causes`, `contributes to`) instead, per §0.
+Since Biolink 4.4.4 the object constraint follows the **aspect**, not the predicate name, so the lexicon keys those rows `affects|<aspect>` (the legacy `decreases activity of`-style keys are kept for the legacy corpus). An `affects` edge never takes a `Disease` or `PhenotypicFeature` object — reach the disease with a mechanistic/causal predicate (e.g. `causes`, `contributes to`) instead, per §0.
 
 The gate enforces these: an edge whose known endpoint types fall outside the allowed set is flagged as a SOFT `type_violation` and routed to the semantic critic (§5 step 8), so a mis-typed edge is surfaced and returned for correction rather than passing silently. Getting the types right here keeps the edge from bouncing.
 

@@ -24,7 +24,9 @@ nodes:
     name: Type 1 Diabetes Mellitus
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: DB:DB00046
     target: UniProt:P06213
     evidence:
@@ -38,7 +40,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Ligand binding to the insulin receptor alpha subunits triggers conformational changes that stimulate autophosphorylation and promote the receptor's kinase activity."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P06213
     target: GO:0046323
     evidence:
@@ -52,7 +55,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Insulin receptor signaling increases glucose flux into cells via GLUT4 translocation."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0046323
     target: HP:0003074
     evidence:

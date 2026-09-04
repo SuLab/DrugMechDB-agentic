@@ -1,0 +1,271 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P04_DB00264_MESH_D006333",
+    "drug": "Metoprolol",
+    "drug_mesh": "MESH:D008790",
+    "drugbank": "DB:DB00264",
+    "disease": "Heart Failure",
+    "disease_mesh": "MESH:D006333",
+    "summary": "Metoprolol → Beta-1 adrenergic receptor → apoptotic process → Heart Failure"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D008790",
+      "name": "Metoprolol",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P08588",
+      "name": "Beta-1 adrenergic receptor",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0006915",
+      "name": "apoptotic process",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D006333",
+      "name": "Heart Failure",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D008790",
+      "target": "UniProt:P08588",
+      "evidence": [
+        {
+          "reference": "PMID:23300817",
+          "snippet": "This effect could be blocked by the selective β(1)-adrenergic receptor antagonist metoprolol, PKA inhibitor H89, and p38 MAPK inhibitor SB203580.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Metoprolol is identified as a selective beta-1 adrenergic receptor antagonist, blocking (decreasing) receptor activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "β1-Adrenoceptor autoantibodies from DCM patients enhance the proliferation of T lymphocytes through the β1-AR/cAMP/PKA and p38 MAPK pathways.",
+            "authors": [
+              "Du Y",
+              "Yan L",
+              "Wang J",
+              "Zhan W",
+              "Song K",
+              "Han X",
+              "Li X",
+              "Cao J",
+              "Liu H"
+            ],
+            "journal": "PloS one",
+            "year": "2012",
+            "doi": "10.1371/journal.pone.0052911",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:20888833",
+          "snippet": "prolonged treatment with of β(2) AR agonist, fenoterol, in combination with a β(1) AR blocker, metoprolol, is more effective than β(1) AR blocker alone",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Metoprolol is a beta-1 adrenergic receptor blocker, decreasing receptor activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "β₂ AR agonists in treatment of chronic heart failure: long path to translation.",
+            "authors": [
+              "Talan MI",
+              "Ahmet I",
+              "Xiao RP",
+              "Lakatta EG"
+            ],
+            "journal": "Journal of molecular and cellular cardiology",
+            "year": "2011",
+            "doi": "10.1016/j.yjmcc.2010.09.019",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P08588",
+      "target": "GO:0006915",
+      "evidence": [
+        {
+          "reference": "PMID:20888833",
+          "snippet": "selective stimulation of β(1) AR activates the proapoptotic signaling pathways, while selective stimulation of β(2) AR is antiapoptotic",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Activation of beta-1 adrenergic receptor triggers pro-apoptotic signaling pathways in cardiomyocytes.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "β₂ AR agonists in treatment of chronic heart failure: long path to translation.",
+            "authors": [
+              "Talan MI",
+              "Ahmet I",
+              "Xiao RP",
+              "Lakatta EG"
+            ],
+            "journal": "Journal of molecular and cellular cardiology",
+            "year": "2011",
+            "doi": "10.1016/j.yjmcc.2010.09.019",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:23104882",
+          "snippet": "PKA inhibition protected myocytes from death induced by β1-adrenergic receptor agonists by preventing cytosolic and sarcoplasmic reticulum Ca(2+) overload and calcium/calmodulin-dependent kinase II activation.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Beta-1 adrenergic receptor agonists drive myocyte death through PKA and CaMKII pathways.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Cardiotoxic and cardioprotective features of chronic β-adrenergic signaling.",
+            "authors": [
+              "Zhang X",
+              "Szeto C",
+              "Gao E",
+              "Tang M",
+              "Jin J",
+              "Fu Q",
+              "Makarewich C",
+              "Ai X",
+              "Li Y",
+              "Tang A",
+              "Wang J",
+              "Gao H",
+              "Wang F",
+              "Ge XJ",
+              "Kunapuli SP",
+              "Zhou L",
+              "Zeng C",
+              "Xiang KY",
+              "Chen X"
+            ],
+            "journal": "Circulation research",
+            "year": "2013",
+            "doi": "10.1161/CIRCRESAHA.112.273896",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0006915",
+      "target": "MESH:D006333",
+      "evidence": [
+        {
+          "reference": "PMID:20888833",
+          "snippet": "Loss of cardiomyocytes due to apoptosis is one mechanism that undoubtedly contributes to cardiac remodeling and functional deterioration associated with dilated cardiomyopathy (DCM).",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Cardiomyocyte apoptosis contributes to progressive cardiac remodeling and functional deterioration seen in heart failure.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "β₂ AR agonists in treatment of chronic heart failure: long path to translation.",
+            "authors": [
+              "Talan MI",
+              "Ahmet I",
+              "Xiao RP",
+              "Lakatta EG"
+            ],
+            "journal": "Journal of molecular and cellular cardiology",
+            "year": "2011",
+            "doi": "10.1016/j.yjmcc.2010.09.019",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "treats",
+      "source": "MESH:D008790",
+      "target": "MESH:D006333",
+      "evidence": [
+        {
+          "reference": "PMID:11181074",
+          "snippet": "Selective beta(1)-blockade with high dose of metoprolol initiated in the early postinfarct phase improves myocardial energy metabolism and function and prevents overactivation of sympathetic system.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Metoprolol treatment improves cardiac function and energy metabolism in a heart failure model.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Selective beta(1)-blockade improves cardiac bioenergetics and function and decreases neuroendocrine activation in rats during early postinfarct remodeling.",
+            "authors": [
+              "Omerovic E",
+              "Bollano E",
+              "Mobini R",
+              "Madhu B",
+              "Kujacic V",
+              "Soussi B",
+              "Hjalmarson A",
+              "Waagstein F"
+            ],
+            "journal": "Biochemical and biophysical research communications",
+            "year": "2001",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:26488593",
+          "snippet": "Several well designed, large scale randomized clinical trials including CIBS-II (bisoprolol), MERIT-HF (metoprolol succinate), and Copernicus (carvedilol) among others, have been conducted in patients with HFRef and demonstrated an improvement in cardiac mortality and morbidity.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Multiple large clinical trials demonstrate that metoprolol succinate improves cardiac mortality and morbidity in heart failure.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The safety and tolerability of beta blockers in heart failure with reduced ejection fraction: is the current underutilization of this evidence-based therapy justified?",
+            "authors": [
+              "Kiel RG",
+              "Deedwania P"
+            ],
+            "journal": "Expert opinion on drug safety",
+            "year": "2015",
+            "doi": "10.1517/14740338.2015.1102225",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.drugbank.ca/drugs/DB00264",
+      "type": "drugbank",
+      "label": "drugbank.ca — record source"
+    },
+    {
+      "url": "https://meshb.nlm.nih.gov/record/ui?ui=D006333",
+      "type": "other",
+      "label": "meshb.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "sonnet__P04",
+    "record_id": "P04_DB00264_MESH_D006333",
+    "run": "sonnet",
+    "run_label": "Sonnet (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/sonnet/outputs/P04.yaml",
+    "summary_generated": true
+  }
+}

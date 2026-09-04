@@ -33,7 +33,9 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Tamoxifen is metabolized by CYP enzymes to its active metabolite endoxifen."
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: CHEBI:71176
     target: UniProt:P03372
     evidence:
@@ -42,7 +44,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Endoxifen is a potent antiestrogen that blocks ERalpha transcriptional activity and targets it for degradation, after binding the receptor with high affinity."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P03372
     target: GO:0008283
     evidence:

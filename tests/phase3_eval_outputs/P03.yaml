@@ -21,7 +21,9 @@ nodes:
     name: Hypertension
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D017706
     target: UniProt:P12821
     evidence:

@@ -21,7 +21,9 @@ nodes:
     name: Bipolar Disorder
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D008094
     target: UniProt:P49841
     evidence:
@@ -35,7 +37,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Lithium is hypothesized to exert its therapeutic effects through direct inhibition of GSK3.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P49841
     target: GO:0006915
     evidence:

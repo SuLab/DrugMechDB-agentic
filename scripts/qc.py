@@ -88,7 +88,8 @@ def iter_files(targets: Iterable[str]) -> list[Path]:
     return files
 
 
-def run_layer(layer: int, files: list[Path], json_out: bool, offline: bool = False) -> tuple[int, str]:
+def run_layer(layer: int, files: list[Path], json_out: bool, offline: bool = False,
+              profile: str = "auto") -> tuple[int, str]:
     """Invoke a layer script against a set of files. Returns (exit_code, stdout_or_json)."""
     cmd = [python_bin(), str(LAYER_SCRIPTS[layer])]
     if json_out:
@@ -97,6 +98,11 @@ def run_layer(layer: int, files: list[Path], json_out: bool, offline: bool = Fal
     # to the committed references_cache/ for deterministic CI / reproducible runs.
     if offline and layer == 4:
         cmd.append("--offline")
+    # Layer 3 applies a different predicate era per profile (legacy accepts the old
+    # vocabulary, ai_curated does not), so a forced --profile has to reach it too —
+    # otherwise it would re-detect and override the caller's choice.
+    if layer == 3 and profile != "auto":
+        cmd.extend(["--profile", profile])
     cmd.extend(str(f) for f in files)
     proc = subprocess.run(cmd, capture_output=True, text=True)
     return proc.returncode, proc.stdout + proc.stderr
@@ -182,7 +188,8 @@ def main() -> int:
             continue
         if not args.json:
             print(f"--- Layer {layer} ({LAYER_SCRIPTS[layer].name}) — {len(layer_files)} file(s) ---")
-        code, out = run_layer(layer, layer_files, json_out=args.json, offline=args.offline)
+        code, out = run_layer(layer, layer_files, json_out=args.json, offline=args.offline,
+                              profile=args.profile)
         results.append({"layer": layer, "files": len(layer_files), "exit_code": code, "output": out})
         if code != 0:
             overall_fail = True

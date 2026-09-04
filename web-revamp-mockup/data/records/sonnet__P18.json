@@ -1,0 +1,246 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P18_DB01356_MESH_D001714",
+    "drug": "Lithium",
+    "drug_mesh": "MESH:D008094",
+    "drugbank": "DB:DB01356",
+    "disease": "Bipolar Disorder",
+    "disease_mesh": "MESH:D001714",
+    "summary": "Lithium → Glycogen synthase kinase-3 beta → Apoptotic process → Bipolar Disorder"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D008094",
+      "name": "Lithium",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P49841",
+      "name": "Glycogen synthase kinase-3 beta",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0006915",
+      "name": "Apoptotic process",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D001714",
+      "name": "Bipolar Disorder",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D008094",
+      "target": "UniProt:P49841",
+      "evidence": [
+        {
+          "reference": "PMID:12071511",
+          "snippet": "lithium has been identified as a selective and direct inhibitor of GSK-3beta",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Lithium directly inhibits GSK-3beta activity, a key mechanism underlying its mood-stabilizing effects in bipolar disorder.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Glycogen synthase kinase-3beta, mood stabilizers, and neuroprotection.",
+            "authors": [
+              "Li X",
+              "Bijur GN",
+              "Jope RS"
+            ],
+            "journal": "Bipolar disorders",
+            "year": "2002",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:27128528",
+          "snippet": "The mood stabilizer lithium, the first-line treatment for bipolar disorder, is hypothesized to exert its effects through direct inhibition of glycogen synthase kinase 3 (GSK3)",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Lithium is hypothesized to exert its therapeutic effects through direct inhibition of GSK3.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Inhibitors of Glycogen Synthase Kinase 3 with Exquisite Kinome-Wide Selectivity and Their Functional Effects.",
+            "authors": [
+              "Wagner FF",
+              "Bishop JA",
+              "Gale JP",
+              "Shi X",
+              "Walk M",
+              "Ketterman J",
+              "Patnaik D",
+              "Barker D",
+              "Walpita D",
+              "Campbell AJ",
+              "Nguyen S",
+              "Lewis M",
+              "Ross L",
+              "Weïwer M",
+              "An WF",
+              "Germain AR",
+              "Nag PP",
+              "Metkar S",
+              "Kaya T",
+              "Dandapani S",
+              "Olson DE",
+              "Barbe AL",
+              "Lazzaro F",
+              "Sacher JR",
+              "Cheah JH",
+              "Fei D",
+              "Perez J",
+              "Munoz B",
+              "Palmer M",
+              "Stegmaier K",
+              "Schreiber SL",
+              "Scolnick E",
+              "Zhang YL",
+              "Haggarty SJ",
+              "Holson EB",
+              "Pan JQ"
+            ],
+            "journal": "ACS chemical biology",
+            "year": "2016",
+            "doi": "10.1021/acschembio.6b00306",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P49841",
+      "target": "GO:0006915",
+      "evidence": [
+        {
+          "reference": "PMID:12071511",
+          "snippet": "GSK-3beta is a pro-apoptotic enzyme",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "GSK-3beta promotes apoptosis; inhibition of its pro-apoptotic activity is linked to neuroprotection in bipolar disorder.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Glycogen synthase kinase-3beta, mood stabilizers, and neuroprotection.",
+            "authors": [
+              "Li X",
+              "Bijur GN",
+              "Jope RS"
+            ],
+            "journal": "Bipolar disorders",
+            "year": "2002",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:11527574",
+          "snippet": "GSK3beta also regulates cell survival, as it facilitates a variety of apoptotic mechanisms",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "GSK3beta positively regulates apoptotic processes in neuronal cells.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The multifaceted roles of glycogen synthase kinase 3beta in cellular signaling.",
+            "authors": [
+              "Grimes CA",
+              "Jope RS"
+            ],
+            "journal": "Progress in neurobiology",
+            "year": "2001",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0006915",
+      "target": "MESH:D001714",
+      "evidence": [
+        {
+          "reference": "PMID:33732117",
+          "snippet": "neuronal apoptosis, contributing to chronic neuroinflammation",
+          "supports": "PARTIAL",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Neuronal apoptosis is a feature of bipolar disorder pathophysiology; the abstract describes BD as characterized by neuronal apoptosis contributing to neuroinflammation in BD.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Concepts of Neuroinflammation and Their Relationship With Impaired Mitochondrial Functions in Bipolar Disorder.",
+            "authors": [
+              "Cyrino LAR",
+              "Delwing-de Lima D",
+              "Ullmann OM",
+              "Maia TP"
+            ],
+            "journal": "Frontiers in behavioral neuroscience",
+            "year": "2021",
+            "doi": "10.3389/fnbeh.2021.609487",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:12071511",
+          "snippet": "dysregulation of GSK-3beta may contribute to the pathophysiology of bipolar disorder",
+          "supports": "PARTIAL",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Drugs that inhibit the pro-apoptotic effects of GSK-3beta are therapeutic for bipolar disorder, linking apoptotic process dysregulation to bipolar disorder pathophysiology.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Glycogen synthase kinase-3beta, mood stabilizers, and neuroprotection.",
+            "authors": [
+              "Li X",
+              "Bijur GN",
+              "Jope RS"
+            ],
+            "journal": "Bipolar disorders",
+            "year": "2002",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.drugbank.ca/drugs/DB01356",
+      "type": "drugbank",
+      "label": "drugbank.ca — record source"
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/mesh/D001714",
+      "type": "other",
+      "label": "ncbi.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "sonnet__P18",
+    "record_id": "P18_DB01356_MESH_D001714",
+    "run": "sonnet",
+    "run_label": "Sonnet (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/sonnet/outputs/P18.yaml",
+    "summary_generated": true
+  }
+}

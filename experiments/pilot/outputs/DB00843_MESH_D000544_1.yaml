@@ -21,7 +21,9 @@ nodes:
     name: Alzheimer's disease
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:C076946
     target: UniProt:P22303
     evidence:
@@ -34,7 +36,9 @@ links:
         snippet: "The most commonly used drug, donepezil, is a cholinesterase inhibitor."
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: decreases abundance of
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: decreased
     source: UniProt:P22303
     target: CHEBI:15355
     evidence:

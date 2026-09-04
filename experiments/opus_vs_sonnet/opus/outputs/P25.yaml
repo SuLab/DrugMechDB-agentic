@@ -21,7 +21,9 @@ nodes:
     name: Psoriasis
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00051
     target: UniProt:P01375
     evidence:

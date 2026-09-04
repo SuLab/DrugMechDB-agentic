@@ -12,7 +12,8 @@
 ## 1. Why this exists
 
 The corpus stores edges keyed by a fixed vocabulary of Biolink predicates
-(`src/drugmechdb/schema/biolink_predicates.yaml`, 67 predicates), each also assigned a
+(`src/drugmechdb/schema/biolink_predicates.yaml`; `biolink_predicate_status.yaml` records
+which of them the pinned Biolink release still defines), each also assigned a
 direction-of-influence sign in `scripts/quality/predicate_polarity.yaml`. Biolink evolves
 independently — the v2→v4 **qualifier refactor** already folded many of our high-frequency
 predicates (`positively regulates`, `increases activity of`, …) into `regulates`/`affects`

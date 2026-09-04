@@ -24,7 +24,9 @@ nodes:
     name: HER2-positive Breast Cancer
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000068878
     target: UniProt:P04626
     evidence:
@@ -33,7 +35,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Trastuzumab abrogates intracellular signaling downstream of HER2, effectively decreasing HER2-mediated signaling activity.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P04626
     target: UniProt:P31749
     evidence:
@@ -42,7 +45,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: HER2 (ErbB2) activates the PI3K/AKT (protein kinase B) pathway, demonstrating HER2 positively regulates AKT1 signaling.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P31749
     target: GO:0008283
     evidence:

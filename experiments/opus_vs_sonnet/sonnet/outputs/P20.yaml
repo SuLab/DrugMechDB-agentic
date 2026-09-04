@@ -24,7 +24,9 @@ nodes:
     name: Alzheimer's Disease
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000077856
     target: UniProt:P22303
     evidence:
@@ -33,7 +35,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Donepezil acts by blocking AChE, increasing extracellular acetylcholine concentrations.
-  - key: decreases abundance of
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: decreased
     source: UniProt:P22303
     target: MESH:D000109
     evidence:
@@ -42,7 +46,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: AChE hydrolyzes acetylcholine, thereby reducing its availability at the synapse.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: MESH:D000109
     target: GO:0007271
     evidence:

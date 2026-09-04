@@ -18,7 +18,9 @@ nodes:
     name: Leukemia, Myelogenous, Chronic, BCR-ABL Positive
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000068877
     target: UniProt:A9UF07
     evidence:

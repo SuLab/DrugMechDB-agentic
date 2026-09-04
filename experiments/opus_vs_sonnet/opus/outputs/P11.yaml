@@ -24,7 +24,9 @@ nodes:
     name: Pulmonary Tuberculosis
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB01045
     target: UniProt:P9WGY9
     evidence:
@@ -33,7 +35,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Rifampin binds the RpoB beta subunit, inhibiting the RNA polymerase enzyme."
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB01045
     target: GO:0006351
     evidence:
@@ -50,7 +54,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "RpoB-containing RNA polymerase performs DNA-templated transcription in M. tuberculosis."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: DB:DB01045
     target: NCBITaxon:1773
     evidence:

@@ -33,7 +33,9 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: MMF is a prodrug that is completely hydrolyzed to the active metabolite mycophenolic acid (MPA) after oral administration.
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D009173
     target: UniProt:P12268
     evidence:
@@ -46,7 +48,8 @@ links:
         snippet: Mycophenolic acid (MPA) is a highly selective, non-competitive and reversible inhibitor of the inosine monophosphate dehydrogenase (IMPDH), the rate-limiting enzyme in the de novo biosynthesis of guanosine nucleotides.
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P12268
     target: GO:0046651
     evidence:
