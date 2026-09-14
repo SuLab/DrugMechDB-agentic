@@ -1,0 +1,180 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P22_DB00065_MESH_D003424",
+    "drug": "Infliximab",
+    "drug_mesh": "MESH:D000069285",
+    "drugbank": "DB:DB00065",
+    "disease": "Crohn's Disease",
+    "disease_mesh": "MESH:D003424",
+    "summary": "Infliximab → Tumor necrosis factor → inflammatory response → Crohn's Disease"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00065",
+      "name": "Infliximab",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P01375",
+      "name": "Tumor necrosis factor",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0006954",
+      "name": "inflammatory response",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D003424",
+      "name": "Crohn's Disease",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "DB:DB00065",
+      "target": "UniProt:P01375",
+      "evidence": [
+        {
+          "reference": "PMID:11563881",
+          "snippet": "Ifx bound to transmembrane TNF-alpha of activated T cells",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Infliximab binds transmembrane TNF-alpha; it is the TNF-alpha neutralizing antibody described in this study.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Infliximab downregulates interferon-gamma production in activated gut T-lymphocytes from patients with Crohn's disease.",
+            "authors": [
+              "Agnholt J",
+              "Kaltoft K"
+            ],
+            "journal": "Cytokine",
+            "year": "2001",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:29518978",
+          "snippet": "These drugs block TNFα from interacting with its receptors",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Infliximab is named among these anti-TNF drugs that block TNF from interacting with its receptors, i.e. neutralize its activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Structural Biology of the TNFα Antagonists Used in the Treatment of Rheumatoid Arthritis.",
+            "authors": [
+              "Lim H",
+              "Lee SH",
+              "Lee HT",
+              "Lee JU",
+              "Son JY",
+              "Shin W",
+              "Heo YS"
+            ],
+            "journal": "International journal of molecular sciences",
+            "year": "2018",
+            "doi": "10.3390/ijms19030768",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:P01375",
+      "target": "GO:0006954",
+      "evidence": [
+        {
+          "reference": "PMID:29518978",
+          "snippet": "The binding of the tumor necrosis factor α (TNFα) to its cognate receptor initiates many immune and inflammatory processes.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Structural Biology of the TNFα Antagonists Used in the Treatment of Rheumatoid Arthritis.",
+            "authors": [
+              "Lim H",
+              "Lee SH",
+              "Lee HT",
+              "Lee JU",
+              "Son JY",
+              "Shin W",
+              "Heo YS"
+            ],
+            "journal": "International journal of molecular sciences",
+            "year": "2018",
+            "doi": "10.3390/ijms19030768",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "GO:0006954",
+      "target": "MESH:D003424",
+      "evidence": [
+        {
+          "reference": "PMID:41225190",
+          "snippet": "Crohn's disease (CD) is a chronic inflammatory bowel disorder characterized by transmural inflammation of the gastrointestinal tract.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Systematic Review of Bile Acids Metabolism in Crohn's Disease: Implications for Pathogenesis and Therapeutic Interventions.",
+            "authors": [
+              "Abubasheer TM",
+              "Saad K",
+              "Altaweel A",
+              "Alomari O",
+              "Kamal SK",
+              "Abdelfattah M",
+              "Abualkhair KA",
+              "Ezz MR",
+              "Elgendy MS",
+              "Omar A",
+              "Mubarak ES",
+              "Elhoufey A",
+              "Helmy AM",
+              "Hussein WM",
+              "Hussain SA",
+              "Hassan AM",
+              "Elgenidi A"
+            ],
+            "journal": "Digestive diseases and sciences",
+            "year": "2026",
+            "doi": "10.1007/s10620-025-09557-z",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00065",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P22",
+    "record_id": "P22_DB00065_MESH_D003424",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P22.yaml",
+    "summary_generated": true
+  }
+}

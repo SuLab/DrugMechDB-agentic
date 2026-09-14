@@ -1,0 +1,102 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "B02362_MESH_D003882_1",
+    "drug": "aminobenzoic acid",
+    "drug_mesh": "MESH:D010129",
+    "drugbank": "DB:B02362",
+    "disease": "Dermatomyositis",
+    "disease_mesh": "MESH:D003882",
+    "summary": "aminobenzoic acid → Glycosaminoglycans → Dermatomyositis"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D010129",
+      "name": "aminobenzoic acid",
+      "label": "Drug"
+    },
+    {
+      "id": "MESH:D006025",
+      "name": "Glycosaminoglycans",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "MESH:D003882",
+      "name": "Dermatomyositis",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases abundance of",
+      "source": "MESH:D010129",
+      "target": "MESH:D006025",
+      "evidence": [
+        {
+          "reference": "PMID:155125",
+          "snippet": "Acid mucopolysaccharide secretion by rheumatoid synovial cells and scleroderma fibroblasts was inhibited even at 100 microgram/ml, which is within the therapeutic range",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Potassium para-aminobenzoate (Potaba), the potassium salt of aminobenzoic acid, directly inhibits fibroblast secretion of acid mucopolysaccharides (glycosaminoglycans).",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:1350132",
+          "snippet": "There was a similar dose dependent inhibition of glycosaminoglycan secretion in all 3 groups",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Potaba (potassium para-aminobenzoate, the potassium salt of aminobenzoic acid) produces dose-dependent inhibition of glycosaminoglycan secretion by skin fibroblasts.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "manifestation of",
+      "source": "MESH:D006025",
+      "target": "MESH:D003882",
+      "evidence": [
+        {
+          "reference": "PMID:17300236",
+          "snippet": "Dermal mucin is an amorphous gelatinous substance composed primarily of hyaluronan (HA) and sulphated glycosaminoglycans (GAGs) ... deposition is associated with lupus erythematosus, dermatomyositis, scleroderma and granuloma annulare",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "The dermal mucin deposited in dermatomyositis is composed of hyaluronan and sulphated glycosaminoglycans, and its deposition is associated with dermatomyositis.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:11328393",
+          "snippet": "Mucin deposition is a common feature in autoimmune collagen diseases including dermatomyositis.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Glycosaminoglycan-rich dermal mucin deposition is a characteristic feature of dermatomyositis.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/155125/",
+      "type": "other",
+      "label": "pubmed.ncbi.nlm.nih.gov — record source"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17300236/",
+      "type": "other",
+      "label": "pubmed.ncbi.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__B02362_MESH_D003882_1__r3",
+    "record_id": "B02362_MESH_D003882_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/B02362_MESH_D003882_1__r3.yaml",
+    "summary_generated": true
+  }
+}

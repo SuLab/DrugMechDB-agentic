@@ -1,0 +1,252 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P01_DB00945_MESH_D009203",
+    "drug": "Aspirin",
+    "drug_mesh": "MESH:D001241",
+    "drugbank": "DB:DB00945",
+    "disease": "Myocardial Infarction",
+    "disease_mesh": "MESH:D009203",
+    "summary": "Aspirin → Cyclooxygenase-1 → Thromboxane A2 → platelet aggregation → Myocardial Infarction"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D001241",
+      "name": "Aspirin",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P23219",
+      "name": "Cyclooxygenase-1",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D013931",
+      "name": "Thromboxane A2",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "GO:0070527",
+      "name": "platelet aggregation",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D009203",
+      "name": "Myocardial Infarction",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "MESH:D001241",
+      "target": "UniProt:P23219",
+      "evidence": [
+        {
+          "reference": "PMID:18855644",
+          "snippet": "Aspirin works by irreversibly acetylating the cyclooxygenase (COX-1) enzyme, thus suppressing the production of thromboxane A(2) (TxA(2)) and inhibiting platelet activation and aggregation.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Directly states aspirin irreversibly acetylates COX-1, decreasing its activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Clopidogrel and aspirin in cardiovascular medicine: responders or not--current best available evidence.",
+            "authors": [
+              "Tourmousoglou CE",
+              "Rokkas CK"
+            ],
+            "journal": "Cardiovascular & hematological agents in medicinal chemistry",
+            "year": "2008",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:26139061",
+          "snippet": "Inactivation of platelet cyclooxygenase (COX)-1 by low-dose aspirin leads to long-lasting suppression of thromboxane (TX) A2 production and TXA2-mediated platelet activation and aggregation.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "States that aspirin inactivates COX-1, confirming decreases activity of relationship.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The Multifaceted Clinical Readouts of Platelet Inhibition by Low-Dose Aspirin.",
+            "authors": [
+              "Patrono C"
+            ],
+            "journal": "Journal of the American College of Cardiology",
+            "year": "2015",
+            "doi": "10.1016/j.jacc.2015.05.012",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:P23219",
+      "target": "MESH:D013931",
+      "evidence": [
+        {
+          "reference": "PMID:11552047",
+          "snippet": "Cox-1 catalyzes the synthesis of thromboxane A2 (Tx-A2), which causes platelet activation, vasoconstriction, and smooth muscle proliferation.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Directly states COX-1 catalyzes synthesis of TXA2, establishing COX-1 positively regulates TXA2 production.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Vascular biology of thrombosis: platelet-vessel wall interactions and aspirin effects.",
+            "authors": [
+              "Catella-Lawson F"
+            ],
+            "journal": "Neurology",
+            "year": "2001",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:19110389",
+          "snippet": "Aspirin irreversibly inhibits cyclooxygenase (COX) 1 involved in the platelet production of thromboxane (TX) A(2), an inducer of vasoconstriction and a platelet activating agent.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "States COX-1 is involved in platelet production of TXA2, supporting positive regulation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "[Variable platelet response to aspirin and new therapeutic targets].",
+            "authors": [
+              "Richard S",
+              "Toussaint-Hacquard M",
+              "Lecompte T"
+            ],
+            "journal": "Journal des maladies vasculaires",
+            "year": "2009",
+            "doi": "10.1016/j.jmv.2008.10.009",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "MESH:D013931",
+      "target": "GO:0070527",
+      "evidence": [
+        {
+          "reference": "PMID:32721526",
+          "snippet": "Thromboxane A2 (TXA2) is implicated in graft failure by inducing vasoconstriction and platelet aggregation.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Directly states TXA2 induces platelet aggregation, supporting positive regulation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mechanism of thromboxane receptor-induced vasoconstriction in human saphenous vein.",
+            "authors": [
+              "Ozen G",
+              "Aljesri K",
+              "Celik Z",
+              "Turkyılmaz G",
+              "Turkyılmaz S",
+              "Teskin O",
+              "Norel X",
+              "Topal G"
+            ],
+            "journal": "Prostaglandins & other lipid mediators",
+            "year": "2020",
+            "doi": "10.1016/j.prostaglandins.2020.106476",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:19110389",
+          "snippet": "Aspirin irreversibly inhibits cyclooxygenase (COX) 1 involved in the platelet production of thromboxane (TX) A(2), an inducer of vasoconstriction and a platelet activating agent.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Describes TXA2 as a platelet activating agent, supporting its role in positively regulating platelet aggregation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "[Variable platelet response to aspirin and new therapeutic targets].",
+            "authors": [
+              "Richard S",
+              "Toussaint-Hacquard M",
+              "Lecompte T"
+            ],
+            "journal": "Journal des maladies vasculaires",
+            "year": "2009",
+            "doi": "10.1016/j.jmv.2008.10.009",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0070527",
+      "target": "MESH:D009203",
+      "evidence": [
+        {
+          "reference": "PMID:24558405",
+          "snippet": "Excessive aggregation of platelets at the site of plaque rupture on the coronary artery led to the formation of thrombus which is reported to precipitate acute myocardial infarction (AMI).",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Directly states platelet aggregation at plaque rupture precipitates acute myocardial infarction.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Reduction of death rate due to acute myocardial infarction in subjects with cancers through systemic restoration of impaired nitric oxide.",
+            "authors": [
+              "Ghosh R",
+              "Ray U",
+              "Jana P",
+              "Bhattacharya R",
+              "Banerjee D",
+              "Sinha A"
+            ],
+            "journal": "PloS one",
+            "year": "2014",
+            "doi": "10.1371/journal.pone.0088639",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.drugbank.ca/drugs/DB00945",
+      "type": "drugbank",
+      "label": "drugbank.ca — record source"
+    },
+    {
+      "url": "https://meshb.nlm.nih.gov/record/ui?ui=D001241",
+      "type": "other",
+      "label": "meshb.nlm.nih.gov — record source"
+    },
+    {
+      "url": "https://meshb.nlm.nih.gov/record/ui?ui=D009203",
+      "type": "other",
+      "label": "meshb.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "sonnet__P01",
+    "record_id": "P01_DB00945_MESH_D009203",
+    "run": "sonnet",
+    "run_label": "Sonnet (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/sonnet/outputs/P01.yaml",
+    "summary_generated": true
+  }
+}

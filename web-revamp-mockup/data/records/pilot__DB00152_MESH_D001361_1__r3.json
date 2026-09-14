@@ -1,0 +1,100 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00152_MESH_D001361_1",
+    "drug": "thiamine",
+    "drug_mesh": "MESH:D013831",
+    "drugbank": "DB:DB00152",
+    "disease": "Avitaminosis",
+    "disease_mesh": "MESH:D001361",
+    "summary": "Thiamine → Thiamine pyrophosphate → Transketolase activity → Avitaminosis"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D013831",
+      "name": "Thiamine",
+      "label": "Drug"
+    },
+    {
+      "id": "MESH:D013835",
+      "name": "Thiamine pyrophosphate",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "GO:0004802",
+      "name": "Transketolase activity",
+      "label": "MolecularActivity"
+    },
+    {
+      "id": "MESH:D001361",
+      "name": "Avitaminosis",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "has metabolite",
+      "source": "MESH:D013831",
+      "target": "MESH:D013835",
+      "evidence": [
+        {
+          "reference": "PMID:39470204",
+          "snippet": "Thiamine is metabolized into thiamine pyrophosphate (TPP), an essential enzyme cofactor.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Thiamine is the precursor metabolized to its active coenzyme form, thiamine pyrophosphate (TPP); repletion with thiamine raises TPP, the vitamin form whose depletion defines the thiamine-deficiency state.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "increases activity of",
+      "source": "MESH:D013835",
+      "target": "GO:0004802",
+      "evidence": [
+        {
+          "reference": "PMID:22152682",
+          "snippet": "Thiamine pyrophosphate (TPP) is an essential cofactor of the cytosolic transketolase and of three mitochondrial enzymes involved in the oxidative decarboxylation of either pyruvate, α-ketoglutarate or branched chain amino acids.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "TPP is the essential coenzyme required for transketolase and the TPP-dependent dehydrogenases; supplying TPP increases their catalytic activity.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "negatively correlated with",
+      "source": "GO:0004802",
+      "target": "MESH:D001361",
+      "evidence": [
+        {
+          "reference": "PMID:38696890",
+          "snippet": "Deficiency for thiamine (vitamin B1), traditionally assessed via the activity of the thiamine-dependent enzyme erythrocyte transketolase",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Erythrocyte transketolase activity is the classic functional index of thiamine status and is inversely related to the thiamine-deficiency state (a form of avitaminosis); low transketolase activity marks the deficiency and rises when thiamine is repleted.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00152",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00152_MESH_D001361_1__r3",
+    "record_id": "DB00152_MESH_D001361_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00152_MESH_D001361_1__r3.yaml",
+    "summary_generated": true
+  }
+}

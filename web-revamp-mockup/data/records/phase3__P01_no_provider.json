@@ -1,0 +1,312 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P01_DB00945_MESH_D009203",
+    "drug": "Aspirin",
+    "drug_mesh": "MESH:D001241",
+    "drugbank": "DB:DB00945",
+    "disease": "Myocardial Infarction",
+    "disease_mesh": "MESH:D009203",
+    "summary": "Aspirin → Prostaglandin G/H synthase 1 → prostaglandin biosynthetic process → Thromboxane A2 → platelet aggregation → Myocardial Infarction"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D001241",
+      "name": "Aspirin",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P23219",
+      "name": "Prostaglandin G/H synthase 1",
+      "label": "Protein"
+    },
+    {
+      "id": "UniProt:P35354",
+      "name": "Prostaglandin G/H synthase 2",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0001516",
+      "name": "prostaglandin biosynthetic process",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D013928",
+      "name": "Thromboxane A2",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "GO:0070527",
+      "name": "platelet aggregation",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D009203",
+      "name": "Myocardial Infarction",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "MESH:D001241",
+      "target": "UniProt:P23219",
+      "evidence": [
+        {
+          "reference": "PMID:23422285",
+          "snippet": "It acetylates Ser529 residue in cyclooxygenase-1 (COX-1) and prevents thromboxane A2 (TXA2) formation from arachidonic acid (AA) in platelets.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Aspirin covalently acetylates Ser529 of platelet COX-1, irreversibly inhibiting its catalytic activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "New direct and indirect methods for the detection of cyclooxygenase 1 acetylation by aspirin; the lack of aspirin resistance among healthy individuals.",
+            "authors": [
+              "Kovács EG",
+              "Katona E",
+              "Bereczky Z",
+              "Homoródi N",
+              "Balogh L",
+              "Tóth E",
+              "Péterfy H",
+              "Kiss RG",
+              "Edes I",
+              "Muszbek L"
+            ],
+            "journal": "Thrombosis research",
+            "year": "2013",
+            "doi": "10.1016/j.thromres.2013.01.033",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "decreases activity of",
+      "source": "MESH:D001241",
+      "target": "UniProt:P35354",
+      "evidence": [
+        {
+          "reference": "PMID:36588714",
+          "snippet": "In cancer cells, ASA and IP1867B acted by inhibiting PGE2 and TXB2 generation via the acetylation of COX-2.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Aspirin (ASA) acetylates COX-2 at Serine 516, inhibiting its prostanoid-generating activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Characterization of the acetylation of cyclooxygenase-isozymes and targeted lipidomics of eicosanoids in serum and colon cancer cells by the new aspirin formulation IP1867B versus aspirin in vitro.",
+            "authors": [
+              "Hofling U",
+              "Tacconelli S",
+              "Contursi A",
+              "Bruno A",
+              "Mucci M",
+              "Ballerini P",
+              "Cohen S",
+              "Patrignani P"
+            ],
+            "journal": "Frontiers in pharmacology",
+            "year": "2022",
+            "doi": "10.3389/fphar.2022.1070277",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:P23219",
+      "target": "GO:0001516",
+      "evidence": [
+        {
+          "reference": "PMID:38495101",
+          "snippet": "All aspirin doses caused comparable % acetylation of platelet COX-1 at Serine 529 associated with similar profound inhibition of platelet-dependent thromboxane (TX)A2 generation ex vivo (serum TXB2) and in vivo (urinary TXM).",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Catalytically intact COX-1 drives platelet prostanoid biosynthesis; its acetylation by aspirin suppresses thromboxane A2 (a prostaglandin-class product) generation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Optimizing aspirin dose for colorectal cancer patients through deep phenotyping using novel biomarkers of drug action.",
+            "authors": [
+              "Patrignani P",
+              "Tacconelli S",
+              "Contursi A",
+              "Piazuelo E",
+              "Bruno A",
+              "Nobili S",
+              "Mazzei M",
+              "Milillo C",
+              "Hofling U",
+              "Hijos-Mallada G",
+              "Sostres C",
+              "Lanas A"
+            ],
+            "journal": "Frontiers in pharmacology",
+            "year": "2024",
+            "doi": "10.3389/fphar.2024.1362217",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:P35354",
+      "target": "GO:0001516",
+      "evidence": [
+        {
+          "reference": "PMID:36588714",
+          "snippet": "In cancer cells, ASA and IP1867B acted by inhibiting PGE2 and TXB2 generation via the acetylation of COX-2.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "COX-2 activity is required for PGE2 and TXB2 (prostaglandin biosynthetic) generation; acetylation of COX-2 by aspirin reduces it.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Characterization of the acetylation of cyclooxygenase-isozymes and targeted lipidomics of eicosanoids in serum and colon cancer cells by the new aspirin formulation IP1867B versus aspirin in vitro.",
+            "authors": [
+              "Hofling U",
+              "Tacconelli S",
+              "Contursi A",
+              "Bruno A",
+              "Mucci M",
+              "Ballerini P",
+              "Cohen S",
+              "Patrignani P"
+            ],
+            "journal": "Frontiers in pharmacology",
+            "year": "2022",
+            "doi": "10.3389/fphar.2022.1070277",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "has output",
+      "source": "GO:0001516",
+      "target": "MESH:D013928",
+      "evidence": [
+        {
+          "reference": "PMID:23422285",
+          "snippet": "It acetylates Ser529 residue in cyclooxygenase-1 (COX-1) and prevents thromboxane A2 (TXA2) formation from arachidonic acid (AA) in platelets.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "TXA2 is the platelet-specific prostanoid output of COX-1-mediated arachidonic acid metabolism (the prostaglandin biosynthetic process).",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "New direct and indirect methods for the detection of cyclooxygenase 1 acetylation by aspirin; the lack of aspirin resistance among healthy individuals.",
+            "authors": [
+              "Kovács EG",
+              "Katona E",
+              "Bereczky Z",
+              "Homoródi N",
+              "Balogh L",
+              "Tóth E",
+              "Péterfy H",
+              "Kiss RG",
+              "Edes I",
+              "Muszbek L"
+            ],
+            "journal": "Thrombosis research",
+            "year": "2013",
+            "doi": "10.1016/j.thromres.2013.01.033",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "MESH:D013928",
+      "target": "GO:0070527",
+      "evidence": [
+        {
+          "reference": "PMID:21844189",
+          "snippet": "Exposing aspirin to erythrocytes blocked its ability to inhibit thromboxane A(2) synthesis and platelet aggregation.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Loss of inhibition of TXA2 synthesis tracks with loss of inhibition of platelet aggregation, consistent with TXA2 driving aggregation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Intracellular erythrocyte platelet-activating factor acetylhydrolase I inactivates aspirin in blood.",
+            "authors": [
+              "Zhou G",
+              "Marathe GK",
+              "Willard B",
+              "McIntyre TM"
+            ],
+            "journal": "The Journal of biological chemistry",
+            "year": "2011",
+            "doi": "10.1074/jbc.M111.267161",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0070527",
+      "target": "MESH:D009203",
+      "evidence": [
+        {
+          "reference": "PMID:17323609",
+          "snippet": "aspirin significantly reduced the risk of both, fatal and non-fatal myocardial infarction",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Aspirin's inhibition of platelet aggregation translates to a reduction in MI risk, indicating platelet aggregation contributes to MI.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "[Milestones of cardivascular pharmacotherapy: salicylates and aspirin].",
+            "authors": [
+              "Jerie P"
+            ],
+            "journal": "Casopis lekaru ceskych",
+            "year": "2006",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00945#mechanism-of-action",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    },
+    {
+      "url": "https://www.uniprot.org/uniprot/P23219#function",
+      "type": "other",
+      "label": "uniprot.org — record source"
+    },
+    {
+      "url": "https://www.uniprot.org/uniprot/P35354#function",
+      "type": "other",
+      "label": "uniprot.org — record source"
+    }
+  ],
+  "site": {
+    "id": "phase3__P01_no_provider",
+    "record_id": "P01_DB00945_MESH_D009203",
+    "run": "phase3",
+    "run_label": "Phase-3 eval",
+    "source_file": "tests/phase3_eval_outputs/P01_no_provider.yaml",
+    "summary_generated": true
+  }
+}

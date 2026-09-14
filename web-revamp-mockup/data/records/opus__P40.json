@@ -1,0 +1,248 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P40_DB00043_MESH_D001249",
+    "drug": "omalizumab",
+    "drug_mesh": "MESH:D000069444",
+    "drugbank": "DB:DB00043",
+    "disease": "Asthma",
+    "disease_mesh": "MESH:D001249",
+    "summary": "Omalizumab → Immunoglobulin heavy constant epsilon (IgE) → High affinity immunoglobulin epsilon receptor subunit alpha (FcepsilonRI) → Mast cell degranulation → Asthma"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00043",
+      "name": "Omalizumab",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P01854",
+      "name": "Immunoglobulin heavy constant epsilon (IgE)",
+      "label": "Protein"
+    },
+    {
+      "id": "UniProt:P12319",
+      "name": "High affinity immunoglobulin epsilon receptor subunit alpha (FcepsilonRI)",
+      "label": "Protein"
+    },
+    {
+      "id": "CL:0000097",
+      "name": "Mast cell",
+      "label": "Cell"
+    },
+    {
+      "id": "GO:0043303",
+      "name": "Mast cell degranulation",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D001249",
+      "name": "Asthma",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "DB:DB00043",
+      "target": "UniProt:P01854",
+      "evidence": [
+        {
+          "reference": "PMID:12110823",
+          "snippet": "Omalizumab (Xolair; formerly rhuMAb-E25) binds to circulating IgE, thus preventing induction of the allergic process.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Omalizumab binds and sequesters free IgE, neutralizing its function.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The effect of omalizumab on nasal allergic inflammation.",
+            "authors": [
+              "Plewako H",
+              "Arvidsson M",
+              "Petruson K",
+              "Oancea I",
+              "Holmberg K",
+              "Adelroth E",
+              "Gustafsson H",
+              "Sandström T",
+              "Rak S"
+            ],
+            "journal": "The Journal of allergy and clinical immunology",
+            "year": "2002",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "decreases activity of",
+      "source": "UniProt:P01854",
+      "target": "UniProt:P12319",
+      "evidence": [
+        {
+          "reference": "PMID:16318424",
+          "snippet": "The humanised monoclonal IgE antibody Xolair (omalizumab) complexes with free circulating IgE, thereby preventing binding of IgE to FcepsilonRI receptors on immune cells.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "By sequestering free IgE, omalizumab prevents IgE from engaging and activating FcepsilonRI.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Omalizumab: a future innovation for treatment of severe ocular allergy?",
+            "authors": [
+              "Williams PB",
+              "Sheppard JD"
+            ],
+            "journal": "Expert opinion on biological therapy",
+            "year": "2005",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "located in",
+      "source": "UniProt:P12319",
+      "target": "CL:0000097",
+      "evidence": [
+        {
+          "reference": "PMID:16750976",
+          "snippet": "can block IgE's binding to high-affinity IgE Fc receptors (FcepsilonRI) on mast cells and basophils",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Anti-IgE as a mast cell-stabilizing therapeutic agent.",
+            "authors": [
+              "Chang TW",
+              "Shiung YY"
+            ],
+            "journal": "The Journal of allergy and clinical immunology",
+            "year": "2006",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "negatively regulates",
+      "source": "UniProt:P12319",
+      "target": "GO:0043303",
+      "evidence": [
+        {
+          "reference": "PMID:26509363",
+          "snippet": "We found that OmAb dissociates pre-bound IgE from mast cells and basophils, resulting in a reduction of proximal phosphorylation-mediated signalling events (Syk, PLCγ, and LAT) and in a decrease in degranulation and leukotriene synthesis.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Loss of IgE-FcepsilonRI signalling reduces mast cell degranulation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Comparable actions of omalizumab on mast cells and basophils.",
+            "authors": [
+              "Serrano-Candelas E",
+              "Martinez-Aranguren R",
+              "Valero A",
+              "Bartra J",
+              "Gastaminza G",
+              "Goikoetxea MJ",
+              "Martín M",
+              "Ferrer M"
+            ],
+            "journal": "Clinical and experimental allergy : journal of the British Society for Allergy and Clinical Immunology",
+            "year": "2016",
+            "doi": "10.1111/cea.12668",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "GO:0043303",
+      "target": "MESH:D001249",
+      "evidence": [
+        {
+          "reference": "PMID:12110823",
+          "snippet": "coupling between IgE and FcepsilonRI receptors on mast cells leads to release of proinflammatory mediators and a subsequent influx of inflammatory cells to the affected organ",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Mast cell mediator release drives the allergic inflammation underlying asthma.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The effect of omalizumab on nasal allergic inflammation.",
+            "authors": [
+              "Plewako H",
+              "Arvidsson M",
+              "Petruson K",
+              "Oancea I",
+              "Holmberg K",
+              "Adelroth E",
+              "Gustafsson H",
+              "Sandström T",
+              "Rak S"
+            ],
+            "journal": "The Journal of allergy and clinical immunology",
+            "year": "2002",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "treats",
+      "source": "DB:DB00043",
+      "target": "MESH:D001249",
+      "evidence": [
+        {
+          "reference": "PMID:16318424",
+          "snippet": "Omalizumab effectively alleviates the signs and symptoms of asthma.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Omalizumab: a future innovation for treatment of severe ocular allergy?",
+            "authors": [
+              "Williams PB",
+              "Sheppard JD"
+            ],
+            "journal": "Expert opinion on biological therapy",
+            "year": "2005",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00043",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P40",
+    "record_id": "P40_DB00043_MESH_D001249",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P40.yaml",
+    "summary_generated": true
+  }
+}

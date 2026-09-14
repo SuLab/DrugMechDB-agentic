@@ -1,0 +1,204 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P11_DB01045_MESH_D014397",
+    "drug": "Rifampicin",
+    "drug_mesh": "MESH:D012293",
+    "drugbank": "DB:DB01045",
+    "disease": "Pulmonary Tuberculosis",
+    "disease_mesh": "MESH:D014397",
+    "summary": "Rifampicin → DNA-templated transcription → Mycobacterium tuberculosis → Pulmonary Tuberculosis"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB01045",
+      "name": "Rifampicin",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P9WGY9",
+      "name": "DNA-directed RNA polymerase subunit beta (RpoB)",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0006351",
+      "name": "DNA-templated transcription",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "NCBITaxon:1773",
+      "name": "Mycobacterium tuberculosis",
+      "label": "OrganismTaxon"
+    },
+    {
+      "id": "MESH:D014397",
+      "name": "Pulmonary Tuberculosis",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "DB:DB01045",
+      "target": "UniProt:P9WGY9",
+      "evidence": [
+        {
+          "reference": "PMID:25288092",
+          "snippet": "rifampin (RIF) binds to the beta subunit of the RNA polymerase (RpoB) of Mycobacterium tuberculosis",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Rifampin binds the RpoB beta subunit, inhibiting the RNA polymerase enzyme.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Rifampin induces hydroxyl radical formation in Mycobacterium tuberculosis.",
+            "authors": [
+              "Piccaro G",
+              "Pietraforte D",
+              "Giannoni F",
+              "Mustazzolu A",
+              "Fattorini L"
+            ],
+            "journal": "Antimicrobial agents and chemotherapy",
+            "year": "2014",
+            "doi": "10.1128/AAC.03169-14",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "decreases activity of",
+      "source": "DB:DB01045",
+      "target": "GO:0006351",
+      "evidence": [
+        {
+          "reference": "PMID:31269464",
+          "snippet": "The antimicrobial activity of RIF is attributed to its ability to inhibit transcription by binding to the β subunit of bacterial RNA polymerase (encoded by rpoB).",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Unveiling the molecular basis for pleiotropy in selected rif mutants of Escherichia coli: Possible role for Tyrosine in the Rif binding pocket and fast movement of RNA polymerase.",
+            "authors": [
+              "Karthik M",
+              "Meenakshi S",
+              "Munavar MH"
+            ],
+            "journal": "Gene",
+            "year": "2019",
+            "doi": "10.1016/j.gene.2019.143951",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "occurs in",
+      "source": "GO:0006351",
+      "target": "NCBITaxon:1773",
+      "evidence": [
+        {
+          "reference": "PMID:25288092",
+          "snippet": "rifampin (RIF) binds to the beta subunit of the RNA polymerase (RpoB) of Mycobacterium tuberculosis",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "RpoB-containing RNA polymerase performs DNA-templated transcription in M. tuberculosis.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Rifampin induces hydroxyl radical formation in Mycobacterium tuberculosis.",
+            "authors": [
+              "Piccaro G",
+              "Pietraforte D",
+              "Giannoni F",
+              "Mustazzolu A",
+              "Fattorini L"
+            ],
+            "journal": "Antimicrobial agents and chemotherapy",
+            "year": "2014",
+            "doi": "10.1128/AAC.03169-14",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "negatively regulates",
+      "source": "DB:DB01045",
+      "target": "NCBITaxon:1773",
+      "evidence": [
+        {
+          "reference": "PMID:25288092",
+          "snippet": "M. tuberculosis killing by RIF stimulated an increase in the rate of formation of the CPH radical",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Rifampin induces hydroxyl radical formation in Mycobacterium tuberculosis.",
+            "authors": [
+              "Piccaro G",
+              "Pietraforte D",
+              "Giannoni F",
+              "Mustazzolu A",
+              "Fattorini L"
+            ],
+            "journal": "Antimicrobial agents and chemotherapy",
+            "year": "2014",
+            "doi": "10.1128/AAC.03169-14",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "NCBITaxon:1773",
+      "target": "MESH:D014397",
+      "evidence": [
+        {
+          "reference": "PMID:40916634",
+          "snippet": "Tuberculosis, caused by Mycobacterium tuberculosis, persists as a significant worldwide health issue",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Unveiling the molecular toxicity of Isoniazid and Rifampicin in tuberculosis therapy: emerging insights and therapeutic strategies.",
+            "authors": [
+              "Shivaji P",
+              "Prince SE"
+            ],
+            "journal": "Toxicology mechanisms and methods",
+            "year": "2025",
+            "doi": "10.1080/15376516.2025.2554918",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB01045",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P11",
+    "record_id": "P11_DB01045_MESH_D014397",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P11.yaml",
+    "summary_generated": true
+  }
+}

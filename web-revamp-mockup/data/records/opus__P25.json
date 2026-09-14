@@ -1,0 +1,140 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P25_DB00051_MESH_D011565",
+    "drug": "Adalimumab",
+    "drug_mesh": "MESH:D000068879",
+    "drugbank": "DB:DB00051",
+    "disease": "Psoriasis",
+    "disease_mesh": "MESH:D011565",
+    "summary": "Adalimumab → Tumor necrosis factor → keratinocyte proliferation → Psoriasis"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00051",
+      "name": "Adalimumab",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P01375",
+      "name": "Tumor necrosis factor",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0043616",
+      "name": "keratinocyte proliferation",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D011565",
+      "name": "Psoriasis",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "DB:DB00051",
+      "target": "UniProt:P01375",
+      "evidence": [
+        {
+          "reference": "PMID:19799828",
+          "snippet": "Adalimumab, a fully human monoclonal antibody, binds to and neutralizes tumor necrosis factor.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Adalimumab in the treatment of psoriasis: pooled efficacy and safety results from three pivotal studies.",
+            "authors": [
+              "Papp K",
+              "Okun M",
+              "Vender R"
+            ],
+            "journal": "Journal of cutaneous medicine and surgery",
+            "year": "2009",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "UniProt:P01375",
+      "target": "GO:0043616",
+      "evidence": [
+        {
+          "reference": "PMID:17502868",
+          "snippet": "Overproduction of inflammatory mediators, such as tumor necrosis factor-alpha (TNF-alpha) and IFN-gamma, results in a self-sustaining inflammatory cascade, causing abnormal keratinocyte proliferation and differentiation.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mechanisms of action of etanercept in psoriasis.",
+            "authors": [
+              "Tan JK",
+              "Aphale A",
+              "Malaviya R",
+              "Sun Y",
+              "Gottlieb AB"
+            ],
+            "journal": "The journal of investigative dermatology. Symposium proceedings",
+            "year": "2007",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0043616",
+      "target": "MESH:D011565",
+      "evidence": [
+        {
+          "reference": "PMID:15315008",
+          "snippet": "It follows that blockade of TNF-alpha should diminish inflammation and normalize keratinocyte proliferation in psoriasis.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "New development in the treatment of psoriasis--infliximab.",
+            "authors": [
+              "Pietrzak A",
+              "Chodorowska G",
+              "Jazienicka I",
+              "Junak-Bojarska A",
+              "Roliński J"
+            ],
+            "journal": "Annales Universitatis Mariae Curie-Sklodowska. Sectio D: Medicina",
+            "year": "2003",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00051",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P25",
+    "record_id": "P25_DB00051_MESH_D011565",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P25.yaml",
+    "summary_generated": true
+  }
+}

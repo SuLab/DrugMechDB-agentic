@@ -1,0 +1,252 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P16_DB01235_MESH_D010300",
+    "drug": "Levodopa",
+    "drug_mesh": "MESH:D007980",
+    "drugbank": "DB:DB01235",
+    "disease": "Parkinson's Disease",
+    "disease_mesh": "MESH:D010300",
+    "summary": "Levodopa → Dopamine → D(2) dopamine receptor"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D007980",
+      "name": "Levodopa",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P20711",
+      "name": "Aromatic-L-amino-acid decarboxylase",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D004298",
+      "name": "Dopamine",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "UniProt:P14416",
+      "name": "D(2) dopamine receptor",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D010300",
+      "name": "Parkinson's Disease",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "increases activity of",
+      "source": "MESH:D007980",
+      "target": "UniProt:P20711",
+      "evidence": [
+        {
+          "reference": "PMID:28166239",
+          "snippet": "aromatic L-amino acid decarboxylase (AADC) is the rate-limiting enzyme in the conversion of L-DOPA (Sinemet) to dopamine (DA)",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Levodopa is the substrate for AADC (DDC), the enzyme that converts it to dopamine. The enzyme activity is the key step in levodopa's mechanism.\n",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Depletion of AADC activity in caudate nucleus and putamen of Parkinson's disease patients; implications for ongoing AAV2-AADC gene therapy trial.",
+            "authors": [
+              "Ciesielska A",
+              "Samaranch L",
+              "San Sebastian W",
+              "Dickson DW",
+              "Goldman S",
+              "Forsayeth J",
+              "Bankiewicz KS"
+            ],
+            "journal": "PloS one",
+            "year": "2017",
+            "doi": "10.1371/journal.pone.0169965",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "has metabolite",
+      "source": "MESH:D007980",
+      "target": "MESH:D004298",
+      "evidence": [
+        {
+          "reference": "PMID:30077198",
+          "snippet": "Replenishment of dopamine by oral supplementation of its precursor, the levodopa (L-DOPA), remains the primary mode of treatment of PD",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Levodopa is converted to dopamine in the brain, replenishing dopamine levels in Parkinson's disease patients.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Garcinol, an effective monoamine oxidase-B inhibitor for the treatment of Parkinson's disease.",
+            "authors": [
+              "Mazumder MK",
+              "Paul R",
+              "Phukan BC",
+              "Dutta A",
+              "Chakrabarty J",
+              "Bhattacharya P",
+              "Borah A"
+            ],
+            "journal": "Medical hypotheses",
+            "year": "2018",
+            "doi": "10.1016/j.mehy.2018.06.009",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:16829205",
+          "snippet": "Dopamine, the major neurotransmitter depleted in Parkinson disease, can be synthesized and regulated in vivo with a combination of intrastriatal AAV-hAADC gene therapy and administration of the dopamine precursor l-Dopa.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Confirms levodopa is a dopamine precursor and its conversion to dopamine is central to its therapeutic effect.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Long-term clinical improvement in MPTP-lesioned primates after gene therapy with AAV-hAADC.",
+            "authors": [
+              "Bankiewicz KS",
+              "Forsayeth J",
+              "Eberling JL",
+              "Sanchez-Pernaute R",
+              "Pivirotto P",
+              "Bringas J",
+              "Herscovitch P",
+              "Carson RE",
+              "Eckelman W",
+              "Reutter B",
+              "Cunningham J"
+            ],
+            "journal": "Molecular therapy : the journal of the American Society of Gene Therapy",
+            "year": "2006",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "increases activity of",
+      "source": "MESH:D004298",
+      "target": "UniProt:P14416",
+      "evidence": [
+        {
+          "reference": "PMID:22133327",
+          "snippet": "Although the resulting dopamine deficiency is the cause of the typical motor features of Parkinson's disease (bradykinesia, rigidity, tremor)",
+          "supports": "PARTIAL",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Dopamine deficiency underlies Parkinson's motor symptoms; replenishment of dopamine (from levodopa) restores stimulation of dopamine receptors including DRD2, which modulates motor control.\n",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Monoamine oxidase B inhibitors for the treatment of Parkinson's disease: a review of symptomatic and potential disease-modifying effects.",
+            "authors": [
+              "Schapira AH"
+            ],
+            "journal": "CNS drugs",
+            "year": "2011",
+            "doi": "10.2165/11596310-000000000-00000",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:36403747",
+          "snippet": "a decrease in dopamine levels in the striatum causes abnormal circuit activity in the basal ganglia, resulting in increased output via the substantia nigra pars reticulata (SNr)",
+          "supports": "PARTIAL",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Depletion of dopamine disrupts basal ganglia activity; restoration of dopamine by levodopa acts through dopamine receptors to normalize this circuit.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Amino acid transporter Asc-1 (SLC7A10) expression is altered in basal ganglia in experimental Parkinsonism and L-dopa-induced dyskinesia model mice.",
+            "authors": [
+              "Nakahara K",
+              "Okuda H",
+              "Isonishi A",
+              "Kawabe Y",
+              "Tanaka T",
+              "Tatsumi K",
+              "Wanaka A"
+            ],
+            "journal": "Journal of chemical neuroanatomy",
+            "year": "2023",
+            "doi": "10.1016/j.jchemneu.2022.102191",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "treats",
+      "source": "MESH:D007980",
+      "target": "MESH:D010300",
+      "evidence": [
+        {
+          "reference": "PMID:34268560",
+          "snippet": "l-DOPA treatment ameliorated PD signs, particularly akinesia/bradykinesia, and normalized cortically evoked responses in both the GPi and GPe",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "L-DOPA directly ameliorates the motor signs of Parkinson's disease by restoring dopaminergic signaling in the basal ganglia.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Altered Dynamic Information Flow through the Cortico-Basal Ganglia Pathways Mediates Parkinson's Disease Symptoms.",
+            "authors": [
+              "Chiken S",
+              "Takada M",
+              "Nambu A"
+            ],
+            "journal": "Cerebral cortex (New York, N.Y. : 1991)",
+            "year": "2021",
+            "doi": "10.1093/cercor/bhab164",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:17894650",
+          "snippet": "The most effective treatment for this disease continues to be the dopamine replacement therapy with levodopa together with an inhibitor of aromatic amino acid decarboxylase (AADC)",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Levodopa is the gold-standard treatment for Parkinson's disease.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Catechol-O-methyltransferase and its inhibitors in Parkinson's disease.",
+            "authors": [
+              "Bonifácio MJ",
+              "Palma PN",
+              "Almeida L",
+              "Soares-da-Silva P"
+            ],
+            "journal": "CNS drug reviews",
+            "year": "2007",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [],
+  "site": {
+    "id": "sonnet__P16",
+    "record_id": "P16_DB01235_MESH_D010300",
+    "run": "sonnet",
+    "run_label": "Sonnet (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/sonnet/outputs/P16.yaml",
+    "summary_generated": true
+  }
+}

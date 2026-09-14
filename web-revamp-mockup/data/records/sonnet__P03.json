@@ -1,0 +1,270 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P03_DB00722_MESH_D006973",
+    "drug": "Lisinopril",
+    "drug_mesh": "MESH:D017706",
+    "drugbank": "DB:DB00722",
+    "disease": "Hypertension",
+    "disease_mesh": "MESH:D006973",
+    "summary": "Lisinopril → Angiotensin-converting enzyme → Angiotensin II → vasoconstriction → Hypertension"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D017706",
+      "name": "Lisinopril",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P12821",
+      "name": "Angiotensin-converting enzyme",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D000804",
+      "name": "Angiotensin II",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "GO:0042310",
+      "name": "vasoconstriction",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D006973",
+      "name": "Hypertension",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "MESH:D017706",
+      "target": "UniProt:P12821",
+      "evidence": [
+        {
+          "reference": "PMID:28629525",
+          "snippet": "ACE inhibitors, to prevent Ang I processing to Ang II",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Lisinopril is an ACE inhibitor that decreases the activity of angiotensin-converting enzyme, thereby preventing the conversion of angiotensin I to angiotensin II.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Erythropoietin Regulation by Angiotensin II.",
+            "authors": [
+              "Kim YC",
+              "Mungunsukh O",
+              "Day RM"
+            ],
+            "journal": "Vitamins and hormones",
+            "year": "2017",
+            "doi": "10.1016/bs.vh.2017.02.001",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:16614314",
+          "snippet": "Inhibition of the angiotensin-converting enzyme (ACE) protects against the progression of several cardiovascular diseases. Because of its dual role in regulating angiotensin II and bradykinin levels, the positive clinical effects of ACE inhibitors were thought to be the consequence of concomitant reductions in the production of angiotensin II",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Signaling by the angiotensin-converting enzyme.",
+            "authors": [
+              "Fleming I"
+            ],
+            "journal": "Circulation research",
+            "year": "2006",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:P12821",
+      "target": "MESH:D000804",
+      "evidence": [
+        {
+          "reference": "PMID:28629525",
+          "snippet": "angiotensin II (Ang II) that has a variety of biological functions in the cells is converted from Ang I through removal of two-C-terminal residues by ACE",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "ACE cleaves angiotensin I to produce angiotensin II by removing the C-terminal dipeptide.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Erythropoietin Regulation by Angiotensin II.",
+            "authors": [
+              "Kim YC",
+              "Mungunsukh O",
+              "Day RM"
+            ],
+            "journal": "Vitamins and hormones",
+            "year": "2017",
+            "doi": "10.1016/bs.vh.2017.02.001",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:32799009",
+          "snippet": "induced angiotensin-converting enzyme (ACE) expression and the consequent conversion from Ang I to Ang II",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Multiple pathophysiological roles of midkine in human disease.",
+            "authors": [
+              "Cai YQ",
+              "Lv Y",
+              "Mo ZC",
+              "Lei J",
+              "Zhu JL",
+              "Zhong QQ"
+            ],
+            "journal": "Cytokine",
+            "year": "2020",
+            "doi": "10.1016/j.cyto.2020.155242",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "MESH:D000804",
+      "target": "GO:0042310",
+      "evidence": [
+        {
+          "reference": "PMID:28384411",
+          "snippet": "angiotensin II (Ang II), that causes vasoconstriction, sodium retention, and structural alterations of the heart and the arteries",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Angiotensin II directly causes vasoconstriction, which raises peripheral vascular resistance.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Kallikrein-kinin system as the dominant mechanism to counteract hyperactive renin-angiotensin system.",
+            "authors": [
+              "Regoli D",
+              "Gobeil F"
+            ],
+            "journal": "Canadian journal of physiology and pharmacology",
+            "year": "2017",
+            "doi": "10.1139/cjpp-2016-0619",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:39385670",
+          "snippet": "angiotensin (Ang) II is an essential vasoconstrictive peptide",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Pyridoxal-5'-phosphate: A cost-effective treatment candidate for hypertensive patients?",
+            "authors": [
+              "Lellig M",
+              "Rodríguez M",
+              "López-Baltanás R",
+              "Hermann J",
+              "Wollenhaupt J",
+              "Noels H",
+              "Zidek W",
+              "Tepel M",
+              "Mahfoud F",
+              "Jankowski J",
+              "Muñoz-Castañeda JR",
+              "Jankowski V"
+            ],
+            "journal": "Journal of internal medicine",
+            "year": "2024",
+            "doi": "10.1111/joim.20015",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "GO:0042310",
+      "target": "MESH:D006973",
+      "evidence": [
+        {
+          "reference": "PMID:28629525",
+          "snippet": "The physiological effects of Ang II are due to Ang II signaling through specific receptor binding, resulting in muscle contraction leading to increased blood pressure and volume.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Vasoconstriction from angiotensin II-mediated smooth muscle contraction increases peripheral resistance leading to elevated blood pressure (hypertension).",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Erythropoietin Regulation by Angiotensin II.",
+            "authors": [
+              "Kim YC",
+              "Mungunsukh O",
+              "Day RM"
+            ],
+            "journal": "Vitamins and hormones",
+            "year": "2017",
+            "doi": "10.1016/bs.vh.2017.02.001",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:28384411",
+          "snippet": "The renin-angiotensin system (RAS) generates, maintains, and makes worse hypertension and cardiovascular diseases (CVDs) through its biologically active component angiotensin II (Ang II), that causes vasoconstriction",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Kallikrein-kinin system as the dominant mechanism to counteract hyperactive renin-angiotensin system.",
+            "authors": [
+              "Regoli D",
+              "Gobeil F"
+            ],
+            "journal": "Canadian journal of physiology and pharmacology",
+            "year": "2017",
+            "doi": "10.1139/cjpp-2016-0619",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.drugbank.ca/drugs/DB00722",
+      "type": "drugbank",
+      "label": "drugbank.ca — record source"
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/mesh/D017706",
+      "type": "other",
+      "label": "ncbi.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "sonnet__P03",
+    "record_id": "P03_DB00722_MESH_D006973",
+    "run": "sonnet",
+    "run_label": "Sonnet (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/sonnet/outputs/P03.yaml",
+    "summary_generated": true
+  }
+}

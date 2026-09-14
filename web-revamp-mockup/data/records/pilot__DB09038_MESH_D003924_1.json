@@ -1,0 +1,158 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB09038_MESH_D003924_1",
+    "drug": "empagliflozin",
+    "drug_mesh": "MESH:C570240",
+    "drugbank": "DB:DB09038",
+    "disease": "Diabetes Mellitus, Type 2",
+    "disease_mesh": "MESH:D003924",
+    "summary": "empagliflozin → Sodium/glucose cotransporter 2 → renal glucose absorption → Glycosuria → Hyperglycemia → Diabetes Mellitus, Type 2"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB09038",
+      "name": "empagliflozin",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P31639",
+      "name": "Sodium/glucose cotransporter 2",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0035623",
+      "name": "renal glucose absorption",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "HP:0003076",
+      "name": "Glycosuria",
+      "label": "PhenotypicFeature"
+    },
+    {
+      "id": "HP:0003074",
+      "name": "Hyperglycemia",
+      "label": "PhenotypicFeature"
+    },
+    {
+      "id": "MESH:D003924",
+      "name": "Diabetes Mellitus, Type 2",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "DB:DB09038",
+      "target": "UniProt:P31639",
+      "evidence": [
+        {
+          "reference": "PMID:24152604",
+          "snippet": "Empagliflozin is an orally available, potent and highly selective inhibitor of the sodium glucose cotransporter 2 (SGLT2).",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "UniProt:P31639",
+      "target": "GO:0035623",
+      "evidence": [
+        {
+          "reference": "PMID:38171209",
+          "snippet": "Sodium-dependent glucose cotransporter 2 (SGLT2) mediates glucose reabsorption in the renal proximal tubules",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Inhibition of Sodium-Glucose Cotransporter-2 during Serum Deprivation Increases Hepatic Gluconeogenesis via the AMPK/AKT/FOXO Signaling Pathway.",
+            "authors": [
+              "Lee J",
+              "Hong SW",
+              "Kim MJ",
+              "Lim YM",
+              "Moon SJ",
+              "Kwon H",
+              "Park SE",
+              "Rhee EJ",
+              "Lee WY"
+            ],
+            "journal": "Endocrinology and metabolism (Seoul, Korea)",
+            "year": "2024",
+            "doi": "10.3803/EnM.2023.1786",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "negatively correlated with",
+      "source": "GO:0035623",
+      "target": "HP:0003076",
+      "evidence": [
+        {
+          "reference": "PMID:31951170",
+          "snippet": "The SGLT2 inhibitors by inhibiting the SGLT2 in the proximal nephron, helps in reducing the reabsorption of approximately 90% of the filtered glucose and increased urinary glucose excretion (UGE).",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Reduced renal glucose reabsorption is accompanied by increased urinary glucose excretion (glycosuria), i.e. the two are inversely related.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "negatively correlated with",
+      "source": "HP:0003076",
+      "target": "HP:0003074",
+      "evidence": [
+        {
+          "reference": "PMID:24455799",
+          "snippet": "SGLT2-inhibitors are a new class of oral antidiabetics, which reduce hyperglycemia by increasing urinary glucose excretion independently of insulin secretion or action.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Increasing urinary glucose excretion (glycosuria) lowers blood glucose, reducing hyperglycemia.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "manifestation of",
+      "source": "HP:0003074",
+      "target": "MESH:D003924",
+      "evidence": [
+        {
+          "reference": "PMID:42356484",
+          "snippet": "Type 2 Diabetes Mellitus (T2DM) is characterized by insulin resistance and chronic hyperglycemia, which significantly impair vascular function.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB09038",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB09038_MESH_D003924_1",
+    "record_id": "DB09038_MESH_D003924_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB09038_MESH_D003924_1.yaml",
+    "summary_generated": true
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P03_DB00722_MESH_D006973",
+    "drug": "Lisinopril",
+    "drug_mesh": "MESH:D017706",
+    "drugbank": "DB:DB00722",
+    "disease": "Hypertension",
+    "disease_mesh": "MESH:D006973",
+    "summary": "Lisinopril → Angiotensin-converting enzyme → Angiotensin II → Hypertension"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D017706",
+      "name": "Lisinopril",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P12821",
+      "name": "Angiotensin-converting enzyme",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D000804",
+      "name": "Angiotensin II",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "MESH:D006973",
+      "name": "Hypertension",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "decreases activity of",
+      "source": "MESH:D017706",
+      "target": "UniProt:P12821",
+      "evidence": [
+        {
+          "reference": "PMID:41534066",
+          "snippet": "we treated flies with the angiotensin-converting enzyme (ACE) inhibitor lisinopril.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Lisinopril is identified as an angiotensin-converting enzyme (ACE) inhibitor, i.e. it decreases the catalytic activity of ACE.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Selection for Postponed Senescence in Drosophila melanogaster Reveals Distinct Metabolic Aging Trajectories Modifiable by the Angiotensin-Converting Enzyme Inhibitor Lisinopril.",
+            "authors": [
+              "Vecchié D",
+              "Anholt RRH",
+              "Mackay TFC",
+              "De Luca M"
+            ],
+            "journal": "Aging cell",
+            "year": "2026",
+            "doi": "10.1111/acel.70375",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:41532628",
+          "snippet": "lisinopril suppressed Ang II",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "In spontaneously hypertensive rats, lisinopril suppressed angiotensin II, the functional readout of decreased ACE activity (ACE is the enzyme that produces Ang II).",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Combined RAS Modulation: The Effect on Plasma and Tissue Angiotensin Peptide Levels.",
+            "authors": [
+              "Paulis L",
+              "Rajkovicova R",
+              "Repova K",
+              "Gubo G",
+              "Barta A",
+              "Poglitsch M",
+              "Domenig O",
+              "Andelova N",
+              "Ferko M",
+              "Pechanova O",
+              "Simko F"
+            ],
+            "journal": "Physiological research",
+            "year": "2025",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "produces",
+      "source": "UniProt:P12821",
+      "target": "MESH:D000804",
+      "evidence": [
+        {
+          "reference": "PMID:41154607",
+          "snippet": "controls blood pressure through Angiotensin II, an octapeptide hormone generated from Angiotensin I by Angiotensin-Converting Enzyme (ACE)",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Angiotensin-Converting Enzyme generates the octapeptide hormone Angiotensin II from Angiotensin I, i.e. ACE produces angiotensin II.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Angiotensin-Converting Enzyme Inhibitors and Metabolic Aging: A Drosophila Perspective.",
+            "authors": [
+              "Vecchie' D",
+              "Faber VG",
+              "Jumbo-Lucioni P",
+              "Anholt RRH",
+              "Mackay TFC",
+              "De Luca M"
+            ],
+            "journal": "Biomolecules",
+            "year": "2025",
+            "doi": "10.3390/biom15101378",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:42244833",
+          "snippet": "ATII is converted from angiotensin I by the action of the angiotensin-converting enzyme (ACE).",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Angiotensin II (ATII) is produced from angiotensin I by the action of ACE, confirming ACE produces angiotensin II.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Successful treatment of refractory anaphylactic shock with angiotensin II: A case report.",
+            "authors": [
+              "Bajec KB",
+              "Möller Petrun A"
+            ],
+            "journal": "European journal of anaesthesiology and intensive care",
+            "year": "2026",
+            "doi": "10.1097/EA9.0000000000000104",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "MESH:D000804",
+      "target": "MESH:D006973",
+      "evidence": [
+        {
+          "reference": "PMID:41185995",
+          "snippet": "Ang II (angiotensin II) causes hypertension and vascular inflammation both directly and indirectly via cytokines",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Angiotensin II causes hypertension, the terminal disease node; reducing Ang II (via lisinopril's ACE inhibition) therefore lowers blood pressure.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Smooth Muscle LRRC8A Knockout Preserves Vascular Function in Ang II Hypertension.",
+            "authors": [
+              "Choi H",
+              "Panja S",
+              "Nguyen HN",
+              "Stark RJ",
+              "Lamb FS"
+            ],
+            "journal": "Hypertension (Dallas, Tex. : 1979)",
+            "year": "2026",
+            "doi": "10.1161/HYPERTENSIONAHA.125.25222",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00722#mechanism-of-action",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    },
+    {
+      "url": "https://www.uniprot.org/uniprot/P12821#function",
+      "type": "other",
+      "label": "uniprot.org — record source"
+    }
+  ],
+  "site": {
+    "id": "phase3__P03",
+    "record_id": "P03_DB00722_MESH_D006973",
+    "run": "phase3",
+    "run_label": "Phase-3 eval",
+    "source_file": "tests/phase3_eval_outputs/P03.yaml",
+    "summary_generated": true
+  }
+}

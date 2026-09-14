@@ -1,0 +1,251 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P16_DB01235_MESH_D010300",
+    "drug": "levodopa",
+    "drug_mesh": "MESH:D007980",
+    "drugbank": "DB:DB01235",
+    "disease": "Parkinson's disease",
+    "disease_mesh": "MESH:D010300",
+    "summary": "levodopa → aromatic-L-amino-acid decarboxylase → Dopamine → synaptic transmission, dopaminergic → Parkinson's disease"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D007980",
+      "name": "levodopa",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P20711",
+      "name": "aromatic-L-amino-acid decarboxylase",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D004298",
+      "name": "Dopamine",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "GO:0001963",
+      "name": "synaptic transmission, dopaminergic",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D010300",
+      "name": "Parkinson's disease",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "molecularly interacts with",
+      "source": "MESH:D007980",
+      "target": "UniProt:P20711",
+      "evidence": [
+        {
+          "reference": "PMID:14634798",
+          "snippet": "l-DOPA with the tag bonded at position 5 served as the best substrate for AADC.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Levodopa (L-DOPA) is the substrate that directly interacts with aromatic amino acid decarboxylase (AADC) at its active site; this biochemical interaction is the first step in the conversion of levodopa to dopamine.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Enzymatic assay for perfluoro-tagged metabolites of l-DOPA using crude lysate from E. coli transformed with pKKAADCII.",
+            "authors": [
+              "Dingman S",
+              "Snyder-Leiby T",
+              "Mack DJ",
+              "Thomas R",
+              "Guo C"
+            ],
+            "journal": "Applied microbiology and biotechnology",
+            "year": "2004",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "produces",
+      "source": "UniProt:P20711",
+      "target": "MESH:D004298",
+      "evidence": [
+        {
+          "reference": "PMID:22061622",
+          "snippet": "recombinant human AADC, which actively catalyzes dopamine production from DOPA",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "AADC catalyzes the decarboxylation of L-DOPA (DOPA) to produce dopamine; this is the direct enzymatic product of AADC activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Does the aromatic L-amino acid decarboxylase contribute to thyronamine biosynthesis?",
+            "authors": [
+              "Hoefig CS",
+              "Renko K",
+              "Piehl S",
+              "Scanlan TS",
+              "Bertoldi M",
+              "Opladen T",
+              "Hoffmann GF",
+              "Klein J",
+              "Blankenstein O",
+              "Schweizer U",
+              "Köhrle J"
+            ],
+            "journal": "Molecular and cellular endocrinology",
+            "year": "2012",
+            "doi": "10.1016/j.mce.2011.10.024",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:40488810",
+          "snippet": "subsequently converted into dopamine via aromatic L-amino acid decarboxylase",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Review confirming that L-DOPA is converted into dopamine by the enzyme aromatic L-amino acid decarboxylase (AADC).",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The role of L-DOPA in neurological and neurodegenerative complications: a review.",
+            "authors": [
+              "Kulkarni SR",
+              "Thokchom B",
+              "Abbigeri MB",
+              "Bhavi SM",
+              "Singh SR",
+              "Metri N",
+              "Yarajarla RB"
+            ],
+            "journal": "Molecular and cellular biochemistry",
+            "year": "2025",
+            "doi": "10.1007/s11010-025-05324-w",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "positively regulates",
+      "source": "MESH:D004298",
+      "target": "GO:0001963",
+      "evidence": [
+        {
+          "reference": "PMID:38537648",
+          "snippet": "Dopamine's role as the principal neurotransmitter in motor functions has long been accepted.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Dopamine is the neurotransmitter that mediates dopaminergic synaptic transmission; its presence positively regulates this biological process.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Ophthalmate is a new regulator of motor functions via CaSR: implications for movement disorders.",
+            "authors": [
+              "Alhassen S",
+              "Hogenkamp D",
+              "Nguyen HA",
+              "Al Masri S",
+              "Abbott GW",
+              "Civelli O",
+              "Alachkar A"
+            ],
+            "journal": "Brain : a journal of neurology",
+            "year": "2024",
+            "doi": "10.1093/brain/awae097",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "negatively correlated with",
+      "source": "GO:0001963",
+      "target": "MESH:D010300",
+      "evidence": [
+        {
+          "reference": "PMID:40966690",
+          "snippet": "reduced striatal dopaminergic transmission is a transdiagnostic substrate for psychomotor retardation underlying the motor features of conditions such as Parkinson's disease",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Reduced dopaminergic synaptic transmission is the defining pathophysiological feature of Parkinson's disease motor symptoms; dopaminergic transmission is therefore negatively correlated with Parkinson's disease.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Reduced striatal dopamine transmission as a transdiagnostic substrate of psychomotor retardation.",
+            "authors": [
+              "Leong IL",
+              "Ng TH",
+              "Sen K",
+              "Burchill E",
+              "Costello H",
+              "Badenoch JB",
+              "Coebergh J",
+              "McCutcheon RA",
+              "Nair A",
+              "Browning M",
+              "Huys QJM",
+              "Lewis G",
+              "Lees A",
+              "David AS",
+              "Rogers JP"
+            ],
+            "journal": "Brain : a journal of neurology",
+            "year": "2026",
+            "doi": "10.1093/brain/awaf335",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:35331828",
+          "snippet": "Parkinson's Disease (PD) occurs due to extensive damage of dopamine-producing neurons; this causes dopamine deficits in the midbrain",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Review confirming that dopamine deficiency (from neuronal loss) is the pathogenic basis of PD, establishing the negative correlation between dopaminergic neurotransmission and disease.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Restoration and targeting of aberrant neurotransmitters in Parkinson's disease therapeutics.",
+            "authors": [
+              "Yadav D",
+              "Kumar P"
+            ],
+            "journal": "Neurochemistry international",
+            "year": "2022",
+            "doi": "10.1016/j.neuint.2022.105327",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB01235#mechanism-of-action",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    },
+    {
+      "url": "https://www.uniprot.org/uniprot/P20711",
+      "type": "other",
+      "label": "uniprot.org — record source"
+    }
+  ],
+  "site": {
+    "id": "phase3__P16",
+    "record_id": "P16_DB01235_MESH_D010300",
+    "run": "phase3",
+    "run_label": "Phase-3 eval",
+    "source_file": "tests/phase3_eval_outputs/P16.yaml",
+    "summary_generated": true
+  }
+}
