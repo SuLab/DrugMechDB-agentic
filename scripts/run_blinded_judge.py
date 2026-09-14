@@ -338,15 +338,29 @@ def _blank_verdict_counts() -> dict:
 
 
 def aggregate(results: list[dict], reveal: list[dict]) -> dict:
-    """Post-scoring aggregate: verdict + gold distributions, overall and per arm."""
+    """Post-scoring aggregate: verdict + legacy-divergence distributions, per arm.
+
+    NOTE ON LEGACY. The legacy corpus is a comparison point, NOT a gold standard.
+    It was expert-curated but is known to contain errors, and replacing it is the
+    point of this project. So divergence from legacy is reported as a DIVERGENCE
+    RATE routed to human adjudication — never as an "agreement" score.
+
+    The distinction is not cosmetic. Scoring agreement rewards reproducing
+    legacy, which means an AI path that correctly FIXES a legacy error is
+    recorded as a failure. That caps measured quality at "matches human" and
+    hides exactly the errors the project exists to find. The judge prompt
+    already says "Disagreement != error" and calls gold_comparison a
+    human-review prompt rather than a verdict; this aggregate now matches it.
+    """
     arm_of = {r["blind_id"]: r["arm"] for r in reveal}
     by_arm_verdict: dict[str, dict] = {}
     by_arm_gold: dict[str, dict] = {}
     verdict_counts = _blank_verdict_counts()
     gold_dist = {c: 0 for c in _GOLD_CLASSES} | {"other": 0}
     support_fracs = []
-    n_with_gold = n_agree = 0
-    agree_by_arm: dict[str, list[int]] = {}
+    n_with_gold = n_divergent = 0
+    divergent_by_arm: dict[str, list[int]] = {}
+    adjudication_queue: list[dict] = []
 
     for r in results:
         arm = arm_of.get(r["blind_id"], "?")
@@ -365,9 +379,30 @@ def aggregate(results: list[dict], reveal: list[dict]) -> dict:
             gold_dist[gbucket] += 1
             by_arm_gold.setdefault(arm, {c: 0 for c in _GOLD_CLASSES} | {"other": 0})[gbucket] += 1
             n_with_gold += 1
-            agrees = 1 if gc != "disagree" else 0     # agreement = judge did not call it a disagreement
-            n_agree += agrees
-            agree_by_arm.setdefault(arm, []).append(agrees)
+            # `disagree` means the judge read the two paths as telling different
+            # stories. Which one is RIGHT is not something this harness decides —
+            # it goes to a human. Everything else is a shape difference the judge
+            # already considers compatible.
+            divergent = 1 if gc == "disagree" else 0
+            n_divergent += divergent
+            divergent_by_arm.setdefault(arm, []).append(divergent)
+            if divergent:
+                # `overall` is a dict per the prompt schema ({verdict, summary})
+                # but arrives as a bare verdict string from some paths — the
+                # existing verdict tally above relies on the string form. Accept
+                # both rather than assume either.
+                overall = (r.get("path_coherence") or {}).get("overall")
+                summary = overall.get("summary") if isinstance(overall, dict) else None
+                adjudication_queue.append({
+                    "blind_id": r["blind_id"],
+                    "arm": arm,
+                    "record": r.get("record"),
+                    "legacy_path_id": r.get("legacy_path_id"),
+                    "gold_comparison": gc,
+                    "judge_summary": summary,
+                    "verdict": "UNADJUDICATED",
+                    "ruling": None,   # ai_correct | legacy_correct | both_defensible
+                })
 
     return {
         "path_verdict_counts": verdict_counts,
@@ -375,15 +410,20 @@ def aggregate(results: list[dict], reveal: list[dict]) -> dict:
         "edge_support_fraction_mean": round(sum(support_fracs) / len(support_fracs), 3) if support_fracs else None,
         "gold_comparison_distribution": gold_dist,
         "gold_comparison_distribution_by_arm": by_arm_gold,
-        "agreement_with_legacy": {
-            "n_with_gold": n_with_gold, "n_agree": n_agree,
-            "fraction": round(n_agree / n_with_gold, 3) if n_with_gold else None,
+        "legacy_divergence": {
+            "n_with_legacy": n_with_gold,
+            "n_divergent": n_divergent,
+            "divergence_rate": round(n_divergent / n_with_gold, 3) if n_with_gold else None,
+            "note": "Divergence from legacy is not error. Legacy is a comparison "
+                    "point, not a gold standard; each divergence needs human "
+                    "adjudication (ai_correct / legacy_correct / both_defensible).",
         },
-        "agreement_with_legacy_by_arm": {
-            arm: {"n_with_gold": len(v), "n_agree": sum(v),
-                  "fraction": round(sum(v) / len(v), 3) if v else None}
-            for arm, v in agree_by_arm.items()
+        "legacy_divergence_by_arm": {
+            arm: {"n_with_legacy": len(v), "n_divergent": sum(v),
+                  "divergence_rate": round(sum(v) / len(v), 3) if v else None}
+            for arm, v in divergent_by_arm.items()
         },
+        "adjudication_queue": adjudication_queue,
     }
 
 
@@ -479,14 +519,30 @@ def render_markdown(report: dict) -> str:
     rows.append(["**all**", *(tot[v] for v in _VERDICTS), tot["other"]])
     lines.append(_md_table(headers, rows))
 
-    al = agg["agreement_with_legacy"]
-    al_frac = "—" if al["fraction"] is None else f"{al['fraction']:.0%}"
-    lines += ["", "**Agreement with legacy** (judge did not classify the pair as `disagree`, "
-                  "among paths that have a legacy path)", "",
-              f"- overall: {al['n_agree']}/{al['n_with_gold']} ({al_frac})"]
-    for arm, a in sorted(agg["agreement_with_legacy_by_arm"].items()):
-        frac = "—" if a["fraction"] is None else f"{a['fraction']:.0%}"
-        lines.append(f"- {arm}: {a['n_agree']}/{a['n_with_gold']} ({frac})")
+    ld = agg["legacy_divergence"]
+    ld_frac = "—" if ld["divergence_rate"] is None else f"{ld['divergence_rate']:.0%}"
+    lines += ["", "**Divergence from legacy** — paths the judge read as telling a "
+                  "different story from the legacy path.", "",
+              "> Legacy is a comparison point, **not** a gold standard. It was "
+              "expert-curated but is known to contain errors, and replacing it is "
+              "the point of this project. A divergence is a question for a human, "
+              "not a mark against the agent — the agent may be right.", "",
+              f"- overall: {ld['n_divergent']}/{ld['n_with_legacy']} ({ld_frac}) need adjudication"]
+    for arm, a in sorted(agg["legacy_divergence_by_arm"].items()):
+        frac = "—" if a["divergence_rate"] is None else f"{a['divergence_rate']:.0%}"
+        lines.append(f"- {arm}: {a['n_divergent']}/{a['n_with_legacy']} ({frac})")
+
+    queue = agg.get("adjudication_queue") or []
+    if queue:
+        lines += ["", f"### Adjudication queue ({len(queue)})", "",
+                  "Each row is a path where the agent and the legacy record disagree. "
+                  "A human rules `ai_correct` / `legacy_correct` / `both_defensible`. "
+                  "Rulings of `ai_correct` are previously-unknown errors in the "
+                  "expert-curated corpus.", "",
+                  "| blind_id | arm | legacy path | ruling |", "|---|---|---|---|"]
+        for item in queue:
+            lines.append(f"| `{item['blind_id']}` | {item['arm']} | "
+                         f"`{item.get('legacy_path_id') or '—'}` | _unadjudicated_ |")
 
     gd = agg["gold_comparison_distribution"]
     if any(gd.values()):
@@ -525,6 +581,28 @@ def _write_outputs(out_dir: Path, report: dict) -> tuple[Path, Path]:
     md_path = out_dir / "blinded_judge_results.md"
     json_path.write_text(json.dumps(report, indent=2, default=str))
     md_path.write_text(render_markdown(report))
+
+    # The adjudication queue is written separately because it is a WORKSHEET a
+    # human fills in, not a result. Keeping it out of the results file means a
+    # re-run cannot silently overwrite rulings someone already made.
+    queue = (report.get("aggregate") or {}).get("adjudication_queue") or []
+    if queue:
+        queue_path = out_dir / "adjudication_queue.yaml"
+        if queue_path.exists():
+            print(f"  (leaving existing {queue_path.name} untouched — it may hold rulings)")
+        else:
+            queue_path.write_text(yaml.safe_dump(
+                {"instructions":
+                    "One entry per path where the agent and legacy disagree. Set `ruling` to "
+                    "ai_correct, legacy_correct, or both_defensible, and set verdict to "
+                    "ADJUDICATED. ai_correct means a previously-unknown error in the legacy "
+                    "corpus. Do not treat legacy as automatically right.",
+                 "note_on_blinding":
+                    "This worksheet is necessarily unblinded: the task is to compare an agent "
+                    "path against its legacy counterpart, so the reviewer knows which is which. "
+                    "Presenting the pair as randomised Path A / Path B would restore blinding "
+                    "and belongs with the human-review protocol (#12).",
+                 "queue": queue}, sort_keys=False))
     return json_path, md_path
 
 
@@ -627,10 +705,11 @@ def main(argv=None) -> int:
     json_path, md_path = _write_outputs(Path(args.out_dir), report)
     agg = report["aggregate"]
     print(f"\nverdicts: {agg['path_verdict_counts']}")
-    al = agg["agreement_with_legacy"]
-    if al["n_with_gold"]:
-        al_frac = "" if al["fraction"] is None else f"{al['fraction']:.0%}"
-        print(f"agreement-with-legacy: {al['n_agree']}/{al['n_with_gold']} ({al_frac})")
+    ld = agg["legacy_divergence"]
+    if ld["n_with_legacy"]:
+        ld_frac = "" if ld["divergence_rate"] is None else f"{ld['divergence_rate']:.0%}"
+        print(f"legacy divergence (needs human adjudication): "
+              f"{ld['n_divergent']}/{ld['n_with_legacy']} ({ld_frac})")
     print(f"wrote {json_path}\n      {md_path}")
     return 0
 
