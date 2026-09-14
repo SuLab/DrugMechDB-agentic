@@ -1,0 +1,52 @@
+directed: true
+multigraph: true
+graph:
+  _id: P07_DB00619_MESH_D015464
+  drug: Imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+  disease: Chronic Myeloid Leukemia
+  disease_mesh: MESH:D015464
+nodes:
+  - id: MESH:D000068877
+    name: Imatinib
+    label: Drug
+  - id: UniProt:A9UF07
+    name: BCR/ABL fusion protein
+    label: Protein
+  - id: GO:0008283
+    name: cell population proliferation
+    label: BiologicalProcess
+  - id: MESH:D015464
+    name: Chronic Myeloid Leukemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: UniProt:A9UF07
+    evidence:
+      - reference: PMID:12414617
+        snippet: "The major mechanism of action of STI571 is a competitive interference with the ATP-binding site of the Bcr/Abl tyrosine kinase."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "STI571 is imatinib; it competitively inhibits the ATP-binding site of the BCR/ABL tyrosine kinase, decreasing its kinase activity."
+  - key: positively regulates
+    source: UniProt:A9UF07
+    target: GO:0008283
+    evidence:
+      - reference: PMID:42174092
+        snippet: "This alteration gives rise to the BCR::ABL1 fusion oncogene, whose constitutive tyrosine kinase activity promotes uncontrolled proliferation and survival of leukemic cells."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "The constitutive tyrosine kinase activity of the BCR::ABL1 fusion promotes uncontrolled proliferation of leukemic cells."
+  - key: manifestation of
+    source: GO:0008283
+    target: MESH:D015464
+    evidence:
+      - reference: PMID:41353321
+        snippet: "Chronic myeloid leukemia (CML) is a myeloproliferative malignancy marked through the excessive proliferative growth of functional myeloid cells."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "CML is a myeloproliferative malignancy marked by excessive proliferative growth of myeloid cells; uncontrolled proliferation is a manifestation of the disease."
+references:
+  - https://go.drugbank.com/drugs/DB00619

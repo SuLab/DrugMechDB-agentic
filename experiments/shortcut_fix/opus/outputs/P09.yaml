@@ -1,0 +1,76 @@
+directed: true
+multigraph: true
+graph:
+  _id: P09_DB00563_MESH_D054198
+  drug: Methotrexate
+  drug_mesh: MESH:D008727
+  drugbank: DB:DB00563
+  disease: Precursor Cell Lymphoblastic Leukemia-Lymphoma
+  disease_mesh: MESH:D054198
+nodes:
+  - id: MESH:D008727
+    name: Methotrexate
+    label: Drug
+  - id: UniProt:P00374
+    name: Dihydrofolate reductase
+    label: Protein
+  - id: GO:0046654
+    name: tetrahydrofolate biosynthetic process
+    label: BiologicalProcess
+  - id: GO:0071897
+    name: DNA biosynthetic process
+    label: BiologicalProcess
+  - id: CL:0017005
+    name: lymphoblast
+    label: Cell
+  - id: MESH:D054198
+    name: Precursor Cell Lymphoblastic Leukemia-Lymphoma
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D008727
+    target: UniProt:P00374
+    evidence:
+      - reference: PMID:40088855
+        snippet: "MTX acts as a folate antagonist by inhibiting dihydrofolate reductase (DHFR), an enzyme essential for the synthesis of tetrahydrofolate."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Methotrexate is a folate antagonist that competitively inhibits DHFR."
+  - key: participates in
+    source: UniProt:P00374
+    target: GO:0046654
+    evidence:
+      - reference: PMID:40088855
+        snippet: "MTX acts as a folate antagonist by inhibiting dihydrofolate reductase (DHFR), an enzyme essential for the synthesis of tetrahydrofolate."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "DHFR is essential for the synthesis of tetrahydrofolate."
+  - key: positively regulates
+    source: GO:0046654
+    target: GO:0071897
+    evidence:
+      - reference: PMID:40088855
+        snippet: "This disruption impairs DNA synthesis, repair, and cellular replication, particularly affecting rapidly dividing cells."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Disruption of reduced folate (tetrahydrofolate) pools impairs DNA synthesis, so the folate/tetrahydrofolate supply positively regulates DNA biosynthesis."
+  - key: occurs in
+    source: GO:0071897
+    target: CL:0017005
+    evidence:
+      - reference: PMID:26022503
+        snippet: "Methotrexate (MTX) eradicates leukemic cells by disrupting de novo nucleotide biosynthesis and DNA replication, resulting in cell death."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "MTX disrupts de novo nucleotide biosynthesis and DNA replication in the proliferating leukemic lymphoblasts, killing them."
+  - key: manifestation of
+    source: CL:0017005
+    target: MESH:D054198
+    evidence:
+      - reference: PMID:41493028
+        snippet: "It is characterised by the proliferation of immature lymphoid cells capable of infiltrating bone marrow, blood and extramedullary sites."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Acute lymphoblastic leukemia is characterised by the proliferation of immature lymphoid cells (lymphoblasts)."
+references:
+  - https://go.drugbank.com/drugs/DB00563

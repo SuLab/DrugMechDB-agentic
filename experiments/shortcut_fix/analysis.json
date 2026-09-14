@@ -1,0 +1,381 @@
+{
+  "metric": "records with clinical_shortcut and/or short_circuit",
+  "before": {
+    "scored": 14,
+    "shortcut": 14,
+    "rate": 1.0
+  },
+  "after": {
+    "scored": 14,
+    "shortcut": 0,
+    "rate": 0.0
+  },
+  "target_after_rate": 0.1,
+  "pass": true,
+  "pairs": [
+    {
+      "pair": "P02",
+      "disease_area": "cardiovascular",
+      "before": {
+        "n_edges": 5,
+        "n_paths": 1,
+        "shortcut_flags": [
+          "clinical_shortcut"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "clinical_shortcut",
+          "type_violation"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 5,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [],
+        "clean_hard": true
+      }
+    },
+    {
+      "pair": "P03",
+      "disease_area": "cardiovascular",
+      "before": {
+        "n_edges": 6,
+        "n_paths": 2,
+        "shortcut_flags": [
+          "clinical_shortcut",
+          "short_circuit"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "clinical_shortcut",
+          "short_circuit"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 5,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [],
+        "clean_hard": true
+      }
+    },
+    {
+      "pair": "P07",
+      "disease_area": "cancer",
+      "before": {
+        "n_edges": 3,
+        "n_paths": 2,
+        "shortcut_flags": [
+          "clinical_shortcut"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "clinical_shortcut"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 3,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [],
+        "clean_hard": true
+      }
+    },
+    {
+      "pair": "P08",
+      "disease_area": "cancer",
+      "before": {
+        "n_edges": 6,
+        "n_paths": 3,
+        "shortcut_flags": [
+          "clinical_shortcut",
+          "short_circuit"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "clinical_shortcut",
+          "net_polarity",
+          "short_circuit"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 4,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [],
+        "clean_hard": true
+      }
+    },
+    {
+      "pair": "P09",
+      "disease_area": "cancer",
+      "before": {
+        "n_edges": 7,
+        "n_paths": 1,
+        "shortcut_flags": [
+          "clinical_shortcut"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "clinical_shortcut"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 5,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [],
+        "clean_hard": true
+      }
+    },
+    {
+      "pair": "P11",
+      "disease_area": "infectious",
+      "before": {
+        "n_edges": 5,
+        "n_paths": 2,
+        "shortcut_flags": [
+          "short_circuit"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "short_circuit"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 4,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [],
+        "clean_hard": true
+      }
+    },
+    {
+      "pair": "P13",
+      "disease_area": "infectious",
+      "before": {
+        "n_edges": 5,
+        "n_paths": 2,
+        "shortcut_flags": [
+          "clinical_shortcut",
+          "short_circuit"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "clinical_shortcut",
+          "short_circuit"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 4,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [],
+        "clean_hard": true
+      }
+    },
+    {
+      "pair": "P16",
+      "disease_area": "neurological",
+      "before": {
+        "n_edges": 4,
+        "n_paths": 1,
+        "shortcut_flags": [
+          "clinical_shortcut"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "clinical_shortcut"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 3,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [
+          "net_polarity"
+        ],
+        "clean_hard": false
+      }
+    },
+    {
+      "pair": "P37",
+      "disease_area": "neurological",
+      "before": {
+        "n_edges": 4,
+        "n_paths": 1,
+        "shortcut_flags": [
+          "clinical_shortcut"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "clinical_shortcut"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 5,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [
+          "net_polarity"
+        ],
+        "clean_hard": false
+      }
+    },
+    {
+      "pair": "P21",
+      "disease_area": "autoimmune",
+      "before": {
+        "n_edges": 6,
+        "n_paths": 2,
+        "shortcut_flags": [
+          "clinical_shortcut",
+          "short_circuit"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "clinical_shortcut",
+          "net_polarity",
+          "short_circuit"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 5,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [],
+        "clean_hard": true
+      }
+    },
+    {
+      "pair": "P26",
+      "disease_area": "metabolic",
+      "before": {
+        "n_edges": 5,
+        "n_paths": 2,
+        "shortcut_flags": [
+          "clinical_shortcut",
+          "short_circuit"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "clinical_shortcut",
+          "short_circuit"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 4,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [
+          "net_polarity"
+        ],
+        "clean_hard": false
+      }
+    },
+    {
+      "pair": "P32",
+      "disease_area": "metabolic",
+      "before": {
+        "n_edges": 4,
+        "n_paths": 2,
+        "shortcut_flags": [
+          "clinical_shortcut",
+          "short_circuit"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "clinical_shortcut",
+          "net_polarity",
+          "short_circuit"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 3,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [
+          "net_polarity"
+        ],
+        "clean_hard": false
+      }
+    },
+    {
+      "pair": "P35",
+      "disease_area": "infectious",
+      "before": {
+        "n_edges": 7,
+        "n_paths": 2,
+        "shortcut_flags": [
+          "clinical_shortcut",
+          "short_circuit"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "clinical_shortcut",
+          "short_circuit"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 5,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [],
+        "clean_hard": true
+      }
+    },
+    {
+      "pair": "P40",
+      "disease_area": "allergy",
+      "before": {
+        "n_edges": 6,
+        "n_paths": 2,
+        "shortcut_flags": [
+          "clinical_shortcut",
+          "short_circuit"
+        ],
+        "related_flags": [],
+        "hard_flags": [
+          "clinical_shortcut",
+          "short_circuit"
+        ],
+        "clean_hard": false
+      },
+      "after": {
+        "n_edges": 4,
+        "n_paths": 1,
+        "shortcut_flags": [],
+        "related_flags": [],
+        "hard_flags": [],
+        "clean_hard": true
+      }
+    }
+  ]
+}

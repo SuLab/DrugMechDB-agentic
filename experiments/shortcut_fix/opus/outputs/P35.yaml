@@ -1,0 +1,76 @@
+directed: true
+multigraph: true
+graph:
+  _id: P35_DB00008_MESH_D019698
+  drug: Peginterferon alfa-2a
+  drug_mesh: MESH:C100416
+  drugbank: DB:DB00008
+  disease: Chronic hepatitis C
+  disease_mesh: MESH:D019698
+nodes:
+  - id: DB:DB00008
+    name: Peginterferon alfa-2a
+    label: Drug
+  - id: UniProt:P17181
+    name: Interferon alpha/beta receptor 1
+    label: Protein
+  - id: GO:0060337
+    name: type I interferon-mediated signaling pathway
+    label: BiologicalProcess
+  - id: GO:0051607
+    name: defense response to virus
+    label: BiologicalProcess
+  - id: GO:0019079
+    name: viral genome replication
+    label: BiologicalProcess
+  - id: MESH:D019698
+    name: Chronic hepatitis C
+    label: Disease
+links:
+  - key: increases activity of
+    source: DB:DB00008
+    target: UniProt:P17181
+    evidence:
+      - reference: PMID:17627610
+        snippet: "control a variety of cellular functions through binding to a receptor composed of IFNAR (IFNalpha receptor subunit) 1 and 2"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Type I interferons (IFNalpha, the active moiety of peginterferon alfa-2a) act as agonists by binding and activating the receptor composed of IFNAR1 and IFNAR2."
+  - key: positively regulates
+    source: UniProt:P17181
+    target: GO:0060337
+    evidence:
+      - reference: PMID:31207241
+        snippet: "We show that both IFNAR chains (IFNAR1 and IFNAR2) are absolutely required for any IFN-induced signaling."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "IFNAR1 is required for the type I interferon signaling cascade (JAK/STAT)."
+  - key: positively regulates
+    source: GO:0060337
+    target: GO:0051607
+    evidence:
+      - reference: PMID:28066437
+        snippet: "They signal through the Janus kinases (JAK)-signal transducers and activators of transcription pathway and promote an antiviral state by the induction of expression of several interferon-stimulated genes (ISGs)."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Interferon receptor-driven JAK-STAT signaling induces interferon-stimulated genes that establish an antiviral state (defense response to virus)."
+  - key: disrupts
+    source: GO:0051607
+    target: GO:0019079
+    evidence:
+      - reference: PMID:25122750
+        snippet: "knockdown of lncRNA-CMPK2 resulted in a marked reduction in HCV replication in IFN-stimulated hepatocytes"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "The interferon-induced antiviral ISG program reduces HCV replication; loss of a negative regulator that suppresses antiviral ISGs increases the antiviral response and reduces HCV replication."
+  - key: causes
+    source: GO:0019079
+    target: MESH:D019698
+    evidence:
+      - reference: PMID:31862501
+        snippet: "Persistent HCV infection causes liver diseases such as chronic hepatitis, liver cirrhosis, and hepatocellular carcinoma"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Persistent HCV genome replication and infection causes chronic hepatitis C."
+references:
+  - https://go.drugbank.com/drugs/DB00008

@@ -1,0 +1,81 @@
+directed: true
+multigraph: true
+graph:
+  _id: P37_DB00186_MESH_D001007
+  drug: lorazepam
+  drug_mesh: MESH:D008140
+  drugbank: DB:DB00186
+  disease: Anxiety
+  disease_mesh: MESH:D001007
+nodes:
+  - id: MESH:D008140
+    name: Lorazepam
+    label: Drug
+  - id: UniProt:P18507
+    name: Gamma-aminobutyric acid receptor subunit gamma-2
+    label: Protein
+  - id: GO:0022851
+    name: GABA-gated chloride ion channel activity
+    label: MolecularActivity
+  - id: GO:1902476
+    name: chloride transmembrane transport
+    label: BiologicalProcess
+  - id: UBERON:0001876
+    name: amygdala
+    label: GrossAnatomicalStructure
+  - id: MESH:D001007
+    name: Anxiety
+    label: Disease
+links:
+  - key: increases activity of
+    source: MESH:D008140
+    target: UniProt:P18507
+    evidence:
+      - reference: PMID:34278874
+        snippet: "lorazepam (0.5 mg and 1 mg), a positive allosteric modulator at the GABAA receptor"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Lorazepam is a positive allosteric modulator of the GABA-A receptor, whose gamma2 subunit forms the benzodiazepine binding site."
+      - reference: PMID:20417252
+        snippet: "The gamma2 subunit is essential for the formation of the binding site for benzodiazepines, allosteric modulators of GABA(A) receptors that are clinically often used as sedatives/hypnotics and anxiolytics."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "The gamma2 subunit forms the benzodiazepine binding site through which lorazepam acts."
+  - key: positively regulates
+    source: UniProt:P18507
+    target: GO:0022851
+    evidence:
+      - reference: PMID:24930360
+        snippet: "BZDs are thought to act predominantly by affecting the gating of GABAA receptor channels, resulting in enhanced GABA-mediated currents in neurons."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Benzodiazepine action via the GABA-A receptor enhances GABA-mediated (chloride) channel currents."
+  - key: positively regulates
+    source: GO:0022851
+    target: GO:1902476
+    evidence:
+      - reference: PMID:9745914
+        snippet: "The inhibitory neurotransmitters gamma-aminobutyric acid (GABA) and glycine directly cause an increase in conductance to Cl- by binding to ligand-operated ion channel receptors at the postsynaptic membranes, so that opening of Cl- channels usually leads to a net hyperpolarization."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "GABA-gated chloride channel activity increases chloride conductance/transport, producing membrane hyperpolarization."
+  - key: occurs in
+    source: GO:1902476
+    target: UBERON:0001876
+    evidence:
+      - reference: PMID:24723854
+        snippet: "Recent evidence indicates that pcs express benzodiazepine (BZ)-sensitive GABAA receptor (GABAAR) variants containing the α2- and α3-subunit for transmission of post-synaptic currents"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Benzodiazepine-sensitive GABA-A receptor mediated chloride currents occur in intercalated paracapsular cells of the amygdala."
+  - key: causes
+    source: UBERON:0001876
+    target: MESH:D001007
+    evidence:
+      - reference: PMID:24723854
+        snippet: "Modulation of their activity is thus thought to affect amygdala output and the generation of fear and anxiety."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Amygdala output governs the generation of anxiety; enhancing GABAergic inhibition in amygdala reduces this output."
+references:
+  - https://go.drugbank.com/drugs/DB00186

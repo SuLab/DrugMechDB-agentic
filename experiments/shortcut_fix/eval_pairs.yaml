@@ -1,0 +1,203 @@
+# Shortcut-fix validation eval — re-curation set (Issue #2)
+#
+# PURPOSE
+#   Empirically confirm that the clarified "one connected chain / no shortcut edge"
+#   rule (Issue #1: AGENTS.md §0 + §8, /curate, CurationGuide.md, and the semantic
+#   path-coherence judge) collapses the redundant shortcut/bypass-edge rate.
+#
+#   Every pair here is one on which the PRIOR curation run (experiments/opus_vs_sonnet/
+#   opus/outputs/, same model = claude-opus-4-8, PRE-fix AGENTS.md) produced a
+#   `clinical_shortcut` and/or `short_circuit` HARD flag. So the BEFORE rate on this
+#   exact set is 100% by construction. We re-curate the same pairs under the fixed
+#   prompt and re-score with scripts/quality/structural_quality.py; the target
+#   (Issue #2 "done when") is a combined shortcut-flag rate <=10% on the re-run.
+#
+# SELECTION RATIONALE — diverse edge cases, not just the easy ones
+#   From the 20/40 prior-run pairs that shortcutted, these 14 were chosen to span:
+#     disease_area : cardiovascular, cancer, infectious, neurological, autoimmune,
+#                    metabolic, allergy            (8 areas)
+#     path length  : short 3-4 links (P07,P16,P37,P02) ... long 7 links (P09,P35)
+#     node niches  : organism_taxon (P35), gene_family (P37), chemical-heavy (P38-class
+#                    statin P02), branch-convergence biologic (P40, P08 multi-branch)
+#     stub guard   : P32 (ascorbic-acid deficiency) — legacy is a 1-link path; this is
+#                    the control that the fix must NOT over-correct into forcing a
+#                    mechanism where the single-link stub is legitimately allowed.
+#     failure mode : both flavors — a full mechanism PLUS a redundant Drug--treats-->
+#                    Disease edge (P03, P07, ...), and a mechanism that stops short and
+#                    is bridged with `treats` (P02, which also drew a type_violation).
+#
+# ISOLATION (enforced by run_arm.py — identical to the opus_vs_sonnet harness)
+#   * The agent has ONLY 8 tools: pubmed_search/fetch/probe, read_reference,
+#     write/read_path_yaml, canonicalize_predicates, run_qc. NONE of them can read
+#     kb/paths/ or any gold/legacy curation — the agent never sees "what good looks like."
+#   * Outputs land ONLY under experiments/shortcut_fix/opus/outputs/ — never kb/paths/.
+#   * Each arm has its own references_cache (DMDB_CACHE_DIR) — no leakage to the repo cache.
+#   * Each pair is a fresh message history; the task prompt passes drug/disease/ids only —
+#     legacy_path_id is recorded here for OUR post-hoc scoring, never shown to the agent.
+#   * Curation model is claude-opus-4-8 (the designated curation agent), no other.
+#
+# NOTE: legacy_path_id + prior_flags are provenance for scoring, ignored by run_arm.py.
+
+pairs:
+
+  # ── cardiovascular ──
+  - id: P02
+    drug: Atorvastatin
+    disease: Hypercholesterolemia
+    drug_class: cardiovascular
+    disease_area: cardiovascular
+    drugbank: DB:DB01076
+    drug_mesh: MESH:D000069059
+    disease_mesh: MESH:D006937
+    legacy_path_id: DB01076_MESH_D006937_1
+    prior_flags: [clinical_shortcut, type_violation]   # mechanism stopped short, bridged with treats
+
+  - id: P03
+    drug: Lisinopril
+    disease: Hypertension
+    drug_class: cardiovascular
+    disease_area: cardiovascular
+    drugbank: DB:DB00722
+    drug_mesh: MESH:D017706
+    disease_mesh: MESH:D006973
+    prior_flags: [short_circuit, clinical_shortcut]     # canonical: full chain + treats shortcut
+
+  # ── oncology ──
+  - id: P07
+    drug: Imatinib
+    disease: Chronic Myeloid Leukemia
+    drug_class: oncology
+    disease_area: cancer
+    drugbank: DB:DB00619
+    drug_mesh: MESH:D000068877
+    disease_mesh: MESH:D015464
+    legacy_path_id: DB00619_MESH_D015464_1
+    prior_flags: [clinical_shortcut]                    # short 3-edge mechanism
+
+  - id: P08
+    drug: Cetuximab
+    disease: Colorectal Cancer
+    drug_class: oncology
+    disease_area: cancer
+    drugbank: DB:DB00002
+    drug_mesh: MESH:D000068818
+    disease_mesh: MESH:D015179
+    prior_flags: [short_circuit, clinical_shortcut]     # multi-branch (3 paths)
+
+  - id: P09
+    drug: Methotrexate
+    disease: Acute Lymphoblastic Leukemia
+    drug_class: oncology
+    disease_area: cancer
+    drugbank: DB:DB00563
+    drug_mesh: MESH:D008727
+    disease_mesh: MESH:D054198
+    prior_flags: [clinical_shortcut]                    # long 7-edge chain
+
+  # ── infectious ──
+  - id: P11
+    drug: Rifampicin
+    disease: Pulmonary Tuberculosis
+    drug_class: antimicrobial
+    disease_area: infectious
+    drugbank: DB:DB01045
+    drug_mesh: MESH:D012293
+    disease_mesh: MESH:D014397
+    legacy_path_id: DB01045_MESH_D014397_1
+    prior_flags: [short_circuit]
+
+  - id: P13
+    drug: Vancomycin
+    disease: MRSA Infection
+    drug_class: antimicrobial
+    disease_area: infectious
+    drugbank: DB:DB00512
+    drug_mesh: MESH:D014640
+    disease_mesh: MESH:D055624
+    prior_flags: [short_circuit, clinical_shortcut]
+
+  # ── neurological ──
+  - id: P16
+    drug: Levodopa
+    disease: Parkinson's Disease
+    drug_class: cns
+    disease_area: neurological
+    drugbank: DB:DB01235
+    drug_mesh: MESH:D007980
+    disease_mesh: MESH:D010300
+    legacy_path_id: DB01235_MESH_D010300_1
+    prior_flags: [clinical_shortcut]
+
+  - id: P37
+    drug: Lorazepam
+    disease: Anxiety
+    drug_class: cns
+    disease_area: neurological
+    drugbank: DB:DB00186
+    drug_mesh: MESH:D008140
+    disease_mesh: MESH:D001007
+    legacy_path_id: DB00186_MESH_D001007_1
+    niche: gene_family
+    prior_flags: [clinical_shortcut]
+
+  # ── autoimmune ──
+  - id: P21
+    drug: Methotrexate
+    disease: Rheumatoid Arthritis
+    drug_class: immunomodulator
+    disease_area: autoimmune
+    drugbank: DB:DB00563
+    drug_mesh: MESH:D008727
+    disease_mesh: MESH:D001172
+    legacy_path_id: DB00563_MESH_D001171_1
+    prior_flags: [short_circuit, clinical_shortcut]
+
+  # ── metabolic ──
+  - id: P26
+    drug: Metformin
+    disease: Type 2 Diabetes Mellitus
+    drug_class: endocrine
+    disease_area: metabolic
+    drugbank: DB:DB00331
+    drug_mesh: MESH:D008687
+    disease_mesh: MESH:D003924
+    legacy_path_id: DB00331_MESH_D003924_1
+    prior_flags: [short_circuit, clinical_shortcut]
+
+  - id: P32
+    drug: Ascorbic acid
+    disease: Ascorbic acid deficiency
+    drug_class: replacement
+    disease_area: metabolic
+    drugbank: DB:DB00126
+    drug_mesh: MESH:D001205
+    disease_mesh: MESH:D001206
+    legacy_path_id: DB00126_MESH_D001206_1
+    niche: short_path_stub_guard   # legacy is 1 link — the control for over-correction
+    prior_flags: [short_circuit, clinical_shortcut]
+
+  # ── infectious / organism-taxon ──
+  - id: P35
+    drug: Peginterferon alfa-2a
+    disease: Chronic hepatitis C
+    drug_class: antiviral
+    disease_area: infectious
+    drugbank: DB:DB00008
+    drug_mesh: MESH:C100416
+    disease_mesh: MESH:D019698
+    legacy_path_id: DB00008_MESH_D019698_1
+    niche: organism_taxon
+    prior_flags: [short_circuit, clinical_shortcut]     # long 7-edge chain
+
+  # ── allergy / long branch-convergence biologic ──
+  - id: P40
+    drug: Omalizumab
+    disease: Asthma
+    drug_class: immunomodulator
+    disease_area: allergy
+    drugbank: DB:DB00043
+    drug_mesh: MESH:D000069444
+    disease_mesh: MESH:D001249
+    legacy_path_id: DB00043_MESH_D001249_1
+    niche: long_path_branch_convergence
+    prior_flags: [short_circuit, clinical_shortcut]

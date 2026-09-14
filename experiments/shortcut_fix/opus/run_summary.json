@@ -1,0 +1,378 @@
+[
+  {
+    "pair_id": "P02",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 23,
+    "wall_seconds": 194.0,
+    "usage": {
+      "input_tokens": 392575,
+      "output_tokens": 10284,
+      "cache_read_input_tokens": 254541,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.3472,
+    "n_tool_calls": 38,
+    "tool_call_counts": {
+      "pubmed_search": 8,
+      "pubmed_fetch": 5,
+      "read_reference": 18,
+      "write_path_yaml": 3,
+      "canonicalize_predicates": 2,
+      "run_qc": 1,
+      "read_path_yaml": 1
+    },
+    "draft_nudges": [],
+    "output_written": true,
+    "final_text_tail": "predicate (`manifestation of`), not a clinical-outcome predicate; no `treats` shortcut or bypass edge was added.\n\n**QC layer-by-layer result (final run):**\n- Layer 1 (schema): **PASS**\n- Layer 2 (node ontology): **PASS** \u2014 0 legacy-prefix warnings\n- Layer 3 (predicates): **PASS** \u2014 all 5 keys in the 67-predicate BiolinkPredicate enum\n- Layer 4 (verbatim references): **PASS** \u2014 every snippet verified as a verbatim substring of its cited abstract\n- **Overall: PASS**\n\n**Retry count:** 0 (passed on first QC run; I revised the draft twice *before* running QC to correct the terminal-edge direction/predicate).\n\n**PMIDs cited (4):**\n- PMID:14531725 \u2014 Lennern\u00e4s, *Clinical pharmacokinetics of atorvastatin* (atorvastatin \u2192 HMG-CoA reductase)\n- PMID:38397481 \u2014 Wang et al. (HMG-CoA reductase \u2192 cholesterol biosynthesis)\n- PMID:17910517 \u2014 Poli, *Atorvastatin: pharmacological characteristics* (cholesterol synthesis \u2192 LDL receptor upregulation \u2192 LDL clearance; supports edges 3 and 4)\n- PMID:40803869 \u2014 Sakurabu et al. (elevated LDL cholesterol is the defining manifestation of hypercholesterolemia)\n\nAll evidence snippets are verbatim from fetched abstracts (no full-text escalation was needed; no `source_tier: FULL_TEXT` set).\n\n**Unresolved validation failures:** None. Every edge carries a `SUPPORT` EvidenceItem; no `NO_EVIDENCE` flags remain.\n\nNote: Per the environment instructions, I did not run the semantic critic step (critic.py is not available as a tool here), so I stopped after QC passed."
+  },
+  {
+    "pair_id": "P03",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 17,
+    "wall_seconds": 117.8,
+    "usage": {
+      "input_tokens": 207049,
+      "output_tokens": 6388,
+      "cache_read_input_tokens": 177072,
+      "cache_creation_input_tokens": 11067
+    },
+    "est_cost_usd": 1.3526,
+    "n_tool_calls": 31,
+    "tool_call_counts": {
+      "pubmed_search": 9,
+      "pubmed_fetch": 4,
+      "read_reference": 14,
+      "pubmed_probe": 1,
+      "write_path_yaml": 1,
+      "canonicalize_predicates": 1,
+      "run_qc": 1
+    },
+    "draft_nudges": [],
+    "output_written": true,
+    "final_text_tail": ")\n  --increases activity of--> Type-1 angiotensin II receptor / AT1R (UniProt:P30556)\n  --causes--> vasoconstriction (GO:0042310)\n  --causes--> Hypertension (MESH:D006973)\n```\nSingle connected causal chain, ending on the disease with a mechanistic predicate (`causes`). No `treats` shortcut, no bypass edges.\n\n### QC layer-by-layer (final run)\n| Layer | Check | Result |\n|-------|-------|--------|\n| Layer 1 | Schema (LinkML) | **PASS** |\n| Layer 2 | Node ontology | **PASS** (0 legacy prefixes) |\n| Layer 3 | Predicate vocabulary | **PASS** |\n| Layer 4 | Verbatim reference | **PASS** (every snippet verified verbatim) |\n| **Overall** | | **PASS** |\n\n### PMIDs cited\n- **PMID:7895240** \u2014 ACE-mediated angiotensin I\u2192II conversion \"completely inhibited by 50 microM lisinopril\" (IN_VITRO). Grounds the Lisinopril\u2192ACE and ACE\u2192Angiotensin II edges.\n- **PMID:35211833** \u2014 \"Angiotensin II \u2026 induces vasoconstriction \u2026 by acting on \u2026 Ang-II type 1 receptors (AT1R)\" (OTHER/review). Grounds AngII\u2192AT1R and AT1R\u2192vasoconstriction edges.\n- **PMID:40442063** \u2014 \"the contribution of skin RAS-mediated vasoconstriction to BP elevation\" (MODEL_ORGANISM). Grounds vasoconstriction\u2192Hypertension edge.\n\n### Unresolved validation failures\nNone. All edges carry verbatim-verified `SUPPORT` evidence; no edges were flagged `NO_EVIDENCE` or dropped.\n\nNote: per the environment instructions, the semantic critic step (critic.py) was **not** run here as it is not available as a tool. I stopped after QC passed as directed."
+  },
+  {
+    "pair_id": "P07",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 16,
+    "wall_seconds": 125.6,
+    "usage": {
+      "input_tokens": 189739,
+      "output_tokens": 6375,
+      "cache_read_input_tokens": 177072,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.1966,
+    "n_tool_calls": 26,
+    "tool_call_counts": {
+      "pubmed_search": 7,
+      "pubmed_fetch": 3,
+      "read_reference": 12,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 1,
+      "run_qc": 1
+    },
+    "draft_nudges": [],
+    "output_written": true,
+    "final_text_tail": ":D015464)\n```\n\n**QC layer-by-layer result (final run):**\n| Layer | Check | Result |\n|-------|-------|--------|\n| Layer 1 | Schema (LinkML) | **PASS** |\n| Layer 2 | Node ontology (CURIE\u2194label) | **PASS** (0 legacy-prefix warnings) |\n| Layer 3 | Predicate vocabulary | **PASS** |\n| Layer 4 | Verbatim reference match | **PASS** (all snippets verbatim substrings of cited abstracts) |\n| **Overall** | | **PASS** |\n\n**Retry count:** 0 \u2014 QC passed on the first `run_qc` invocation after canonicalization.\n\n**PMIDs cited:**\n- **PMID:12414617** \u2014 imatinib (STI571) competitively inhibits the ATP-binding site of the BCR/ABL tyrosine kinase (IN_VITRO). Supports drug \u2192 target inhibition.\n- **PMID:42174092** \u2014 constitutive BCR::ABL1 kinase activity promotes uncontrolled proliferation of leukemic cells (HUMAN_CLINICAL). Supports target \u2192 proliferation.\n- **PMID:41353321** \u2014 CML is a myeloproliferative malignancy marked by excessive proliferative growth of myeloid cells (HUMAN_CLINICAL). Supports proliferation \u2192 disease.\n\n**Unresolved validation failures:** None.\n\n**Note:** The semantic critic step (step 8) and full-text stripping (step 9) were intentionally not run, as `critic.py` and terminal git/finalize operations are outside the tool surface available in this environment (per instructions). All evidence snippets were copied verbatim from PubMed-cached abstracts I fetched; no full-text escalation was needed (`source_tier` omitted on all items, correctly indicating abstract-sourced evidence)."
+  },
+  {
+    "pair_id": "P08",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 13,
+    "wall_seconds": 92.0,
+    "usage": {
+      "input_tokens": 127436,
+      "output_tokens": 4809,
+      "cache_read_input_tokens": 143871,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 0.8293,
+    "n_tool_calls": 24,
+    "tool_call_counts": {
+      "pubmed_search": 5,
+      "pubmed_fetch": 4,
+      "read_reference": 11,
+      "write_path_yaml": 1,
+      "canonicalize_predicates": 1,
+      "run_qc": 1,
+      "read_path_yaml": 1
+    },
+    "draft_nudges": [],
+    "output_written": true,
+    "final_text_tail": "ade (GO:0000165)\n  --positively regulates--> cell population proliferation (GO:0008283)\n  --causes--> Colorectal Cancer (MESH:D015179)\n```\n\nThe chain ends on the disease with a mechanistic predicate (`causes`); no `treats`/shortcut/bypass edges were added.\n\n**QC layer-by-layer result (final run):**\n- Layer 1 (schema): **PASS**\n- Layer 2 (node ontology): **PASS** \u2014 all CURIEs match canonical prefixes (DB, UniProt, GO, MESH)\n- Layer 3 (predicate): **PASS** \u2014 all keys in the 67-predicate BiolinkPredicate enum\n- Layer 4 (verbatim reference): **PASS** \u2014 every snippet verified as a verbatim substring of its cached abstract\n- **Overall: PASS**\n\n**Retry count:** 0 (passed on the first QC run).\n\n**PMIDs cited:**\n- **PMID:21760527** \u2014 Cetuximab inhibits ligand binding and indirectly inactivates the EGFR kinase (drug \u2192 EGFR edge)\n- **PMID:37772552** \u2014 EGFR activation drives feedback activation of the ERK/MAPK pathway in colorectal cancer cells (EGFR \u2192 MAPK cascade edge)\n- **PMID:39194723** \u2014 EGFR/MAPK signaling is involved in cell proliferation and dysregulated in CRC (MAPK \u2192 proliferation edge)\n- **PMID:38904222** \u2014 Uncontrolled growth via hyperactivation of the RTK/MAPK pathway underlies cancer (proliferation \u2192 CRC edge)\n\n**Unresolved validation failures:** None.\n\n**Note:** Per AGENTS.md, I did not run the semantic critic (`critic.py`) as it is not available as a tool in this environment; I stopped after QC passed. No full-text escalation was needed \u2014 all snippets came from abstracts."
+  },
+  {
+    "pair_id": "P09",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 19,
+    "wall_seconds": 182.6,
+    "usage": {
+      "input_tokens": 295821,
+      "output_tokens": 10824,
+      "cache_read_input_tokens": 210273,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.8548,
+    "n_tool_calls": 32,
+    "tool_call_counts": {
+      "pubmed_search": 8,
+      "pubmed_fetch": 4,
+      "read_reference": 13,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "draft_nudges": [],
+    "output_written": true,
+    "final_text_tail": "):**\n- Layer 1 (schema): **PASS**\n- Layer 2 (node ontology): **PASS** \u2014 0 legacy-prefix warnings\n- Layer 3 (predicate vocabulary): **PASS** \u2014 all keys in the 67-predicate enum\n- Layer 4 (verbatim reference): **PASS** \u2014 every snippet verified as verbatim substring of its cached PMID abstract\n- **Overall: PASS**\n\n**Retry count:** 1 iteration. The first draft (7 nodes/6 edges) passed QC, but I revised it before finalizing because three tail edges reused a single sentence \u2014 I re-sourced the tail so each edge carries a genuinely-supporting distinct sentence (adding PMID:41493028 for the ALL characterization, dropping the redundant `mononuclear cell` node). The revised version passed all four layers.\n\n**PMIDs cited:**\n- **PMID:40088855** \u2014 MTX inhibits DHFR; DHFR essential for tetrahydrofolate synthesis; disruption impairs DNA synthesis (edges 1\u20133)\n- **PMID:26022503** \u2014 MTX disrupts de novo nucleotide biosynthesis and DNA replication in leukemic cells, resulting in cell death (edge 4)\n- **PMID:41493028** \u2014 ALL is characterised by proliferation of immature lymphoid cells (edge 5)\n\n**Unresolved validation failures:** None \u2014 all QC layers pass.\n\n**Notes:** Per AGENTS.md I did not run the semantic critic (not available as a tool in this environment). Full-text escalation was not needed; all snippets came from abstracts (no `source_tier: FULL_TEXT` set). Two edges use `evidence_source: OTHER` because PMID:40088855 is a mechanistic review; the two disease/cell edges are `HUMAN_CLINICAL`."
+  },
+  {
+    "pair_id": "P11",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 24,
+    "wall_seconds": 287.3,
+    "usage": {
+      "input_tokens": 460894,
+      "output_tokens": 14627,
+      "cache_read_input_tokens": 265608,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.8029,
+    "n_tool_calls": 43,
+    "tool_call_counts": {
+      "pubmed_search": 14,
+      "pubmed_fetch": 5,
+      "read_reference": 15,
+      "pubmed_probe": 1,
+      "write_path_yaml": 3,
+      "canonicalize_predicates": 3,
+      "run_qc": 2
+    },
+    "draft_nudges": [
+      1
+    ],
+    "output_written": true,
+    "final_text_tail": " disease with a mechanistic predicate (`causes`); no `treats`/clinical-shortcut or bypass edge was added.\n\n**QC layer-by-layer result (final run):**\n- Layer 1 (schema): **PASS**\n- Layer 2 (node ontology): **PASS**\n- Layer 3 (predicate vocabulary): **PASS**\n- Layer 4 (verbatim reference): **PASS**\n- Overall: **PASS**\n\n**Retry count:** 1 retry after the initial draft. The first draft used the predicate `binds`, which \u2014 despite appearing in the AGENTS.md high-frequency list \u2014 is not a member of this repo's 67-predicate `BiolinkPredicate` enum (Layer 1 + Layer 3 FAIL). I re-sourced the drug\u2192target edge to `decreases activity of` (well-supported: rifampicin \"binds to and inhibits the \u03b2 subunit of RNA polymerase (RpoB)\") and it then passed. (A separate stray-tag YAML parse error on the very first write was corrected before that count.)\n\n**PMIDs cited (all verbatim-verified against fetched abstracts):**\n- PMID:36572148 \u2014 edge 1 (rifampicin binds to and inhibits RpoB)\n- PMID:21704562 \u2014 edge 2 (rifampin inhibits transcription via the \u03b2 subunit / rpoB of RNA polymerase)\n- PMID:25288092 \u2014 edge 3 (the RNA polymerase (RpoB) of M. tuberculosis)\n- PMID:42357287 \u2014 edge 4 (pulmonary TB is caused by M. tuberculosis)\n\n**Unresolved validation failures:** None. All four QC layers pass.\n\nNote: the semantic critic gate (step 8) was intentionally not run \u2014 `critic.py` is not available as a tool in this environment, and full-text stripping/PR finalization steps are likewise outside this tool surface."
+  },
+  {
+    "pair_id": "P13",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 22,
+    "wall_seconds": 203.1,
+    "usage": {
+      "input_tokens": 314273,
+      "output_tokens": 10608,
+      "cache_read_input_tokens": 243474,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.9583,
+    "n_tool_calls": 34,
+    "tool_call_counts": {
+      "pubmed_search": 9,
+      "pubmed_fetch": 4,
+      "read_reference": 13,
+      "write_path_yaml": 3,
+      "canonicalize_predicates": 2,
+      "run_qc": 2,
+      "read_path_yaml": 1
+    },
+    "draft_nudges": [],
+    "output_written": true,
+    "final_text_tail": "Layer 2 (node ontology):** PASS (0 legacy-prefix warnings)\n- **Layer 3 (predicate):** PASS (all 4 keys in BiolinkPredicate)\n- **Layer 4 (verbatim reference):** PASS (all 4 snippets verbatim substrings of their cached abstracts)\n- **Overall:** PASS\n\n### Retry count: 2 of 3 allowed\n- Attempt 1 failed on: (a) `binds` not in the BiolinkPredicate enum despite appearing in the AGENTS.md quick-list \u2014 switched to canonical `physically interacts with`; and (b) a non-verbatim snippet on the peptidoglycan-biosynthesis edge (I had pulled the title phrasing, which differed from the abstract body).\n- Attempt 2 (final): corrected both \u2192 all layers PASS.\n\n### PMIDs cited\n- **PMID:27663982** \u2014 glycopeptide MOA review (edges 1 & 2: D-Ala-D-Ala/lipid II binding; prevention of peptidoglycan cross-linking)\n- **PMID:42066855** \u2014 MRSA peptidoglycan biosynthesis study (edge 3)\n- **PMID:42406614** \u2014 MRSA infection pathogenesis (edge 4: S. aureus causes MRSA infection)\n\n### Unresolved validation failures\nNone \u2014 QC passed cleanly within the retry budget.\n\n**Note on workflow scope:** Per the environment instructions, I did **not** run the semantic critic (`critic.py`) or the `strip-fulltext` finalize step, as those tools are not available here. All evidence was drawn from cached PubMed **abstracts** (no full-text escalation was needed), so no `source_tier: FULL_TEXT` flags were set and no full-text stripping is required. A human reviewer / the critic gate should still be applied downstream before merge."
+  },
+  {
+    "pair_id": "P16",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 19,
+    "wall_seconds": 224.9,
+    "usage": {
+      "input_tokens": 319469,
+      "output_tokens": 12504,
+      "cache_read_input_tokens": 210273,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 2.0151,
+    "n_tool_calls": 32,
+    "tool_call_counts": {
+      "pubmed_search": 7,
+      "pubmed_fetch": 4,
+      "read_reference": 13,
+      "write_path_yaml": 3,
+      "canonicalize_predicates": 3,
+      "read_path_yaml": 1,
+      "run_qc": 1
+    },
+    "draft_nudges": [],
+    "output_written": true,
+    "final_text_tail": "rrections during canonicalization: `binds` and `affects` were rejected by the canonicalizer, so I restructured the enzyme-substrate step into a `has metabolite` edge (Levodopa \u2192 Dopamine), which is the standard, honest, and verbatim-supported encoding of the AADC-catalyzed conversion.\n\n**Mechanistic chain (3 edges, 4 nodes):**\n1. Levodopa (MESH:D007980) \u2014**has metabolite**\u2192 Dopamine (MESH:D004298)\n2. Dopamine \u2014**participates in**\u2192 synaptic transmission, dopaminergic (GO:0001963)\n3. synaptic transmission, dopaminergic \u2014**manifestation of**\u2192 Parkinson Disease (MESH:D010300)\n\nThe chain is a single connected drug\u2192disease path ending on a mechanistic predicate (`manifestation of`); no clinical-outcome shortcut (`treats`) or bypass edge was added.\n\n**PMIDs cited:**\n- **PMID:27622543** \u2014 L-DOPA \u2192 dopamine conversion by AADC, replenishing depleted brain dopamine in PD patients\n- **PMID:26787846** \u2014 dopamine transmission restoration relieves PD motor symptoms; PD movement deficit due to nigrostriatal dopamine neuron degeneration\n\n**Unresolved validation failures:** None.\n\n**Note on scope:** The semantic critic step (step 8) and full-text strip (step 9) were not run, per instructions to stop after QC passes in this environment. Additional papers were fetched during sourcing (e.g., PMID:28166239 on AADC as rate-limiting enzyme) but are not cited in the final path because the mechanism was more cleanly and honestly encoded with the two PMIDs above after dropping the standalone AADC node."
+  },
+  {
+    "pair_id": "P21",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 19,
+    "wall_seconds": 267.5,
+    "usage": {
+      "input_tokens": 194077,
+      "output_tokens": 7027,
+      "cache_read_input_tokens": 210273,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.2512,
+    "n_tool_calls": 28,
+    "tool_call_counts": {
+      "pubmed_search": 9,
+      "pubmed_fetch": 3,
+      "read_reference": 10,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2
+    },
+    "draft_nudges": [],
+    "output_written": true,
+    "final_text_tail": "matoid arthritis (MESH:D001172)\n```\nThis is the well-established Cronstein adenosine-signalling model of low-dose MTX action in RA.\n\n### QC \u2014 layer by layer (final run)\n- **Layer 1 (schema):** PASS\n- **Layer 2 (node ontology):** PASS \u2014 0 legacy-prefix warnings\n- **Layer 3 (predicate enum):** PASS \u2014 all 5 keys canonical\n- **Layer 4 (verbatim reference):** PASS \u2014 every snippet a verbatim substring of its cached abstract\n- **Overall:** PASS\n\n### Retry count\n**1 retry** (2 total attempts). First run failed on: (a) `binds` not in the BiolinkPredicate enum, and (b) a snippet copied from the article *title* that did not match the cached body. Fixed by switching that edge to `increases activity of` and re-sourcing the A2A\u2192inflammation snippet from an abstract-body sentence in PMID:16519795.\n\n### PMIDs cited\n- **PMID:23464989** \u2014 MTX polyglutamates inhibit ATIC and thereby promote adenosine release (edges 1 & 2)\n- **PMID:12528125** \u2014 adenosine acting at A2A/A3 receptors regulates inflammation (edge 3)\n- **PMID:16519795** \u2014 MTX-driven suppression of inflammation (reduced leukocyte accumulation) requires the A2A receptor (edge 4)\n- **PMID:42240746** \u2014 RA is characterized by persistent synovial inflammation (edge 5)\n\n### Unresolved validation failures\nNone. All layers pass. (Per environment instructions, the semantic critic step was not run here.)\n\nNote: no full-text escalation was used \u2014 every snippet came from cached abstracts, so no `source_tier: FULL_TEXT` flags and nothing to strip."
+  },
+  {
+    "pair_id": "P26",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 11,
+    "wall_seconds": 107.1,
+    "usage": {
+      "input_tokens": 105117,
+      "output_tokens": 6163,
+      "cache_read_input_tokens": 121737,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 0.7405,
+    "n_tool_calls": 20,
+    "tool_call_counts": {
+      "pubmed_search": 5,
+      "pubmed_fetch": 2,
+      "read_reference": 9,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 1,
+      "run_qc": 1
+    },
+    "draft_nudges": [],
+    "output_written": true,
+    "final_text_tail": "ayer result (final run)\n| Layer | Check | Result |\n|-------|-------|--------|\n| Layer 1 | LinkML schema | **PASS** |\n| Layer 2 | Node ontology (CURIE\u2194label) | **PASS** (0 legacy-prefix warnings) |\n| Layer 3 | Predicate vocabulary | **PASS** |\n| Layer 4 | Verbatim reference snippets | **PASS** (all snippets verbatim) |\n| **Overall** | | **PASS** |\n\n### Retry count\n**0 retries** \u2014 passed on the first QC run (predicate canonicalization reported 0 rewrites needed).\n\n### PMIDs cited\n- **PMID:38409699** \u2014 review; metformin's primary mechanism = complex I inhibition \u2192 reduced energy state \u2192 AMPK activation (2 edges).\n- **PMID:16148943** \u2014 *Nature*; AMPK-activating signals attenuate the gluconeogenic programme (AMPK \u2192 gluconeogenesis edge).\n- **PMID:11118008** \u2014 human clinical; increased gluconeogenesis drives elevated glucose production in T2D (gluconeogenesis \u2192 disease edge).\n\nAdditional papers fetched/read during sourcing but not cited (either off-target or superseded by a cleaner snippet): PMID:34478236, PMID:21059655, PMID:18285556, PMID:37850242, PMID:8923861, PMID:16477438.\n\n### Unresolved validation failures\n**None.** All layers passed; no edges required `NO_EVIDENCE` flagging.\n\n*Note per AGENTS.md: the semantic critic step (critic.py) is not available as a tool in this environment and was intentionally not run. All evidence snippets are verbatim substrings of the cached PubMed abstracts I fetched. No full-text escalation was needed, so no `strip-fulltext` step was required.*"
+  },
+  {
+    "pair_id": "P32",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 9,
+    "wall_seconds": 80.0,
+    "usage": {
+      "input_tokens": 51731,
+      "output_tokens": 3648,
+      "cache_read_input_tokens": 99603,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 0.3997,
+    "n_tool_calls": 14,
+    "tool_call_counts": {
+      "pubmed_search": 3,
+      "pubmed_fetch": 1,
+      "read_reference": 6,
+      "write_path_yaml": 1,
+      "canonicalize_predicates": 1,
+      "run_qc": 1,
+      "read_path_yaml": 1
+    },
+    "draft_nudges": [],
+    "output_written": true,
+    "final_text_tail": ").\n\n**Mechanistic chain:**\n```\nAscorbic acid (MESH:D001205)\n  --increases activity of--> Prolyl 4-hydroxylase alpha-1 (UniProt:P13674)\n  --participates in--> collagen biosynthetic process (GO:0032964)\n  --causes--> Ascorbic acid deficiency / scurvy (MESH:D001206)\n```\nThe rationale: ascorbate is the essential cofactor sustaining prolyl 4-hydroxylase; the enzyme drives collagen biosynthesis; defective collagen synthesis is what defines scurvy \u2014 the clinical manifestation of ascorbic acid deficiency.\n\n**QC layer-by-layer (final run):**\n- Layer 1 (schema): **PASS**\n- Layer 2 (node ontology): **PASS** \u2014 0 legacy-prefix warnings\n- Layer 3 (predicate): **PASS** \u2014 all keys in the 67-predicate enum\n- Layer 4 (verbatim reference): **PASS** \u2014 every snippet verified as a verbatim substring of its PMID abstract\n- **Overall: PASS**\n\n**Retry count:** 0 (passed on the first QC run).\n\n**PMIDs cited:**\n- PMID:24150425 \u2014 ascorbate as essential cofactor for the hydroxylation enzymes in collagen synthesis\n- PMID:21346252 \u2014 prolyl-4-hydroxylation necessary for structural assembly of collagens\n- PMID:37255614 \u2014 scurvy as a disease of defective collagen synthesis\n\n**Unresolved validation failures:** None.\n\nNote: I did not run the semantic critic (`critic.py`) or `strip-fulltext`, per the environment instructions (those tools are not part of this tool surface, and all evidence was sourced from abstracts, so no full text needs stripping). This path is ready for the downstream critic/human review step."
+  },
+  {
+    "pair_id": "P35",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 23,
+    "wall_seconds": 4301.1,
+    "usage": {
+      "input_tokens": 331495,
+      "output_tokens": 8535,
+      "cache_read_input_tokens": 243474,
+      "cache_creation_input_tokens": 11067
+    },
+    "est_cost_usd": 2.0618,
+    "n_tool_calls": 35,
+    "tool_call_counts": {
+      "pubmed_search": 10,
+      "pubmed_fetch": 5,
+      "read_reference": 14,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2
+    },
+    "draft_nudges": [
+      1
+    ],
+    "output_written": true,
+    "final_text_tail": "us **\u2014disrupts\u2192** viral genome replication (GO:0019079) \u2014 *PMID:25122750*\n5. viral genome replication **\u2014causes\u2192** Chronic hepatitis C (MESH:D019698) \u2014 *PMID:31862501*\n\nThe chain ends at the disease with a mechanistic predicate (`causes`); no `treats`/clinical-outcome or direct drug\u2192disease edge was added.\n\n### QC \u2014 layer by layer (final run)\n- **Layer 1 (schema):** PASS\n- **Layer 2 (node ontology):** PASS \u2014 0 legacy-prefix warnings\n- **Layer 3 (predicate):** PASS \u2014 all keys in BiolinkPredicate enum\n- **Layer 4 (verbatim reference):** PASS \u2014 all 5 snippets verified as verbatim substrings of their cached PubMed abstracts\n- **Overall:** PASS\n\n### Retry count\n**1 retry.** First run failed Layers 1 & 3: the initial `binds` predicate is not in the 67-member BiolinkPredicate enum. I replaced it with the canonical `increases activity of` (interferon acts as an IFNAR agonist), re-canonicalized (0 unmapped), and re-ran QC \u2192 all layers PASS. Layers 2 and 4 passed on the first run.\n\n### PMIDs cited\n- PMID:17627610 (IN_VITRO)\n- PMID:31207241 (IN_VITRO)\n- PMID:28066437 (OTHER \u2014 review)\n- PMID:25122750 (IN_VITRO)\n- PMID:31862501 (OTHER)\n\n### Unresolved validation failures\n**None.** All QC layers pass; every edge carries a verbatim SUPPORT snippet.\n\nNote: Per the environment instructions, I did not run the semantic critic (`critic.py` is not available as a tool here) and did not run the full-text strip step; no full text was escalated during this curation (all snippets came from abstracts)."
+  },
+  {
+    "pair_id": "P37",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 16,
+    "wall_seconds": 153.8,
+    "usage": {
+      "input_tokens": 225979,
+      "output_tokens": 8238,
+      "cache_read_input_tokens": 177072,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.4244,
+    "n_tool_calls": 30,
+    "tool_call_counts": {
+      "pubmed_search": 7,
+      "pubmed_fetch": 3,
+      "read_reference": 14,
+      "write_path_yaml": 2,
+      "canonicalize_predicates": 2,
+      "run_qc": 2
+    },
+    "draft_nudges": [],
+    "output_written": true,
+    "final_text_tail": "oboration. Re-canonicalized and re-ran \u2014 clean pass.\n\n**Mechanistic chain (6 nodes, 5 edges):**\n1. Lorazepam (MESH:D008140) \u2014*increases activity of*\u2192 GABA-A receptor \u03b32 subunit (UniProt:P18507)\n2. \u03b32 subunit \u2014*positively regulates*\u2192 GABA-gated chloride ion channel activity (GO:0022851)\n3. chloride channel activity \u2014*positively regulates*\u2192 chloride transmembrane transport (GO:1902476)\n4. chloride transport \u2014*occurs in*\u2192 amygdala (UBERON:0001876)\n5. amygdala \u2014*causes*\u2192 Anxiety (MESH:D001007)\n\nThe chain is a single connected path Drug\u2192\u2026\u2192Disease, ending with a mechanistic predicate (`causes`); no clinical-outcome shortcut/bypass edge was added.\n\n**PMIDs cited (4):**\n- **PMID:34278874** \u2014 lorazepam as positive allosteric modulator at the GABA-A receptor (HUMAN_CLINICAL)\n- **PMID:20417252** \u2014 \u03b32 subunit forms the benzodiazepine binding site (HUMAN_CLINICAL)\n- **PMID:24930360** \u2014 benzodiazepines enhance GABA-mediated currents via GABA-A channel gating (IN_VITRO)\n- **PMID:9745914** \u2014 GABA-gated chloride conductance leads to hyperpolarization (IN_VITRO)\n- **PMID:24723854** \u2014 amygdala paracapsular GABAergic inhibition affects amygdala output and the generation of fear/anxiety (MODEL_ORGANISM)\n\n**Unresolved validation failures:** None. All snippets are verbatim, all identifiers resolve to canonical ontologies, all predicates are canonical.\n\n*(Note: per instructions I stopped after QC passed and did not run the semantic critic step, which is not available as a tool in this environment.)*"
+  },
+  {
+    "pair_id": "P40",
+    "model": "claude-opus-4-8",
+    "stopped": "end_turn",
+    "iters": 13,
+    "wall_seconds": 136.1,
+    "usage": {
+      "input_tokens": 145473,
+      "output_tokens": 8520,
+      "cache_read_input_tokens": 143871,
+      "cache_creation_input_tokens": 0
+    },
+    "est_cost_usd": 1.0123,
+    "n_tool_calls": 17,
+    "tool_call_counts": {
+      "pubmed_search": 2,
+      "pubmed_fetch": 1,
+      "read_reference": 7,
+      "write_path_yaml": 3,
+      "canonicalize_predicates": 2,
+      "run_qc": 2
+    },
+    "draft_nudges": [],
+    "output_written": true,
+    "final_text_tail": "e drug node (drug\u2192IgE and drug\u2192Fc\u03b5RI), which is not a strict single chain.\n- **Attempt 2 (final):** Replaced `binds` with `decreases activity of`, and restructured into one strictly linear causal chain where each node is reached from the step before. \u2192 all layers PASS.\n\n### Mechanistic chain (single connected path, 5 nodes / 4 edges)\n1. **Omalizumab** \u2014*decreases activity of*\u2192 **IgE** (UniProt:P01854)\n2. **IgE** \u2014*positively regulates*\u2192 **Fc\u03b5RI** (UniProt:P12319)\n3. **Fc\u03b5RI** \u2014*participates in*\u2192 **mast cell activation** (GO:0045576)\n4. **mast cell activation** \u2014*contributes to*\u2192 **Asthma** (MESH:D001249)\n\nThe chain ends on the disease with the mechanistic predicate `contributes to` (no `treats` shortcut, no drug\u2192disease bypass edge).\n\n### PMIDs cited\n- **PMID:11483846** \u2014 Milgrom et al., *Pediatrics* 2001 (HUMAN_CLINICAL): omalizumab binds free IgE, down-regulates Fc\u03b5RI, IgE binds Fc\u03b5RI on mast cells, and mast cell activation contributes to airway remodeling.\n- **PMID:25241913** \u2014 Yalcin, *Med Sci Monit* 2014 (HUMAN_CLINICAL): omalizumab neutralizes free IgE and inhibits the IgE allergic pathway.\n- **PMID:28438838** \u2014 Davies et al., *J Biol Chem* 2017 (IN_VITRO): omalizumab inhibits the IgE\u2013Fc\u03b5RI interaction, preventing mast cell and basophil activation.\n\n### Unresolved validation failures\n**None.** All QC layers passed on the final run.\n\nPer environment instructions, the semantic critic step was **not** run (critic.py is unavailable here). Stopping after QC pass as directed."
+  }
+]

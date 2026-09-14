@@ -1,0 +1,64 @@
+directed: true
+multigraph: true
+graph:
+  _id: P11_DB01045_MESH_D014397
+  drug: Rifampicin
+  drug_mesh: MESH:D012293
+  drugbank: DB:DB01045
+  disease: Pulmonary Tuberculosis
+  disease_mesh: MESH:D014397
+nodes:
+  - id: MESH:D012293
+    name: Rifampicin
+    label: Drug
+  - id: UniProt:P9WGY9
+    name: DNA-directed RNA polymerase subunit beta (RpoB)
+    label: Protein
+  - id: GO:0006351
+    name: DNA-templated transcription
+    label: BiologicalProcess
+  - id: NCBITaxon:1773
+    name: Mycobacterium tuberculosis
+    label: OrganismTaxon
+  - id: MESH:D014397
+    name: Pulmonary Tuberculosis
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D012293
+    target: UniProt:P9WGY9
+    evidence:
+      - reference: PMID:36572148
+        snippet: "a bactericidal drug that binds to and inhibits the β subunit of RNA polymerase (RpoB)"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Rifampicin binds to and inhibits the RpoB beta subunit of RNA polymerase."
+  - key: participates in
+    source: UniProt:P9WGY9
+    target: GO:0006351
+    evidence:
+      - reference: PMID:21704562
+        snippet: "inhibits transcription by binding to the β subunit (encoded by the rpoB gene) of the prokaryotic RNA polymerase (RNAP)"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "The RpoB beta subunit is the transcription-catalyzing component of RNA polymerase; rifampin binding to it inhibits transcription."
+  - key: occurs in
+    source: GO:0006351
+    target: NCBITaxon:1773
+    evidence:
+      - reference: PMID:25288092
+        snippet: "the RNA polymerase (RpoB) of Mycobacterium tuberculosis"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Transcription is carried out by the RNA polymerase of Mycobacterium tuberculosis."
+  - key: causes
+    source: NCBITaxon:1773
+    target: MESH:D014397
+    evidence:
+      - reference: PMID:42357287
+        snippet: "Pulmonary tuberculosis (TB) is an infectious disease caused by Mycobacterium tuberculosis (M. tuberculosis)"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Mycobacterium tuberculosis is the causative agent of pulmonary tuberculosis."
+references:
+  - https://go.drugbank.com/drugs/DB01045

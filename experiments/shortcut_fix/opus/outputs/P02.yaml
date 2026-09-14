@@ -1,0 +1,74 @@
+directed: true
+multigraph: true
+graph:
+  _id: P02_DB01076_MESH_D006937
+  drug: atorvastatin
+  drug_mesh: MESH:D000069059
+  drugbank: DB:DB01076
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+nodes:
+  - id: MESH:D000069059
+    name: atorvastatin
+    label: Drug
+  - id: UniProt:P04035
+    name: 3-hydroxy-3-methylglutaryl-coenzyme A reductase
+    label: Protein
+  - id: GO:0006695
+    name: cholesterol biosynthetic process
+    label: BiologicalProcess
+  - id: UniProt:P01130
+    name: low-density lipoprotein receptor
+    label: Protein
+  - id: MESH:D008078
+    name: low-density lipoprotein cholesterol
+    label: ChemicalSubstance
+  - id: MESH:D006937
+    name: Hypercholesterolemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000069059
+    target: UniProt:P04035
+    evidence:
+      - reference: PMID:14531725
+        snippet: "Atorvastatin lowers plasma low-density lipoprotein (LDL) cholesterol levels by inhibition of HMG-CoA reductase."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+  - key: participates in
+    source: UniProt:P04035
+    target: GO:0006695
+    evidence:
+      - reference: PMID:38397481
+        snippet: "3-hydroxy-3-methylglutaryl-CoA reductase (HMG-CoA reductase, HMGCR) is one of the rate-limiting enzymes in the mevalonate pathway required for cholesterol biosynthesis."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: negatively regulates
+    source: GO:0006695
+    target: UniProt:P01130
+    evidence:
+      - reference: PMID:17910517
+        snippet: "By inhibiting 3-hydroxy-3-methylglutaryl coenzyme-A (HMG-CoA) reductase, the statins reduce hepatocyte cholesterol levels, which results in up-regulation of low-density lipoprotein (LDL) receptors and, consequently, increased clearance of LDL-cholesterol (LDL-C) from the plasma."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Reduced hepatocyte cholesterol biosynthesis leads to up-regulation of LDL receptors."
+  - key: negatively regulates
+    source: UniProt:P01130
+    target: MESH:D008078
+    evidence:
+      - reference: PMID:17910517
+        snippet: "up-regulation of low-density lipoprotein (LDL) receptors and, consequently, increased clearance of LDL-cholesterol (LDL-C) from the plasma"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Up-regulated LDL receptors increase clearance of LDL-cholesterol from plasma, lowering plasma LDL-C."
+  - key: manifestation of
+    source: MESH:D008078
+    target: MESH:D006937
+    evidence:
+      - reference: PMID:40803869
+        snippet: "Familial hypercholesterolemia (FH) is an inherited disorder characterized by elevated LDL cholesterol levels and an increased risk of early-onset atherosclerotic cardiovascular disease."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Elevated plasma LDL cholesterol is the defining manifestation of hypercholesterolemia; the LDL-receptor-driven reduction in plasma LDL-C therefore counters the disease state."
+references:
+  - https://go.drugbank.com/drugs/DB01076

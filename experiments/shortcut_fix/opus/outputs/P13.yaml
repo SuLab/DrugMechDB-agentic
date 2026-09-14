@@ -1,0 +1,64 @@
+directed: true
+multigraph: true
+graph:
+  _id: P13_DB00512_MESH_D055624
+  drug: Vancomycin
+  drug_mesh: MESH:D014640
+  drugbank: DB:DB00512
+  disease: Methicillin-Resistant Staphylococcus aureus Infection
+  disease_mesh: MESH:D055624
+nodes:
+  - id: MESH:D014640
+    name: Vancomycin
+    label: Drug
+  - id: MESH:D010457
+    name: Peptidoglycan cell-wall precursor (lipid II, D-alanyl-D-alanine terminus)
+    label: ChemicalSubstance
+  - id: GO:0009252
+    name: peptidoglycan biosynthetic process
+    label: BiologicalProcess
+  - id: NCBITaxon:1280
+    name: Staphylococcus aureus
+    label: OrganismTaxon
+  - id: MESH:D055624
+    name: Methicillin-Resistant Staphylococcus aureus Infection
+    label: Disease
+links:
+  - key: physically interacts with
+    source: MESH:D014640
+    target: MESH:D010457
+    evidence:
+      - reference: PMID:27663982
+        snippet: "binding to the d-alanyl-d-alanine terminus of the lipid II bacterial cell-wall precursor"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Vancomycin binds the D-Ala-D-Ala terminus of the lipid II peptidoglycan precursor."
+  - key: negatively regulates
+    source: MESH:D010457
+    target: GO:0009252
+    evidence:
+      - reference: PMID:27663982
+        snippet: "preventing cross-linking of the peptidoglycan layer"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Sequestration of the lipid II precursor prevents cross-linking, blocking peptidoglycan biosynthesis."
+  - key: occurs in
+    source: GO:0009252
+    target: NCBITaxon:1280
+    evidence:
+      - reference: PMID:42066855
+        snippet: "influenced the peptidoglycan biosynthesis pathway"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Peptidoglycan biosynthesis occurs in (methicillin-resistant) Staphylococcus aureus as part of its cell-wall assembly."
+  - key: causes
+    source: NCBITaxon:1280
+    target: MESH:D055624
+    evidence:
+      - reference: PMID:42406614
+        snippet: "skin and soft tissue infections caused by methicillin-resistant Staphylococcus aureus (MRSA)"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Methicillin-resistant Staphylococcus aureus is the causative pathogen of MRSA infection; blocking its peptidoglycan synthesis is bactericidal and clears the infection."
+references:
+  - https://go.drugbank.com/drugs/DB00512

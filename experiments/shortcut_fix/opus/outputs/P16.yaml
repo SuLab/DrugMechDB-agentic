@@ -1,0 +1,52 @@
+directed: true
+multigraph: true
+graph:
+  _id: P16_DB01235_MESH_D010300
+  drug: Levodopa
+  drug_mesh: MESH:D007980
+  drugbank: DB:DB01235
+  disease: Parkinson Disease
+  disease_mesh: MESH:D010300
+nodes:
+  - id: MESH:D007980
+    name: Levodopa
+    label: Drug
+  - id: MESH:D004298
+    name: Dopamine
+    label: ChemicalSubstance
+  - id: GO:0001963
+    name: synaptic transmission, dopaminergic
+    label: BiologicalProcess
+  - id: MESH:D010300
+    name: Parkinson Disease
+    label: Disease
+links:
+  - key: has metabolite
+    source: MESH:D007980
+    target: MESH:D004298
+    evidence:
+      - reference: PMID:27622543
+        snippet: "Through its conversion to dopamine by aromatic l-amino acid decarboxylase (AADC), l-3,4-dihydroxyphenylalanine (l-DOPA) replenishes depleted brain dopamine in Parkinson's disease patients"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "L-DOPA is converted to dopamine by aromatic L-amino acid decarboxylase (AADC), replenishing depleted brain dopamine."
+  - key: participates in
+    source: MESH:D004298
+    target: GO:0001963
+    evidence:
+      - reference: PMID:26787846
+        snippet: "Restoration of dopamine transmission by levodopa (L-DOPA) relieves motor symptoms of PD"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Dopamine derived from L-DOPA restores dopaminergic synaptic transmission."
+  - key: manifestation of
+    source: GO:0001963
+    target: MESH:D010300
+    evidence:
+      - reference: PMID:26787846
+        snippet: "The reduced movement repertoire of Parkinson's disease (PD) is mainly due to degeneration of nigrostriatal dopamine neurons"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Deficient nigrostriatal dopaminergic transmission underlies the motor manifestations of Parkinson's disease; restoring it relieves symptoms."
+references:
+  - https://go.drugbank.com/drugs/DB01235

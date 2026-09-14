@@ -145,3 +145,6 @@ audit_work/
 # run status stay scratch; the curated outputs, run summary, and manifest are published.
 experiments/pilot/cache/
 experiments/pilot/_status.yaml
+
+# stray process-id files from backgrounded experiment runs
+*.pid

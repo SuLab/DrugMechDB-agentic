@@ -1,0 +1,74 @@
+directed: true
+multigraph: true
+graph:
+  _id: P40_DB00043_MESH_D001249
+  drug: omalizumab
+  drug_mesh: MESH:D000069444
+  drugbank: DB:DB00043
+  disease: Asthma
+  disease_mesh: MESH:D001249
+nodes:
+  - id: DB:DB00043
+    name: omalizumab
+    label: Drug
+  - id: UniProt:P01854
+    name: Immunoglobulin heavy constant epsilon (IgE)
+    label: Protein
+  - id: UniProt:P12319
+    name: High affinity immunoglobulin epsilon receptor subunit alpha (FcepsilonRI)
+    label: Protein
+  - id: GO:0045576
+    name: mast cell activation
+    label: BiologicalProcess
+  - id: MESH:D001249
+    name: Asthma
+    label: Disease
+links:
+  - key: decreases activity of
+    source: DB:DB00043
+    target: UniProt:P01854
+    evidence:
+      - reference: PMID:25241913
+        snippet: "can neutralize free IgE and inhibit the IgE allergic pathway without sensitizing mast cells and basophils"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Omalizumab binds and neutralizes free IgE, decreasing its functional activity."
+      - reference: PMID:11483846
+        snippet: "Omalizumab binds to free IgE at the same site as the high-affinity receptor."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Omalizumab binds free IgE at the FcepsilonRI-binding site, preventing IgE from engaging its receptor."
+  - key: positively regulates
+    source: UniProt:P01854
+    target: UniProt:P12319
+    evidence:
+      - reference: PMID:11483846
+        snippet: "Specific IgE binds to high-affinity (FcepsilonRI) receptors on mast cells and basophils."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "IgE engages and activates the high-affinity receptor FcepsilonRI on mast cells; neutralizing IgE removes this activating signal and down-regulates the receptor."
+      - reference: PMID:11483846
+        snippet: "cause a down-regulation of FcepsilonRI receptors on basophils"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Loss of free IgE upon omalizumab treatment down-regulates FcepsilonRI, confirming IgE positively regulates receptor expression/activity."
+  - key: participates in
+    source: UniProt:P12319
+    target: GO:0045576
+    evidence:
+      - reference: PMID:28438838
+        snippet: "inhibits the interaction between IgE and FcϵRI, preventing mast cell and basophil activation"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "FcepsilonRI engagement by IgE is the receptor event that drives mast cell activation."
+  - key: contributes to
+    source: GO:0045576
+    target: MESH:D001249
+    evidence:
+      - reference: PMID:11483846
+        snippet: "IgE-mediated mast cell activation contributes to chronic tissue eosinophilia and airway remodeling, with permanent loss in pulmonary function."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Mast cell activation drives the airway inflammation and remodeling underlying allergic asthma."
+references:
+  - https://go.drugbank.com/drugs/DB00043

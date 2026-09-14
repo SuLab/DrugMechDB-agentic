@@ -1,0 +1,76 @@
+directed: true
+multigraph: true
+graph:
+  _id: P21_DB00563_MESH_D001172
+  drug: methotrexate
+  drug_mesh: MESH:D008727
+  drugbank: DB:DB00563
+  disease: Rheumatoid arthritis
+  disease_mesh: MESH:D001172
+nodes:
+  - id: MESH:D008727
+    name: methotrexate
+    label: Drug
+  - id: UniProt:P31939
+    name: Bifunctional purine biosynthesis protein PURH (AICAR transformylase, ATIC)
+    label: Protein
+  - id: MESH:D000241
+    name: Adenosine
+    label: ChemicalSubstance
+  - id: UniProt:P29274
+    name: Adenosine receptor A2a (ADORA2A)
+    label: Protein
+  - id: GO:0006954
+    name: inflammatory response
+    label: BiologicalProcess
+  - id: MESH:D001172
+    name: Rheumatoid arthritis
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D008727
+    target: UniProt:P31939
+    evidence:
+      - reference: PMID:23464989
+        snippet: "intracellular MTX polyglutamates inhibit AICAR transformylase (ATIC) activity"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Methotrexate polyglutamates inhibit ATIC (AICAR transformylase) activity."
+  - key: negatively regulates
+    source: UniProt:P31939
+    target: MESH:D000241
+    evidence:
+      - reference: PMID:23464989
+        snippet: "intracellular MTX polyglutamates inhibit AICAR transformylase (ATIC) activity and thereby promote adenosine release"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Inhibition of ATIC activity promotes adenosine release, i.e. ATIC activity negatively regulates adenosine levels."
+  - key: increases activity of
+    source: MESH:D000241
+    target: UniProt:P29274
+    evidence:
+      - reference: PMID:12528125
+        snippet: "adenosine, acting at A(2A) and A(3) receptors, is a potent regulator of inflammation"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Adenosine acts at (activates) the A2A receptor to regulate inflammation."
+  - key: negatively regulates
+    source: UniProt:P29274
+    target: GO:0006954
+    evidence:
+      - reference: PMID:16519795
+        snippet: "reduced the leukocyte accumulation in the wild-type mice and A3 receptor knockout mice but not in the A2A receptor knockout mice"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Methotrexate reduces leukocyte accumulation (inflammation) via the adenosine A2A receptor; effect is lost in A2A knockout mice, showing A2A activation suppresses the inflammatory response."
+  - key: manifestation of
+    source: GO:0006954
+    target: MESH:D001172
+    evidence:
+      - reference: PMID:42240746
+        snippet: "Rheumatoid arthritis (RA) is a chronic autoimmune disease characterized by persistent synovial inflammation"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Persistent synovial inflammation is a defining manifestation of rheumatoid arthritis."
+references:
+  - https://go.drugbank.com/drugs/DB00563
