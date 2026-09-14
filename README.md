@@ -102,12 +102,32 @@ every edge's evidence snippet must be a verbatim substring of a fetched referenc
 
 ## Getting started
 
+### Prerequisites
+
+| | needed for | install |
+|---|---|---|
+| **Python 3.10** | everything | `brew install python@3.10`, or your platform's equivalent |
+| **[`just`](https://github.com/casey/just)** | every `just …` command below | `brew install just` · `cargo install just` · `apt install just` |
+| **`uv`** | the `ols-mcp` ontology server in `.claude/.mcp.json` (launched via `uvx`) | `brew install uv`, or see [astral.sh/uv](https://docs.astral.sh/uv/) |
+| **`ANTHROPIC_API_KEY`** | agent curation and the semantic critic only | export it in your shell |
+
+Validation needs none of the API key: `just qc`, the test suite, and the term
+audit all run offline against the committed corpus and caches.
+
+### Setup
+
 ```bash
 python3.10 -m venv .venv-py310
 .venv-py310/bin/pip install -r requirements.lock   # reproducible, pinned
 .venv-py310/bin/pip install -e . --no-deps
 just qc                                             # validate the corpus
+just test                                           # run the test suite
 ```
+
+Verified from a clean clone on 2026-09-13: the three install steps complete with
+no errors and the suite reports 274 passed, 7 skipped. If you have no `just`,
+every target is a thin wrapper — `just qc` is
+`.venv-py310/bin/python scripts/qc.py`.
 
 Full setup and the end-to-end pipeline are in **`docs/PIPELINE.md`**.
 
