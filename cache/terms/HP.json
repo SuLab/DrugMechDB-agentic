@@ -1,0 +1,2524 @@
+{
+  "HP:0000017": {
+    "label": "Nocturia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Nycturia"
+    ]
+  },
+  "HP:0000107": {
+    "label": "Renal cyst",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Cystic kidney disease",
+      "Cystic kidneys",
+      "Kidney cyst",
+      "Renal cysts"
+    ]
+  },
+  "HP:0000141": {
+    "label": "Amenorrhea",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormal absence of menstruation"
+    ]
+  },
+  "HP:0000282": {
+    "label": "Facial edema",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Swelling of the face",
+      "Facial oedema",
+      "Facial puffiness",
+      "Facial swelling"
+    ]
+  },
+  "HP:0000518": {
+    "label": "Cataract",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Cataracts",
+      "Lens opacities",
+      "Lens opacity",
+      "Clouding of the lens of the eye",
+      "Cloudy lens"
+    ]
+  },
+  "HP:0000549": {
+    "label": "Abnormal conjugate eye movement",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Disconjugate eye movements"
+    ]
+  },
+  "HP:0000572": {
+    "label": "Visual loss",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Loss of vision",
+      "Vision loss",
+      "Visual loss"
+    ]
+  },
+  "HP:0000616": {
+    "label": "Miosis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Constricted pupils",
+      "Pupillary constriction"
+    ]
+  },
+  "HP:0000662": {
+    "label": "Nyctalopia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Difficulties with night vision",
+      "Night blindness",
+      "Night-blindness",
+      "Poor night vision"
+    ]
+  },
+  "HP:0000707": {
+    "label": "Abnormality of the nervous system",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormality of the nervous system",
+      "Brain and/or spinal cord issue",
+      "Neurologic abnormalities",
+      "Neurological abnormality"
+    ]
+  },
+  "HP:0000708": {
+    "label": "Atypical behavior",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Behavioral abnormality",
+      "Behavioral changes",
+      "Behavioral disorders",
+      "Behavioral disturbances",
+      "Behavioral problems",
+      "Behavioral symptoms",
+      "Behavioral/psychiatric abnormalities",
+      "Behavioural abnormality",
+      "Behavioural changes",
+      "Behavioural disorders",
+      "Behavioural disturbances",
+      "Behavioural problems",
+      "Behavioural symptoms",
+      "Behavioural/Psychiatric abnormality",
+      "Psychiatric disorders",
+      "Psychiatric disturbances"
+    ]
+  },
+  "HP:0000709": {
+    "label": "Psychosis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Psychosis"
+    ]
+  },
+  "HP:0000713": {
+    "label": "Agitation",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Psychomotor agitation"
+    ]
+  },
+  "HP:0000716": {
+    "label": "Depression",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Depressive disorder",
+      "Depressive episode",
+      "Depressivity",
+      "Depression"
+    ]
+  },
+  "HP:0000726": {
+    "label": "Dementia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Dementia",
+      "Dementia, progressive",
+      "Progressive dementia"
+    ]
+  },
+  "HP:0000737": {
+    "label": "Irritability",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Cranky",
+      "Easily annoyed",
+      "Easily bothered",
+      "Easily upset",
+      "Grumpy",
+      "Hot-temper",
+      "Irritability",
+      "Irritable",
+      "Quick temper",
+      "Short fuse",
+      "Short tempered"
+    ]
+  },
+  "HP:0000738": {
+    "label": "Hallucinations",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Hallucination",
+      "Hallucinations",
+      "Sensory hallucination"
+    ]
+  },
+  "HP:0000739": {
+    "label": "Anxiety",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Anxiousness",
+      "Anxiety disease",
+      "Anxiety",
+      "Excessive, persistent worry and fear"
+    ]
+  },
+  "HP:0000741": {
+    "label": "Apathy",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Lack of feeling, emotion, interest, motivation, initiation",
+      "State of indifference",
+      "Lack of feeling, emotion, interest"
+    ]
+  },
+  "HP:0000746": {
+    "label": "Delusion",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Delusions"
+    ]
+  },
+  "HP:0000750": {
+    "label": "Delayed speech and language development",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Deficiency of speech development",
+      "Delayed language development",
+      "Delayed speech acquisition",
+      "Delayed speech and language development",
+      "Delayed speech development",
+      "Delayed speech",
+      "Impaired speech and language development",
+      "Impaired speech development",
+      "Language delay",
+      "Language delayed",
+      "Language development deficit",
+      "Late-onset speech development",
+      "Poor language development",
+      "Poor speech acquisition",
+      "Poor speech development",
+      "Speech and language delay",
+      "Speech and language difficulties",
+      "Speech delay",
+      "Speech difficulties"
+    ]
+  },
+  "HP:0000752": {
+    "label": "Hyperactivity",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Hyperactive behavior",
+      "Hyperactive behaviour",
+      "Hyperkinetic disorder",
+      "More active than typical"
+    ]
+  },
+  "HP:0000787": {
+    "label": "Kidney stone",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Nephrolithiasis",
+      "Renal calculi",
+      "Renal stones",
+      "Kidney stones"
+    ]
+  },
+  "HP:0000822": {
+    "label": "Hypertension",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Arterial hypertension",
+      "Systemic hypertension",
+      "High blood pressure"
+    ]
+  },
+  "HP:0000836": {
+    "label": "Hyperthyroidism",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Overactive thyroid"
+    ]
+  },
+  "HP:0000855": {
+    "label": "Insulin resistance",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Body fails to respond to insulin"
+    ]
+  },
+  "HP:0000953": {
+    "label": "Hyperpigmentation of the skin",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Cutaneous hyperpigmentation",
+      "Increased skin pigmentation",
+      "Melanoderma",
+      "Melanodermia",
+      "Skin hyperpigmentation",
+      "Hyperpigmented lesion",
+      "Patchy darkened skin"
+    ]
+  },
+  "HP:0000964": {
+    "label": "Eczematoid dermatitis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Dermatitis",
+      "Eczema"
+    ]
+  },
+  "HP:0000969": {
+    "label": "Edema",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Hydrops",
+      "Oedema",
+      "Soft tissue swelling",
+      "Dropsy",
+      "Fluid retention",
+      "Water retention"
+    ]
+  },
+  "HP:0000987": {
+    "label": "Atypical scarring of skin",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Atypical scarring of skin",
+      "Atypical scarring"
+    ]
+  },
+  "HP:0000988": {
+    "label": "Skin rash",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Rash",
+      "Skin rash"
+    ]
+  },
+  "HP:0000989": {
+    "label": "Pruritus",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Itching",
+      "Itchy skin",
+      "Skin itching"
+    ]
+  },
+  "HP:0000992": {
+    "label": "Cutaneous photosensitivity",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Photosensitive skin rashes",
+      "Photosensitive skin",
+      "Photosensitivity",
+      "Sensitivity to sunlight",
+      "Skin photosensitivity",
+      "Sun sensitivity"
+    ]
+  },
+  "HP:0001019": {
+    "label": "Erythroderma",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Generalized erythroderma",
+      "Generalized erythrodermia",
+      "Exfoliative dermititis",
+      "Generalised erythroderma",
+      "Generalised erythrodermia",
+      "Red scaly skin caused by inflammatory skin disease"
+    ]
+  },
+  "HP:0001025": {
+    "label": "Urticaria",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Hives"
+    ]
+  },
+  "HP:0001033": {
+    "label": "Facial flushing after alcohol intake",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Facial flushing after alcohol intake"
+    ]
+  },
+  "HP:0001041": {
+    "label": "Facial erythema",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Blushed cheeks",
+      "Blushing",
+      "Red face",
+      "Red in the face",
+      "Rosacea",
+      "Ruddy face"
+    ]
+  },
+  "HP:0001249": {
+    "label": "Intellectual disability",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Dull intelligence",
+      "Nonprogressive intellectual disability",
+      "Nonprogressive mental retardation",
+      "Intellectual disability",
+      "Low intelligence",
+      "Mental deficiency",
+      "Mental retardation",
+      "Mental retardation, nonspecific",
+      "Mental-retardation",
+      "Poor school performance"
+    ]
+  },
+  "HP:0001250": {
+    "label": "Seizure",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Epileptic seizure",
+      "Epilepsy",
+      "Seizures"
+    ]
+  },
+  "HP:0001251": {
+    "label": "Ataxia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Cerebellar ataxia"
+    ]
+  },
+  "HP:0001252": {
+    "label": "Hypotonia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Central hypotonia",
+      "Muscle hypotonia",
+      "Muscular hypotonia",
+      "Peripheral hypotonia",
+      "Low muscle tone",
+      "Low or weak muscle tone"
+    ]
+  },
+  "HP:0001257": {
+    "label": "Spasticity",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Muscle spasticity",
+      "Muscular spasticity",
+      "Involuntary muscle stiffness, contraction, or spasm"
+    ]
+  },
+  "HP:0001268": {
+    "label": "Mental deterioration",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Cognitive decline",
+      "Cognitive decline, progressive",
+      "Intellectual deterioration",
+      "Mental deterioration",
+      "Progressive cognitive decline"
+    ]
+  },
+  "HP:0001276": {
+    "label": "Hypertonia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Hypertonicity",
+      "Increased muscle tone",
+      "Muscle hypertonia",
+      "Spasticity and rigidity of muscles"
+    ]
+  },
+  "HP:0001278": {
+    "label": "Orthostatic hypotension",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Postural hypotension",
+      "Decrease in blood pressure upon standing up"
+    ]
+  },
+  "HP:0001289": {
+    "label": "Confusion",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Confusion",
+      "Disorientation",
+      "Easily confused",
+      "Mental disorientation"
+    ]
+  },
+  "HP:0001300": {
+    "label": "Parkinsonism",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Parkinsonian disease"
+    ]
+  },
+  "HP:0001324": {
+    "label": "Muscle weakness",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Muscle weakness",
+      "Muscular weakness"
+    ]
+  },
+  "HP:0001337": {
+    "label": "Tremor",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Tremor",
+      "Tremors"
+    ]
+  },
+  "HP:0001369": {
+    "label": "Arthritis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Arthritis",
+      "Joint inflammation"
+    ]
+  },
+  "HP:0001370": {
+    "label": "Rheumatoid arthritis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "RA",
+      "Rheumatoid arthritis"
+    ]
+  },
+  "HP:0001386": {
+    "label": "Joint swelling",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Joint swelling"
+    ]
+  },
+  "HP:0001387": {
+    "label": "Joint stiffness",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Joint stiffness",
+      "Stiff joint",
+      "Stiff joints"
+    ]
+  },
+  "HP:0001394": {
+    "label": "Cirrhosis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Hepatic cirrhosis",
+      "Liver cirrhosis",
+      "Scar tissue replaces healthy tissue in the liver"
+    ]
+  },
+  "HP:0001508": {
+    "label": "Failure to thrive",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Postnatal failure to thrive",
+      "FTT",
+      "Faltering weight",
+      "Poor weight gain",
+      "Undergrowth",
+      "Weight faltering"
+    ]
+  },
+  "HP:0001643": {
+    "label": "Patent ductus arteriosus",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Ductus arteriosus",
+      "Patent ductus Botalli",
+      "Persistent arterial duct",
+      "Persistent ductus arteriosus",
+      "PDA"
+    ]
+  },
+  "HP:0001649": {
+    "label": "Tachycardia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Elevated heart rate",
+      "Fast heart rate",
+      "Heart racing",
+      "Increased heart rate",
+      "Racing heart",
+      "Rapid heart beat"
+    ]
+  },
+  "HP:0001654": {
+    "label": "Abnormal heart valve morphology",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormality of the heart valves",
+      "Valvular abnormality",
+      "Valvular heart disease"
+    ]
+  },
+  "HP:0001657": {
+    "label": "Prolonged QT interval",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Long Q-T syndrome",
+      "Long QT syndrome",
+      "Prolong qt interval on ekg"
+    ]
+  },
+  "HP:0001692": {
+    "label": "Atrial arrhythmia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Primary atrial arrhythmia"
+    ]
+  },
+  "HP:0001714": {
+    "label": "Ventricular hypertrophy",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0001742": {
+    "label": "Nasal congestion",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Blockage of nose",
+      "Congestion of nose",
+      "Nasal blockage",
+      "Nasal obstruction",
+      "Obstruction of nose",
+      "Stuffy nose"
+    ]
+  },
+  "HP:0001854": {
+    "label": "Podagra",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Gout of big toe"
+    ]
+  },
+  "HP:0001878": {
+    "label": "Hemolytic anemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Haemolytic anemia",
+      "Increased hemolysis",
+      "Haemolytic anaemia",
+      "Hemolytic anaemia"
+    ]
+  },
+  "HP:0001880": {
+    "label": "Increased total eosinophil count",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Eosinophilia",
+      "Increased eosinophil count",
+      "High blood eosinophil count"
+    ]
+  },
+  "HP:0001889": {
+    "label": "Megaloblastic anemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Megaloblastic anaemia"
+    ]
+  },
+  "HP:0001892": {
+    "label": "Abnormal bleeding",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Bleeding diathesis",
+      "Hemorrhagic diathesis",
+      "Bleeding tendency"
+    ]
+  },
+  "HP:0001894": {
+    "label": "Thrombocytosis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Increased platelet count",
+      "Thrombocythaemia",
+      "Thrombocythemia",
+      "Increased number of platelets in blood"
+    ]
+  },
+  "HP:0001903": {
+    "label": "Anemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Anaemia",
+      "Decreased hemoglobin",
+      "Decreased haemoglobin",
+      "Low number of red blood cells or haemoglobin",
+      "Low number of red blood cells or hemoglobin"
+    ]
+  },
+  "HP:0001907": {
+    "label": "Thromboembolism",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Embolism and thrombosis",
+      "Thromboembolic disease",
+      "Thromboembolic events",
+      "Blood clot in blood vessel"
+    ]
+  },
+  "HP:0001908": {
+    "label": "Hypoplastic anemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Hypoplastic anaemia"
+    ]
+  },
+  "HP:0001943": {
+    "label": "Hypoglycemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Hypoglycaemia",
+      "Low blood sugar"
+    ]
+  },
+  "HP:0001945": {
+    "label": "Fever",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Hyperthermia",
+      "Pyrexia",
+      "Fever"
+    ]
+  },
+  "HP:0001950": {
+    "label": "Respiratory alkalosis",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0001974": {
+    "label": "Increased total leukocyte count",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Leukocytosis",
+      "Elevated white blood count",
+      "High white blood count",
+      "Increased blood leukocyte number"
+    ]
+  },
+  "HP:0001975": {
+    "label": "Decreased platelet glycoprotein IIb-IIIa",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Glanzmann thrombasthenia",
+      "Reduced level of platelet glycoprotein IIb/IIIa complex"
+    ]
+  },
+  "HP:0001987": {
+    "label": "Hyperammonemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "High blood ammonia levels"
+    ]
+  },
+  "HP:0002017": {
+    "label": "Nausea and vomiting",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Nausea and vomiting"
+    ]
+  },
+  "HP:0002018": {
+    "label": "Nausea",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Nausea"
+    ]
+  },
+  "HP:0002019": {
+    "label": "Constipation",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Costiveness",
+      "Dyschezia",
+      "Constipation"
+    ]
+  },
+  "HP:0002020": {
+    "label": "Gastroesophageal reflux",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Gastro-esophageal reflux",
+      "Gastroesophageal reflux disease",
+      "Acid reflux disease",
+      "Acid reflux",
+      "GERD",
+      "GORD",
+      "Gastro-oesophageal reflux",
+      "Heartburn"
+    ]
+  },
+  "HP:0002027": {
+    "label": "Abdominal pain",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abdominal discomfort",
+      "Abdominal pain",
+      "Gastro pain",
+      "Gastrointestinal pain",
+      "Pain in stomach",
+      "Stomach pain",
+      "Upset stomach"
+    ]
+  },
+  "HP:0002037": {
+    "label": "Inflammation of the large intestine",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Inflammation of the large intestine",
+      "Inflammatory bowel disease"
+    ]
+  },
+  "HP:0002045": {
+    "label": "Hypothermia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormally low body temperature",
+      "Hypothermia"
+    ]
+  },
+  "HP:0002069": {
+    "label": "Bilateral tonic-clonic seizure",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Bilateral convulsive seizures",
+      "Generalised tonic-clonic seizure (without specification of onset)",
+      "Generalized convulsion",
+      "Generalized tonic-clonic seizure (without specification of onset)",
+      "Grand mal",
+      "Seizures, tonic-clonic",
+      "Generalised convulsion",
+      "Grand mal seizures",
+      "Tonic-clonic convulsion",
+      "Tonic-clonic convulsions"
+    ]
+  },
+  "HP:0002071": {
+    "label": "Abnormality of extrapyramidal motor function",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Extrapyramidal dysfunction",
+      "Extrapyramidal signs",
+      "Extrapyramidal symptoms",
+      "Extrapyramidal syndrome",
+      "Extrapyramidal tract signs"
+    ]
+  },
+  "HP:0002094": {
+    "label": "Dyspnea",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormal breathing",
+      "Breathing difficulty",
+      "Difficult to breathe",
+      "Difficulty breathing",
+      "Dyspnoea",
+      "Panting",
+      "Shortness of breath",
+      "Trouble breathing"
+    ]
+  },
+  "HP:0002098": {
+    "label": "Respiratory distress",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Breathing difficulties",
+      "Labored breathing",
+      "Laboured breathing"
+    ]
+  },
+  "HP:0002107": {
+    "label": "Pneumothorax",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Collapsed lung"
+    ]
+  },
+  "HP:0002121": {
+    "label": "Generalized non-motor (absence) seizure",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Absence seizure",
+      "Petit mal seizure",
+      "Petit mal",
+      "Absence seizures",
+      "Brief seizures with staring spells",
+      "Generalised non-motor (absence) seizure",
+      "Generalised non-motor seizure",
+      "Petit mal seizures"
+    ]
+  },
+  "HP:0002149": {
+    "label": "Hyperuricemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Elevated uric acid concentration",
+      "Elevated uric acid level in blood",
+      "Elevated uric acid level",
+      "Hyperuricaemia",
+      "Increased uric acid concentration",
+      "Increased uric acid level in blood",
+      "Increased uric acid level",
+      "High blood uric acid level"
+    ]
+  },
+  "HP:0002153": {
+    "label": "Hyperkalemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Elevated potassium(1+) concentration",
+      "Elevated potassium(1+) level in blood",
+      "Elevated potassium(1+) level",
+      "Increased potassium(1+) concentration",
+      "Increased potassium(1+) level in blood",
+      "Increased potassium(1+) level",
+      "Increased circulating potassium concentration"
+    ]
+  },
+  "HP:0002185": {
+    "label": "Neurofibrillary tangles",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Neurofibrillary tangles composed of disordered microtubules in neurons",
+      "Paired helical filaments",
+      "Tau-positive neurofibrillary tangles",
+      "Tau-positive tangle",
+      "NFTs"
+    ]
+  },
+  "HP:0002240": {
+    "label": "Hepatomegaly",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Enlarged liver"
+    ]
+  },
+  "HP:0002315": {
+    "label": "Headache",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Headache",
+      "Headaches"
+    ]
+  },
+  "HP:0002354": {
+    "label": "Memory impairment",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Amnesia",
+      "Forgetfulness",
+      "Memory impairment",
+      "Memory loss",
+      "Memory problems",
+      "Poor memory"
+    ]
+  },
+  "HP:0002355": {
+    "detail": "OLS4 reports is_obsolete",
+    "label": "obsolete Difficulty walking",
+    "source": "ols4:hp",
+    "status": "obsolete"
+  },
+  "HP:0002360": {
+    "label": "Sleep disturbance",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Sleep abnormality",
+      "Sleep dysfunction",
+      "Sleep-wake disturbance",
+      "Difficulty sleeping",
+      "Sleep disturbances",
+      "Trouble sleeping"
+    ]
+  },
+  "HP:0002465": {
+    "label": "Poor speech",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Difficulty speaking",
+      "Poor speech",
+      "Problems speaking"
+    ]
+  },
+  "HP:0002486": {
+    "label": "Myotonia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Delayed relaxation of muscle fibers after contraction",
+      "Delayed relaxation of muscle fibres after contraction"
+    ]
+  },
+  "HP:0002493": {
+    "label": "Upper motor neuron dysfunction",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Corticospinal tract dysfunction",
+      "Pyramidal tract dysfunction"
+    ]
+  },
+  "HP:0002524": {
+    "label": "Cataplexy",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Narcolepsy"
+    ]
+  },
+  "HP:0002579": {
+    "label": "Gastrointestinal dysmotility",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "GI dysmotility"
+    ]
+  },
+  "HP:0002588": {
+    "label": "Duodenal ulcer",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0002591": {
+    "label": "Polyphagia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Hyperphagia",
+      "Increased appetite",
+      "Voracious appetite"
+    ]
+  },
+  "HP:0002615": {
+    "label": "Hypotension",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Arterial hypotension",
+      "Low blood pressure"
+    ]
+  },
+  "HP:0002619": {
+    "label": "Varicose veins",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0002621": {
+    "label": "Atherosclerosis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Atherosclerotic cardiovascular disease",
+      "Narrowing and hardening of arteries",
+      "Plaque build-up in arteries"
+    ]
+  },
+  "HP:0002632": {
+    "label": "Low-to-normal blood pressure",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Low-to-normal BP",
+      "Low-to-normal blood pressure"
+    ]
+  },
+  "HP:0002637": {
+    "label": "Cerebral ischemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Brain ischemia",
+      "Cerebrovascular ischemia",
+      "Disruption of blood oxygen supply to brain"
+    ]
+  },
+  "HP:0002640": {
+    "label": "Hypertension associated with pheochromocytoma",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0002665": {
+    "label": "Lymphoma",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Cancer of lymphatic system"
+    ]
+  },
+  "HP:0002791": {
+    "label": "Hypoventilation",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Alveolar hypoventilation",
+      "Respiratory depression",
+      "Slow breathing",
+      "Under breathing"
+    ]
+  },
+  "HP:0002829": {
+    "label": "Arthralgia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Arthralgias",
+      "Arthritic pain",
+      "Joint pain",
+      "Joint pains"
+    ]
+  },
+  "HP:0002901": {
+    "label": "Hypocalcemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Decreased calcium(2+) concentration",
+      "Decreased calcium(2+) level in blood",
+      "Decreased calcium(2+) level",
+      "Hypocalcaemia",
+      "Reduced calcium(2+) concentration",
+      "Reduced calcium(2+) level in blood",
+      "Reduced calcium(2+) level",
+      "Low blood calcium levels"
+    ]
+  },
+  "HP:0002912": {
+    "label": "Methylmalonic acidemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Elevated circulating methylmalonic acid concentration",
+      "Elevated methylmalonic acid concentration",
+      "Elevated methylmalonic acid level in blood",
+      "Elevated methylmalonic acid level",
+      "Increased methylmalonic acid concentration",
+      "Increased methylmalonic acid level in blood",
+      "Increased methylmalonic acid level"
+    ]
+  },
+  "HP:0002960": {
+    "label": "Autoimmunity",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Autoimmune condition",
+      "Autoimmune disease",
+      "Autoimmune disorder",
+      "Autoimmunity"
+    ]
+  },
+  "HP:0003072": {
+    "label": "Hypercalcemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Elevated calcium(2+) concentration",
+      "Elevated calcium(2+) level in blood",
+      "Elevated calcium(2+) level",
+      "Hypercalcaemia",
+      "Increased calcium(2+) concentration",
+      "Increased calcium(2+) level in blood",
+      "Increased calcium(2+) level",
+      "High blood calcium levels",
+      "Increased calcium in blood"
+    ]
+  },
+  "HP:0003074": {
+    "label": "Hyperglycemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "High blood glucose",
+      "High blood sugar"
+    ]
+  },
+  "HP:0003076": {
+    "label": "Glycosuria",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Glucosuria",
+      "Glucose in urine"
+    ]
+  },
+  "HP:0003107": {
+    "label": "Abnormal circulating cholesterol concentration",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormal cholesterol homeostasis",
+      "Abnormality of cholesterol metabolism"
+    ]
+  },
+  "HP:0003124": {
+    "label": "Hypercholesterolemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Elevated serum cholesterol",
+      "Elevated total cholesterol",
+      "High cholesterol",
+      "Increased total cholesterol"
+    ]
+  },
+  "HP:0003131": {
+    "label": "Cystinuria",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Nitroprusside-cyanide urine test positive",
+      "High urine cystine levels"
+    ]
+  },
+  "HP:0003141": {
+    "label": "Elevated circulating LDL-C concentration",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Elevated low-density lipoprotein cholesterol concentration",
+      "Elevated low-density lipoprotein cholesterol level in blood",
+      "Elevated low-density lipoprotein cholesterol level",
+      "Hyperbetalipoproteinemia",
+      "Increased beta-lipoproteins",
+      "Increased circulating low-density lipoprotein cholesterol",
+      "Increased circulating low-density lipoprotein levels",
+      "Increased low-density lipoprotein cholesterol concentration",
+      "Increased low-density lipoprotein cholesterol level in blood",
+      "Increased low-density lipoprotein cholesterol level",
+      "Increased LDL cholesterol",
+      "Increased LDLc concentration",
+      "Increased circulating LDL level",
+      "Increased plasma LDL levels"
+    ]
+  },
+  "HP:0003165": {
+    "label": "Elevated circulating parathyroid hormone level",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Elevated circulating PTH level",
+      "Elevated serum parathyroid hormone level",
+      "Elevated serum parathyroid hormone",
+      "Elevated serum pth",
+      "Increased serum parathyroid hormone"
+    ]
+  },
+  "HP:0003251": {
+    "label": "Male infertility",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Male infertility"
+    ]
+  },
+  "HP:0003323": {
+    "label": "Progressive muscle weakness",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Muscle weakness, progressive",
+      "Progressive muscular weakness"
+    ]
+  },
+  "HP:0003326": {
+    "label": "Myalgia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Muscle ache",
+      "Muscle pain",
+      "Myalgias"
+    ]
+  },
+  "HP:0003394": {
+    "label": "Muscle spasm",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Nocturnal hand and foot cramps",
+      "Nocturnal leg cramp",
+      "Sleep-related dystonia",
+      "Muscle cramps",
+      "Muscle spasms"
+    ]
+  },
+  "HP:0003401": {
+    "label": "Paresthesia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Paresthesias",
+      "Pins and needles feeling",
+      "Tingling"
+    ]
+  },
+  "HP:0003470": {
+    "label": "Paralysis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Inability to move",
+      "Paralysis"
+    ]
+  },
+  "HP:0003510": {
+    "label": "Severe short stature",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Dwarfism",
+      "Proportionate dwarfism",
+      "Severe short stature",
+      "Short stature, extreme",
+      "Short stature, severe"
+    ]
+  },
+  "HP:0003552": {
+    "label": "Muscle stiffness",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0003690": {
+    "label": "Limb muscle weakness",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Limb muscle weakness",
+      "Limb weakness"
+    ]
+  },
+  "HP:0003765": {
+    "label": "Psoriasiform dermatitis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Psoriasis"
+    ]
+  },
+  "HP:0004308": {
+    "label": "Ventricular arrhythmia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Ventricular arrhythmias"
+    ]
+  },
+  "HP:0004322": {
+    "label": "Short stature",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Height less than 3rd percentile",
+      "Stature below 3rd percentile",
+      "Decreased body height",
+      "Short stature",
+      "Small stature"
+    ]
+  },
+  "HP:0004324": {
+    "label": "Increased body weight",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Increased body weight",
+      "Weight gain"
+    ]
+  },
+  "HP:0004334": {
+    "label": "Dermal atrophy",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Atrophic skin",
+      "Skin atrophy",
+      "Skin degeneration"
+    ]
+  },
+  "HP:0004349": {
+    "label": "Reduced bone mineral density",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Decreased bone mineral density Z score",
+      "Decreased bone mineral density",
+      "Low solidness and mass of the bones"
+    ]
+  },
+  "HP:0004363": {
+    "label": "Abnormal circulating calcium concentration",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormal calcium(2+) level",
+      "Abnormal blood calcium concentration",
+      "Abnormal blood calcium levels",
+      "Abnormal circulating Ca concentration",
+      "Abnormal circulating Ca2+ concentration"
+    ]
+  },
+  "HP:0004364": {
+    "label": "Abnormal circulating nitrogen compound concentration",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormal nitrogen compound level"
+    ]
+  },
+  "HP:0004370": {
+    "label": "Abnormality of temperature regulation",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Impaired temperature control",
+      "Impaired temperature regulation",
+      "Inability to control temperature",
+      "Inability to regulate temperature",
+      "Poor control of temperature",
+      "Poor regulation of temperature",
+      "Poor temperature control",
+      "Unable to control temperature",
+      "Abnormality of temperature regulation",
+      "Body temperature changes",
+      "Poor temperature regulation"
+    ]
+  },
+  "HP:0004396": {
+    "label": "Poor appetite",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Loss of appetite",
+      "Decreased appetite",
+      "No appetite",
+      "Poor appetite"
+    ]
+  },
+  "HP:0004398": {
+    "label": "Peptic ulcer",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Sore in the lining of gastrointestinal tract"
+    ]
+  },
+  "HP:0004420": {
+    "label": "Arterial thrombosis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Blood clot in artery"
+    ]
+  },
+  "HP:0004791": {
+    "label": "Esophageal ulceration",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Esophagus ulcer",
+      "Oesophagus ulcer",
+      "Oesophagus ulceration"
+    ]
+  },
+  "HP:0005059": {
+    "label": "Arthralgia/arthritis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Joint pain/Joint inflammation"
+    ]
+  },
+  "HP:0005110": {
+    "label": "Atrial fibrillation",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Quivering upper heart chambers resulting in irregular heartbeat"
+    ]
+  },
+  "HP:0005162": {
+    "label": "Abnormal left ventricular function",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Impaired left ventricular function",
+      "Left ventricular dysfunction",
+      "Left ventricular failure",
+      "Left ventricular impairment",
+      "Left-sided heart failure"
+    ]
+  },
+  "HP:0005187": {
+    "label": "Progressive joint destruction",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0005263": {
+    "label": "Gastritis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Stomach inflammation"
+    ]
+  },
+  "HP:0005968": {
+    "label": "Temperature instability",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Body temperature instability",
+      "Temperature instability"
+    ]
+  },
+  "HP:0006536": {
+    "label": "Airway obstruction",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Pulmonary obstruction",
+      "Obstructive lung disease"
+    ]
+  },
+  "HP:0007663": {
+    "label": "Reduced visual acuity",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Decreased central vision",
+      "Decreased visual acuity",
+      "Poor visual acuity",
+      "Decreased clarity of vision"
+    ]
+  },
+  "HP:0007879": {
+    "label": "Allergic conjunctivitis",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0007906": {
+    "label": "Ocular hypertension",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Elevated intraocular pressure",
+      "Increased intraocular pressure",
+      "Raised intraocular pressure",
+      "Elevated IOP",
+      "High eye pressure",
+      "Increased IOP",
+      "Raised IOP"
+    ]
+  },
+  "HP:0008066": {
+    "label": "Abnormal blistering of the skin",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Blister",
+      "Skin bullae",
+      "Abnormal blistering of the skin",
+      "Blistering, generalised",
+      "Blistering, generalized",
+      "Blisters",
+      "Skin blisters"
+    ]
+  },
+  "HP:0008189": {
+    "label": "Insulin insensitivity",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0008249": {
+    "label": "Thyroid hyperplasia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Large thyroid"
+    ]
+  },
+  "HP:0008760": {
+    "label": "Violent behavior",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Violent behavior",
+      "Violent behaviour"
+    ]
+  },
+  "HP:0009926": {
+    "label": "Epiphora",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Increased lacrimation",
+      "Increased tears",
+      "Tearing",
+      "Watery eyes"
+    ]
+  },
+  "HP:0010741": {
+    "label": "Pedal edema",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Dependant edema",
+      "Edema of the lower limbs",
+      "Leg edema",
+      "Peripheral edema of lower extremity",
+      "Dependant oedema",
+      "Fluid accumulation in lower limbs",
+      "Leg oedema",
+      "Lower leg swelling",
+      "Oedema of the lower limbs",
+      "Pedal oedema",
+      "Peripheral oedema of lower extremity"
+    ]
+  },
+  "HP:0010783": {
+    "label": "Erythema",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Redness of skin or mucous membrane"
+    ]
+  },
+  "HP:0011037": {
+    "label": "Decreased urine output",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0011097": {
+    "label": "Epileptic spasm",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Salaam convulsion",
+      "Salaam seizure",
+      "West syndrome",
+      "Epileptic spasms",
+      "Salaam convulsions",
+      "Salaam seizures"
+    ]
+  },
+  "HP:0011104": {
+    "label": "Abnormality of blood volume homeostasis",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0011105": {
+    "label": "Hypervolemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Fluid overload in blood"
+    ]
+  },
+  "HP:0011123": {
+    "label": "Inflammatory abnormality of the skin",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormal tendency to infections of the skin",
+      "Inflammatory skin disease",
+      "Inflammatory abnormality of the skin",
+      "Skin inflammation"
+    ]
+  },
+  "HP:0011355": {
+    "label": "Localized skin lesion",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Localised skin lesion",
+      "Localized skin lesion"
+    ]
+  },
+  "HP:0011442": {
+    "label": "Abnormal central motor function",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormality of central motor function"
+    ]
+  },
+  "HP:0011499": {
+    "label": "Mydriasis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Dilated pupil"
+    ]
+  },
+  "HP:0011675": {
+    "label": "Arrhythmia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Arrhythmias",
+      "Cardiac arrhythmia",
+      "Cardiac arrhythmias",
+      "Cardiac rhythm disturbances",
+      "Abnormal heart rate",
+      "Heart rhythm disorders",
+      "Irregular heart beat",
+      "Irregular heartbeat"
+    ]
+  },
+  "HP:0011804": {
+    "label": "Abnormal muscle physiology",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormality of muscle physiology",
+      "Issue with muscle function"
+    ]
+  },
+  "HP:0011849": {
+    "label": "Abnormal bone ossification",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormal bone maturation"
+    ]
+  },
+  "HP:0011980": {
+    "label": "Cholesterol gallstones",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0011999": {
+    "label": "Paranoia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Paranoia"
+    ]
+  },
+  "HP:0012072": {
+    "label": "Aciduria",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Acidic urine"
+    ]
+  },
+  "HP:0012154": {
+    "label": "Anhedonia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Anhedonic",
+      "Diminished pleasure response",
+      "Inability to experience pleasure",
+      "Loss of enjoyment",
+      "Loss of interest in pleasurable activities",
+      "Reduced pleasure response",
+      "Diminished capacity for joy",
+      "Loss of ability to enjoy things"
+    ]
+  },
+  "HP:0012192": {
+    "label": "Cutaneous T-cell lymphoma",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0012378": {
+    "label": "Fatigue",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Fatigue",
+      "Tired",
+      "Tiredness"
+    ]
+  },
+  "HP:0012393": {
+    "label": "Allergy",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Allergy"
+    ]
+  },
+  "HP:0012418": {
+    "label": "Hypoxemia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Hypoxia",
+      "Low blood oxygen level"
+    ]
+  },
+  "HP:0012423": {
+    "label": "Colonic inertia",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0012465": {
+    "label": "Elevated hepatic iron concentration",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Increased iron concentration in liver",
+      "Increased liver iron level"
+    ]
+  },
+  "HP:0012469": {
+    "label": "Infantile spasms",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0012514": {
+    "label": "Lower limb pain",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Leg pain",
+      "Lower limb pain"
+    ]
+  },
+  "HP:0012531": {
+    "label": "Pain",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Pain"
+    ]
+  },
+  "HP:0012534": {
+    "label": "Dysesthesia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Dysaesthesia",
+      "Hyperalgesia",
+      "Hyperpathia",
+      "Dysesthesias"
+    ]
+  },
+  "HP:0012535": {
+    "label": "Abnormal synaptic transmission",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormality of neurotransmitter metabolism"
+    ]
+  },
+  "HP:0012735": {
+    "label": "Cough",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Cough",
+      "Coughing"
+    ]
+  },
+  "HP:0020060": {
+    "label": "Decreased red blood cell count",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Decreased RBC count"
+    ]
+  },
+  "HP:0020174": {
+    "label": "Refractory drug response",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Drug resistance"
+    ]
+  },
+  "HP:0020219": {
+    "label": "Motor seizure",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0025095": {
+    "label": "Sneeze",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0025249": {
+    "label": "Comedo",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0025300": {
+    "label": "Malar rash",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Butterfly rash",
+      "Cheekbone rash"
+    ]
+  },
+  "HP:0025428": {
+    "detail": "OLS4 reports is_obsolete",
+    "label": "obsolete Bronchospasm",
+    "source": "ols4:hp",
+    "status": "obsolete"
+  },
+  "HP:0025464": {
+    "label": "Increased reactive oxygen species production",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Oxidative stress",
+      "Increased ROS production"
+    ]
+  },
+  "HP:0025637": {
+    "label": "Vasospasm",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Angiospasm",
+      "Blood vessel spasm",
+      "Vascular spasm"
+    ]
+  },
+  "HP:0030016": {
+    "label": "Dyspareunia",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0030088": {
+    "label": "Increased serum testosterone level",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "High serum testosterone level",
+      "High serum testosterone levels",
+      "Increased serum testosterone levels",
+      "Increased testosterone"
+    ]
+  },
+  "HP:0030126": {
+    "label": "Abnormal endometrium morphology",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormality of the endometrium"
+    ]
+  },
+  "HP:0030213": {
+    "label": "Emotional dearth",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Blunted affect",
+      "Diminished emotional response",
+      "Emotional Detachment",
+      "Emotional blunting",
+      "Emotional numbness",
+      "Flat Affect",
+      "Restricted Affect",
+      "Restricted affect",
+      "Emotional poverty",
+      "Emotionally barren",
+      "Unable to feel emotion"
+    ]
+  },
+  "HP:0030683": {
+    "label": "Recurrent bacterial vaginosis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Vaginitis",
+      "Vulvovaginitis"
+    ]
+  },
+  "HP:0030828": {
+    "label": "Wheezing",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Wheezing"
+    ]
+  },
+  "HP:0030858": {
+    "label": "Addictive behavior",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Addictive behaviour"
+    ]
+  },
+  "HP:0030895": {
+    "label": "Abnormal gastrointestinal motility",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormal GI motility"
+    ]
+  },
+  "HP:0030900": {
+    "label": "Pruritus on foot",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Itchy feet",
+      "Itchy foot"
+    ]
+  },
+  "HP:0031088": {
+    "label": "Vaginal dryness",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0031245": {
+    "label": "Productive cough",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Cough with mucus production",
+      "Wet cough"
+    ]
+  },
+  "HP:0031284": {
+    "label": "Flushing",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0031377": {
+    "label": "Abnormal cell proliferation",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0031378": {
+    "label": "Abnormal lymphocyte proliferation",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0031379": {
+    "label": "Abnormal T cell proliferation",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Defective T cell proliferation"
+    ]
+  },
+  "HP:0031417": {
+    "label": "Rhinorrhea",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Nasal Discharge",
+      "Runny Nose"
+    ]
+  },
+  "HP:0031546": {
+    "label": "Cardiac conduction abnormality",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormality of cardiac conduction system",
+      "Abnormality of cardiac conduction",
+      "Cardiac conduction abnormalities",
+      "Cardiac conduction defects",
+      "Heart conduction disorder"
+    ]
+  },
+  "HP:0031602": {
+    "label": "Abnormal mucociliary clearance",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormal mucociliary transport"
+    ]
+  },
+  "HP:0031678": {
+    "label": "Atherosclerotic lesion",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0031826": {
+    "label": "Abnormal reflex",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0031860": {
+    "label": "Abnormal heart rate variability",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0032152": {
+    "label": "Keratosis pilaris",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Carpet tack sign",
+      "Follicular keratosis",
+      "Follicular keratotic plug",
+      "Follicular plugging",
+      "Hyperkeratosis pilaris",
+      "Lichen pilaris",
+      "Chicken skin"
+    ]
+  },
+  "HP:0032155": {
+    "label": "Abdominal cramps",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0032262": {
+    "label": "Pulmonary tuberculosis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Pulmonary TB"
+    ]
+  },
+  "HP:0032263": {
+    "label": "Increased blood pressure",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Increased BP"
+    ]
+  },
+  "HP:0032792": {
+    "label": "Tonic seizure",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0032843": {
+    "label": "Focal-onset epileptic spasm",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Focal onset epileptic spasm"
+    ]
+  },
+  "HP:0033050": {
+    "label": "Pharyngalgia",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Pharyngodynia",
+      "Sore throat",
+      "Throat discomfort",
+      "Throat pain"
+    ]
+  },
+  "HP:0033067": {
+    "label": "Cystine crystalluria",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0033341": {
+    "label": "Elevated circulating sitosterol concentration",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Elevated circulating beta-sitosterol concentration"
+    ]
+  },
+  "HP:0033400": {
+    "label": "Acute abdomen",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Acute abdominal pain"
+    ]
+  },
+  "HP:0033401": {
+    "label": "Tissue ischemia",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0033511": {
+    "label": "Addictive substance use",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Addictive drug use",
+      "Drug addiction"
+    ]
+  },
+  "HP:0033515": {
+    "label": "Addictive opioid use",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Opioid addiction",
+      "Opioid dependence"
+    ]
+  },
+  "HP:0033532": {
+    "label": "Decreased cardiac output",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0033533": {
+    "label": "Increased cardiac output",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0033540": {
+    "label": "Reversible airflow obstruction",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Reversible pulmonary obstruction"
+    ]
+  },
+  "HP:0033631": {
+    "label": "Spondylitis",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0040189": {
+    "label": "Scaling skin",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Desquamation",
+      "Exfoliation",
+      "Scaling skin",
+      "Scaly skin",
+      "flaking skin",
+      "peeling skin"
+    ]
+  },
+  "HP:0046504": {
+    "label": "Decreased libido",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0100022": {
+    "label": "Abnormality of movement",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormality of movement",
+      "Movement disorder",
+      "Unusual movement"
+    ]
+  },
+  "HP:0100033": {
+    "label": "Tics",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Tic disorder"
+    ]
+  },
+  "HP:0100261": {
+    "label": "Abnormal tendon morphology",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormality of the sinew",
+      "Abnormal shape of tendon"
+    ]
+  },
+  "HP:0100326": {
+    "label": "Immunologic hypersensitivity",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0100497": {
+    "label": "Decreased circulating vitamin B3 concentration",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Decreased blood concentration of nicotinic acid or nicotinamide",
+      "Vitamin B3 deficiency"
+    ]
+  },
+  "HP:0100504": {
+    "label": "Decreased circulating vitamin B2 concentration",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Low levels of vitamin B2",
+      "Riboflavin deficiency",
+      "Vitamin B2 deficiency"
+    ]
+  },
+  "HP:0100515": {
+    "label": "Pollakisuria",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Constant urination",
+      "Frequent urination"
+    ]
+  },
+  "HP:0100529": {
+    "label": "Abnormal circulating phosphate ion concentration",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormal blood phosphate concentration",
+      "Abnormal phosphate ion level",
+      "Abnormality of phosphate homeostasis"
+    ]
+  },
+  "HP:0100533": {
+    "label": "Inflammatory abnormality of the eye",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Ocular inflammation",
+      "Inflammatory abnormality of the eye"
+    ]
+  },
+  "HP:0100543": {
+    "label": "Cognitive impairment",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormality of cognition",
+      "Cognitive abnormality",
+      "Cognitive defects",
+      "Cognitive deficits",
+      "Cognitive impairment",
+      "Intellectual impairment"
+    ]
+  },
+  "HP:0100570": {
+    "label": "Carcinoid tumor",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Carcinoid",
+      "Carcinoid tumors",
+      "Carcinoid tumour",
+      "Carcinoid tumours"
+    ]
+  },
+  "HP:0100577": {
+    "label": "Urinary bladder inflammation",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Cystitis of the urinary bladder",
+      "Urinary bladder inflammation"
+    ]
+  },
+  "HP:0100639": {
+    "label": "Erectile dysfunction",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormal erection",
+      "Erectile abnormalities"
+    ]
+  },
+  "HP:0100699": {
+    "label": "Scarring",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Scar tissue",
+      "Scarring"
+    ]
+  },
+  "HP:0100738": {
+    "label": "Abnormal eating behavior",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormal eating behavior",
+      "Abnormal eating behaviour"
+    ]
+  },
+  "HP:0100742": {
+    "label": "Vascular neoplasm",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Blood vessel tumor",
+      "Blood vessel tumour"
+    ]
+  },
+  "HP:0100749": {
+    "label": "Chest pain",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Chest discomfort",
+      "Thoracic pain",
+      "Chest pain"
+    ]
+  },
+  "HP:0100753": {
+    "label": "Schizophrenia",
+    "source": "ols4:hp",
+    "status": "exists"
+  },
+  "HP:0100754": {
+    "label": "Mania",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Hypomania",
+      "Hypomanic",
+      "Manic"
+    ]
+  },
+  "HP:0100770": {
+    "label": "Hyperperistalsis",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Stomach churning"
+    ]
+  },
+  "HP:0100773": {
+    "label": "Cartilage destruction",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Cartilage destruction"
+    ]
+  },
+  "HP:0100852": {
+    "label": "Abnormal fear-induced behavior",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Abnormal fear/anxiety-related behavior",
+      "Abnormal fear/anxiety-related behaviour"
+    ]
+  },
+  "HP:0500005": {
+    "label": "Anal pain",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Anorectal pain",
+      "Proctalgia",
+      "Anal pain",
+      "Rectal pain"
+    ]
+  },
+  "HP:4000007": {
+    "label": "Bronchoconstriction",
+    "source": "ols4:hp",
+    "status": "exists",
+    "synonyms": [
+      "Bronchial constriction",
+      "Bronchospasm",
+      "Constriction of the bronchi"
+    ]
+  }
+}

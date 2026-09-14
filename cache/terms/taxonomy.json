@@ -1,0 +1,1617 @@
+{
+  "taxonomy:100816": {
+    "label": "Madurella mycetomatis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Madurella ikedae",
+      "Streptothrix mycetomatis Laveran, 1902"
+    ]
+  },
+  "taxonomy:100942": {
+    "label": "Chrysops sp.",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:10239": {
+    "label": "Viruses",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Vira",
+      "Viridae",
+      "viruses"
+    ]
+  },
+  "taxonomy:10298": {
+    "label": "Human alphaherpesvirus 1",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "HSV-1",
+      "HSV1",
+      "Herpes simplex virus 1",
+      "Herpes simplex virus type 1",
+      "Human herpesvirus 1",
+      "Human herpesvirus type 1",
+      "herpes simplex virus 1 HSV-1",
+      "herpes simplex virus HSV-1",
+      "herpes simplex virus type 1 HSV-1",
+      "herpes simplex virus type 1 HSV1",
+      "herpes simplex virus type-1 HSV-1"
+    ]
+  },
+  "taxonomy:10299": {
+    "label": "Human alphaherpesvirus 1 strain 17",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Herpes simplex virus (type 1 / strain 17)"
+    ]
+  },
+  "taxonomy:10310": {
+    "label": "Human alphaherpesvirus 2",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "HSV2",
+      "Herpes simplex virus (type 2)",
+      "Herpes simplex virus 2",
+      "Herpes simplex virus II",
+      "Herpes simplex virus type 2 (HSV-2)",
+      "Herpes simplex virus type 2",
+      "Human herpesvirus 2",
+      "herpes simplex virus type 2 HSV-2"
+    ]
+  },
+  "taxonomy:10335": {
+    "label": "Human alphaherpesvirus 3",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "HHV-3",
+      "Human herpes virus 3",
+      "Human herpesvirus 3",
+      "VZV",
+      "Varicella Zoster Virus",
+      "Varicella-zoster virus",
+      "varicella zoster virus VZV",
+      "varicella-zoster virus VZV"
+    ]
+  },
+  "taxonomy:10358": {
+    "label": "Cytomegalovirus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:10359": {
+    "label": "Human betaherpesvirus 5",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "HHV-5",
+      "Human cytomegalovirus",
+      "Human herpesvirus 5",
+      "human herpesvirus type 5"
+    ]
+  },
+  "taxonomy:10407": {
+    "label": "Hepatitis B virus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "HBV",
+      "Human hepatitis B virus",
+      "hepatitis B virus (HBV)",
+      "hepatitis B virus HBV",
+      "hepatitis B virus, HBV",
+      "human hepatitis B virus HBV"
+    ]
+  },
+  "taxonomy:10566": {
+    "label": "Human papillomavirus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Human Papilloma Virus",
+      "human papillomavirus HPV"
+    ]
+  },
+  "taxonomy:11103": {
+    "source": "ols4:ncbitaxon",
+    "status": "absent"
+  },
+  "taxonomy:11309": {
+    "label": "unidentified influenza virus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Influenza virus sp.",
+      "Influenza virus",
+      "Influenzavirus",
+      "avian influenza virus"
+    ]
+  },
+  "taxonomy:11320": {
+    "label": "Influenza A virus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "FLUAV",
+      "Human Influenza A Virus",
+      "Influenza virus type A",
+      "influenza A virus"
+    ]
+  },
+  "taxonomy:11676": {
+    "label": "Human immunodeficiency virus 1",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "AIDS virus",
+      "HIV",
+      "HIV-1",
+      "HIV1",
+      "Human immunodeficiency virus type 1",
+      "LAV-1",
+      "human immunodeficiency virus 1 HIV-1",
+      "human immunodeficiency virus HIV-1",
+      "human immunodeficiency virus type 1 HIV 1",
+      "human immunodeficiency virus type 1 HIV-1",
+      "human immunodeficiency virus type 1 HIV1",
+      "human immunodeficiency virus type 1, HIV-1",
+      "human immunodeficiency virus type I HIV-1",
+      "human immunodeficiency virus type-1 HIV-1",
+      "human immunodeficiency virus-1 HIV-1"
+    ]
+  },
+  "taxonomy:12058": {
+    "label": "Picornaviridae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Picornavirus"
+    ]
+  },
+  "taxonomy:12059": {
+    "label": "Enterovirus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Enteroviruses"
+    ]
+  },
+  "taxonomy:1213463": {
+    "label": "Mycoplasmoides pneumoniae 19294",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Mycoplasma pneumoniae 19294"
+    ]
+  },
+  "taxonomy:121759": {
+    "label": "Paracoccidioides brasiliensis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Loboa loboi",
+      "Zymonema brasiliensis"
+    ]
+  },
+  "taxonomy:12721": {
+    "label": "Human immunodeficiency virus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "AIDS virus",
+      "HIV"
+    ]
+  },
+  "taxonomy:1279": {
+    "label": "Staphylococcus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Aurococcus"
+    ]
+  },
+  "taxonomy:1280": {
+    "label": "Staphylococcus aureus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Micrococcus aureus",
+      "Micrococcus pyogenes",
+      "Staphylococcus aureus subsp. anaerobius",
+      "Staphylococcus pyogenes aureus",
+      "Staphylococcus pyogenes citreus"
+    ]
+  },
+  "taxonomy:12814": {
+    "label": "Respiratory syncytial virus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "RSV",
+      "respiratory syncytial virus RS virus",
+      "respiratory syncytial virus RS",
+      "respiratory syncytial virus RSV"
+    ]
+  },
+  "taxonomy:1301": {
+    "label": "Streptococcus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Okadaella"
+    ]
+  },
+  "taxonomy:1311": {
+    "label": "Streptococcus agalactiae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Streptoccocus de la mammite",
+      "Streptococcus agalactiae contagiosae",
+      "Streptococcus difficile",
+      "Streptococcus difficilis",
+      "Streptococcus mastitidis"
+    ]
+  },
+  "taxonomy:1313": {
+    "label": "Streptococcus pneumoniae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Diplococcus pneumoniae",
+      "Micrococcus pneumoniae"
+    ]
+  },
+  "taxonomy:1314": {
+    "label": "Streptococcus pyogenes",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Micrococcus scarlatinae",
+      "Streptococcus erysipelatos",
+      "Streptococcus hemolyticus",
+      "Streptococcus scarlatinae"
+    ]
+  },
+  "taxonomy:138": {
+    "label": "Borrelia",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Relapsing Fever Borrelia"
+    ]
+  },
+  "taxonomy:139": {
+    "label": "Borreliella burgdorferi",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Borrelia burgdorferi Johnson et al. 1984",
+      "Borreliella burgdorferi (Johnson et al. 1984) Adeolu and Gupta 2015",
+      "Lyme disease spirochete"
+    ]
+  },
+  "taxonomy:1392": {
+    "label": "Bacillus anthracis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus cereus var. anthracis",
+      "Bacteridium anthracis",
+      "anthrax bacterium"
+    ]
+  },
+  "taxonomy:1485": {
+    "label": "Clostridium",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Anaerobacter Duda et al. 1996",
+      "Anaerobacter"
+    ]
+  },
+  "taxonomy:1491": {
+    "label": "Clostridium botulinum",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus botulinus",
+      "Bacillus putrificus",
+      "Botulobacillus botulinus",
+      "Clostridium botulinum subsp. botulinum",
+      "Clostridium putrificum",
+      "Ermengemillus botulinus",
+      "Pacinia putrifica"
+    ]
+  },
+  "taxonomy:1496": {
+    "label": "Clostridioides difficile",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Clostridium difficile (Hall and O'Toole 1935) Prevot 1938 (Approved Lists 1980)",
+      "Peptoclostridium difficile"
+    ]
+  },
+  "taxonomy:1513": {
+    "label": "Clostridium tetani",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus tetani"
+    ]
+  },
+  "taxonomy:1535326": {
+    "source": "ols4:ncbitaxon",
+    "status": "absent"
+  },
+  "taxonomy:157": {
+    "label": "Treponema",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Microspironema",
+      "\"Spironema\" Vuillemin 1905"
+    ]
+  },
+  "taxonomy:160": {
+    "label": "Treponema pallidum",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Microspironema pallidum",
+      "Spirillum pallidum",
+      "Spirochaeta pallida",
+      "Spironema pallidum",
+      "Treponema pallidum (Schaudinn and Hoffmann 1905) Schaudinn 1905 (Approved Lists 1980)"
+    ]
+  },
+  "taxonomy:1637": {
+    "label": "Listeria",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Listerella"
+    ]
+  },
+  "taxonomy:1639": {
+    "label": "Listeria monocytogenes",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacterium monocytogenes hominis",
+      "Bacterium monocytogenes",
+      "Corynebacterium infantisepticum",
+      "Corynebacterium parvulum",
+      "Erysipelothrix monocytogenes",
+      "Listerella hepatolytica"
+    ]
+  },
+  "taxonomy:1648": {
+    "label": "Erysipelothrix rhusiopathiae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus insidiosus",
+      "Bacillus rhusiopathiae suis",
+      "Bacterium rhusiopathiae",
+      "Erysipelothrix erysipeloides",
+      "Erysipelothrix insidiosa",
+      "Erysipelothrix murisepticus",
+      "Erysipelothrix porci"
+    ]
+  },
+  "taxonomy:1654": {
+    "label": "Actinomyces",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Actinocladothrix",
+      "Discomyces"
+    ]
+  },
+  "taxonomy:1717": {
+    "label": "Corynebacterium diphtheriae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus diphtheriae",
+      "Bacterium diphtheriae",
+      "Microsporon diphthericum",
+      "Microsporon diphtheriticum",
+      "Mycobacterium diphtheriae",
+      "Pacinia loeffleri"
+    ]
+  },
+  "taxonomy:1747": {
+    "label": "Cutibacterium acnes",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus acnes",
+      "Corynebacterium acnes",
+      "Cutibacterium acnes (Gilchrist 1900) Scholz and Kilian 2016",
+      "Propionibacterium acnes"
+    ]
+  },
+  "taxonomy:1763": {
+    "label": "Mycobacterium",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Mycobacterium Lehmann and Neumann 1896 (Approved Lists 1980)"
+    ]
+  },
+  "taxonomy:1769": {
+    "label": "Mycobacterium leprae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus leprae"
+    ]
+  },
+  "taxonomy:1773": {
+    "label": "Mycobacterium tuberculosis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus tuberculosis",
+      "Bacterium tuberculosis",
+      "Mycobacterium tuberculosis (Zopf 1883) Lehmann and Neumann 1896 (Approved Lists 1980)",
+      "Mycobacterium tuberculosis typus humanus",
+      "Mycobacterium tuberculosis var. hominis"
+    ]
+  },
+  "taxonomy:1817": {
+    "label": "Nocardia",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Micropolyspora"
+    ]
+  },
+  "taxonomy:1824": {
+    "label": "Nocardia asteroides",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Actinomyces asteroides",
+      "Actinomyces eppinger",
+      "Actinomyces eppingeri",
+      "Asteroides asteroides",
+      "Cladothrix asteroides",
+      "Discomyces asteroides",
+      "Oospora asteroides",
+      "Proactinomyces asteroides",
+      "Streptothrix eppingerii",
+      "Streptotrix asteroides"
+    ]
+  },
+  "taxonomy:1872": {
+    "label": "Actinoplanes sp. ATCC 31351",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Actinoplanes ATCC31351",
+      "Ampullariella ATCC31351",
+      "Ampullariella sp. (ATCC 31351)",
+      "Ampullariella sp. (strain 3876)"
+    ]
+  },
+  "taxonomy:2": {
+    "label": "Bacteria",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacteria (ex Cavalier-Smith 1987)",
+      "Bacteria Woese et al. 2024",
+      "Bacteriobiota",
+      "Monera",
+      "Procaryotae",
+      "Prokaryota",
+      "Prokaryotae",
+      "bacteria",
+      "bacteria",
+      "eubacteria",
+      "prokaryote",
+      "prokaryotes"
+    ]
+  },
+  "taxonomy:2097": {
+    "label": "Mycoplasmoides genitalium",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Mycoplasma genitalium"
+    ]
+  },
+  "taxonomy:210": {
+    "label": "Helicobacter pylori",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Campylobacter pylori subsp. pylori",
+      "Campylobacter pylori",
+      "Campylobacter pyloridis",
+      "Helicobacter nemestrinae"
+    ]
+  },
+  "taxonomy:2104": {
+    "label": "Mycoplasmoides pneumoniae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Filterable agent of primary atypical pneumonia",
+      "Schizoplasma pneumoniae"
+    ]
+  },
+  "taxonomy:229219": {
+    "label": "Blastomyces",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Emmonsia"
+    ]
+  },
+  "taxonomy:234": {
+    "label": "Brucella",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:237561": {
+    "label": "Candida albicans SC5314",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:263": {
+    "label": "Francisella tularensis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacterium tularense",
+      "Brucella tularensis",
+      "Francisella tularense",
+      "Pasteurella tularensis"
+    ]
+  },
+  "taxonomy:28131": {
+    "label": "Prevotella intermedia",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacteroides intermedius",
+      "Bacteroides melaninogenicus subsp. intermedius"
+    ]
+  },
+  "taxonomy:287": {
+    "label": "Pseudomonas aeruginosa",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus aeruginosus",
+      "Bacillus pyocyaneus",
+      "Bacterium aeruginosum",
+      "Bacterium pyocyaneum",
+      "Micrococcus pyocyaneus",
+      "Pseudomonas aeruginosa (Schroeter 1872) Migula 1900 (Approved Lists 1980)",
+      "Pseudomonas polycolor",
+      "Pseudomonas pyocyanea",
+      "probable synonym or variety: \"Pseudomonas polycolor\" Clara 1930"
+    ]
+  },
+  "taxonomy:29459": {
+    "label": "Brucella melitensis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Brucella melitensis (Hughes 1893) Meyer and Shaw 1920 (Approved Lists 1980)",
+      "Micrococcus melitensis"
+    ]
+  },
+  "taxonomy:33040": {
+    "label": "Streptococcus milleri",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "'Streptococcus milleri'"
+    ]
+  },
+  "taxonomy:33278": {
+    "label": "Ancylostomatidae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:333922": {
+    "label": "Betapapillomavirus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:34105": {
+    "label": "Streptobacillus moniliformis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Actinomyces muris ratti",
+      "Actinomyces muris",
+      "Asterococcus muris",
+      "Haverhillia moniliformis",
+      "Haverhillia multiformis",
+      "Nocardia muris",
+      "Proactinomyces muris",
+      "Streptothrix muris ratti",
+      "\"Actinobacillus muris\" (de Mello and Pais 1918) Wilson and Miles 1955"
+    ]
+  },
+  "taxonomy:34384": {
+    "label": "Arthrodermataceae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Arthrodermataceae anamorphs",
+      "anamorphic Arthrodermataceae",
+      "dermatophytes"
+    ]
+  },
+  "taxonomy:36087": {
+    "label": "Trichuris trichiura",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Ascaris trichiura",
+      "human whipworm"
+    ]
+  },
+  "taxonomy:37296": {
+    "label": "Human gammaherpesvirus 8",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "HHV8",
+      "Human herpesvirus 8 type P",
+      "Human herpesvirus 8",
+      "KSHV",
+      "Kaposi's sarcoma herpesvirus",
+      "Kaposi's sarcoma-associated herpes-like virus",
+      "Kaposi's sarcoma-associated herpesvirus - Human herpesvirus 8",
+      "Kaposi's sarcoma-associated herpesvirus"
+    ]
+  },
+  "taxonomy:380985": {
+    "label": "Influenza A virus (A/Chile/1/1983(H1N1))",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Influenza A virus (A/Chile/1/83/(H1N1))",
+      "Influenza A virus (STRAIN A/CHILE/1/83)"
+    ]
+  },
+  "taxonomy:38301": {
+    "label": "Corynebacterium minutissimum",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:384509": {
+    "label": "Influenza A virus (A/tern/Australia/G70C/1975(H11N9))",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Influenza A virus (A/tern/Austalia/G70C/1975(H11N9))",
+      "Influenza A virus (A/tern/Australia/G70C/75(H11N9))",
+      "Influenza A virus (STRAIN A/TERN/AUSTRALIA/G70C/75)"
+    ]
+  },
+  "taxonomy:39824": {
+    "label": "Klebsiella granulomatis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Calymmatobacterium granulomatis",
+      "Donovania granulomatis",
+      "Encapsulatus inguinalis"
+    ]
+  },
+  "taxonomy:39831": {
+    "label": "Klebsiella pneumoniae subsp. rhinoscleromatis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacterium rhinoscleromatis",
+      "Klebsiella rhinoscleromatis"
+    ]
+  },
+  "taxonomy:40355": {
+    "label": "Fonsecaea pedrosoi",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Acrotheca pedrosoi",
+      "Carrionia pedrosoi",
+      "Gomphinaria pedrosoi",
+      "Hormodendroides pedrosoi",
+      "Hormodendrum pedrosoi",
+      "Phialophora pedrosoi",
+      "Rhinocladiella pedrosoi",
+      "Trichosporum pedrosianum",
+      "Trichosporum pedrosoi"
+    ]
+  },
+  "taxonomy:4751": {
+    "label": "Fungi",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Mycota",
+      "fungi"
+    ]
+  },
+  "taxonomy:480": {
+    "label": "Moraxella catarrhalis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Branhamella catarrhalis",
+      "Mikrokkokus catarrhalis",
+      "Moraxella (subgen. Branhamella Catlin 1970) catarrhalis (Frosch and Kolle 1896) Bovre 1984"
+    ]
+  },
+  "taxonomy:480418": {
+    "label": "Mycobacterium lepromatosis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:4827": {
+    "label": "Mucorales",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "pin molds"
+    ]
+  },
+  "taxonomy:485": {
+    "label": "Neisseria gonorrhoeae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Diplococcus gonorrhoeae",
+      "Gonococcus neisseri",
+      "Merismopedia gonorrhoeae",
+      "Micrococcus der gonorrhoe",
+      "Micrococcus gonococcus",
+      "Micrococcus gonorrhoeae"
+    ]
+  },
+  "taxonomy:487": {
+    "label": "Neisseria meningitidis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Diplokokkus intracellularis meningitidis",
+      "Micrococcus intracellularis",
+      "Micrococcus meningitidis cerebrospinalis",
+      "Micrococcus meningitidis",
+      "Neisseria weichselbaumii"
+    ]
+  },
+  "taxonomy:5036": {
+    "label": "Histoplasma",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Emmonsiella"
+    ]
+  },
+  "taxonomy:5037": {
+    "label": "Histoplasma capsulatum",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Ajellomyces capsulatus (Kwon-Chung) McGinnis & Katz, 1979",
+      "Cryptococcus capsulatus",
+      "Emmonsiella capsulata"
+    ]
+  },
+  "taxonomy:5039": {
+    "label": "Blastomyces dermatitidis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Ajellomyces dermatitidis",
+      "Blastomycoides dermatitidis"
+    ]
+  },
+  "taxonomy:5052": {
+    "label": "Aspergillus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Chaetosartorya",
+      "Dichotomomyces",
+      "Emericella",
+      "Petromyces",
+      "Phialosimplex",
+      "Polypaecilum",
+      "Warcupiella"
+    ]
+  },
+  "taxonomy:5059": {
+    "label": "Aspergillus flavus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Aspergillus flavus var. parvisclerotigenus",
+      "Aspergillus parvisclerotigenus",
+      "Petromyces flavus"
+    ]
+  },
+  "taxonomy:51022": {
+    "label": "Ancylostoma duodenale",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Agchylostoma duodenale"
+    ]
+  },
+  "taxonomy:51028": {
+    "label": "Enterobius vermicularis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Ascaris vermicularis",
+      "human pinworm"
+    ]
+  },
+  "taxonomy:520": {
+    "label": "Bordetella pertussis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacterium tussis-convulsivae",
+      "Haemophilus pertussis",
+      "Hemophilus pertussis",
+      "Microbe de la coqueluche"
+    ]
+  },
+  "taxonomy:5206": {
+    "label": "Cryptococcus <basidiomycete fungi>",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Cryptococcus",
+      "Filobasidiella"
+    ]
+  },
+  "taxonomy:52283": {
+    "label": "Sarcoptes scabiei",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Sarcoptes scabiei type canis",
+      "Sarcoptes scabiei type chimp",
+      "Sarcoptes scabiei type hominis",
+      "Sarcoptes scabiei type suis",
+      "Sarcoptes scabiei type wallaby",
+      "Sarcoptes scabiei type wombati",
+      "Sarcoptes scabiei var. canis",
+      "Sarcoptes scabiei var. chimp",
+      "Sarcoptes scabiei var. hominis",
+      "Sarcoptes scabiei var. nyctereutis",
+      "Sarcoptes scabiei var. suis",
+      "Sarcoptes scabiei var. wallaby",
+      "Sarcoptes scabiei var. wombati"
+    ]
+  },
+  "taxonomy:53436": {
+    "label": "Treponema pallidum subsp. endemicum",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Treponema pallidum endemicum"
+    ]
+  },
+  "taxonomy:543": {
+    "label": "Enterobacteriaceae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Enterobacteraceae",
+      "enterobacteria",
+      "enterobacteria",
+      "gamma-3 proteobacteria"
+    ]
+  },
+  "taxonomy:5475": {
+    "label": "Candida",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Torulopsis"
+    ]
+  },
+  "taxonomy:5476": {
+    "label": "Candida albicans",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Candida albicans var. stellatoidea",
+      "Candida stellatoidea",
+      "Dematium albicans",
+      "Endomyces albicans",
+      "Monilia albicans",
+      "Monilia stellatoidea",
+      "Myceloblastanon albicans",
+      "Mycotorula albicans",
+      "Oidium albicans",
+      "Parasaccharomyces albicans",
+      "Procandida albicans",
+      "Procandida stellatoidea",
+      "Saccharomyces albicans",
+      "Syringospora albicans"
+    ]
+  },
+  "taxonomy:550": {
+    "label": "Enterobacter cloacae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Aerobacter cloacae",
+      "Bacillus cloacae",
+      "Bacterium cloacae",
+      "Cloaca cloacae"
+    ]
+  },
+  "taxonomy:5500": {
+    "label": "Coccidioides",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:5501": {
+    "label": "Coccidioides immitis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:5506": {
+    "label": "Fusarium",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Albonectria",
+      "Bisifusarium",
+      "Cyanonectria",
+      "Fusarium sect. Setofusarium",
+      "Fusisporium",
+      "Geejayessia",
+      "Gibberella",
+      "Haematonectria",
+      "Luteonectria",
+      "Neocosmospora",
+      "Nothofusarium",
+      "Rectifusarium",
+      "Setofusarium"
+    ]
+  },
+  "taxonomy:5519": {
+    "source": "ols4:ncbitaxon",
+    "status": "absent"
+  },
+  "taxonomy:55193": {
+    "label": "Malassezia",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:55194": {
+    "label": "Malassezia furfur",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Microsporum furfur",
+      "Pityriasis (Tinea) versicolor infection agent",
+      "Pityrosporum orbiculare",
+      "Pityrosporum ovale",
+      "Saccharomyces ovalis"
+    ]
+  },
+  "taxonomy:5550": {
+    "label": "Trichophyton",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bodinia",
+      "Grubyella"
+    ]
+  },
+  "taxonomy:5551": {
+    "label": "Trichophyton rubrum",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Epidermophyton rubrum",
+      "Microsporum rubrum",
+      "Sabouraudites ruber (Cazalbou) Nann., 1934",
+      "Sabouraudites ruber",
+      "Trichophyton fischeri",
+      "Trichophyton kanei",
+      "Trichophyton megninii",
+      "Trichophyton raubitschekii",
+      "Trichophyton rubrum var. raubitschekii"
+    ]
+  },
+  "taxonomy:562": {
+    "label": "Escherichia coli",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus coli",
+      "Bacterium coli commune",
+      "Bacterium coli",
+      "E. coli",
+      "Enterococcus coli",
+      "Escherichia/Shigella coli"
+    ]
+  },
+  "taxonomy:5658": {
+    "label": "Leishmania <genus>",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Leishmania"
+    ]
+  },
+  "taxonomy:5661": {
+    "label": "Leishmania donovani",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Leishmania (Leishmania) donovani"
+    ]
+  },
+  "taxonomy:5691": {
+    "label": "Trypanosoma brucei",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Trypanosoma (Trypanozoon) brucei",
+      "Trypanosoma brucei subgroup"
+    ]
+  },
+  "taxonomy:5693": {
+    "label": "Trypanosoma cruzi",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:570": {
+    "label": "Klebsiella",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Calymmatobacterium",
+      "Donovania",
+      "Hyalococcus",
+      "Raoultella"
+    ]
+  },
+  "taxonomy:5721": {
+    "label": "Trichomonas",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:5722": {
+    "label": "Trichomonas vaginalis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Tritrichomonas vaginalis"
+    ]
+  },
+  "taxonomy:573": {
+    "label": "Klebsiella pneumoniae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "'Klebsiella aerogenes' (Kruse) Taylor et al. 1956",
+      "Bacillus pneumoniae",
+      "Bacterium pneumoniae crouposae",
+      "Hyalococcus pneumoniae",
+      "Klebsiella pneumoniae aerogenes"
+    ]
+  },
+  "taxonomy:5741": {
+    "label": "Giardia duodenalis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Giardia intestinalis",
+      "Giardia lamblia",
+      "Lamblia intestinalis"
+    ]
+  },
+  "taxonomy:5754": {
+    "label": "Acanthamoeba",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:5759": {
+    "label": "Entamoeba histolytica",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:5806": {
+    "label": "Cryptosporidium",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:5811": {
+    "label": "Toxoplasma gondii",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Leishmania gondii"
+    ]
+  },
+  "taxonomy:5820": {
+    "label": "Plasmodium <genus>",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Plasmodium (Plasmodium)",
+      "Plasmodium",
+      "Saurocytozoon"
+    ]
+  },
+  "taxonomy:5833": {
+    "label": "Plasmodium falciparum",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Plasmodium (Laverania) falciparum",
+      "malaria parasite P. falciparum"
+    ]
+  },
+  "taxonomy:5839": {
+    "label": "Plasmodium falciparum K1",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Plasmodium falciparum (isolate K1 / Thailand)",
+      "Plasmodium falciparum K1/Thailand"
+    ]
+  },
+  "taxonomy:5855": {
+    "label": "Plasmodium vivax",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Haemamoeba vivax",
+      "malaria parasite P. vivax"
+    ]
+  },
+  "taxonomy:590": {
+    "label": "Salmonella",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:59201": {
+    "label": "Salmonella enterica subsp. enterica",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Salmonella cholerae-suis subsp. cholerae-suis",
+      "Salmonella choleraesuis subsp. choleraesuis",
+      "Salmonella enterica I",
+      "Salmonella enterica subsp. I",
+      "Salmonella enterica subsp. Subsp. I",
+      "Salmonella enterica subsp. Subsp. Ixxx"
+    ]
+  },
+  "taxonomy:613": {
+    "label": "Serratia <enterobacteria>",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Serratia"
+    ]
+  },
+  "taxonomy:615": {
+    "label": "Serratia marcescens",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus marcescens",
+      "Serratia marcescens subsp. marcescens",
+      "Serratia marcescens subsp. sakuensis"
+    ]
+  },
+  "taxonomy:6181": {
+    "label": "Schistosoma",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:6183": {
+    "label": "Schistosoma mansoni",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:6198": {
+    "label": "Opisthorchis viverrini",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Distomum viverrini",
+      "Southeast Asian liver fluke"
+    ]
+  },
+  "taxonomy:620": {
+    "label": "Shigella",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:6204": {
+    "label": "Taenia solium",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Cysticercus cellulosae",
+      "Taenia cellulosae",
+      "pig tapeworm",
+      "pork tapeworm"
+    ]
+  },
+  "taxonomy:6210": {
+    "label": "Echinococcus granulosus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Echinococcus granulosus G1 strain",
+      "Echinococcus granulosus G2 strain",
+      "Echinococcus granulosus G3 strain",
+      "Echinococcus granulosus Tasmanian sheep strain",
+      "Echinococcus granulosus buffalo strain",
+      "Echinococcus granulosus s. s.",
+      "Echinococcus granulosus sensu stricto",
+      "Echinococcus granulosus sheep strain"
+    ]
+  },
+  "taxonomy:622": {
+    "label": "Shigella dysenteriae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus dysenteriae",
+      "Bacillus dysentericus",
+      "Bacillus shigae",
+      "Eberthella dysenteriae",
+      "Escherichia/Shigella dysenteriae",
+      "Shigella shigae"
+    ]
+  },
+  "taxonomy:623": {
+    "label": "Shigella flexneri",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Escherichia flexneri",
+      "Escherichia/Shigella flexneri",
+      "Shigella paradysenteriae"
+    ]
+  },
+  "taxonomy:624": {
+    "label": "Shigella sonnei",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacterium sonnei"
+    ]
+  },
+  "taxonomy:6247": {
+    "label": "Strongyloides",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:6248": {
+    "label": "Strongyloides stercoralis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Anguillula stercoralis"
+    ]
+  },
+  "taxonomy:6252": {
+    "label": "Ascaris lumbricoides",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "common roundworm"
+    ]
+  },
+  "taxonomy:6265": {
+    "label": "Toxocara canis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "dog roundworm"
+    ]
+  },
+  "taxonomy:6282": {
+    "label": "Onchocerca volvulus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:6293": {
+    "label": "Wuchereria bancrofti",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Filaria bancrofti",
+      "agent of lymphatic filariasis"
+    ]
+  },
+  "taxonomy:632": {
+    "label": "Yersinia pestis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus pestis",
+      "Pasteurella pestis",
+      "Pestisella pestis",
+      "Yersinia pestis (Lehmann and Neumann 1896) van Loghem 1944 (Approved Lists 1980), nom. cons.",
+      "Yersinia pseudotuberculosis subsp. pestis"
+    ]
+  },
+  "taxonomy:6333": {
+    "label": "Trichinella",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:6334": {
+    "label": "Trichinella spiralis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Trichina spiralis"
+    ]
+  },
+  "taxonomy:63746": {
+    "label": "Hepatitis C virus (isolate H77)",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Hepatitis C virus strain H77"
+    ]
+  },
+  "taxonomy:666": {
+    "label": "Vibrio cholerae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillo virgola del Koch",
+      "Bacillus cholerae",
+      "Bacillus cholerae-asiaticae",
+      "Kommabacillus",
+      "Liquidivibrio cholerae",
+      "Microspira comma",
+      "Pacinia cholerae-asiaticae",
+      "Spirillum cholerae",
+      "Spirillum cholerae-asiaticae",
+      "Vibrio albensis",
+      "Vibrio cholera",
+      "Vibrio cholerae biovar albensis",
+      "Vibrio cholerae bv. albensis",
+      "Vibrio cholerae-asiaticae",
+      "Vibrio comma"
+    ]
+  },
+  "taxonomy:714": {
+    "label": "Aggregatibacter actinomycetemcomitans",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Actinobacillus (Haemophilus) actinomycetemcomitans",
+      "Actinobacillus actinomycetemcomitans (Klinger 1912) Topley and Wilson 1929 (Approved Lists 1980)",
+      "Bacterium acetinomycetum comitans",
+      "Bacterium comitans",
+      "Haemophilus actinomycetemcomitans",
+      "Haemophilus actinomyceticomitans"
+    ]
+  },
+  "taxonomy:727": {
+    "label": "Haemophilus influenzae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacterium influenzae",
+      "Coccobacillus pfeifferi",
+      "Haemophilus meningitidis",
+      "Influenza-bacillus",
+      "Mycobacterium influenzae"
+    ]
+  },
+  "taxonomy:730": {
+    "label": "[Haemophilus] ducreyi",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus ulceris cancrosi",
+      "Haemophilus ducreyi (Neveu-Lemaire 1921) Bergey et al. 1923 (Approved Lists 1980)",
+      "Pseudactinobacillus ducreyi"
+    ]
+  },
+  "taxonomy:745": {
+    "label": "Pasteurella",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:746128": {
+    "label": "Aspergillus fumigatus",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Aspergillus fumigatus Fresen., 1863",
+      "Aspergillus fumigatus var. ellipticus",
+      "Aspergillus neoellipticus",
+      "Neosartorya fumigata",
+      "Sartorya fumigata"
+    ]
+  },
+  "taxonomy:76773": {
+    "label": "Malassezia globosa",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:773": {
+    "label": "Bartonella",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Grahamella",
+      "Grahmia",
+      "Rocha-Limae",
+      "Rochalimaea",
+      "\"Bartonia\" Strong et al. 1913"
+    ]
+  },
+  "taxonomy:777": {
+    "label": "Coxiella burnetii",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Coxiella burnetii corrig. (Derrick 1939) Philip 1948 (Approved Lists 1980)",
+      "Rickettsia burneti",
+      "Rickettsia diaporica"
+    ]
+  },
+  "taxonomy:780": {
+    "label": "Rickettsia",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:781": {
+    "label": "Rickettsia conorii",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Rickettsia conorii corrig. Brumpt 1932 (Approved Lists 1980)"
+    ]
+  },
+  "taxonomy:782": {
+    "label": "Rickettsia prowazekii",
+    "source": "ols4:ncbitaxon",
+    "status": "exists"
+  },
+  "taxonomy:783": {
+    "label": "Rickettsia rickettsii",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Dermacentroxenus rickettsii"
+    ]
+  },
+  "taxonomy:784": {
+    "label": "Orientia tsutsugamushi",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Rickettsia akamushi",
+      "Rickettsia orientalis",
+      "Rickettsia tsutsugamushi",
+      "Theileria tsutsugamushi"
+    ]
+  },
+  "taxonomy:785": {
+    "label": "Rickettsia typhi",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Dermacentroxenus typhi",
+      "Rickettsia mooseri"
+    ]
+  },
+  "taxonomy:786": {
+    "label": "Rickettsia akari",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Dermacentroxenus murinus",
+      "Gamasoxenus muris",
+      "agent of rickettsialpox",
+      "rickettsialpox"
+    ]
+  },
+  "taxonomy:810": {
+    "label": "Chlamydia",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bedsonia",
+      "Chlamydophila",
+      "Miyagawanella",
+      "Rakeia",
+      "Rickettsiaformis",
+      "\"Prowazekia\" Coles 1953"
+    ]
+  },
+  "taxonomy:813": {
+    "label": "Chlamydia trachomatis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Chlamydozoon trachomatis",
+      "Rickettsia trachomae",
+      "Rickettsia trachomatis"
+    ]
+  },
+  "taxonomy:83554": {
+    "label": "Chlamydia psittaci",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Chlamydophila psittaci",
+      "Chlamydozoon psittaci",
+      "Ehrlichia psittaci",
+      "Rickettsia psittaci",
+      "Rickettsiaformis psittacosis"
+    ]
+  },
+  "taxonomy:83558": {
+    "label": "Chlamydia pneumoniae",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Chlamydophila pneumoniae"
+    ]
+  },
+  "taxonomy:837": {
+    "label": "Porphyromonas gingivalis",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacteroides gingivalis"
+    ]
+  },
+  "taxonomy:848": {
+    "label": "Fusobacterium",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Fusibacterium"
+    ]
+  },
+  "taxonomy:90370": {
+    "label": "Salmonella enterica subsp. enterica serovar Typhi",
+    "source": "ols4:ncbitaxon",
+    "status": "exists",
+    "synonyms": [
+      "Bacillus typhi",
+      "Bacterium (subgen. Eberthella) typhi",
+      "Salmonella choleraesuis serovar Typhi",
+      "Salmonella choleraesuis typhi",
+      "Salmonella enterica ser. typhi",
+      "Salmonella enterica serotype Typhi",
+      "Salmonella enterica serovar Typhi",
+      "Salmonella typhi"
+    ]
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "CL:0000037": {
+    "label": "hematopoietic stem cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "blood forming stem cell",
+      "colony forming unit hematopoietic",
+      "hemopoietic stem cell",
+      "HSC"
+    ]
+  },
+  "CL:0000062": {
+    "label": "osteoblast",
+    "source": "ols4:cl",
+    "status": "exists"
+  },
+  "CL:0000084": {
+    "label": "T cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "T lymphocyte",
+      "T-cell",
+      "T-lymphocyte",
+      "immature T cell",
+      "mature T cell"
+    ]
+  },
+  "CL:0000092": {
+    "label": "osteoclast",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "chondroclast"
+    ]
+  },
+  "CL:0000097": {
+    "label": "mast cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "histaminocyte",
+      "labrocyte",
+      "mastocyte",
+      "tissue basophil"
+    ]
+  },
+  "CL:0000101": {
+    "label": "sensory neuron",
+    "source": "ols4:cl",
+    "status": "exists"
+  },
+  "CL:0000145": {
+    "label": "professional antigen presenting cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "APC"
+    ]
+  },
+  "CL:0000148": {
+    "label": "melanocyte",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "melanophore"
+    ]
+  },
+  "CL:0000169": {
+    "label": "type B pancreatic cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "pancreatic B cell",
+      "B-cell of pancreatic islet",
+      "beta cell islet",
+      "beta cell of pancreatic islet",
+      "beta cell",
+      "insulin-secreting cell",
+      "pancreatic B-cell",
+      "pancreatic beta cell",
+      "pancreatic islet core",
+      "type B enteroendocrine cell"
+    ]
+  },
+  "CL:0000197": {
+    "label": "sensory receptor cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "receptor cell"
+    ]
+  },
+  "CL:0000198": {
+    "label": "pain receptor cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "nociceptor",
+      "nocireceptor"
+    ]
+  },
+  "CL:0000232": {
+    "label": "erythrocyte",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "RBC",
+      "red blood cell"
+    ]
+  },
+  "CL:0000235": {
+    "label": "macrophage",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "histiocyte"
+    ]
+  },
+  "CL:0000236": {
+    "label": "B cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "B lymphocyte",
+      "B-cell",
+      "B-lymphocyte"
+    ]
+  },
+  "CL:0000317": {
+    "label": "sebocyte",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "sebum secreting cell"
+    ]
+  },
+  "CL:0000346": {
+    "label": "hair follicle dermal papilla cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "hair follicle DPC"
+    ]
+  },
+  "CL:0000540": {
+    "label": "neuron",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "nerve cell"
+    ]
+  },
+  "CL:0000542": {
+    "label": "lymphocyte",
+    "source": "ols4:cl",
+    "status": "exists"
+  },
+  "CL:0000576": {
+    "label": "monocyte",
+    "source": "ols4:cl",
+    "status": "exists"
+  },
+  "CL:0000584": {
+    "label": "enterocyte",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "differentiated enterocyte",
+      "mature enterocyte"
+    ]
+  },
+  "CL:0000623": {
+    "label": "natural killer cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "NK cell",
+      "large granular lymphocyte",
+      "null cell"
+    ]
+  },
+  "CL:0000738": {
+    "label": "leukocyte",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "immune cell",
+      "leucocyte",
+      "white blood cell",
+      "WBC"
+    ]
+  },
+  "CL:0000740": {
+    "label": "retinal ganglion cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "gangliocyte",
+      "ganglion cell of retina",
+      "RGC",
+      "RGCs"
+    ]
+  },
+  "CL:0000763": {
+    "label": "myeloid cell",
+    "source": "ols4:cl",
+    "status": "exists"
+  },
+  "CL:0000767": {
+    "label": "basophil",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "basophilic leucocyte",
+      "basophilic leukocyte",
+      "polymorphonuclear leucocyte",
+      "polymorphonuclear leukocyte"
+    ]
+  },
+  "CL:0000775": {
+    "label": "neutrophil",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "PMN",
+      "neutrocyte",
+      "neutrophil leucocyte",
+      "neutrophil leukocyte",
+      "neutrophilic leucocyte",
+      "neutrophilic leukocyte",
+      "poly",
+      "polymorphonuclear leucocyte",
+      "polymorphonuclear leukocyte",
+      "polymorphonuclear neutrophil",
+      "polynuclear neutrophilic leucocyte",
+      "polynuclear neutrophilic leukocyte"
+    ]
+  },
+  "CL:0000786": {
+    "label": "plasma cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "effector B cell",
+      "effector B-cell",
+      "plasma B cell",
+      "plasma B-cell",
+      "plasmacyte",
+      "plasmocyte"
+    ]
+  },
+  "CL:0000836": {
+    "label": "promyelocyte",
+    "source": "ols4:cl",
+    "status": "exists"
+  },
+  "CL:0001063": {
+    "label": "neoplastic cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "tumor cell",
+      "tumour cell"
+    ]
+  },
+  "CL:0001064": {
+    "label": "malignant cell",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "cancer cell"
+    ]
+  },
+  "CL:0002559": {
+    "label": "hair follicle cell",
+    "source": "ols4:cl",
+    "status": "exists"
+  },
+  "CL:0011005": {
+    "label": "GABAergic interneuron",
+    "source": "ols4:cl",
+    "status": "exists",
+    "synonyms": [
+      "GABAergic inhibitory interneuron"
+    ]
+  },
+  "CL:1001516": {
+    "label": "intestinal enteroendocrine cell",
+    "source": "ols4:cl",
+    "status": "exists"
+  }
+}

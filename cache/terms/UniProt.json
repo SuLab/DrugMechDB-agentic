@@ -1,0 +1,7275 @@
+{
+  "UniProt:A0A0C4MI94": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:A0A0E1NU92": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:A0A0E1NWQ7": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:A0A0F4ER22": {
+    "label": "Dihydropteroate synthase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DHPS",
+      "Dihydropteroate pyrophosphorylase"
+    ]
+  },
+  "UniProt:A0A132A3X0": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:A0A156J405": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:A0A156YKX6": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:A0A2B7ICU0": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:A0A443X2G9": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:A0A448KJJ7": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:A0A6C1LUF2": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:A0A715KJC7": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:A0A717UR96": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:A0A8A6J2U1": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:A2QLK4": {
+    "label": "1,3-beta-glucan synthase component FKS1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "1,3-beta-D-glucan-UDP glucosyltransferase"
+    ]
+  },
+  "UniProt:A2RCI2": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:A2RGF8": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:A2RGZ8": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:A4WFD5": {
+    "label": "Small ribosomal subunit protein uS12",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S12"
+    ]
+  },
+  "UniProt:A6MUU8": {
+    "label": "Macrophage migration inhibitory factor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "L-dopachrome isomerase",
+      "L-dopachrome tautomerase",
+      "Phenylpyruvate tautomerase"
+    ]
+  },
+  "UniProt:A6TBT6": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:A6TE12": {
+    "label": "DNA topoisomerase 4 subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit A"
+    ]
+  },
+  "UniProt:A8B852": {
+    "label": "Pyruvate-flavodoxin oxidoreductase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:A9UF02": {
+    "label": "Tyrosine-protein kinase ABL1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Abelson murine leukemia viral oncogene homolog 1",
+      "Abelson tyrosine-protein kinase 1",
+      "Proto-oncogene c-Abl",
+      "p150"
+    ]
+  },
+  "UniProt:B0B3C9": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:B0BWQ1": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:B0BX57": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:B2ISJ9": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:B3CTE7": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:B4DP61": {
+    "label": "cDNA FLJ60754, moderately similar to Survival motor neuron protein",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:B4RQX2": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:B5RLS3": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:B5RMG4": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:B5RPN9": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:B5XN85": {
+    "label": "Small ribosomal subunit protein uS12",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S12"
+    ]
+  },
+  "UniProt:B6J5C9": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:B7Z2C7": {
+    "label": "adenylate cyclase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:B8N2C8": {
+    "label": "Sterol 14-alpha demethylase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cytochrome P450 monooxygenase 51A",
+      "Ergosterol biosynthesis protein cyp51A"
+    ]
+  },
+  "UniProt:C1CHZ1": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:C1CIH6": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:C3PAK4": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:C3PBC1": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:D0RGV5": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:D0RGZ2": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:D8GUW8": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:D8H6M3": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:F1KYN0": {
+    "label": "Acetylcholine receptor subunit beta-type unc-29",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:F1L348": {
+    "label": "Acetylcholine receptor subunit alpha-type unc-38",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:G4NN22": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:I1S2M5": {
+    "label": "Sterol 14-alpha demethylase CYP51C",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CYP51C",
+      "Ergosterol biosynthetic protein CYP51C"
+    ]
+  },
+  "UniProt:J7M8X7": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:O00206": {
+    "label": "Toll-like receptor 4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "hToll"
+    ]
+  },
+  "UniProt:O00329": {
+    "label": "Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PI3-kinase subunit delta",
+      "PI3K-delta",
+      "PI3Kdelta",
+      "PtdIns-3-kinase subunit delta",
+      "Phosphatidylinositol 4,5-bisphosphate 3-kinase 110 kDa catalytic subunit delta",
+      "PtdIns-3-kinase subunit p110-delta",
+      "p110delta"
+    ]
+  },
+  "UniProt:O00463": {
+    "label": "TNF receptor-associated factor 5",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "RING finger protein 84"
+    ]
+  },
+  "UniProt:O00555": {
+    "label": "Voltage-dependent P/Q-type calcium channel subunit alpha-1A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Brain calcium channel I",
+      "BI",
+      "Calcium channel, L type, alpha-1 polypeptide isoform 4",
+      "Voltage-gated calcium channel subunit alpha Cav2.1"
+    ]
+  },
+  "UniProt:O00764": {
+    "label": "Pyridoxal kinase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Pyridoxine kinase"
+    ]
+  },
+  "UniProt:O05131": {
+    "label": "Penicillin-binding protein 1A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PBP-1a",
+      "PBP1a"
+    ]
+  },
+  "UniProt:O14649": {
+    "label": "Potassium channel subfamily K member 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Acid-sensitive potassium channel protein TASK-1",
+      "TWIK-related acid-sensitive K(+) channel 1",
+      "Two pore potassium channel KT3.1",
+      "Two pore K(+) channel KT3.1"
+    ]
+  },
+  "UniProt:O14746": {
+    "label": "Telomerase reverse transcriptase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "HEST2",
+      "Telomerase catalytic subunit",
+      "Telomerase-associated protein 2",
+      "TP2"
+    ]
+  },
+  "UniProt:O14773": {
+    "label": "Tripeptidyl-peptidase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TPP-1",
+      "Cell growth-inhibiting gene 1 protein",
+      "Lysosomal pepstatin-insensitive protease",
+      "LPIC",
+      "Tripeptidyl aminopeptidase",
+      "Tripeptidyl-peptidase I",
+      "TPP-I"
+    ]
+  },
+  "UniProt:O14788": {
+    "label": "Tumor necrosis factor ligand superfamily member 11",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TNFSF11",
+      "Osteoclast differentiation factor",
+      "ODF",
+      "Osteoprotegerin ligand",
+      "OPGL",
+      "Receptor activator of nuclear factor kappa-B ligand",
+      "RANKL",
+      "TNF-related activation-induced cytokine",
+      "TRANCE"
+    ]
+  },
+  "UniProt:O14920": {
+    "label": "Inhibitor of nuclear factor kappa-B kinase subunit beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "I-kappa-B-kinase beta",
+      "IKK-B",
+      "IKK-beta",
+      "IkBKB",
+      "I-kappa-B kinase 2",
+      "IKK-2",
+      "IKK2",
+      "Nuclear factor NF-kappa-B inhibitor kinase beta",
+      "NFKBIKB",
+      "Serine/threonine protein kinase IKBKB"
+    ]
+  },
+  "UniProt:O14975": {
+    "label": "Long-chain fatty acid transport protein 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Arachidonate--CoA ligase",
+      "Fatty acid transport protein 2",
+      "FATP-2",
+      "Fatty-acid-coenzyme A ligase, very long-chain 1",
+      "Long-chain-fatty-acid--CoA ligase",
+      "Phytanate--CoA ligase",
+      "Solute carrier family 27 member 2",
+      "THCA-CoA ligase",
+      "Very long-chain acyl-CoA synthetase",
+      "VLACS",
+      "VLCS",
+      "Very long-chain-fatty-acid-CoA ligase"
+    ]
+  },
+  "UniProt:O15111": {
+    "label": "Inhibitor of nuclear factor kappa-B kinase subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "I-kappa-B kinase alpha",
+      "IKK-A",
+      "IKK-alpha",
+      "IkBKA",
+      "IkappaB kinase",
+      "Conserved helix-loop-helix ubiquitous kinase",
+      "I-kappa-B kinase 1",
+      "IKK-1",
+      "IKK1",
+      "Nuclear factor NF-kappa-B inhibitor kinase alpha",
+      "NFKBIKA",
+      "Transcription factor 16",
+      "TCF-16"
+    ]
+  },
+  "UniProt:O15379": {
+    "label": "Histone deacetylase 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "HD3",
+      "Protein deacetylase HDAC3",
+      "Protein deacylase HDAC3",
+      "RPD3-2",
+      "SMAP45"
+    ]
+  },
+  "UniProt:O15399": {
+    "label": "Glutamate receptor ionotropic, NMDA 2D",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GluN2D",
+      "EB11",
+      "Glutamate [NMDA] receptor subunit epsilon-4",
+      "N-methyl D-aspartate receptor subtype 2D",
+      "NMDAR2D",
+      "NR2D"
+    ]
+  },
+  "UniProt:O15528": {
+    "label": "25-hydroxyvitamin D-1 alpha hydroxylase, mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "25-OHD-1 alpha-hydroxylase",
+      "25-hydroxyvitamin D(3) 1-alpha-hydroxylase",
+      "VD3 1A hydroxylase",
+      "Calcidiol 1-monooxygenase",
+      "Cytochrome P450 subfamily XXVIIB polypeptide 1",
+      "Cytochrome P450C1 alpha",
+      "Cytochrome P450VD1-alpha",
+      "Cytochrome p450 27B1"
+    ]
+  },
+  "UniProt:O39930": {
+    "label": "RNA-directed RNA polymerase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:O43451": {
+    "label": "Maltase-glucoamylase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alpha-1,4-glucosidase"
+    ]
+  },
+  "UniProt:O43497": {
+    "label": "Voltage-dependent T-type calcium channel subunit alpha-1G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cav3.1c",
+      "NBR13",
+      "Voltage-gated calcium channel subunit alpha Cav3.1"
+    ]
+  },
+  "UniProt:O43570": {
+    "label": "Carbonic anhydrase 12",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Carbonate dehydratase XII",
+      "Carbonic anhydrase XII",
+      "CA-XII",
+      "Tumor antigen HOM-RCC-3.1.3"
+    ]
+  },
+  "UniProt:O43612": {
+    "label": "Hypocretin neuropeptide precursor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Hypocretin",
+      "Hcrt",
+      "Orexin precursor",
+      "Prepro-orexin",
+      "Preprohypocretin"
+    ]
+  },
+  "UniProt:O43734": {
+    "label": "E3 ubiquitin ligase TRAF3IP2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Adapter protein CIKS",
+      "Connection to IKK and SAPK/JNK",
+      "E3 ubiquitin-protein ligase CIKS",
+      "Nuclear factor NF-kappa-B activator 1",
+      "ACT1",
+      "TRAF3-interacting protein 2"
+    ]
+  },
+  "UniProt:O44030": {
+    "label": "Hydroxymethyldihydropterin pyrophosphokinase-dihydropteroate synthase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:O60391": {
+    "label": "Glutamate receptor ionotropic, NMDA 3B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GluN3B",
+      "N-methyl-D-aspartate receptor subtype 3B",
+      "NMDAR3B",
+      "NR3B"
+    ]
+  },
+  "UniProt:O60603": {
+    "label": "Toll-like receptor 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Toll/interleukin-1 receptor-like protein 4"
+    ]
+  },
+  "UniProt:O60674": {
+    "label": "Tyrosine-protein kinase JAK2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Janus kinase 2",
+      "JAK-2"
+    ]
+  },
+  "UniProt:O60706": {
+    "label": "ATP-binding cassette sub-family C member 9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Sulfonylurea receptor 2"
+    ]
+  },
+  "UniProt:O60840": {
+    "label": "Voltage-dependent L-type calcium channel subunit alpha-1F",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Voltage-gated calcium channel subunit alpha Cav1.4"
+    ]
+  },
+  "UniProt:O75116": {
+    "label": "Rho-associated protein kinase 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Rho kinase 2",
+      "Rho-associated, coiled-coil-containing protein kinase 2",
+      "Rho-associated, coiled-coil-containing protein kinase II",
+      "ROCK-II",
+      "p164 ROCK-2"
+    ]
+  },
+  "UniProt:O75762": {
+    "label": "Transient receptor potential cation channel subfamily A member 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Ankyrin-like with transmembrane domains protein 1",
+      "Transformation-sensitive protein p120",
+      "p120",
+      "Wasabi receptor"
+    ]
+  },
+  "UniProt:O75907": {
+    "label": "Diacylglycerol O-acyltransferase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ACAT-related gene product 1",
+      "Acyl-CoA retinol O-fatty-acyltransferase",
+      "ARAT",
+      "Retinol O-fatty-acyltransferase",
+      "Diglyceride acyltransferase"
+    ]
+  },
+  "UniProt:O76074": {
+    "label": "cGMP-specific 3',5'-cyclic phosphodiesterase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "cGMP-binding cGMP-specific phosphodiesterase",
+      "CGB-PDE"
+    ]
+  },
+  "UniProt:O83328": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:O83748": {
+    "label": "Elongation factor G 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G 1"
+    ]
+  },
+  "UniProt:O83987": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:O84128": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:O84192": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:O84444": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:O84619": {
+    "label": "Folate synthesis bifunctional protein",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:O84631": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:O95069": {
+    "label": "Potassium channel subfamily K member 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Outward rectifying potassium channel protein TREK-1",
+      "TREK-1 K(+) channel subunit",
+      "Two pore domain potassium channel TREK1",
+      "Two pore potassium channel TPKC1",
+      "K2P2.1"
+    ]
+  },
+  "UniProt:O95180": {
+    "label": "Voltage-dependent T-type calcium channel subunit alpha-1H",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Low-voltage-activated calcium channel alpha1 3.2 subunit",
+      "Voltage-gated calcium channel subunit alpha Cav3.2"
+    ]
+  },
+  "UniProt:O95477": {
+    "label": "Phospholipid-transporting ATPase ABCA1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ATP-binding cassette sub-family A member 1",
+      "ATP-binding cassette transporter 1",
+      "ABC-1",
+      "ATP-binding cassette 1",
+      "Cholesterol efflux regulatory protein"
+    ]
+  },
+  "UniProt:O95644": {
+    "label": "Nuclear factor of activated T-cells, cytoplasmic 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "NF-ATc1",
+      "NFATc1",
+      "NFAT transcription complex cytosolic component",
+      "NF-ATc",
+      "NFATc"
+    ]
+  },
+  "UniProt:O95665": {
+    "label": "Neurotensin receptor type 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "NT-R-2",
+      "NTR2",
+      "Levocabastine-sensitive neurotensin receptor"
+    ]
+  },
+  "UniProt:O95749": {
+    "label": "Geranylgeranyl pyrophosphate synthase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GGPP synthase",
+      "GGPPSase",
+      "(2E,6E)-farnesyl diphosphate synthase",
+      "Dimethylallyltranstransferase",
+      "Farnesyl diphosphate synthase",
+      "Farnesyltranstransferase",
+      "Geranylgeranyl diphosphate synthase",
+      "Geranyltranstransferase"
+    ]
+  },
+  "UniProt:O95838": {
+    "label": "Glucagon-like peptide 2 receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GLP-2 receptor",
+      "GLP-2-R",
+      "GLP-2R"
+    ]
+  },
+  "UniProt:P00338": {
+    "label": "L-lactate dehydrogenase A chain",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "LDH-A",
+      "Cell proliferation-inducing gene 19 protein",
+      "LDH muscle subunit",
+      "LDH-M",
+      "Renal carcinoma antigen NY-REN-59"
+    ]
+  },
+  "UniProt:P00374": {
+    "label": "Dihydrofolate reductase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P00390": {
+    "label": "Glutathione reductase, mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GR",
+      "GRase"
+    ]
+  },
+  "UniProt:P00439": {
+    "label": "Phenylalanine-4-hydroxylase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PAH",
+      "Phe-4-monooxygenase"
+    ]
+  },
+  "UniProt:P00451": {
+    "label": "Coagulation factor VIII",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Antihemophilic factor",
+      "AHF",
+      "Procoagulant component"
+    ]
+  },
+  "UniProt:P00488": {
+    "label": "Coagulation factor XIII A chain",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Coagulation factor XIIIa",
+      "Protein-glutamine gamma-glutamyltransferase A chain",
+      "Transglutaminase A chain"
+    ]
+  },
+  "UniProt:P00492": {
+    "label": "Hypoxanthine-guanine phosphoribosyltransferase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "HGPRT",
+      "HGPRTase"
+    ]
+  },
+  "UniProt:P00519": {
+    "label": "Tyrosine-protein kinase ABL1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Abelson murine leukemia viral oncogene homolog 1",
+      "Abelson tyrosine-protein kinase 1",
+      "Proto-oncogene c-Abl",
+      "p150"
+    ]
+  },
+  "UniProt:P00533": {
+    "label": "Epidermal growth factor receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Proto-oncogene c-ErbB-1",
+      "Receptor tyrosine-protein kinase erbB-1"
+    ]
+  },
+  "UniProt:P00734": {
+    "label": "Prothrombin",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Coagulation factor II"
+    ]
+  },
+  "UniProt:P00740": {
+    "label": "Coagulation factor IX",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Christmas factor",
+      "Plasma thromboplastin component",
+      "PTC"
+    ]
+  },
+  "UniProt:P00742": {
+    "label": "Coagulation factor X",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Stuart factor",
+      "Stuart-Prower factor"
+    ]
+  },
+  "UniProt:P00747": {
+    "label": "Plasminogen",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P00750": {
+    "label": "Tissue-type plasminogen activator",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "t-PA",
+      "t-plasminogen activator",
+      "tPA"
+    ]
+  },
+  "UniProt:P00797": {
+    "label": "Renin",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Angiotensinogenase"
+    ]
+  },
+  "UniProt:P00807": {
+    "label": "Beta-lactamase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Penicillinase"
+    ]
+  },
+  "UniProt:P00813": {
+    "label": "Adenosine deaminase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Adenosine aminohydrolase"
+    ]
+  },
+  "UniProt:P00915": {
+    "label": "Carbonic anhydrase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Carbonate dehydratase I",
+      "Carbonic anhydrase B",
+      "CAB",
+      "Carbonic anhydrase I",
+      "CA-I",
+      "Cyanamide hydratase CA1"
+    ]
+  },
+  "UniProt:P00918": {
+    "label": "Carbonic anhydrase 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Carbonate dehydratase II",
+      "Carbonic anhydrase C",
+      "CAC",
+      "Carbonic anhydrase II",
+      "CA-II",
+      "Cyanamide hydratase CA2"
+    ]
+  },
+  "UniProt:P01008": {
+    "label": "Antithrombin-III",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ATIII",
+      "Serpin C1"
+    ]
+  },
+  "UniProt:P01031": {
+    "label": "Complement C5",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "C3 and PZP-like alpha-2-macroglobulin domain-containing protein 4"
+    ]
+  },
+  "UniProt:P01130": {
+    "label": "Low-density lipoprotein receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "LDL receptor"
+    ]
+  },
+  "UniProt:P01148": {
+    "label": "Progonadoliberin-1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Progonadoliberin I"
+    ]
+  },
+  "UniProt:P01213": {
+    "label": "Proenkephalin-B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Beta-neoendorphin-dynorphin",
+      "Preprodynorphin"
+    ]
+  },
+  "UniProt:P01241": {
+    "label": "Somatotropin",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Growth hormone",
+      "GH",
+      "GH-N",
+      "Growth hormone 1",
+      "Pituitary growth hormone"
+    ]
+  },
+  "UniProt:P01270": {
+    "label": "Parathyroid hormone",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PTH",
+      "Parathormone",
+      "Parathyrin"
+    ]
+  },
+  "UniProt:P01303": {
+    "label": "Pro-neuropeptide Y",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P01308": {
+    "label": "Insulin",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P01375": {
+    "label": "Tumor necrosis factor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cachectin",
+      "TNF-alpha",
+      "Tumor necrosis factor ligand superfamily member 2",
+      "TNF-a"
+    ]
+  },
+  "UniProt:P01583": {
+    "label": "Interleukin-1 alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-1 alpha",
+      "Hematopoietin-1"
+    ]
+  },
+  "UniProt:P01584": {
+    "label": "Interleukin-1 beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-1 beta",
+      "Catabolin"
+    ]
+  },
+  "UniProt:P01589": {
+    "label": "Interleukin-2 receptor subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-2 receptor subunit alpha",
+      "IL-2-RA",
+      "IL-2R subunit alpha",
+      "IL2-RA",
+      "TAC antigen",
+      "p55"
+    ]
+  },
+  "UniProt:P01854": {
+    "label": "Immunoglobulin heavy constant epsilon",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Ig epsilon chain C region",
+      "Ig epsilon chain C region ND"
+    ]
+  },
+  "UniProt:P02452": {
+    "label": "Collagen alpha-1(I) chain",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alpha-1 type I collagen"
+    ]
+  },
+  "UniProt:P02647": {
+    "label": "Apolipoprotein A-I",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Apo-AI",
+      "ApoA-I",
+      "Apolipoprotein A1"
+    ]
+  },
+  "UniProt:P02656": {
+    "label": "Apolipoprotein C-III",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Apo-CIII",
+      "ApoC-III",
+      "Apolipoprotein C3"
+    ]
+  },
+  "UniProt:P02741": {
+    "label": "C-reactive protein",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P02766": {
+    "label": "Transthyretin",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ATTR",
+      "Prealbumin",
+      "TBPA"
+    ]
+  },
+  "UniProt:P02818": {
+    "label": "Osteocalcin",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Bone Gla protein",
+      "BGP",
+      "Gamma-carboxyglutamic acid-containing protein"
+    ]
+  },
+  "UniProt:P03120": {
+    "label": "Regulatory protein E2",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P03129": {
+    "label": "Protein E7",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P03156": {
+    "label": "Protein P",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P03200": {
+    "label": "Envelope glycoprotein GP350",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Membrane antigen",
+      "MA"
+    ]
+  },
+  "UniProt:P03372": {
+    "label": "Estrogen receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ER",
+      "ER-alpha",
+      "Estradiol receptor",
+      "Nuclear receptor subfamily 3 group A member 1"
+    ]
+  },
+  "UniProt:P03468": {
+    "label": "Neuraminidase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P03472": {
+    "label": "Neuraminidase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P03952": {
+    "label": "Plasma kallikrein",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Fletcher factor",
+      "Kininogenin",
+      "Plasma prekallikrein",
+      "PKK"
+    ]
+  },
+  "UniProt:P04035": {
+    "label": "3-hydroxy-3-methylglutaryl-coenzyme A reductase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "HMG-CoA reductase"
+    ]
+  },
+  "UniProt:P04049": {
+    "label": "RAF proto-oncogene serine/threonine-protein kinase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Proto-oncogene c-RAF",
+      "cRaf",
+      "Raf-1"
+    ]
+  },
+  "UniProt:P04054": {
+    "label": "Phospholipase A2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Group IB phospholipase A2",
+      "Phosphatidylcholine 2-acylhydrolase 1B"
+    ]
+  },
+  "UniProt:P04062": {
+    "label": "Lysosomal acid glucosylceramidase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Lysosomal acid GCase",
+      "Acid beta-glucosidase",
+      "Alglucerase",
+      "Beta-glucocerebrosidase",
+      "Beta-GC",
+      "Beta-glucosylceramidase 1",
+      "Cholesterol glucosyltransferase",
+      "SGTase",
+      "Cholesteryl-beta-glucosidase",
+      "D-glucosyl-N-acylsphingosine glucohydrolase",
+      "Glucosylceramidase beta 1",
+      "Imiglucerase",
+      "Lysosomal cholesterol glycosyltransferase",
+      "Lysosomal galactosylceramidase",
+      "Lysosomal glycosylceramidase"
+    ]
+  },
+  "UniProt:P04070": {
+    "label": "Vitamin K-dependent protein C",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Anticoagulant protein C",
+      "Autoprothrombin IIA",
+      "Blood coagulation factor XIV"
+    ]
+  },
+  "UniProt:P04083": {
+    "label": "Annexin A1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Annexin I",
+      "Annexin-1",
+      "Calpactin II",
+      "Calpactin-2",
+      "Chromobindin-9",
+      "Lipocortin I",
+      "Phospholipase A2 inhibitory protein",
+      "p35"
+    ]
+  },
+  "UniProt:P04114": {
+    "label": "Apolipoprotein B-100",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Apo B-100"
+    ]
+  },
+  "UniProt:P04150": {
+    "label": "Glucocorticoid receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GR",
+      "Nuclear receptor subfamily 3 group C member 1"
+    ]
+  },
+  "UniProt:P04275": {
+    "label": "von Willebrand factor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "vWF"
+    ]
+  },
+  "UniProt:P04278": {
+    "label": "Sex hormone-binding globulin",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "SHBG",
+      "Sex steroid-binding protein",
+      "SBP",
+      "Testis-specific androgen-binding protein",
+      "ABP",
+      "Testosterone-estradiol-binding globulin",
+      "TeBG",
+      "Testosterone-estrogen-binding globulin"
+    ]
+  },
+  "UniProt:P04293": {
+    "label": "DNA polymerase catalytic subunit",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P04406": {
+    "label": "Glyceraldehyde-3-phosphate dehydrogenase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GAPDH",
+      "Peptidyl-cysteine S-nitrosylase GAPDH"
+    ]
+  },
+  "UniProt:P04585": {
+    "label": "Gag-Pol polyprotein",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Pr160Gag-Pol"
+    ]
+  },
+  "UniProt:P04591": {
+    "label": "Gag polyprotein",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Pr55Gag"
+    ]
+  },
+  "UniProt:P04746": {
+    "label": "Pancreatic alpha-amylase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PA",
+      "1,4-alpha-D-glucan glucanohydrolase"
+    ]
+  },
+  "UniProt:P04818": {
+    "label": "Thymidylate synthase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TS",
+      "TSase"
+    ]
+  },
+  "UniProt:P04926": {
+    "label": "Malaria protein EXP-1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Exported antigen AG 5.1"
+    ]
+  },
+  "UniProt:P05019": {
+    "label": "Insulin-like growth factor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Insulin-like growth factor I",
+      "IGF-I",
+      "Mechano growth factor",
+      "MGF",
+      "Somatomedin-C"
+    ]
+  },
+  "UniProt:P05023": {
+    "label": "Sodium/potassium-transporting ATPase subunit alpha-1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Na(+)/K(+) ATPase alpha-1 subunit",
+      "Sodium pump subunit alpha-1"
+    ]
+  },
+  "UniProt:P05091": {
+    "label": "Aldehyde dehydrogenase, mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ALDH I",
+      "ALDH class 2",
+      "ALDH-2",
+      "ALDH-E2",
+      "Nitroglycerin reductase ALDH2"
+    ]
+  },
+  "UniProt:P05093": {
+    "label": "Steroid 17-alpha-hydroxylase/17,20 lyase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "17-alpha-hydroxyprogesterone aldolase",
+      "CYPXVII",
+      "Cytochrome P450 17A1",
+      "Cytochrome P450-C17",
+      "Cytochrome P450c17",
+      "Steroid 17-alpha-monooxygenase"
+    ]
+  },
+  "UniProt:P05106": {
+    "label": "Integrin beta-3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Platelet membrane glycoprotein IIIa",
+      "GPIIIa"
+    ]
+  },
+  "UniProt:P05113": {
+    "label": "Interleukin-5",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-5",
+      "B-cell differentiation factor I",
+      "Eosinophil differentiation factor",
+      "T-cell replacing factor",
+      "TRF"
+    ]
+  },
+  "UniProt:P05121": {
+    "label": "Plasminogen activator inhibitor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PAI",
+      "PAI-1",
+      "Endothelial plasminogen activator inhibitor",
+      "Serpin E1"
+    ]
+  },
+  "UniProt:P05155": {
+    "label": "Plasma protease C1 inhibitor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "C1 Inh",
+      "C1Inh",
+      "C1 esterase inhibitor",
+      "C1-inhibiting factor",
+      "Serpin G1"
+    ]
+  },
+  "UniProt:P05177": {
+    "label": "Cytochrome P450 1A2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CYPIA2",
+      "Cholesterol 25-hydroxylase",
+      "Cytochrome P(3)450",
+      "Cytochrome P450 4",
+      "Cytochrome P450-P3",
+      "Hydroperoxy icosatetraenoate dehydratase"
+    ]
+  },
+  "UniProt:P05186": {
+    "label": "Alkaline phosphatase, tissue-nonspecific isozyme",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "AP-TNAP",
+      "TNS-ALP",
+      "TNSALP",
+      "Alkaline phosphatase liver/bone/kidney isozyme",
+      "Phosphoamidase",
+      "Phosphocreatine phosphatase"
+    ]
+  },
+  "UniProt:P05230": {
+    "label": "Fibroblast growth factor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "FGF-1",
+      "Acidic fibroblast growth factor",
+      "aFGF",
+      "Endothelial cell growth factor",
+      "ECGF",
+      "Heparin-binding growth factor 1",
+      "HBGF-1"
+    ]
+  },
+  "UniProt:P05231": {
+    "label": "Interleukin-6",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-6",
+      "B-cell stimulatory factor 2",
+      "BSF-2",
+      "CTL differentiation factor",
+      "CDF",
+      "Hybridoma growth factor",
+      "Interferon beta-2",
+      "IFN-beta-2"
+    ]
+  },
+  "UniProt:P05362": {
+    "label": "Intercellular adhesion molecule 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ICAM-1",
+      "Major group rhinovirus receptor"
+    ]
+  },
+  "UniProt:P05364": {
+    "label": "Beta-lactamase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cephalosporinase"
+    ]
+  },
+  "UniProt:P05412": {
+    "label": "Transcription factor Jun",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Activator protein 1",
+      "AP1",
+      "Proto-oncogene c-Jun",
+      "Transcription factor AP-1 subunit Jun",
+      "V-jun avian sarcoma virus 17 oncogene homolog",
+      "p39"
+    ]
+  },
+  "UniProt:P05937": {
+    "label": "Calbindin",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Calbindin D28",
+      "D-28K",
+      "Vitamin D-dependent calcium-binding protein, avian-type"
+    ]
+  },
+  "UniProt:P06213": {
+    "label": "Insulin receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IR"
+    ]
+  },
+  "UniProt:P06276": {
+    "label": "Cholinesterase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Acylcholine acylhydrolase",
+      "Butyrylcholine esterase",
+      "Choline esterase II",
+      "Pseudocholinesterase"
+    ]
+  },
+  "UniProt:P06280": {
+    "label": "Alpha-galactosidase A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alpha-D-galactosidase A",
+      "Alpha-D-galactoside galactohydrolase",
+      "Galactosylgalactosylglucosylceramidase GLA",
+      "Melibiase"
+    ]
+  },
+  "UniProt:P06307": {
+    "label": "Cholecystokinin",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CCK"
+    ]
+  },
+  "UniProt:P06401": {
+    "label": "Progesterone receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PR",
+      "Nuclear receptor subfamily 3 group C member 3"
+    ]
+  },
+  "UniProt:P06653": {
+    "label": "Autolysin",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cell wall hydrolase",
+      "Mucopeptide aminohydrolase",
+      "Murein hydrolase",
+      "N-acetylmuramoyl-L-alanine amidase"
+    ]
+  },
+  "UniProt:P06746": {
+    "label": "DNA polymerase beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "5'-deoxyribose-phosphate lyase",
+      "5'-dRP lyase",
+      "AP lyase"
+    ]
+  },
+  "UniProt:P06858": {
+    "label": "Lipoprotein lipase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "LPL",
+      "Phospholipase A1"
+    ]
+  },
+  "UniProt:P07098": {
+    "label": "Gastric triacylglycerol lipase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GL",
+      "Gastric lipase"
+    ]
+  },
+  "UniProt:P07101": {
+    "label": "Tyrosine 3-monooxygenase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Tyrosine 3-hydroxylase",
+      "TH"
+    ]
+  },
+  "UniProt:P07195": {
+    "label": "L-lactate dehydrogenase B chain",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "LDH-B",
+      "LDH heart subunit",
+      "LDH-H",
+      "Renal carcinoma antigen NY-REN-46"
+    ]
+  },
+  "UniProt:P07202": {
+    "label": "Thyroid peroxidase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TPO"
+    ]
+  },
+  "UniProt:P07225": {
+    "label": "Vitamin K-dependent protein S",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P07327": {
+    "label": "Alcohol dehydrogenase 1A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alcohol dehydrogenase subunit alpha"
+    ]
+  },
+  "UniProt:P07333": {
+    "label": "Macrophage colony-stimulating factor 1 receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CSF-1 receptor",
+      "CSF-1-R",
+      "CSF-1R",
+      "M-CSF-R",
+      "Proto-oncogene c-Fms"
+    ]
+  },
+  "UniProt:P07437": {
+    "label": "Tubulin beta chain",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Tubulin beta-5 chain"
+    ]
+  },
+  "UniProt:P07451": {
+    "label": "Carbonic anhydrase 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Carbonate dehydratase III",
+      "Carbonic anhydrase III",
+      "CA-III"
+    ]
+  },
+  "UniProt:P07550": {
+    "label": "Beta-2 adrenergic receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Beta-2 adrenoreceptor",
+      "Beta-2 adrenoceptor"
+    ]
+  },
+  "UniProt:P07949": {
+    "label": "Proto-oncogene tyrosine-protein kinase receptor Ret",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cadherin family member 12",
+      "Proto-oncogene c-Ret"
+    ]
+  },
+  "UniProt:P07988": {
+    "label": "Pulmonary surfactant-associated protein B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "SP-B",
+      "18 kDa pulmonary-surfactant protein",
+      "6 kDa protein",
+      "Pulmonary surfactant-associated proteolipid SPL(Phe)"
+    ]
+  },
+  "UniProt:P08069": {
+    "label": "Insulin-like growth factor 1 receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Insulin-like growth factor I receptor",
+      "IGF-I receptor"
+    ]
+  },
+  "UniProt:P08100": {
+    "label": "Rhodopsin",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Opsin-2"
+    ]
+  },
+  "UniProt:P08172": {
+    "label": "Muscarinic acetylcholine receptor M2",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P08173": {
+    "label": "Muscarinic acetylcholine receptor M4",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P08183": {
+    "label": "ATP-dependent translocase ABCB1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ATP-binding cassette sub-family B member 1",
+      "Multidrug resistance protein 1",
+      "P-glycoprotein 1",
+      "Phospholipid transporter ABCB1"
+    ]
+  },
+  "UniProt:P08235": {
+    "label": "Mineralocorticoid receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "MR",
+      "Nuclear receptor subfamily 3 group C member 2"
+    ]
+  },
+  "UniProt:P08246": {
+    "label": "Neutrophil elastase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Bone marrow serine protease",
+      "Elastase-2",
+      "Human leukocyte elastase",
+      "HLE",
+      "Medullasin",
+      "PMN elastase"
+    ]
+  },
+  "UniProt:P08514": {
+    "label": "Integrin alpha-IIb",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GPalpha IIb",
+      "GPIIb",
+      "Platelet membrane glycoprotein IIb"
+    ]
+  },
+  "UniProt:P08546": {
+    "label": "DNA polymerase catalytic subunit",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P08581": {
+    "label": "Hepatocyte growth factor receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "HGF receptor",
+      "HGF/SF receptor",
+      "Proto-oncogene c-Met",
+      "Scatter factor receptor",
+      "SF receptor",
+      "Tyrosine-protein kinase Met"
+    ]
+  },
+  "UniProt:P08588": {
+    "label": "Beta-1 adrenergic receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Beta-1 adrenoreceptor",
+      "Beta-1 adrenoceptor"
+    ]
+  },
+  "UniProt:P08684": {
+    "label": "Cytochrome P450 3A4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "1,4-cineole 2-exo-monooxygenase",
+      "1,8-cineole 2-exo-monooxygenase",
+      "Albendazole monooxygenase (sulfoxide-forming)",
+      "Albendazole sulfoxidase",
+      "CYPIIIA3",
+      "CYPIIIA4",
+      "Cholesterol 25-hydroxylase",
+      "Cytochrome P450 3A3",
+      "Cytochrome P450 HLp",
+      "Cytochrome P450 NF-25",
+      "Cytochrome P450-PCN1",
+      "Nifedipine oxidase",
+      "Quinine 3-monooxygenase"
+    ]
+  },
+  "UniProt:P08686": {
+    "label": "Steroid 21-hydroxylase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "21-OHase",
+      "Cytochrome P-450c21",
+      "Cytochrome P450 21",
+      "Cytochrome P450 XXI",
+      "Cytochrome P450-C21",
+      "Cytochrome P450-C21B"
+    ]
+  },
+  "UniProt:P08709": {
+    "label": "Coagulation factor VII",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Proconvertin",
+      "Serum prothrombin conversion accelerator",
+      "SPCA"
+    ]
+  },
+  "UniProt:P08887": {
+    "label": "Interleukin-6 receptor subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-6 receptor subunit alpha",
+      "IL-6R subunit alpha",
+      "IL-6R-alpha",
+      "IL-6RA",
+      "IL-6R 1",
+      "Membrane glycoprotein 80",
+      "gp80"
+    ]
+  },
+  "UniProt:P08908": {
+    "label": "5-hydroxytryptamine receptor 1A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "5-HT-1A",
+      "5-HT1A",
+      "G-21",
+      "Serotonin receptor 1A"
+    ]
+  },
+  "UniProt:P08912": {
+    "label": "Muscarinic acetylcholine receptor M5",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P08913": {
+    "label": "Alpha-2A adrenergic receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alpha-2 adrenergic receptor subtype C10",
+      "Alpha-2A adrenoreceptor",
+      "Alpha-2A adrenoceptor",
+      "Alpha-2AAR"
+    ]
+  },
+  "UniProt:P08922": {
+    "label": "Proto-oncogene tyrosine-protein kinase ROS",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Proto-oncogene c-Ros",
+      "Proto-oncogene c-Ros-1",
+      "Receptor tyrosine kinase c-ros oncogene 1",
+      "c-Ros receptor tyrosine kinase"
+    ]
+  },
+  "UniProt:P09252": {
+    "label": "DNA polymerase catalytic subunit",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P09601": {
+    "label": "Heme oxygenase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "HO-1"
+    ]
+  },
+  "UniProt:P09619": {
+    "label": "Platelet-derived growth factor receptor beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PDGF-R-beta",
+      "PDGFR-beta",
+      "Beta platelet-derived growth factor receptor",
+      "Beta-type platelet-derived growth factor receptor",
+      "CD140 antigen-like family member B",
+      "Platelet-derived growth factor receptor 1",
+      "PDGFR-1"
+    ]
+  },
+  "UniProt:P09681": {
+    "label": "Gastric inhibitory polypeptide",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GIP",
+      "Glucose-dependent insulinotropic polypeptide",
+      "Incretin hormone"
+    ]
+  },
+  "UniProt:P09874": {
+    "label": "Poly [ADP-ribose] polymerase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PARP-1",
+      "ADP-ribosyltransferase diphtheria toxin-like 1",
+      "ARTD1",
+      "DNA ADP-ribosyltransferase PARP1",
+      "NAD(+) ADP-ribosyltransferase 1",
+      "ADPRT 1",
+      "Poly[ADP-ribose] synthase 1",
+      "Protein poly-ADP-ribosyltransferase PARP1"
+    ]
+  },
+  "UniProt:P09884": {
+    "label": "DNA polymerase alpha catalytic subunit",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DNA polymerase alpha catalytic subunit p180"
+    ]
+  },
+  "UniProt:P09917": {
+    "label": "Polyunsaturated fatty acid 5-lipoxygenase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Arachidonate 5-lipoxygenase",
+      "5-LO",
+      "5-lipoxygenase"
+    ]
+  },
+  "UniProt:P0A0H0": {
+    "label": "Small ribosomal subunit protein uS12",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S12"
+    ]
+  },
+  "UniProt:P0A0Z5": {
+    "label": "Penicillin-binding protein 1A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PBP-1a",
+      "PBP1a"
+    ]
+  },
+  "UniProt:P0A298": {
+    "label": "Large ribosomal subunit protein uL10",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "50S ribosomal protein L10"
+    ]
+  },
+  "UniProt:P0A3M6": {
+    "label": "Penicillin-binding protein 2B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PBP2b",
+      "Peptidoglycan transpeptidase"
+    ]
+  },
+  "UniProt:P0A4L9": {
+    "label": "DNA gyrase subunit B",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P0A6M8": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:P0A749": {
+    "label": "UDP-N-acetylglucosamine 1-carboxyvinyltransferase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Enoylpyruvate transferase",
+      "UDP-N-acetylglucosamine enolpyruvyl transferase",
+      "EPT"
+    ]
+  },
+  "UniProt:P0A7J3": {
+    "label": "Large ribosomal subunit protein uL10",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "50S ribosomal protein L10",
+      "50S ribosomal protein L8"
+    ]
+  },
+  "UniProt:P0A7J6": {
+    "label": "Large ribosomal subunit protein uL10",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "50S ribosomal protein L10"
+    ]
+  },
+  "UniProt:P0A7S3": {
+    "label": "Small ribosomal subunit protein uS12",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S12"
+    ]
+  },
+  "UniProt:P0A7V8": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:P0A7X3": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:P0A8V2": {
+    "label": "DNA-directed RNA polymerase subunit beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "RNAP subunit beta",
+      "RNA polymerase subunit beta",
+      "Transcriptase subunit beta"
+    ]
+  },
+  "UniProt:P0A9Z7": {
+    "label": "Beta-lactamase SHV-2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "SHV-2A"
+    ]
+  },
+  "UniProt:P0AD63": {
+    "label": "Beta-lactamase SHV-1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PIT-2"
+    ]
+  },
+  "UniProt:P0AD64": {
+    "label": "Beta-lactamase SHV-1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PIT-2",
+      "Sulfhydryl reagent variable 1"
+    ]
+  },
+  "UniProt:P0AD65": {
+    "label": "Peptidoglycan D,D-transpeptidase MrdA",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Class B penicillin-binding protein 2",
+      "Penicillin-binding protein 2",
+      "PBP-2",
+      "PBP2",
+      "Transpeptidase PBP2",
+      "TP PBP2"
+    ]
+  },
+  "UniProt:P0AES4": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P0AES5": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P0AFI2": {
+    "label": "DNA topoisomerase 4 subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit A"
+    ]
+  },
+  "UniProt:P0AFI4": {
+    "label": "DNA topoisomerase 4 subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit A"
+    ]
+  },
+  "UniProt:P0C0D5": {
+    "label": "Large ribosomal subunit protein uL4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "50S ribosomal protein L4"
+    ]
+  },
+  "UniProt:P0C0X1": {
+    "label": "Dihydropteroate synthase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DHPS",
+      "Dihydropteroate pyrophosphorylase"
+    ]
+  },
+  "UniProt:P0C1U9": {
+    "label": "DNA topoisomerase 4 subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit A"
+    ]
+  },
+  "UniProt:P0C5Z8": {
+    "label": "Bifunctional autolysin",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P0DG02": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P0DG06": {
+    "label": "DNA topoisomerase 4 subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit A"
+    ]
+  },
+  "UniProt:P0DJD9": {
+    "label": "Pepsin A-5",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Pepsinogen-5"
+    ]
+  },
+  "UniProt:P0DP23": {
+    "label": "Calmodulin-1",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P0DTD1": {
+    "label": "Replicase polyprotein 1ab",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "pp1ab",
+      "ORF1ab polyprotein"
+    ]
+  },
+  "UniProt:P10145": {
+    "label": "Interleukin-8",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-8",
+      "C-X-C motif chemokine 8",
+      "Chemokine (C-X-C motif) ligand 8",
+      "Emoctakin",
+      "Granulocyte chemotactic protein 1",
+      "GCP-1",
+      "Monocyte-derived neutrophil chemotactic factor",
+      "MDNCF",
+      "Monocyte-derived neutrophil-activating peptide",
+      "MONAP",
+      "Neutrophil-activating protein 1",
+      "NAP-1",
+      "Protein 3-10C",
+      "T-cell chemotactic factor"
+    ]
+  },
+  "UniProt:P10253": {
+    "label": "Lysosomal alpha-glucosidase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Acid maltase",
+      "Aglucosidase alfa"
+    ]
+  },
+  "UniProt:P10275": {
+    "label": "Androgen receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Dihydrotestosterone receptor",
+      "Nuclear receptor subfamily 3 group C member 4"
+    ]
+  },
+  "UniProt:P10276": {
+    "label": "Retinoic acid receptor alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "RAR-alpha",
+      "Nuclear receptor subfamily 1 group B member 1"
+    ]
+  },
+  "UniProt:P10415": {
+    "label": "Apoptosis regulator Bcl-2",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P10613": {
+    "label": "Lanosterol 14-alpha demethylase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "LDM",
+      "Cytochrome P450 51",
+      "Cytochrome P450-14DM",
+      "Cytochrome P450-LIA1",
+      "CYPLI",
+      "Ergosterol biosynthesis protein 11",
+      "Sterol 14-alpha demethylase"
+    ]
+  },
+  "UniProt:P10721": {
+    "label": "Mast/stem cell growth factor receptor Kit",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "SCFR",
+      "Piebald trait protein",
+      "PBT",
+      "Proto-oncogene c-Kit",
+      "Tyrosine-protein kinase Kit",
+      "p145 c-kit",
+      "v-kit Hardy-Zuckerman 4 feline sarcoma viral oncogene homolog"
+    ]
+  },
+  "UniProt:P10747": {
+    "label": "T-cell-specific surface glycoprotein CD28",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TP44"
+    ]
+  },
+  "UniProt:P10826": {
+    "label": "Retinoic acid receptor beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "RAR-beta",
+      "HBV-activated protein",
+      "Nuclear receptor subfamily 1 group B member 2",
+      "RAR-epsilon"
+    ]
+  },
+  "UniProt:P10827": {
+    "label": "Thyroid hormone receptor alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Nuclear receptor subfamily 1 group A member 1",
+      "V-erbA-related protein 7",
+      "EAR-7",
+      "c-erbA-1",
+      "c-erbA-alpha"
+    ]
+  },
+  "UniProt:P10828": {
+    "label": "Thyroid hormone receptor beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Nuclear receptor subfamily 1 group A member 2",
+      "c-erbA-2",
+      "c-erbA-beta"
+    ]
+  },
+  "UniProt:P10912": {
+    "label": "Growth hormone receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GH receptor",
+      "Somatotropin receptor"
+    ]
+  },
+  "UniProt:P11137": {
+    "label": "Microtubule-associated protein 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "MAP-2"
+    ]
+  },
+  "UniProt:P11229": {
+    "label": "Muscarinic acetylcholine receptor M1",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P11362": {
+    "label": "Fibroblast growth factor receptor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "FGFR-1",
+      "Basic fibroblast growth factor receptor 1",
+      "BFGFR",
+      "bFGF-R-1",
+      "Fms-like tyrosine kinase 2",
+      "FLT-2",
+      "N-sam"
+    ]
+  },
+  "UniProt:P11387": {
+    "label": "DNA topoisomerase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DNA topoisomerase I"
+    ]
+  },
+  "UniProt:P11388": {
+    "label": "DNA topoisomerase 2-alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DNA topoisomerase II, alpha isozyme"
+    ]
+  },
+  "UniProt:P11473": {
+    "label": "Vitamin D3 receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "VDR",
+      "1,25-dihydroxyvitamin D3 receptor",
+      "Nuclear receptor subfamily 1 group I member 1"
+    ]
+  },
+  "UniProt:P11485": {
+    "label": "Neuraminidase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P11511": {
+    "label": "Aromatase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CYPXIX",
+      "Cytochrome P-450AROM",
+      "Cytochrome P450 19A1",
+      "Estrogen synthase"
+    ]
+  },
+  "UniProt:P11532": {
+    "label": "Dystrophin",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P11597": {
+    "label": "Cholesteryl ester transfer protein",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Lipid transfer protein I"
+    ]
+  },
+  "UniProt:P11712": {
+    "label": "Cytochrome P450 2C9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "(R)-limonene 6-monooxygenase",
+      "(S)-limonene 6-monooxygenase",
+      "(S)-limonene 7-monooxygenase",
+      "CYPIIC9",
+      "Cholesterol 25-hydroxylase",
+      "Cytochrome P-450MP",
+      "Cytochrome P450 MP-4",
+      "Cytochrome P450 MP-8",
+      "Cytochrome P450 PB-1",
+      "S-mephenytoin 4-hydroxylase"
+    ]
+  },
+  "UniProt:P11717": {
+    "label": "Cation-independent mannose-6-phosphate receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CI Man-6-P receptor",
+      "CI-MPR",
+      "M6PR",
+      "300 kDa mannose 6-phosphate receptor",
+      "MPR 300",
+      "Insulin-like growth factor 2 receptor",
+      "Insulin-like growth factor II receptor",
+      "IGF-II receptor",
+      "M6P/IGF2 receptor",
+      "M6P/IGF2R"
+    ]
+  },
+  "UniProt:P11836": {
+    "label": "B-lymphocyte antigen CD20",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "B-lymphocyte surface antigen B1",
+      "Bp35",
+      "Leukocyte surface antigen Leu-16",
+      "Membrane-spanning 4-domains subfamily A member 1"
+    ]
+  },
+  "UniProt:P11926": {
+    "label": "Ornithine decarboxylase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ODC"
+    ]
+  },
+  "UniProt:P12268": {
+    "label": "Inosine-5'-monophosphate dehydrogenase 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IMP dehydrogenase 2",
+      "IMPD 2",
+      "IMPDH 2",
+      "Inosine-5'-monophosphate dehydrogenase type II",
+      "IMP dehydrogenase II",
+      "IMPDH-II"
+    ]
+  },
+  "UniProt:P12821": {
+    "label": "Angiotensin-converting enzyme",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ACE",
+      "Dipeptidyl carboxypeptidase I",
+      "Kininase II"
+    ]
+  },
+  "UniProt:P13196": {
+    "label": "5-aminolevulinate synthase, non-specific, mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ALAS-H",
+      "5-aminolevulinic acid synthase 1",
+      "Delta-ALA synthase 1",
+      "Delta-aminolevulinate synthase 1"
+    ]
+  },
+  "UniProt:P13423": {
+    "label": "Protective antigen",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PA",
+      "Anthrax toxins translocating protein",
+      "PA-83",
+      "PA83"
+    ]
+  },
+  "UniProt:P13569": {
+    "label": "Cystic fibrosis transmembrane conductance regulator",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CFTR",
+      "ATP-binding cassette sub-family C member 7",
+      "Channel conductance-controlling ATPase",
+      "cAMP-dependent chloride channel"
+    ]
+  },
+  "UniProt:P13612": {
+    "label": "Integrin alpha-4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CD49 antigen-like family member D",
+      "Integrin alpha-IV",
+      "VLA-4 subunit alpha"
+    ]
+  },
+  "UniProt:P13631": {
+    "label": "Retinoic acid receptor gamma",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "RAR-gamma",
+      "Nuclear receptor subfamily 1 group B member 3"
+    ]
+  },
+  "UniProt:P13639": {
+    "label": "Elongation factor 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-2"
+    ]
+  },
+  "UniProt:P13843": {
+    "label": "Fusion glycoprotein F0",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P13866": {
+    "label": "Sodium/glucose cotransporter 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Na(+)/glucose cotransporter 1",
+      "High affinity sodium-glucose cotransporter",
+      "Solute carrier family 5 member 1"
+    ]
+  },
+  "UniProt:P13922": {
+    "label": "Bifunctional dihydrofolate reductase-thymidylate synthase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DHFR-TS"
+    ]
+  },
+  "UniProt:P13945": {
+    "label": "Beta-3 adrenergic receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Beta-3 adrenoreceptor",
+      "Beta-3 adrenoceptor"
+    ]
+  },
+  "UniProt:P14060": {
+    "label": "3 beta-hydroxysteroid dehydrogenase/Delta 5-->4-isomerase type 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "3 beta-hydroxysteroid dehydrogenase/Delta 5-->4-isomerase type I",
+      "3-beta-HSD I",
+      "3-beta-hydroxy-5-ene steroid dehydrogenase",
+      "3-beta-hydroxy-Delta(5)-steroid dehydrogenase",
+      "3-beta-hydroxysteroid 3-dehydrogenase",
+      "Delta-5-3-ketosteroid isomerase",
+      "Dihydrotestosterone oxidoreductase",
+      "Steroid Delta-isomerase",
+      "Trophoblast antigen FDO161G"
+    ]
+  },
+  "UniProt:P14324": {
+    "label": "Farnesyl pyrophosphate synthase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "FPP synthase",
+      "FPS",
+      "(2E,6E)-farnesyl diphosphate synthase",
+      "Dimethylallyltranstransferase",
+      "Farnesyl diphosphate synthase",
+      "Geranyltranstransferase"
+    ]
+  },
+  "UniProt:P14410": {
+    "label": "Sucrase-isomaltase, intestinal",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P14416": {
+    "label": "Dopamine receptor D2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Dopamine D2 receptor"
+    ]
+  },
+  "UniProt:P14672": {
+    "label": "Solute carrier family 2, facilitated glucose transporter member 4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Glucose transporter type 4, insulin-responsive",
+      "GLUT-4"
+    ]
+  },
+  "UniProt:P14679": {
+    "label": "Tyrosinase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "LB24-AB",
+      "Monophenol monooxygenase",
+      "SK29-AB",
+      "Tumor rejection antigen AB"
+    ]
+  },
+  "UniProt:P14778": {
+    "label": "Interleukin-1 receptor type 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-1R-1",
+      "IL-1RT-1",
+      "IL-1RT1",
+      "CD121 antigen-like family member A",
+      "Interleukin-1 receptor alpha",
+      "IL-1R-alpha",
+      "Interleukin-1 receptor type I",
+      "p80"
+    ]
+  },
+  "UniProt:P14784": {
+    "label": "Interleukin-2 receptor subunit beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-2 receptor subunit beta",
+      "IL-2R subunit beta",
+      "IL-2RB",
+      "High affinity IL-2 receptor subunit beta",
+      "Interleukin-15 receptor subunit beta",
+      "p70-75",
+      "p75"
+    ]
+  },
+  "UniProt:P14867": {
+    "label": "Gamma-aminobutyric acid receptor subunit alpha-1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GABA(A) receptor subunit alpha-1",
+      "GABAAR subunit alpha-1"
+    ]
+  },
+  "UniProt:P15056": {
+    "label": "Serine/threonine-protein kinase B-raf",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Proto-oncogene B-Raf",
+      "p94",
+      "v-Raf murine sarcoma viral oncogene homolog B1"
+    ]
+  },
+  "UniProt:P15090": {
+    "label": "Fatty acid-binding protein, adipocyte",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Adipocyte lipid-binding protein",
+      "ALBP",
+      "Adipocyte-type fatty acid-binding protein",
+      "A-FABP",
+      "AFABP",
+      "Fatty acid-binding protein 4"
+    ]
+  },
+  "UniProt:P15121": {
+    "label": "Aldo-keto reductase family 1 member B1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Aldehyde reductase",
+      "Alditol:NADP oxidoreductase",
+      "Aldose reductase",
+      "AR"
+    ]
+  },
+  "UniProt:P15428": {
+    "label": "15-hydroxyprostaglandin dehydrogenase [NAD(+)]",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "15-PGDH",
+      "Eicosanoid/docosanoid dehydrogenase [NAD(+)]",
+      "Prostaglandin dehydrogenase 1",
+      "Short chain dehydrogenase/reductase family 36C member 1"
+    ]
+  },
+  "UniProt:P15538": {
+    "label": "Cytochrome P450 11B1, mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CYP11B1",
+      "CYPXIB1",
+      "Cytochrome P-450c11",
+      "Cytochrome P450C11",
+      "Steroid 11-beta-hydroxylase, CYP11B1"
+    ]
+  },
+  "UniProt:P15692": {
+    "label": "Vascular endothelial growth factor A, long form",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "L-VEGF",
+      "Vascular permeability factor",
+      "VPF"
+    ]
+  },
+  "UniProt:P16066": {
+    "label": "Atrial natriuretic peptide receptor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Atrial natriuretic peptide receptor type A",
+      "ANP-A",
+      "ANPR-A",
+      "NPR-A",
+      "Guanylate cyclase A",
+      "GC-A"
+    ]
+  },
+  "UniProt:P16233": {
+    "label": "Pancreatic triacylglycerol lipase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PL",
+      "PTL",
+      "Pancreatic lipase"
+    ]
+  },
+  "UniProt:P16234": {
+    "label": "Platelet-derived growth factor receptor alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PDGF-R-alpha",
+      "PDGFR-alpha",
+      "Alpha platelet-derived growth factor receptor",
+      "Alpha-type platelet-derived growth factor receptor",
+      "CD140 antigen-like family member A",
+      "CD140a antigen",
+      "Platelet-derived growth factor alpha receptor",
+      "Platelet-derived growth factor receptor 2",
+      "PDGFR-2"
+    ]
+  },
+  "UniProt:P16444": {
+    "label": "Dipeptidase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Beta-lactamase",
+      "Dehydropeptidase-I",
+      "Microsomal dipeptidase",
+      "Renal dipeptidase",
+      "hRDP"
+    ]
+  },
+  "UniProt:P16473": {
+    "label": "Thyrotropin receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Thyroid-stimulating hormone receptor",
+      "TSH-R"
+    ]
+  },
+  "UniProt:P17181": {
+    "label": "Interferon alpha/beta receptor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IFN-R-1",
+      "IFN-alpha/beta receptor 1",
+      "Cytokine receptor class-II member 1",
+      "Cytokine receptor family 2 member 1",
+      "CRF2-1",
+      "Type I interferon receptor 1"
+    ]
+  },
+  "UniProt:P17252": {
+    "label": "Protein kinase C alpha type",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PKC-A",
+      "PKC-alpha"
+    ]
+  },
+  "UniProt:P17612": {
+    "label": "cAMP-dependent protein kinase catalytic subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PKA C-alpha"
+    ]
+  },
+  "UniProt:P17752": {
+    "label": "Tryptophan 5-hydroxylase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Tryptophan 5-monooxygenase 1"
+    ]
+  },
+  "UniProt:P17948": {
+    "label": "Vascular endothelial growth factor receptor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "VEGFR-1",
+      "Fms-like tyrosine kinase 1",
+      "FLT-1",
+      "Tyrosine-protein kinase FRT",
+      "Tyrosine-protein kinase receptor FLT",
+      "FLT",
+      "Vascular permeability factor receptor"
+    ]
+  },
+  "UniProt:P18089": {
+    "label": "Alpha-2B adrenergic receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alpha-2 adrenergic receptor subtype C2",
+      "Alpha-2B adrenoreceptor",
+      "Alpha-2B adrenoceptor",
+      "Alpha-2BAR"
+    ]
+  },
+  "UniProt:P18177": {
+    "label": "Toxin B",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P18405": {
+    "label": "3-oxo-5-alpha-steroid 4-dehydrogenase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "SR type 1",
+      "Steroid 5-alpha-reductase 1",
+      "S5AR 1"
+    ]
+  },
+  "UniProt:P18510": {
+    "label": "Interleukin-1 receptor antagonist protein",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-1RN",
+      "IL-1ra",
+      "IRAP",
+      "ICIL-1RA",
+      "IL1 inhibitor"
+    ]
+  },
+  "UniProt:P18825": {
+    "label": "Alpha-2C adrenergic receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alpha-2 adrenergic receptor subtype C4",
+      "Alpha-2C adrenoreceptor",
+      "Alpha-2C adrenoceptor",
+      "Alpha-2CAR"
+    ]
+  },
+  "UniProt:P19235": {
+    "label": "Erythropoietin receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EPO-R"
+    ]
+  },
+  "UniProt:P19320": {
+    "label": "Vascular cell adhesion protein 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "V-CAM 1",
+      "VCAM-1",
+      "INCAM-100"
+    ]
+  },
+  "UniProt:P19793": {
+    "label": "Retinoic acid receptor RXR-alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Nuclear receptor subfamily 2 group B member 1",
+      "Retinoid X receptor alpha"
+    ]
+  },
+  "UniProt:P19838": {
+    "label": "Nuclear factor NF-kappa-B p105 subunit",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DNA-binding factor KBF1",
+      "EBP-1",
+      "Nuclear factor of kappa light polypeptide gene enhancer in B-cells 1"
+    ]
+  },
+  "UniProt:P19971": {
+    "label": "Thymidine phosphorylase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TP",
+      "Gliostatin",
+      "Platelet-derived endothelial cell growth factor",
+      "PD-ECGF",
+      "TdRPase"
+    ]
+  },
+  "UniProt:P20138": {
+    "label": "Myeloid cell surface antigen CD33",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Sialic acid-binding Ig-like lectin 3",
+      "Siglec-3",
+      "gp67"
+    ]
+  },
+  "UniProt:P20309": {
+    "label": "Muscarinic acetylcholine receptor M3",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P20366": {
+    "label": "Protachykinin-1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PPT"
+    ]
+  },
+  "UniProt:P20618": {
+    "label": "Proteasome subunit beta type-1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Macropain subunit C5",
+      "Multicatalytic endopeptidase complex subunit C5",
+      "Proteasome component C5",
+      "Proteasome gamma chain",
+      "Proteasome subunit beta-6",
+      "beta-6"
+    ]
+  },
+  "UniProt:P20645": {
+    "label": "Cation-dependent mannose-6-phosphate receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CD Man-6-P receptor",
+      "CD-MPR",
+      "46 kDa mannose 6-phosphate receptor",
+      "MPR 46"
+    ]
+  },
+  "UniProt:P20648": {
+    "label": "Potassium-transporting ATPase alpha chain 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Gastric H(+)/K(+) ATPase subunit alpha",
+      "Proton pump"
+    ]
+  },
+  "UniProt:P20701": {
+    "label": "Integrin alpha-L",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CD11 antigen-like family member A",
+      "Leukocyte adhesion glycoprotein LFA-1 alpha chain",
+      "LFA-1A",
+      "Leukocyte function-associated molecule 1 alpha chain"
+    ]
+  },
+  "UniProt:P20711": {
+    "label": "Aromatic-L-amino-acid decarboxylase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "AADC",
+      "DOPA decarboxylase",
+      "DDC"
+    ]
+  },
+  "UniProt:P20831": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P20839": {
+    "label": "Inosine-5'-monophosphate dehydrogenase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IMP dehydrogenase 1",
+      "IMPD 1",
+      "IMPDH 1",
+      "IMPDH-I"
+    ]
+  },
+  "UniProt:P21397": {
+    "label": "Amine oxidase [flavin-containing] A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Monoamine oxidase type A",
+      "MAO-A"
+    ]
+  },
+  "UniProt:P21453": {
+    "label": "Sphingosine 1-phosphate receptor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "S1P receptor 1",
+      "S1P1",
+      "Endothelial differentiation G protein-coupled receptor 1",
+      "Sphingosine 1-phosphate receptor Edg-1",
+      "S1P receptor Edg-1"
+    ]
+  },
+  "UniProt:P21554": {
+    "label": "Cannabinoid receptor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CB-R",
+      "CB1",
+      "CANN6"
+    ]
+  },
+  "UniProt:P21728": {
+    "label": "Dopamine receptor D1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "D(1A) dopamine receptor",
+      "Dopamine D1 receptor"
+    ]
+  },
+  "UniProt:P21731": {
+    "label": "Thromboxane A2 receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TXA2-R",
+      "Prostanoid TP receptor"
+    ]
+  },
+  "UniProt:P21817": {
+    "label": "Ryanodine receptor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "RYR-1",
+      "RyR1",
+      "Skeletal muscle calcium release channel",
+      "Skeletal muscle ryanodine receptor",
+      "Skeletal muscle-type ryanodine receptor",
+      "Type 1 ryanodine receptor"
+    ]
+  },
+  "UniProt:P21917": {
+    "label": "Dopamine receptor D4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "D(2C) dopamine receptor",
+      "Dopamine D4 receptor"
+    ]
+  },
+  "UniProt:P21918": {
+    "label": "Dopamine receptor D5",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "D(1B) dopamine receptor",
+      "D(5) dopamine receptor",
+      "D1beta dopamine receptor",
+      "Dopamine D5 receptor"
+    ]
+  },
+  "UniProt:P21964": {
+    "label": "Catechol O-methyltransferase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P22001": {
+    "label": "Potassium voltage-gated channel subfamily A member 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "HGK5",
+      "HLK3",
+      "HPCN3",
+      "Voltage-gated K(+) channel HuKIII",
+      "Voltage-gated potassium channel subunit Kv1.3"
+    ]
+  },
+  "UniProt:P22033": {
+    "label": "Methylmalonyl-CoA mutase, mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "MCM",
+      "Methylmalonyl-CoA isomerase"
+    ]
+  },
+  "UniProt:P22102": {
+    "label": "Trifunctional purine biosynthetic protein adenosine-3",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P22118": {
+    "label": "Antibiotic resistant DNA gyrase subunit B",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P22301": {
+    "label": "Interleukin-10",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-10",
+      "Cytokine synthesis inhibitory factor",
+      "CSIF"
+    ]
+  },
+  "UniProt:P22303": {
+    "label": "Acetylcholinesterase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "AChE"
+    ]
+  },
+  "UniProt:P22304": {
+    "label": "Iduronate 2-sulfatase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alpha-L-iduronate sulfate sulfatase",
+      "Idursulfase"
+    ]
+  },
+  "UniProt:P22446": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P22447": {
+    "label": "DNA gyrase subunit B",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P22460": {
+    "label": "Potassium voltage-gated channel subfamily A member 5",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "HPCN1",
+      "Voltage-gated potassium channel HK2",
+      "Voltage-gated potassium channel subunit Kv1.5"
+    ]
+  },
+  "UniProt:P22748": {
+    "label": "Carbonic anhydrase 4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Carbonate dehydratase IV",
+      "Carbonic anhydrase IV",
+      "CA-IV"
+    ]
+  },
+  "UniProt:P23219": {
+    "label": "Prostaglandin G/H synthase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cyclooxygenase-1",
+      "COX-1",
+      "Prostaglandin H2 synthase 1",
+      "PGH synthase 1",
+      "PGHS-1",
+      "PHS 1",
+      "Prostaglandin-endoperoxide synthase 1"
+    ]
+  },
+  "UniProt:P23258": {
+    "label": "Tubulin gamma-1 chain",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Gamma-1-tubulin",
+      "Gamma-tubulin complex component 1",
+      "GCP-1"
+    ]
+  },
+  "UniProt:P23458": {
+    "label": "Tyrosine-protein kinase JAK1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Janus kinase 1",
+      "JAK-1"
+    ]
+  },
+  "UniProt:P23560": {
+    "label": "Neurotrophic factor BDNF precursor form",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "proBDNF",
+      "Abrineurin",
+      "Brain-derived neurotrophic factor"
+    ]
+  },
+  "UniProt:P23921": {
+    "label": "Ribonucleoside-diphosphate reductase large subunit",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Ribonucleoside-diphosphate reductase subunit M1",
+      "Ribonucleotide reductase large subunit"
+    ]
+  },
+  "UniProt:P23945": {
+    "label": "Follicle-stimulating hormone receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "FSH-R",
+      "Follitropin receptor"
+    ]
+  },
+  "UniProt:P23975": {
+    "label": "Sodium-dependent noradrenaline transporter",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Norepinephrine transporter",
+      "NET",
+      "Solute carrier family 6 member 2"
+    ]
+  },
+  "UniProt:P24024": {
+    "label": "Protein P",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P24228": {
+    "label": "D-alanyl-D-alanine carboxypeptidase DacB",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DD-carboxypeptidase",
+      "DD-peptidase",
+      "D-alanyl-D-alanine endopeptidase",
+      "DD-endopeptidase",
+      "Penicillin-binding protein 4",
+      "PBP-4"
+    ]
+  },
+  "UniProt:P24394": {
+    "label": "Interleukin-4 receptor subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-4 receptor subunit alpha",
+      "IL-4R subunit alpha",
+      "IL-4R-alpha",
+      "IL-4RA"
+    ]
+  },
+  "UniProt:P24530": {
+    "label": "Endothelin receptor type B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ET-B",
+      "ET-BR",
+      "Endothelin receptor non-selective type"
+    ]
+  },
+  "UniProt:P24557": {
+    "label": "Thromboxane-A synthase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TXA synthase",
+      "TXS",
+      "Cytochrome P450 5A1",
+      "Hydroperoxy icosatetraenoate dehydratase"
+    ]
+  },
+  "UniProt:P25021": {
+    "label": "Histamine H2 receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "H2R",
+      "HH2R",
+      "Gastric receptor I"
+    ]
+  },
+  "UniProt:P25024": {
+    "label": "C-X-C chemokine receptor type 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CXC-R1",
+      "CXCR-1",
+      "CDw128a",
+      "High affinity interleukin-8 receptor A",
+      "IL-8R A",
+      "IL-8 receptor type 1"
+    ]
+  },
+  "UniProt:P25092": {
+    "label": "Guanylyl cyclase C",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GC-C",
+      "Heat-stable enterotoxin receptor",
+      "STA receptor",
+      "hSTAR",
+      "Intestinal guanylate cyclase"
+    ]
+  },
+  "UniProt:P25100": {
+    "label": "Alpha-1D adrenergic receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alpha-1A adrenergic receptor",
+      "Alpha-1D adrenoreceptor",
+      "Alpha-1D adrenoceptor",
+      "Alpha-adrenergic receptor 1a"
+    ]
+  },
+  "UniProt:P25101": {
+    "label": "Endothelin-1 receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Endothelin receptor type A",
+      "ET-A",
+      "ETA-R",
+      "hET-AR"
+    ]
+  },
+  "UniProt:P25105": {
+    "label": "Platelet-activating factor receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PAF-R",
+      "PAFr"
+    ]
+  },
+  "UniProt:P25116": {
+    "label": "Proteinase-activated receptor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PAR-1",
+      "Coagulation factor II receptor",
+      "Thrombin receptor"
+    ]
+  },
+  "UniProt:P25815": {
+    "label": "Protein S100-P",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Migration-inducing gene 9 protein",
+      "MIG9",
+      "Protein S100-E",
+      "S100 calcium-binding protein P"
+    ]
+  },
+  "UniProt:P26010": {
+    "label": "Integrin beta-7",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Gut homing receptor beta subunit"
+    ]
+  },
+  "UniProt:P26358": {
+    "label": "DNA (cytosine-5)-methyltransferase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Dnmt1",
+      "CXXC-type zinc finger protein 9",
+      "DNA methyltransferase HsaI",
+      "DNA MTase HsaI",
+      "M.HsaI",
+      "MCMT"
+    ]
+  },
+  "UniProt:P26439": {
+    "label": "3 beta-hydroxysteroid dehydrogenase/Delta 5-->4-isomerase type 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "3 beta-hydroxysteroid dehydrogenase/Delta 5-->4-isomerase type II",
+      "3-beta-HSD II",
+      "3-beta-HSD adrenal and gonadal type"
+    ]
+  },
+  "UniProt:P27338": {
+    "label": "Amine oxidase [flavin-containing] B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Monoamine oxidase type B",
+      "MAO-B"
+    ]
+  },
+  "UniProt:P27487": {
+    "label": "Dipeptidyl peptidase 4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ADABP",
+      "Adenosine deaminase complexing protein 2",
+      "ADCP-2",
+      "Dipeptidyl peptidase IV",
+      "DPP IV",
+      "T-cell activation antigen CD26",
+      "TP103"
+    ]
+  },
+  "UniProt:P27815": {
+    "label": "3',5'-cyclic-AMP phosphodiesterase 4A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DPDE2",
+      "PDE46",
+      "cAMP-specific phosphodiesterase 4A"
+    ]
+  },
+  "UniProt:P27958": {
+    "label": "Genome polyprotein",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P28062": {
+    "label": "Proteasome subunit beta type-8",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Low molecular mass protein 7",
+      "Macropain subunit C13",
+      "Multicatalytic endopeptidase complex subunit C13",
+      "Proteasome component C13",
+      "Proteasome subunit beta-5i",
+      "Really interesting new gene 10 protein"
+    ]
+  },
+  "UniProt:P28065": {
+    "label": "Proteasome subunit beta type-9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Low molecular mass protein 2",
+      "Macropain chain 7",
+      "Multicatalytic endopeptidase complex chain 7",
+      "Proteasome chain 7",
+      "Proteasome subunit beta-1i",
+      "Really interesting new gene 12 protein"
+    ]
+  },
+  "UniProt:P28074": {
+    "label": "Proteasome subunit beta type-5",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Macropain epsilon chain",
+      "Multicatalytic endopeptidase complex epsilon chain",
+      "Proteasome chain 6",
+      "Proteasome epsilon chain",
+      "Proteasome subunit MB1",
+      "Proteasome subunit X",
+      "Proteasome subunit beta-5",
+      "beta-5"
+    ]
+  },
+  "UniProt:P28221": {
+    "label": "5-hydroxytryptamine receptor 1D",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "5-HT-1D",
+      "5-HT1D",
+      "Serotonin 1D alpha receptor",
+      "5-HT-1D-alpha",
+      "Serotonin receptor 1D"
+    ]
+  },
+  "UniProt:P28222": {
+    "label": "5-hydroxytryptamine receptor 1B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "5-HT-1B",
+      "5-HT1B",
+      "S12",
+      "Serotonin 1D beta receptor",
+      "5-HT-1D-beta",
+      "Serotonin receptor 1B"
+    ]
+  },
+  "UniProt:P28223": {
+    "label": "5-hydroxytryptamine receptor 2A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "5-HT-2",
+      "5-HT-2A",
+      "Serotonin receptor 2A"
+    ]
+  },
+  "UniProt:P28335": {
+    "label": "5-hydroxytryptamine receptor 2C",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "5-HT-2C",
+      "5-HT2C",
+      "5-HTR2C",
+      "5-hydroxytryptamine receptor 1C",
+      "5-HT-1C",
+      "5-HT1C",
+      "Serotonin receptor 2C"
+    ]
+  },
+  "UniProt:P28702": {
+    "label": "Retinoic acid receptor RXR-beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Nuclear receptor subfamily 2 group B member 2",
+      "Retinoid X receptor beta"
+    ]
+  },
+  "UniProt:P28845": {
+    "label": "11-beta-hydroxysteroid dehydrogenase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "11-DH",
+      "11-beta-HSD1",
+      "7-oxosteroid reductase",
+      "Corticosteroid 11-beta-dehydrogenase isozyme 1",
+      "Short chain dehydrogenase/reductase family 26C member 1"
+    ]
+  },
+  "UniProt:P28907": {
+    "label": "ADP-ribosyl cyclase/cyclic ADP-ribose hydrolase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "2'-phospho-ADP-ribosyl cyclase",
+      "2'-phospho-ADP-ribosyl cyclase/2'-phospho-cyclic-ADP-ribose transferase",
+      "2'-phospho-cyclic-ADP-ribose transferase",
+      "ADP-ribosyl cyclase 1",
+      "ADPRC 1",
+      "Cyclic ADP-ribose hydrolase 1",
+      "cADPR hydrolase 1",
+      "T10"
+    ]
+  },
+  "UniProt:P28908": {
+    "label": "Tumor necrosis factor receptor superfamily member 8",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CD30L receptor",
+      "Ki-1 antigen",
+      "Lymphocyte activation antigen CD30"
+    ]
+  },
+  "UniProt:P29218": {
+    "label": "Inositol monophosphatase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IMP 1",
+      "IMPase 1",
+      "D-galactose 1-phosphate phosphatase",
+      "Inositol-1(or 4)-monophosphatase 1",
+      "Lithium-sensitive myo-inositol monophosphatase A1"
+    ]
+  },
+  "UniProt:P29274": {
+    "label": "Adenosine receptor A2a",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P29275": {
+    "label": "Adenosine receptor A2b",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P29460": {
+    "label": "Interleukin-12 subunit beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-12B",
+      "Cytotoxic lymphocyte maturation factor 40 kDa subunit",
+      "CLMF p40",
+      "IL-12 subunit p40",
+      "NK cell stimulatory factor chain 2",
+      "NKSF2"
+    ]
+  },
+  "UniProt:P29474": {
+    "label": "Nitric oxide synthase 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Constitutive NOS",
+      "cNOS",
+      "EC-NOS",
+      "NOS type III",
+      "NOSIII",
+      "Nitric oxide synthase, endothelial",
+      "Endothelial NOS",
+      "eNOS"
+    ]
+  },
+  "UniProt:P29597": {
+    "label": "Non-receptor tyrosine-protein kinase TYK2",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P29966": {
+    "label": "Myristoylated alanine-rich C-kinase substrate",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "MARCKS",
+      "Protein kinase C substrate, 80 kDa protein, light chain",
+      "80K-L protein",
+      "PKCSL"
+    ]
+  },
+  "UniProt:P30085": {
+    "label": "UMP-CMP kinase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Deoxycytidylate kinase",
+      "CK",
+      "dCMP kinase",
+      "Nucleoside-diphosphate kinase",
+      "Uridine monophosphate/cytidine monophosphate kinase",
+      "UMP/CMP kinase",
+      "UMP/CMPK"
+    ]
+  },
+  "UniProt:P30411": {
+    "label": "B2 bradykinin receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "B2R",
+      "BK-2 receptor"
+    ]
+  },
+  "UniProt:P30518": {
+    "label": "Vasopressin V2 receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "V2R",
+      "AVPR V2",
+      "Antidiuretic hormone receptor",
+      "Renal-type arginine vasopressin receptor"
+    ]
+  },
+  "UniProt:P30531": {
+    "label": "Sodium- and chloride-dependent GABA transporter 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GAT-1",
+      "Solute carrier family 6 member 1"
+    ]
+  },
+  "UniProt:P30556": {
+    "label": "Type-1 angiotensin II receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "AT1AR",
+      "AT1BR",
+      "Angiotensin II type-1 receptor",
+      "AT1 receptor"
+    ]
+  },
+  "UniProt:P30559": {
+    "label": "Oxytocin receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "OT-R"
+    ]
+  },
+  "UniProt:P30872": {
+    "label": "Somatostatin receptor type 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "SS-1-R",
+      "SS1-R",
+      "SS1R",
+      "SST1",
+      "SRIF-2"
+    ]
+  },
+  "UniProt:P30874": {
+    "label": "Somatostatin receptor type 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "SS-2-R",
+      "SS2-R",
+      "SS2R",
+      "SST2",
+      "SRIF-1"
+    ]
+  },
+  "UniProt:P30926": {
+    "label": "Neuronal acetylcholine receptor subunit beta-4",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P30939": {
+    "label": "5-hydroxytryptamine receptor 1F",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "5-HT-1F",
+      "5-HT1F",
+      "Serotonin receptor 1F"
+    ]
+  },
+  "UniProt:P30968": {
+    "label": "Gonadotropin-releasing hormone receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GnRH receptor",
+      "GnRH-R"
+    ]
+  },
+  "UniProt:P30988": {
+    "label": "Calcitonin receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CT-R"
+    ]
+  },
+  "UniProt:P31040": {
+    "label": "Succinate dehydrogenase [ubiquinone] flavoprotein subunit, mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Flavoprotein subunit of complex II",
+      "Fp",
+      "Malate dehydrogenase [quinone] flavoprotein subunit"
+    ]
+  },
+  "UniProt:P31213": {
+    "label": "3-oxo-5-alpha-steroid 4-dehydrogenase 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "5 alpha-SR2",
+      "SR type 2",
+      "Steroid 5-alpha-reductase 2",
+      "S5AR 2",
+      "Type II 5-alpha reductase"
+    ]
+  },
+  "UniProt:P31350": {
+    "label": "Ribonucleoside-diphosphate reductase subunit M2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Ribonucleotide reductase small chain",
+      "Ribonucleotide reductase small subunit"
+    ]
+  },
+  "UniProt:P31358": {
+    "label": "CAMPATH-1 antigen",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CDw52",
+      "Cambridge pathology 1 antigen",
+      "Epididymal secretory protein E5",
+      "Human epididymis-specific protein 5",
+      "He5"
+    ]
+  },
+  "UniProt:P31639": {
+    "label": "Sodium/glucose cotransporter 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Na(+)/glucose cotransporter 2",
+      "Low affinity sodium-glucose cotransporter",
+      "Solute carrier family 5 member 2"
+    ]
+  },
+  "UniProt:P31644": {
+    "label": "Gamma-aminobutyric acid receptor subunit alpha-5",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GABA(A) receptor subunit alpha-5",
+      "GABAAR subunit alpha-5"
+    ]
+  },
+  "UniProt:P31645": {
+    "label": "Sodium-dependent serotonin transporter",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "SERT",
+      "5HT transporter",
+      "5HTT",
+      "Solute carrier family 6 member 4"
+    ]
+  },
+  "UniProt:P31749": {
+    "label": "RAC-alpha serine/threonine-protein kinase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Protein kinase B",
+      "PKB",
+      "Protein kinase B alpha",
+      "PKB alpha",
+      "Proto-oncogene c-Akt",
+      "RAC-PK-alpha"
+    ]
+  },
+  "UniProt:P31785": {
+    "label": "Cytokine receptor common subunit gamma",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Interleukin-2 receptor subunit gamma",
+      "IL-2 receptor subunit gamma",
+      "IL-2R subunit gamma",
+      "IL-2RG",
+      "gammaC",
+      "p64"
+    ]
+  },
+  "UniProt:P31939": {
+    "label": "Bifunctional purine biosynthesis protein ATIC",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "AICAR transformylase/inosine monophosphate cyclohydrolase",
+      "ATIC"
+    ]
+  },
+  "UniProt:P32297": {
+    "label": "Neuronal acetylcholine receptor subunit alpha-3",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P32745": {
+    "label": "Somatostatin receptor type 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "SS-3-R",
+      "SS3-R",
+      "SS3R",
+      "SST3",
+      "SSR-28"
+    ]
+  },
+  "UniProt:P32754": {
+    "label": "4-hydroxyphenylpyruvate dioxygenase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "4-hydroxyphenylpyruvic acid oxidase",
+      "4HPPD",
+      "HPD",
+      "HPPDase",
+      "N(6)-adenosine-methyltransferase HPD"
+    ]
+  },
+  "UniProt:P33402": {
+    "label": "Guanylate cyclase soluble subunit alpha-2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GCS-alpha-2"
+    ]
+  },
+  "UniProt:P33681": {
+    "label": "T-lymphocyte activation antigen CD80",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Activation B7-1 antigen",
+      "BB1",
+      "CTLA-4 counter-receptor B7.1",
+      "B7"
+    ]
+  },
+  "UniProt:P34903": {
+    "label": "Gamma-aminobutyric acid receptor subunit alpha-3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GABA(A) receptor subunit alpha-3",
+      "GABAAR subunit alpha-3"
+    ]
+  },
+  "UniProt:P34969": {
+    "label": "5-hydroxytryptamine receptor 7",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "5-HT-7",
+      "5-HT7",
+      "5-HT-X",
+      "Serotonin receptor 7"
+    ]
+  },
+  "UniProt:P34995": {
+    "label": "Prostaglandin E2 receptor EP1 subtype",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PGE receptor EP1 subtype",
+      "PGE2 receptor EP1 subtype",
+      "Prostanoid EP1 receptor"
+    ]
+  },
+  "UniProt:P35228": {
+    "label": "Nitric oxide synthase, inducible",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Hepatocyte NOS",
+      "HEP-NOS",
+      "Inducible NO synthase",
+      "Inducible NOS",
+      "iNOS",
+      "NOS type II",
+      "Peptidyl-cysteine S-nitrosylase NOS2"
+    ]
+  },
+  "UniProt:P35236": {
+    "label": "Tyrosine-protein phosphatase non-receptor type 7",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Hematopoietic protein-tyrosine phosphatase",
+      "HEPTP",
+      "Protein-tyrosine phosphatase LC-PTP"
+    ]
+  },
+  "UniProt:P35346": {
+    "label": "Somatostatin receptor type 5",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "SS-5-R",
+      "SS5-R",
+      "SS5R",
+      "SST5"
+    ]
+  },
+  "UniProt:P35348": {
+    "label": "Alpha-1A adrenergic receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alpha-1A adrenoreceptor",
+      "Alpha-1A adrenoceptor",
+      "Alpha-1C adrenergic receptor",
+      "Alpha-adrenergic receptor 1c"
+    ]
+  },
+  "UniProt:P35354": {
+    "label": "Prostaglandin G/H synthase 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cyclooxygenase-2",
+      "COX-2",
+      "PHS II",
+      "Prostaglandin H2 synthase 2",
+      "PGH synthase 2",
+      "PGHS-2",
+      "Prostaglandin-endoperoxide synthase 2"
+    ]
+  },
+  "UniProt:P35367": {
+    "label": "Histamine H1 receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "H1-R",
+      "H1R",
+      "HH1R"
+    ]
+  },
+  "UniProt:P35368": {
+    "label": "Alpha-1B adrenergic receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alpha-1B adrenoreceptor",
+      "Alpha-1B adrenoceptor"
+    ]
+  },
+  "UniProt:P35372": {
+    "label": "Mu-type opioid receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "M-OR-1",
+      "MOR-1",
+      "Mu opiate receptor",
+      "Mu opioid receptor",
+      "MOP",
+      "hMOP"
+    ]
+  },
+  "UniProt:P35408": {
+    "label": "Prostaglandin E2 receptor EP4 subtype",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PGE receptor EP4 subtype",
+      "PGE2 receptor EP4 subtype",
+      "Prostanoid EP4 receptor"
+    ]
+  },
+  "UniProt:P35462": {
+    "label": "Dopamine receptor D3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Dopamine D3 receptor"
+    ]
+  },
+  "UniProt:P35475": {
+    "label": "Alpha-L-iduronidase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P35498": {
+    "label": "Sodium channel protein type 1 subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Sodium channel protein brain I subunit alpha",
+      "Sodium channel protein type I subunit alpha",
+      "Voltage-gated sodium channel subunit alpha Nav1.1"
+    ]
+  },
+  "UniProt:P35499": {
+    "label": "Sodium channel protein type 4 subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "SkM1",
+      "Sodium channel protein skeletal muscle subunit alpha",
+      "Sodium channel protein type IV subunit alpha",
+      "Voltage-gated sodium channel subunit alpha Nav1.4"
+    ]
+  },
+  "UniProt:P35916": {
+    "label": "Vascular endothelial growth factor receptor 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "VEGFR-3",
+      "Fms-like tyrosine kinase 4",
+      "FLT-4",
+      "Tyrosine-protein kinase receptor FLT4"
+    ]
+  },
+  "UniProt:P35968": {
+    "label": "Vascular endothelial growth factor receptor 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "VEGFR-2",
+      "Fetal liver kinase 1",
+      "FLK-1",
+      "Kinase insert domain receptor",
+      "KDR",
+      "Protein-tyrosine kinase receptor flk-1"
+    ]
+  },
+  "UniProt:P36888": {
+    "label": "Receptor-type tyrosine-protein kinase FLT3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "FL cytokine receptor",
+      "Fetal liver kinase-2",
+      "FLK-2",
+      "Fms-like tyrosine kinase 3",
+      "FLT-3",
+      "Stem cell tyrosine kinase 1",
+      "STK-1"
+    ]
+  },
+  "UniProt:P37088": {
+    "label": "Epithelial sodium channel subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alpha-ENaC",
+      "ENaC subunit alpha",
+      "ENaCA",
+      "Epithelial Na(+) channel subunit alpha",
+      "Alpha-NaCH",
+      "Amiloride-sensitive sodium channel subunit alpha",
+      "Nonvoltage-gated sodium channel 1 subunit alpha",
+      "SCNEA",
+      "Sodium channel epithelial 1 subunit alpha"
+    ]
+  },
+  "UniProt:P37231": {
+    "label": "Peroxisome proliferator-activated receptor gamma",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PPAR-gamma",
+      "Nuclear receptor subfamily 1 group C member 3"
+    ]
+  },
+  "UniProt:P37288": {
+    "label": "Vasopressin V1a receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "V1aR",
+      "AVPR V1a",
+      "Antidiuretic hormone receptor 1a",
+      "Vascular/hepatic-type arginine vasopressin receptor"
+    ]
+  },
+  "UniProt:P37321": {
+    "label": "Extended-spectrum beta-lactamase PER-1",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P38435": {
+    "label": "Vitamin K-dependent gamma-carboxylase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "VKGC",
+      "Gamma-glutamyl carboxylase",
+      "Peptidyl-glutamate 4-carboxylase",
+      "Vitamin K gamma glutamyl carboxylase"
+    ]
+  },
+  "UniProt:P38606": {
+    "label": "V-type proton ATPase catalytic subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "V-ATPase subunit A",
+      "V-ATPase 69 kDa subunit",
+      "Vacuolar ATPase isoform VA68",
+      "Vacuolar proton pump subunit alpha"
+    ]
+  },
+  "UniProt:P39023": {
+    "label": "Large ribosomal subunit protein uL3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "60S ribosomal protein L3",
+      "HIV-1 TAR RNA-binding protein B",
+      "TARBP-B"
+    ]
+  },
+  "UniProt:P40238": {
+    "label": "Thrombopoietin receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TPO-R",
+      "Myeloproliferative leukemia protein",
+      "Proto-oncogene c-Mpl"
+    ]
+  },
+  "UniProt:P40306": {
+    "label": "Proteasome subunit beta type-10",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Low molecular mass protein 10",
+      "Macropain subunit MECl-1",
+      "Multicatalytic endopeptidase complex subunit MECl-1",
+      "Proteasome MECl-1",
+      "Proteasome subunit beta-2i"
+    ]
+  },
+  "UniProt:P41084": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:P41143": {
+    "label": "Delta-type opioid receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "D-OR-1",
+      "DOR-1"
+    ]
+  },
+  "UniProt:P41145": {
+    "label": "Kappa-type opioid receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "K-OR-1",
+      "KOR-1"
+    ]
+  },
+  "UniProt:P41180": {
+    "label": "Extracellular calcium-sensing receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CaR",
+      "CaSR",
+      "hCasR",
+      "Parathyroid cell calcium-sensing receptor 1",
+      "PCaR1"
+    ]
+  },
+  "UniProt:P41594": {
+    "label": "Metabotropic glutamate receptor 5",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "mGluR5"
+    ]
+  },
+  "UniProt:P41595": {
+    "label": "5-hydroxytryptamine receptor 2B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "5-HT-2B",
+      "5-HT2B",
+      "Serotonin receptor 2B"
+    ]
+  },
+  "UniProt:P42081": {
+    "label": "T-lymphocyte activation antigen CD86",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Activation B7-2 antigen",
+      "B70",
+      "BU63",
+      "CTLA-4 counter-receptor B7.2",
+      "FUN-1"
+    ]
+  },
+  "UniProt:P42261": {
+    "label": "Glutamate receptor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GluR-1",
+      "AMPA-selective glutamate receptor 1",
+      "GluR-A",
+      "GluR-K1",
+      "Glutamate receptor ionotropic, AMPA 1"
+    ]
+  },
+  "UniProt:P42345": {
+    "label": "Serine/threonine-protein kinase mTOR",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "FK506-binding protein 12-rapamycin complex-associated protein 1",
+      "FKBP12-rapamycin complex-associated protein",
+      "Mammalian target of rapamycin",
+      "mTOR",
+      "Mechanistic target of rapamycin",
+      "Rapamycin and FKBP12 target 1",
+      "Rapamycin target protein 1",
+      "Tyrosine-protein kinase mTOR"
+    ]
+  },
+  "UniProt:P42765": {
+    "label": "3-ketoacyl-CoA thiolase, mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Acetyl-CoA acetyltransferase",
+      "Acetyl-CoA acyltransferase",
+      "Acyl-CoA hydrolase, mitochondrial",
+      "Beta-ketothiolase",
+      "Mitochondrial 3-oxoacyl-CoA thiolase",
+      "T1"
+    ]
+  },
+  "UniProt:P43088": {
+    "label": "Prostaglandin F2-alpha receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PGF receptor",
+      "PGF2-alpha receptor",
+      "Prostanoid FP receptor"
+    ]
+  },
+  "UniProt:P43116": {
+    "label": "Prostaglandin E2 receptor EP2 subtype",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PGE receptor EP2 subtype",
+      "PGE2 receptor EP2 subtype",
+      "Prostanoid EP2 receptor"
+    ]
+  },
+  "UniProt:P43119": {
+    "label": "Prostacyclin receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Prostaglandin I2 receptor",
+      "PGI receptor",
+      "PGI2 receptor",
+      "Prostanoid IP receptor"
+    ]
+  },
+  "UniProt:P43166": {
+    "label": "Carbonic anhydrase 7",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Carbonate dehydratase VII",
+      "Carbonic anhydrase VII",
+      "CA-VII"
+    ]
+  },
+  "UniProt:P43220": {
+    "label": "Glucagon-like peptide 1 receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GLP-1 receptor",
+      "GLP-1-R",
+      "GLP-1R"
+    ]
+  },
+  "UniProt:P43700": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P43702": {
+    "label": "DNA topoisomerase 4 subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit A"
+    ]
+  },
+  "UniProt:P44350": {
+    "label": "Large ribosomal subunit protein uL10",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "50S ribosomal protein L10"
+    ]
+  },
+  "UniProt:P44469": {
+    "label": "Peptidoglycan D,D-transpeptidase MrdA",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Penicillin-binding protein 2",
+      "PBP-2"
+    ]
+  },
+  "UniProt:P46098": {
+    "label": "5-hydroxytryptamine receptor 3A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "5-HT3-A",
+      "5-HT3A",
+      "5-hydroxytryptamine receptor 3",
+      "5-HT-3",
+      "5-HT3R",
+      "Serotonin receptor 3A",
+      "Serotonin-gated ion channel receptor"
+    ]
+  },
+  "UniProt:P46775": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:P47712": {
+    "label": "Cytosolic phospholipase A2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "cPLA2",
+      "Phospholipase A2 group IVA"
+    ]
+  },
+  "UniProt:P47869": {
+    "label": "Gamma-aminobutyric acid receptor subunit alpha-2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GABA(A) receptor subunit alpha-2",
+      "GABAAR subunit alpha-2"
+    ]
+  },
+  "UniProt:P47871": {
+    "label": "Glucagon receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GL-R"
+    ]
+  },
+  "UniProt:P47989": {
+    "label": "Xanthine dehydrogenase/oxidase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P48039": {
+    "label": "Melatonin receptor type 1A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Mel-1A-R",
+      "Mel1a receptor"
+    ]
+  },
+  "UniProt:P48048": {
+    "label": "ATP-sensitive inward rectifier potassium channel 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ATP-regulated potassium channel ROM-K",
+      "Inward rectifier K(+) channel Kir1.1",
+      "Potassium channel, inwardly rectifying subfamily J member 1"
+    ]
+  },
+  "UniProt:P48169": {
+    "label": "Gamma-aminobutyric acid receptor subunit alpha-4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GABA(A) receptor subunit alpha-4",
+      "GABAAR subunit alpha-4"
+    ]
+  },
+  "UniProt:P48357": {
+    "label": "Leptin receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "LEP-R",
+      "HuB219",
+      "OB receptor",
+      "OB-R"
+    ]
+  },
+  "UniProt:P48371": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P48374": {
+    "label": "DNA topoisomerase 4 subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit A"
+    ]
+  },
+  "UniProt:P48443": {
+    "label": "Retinoic acid receptor RXR-gamma",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Nuclear receptor subfamily 2 group B member 3",
+      "Retinoid X receptor gamma"
+    ]
+  },
+  "UniProt:P48551": {
+    "label": "Interferon alpha/beta receptor 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IFN-R-2",
+      "IFN-alpha binding protein",
+      "IFN-alpha/beta receptor 2",
+      "Interferon alpha binding protein",
+      "Type I interferon receptor 2"
+    ]
+  },
+  "UniProt:P49019": {
+    "label": "Hydroxycarboxylic acid receptor 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "G protein-coupled receptor 109B",
+      "G protein-coupled receptor HM74",
+      "G protein-coupled receptor HM74B",
+      "Niacin receptor 2",
+      "Nicotinic acid receptor 2"
+    ]
+  },
+  "UniProt:P49286": {
+    "label": "Melatonin receptor type 1B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Mel-1B-R",
+      "Mel1b receptor"
+    ]
+  },
+  "UniProt:P49643": {
+    "label": "DNA primase large subunit",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DNA primase 58 kDa subunit",
+      "p58"
+    ]
+  },
+  "UniProt:P49721": {
+    "label": "Proteasome subunit beta type-2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Macropain subunit C7-I",
+      "Multicatalytic endopeptidase complex subunit C7-I",
+      "Proteasome component C7-I",
+      "Proteasome subunit beta-4",
+      "beta-4"
+    ]
+  },
+  "UniProt:P50148": {
+    "label": "Guanine nucleotide-binding protein G(q) subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Guanine nucleotide-binding protein alpha-q"
+    ]
+  },
+  "UniProt:P50859": {
+    "label": "Lanosterol 14-alpha demethylase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CYPLI",
+      "Cytochrome P450 51",
+      "Cytochrome P450-14DM",
+      "Cytochrome P450-LIA1",
+      "Sterol 14-alpha demethylase"
+    ]
+  },
+  "UniProt:P51164": {
+    "label": "Potassium-transporting ATPase subunit beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Gastric H(+)/K(+) ATPase subunit beta",
+      "Proton pump beta chain"
+    ]
+  },
+  "UniProt:P51168": {
+    "label": "Epithelial sodium channel subunit beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Beta-ENaC",
+      "ENaC subunit beta",
+      "ENaCB",
+      "Epithelial Na(+) channel subunit beta",
+      "Amiloride-sensitive sodium channel subunit beta",
+      "Beta-NaCH",
+      "Nonvoltage-gated sodium channel 1 subunit beta",
+      "SCNEB"
+    ]
+  },
+  "UniProt:P51170": {
+    "label": "Epithelial sodium channel subunit gamma",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ENaC subunit gamma",
+      "ENaCG",
+      "Epithelial Na(+) channel subunit gamma",
+      "Gamma-ENaC",
+      "Amiloride-sensitive sodium channel subunit gamma",
+      "Gamma-NaCH",
+      "Nonvoltage-gated sodium channel 1 subunit gamma",
+      "SCNEG",
+      "Sodium channel epithelial 1 subunit gamma"
+    ]
+  },
+  "UniProt:P51649": {
+    "label": "Succinate-semialdehyde dehydrogenase, mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Aldehyde dehydrogenase family 5 member A1",
+      "NAD(+)-dependent succinic semialdehyde dehydrogenase"
+    ]
+  },
+  "UniProt:P51679": {
+    "label": "C-C chemokine receptor type 4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "C-C CKR-4",
+      "CC-CKR-4",
+      "CCR-4",
+      "CCR4",
+      "K5-5"
+    ]
+  },
+  "UniProt:P51787": {
+    "label": "Potassium voltage-gated channel subfamily KQT member 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IKs producing slow voltage-gated potassium channel subunit alpha KvLQT1",
+      "KQT-like 1",
+      "Voltage-gated potassium channel subunit Kv7.1"
+    ]
+  },
+  "UniProt:P52333": {
+    "label": "Tyrosine-protein kinase JAK3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Janus kinase 3",
+      "JAK-3",
+      "Leukocyte janus kinase",
+      "L-JAK"
+    ]
+  },
+  "UniProt:P54289": {
+    "label": "Voltage-dependent calcium channel subunit alpha-2/delta-1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Voltage-gated calcium channel subunit alpha-2/delta-1"
+    ]
+  },
+  "UniProt:P54750": {
+    "label": "Dual specificity calcium/calmodulin-dependent 3',5'-cyclic nucleotide phosphodiesterase 1A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cam-PDE 1A",
+      "61 kDa Cam-PDE",
+      "hCam-1"
+    ]
+  },
+  "UniProt:P55017": {
+    "label": "Solute carrier family 12 member 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Na-Cl cotransporter",
+      "NCC",
+      "Na-Cl symporter",
+      "Thiazide-sensitive sodium-chloride cotransporter"
+    ]
+  },
+  "UniProt:P56181": {
+    "label": "NADH dehydrogenase [ubiquinone] flavoprotein 3, mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Complex I-9kD",
+      "CI-9kD",
+      "NADH-ubiquinone oxidoreductase 9 kDa subunit",
+      "Renal carcinoma antigen NY-REN-4"
+    ]
+  },
+  "UniProt:P56282": {
+    "label": "DNA polymerase epsilon subunit 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DNA polymerase II subunit 2",
+      "DNA polymerase epsilon subunit B"
+    ]
+  },
+  "UniProt:P59676": {
+    "label": "Penicillin-binding protein 2X",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PBP-2X",
+      "PBP2X"
+    ]
+  },
+  "UniProt:P60568": {
+    "label": "Interleukin-2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-2",
+      "T-cell growth factor",
+      "TCGF"
+    ]
+  },
+  "UniProt:P61073": {
+    "label": "C-X-C chemokine receptor type 4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CXC-R4",
+      "CXCR-4",
+      "FB22",
+      "Fusin",
+      "HM89",
+      "LCR1",
+      "Leukocyte-derived seven transmembrane domain receptor",
+      "LESTR",
+      "Lipopolysaccharide-associated protein 3",
+      "LAP-3",
+      "LPS-associated protein 3",
+      "NPYRL",
+      "Stromal cell-derived factor 1 receptor",
+      "SDF-1 receptor"
+    ]
+  },
+  "UniProt:P62593": {
+    "label": "Beta-lactamase TEM",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IRT-4",
+      "Penicillinase",
+      "TEM-1",
+      "TEM-16/CAZ-7",
+      "TEM-2",
+      "TEM-24/CAZ-6",
+      "TEM-3",
+      "TEM-4",
+      "TEM-5",
+      "TEM-6",
+      "TEM-8/CAZ-2"
+    ]
+  },
+  "UniProt:P62594": {
+    "label": "Beta-lactamase TEM",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Penicillinase"
+    ]
+  },
+  "UniProt:P62937": {
+    "label": "Peptidyl-prolyl cis-trans isomerase A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PPIase A",
+      "Cyclophilin A",
+      "Cyclosporin A-binding protein",
+      "Rotamase A"
+    ]
+  },
+  "UniProt:P62942": {
+    "label": "Peptidyl-prolyl cis-trans isomerase FKBP1A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PPIase FKBP1A",
+      "12 kDa FK506-binding protein",
+      "12 kDa FKBP",
+      "FKBP-12",
+      "Calstabin-1",
+      "FK506-binding protein 1A",
+      "FKBP-1A",
+      "Immunophilin FKBP12",
+      "Rotamase"
+    ]
+  },
+  "UniProt:P63000": {
+    "label": "Ras-related C3 botulinum toxin substrate 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cell migration-inducing gene 5 protein",
+      "Ras-like protein TC25",
+      "p21-Rac1"
+    ]
+  },
+  "UniProt:P63098": {
+    "label": "Calcineurin subunit B type 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Protein phosphatase 2B regulatory subunit 1",
+      "Protein phosphatase 3 regulatory subunit B alpha isoform 1"
+    ]
+  },
+  "UniProt:P63252": {
+    "label": "Inward rectifier potassium channel 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cardiac inward rectifier potassium channel",
+      "Inward rectifier K(+) channel Kir2.1",
+      "IRK-1",
+      "hIRK1",
+      "Potassium channel, inwardly rectifying subfamily J member 2"
+    ]
+  },
+  "UniProt:P63316": {
+    "label": "Troponin C, slow skeletal and cardiac muscles",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TN-C"
+    ]
+  },
+  "UniProt:P66096": {
+    "label": "Large ribosomal subunit protein uL1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "50S ribosomal protein L1"
+    ]
+  },
+  "UniProt:P66936": {
+    "label": "DNA gyrase subunit B",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P68371": {
+    "label": "Tubulin beta-4B chain",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Tubulin beta-2 chain",
+      "Tubulin beta-2C chain"
+    ]
+  },
+  "UniProt:P68790": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G",
+      "85 kDa vitronectin-binding protein"
+    ]
+  },
+  "UniProt:P72524": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P72525": {
+    "label": "DNA topoisomerase 4 subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit A"
+    ]
+  },
+  "UniProt:P75179": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:P75352": {
+    "label": "DNA topoisomerase 4 subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit A"
+    ]
+  },
+  "UniProt:P75544": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:P75575": {
+    "label": "Large ribosomal subunit protein uL22",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "50S ribosomal protein L22"
+    ]
+  },
+  "UniProt:P78016": {
+    "label": "DNA topoisomerase 4 subunit B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit B"
+    ]
+  },
+  "UniProt:P78032": {
+    "label": "DNA topoisomerase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DNA topoisomerase I",
+      "Omega-protein",
+      "Relaxing enzyme",
+      "Swivelase",
+      "Untwisting enzyme"
+    ]
+  },
+  "UniProt:P78559": {
+    "label": "Microtubule-associated protein 1A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "MAP-1A",
+      "Proliferation-related protein p80"
+    ]
+  },
+  "UniProt:P80404": {
+    "label": "4-aminobutyrate aminotransferase, mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "(S)-3-amino-2-methylpropionate transaminase",
+      "GABA aminotransferase",
+      "GABA-AT",
+      "Gamma-amino-N-butyrate transaminase",
+      "GABA transaminase",
+      "GABA-T",
+      "L-AIBAT"
+    ]
+  },
+  "UniProt:P87764": {
+    "label": "Nonstructural protein 5b",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P9WGR1": {
+    "label": "Enoyl-[acyl-carrier-protein] reductase [NADH]",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ENR",
+      "Enoyl-ACP reductase",
+      "FAS-II enoyl-ACP reductase",
+      "NADH-dependent 2-trans-enoyl-ACP reductase"
+    ]
+  },
+  "UniProt:P9WGY7": {
+    "label": "DNA-directed RNA polymerase subunit beta'",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "RNAP subunit beta'",
+      "RNA polymerase subunit beta'",
+      "Transcriptase subunit beta'"
+    ]
+  },
+  "UniProt:P9WGY9": {
+    "label": "DNA-directed RNA polymerase subunit beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "RNAP subunit beta",
+      "RNA polymerase subunit beta",
+      "Transcriptase subunit beta"
+    ]
+  },
+  "UniProt:P9WNL5": {
+    "label": "Probable arabinosyltransferase C",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P9WNL7": {
+    "label": "Probable arabinosyltransferase B",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P9WNL9": {
+    "label": "Probable arabinosyltransferase A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:P9WP31": {
+    "label": "D-alanine--D-alanine ligase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "D-Ala-D-Ala ligase",
+      "D-alanine:D-alanine ligase",
+      "D-alanylalanine synthetase"
+    ]
+  },
+  "UniProt:P9WPS1": {
+    "label": "ATP synthase subunit c",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ATP synthase F(0) sector subunit c",
+      "F-type ATPase subunit c",
+      "F-ATPase subunit c",
+      "Lipid-binding protein"
+    ]
+  },
+  "UniProt:P9WQA9": {
+    "label": "Alanine racemase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q00000": {
+    "source": "uniprot",
+    "status": "absent"
+  },
+  "UniProt:Q00975": {
+    "label": "Voltage-dependent N-type calcium channel subunit alpha-1B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Brain calcium channel III",
+      "BIII",
+      "Calcium channel, L type, alpha-1 polypeptide isoform 5",
+      "Voltage-gated calcium channel subunit alpha Cav2.2"
+    ]
+  },
+  "UniProt:Q01064": {
+    "label": "Dual specificity calcium/calmodulin-dependent 3',5'-cyclic nucleotide phosphodiesterase 1B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cam-PDE 1B",
+      "63 kDa Cam-PDE"
+    ]
+  },
+  "UniProt:Q01668": {
+    "label": "Voltage-dependent L-type calcium channel subunit alpha-1D",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Calcium channel, L type, alpha-1 polypeptide, isoform 2",
+      "Voltage-gated calcium channel subunit alpha Cav1.3"
+    ]
+  },
+  "UniProt:Q01718": {
+    "label": "Adrenocorticotropic hormone receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ACTH receptor",
+      "ACTH-R",
+      "Adrenocorticotropin receptor",
+      "Melanocortin receptor 2",
+      "MC2-R"
+    ]
+  },
+  "UniProt:Q01726": {
+    "label": "Melanocyte-stimulating hormone receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "MSH-R",
+      "Melanocortin receptor 1",
+      "MC1-R"
+    ]
+  },
+  "UniProt:Q01959": {
+    "label": "Sodium-dependent dopamine transporter",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DA transporter",
+      "DAT",
+      "Solute carrier family 6 member 3"
+    ]
+  },
+  "UniProt:Q02127": {
+    "label": "Dihydroorotate dehydrogenase (quinone), mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DHOdehase",
+      "Dihydroorotate oxidase"
+    ]
+  },
+  "UniProt:Q02156": {
+    "label": "Protein kinase C epsilon type",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "nPKC-epsilon"
+    ]
+  },
+  "UniProt:Q02318": {
+    "label": "Sterol 26-hydroxylase, mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "5-beta-cholestane-3-alpha,7-alpha,12-alpha-triol 26-hydroxylase",
+      "Cytochrome P-450C27/25",
+      "Cytochrome P450 27",
+      "Sterol 27-hydroxylase",
+      "Vitamin D(3) 25-hydroxylase"
+    ]
+  },
+  "UniProt:Q02641": {
+    "label": "Voltage-dependent L-type calcium channel subunit beta-1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CAB1",
+      "Calcium channel voltage-dependent subunit beta 1"
+    ]
+  },
+  "UniProt:Q02643": {
+    "label": "Growth hormone-releasing hormone receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GHRH receptor",
+      "Growth hormone-releasing factor receptor",
+      "GRF receptor",
+      "GRFR"
+    ]
+  },
+  "UniProt:Q02768": {
+    "label": "Cytochrome b",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Complex III subunit 3",
+      "Complex III subunit III",
+      "Cytochrome b-c1 complex subunit 3",
+      "Ubiquinol-cytochrome-c reductase complex cytochrome b subunit"
+    ]
+  },
+  "UniProt:Q02880": {
+    "label": "DNA topoisomerase 2-beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DNA topoisomerase II, beta isozyme"
+    ]
+  },
+  "UniProt:Q03181": {
+    "label": "Peroxisome proliferator-activated receptor delta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PPAR-delta",
+      "NUCI",
+      "Nuclear hormone receptor 1",
+      "NUC1",
+      "Nuclear receptor subfamily 1 group C member 2",
+      "Peroxisome proliferator-activated receptor beta",
+      "PPAR-beta"
+    ]
+  },
+  "UniProt:Q03431": {
+    "label": "Parathyroid hormone/parathyroid hormone-related peptide receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PTH/PTHrP type I receptor",
+      "PTH/PTHr receptor",
+      "Parathyroid hormone 1 receptor",
+      "PTH1 receptor"
+    ]
+  },
+  "UniProt:Q04707": {
+    "label": "Penicillin-binding protein 1A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PBP-1A"
+    ]
+  },
+  "UniProt:Q05486": {
+    "label": "Protein P",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q05586": {
+    "label": "Glutamate receptor ionotropic, NMDA 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GluN1",
+      "Glutamate [NMDA] receptor subunit zeta-1",
+      "N-methyl-D-aspartate receptor subunit NR1",
+      "NMD-R1",
+      "hNR1"
+    ]
+  },
+  "UniProt:Q05655": {
+    "label": "Protein kinase C delta type",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Tyrosine-protein kinase PRKCD",
+      "nPKC-delta"
+    ]
+  },
+  "UniProt:Q05940": {
+    "label": "Synaptic vesicular amine transporter",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Solute carrier family 18 member 2",
+      "Vesicular amine transporter 2",
+      "VAT2",
+      "Vesicular monoamine transporter 2"
+    ]
+  },
+  "UniProt:Q06187": {
+    "label": "Tyrosine-protein kinase BTK",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Agammaglobulinemia tyrosine kinase",
+      "ATK",
+      "B-cell progenitor kinase",
+      "BPK",
+      "Bruton tyrosine kinase"
+    ]
+  },
+  "UniProt:Q06203": {
+    "label": "Amidophosphoribosyltransferase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ATase",
+      "Glutamine phosphoribosylpyrophosphate amidotransferase",
+      "GPAT"
+    ]
+  },
+  "UniProt:Q06432": {
+    "label": "Voltage-dependent calcium channel gamma-1 subunit",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Dihydropyridine-sensitive L-type, skeletal muscle calcium channel subunit gamma"
+    ]
+  },
+  "UniProt:Q07343": {
+    "label": "3',5'-cyclic-AMP phosphodiesterase 4B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DPDE4",
+      "PDE32",
+      "cAMP-specific phosphodiesterase 4B"
+    ]
+  },
+  "UniProt:Q07817-1": {
+    "label": "Isoform Bcl-X(L) of Bcl-2-like protein 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Bcl2-L-1",
+      "Apoptosis regulator Bcl-X"
+    ]
+  },
+  "UniProt:Q07869": {
+    "label": "Peroxisome proliferator-activated receptor alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PPAR-alpha",
+      "Nuclear receptor subfamily 1 group C member 1"
+    ]
+  },
+  "UniProt:Q08209": {
+    "label": "Protein phosphatase 3 catalytic subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CAM-PRP catalytic subunit",
+      "Calcineurin A alpha",
+      "Calmodulin-dependent calcineurin A subunit alpha isoform",
+      "CNA alpha",
+      "Serine/threonine-protein phosphatase 2B catalytic subunit alpha isoform"
+    ]
+  },
+  "UniProt:Q08210": {
+    "label": "Dihydroorotate dehydrogenase (quinone), mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DHOdehase",
+      "Dihydroorotate oxidase"
+    ]
+  },
+  "UniProt:Q08289": {
+    "label": "Voltage-dependent L-type calcium channel subunit beta-2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CAB2",
+      "Calcium channel voltage-dependent subunit beta 2",
+      "Lambert-Eaton myasthenic syndrome antigen B",
+      "MYSB"
+    ]
+  },
+  "UniProt:Q08493": {
+    "label": "3',5'-cyclic-AMP phosphodiesterase 4C",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DPDE1",
+      "PDE21",
+      "cAMP-specific phosphodiesterase 4C"
+    ]
+  },
+  "UniProt:Q08499": {
+    "label": "3',5'-cyclic-AMP phosphodiesterase 4D",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DPDE3",
+      "PDE43",
+      "cAMP-specific phosphodiesterase 4D"
+    ]
+  },
+  "UniProt:Q09428": {
+    "label": "ATP-binding cassette sub-family C member 8",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Sulfonylurea receptor 1"
+    ]
+  },
+  "UniProt:Q12791": {
+    "label": "Calcium-activated potassium channel subunit alpha-1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "BK channel",
+      "BKCA alpha",
+      "Calcium-activated potassium channel, subfamily M subunit alpha-1",
+      "K(VCA)alpha",
+      "KCa1.1",
+      "Maxi K channel",
+      "MaxiK",
+      "Slo-alpha",
+      "Slo1",
+      "Slowpoke homolog",
+      "Slo homolog",
+      "hSlo"
+    ]
+  },
+  "UniProt:Q12809": {
+    "label": "Voltage-gated inwardly rectifying potassium channel KCNH2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Eag homolog",
+      "Ether-a-go-go-related gene potassium channel 1",
+      "ERG-1",
+      "Eag-related protein 1",
+      "Ether-a-go-go-related protein 1",
+      "H-ERG",
+      "hERG-1",
+      "hERG1",
+      "Potassium voltage-gated channel subfamily H member 2",
+      "Voltage-gated potassium channel subunit Kv11.1"
+    ]
+  },
+  "UniProt:Q12879": {
+    "label": "Glutamate receptor ionotropic, NMDA 2A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GluN2A",
+      "Glutamate [NMDA] receptor subunit epsilon-1",
+      "N-methyl D-aspartate receptor subtype 2A",
+      "NMDAR2A",
+      "NR2A",
+      "hNR2A"
+    ]
+  },
+  "UniProt:Q12882": {
+    "label": "Dihydropyrimidine dehydrogenase [NADP(+)]",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DHPDHase",
+      "DPD",
+      "Dihydrothymine dehydrogenase",
+      "Dihydrouracil dehydrogenase"
+    ]
+  },
+  "UniProt:Q13224": {
+    "label": "Glutamate receptor ionotropic, NMDA 2B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GluN2B",
+      "Glutamate [NMDA] receptor subunit epsilon-2",
+      "N-methyl D-aspartate receptor subtype 2B",
+      "NMDAR2B",
+      "NR2B",
+      "N-methyl-D-aspartate receptor subunit 3",
+      "NR3",
+      "hNR3"
+    ]
+  },
+  "UniProt:Q13370": {
+    "label": "cGMP-inhibited 3',5'-cyclic phosphodiesterase 3B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CGIPDE1",
+      "CGIP1",
+      "Cyclic GMP-inhibited phosphodiesterase B",
+      "CGI-PDE B"
+    ]
+  },
+  "UniProt:Q13422": {
+    "label": "DNA-binding protein Ikaros",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Ikaros family zinc finger protein 1",
+      "Lymphoid transcription factor LyF-1"
+    ]
+  },
+  "UniProt:Q13464": {
+    "label": "Rho-associated protein kinase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Renal carcinoma antigen NY-REN-35",
+      "Rho-associated, coiled-coil-containing protein kinase 1",
+      "Rho-associated, coiled-coil-containing protein kinase I",
+      "ROCK-I",
+      "p160 ROCK-1",
+      "p160ROCK"
+    ]
+  },
+  "UniProt:Q13477": {
+    "label": "Mucosal addressin cell adhesion molecule 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "MAdCAM-1",
+      "hMAdCAM-1"
+    ]
+  },
+  "UniProt:Q13510": {
+    "label": "Acid ceramidase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "AC",
+      "ACDase",
+      "Acid CDase",
+      "Acylsphingosine deacylase",
+      "Glycosylceramide deacylase",
+      "N-acylethanolamine hydrolase ASAH1",
+      "N-acylsphingosine amidohydrolase",
+      "Putative 32 kDa heart protein",
+      "PHP32"
+    ]
+  },
+  "UniProt:Q13547": {
+    "label": "Histone deacetylase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "HD1",
+      "Protein deacetylase HDAC1",
+      "Protein deacylase HDAC1"
+    ]
+  },
+  "UniProt:Q13621": {
+    "label": "Solute carrier family 12 member 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Bumetanide-sensitive sodium-(potassium)-chloride cotransporter 1",
+      "BSC1",
+      "Kidney-specific Na-K-Cl symporter",
+      "Na-K-2Cl cotransporter 2",
+      "NKCC2"
+    ]
+  },
+  "UniProt:Q13639": {
+    "label": "5-hydroxytryptamine receptor 4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "5-HT-4",
+      "5-HT4",
+      "Serotonin receptor 4"
+    ]
+  },
+  "UniProt:Q13698": {
+    "label": "Voltage-dependent L-type calcium channel subunit alpha-1S",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Calcium channel, L type, alpha-1 polypeptide, isoform 3, skeletal muscle",
+      "Voltage-gated calcium channel subunit alpha Cav1.1"
+    ]
+  },
+  "UniProt:Q13936": {
+    "label": "Voltage-dependent L-type calcium channel subunit alpha-1C",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Calcium channel, L type, alpha-1 polypeptide, isoform 1, cardiac muscle",
+      "Voltage-gated calcium channel subunit alpha Cav1.2"
+    ]
+  },
+  "UniProt:Q13976": {
+    "label": "cGMP-dependent protein kinase 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "cGK 1",
+      "cGK1",
+      "cGMP-dependent protein kinase I",
+      "cGKI"
+    ]
+  },
+  "UniProt:Q14145": {
+    "label": "Kelch-like ECH-associated protein 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cytosolic inhibitor of Nrf2",
+      "INrf2",
+      "Kelch-like protein 19"
+    ]
+  },
+  "UniProt:Q14164": {
+    "label": "Inhibitor of nuclear factor kappa-B kinase subunit epsilon",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "I-kappa-B kinase epsilon",
+      "IKK-E",
+      "IKK-epsilon",
+      "IkBKE",
+      "Inducible I kappa-B kinase",
+      "IKK-i"
+    ]
+  },
+  "UniProt:Q14432": {
+    "label": "cGMP-inhibited 3',5'-cyclic phosphodiesterase 3A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cyclic GMP-inhibited phosphodiesterase A",
+      "CGI-PDE A",
+      "cGMP-inhibited cAMP phosphodiesterase",
+      "cGI-PDE"
+    ]
+  },
+  "UniProt:Q14500": {
+    "label": "ATP-sensitive inward rectifier potassium channel 12",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Inward rectifier K(+) channel Kir2.2",
+      "IRK-2",
+      "Inward rectifier K(+) channel Kir2.2v",
+      "Potassium channel, inwardly rectifying subfamily J member 12"
+    ]
+  },
+  "UniProt:Q14524": {
+    "label": "Sodium channel protein type 5 subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Sodium channel protein cardiac muscle subunit alpha",
+      "Sodium channel protein type V subunit alpha",
+      "Voltage-gated sodium channel subunit alpha Nav1.5",
+      "hH1"
+    ]
+  },
+  "UniProt:Q14534": {
+    "label": "Squalene monooxygenase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Squalene epoxidase",
+      "SE"
+    ]
+  },
+  "UniProt:Q14626": {
+    "label": "Interleukin-11 receptor subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IL-11 receptor subunit alpha",
+      "IL-11R subunit alpha",
+      "IL-11R-alpha",
+      "IL-11RA"
+    ]
+  },
+  "UniProt:Q14654": {
+    "label": "ATP-sensitive inward rectifier potassium channel 11",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "IKATP",
+      "Inward rectifier K(+) channel Kir6.2",
+      "Potassium channel, inwardly rectifying subfamily J member 11"
+    ]
+  },
+  "UniProt:Q14697": {
+    "label": "Neutral alpha-glucosidase AB",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alpha-glucosidase 2",
+      "Glucosidase II subunit alpha"
+    ]
+  },
+  "UniProt:Q14JC2": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:Q15116": {
+    "label": "Programmed cell death protein 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Protein PD-1",
+      "hPD-1"
+    ]
+  },
+  "UniProt:Q15185": {
+    "label": "Prostaglandin E synthase 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Cytosolic prostaglandin E2 synthase",
+      "cPGES",
+      "Hsp90 co-chaperone",
+      "Progesterone receptor complex p23",
+      "Telomerase-binding protein p23"
+    ]
+  },
+  "UniProt:Q155P6": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:Q15822": {
+    "label": "Neuronal acetylcholine receptor subunit alpha-2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Nicotinic acetylcholine receptor subunit alpha-2"
+    ]
+  },
+  "UniProt:Q15842": {
+    "label": "ATP-sensitive inward rectifier potassium channel 8",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Inward rectifier K(+) channel Kir6.1",
+      "Potassium channel, inwardly rectifying subfamily J member 8",
+      "uKATP-1"
+    ]
+  },
+  "UniProt:Q15858": {
+    "label": "Sodium channel protein type 9 subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Neuroendocrine sodium channel",
+      "hNE-Na",
+      "Peripheral sodium channel 1",
+      "PN1",
+      "Sodium channel protein type IX subunit alpha",
+      "Voltage-gated sodium channel subunit alpha Nav1.7"
+    ]
+  },
+  "UniProt:Q15878": {
+    "label": "Voltage-dependent R-type calcium channel subunit alpha-1E",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Brain calcium channel II",
+      "BII",
+      "Calcium channel, L type, alpha-1 polypeptide, isoform 6",
+      "Voltage-gated calcium channel subunit alpha Cav2.3"
+    ]
+  },
+  "UniProt:Q16134": {
+    "label": "Electron transfer flavoprotein-ubiquinone oxidoreductase, mitochondrial",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ETF-QO",
+      "ETF-ubiquinone oxidoreductase",
+      "Electron-transferring-flavoprotein dehydrogenase",
+      "ETF dehydrogenase"
+    ]
+  },
+  "UniProt:Q16236": {
+    "label": "Nuclear factor erythroid 2-related factor 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "NF-E2-related factor 2",
+      "NFE2-related factor 2",
+      "Nrf-2",
+      "Nuclear factor, erythroid derived 2, like 2"
+    ]
+  },
+  "UniProt:Q16445": {
+    "label": "Gamma-aminobutyric acid receptor subunit alpha-6",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GABA(A) receptor subunit alpha-6",
+      "GABAAR subunit alpha-6"
+    ]
+  },
+  "UniProt:Q16568": {
+    "label": "Cocaine- and amphetamine-regulated transcript protein",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q16739": {
+    "label": "Ceramide glucosyltransferase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GLCT-1",
+      "Glucosylceramide synthase",
+      "GCS",
+      "Glycosylceramide synthase",
+      "UDP-glucose ceramide glucosyltransferase",
+      "UDP-glucose:N-acylsphingosine D-glucosyltransferase"
+    ]
+  },
+  "UniProt:Q16873": {
+    "label": "Leukotriene C4 synthase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "LTC4 synthase",
+      "Glutathione S-transferase LTC4",
+      "Leukotriene-C(4) synthase",
+      "Leukotriene-C4 synthase"
+    ]
+  },
+  "UniProt:Q18BX5": {
+    "label": "RNA polymerase sigma factor SigA",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q2FKQ0": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q2FYS4": {
+    "label": "DNA topoisomerase 4 subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit A"
+    ]
+  },
+  "UniProt:Q2FYS5": {
+    "label": "DNA topoisomerase 4 subunit B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit B"
+    ]
+  },
+  "UniProt:Q2G0P0": {
+    "label": "Large ribosomal subunit protein uL1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "50S ribosomal protein L1"
+    ]
+  },
+  "UniProt:Q2G2Q0": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q2M2H8": {
+    "label": "Probable maltase-glucoamylase 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Maltase-glucoamylase (alpha-glucosidase) pseudogene"
+    ]
+  },
+  "UniProt:Q2VKV7": {
+    "label": "Sodium channel protein",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q4U2R8": {
+    "label": "Solute carrier family 22 member 6",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Organic anion transporter 1",
+      "hOAT1",
+      "PAH transporter",
+      "hPAHT",
+      "Renal organic anion transporter 1",
+      "hROAT1"
+    ]
+  },
+  "UniProt:Q53725": {
+    "label": "Cell division protein FtsI (Peptidoglycan synthetase)",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q53I07": {
+    "label": "Env polyprotein",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q54906": {
+    "label": "Penicillin-binding protein",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q54A16": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q57CQ5": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:Q59961": {
+    "label": "DNA topoisomerase 4 subunit B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit B"
+    ]
+  },
+  "UniProt:Q59R99": {
+    "label": "V-type proton ATPase subunit a",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q5EP76": {
+    "label": "DNA topoisomerase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Omega-protein",
+      "Relaxing enzyme",
+      "Swivelase",
+      "Untwisting enzyme"
+    ]
+  },
+  "UniProt:Q5F5A4": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:Q5F5S1": {
+    "label": "Small ribosomal subunit protein uS12",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S12"
+    ]
+  },
+  "UniProt:Q5F5V1": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:Q5L478": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:Q5NFG2": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q5NHU4": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:Q5UBX3": {
+    "label": "Tubulin beta chain",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Beta-tubulin"
+    ]
+  },
+  "UniProt:Q68HC5": {
+    "label": "sterol 14alpha-demethylase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q6A6R0": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:Q6A6T4": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:Q6FZB9": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:Q6FZQ5": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:Q6FZU4": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:Q6Q788": {
+    "label": "Apolipoprotein A-V",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Apo-AV",
+      "ApoA-V",
+      "Apolipoprotein A5",
+      "Regeneration-associated protein 3"
+    ]
+  },
+  "UniProt:Q71U36": {
+    "label": "Tubulin alpha-1A chain",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Alpha-tubulin 3",
+      "Tubulin B-alpha-1",
+      "Tubulin alpha-3 chain"
+    ]
+  },
+  "UniProt:Q71WB8": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:Q71WI2": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:Q71Z71": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:Q72547": {
+    "label": "Reverse transcriptase/RNaseH",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q72874": {
+    "label": "HIV-1 retropepsin",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Pepsin A"
+    ]
+  },
+  "UniProt:Q7L0J3": {
+    "label": "Synaptic vesicle glycoprotein 2A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q7LG56": {
+    "label": "Ribonucleoside-diphosphate reductase subunit M2 B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TP53-inducible ribonucleotide reductase M2 B",
+      "p53-inducible ribonucleotide reductase small subunit 2-like protein",
+      "p53R2"
+    ]
+  },
+  "UniProt:Q7VKF7": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:Q7VKW4": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q7VL92": {
+    "label": "DNA topoisomerase 4 subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit A"
+    ]
+  },
+  "UniProt:Q7VNA2": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:Q7Z2W7": {
+    "label": "Transient receptor potential cation channel subfamily M member 8",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Long transient receptor potential channel 6",
+      "LTrpC-6",
+      "LTrpC6",
+      "Transient receptor potential p8",
+      "Trp-p8"
+    ]
+  },
+  "UniProt:Q7ZJM1": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:Q809M3": {
+    "label": "RNA-directed RNA polymerase catalytic subunit",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Polymerase basic protein 1",
+      "PB1",
+      "RNA-directed RNA polymerase subunit P1"
+    ]
+  },
+  "UniProt:Q81VT3": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:Q83AX9": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:Q83EQ3": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:Q8DNB6": {
+    "label": "Penicillin-binding protein 2a",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PBP2a",
+      "Cell wall synthase PBP2a"
+    ]
+  },
+  "UniProt:Q8DPM2": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q8DR59": {
+    "label": "Penicillin-binding protein 1A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PBP-1A",
+      "Exported protein 2"
+    ]
+  },
+  "UniProt:Q8GND6": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:Q8I3Z5": {
+    "label": "Translationally-controlled tumor protein homolog",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TCTP"
+    ]
+  },
+  "UniProt:Q8IL04": {
+    "label": "Heme ligase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Heme detoxification protein",
+      "PfHDP",
+      "Hemozoin synthase"
+    ]
+  },
+  "UniProt:Q8IWU9": {
+    "label": "Tryptophan 5-hydroxylase 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Neuronal tryptophan hydroxylase",
+      "Tryptophan 5-monooxygenase 2"
+    ]
+  },
+  "UniProt:Q8KTB2": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:Q8KTC1": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:Q8NBP7": {
+    "label": "Proprotein convertase subtilisin/kexin type 9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Neural apoptosis-regulated convertase 1",
+      "NARC-1",
+      "Proprotein convertase 9",
+      "PC9",
+      "Subtilisin/kexin-like protease PC9"
+    ]
+  },
+  "UniProt:Q8NER1": {
+    "label": "Transient receptor potential cation channel subfamily V member 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TrpV1",
+      "Capsaicin receptor",
+      "Osm-9-like TRP channel 1",
+      "OTRPC1",
+      "Vanilloid receptor 1"
+    ]
+  },
+  "UniProt:Q8NET8": {
+    "label": "Transient receptor potential cation channel subfamily V member 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TrpV3",
+      "Vanilloid receptor-like 3",
+      "VRL-3"
+    ]
+  },
+  "UniProt:Q8TCC7": {
+    "label": "Organic anion transporter 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "hOAT3",
+      "Organic anion/dicarboxylate exchanger",
+      "Solute carrier family 22 member 8"
+    ]
+  },
+  "UniProt:Q8TCU5": {
+    "label": "Glutamate receptor ionotropic, NMDA 3A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GluN3A",
+      "N-methyl-D-aspartate receptor subtype 3A",
+      "NMDAR3A",
+      "NR3A",
+      "NMDAR-L"
+    ]
+  },
+  "UniProt:Q8TDS4": {
+    "label": "Hydroxycarboxylic acid receptor 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "G protein-coupled receptor 109A",
+      "G protein-coupled receptor HM74A",
+      "Niacin receptor 1",
+      "Nicotinic acid receptor"
+    ]
+  },
+  "UniProt:Q8TET4": {
+    "label": "Neutral alpha-glucosidase C",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q8WWX8": {
+    "label": "Sodium/myo-inositol cotransporter 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Na(+)/myo-inositol cotransporter 2",
+      "Sodium-dependent glucose cotransporter",
+      "Sodium/glucose cotransporter KST1",
+      "Sodium/myo-inositol transporter 2",
+      "SMIT2",
+      "Solute carrier family 5 member 11"
+    ]
+  },
+  "UniProt:Q8XET6": {
+    "label": "Large ribosomal subunit protein uL16",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "50S ribosomal protein L16"
+    ]
+  },
+  "UniProt:Q8ZB62": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:Q8ZJ88": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:Q91RS4": {
+    "label": "NS3 protease",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q92206": {
+    "label": "Squalene epoxidase ERG1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "SE",
+      "Ergosterol biosynthesis protein 1",
+      "Squalene monooxygenase ERG1"
+    ]
+  },
+  "UniProt:Q92482": {
+    "label": "Aquaporin-3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "AQP-3",
+      "Aquaglyceroporin-3"
+    ]
+  },
+  "UniProt:Q92731": {
+    "label": "Estrogen receptor beta",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ER-beta",
+      "Nuclear receptor subfamily 3 group A member 2"
+    ]
+  },
+  "UniProt:Q92769": {
+    "label": "Histone deacetylase 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "HD2",
+      "Protein deacylase HDAC2"
+    ]
+  },
+  "UniProt:Q92J93": {
+    "label": "Elongation factor G",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G"
+    ]
+  },
+  "UniProt:Q96885": {
+    "label": "RNA dependent RNA polymerase",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q968X7": {
+    "label": "Pyruvate dehydrogenase [NADP(+)]",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CpPNO",
+      "Pyruvate:NADP(+) oxidoreductase"
+    ]
+  },
+  "UniProt:Q969G6": {
+    "label": "Riboflavin kinase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ATP:riboflavin 5'-phosphotransferase",
+      "Flavokinase"
+    ]
+  },
+  "UniProt:Q96PD7": {
+    "label": "Diacylglycerol O-acyltransferase 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Acyl-CoA retinol O-fatty-acyltransferase",
+      "ARAT",
+      "Retinol O-fatty-acyltransferase",
+      "Diglyceride acyltransferase 2"
+    ]
+  },
+  "UniProt:Q96RJ0": {
+    "label": "Trace amine-associated receptor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TaR-1",
+      "Trace amine receptor 1"
+    ]
+  },
+  "UniProt:Q96S37": {
+    "label": "Solute carrier family 22 member 12",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Organic anion transporter 4-like protein",
+      "Renal-specific transporter",
+      "RST",
+      "Urate anion exchanger 1",
+      "URAT1",
+      "Urate:anion antiporter SLC22A12"
+    ]
+  },
+  "UniProt:Q96SW2": {
+    "label": "Protein cereblon",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q99062": {
+    "label": "Granulocyte colony-stimulating factor receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "G-CSF receptor",
+      "G-CSF-R"
+    ]
+  },
+  "UniProt:Q99500": {
+    "label": "Sphingosine 1-phosphate receptor 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "S1P receptor 3",
+      "S1P3",
+      "Endothelial differentiation G protein-coupled receptor 3",
+      "Sphingosine 1-phosphate receptor Edg-3",
+      "S1P receptor Edg-3"
+    ]
+  },
+  "UniProt:Q99707": {
+    "label": "Methionine synthase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "MS",
+      "5-methyltetrahydrofolate--homocysteine methyltransferase",
+      "Cobalamin-dependent methionine synthase",
+      "Vitamin-B12 dependent methionine synthase"
+    ]
+  },
+  "UniProt:Q99720": {
+    "label": "Sigma non-opioid intracellular receptor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Aging-associated gene 8 protein",
+      "SR31747-binding protein",
+      "SR-BP",
+      "Sigma 1-type opioid receptor",
+      "SIG-1R",
+      "Sigma1-receptor",
+      "Sigma1R",
+      "hSigmaR1"
+    ]
+  },
+  "UniProt:Q9A1X4": {
+    "label": "Large ribosomal subunit protein uL3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "50S ribosomal protein L3"
+    ]
+  },
+  "UniProt:Q9BQB6": {
+    "label": "Vitamin K epoxide reductase complex subunit 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Vitamin K1 2,3-epoxide reductase subunit 1"
+    ]
+  },
+  "UniProt:Q9F663": {
+    "label": "Carbapenem-hydrolyzing beta-lactamase KPC-2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Carbapenem-hydrolyzing beta-lactamase KPC-1"
+    ]
+  },
+  "UniProt:Q9GZZ6": {
+    "label": "Neuronal acetylcholine receptor subunit alpha-10",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Nicotinic acetylcholine receptor subunit alpha-10",
+      "NACHR alpha-10"
+    ]
+  },
+  "UniProt:Q9H228": {
+    "label": "Sphingosine 1-phosphate receptor 5",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "S1P receptor 5",
+      "S1P5",
+      "Endothelial differentiation G protein-coupled receptor 8",
+      "Sphingosine 1-phosphate receptor Edg-8",
+      "S1P receptor Edg-8"
+    ]
+  },
+  "UniProt:Q9H244": {
+    "label": "P2Y purinoceptor 12",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "P2Y12",
+      "ADP-glucose receptor",
+      "ADPG-R",
+      "P2T(AC)",
+      "P2Y(AC)",
+      "P2Y(cyc)",
+      "P2Y12 platelet ADP receptor",
+      "P2Y(ADP)",
+      "SP1999"
+    ]
+  },
+  "UniProt:Q9H4B7": {
+    "label": "Tubulin beta-1 chain",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q9H8P0": {
+    "label": "Polyprenal reductase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "3-oxo-5-alpha-steroid 4-dehydrogenase 3",
+      "Steroid 5-alpha-reductase 2-like",
+      "Steroid 5-alpha-reductase 3",
+      "S5AR 3",
+      "SR type 3"
+    ]
+  },
+  "UniProt:Q9HB55": {
+    "label": "Cytochrome P450 3A43",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q9HBA0": {
+    "label": "Transient receptor potential cation channel subfamily V member 4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "TrpV4",
+      "Osm-9-like TRP channel 4",
+      "OTRPC4",
+      "Transient receptor potential protein 12",
+      "TRP12",
+      "Vanilloid receptor-like channel 2",
+      "Vanilloid receptor-like protein 2",
+      "VRL-2",
+      "Vanilloid receptor-related osmotically-activated channel",
+      "VR-OAC"
+    ]
+  },
+  "UniProt:Q9HGT2": {
+    "label": "leucine--tRNA ligase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Leucyl-tRNA synthetase"
+    ]
+  },
+  "UniProt:Q9KP07": {
+    "label": "Small ribosomal subunit protein uS4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S4"
+    ]
+  },
+  "UniProt:Q9KUF0": {
+    "label": "Small ribosomal subunit protein uS9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "30S ribosomal protein S9"
+    ]
+  },
+  "UniProt:Q9KUZ7": {
+    "label": "Elongation factor G 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "EF-G 1"
+    ]
+  },
+  "UniProt:Q9L7Q4": {
+    "label": "DNA topoisomerase 4 subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit A"
+    ]
+  },
+  "UniProt:Q9L7Q5": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q9NJG8": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:Q9NPC2": {
+    "label": "Potassium channel subfamily K member 9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Acid-sensitive potassium channel protein TASK-3",
+      "TWIK-related acid-sensitive K(+) channel 3",
+      "Two pore potassium channel KT3.2",
+      "Two pore K(+) channel KT3.2"
+    ]
+  },
+  "UniProt:Q9NQ25": {
+    "label": "SLAM family member 7",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CD2 subset 1",
+      "CD2-like receptor-activating cytotoxic cells",
+      "CRACC",
+      "Membrane protein FOAP-12",
+      "Novel Ly9",
+      "Protein 19A"
+    ]
+  },
+  "UniProt:Q9NR33": {
+    "label": "DNA polymerase epsilon subunit 4",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DNA polymerase II subunit 4",
+      "DNA polymerase epsilon subunit p12"
+    ]
+  },
+  "UniProt:Q9NR96": {
+    "label": "Toll-like receptor 9",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q9NRF9": {
+    "label": "DNA polymerase epsilon subunit 3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Arsenic-transactivated protein",
+      "AsTP",
+      "Chromatin accessibility complex 17 kDa protein",
+      "CHRAC-17",
+      "HuCHRAC17",
+      "DNA polymerase II subunit 3",
+      "DNA polymerase epsilon subunit p17"
+    ]
+  },
+  "UniProt:Q9NS75": {
+    "label": "Cysteinyl leukotriene receptor 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CysLTR2",
+      "G protein-coupled receptor GPCR21",
+      "hGPCR21",
+      "G protein-coupled receptor HG57",
+      "HPN321"
+    ]
+  },
+  "UniProt:Q9NSA0": {
+    "label": "Solute carrier family 22 member 11",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Organic anion transporter 4",
+      "OAT4",
+      "Organic anion:dicarboxylate exchanger OAT4"
+    ]
+  },
+  "UniProt:Q9NY47": {
+    "label": "Voltage-dependent calcium channel subunit alpha-2/delta-2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Voltage-gated calcium channel subunit alpha-2/delta-2"
+    ]
+  },
+  "UniProt:Q9NYK1": {
+    "label": "Toll-like receptor 7",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q9NZQ7": {
+    "label": "Programmed cell death 1 ligand 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PD-L1",
+      "PDCD1 ligand 1",
+      "Programmed death ligand 1",
+      "hPD-L1",
+      "B7 homolog 1",
+      "B7-H1"
+    ]
+  },
+  "UniProt:Q9P0X4": {
+    "label": "Voltage-dependent T-type calcium channel subunit alpha-1I",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Voltage-gated calcium channel subunit alpha Cav3.3",
+      "Ca(v)3.3"
+    ]
+  },
+  "UniProt:Q9UBN7": {
+    "label": "Protein deacetylase HDAC6",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "E3 ubiquitin-protein ligase HDAC6",
+      "Tubulin-lysine deacetylase HDAC6"
+    ]
+  },
+  "UniProt:Q9UBS5": {
+    "label": "Gamma-aminobutyric acid type B receptor subunit 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "GABA-B receptor 1",
+      "GABA-B-R1",
+      "GABA-BR1",
+      "GABABR1",
+      "Gb1"
+    ]
+  },
+  "UniProt:Q9UE69": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:Q9UGN5": {
+    "label": "Poly [ADP-ribose] polymerase 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "PARP-2",
+      "hPARP-2",
+      "ADP-ribosyltransferase diphtheria toxin-like 2",
+      "ARTD2",
+      "DNA ADP-ribosyltransferase PARP2",
+      "NAD(+) ADP-ribosyltransferase 2",
+      "ADPRT-2",
+      "Poly[ADP-ribose] synthase 2",
+      "pADPRT-2",
+      "Protein poly-ADP-ribosyltransferase PARP2"
+    ]
+  },
+  "UniProt:Q9UHC9": {
+    "label": "NPC1-like intracellular cholesterol transporter 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "NPC1L1",
+      "Niemann-Pick C1-like protein 1"
+    ]
+  },
+  "UniProt:Q9UJT0": {
+    "label": "Tubulin epsilon chain",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Epsilon-tubulin"
+    ]
+  },
+  "UniProt:Q9UJT1": {
+    "label": "Tubulin delta chain",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Delta-tubulin"
+    ]
+  },
+  "UniProt:Q9UK17": {
+    "label": "A-type voltage-gated potassium channel KCND3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Potassium voltage-gated channel subfamily D member 3",
+      "Voltage-gated potassium channel subunit Kv4.3"
+    ]
+  },
+  "UniProt:Q9UKT9": {
+    "label": "Zinc finger protein Aiolos",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Ikaros family zinc finger protein 3"
+    ]
+  },
+  "UniProt:Q9UKV0": {
+    "label": "Histone deacetylase 9",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "HD9",
+      "Histone deacetylase 7B",
+      "HD7",
+      "HD7b",
+      "Histone deacetylase-related protein",
+      "MEF2-interacting transcription repressor MITR"
+    ]
+  },
+  "UniProt:Q9UL51": {
+    "label": "Potassium/sodium hyperpolarization-activated cyclic nucleotide-gated channel 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Brain cyclic nucleotide-gated channel 2",
+      "BCNG-2"
+    ]
+  },
+  "UniProt:Q9ULX7": {
+    "label": "Carbonic anhydrase 14",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Carbonate dehydratase XIV",
+      "Carbonic anhydrase XIV",
+      "CA-XIV"
+    ]
+  },
+  "UniProt:Q9UM73": {
+    "label": "ALK tyrosine kinase receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Anaplastic lymphoma kinase"
+    ]
+  },
+  "UniProt:Q9UNQ0": {
+    "label": "Broad substrate specificity ATP-binding cassette transporter ABCG2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ATP-binding cassette sub-family G member 2",
+      "Breast cancer resistance protein",
+      "CDw338",
+      "Mitoxantrone resistance-associated protein",
+      "Placenta-specific ATP-binding cassette transporter",
+      "Urate exporter"
+    ]
+  },
+  "UniProt:Q9Y233": {
+    "label": "cAMP and cAMP-inhibited cGMP 3',5'-cyclic phosphodiesterase 10A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q9Y271": {
+    "label": "Cysteinyl leukotriene receptor 1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "CysLTR1",
+      "Cysteinyl leukotriene D4 receptor",
+      "LTD4 receptor",
+      "G protein-coupled receptor HG55",
+      "HMTMF81"
+    ]
+  },
+  "UniProt:Q9Y275": {
+    "label": "Tumor necrosis factor ligand superfamily member 13B",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "B lymphocyte stimulator",
+      "BLyS",
+      "B-cell-activating factor",
+      "BAFF",
+      "Dendritic cell-derived TNF-like molecule",
+      "TNF- and APOL-related leukocyte expressed ligand 1",
+      "TALL-1"
+    ]
+  },
+  "UniProt:Q9Y2I1": {
+    "label": "Nischarin",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Imidazoline receptor 1",
+      "I-1",
+      "IR1",
+      "Imidazoline receptor antisera-selected protein",
+      "hIRAS",
+      "Imidazoline-1 receptor",
+      "I1R",
+      "Imidazoline-1 receptor candidate protein",
+      "I-1 receptor candidate protein",
+      "I1R candidate protein"
+    ]
+  },
+  "UniProt:Q9Y3Q4": {
+    "label": "Potassium/sodium hyperpolarization-activated cyclic nucleotide-gated channel 4",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q9Y5N1": {
+    "label": "Histamine H3 receptor",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "H3R",
+      "HH3R",
+      "G protein-coupled receptor 97"
+    ]
+  },
+  "UniProt:Q9Y5Y4": {
+    "label": "Prostaglandin D2 receptor 2",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Chemoattractant receptor-homologous molecule expressed on Th2 cells",
+      "G protein-coupled receptor 44"
+    ]
+  },
+  "UniProt:Q9Y5Y9": {
+    "label": "Sodium channel protein type 10 subunit alpha",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Peripheral nerve sodium channel 3",
+      "PN3",
+      "hPN3",
+      "Sodium channel protein type X subunit alpha",
+      "Voltage-gated sodium channel subunit alpha Nav1.8"
+    ]
+  },
+  "UniProt:Q9Y6F1": {
+    "label": "Protein mono-ADP-ribosyltransferase PARP3",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "ADP-ribosyltransferase diphtheria toxin-like 3",
+      "ARTD3",
+      "DNA ADP-ribosyltransferase PARP3",
+      "IRT1",
+      "NAD(+) ADP-ribosyltransferase 3",
+      "ADPRT-3",
+      "Poly [ADP-ribose] polymerase 3",
+      "PARP-3",
+      "hPARP-3",
+      "Poly[ADP-ribose] synthase 3",
+      "pADPRT-3"
+    ]
+  },
+  "UniProt:Q9Y6K1": {
+    "label": "DNA (cytosine-5)-methyltransferase 3A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Dnmt3a",
+      "Cysteine methyltransferase DNMT3A",
+      "DNA methyltransferase HsaIIIA",
+      "DNA MTase HsaIIIA",
+      "M.HsaIIIA"
+    ]
+  },
+  "UniProt:Q9Z7D7": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:Q9Z7I9": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:Q9Z8R3": {
+    "label": "DNA gyrase subunit B",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q9Z8R4": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:Q9Z9A3": {
+    "label": "Large ribosomal subunit protein uL1",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "50S ribosomal protein L1"
+    ]
+  },
+  "UniProt:R4Y4Z5": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:R4Y7H5": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:R4YB92": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:R4YE07": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:S2ZP52": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:S3ABF8": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:S7IK33": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:S7IMP9": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:S7JCG1": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:U5EHR3": {
+    "label": "Dihydropteroate synthase",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "DHPS",
+      "Dihydropteroate pyrophosphorylase"
+    ]
+  },
+  "UniProt:V5AL63": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:W1DEE8": {
+    "label": "DNA topoisomerase 4 subunit A",
+    "source": "uniprot",
+    "status": "exists",
+    "synonyms": [
+      "Topoisomerase IV subunit A"
+    ]
+  },
+  "UniProt:W1DID1": {
+    "label": "DNA gyrase subunit A",
+    "source": "uniprot",
+    "status": "exists"
+  },
+  "UniProt:W8TZX4": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:X2JRY4": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  },
+  "UniProt:X2K2U8": {
+    "detail": "UniProt entry is inactive (DELETED)",
+    "source": "uniprot",
+    "status": "obsolete"
+  }
+}

@@ -1,0 +1,379 @@
+{
+  "reactome:R-HSA-109704": {
+    "label": "PI3K Cascade",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-111885": {
+    "label": "Opioid Signalling",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-112308": {
+    "label": "Presynaptic depolarization and calcium channel opening",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-1169091": {
+    "label": "Activation of NF-kappaB in B cells",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-1169410": {
+    "label": "Antimicrobial mechanism of IFN-stimulated genes",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-1296059": {
+    "label": "G protein gated Potassium channels",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-1296072": {
+    "label": "Voltage gated Potassium channels",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-140834": {
+    "source": "reactome",
+    "status": "absent"
+  },
+  "reactome:R-HSA-140877": {
+    "source": "reactome",
+    "status": "absent"
+  },
+  "reactome:R-HSA-1592389": {
+    "label": "Activation of Matrix Metalloproteinases",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-162582": {
+    "label": "Signal Transduction",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-166016": {
+    "label": "Toll Like Receptor 4 (TLR4) Cascade",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-166208": {
+    "label": "mTORC1-mediated signalling",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-170660": {
+    "label": "Adenylate cyclase activating pathway",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-181430": {
+    "label": "Norepinephrine Neurotransmitter Release Cycle",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-181438": {
+    "label": "Toll Like Receptor 2 (TLR2) Cascade",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-186797": {
+    "label": "Signaling by PDGF",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-189200": {
+    "label": "Cellular hexose transport",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-189451": {
+    "label": "Heme biosynthesis",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-190236": {
+    "label": "Signaling by FGFR",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-194138": {
+    "label": "Signaling by VEGF",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-198203": {
+    "label": "PI3K/AKT activation",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-2022377": {
+    "label": "Metabolism of Angiotensinogen to Angiotensins",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-2025928": {
+    "label": "Calcineurin activates NFAT",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-209905": {
+    "label": "Catecholamine biosynthesis",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-211976": {
+    "label": "Endogenous sterols",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-212676": {
+    "label": "Dopamine Neurotransmitter Release Cycle",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-2142691": {
+    "label": "Synthesis of Leukotrienes (LT) and Eoxins (EX)",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-2162123": {
+    "label": "Synthesis of Prostaglandins (PG) and Thromboxanes (TX)",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-2454202": {
+    "label": "Fc epsilon receptor (FCERI) signaling",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-372790": {
+    "label": "Signaling by GPCR",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-381676": {
+    "label": "Glucagon-like Peptide-1 (GLP1) regulates insulin secretion",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-381771": {
+    "label": "Synthesis, secretion, and inactivation of Glucagon-like Peptide-1 (GLP-1)",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-388396": {
+    "label": "GPCR downstream signalling",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-390648": {
+    "label": "Muscarinic acetylcholine receptors",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-390651": {
+    "label": "Dopamine receptors",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-400511": {
+    "label": "Synthesis, secretion, and inactivation of Glucose-dependent Insulinotropic Polypeptide (GIP)",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-416476": {
+    "label": "G alpha (q) signalling events",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-416482": {
+    "label": "G alpha (12/13) signalling events",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-418555": {
+    "label": "G alpha (s) signalling events",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-418594": {
+    "label": "G alpha (i) signalling events",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-418597": {
+    "label": "G alpha (z) signalling events",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-422356": {
+    "label": "Regulation of insulin secretion",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-432040": {
+    "label": "Vasopressin regulates renal water homeostasis via Aquaporins",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-448424": {
+    "label": "Interleukin-17 signaling",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-5218921": {
+    "label": "VEGFR2 mediated cell proliferation",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-5357786": {
+    "label": "TNFR1-induced proapoptotic signaling",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-5357956": {
+    "label": "TNFR1-induced NF-kappa-B signaling pathway",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-556833": {
+    "label": "Metabolism of lipids",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-5576890": {
+    "label": "Phase 3 - rapid repolarisation",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-5668541": {
+    "label": "TNFR2 non-canonical NF-kB pathway",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-5673001": {
+    "label": "RAF/MAP kinase cascade",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-5684996": {
+    "label": "MAPK1/MAPK3 signaling",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-629587": {
+    "label": "Highly sodium permeable postsynaptic acetylcholine nicotinic receptors",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-629594": {
+    "label": "Highly calcium permeable postsynaptic nicotinic acetylcholine receptors",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-629597": {
+    "label": "Highly calcium permeable nicotinic acetylcholine receptors",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-6785807": {
+    "label": "Interleukin-4 and Interleukin-13 signaling",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-6802957": {
+    "label": "Oncogenic MAPK signaling",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-70171": {
+    "label": "Glycolysis",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-71384": {
+    "label": "Ethanol oxidation",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-74259": {
+    "label": "Purine catabolism",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-74713": {
+    "label": "IRS activation",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-74751": {
+    "label": "Insulin receptor signalling cascade",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-75109": {
+    "label": "Triglyceride biosynthesis",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-75893": {
+    "label": "TNF signaling",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-844456": {
+    "label": "The NLRP3 inflammasome",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-8932339": {
+    "source": "reactome",
+    "status": "absent"
+  },
+  "reactome:R-HSA-8950505": {
+    "label": "Gene and protein expression by JAK-STAT signaling after Interleukin-12 stimulation",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-8956320": {
+    "label": "Nucleotide biosynthesis",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-9006934": {
+    "label": "Signaling by Receptor Tyrosine Kinases",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-9018519": {
+    "label": "Estrogen-dependent gene expression",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-9020558": {
+    "label": "Interleukin-2 signaling",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-9607240": {
+    "label": "FLT3 Signaling",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-9670439": {
+    "label": "Signaling by phosphorylated juxtamembrane, extracellular and kinase domain KIT mutants",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-9673767": {
+    "label": "Signaling by PDGFRA transmembrane, juxtamembrane and kinase domain mutants",
+    "source": "reactome",
+    "status": "exists"
+  },
+  "reactome:R-HSA-9701898": {
+    "label": "STAT3 nuclear events downstream of ALK signaling",
+    "source": "reactome",
+    "status": "exists"
+  }
+}

@@ -1,0 +1,1394 @@
+{
+  "UBERON:0000004": {
+    "label": "nose",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "proboscis",
+      "nasal sac",
+      "nasus",
+      "nose",
+      "olfactory apparatus",
+      "peripheral olfactory organ"
+    ]
+  },
+  "UBERON:0000007": {
+    "label": "pituitary gland",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "Hp",
+      "glandula pituitaria",
+      "hypophysis cerebri",
+      "hypophysis",
+      "pituitary body",
+      "pituitary"
+    ]
+  },
+  "UBERON:0000013": {
+    "label": "sympathetic nervous system",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "sympathetic nervous system",
+      "sympathetic part of autonomic division of nervous system",
+      "pars sympathica divisionis autonomici systematis nervosi",
+      "pars sympathica divisionis autonomici systematis nervosi"
+    ]
+  },
+  "UBERON:0000014": {
+    "label": "zone of skin",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "portion of skin",
+      "region of skin",
+      "skin region",
+      "skin zone",
+      "skin"
+    ]
+  },
+  "UBERON:0000043": {
+    "label": "tendon",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "sinew",
+      "tendo"
+    ]
+  },
+  "UBERON:0000054": {
+    "label": "macula",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "macula",
+      "acoustic macula",
+      "acoustic maculae",
+      "maculae",
+      "sensory macula",
+      "sensory patch"
+    ]
+  },
+  "UBERON:0000159": {
+    "label": "anal canal",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "anal canal viewed anatomically",
+      "anal canal",
+      "anal pad",
+      "anatomical anal canal",
+      "anus",
+      "cloaca",
+      "cloacal chamber",
+      "mesenteron",
+      "canalis analis",
+      "pars analis recti"
+    ]
+  },
+  "UBERON:0000176": {
+    "label": "oronasal secretion",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "oronasal discharge"
+    ]
+  },
+  "UBERON:0000178": {
+    "label": "blood",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "portion of blood",
+      "vertebrate blood",
+      "whole blood"
+    ]
+  },
+  "UBERON:0000310": {
+    "label": "breast",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "mamma",
+      "mammary part of chest",
+      "mammary region"
+    ]
+  },
+  "UBERON:0000325": {
+    "label": "gastric gland",
+    "source": "ols4:uberon",
+    "status": "exists"
+  },
+  "UBERON:0000381": {
+    "label": "urinary bladder detrusor smooth muscle",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "detrusor smooth muscle",
+      "detrusor muscle of bladder",
+      "detrusor muscle",
+      "detrusor urinae muscle",
+      "detrusor",
+      "muscularis propria of the urinary bladder",
+      "muscularis propria",
+      "musculus detrusor vesicae urinariae",
+      "musculus detrusor vesicae",
+      "urinary bladder detrusor muscle",
+      "urinary bladder detrussor smooth muscle"
+    ]
+  },
+  "UBERON:0000403": {
+    "label": "scalp",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "scalpus"
+    ]
+  },
+  "UBERON:0000410": {
+    "label": "bronchial mucosa",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "bronchi mucosa of organ",
+      "bronchi mucosa",
+      "bronchi mucous membrane",
+      "bronchi organ mucosa",
+      "bronchial trunk mucosa of organ",
+      "bronchial trunk mucosa",
+      "bronchial trunk mucous membrane",
+      "bronchial trunk organ mucosa",
+      "bronchus mucosa of organ",
+      "bronchus mucosa",
+      "bronchus mucous membrane",
+      "bronchus organ mucosa",
+      "mucosa of bronchi",
+      "mucosa of bronchial trunk",
+      "mucosa of bronchus",
+      "mucosa of organ of bronchi",
+      "mucosa of organ of bronchial trunk",
+      "mucosa of organ of bronchus",
+      "mucous membrane of bronchi",
+      "mucous membrane of bronchial trunk",
+      "mucous membrane of bronchus",
+      "organ mucosa of bronchi",
+      "organ mucosa of bronchial trunk",
+      "organ mucosa of bronchus",
+      "tunica mucosa bronchi"
+    ]
+  },
+  "UBERON:0000451": {
+    "label": "prefrontal cortex",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "frontal association cortex",
+      "prefrontal association complex",
+      "prefrontal association cortex"
+    ]
+  },
+  "UBERON:0000912": {
+    "label": "mucus",
+    "source": "ols4:uberon",
+    "status": "exists"
+  },
+  "UBERON:0000945": {
+    "label": "stomach",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "anterior intestine",
+      "mesenteron",
+      "stomach chamber",
+      "gaster",
+      "ventriculus"
+    ]
+  },
+  "UBERON:0000948": {
+    "label": "heart",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "vertebrate heart",
+      "branchial heart",
+      "cardium",
+      "chambered heart"
+    ]
+  },
+  "UBERON:0000955": {
+    "label": "brain",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "synganglion",
+      "encephalon",
+      "suprasegmental levels of nervous system",
+      "suprasegmental structures",
+      "the brain"
+    ]
+  },
+  "UBERON:0000964": {
+    "label": "cornea",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "tunica cornea",
+      "cornea of camera-type eye",
+      "corneas"
+    ]
+  },
+  "UBERON:0000966": {
+    "label": "retina",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "inner layer of eyeball",
+      "tunica interna of eyeball",
+      "Netzhaut",
+      "retina of camera-type eye",
+      "retinas"
+    ]
+  },
+  "UBERON:0000970": {
+    "label": "eye",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "light-detecting organ",
+      "visual apparatus"
+    ]
+  },
+  "UBERON:0000992": {
+    "label": "ovary",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "female gonad",
+      "animal ovary",
+      "female organism genitalia gonad",
+      "female organism genitalia gonada",
+      "female organism reproductive system gonad",
+      "female organism reproductive system gonada",
+      "female reproductive system gonad",
+      "female reproductive system gonada",
+      "genitalia of female organism gonad",
+      "genitalia of female organism gonada",
+      "gonad of female organism genitalia",
+      "gonad of female organism reproductive system",
+      "gonad of female reproductive system",
+      "gonad of genitalia of female organism",
+      "gonad of reproductive system of female organism",
+      "gonada of female organism genitalia",
+      "gonada of female organism reproductive system",
+      "gonada of female reproductive system",
+      "gonada of genitalia of female organism",
+      "gonada of reproductive system of female organism",
+      "ovaries",
+      "ovarium",
+      "ovum-producing ovary",
+      "reproductive system of female organism gonad",
+      "reproductive system of female organism gonada"
+    ]
+  },
+  "UBERON:0000995": {
+    "label": "uterus",
+    "source": "ols4:uberon",
+    "status": "exists"
+  },
+  "UBERON:0001003": {
+    "label": "skin epidermis",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "epidermis",
+      "skin",
+      "vertebrate epidermis"
+    ]
+  },
+  "UBERON:0001005": {
+    "label": "respiratory airway",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "airway",
+      "airways"
+    ]
+  },
+  "UBERON:0001013": {
+    "label": "adipose tissue",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "fat tissue",
+      "fatty depot",
+      "fatty tissue",
+      "adipose",
+      "bodyfat",
+      "fat"
+    ]
+  },
+  "UBERON:0001017": {
+    "label": "central nervous system",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "CNS",
+      "cerebrospinal axis",
+      "neuraxis",
+      "systema nervosum centrale"
+    ]
+  },
+  "UBERON:0001043": {
+    "label": "esophagus",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "gullet",
+      "oesophagus"
+    ]
+  },
+  "UBERON:0001044": {
+    "label": "saliva-secreting gland",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "glandulae salivariae",
+      "salivary gland"
+    ]
+  },
+  "UBERON:0001052": {
+    "label": "rectum",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "rectal sac",
+      "terminal portion of intestine",
+      "terminal portion of large intestine",
+      "intestinum rectum"
+    ]
+  },
+  "UBERON:0001133": {
+    "label": "cardiac muscle tissue",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "cardiac muscle",
+      "cardiac muscle muscle tissue",
+      "cardiac muscle textus muscularis",
+      "cardiac musculature",
+      "heart muscle muscle tissue",
+      "heart muscle textus muscularis",
+      "heart myocardium muscle tissue",
+      "heart myocardium textus muscularis",
+      "muscle of heart muscle tissue",
+      "muscle of heart textus muscularis",
+      "muscle tissue of cardiac muscle",
+      "muscle tissue of heart muscle",
+      "muscle tissue of heart myocardium",
+      "muscle tissue of muscle of heart",
+      "muscle tissue of myocardium",
+      "myocardium muscle tissue",
+      "myocardium textus muscularis",
+      "textus muscularis of cardiac muscle",
+      "textus muscularis of heart muscle",
+      "textus muscularis of heart myocardium",
+      "textus muscularis of muscle of heart",
+      "textus muscularis of myocardium"
+    ]
+  },
+  "UBERON:0001135": {
+    "label": "smooth muscle tissue",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "involuntary muscle",
+      "non-striated muscle",
+      "smooth muscle",
+      "textus muscularis levis; textus muscularis nonstriatus",
+      "textus muscularis nonstriatus",
+      "visceral muscle tissue",
+      "visceral muscle"
+    ]
+  },
+  "UBERON:0001155": {
+    "label": "colon",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "hindgut",
+      "large bowel",
+      "posterior intestine"
+    ]
+  },
+  "UBERON:0001199": {
+    "label": "mucosa of stomach",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "gastric mucosa",
+      "gastric mucous membrane",
+      "mucous membrane of stomach",
+      "stomach mucosa",
+      "tunica mucosa (gaster)",
+      "Magenschleimhaut",
+      "mucosa of organ of stomach",
+      "mucosa of organ of ventriculus",
+      "mucosa of ventriculus",
+      "mucous membrane of ventriculus",
+      "organ mucosa of stomach",
+      "organ mucosa of ventriculus",
+      "stomach mucosa of organ",
+      "stomach mucous membrane",
+      "stomach organ mucosa",
+      "tunica mucosa gastricae",
+      "tunica mucosa gastris",
+      "ventriculus mucosa of organ",
+      "ventriculus mucosa",
+      "ventriculus mucous membrane",
+      "ventriculus organ mucosa"
+    ]
+  },
+  "UBERON:0001202": {
+    "label": "pyloric sphincter",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "pyloric valve"
+    ]
+  },
+  "UBERON:0001235": {
+    "label": "adrenal cortex",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "adrenal gland cortex",
+      "cortex (glandula suprarenalis)",
+      "cortex of adrenal gland",
+      "cortex of suprarenal gland",
+      "suprarenal cortex",
+      "suprarenal",
+      "cortex glandulae suprarenalis"
+    ]
+  },
+  "UBERON:0001245": {
+    "label": "anus",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "anal opening",
+      "anal orifice",
+      "opening of terminal part of digestive tract",
+      "proctodeum"
+    ]
+  },
+  "UBERON:0001255": {
+    "label": "urinary bladder",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "bladder",
+      "urocyst",
+      "vesica urinaria",
+      "vesica"
+    ]
+  },
+  "UBERON:0001276": {
+    "label": "epithelium of stomach",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "epithelial tissue of stomach",
+      "epithelial tissue of ventriculus",
+      "epithelium of ventriculus",
+      "gastric epithelium",
+      "stomach epithelial tissue",
+      "stomach epithelium",
+      "ventriculus epithelial tissue",
+      "ventriculus epithelium"
+    ]
+  },
+  "UBERON:0001291": {
+    "label": "thick ascending limb of loop of Henle",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "ascending thick limb",
+      "straight portion of distal convoluted renal tubule",
+      "thick ascending limb of Henle's loop",
+      "thick ascending limb",
+      "distal straight tubule",
+      "loop of Henle ascending limb thick segment",
+      "straight portion of distal convoluted tubule",
+      "thick ascending limb of distal tubule",
+      "tubulus rectus distalis",
+      "tubulus rectus distalis"
+    ]
+  },
+  "UBERON:0001295": {
+    "label": "endometrium",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "uterine mucosa",
+      "tunica mucosa (endometrium)",
+      "tunica mucosa uteri",
+      "uterine endometrium",
+      "uterine mucous membrane"
+    ]
+  },
+  "UBERON:0001555": {
+    "label": "digestive tract",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "alimentary canal",
+      "alimentary tract",
+      "digestive tube",
+      "gut tube",
+      "gut",
+      "digestive canal",
+      "enteric tract"
+    ]
+  },
+  "UBERON:0001605": {
+    "label": "ciliary muscle",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "Bowman`s muscles",
+      "ciliaris",
+      "musculus ciliaris",
+      "musculus ciliarus"
+    ]
+  },
+  "UBERON:0001607": {
+    "label": "sphincter pupillae",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "M. sphincter pupillae",
+      "iris constrictor",
+      "circular fibers",
+      "constrictor pupillae",
+      "iris constrictor muscle",
+      "iris sphincter muscle",
+      "iris sphincter",
+      "m. sphincter pupillae",
+      "musculus sphincter pupillae",
+      "pupillary constrictor muscle",
+      "pupillary sphincter muscle",
+      "pupillary sphincter",
+      "sphincter muscle of pupil",
+      "sphincter pupillae muscle",
+      "sphincter pupillae",
+      "spincter pupillae"
+    ]
+  },
+  "UBERON:0001629": {
+    "label": "carotid body",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "carotid glomus",
+      "glomus caroticum"
+    ]
+  },
+  "UBERON:0001637": {
+    "label": "artery",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "arterial subtree",
+      "arterial system",
+      "arterial tree organ part",
+      "arterial vessel",
+      "arteries"
+    ]
+  },
+  "UBERON:0001645": {
+    "label": "trigeminal nerve",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "CN-V",
+      "cranial nerve V",
+      "fifth cranial nerve",
+      "trigeminal nerve [V]",
+      "trigeminal nerve tree",
+      "trigeminal v nerve",
+      "5n",
+      "nerve V",
+      "nervus trigeminus [v]",
+      "nervus trigeminus",
+      "nervus trigeminus",
+      "trigeminal V",
+      "trigeminus"
+    ]
+  },
+  "UBERON:0001707": {
+    "label": "nasal cavity",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "cavity of nose",
+      "nasal pit",
+      "olfactory cavity",
+      "cavitas nasalis",
+      "cavitas nasi",
+      "cavity of olfactory apparatus",
+      "cavum nasi",
+      "nasal canal",
+      "nasal conduit space",
+      "nasal fossa",
+      "olfactory chamber cavity",
+      "olfactory chamber",
+      "olfactory pit"
+    ]
+  },
+  "UBERON:0001737": {
+    "label": "larynx",
+    "source": "ols4:uberon",
+    "status": "exists"
+  },
+  "UBERON:0001768": {
+    "label": "uvea",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "pars iridica retinae",
+      "tunica vasculatis oculi",
+      "tunica vasculosa bulbi",
+      "tunica vasculosa of eyeball",
+      "uvea",
+      "uveal tract",
+      "vascular layer of eyeball"
+    ]
+  },
+  "UBERON:0001769": {
+    "label": "iris",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "anterior uvea",
+      "irides",
+      "irises"
+    ]
+  },
+  "UBERON:0001796": {
+    "label": "aqueous humor of eyeball",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "aqueous humor",
+      "aqueous humour",
+      "humor aquosus"
+    ]
+  },
+  "UBERON:0001800": {
+    "label": "sensory ganglion",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "ganglion sensorium"
+    ]
+  },
+  "UBERON:0001811": {
+    "label": "conjunctiva",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "conjunctivae",
+      "conjunctivas",
+      "tunica conjunctiva",
+      "wall of conjunctival sac"
+    ]
+  },
+  "UBERON:0001826": {
+    "label": "nasal cavity mucosa",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "nasal mucosa",
+      "tunica mucosa nasalis",
+      "mucosa of nose",
+      "mucous membrane of nose",
+      "tunica mucosa nasi"
+    ]
+  },
+  "UBERON:0001866": {
+    "label": "sebum",
+    "source": "ols4:uberon",
+    "status": "exists"
+  },
+  "UBERON:0001870": {
+    "label": "frontal cortex",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "grey matter of frontal lobe",
+      "cortex of frontal lobe",
+      "frontal lobe cortex",
+      "frontal neocortex",
+      "gray matter of frontal lobe"
+    ]
+  },
+  "UBERON:0001896": {
+    "label": "medulla oblongata",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "bulb",
+      "bulbus",
+      "medulla oblonzata",
+      "medulla",
+      "metepencephalon"
+    ]
+  },
+  "UBERON:0001910": {
+    "label": "medial forebrain bundle",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "medial forebrain fasciculus",
+      "telencephalic medial fasciculus",
+      "MFB",
+      "fasciculus longitudinalis telencephali medialis",
+      "fasciculus medialis telencephali",
+      "fasciculus medialis telencephalicus",
+      "fasciculus prosencephalicus medialis",
+      "medial forebrain bundles",
+      "median forebrain bundle"
+    ]
+  },
+  "UBERON:0001977": {
+    "label": "blood serum",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "serum"
+    ]
+  },
+  "UBERON:0001981": {
+    "label": "blood vessel",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "region of vascular tree organ",
+      "vas sanguineum",
+      "vascular element",
+      "vascular tree organ region"
+    ]
+  },
+  "UBERON:0002018": {
+    "label": "synovial membrane of synovial joint",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "membrana synovialis (capsula articularis)",
+      "membrana synovialis capsulae articularis",
+      "stratum synoviale (capsula articularis)",
+      "stratum synoviale",
+      "synovial layer of articular capsule of synovial joint",
+      "synovial layer",
+      "synovial membrane of articular capsule of synovial joint",
+      "synovial membrane",
+      "synovium of articular capsule of synovial joint",
+      "synovium"
+    ]
+  },
+  "UBERON:0002027": {
+    "label": "stratum corneum of epidermis",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "cornified layer",
+      "epidermis stratum corneum",
+      "keratinized squame layer of epidermis",
+      "keratinized squame layer",
+      "stratum corneum",
+      "horny layer of epidermis",
+      "horny layer",
+      "stratum corneum epidermidis"
+    ]
+  },
+  "UBERON:0002034": {
+    "label": "suprachiasmatic nucleus",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "suprachiasmatic nucleus of hypothalamus",
+      "SCN",
+      "SCN",
+      "SCh",
+      "nucleus suprachiasmaticus hypothalami",
+      "nucleus suprachiasmaticus",
+      "suprachiasmatic nucleus (Spiegel-Zwieg)"
+    ]
+  },
+  "UBERON:0002038": {
+    "label": "substantia nigra",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "Soemmering's substance",
+      "nucleus of basis pedunculi",
+      "SN",
+      "nucleus pigmentosus subthalamo-peduncularis",
+      "substancia nigra",
+      "substantia nigra (Soemmerringi)"
+    ]
+  },
+  "UBERON:0002046": {
+    "label": "thyroid gland",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "thyroid",
+      "glandula thyroidea"
+    ]
+  },
+  "UBERON:0002048": {
+    "label": "lung",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "pulmo"
+    ]
+  },
+  "UBERON:0002067": {
+    "label": "dermis",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "vertebrate dermis",
+      "corium",
+      "cutis"
+    ]
+  },
+  "UBERON:0002097": {
+    "label": "skin of body",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "entire integument",
+      "entire skin",
+      "integument",
+      "integumental organ",
+      "pelt",
+      "skin organ",
+      "skin"
+    ]
+  },
+  "UBERON:0002107": {
+    "label": "liver",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "iecur",
+      "jecur"
+    ]
+  },
+  "UBERON:0002110": {
+    "label": "gallbladder",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "gall bladder",
+      "cholecyst",
+      "vesica biliaris",
+      "vesica fellea"
+    ]
+  },
+  "UBERON:0002113": {
+    "label": "kidney",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "reniculate kidney"
+    ]
+  },
+  "UBERON:0002114": {
+    "label": "duodenum",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "proximal intestine",
+      "upper intestine"
+    ]
+  },
+  "UBERON:0002185": {
+    "label": "bronchus",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "bronchi",
+      "bronchial tissue",
+      "bronchial trunk"
+    ]
+  },
+  "UBERON:0002187": {
+    "label": "terminal bronchiole",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "terminal bronchiole tube",
+      "bronchioli terminalis",
+      "bronchiolus terminalis"
+    ]
+  },
+  "UBERON:0002206": {
+    "label": "mammillary body",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "MMB",
+      "corpora mamillaria",
+      "corpora mammillaria",
+      "corpus mamillare",
+      "corpus mamillare",
+      "corpus mamillaris",
+      "corpus mammillare",
+      "mammillary area"
+    ]
+  },
+  "UBERON:0002240": {
+    "label": "spinal cord",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "SpC",
+      "cerebro-cerebellar fissure",
+      "cerebrocerebellar fissure",
+      "fissura cerebro-cerebellaris",
+      "fissura cerebrocerebellaris",
+      "medulla spinalis",
+      "spinal cord structure",
+      "spinal medulla"
+    ]
+  },
+  "UBERON:0002282": {
+    "label": "stria vascularis of cochlear duct",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "stria vascularis",
+      "psalterial cord",
+      "stria vascularis ductus cochlearis",
+      "stria vascularis of cochlea",
+      "vascular stria of cochlear duct",
+      "vascular stripe of cochlear duct"
+    ]
+  },
+  "UBERON:0002299": {
+    "label": "alveolus of lung",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "alveolus",
+      "lung alveolus",
+      "respiratory alveolus",
+      "alveoli",
+      "alveolus pulmonis",
+      "alveolus pulmonis",
+      "pulmonary alveolus",
+      "respiratory alveoli"
+    ]
+  },
+  "UBERON:0002306": {
+    "label": "nasal mucus",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "respiratory mucus"
+    ]
+  },
+  "UBERON:0002371": {
+    "label": "bone marrow",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "medullary bone",
+      "medulla of bone",
+      "medulla ossea",
+      "medulla ossium"
+    ]
+  },
+  "UBERON:0002423": {
+    "label": "hepatobiliary system",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "liver and biliary system",
+      "liver/biliary system",
+      "hepaticobiliary system"
+    ]
+  },
+  "UBERON:0002439": {
+    "label": "myenteric nerve plexus",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "myenteric plexus",
+      "submucous plexus",
+      "Auberbach plexus",
+      "Auberbach's plexus",
+      "Auberbachs plexus",
+      "Auerbach's plexus",
+      "Meissner's plexus",
+      "Remak's plexus",
+      "plexus myentericus",
+      "plexus nervosus submucosus",
+      "plexus submucosus"
+    ]
+  },
+  "UBERON:0002465": {
+    "label": "lymphoid system",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "lymphatic circulatory system",
+      "lymphatic drainage system",
+      "lymphatic system",
+      "systema lymphoideum"
+    ]
+  },
+  "UBERON:0003668": {
+    "label": "synovial bursa",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "bursa synovialis",
+      "bursa"
+    ]
+  },
+  "UBERON:0003729": {
+    "label": "mouth mucosa",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "oral mucous membrane",
+      "buccal mucosa",
+      "mouth mucosa",
+      "mouth mucous membrane",
+      "mouth organ mucosa",
+      "mucosa of mouth",
+      "mucosal lining of mouth",
+      "mucous membrane of mouth",
+      "oral mucosa",
+      "oral part of viscerocranial mucosa",
+      "tunica mucosa oris",
+      "tunica mucosa oris"
+    ]
+  },
+  "UBERON:0003956": {
+    "label": "aqueous drainage system",
+    "source": "ols4:uberon",
+    "status": "exists"
+  },
+  "UBERON:0004092": {
+    "label": "hypothalamus-pituitary axis",
+    "source": "ols4:uberon",
+    "status": "exists"
+  },
+  "UBERON:0004221": {
+    "label": "intestine smooth muscle",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "bowel involuntary muscle",
+      "bowel non-striated muscle",
+      "bowel smooth muscle tissue",
+      "bowel smooth muscle",
+      "intestinal muscularis",
+      "intestinal smooth muscle",
+      "intestine involuntary muscle",
+      "intestine non-striated muscle",
+      "intestine smooth muscle tissue",
+      "involuntary muscle of bowel",
+      "involuntary muscle of intestine",
+      "non-striated muscle of bowel",
+      "non-striated muscle of intestine",
+      "smooth muscle of bowel",
+      "smooth muscle of intestine",
+      "smooth muscle tissue of bowel",
+      "smooth muscle tissue of intestine"
+    ]
+  },
+  "UBERON:0004293": {
+    "label": "parasympathetic nerve",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "nerve of parasympathetic nervous system"
+    ]
+  },
+  "UBERON:0004479": {
+    "label": "musculature of trunk",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "muscle group of trunk",
+      "muscular system of trunk",
+      "set of muscles of trunk"
+    ]
+  },
+  "UBERON:0005304": {
+    "label": "submucous nerve plexus",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "Henle's plexus",
+      "Meissner's plexus",
+      "meissner's plexus",
+      "submucosal nerve plexus"
+    ]
+  },
+  "UBERON:0005969": {
+    "label": "eye trabecular meshwork",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "Hueck's ligament",
+      "cribiform ligament",
+      "eye trabecular meshwork",
+      "iridis",
+      "ligamentum peactin-tum iridis",
+      "ligamentum pectinatum anguli iridocornealis",
+      "ligamentum pectinatum iridis",
+      "ligamentum pectinatum",
+      "pectinate ligament of iris",
+      "pectinate ligament",
+      "reticulum trabeculare sclerae",
+      "reticulum trabeculare",
+      "scleral trabeculae",
+      "scleral trabecular",
+      "scleral trabecule",
+      "scribiform ligament",
+      "trabecular mesh",
+      "trabecular meshwork of the eye",
+      "trabecular meshwork"
+    ]
+  },
+  "UBERON:0006562": {
+    "label": "pharynx",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "anterior part of foregut",
+      "pharyngeal tube"
+    ]
+  },
+  "UBERON:0007652": {
+    "label": "esophageal sphincter",
+    "source": "ols4:uberon",
+    "status": "exists"
+  },
+  "UBERON:0008826": {
+    "label": "pulmonary surfactant",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "type II pneumocyte secretion",
+      "alveolar surfactant",
+      "lung surfactant"
+    ]
+  },
+  "UBERON:0008915": {
+    "label": "pore",
+    "source": "ols4:uberon",
+    "status": "exists"
+  },
+  "UBERON:0009834": {
+    "label": "dorsolateral prefrontal cortex",
+    "source": "ols4:uberon",
+    "status": "exists"
+  },
+  "UBERON:0010061": {
+    "label": "lumen of nasopharynx",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "nasopharyngeal luman",
+      "nasopharynx cavity",
+      "nasopharynx lumen"
+    ]
+  },
+  "UBERON:0010210": {
+    "label": "blood clot",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "clot",
+      "coagulated blood",
+      "fibrin clot",
+      "hemostatic plug",
+      "thrombus"
+    ]
+  },
+  "UBERON:0010427": {
+    "label": "ciliary processes",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "ciliary process",
+      "ciliary processes set",
+      "ciliary processes",
+      "processus ciliares",
+      "processus ciliares",
+      "set of ciliary processes"
+    ]
+  },
+  "UBERON:0010996": {
+    "label": "articular cartilage of joint",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "articular cartilage",
+      "cartilago articularis",
+      "hyaline cartilage",
+      "joint-associated cartilage"
+    ]
+  },
+  "UBERON:0011233": {
+    "label": "synovial membrane of synovial tendon sheath",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "synovium"
+    ]
+  },
+  "UBERON:0012278": {
+    "label": "gland of nasal mucosa",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "nasal gland",
+      "glandula nasalis",
+      "glandulae nasales"
+    ]
+  },
+  "UBERON:0012399": {
+    "label": "large intestine smooth muscle longitudinal layer",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "longitudinal muscle layer of zone of large intestine"
+    ]
+  },
+  "UBERON:0014169": {
+    "label": "nigrostriatal tract",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "comb bundle",
+      "comb bundle",
+      "nigrostriatal bundle",
+      "nigrostriatal bundle",
+      "nigrostriatal fibers",
+      "nigrostriatal fibers",
+      "nigrostriatal tract",
+      "nucleus caudalis centralis oculomotorii",
+      "nucleus centralis nervi oculomotorii",
+      "tegmentum mesencephalicum"
+    ]
+  },
+  "UBERON:0014892": {
+    "label": "skeletal muscle organ, vertebrate",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "skeletal muscle"
+    ]
+  },
+  "UBERON:0016552": {
+    "label": "phlegm",
+    "source": "ols4:uberon",
+    "status": "exists"
+  },
+  "UBERON:0016553": {
+    "label": "respiratory system mucus",
+    "source": "ols4:uberon",
+    "status": "exists"
+  },
+  "UBERON:0018229": {
+    "label": "renin-angiotensin system",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "renin angiotensin aldosterone system",
+      "renin angiotensin system",
+      "renin-angiotensin system",
+      "renin-angiotensin-aldosterone system"
+    ]
+  },
+  "UBERON:0025525": {
+    "label": "motor system",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "motor system"
+    ]
+  },
+  "UBERON:0025593": {
+    "label": "serotonergic system",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "5-ht system",
+      "5ht system",
+      "serotonergic system",
+      "serotonin system"
+    ]
+  },
+  "UBERON:0027221": {
+    "label": "adrenergic system",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "adrenergic system"
+    ]
+  },
+  "UBERON:0034729": {
+    "label": "sympathetic nerve",
+    "source": "ols4:uberon",
+    "status": "exists"
+  },
+  "UBERON:0035501": {
+    "label": "unencapsulated tactile receptor",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "free nerve ending",
+      "unencapsulated nerve ending"
+    ]
+  },
+  "UBERON:0035552": {
+    "label": "deep vein",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "deep veins",
+      "deep vessels"
+    ]
+  },
+  "UBERON:0035965": {
+    "label": "wall of blood vessel",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "blood vessel wall",
+      "vascular wall"
+    ]
+  },
+  "UBERON:0035999": {
+    "label": "dopaminergic cell groups",
+    "source": "ols4:uberon",
+    "status": "exists",
+    "synonyms": [
+      "DA cell groups",
+      "dopaminergic cell groups",
+      "dopaminergic nuclei"
+    ]
+  }
+}

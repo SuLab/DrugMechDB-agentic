@@ -1,0 +1,1973 @@
+{
+  "CHEBI:141146": {
+    "label": "alpha-methylnoradrenaline",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "4-(2-amino-1-hydroxypropyl)benzene-1,2-diol",
+      "4-(2-amino-1-hydroxypropyl)benzene-1,2-diol",
+      "Methylnoradrenaline",
+      "alpha-(1-aminoethyl)-3,4-dihydroxybenzyl alcohol",
+      "alpha-methylnorepinephrine",
+      "corbadrina",
+      "corbadrine",
+      "corbadrinum",
+      "isoadrenaline",
+      "levonordefrin"
+    ]
+  },
+  "CHEBI:15343": {
+    "label": "acetaldehyde",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "ACETALDEHYDE",
+      "ACETALDEHYDE",
+      "Acetaldehyd",
+      "Acetaldehyde",
+      "Acetaldehyde",
+      "Azetaldehyd",
+      "Ethanal",
+      "acetaldehyde",
+      "acetaldehyde",
+      "acetaldehydes",
+      "acetic aldehyde",
+      "ethyl aldehyde"
+    ]
+  },
+  "CHEBI:15355": {
+    "label": "acetylcholine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "2-acetyloxy-N,N,N-trimethylethanaminium",
+      "2-acetyloxy-N,N,N-trimethylethanaminium",
+      "ACETYLCHOLINE",
+      "ACh",
+      "Acetylcholine",
+      "Azetylcholin",
+      "O-Acetylcholine",
+      "acetylcholine",
+      "choline acetate"
+    ]
+  },
+  "CHEBI:15356": {
+    "label": "cysteine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "2-Amino-3-mercaptopropionic acid",
+      "2-amino-3-mercaptopropanoic acid",
+      "2-amino-3-sulfanylpropanoic acid",
+      "C",
+      "Cys",
+      "Cystein",
+      "Cysteine",
+      "Cysteine",
+      "Hcys",
+      "Zystein",
+      "cisteina",
+      "cysteine",
+      "cysteine"
+    ]
+  },
+  "CHEBI:15422": {
+    "label": "ATP",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "ADENOSINE-5'-TRIPHOSPHATE",
+      "ATP",
+      "Adenosine 5'-triphosphate",
+      "Adenosine triphosphate",
+      "H4atp",
+      "adenosine 5'-(tetrahydrogen triphosphate)",
+      "adenosine 5'-(tetrahydrogen triphosphate)"
+    ]
+  },
+  "CHEBI:15430": {
+    "label": "protoporphyrin",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "3,3'-(3,7,12,17-tetramethyl-8,13-divinyl-21H,23H-porphine-2,18-diyl)-bis-propionic acid",
+      "3,7,12,17-tetramethyl-8,13-divinylporphyrin-2,18-dipropanoic acid",
+      "7,12-diethenyl-3,8,13,17-tetramethylporphyrin-2,18-dipropanoic acid",
+      "7,12-diethenyl-3,8,13,17-tetramethylporphyrin-2,18-dipropanoic acid",
+      "H2ppIX",
+      "Kammerer's prophyrin",
+      "PROTOPORPHYRIN IX",
+      "Porphyrinogen IX",
+      "Protoporphyrin IX",
+      "Protoporphyrin",
+      "ooporphyrin"
+    ]
+  },
+  "CHEBI:15551": {
+    "label": "prostaglandin E2",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(15S)-prostaglandin E2",
+      "(5Z,11alpha,13E,15S)-11,15-dihydroxy-9-oxoprosta-5,13-dien-1-oic acid",
+      "(5Z,13E)-(15S)-11alpha,15-Dihydroxy-9-oxoprost-13-enoate",
+      "(5Z,13E)-(15S)-11alpha,15-Dihydroxy-9-oxoprosta-5,13-dienoate",
+      "(5Z,13E,15S)-11alpha,15-dihydroxy-9-oxoprosta-5,13-dien-1-oic acid",
+      "(5Z,13E,15S)-11alpha,15-dihydroxy-9-oxoprosta-5,13-dien-1-oic acid",
+      "(E,Z)-(1R,2R,3R)-7-(3-Hydroxy-2-((3S)-(3-hydroxy-1-octenyl))-5-oxocyclopentyl)-5-heptenoic acid",
+      "(Z)-7-((1R,2R,3R)-3-hydroxy-2-((S,E)-3-hydroxyoct-1-enyl)-5-oxocyclopentyl)hept-5-enoic acid",
+      "Cervidil",
+      "Cerviprime",
+      "Cerviprost",
+      "Dinoproston",
+      "Enzaprost E",
+      "Glandin-E2",
+      "Minprositin E2",
+      "Minprostin E2",
+      "PGE2",
+      "Prepidil",
+      "Propess",
+      "Prostaglandin E2",
+      "Prostarmon E",
+      "Prostenone",
+      "Prostin E2",
+      "Prostin",
+      "U 12062",
+      "U-12,062",
+      "U-12062",
+      "dinoprostona",
+      "dinoprostone",
+      "dinoprostonum"
+    ]
+  },
+  "CHEBI:15765": {
+    "label": "L-dopa",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(-)-3-(3,4-dihydroxyphenyl)-L-alanine",
+      "(-)-dopa",
+      "(2S)-2-amino-3-(3,4-dihydroxyphenyl)propanoic acid",
+      "(2S)-2-amino-3-(3,4-dihydroxyphenyl)propanoic acid",
+      "3,4-DIHYDROXYPHENYLALANINE",
+      "3,4-Dihydroxy-L-phenylalanine",
+      "3-Hydroxy-L-tyrosine",
+      "Dihydroxy-L-phenylalanine",
+      "Dopar",
+      "L-DOPA",
+      "L-Dopa",
+      "L-Dopa",
+      "L-beta-(3,4-Dihydroxyphenyl)alanine",
+      "L-dopa",
+      "L-dopa",
+      "beta-(3,4-dihydroxyphenyl)-L-alanine",
+      "beta-(3,4-dihydroxyphenyl)alanine",
+      "levodopa",
+      "levodopum"
+    ]
+  },
+  "CHEBI:15889": {
+    "label": "sterol",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "3-hydroxysteroids",
+      "Sterol",
+      "a sterol",
+      "sterols",
+      "sterols"
+    ]
+  },
+  "CHEBI:15940": {
+    "label": "nicotinic acid",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "3-Pyridylcarboxylic acid",
+      "3-carboxylpyridine",
+      "3-carboxypyridine",
+      "3-pyridinecarboxylic acid",
+      "NICOTINIC ACID",
+      "NICOTINIC ACID",
+      "Niacin",
+      "Niacor",
+      "Niaspan",
+      "Nicotinic acid",
+      "Nicotinic acid",
+      "Nicotinsaure",
+      "Nikotinsaeure",
+      "P.P. factor",
+      "PP factor",
+      "acide nicotinique",
+      "acido nicotinico",
+      "acidum nicotinicum",
+      "anti-pellagra vitamin",
+      "beta-pyridinecarboxylic acid",
+      "m-pyridinecarboxylic acid",
+      "nicotinic acid",
+      "nicotinic acid",
+      "pellagra preventive factor",
+      "pyridine-3-carboxylic acid",
+      "pyridine-3-carboxylic acid",
+      "pyridine-beta-carboxylic acid",
+      "pyridine-carboxylique-3",
+      "vitamin B3"
+    ]
+  },
+  "CHEBI:16040": {
+    "label": "cytosine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "4-amino-2(1H)-pyrimidinone",
+      "4-amino-2-hydroxypyrimidine",
+      "4-aminopyrimidin-2(1H)-one",
+      "4-aminopyrimidin-2(1H)-one",
+      "C",
+      "Cyt",
+      "Cytosin",
+      "Cytosine",
+      "Zytosin",
+      "cytosine"
+    ]
+  },
+  "CHEBI:16113": {
+    "label": "cholesterol",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(3beta,14beta,17alpha)-cholest-5-en-3-ol",
+      "CHOLESTEROL",
+      "Cholest-5-en-3beta-ol",
+      "Cholest-5-en-3beta-ol",
+      "Cholesterin",
+      "Cholesterol",
+      "cholest-5-en-3beta-ol",
+      "cholest-5-en-3beta-ol",
+      "cholesterol"
+    ]
+  },
+  "CHEBI:16134": {
+    "label": "ammonia",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "AMMONIA",
+      "AMMONIA",
+      "Ammonia",
+      "Ammonia",
+      "Ammoniak",
+      "NH3",
+      "R-717",
+      "[NH3]",
+      "ammonia",
+      "ammonia",
+      "ammoniac",
+      "amoniaco",
+      "azane",
+      "azane",
+      "spirit of hartshorn"
+    ]
+  },
+  "CHEBI:16136": {
+    "label": "hydrogen sulfide",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "H2S",
+      "HYDROSULFURIC ACID",
+      "Hydrogen sulfide",
+      "Hydrogen sulfide",
+      "Hydrogen-sulfide",
+      "Schwefelwasserstoff",
+      "Sulfide",
+      "[SH2]",
+      "acide sulfhydrique",
+      "dihydridosulfur",
+      "dihydridosulfur",
+      "dihydrogen monosulfide",
+      "dihydrogen sulfide",
+      "dihydrogen(sulfide)",
+      "dihydrogen(sulfide)",
+      "hydrogen monosulfide",
+      "hydrogen sulfide",
+      "hydrogen sulfide",
+      "hydrogen sulphide",
+      "hydrogene sulfure",
+      "sulfane",
+      "sulfane",
+      "sulfure d'hydrogene"
+    ]
+  },
+  "CHEBI:16235": {
+    "label": "guanine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "2-Amino-6-hydroxypurine",
+      "2-amino-1,9-dihydro-6H-purin-6-one",
+      "2-amino-1,9-dihydro-6H-purin-6-one",
+      "2-amino-6-oxopurine",
+      "G",
+      "GUANINE",
+      "Gua",
+      "Guanine",
+      "guanine"
+    ]
+  },
+  "CHEBI:16247": {
+    "label": "phospholipid",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Phospholipid",
+      "a phospholipid derivative",
+      "phospholipids"
+    ]
+  },
+  "CHEBI:16284": {
+    "label": "dATP",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "2'-Deoxyadenosine 5'-triphosphate",
+      "2'-dATP",
+      "2'-deoxy-ATP",
+      "2'-deoxyadenosine 5'-(tetrahydrogen triphosphate)",
+      "2'-deoxyadenosine 5'-(tetrahydrogen triphosphate)",
+      "2'-deoxyadenosine 5'-triphosphate",
+      "2'-deoxyadenosine triphosphate",
+      "Deoxyadenosine 5'-triphosphate",
+      "Deoxyadenosine triphosphate",
+      "dATP"
+    ]
+  },
+  "CHEBI:16330": {
+    "label": "17beta-hydroxy-5alpha-androstan-3-one",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "17-beta-hydroxy-5-alpha-androstan-3-one",
+      "17beta-Hydroxy-5alpha-androstan-3-one",
+      "17beta-Hydroxy-5alpha-androstan-3-one",
+      "17beta-Hydroxyandrostan-3-one",
+      "17beta-hydroxy-5alpha-androstan-3-one",
+      "17beta-hydroxy-5alpha-androstan-3-one",
+      "17beta-hydroxyandrostan-3-one",
+      "4,5alpha-dihydrotestosterone",
+      "5alpha-DHT",
+      "5alpha-Dihydrotestosterone",
+      "5alpha-dihydrotestosterone",
+      "Androstanolone",
+      "DHT",
+      "DIHYDROTESTOSTERONE",
+      "Dihydrotestosteron",
+      "Stanolone",
+      "androstanolona",
+      "androstanolone",
+      "androstanolonum",
+      "dihydrotestosterone"
+    ]
+  },
+  "CHEBI:16335": {
+    "label": "adenosine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(2R,3R,4S,5R)-2-(6-aminopurin-9-yl)-5-(hydroxymethyl)oxolane-3,4-diol",
+      "6-Amino-9-beta-D-ribofuranosyl-9H-purine",
+      "9-beta-D-Ribofuranosidoadenine",
+      "9-beta-D-Ribofuranosyl-9H-purin-6-amine",
+      "9-beta-D-ribofuranosyl-9H-purin-6-amine",
+      "9-beta-D-ribofuranosyladenine",
+      "ADENOSINE",
+      "ADENOSINE",
+      "Ade-Rib",
+      "Adenocard",
+      "Adenocor",
+      "Adenoscan",
+      "Adenosin",
+      "Adenosine",
+      "Adenosine",
+      "Ado",
+      "adenine riboside",
+      "adenosine",
+      "adenosine",
+      "beta-D-adenosine"
+    ]
+  },
+  "CHEBI:16356": {
+    "label": "3',5'-cyclic GMP",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "3',5'-Cyclic GMP",
+      "Cyclic GMP",
+      "Guanosine 3',5'-cyclic monophosphate",
+      "Guanosine 3',5'-cyclic phosphate",
+      "Guanosine cyclic monophosphate",
+      "cGMP",
+      "guanosine 3',5'-(hydrogen phosphate)",
+      "guanosine 3',5'-(hydrogen phosphate)"
+    ]
+  },
+  "CHEBI:16412": {
+    "label": "lipopolysaccharide",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "LPS",
+      "Lipopolysaccharide",
+      "lipopolysaccharides"
+    ]
+  },
+  "CHEBI:16480": {
+    "label": "nitric oxide",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(.)NO",
+      "(NO)(.)",
+      "EDRF",
+      "NO",
+      "NO(.)",
+      "Nitric oxide",
+      "Nitrogen monoxide",
+      "Stickstoff(II)-oxid",
+      "Stickstoffmonoxid",
+      "[NO]",
+      "endothelium-derived relaxing factor",
+      "mononitrogen monoxide",
+      "monoxido de nitrogeno",
+      "monoxyde d'azote",
+      "nitric oxide",
+      "nitrogen monooxide",
+      "nitrogen monoxide",
+      "nitrosyl",
+      "oxido de nitrogeno(II)",
+      "oxido nitrico",
+      "oxidonitrogen(.)",
+      "oxidonitrogen(.)",
+      "oxoazanyl",
+      "oxoazanyl",
+      "oxyde azotique",
+      "oxyde nitrique"
+    ]
+  },
+  "CHEBI:16521": {
+    "label": "lanosterol",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(3beta)-lanosta-8,24-dien-3-ol",
+      "(3beta,5alpha)-4,4,14-trimethylcholesta-8,24-dien-3-ol",
+      "4,4',14alpha-Trimethyl-5alpha-cholesta-8,24-dien-3beta-ol",
+      "LANOSTEROL",
+      "Lanosterin",
+      "Lanosterol",
+      "lanosta-8,24-dien-3beta-ol",
+      "lanosta-8,24-dien-3beta-ol",
+      "lanosterol"
+    ]
+  },
+  "CHEBI:16576": {
+    "label": "D-alanyl-D-alanine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(D-Ala)2",
+      "D-Ala-D-Ala",
+      "D-Alanyl-D-alanine",
+      "H-D-Ala-D-Ala-OH"
+    ]
+  },
+  "CHEBI:16625": {
+    "label": "methylmalonyl-CoA",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "2-Methylmalonyl-CoA",
+      "2-methyl-3-oxopropanoyl-CoAs",
+      "2-methylmalonyl-CoA",
+      "3'-phosphoadenosine 5'-[3-(3-hydroxy-2,2-dimethyl-4-{[3-({2-[(2-methyl-3-oxopropanoyl)sulfanyl]ethyl}amino)-3-oxopropyl]amino}-4-oxobutyl) dihydrogen diphosphate]",
+      "3'-phosphoadenosine 5'-[3-(3-hydroxy-2,2-dimethyl-4-{[3-({2-[(2-methyl-3-oxopropanoyl)sulfanyl]ethyl}amino)-3-oxopropyl]amino}-4-oxobutyl) dihydrogen diphosphate]",
+      "Methylmalonyl coemzyme A",
+      "Methylmalonyl coenzyme A",
+      "Methylmalonyl-CoA",
+      "methylmalonyl coenzyme A"
+    ]
+  },
+  "CHEBI:16856": {
+    "label": "glutathione",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "5-L-Glutamyl-L-cysteinylglycine",
+      "GSH",
+      "Glutathione",
+      "Glutathione-SH",
+      "L-gamma-glutamyl-L-cysteinylglycine",
+      "L-gamma-glutamyl-L-cysteinylglycine",
+      "N-(N-gamma-L-Glutamyl-L-cysteinyl)glycine",
+      "Reduced glutathione",
+      "gamma-L-Glutamyl-L-cysteinyl-glycine"
+    ]
+  },
+  "CHEBI:16865": {
+    "label": "gamma-aminobutyric acid",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "4-Aminobutanoic acid",
+      "4-Aminobutanoic acid",
+      "4-Aminobutyric acid",
+      "4-aminobutanoic acid",
+      "4-aminobutanoic acid",
+      "4-aminobutyric acid",
+      "4Abu",
+      "GABA",
+      "GAMMA-AMINO-BUTANOIC ACID",
+      "gamma-Aminobuttersaeure",
+      "gamma-Aminobutyric acid",
+      "gamma-amino-n-butyric acid",
+      "gamma-aminobutanoic acid",
+      "gamma-aminobutyric acid",
+      "omega-aminobutyric acid",
+      "piperidic acid",
+      "piperidinic acid"
+    ]
+  },
+  "CHEBI:169041": {
+    "label": "simvastatin hydroxy acid",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(3R,5R)-7-[(1S,2S,6R,8S,8aR)-8-(2,2-dimethylbutanoyloxy)-2,6-dimethyl-1,2,6,7,8,8a-hexahydronaphthalen-1-yl]-3,5-dihydroxyheptanoic acid",
+      "(3R,5R)-7-[(1S,2S,6R,8S,8aR)-8-(2,2-dimethylbutanoyloxy)-2,6-dimethyl-1,2,6,7,8,8a-hexahydronaphthalen-1-yl]-3,5-dihydroxyheptanoic acid",
+      "Simvastatin acid",
+      "Simvastatin carboxylic acid",
+      "Simvastatin hydroxy acid",
+      "tenivastatin",
+      "tenivastatina",
+      "tenivastatine"
+    ]
+  },
+  "CHEBI:16933": {
+    "label": "ergosterol",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(22E)-ergosta-5,7,22-trien-3beta-ol",
+      "(22E)-ergosta-5,7,22-trien-3beta-ol",
+      "(22E,24S)-24-methylcholesta-5,7,22-trien-3beta-ol",
+      "ERGOSTEROL",
+      "Ergosterol",
+      "Provitamin D2",
+      "ergosterol"
+    ]
+  },
+  "CHEBI:16991": {
+    "label": "deoxyribonucleic acid",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(Deoxyribonucleotide)m",
+      "(Deoxyribonucleotide)n",
+      "(Deoxyribonucleotide)n+m",
+      "DNA",
+      "DNAn",
+      "DNAn+1",
+      "DNS",
+      "Deoxyribonucleic acid",
+      "Desoxyribonukleinsaeure",
+      "deoxyribonucleic acids",
+      "deoxyribonucleic acids",
+      "desoxyribose nucleic acid",
+      "thymus nucleic acid"
+    ]
+  },
+  "CHEBI:170009": {
+    "label": "favipiravir-RTP",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "6-fluoro-3,4-dihydro-4-(5-O-(hydroxy((hydroxy(phosphonooxy)phosphinyl)oxy)phosphinyl)-beta-D-ribofuranosyl)-3-oxo-2-pyrazinecarboxamide",
+      "6-fluoro-4-[5-O-(hydroxy{[hydroxy(phosphonooxy)phosphoryl]oxy}phosphoryl)-beta-D-ribofuranosyl]-3-oxo-3,4-dihydropyrazine-2-carboxamide",
+      "6-fluoro-4-[5-O-(hydroxy{[hydroxy(phosphonooxy)phosphoryl]oxy}phosphoryl)-beta-D-ribofuranosyl]-3-oxo-3,4-dihydropyrazine-2-carboxamide",
+      "T-705 RTP",
+      "T-705 ribosyl triphosphate",
+      "T-705-4-ribofuranosyl-5'-triphosphate",
+      "T-705RTP",
+      "favipiravir riboside triphosphate"
+    ]
+  },
+  "CHEBI:17047": {
+    "label": "all-trans-undecaprenyl diphosphate",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(2E,6E,10E,14E,18E,22E,26E,30E,34E,38E)-3,7,11,15,19,23,27,31,35,39,43-undecamethyltetratetraconta-2,6,10,14,18,22,26,30,34,38,42-undecaen-1-yl trihydrogen diphosphate",
+      "(2E,6E,10E,14E,18E,22E,26E,30E,34E,38E)-3,7,11,15,19,23,27,31,35,39,43-undecamethyltetratetraconta-2,6,10,14,18,22,26,30,34,38,42-undecaen-1-yl trihydrogen diphosphate",
+      "C55-isoprenyl pyrophosphate",
+      "Diphosphoric acid, mono(3,7,11,15,19,23,27,31,35,39,43-undecamethyl-2,6,10,14,18,22,26,30,34,38,42-tetratetracontaundecaenyl) ester",
+      "UndPP",
+      "undecaprenyl diphosphate",
+      "undecaprenyl pyrophosphate",
+      "undecaprenyl trihydrogen diphosphate"
+    ]
+  },
+  "CHEBI:17154": {
+    "label": "nicotinamide",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "3-carbamoylpyridine",
+      "3-pyridinecarboxamide",
+      "Niacinamide",
+      "Nicotinamid",
+      "Nicotinsaeureamid",
+      "Nikotinamid",
+      "Nikotinsaeureamid",
+      "Vitamin PP",
+      "beta-pyridinecarboxamide",
+      "m-(aminocarbonyl)pyridine",
+      "niacin",
+      "niamide",
+      "nicotinamida",
+      "nicotinamide",
+      "nicotinamidum",
+      "nicotine acid amide",
+      "nicotine amide",
+      "nicotinic acid amide",
+      "nicotinic amide",
+      "nicotylamide",
+      "pyridine-3-carboxamide",
+      "pyridine-3-carboxamide",
+      "pyridine-3-carboxylic acid amide",
+      "vitamin B3"
+    ]
+  },
+  "CHEBI:17234": {
+    "label": "glucose",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "DL-glucose",
+      "Glc",
+      "Glucose",
+      "Glucose",
+      "Glukose",
+      "gluco-hexose",
+      "gluco-hexose",
+      "glucose",
+      "glucose"
+    ]
+  },
+  "CHEBI:17256": {
+    "label": "2'-deoxyadenosine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(2R,3S,5R)-5-(6-amino-9H-purin-9-yl)-2-(hydroxymethyl)tetrahydrofuran-3-ol",
+      "2'-Deoxyadenosine",
+      "2'-Deoxyadenosine",
+      "2'-deoxyadenosine",
+      "2'-deoxyadenosine",
+      "5-(6-AMINO-PURIN-9-YL)-2-HYDROXYMETHYL-TETRAHYDRO-FURAN-3-OL",
+      "9-(2-Deoxy-beta-D-erythro-pentofuranosyl)adenine",
+      "9-(2-deoxy-beta-D-ribofuranosyl)-9H-purin-6-amine",
+      "Deoxyadenosine",
+      "adenine deoxyribonucleoside",
+      "adenyldeoxyriboside",
+      "dA"
+    ]
+  },
+  "CHEBI:172731": {
+    "label": "2-Chloro-2'-deoxyadenosine-5'-triphosphate",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "2-chlorodeoxyadenosine triphosphate",
+      "[[(2R,3S,5R)-5-(6-amino-2-chloropurin-9-yl)-3-hydroxyoxolan-2-yl]methoxy-hydroxyphosphoryl] phosphono hydrogen phosphate",
+      "[[(2R,3S,5R)-5-(6-amino-2-chloropurin-9-yl)-3-hydroxyoxolan-2-yl]methoxy-hydroxyphosphoryl] phosphono hydrogen phosphate"
+    ]
+  },
+  "CHEBI:17347": {
+    "label": "testosterone",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "17beta-Hydroxy-4-androsten-3-one",
+      "17beta-hydroxy-4-androsten-3-one",
+      "17beta-hydroxyandrost-4-en-3-one",
+      "17beta-hydroxyandrost-4-en-3-one",
+      "4-androsten-17beta-ol-3-one",
+      "Androderm",
+      "TESTOSTERONE",
+      "Testosteron",
+      "Testosterone",
+      "testosterona",
+      "testosterone",
+      "testosteronum"
+    ]
+  },
+  "CHEBI:17376": {
+    "label": "cystine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "3,3'-disulfanediylbis(2-aminopropanoic acid)",
+      "3,3'-disulfanediylbis(2-aminopropanoic acid)",
+      "3,3'-dithiobis(2-aminopropanoic acid)",
+      "Cystin",
+      "Cystine",
+      "Cystine",
+      "Dicysteine",
+      "Zystin",
+      "alpha-Diamino-beta-dithiolactic acid",
+      "cistina",
+      "cystine",
+      "cystine"
+    ]
+  },
+  "CHEBI:17489": {
+    "label": "3',5'-cyclic AMP",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "3',5'-Cyclic AMP",
+      "ADENOSINE-3',5'-CYCLIC-MONOPHOSPHATE",
+      "Adenosine 3',5'-cyclic phosphate",
+      "Adenosine 3',5'-phosphate",
+      "Adenosine 3',5'-phosphate",
+      "Cyclic AMP",
+      "Cyclic adenylic acid",
+      "adenosine 3',5'-(hydrogen phosphate)",
+      "adenosine 3',5'-(hydrogen phosphate)",
+      "adenosine 3',5'-cyclic monophosphate",
+      "cAMP"
+    ]
+  },
+  "CHEBI:17650": {
+    "label": "cortisol",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(11beta)-11,17,21-trihydroxypregn-4-ene-3,20-dione",
+      "11beta,17,21-trihydroxypregn-4-ene-3,20-dione",
+      "11beta,17,21-trihydroxypregn-4-ene-3,20-dione",
+      "11beta,17alpha,21-Trihydroxy-4-pregnene-3,20-dione",
+      "11beta,17alpha,21-trihydroxy-4-pregnene-3,20-dione",
+      "11beta-hydrocortisone",
+      "17-hydroxycorticosterone",
+      "4-pregnen-11beta,17alpha,21-triol-3,20-dione",
+      "Cortisol",
+      "Hydrocortisone",
+      "Kendall's compound F",
+      "Reichstein's substance M",
+      "cortisol",
+      "hidrocortisona",
+      "hydrocortisone",
+      "hydrocortisonum"
+    ]
+  },
+  "CHEBI:17716": {
+    "label": "lactose",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(+)-lactose",
+      "(Gal)1 (Glc)1",
+      "1-beta-D-Galactopyranosyl-4-D-glucopyranose",
+      "4-(beta-D-galactosido)-D-glucose",
+      "4-O-beta-D-galactopyranosyl-D-glucose",
+      "D-lactose",
+      "Galbeta1-4Glc",
+      "Lac",
+      "Laktobiose",
+      "Laktose",
+      "Milchzucker",
+      "Milk sugar",
+      "beta-D-Gal-(1->4)-D-Glc",
+      "beta-D-Galp-(1->4)-D-Glcp",
+      "beta-D-galactopyranosyl-(1->4)-D-glucopyranose",
+      "beta-D-galactopyranosyl-(1->4)-D-glucopyranose",
+      "beta-Gal1,4-Glc",
+      "lactobiose",
+      "lactose",
+      "milk sugar"
+    ]
+  },
+  "CHEBI:17842": {
+    "label": "trypanothione",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(2S,7R,26R,31S)-2,31-diamino-5,8,11,22,25,28-hexaoxo-7,26-bis(sulfanylmethyl)-6,9,12,16,21,24,27-heptaazadotriacontane-1,32-dioic acid",
+      "(2S,7R,26R,31S)-2,31-diamino-5,8,11,22,25,28-hexaoxo-7,26-bis(sulfanylmethyl)-6,9,12,16,21,24,27-heptaazadotriacontane-1,32-dioic acid",
+      "(2S,7R,26R,31S)-2,31-diamino-7,26-bis(mercaptomethyl)-5,8,11,22,25,28-hexaoxo-6,9,12,16,21,24,27-heptaazadotriacontane-1,32-dioic acid",
+      "BIS(GAMMA-GLUTAMYL-CYSTEINYL-GLYCINYL)SPERMIDINE",
+      "N1,N8-Bis(gamma-L-glutamyl-L-cysteinyl-glycyl)spermidine",
+      "N1,N8-Bis(glutathionyl)spermidine",
+      "N1,N8-Bis-(gamma-L-glutamyl-L-cysteinyl-glycyl)-spermidine",
+      "N1,N8-Bis-(glutathionyl)spermidine",
+      "Reduced trypanothione",
+      "TSH",
+      "Trypanothion",
+      "Trypanothione"
+    ]
+  },
+  "CHEBI:17855": {
+    "label": "triglyceride",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Triacylglycerol",
+      "Triglycerid",
+      "Triglyceride",
+      "Triglyzerid",
+      "a triacylglycerol",
+      "triacylglycerols",
+      "triglycerides",
+      "triglycerides"
+    ]
+  },
+  "CHEBI:17884": {
+    "label": "N(2)-phenylacetyl-L-glutamine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "N(2)-(phenylacetyl)-L-glutamine",
+      "N(2)-(phenylacetyl)-L-glutamine",
+      "alpha-N-Phenylacetyl-L-glutamine",
+      "phenylacetyl-L-glutamine",
+      "phenylacetylglutamine"
+    ]
+  },
+  "CHEBI:17996": {
+    "label": "chloride",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "CHLORIDE ION",
+      "Chloride ion",
+      "Chloride",
+      "Chloride",
+      "Chloride(1-)",
+      "Chlorine anion",
+      "Cl(-)",
+      "Cl-",
+      "chloride",
+      "chloride",
+      "chloride(1-)",
+      "chloride(1-)"
+    ]
+  },
+  "CHEBI:18059": {
+    "label": "lipid",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Lipid",
+      "lipids",
+      "lipids"
+    ]
+  },
+  "CHEBI:18085": {
+    "label": "glycosaminoglycan",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Glycosaminoglycan",
+      "Glycosaminoglycan",
+      "Glykosaminoglykan",
+      "glicosaminoglicano",
+      "glycosaminoglycan",
+      "glycosaminoglycan",
+      "glycosaminoglycane",
+      "glycosaminoglycans"
+    ]
+  },
+  "CHEBI:18111": {
+    "label": "ribosomal RNA",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Ribosomal RNA",
+      "Ribosomal RNA",
+      "rRNA",
+      "ribosomal RNA",
+      "ribosomal RNA"
+    ]
+  },
+  "CHEBI:18243": {
+    "label": "dopamine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "2-(3,4-Dihydroxyphenyl)ethylamine",
+      "2-(3,4-dihydroxyphenyl)ethylamine",
+      "3,4-Dihydroxyphenethylamine",
+      "3-Hydroxytyramine",
+      "4-(2-Aminoethyl)-1,2-benzenediol",
+      "4-(2-Aminoethyl)benzene-1,2-diol",
+      "4-(2-Aminoethyl)benzene-1,2-diol",
+      "4-(2-aminoethyl)-1,2-benzenediol",
+      "4-(2-aminoethyl)benzene-1,2-diol",
+      "4-(2-aminoethyl)benzene-1,2-diol",
+      "4-(2-aminoethyl)catechol",
+      "4-(2-aminoethyl)pyrocatechol",
+      "Deoxyepinephrine",
+      "Dopamine",
+      "Hydroxytyramin",
+      "dopamina",
+      "dopamine",
+      "dopaminum"
+    ]
+  },
+  "CHEBI:18248": {
+    "label": "iron atom",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "26Fe",
+      "Eisen",
+      "Fe",
+      "Iron",
+      "Iron",
+      "fer",
+      "ferrum",
+      "hierro",
+      "iron",
+      "iron"
+    ]
+  },
+  "CHEBI:18295": {
+    "label": "histamine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "1H-Imidazole-4-ethanamine",
+      "2-(1H-imidazol-4-yl)ethanamine",
+      "2-(1H-imidazol-4-yl)ethanamine",
+      "2-(4-Imidazolyl)ethylamine",
+      "HISTAMINE",
+      "Histamine"
+    ]
+  },
+  "CHEBI:18361": {
+    "label": "diphosphate(4-)",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "DIPHOSPHATE",
+      "DIPHOSPHATE",
+      "Diphosphat",
+      "Diphosphate",
+      "P2O7(4-)",
+      "PPi",
+      "Pyrophosphat",
+      "Pyrophosphate",
+      "[O3POPO3](4-)",
+      "diphosphate",
+      "diphosphate",
+      "mu-oxido-bis(trioxidophosphate)(4-)",
+      "mu-oxido-bis(trioxidophosphate)(4-)",
+      "mu-oxo-hexaoxodiphosphate",
+      "mu-oxo-hexaoxodiphosphate",
+      "pyrophosphate ion"
+    ]
+  },
+  "CHEBI:18367": {
+    "label": "phosphate(3-)",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Orthophosphate",
+      "PHOSPHATE ION",
+      "PO4(3-)",
+      "Phosphate",
+      "Phosphate",
+      "[PO4](3-)",
+      "phosphate",
+      "phosphate",
+      "tetraoxidophosphate(3-)",
+      "tetraoxidophosphate(3-)",
+      "tetraoxophosphate(3-)",
+      "tetraoxophosphate(3-)",
+      "tetraoxophosphate(V)",
+      "tetraoxophosphate(V)"
+    ]
+  },
+  "CHEBI:18405": {
+    "label": "pyridoxal 5'-phosphate",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(4-formyl-5-hydroxy-6-methylpyridin-3-yl)methyl dihydrogen phosphate",
+      "(4-formyl-5-hydroxy-6-methylpyridin-3-yl)methyl dihydrogen phosphate",
+      "3-hydroxy-2-methyl-5-[(phosphonooxy)methyl]-4-pyridinecarboxaldehyde",
+      "3-hydroxy-5-(hydroxymethyl)-2-methylisonicotinaldehyde 5-phosphate",
+      "PLP",
+      "PYRIDOXAL-5'-PHOSPHATE",
+      "Phosphoric acid mono-(4-formyl-5-hydroxy-6-methyl-pyridin-3-ylmethyl) ester",
+      "Pyridoxal 5'-phosphate",
+      "Pyridoxal 5-phosphate",
+      "Pyridoxal phosphate",
+      "codecarboxylase",
+      "pyridoxal 5'-(dihydrogen phosphate)",
+      "pyridoxal 5-monophosphoric acid ester"
+    ]
+  },
+  "CHEBI:18406": {
+    "label": "AICA ribonucleotide",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "1-(5'-Phosphoribosyl)-5-amino-4-imidazolecarboxamide",
+      "1-(5'-phosphoribosyl)-5-amino-4-imidazolecarboxamide",
+      "5'-Phospho-ribosyl-5-amino-4-imidazole carboxamide",
+      "5'-Phosphoribosyl-5-amino-4-imidazolecarboxamide",
+      "5'-phospho-ribosyl-5-amino-4-imidazole carboxamide",
+      "5'-phosphoribosyl-5-amino-4-imidazolecarboxamide",
+      "5-Amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamide",
+      "5-Aminoimidazole-4-carboxamide ribotide",
+      "5-Phosphoribosyl-4-carbamoyl-5-aminoimidazole",
+      "5-amino-1-(5-O-phosphono-beta-D-ribofuranosyl)-1H-imidazole-4-carboxamide",
+      "5-amino-1-(5-O-phosphono-beta-D-ribofuranosyl)-1H-imidazole-4-carboxamide",
+      "5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamide",
+      "5-aminoimidazole-4-carboxamide ribotide",
+      "5-phosphoribosyl-4-carbamoyl-5-aminoimidazole",
+      "AICA-ribonucleotide",
+      "AICAR",
+      "Aica ribonucleotide",
+      "acadesine 5'-monophosphate"
+    ]
+  },
+  "CHEBI:207229": {
+    "label": "dihydroartemisinin",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(3R,5aS,6R,8aS,9R,12R,12aR)-3,6,9-trimethyldecahydro-3,12-epoxypyrano[4,3-j][1,2]benzodioxepin-10-ol",
+      "(3R,5aS,6R,8aS,9R,12R,12aR)-3,6,9-trimethyldecahydro-3,12-epoxypyrano[4,3-j][1,2]benzodioxepin-10-ol"
+    ]
+  },
+  "CHEBI:21241": {
+    "detail": "OLS4 reports is_obsolete",
+    "label": "CHEBI_21241",
+    "source": "ols4:chebi",
+    "status": "obsolete"
+  },
+  "CHEBI:22587": {
+    "label": "antiviral agent",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "anti-viral agent",
+      "anti-viral agents",
+      "antiviral agents",
+      "antiviral",
+      "antivirals"
+    ]
+  },
+  "CHEBI:22868": {
+    "label": "bile salt",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Bile acid",
+      "bile salts"
+    ]
+  },
+  "CHEBI:23044": {
+    "label": "carotenoid",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "carotenes and carotenoids",
+      "carotenoid",
+      "carotenoid",
+      "carotenoids"
+    ]
+  },
+  "CHEBI:23965": {
+    "label": "estradiol",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "estra-1,3,5(10)-triene-3,17-diol",
+      "estra-1,3,5(10)-triene-3,17-diol",
+      "oestradiol"
+    ]
+  },
+  "CHEBI:24838": {
+    "label": "inorganic phosphate",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "inorganic phosphates"
+    ]
+  },
+  "CHEBI:25029": {
+    "label": "leukotriene",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Leukotrien",
+      "Leukotriene",
+      "leucotriene",
+      "leucotrienes",
+      "leukotriene",
+      "leukotrienes",
+      "leukotrienes"
+    ]
+  },
+  "CHEBI:25051": {
+    "label": "lipid As",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "lipid A"
+    ]
+  },
+  "CHEBI:26125": {
+    "label": "phytosterols",
+    "source": "ols4:chebi",
+    "status": "exists"
+  },
+  "CHEBI:26333": {
+    "label": "prostaglandin",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "prostaglandin",
+      "prostaglandins",
+      "prostaglandins"
+    ]
+  },
+  "CHEBI:26523": {
+    "label": "reactive oxygen species",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "ROS"
+    ]
+  },
+  "CHEBI:27226": {
+    "label": "uric acid",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "uric acids"
+    ]
+  },
+  "CHEBI:28044": {
+    "label": "phenylalanine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "2-amino-3-phenylpropanoic acid",
+      "2-amino-3-phenylpropanoic acid",
+      "DL-Phenylalanine",
+      "F",
+      "PHE",
+      "Phenylalanin",
+      "Phenylalanine",
+      "Phenylalanine",
+      "alpha-Amino-beta-phenylpropionic acid",
+      "fenilalanina",
+      "phenylalanine",
+      "phenylalanine"
+    ]
+  },
+  "CHEBI:28061": {
+    "label": "alpha-D-galactose",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "ALPHA D-GALACTOSE",
+      "Gal-alpha",
+      "alpha-D-Gal",
+      "alpha-D-Galactose",
+      "alpha-D-galactopyranose",
+      "alpha-D-galactopyranose",
+      "alpha-D-galactose"
+    ]
+  },
+  "CHEBI:28300": {
+    "label": "glutamine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "2,5-diamino-5-oxopentanoic acid",
+      "2-Aminoglutaramic acid",
+      "2-amino-4-carbamoylbutanoic acid",
+      "Glutamin",
+      "Glutamine",
+      "Glutamine",
+      "Glutaminsaeure-5-amid",
+      "Hgln",
+      "glutamic acid gamma-amide",
+      "glutamine",
+      "glutamine"
+    ]
+  },
+  "CHEBI:28648": {
+    "label": "beta-D-GalNAc-(1->4)-[alpha-Neu5Ac-(2->8)-alpha-Neu5Ac-(2->3)]-beta-D-Gal-(1->4)-beta-D-Glc-(1<->1')-Cer",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(2S,3R,4E)-2-(acylamino)-3-hydroxyoctadec-4-en-1-yl 2-acetamido-2-deoxy-beta-D-galactopyranosyl-(1->4)-[5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->8)-5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl]-(2->3)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranoside",
+      "(2S,3R,4E)-2-(acylamino)-3-hydroxyoctadec-4-en-1-yl 2-acetamido-2-deoxy-beta-D-galactopyranosyl-(1->4)-[5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->8)-5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl]-(2->3)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranoside",
+      "(Gal)1 (GalNAc)1 (Glc)1 (Neu5Ac)2 (Cer)1",
+      "GD2",
+      "GalNAc(beta1-4)[NeuAc(alpha2-8)NeuAc(alpha2-3)]Gal(beta1-4)Glc(beta1-1)Cer",
+      "GalNAc-beta1->4(NeuAc-alpha2->8NeuAc2->3)Gal-beta1->4Glc-beta1->1'Cer",
+      "GalNAc-beta1->4(NeuAc-alpha2->8NeuAc2->3)LacCer",
+      "GalNAcbeta1-4(NeuAcalpha2-8NeuAcalpha2-3)Galbeta1-4Glcbeta1-1'Cer",
+      "GalNAcbeta1->4(NeuAcalpha2->8NeuAcalpha2->3)Galbeta1->4Glc-Cer",
+      "beta-GalpNAc-(1->4)-[alpha-Neu5Ac-(2->8)-alpha-Neu5Ac-(2->3)]-beta-Galp-(1->4)-beta-Glcp-(1<->1')-Cer",
+      "disialoganglioside GD2",
+      "ganglioside GD2"
+    ]
+  },
+  "CHEBI:29034": {
+    "label": "iron(3+)",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "FE (III) ION",
+      "Fe(3+)",
+      "Fe(III)",
+      "Fe3+",
+      "Ferric ion",
+      "Iron(3+)",
+      "Iron(3+)",
+      "ferric iron",
+      "iron(3+) ion",
+      "iron(3+) ion",
+      "iron(3+)",
+      "iron(3+)",
+      "iron(III) cation",
+      "iron(III) cation",
+      "iron, ion (Fe(3+))"
+    ]
+  },
+  "CHEBI:29103": {
+    "label": "potassium(1+)",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "K(+)",
+      "K+",
+      "POTASSIUM ION",
+      "potassium cation",
+      "potassium cation",
+      "potassium(1+) ion",
+      "potassium(1+) ion",
+      "potassium(1+)",
+      "potassium(1+)",
+      "potassium(I) cation",
+      "potassium(I) cation"
+    ]
+  },
+  "CHEBI:29108": {
+    "label": "calcium(2+)",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "CALCIUM ION",
+      "Ca(2+)",
+      "Ca2+",
+      "calcium(2+) ion",
+      "calcium(2+) ion",
+      "calcium(2+)",
+      "calcium(2+)",
+      "calcium(II) cation",
+      "calcium(II) cation",
+      "calcium, doubly charged positive ion"
+    ]
+  },
+  "CHEBI:3001": {
+    "label": "beclomethasone",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(11beta,16beta)-9-chloro-11,17,21-trihydroxy-16-methylpregna-1,4-diene-3,20-dione",
+      "(11beta,16beta)-9-chloro-11,17,21-trihydroxy-16-methylpregna-1,4-diene-3,20-dione",
+      "9-chloro-11beta,17,21-trihydroxy-16beta-methylpregna-1,4-diene-3,20-dione",
+      "9alpha-chloro-16beta-methylprednisolone",
+      "Beclomethasone",
+      "beclometasona",
+      "beclometasone",
+      "beclometasonum"
+    ]
+  },
+  "CHEBI:30411": {
+    "label": "cobalamin",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "COBALAMIN",
+      "Coalpha-[alpha-(5,6-dimethylbenzimidazolyl)]-cobamide",
+      "Coalpha-[alpha-(5,6-dimethylbenzimidazolyl)]-cobamide",
+      "cobalamin",
+      "cobalamin"
+    ]
+  },
+  "CHEBI:3165": {
+    "label": "bradykinin",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Arg-Pro-Pro-Gly-Phe-Ser-Pro-Phe-Arg",
+      "BK",
+      "L-Arg-L-Pro-L-Pro-Gly-L-Phe-L-Ser-L-Pro-L-Phe-L-Arg",
+      "L-arginyl-L-prolyl-L-prolylglycyl-L-phenylalanyl-L-seryl-L-prolyl-L-phenylalanyl-L-arginine",
+      "L-arginyl-L-prolyl-L-prolylglycyl-L-phenylalanyl-L-seryl-L-prolyl-L-phenylalanyl-L-arginine",
+      "L-bradykinin",
+      "RPPGFSPFR"
+    ]
+  },
+  "CHEBI:33568": {
+    "label": "adrenaline",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(+-)-adrenaline",
+      "(+-)-epinephrine",
+      "2-(methylamino)-1-(3,4-dihydroxyphenyl)ethanol",
+      "dl-adrenaline",
+      "epinephrine racemic",
+      "rac-4-[1-hydroxy-2-(methylamino)ethyl]benzene-1,2-diol",
+      "rac-4-[1-hydroxy-2-(methylamino)ethyl]benzene-1,2-diol",
+      "rac-adrenaline",
+      "racemic adrenaline",
+      "racepinefrina",
+      "racepinefrine",
+      "racepinefrinum"
+    ]
+  },
+  "CHEBI:33569": {
+    "label": "noradrenaline",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "4-(2-amino-1-hydroxyethyl)benzene-1,2-diol",
+      "4-(2-amino-1-hydroxyethyl)benzene-1,2-diol",
+      "noradrenalina",
+      "norepinephrine"
+    ]
+  },
+  "CHEBI:34179": {
+    "label": "17alpha-Methylestradiol",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "17alpha-Methylestradiol"
+    ]
+  },
+  "CHEBI:35143": {
+    "label": "hemoglobin",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "haemoglobin",
+      "hemoglobin"
+    ]
+  },
+  "CHEBI:35366": {
+    "label": "fatty acid",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Fatty acid",
+      "Fettsaeure",
+      "Fettsaeuren",
+      "acide gras",
+      "acides gras",
+      "acido graso",
+      "acidos grasos",
+      "fatty acids",
+      "fatty acids"
+    ]
+  },
+  "CHEBI:35472": {
+    "label": "anti-inflammatory drug",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "anti-inflammatory drugs",
+      "antiinflammatory agent",
+      "antiinflammatory drug",
+      "antiinflammatory drugs"
+    ]
+  },
+  "CHEBI:35475": {
+    "label": "non-steroidal anti-inflammatory drug",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "NSAID",
+      "NSAIDs",
+      "non-steroidal anti-inflammatory agent",
+      "non-steroidal anti-inflammatory drugs"
+    ]
+  },
+  "CHEBI:35490": {
+    "label": "trypanothione disulfide",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(2S,2'S)-5,5'-{[(4R,23R)-5,8,19,22-tetraoxo-1,2-dithia-6,9,13,18,21-pentaazacyclotetracosane-4,23-diyl]diimino}bis(2-amino-5-oxopentanoic acid)",
+      "(2S,2'S)-5,5'-{[(4R,23R)-5,8,19,22-tetraoxo-1,2-dithia-6,9,13,18,21-pentaazacyclotetracosane-4,23-diyl]diimino}bis(2-amino-5-oxopentanoic acid)",
+      "2-AMINO-4-[4-(4-AMINO-4-CARBOXY-BUTYRYLAMINO)-5,8,19,22-TETRAOXO-1,2-DITHIA-6,9,13,18,21-PENTAAZA-CYCLOTETRACOS-23-YLCARBAMOYL]-BUTYRIC ACID",
+      "Oxidized trypanothione",
+      "TSST",
+      "Trypanothiondisulfid",
+      "Trypanothione disulfide"
+    ]
+  },
+  "CHEBI:35628": {
+    "label": "(6-methoxy-2-naphthyl)acetic acid",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(6-methoxynaphthalen-2-yl)acetic acid",
+      "(6-methoxynaphthalen-2-yl)acetic acid",
+      "6-MNAA",
+      "6-Methoxy-2-naphthylacetic acid",
+      "6-methoxynaphth-2-ylacetic acid"
+    ]
+  },
+  "CHEBI:35705": {
+    "label": "immunosuppressive agent",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "immunosuppressant",
+      "immunosuppressive agents",
+      "inmunosupresor"
+    ]
+  },
+  "CHEBI:36161": {
+    "label": "hematin",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Fe(ppIX)(OH)",
+      "Haematin",
+      "[Fe(ppIX)(OH)]",
+      "ferriheme hydroxide",
+      "ferriporphyrin hydroxide",
+      "ferriprotoporphyrin IX hydroxide",
+      "ferriprotoporphyrin basic",
+      "hematin",
+      "hydroxo(protoporphyrinato)iron(III)",
+      "hydroxo(protoporphyrinato)iron(III)",
+      "hydroxo[3,7,12,17-tetramethyl-8,13-divinylporphyrin-2,18-dipropanoato(2-)]iron(III)",
+      "hydroxyhemin",
+      "phenodin",
+      "protohematin"
+    ]
+  },
+  "CHEBI:36500": {
+    "label": "glucosylceramide",
+    "source": "ols4:chebi",
+    "status": "exists"
+  },
+  "CHEBI:40050": {
+    "label": "amprenavir",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(3S)-Tetrahydro-3-furanyl ((1S,2R)-3-(((4-aminophenyl)sulfonyl)(2-methylpropyl)amino)-2-hydroxy-1-(phenylmethyl)propyl)carbamate",
+      "(3S)-tetrahydrofuran-3-yl [(1S,2R)-3-{[(4-aminophenyl)sulfonyl](2-methylpropyl)amino}-1-benzyl-2-hydroxypropyl]carbamate",
+      "(3S)-tetrahydrofuran-3-yl [(1S,2R)-3-{[(4-aminophenyl)sulfonyl](2-methylpropyl)amino}-1-benzyl-2-hydroxypropyl]carbamate",
+      "Agenerase",
+      "Amprenavir"
+    ]
+  },
+  "CHEBI:4167": {
+    "label": "D-glucopyranose",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "D-Glc",
+      "D-Glcp",
+      "D-Glucose",
+      "D-glucopyranose",
+      "D-glucopyranose",
+      "D-glucose",
+      "Dextrose",
+      "Glc-OH",
+      "Glucose",
+      "Grape sugar",
+      "glucose"
+    ]
+  },
+  "CHEBI:42797": {
+    "label": "gabapentin",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "1-(Aminomethyl)cyclohexaneacetic acid",
+      "Neurontin",
+      "[1-(aminomethyl)cyclohexyl]acetic acid",
+      "[1-(aminomethyl)cyclohexyl]acetic acid",
+      "gabapentin",
+      "gabapentina",
+      "gabapentine",
+      "gabapentinum"
+    ]
+  },
+  "CHEBI:43394": {
+    "label": "alpha-L-iduronic acid",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "L-IDURONIC ACID",
+      "alpha-L-idopyranuronic acid",
+      "alpha-L-idopyranuronic acid"
+    ]
+  },
+  "CHEBI:4575": {
+    "label": "dihydromorphine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Dihydromorphine"
+    ]
+  },
+  "CHEBI:46345": {
+    "label": "5-fluorouracil",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "5-FU",
+      "5-Fluoracil",
+      "5-Fluoropyrimidine-2,4-dione",
+      "5-Fluorouracil",
+      "5-Fluorouracil",
+      "5-fluoropyrimidine-2,4(1H,3H)-dione",
+      "5-fluoropyrimidine-2,4(1H,3H)-dione",
+      "5-fluorouracil",
+      "5-fluorouracil",
+      "Fluorouracil",
+      "fluorouracil",
+      "fluorouracilo",
+      "fluorouracilum"
+    ]
+  },
+  "CHEBI:47774": {
+    "label": "low-density lipoprotein cholesterol",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "LDL cholesterol",
+      "LDL-C",
+      "beta-lipoprotein cholesterol"
+    ]
+  },
+  "CHEBI:50503": {
+    "label": "laxative",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "aperient",
+      "aperients",
+      "laxante",
+      "laxatives",
+      "purgative",
+      "purgatives"
+    ]
+  },
+  "CHEBI:50673": {
+    "label": "methimazole",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "1-METHYL-1,3-DIHYDRO-2H-IMIDAZOLE-2-THIONE",
+      "1-METHYL-1,3-DIHYDRO-2H-IMIDAZOLE-2-THIONE",
+      "1-Methylimidazole-2(3H)-thione",
+      "1-methyl-1,3-dihydro-2H-imidazole-2-thione",
+      "1-methyl-1,3-dihydro-2H-imidazole-2-thione",
+      "Danantizol",
+      "Favistan",
+      "Methimazole",
+      "Strumazol",
+      "Tapazole",
+      "Thacapzol",
+      "USAF el-30",
+      "thiamazol",
+      "thiamazole",
+      "thiamazolum",
+      "tiamazol"
+    ]
+  },
+  "CHEBI:50919": {
+    "label": "antiemetic",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "anti-emetic",
+      "anti-emetics",
+      "antiemetico",
+      "antiemetics"
+    ]
+  },
+  "CHEBI:52255": {
+    "label": "hydroxylapatite",
+    "source": "ols4:chebi",
+    "status": "exists"
+  },
+  "CHEBI:59683": {
+    "label": "antipruritic drug",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "anti-itching drug",
+      "anti-itching drugs",
+      "antipruritic agent",
+      "antipruritic agents",
+      "antipruritic drugs"
+    ]
+  },
+  "CHEBI:60425": {
+    "label": "amyloid fibril",
+    "source": "ols4:chebi",
+    "status": "exists"
+  },
+  "CHEBI:63528": {
+    "label": "dTMP(2-)",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "5'-O-phosphonatothymidine",
+      "5'-O-phosphonatothymidine",
+      "5-methyluridine 5'-phosphate",
+      "5-methyluridine 5'-phosphate",
+      "TMP dianion",
+      "dTMP",
+      "ribothymidine 5'-monophosphate anion",
+      "thymidine 5'-monophosphate",
+      "thymidine 5'-phosphate",
+      "thymidine 5'-phosphate(2-)"
+    ]
+  },
+  "CHEBI:63726": {
+    "label": "neuroprotective agent",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "neuroprotectant",
+      "neuroprotectants",
+      "neuroprotective agents"
+    ]
+  },
+  "CHEBI:64174": {
+    "label": "carbovir triphosphate",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(-)-CBV-TP",
+      "(-)-carbovir 5'-triphosphate",
+      "(-)-carbovir triphosphate",
+      "(1S-cis)-triphosphoric acid, P-((4-(2-amino-1,6-dihydro-6-oxo-9H-purin-9-yl)-2-cyclopenten-1-yl)methyl) ester",
+      "[(1S,4R)-4-(2-amino-6-oxo-1,6-dihydro-9H-purin-9-yl)cyclopent-2-en-1-yl]methyl tetrahydrogen triphosphate",
+      "[(1S,4R)-4-(2-amino-6-oxo-1,6-dihydro-9H-purin-9-yl)cyclopent-2-en-1-yl]methyl tetrahydrogen triphosphate",
+      "carbovir 5'-triphosphate"
+    ]
+  },
+  "CHEBI:64645": {
+    "label": "amyloid-beta",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "amyloid beta",
+      "beta amyloid",
+      "beta-amyloid",
+      "beta-amyloids"
+    ]
+  },
+  "CHEBI:65312": {
+    "label": "corticotropin-releasing hormone (human)",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "CRH",
+      "Corticoliberin",
+      "Corticotropin releasing hormone",
+      "L-seryl-L-alpha-glutamyl-L-alpha-glutamyl-L-prolyl-L-prolyl-L-isoleucyl-L-seryl-L-leucyl-L-alpha-aspartyl-L-leucyl-L-valyl-L-phenylalanyl-L-histidyl-L-leucyl-L-leucyl-L-arginyl-L-alpha-glutamyl-L-valyl-L-leucyl-L-alpha-glutamyl-L-methionyl-L-alanyl-L-arginyl-L-alanyl-L-alpha-glutamyl-L-glutaminyl-L-leucyl-L-alanyl-L-glutaminyl-L-glutaminyl-L-alanyl-L-histidyl-L-seryl-L-asparaginyl-L-arginyl-L-lysyl-L-leucyl-L-methionyl-L-alpha-glutamyl-L-isoleucyl-L-isoleucinamide",
+      "L-seryl-L-alpha-glutamyl-L-alpha-glutamyl-L-prolyl-L-prolyl-L-isoleucyl-L-seryl-L-leucyl-L-alpha-aspartyl-L-leucyl-L-valyl-L-phenylalanyl-L-histidyl-L-leucyl-L-leucyl-L-arginyl-L-alpha-glutamyl-L-valyl-L-leucyl-L-alpha-glutamyl-L-methionyl-L-alanyl-L-arginyl-L-alanyl-L-alpha-glutamyl-L-glutaminyl-L-leucyl-L-alanyl-L-glutaminyl-L-glutaminyl-L-alanyl-L-histidyl-L-seryl-L-asparaginyl-L-arginyl-L-lysyl-L-leucyl-L-methionyl-L-alpha-glutamyl-L-isoleucyl-L-isoleucinamide",
+      "SEEPPISLDLTFHLLREVLEMARAEQLAQQAHSNRKLMEII-NH2",
+      "Ser-Glu-Glu-Pro-Pro-Ile-Ser-Leu-Asp-Leu-Thr-Phe-His-Leu-Leu-Arg-Glu-Val-Leu-Glu-Met-Ala-Arg-Ala-Glu-Gln-Leu-Ala-Gln-Gln-Ala-His-Ser-Asn-Arg-Lys-Leu-Met-Glu-Ile-Ile-NH2",
+      "corticotropin-releasing factor (human)",
+      "corticotropin-releasing factor (human/rat)",
+      "human/rat CRF"
+    ]
+  },
+  "CHEBI:66980": {
+    "label": "nootropic agent",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "cognitive enhancer",
+      "cognitive enhancers",
+      "intelligence enhancer",
+      "intelligence enhancers",
+      "memory enhancer",
+      "memory enhancers",
+      "neuro enhancer",
+      "neuro enhancers",
+      "nootropic agents",
+      "nootropic drug",
+      "nootropic drugs",
+      "nootropic",
+      "nootropics",
+      "smart drug",
+      "smart drugs"
+    ]
+  },
+  "CHEBI:701": {
+    "label": "licarbazepine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "10,11-Dihydro-10-hydroxycarbamazepine",
+      "10-Hydroxycarbamazepine",
+      "10-Hydroxycarbazepine",
+      "10-hydroxy-10,11-dihydro-5H-dibenzo[b,f]azepine-5-carboxamide",
+      "10-hydroxy-10,11-dihydro-5H-dibenzo[b,f]azepine-5-carboxamide",
+      "GP 47779",
+      "licarbazepine"
+    ]
+  },
+  "CHEBI:70729": {
+    "label": "ceftaroline",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(6R,7R)-7-{[(2Z)-2-(5-amino-1,2,4-thiadiazol-3-yl)-2-(ethoxyimino)acetyl]amino}-3-{[4-(1-methylpyridinium-4-yl)-1,3-thiazol-2-yl]sulfanyl}-8-oxo-5-thia-1-azabicyclo[4.2.0]oct-2-ene-2-carboxylate",
+      "(6R,7R)-7-{[(2Z)-2-(5-amino-1,2,4-thiadiazol-3-yl)-2-(ethoxyimino)acetyl]amino}-3-{[4-(1-methylpyridinium-4-yl)-1,3-thiazol-2-yl]sulfanyl}-8-oxo-5-thia-1-azabicyclo[4.2.0]oct-2-ene-2-carboxylate",
+      "PPI 0903M",
+      "T 91825",
+      "T-91825"
+    ]
+  },
+  "CHEBI:73080": {
+    "label": "hemiaminal",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "carbinolamine",
+      "carbinolamines",
+      "hemiaminals"
+    ]
+  },
+  "CHEBI:73248": {
+    "label": "deglymidodrine",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(+-)-2-amino-1-(2,5-dimethoxyphenyl)ethanol",
+      "(+/-)-2-amino-1-(2,5-dimethoxyphenyl)ethanol",
+      "1-(2',5'-dimethoxyphenyl)aminoethanol",
+      "ST-1059",
+      "alpha-(aminomethyl)-2,5-dimethoxybenzenemethanol",
+      "de-glymidodrine",
+      "desglymidodrine",
+      "rac-2-amino-1-(2,5-dimethoxyphenyl)ethanol",
+      "rac-2-amino-1-(2,5-dimethoxyphenyl)ethanol"
+    ]
+  },
+  "CHEBI:73420": {
+    "label": "fingolimod phosphate",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "2-amino-2-(hydroxymethyl)-4-(4-octylphenyl)butyl dihydrogen phosphate",
+      "2-amino-2-(hydroxymethyl)-4-(4-octylphenyl)butyl dihydrogen phosphate",
+      "FTY720 phosphate",
+      "FTY720-phosphate",
+      "fingolimod-P"
+    ]
+  },
+  "CHEBI:75316": {
+    "label": "sodium phenylbutyrate",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "4PBA",
+      "Ammonaps",
+      "Benzenebutanoic acid, sodium salt",
+      "Buphenyl",
+      "Sodium 4-phenylbutyrate",
+      "TriButyrate",
+      "sodium 4-phenylbutanoate",
+      "sodium 4-phenylbutanoate"
+    ]
+  },
+  "CHEBI:77034": {
+    "label": "mucolytic",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "mucolytics"
+    ]
+  },
+  "CHEBI:77035": {
+    "label": "expectorant",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "expectorants"
+    ]
+  },
+  "CHEBI:77363": {
+    "label": "ramiprilat",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(2S,3aS,6aS)-1-[(2S)-2-{[(1S)-1-carboxy-3-phenylpropyl]amino}propanoyl]octahydrocyclopenta[b]pyrrole-2-carboxylic acid",
+      "(2S,3aS,6aS)-1-[(2S)-2-{[(1S)-1-carboxy-3-phenylpropyl]amino}propanoyl]octahydrocyclopenta[b]pyrrole-2-carboxylic acid",
+      "ramiprilat",
+      "ramiprilate",
+      "ramiprilatum"
+    ]
+  },
+  "CHEBI:8005": {
+    "label": "peptidoglycan",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Mucopeptide",
+      "Murein",
+      "Peptideglycan",
+      "Peptidoglycan",
+      "peptidoglycan",
+      "peptidoglycan"
+    ]
+  },
+  "CHEBI:80270": {
+    "label": "Glucagon-like peptide 1",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "GLP-1",
+      "Glucagon-like peptide 1"
+    ]
+  },
+  "CHEBI:80308": {
+    "label": "substance P",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Arg-Pro-Lys-Pro-Gln-Gln-Phe-Phe-Gly-Leu-Met-NH2",
+      "H-Arg-Pro-Lys-Pro-Gln-Gln-Phe-Phe-Gly-Leu-Met-NH2",
+      "L-Arg-L-Pro-L-Lys-L-Pro-L-Gln-L-Gln-L-Phe-L-Phe-Gly-L-Leu-L-Met-NH2",
+      "L-arginyl-L-prolyl-L-lysyl-L-prolyl-L-glutaminyl-L-glutaminyl-L-phenylalanyl-L-phenylalanylglycyl-L-leucyl-L-methioninamide",
+      "L-arginyl-L-prolyl-L-lysyl-L-prolyl-L-glutaminyl-L-glutaminyl-L-phenylalanyl-L-phenylalanylglycyl-L-leucyl-L-methioninamide",
+      "RPKPQQFFGLM-NH2",
+      "RPKPQQFFGLM-amide",
+      "SP"
+    ]
+  },
+  "CHEBI:80613": {
+    "label": "6-Thioguanosine monophosphate",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "6-thioguanosine monophosphate",
+      "6-thioguanosine-5'-phosphate",
+      "6-thioguanylic acid",
+      "NSC-408090"
+    ]
+  },
+  "CHEBI:8069": {
+    "label": "phenobarbital",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "5-Ethyl-5-phenyl-pyrimidine-2,4,6-trione",
+      "5-Ethyl-5-phenylbarbituric acid",
+      "5-Phenyl-5-ethylbarbituric acid",
+      "5-ethyl-5-phenyl-2,4,6(1H,3H,5H)-pyrimidinetrione",
+      "5-ethyl-5-phenylpyrimidine-2,4,6(1H,3H,5H)-trione",
+      "5-ethyl-5-phenylpyrimidine-2,4,6(1H,3H,5H)-trione",
+      "Luminal",
+      "PHENYLETHYLMALONYLUREA",
+      "Phenobarbital",
+      "Phenobarbitol",
+      "Phenobarbitone",
+      "Phenobarbituric Acid",
+      "Phenylaethylbarbitursaeure",
+      "Phenylethylbarbiturate",
+      "Phenylethylbarbituric Acid",
+      "Phenylethylbarbitursaeure",
+      "Phenylethylmalonylurea",
+      "phenobarbital"
+    ]
+  },
+  "CHEBI:8097": {
+    "label": "Phenylethylmalonamide",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "2-Phenyl-2-ethylmalondiamide",
+      "PEMA",
+      "Phenylethylmalonamide"
+    ]
+  },
+  "CHEBI:8163": {
+    "label": "phosphoramide mustard",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "Friedman acid",
+      "N,N-bis(2-chloroethyl)phosphorodiamidic acid",
+      "N,N-bis(2-chloroethyl)phosphorodiamidic acid",
+      "Phosphamide mustard",
+      "Phosphoramide mustard",
+      "phosphamide mustard",
+      "phosphorodiamidic mustard"
+    ]
+  },
+  "CHEBI:82717": {
+    "label": "tedizolid",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "(5R)-3-{3-fluoro-4-[6-(2-methyl-2H-tetrazol-5-yl)pyridin-3-yl]phenyl}-5-(hydroxymethyl)-1,3-oxazolidin-2-one",
+      "(5R)-3-{3-fluoro-4-[6-(2-methyl-2H-tetrazol-5-yl)pyridin-3-yl]phenyl}-5-(hydroxymethyl)-1,3-oxazolidin-2-one",
+      "DA 7157",
+      "DA-7157",
+      "TR 700",
+      "TR-700",
+      "Torezolid",
+      "tedizolid"
+    ]
+  },
+  "CHEBI:86320": {
+    "label": "1alpha,25-dihydroxyvitamin D2",
+    "source": "ols4:chebi",
+    "status": "exists",
+    "synonyms": [
+      "1,25-Dihydroxycalciferol",
+      "1,25-Dihydroxyergocalciferol",
+      "1,25-Dihydroxyvitamin D2",
+      "1alpha,25-Dihydroxyergocalciferol",
+      "1alpha,25-Dihydroxyvitamin D2",
+      "1alpha,25-dihydroxycalciferol",
+      "1alpha,25-dihydroxyergocalciferol",
+      "1alpha,25-dihydroxyvitamin D2",
+      "Ercalcitriol"
+    ]
+  },
+  "CHEBI:93775": {
+    "label": "2-[[[4-[(2,4-diamino-6-pteridinyl)methyl-methylamino]phenyl]-oxomethyl]amino]pentanedioic acid",
+    "source": "ols4:chebi",
+    "status": "exists"
+  }
+}
