@@ -633,3 +633,37 @@ class TestOakFallback:
         monkeypatch.setattr(oaklib, "get_adapter", lambda _s: _Adapter())
         with pytest.raises(LookupError_, match="could not confirm absence"):
             backends.resolve_oak("GO:1", "sqlite:obo:go")
+
+    def test_cache_is_flushed_periodically(self, tmp_path, monkeypatch):
+        """A full-corpus pass is ~5,100 lookups over hours; without incremental
+        flushing a late crash loses every resolution."""
+        from term_validation.audit import audit
+        files = [_write_record(tmp_path, f"r{i}.yaml",
+                               [{"id": f"GO:{i}", "label": "BiologicalProcess", "name": "x"}])
+                 for i in range(10)]
+        flushes = {"n": 0}
+
+        class _Reg(_FakeRegistry):
+            def flush(self):
+                flushes["n"] += 1
+                return []
+
+        reg = _Reg({f"GO:{i}": TermResult(f"GO:{i}", TermStatus.EXISTS, label="x")
+                    for i in range(10)})
+        audit(files, reg, flush_every=3)
+        assert flushes["n"] == 3          # at 3, 6, 9
+
+    def test_flush_every_zero_disables_incremental_flushing(self, tmp_path):
+        from term_validation.audit import audit
+        files = [_write_record(tmp_path, "r.yaml",
+                               [{"id": "GO:1", "label": "BiologicalProcess", "name": "x"}])]
+        flushes = {"n": 0}
+
+        class _Reg(_FakeRegistry):
+            def flush(self):
+                flushes["n"] += 1
+                return []
+
+        audit(files, _Reg({"GO:1": TermResult("GO:1", TermStatus.EXISTS, label="x")}),
+              flush_every=0)
+        assert flushes["n"] == 0

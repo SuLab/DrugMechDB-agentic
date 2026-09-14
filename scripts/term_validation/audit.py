@@ -111,8 +111,15 @@ def iter_nodes(files: Iterable[Path]) -> Iterable[NodeRef]:
 
 def audit(files: list[Path], registry: Registry,
           *, check_names: bool = True,
-          progress: callable | None = None) -> AuditReport:
-    """Resolve every node id across `files` and collect findings."""
+          progress: callable | None = None,
+          flush_every: int = 200) -> AuditReport:
+    """Resolve every node id across `files` and collect findings.
+
+    `flush_every` writes the term cache periodically. A full-corpus pass is
+    ~5,100 network lookups and takes hours; without incremental flushing a
+    crash at hour two loses every resolution, and the next run starts from
+    nothing. Set 0 to flush only at the end.
+    """
     report = AuditReport(files_checked=len(files))
     nodes = list(iter_nodes(files))
     report.nodes_checked = len(nodes)
@@ -122,6 +129,8 @@ def audit(files: list[Path], registry: Registry,
 
     for i, curie in enumerate(unique, 1):
         report.resolutions[curie] = registry.resolve(curie)
+        if flush_every and i % flush_every == 0:
+            registry.flush()
         if progress and (i % 100 == 0 or i == len(unique)):
             progress(i, len(unique))
 
