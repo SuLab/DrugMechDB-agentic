@@ -114,28 +114,57 @@ def local_id(curie: str) -> str:
 
 # ── MeSH ────────────────────────────────────────────────────────────────────
 def resolve_mesh(curie: str) -> TermResult:
-    """NLM MeSH. Absent descriptors return 200 with an empty object."""
+    """NLM MeSH, via the `lookup/details` endpoint.
+
+    Chosen over `/mesh/<id>.json` because one call answers both questions the
+    audit asks: an absent id returns `terms: []`, and a present one returns its
+    full entry-term list — the preferred term plus every synonym.
+
+    Those entry terms matter more here than anywhere else. MeSH inverts its
+    headings ("Arthritis, Rheumatoid") and the descriptor endpoint exposes only
+    that inverted form, so comparing record names against it alone flags a large
+    fraction of the ~2,500 MeSH nodes for what is a formatting convention.
+    "Morphea" is a real entry term for D012594; against the preferred label
+    "Scleroderma, Localized" it looks like an error.
+
+    Also handles C-number supplementary concept records (1,438 node occurrences
+    in the corpus), which this endpoint serves the same way.
+
+    Known limitation: this endpoint does not expose a deprecation flag, so MeSH
+    identifiers are never reported OBSOLETE — only EXISTS or ABSENT.
+    """
     ident = local_id(curie)
-    code, data = _get_json(f"https://id.nlm.nih.gov/mesh/{urllib.parse.quote(ident)}.json")
+    code, data = _get_json(
+        "https://id.nlm.nih.gov/mesh/lookup/details"
+        f"?descriptor={urllib.parse.quote(ident)}")
     if code == 404 or data is None:
         return TermResult(curie, TermStatus.ABSENT, source="mesh")
     if not isinstance(data, dict):
         raise LookupError_(f"unexpected MeSH payload type {type(data).__name__} for {curie}")
-    if not data:
+
+    terms = data.get("terms")
+    if terms is None:
+        raise LookupError_(f"MeSH response for {curie} has no `terms` key")
+    if not terms:
         return TermResult(curie, TermStatus.ABSENT, source="mesh")
 
-    label = data.get("label")
-    if isinstance(label, dict):
-        label = label.get("@value")
-    elif isinstance(label, list) and label:
-        first = label[0]
-        label = first.get("@value") if isinstance(first, dict) else str(first)
+    label = None
+    synonyms: list[str] = []
+    for term in terms:
+        if not isinstance(term, dict):
+            continue
+        text = term.get("label")
+        if not isinstance(text, str):
+            continue
+        if term.get("preferred") and label is None:
+            label = text
+        else:
+            synonyms.append(text)
+    if label is None:  # no term flagged preferred; take the first and keep the rest
+        label = synonyms.pop(0) if synonyms else None
 
-    # An explicitly deactivated descriptor is obsolete, not merely present.
-    if data.get("http://id.nlm.nih.gov/mesh/vocab#active") is False:
-        return TermResult(curie, TermStatus.OBSOLETE, label=label, source="mesh",
-                          detail="MeSH descriptor is not active")
-    return TermResult(curie, TermStatus.EXISTS, label=label, source="mesh")
+    return TermResult(curie, TermStatus.EXISTS, label=label, source="mesh",
+                      synonyms=tuple(dict.fromkeys(synonyms)))
 
 
 # ── UniProt ─────────────────────────────────────────────────────────────────
@@ -165,7 +194,20 @@ def resolve_uniprot(curie: str) -> TermResult:
         submitted = desc.get("submissionNames") or []
         if submitted:
             label = ((submitted[0].get("fullName") or {}).get("value"))
-    return TermResult(curie, TermStatus.EXISTS, label=label, source="uniprot")
+
+    syns: list[str] = []
+    for short in rec.get("shortNames") or []:
+        if isinstance(short, dict) and short.get("value"):
+            syns.append(short["value"])
+    for alt in desc.get("alternativeNames") or []:
+        alt_full = (alt or {}).get("fullName") or {}
+        if alt_full.get("value"):
+            syns.append(alt_full["value"])
+        for short in alt.get("shortNames") or []:
+            if isinstance(short, dict) and short.get("value"):
+                syns.append(short["value"])
+    return TermResult(curie, TermStatus.EXISTS, label=label, source="uniprot",
+                      synonyms=tuple(dict.fromkeys(syns)))
 
 
 # ── Reactome ────────────────────────────────────────────────────────────────
@@ -221,10 +263,12 @@ def resolve_obo(curie: str, ontology: str) -> TermResult:
 
     term = terms[0]
     label = term.get("label")
+    syns = tuple(s for s in (term.get("synonyms") or []) if isinstance(s, str))
     if term.get("is_obsolete"):
         return TermResult(curie, TermStatus.OBSOLETE, label=label,
                           source=f"ols4:{ontology}", detail="OLS4 reports is_obsolete")
-    return TermResult(curie, TermStatus.EXISTS, label=label, source=f"ols4:{ontology}")
+    return TermResult(curie, TermStatus.EXISTS, label=label,
+                      source=f"ols4:{ontology}", synonyms=syns)
 
 
 # ── OAK (preferred when its sqlite adapters are reachable) ──────────────────

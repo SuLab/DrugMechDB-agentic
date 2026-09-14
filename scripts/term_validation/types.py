@@ -53,6 +53,11 @@ class TermResult:
     """Which backend answered — e.g. "ols4", "oak:sqlite:obo:go", "uniprot"."""
     detail: str | None = None
     """Why, for UNRESOLVED / SKIPPED. Human-readable; never parsed."""
+    synonyms: tuple[str, ...] = ()
+    """Alternative labels the authority accepts, when it returns them in the
+    same response (OLS4 and UniProt do; MeSH would need a second fetch per term,
+    which is not worth 2,539 extra requests). Used only to suppress false name
+    mismatches — a record is entitled to prefer a synonym."""
 
     @property
     def ok(self) -> bool:
@@ -75,6 +80,7 @@ class TermResult:
             label=d.get("label"),
             source=d.get("source"),
             detail=d.get("detail"),
+            synonyms=tuple(d.get("synonyms") or ()),
         )
 
 

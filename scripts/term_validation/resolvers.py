@@ -91,16 +91,73 @@ def normalize_label(value: str | None) -> str:
     return " ".join(value.split()).casefold()
 
 
+def uninvert(value: str) -> str:
+    """Un-invert a MeSH-style heading: "Arthritis, Rheumatoid" -> "Rheumatoid Arthritis".
+
+    MeSH systematically inverts descriptor headings, so a record that spells a
+    disease the way a clinician would will differ from the canonical label on
+    almost every MeSH node. That is a formatting convention, not a curation
+    error, and flagging ~2,500 of them would bury the handful that matter.
+    """
+    parts = [p.strip() for p in value.split(",") if p.strip()]
+    return " ".join(reversed(parts)) if len(parts) > 1 else value
+
+
+def _tokens(value: str) -> set[str]:
+    return {t for t in normalize_label(value).replace("-", " ").split() if t}
+
+
+def name_similarity(name: str, label: str) -> float:
+    """Jaccard overlap of token sets, for RANKING mismatches — not deciding them.
+
+    Names sharing no tokens with the canonical label ("Banana ripening factor 7"
+    against "Amine oxidase") are the ones worth a human's time; a reordering or
+    a one-word difference usually is not."""
+    a, b = _tokens(name), _tokens(label)
+    if not a or not b:
+        return 0.0
+    return len(a & b) / len(a | b)
+
+
+def names_match(name: str | None, result: TermResult) -> bool:
+    """Is `name` an acceptable spelling of this term?
+
+    Accepts the canonical label, any synonym the authority volunteered, and the
+    un-inverted form of either. Everything else is reported as a mismatch —
+    advisory, because ontologies carry more synonyms than any API returns.
+    """
+    if not name:
+        return True
+    target = normalize_label(name)
+    if not target:
+        return True
+    candidates: list[str] = []
+    if result.label:
+        candidates.append(result.label)
+    candidates.extend(result.synonyms)
+    for candidate in candidates:
+        if target == normalize_label(candidate):
+            return True
+        if target == normalize_label(uninvert(candidate)):
+            return True
+    return False
+
+
 class Registry:
     """Routes a CURIE to a backend, with a write-through cache in front."""
 
     def __init__(self, config: dict[str, str] | None = None,
                  cache: TermCache | None = None,
-                 *, prefer_oak: bool = True, use_cache: bool = True):
+                 *, prefer_oak: bool = True, use_cache: bool = True,
+                 offline: bool = False):
         self.config = config if config is not None else load_config()
         self.cache = cache if cache is not None else TermCache()
         self.prefer_oak = prefer_oak
         self.use_cache = use_cache
+        self.offline = offline
+        """Answer only from the committed cache; never touch the network.
+        An uncached term becomes UNRESOLVED — correct, since offline we have
+        established nothing about it."""
         self.stats = {"cache_hits": 0, "lookups": 0}
 
     def prefix_of(self, curie: str) -> str:
@@ -134,6 +191,10 @@ class Registry:
 
         if kind in ("skip", "unknown"):
             return TermResult(curie, TermStatus.SKIPPED, detail=detail)
+
+        if self.offline:
+            return TermResult(curie, TermStatus.UNRESOLVED,
+                              detail="offline: not in the committed term cache")
 
         self.stats["lookups"] += 1
         query = canonical_curie(curie)

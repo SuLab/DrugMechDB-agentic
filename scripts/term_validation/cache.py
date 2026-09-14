@@ -77,7 +77,7 @@ class TermCache:
             return  # transient / policy, not a fact about the ontology
         prefix = prefix_of(result.curie)
         entry = {k: v for k, v in result.to_dict().items()
-                 if k != "curie" and v is not None}
+                 if k != "curie" and v is not None and v != [] and v != ()}
         self._shard(prefix)[result.curie] = entry
         self._dirty.add(prefix)
 
