@@ -1,0 +1,9 @@
+PMID:22751595  Synovial biomarkers in psoriatic arthritis.  (The Journal of rheumatology. Supplement, 2012)
+
+**OBJECTIVE:** To find candidate biomarkers of psoriatic arthritis (PsA). A panel of synovial fluid (SF) and synovial tissue (ST) biomarkers was analyzed in patients with resistant peripheral PsA, in relation to clinical and imaging outcomes of synovitis response following serial intraarticular (IA) etanercept injections (12.5 mg).
+
+**METHODS:** Fourteen PsA patients with resistant knee joint synovitis were treated with 4 IA etanercept injections in a single knee joint, once every 2 weeks. Primary outcome (Thompson's knee index: THOMP) and secondary outcomes were assessed at baseline and end of study: C-reactive protein, Knee Joint Articular Index (KJAI), Health Assessment Questionnaire disability index, maximal synovial thickness (MST) by gray-scale ultrasonography, contrast-enhanced magnetic resonance imaging (C+MRI), ST-cluster differentiation (CD)45+ mononuclear cell, ST-CD31+ vessels, and ST-CD105+ angiogenic endothelial cells, along with levels of SF interleukin 1ß (IL-1ß), IL-1 receptor antagonist (Ra), and IL-6.
+
+**RESULTS:** At the end of the study, clinical and imaging outcomes, ST and SF biological markers were significantly reduced compared to baseline. There was a significant association between IL-6 and either THOMP or KJAI; between either ST-CD31+ or ST-CD105+ or ST-CD45+; between ST and SF biomarkers expression (CD45+ and IL-1ß) and between ST-CD45+ and both KJAI and MRI-MST. Comparing pre- versus post-IA etanercept injection changes (Δ), Δ IL-1ß was significantly correlated with both Δ IL-6 and with Δ IL-1Ra and Δ IL-6 with Δ IL-1Ra.
+
+**CONCLUSION:** The association to disease activity and the changes following IA treatment indicate that ST-CD45+ and ST-CD31+, along with SF-IL-6 and SF-IL-1ß, may represent candidate biomarkers of the knee synovitis response to IA tumor necrosis factor-α blockade.

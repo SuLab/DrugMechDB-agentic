@@ -1,0 +1,7 @@
+PMID:42438052  Continuous glucose monitoring characteristics of common MODY subtypes and their clinical applications: a review.  (Journal of pediatric endocrinology & metabolism : JPEM, 2026)
+
+**BACKGROUND:** Maturity-onset diabetes of the young (MODY) is a heterogeneous monogenic diabetes category caused by defects in genes involved in pancreatic β-cell development, glucose sensing, or insulin secretion. In children, adolescents, and young adults, its clinical presentation may overlap with type 1 diabetes (T1D) or early-onset type 2 diabetes (T2D), which can complicate etiological classification.
+
+**CONTENT:** This review examines continuous glucose monitoring (CGM) patterns in HNF1A-, GCK-, HNF4A-, HNF1B-, and KATP channel-related MODY. PubMed/MEDLINE, Embase, Web of Science Core Collection, and Scopus were searched through March 1, 2026, with supplementary citation tracking. Priority was given to genetically confirmed or clearly defined studies reporting CGM/flash glucose monitoring (FGM) metrics, glycemic variability, hypoglycemic exposure, or treatment-transition data.
+
+**SUMMARY AND OUTLOOK:** CGM can complement glycated hemoglobin (HbA1c) by showing stable mild hyperglycemia, postprandial excursions, nocturnal or asymptomatic hypoglycemia, and treatment-related fluctuations. It should not be used as a substitute for genetic diagnosis. Multicenter, genetically confirmed studies using standardized CGM metrics are needed to clarify its role in precision management.

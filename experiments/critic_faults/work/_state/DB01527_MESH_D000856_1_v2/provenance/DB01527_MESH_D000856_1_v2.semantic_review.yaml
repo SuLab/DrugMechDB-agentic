@@ -1,0 +1,85 @@
+record_id: DB01527_MESH_D000856_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T05:20:49+00:00'
+last_reviewed_at: '2026-08-25T05:20:49+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ESCALATE
+escalation_reason: factual_contradiction
+overall_summary: This is not a valid drug-treats-disease mechanism. Clortermine (Voranil)
+  is an amphetamine-like anorexiant/appetite suppressant used for OBESITY (PMID:4606535,
+  PMID:2885408). Edge 1 carries a verbatim-confirmed sign error ('positively regulates'
+  vs. the sources' REDUCED food intake / SUPPRESSION of food-maintained behavior).
+  More fundamentally, the whole path — even with the sign corrected — describes the
+  drug SUPPRESSING feeding and thereby PRODUCING anorexia, i.e. the drug causing/worsening
+  the disease rather than treating it. No independent authority supports clortermine
+  as a therapy for anorexia. The defect cannot be repaired by editing an edge; the
+  drug–disease pairing itself is anti-therapeutic. An edge's evidence contradicts
+  the claim (curator territory).
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T05:20:49+00:00'
+  verdict: ESCALATE
+  escalation_reason: factual_contradiction
+  summary: This is not a valid drug-treats-disease mechanism. Clortermine (Voranil)
+    is an amphetamine-like anorexiant/appetite suppressant used for OBESITY (PMID:4606535,
+    PMID:2885408). Edge 1 carries a verbatim-confirmed sign error ('positively regulates'
+    vs. the sources' REDUCED food intake / SUPPRESSION of food-maintained behavior).
+    More fundamentally, the whole path — even with the sign corrected — describes
+    the drug SUPPRESSING feeding and thereby PRODUCING anorexia, i.e. the drug causing/worsening
+    the disease rather than treating it. No independent authority supports clortermine
+    as a therapy for anorexia. The defect cannot be repaired by editing an edge; the
+    drug–disease pairing itself is anti-therapeutic. An edge's evidence contradicts
+    the claim (curator territory).
+  flags:
+  - edge: Clortermine --positively regulates--> Feeding behavior
+    issue: The cited source states the subject REDUCES food intake, i.e., it decreases
+      feeding behavior. This directly contradicts the edge's 'positively regulates'
+      (increase) predicate — the sign is flipped. An anorectic reducing feeding is
+      what drives the downstream anorexia manifestation; the predicate should reflect
+      a decrease.
+  - edge: Clortermine --positively regulates--> Feeding behavior
+    issue: The cited source states the subject SUPPRESSES food-maintained behavior,
+      i.e., a decrease in feeding. This contradicts the 'positively regulates' (increase)
+      predicate — the sign is flipped.
+  path_issue: This path does not encode the drug treating the disease. The first edge's
+    direction contradicts its own cited sources (the drug is shown to reduce feeding,
+    not increase it), and once that is corrected the whole chain reads as the drug
+    producing/worsening the disease rather than ameliorating it. Please re-examine
+    whether this drug actually treats this disease at all before adjusting individual
+    edges.
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:clortermine
+  - PMID:2709326
+  - PMID:2885408
+  - PMID:33897295
+  - PMID:4606535
+  edge_reviews:
+  - edge: Clortermine --positively regulates--> Feeding behavior
+    reference: PMID:3620005
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: The cited source states the subject REDUCES food intake, i.e., it decreases
+      feeding behavior. This directly contradicts the edge's 'positively regulates'
+      (increase) predicate — the sign is flipped. An anorectic reducing feeding is
+      what drives the downstream anorexia manifestation; the predicate should reflect
+      a decrease.
+    grounding: '{"source": "PMID:2885408 (independent, not cited) and ChEMBL CHEMBL1697833",
+      "record": "PMID:2885408 classifies clortermine among ''drugs used therapeutically
+      as anorectics''; ChEMBL confirms identity as CLORTERMINE. Anorectic = appetite/feeding
+      suppressant, consistent with REDUCED feeding."}'
+    confidence: high
+  - edge: Clortermine --positively regulates--> Feeding behavior
+    reference: PMID:826970
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: The cited source states the subject SUPPRESSES food-maintained behavior,
+      i.e., a decrease in feeding. This contradicts the 'positively regulates' (increase)
+      predicate — the sign is flipped.
+    grounding: '{"source": "PMID:2885408 (independent, not cited)", "record": "Classifies
+      clortermine as an anorectic (appetite/feeding suppressant), consistent with
+      the suppression of food-maintained behavior \u2014 i.e., a NEGATIVE effect on
+      feeding."}'
+    confidence: high

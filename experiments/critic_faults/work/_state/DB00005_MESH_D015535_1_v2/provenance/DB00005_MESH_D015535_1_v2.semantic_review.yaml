@@ -1,0 +1,93 @@
+record_id: DB00005_MESH_D015535_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T05:51:47+00:00'
+last_reviewed_at: '2026-08-25T05:51:47+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: RE_CURATE
+escalation_reason: null
+overall_summary: No semantic problems found.
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T05:51:47+00:00'
+  verdict: RE_CURATE
+  escalation_reason: null
+  summary: No semantic problems found.
+  flags:
+  - edge: Etanercept --decreases activity of--> Interleukin-6
+    issue: The cited quote describes the drug neutralizing a soluble cytokine that
+      is NOT the edge's object protein — it does not mention or act on the object
+      at all. The drug's molecular action is on a different (upstream) cytokine; any
+      effect on this edge's object protein is downstream and indirect, so a direct
+      'decreases activity of' edge on this object is unsupported by the quote and
+      mis-specifies the drug's true target.
+  - edge: Interleukin-6 --contributes to--> inflammatory response
+    issue: 'The cited quotation supports a different cytokine (the subject of a neighboring
+      edge) and never mentions Interleukin-6, the subject of THIS edge. The subject_grounding
+      check fails: nothing in the snippet asserts that Interleukin-6 specifically
+      contributes to the inflammatory response. Replace the citation with a source
+      that explicitly names Interleukin-6 as a mediator of the inflammatory response.'
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:Etanercept
+  - ChEMBL:etanercept
+  - PMID:16259772
+  - PMID:18179745
+  - PMID:22751595
+  - PMID:23055831
+  - PMID:41353472
+  - PMID:41626754
+  - PMID:41925889
+  - PMID:42191498
+  - PMID:42428479
+  - PMID:42612769
+  - PMID:42622962
+  - PMID:42634373
+  - PMID:42637361
+  - PMID:9525978
+  edge_reviews:
+  - edge: Etanercept --decreases activity of--> Interleukin-6
+    reference: PMID:22686544
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: The cited quote describes the drug neutralizing a soluble cytokine that
+      is NOT the edge's object protein — it does not mention or act on the object
+      at all. The drug's molecular action is on a different (upstream) cytokine; any
+      effect on this edge's object protein is downstream and indirect, so a direct
+      'decreases activity of' edge on this object is unsupported by the quote and
+      mis-specifies the drug's true target.
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1201572; PMID:22751595 (independent,
+      not cited by curator)", "record": "ChEMBL: etanercept action_type=INHIBITOR,
+      target=Tumor necrosis factor, moa=''TNF-alpha inhibitor'' \u2014 no IL-6 target.
+      PMID:22751595: synovial-fluid IL-6 is REDUCED after etanercept, but attributed
+      to ''TNF-\u03b1 blockade'' (downstream biomarker), not a direct action on IL-6."}'
+    confidence: high
+  - edge: Interleukin-6 --contributes to--> inflammatory response
+    reference: PMID:30293157
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: 'The cited quotation supports a different cytokine (the subject of a neighboring
+      edge) and never mentions Interleukin-6, the subject of THIS edge. The subject_grounding
+      check fails: nothing in the snippet asserts that Interleukin-6 specifically
+      contributes to the inflammatory response. Replace the citation with a source
+      that explicitly names Interleukin-6 as a mediator of the inflammatory response.'
+    grounding: '{"source": "PMID:41925889 (Mol Biol Rep review, read via read_abstract/read_evidence)
+      and PMID:42428479", "record": "''Studies consistently report elevated proinflammatory
+      cytokines, such as interleukin-6 and tumor necrosis factor-\u03b1'' and ''pro-inflammatory
+      cytokines, including interleukin-1\u03b2, interleukin-6, and tumor necrosis
+      factor-\u03b1'' \u2014 independently establish IL-6 as a proinflammatory mediator
+      of the inflammatory response."}'
+    confidence: high
+  - edge: inflammatory response --manifestation of--> Psoriasis with arthropathy
+    reference: PMID:26523063
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed abstracts not cited by curator: PMID:42191498 (Ann
+      Rheum Dis 2026) and PMID:41626754 (Mod Rheumatol Case Rep 2026)", "record":
+      "PMID:42191498 assesses ''peripheral and axial inflammation in patients with
+      psoriatic arthritis'' and refers to ''PsA manifestations''; PMID:41626754 opens
+      ''Psoriatic arthritis is a chronic inflammatory disease associated with psoriasis.''
+      Both independently confirm inflammation is a defining manifestation of PsA."}'
+    confidence: high

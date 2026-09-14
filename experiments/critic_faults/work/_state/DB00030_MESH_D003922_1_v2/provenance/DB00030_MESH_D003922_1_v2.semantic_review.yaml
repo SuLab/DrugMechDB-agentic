@@ -1,0 +1,148 @@
+record_id: DB00030_MESH_D003922_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T05:37:33+00:00'
+last_reviewed_at: '2026-08-25T05:37:33+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: RE_CURATE
+escalation_reason: null
+overall_summary: 'The chain nets in the right direction and edges 3–4 are sound, but
+  the first two edges route insulin''s mechanism through the wrong receptor: they
+  name the IGF-1 receptor (IGF1R) where the accepted MoA acts through the insulin
+  receptor (INSR). ChEMBL curates insulin human as an INSR agonist, PMID:17291192
+  shows insulin does not bind IGF-receptor complexes at physiological concentrations,
+  and the curator''s own cited quotes (PMID:9932214, 20526383) actually describe the
+  insulin-receptor cascade — the edge judge already flagged object/subject grounding
+  FAIL for the paralog substitution. This is a whole-path defect: a plausible-but-off-route
+  paralog stands in for the correct top-of-chain receptor node.'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T05:37:33+00:00'
+  verdict: RE_CURATE
+  escalation_reason: null
+  summary: 'The chain nets in the right direction and edges 3–4 are sound, but the
+    first two edges route insulin''s mechanism through the wrong receptor: they name
+    the IGF-1 receptor (IGF1R) where the accepted MoA acts through the insulin receptor
+    (INSR). ChEMBL curates insulin human as an INSR agonist, PMID:17291192 shows insulin
+    does not bind IGF-receptor complexes at physiological concentrations, and the
+    curator''s own cited quotes (PMID:9932214, 20526383) actually describe the insulin-receptor
+    cascade — the edge judge already flagged object/subject grounding FAIL for the
+    paralog substitution. This is a whole-path defect: a plausible-but-off-route paralog
+    stands in for the correct top-of-chain receptor node.'
+  flags:
+  - edge: insulin human --increases activity of--> Insulin-like growth factor 1 receptor
+    issue: The cited text describes insulin activating its own receptor and its tyrosine
+      kinase activity, but the receptor named/defined in the source is the insulin
+      receptor, not the insulin-like growth factor 1 receptor that is this edge's
+      object. The object entity (IGF1R) is a distinct paralog and is not the receptor
+      the snippet is about, so object_grounding fails and the quote does not establish
+      this specific edge.
+  - edge: insulin human --increases activity of--> Insulin-like growth factor 1 receptor
+    issue: This quote describes insulin binding and activating its own receptor, with
+      insulin receptor substrates as the readout; the receptor in the source is the
+      insulin receptor, not the insulin-like growth factor 1 receptor that is this
+      edge's object. The object entity does not match what the source is about, so
+      the quote does not establish this edge.
+  - edge: Insulin-like growth factor 1 receptor --positively regulates--> glucose
+      import
+    issue: The cited source describes the glucose-transport signaling cascade of a
+      DIFFERENT receptor (the one activated by the hormone itself), not the edge's
+      subject receptor. The snippet does not name or assert anything specifically
+      about the subject IGF-1 receptor, so it cannot ground the subject→glucose-import
+      relation as written.
+  - edge: Insulin-like growth factor 1 receptor --positively regulates--> glucose
+      import
+    issue: The cited sentence is about the insulin hormone's receptor and attributes
+      glucose transport to a downstream lipid-kinase pathway, not to the edge's subject
+      receptor. It establishes neither that the subject entity is IGF-1 receptor nor
+      that this receptor directly positively regulates glucose import.
+  path_issue: 'The first two edges appear to route the drug''s action through the
+    wrong receptor: the receptor entity named here is a paralog that is off the accepted
+    causal route, while the drug''s own cited sources actually describe a different
+    (correct) receptor. Re-derive the top-of-chain receptor node so the receptor the
+    drug actually agonizes is the one carried into the glucose-import step. Direction
+    and downstream steps are fine.'
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:insulin human
+  - PMID:10067838
+  - PMID:10521479
+  - PMID:11404219
+  - PMID:17291192
+  - PMID:20724647
+  - PMID:21750218
+  - PMID:38170783
+  - PMID:42347980
+  - PMID:42438052
+  - PMID:42631036
+  edge_reviews:
+  - edge: insulin human --increases activity of--> Insulin-like growth factor 1 receptor
+    reference: PMID:9932214
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: The cited text describes insulin activating its own receptor and its tyrosine
+      kinase activity, but the receptor named/defined in the source is the insulin
+      receptor, not the insulin-like growth factor 1 receptor that is this edge's
+      object. The object entity (IGF1R) is a distinct paralog and is not the receptor
+      the snippet is about, so object_grounding fails and the quote does not establish
+      this specific edge.
+    grounding: '{"source": "ChEMBL mechanism (CHEMBL1201631) + PMID:17291192 (independent,
+      not cited)", "record": "ChEMBL curates insulin human as AGONIST of the Insulin
+      receptor (INSR), not IGF1R. PMID:17291192 shows insulin binds homodimeric IGFR
+      only at relatively low affinity and hybrids ''bind IGFs but not insulin at physiological
+      concentrations.''"}'
+    confidence: high
+  - edge: insulin human --increases activity of--> Insulin-like growth factor 1 receptor
+    reference: PMID:20526383
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: This quote describes insulin binding and activating its own receptor, with
+      insulin receptor substrates as the readout; the receptor in the source is the
+      insulin receptor, not the insulin-like growth factor 1 receptor that is this
+      edge's object. The object entity does not match what the source is about, so
+      the quote does not establish this edge.
+    grounding: '{"source": "ChEMBL mechanism (CHEMBL1201631)", "record": "insulin
+      human = AGONIST of Insulin receptor; the abstract''s ''insulin receptor substrates
+      (IRSs)'' confirms the receptor in question is INSR, not IGF1R."}'
+    confidence: high
+  - edge: Insulin-like growth factor 1 receptor --positively regulates--> glucose
+      import
+    reference: PMID:20526383
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited source describes the glucose-transport signaling cascade of a
+      DIFFERENT receptor (the one activated by the hormone itself), not the edge's
+      subject receptor. The snippet does not name or assert anything specifically
+      about the subject IGF-1 receptor, so it cannot ground the subject→glucose-import
+      relation as written.
+    grounding: '{"source": "PMID:11404219 (read_abstract) and PMID:10521479 (read_abstract)",
+      "record": "Both establish that IGF-I receptor activation stimulates glucose
+      uptake/GLUT4 translocation; PMID:11404219: glucose transport ''mediated via
+      increased activation of the IGF-I receptor.''"}'
+    confidence: high
+  - edge: Insulin-like growth factor 1 receptor --positively regulates--> glucose
+      import
+    reference: PMID:9932214
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: The cited sentence is about the insulin hormone's receptor and attributes
+      glucose transport to a downstream lipid-kinase pathway, not to the edge's subject
+      receptor. It establishes neither that the subject entity is IGF-1 receptor nor
+      that this receptor directly positively regulates glucose import.
+    grounding: '{"source": "PMID:10521479 (read_abstract)", "record": "IGF-I receptor
+      chimera in 3T3-L1 adipocytes mediates stimulation of glucose uptake and GLUT4
+      translocation, confirming IGF1R positively regulates glucose import."}'
+    confidence: high
+  - edge: glucose import --negatively regulates--> Hyperglycemia
+    reference: PMID:12542844
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed (not cited by curator): PMID:20724647 (Diabetes
+      Care human clinical study) and PMID:10067838 (Endocrinology transgenic mouse)",
+      "record": "PMID:20724647: increased insulin-dependent glucose uptake / peripheral
+      glucose disposal reduced postprandial hyperglycemia in type 2 diabetic humans.
+      PMID:10067838 shows the converse: impaired GLUT4-mediated glucose uptake is
+      associated with the hyperglycemic/insulin-resistant state. Both corroborate
+      that increased glucose import negatively regulates hyperglycemia."}'
+    confidence: high

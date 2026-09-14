@@ -1,0 +1,121 @@
+record_id: DB01076_MESH_D006937_1_v1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T06:58:16+00:00'
+last_reviewed_at: '2026-08-25T06:58:16+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: RE_CURATE
+escalation_reason: null
+overall_summary: 'After an adversarial search for a whole-path defect (omitted sign-flip,
+  wrong-direction net, incidental-effect substitution, redundant shortcut), none was
+  found. The path is the textbook primary MoA for statins in hypercholesterolemia,
+  asserted verbatim by an independent authority (PMID:19534648) and grounded on the
+  drug->target by ChEMBL. The crucial double-negative feedback step is present and
+  the chain nets to a decrease of the disease. The only weakness is edge-level and
+  non-fatal: the terminal LDL-C->hypercholesterolemia edge is cited from a narrow
+  transgenic-rabbit model, but the edge is definitional and independently confirmed
+  (PMID:42500340); this does not compromise whole-path validity.'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T06:58:16+00:00'
+  verdict: RE_CURATE
+  escalation_reason: null
+  summary: 'After an adversarial search for a whole-path defect (omitted sign-flip,
+    wrong-direction net, incidental-effect substitution, redundant shortcut), none
+    was found. The path is the textbook primary MoA for statins in hypercholesterolemia,
+    asserted verbatim by an independent authority (PMID:19534648) and grounded on
+    the drug->target by ChEMBL. The crucial double-negative feedback step is present
+    and the chain nets to a decrease of the disease. The only weakness is edge-level
+    and non-fatal: the terminal LDL-C->hypercholesterolemia edge is cited from a narrow
+    transgenic-rabbit model, but the edge is definitional and independently confirmed
+    (PMID:42500340); this does not compromise whole-path validity.'
+  flags:
+  - edge: Low-density lipoprotein cholesterol --causes--> Hypercholesterolemia
+    issue: The cited quote demonstrates elevated LDL cholesterol co-occurring with
+      hypercholesterolemia only within a narrow, artificial overexpression model whose
+      primary driver is a different upstream factor, and it uses descriptive 'characterized
+      by' language rather than asserting that LDL cholesterol produces the hypercholesterolemic
+      state. This over-generalizes a model-specific observation to a general causal
+      edge; a source that directly and generally establishes that elevated LDL cholesterol
+      constitutes/causes the hypercholesterolemic state is needed.
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:atorvastatin
+  - PMID:19534648
+  - PMID:22110652
+  - PMID:22355094
+  - PMID:24297394
+  - PMID:26598835
+  - PMID:27019638
+  - PMID:42166216
+  - PMID:42301783
+  - PMID:42362472
+  - PMID:42460149
+  - PMID:42500340
+  - PMID:42547322
+  - PMID:42562980
+  - PMID:42608182
+  edge_reviews:
+  - edge: atorvastatin --decreases activity of--> 3-hydroxy-3-methylglutaryl-coenzyme
+      A reductase
+    reference: PMID:10582478
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL mechanism (chembl_get_mechanism ''atorvastatin'',
+      CHEMBL1487 via CHEMBL393220)", "record": "action_type=''INHIBITOR''; target=''3-hydroxy-3-methylglutaryl-coenzyme
+      A reductase''; direct_interaction=1; moa=''HMG-CoA reductase inhibitor''"}'
+    confidence: high
+  - edge: 3-hydroxy-3-methylglutaryl-coenzyme A reductase --increases abundance of-->
+      Cholesterol
+    reference: PMID:10582478
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:42562980 (independent, not cited) and PMID:42301783
+      (independent, not cited)", "record": "PMID:42562980: ''HMG-CoA reductase (EC
+      1.1.1.34) is the rate-limiting enzyme of cholesterol biosynthesis''; PMID:42301783:
+      ''HMGCR catalyzes conversion of HMG CoA to mevalonate, the first rate-limiting
+      step in cholesterol synthesis.''"}'
+    confidence: high
+  - edge: Cholesterol --negatively regulates--> Low-density lipoprotein receptor
+    reference: PMID:12829694
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:24297394 (not cited by curator) and PMID:26598835
+      (not cited)", "record": "PMID:24297394: ''LDL loading increased intracellular
+      cholesterol level, reducing LDL receptor mRNA level in both THP-1 macrophages
+      and VSMCs'' \u2014 direct experimental confirmation cholesterol negatively regulates
+      LDLR. PMID:26598835: ''uptake by LDL receptors are tightly regulated... through
+      negative feedback control... SREBP-2 is activated in a cholesterol-dependent
+      manner.''"}'
+    confidence: high
+  - edge: Low-density lipoprotein receptor --decreases abundance of--> Low-density
+      lipoprotein cholesterol
+    reference: PMID:32109664
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:42608182 (independent, not cited by curator)", "record":
+      "''The hepatic low-density lipoprotein receptor (LDLR) mediates the clearance
+      of circulating low-density lipoprotein (LDL) and is a key determinant of cholesterol
+      homeostasis'' \u2014 confirms LDLR reduces circulating LDL abundance."}'
+    confidence: high
+  - edge: Low-density lipoprotein cholesterol --causes--> Hypercholesterolemia
+    reference: PMID:10591675
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited quote demonstrates elevated LDL cholesterol co-occurring with
+      hypercholesterolemia only within a narrow, artificial overexpression model whose
+      primary driver is a different upstream factor, and it uses descriptive 'characterized
+      by' language rather than asserting that LDL cholesterol produces the hypercholesterolemic
+      state. This over-generalizes a model-specific observation to a general causal
+      edge; a source that directly and generally establishes that elevated LDL cholesterol
+      constitutes/causes the hypercholesterolemic state is needed.
+    grounding: '{"source": "PubMed PMID:42500340 (independent, not cited by curator)
+      and PMID:42460149", "record": "PMID:42500340: ''Familial hypercholesterolemia
+      (FH) is an autosomal dominant disorder characterized by elevated levels of low-density
+      lipoprotein cholesterol (LDL-C)''. PMID:42460149: HoFH ''characterized by extremely
+      elevated LDL-C'', and treatment interruption caused LDL-C rebound with ''marked
+      rebound hypercholesterolemia'' \u2014 a clean causal demonstration that elevated
+      LDL-C produces the hypercholesterolemic state."}'
+    confidence: high

@@ -1,0 +1,89 @@
+record_id: DB00005_MESH_D015535_1_v1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T07:37:54+00:00'
+last_reviewed_at: '2026-08-25T07:37:54+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ACCEPT
+escalation_reason: null
+overall_summary: After adversarially probing for a whole-path defect, none is found.
+  The chain is a single connected drug→target→process→disease path with the inhibitory
+  sign-flip correctly placed at the drug, so it nets to decreasing the disease. It
+  matches the independently-grounded accepted MoA of etanercept in psoriatic disease
+  (TNF neutralization → reduced immune/inflammatory response). The 'manifestation
+  of' review_predicate flag is a benign idiomatic structural predicate, not a defect.
+  ChEMBL grounding was unavailable (biologic not indexed), but two-plus independent
+  PubMed sources plus a review corroborate every step and the overall mechanism.
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T07:37:54+00:00'
+  verdict: ACCEPT
+  escalation_reason: null
+  summary: After adversarially probing for a whole-path defect, none is found. The
+    chain is a single connected drug→target→process→disease path with the inhibitory
+    sign-flip correctly placed at the drug, so it nets to decreasing the disease.
+    It matches the independently-grounded accepted MoA of etanercept in psoriatic
+    disease (TNF neutralization → reduced immune/inflammatory response). The 'manifestation
+    of' review_predicate flag is a benign idiomatic structural predicate, not a defect.
+    ChEMBL grounding was unavailable (biologic not indexed), but two-plus independent
+    PubMed sources plus a review corroborate every step and the overall mechanism.
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources: &id001
+  - ChEMBL:Etanercept
+  - ChEMBL:etanercept
+  - PMID:11380043
+  - PMID:22379032
+  - PMID:26429698
+  - PMID:34275303
+  - PMID:39052869
+  - PMID:41134488
+  - PMID:41168056
+  - PMID:41353472
+  - PMID:42627542
+  - PMID:42635647
+  edge_reviews:
+  - edge: Etanercept --decreases activity of--> Tumor necrosis factor
+    reference: PMID:22686544
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:11380043 and PMID:22379032 (independent PubMed abstracts
+      not cited by curator)", "record": "Both describe etanercept as a TNF-binding/neutralizing
+      TNF receptor fusion protein; PMID:22379032 confirms etanercept binds TNF and
+      impairs TNF signaling."}'
+    confidence: high
+  - edge: Tumor necrosis factor --contributes to--> inflammatory response
+    reference: PMID:30293157
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:42635647 (Neurosurgical review, 2026) and PMID:42627542
+      (Current Oncology Reports, 2026) \u2014 not cited by curator", "record": "Both
+      describe TNF-\u03b1 as a pro-inflammatory cytokine; PMID:42635647 states pro-inflammatory
+      cytokines including TNF-\u03b1 ''promote endothelial activation, leukocyte recruitment,
+      and abnormal angiogenesis'', confirming TNF''s positive contribution to inflammatory
+      response."}'
+    confidence: high
+  - edge: inflammatory response --manifestation of--> Psoriasis with arthropathy
+    reference: PMID:26523063
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:41168056 (EULAR 2026 consensus on treatment-refractory
+      PsA), independently read abstract", "record": "Defines PsA disease activity
+      in terms of ''objective evidence of active inflammation'' and lists inflammation
+      as a core driver of the disease \u2014 corroborating that inflammation is a
+      defining manifestation of psoriatic arthritis, from a source the curator did
+      not cite."}'
+    confidence: high
+  accept_report:
+    rationale: After adversarially probing for a whole-path defect, none is found.
+      The chain is a single connected drug→target→process→disease path with the inhibitory
+      sign-flip correctly placed at the drug, so it nets to decreasing the disease.
+      It matches the independently-grounded accepted MoA of etanercept in psoriatic
+      disease (TNF neutralization → reduced immune/inflammatory response). The 'manifestation
+      of' review_predicate flag is a benign idiomatic structural predicate, not a
+      defect. ChEMBL grounding was unavailable (biologic not indexed), but two-plus
+      independent PubMed sources plus a review corroborate every step and the overall
+      mechanism.
+    supporting_sources: *id001

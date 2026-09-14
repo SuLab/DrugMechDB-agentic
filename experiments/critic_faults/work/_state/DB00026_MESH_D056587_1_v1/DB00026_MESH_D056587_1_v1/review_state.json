@@ -1,0 +1,307 @@
+{
+  "edges": {
+    "e5887c5229e35b77": {
+      "edge": {
+        "subject": {
+          "id": "DB:DB00026",
+          "name": "anakinra",
+          "label": "Drug"
+        },
+        "predicate": "decreases activity of",
+        "object": {
+          "id": "UniProt:P14778",
+          "name": "Interleukin-1 receptor type 1",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "DB:DB00026|decreases activity of|UniProt:P14778",
+        "verdicts": [
+          {
+            "reference": "PMID:27790031",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the PMID:27790031 abstract first sentence: 'Anakinra is an interleukin (IL) receptor antagonist that works by blocking the biological activity of IL-1 by competitively inhibiting binding of IL-1 to the type 1 interleukin receptor.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet's subject is 'Anakinra' = edge subject DB:DB00026; ChEMBL CHEMBL1201570 (ANAKINRA) independently confirms this exact agent."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet names 'the type 1 interleukin receptor' = Interleukin-1 receptor type 1 (UniProt:P14778); ChEMBL lists the direct interaction target as 'Interleukin-1 receptor type 1'."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'antagonist... blocking the biological activity... competitively inhibiting binding' = decrease of receptor signaling activity, matching 'decreases activity of'. ChEMBL action_type='ANTAGONIST'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Anakinra acts on the receptor (blocks IL-1 binding to it), not the reverse; ChEMBL direct_interaction=1 with anakinra as the acting agent."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Mechanism is functional antagonism (blocking activation/signaling activity), not reduction of receptor abundance/expression \u2014 matches 'decreases activity of'."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established fact ('works by blocking...'), no hedging; consistent with curated ChEMBL MOA."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review article describing established pharmacology; corroborated by ChEMBL database assertion. evidence_source best classified as DATABASE (ChEMBL) / literature review."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "DATABASE",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism CHEMBL1201570",
+              "record": "action_type='ANTAGONIST'; target='Interleukin-1 receptor type 1'; direct_interaction=1; moa='Interleukin-1 receptor antagonist'"
+            },
+            "confidence": "high",
+            "note": "Snippet verbatim-confirmed via independent read of the abstract (curator cache lacked it, but abstract retrieved in memory). ChEMBL independently confirms anakinra is a direct antagonist of IL-1R type 1. Competitive antagonism decreasing receptor signaling activity aligns precisely with the 'decreases activity of' predicate and the object P14778. All ladder checks pass."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent ChEMBL mechanism record CHEMBL1201570 records anakinra as a direct ANTAGONIST of Interleukin-1 receptor type 1 (UniProt:P14778), matching the edge's subject, object, and negative polarity; the cited PMID:27790031 also verbatim states anakinra competitively inhibits IL-1 binding to the type 1 IL-1 receptor."
+      },
+      "edge_hash": "e5887c5229e35b77"
+    },
+    "bc366e428ed3225f": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:P14778",
+          "name": "Interleukin-1 receptor type 1",
+          "label": "Protein"
+        },
+        "predicate": "positively regulates",
+        "object": {
+          "id": "GO:0006954",
+          "name": "inflammatory response",
+          "label": "BiologicalProcess"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:P14778|positively regulates|GO:0006954",
+        "verdicts": [
+          {
+            "reference": "PMID:26140469",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "'IL-1 inhibitors block the IL-1 signaling cascade, thereby preventing systemic inflammation in CAPS.' appears exactly in the abstract."
+              },
+              "subject_grounding": {
+                "result": "fail",
+                "basis": "The snippet names 'IL-1 signaling cascade' and 'IL-1 inhibitors' \u2014 it never mentions IL-1R1 / the IL-1 receptor type 1 (UniProt:P14778). The surrounding abstract discusses IL-1\u03b2 cytokine and NLRP3, not the receptor. The subject of this edge is the receptor protein specifically; the snippet is about the ligand/cascade generically."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'systemic inflammation in CAPS' maps to inflammatory response (GO:0006954)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Blocking the cascade 'prevents' inflammation implies the intact cascade positively drives inflammation \u2014 consistent with 'positively regulates.'"
+              },
+              "direction": {
+                "result": "abstain",
+                "basis": "Cannot confirm receptor\u2192inflammation direction because the receptor itself is not named in the snippet; only the cascade/ligand is."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Signaling driving inflammation is process-level regulation, matching a BiologicalProcess object."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established mechanism, not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review of clinical IL-1 inhibition in autoinflammatory syndromes \u2192 REVIEW, not OTHER as curator labeled."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "REVIEW",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:26692072 (independent, not cited by curator)",
+              "record": "'IL-1 is a key cytokine known to drive chronic inflammation ... via actions...'; IL-1R1 conditional knockout mice show reduced IL-17/IL-22 cytokine responses, establishing IL-1R1 mediates inflammatory response."
+            },
+            "confidence": "high",
+            "note": "Snippet is verbatim and topically about the IL-1 axis, but it speaks to the ligand/cascade and IL-1 inhibitors, not the receptor entity that is the edge subject. It supports the neighbour context (anakinra blocking) more than it establishes IL-1R1\u2192inflammation specifically.",
+            "issue_for_curator": "The quoted sentence is about the IL-1 signaling cascade and IL-1 inhibitors generically; it never names the receptor that is this edge's subject, so it does not specifically establish that the IL-1 receptor type 1 protein regulates the inflammatory response."
+          },
+          {
+            "reference": "PMID:31524632",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "The full snippet appears verbatim in the JCI abstract conclusion."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet explicitly names 'IL-1R1' as a component of the signaling pathway \u2014 matches UniProt:P14778."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'IL-1\u03b1 and/or IL-1\u03b2-mediated neutrophilic inflammation' maps to inflammatory response (GO:0006954)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "The pathway including IL-1R1 'generate[s] a positive feedback cycle capable of producing ... neutrophilic inflammation' \u2014 positive regulation."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "IL-1R1 is an upstream/pathway component producing inflammation downstream \u2014 subject acts toward the object."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Signaling pathway producing an inflammatory process \u2014 process-level, matches the object."
+              },
+              "scope_modality": {
+                "result": "partial",
+                "basis": "Mechanism established but bound to a narrow context: CF human bronchial epithelial cells in vitro / CF airways, a specific SPDEF/ERN2 feedback loop. The edge generalizes to inflammatory response broadly."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "In-vitro HBE cell mechanistic study with CF lung tissue mRNA \u2014 IN_VITRO, matching curator."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "IN_VITRO",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:26692072 (independent)",
+              "record": "IL-1R1 conditional-knockout study confirms IL-1R1 is required for IL-1-driven inflammatory/cytokine responses in vivo \u2014 corroborates the receptor's positive regulation of inflammation beyond the CF-airway context."
+            },
+            "confidence": "high",
+            "note": "This item genuinely names IL-1R1 and ties it to producing inflammation, so subject/object/polarity all hold. Only weakness is scope: it is a CF-airway-specific positive-feedback mechanism, whereas the edge asserts general regulation of inflammatory response. Independent IL-1R1 knockout evidence supports the general claim, so edge_supported is true.",
+            "issue_for_curator": "The quote establishes IL-1R1's role only within a narrow cystic-fibrosis airway feedback loop (in-vitro epithelial cells); it does not by itself establish the receptor's general regulation of the inflammatory response asserted by this edge."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent authority PMID:26692072 (IL-1R1 conditional knockout) establishes that IL-1R1 mediates IL-1-driven inflammatory/cytokine responses in vivo, directly supporting IL-1R1 positively regulates inflammatory response. Cited snippets are verbatim and on-topic but each has a grounding gap (item 1 names only the ligand/cascade, not the receptor; item 2 names the receptor but in a narrow CF-airway context)."
+      },
+      "edge_hash": "bc366e428ed3225f"
+    },
+    "f88bb566e0f20266": {
+      "edge": {
+        "subject": {
+          "id": "GO:0006954",
+          "name": "inflammatory response",
+          "label": "BiologicalProcess"
+        },
+        "predicate": "causes",
+        "object": {
+          "id": "MESH:D056587",
+          "name": "Cryopyrin-associated periodic syndrome",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "GO:0006954|causes|MESH:D056587",
+        "verdicts": [
+          {
+            "reference": "PMID:22288581",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'Both CAPS and FMF are characterized by increased inflammasome activity and overproduction of IL-1\u03b2 which is ultimately responsible for disease manifestations.' appears verbatim in the abstract summary."
+              },
+              "subject_grounding": {
+                "result": "partial",
+                "basis": "Edge subject is the generic process 'inflammatory response' (GO:0006954). The snippet's causal agent is specifically 'overproduction of IL-1\u03b2' (a cytokine, protein/molecular entity), not the inflammatory-response process per se. IL-1\u03b2 is an effector of inflammation, so it is closely related but a narrower/different-granularity entity."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet explicitly names CAPS (cryopyrin-associated periodic syndromes) = MESH:D056587, and speaks of 'disease manifestations' of CAPS."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'ultimately responsible for disease manifestations' = positive causation, matching predicate 'causes'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Inflammation/IL-1\u03b2 \u2192 disease manifestations (subject acts on object), not the reverse."
+              },
+              "granularity": {
+                "result": "partial",
+                "basis": "Source frames inflammation as producing disease MANIFESTATIONS while the ROOT cause is stated as NLRP3/PYRIN mutations. 'Causes disease' vs 'causes disease manifestations' is a manifestation-level, not etiologic-root, claim; also the agent named is IL-1\u03b2 activity rather than the inflammatory-response process."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established ('is ultimately responsible for'), in a peer-reviewed review of autoinflammatory disease mechanisms; not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Peer-reviewed review article (Clinical and Experimental Immunology 2012) synthesizing mechanism \u2192 evidence_source OTHER (review)."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:40826276 (Nature Immunology 2025 review, not cited by curator) and PMID:40410596",
+              "record": "'gain-of-function mutations in NLRP3 were demonstrated to cause a rare autoinflammatory disease termed cryopyrin-associated periodic syndrome'; CAPS inflammatory episodes are 'primarily driven by the production of IL-1\u03b2'. Confirms inflammation/IL-1\u03b2 drives CAPS manifestations while the etiologic root is the NLRP3 mutation."
+            },
+            "confidence": "high",
+            "note": "Edge is defensible as the terminal manifestation-causation link consistent with path context (IL-1R1 \u2192 inflammatory response \u2192 CAPS). But the cited snippet's causal agent is IL-1\u03b2 specifically and describes 'disease manifestations,' not the GO inflammatory-response process causing the disease at the etiologic level (root cause is NLRP3 mutation). Partial on subject_grounding/granularity.",
+            "issue_for_curator": "The cited quote attributes disease causation to a specific cytokine's overproduction and frames it as being responsible for disease 'manifestations', whereas this edge's subject is the broader inflammatory-response process and the predicate asserts causation of the disease itself. Also note the source identifies a genetic mutation as the true root cause of the disease. Provide a citation that speaks to the inflammatory-response process (not solely one cytokine) producing the disease phenotype."
+          },
+          {
+            "reference": "PMID:26140469",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'It is not only a pro-inflammatory cytokine responsible for features such as fever, rash, and arthritis, but is also a major mediator in the central pathways of fatigue.' appears verbatim."
+              },
+              "subject_grounding": {
+                "result": "partial",
+                "basis": "'It' refers to IL-1\u03b2 (the prior sentence: 'IL-1\u03b2 is a biologically active member of the IL-1 family'). Subject grounded to IL-1\u03b2 cytokine, not the generic 'inflammatory response' process (GO:0006954)."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Abstract is about CAPS = MESH:D056587; 'features such as fever, rash, and arthritis' are CAPS clinical features."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'responsible for features such as fever, rash, and arthritis' = positive causation of CAPS features, matching 'causes'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "IL-1\u03b2/inflammation \u2192 CAPS features (subject \u2192 object)."
+              },
+              "granularity": {
+                "result": "partial",
+                "basis": "Claim is that IL-1\u03b2 is responsible for individual clinical FEATURES (fever/rash/arthritis), i.e. manifestation-level, and via a specific cytokine rather than the inflammatory-response process. Abstract also states CAPS 'is caused by a mutation in ... NLRP3' \u2014 etiologic root differs from this edge subject."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established mechanism in a peer-reviewed rheumatology article; not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Peer-reviewed review/clinical-focus article (Modern Rheumatology 2016) \u2192 evidence_source OTHER."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:40539069 (Frontiers in Immunology 2025, not cited)",
+              "record": "CAPS 'caused by a dysregulation of cytokine signaling pathways, particularly of the interleukin-1\u03b2 production' with 'systemic manifestations ... resulting from chronic inflammation' \u2014 corroborates inflammation producing CAPS manifestations."
+            },
+            "confidence": "high",
+            "note": "Same partial pattern: verbatim and on-topic, but the causal agent named is IL-1\u03b2 specifically and it is responsible for clinical FEATURES/manifestations, not the etiologic causation of the disease by the inflammatory-response process. Consistent with the edge as a manifestation link but not a precise subject match.",
+            "issue_for_curator": "The quote attributes the disease's clinical features to a single pro-inflammatory cytokine, not to the broader inflammatory-response process that is this edge's subject, and it addresses disease features/manifestations rather than causation of the disease. Strengthen with evidence tying the inflammatory-response process itself to the disease phenotype."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent, uncited reviews (PMID:40826276, PMID:40410596, PMID:40539069) establish that CAPS pathology proceeds via NLRP3-driven inflammasome activation \u2192 IL-1\u03b2 \u2192 chronic inflammation that produces the disease's systemic manifestations. As the terminal manifestation-causation edge in the path (IL-1R1 \u2192 inflammatory response \u2192 CAPS) this is defensible. Caveat: the etiologic root cause per all sources is the NLRP3 gain-of-function mutation; the inflammatory response causes the disease phenotype/manifestations rather than being the primary etiology, and the cited snippets speak specifically of IL-1\u03b2 rather than the inflammatory-response process."
+      },
+      "edge_hash": "f88bb566e0f20266"
+    }
+  }
+}

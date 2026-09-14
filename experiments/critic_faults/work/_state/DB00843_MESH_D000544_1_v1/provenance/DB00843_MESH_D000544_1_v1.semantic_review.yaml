@@ -1,0 +1,83 @@
+record_id: DB00843_MESH_D000544_1_v1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T06:17:37+00:00'
+last_reviewed_at: '2026-08-25T06:17:37+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ACCEPT
+escalation_reason: null
+overall_summary: Canonical, correctly-composed cholinergic-hypothesis MoA for donepezil.
+  Adversarial search for a whole-path defect (missing sign-flip, incidental effect,
+  off-route intermediate, redundant shortcut) found none. The double-negative (inhibit
+  AChE → ACh rises) is properly encoded, and the three signs compose to a net disease-decreasing
+  effect that matches ChEMBL's labeled mechanism and two independent reviews asserting
+  donepezil increases ACh to relieve AD symptoms.
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T06:17:37+00:00'
+  verdict: ACCEPT
+  escalation_reason: null
+  summary: Canonical, correctly-composed cholinergic-hypothesis MoA for donepezil.
+    Adversarial search for a whole-path defect (missing sign-flip, incidental effect,
+    off-route intermediate, redundant shortcut) found none. The double-negative (inhibit
+    AChE → ACh rises) is properly encoded, and the three signs compose to a net disease-decreasing
+    effect that matches ChEMBL's labeled mechanism and two independent reviews asserting
+    donepezil increases ACh to relieve AD symptoms.
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources: &id001
+  - ChEMBL:Donepezil
+  - ChEMBL:donepezil
+  - PMID:28777299
+  - PMID:30050445
+  - PMID:38877470
+  - PMID:40097131
+  - PMID:40207817
+  - PMID:40326082
+  - PMID:41141199
+  edge_reviews:
+  - edge: Donepezil --decreases activity of--> Acetylcholinesterase
+    reference: PMID:39037949
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL chembl_get_mechanism (CHEMBL502)", "record": "action_type=''INHIBITOR'';
+      target=Acetylcholinesterase; direct_interaction=1; moa=''Acetylcholinesterase
+      inhibitor''"}'
+    confidence: high
+  - edge: Donepezil --decreases activity of--> Acetylcholinesterase
+    reference: PMID:34893996
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL chembl_get_mechanism (CHEMBL502)", "record": "action_type=''INHIBITOR'';
+      target=Acetylcholinesterase; direct_interaction=1"}'
+    confidence: high
+  - edge: Acetylcholinesterase --decreases abundance of--> Acetylcholine
+    reference: PMID:39037949
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:30050445 and PMID:28777299 (not cited by curator)",
+      "record": "PMID:30050445: cholinesterases ''catalyze the hydrolysis of ACh,
+      thus terminate its action on AChRs''; PMID:28777299: AChE ''curtails the postsynaptic
+      response by ultrafast ACh hydrolysis'' \u2014 both independently confirm AChE
+      degrades/hydrolyzes ACh, reducing its abundance."}'
+    confidence: high
+  - edge: Acetylcholine --negatively correlated with--> Alzheimer's disease
+    reference: PMID:37242234
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:40207817 (Current Neuropharmacology 2025 review),
+      not cited by curator", "record": "''Lower level of acetylcholine in the brain
+      is characterized as one of the prominent reasons for AD. The cholinergic hypothesis
+      states that elevated levels of acetylcholine in the brain can alleviate symptoms
+      of AD.'' \u2014 independently establishes the negative ACh\u2194AD association."}'
+    confidence: high
+  accept_report:
+    rationale: Canonical, correctly-composed cholinergic-hypothesis MoA for donepezil.
+      Adversarial search for a whole-path defect (missing sign-flip, incidental effect,
+      off-route intermediate, redundant shortcut) found none. The double-negative
+      (inhibit AChE → ACh rises) is properly encoded, and the three signs compose
+      to a net disease-decreasing effect that matches ChEMBL's labeled mechanism and
+      two independent reviews asserting donepezil increases ACh to relieve AD symptoms.
+    supporting_sources: *id001

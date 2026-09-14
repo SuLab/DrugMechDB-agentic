@@ -1,0 +1,260 @@
+{
+  "edges": {
+    "dbe9d5b6c766377c": {
+      "edge": {
+        "subject": {
+          "id": "MESH:C076946",
+          "name": "Donepezil",
+          "label": "Drug"
+        },
+        "predicate": "decreases activity of",
+        "object": {
+          "id": "UniProt:P06276",
+          "name": "Cholinesterase",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:C076946|decreases activity of|UniProt:P06276",
+        "verdicts": [
+          {
+            "reference": "PMID:39037949",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Abstract contains 'donepezil, a well-known AChE inhibitor used in Alzheimer's disease treatment' verbatim."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet is about donepezil, the edge subject (MESH:C076946)."
+              },
+              "object_grounding": {
+                "result": "fail",
+                "basis": "Edge object UniProt:P06276 is human BUTYRYLcholinesterase (BCHE). The snippet asserts donepezil is an AChE (acetylcholinesterase, P22303) inhibitor \u2014 a different isozyme. ChEMBL (CHEMBL502\u2192CHEMBL1678) independently grounds donepezil's curated mechanism to Acetylcholinesterase, not BCHE."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'inhibitor' = decreases activity, matching the predicate sign \u2014 but against AChE, not the object protein."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Donepezil acts on the enzyme (subject acts on object)."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "'inhibitor' denotes activity inhibition, matching 'decreases activity of'."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established fact ('well-known AChE inhibitor'), not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Computational/in-vitro medicinal-chemistry paper; donepezil cited as a literature reference standard \u2192 OTHER/review-style assertion."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL chembl_get_mechanism('donepezil')",
+              "record": "CHEMBL502 action_type=INHIBITOR, target=Acetylcholinesterase, moa='Acetylcholinesterase inhibitor', direct_interaction=1 \u2014 i.e. AChE (P22303), NOT butyrylcholinesterase (P06276)."
+            },
+            "confidence": "high",
+            "note": "The snippet is verbatim and correctly describes donepezil as a cholinesterase (AChE) inhibitor, but the edge object is the WRONG isozyme: P06276 = BCHE. Curator's own snippet says 'AChE'. The mechanism is real for AChE; the object identifier is mis-grounded.",
+            "issue_for_curator": "The cited text describes donepezil as an inhibitor of acetylcholinesterase, but the edge's object protein identifier corresponds to butyrylcholinesterase \u2014 a different cholinesterase isozyme. Object grounding fails: the specific target named in the edge is not the enzyme the snippet (or donepezil's established mechanism) acts on."
+          },
+          {
+            "reference": "PMID:34893996",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Abstract contains 'The most commonly used drug, donepezil, is a cholinesterase inhibitor.' verbatim."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet is about donepezil, the edge subject."
+              },
+              "object_grounding": {
+                "result": "fail",
+                "basis": "Snippet says generic 'cholinesterase inhibitor', but the paper's own methods measure donepezil's IC50 against ACETYLcholinesterase (AChE = 0.021 \u00b5M) and describe AChE active-site residues (Trp86, Trp286, Tyr341). It does not establish donepezil inhibits butyrylcholinesterase (P06276), the edge object. ChEMBL grounds donepezil to AChE."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'inhibitor' = decreased activity, matching predicate sign."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Donepezil acts on the enzyme."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "IC50 / 'inhibitor' = activity inhibition, matching 'decreases activity of'."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established; donepezil used as reference drug with measured IC50."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "In-vitro Ellman-assay medicinal-chemistry study using donepezil as reference standard \u2192 IN_VITRO for the reference compound, but the measured target is AChE."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "IN_VITRO",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL chembl_get_mechanism('donepezil') + PMID:34893996 methods",
+              "record": "ChEMBL: donepezil = Acetylcholinesterase inhibitor. PMID:34893996 measures donepezil AChE IC50=0.021 \u00b5M at AChE catalytic-gorge residues \u2014 confirming the target is AChE (P22303), not BCHE (P06276)."
+            },
+            "confidence": "high",
+            "note": "The word 'cholinesterase inhibitor' is loose; the paper's data are AChE-specific. Object identifier P06276 (BCHE) is not supported. Edge is defensible only if object is corrected to acetylcholinesterase.",
+            "issue_for_curator": "The snippet calls donepezil a generic 'cholinesterase inhibitor', but the underlying evidence and donepezil's established mechanism are specific to acetylcholinesterase, whereas the edge's object identifier corresponds to butyrylcholinesterase. Object grounding fails \u2014 the named target isozyme does not match the drug's mechanism."
+          }
+        ],
+        "edge_supported": false,
+        "edge_basis": "Donepezil IS an established cholinesterase inhibitor that 'decreases activity of' its target, but the edge as written points to the WRONG object: UniProt:P06276 is butyrylcholinesterase (BCHE/CHE1), while independent expert curation (ChEMBL CHEMBL502\u2192CHEMBL1678: 'Acetylcholinesterase inhibitor') and both cited papers establish donepezil's mechanistic target as acetylcholinesterase (P22303). The predicate/polarity/direction/granularity are all correct; only the object entity is mis-grounded. The edge is not defensible as written until the object is corrected to acetylcholinesterase."
+      },
+      "edge_hash": "dbe9d5b6c766377c"
+    },
+    "f409124239e61d41": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:P06276",
+          "name": "Cholinesterase",
+          "label": "Protein"
+        },
+        "predicate": "decreases abundance of",
+        "object": {
+          "id": "CHEBI:15355",
+          "name": "Acetylcholine",
+          "label": "ChemicalSubstance"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:P06276|decreases abundance of|CHEBI:15355",
+        "verdicts": [
+          {
+            "reference": "PMID:39037949",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "The snippet 'acetylcholinesterase (AChE) is a critical enzyme in the nervous system, responsible for breaking down the neurotransmitter acetylcholine' is an exact substring of the PMID:39037949 abstract (independently read)."
+              },
+              "subject_grounding": {
+                "result": "fail",
+                "basis": "Edge subject is UniProt:P06276, which is human BUTYRYLcholinesterase (BCHE, EC 3.1.1.8). The snippet is explicitly about ACETYLcholinesterase (AChE, gene ACHE, UniProt P22303) \u2014 a structurally related but distinct enzyme (cf. PMID:38590305, which states BChE is 'an enzyme structurally related to acetylcholinesterase'). The snippet never mentions butyrylcholinesterase. It speaks to a different protein than the edge subject."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "The snippet's relation acts on 'the neurotransmitter acetylcholine' = CHEBI:15355, which is the edge object."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'breaking down' acetylcholine = reduction; matches 'decreases' sign of the predicate."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "In the snippet the enzyme acts on acetylcholine (enzyme\u2192substrate), matching subject\u2192object direction (though the enzyme named is the wrong one)."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "'breaking down'/hydrolysis reduces the AMOUNT of acetylcholine \u2192 matches 'decreases abundance of' (abundance, not activity)."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as an established fact ('is a critical enzyme...responsible for breaking down'), not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "PMID:39037949 is a medicinal-chemistry/docking + in-vitro synthesis paper; the cited sentence is background biochemistry stated as textbook fact \u2192 evidence_source OTHER (general biochemical assertion)."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:38704944, PMID:38590305, PMID:37972875, PMID:39740234 (independently read, not cited by curator)",
+              "record": "Multiple independent sources confirm butyrylcholinesterase (BCHE = P06276) hydrolyzes acetylcholine: PMID:38704944 'BChE is considered to play a compensable role of hydrolyzing acetylcholine'; PMID:38590305 'its other functions include the ability to hydrolyze acetylcholine'; PMID:39740234 'ACh is normally hydrolyzed by AChE...and by BChE'. So the edge P06276\u2192decreases abundance of\u2192acetylcholine is defensible, but the CITED snippet establishes this for AChE, not for the BCHE that P06276 denotes."
+            },
+            "confidence": "high",
+            "note": "The core defect is an entity mismatch between the edge's identifier (P06276 = butyrylcholinesterase) and the cited snippet (about acetylcholinesterase). The edge itself is true \u2014 BCHE does hydrolyze ACh \u2014 but the citation supports the AChE fact, not the BCHE fact. Separately note a probable upstream path-coherence problem: donepezil's curated target (ChEMBL: CHEMBL1678) is Acetylcholinesterase, not BCHE, so the whole path may intend AChE/P22303 and the P06276 grounding on the 'Cholinesterase' node may be a mis-grounding \u2014 but that concerns the neighboring donepezil edge, not this one. For this edge, the entities as given (BCHE, ACh) are internally consistent and independently supported.",
+            "issue_for_curator": "The subject enzyme identified in this edge is butyrylcholinesterase, but the cited quote describes acetylcholinesterase \u2014 a different (though related) enzyme. The quote therefore does not establish the substrate-degradation relationship for the specific enzyme named as the subject. Re-source a citation that states the subject enzyme (as identified) hydrolyzes/breaks down acetylcholine, or confirm that the intended subject entity is correct for this path."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent sources not cited by the curator (PMID:38704944, PMID:38590305, PMID:39740234) confirm that butyrylcholinesterase (UniProt:P06276) hydrolyzes/breaks down acetylcholine, reducing its abundance \u2014 so the edge as stated (BCHE \u2192 decreases abundance of \u2192 acetylcholine) is factually defensible. The cited snippet, however, is about acetylcholinesterase and does not itself ground this edge's subject."
+      },
+      "edge_hash": "f409124239e61d41"
+    },
+    "dc939dcc189ba139": {
+      "edge": {
+        "subject": {
+          "id": "CHEBI:15355",
+          "name": "Acetylcholine",
+          "label": "ChemicalSubstance"
+        },
+        "predicate": "negatively correlated with",
+        "object": {
+          "id": "MESH:D000544",
+          "name": "Alzheimer's disease",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "CHEBI:15355|negatively correlated with|MESH:D000544",
+        "verdicts": [
+          {
+            "reference": "PMID:37242234",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'the cholinergic hypothesis proposes that AD symptoms are a result of reduced synthesis of acetylcholine (ACh)' is an exact substring of the PMID:37242234 abstract (Nutrients 2023, Umbelliferone/scopolamine rat study)."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet explicitly names 'acetylcholine (ACh)' \u2014 the edge subject CHEBI:15355. Not a metabolite or paralog; the actual entity."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet explicitly names 'AD symptoms' / Alzheimer's disease \u2014 the edge object MESH:D000544."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Snippet: AD symptoms result from 'reduced synthesis of acetylcholine' \u2014 i.e., low ACh associates with more disease. Inverse/negative relationship, matching predicate 'negatively correlated with'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "The correlational predicate is symmetric; the snippet relates ACh level to AD status, consistent with the edge orientation."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Edge is a correlation between acetylcholine level and disease; the snippet speaks to ACh synthesis/level vs AD symptoms \u2014 a level/abundance-vs-disease correlation, the right flavor."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Framed as 'the cholinergic hypothesis' (hedged as hypothesis), but the correlational claim (low ACh \u2194 AD) is the well-established core of that hypothesis and the predicate itself is correlational, not causal-mechanistic \u2014 within scope. Independent review PMID:40207817 states it as characterized fact."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Cited PMID is a rodent pharmacology paper invoking the hypothesis in its intro; the claim is a general hypothesis statement, not primary data \u2192 evidence_source OTHER."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PubMed PMID:40207817 (Current Neuropharmacology 2025 review; NOT cited by curator)",
+              "record": "'Lower level of acetylcholine in the brain is characterized as one of the prominent reasons for AD. The cholinergic hypothesis states that elevated levels of acetylcholine in the brain can alleviate symptoms of AD.' \u2014 directly confirms the negative correlation between ACh level and AD."
+            },
+            "confidence": "high",
+            "note": "Cited PMID was not in the committed cache, but read_abstract independently confirms the verbatim snippet in context. Both cited and independent sources frame the low-ACh/AD relation as the cholinergic hypothesis; the correlational predicate accommodates this. Corroborated by two independent, uncited sources (PMID:40207817, PMID:39533696). All ladder checks pass."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent Current Neuropharmacology review (PMID:40207817), not cited by the curator, explicitly states lower brain acetylcholine is a prominent characteristic of AD and that raising ACh alleviates symptoms \u2014 establishing the negative correlation between acetylcholine and Alzheimer's disease independent of the curator's snippet."
+      },
+      "edge_hash": "dc939dcc189ba139"
+    }
+  }
+}

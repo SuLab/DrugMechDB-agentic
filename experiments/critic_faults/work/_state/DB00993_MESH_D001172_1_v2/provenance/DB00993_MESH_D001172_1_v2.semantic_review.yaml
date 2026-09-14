@@ -1,0 +1,138 @@
+record_id: DB00993_MESH_D001172_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T06:11:24+00:00'
+last_reviewed_at: '2026-08-25T06:11:24+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ESCALATE
+escalation_reason: factual_contradiction
+overall_summary: 'The chain uses the correct entities and route for azathioprine''s
+  accepted MoA in RA, but as written it carries a sign error at the mercaptopurine→purine-nucleotide-biosynthesis
+  step: it asserts POSITIVE regulation whereas mercaptopurine is an antimetabolite
+  that INHIBITS de novo purine synthesis (ChEMBL CHEMBL1425 INHIBITOR of amidophosphoribosyltransferase;
+  PMID:10878284 ''inhibit several enzymes of purine synthesis''; PMID:11683683 ''purine
+  antimetabolite''). Consequently the whole path nets POSITIVE and reads as the drug
+  INCREASING T-cell proliferation and WORSENING RA — the reverse of its therapeutic
+  action. Correcting this one edge''s polarity to negative regulation makes the chain
+  net correctly toward disease suppression. An edge''s evidence contradicts the claim
+  (curator territory).'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T06:11:24+00:00'
+  verdict: ESCALATE
+  escalation_reason: factual_contradiction
+  summary: 'The chain uses the correct entities and route for azathioprine''s accepted
+    MoA in RA, but as written it carries a sign error at the mercaptopurine→purine-nucleotide-biosynthesis
+    step: it asserts POSITIVE regulation whereas mercaptopurine is an antimetabolite
+    that INHIBITS de novo purine synthesis (ChEMBL CHEMBL1425 INHIBITOR of amidophosphoribosyltransferase;
+    PMID:10878284 ''inhibit several enzymes of purine synthesis''; PMID:11683683 ''purine
+    antimetabolite''). Consequently the whole path nets POSITIVE and reads as the
+    drug INCREASING T-cell proliferation and WORSENING RA — the reverse of its therapeutic
+    action. Correcting this one edge''s polarity to negative regulation makes the
+    chain net correctly toward disease suppression. An edge''s evidence contradicts
+    the claim (curator territory).'
+  flags:
+  - edge: Mercaptopurine --positively regulates--> purine nucleotide biosynthetic
+      process
+    issue: 'The subject acts on the object with the OPPOSITE sign to the predicate:
+      the cited source describes mercaptopurine as a purine antimetabolite that INHIBITS
+      purine nucleotide biosynthesis, whereas the edge asserts positive regulation.
+      Polarity is flipped.'
+  - edge: Mercaptopurine --positively regulates--> purine nucleotide biosynthetic
+      process
+    issue: 'Polarity is flipped: the source states the subject''s action INHIBITS
+      enzymes of purine synthesis, contradicting the edge''s positive-regulation claim.
+      Additionally the snippet references the parent drug''s metabolites collectively
+      rather than the edge subject specifically.'
+  - edge: Mercaptopurine --positively regulates--> purine nucleotide biosynthetic
+      process
+    issue: The cited source explicitly classifies the subject as an inhibitor of purine
+      synthesis, i.e. it negatively affects the object — this refutes the edge's 'positively
+      regulates' polarity.
+  path_issue: 'The chain nets in the wrong direction: as written it reads as the drug
+    driving, rather than suppressing, the disease. Re-examine the polarity of the
+    step linking the drug metabolite to purine nucleotide biosynthesis — its sign
+    appears inconsistent with the downstream steps and with the drug''s therapeutic
+    effect.'
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:Azathioprine
+  - ChEMBL:azathioprine
+  - ChEMBL:mercaptopurine
+  - PMID:11288107
+  - PMID:23797095
+  - PMID:39397163
+  - PMID:39938824
+  - PMID:40955898
+  - PMID:41299519
+  - PMID:41542857
+  edge_reviews:
+  - edge: Mercaptopurine --positively regulates--> purine nucleotide biosynthetic
+      process
+    reference: PMID:11683683
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: 'The subject acts on the object with the OPPOSITE sign to the predicate:
+      the cited source describes mercaptopurine as a purine antimetabolite that INHIBITS
+      purine nucleotide biosynthesis, whereas the edge asserts positive regulation.
+      Polarity is flipped.'
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1425 (mercaptopurine)", "record":
+      "action_type=INHIBITOR, target=Amidophosphoribosyltransferase, moa=''Amidophosphoribosyltransferase
+      inhibitor'' \u2014 the rate-limiting de novo purine biosynthesis enzyme; confirms
+      mercaptopurine DECREASES purine biosynthesis."}'
+    confidence: high
+  - edge: Mercaptopurine --positively regulates--> purine nucleotide biosynthetic
+      process
+    reference: PMID:10878284
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: 'Polarity is flipped: the source states the subject''s action INHIBITS
+      enzymes of purine synthesis, contradicting the edge''s positive-regulation claim.
+      Additionally the snippet references the parent drug''s metabolites collectively
+      rather than the edge subject specifically.'
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1425", "record": "Mercaptopurine
+      = INHIBITOR of amidophosphoribosyltransferase; confirms inhibition (negative),
+      not positive regulation."}'
+    confidence: high
+  - edge: Mercaptopurine --positively regulates--> purine nucleotide biosynthetic
+      process
+    reference: PMID:12734342
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: The cited source explicitly classifies the subject as an inhibitor of purine
+      synthesis, i.e. it negatively affects the object — this refutes the edge's 'positively
+      regulates' polarity.
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1425", "record": "Mercaptopurine
+      INHIBITOR of amidophosphoribosyltransferase \u2014 corroborates that 6-MP decreases
+      purine biosynthesis."}'
+    confidence: high
+  - edge: purine nucleotide biosynthetic process --positively regulates--> T cell
+      proliferation
+    reference: PMID:12734342
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:11288107 (VX-497 IMPDH inhibitor study), not
+      cited by curator", "record": "States IMPDH catalyzes ''de novo synthesis of
+      guanine nucleotides required for lymphocyte proliferation'' and that IMPDH inhibition
+      specifically and selectively inhibits lymphocyte proliferation \u2014 independently
+      confirming purine nucleotide biosynthesis positively regulates T/lymphocyte
+      proliferation."}'
+    confidence: high
+  - edge: T cell proliferation --contributes to--> Rheumatoid arthritis
+    reference: PMID:8013988
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:41299519 (J Transl Med 2025 review, not cited by
+      curator)", "record": "States activated CD4+ T cells differentiate into Th/Treg
+      subsets that ''contribute to the pathogenesis of RA''; macrophage-derived cytokines
+      recruit/activate T cells driving synovial inflammation."}'
+    confidence: high
+  - edge: T cell proliferation --contributes to--> Rheumatoid arthritis
+    reference: PMID:29581356
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:41299519 (independent review)", "record": "Confirms
+      activated/expanded CD4+ T cells contribute to RA pathogenesis in humans, supporting
+      extrapolation of the CIA model finding."}'
+    confidence: high

@@ -1,0 +1,14 @@
+SOURCE CLINICALTRIALS:NCT01088412  (content_type=abstract)
+Title: The Genetics and Neuroendocrinology of Short Stature International Study (GeNeSIS)
+
+GeNeSIS is an open-label, multinational, multicenter, observational study to evaluate the safety and effectiveness of Humatrope treatment.
+
+GeNeSIS is a modular program that includes:
+
+* Core study: Evaluating the safety and effectiveness of Humatrope in the observational setting
+* Genetic Analysis Sub-study: Investigating the genetic defects underlying growth hormone (GH) deficiency and non-GH-deficient growth disorders
+* Growth Prediction Sub-study: Working to validate and refine specific models to accurately predict growth response to GH
+* Short Stature Homeobox containing gene (SHOX) Deficiency Sub-study: Elucidating the clinical, endocrine and radiological features of participants with SHOX deficiency due to loss of, or mutation in the SHOX gene (including participants with Turner syndrome)
+* Neoplasia Sub-study: To characterize the natural history of neoplastic disease, especially in relation to recurrence/progression of primary neoplasia or development of secondary neoplasia in children with a history of neoplasia
+
+(Independent trusted source the critic retrieved — cite it as grounding.)

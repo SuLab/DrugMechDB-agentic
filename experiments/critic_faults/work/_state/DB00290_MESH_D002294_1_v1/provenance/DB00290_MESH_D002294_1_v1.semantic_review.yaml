@@ -1,0 +1,98 @@
+record_id: DB00290_MESH_D002294_1_v1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T06:41:30+00:00'
+last_reviewed_at: '2026-08-25T06:41:30+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: RE_CURATE
+escalation_reason: null
+overall_summary: No semantic problems found.
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T06:41:30+00:00'
+  verdict: RE_CURATE
+  escalation_reason: null
+  summary: No semantic problems found.
+  flags:
+  - edge: apoptotic process --disrupts--> Squamous cell carcinoma
+    issue: The cited quote establishes the apoptosis→disease-disruption relation only
+      for one squamous cell carcinoma subtype (oral cancer) and within a single narrow
+      experimental context (one specific agent acting on a cancer-stem-cell/orosphere
+      subpopulation, in vitro). The edge object is squamous cell carcinoma in general,
+      so this quote over-generalizes a subtype- and context-restricted finding. Strengthen
+      with a source that asserts apoptosis disrupting squamous cell carcinoma as an
+      established, broader principle.
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:bleomycin
+  - PMID:12691572
+  - PMID:21095075
+  - PMID:22773697
+  - PMID:24881675
+  - PMID:28641523
+  - PMID:33204397
+  - PMID:34590505
+  - PMID:34907000
+  - PMID:35974187
+  - PMID:37686404
+  - PMID:38603946
+  - PMID:38874804
+  - PMID:42481535
+  - PMID:42509225
+  - PMID:42587809
+  - PMID:42592019
+  - PMID:42601573
+  - PMID:42625843
+  - PMID:6184448
+  edge_reviews:
+  - edge: bleomycin --increases abundance of--> Reactive oxygen species
+    reference: PMID:18234257
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:12691572 (Inorg Chem 2003) and PMID:24881675
+      (Chem Commun 2014), not cited by curator", "record": "Both describe the antitumor
+      drug bleomycin''s iron complex generating reactive peroxo / oxoiron(IV) oxygen
+      species that cleave DNA \u2014 independently confirming bleomycin generates
+      reactive oxygen species."}'
+    confidence: high
+  - edge: Reactive oxygen species --causes--> DNA damage
+    reference: PMID:37491116
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:42625843 (review, not cited by curator) and PMID:42587809
+      (glioma experimental, not cited)", "record": "PMID:42625843: ''elevated intracellular
+      levels of reactive oxygen species (ROS) that cause damage to lipids, proteins,
+      and DNA.'' PMID:42587809: increased ROS accompanied by \u03b3-H2AX induction
+      and DNA damage. Both independently affirm ROS\u2192DNA damage."}'
+    confidence: high
+  - edge: DNA damage --causes--> apoptotic process
+    reference: PMID:17879944
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:42481535 (Sci Rep 2026), not cited by curator",
+      "record": "States anticancer compound ''exerts potent anticancer activity through
+      DNA damage-mediated activation of apoptotic and autophagic pathways'' \u2014
+      independent confirmation that DNA damage (\u03b3H2AX, strand breaks) causes
+      activation of the apoptotic process."}'
+    confidence: high
+  - edge: apoptotic process --disrupts--> Squamous cell carcinoma
+    reference: PMID:28459216
+    rederived_supports: PARTIAL
+    agrees_with_curator: true
+    issue: The cited quote establishes the apoptosis→disease-disruption relation only
+      for one squamous cell carcinoma subtype (oral cancer) and within a single narrow
+      experimental context (one specific agent acting on a cancer-stem-cell/orosphere
+      subpopulation, in vitro). The edge object is squamous cell carcinoma in general,
+      so this quote over-generalizes a subtype- and context-restricted finding. Strengthen
+      with a source that asserts apoptosis disrupting squamous cell carcinoma as an
+      established, broader principle.
+    grounding: '{"source": "PubMed abstracts not cited by curator: PMID:34590505 (laryngeal
+      SCC HEp-2) and PMID:34907000 (head and neck SCC, cisplatin/senolytic)", "record":
+      "PMID:34590505 shows EGCG/Honokiol ''eradicated HEp-2 human larynx cancer cells''
+      via caspase-dependent intrinsic apoptosis; PMID:34907000 shows apoptosis induction
+      (Navitoclax) eliminates HNSCC tumor cells and delays tumor growth. Together
+      with the oral SCC finding, these independently establish that inducing apoptosis
+      disrupts squamous cell carcinoma across subtypes."}'
+    confidence: high

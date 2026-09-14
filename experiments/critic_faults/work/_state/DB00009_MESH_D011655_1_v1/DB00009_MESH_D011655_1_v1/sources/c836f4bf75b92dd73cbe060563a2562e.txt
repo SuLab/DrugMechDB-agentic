@@ -1,0 +1,11 @@
+PMID:37751849  Thrombin-activatable fibrinolysis inhibitor and sex modulate thrombus stability and pulmonary embolism burden in a murine model.  (Journal of thrombosis and haemostasis : JTH, 2024)
+
+**BACKGROUND:** Thrombin-activatable fibrinolysis inhibitor (TAFI) levels are positively correlated with the risk of thrombosis. The mechanism of how TAFI affects venous thromboembolism (VTE) remains uncertain. In addition, the role of sex on the risk of VTE has also been studied. However, their association also remains unclear.
+
+**OBJECTIVES:** To investigate how TAFI and/or sex affect venous thrombus stability and consequent pulmonary embolism (PE).
+
+**METHODS:** Ferric chloride-induced thrombi were formed within the femoral veins of male and female wild-type (WT) or TAFI-knockout (Cpb2-/-) mice. Thrombi were imaged over 2 hours using intravital videomicroscopy to quantify embolization and thrombus size over time. Lungs were examined by immunohistochemistry to quantify (a) emboli and (b) fibrin composition of these emboli.
+
+**RESULTS:** Embolization events in female mice were higher than in males (7.9-fold in WT and 3.1-fold in Cpb2-/- mice). Although the maximal thrombus sizes were not different across groups, Cpb2-/- mice had thrombi that were, on average, 24% smaller at the end of the 2-hour experiment than WT mice. Loss of TAFI led to a 4.0- and 2.8-fold increase in PE burden in males and females, respectively, while sex had no influence. Pulmonary emboli in Cpb2-/- mice had higher fibrin composition compared with WT mice.
+
+**CONCLUSION:** Female mice had less stable venous thrombi than male mice, suggesting a higher risk of PE in females with deep vein thrombosis. Mice lacking TAFI had more thrombus degradation and higher PE burden than WT mice. These results confirm the role of TAFI in venous thrombosis.

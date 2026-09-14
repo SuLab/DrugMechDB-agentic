@@ -1,0 +1,15 @@
+PMID:42268624  Outcomes of Cardiovascular Surgery in Patients With Multiple Sclerosis.  (JAMA surgery, 2026)
+
+**IMPORTANCE:** Patients with multiple sclerosis (MS) have a higher incidence of heart failure and myocardial infarction. In patients with MS, autonomic dysregulation may cause detrimental hemodynamic instability perioperatively. However, data on outcomes of cardiac surgery in patients with MS are scarce.
+
+**OBJECTIVES:** To describe US nationwide morbidity and mortality in patients with MS undergoing cardiovascular surgery.
+
+**DESIGN, SETTING, AND PARTICIPANTS:** This cross-sectional study included records of patients who underwent coronary artery bypass grafting, valve, aortic, or combined cardiovascular surgery between 2016 and 2022 in the National Inpatient Sample database. The association between MS and surgical outcomes at admission was evaluated using a balancing-score matched cohort. Data were analyzed between November 1 and 26, 2025.
+
+**EXPOSURE:** Multiple sclerosis.
+
+**MAIN OUTCOMES AND MEASURES:** In-hospital mortality, complications, length of stay, costs, and discharge disposition.
+
+**RESULTS:** Records for 1 766 170 patients (3605 with MS and 1 762 565 without) were included. The MS cohort was younger (median [IQR] age, 63 [57-69] years vs 67 [58-70] years) and had a larger proportion of women (2025 [56%] vs 488 850 [28%]). Patients with MS, vs those without, exhibited higher frequencies of comorbidities, including chronic lung disease, depression, hypothyroidism, paralysis, psychosis, and valvular disease. In the matched cohorts of 3530 patients, mortality did not differ significantly between patients with MS and those without MS (70 [2.0%] vs 130 [3.7%]; P = .05). The prevalence of a composite complication end point was also comparable between groups (1770 [50%] vs 1810 [51%]; P = .67). This included similarities in prevalence of stroke, acute kidney failure, pulmonary embolism, deep vein thrombosis, gastrointestinal (GI) bleeding, non-GI bleeding, prolonged mechanical ventilation, tracheostomy, pneumonia, surgical site infection, sepsis, blood transfusion, pericardial effusion, fluid overload, and pacemaker requirement. However, discharge disposition differed significantly, with a lower prevalence of routine home discharges in the MS cohort (985 [28%] vs 1265 [36%]; P < .001). Median hospitalization cost ($41 285 [IQR, $31 508-$56 040] vs $40 328 [IQR, $30 604-$56 202]; P = .44) and median length of stay (8 [IQR, 6-12] days in both groups; P = .33) did not differ between cohorts.
+
+**CONCLUSIONS AND RELEVANCE:** This cross-sectional study suggests that MS is not associated with increased in-hospital mortality or complications in patients undergoing cardiovascular surgery, although the prevalence of routine home discharges was lower among patients with MS. Surgeons may consider a team approach with neurological experts to optimize perioperative care and increase routine home discharges.

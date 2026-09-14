@@ -1,0 +1,67 @@
+record_id: B02362_MESH_D003882_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T05:23:07+00:00'
+last_reviewed_at: '2026-08-25T05:23:07+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ESCALATE
+escalation_reason: factual_contradiction
+overall_summary: An edge's evidence contradicts the claim (curator territory).
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T05:23:07+00:00'
+  verdict: ESCALATE
+  escalation_reason: factual_contradiction
+  summary: An edge's evidence contradicts the claim (curator territory).
+  flags:
+  - edge: aminobenzoic acid --increases abundance of--> Glycosaminoglycans
+    issue: The cited source describes the subject DECREASING (dose-dependent inhibition
+      of) the object's secretion, which is the opposite direction of the edge's 'increases
+      abundance of' predicate. The stated sign of the effect is inverted. Additionally,
+      the source concerns the potassium salt form rather than the free parent-acid
+      subject entity.
+  - edge: aminobenzoic acid --increases abundance of--> Glycosaminoglycans
+    issue: The cited source reports the subject INHIBITING (decreasing) secretion
+      of the object, the opposite of the edge's 'increases abundance of' predicate.
+      The effect sign is inverted. The source also studies the potassium salt form
+      rather than the free parent-acid subject entity.
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:aminobenzoic acid
+  - ChEMBL:potassium aminobenzoate
+  - PMID:28632566
+  - PMID:36395446
+  - PMID:37574925
+  - PMID:39005210
+  - PMID:40217643
+  - PMID:6603448
+  edge_reviews:
+  - edge: aminobenzoic acid --increases abundance of--> Glycosaminoglycans
+    reference: PMID:1350132
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: The cited source describes the subject DECREASING (dose-dependent inhibition
+      of) the object's secretion, which is the opposite direction of the edge's 'increases
+      abundance of' predicate. The stated sign of the effect is inverted. Additionally,
+      the source concerns the potassium salt form rather than the free parent-acid
+      subject entity.
+    grounding: '{"source": "read_abstract PMID:1350132 (independent of committed cache)
+      + ChEMBL CHEMBL1564391", "record": "Abstract: ''dose dependent inhibition of
+      glycosaminoglycan secretion in all 3 groups'' \u2014 a decrease. ChEMBL: no
+      curated mechanism supporting a GAG increase (moa Unknown)."}'
+    confidence: high
+  - edge: aminobenzoic acid --increases abundance of--> Glycosaminoglycans
+    reference: PMID:155125
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: The cited source reports the subject INHIBITING (decreasing) secretion
+      of the object, the opposite of the edge's 'increases abundance of' predicate.
+      The effect sign is inverted. The source also studies the potassium salt form
+      rather than the free parent-acid subject entity.
+    grounding: '{"source": "read_abstract PMID:155125 (independent read) + ChEMBL
+      CHEMBL1564391", "record": "Abstract: acid mucopolysaccharide secretion ''was
+      inhibited even at 100 microgram/ml... over 50% inhibition at 5000 microgram/ml''
+      \u2014 a decrease. ChEMBL has no mechanism supporting a GAG-increasing action."}'
+    confidence: high

@@ -1,0 +1,136 @@
+record_id: DB00009_MESH_D011655_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T07:32:35+00:00'
+last_reviewed_at: '2026-08-25T07:32:35+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ESCALATE
+escalation_reason: factual_contradiction
+overall_summary: 'The mechanistic skeleton is the correct primary MoA (thrombolysis:
+  activate plasminogen→plasmin→degrade fibrin→resolve embolus), but the first edge
+  carries an inverted sign. As encoded the chain nets POSITIVE toward the disease
+  — it reads as alteplase suppressing plasminogen activity, which would increase fibrin
+  and worsen PE, the opposite of the drug''s therapeutic action. The chain is also
+  internally inconsistent: edge 2 needs plasminogen to be activated (as plasmin) to
+  degrade fibrin, which contradicts edge 1''s ''decreases activity''. Correcting the
+  first step''s sign (and ideally surfacing the active plasmin form) restores the
+  accepted mechanism. Edges 2 and 3 are directionally sound; the fatal defect is localized
+  to the drug→plasminogen step. An edge''s evidence contradicts the claim (curator
+  territory).'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T07:32:35+00:00'
+  verdict: ESCALATE
+  escalation_reason: factual_contradiction
+  summary: 'The mechanistic skeleton is the correct primary MoA (thrombolysis: activate
+    plasminogen→plasmin→degrade fibrin→resolve embolus), but the first edge carries
+    an inverted sign. As encoded the chain nets POSITIVE toward the disease — it reads
+    as alteplase suppressing plasminogen activity, which would increase fibrin and
+    worsen PE, the opposite of the drug''s therapeutic action. The chain is also internally
+    inconsistent: edge 2 needs plasminogen to be activated (as plasmin) to degrade
+    fibrin, which contradicts edge 1''s ''decreases activity''. Correcting the first
+    step''s sign (and ideally surfacing the active plasmin form) restores the accepted
+    mechanism. Edges 2 and 3 are directionally sound; the fatal defect is localized
+    to the drug→plasminogen step. An edge''s evidence contradicts the claim (curator
+    territory).'
+  flags:
+  - edge: alteplase --decreases activity of--> Plasminogen
+    issue: 'The predicate sign is inverted relative to what the cited source establishes:
+      the source and independent authorities describe the subject as an ACTIVATOR
+      of the object (enhancing its conversion to the active enzyme), not a decreaser
+      of its activity. As written, the edge asserts the opposite direction of effect,
+      and it is also internally inconsistent with the downstream step of the path,
+      which requires the object to be activated. The relation direction (subject acts
+      on object) and entity groundings are correct — only the sign is wrong.'
+  - edge: Plasminogen --decreases abundance of--> Fibrin
+    issue: The cited quote attributes fibrin degradation to the ACTIVE enzyme (plasmin),
+      reached only after conversion of the subject as named (the inactive zymogen
+      plasminogen); as written the quote does not establish that the named subject
+      form itself decreases fibrin. Additionally the source is a mechanistic review,
+      not primary in-vitro data, so the evidence_source label is mis-derived. Re-source
+      with evidence that explicitly names the acting enzymatic form performing fibrin
+      degradation, and re-derive the source type.
+  - edge: Fibrin --causes--> Pulmonary embolism
+    issue: The cited quote describes fibrin emboli in an artificially INDUCED experimental
+      thrombosis model used to test a delivery agent, not an assertion that fibrin
+      causes clinical pulmonary embolism as an established disease mechanism. The
+      subject entity is correct and the object context (fibrin obstructing pulmonary
+      vasculature) is on-topic, but the source's scope is a laboratory clot-induction
+      method, which over-generalizes to the disease. Re-source with evidence that
+      directly establishes fibrin as the causal/structural substrate of clinical pulmonary
+      embolism.
+  path_issue: 'The first step of the chain (drug acting on its immediate target) appears
+    to carry the wrong sign: as written the chain nets toward the disease rather than
+    away from it, so it reads as the drug worsening the condition, and it is internally
+    inconsistent with the very next step, which requires the target to be activated
+    rather than suppressed. Re-examine the direction of effect of the drug on its
+    immediate target and confirm the chain nets to a disease-decrease.'
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:alteplase
+  - PMID:26379477
+  - PMID:30507392
+  - PMID:31140413
+  - PMID:34404914
+  - PMID:35580335
+  - PMID:36121244
+  - PMID:36603558
+  - PMID:39261049
+  - PMID:39759449
+  - PMID:42161432
+  - PMID:42194044
+  - PMID:42207594
+  edge_reviews:
+  - edge: alteplase --decreases activity of--> Plasminogen
+    reference: PMID:3044205
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: 'The predicate sign is inverted relative to what the cited source establishes:
+      the source and independent authorities describe the subject as an ACTIVATOR
+      of the object (enhancing its conversion to the active enzyme), not a decreaser
+      of its activity. As written, the edge asserts the opposite direction of effect,
+      and it is also internally inconsistent with the downstream step of the path,
+      which requires the object to be activated. The relation direction (subject acts
+      on object) and entity groundings are correct — only the sign is wrong.'
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1201593 (ALTEPLASE) and independent
+      PMID:39261049 abstract", "record": "ChEMBL classifies alteplase as ''Tissue-type
+      plasminogen activator exogenous protein''. PMID:39261049 states tissue plasminogen
+      activator ''converts plasminogen into plasmin'' \u2014 confirming activation,
+      not inhibition."}'
+    confidence: high
+  - edge: Plasminogen --decreases abundance of--> Fibrin
+    reference: PMID:3044205
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited quote attributes fibrin degradation to the ACTIVE enzyme (plasmin),
+      reached only after conversion of the subject as named (the inactive zymogen
+      plasminogen); as written the quote does not establish that the named subject
+      form itself decreases fibrin. Additionally the source is a mechanistic review,
+      not primary in-vitro data, so the evidence_source label is mis-derived. Re-source
+      with evidence that explicitly names the acting enzymatic form performing fibrin
+      degradation, and re-derive the source type.
+    grounding: '{"source": "PubMed independent reads: PMID:31140413 and PMID:35580335
+      (not cited by curator)", "record": "PMID:31140413: ''convert inactive plasminogen
+      to active plasmin.'' PMID:35580335: ''catalyzes the production of plasmin, a
+      broad-spectrum protease that can degrade fibrin.'' Both confirm plasmin (active
+      form), not plasminogen, degrades fibrin."}'
+    confidence: high
+  - edge: Fibrin --causes--> Pulmonary embolism
+    reference: PMID:12845330
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited quote describes fibrin emboli in an artificially INDUCED experimental
+      thrombosis model used to test a delivery agent, not an assertion that fibrin
+      causes clinical pulmonary embolism as an established disease mechanism. The
+      subject entity is correct and the object context (fibrin obstructing pulmonary
+      vasculature) is on-topic, but the source's scope is a laboratory clot-induction
+      method, which over-generalizes to the disease. Re-source with evidence that
+      directly establishes fibrin as the causal/structural substrate of clinical pulmonary
+      embolism.
+    grounding: '{"source": "PubMed PMID:26379477 (Thrombosis Journal, 2015), independent
+      of curator", "record": "Clinical high-risk pulmonary embolism case; autopsy
+      of the pulmonary-trunk thromboembolus revealed ''high fibrin-rich content'',
+      confirming fibrin as a structural/causal component of the obstructing embolus
+      in clinical PE."}'
+    confidence: high

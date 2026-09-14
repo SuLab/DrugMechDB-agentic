@@ -1,0 +1,213 @@
+{
+  "edges": {
+    "ab3c98a194fe68d0": {
+      "edge": {
+        "subject": {
+          "id": "DB:DB00005",
+          "name": "Etanercept",
+          "label": "Drug"
+        },
+        "predicate": "decreases activity of",
+        "object": {
+          "id": "UniProt:P05231",
+          "name": "Interleukin-6",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "DB:DB00005|decreases activity of|UniProt:P05231",
+        "verdicts": [
+          {
+            "reference": "PMID:22686544",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "The snippet 'The mechanism of action of etanercept in psoriatic disease and other approved indications is mediated by the neutralization of soluble TNF-\u03b1' is an exact substring of the PMID:22686544 abstract (read independently via read_abstract)."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet is about etanercept (edge subject DB:DB00005). ChEMBL CHEMBL1201572 confirms this is the same agent."
+              },
+              "object_grounding": {
+                "result": "fail",
+                "basis": "The edge object is Interleukin-6 (UniProt:P05231). The snippet is about neutralization of soluble TNF-\u03b1 (Tumor necrosis factor), NOT IL-6. IL-6 is never mentioned in the source abstract. ChEMBL confirms etanercept's direct target is TNF-alpha, not IL-6."
+              },
+              "polarity": {
+                "result": "abstain",
+                "basis": "Snippet asserts 'neutralization' (a decrease) but of TNF-\u03b1, not IL-6; polarity cannot be assessed for the IL-6 object because the source says nothing about IL-6."
+              },
+              "direction": {
+                "result": "fail",
+                "basis": "Etanercept does not act directly on IL-6. It binds/neutralizes TNF-\u03b1 (upstream); any effect on IL-6 is a downstream consequence of TNF-\u03b1 blockade, not a direct subject\u2192object action on IL-6."
+              },
+              "granularity": {
+                "result": "fail",
+                "basis": "Snippet describes binding/neutralization of TNF-\u03b1 (drug-target binding). The edge asserts decreased IL-6 activity \u2014 a different molecule and a downstream readout, not the drug's molecular action."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Source asserts the TNF-\u03b1 mechanism as established ('mechanism of action ... is mediated by the neutralization of soluble TNF-\u03b1'), but for the wrong object."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "PMID:22686544 is a clinical-experience review of etanercept in psoriasis \u2192 evidence_source OTHER (review)."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism CHEMBL1201572; PMID:22751595 (independent, not cited by curator)",
+              "record": "ChEMBL: etanercept action_type=INHIBITOR, target=Tumor necrosis factor, moa='TNF-alpha inhibitor' \u2014 no IL-6 target. PMID:22751595: synovial-fluid IL-6 is REDUCED after etanercept, but attributed to 'TNF-\u03b1 blockade' (downstream biomarker), not a direct action on IL-6."
+            },
+            "confidence": "high",
+            "note": "The cited snippet supports a DIFFERENT edge (Etanercept --decreases activity of--> TNF-\u03b1). Etanercept's molecular target is TNF-\u03b1; IL-6 reduction is downstream. The snippet does not speak to the IL-6 edge at all, so NO_EVIDENCE for this specific edge. The edge as written mis-grounds the object: it should be TNF-\u03b1, with IL-6 sitting further downstream in the path. Independent evidence (PMID:22751595) shows IL-6 does fall after etanercept, but only as a downstream/indirect consequence \u2014 so a direct 'decreases activity of IL-6' edge over-reaches and skips the true mechanistic intermediate.",
+            "issue_for_curator": "The cited quote describes the drug neutralizing a soluble cytokine that is NOT the edge's object protein \u2014 it does not mention or act on the object at all. The drug's molecular action is on a different (upstream) cytokine; any effect on this edge's object protein is downstream and indirect, so a direct 'decreases activity of' edge on this object is unsupported by the quote and mis-specifies the drug's true target."
+          }
+        ],
+        "edge_supported": false,
+        "edge_basis": "Independent grounding (ChEMBL CHEMBL1201572) establishes etanercept's direct target is TNF-\u03b1, not IL-6. Etanercept has no direct action on IL-6; the observed IL-6 reduction (PMID:22751595) is a downstream consequence of TNF-\u03b1 neutralization. The direct edge Etanercept 'decreases activity of' IL-6 is not defensible as written \u2014 the correct molecular edge is Etanercept\u2192TNF-\u03b1, with IL-6 as a downstream node."
+      },
+      "edge_hash": "ab3c98a194fe68d0"
+    },
+    "04d03be999fc4b97": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:P05231",
+          "name": "Interleukin-6",
+          "label": "Protein"
+        },
+        "predicate": "contributes to",
+        "object": {
+          "id": "GO:0006954",
+          "name": "inflammatory response",
+          "label": "BiologicalProcess"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:P05231|contributes to|GO:0006954",
+        "verdicts": [
+          {
+            "reference": "PMID:30293157",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the PMID:30293157 abstract: 'Tumor necrosis factor (TNF)-\u03b1 is a cytokine that plays a well-established, key role as a central mediator of inflammation and immune regulation.'"
+              },
+              "subject_grounding": {
+                "result": "fail",
+                "basis": "The snippet's subject is TNF-\u03b1 (UniProt:P01375), not Interleukin-6 (UniProt:P05231). IL-6 is not mentioned anywhere in the abstract; the entire abstract concerns TNF-\u03b1 biology and anti-TNF therapy (etanercept/adalimumab)."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'central mediator of inflammation' corresponds to inflammatory response (GO:0006954)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'central mediator of inflammation' is a positive/contributory relation, matching predicate 'contributes to' \u2014 but for TNF-\u03b1, not the edge subject."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Cytokine acts on/mediates inflammation (subject\u2192object direction), though the cytokine here is TNF-\u03b1."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "'mediator of inflammation' is a functional/process contribution, matching a protein\u2192BiologicalProcess 'contributes to' edge."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established ('well-established, key role'), not hedged \u2014 but describes TNF-\u03b1."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Case report + literature review in Rheumatology International; the general cytokine statement is a review/background assertion \u2192 evidence_source OTHER/review."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:41925889 (Mol Biol Rep review, read via read_abstract/read_evidence) and PMID:42428479",
+              "record": "'Studies consistently report elevated proinflammatory cytokines, such as interleukin-6 and tumor necrosis factor-\u03b1' and 'pro-inflammatory cytokines, including interleukin-1\u03b2, interleukin-6, and tumor necrosis factor-\u03b1' \u2014 independently establish IL-6 as a proinflammatory mediator of the inflammatory response."
+            },
+            "confidence": "high",
+            "note": "Verbatim match confirmed but the snippet is wholly about TNF-\u03b1, a cytokine co-referenced in the same anti-TNF (etanercept) path. The quote almost certainly belongs to the neighboring Etanercept\u2192TNF edge and was reused/misattached here. The IL-6\u2192inflammation edge is biologically sound and independently corroborated, but this specific citation does not speak to IL-6 at all.",
+            "issue_for_curator": "The cited quotation supports a different cytokine (the subject of a neighboring edge) and never mentions Interleukin-6, the subject of THIS edge. The subject_grounding check fails: nothing in the snippet asserts that Interleukin-6 specifically contributes to the inflammatory response. Replace the citation with a source that explicitly names Interleukin-6 as a mediator of the inflammatory response."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent reviews (PMID:41925889, PMID:42428479) explicitly identify interleukin-6 as a proinflammatory cytokine central to the inflammatory response, so the IL-6\u2192inflammatory response 'contributes to' edge is biologically defensible \u2014 but the curator's cited snippet (about TNF-\u03b1) does not establish it."
+      },
+      "edge_hash": "04d03be999fc4b97"
+    },
+    "9c8548aef9a68ec9": {
+      "edge": {
+        "subject": {
+          "id": "GO:0006954",
+          "name": "inflammatory response",
+          "label": "BiologicalProcess"
+        },
+        "predicate": "manifestation of",
+        "object": {
+          "id": "MESH:D015535",
+          "name": "Psoriasis with arthropathy",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "GO:0006954|manifestation of|MESH:D015535",
+        "verdicts": [
+          {
+            "reference": "PMID:26523063",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "The snippet 'Psoriatic arthritis (PsA) is a chronic inflammatory disease affecting peripheral and axial joints' is the exact opening substring of the abstract of PMID:26523063 ('The Role of Tumor Necrosis Factor-\u03b1 Blockers in Psoriatic Disease')."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "The edge subject is 'inflammatory response' (GO:0006954). The snippet characterizes PsA as a 'chronic inflammatory disease' and the abstract details synovial inflammation, neutrophil/macrophage infiltration \u2014 i.e., inflammatory processes as the disease's core pathology. Independent source PMID:42191498 measures 'peripheral and axial inflammation' as the PsA manifestation, confirming inflammation is the subject entity at issue."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'Psoriatic arthritis (PsA)' in the snippet maps to MESH:D015535 'Psoriasis with arthropathy'. This is the disease object of the edge."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'manifestation of' predicate: inflammation is presented as a positive/defining feature of PsA ('chronic inflammatory disease affecting ... joints'). No negation; the direction of the relation (inflammation is a hallmark of the disease) matches."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "The disease PsA presents/manifests as inflammation \u2014 the inflammatory response is a manifestation OF the disease, consistent with the predicate reading (subject is a manifestation of object). Independent PMID:41626754 and PMID:42191498 both frame joint inflammation as a manifestation of PsA."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "The edge is a disease\u2192clinical-manifestation ontological link, not a molecular activity/abundance distinction. The snippet describes the inflammatory disease process as the phenotypic manifestation, matching the granularity of 'manifestation of'."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established fact, not hedged: 'PsA is a chronic inflammatory disease.' A definitional statement, corroborated across multiple independent reviews/studies."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "PMID:26523063 is a clinical review in J Rheumatol Suppl describing PsA pathology and anti-TNF therapy in patients \u2014 human clinical/review evidence. Re-derived evidence_source: HUMAN_CLINICAL/review-level, consistent with a definitional disease-manifestation claim."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "HUMAN_CLINICAL",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PubMed abstracts not cited by curator: PMID:42191498 (Ann Rheum Dis 2026) and PMID:41626754 (Mod Rheumatol Case Rep 2026)",
+              "record": "PMID:42191498 assesses 'peripheral and axial inflammation in patients with psoriatic arthritis' and refers to 'PsA manifestations'; PMID:41626754 opens 'Psoriatic arthritis is a chronic inflammatory disease associated with psoriasis.' Both independently confirm inflammation is a defining manifestation of PsA."
+            },
+            "confidence": "high",
+            "note": "Definitional disease\u2192manifestation edge. The curator's snippet is verbatim, on-target for both entities, and asserted as established. Two independent uncited sources confirm the same characterization. All ladder checks pass. No sign/direction/entity defect found despite active search."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent, uncited sources (PMID:42191498, PMID:41626754) uniformly describe psoriatic arthritis as a chronic inflammatory disease with inflammation of joints/entheses as its defining clinical manifestation, corroborating that the inflammatory response is a manifestation of PsA (MESH:D015535). The curator's cited review (PMID:26523063) states the same definitionally and verbatim."
+      },
+      "edge_hash": "9c8548aef9a68ec9"
+    }
+  }
+}

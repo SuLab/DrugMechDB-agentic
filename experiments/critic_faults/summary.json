@@ -1,0 +1,173 @@
+{
+  "n_pairs_completed": 18,
+  "judge_model": "claude-opus-4-8",
+  "detection_rate": 1.0,
+  "control_false_positive_rate": 0.611,
+  "cells": {
+    "mutant_rejected": 18,
+    "mutant_accepted": 0,
+    "mutant_indeterminate": 0,
+    "control_rejected": 10,
+    "control_accepted": 7,
+    "control_indeterminate": 1
+  },
+  "per_fault_class": {
+    "target_substitution": {
+      "n": 11,
+      "detected": 11,
+      "control_false_positive": 5
+    },
+    "polarity_inversion": {
+      "n": 7,
+      "detected": 7,
+      "control_false_positive": 5
+    }
+  },
+  "excluded": [],
+  "pairs": [
+    {
+      "record": "DB00002_MESH_D003110_1",
+      "fault": "target_substitution",
+      "mutant_verdict": "ESCALATE",
+      "control_verdict": "ACCEPT",
+      "detected": true,
+      "control_clean": true
+    },
+    {
+      "record": "DB00005_MESH_D015535_1",
+      "fault": "target_substitution",
+      "mutant_verdict": "RE_CURATE",
+      "control_verdict": "ACCEPT",
+      "detected": true,
+      "control_clean": true
+    },
+    {
+      "record": "DB00013_MESH_D011655_1",
+      "fault": "target_substitution",
+      "mutant_verdict": "ESCALATE",
+      "control_verdict": "RE_CURATE",
+      "detected": true,
+      "control_clean": false
+    },
+    {
+      "record": "DB00026_MESH_D056587_1",
+      "fault": "target_substitution",
+      "mutant_verdict": "RE_CURATE",
+      "control_verdict": "RE_CURATE",
+      "detected": true,
+      "control_clean": false
+    },
+    {
+      "record": "DB00030_MESH_D003922_1",
+      "fault": "target_substitution",
+      "mutant_verdict": "RE_CURATE",
+      "control_verdict": "RE_CURATE",
+      "detected": true,
+      "control_clean": false
+    },
+    {
+      "record": "DB00035_MESH_D006467_1",
+      "fault": "target_substitution",
+      "mutant_verdict": "ESCALATE",
+      "control_verdict": "ACCEPT",
+      "detected": true,
+      "control_clean": true
+    },
+    {
+      "record": "DB00038_MESH_D013921_1",
+      "fault": "target_substitution",
+      "mutant_verdict": "ESCALATE",
+      "control_verdict": "RE_CURATE",
+      "detected": true,
+      "control_clean": false
+    },
+    {
+      "record": "DB00619_MESH_D015464_1",
+      "fault": "target_substitution",
+      "mutant_verdict": "RE_CURATE",
+      "control_verdict": "ACCEPT",
+      "detected": true,
+      "control_clean": true
+    },
+    {
+      "record": "DB00843_MESH_D000544_1",
+      "fault": "target_substitution",
+      "mutant_verdict": "RE_CURATE",
+      "control_verdict": "ACCEPT",
+      "detected": true,
+      "control_clean": true
+    },
+    {
+      "record": "DB01076_MESH_D006937_1",
+      "fault": "target_substitution",
+      "mutant_verdict": "RE_CURATE",
+      "control_verdict": "RE_CURATE",
+      "detected": true,
+      "control_clean": false
+    },
+    {
+      "record": "DB09038_MESH_D003924_1",
+      "fault": "target_substitution",
+      "mutant_verdict": "ESCALATE",
+      "control_verdict": "ACCEPT",
+      "detected": true,
+      "control_clean": true
+    },
+    {
+      "record": "B02362_MESH_D003882_1",
+      "fault": "polarity_inversion",
+      "mutant_verdict": "ESCALATE",
+      "control_verdict": "RE_CURATE",
+      "detected": true,
+      "control_clean": false
+    },
+    {
+      "record": "DB00009_MESH_D011655_1",
+      "fault": "polarity_inversion",
+      "mutant_verdict": "ESCALATE",
+      "control_verdict": "RE_CURATE",
+      "detected": true,
+      "control_clean": false
+    },
+    {
+      "record": "DB00010_MESH_D004393_1",
+      "fault": "polarity_inversion",
+      "mutant_verdict": "ESCALATE",
+      "control_verdict": "RE_CURATE",
+      "detected": true,
+      "control_clean": false
+    },
+    {
+      "record": "DB00258_MESH_D006996_1",
+      "fault": "polarity_inversion",
+      "mutant_verdict": "ESCALATE",
+      "control_verdict": "ACCEPT",
+      "detected": true,
+      "control_clean": true
+    },
+    {
+      "record": "DB00290_MESH_D002294_1",
+      "fault": "polarity_inversion",
+      "mutant_verdict": "ESCALATE",
+      "control_verdict": "RE_CURATE",
+      "detected": true,
+      "control_clean": false
+    },
+    {
+      "record": "DB00993_MESH_D001172_1",
+      "fault": "polarity_inversion",
+      "mutant_verdict": "ESCALATE",
+      "control_verdict": null,
+      "detected": true,
+      "control_clean": false
+    },
+    {
+      "record": "DB01527_MESH_D000856_1",
+      "fault": "polarity_inversion",
+      "mutant_verdict": "ESCALATE",
+      "control_verdict": "RE_CURATE",
+      "detected": true,
+      "control_clean": false
+    }
+  ]
+}

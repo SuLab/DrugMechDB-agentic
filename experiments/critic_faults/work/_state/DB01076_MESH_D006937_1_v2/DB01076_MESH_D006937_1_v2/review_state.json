@@ -1,0 +1,352 @@
+{
+  "edges": {
+    "495594053b1e018a": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D000069059",
+          "name": "atorvastatin",
+          "label": "Drug"
+        },
+        "predicate": "decreases activity of",
+        "object": {
+          "id": "UniProt:P04114",
+          "name": "Apolipoprotein B-100",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D000069059|decreases activity of|UniProt:P04114",
+        "verdicts": [
+          {
+            "reference": "PMID:10582478",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'the inhibition of HMG Co-A reductase, the key enzyme in cholesterol synthesis, which leads to the increase of LDL receptors.' is an exact substring of the PMID:10582478 abstract."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Abstract is titled '[Atorvastatin (Lipitor)]' and the cited sentence describes atorvastatin's mechanism of action; subject = atorvastatin (MESH:D000069059)."
+              },
+              "object_grounding": {
+                "result": "fail",
+                "basis": "The CITED sentence says nothing about Apolipoprotein B-100 (UniProt:P04114); it names HMG-CoA reductase and LDL receptors. ApoB is only mentioned in a DIFFERENT sentence of the abstract ('a reduction of hepatic apo B production'), which was not the cited span. The snippet as cited does not assert anything about the edge's object."
+              },
+              "polarity": {
+                "result": "fail",
+                "basis": "The predicate is 'decreases activity of' ApoB-100. The cited sentence describes an INCREASE (of LDL receptors) via HMG-CoA reductase inhibition, and does not state any effect on ApoB-100. Independent sources (PMID:11223434, PMID:12612140) describe reduced ApoB-100 PRODUCTION/secretion, i.e. an effect on abundance, not on catalytic activity."
+              },
+              "direction": {
+                "result": "fail",
+                "basis": "Atorvastatin does not act directly on ApoB-100. Per ChEMBL (CHEMBL1487, MoA 'HMG-CoA reductase inhibitor', direct_interaction=1) its direct target is HMG-CoA reductase; any effect on ApoB is indirect/downstream."
+              },
+              "granularity": {
+                "result": "fail",
+                "basis": "ApoB-100 is a structural apolipoprotein (LDL/VLDL scaffold), not an enzyme with catalytic activity. Independent literature (PMID:11223434 'reduction of the LDL production rate'; PMID:12612140 'apoB100 production... reduced') describes an effect on PRODUCTION/ABUNDANCE, not 'activity'. Edge predicate 'decreases activity of' is the wrong flavor."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "The abstract asserts the HMG-CoA reductase mechanism as established, not hedged; but it is asserted for the wrong relation/entity for this edge."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "PMID:10582478 is a review/drug profile (Revue medicale de Bruxelles, 1999) \u2192 evidence_source = REVIEW/OTHER."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "REVIEW",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism (CHEMBL1487) and independent PMIDs 11223434, 12612140",
+              "record": "ChEMBL: atorvastatin's direct, curated target is HMG-CoA reductase (INHIBITOR), not ApoB-100. PMID:11223434: atorvastatin's main mechanism is 'reduction of the LDL production rate'. PMID:12612140: atorvastatin reduced 'apoB100 production' in HepG2 cells \u2014 effect is on production/abundance, not activity."
+            },
+            "confidence": "high",
+            "note": "The cited snippet is verbatim but is about the HMG-CoA reductase \u2192 LDL receptor step, which is a neighbouring node in the path \u2014 classic snippet-misattachment. It does not mention ApoB-100 at all. Separately, the edge's chosen predicate 'decreases activity of' is a granularity error: statins reduce ApoB-100 PRODUCTION/secretion (abundance of ApoB-containing lipoproteins), and act indirectly, not on ApoB catalytic activity. The edge concept (statin lowers ApoB-100-containing lipoproteins) is real, but both the citation and the predicate flavor are defective.",
+            "issue_for_curator": "The cited quote does not mention the object (Apolipoprotein B-100) at all \u2014 it describes the drug's inhibition of a different enzyme and an increase in LDL receptors, i.e. a neighbouring step in the path, not this edge. In addition, the object is a structural apolipoprotein, not a catalytic enzyme; the documented drug effect is on its production/abundance (and indirectly), so 'decreases activity of' is the wrong relation flavor and the wrong directness. Re-source with text that specifically addresses the drug's effect on this object, and reconsider the predicate."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent evidence (PMID:11223434, PMID:12612140) confirms atorvastatin lowers ApoB-100 production/secretion, so a drug\u2192ApoB-100 mechanistic link is real in the path \u2014 but as an abundance/production effect mediated indirectly, not as a direct 'decreases activity of' relation. The edge as currently predicated (activity, direct) is not well supported and the cited snippet supports it not at all."
+      },
+      "edge_hash": "495594053b1e018a"
+    },
+    "a946c64f550374d9": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:P04114",
+          "name": "Apolipoprotein B-100",
+          "label": "Protein"
+        },
+        "predicate": "increases abundance of",
+        "object": {
+          "id": "MESH:D002784",
+          "name": "Cholesterol",
+          "label": "ChemicalSubstance"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:P04114|increases abundance of|MESH:D002784",
+        "verdicts": [
+          {
+            "reference": "PMID:10582478",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "The string 'HMG Co-A reductase, the key enzyme in cholesterol synthesis' is verbatim in the abstract of PMID:10582478 ('...inhibition of HMG Co-A reductase, the key enzyme in cholesterol synthesis, which leads to the increase of LDL receptors')."
+              },
+              "subject_grounding": {
+                "result": "fail",
+                "basis": "The snippet is about HMG-CoA reductase (HMGCR), the cholesterol-biosynthesis enzyme, NOT about the edge subject Apolipoprotein B-100 (UniProt:P04114). ApoB-100 is not mentioned anywhere in the snippet. The only apoB reference in the source ('reduction of hepatic apo B production') is a separate sentence and concerns apoB reduction, not apoB increasing cholesterol."
+              },
+              "object_grounding": {
+                "result": "partial",
+                "basis": "'Cholesterol' (MESH:D002784) is mentioned, but only as the product of HMG-CoA reductase-catalyzed synthesis \u2014 it is co-mentioned in the context of a different subject entity, not as something acted on by ApoB-100."
+              },
+              "polarity": {
+                "result": "fail",
+                "basis": "The snippet asserts HMG-CoA reductase drives cholesterol synthesis. It makes no polarity statement linking ApoB-100 to cholesterol abundance, so the 'increases abundance of' sign cannot be derived from this text for the stated subject."
+              },
+              "direction": {
+                "result": "fail",
+                "basis": "The snippet describes enzyme -> product (HMGCR -> cholesterol). It does not describe ApoB-100 acting on cholesterol in either direction."
+              },
+              "granularity": {
+                "result": "fail",
+                "basis": "Edge asserts an abundance change. The snippet describes an enzyme's catalytic role in synthesis for a different entity; no abundance relationship attributable to ApoB-100 is present."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "The source states HMGCR's role as established, but this is irrelevant to the edge's subject."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "PMID:10582478 is a narrative drug review ([Atorvastatin (Lipitor)], Revue medicale de Bruxelles 1999) -> evidence_source OTHER/review."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PubMed PMID:22342675 (BBA 2012), PMID:9885772 (Crit Rev Clin Lab Sci 1998), PMID:34625741 (Nat Rev Cardiol 2022)",
+              "record": "ApoB-100 is the mandatory structural protein of VLDL/LDL that enables cholesterol/triglyceride TRANSPORT ('ApoB100 is absolutely required for VLDL assembly and secretion'; VLDL/LDL 'transport... cholesterol'). None describe ApoB-100 as increasing the abundance/synthesis of cholesterol; it packages and carries cholesterol, it does not create it."
+            },
+            "confidence": "high",
+            "note": "The cited snippet is a classic entity-substitution/snippet-mismatch: it belongs to a neighbouring mechanism (atorvastatin -> HMG-CoA reductase -> cholesterol synthesis), not to the ApoB-100 -> cholesterol edge. The curator's own explanation reasons entirely about HMG-CoA reductase, confirming the mismatch. Separately, the biological framing of the edge is itself questionable: independent sources describe ApoB-100 as a cholesterol carrier/structural protein enabling transport, not as an agent that increases cholesterol abundance. The edge is at best a coarse simplification and the cited evidence provides zero support for it.",
+            "issue_for_curator": "The cited quotation is about the cholesterol-synthesis enzyme, not about the edge subject (Apolipoprotein B-100) at all \u2014 it fails subject_grounding and establishes no relation between ApoB-100 and cholesterol. Beyond the citation, the asserted relation itself is suspect: the subject is described in the literature as a structural carrier that transports cholesterol within lipoprotein particles, which is a transport/packaging role rather than 'increases abundance of' cholesterol. Re-source with evidence that specifically speaks to the subject acting on the object, and reconsider whether 'increases abundance of' is the correct predicate/granularity."
+          }
+        ],
+        "edge_supported": false,
+        "edge_basis": "The single cited source does not mention the edge subject (ApoB-100) and instead describes HMG-CoA reductase, so it provides no support. Independent sources (PMID:22342675, PMID:9885772, PMID:34625741) characterize ApoB-100 as the structural protein required for VLDL/LDL assembly and cholesterol TRANSPORT, not as an entity that increases cholesterol abundance or synthesis \u2014 so the specific relation 'ApoB-100 increases abundance of cholesterol' is not grounded and appears to be a mischaracterization of a transport role."
+      },
+      "edge_hash": "a946c64f550374d9"
+    },
+    "9da760d21346f30d": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D002784",
+          "name": "Cholesterol",
+          "label": "ChemicalSubstance"
+        },
+        "predicate": "negatively regulates",
+        "object": {
+          "id": "UniProt:P01130",
+          "name": "Low-density lipoprotein receptor",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D002784|negatively regulates|UniProt:P01130",
+        "verdicts": [
+          {
+            "reference": "PMID:12829694",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'LDL receptor levels are subject to negative feedback regulation by cellular cholesterol through sterol regulatory element-binding protein-2 (SREBP-2).' appears verbatim in the abstract of PMID:12829694 (JBC 2003, thyroid hormone/SREBP-2 paper)."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet subject is 'cellular cholesterol', matching edge subject Cholesterol (MESH:D002784). Not a metabolite/oxysterol \u2014 the text says cholesterol itself."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet object is 'LDL receptor', which is the human low-density lipoprotein receptor = UniProt:P01130 (canonical LDLR accession). Matches edge object."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'negative feedback regulation by cellular cholesterol' = cholesterol decreases LDLR; matches 'negatively regulates'. Independently corroborated by PMID:24297394 ('increased intracellular cholesterol level, reducing LDL receptor mRNA level')."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Cholesterol is the regulator acting on LDLR (cholesterol -> SREBP-2 -> LDLR gene). Subject acts on object, not reverse."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Regulation is of LDLR levels/gene expression (abundance). Predicate 'negatively regulates' is a general regulatory predicate, compatible with transcriptional/abundance-level feedback; no activity-vs-abundance conflict."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as established background fact (declarative, not hedged). Corroborated as a general homeostatic mechanism by PMID:26598835 ('tightly regulated at the transcriptional level through negative feedback control ... mediated by SREBPs')."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Primary experimental paper (JBC, animal/molecular study) stating an established feedback mechanism; re-derived evidence_source: model-organism/experimental. Corroborating in-vitro (PMID:24297394) and review (PMID:26598835) also support."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:24297394 (independent, not cited by curator) and PMID:26598835 (review, not cited)",
+              "record": "PMID:24297394: 'LDL loading increased intracellular cholesterol level, reducing LDL receptor mRNA level in both THP-1 macrophages and VSMCs under physiological conditions.' PMID:26598835: 'Cholesterol biosynthesis and uptake by LDL receptors are tightly regulated at the transcriptional level through negative feedback control, mediated by SREBPs.'"
+            },
+            "confidence": "high",
+            "note": "Cited source not in committed cache; read independently via read_abstract, snippet confirmed verbatim and in-context. The primary paper's focus is thyroid hormone, but the cited sentence is established background and is independently corroborated by two additional sources for the exact cholesterol->LDLR negative-regulation relation. Entity mapping P01130=human LDLR is canonical. All ladder checks pass."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Cholesterol negatively regulates LDLR abundance/expression via SREBP-2-mediated sterol feedback \u2014 established mechanism confirmed verbatim in the cited source and independently corroborated by PMID:24297394 (cholesterol loading reduces LDLR mRNA) and PMID:26598835 (SREBP-mediated negative feedback control of LDLR)."
+      },
+      "edge_hash": "9da760d21346f30d"
+    },
+    "76e3f717a198b606": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:P01130",
+          "name": "Low-density lipoprotein receptor",
+          "label": "Protein"
+        },
+        "predicate": "decreases abundance of",
+        "object": {
+          "id": "MESH:D008078",
+          "name": "Low-density lipoprotein cholesterol",
+          "label": "ChemicalSubstance"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:P01130|decreases abundance of|MESH:D008078",
+        "verdicts": [
+          {
+            "reference": "PMID:32109664",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the PMID:32109664 abstract BACKGROUND: 'Hepatic low density lipoprotein receptor (LDLR) pathway, as the major mechanism for clearing circulating low density lipoprotein cholesterol (LDL-C) in bloodstream, is a pivotal therapeutic target...'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet asserts about the 'Hepatic low density lipoprotein receptor (LDLR) pathway', which is the edge subject 'Low-density lipoprotein receptor'. Curator's name matches; the UniProt ID itself is a curator assertion I could not map via available tools, but subject entity (LDLR) is unambiguous in the text."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet explicitly names 'circulating low density lipoprotein cholesterol (LDL-C)' as the entity being cleared = edge object LDL-C (MESH:D008078)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'major mechanism for clearing circulating LDL-C' = removal/decrease, matching predicate 'decreases abundance of'. Corroborated by PMID:6994567: 'a large fraction of LDL was removed from plasma by a specific receptor-mediated uptake mechanism.'"
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "LDLR pathway acts on LDL-C (clears it from bloodstream); subject acts on object, not reverse."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Clearing LDL-C from the bloodstream reduces its amount/abundance \u2014 matches abundance-level predicate (not merely activity/expression)."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established general physiology ('the major mechanism for clearing circulating LDL-C'), not hedged; used as background not a novel narrow-context finding."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Paper is an in-vitro hepatocyte study, but this specific sentence is an established-mechanism background statement; independently corroborated by classic literature (PMID:6994567). Best characterized as established mechanism rather than a novel in-vitro result."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "IN_VITRO",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:6994567 (Brown & Goldstein, LDL receptor concept)",
+              "record": "'a large fraction of LDL was removed from plasma by a specific receptor-mediated uptake mechanism' \u2014 independently confirms LDL receptor clears/decreases plasma LDL."
+            },
+            "confidence": "high",
+            "note": "Curator source not in committed cache; read independently via read_abstract. Snippet is a background sentence but directly and specifically states LDLR pathway clears circulating LDL-C, matching every check. Independent Brown/Goldstein source corroborates polarity and direction. The one soft point: the paper's methodology is in-vitro/miRNA-focused, but the cited sentence is general established physiology, so SUPPORT stands."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent classic literature (PMID:6994567) establishes that the LDL receptor mediates receptor-mediated removal of LDL from plasma, decreasing circulating LDL-C abundance; the cited snippet states the same directly for LDLR clearing circulating LDL-C."
+      },
+      "edge_hash": "76e3f717a198b606"
+    },
+    "c5a2ebe8f56b0d23": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D008078",
+          "name": "Low-density lipoprotein cholesterol",
+          "label": "ChemicalSubstance"
+        },
+        "predicate": "causes",
+        "object": {
+          "id": "MESH:D006937",
+          "name": "Hypercholesterolemia",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D008078|causes|MESH:D006937",
+        "verdicts": [
+          {
+            "reference": "PMID:10591675",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'marked hypercholesterolemia (up to 3- to 4-fold over nontransgenics), characterized by an increase in low density lipoprotein (LDL) cholesterol' is an exact substring of the PMID:10591675 abstract (medium apoE3 expresser description)."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet explicitly names 'low density lipoprotein (LDL) cholesterol', matching edge subject MESH:D008078 (LDL cholesterol)."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet explicitly names 'hypercholesterolemia', matching edge object MESH:D006937."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "An 'increase' in LDL cholesterol is associated with 'marked hypercholesterolemia' \u2014 sign is concordant (elevated analyte \u2194 elevated-cholesterol state)."
+              },
+              "direction": {
+                "result": "fail",
+                "basis": "Edge asserts LDL-C 'causes' hypercholesterolemia (subject\u2192object causation). Snippet frames it as 'hypercholesterolemia ... characterized by an increase in LDL cholesterol' \u2014 a constitutive/definitional relation with the disease as the head noun, not LDL-C acting as an upstream cause. Independent sources (PMID:37847331 'condition characterized by elevated LDL-C'; PMID:42034477 severe hypercholesterolemia 'defined as LDL-C \u2265190 mg/dL') confirm the relation is definitional, not mechanistic causation."
+              },
+              "granularity": {
+                "result": "partial",
+                "basis": "Both edge and snippet operate at LDL-C abundance level, but the snippet expresses 'characterized by' (identity/definition) whereas 'causes' implies a distinct downstream disease event \u2014 a flavor mismatch (constitutive vs causal)."
+              },
+              "scope_modality": {
+                "result": "fail",
+                "basis": "The statement is bound to a narrow model-organism context: transgenic rabbits overexpressing human apoE3 at 'medium' levels, with a combined hyperlipidemia phenotype driven principally by VLDL overproduction and LDL-receptor competition. It is not asserted as a general mechanism that LDL-C causes hypercholesterolemia."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Transgenic rabbit study \u2192 MODEL_ORGANISM methodology; curator's evidence_source label re-derived as accurate."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "MODEL_ORGANISM",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PubMed PMID:42034477 (J Clin Lipidol 2026) and PMID:37847331 (Curr Atheroscler Rep 2023), independent of the curator's citation",
+              "record": "Severe hypercholesterolemia is 'defined as low-density lipoprotein cholesterol (LDL-C) \u2265190 mg/dL'; familial hypercholesterolemia is 'a hereditary condition characterized by elevated levels of LDL-C'. These establish that elevated LDL-C constitutes/defines the hypercholesterolemic state rather than acting as a separable upstream cause."
+            },
+            "confidence": "high",
+            "note": "The cited snippet co-mentions both edge entities verbatim, but describes a definitional 'characterized by' relationship inside a specific apoE3-transgenic-rabbit combined-hyperlipidemia model whose primary driver is VLDL overproduction. It does not establish a general causal LDL-C\u2192hypercholesterolemia mechanism. Independent definitional sources show the relation is constitutive (elevated LDL-C IS hypercholesterolemia) rather than causal, so the edge is defensible in the DrugMechDB terminal-node convention (edge_supported true) but this particular quote does not ground the 'causes' claim.",
+            "issue_for_curator": "The cited passage co-mentions the subject and object but frames the disease as being 'characterized by' the elevated analyte \u2014 a definitional/constitutive relationship inside one narrow transgenic animal model whose phenotype is driven by a different mechanism (VLDL overproduction). It does not assert that the subject analyte acts as an upstream cause of the disease, and it does not establish this as a general mechanism. Re-source with evidence that directly and generally establishes the subject\u2192object relation as claimed."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent definitional sources establish that elevated LDL cholesterol constitutes/defines the hypercholesterolemic disease state (severe hypercholesterolemia 'defined as LDL-C \u2265190 mg/dL'; FH 'characterized by elevated LDL-C'). As the terminal analyte\u2192disease node of the path, the edge is defensible on independent grounds \u2014 but the currently cited model-organism snippet does not establish the 'causes' relation and should be replaced."
+      },
+      "edge_hash": "c5a2ebe8f56b0d23"
+    }
+  }
+}

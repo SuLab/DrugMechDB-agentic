@@ -1,0 +1,350 @@
+{
+  "edges": {
+    "c6d5e2a91ca08044": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D000069059",
+          "name": "atorvastatin",
+          "label": "Drug"
+        },
+        "predicate": "decreases activity of",
+        "object": {
+          "id": "UniProt:P04035",
+          "name": "3-hydroxy-3-methylglutaryl-coenzyme A reductase",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D000069059|decreases activity of|UniProt:P04035",
+        "verdicts": [
+          {
+            "reference": "PMID:10582478",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Abstract of PMID:10582478 contains verbatim: 'the inhibition of HMG Co-A reductase, the key enzyme in cholesterol synthesis, which leads to the increase of LDL receptors.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Surrounding sentence: 'Atorvastatin ... Its mechanism of action is ... the inhibition of HMG Co-A reductase.' The subject is explicitly atorvastatin (MESH:D000069059), not a metabolite or class generality."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet names 'HMG Co-A reductase, the key enzyme in cholesterol synthesis' = HMG-CoA reductase; UniProt:P04035 is human HMGCR. ChEMBL mechanism record independently lists target as '3-hydroxy-3-methylglutaryl-coenzyme A reductase'."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Source says 'inhibition of HMG Co-A reductase' = decrease; predicate 'decreases activity of' matches negative sign. ChEMBL action_type='INHIBITOR'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Atorvastatin acts on the enzyme ('inhibition of HMG Co-A reductase'); ChEMBL direct_interaction=1 (drug->target)."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "'Inhibition' of an enzyme denotes activity reduction, matching 'decreases activity of' (not abundance/expression). ChEMBL moa 'HMG-CoA reductase inhibitor' confirms activity-level."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established mechanism: 'Its mechanism of action is ... the inhibition of HMG Co-A reductase' \u2014 no hedging, not context-restricted."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review article (Revue medicale de Bruxelles, drug profile of Lipitor). Independent curated database (ChEMBL) provides the strongest grounding \u2192 DATABASE-level corroboration."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "DATABASE",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism (chembl_get_mechanism 'atorvastatin', CHEMBL1487 via CHEMBL393220)",
+              "record": "action_type='INHIBITOR'; target='3-hydroxy-3-methylglutaryl-coenzyme A reductase'; direct_interaction=1; moa='HMG-CoA reductase inhibitor'"
+            },
+            "confidence": "high",
+            "note": "Snippet is verbatim and its immediately preceding sentence names atorvastatin explicitly, so subject grounding is unambiguous. ChEMBL provides fully independent, expert-curated confirmation of the exact drug->target->inhibition triple, satisfying the independence requirement. All ladder checks pass; edge is a clean SUPPORT."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "ChEMBL expert-curated mechanism record independently establishes atorvastatin (CHEMBL1487) as a direct INHIBITOR of HMG-CoA reductase; the cited review (PMID:10582478) states the same as atorvastatin's mechanism of action. Object UniProt:P04035 = human HMGCR matches."
+      },
+      "edge_hash": "c6d5e2a91ca08044"
+    },
+    "001ff228dda570ca": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:P04035",
+          "name": "3-hydroxy-3-methylglutaryl-coenzyme A reductase",
+          "label": "Protein"
+        },
+        "predicate": "increases abundance of",
+        "object": {
+          "id": "MESH:D002784",
+          "name": "Cholesterol",
+          "label": "ChemicalSubstance"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:P04035|increases abundance of|MESH:D002784",
+        "verdicts": [
+          {
+            "reference": "PMID:10582478",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "The exact phrase 'HMG Co-A reductase, the key enzyme in cholesterol synthesis' appears in the abstract of PMID:10582478 ([Atorvastatin (Lipitor)], Rev Med Brux 1999): '...the inhibition of HMG Co-A reductase, the key enzyme in cholesterol synthesis, which leads to the increase of LDL receptors.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet is about 'HMG Co-A reductase', which resolves to the edge subject UniProt:P04035 (human 3-hydroxy-3-methylglutaryl-CoA reductase, EC 1.1.1.34). No metabolite/paralog substitution."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet references 'cholesterol synthesis'; cholesterol (MESH:D002784) is the pathway product. Independent PMID:42301783 confirms HMGCR catalyzes the first rate-limiting step of cholesterol synthesis (HMG-CoA -> mevalonate)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Edge sign is positive ('increases abundance of'). As the rate-limiting/key enzyme of cholesterol biosynthesis, HMGCR activity drives cholesterol production upward. Independent PMID:42166216 shows HMGCR activity supports and its inhibition reduces cholesterol levels \u2014 consistent with a positive enzyme->product relation. Cited snippet is descriptive rather than explicitly directional, but the direction is entailed and independently confirmed."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "The enzyme acts on/produces cholesterol (subject acts on object), not the reverse. Confirmed by independent PMID:42301783: 'HMGCR catalyzes conversion of HMG CoA to mevalonate, the first rate-limiting step in cholesterol synthesis.'"
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Edge concerns abundance of cholesterol; the enzyme's synthetic activity increases the amount of cholesterol produced. 'Cholesterol synthesis' is production/abundance-relevant, matching the abundance flavor."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established textbook fact ('the key enzyme in cholesterol synthesis'; independent 'the rate-limiting enzyme of cholesterol biosynthesis' in PMID:42562980), not hedged or restricted to a single narrow context."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "PMID:10582478 is a narrative pharmacology review article; the mechanistic claim is a general/database-style assertion. Re-derived evidence_source: OTHER (review/textbook assertion), corroborated by primary/database records."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:42562980 (independent, not cited) and PMID:42301783 (independent, not cited)",
+              "record": "PMID:42562980: 'HMG-CoA reductase (EC 1.1.1.34) is the rate-limiting enzyme of cholesterol biosynthesis'; PMID:42301783: 'HMGCR catalyzes conversion of HMG CoA to mevalonate, the first rate-limiting step in cholesterol synthesis.'"
+            },
+            "confidence": "high",
+            "note": "The curator's cited snippet is descriptive ('key enzyme in cholesterol synthesis') and does not by itself state an explicit directional 'increases' claim, so one could quibble on polarity granularity. However, the well-established rate-limiting-enzyme role entails a positive enzyme->product relation, and two independent primary sources confirm both the direction and the causal sign. The DrugMechDB modeling convention (enzyme increases abundance of its pathway product) is satisfied. Edge is defensible on independent grounds regardless of the modest cited snippet."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent primary sources (PMID:42562980, PMID:42301783, PMID:42166216) establish that HMG-CoA reductase (UniProt:P04035, EC 1.1.1.34) is the rate-limiting enzyme of cholesterol biosynthesis, catalyzing the committed step toward cholesterol; therefore its activity increases cholesterol abundance, supporting the enzyme -> increases abundance of -> cholesterol edge."
+      },
+      "edge_hash": "001ff228dda570ca"
+    },
+    "9da760d21346f30d": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D002784",
+          "name": "Cholesterol",
+          "label": "ChemicalSubstance"
+        },
+        "predicate": "negatively regulates",
+        "object": {
+          "id": "UniProt:P01130",
+          "name": "Low-density lipoprotein receptor",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D002784|negatively regulates|UniProt:P01130",
+        "verdicts": [
+          {
+            "reference": "PMID:12829694",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Exact sentence 'LDL receptor levels are subject to negative feedback regulation by cellular cholesterol through sterol regulatory element-binding protein-2 (SREBP-2).' is present in the abstract of PMID:12829694 (JBC 2003, thyroid hormone/SREBP-2)."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet's regulating agent is 'cellular cholesterol', matching edge subject Cholesterol (MESH:D002784). No metabolite/oxysterol substitution \u2014 it explicitly says cholesterol, not oxysterols."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet's regulated entity is 'LDL receptor levels', matching edge object LDL receptor (UniProt:P01130). Regulation is of receptor expression/abundance, i.e. the receptor entity itself."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'negative feedback regulation by cellular cholesterol' = cholesterol lowers LDLR levels; matches 'negatively regulates'. Independently confirmed by PMID:24297394 ('LDL loading increased intracellular cholesterol level, reducing LDL receptor mRNA level')."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Cholesterol acts on LDLR (via SREBP-2), not the reverse; subject regulates object as required."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Predicate 'negatively regulates' is generic and covers transcriptional downregulation of LDLR expression/levels described by the source; no activity-vs-abundance mismatch."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as an established mechanism ('LDL receptor levels are subject to negative feedback regulation'), not hedged; corroborated across independent reviews (PMID:26598835, PMID:27019638) and cell experiments (PMID:24297394)."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Cited source is a molecular/mechanistic research article (JBC); statement is a well-established biochemical mechanism. Best re-derived as mechanistic/experimental, not 'OTHER'."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:24297394 (not cited by curator) and PMID:26598835 (not cited)",
+              "record": "PMID:24297394: 'LDL loading increased intracellular cholesterol level, reducing LDL receptor mRNA level in both THP-1 macrophages and VSMCs' \u2014 direct experimental confirmation cholesterol negatively regulates LDLR. PMID:26598835: 'uptake by LDL receptors are tightly regulated... through negative feedback control... SREBP-2 is activated in a cholesterol-dependent manner.'"
+            },
+            "confidence": "high",
+            "note": "Snippet is verbatim, on-topic, and about the exact edge entities with the correct sign and direction. Although the cited paper's headline topic is thyroid hormone/SREBP-2, the cited sentence is a general established statement of the cholesterol\u2192LDLR negative feedback, and multiple independent sources confirm the mechanism experimentally. All ladder checks pass."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Cholesterol negatively regulates LDL receptor expression via SREBP-2-mediated negative feedback \u2014 independently confirmed by cell-based experiment (PMID:24297394 shows cholesterol loading reduces LDLR mRNA) and multiple reviews (PMID:26598835, PMID:27019638), in addition to the verbatim cited statement."
+      },
+      "edge_hash": "9da760d21346f30d"
+    },
+    "76e3f717a198b606": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:P01130",
+          "name": "Low-density lipoprotein receptor",
+          "label": "Protein"
+        },
+        "predicate": "decreases abundance of",
+        "object": {
+          "id": "MESH:D008078",
+          "name": "Low-density lipoprotein cholesterol",
+          "label": "ChemicalSubstance"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:P01130|decreases abundance of|MESH:D008078",
+        "verdicts": [
+          {
+            "reference": "PMID:32109664",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the abstract's BACKGROUND AND AIMS: 'Hepatic low density lipoprotein receptor (LDLR) pathway, as the major mechanism for clearing circulating low density lipoprotein cholesterol (LDL-C) in bloodstream, is a pivotal therapeutic target...'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Edge subject is LDLR (UniProt:P01130, human LDL receptor). Snippet is specifically about the 'Hepatic low density lipoprotein receptor (LDLR) pathway' \u2014 the correct entity, not a paralog/metabolite."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Edge object is LDL-C (MESH:D008078). Snippet explicitly names 'circulating low density lipoprotein cholesterol (LDL-C)' as the thing being cleared."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Predicate sign is decrease; snippet says LDLR pathway is the 'major mechanism for clearing circulating LDL-C', i.e. removes/reduces LDL-C abundance in blood."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "LDLR acts on LDL-C (clears it); not the reverse."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "'clearing circulating LDL-C in bloodstream' = reducing plasma abundance/amount, matching 'decreases abundance of' (abundance flavor, not activity). Independent PMID:42608182 similarly frames LDLR as mediating 'clearance of circulating LDL' affecting plasma cholesterol levels."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established general physiology ('the major mechanism', 'a pivotal therapeutic target'), not hedged. Corroborated as established by independent PMID:42608182 ('LDLR mediates the clearance of circulating LDL and is a key determinant of cholesterol homeostasis')."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Cited paper overall is an in-vitro hepatocyte study, but the cited sentence is a background statement of established physiology; re-derived source type is an assertion of established mechanism rather than a novel in-vitro finding. Minor disagreement with curator's 'IN_VITRO'."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "IN_VITRO",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:42608182 (independent, not cited by curator)",
+              "record": "'The hepatic low-density lipoprotein receptor (LDLR) mediates the clearance of circulating low-density lipoprotein (LDL) and is a key determinant of cholesterol homeostasis' \u2014 confirms LDLR reduces circulating LDL abundance."
+            },
+            "confidence": "high",
+            "note": "All ladder checks pass. Subject UniProt:P01130 correctly resolves to human LDLR. Snippet is directly about LDLR clearing LDL-C, matching the decreases-abundance predicate. Independent 2026 review-style abstract corroborates the mechanism as established. The only quibble is the curator's evidence_source label: the specific snippet is a background statement of established physiology, though the host paper is in-vitro \u2014 this does not weaken support."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "LDLR-mediated clearance of circulating LDL-C is an established physiological mechanism, independently corroborated by PMID:42608182, which is separate from the curator's cited snippet. UniProt:P01130 is correctly the human LDL receptor."
+      },
+      "edge_hash": "76e3f717a198b606"
+    },
+    "c5a2ebe8f56b0d23": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D008078",
+          "name": "Low-density lipoprotein cholesterol",
+          "label": "ChemicalSubstance"
+        },
+        "predicate": "causes",
+        "object": {
+          "id": "MESH:D006937",
+          "name": "Hypercholesterolemia",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D008078|causes|MESH:D006937",
+        "verdicts": [
+          {
+            "reference": "PMID:10591675",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'marked hypercholesterolemia (up to 3- to 4-fold over nontransgenics), characterized by an increase in low density lipoprotein (LDL) cholesterol' is an exact substring of the abstract of PMID:10591675."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet explicitly names 'increase in low density lipoprotein (LDL) cholesterol' = edge subject MESH:D008078 (LDL cholesterol)."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet names 'marked hypercholesterolemia' = edge object MESH:D006937 (Hypercholesterolemia)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Predicate 'causes' is positive/causal; snippet links an increase in LDL-C with the hypercholesterolemic state \u2014 directionally consistent (more LDL-C \u2192 hypercholesterolemia)."
+              },
+              "direction": {
+                "result": "partial",
+                "basis": "Snippet phrasing is descriptive ('hypercholesterolemia ... characterized by an increase in LDL cholesterol'), i.e., a defining feature rather than a clean assertion that LDL-C is the causal agent. In this model the upstream cause is apoE3 overexpression, with LDL accumulation as the resulting phenotype, so the snippet describes association/characterization more than LDL-C\u2192disease causation."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Edge concerns abundance of LDL-C producing a disease state; snippet is about elevated LDL-C abundance being the feature of the hypercholesterolemia \u2014 abundance-to-phenotype match."
+              },
+              "scope_modality": {
+                "result": "fail",
+                "basis": "The statement is bound to a narrow artificial context: transgenic rabbits overexpressing human apoE3 producing combined hyperlipidemia (phenotype resembling familial combined hyperlipidemia). Citing this model-specific observation for a general/definitional LDL-C\u2192hypercholesterolemia edge over-generalizes."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Methodology is a transgenic-rabbit overexpression study \u2192 MODEL_ORGANISM, matching curator's re-derived source type."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "MODEL_ORGANISM",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PubMed PMID:42500340 (independent, not cited by curator) and PMID:42460149",
+              "record": "PMID:42500340: 'Familial hypercholesterolemia (FH) is an autosomal dominant disorder characterized by elevated levels of low-density lipoprotein cholesterol (LDL-C)'. PMID:42460149: HoFH 'characterized by extremely elevated LDL-C', and treatment interruption caused LDL-C rebound with 'marked rebound hypercholesterolemia' \u2014 a clean causal demonstration that elevated LDL-C produces the hypercholesterolemic state."
+            },
+            "confidence": "high",
+            "note": "The edge is essentially definitional/causal \u2014 elevated LDL-C constitutes and produces the hypercholesterolemic state \u2014 and is robustly supported by independent authoritative sources. The cited snippet is verbatim and mentions both entities but comes from a narrow apoE3-transgenic-rabbit model where the primary causal driver is apoE3 overexpression, and it uses descriptive 'characterized by' framing rather than asserting LDL-C as the causal agent. It is a weak, context-narrow citation for a general edge, hence PARTIAL, though the edge itself stands on independent grounding.",
+            "issue_for_curator": "The cited quote demonstrates elevated LDL cholesterol co-occurring with hypercholesterolemia only within a narrow, artificial overexpression model whose primary driver is a different upstream factor, and it uses descriptive 'characterized by' language rather than asserting that LDL cholesterol produces the hypercholesterolemic state. This over-generalizes a model-specific observation to a general causal edge; a source that directly and generally establishes that elevated LDL cholesterol constitutes/causes the hypercholesterolemic state is needed."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent authoritative sources establish that hypercholesterolemia (incl. familial forms) is defined by and driven by elevated LDL-C: PMID:42500340 ('FH ... characterized by elevated levels of LDL-C') and PMID:42460149 (LDL-C rebound after treatment interruption produced 'marked rebound hypercholesterolemia'). The LDL-C\u2192hypercholesterolemia edge is therefore defensible independent of the curator's narrow model-organism citation."
+      },
+      "edge_hash": "c5a2ebe8f56b0d23"
+    }
+  }
+}

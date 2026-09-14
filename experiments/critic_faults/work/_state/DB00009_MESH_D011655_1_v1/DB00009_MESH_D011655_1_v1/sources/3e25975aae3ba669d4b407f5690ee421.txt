@@ -1,0 +1,7 @@
+SOURCE CHEMBL:CHEMBL1201593  (content_type=abstract)
+Title: ChEMBL mechanism of action: ALTEPLASE
+
+Tissue-type plasminogen activator exogenous protein
+is TPA, cleaves plasminogen to plasmin
+
+(Independent trusted source the critic retrieved — cite it as grounding.)

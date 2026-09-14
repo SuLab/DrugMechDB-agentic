@@ -1,0 +1,9 @@
+PMID:38603946  Selenite selectively kills lung fibroblasts to treat bleomycin-induced pulmonary fibrosis.  (Redox biology, 2024)
+
+**BACKGROUND:** Interstitial lung disease (ILD) treatment is a critical unmet need. Selenium is an essential trace element for human life and an antioxidant that activates glutathione, but the gap between its necessity and its toxicity is small and requires special attention. Whether selenium can be used in the treatment of ILD remains unclear.
+
+**METHODS:** We investigated the prophylactic and therapeutic effects of selenite, a selenium derivative, in ILD using a murine model of bleomycin-induced idiopathic pulmonary fibrosis (IPF). We further elucidated the underlying mechanism using in vitro cell models and examined their relevance in human tissue specimens. The therapeutic effect of selenite in bleomycin-administered mice was assessed by respiratory function and histochemical changes. Selenite-induced apoptosis and reactive oxygen species (ROS) production in murine lung fibroblasts were measured.
+
+**RESULTS:** Selenite, administered 1 day (inflammation phase) or 8 days (fibrotic phase) after bleomycin, prevented and treated deterioration of lung function and pulmonary fibrosis in mice. Mechanistically, selenite inhibited the proliferation and induced apoptosis of murine lung fibroblasts after bleomycin treatment both in vitro and in vivo. In addition, selenite upregulated glutathione reductase (GR) and thioredoxin reductase (TrxR) in murine lung fibroblasts, but not in lung epithelial cells, upon bleomycin treatment. GR and TrxR inhibition eliminates the therapeutic effects of selenite. Furthermore, we found that GR and TrxR were upregulated in the human lung fibroblasts of IPF patient samples.
+
+**CONCLUSIONS:** Selenite induces ROS production and apoptosis in murine lung fibroblasts through GR and TrxR upregulation, thereby providing a therapeutic effect in bleomycin-induced IPF.

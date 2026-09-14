@@ -1,0 +1,3 @@
+PMID:24881675  Synthesis, stability and reactivity of the first mononuclear nonheme oxoiron(IV) species with monoamido ligation: a putative reactive species generated from iron-bleomycin.  (Chemical communications (Cambridge, England), 2014)
+
+The preparation and characterisation of an oxoiron(IV) species with monoamido ligation are described. Reactivity studies revealed the important role of the amido ligand in enhancing the ability of oxoiron(IV) complexes to promote hydrogen atom transfer from external alkanes.

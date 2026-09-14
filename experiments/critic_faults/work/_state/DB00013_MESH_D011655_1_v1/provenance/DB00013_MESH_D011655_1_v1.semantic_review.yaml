@@ -1,0 +1,110 @@
+record_id: DB00013_MESH_D011655_1_v1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T06:02:36+00:00'
+last_reviewed_at: '2026-08-25T06:02:36+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: RE_CURATE
+escalation_reason: null
+overall_summary: 'After deliberately hunting for a whole-path defect, none survives.
+  The all-positive-appearance is a false alarm: the required sign-flipping step (plasmin-mediated
+  fibrin degradation) is present at edge 2, and the net polarity computes to a decrease
+  in the disease, matching urokinase''s established thrombolytic effect. The chain
+  is a single connected drug→plasminogen→fibrin→thrombosis→PE mechanism, is the accepted
+  primary MoA (PMID:15823070, PMID:23034825, PMID:36603558, none cited by curator),
+  has no shortcut and no off-route intermediate. The only minor note (edge 4''s citation
+  establishes DVT→PE rather than generic thrombosis→PE) is a source-specificity issue
+  already flagged at the edge level, not a whole-path defect; within the venous-clot
+  context it is defensible and independently supported.'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T06:02:36+00:00'
+  verdict: RE_CURATE
+  escalation_reason: null
+  summary: 'After deliberately hunting for a whole-path defect, none survives. The
+    all-positive-appearance is a false alarm: the required sign-flipping step (plasmin-mediated
+    fibrin degradation) is present at edge 2, and the net polarity computes to a decrease
+    in the disease, matching urokinase''s established thrombolytic effect. The chain
+    is a single connected drug→plasminogen→fibrin→thrombosis→PE mechanism, is the
+    accepted primary MoA (PMID:15823070, PMID:23034825, PMID:36603558, none cited
+    by curator), has no shortcut and no off-route intermediate. The only minor note
+    (edge 4''s citation establishes DVT→PE rather than generic thrombosis→PE) is a
+    source-specificity issue already flagged at the edge level, not a whole-path defect;
+    within the venous-clot context it is defensible and independently supported.'
+  flags:
+  - edge: Thrombosis --causes--> Pulmonary embolism
+    issue: The cited quote establishes causation specifically for venous (deep vein)
+      thrombosis producing pulmonary embolism, whereas this edge's subject is the
+      broader generic 'Thrombosis.' The quote therefore supports only a subtype of
+      the subject rather than the subject as stated; strengthen with a source that
+      either matches the generic subject or justify narrowing the subject to venous
+      thrombosis.
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:Urokinase
+  - ChEMBL:urokinase
+  - PMID:12007605
+  - PMID:15231724
+  - PMID:15823070
+  - PMID:23034825
+  - PMID:23071827
+  - PMID:25409527
+  - PMID:29318541
+  - PMID:32105833
+  - PMID:36603558
+  - PMID:38285167
+  - PMID:38380722
+  - PMID:42268624
+  - PMID:42281545
+  - PMID:42557218
+  - PMID:42619674
+  - PMID:42623987
+  edge_reviews:
+  - edge: Urokinase --increases activity of--> Plasminogen
+    reference: PMID:3044205
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:29318541 (read_abstract, not cited by curator) and
+      ChEMBL CHEMBL1201420 (chembl_get_mechanism)", "record": "PMID:29318541: ''the
+      proteolytic conversion of the zymogen plasminogen to the active serine protease
+      plasmin is ... catalyzed by the serine protease urokinase-type plasminogen activator
+      (urokinase, uPA) ... which in turn specifically converts cell-bound plasminogen
+      to plasmin.'' ChEMBL confirms UROKINASE = urokinase-type plasminogen activator."}'
+    confidence: high
+  - edge: Plasminogen --decreases abundance of--> Fibrin
+    reference: PMID:3044205
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:42619674 (bioRxiv 2026) and PMID:15231724 (FASEB
+      J 2004), neither cited by curator", "record": "Both independently state that
+      plasminogen is converted to plasmin which degrades/mediates degradation of fibrin
+      (''converts Plasminogen to Plasmin to degrade fibrin''; ''convert the circulating
+      zymogen plasminogen to active plasmin and mediate fibrin degradation'')."}'
+    confidence: high
+  - edge: Fibrin --contributes to--> Thrombosis
+    reference: PMID:29225327
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:38285167 and PMID:32105833 (not cited by curator)",
+      "record": "PMID:38285167: ''The fibrin network is one of the main components
+      of thrombi. Altered fibrin network properties are known to influence the development
+      and progression of thrombotic disorders.'' PMID:32105833: ''fibrin fibers, the
+      main structural component of blood clots''."}'
+    confidence: high
+  - edge: Thrombosis --causes--> Pulmonary embolism
+    reference: PMID:29798363
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited quote establishes causation specifically for venous (deep vein)
+      thrombosis producing pulmonary embolism, whereas this edge's subject is the
+      broader generic 'Thrombosis.' The quote therefore supports only a subtype of
+      the subject rather than the subject as stated; strengthen with a source that
+      either matches the generic subject or justify narrowing the subject to venous
+      thrombosis.
+    grounding: '{"source": "PMID:42281545 (independent case report, not cited by curator)",
+      "record": "Patient with lower-extremity deep vein thrombosis subsequently developed
+      ''embolism in the right main pulmonary artery'' (pulmonary embolism), directly
+      demonstrating thrombosis\u2192PE causation."}'
+    confidence: high

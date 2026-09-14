@@ -1,0 +1,163 @@
+record_id: DB00038_MESH_D013921_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T06:45:29+00:00'
+last_reviewed_at: '2026-08-25T06:45:29+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ESCALATE
+escalation_reason: factual_contradiction
+overall_summary: 'The path has the correct overall mechanistic shape and nets in the
+  right therapeutic direction, but the receptor node at the head of the chain is mis-grounded
+  to the WRONG protein: it names the IL-6 receptor alpha subunit (P08887) when oprelvekin
+  (recombinant IL-11) acts specifically on the IL-11 receptor alpha subunit (Q14626).
+  Independent authorities are unanimous: ChEMBL curates the target as IL-11 receptor
+  alpha agonist, and PMID:26551279 explicitly demonstrates IL-11 cannot bind or signal
+  through IL-6R. As written, the first two edges assert a receptor interaction the
+  literature refutes; the drug''s own cited source (PMID:9354656) is actually about
+  the IL-11 receptor. Re-ground the receptor node (and edge-2 subject) to the correct
+  alpha-chain; the downstream two edges are sound. An edge''s evidence contradicts
+  the claim (curator territory).'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T06:45:29+00:00'
+  verdict: ESCALATE
+  escalation_reason: factual_contradiction
+  summary: 'The path has the correct overall mechanistic shape and nets in the right
+    therapeutic direction, but the receptor node at the head of the chain is mis-grounded
+    to the WRONG protein: it names the IL-6 receptor alpha subunit (P08887) when oprelvekin
+    (recombinant IL-11) acts specifically on the IL-11 receptor alpha subunit (Q14626).
+    Independent authorities are unanimous: ChEMBL curates the target as IL-11 receptor
+    alpha agonist, and PMID:26551279 explicitly demonstrates IL-11 cannot bind or
+    signal through IL-6R. As written, the first two edges assert a receptor interaction
+    the literature refutes; the drug''s own cited source (PMID:9354656) is actually
+    about the IL-11 receptor. Re-ground the receptor node (and edge-2 subject) to
+    the correct alpha-chain; the downstream two edges are sound. An edge''s evidence
+    contradicts the claim (curator territory).'
+  flags:
+  - edge: oprelvekin --increases activity of--> Interleukin-6 receptor subunit alpha
+    issue: The cited source establishes that oprelvekin (IL-11) binds and activates
+      the IL-11 receptor alpha subunit — but the edge's object is the IL-6 receptor
+      alpha subunit, a distinct protein. The snippet does not support an action of
+      oprelvekin on the IL-6 receptor; the object entity appears mis-grounded to the
+      wrong receptor.
+  - edge: oprelvekin --increases activity of--> Interleukin-6 receptor subunit alpha
+    issue: The cited source, read in full, states that IL-11 (oprelvekin's active
+      moiety) cannot bind or signal through the IL-6 receptor alpha — it is specific
+      to its own receptor. This contradicts an oprelvekin → IL-6 receptor alpha activation
+      edge. The object receptor appears to be the wrong one for this drug.
+  - edge: Interleukin-6 receptor subunit alpha --positively regulates--> megakaryocyte
+      differentiation
+    issue: The cited text and the drug's mechanism describe a DIFFERENT receptor alpha
+      subunit than the one named as this edge's subject. The subject protein is mis-identified
+      — the ligand-specific receptor alpha chain in the source is not the same protein
+      as the subject entity, even though both signal through the shared gp130 transducer.
+      Re-ground the subject to the receptor alpha chain the drug actually agonizes.
+  - edge: Interleukin-6 receptor subunit alpha --positively regulates--> megakaryocyte
+      differentiation
+    issue: The signaling described is triggered by the drug's own ligand-specific
+      receptor alpha chain, which is a different protein from the subject named on
+      this edge; the phosphorylated component mentioned (a shared signal-transducer)
+      is not the subject either. Additionally, this quote demonstrates receptor-signaling
+      activation rather than the differentiation process itself, so it only indirectly
+      supports a 'positively regulates megakaryocyte differentiation' claim. Re-ground
+      the subject to the correct receptor alpha chain and, ideally, cite text that
+      ties that receptor to the differentiation outcome directly.
+  path_issue: The first node in the chain — the receptor the drug is shown acting
+    on — appears to be mis-identified as the wrong protein. The drug's active moiety
+    and its established target belong to a related but DISTINCT receptor system that
+    shares only a downstream signal-transducer; the independent literature explicitly
+    states the drug's ligand cannot signal through the receptor named here. This defect
+    propagates into the first two edges (drug->receptor and receptor->megakaryocyte
+    differentiation), where the subject/object receptor is wrong even though the biology
+    of the correct receptor is real. Re-derive and re-ground the receptor node; the
+    last two edges of the chain are supported.
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:oprelvekin
+  - PMID:23869192
+  - PMID:28569613
+  - PMID:42060461
+  - PMID:42150413
+  - PMID:42152485
+  - PMID:9310465
+  edge_reviews:
+  - edge: oprelvekin --increases activity of--> Interleukin-6 receptor subunit alpha
+    reference: PMID:12919066
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited source establishes that oprelvekin (IL-11) binds and activates
+      the IL-11 receptor alpha subunit — but the edge's object is the IL-6 receptor
+      alpha subunit, a distinct protein. The snippet does not support an action of
+      oprelvekin on the IL-6 receptor; the object entity appears mis-grounded to the
+      wrong receptor.
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1201573 (oprelvekin)", "record":
+      "action_type=AGONIST; target=''Interleukin-11 receptor subunit alpha''; moa=''Interleukin
+      11 receptor alpha agonist'' \u2014 NOT the IL-6 receptor."}'
+    confidence: high
+  - edge: oprelvekin --increases activity of--> Interleukin-6 receptor subunit alpha
+    reference: PMID:26551279
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: The cited source, read in full, states that IL-11 (oprelvekin's active
+      moiety) cannot bind or signal through the IL-6 receptor alpha — it is specific
+      to its own receptor. This contradicts an oprelvekin → IL-6 receptor alpha activation
+      edge. The object receptor appears to be the wrong one for this drug.
+    grounding: '{"source": "PMID:26551279 full abstract (read independently)", "record":
+      "''we show that neither IL-6 nor IL-11 can bind to and signal through the \u03b1-receptor
+      of the respective other cytokine'' \u2014 IL-11/oprelvekin does not act on IL-6R."}'
+    confidence: high
+  - edge: Interleukin-6 receptor subunit alpha --positively regulates--> megakaryocyte
+      differentiation
+    reference: PMID:9354656
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited text and the drug's mechanism describe a DIFFERENT receptor alpha
+      subunit than the one named as this edge's subject. The subject protein is mis-identified
+      — the ligand-specific receptor alpha chain in the source is not the same protein
+      as the subject entity, even though both signal through the shared gp130 transducer.
+      Re-ground the subject to the receptor alpha chain the drug actually agonizes.
+    grounding: '{"source": "ChEMBL mechanism (CHEMBL1201573, oprelvekin)", "record":
+      "action_type=AGONIST; target=''Interleukin-11 receptor subunit alpha''; moa=''Interleukin
+      11 receptor alpha agonist'' \u2014 NOT IL-6 receptor alpha (P08887)."}'
+    confidence: high
+  - edge: Interleukin-6 receptor subunit alpha --positively regulates--> megakaryocyte
+      differentiation
+    reference: PMID:9354656
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The signaling described is triggered by the drug's own ligand-specific
+      receptor alpha chain, which is a different protein from the subject named on
+      this edge; the phosphorylated component mentioned (a shared signal-transducer)
+      is not the subject either. Additionally, this quote demonstrates receptor-signaling
+      activation rather than the differentiation process itself, so it only indirectly
+      supports a 'positively regulates megakaryocyte differentiation' claim. Re-ground
+      the subject to the correct receptor alpha chain and, ideally, cite text that
+      ties that receptor to the differentiation outcome directly.
+    grounding: '{"source": "ChEMBL mechanism (CHEMBL1201573, oprelvekin) + PMID:9354656
+      abstract", "record": "Drug target = Interleukin-11 receptor subunit alpha; abstract
+      explicitly attributes signaling to rhIL-11 via IL-11 receptor alpha, with gp130
+      as shared transducer \u2014 not IL-6R\u03b1 (P08887)."}'
+    confidence: high
+  - edge: megakaryocyte differentiation --positively regulates--> platelet formation
+    reference: PMID:34943811
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:42060461 (Cell reports, 2026) and PMID:42150413 (Thrombosis
+      research, 2026), both consulted independently (not cited by curator)", "record":
+      "PMID:42060461: ''MELK inhibition promotes MK maturation... and platelet production''
+      \u2014 MK maturation positively drives platelet production. PMID:42150413: mature
+      CD41high MKs display ''proplatelet formation, cytoplasmic maturation'' \u2014
+      differentiation/maturation yields platelet-forming capacity."}'
+    confidence: high
+  - edge: platelet formation --negatively correlated with--> Thrombocytopenic disorder
+    reference: PMID:6683869
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:28569613 (review, Hematology 2017 \u2014 NOT cited
+      by curator)", "record": "''Impaired platelet production has been found to be
+      an important pathological mechanism of thrombocytopenia in many diseases'' and
+      ''Alteration ... may result in defective platelet formation, and eventually
+      lead to thrombocytopenia'' \u2014 uses the exact term ''platelet formation''
+      and asserts the inverse relationship as established across many diseases."}'
+    confidence: high

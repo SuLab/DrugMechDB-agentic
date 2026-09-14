@@ -1,0 +1,236 @@
+{
+  "edges": {
+    "91be94acb40a0a4a": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D010129",
+          "name": "aminobenzoic acid",
+          "label": "Drug"
+        },
+        "predicate": "decreases abundance of",
+        "object": {
+          "id": "MESH:D006025",
+          "name": "Glycosaminoglycans",
+          "label": "ChemicalSubstance"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D010129|decreases abundance of|MESH:D006025",
+        "verdicts": [
+          {
+            "reference": "PMID:1350132",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'Monolayer cultures containing Potaba showed a dose-dependent inhibition... similar dose dependent inhibition of glycosaminoglycan secretion in all 3 groups' is present verbatim in the abstract read independently via PubMed (Acta Dermato-Venereol, 1992)."
+              },
+              "subject_grounding": {
+                "result": "fail",
+                "basis": "The study used 'Potaba' = potassium para-aminobenzoate, the potassium SALT, whereas edge subject MESH:D010129 is the free acid 'aminobenzoic acid' (4-aminobenzoic acid/PABA). Same active anion but the cited entity is the salt form, not the MeSH-grounded free acid."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Abstract explicitly says 'glycosaminoglycan secretion', matching object MESH:D006025 Glycosaminoglycans."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'dose-dependent inhibition of glycosaminoglycan secretion' = decrease, matches 'decreases abundance of'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "The drug (Potaba) is the agent inhibiting GAG secretion by fibroblasts; subject acts on object."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "'GAG secretion' is a production/abundance readout; abstract notes it is 'a direct effect of the drug rather than an indirect effect of changes in cell density' \u2014 consistent with decreasing abundance."
+              },
+              "scope_modality": {
+                "result": "fail",
+                "basis": "In-vitro fibroblast lines from lichen sclerosus, morphoea, and normal skin \u2014 NOT dermatomyositis (the disease in path_context). Effect is asserted at 10-1,000 ug/ml; therapeutic relevance is only 'suggested' as a 'possible target'. Narrow context over-generalized to the path's disease."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "In-vitro fibroblast monolayer culture study \u2192 IN_VITRO."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "IN_VITRO",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PubMed abstract read in memory (PMID:1350132), plus ChEMBL mechanism lookup for aminobenzoic acid (CHEMBL542)",
+              "record": "Abstract confirms Potaba dose-dependently inhibits GAG secretion in dermal fibroblast lines; ChEMBL has NO curated mechanism record for aminobenzoic acid, so no independent target/action grounding available."
+            },
+            "confidence": "high",
+            "note": "Snippet is genuine and on-topic for the GAG-decrease relation. Two gaps: (1) the tested agent is the potassium salt, not the free-acid MeSH entity; (2) the cell models are scleroderma-spectrum sclerosing conditions, not dermatomyositis. The active moiety is the same p-aminobenzoate, so edge is defensible, but the citation's subject is the salt and its context is a different disease.",
+            "issue_for_curator": "The cited experiment tests the potassium SALT of the subject drug, not the free-acid form named by the edge subject; and the cells studied are from sclerosing skin conditions, not the disease named later in the path. Confirm the effect for the subject drug's own grounded form and, ideally, in a context relevant to the path's disease."
+          },
+          {
+            "reference": "PMID:155125",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'Potassium para-aminobenzoate was tested for its ability to affect growth and macromolecule synthesis... Acid mucopolysaccharide secretion by rheumatoid synovial cells and scleroderma fibroblasts was inhibited even at 100 microgram/ml' is present verbatim in the abstract (J Invest Dermatol, 1979)."
+              },
+              "subject_grounding": {
+                "result": "fail",
+                "basis": "Agent is 'potassium para-aminobenzoate' (the potassium SALT), not the free acid MESH:D010129 'aminobenzoic acid'. Same active anion, different cited form."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'Acid mucopolysaccharide' is the historical synonym for glycosaminoglycan; matches object MESH:D006025."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'secretion... was inhibited even at 100 microgram/ml' and 'over 50% inhibition at 5000 microgram/ml' = decrease, matches predicate."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Drug inhibits mucopolysaccharide secretion by cells; subject acts on object."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Secretion/synthesis readout consistent with decreasing abundance."
+              },
+              "scope_modality": {
+                "result": "fail",
+                "basis": "Cell types are scleroderma fibroblasts and rheumatoid synovial cells \u2014 NOT dermatomyositis. Effect stated as within therapeutic range at 100 ug/ml, but disease context differs from the path."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "In-vitro fibroblast/synovial cell culture study \u2192 IN_VITRO."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "IN_VITRO",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PubMed abstract read in memory (PMID:155125); ChEMBL mechanism lookup (CHEMBL542)",
+              "record": "Abstract confirms potassium para-aminobenzoate inhibits acid mucopolysaccharide (GAG) secretion by scleroderma fibroblasts and rheumatoid synovial cells within therapeutic range. ChEMBL has no curated mechanism for aminobenzoic acid."
+            },
+            "confidence": "high",
+            "note": "Solid GAG-decrease evidence, but again the tested entity is the salt and the disease context is scleroderma/RA, not dermatomyositis. Two independent studies converge on the same relation, strengthening edge_supported even though each citation's subject is the salt form.",
+            "issue_for_curator": "The tested agent is the potassium salt of the subject drug rather than the free-acid form named by the edge; and the model systems are from scleroderma/rheumatoid tissue, not the disease named in the path. The GAG-lowering relation is corroborated, but the subject-form and disease-context mismatch should be addressed."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Two independent in-vitro studies (read directly from PubMed, both concordant) show potassium para-aminobenzoate \u2014 sharing the same active p-aminobenzoate moiety as the free acid MESH:D010129 \u2014 dose-dependently inhibits glycosaminoglycan/acid-mucopolysaccharide secretion by dermal fibroblasts, establishing the decreases-abundance relation. Caveats: (1) no ChEMBL curated mechanism exists to independently ground the drug's action, and (2) the cited studies use the salt form and scleroderma/lichen-sclerosus/rheumatoid models rather than the free acid and dermatomyositis; the relation is real but the citations under-specify the exact subject form and disease context."
+      },
+      "edge_hash": "91be94acb40a0a4a"
+    },
+    "c805b0ee4f07eff6": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D006025",
+          "name": "Glycosaminoglycans",
+          "label": "ChemicalSubstance"
+        },
+        "predicate": "manifestation of",
+        "object": {
+          "id": "MESH:D003882",
+          "name": "Dermatomyositis",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D006025|manifestation of|MESH:D003882",
+        "verdicts": [
+          {
+            "reference": "PMID:17300236",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Abstract BACKGROUND contains verbatim: 'Dermal mucin is an amorphous gelatinous substance composed primarily of hyaluronan (HA) and sulphated glycosaminoglycans (GAGs)' and 'deposition is associated with lupus erythematosus, dermatomyositis, scleroderma and granuloma annulare.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet is explicitly about sulphated glycosaminoglycans (GAGs), matching subject MESH:D006025 Glycosaminoglycans; dermal mucin is defined as composed of HA + sulphated GAGs."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet names dermatomyositis (MESH:D003882) explicitly as a disorder with which mucin/GAG deposition is associated."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'manifestation of' is a presence/finding relation; the source states GAG (mucin) deposition IS a finding associated with dermatomyositis \u2014 positive presence, consistent with the predicate."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "GAG deposition is presented as a finding/consequence within dermatomyositis (deposition associated with the disease), i.e. GAG deposition is a manifestation of the disease, not vice versa."
+              },
+              "granularity": {
+                "result": "partial",
+                "basis": "The finding is specifically dermal DEPOSITION of GAGs (mucinosis), not GAGs as a free chemical. The edge subject 'Glycosaminoglycans' abstracts away the deposition/localization, but the source clearly ties the manifestation to GAG accumulation."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as an established association in a review-style background ('mucin deposition is an additional finding, and deposition is associated with... dermatomyositis'), not hedged as hypothesis; a caveat is that 'the underlying cause... is unknown' \u2014 but the manifestation itself is asserted."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "British Journal of Dermatology clinical/laboratory study with review background; evidence_source is clinical/observational literature (OTHER acceptable)."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:29524269 (independent, not cited by curator)",
+              "record": "Dermatomyositis panniculitis series: 'abundant mucin interstitially deposited between collagen bundles of the dermis were also frequent findings' \u2014 confirms GAG/mucin deposition is a histopathologic manifestation of dermatomyositis."
+            },
+            "confidence": "high",
+            "note": "Verbatim, correct entities, correct direction. Only a minor granularity abstraction (GAG chemical vs GAG deposition/mucinosis). Independent source PMID:29524269 corroborates the manifestation."
+          },
+          {
+            "reference": "PMID:26322557",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Abstract contains verbatim: 'deposition of glycosaminoglycans (mucin), either focally or diffusely within the dermis... secondary to several dermatoses, most notably lupus erythematous, scleroderma, and dermatomyositis.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet explicitly names 'deposition of glycosaminoglycans (mucin)', matching subject MESH:D006025 Glycosaminoglycans."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet names dermatomyositis explicitly as a dermatosis secondary to which GAG deposition occurs \u2014 matches MESH:D003882."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Positive-presence relation: dermal mucinosis (GAG deposition) occurs secondary to dermatomyositis, consistent with 'manifestation of'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "'secondary to... dermatomyositis' establishes GAG deposition as downstream/consequent to the disease, i.e. a manifestation of it \u2014 correct direction."
+              },
+              "granularity": {
+                "result": "partial",
+                "basis": "Again the manifestation is dermal mucinosis (GAG DEPOSITION within the dermis), not the free chemical. Edge subject abstracts this, but the source ties it directly to GAG accumulation."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as established dermatopathology ('most notably... dermatomyositis'); not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "American Journal of Dermatopathology clinicopathologic report/background; observational clinical literature (OTHER)."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:29524269 (independent, not cited)",
+              "record": "Confirms mucin (GAG) deposition in the dermis is a frequent finding in dermatomyositis, corroborating the secondary-mucinosis association stated here."
+            },
+            "confidence": "high",
+            "note": "Verbatim, correct entities and direction; same minor granularity abstraction as the other citation. Well corroborated."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent source PMID:29524269 (dermatomyositis panniculitis series, not cited by the curator) explicitly reports 'abundant mucin interstitially deposited between collagen bundles of the dermis' as a frequent finding in dermatomyositis; mucin is composed of glycosaminoglycans. This, plus the two cited dermatopathology sources, establishes GAG (mucin) deposition as a recognized cutaneous manifestation of dermatomyositis. The only soft spot is granularity \u2014 the manifestation is dermal deposition of GAGs (mucinosis), which the edge abstracts to the GAG chemical entity itself \u2014 but this is within acceptable DrugMechDB abstraction and does not invalidate the edge."
+      },
+      "edge_hash": "c805b0ee4f07eff6"
+    }
+  }
+}

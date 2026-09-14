@@ -1,0 +1,116 @@
+record_id: DB00035_MESH_D006467_1_v1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T06:26:40+00:00'
+last_reviewed_at: '2026-08-25T06:26:40+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ACCEPT
+escalation_reason: null
+overall_summary: After adversarially probing for a missing sign-flip, an incidental
+  effect, or a bypass, the path holds up as the accepted primary MoA. The chain is
+  all-positive to FVIII and then correctly flips at the FVIII→disease 'negatively
+  correlated' edge, netting to a disease decrease. Independent authorities not cited
+  by the curator (PMID:40290674, PMID:36656570, ChEMBL, NCT02506023) describe this
+  exact cascade — V2R agonism → endothelial VWF release → increased circulating VWF/FVIII
+  — as DDAVP's mechanism in hemophilia A. The only caveat is that DDAVP works in mild/moderate
+  (not severe) HA, an indication-scope point rather than a mechanistic defect.
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T06:26:40+00:00'
+  verdict: ACCEPT
+  escalation_reason: null
+  summary: After adversarially probing for a missing sign-flip, an incidental effect,
+    or a bypass, the path holds up as the accepted primary MoA. The chain is all-positive
+    to FVIII and then correctly flips at the FVIII→disease 'negatively correlated'
+    edge, netting to a disease decrease. Independent authorities not cited by the
+    curator (PMID:40290674, PMID:36656570, ChEMBL, NCT02506023) describe this exact
+    cascade — V2R agonism → endothelial VWF release → increased circulating VWF/FVIII
+    — as DDAVP's mechanism in hemophilia A. The only caveat is that DDAVP works in
+    mild/moderate (not severe) HA, an indication-scope point rather than a mechanistic
+    defect.
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources: &id001
+  - ChEMBL:desmopressin
+  - PMID:12640560
+  - PMID:12649145
+  - PMID:21043845
+  - PMID:23152911
+  - PMID:27456858
+  - PMID:35743412
+  - PMID:36656570
+  - PMID:40290674
+  - PMID:9262320
+  - clinicaltrials:NCT02506023
+  edge_reviews:
+  - edge: desmopressin --increases activity of--> Arginine vasopressin receptor 2
+    reference: PMID:8232694
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL chembl_get_mechanism(desmopressin) = CHEMBL1200556",
+      "record": "action_type=''AGONIST''; target=Vasopressin receptor; direct_interaction=1;
+      moa=''Vasopressin receptor agonist''."}'
+    confidence: high
+  - edge: desmopressin --increases activity of--> Arginine vasopressin receptor 2
+    reference: PMID:12871401
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL chembl_get_mechanism(desmopressin) = CHEMBL1200556",
+      "record": "AGONIST of Vasopressin receptor, direct_interaction=1."}'
+    confidence: high
+  - edge: Arginine vasopressin receptor 2 --increases abundance of--> von Willebrand
+      factor
+    reference: PMID:12871401
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:9262320 (read_abstract, J Pharmacol Exp Ther 1997)
+      \u2014 not cited by curator", "record": "In conscious dogs, DDAVP caused a dose-related
+      increase in plasma vWF; pretreatment with the selective V2 receptor antagonist
+      SR 121463 inhibited the DDAVP-induced increase in vWF dose-dependently (ID50
+      ~12.4 \u00b5g/kg), while V1a and PAF antagonists had no effect \u2014 establishing
+      that V2 receptor activation causally drives the increase in plasma vWF."}'
+    confidence: high
+  - edge: von Willebrand factor --increases abundance of--> Coagulation factor VIII
+    reference: PMID:16150043
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:12640560 (review, not cited by curator) and PMID:23152911
+      (biochemical study, not cited)", "record": "PMID:12640560: FVIII ''in circulation
+      it is stabilized by binding to von Willebrand factor (vWF) with a plasma half-life
+      of about 10 hours.'' PMID:23152911: ''the carrier protein, von Willebrand factor,
+      which is critical for stability of fVIII in circulation.''"}'
+    confidence: high
+  - edge: Coagulation factor VIII --negatively correlated with--> Hereditary factor
+      VIII deficiency disease
+    reference: PMID:34349063
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:35743412 (not cited by curator)", "record": "''Hemophilia
+      A (HA) is a rare bleeding disorder caused by factor VIII (FVIII) deficiency...
+      The disease severity inversely correlates with the plasma levels of functional
+      FVIII.'' \u2014 explicit independent confirmation of the inverse (negative)
+      correlation."}'
+    confidence: high
+  - edge: Coagulation factor VIII --negatively correlated with--> Hereditary factor
+      VIII deficiency disease
+    reference: PMID:32248973
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:35743412 (not cited by curator)", "record": "Explicitly
+      states hemophilia A severity ''inversely correlates with the plasma levels of
+      functional FVIII'', independently confirming the negative correlation asserted
+      by the edge."}'
+    confidence: high
+  accept_report:
+    rationale: After adversarially probing for a missing sign-flip, an incidental
+      effect, or a bypass, the path holds up as the accepted primary MoA. The chain
+      is all-positive to FVIII and then correctly flips at the FVIII→disease 'negatively
+      correlated' edge, netting to a disease decrease. Independent authorities not
+      cited by the curator (PMID:40290674, PMID:36656570, ChEMBL, NCT02506023) describe
+      this exact cascade — V2R agonism → endothelial VWF release → increased circulating
+      VWF/FVIII — as DDAVP's mechanism in hemophilia A. The only caveat is that DDAVP
+      works in mild/moderate (not severe) HA, an indication-scope point rather than
+      a mechanistic defect.
+    supporting_sources: *id001

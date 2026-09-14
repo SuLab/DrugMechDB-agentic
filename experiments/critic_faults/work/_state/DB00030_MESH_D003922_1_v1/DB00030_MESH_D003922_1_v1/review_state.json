@@ -1,0 +1,420 @@
+{
+  "edges": {
+    "78cebafdbea1349e": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D007328",
+          "name": "insulin human",
+          "label": "Drug"
+        },
+        "predicate": "increases activity of",
+        "object": {
+          "id": "UniProt:P06213",
+          "name": "Insulin receptor",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D007328|increases activity of|UniProt:P06213",
+        "verdicts": [
+          {
+            "reference": "PMID:9932214",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'The binding of insulin to its receptor induces autophosphorylation of the receptor on tyrosine residues and thereby stimulates its tyrosine kinase activity towards intracellular substrates such as Shc or IRS1.' is an exact substring of the retrieved abstract (PMID:9932214, 'Molecular basis of insulin action', Diabetes & Metabolism 1998)."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Subject is insulin (hormone/drug). Snippet explicitly names 'insulin' as the ligand binding the receptor; ChEMBL CHEMBL1201631 'INSULIN HUMAN' independently confirms insulin as the acting agent on the insulin receptor."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Object UniProt:P06213 = INSR_HUMAN, the insulin receptor. Snippet is about 'its receptor'/'the insulin receptor' possessing tyrosine kinase activity; ChEMBL target field = 'Insulin receptor'."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'induces autophosphorylation... and thereby stimulates its tyrosine kinase activity' = increase, matching predicate 'increases activity of'. ChEMBL action_type='AGONIST' confirms positive polarity."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Insulin (subject) binds and activates the receptor (object) \u2014 subject acts on object, not reverse."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Edge is 'increases activity of'. Snippet states stimulation of the receptor's tyrosine kinase *activity* (not merely abundance/expression) \u2014 correct flavor."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as established mechanism ('induces... and thereby stimulates'), not hedged; general molecular-biology assertion, not confined to a single narrow context."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review of molecular mechanisms of insulin action \u2192 evidence_source OTHER (review/mechanistic literature)."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism CHEMBL1201631 (INSULIN HUMAN)",
+              "record": "action_type='AGONIST'; target='Insulin receptor'; direct_interaction=1; moa='Insulin receptor agonist' \u2014 independently confirms insulin activates the insulin receptor."
+            },
+            "confidence": "high",
+            "note": "Abstract read independently (not from curator cache). Snippet verbatim, entities correct, activity-level polarity correct, corroborated by independent ChEMBL agonist record. Clean edge."
+          },
+          {
+            "reference": "PMID:20526383",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'Insulin action involves a series of signaling cascades initiated by insulin binding to its receptor, eliciting receptor autophosphorylation and activation of the receptor tyrosine kinase, resulting in tyrosine phosphorylation of insulin receptor substrates (IRSs).' is an exact substring of the retrieved abstract (PMID:20526383, Korean J Intern Med 2010)."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet names 'insulin binding to its receptor' \u2014 subject insulin is the acting ligand; matches ChEMBL INSULIN HUMAN."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'its receptor' / 'the receptor tyrosine kinase' = insulin receptor = UniProt:P06213."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'eliciting receptor autophosphorylation and activation of the receptor tyrosine kinase' = increase in activity, matches 'increases activity of'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Insulin binding causes receptor activation \u2014 subject acts on object."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Explicitly 'activation of the receptor tyrosine kinase' = activity-level, matching predicate flavor."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as established canonical signaling ('Insulin action involves...'), not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review of insulin resistance mechanisms \u2192 evidence_source OTHER."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism CHEMBL1201631 (INSULIN HUMAN)",
+              "record": "AGONIST of Insulin receptor, direct_interaction=1 \u2014 independent confirmation."
+            },
+            "confidence": "high",
+            "note": "Second corroborating review; verbatim snippet and correct entities/polarity/granularity. Redundant but valid support, independently corroborated by ChEMBL."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent ChEMBL expert-curated mechanism record CHEMBL1201631 (INSULIN HUMAN) lists action_type='AGONIST' on target 'Insulin receptor' with direct_interaction=1, confirming insulin increases insulin-receptor activity. Both cited abstracts additionally state, as established mechanism, that insulin binding activates the receptor's tyrosine kinase activity. Subject/object/polarity/direction/granularity all pass."
+      },
+      "edge_hash": "78cebafdbea1349e"
+    },
+    "158cbc7d1554b515": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:P06213",
+          "name": "Insulin receptor",
+          "label": "Protein"
+        },
+        "predicate": "positively regulates",
+        "object": {
+          "id": "GO:0046323",
+          "name": "glucose import",
+          "label": "BiologicalProcess"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:P06213|positively regulates|GO:0046323",
+        "verdicts": [
+          {
+            "reference": "PMID:20526383",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the abstract: 'Phosphorylation of IRSs leads to activation of phosphatidylinositol 3-kinase (PI3K) and, subsequently, to activation of Akt and its downstream mediator AS160, all of which are important steps for stimulating glucose transport induced by insulin.'"
+              },
+              "subject_grounding": {
+                "result": "partial",
+                "basis": "Edge subject is the Insulin receptor (P06213). The snippet's proximate grammatical subject is 'Phosphorylation of IRSs \u2192 PI3K/Akt/AS160', i.e. the downstream cascade, not the receptor. The receptor is named earlier in the abstract as the cascade initiator ('insulin binding to its receptor... receptor autophosphorylation... tyrosine phosphorylation of IRSs'), so the receptor is upstream but the snippet itself attributes glucose-transport stimulation to post-receptor mediators."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'stimulating glucose transport' = glucose import (GO:0046323); the object is exactly what the relation acts on."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'important steps for stimulating glucose transport' = positive regulation, matching 'positively regulates'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Signaling flows insulin\u2192receptor\u2192IRS/PI3K\u2192glucose transport; the receptor/cascade acts on glucose transport, not the reverse."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Process-level regulation of glucose transport (biological process), matching GO:0046323 glucose import."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as established canonical mechanism in a review ('all of which are important steps for stimulating glucose transport induced by insulin'), not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review article (Korean J Intern Med 2010) summarizing established insulin signaling \u2192 evidence_source: REVIEW."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "REVIEW",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:37207372 (independent, not cited by curator) and PMID:24225153",
+              "record": "IRTK-inhibitor (genistein) blocks insulin-dependent glucose transport, 'confirmed the presence of IRTK-dependent glucose transport activation' \u2014 directly ties insulin RECEPTOR tyrosine kinase activity to positive control of glucose uptake."
+            },
+            "confidence": "high",
+            "note": "Snippet chains receptor\u2192cascade\u2192glucose transport; the receptor is only the initiator, with the proximate actor on glucose transport being PI3K/Akt/AS160. Edge is nonetheless true and independently corroborated; the citation is acceptable but attributes the effect one step downstream of the named subject.",
+            "issue_for_curator": "The cited quote attributes stimulation of glucose transport to the downstream signaling mediators (IRS\u2192PI3K\u2192Akt), not to the edge's subject (the insulin receptor) directly; the receptor is only mentioned upstream as the cascade initiator. Strengthen with a source that explicitly ties insulin-receptor activity itself to positive regulation of glucose import."
+          },
+          {
+            "reference": "PMID:9932214",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Exact substring of abstract: '...is involved in several of the metabolic effects of the hormone, such as glucose transport, glycolysis and glycogen synthesis.'"
+              },
+              "subject_grounding": {
+                "result": "fail",
+                "basis": "Edge subject is the Insulin receptor (P06213). The grammatical subject of this clipped snippet is 'the PI3-kinase pathway' (preceding sentence: 'the Pl 3-kinase pathway is involved in several of the metabolic effects...'). The snippet as clipped does not mention the insulin receptor at all; it attributes glucose transport to the PI3K pathway."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'glucose transport' = glucose import (GO:0046323)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'involved in... metabolic effects such as glucose transport' \u2014 positive/stimulatory, consistent with the hormone's known effect."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Pathway acts on glucose transport (downstream endpoint)."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Process-level involvement in glucose transport."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as established in a review of molecular insulin action, not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review (Diabetes & Metabolism 1998) \u2192 evidence_source: REVIEW."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "REVIEW",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:37207372 and PMID:24225153 (independent)",
+              "record": "Insulin receptor tyrosine kinase inhibition abolishes insulin-driven glucose transport, establishing receptor\u2192glucose import positively \u2014 but this comes from independent sources, not from the cited snippet."
+            },
+            "confidence": "high",
+            "note": "The clipped snippet's subject is the PI3-kinase pathway, not the insulin receptor. In isolation it does not speak to the edge's subject entity at all. Although the full abstract names the receptor upstream, the snippet as cited establishes a PI3K\u2192glucose-transport relation, not an insulin-receptor\u2192glucose-import relation.",
+            "issue_for_curator": "The clipped quote's subject is the PI3-kinase pathway, not the edge's subject (the insulin receptor); as cited it does not assert anything about the insulin receptor's own role and therefore does not establish this specific subject\u2192object edge. Re-source with text that names the insulin receptor as the regulator of glucose import."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent, non-cited sources (PMID:37207372: 'IRTK inhibitor... confirmed the presence of IRTK-dependent glucose transport activation'; PMID:24225153: genistein, an insulin receptor tyrosine kinase inhibitor, blocks insulin-dependent glucose uptake) establish that insulin-receptor tyrosine-kinase activity positively and causally drives glucose uptake/import. The biological claim of the edge is defensible; the two cited snippets both attribute glucose transport to the downstream PI3K/Akt cascade rather than to the insulin receptor itself, so the citations are weak/mis-focused for the edge's named subject even though the edge is true."
+      },
+      "edge_hash": "158cbc7d1554b515"
+    },
+    "692c9e646956a287": {
+      "edge": {
+        "subject": {
+          "id": "GO:0046323",
+          "name": "glucose import",
+          "label": "BiologicalProcess"
+        },
+        "predicate": "negatively regulates",
+        "object": {
+          "id": "HP:0003074",
+          "name": "Hyperglycemia",
+          "label": "PhenotypicFeature"
+        }
+      },
+      "verdict": {
+        "edge_id": "GO:0046323|negatively regulates|HP:0003074",
+        "verdicts": [
+          {
+            "reference": "PMID:12542844",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the abstract: 'Increased glucose disposal by tissues engineered to overexpress key regulatory genes in glucose transport or phosphorylation can reduce diabetic hyperglycemia.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Edge subject is glucose import (GO:0046323). Snippet and paper concern 'glucose transport'/'glucose uptake and utilization' by tissues (GK-expressing myotubes showing glucose-dependent increase in glucose uptake) \u2014 maps to the glucose-import process, though the snippet also bundles 'phosphorylation' which is distinct from import."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Object is Hyperglycemia (HP:0003074); snippet explicitly names 'diabetic hyperglycemia' and abstract repeatedly discusses lowering/counteracting hyperglycemia."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Predicate sign is negative (decrease). Snippet: increased glucose disposal 'can reduce diabetic hyperglycemia'; abstract: GK-myotubes 'lowered hyperglycemia'. Matches negative regulation."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Glucose import/disposal is the actor reducing hyperglycemia, not the reverse."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Process\u2192phenotype regulatory relation; source describes the glucose-uptake process reducing the hyperglycemia phenotype \u2014 appropriate flavor."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Snippet is stated as an established background principle ('can reduce'); corroborated as a general mechanism by independent sources on GLUT4-mediated uptake lowering blood glucose."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "In-vitro myoblast + STZ mouse gene-therapy study; the cited sentence is a general mechanistic background statement. MODEL_ORGANISM is an accurate re-derivation."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "MODEL_ORGANISM",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PubMed PMID:39251430 (Diabetologia 2024) and PMID:38271325 (PLoS One 2024), not cited by curator",
+              "record": "PMID:39251430: increased GLUT4 translocation/glucose uptake lowered blood glucose from 11.1 to ~7.9 mmol/l in HFD mice; PMID:38271325: enhanced skeletal-muscle glucose uptake/utilization reduces blood glucose in T2D \u2014 both independently confirm that increased glucose import lowers hyperglycemia."
+            },
+            "confidence": "high",
+            "note": "Snippet verbatim, entities correctly grounded, sign correct. Independent sources confirm the general physiological mechanism (glucose import \u2192 lower blood glucose). Minor imperfection: snippet couples 'transport or phosphorylation' but the import direction and hyperglycemia reduction are unambiguous. Clean SUPPORT."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "The physiological relationship that increased cellular/tissue glucose import lowers blood glucose and reduces hyperglycemia is established and independently corroborated (PMID:39251430 showing GLUT4-mediated uptake lowered blood glucose; PMID:38271325 on skeletal-muscle glucose utilization reducing blood glucose), consistent with the cited source's directly stated background principle."
+      },
+      "edge_hash": "692c9e646956a287"
+    },
+    "9233a8bdb149603d": {
+      "edge": {
+        "subject": {
+          "id": "HP:0003074",
+          "name": "Hyperglycemia",
+          "label": "PhenotypicFeature"
+        },
+        "predicate": "manifestation of",
+        "object": {
+          "id": "MESH:D003922",
+          "name": "Diabetes Mellitus, Type 1",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "HP:0003074|manifestation of|MESH:D003922",
+        "verdicts": [
+          {
+            "reference": "PMID:39918671",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'Type 1 diabetes (T1D) is a chronic autoimmune disorder characterized by the destruction of insulin-producing beta cells in the pancreas, leading to insulin deficiency and chronic hyperglycemia.' appears exactly in the abstract's first sentence."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet asserts 'chronic hyperglycemia' \u2014 the edge subject Hyperglycemia (HP:0003074) \u2014 as an outcome of T1D pathology."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet is explicitly about 'Type 1 diabetes (T1D)' = MESH:D003922, the edge object."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'manifestation of' is a non-signed clinical relationship; snippet says T1D 'leading to ... hyperglycemia', i.e., hyperglycemia is a manifestation of T1D \u2014 matches predicate."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Snippet frames hyperglycemia as arising from T1D (T1D leads to hyperglycemia); 'Hyperglycemia manifestation of T1D' is the correct directional reading \u2014 the phenotype is a manifestation of the disease."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "'manifestation of' is a phenotype-disease association; snippet describes hyperglycemia as a defining clinical feature of T1D \u2014 correct flavor."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established definitional fact ('is a chronic autoimmune disorder characterized by ... chronic hyperglycemia'), no hedging."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review article (BioDrugs 2025) stating established disease definition \u2192 evidence_source OTHER/review-level definitional assertion."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:39820433 (J Clin Endocrinol Metab 2025, not cited by curator)",
+              "record": "Describes T1D patients presenting in 'hyperglycemic crises' driven by insulin deficiency, corroborating hyperglycemia as a manifestation of T1D."
+            },
+            "confidence": "high",
+            "note": "Definitional clinical relationship; both cited snippets verbatim and directly on-point, and an independent uncited source corroborates. Clean SUPPORT."
+          },
+          {
+            "reference": "PMID:39211721",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'Type 1 diabetes is an autoimmune disorder characterized by the destruction of pancreatic beta cells, leading to insulin deficiency and hyperglycemia.' appears exactly in the abstract's Background sentence."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet asserts 'hyperglycemia' (HP:0003074) as a downstream outcome of T1D."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet is about 'Type 1 diabetes' = MESH:D003922."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'leading to ... hyperglycemia' = hyperglycemia is a manifestation of T1D \u2014 matches the non-signed predicate."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "T1D \u2192 hyperglycemia; phenotype is manifestation of disease, correct direction."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Phenotype-disease manifestation association, correct flavor."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Definitional statement, asserted as established, no hedging."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Case-control study (Cureus 2024) reciting established disease definition in its background \u2192 evidence_source OTHER."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:39820433 (independent, not cited)",
+              "record": "Corroborates hyperglycemia/hyperglycemic crises as a manifestation of T1D driven by insulin deficiency."
+            },
+            "confidence": "high",
+            "note": "Second verbatim, on-point definitional citation; consistent with independent corroboration."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Hyperglycemia is a defining clinical manifestation of Type 1 Diabetes; both cited sources verbatim state T1D leads to hyperglycemia, and an independent uncited source (PMID:39820433) corroborates hyperglycemic presentation in T1D patients. Entities correctly grounded and relationship direction correct."
+      },
+      "edge_hash": "9233a8bdb149603d"
+    }
+  }
+}

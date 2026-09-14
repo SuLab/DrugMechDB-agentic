@@ -1,0 +1,306 @@
+{
+  "edges": {
+    "d9910e6a964cde1c": {
+      "edge": {
+        "subject": {
+          "id": "DB:DB00026",
+          "name": "anakinra",
+          "label": "Drug"
+        },
+        "predicate": "decreases activity of",
+        "object": {
+          "id": "UniProt:P01375",
+          "name": "Tumor necrosis factor",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "DB:DB00026|decreases activity of|UniProt:P01375",
+        "verdicts": [
+          {
+            "reference": "PMID:27790031",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "The snippet 'Anakinra is an interleukin (IL) receptor antagonist that works by blocking the biological activity of IL-1 by competitively inhibiting binding of IL-1 to the type 1 interleukin receptor.' is the verbatim opening sentence of the PMID:27790031 abstract (read independently via read_abstract)."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "The snippet is about anakinra, matching the edge subject DB:DB00026 (anakinra)."
+              },
+              "object_grounding": {
+                "result": "fail",
+                "basis": "The snippet's target is the 'type 1 interleukin receptor' (IL-1 receptor type 1, UniProt:P14778) and its ligand IL-1/IL-1\u03b2. It says nothing about Tumor necrosis factor (UniProt:P01375). TNF is not mentioned anywhere in the source. The edge object (TNF) is not the entity the asserted relation acts on."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "The snippet describes 'blocking'/'competitively inhibiting' \u2014 a decrease in activity, matching the predicate sign; but this decrease is of IL-1 signaling, not TNF."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Anakinra acts on the receptor (subject acts on object), directionally correct \u2014 but for the wrong object (IL-1 receptor, not TNF)."
+              },
+              "granularity": {
+                "result": "fail",
+                "basis": "Snippet describes receptor-antagonist binding activity against IL-1 signaling. For TNF as the object this is a granularity/entity mismatch: anakinra does not bind or inhibit TNF; any effect on TNF would be a downstream abundance change, not a decrease in TNF activity via direct action."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "The mechanism (IL-1 receptor antagonism) is asserted as established, not hedged \u2014 but it is asserted for IL-1, not TNF."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "PMID:27790031 is a review in Open Access Rheumatology summarizing anakinra's mechanism; evidence_source = OTHER (review/expository)."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism record CHEMBL1201570 (anakinra); independent abstracts PMID:35545011, PMID:37478249",
+              "record": "ChEMBL: action_type=ANTAGONIST, target=Interleukin-1 receptor type 1, direct_interaction=1, moa='Interleukin-1 receptor antagonist' \u2014 no TNF target. PMID:35545011 shows anakinra reduces downstream TNF\u03b1 levels via IL-1 receptor blockade, confirming TNF is a downstream readout, not anakinra's molecular target."
+            },
+            "confidence": "high",
+            "note": "The cited snippet is verbatim and correctly describes anakinra's true mechanism (IL-1 receptor antagonism), but that mechanism is against the IL-1 receptor / IL-1, NOT Tumor necrosis factor. The edge object is wrong. ChEMBL independently confirms the sole curated target is IL-1 receptor type 1. TNF appears in the anakinra literature only as a downstream inflammatory cytokine whose abundance may fall secondary to IL-1 blockade \u2014 not as a direct target whose activity anakinra decreases. The edge as written (anakinra --decreases activity of--> TNF) is factually wrong at the molecular-target level; the correct target object is the IL-1 receptor.",
+            "issue_for_curator": "The cited source describes the subject drug as an antagonist of the interleukin-1 receptor / IL-1, and does not mention the edge's object protein (Tumor necrosis factor) at all. The drug's established molecular target is the IL-1 receptor, not TNF; any relationship between the drug and TNF is a downstream effect on cytokine abundance, not a direct decrease of TNF activity. The object of this edge appears mis-grounded to the wrong protein \u2014 re-source the drug's actual target and correct the object."
+          }
+        ],
+        "edge_supported": false,
+        "edge_basis": "Independent grounding (ChEMBL CHEMBL1201570 and multiple abstracts) establishes anakinra's mechanism as antagonism of the Interleukin-1 receptor type 1 (UniProt:P14778), NOT direct action on Tumor necrosis factor (UniProt:P01375). The edge's object is the wrong protein; the asserted direct drug\u2192TNF activity relation is not supported by the cited source or any independent authority. The edge is not defensible as written and the object must be changed."
+      },
+      "edge_hash": "d9910e6a964cde1c"
+    },
+    "b0fc581634e645e9": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:P01375",
+          "name": "Tumor necrosis factor",
+          "label": "Protein"
+        },
+        "predicate": "positively regulates",
+        "object": {
+          "id": "GO:0006954",
+          "name": "inflammatory response",
+          "label": "BiologicalProcess"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:P01375|positively regulates|GO:0006954",
+        "verdicts": [
+          {
+            "reference": "PMID:26140469",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Sentence 'IL-1 inhibitors block the IL-1 signaling cascade, thereby preventing systemic inflammation in CAPS.' appears verbatim in the abstract of PMID:26140469."
+              },
+              "subject_grounding": {
+                "result": "fail",
+                "basis": "Edge subject is Tumor necrosis factor (UniProt:P01375). The snippet and entire abstract are about interleukin-1 / IL-1\u03b2 (the CAPS driver) and IL-1 inhibitors. TNF is never mentioned. The snippet is about a different entity (IL-1)."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'systemic inflammation in CAPS' maps to inflammatory response (GO:0006954)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Blocking the IL-1 cascade 'preventing systemic inflammation' implies the cascade positively drives inflammation \u2014 matches 'positively regulates' \u2014 but for IL-1, not TNF."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "The cytokine signaling acts on inflammation, not vice versa \u2014 but the cytokine here is IL-1, not the edge subject."
+              },
+              "granularity": {
+                "result": "abstain",
+                "basis": "Snippet refers to 'signaling cascade' at pathway level; moot given subject entity does not match."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established mechanism in CAPS review; not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review of IL-1 inhibition in autoinflammatory syndromes \u2192 review/other."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "REVIEW",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism for anakinra (CHEMBL1201570)",
+              "record": "anakinra action_type=ANTAGONIST, target=Interleukin-1 receptor type 1 \u2014 confirming the path's drug and axis are IL-1-based, not TNF."
+            },
+            "confidence": "high",
+            "note": "The snippet is entirely IL-1-centric; TNF (P01375) does not appear anywhere. Combined with the neighbor edge 'anakinra decreases activity of TNF' (anakinra is an IL-1R antagonist per ChEMBL, NOT a TNF inhibitor), the subject entity of this edge is almost certainly mis-grounded \u2014 it should be IL-1\u03b2. The general fact that TNF drives inflammation is true, but this citation does not establish TNF specifically.",
+            "issue_for_curator": "The cited source establishes that a cytokine signaling cascade positively drives the inflammatory response, but that cytokine is not the edge's subject protein \u2014 the source discusses a different cytokine/receptor axis entirely, and the edge's subject protein is not mentioned. Subject entity appears mis-grounded relative to the mechanism the path describes."
+          },
+          {
+            "reference": "PMID:31524632",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "The quoted sentence about IL-1\u03b1/IL-1\u03b2, IL-1R1, SPDEF, ERN2 appears verbatim in the abstract of PMID:31524632."
+              },
+              "subject_grounding": {
+                "result": "fail",
+                "basis": "Edge subject is Tumor necrosis factor (P01375). The snippet is about IL-1\u03b1 and IL-1\u03b2 and IL-1R1. TNF is absent. Different entity."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'IL-1\u03b1 and/or IL-1\u03b2-mediated neutrophilic inflammation' maps to inflammatory response (GO:0006954)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "IL-1 described as 'upstream' generating inflammation \u2014 positive regulation \u2014 but of IL-1, not TNF."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Cytokine \u2192 inflammation direction, but wrong cytokine."
+              },
+              "granularity": {
+                "result": "abstain",
+                "basis": "Moot given subject mismatch."
+              },
+              "scope_modality": {
+                "result": "fail",
+                "basis": "Context is cystic fibrosis (CF) airways/HBE cells and mucus hyperconcentration \u2014 a different disease than the path's CAPS; over-generalized even setting aside the entity error."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "In-vitro/ex-vivo mechanistic study in CF human bronchial epithelial cells \u2192 in_vitro."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "IN_VITRO",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism for anakinra (CHEMBL1201570)",
+              "record": "anakinra = IL-1 receptor type 1 antagonist, confirming the mechanistic axis is IL-1, not TNF."
+            },
+            "confidence": "high",
+            "note": "IL-1-centric CF study, no TNF; also wrong disease context (CF vs CAPS). Does not speak to TNF regulating inflammation at all.",
+            "issue_for_curator": "The cited source describes a cytokine other than the edge's subject protein driving inflammation, and does so in a disease/tissue context different from the path's disease. It does not establish the edge's subject protein acting on the inflammatory response."
+          }
+        ],
+        "edge_supported": false,
+        "edge_basis": "Neither cited source mentions the edge subject (Tumor necrosis factor / P01375); both are about IL-1\u03b1/IL-1\u03b2/IL-1R1. The path's drug, anakinra, is independently confirmed by ChEMBL (CHEMBL1201570) to be an IL-1 receptor type 1 antagonist, and CAPS is driven by IL-1\u03b2 overproduction (PMID:26140469). The mechanistic axis of the entire path is IL-1\u03b2, not TNF \u2014 strongly indicating the subject entity is mis-grounded (P01375/TNF should be IL-1\u03b2). As written, the edge's subject is not supported and is inconsistent with its own path neighbors."
+      },
+      "edge_hash": "b0fc581634e645e9"
+    },
+    "f88bb566e0f20266": {
+      "edge": {
+        "subject": {
+          "id": "GO:0006954",
+          "name": "inflammatory response",
+          "label": "BiologicalProcess"
+        },
+        "predicate": "causes",
+        "object": {
+          "id": "MESH:D056587",
+          "name": "Cryopyrin-associated periodic syndrome",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "GO:0006954|causes|MESH:D056587",
+        "verdicts": [
+          {
+            "reference": "PMID:22288581",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'Both CAPS and FMF are characterized by increased inflammasome activity and overproduction of IL-1\u03b2 which is ultimately responsible for disease manifestations.' is an exact substring of the PMID:22288581 abstract (Clin Exp Immunol 2012)."
+              },
+              "subject_grounding": {
+                "result": "partial",
+                "basis": "Edge subject is the generic GO:0006954 'inflammatory response.' The snippet attributes causation specifically to 'increased inflammasome activity and overproduction of IL-1\u03b2' \u2014 a specific molecular driver. IL-1\u03b2-driven inflammation is a valid instance of the inflammatory response, so this maps generically but the source is narrower/more specific than the GO term."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "CAPS (cryopyrin-associated periodic syndromes, MESH:D056587) is explicitly named as the disease whose manifestations are driven."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'ultimately responsible for disease manifestations' = positive causal contribution, matching predicate 'causes.'"
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Inflammation/IL-1\u03b2 is the causal agent acting on CAPS manifestations (subject\u2192object), not reverse."
+              },
+              "granularity": {
+                "result": "partial",
+                "basis": "Source states inflammation is responsible for disease *manifestations*; the abstract also states CAPS is caused by NLRP3/PYRIN gene mutations (root cause is genetic). The edge treats inflammation as causing the disease entity, whereas the source frames inflammation as driving the manifestations of a genetically-defined disease."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established mechanism ('is ultimately responsible'), not hedged; review of established autoinflammatory pathophysiology."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review article summarizing inflammasome biology in autoinflammatory syndromes \u2192 evidence_source = review/OTHER."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:40410596 (Cell Mol Life Sci 2025) and PMID:40170849 (Front Immunol 2025), independent of curator",
+              "record": "CAPS characterized by NLRP3 gain-of-function variants \u2192 constitutively active inflammasome \u2192 IL-1\u03b2 production 'primarily driving' inflammatory episodes; overproduction of pro-inflammatory cytokines 'linked to' CAPS."
+            },
+            "confidence": "high",
+            "note": "Snippet is verbatim and on-point. IL-1\u03b2-driven inflammation being responsible for CAPS manifestations is well-corroborated independently. Minor tension: the true root cause of CAPS is genetic (NLRP3), and inflammation drives the symptomatic phenotype rather than the disease genotype \u2014 but for a drug\u2192disease mechanism 'causes' edge from inflammatory response to the disease, this is defensible. Note subject is generic GO term while sources are IL-1\u03b2-specific."
+          },
+          {
+            "reference": "PMID:26140469",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'It is not only a pro-inflammatory cytokine responsible for features such as fever, rash, and arthritis, but is also a major mediator in the central pathways of fatigue.' is an exact substring of PMID:26140469 abstract (Mod Rheumatol 2016)."
+              },
+              "subject_grounding": {
+                "result": "partial",
+                "basis": "'It' refers to IL-1\u03b2 (prior sentence), a specific cytokine, not the generic GO:0006954 'inflammatory response.' IL-1\u03b2 is a specific instance/mediator of the inflammatory response; maps generically."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Abstract is explicitly about CAPS; fever, rash, arthritis are CAPS features; MESH:D056587 correctly identified."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'responsible for features such as fever, rash, and arthritis' = positive causal, matching 'causes.'"
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "IL-1\u03b2/inflammation causes the features (subject\u2192object)."
+              },
+              "granularity": {
+                "result": "partial",
+                "basis": "Source attributes to IL-1\u03b2 the disease *features* (fever, rash, arthritis, fatigue) of CAPS; abstract explicitly states 'CAPS is caused by a mutation in the NLRP3 gene.' Inflammation drives phenotype, genetics is root cause \u2014 same nuance as the other citation."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established fact about IL-1\u03b2 biology in CAPS; not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review on IL-1 inhibition and fatigue in autoinflammatory syndromes \u2192 OTHER/review."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:40410596 (Cell Mol Life Sci 2025), curator did not cite",
+              "record": "'inflammatory episodes... primarily driven by the production of interleukin (IL)-1\u03b2' in CAPS \u2014 corroborates IL-1\u03b2-driven inflammation causing CAPS symptomatology."
+            },
+            "confidence": "high",
+            "note": "Verbatim, specific to CAPS, attributes cardinal disease features to IL-1\u03b2-driven inflammation. Supports the edge. Same generic-GO-term vs IL-1\u03b2-specific nuance noted."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent sources (PMID:40410596, PMID:40170849) confirm that in CAPS, IL-1\u03b2-driven inflammatory activity is the primary driver of the disease's inflammatory episodes/manifestations. Both cited snippets are verbatim and specifically attribute CAPS manifestations to inflammatory (IL-1\u03b2) activity. The edge (inflammatory response causes CAPS) is defensible as the phenotype-driving step of the mechanism path, with the caveat that the ultimate root cause of CAPS is the NLRP3 mutation and inflammation drives the clinical manifestations rather than the genetic disease entity itself."
+      },
+      "edge_hash": "f88bb566e0f20266"
+    }
+  }
+}

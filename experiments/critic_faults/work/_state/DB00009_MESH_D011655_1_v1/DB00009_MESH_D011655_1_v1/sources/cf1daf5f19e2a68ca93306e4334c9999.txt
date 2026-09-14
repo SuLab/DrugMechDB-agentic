@@ -1,0 +1,11 @@
+PMID:38492853  Time-dependent ultrastructural changes during venous thrombogenesis and thrombus resolution.  (Journal of thrombosis and haemostasis : JTH, 2024)
+
+**BACKGROUND:** Deep vein thrombosis is a common vascular event that can result in debilitating morbidity and even death due to pulmonary embolism. Clinically, patients with faster resolution of a venous thrombus have improved prognosis, but the detailed structural information regarding changes that occur in a resolving thrombus over time is lacking.
+
+**OBJECTIVES:** To define the spatial-morphologic characteristics of venous thrombus formation, propagation, and resolution at the submicron level over time.
+
+**METHODS:** Using a murine model of stasis-induced deep vein thrombosis along with scanning electron microscopy and immunohistology, we determine the specific structural, compositional, and morphologic characteristics of venous thrombi formed after 4 days and identify the changes that take place during resolution by day 7. Comparison is made with the structure and composition of venous thrombi formed in mice genetically deficient in plasminogen activator inhibitor type 1.
+
+**RESULTS:** As venous thrombus resolution progresses, fibrin exists in different structural forms, and there are dynamic cellular changes in the compositions of leukocytes, platelet aggregates, and red blood cells. Intrathrombus microvesicles are present that are not evident by histology, and red blood cells in the form of polyhedrocytes are an indicator of clot contraction. Structural evidence of fibrinolysis is observed early during thrombogenesis and is accelerated by plasminogen activator inhibitor type 1 deficiency.
+
+**CONCLUSION:** The results reveal unique, detailed ultrastructural and compositional insights along with documentation of the dynamic changes that occur during accelerated resolution that are not evident by standard pathologic procedures and can be applied to inform diagnosis and effectiveness of thrombolytic treatments to improve patient outcomes.

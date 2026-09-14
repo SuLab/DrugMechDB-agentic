@@ -1,0 +1,7 @@
+SOURCE CHEMBL:CHEMBL1201573  (content_type=abstract)
+Title: ChEMBL mechanism of action: OPRELVEKIN
+
+Interleukin 11 receptor alpha agonist
+complex with beta but only associcates on ligand binding so excluded
+
+(Independent trusted source the critic retrieved — cite it as grounding.)

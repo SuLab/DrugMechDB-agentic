@@ -1,0 +1,164 @@
+{
+  "edges": {
+    "23b6daeff87ddfac": {
+      "edge": {
+        "subject": {
+          "id": "DB:DB00009",
+          "name": "alteplase",
+          "label": "Drug"
+        },
+        "predicate": "increases activity of",
+        "object": {
+          "id": "UniProt:P00747",
+          "name": "Plasminogen",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "_parse_error": "empty model output",
+        "_raw": ""
+      },
+      "edge_hash": "23b6daeff87ddfac"
+    },
+    "d21fd37484fc39e0": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:P00747",
+          "name": "Plasminogen",
+          "label": "Protein"
+        },
+        "predicate": "decreases abundance of",
+        "object": {
+          "id": "MESH:D005342",
+          "name": "Fibrin",
+          "label": "ChemicalSubstance"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:P00747|decreases abundance of|MESH:D005342",
+        "verdicts": [
+          {
+            "reference": "PMID:3044205",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Exact substring present in the abstract of PMID:3044205: 'a proenzyme, plasminogen, which can be converted to the active enzyme plasmin, which will degrade fibrin.'"
+              },
+              "subject_grounding": {
+                "result": "partial",
+                "basis": "The edge subject is Plasminogen (UniProt:P00747). The snippet explicitly names plasminogen as a 'proenzyme'/zymogen that must be 'converted to the active enzyme plasmin'; it is plasmin, not plasminogen, that 'will degrade fibrin.' Independent source PMID:34966964: 'Plasminogen is a zymogenic form of plasmin, an enzyme that plays a fundamental role in the dissolution of fibrin clots.' P00747 nominally denotes the zymogen; the fibrinolytic actor is its activated cleavage product. Same gene product, but the snippet attributes the degrading action to plasmin, not to plasminogen as named."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Object is Fibrin (MESH:D005342); the snippet states the enzyme 'will degrade fibrin.' Corroborated independently (PMID:42476525: 'a central mechanism for degrading fibrin'; PMID:42138967: 'plasmin cleavage' of fibrin)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'degrade fibrin' = decrease of fibrin, matching the predicate 'decreases abundance of.'"
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "The enzyme (plasmin, activated form of the subject node) acts on fibrin, not the reverse."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "'degrade' denotes proteolytic destruction of fibrin protein = decrease in abundance, correctly matching 'decreases abundance of' (not merely activity/expression)."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as the established mammalian fibrinolytic system, no hedging; a review describing the canonical mechanism."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "PMID:3044205 (Annales de biologie clinique, 1988) is a review of fibrin-specific thrombolytic agents describing the established fibrinolytic pathway; evidence_source is best characterized as a review/mechanistic assertion rather than a primary IN_VITRO experiment as the curator labeled."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "REVIEW",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PubMed PMID:34966964 (independent of curator) and PMID:42476525, PMID:42138967",
+              "record": "PMID:34966964: 'Plasminogen is a zymogenic form of plasmin, an enzyme that plays a fundamental role in the dissolution of fibrin clots.' Confirms fibrin degradation is executed by plasmin (the activated form of the P00747 gene product), and that plasminogen itself is the inactive zymogen. PMID:42476525 and PMID:42138967 independently confirm plasmin degrades/cleaves fibrin."
+            },
+            "confidence": "high",
+            "note": "The edge is biologically defensible because UniProt:P00747 is a single node covering both plasminogen (zymogen) and plasmin (active form), and DrugMechDB's path already models alteplase converting/activating this node ('increases activity of Plasminogen'). Thus the plasmin\u2192fibrin degradation is legitimately attributed to the P00747 node under DrugMechDB's collapsing convention. However, the cited snippet's own wording explicitly separates plasminogen (proenzyme, does NOT degrade fibrin) from plasmin (active enzyme, DOES degrade fibrin), so read literally the snippet does not attribute fibrin degradation to the subject as named \u2014 it attributes it to plasmin. Hence PARTIAL, not clean SUPPORT. The curator's evidence_source label IN_VITRO is also inaccurate: the source is a review asserting the established mechanism.",
+            "issue_for_curator": "The cited quotation attributes fibrin degradation specifically to the active enzyme form, while explicitly describing the edge's subject as the inactive proenzyme/zymogen that must first be converted before any fibrin degradation occurs. As written, the quote does not state that the subject entity (in its named zymogen form) decreases fibrin; it states that its activated derivative does. Strengthen the citation with a source that speaks to the subject node's fibrinolytic action directly, and note that the methodology label does not match a review-type mechanistic assertion."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent authorities (PMID:34966964, PMID:42476525, PMID:42138967) confirm that the plasmin(ogen) system \u2014 the activated form of the P00747 gene product \u2014 proteolytically degrades fibrin, decreasing its abundance. Under DrugMechDB's single-node convention for the plasminogen/plasmin pair (the prior path edge already models activation of this node), the Plasminogen\u2192decreases abundance of\u2192Fibrin edge is biologically true. The defect is in the cited snippet's granularity (attributes the action to the active form while naming the zymogen), not in the edge's truth."
+      },
+      "edge_hash": "d21fd37484fc39e0"
+    },
+    "d40b4ca6c37f4404": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D005342",
+          "name": "Fibrin",
+          "label": "ChemicalSubstance"
+        },
+        "predicate": "causes",
+        "object": {
+          "id": "MESH:D011655",
+          "name": "Pulmonary embolism",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D005342|causes|MESH:D011655",
+        "verdicts": [
+          {
+            "reference": "PMID:12845330",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "'In a model of venous thrombosis induced by intravenously injected fibrin microemboli aggregating in pulmonary vasculature' \u2014 snippet is an exact substring of the abstract."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet is about 'fibrin microemboli' \u2014 fibrin (MESH:D005342) is the subject entity; the snippet asserts fibrin forms the emboli."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'aggregating in pulmonary vasculature' and 'pulmonary clots lodged' describe obstruction of the pulmonary vasculature = pulmonary embolism (MESH:D011655)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Fibrin microemboli occlude/aggregate in the pulmonary vasculature \u2014 positive causal direction consistent with 'causes'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Fibrin (subject) forms the microemboli that lodge in and obstruct the pulmonary vasculature (object); subject acts on object."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Edge is a causal/pathologic 'causes' relation; snippet describes fibrin physically constituting the obstructing emboli \u2014 appropriate causal-mechanism flavor."
+              },
+              "scope_modality": {
+                "result": "fail",
+                "basis": "The snippet describes an EXPERIMENTALLY INDUCED model \u2014 'model of venous thrombosis induced by intravenously injected fibrin microemboli.' The fibrin emboli were artificially injected, not arising from natural PE pathogenesis. This is a narrow experimental context cited for a general disease-causation edge."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Animal (murine) thrombosis model in a Nature Biotechnology drug-delivery study \u2192 MODEL_ORGANISM. Curator's evidence_source label is correct."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "MODEL_ORGANISM",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:37751849 (JTH murine PE model; immunohistochemistry of pulmonary emboli) and PMID:42508673 (Acta Biomaterialia review)",
+              "record": "Pulmonary emboli were shown to have measurable 'fibrin composition'; a thrombus is 'a hierarchically organized composite in which a fibrin network scaffold... interact across scales' \u2014 establishing fibrin as a core causal constituent of the emboli that cause pulmonary embolism."
+            },
+            "confidence": "high",
+            "note": "Snippet is verbatim and on-topic and names both subject and object with the right causal direction. The weakness is scope/modality: the cited context is an artificial induced-microemboli delivery model rather than a statement about the natural pathogenesis of clinical PE. The edge is nonetheless well-supported by independent sources (fibrin is the structural scaffold of thrombi and pulmonary emboli have quantifiable fibrin composition). Edge true; citation is a marginal-scope model rather than a general pathophysiologic statement.",
+            "issue_for_curator": "The cited quote describes fibrin emboli only within an artificially induced experimental model (microemboli deliberately injected to occlude the pulmonary vasculature), not the natural pathogenesis of pulmonary embolism. It over-generalizes a narrow experimental context to a general disease-causation edge; a source asserting fibrin as an established constituent of clinical pulmonary emboli would ground this edge more directly."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent authorities (PMID:37751849 immunohistochemically quantifies 'fibrin composition' of pulmonary emboli in a murine PE model; PMID:42508673 describes the fibrin network as the structural scaffold of thrombi that cause pulmonary embolism) establish fibrin as a causal constituent of pulmonary embolism, consistent with the drug-mechanism path where alteplase\u2192plasminogen degrades this fibrin."
+      },
+      "edge_hash": "d40b4ca6c37f4404"
+    }
+  }
+}

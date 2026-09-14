@@ -1,0 +1,125 @@
+record_id: DB00002_MESH_D003110_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T06:33:55+00:00'
+last_reviewed_at: '2026-08-25T06:33:55+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ESCALATE
+escalation_reason: factual_contradiction
+overall_summary: Although the chain is structurally coherent and its polarity nets
+  in the correct direction (drug ultimately decreases colon cancer), the whole path
+  is NOT cetuximab's accepted mechanism because it runs through the wrong receptor.
+  The first mechanistic node, erbB-2/HER2 (UniProt P04626), is not cetuximab's target
+  — cetuximab is an EGFR/erbB-1 (P00533) inhibitor per ChEMBL CHEMBL1201577 and PMID:42176792.
+  Worse, erbB-2/HER2 is an established RESISTANCE/bypass pathway to anti-EGFR cetuximab
+  (PMID:42515723), making it not merely off-route but antagonistic to the route. The
+  curator-cited quote (PMID:39000238) is verbatim but is exclusively about EGFR and
+  never mentions erbB-2, so it does not support hops 1 or 2. Edges 2 and 3 are relation-true
+  in isolation, but the path as a whole mis-grounds its central mediator. The receptor
+  node must be corrected to the drug's actual target for this to become cetuximab's
+  real MoA. An edge's evidence contradicts the claim (curator territory).
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T06:33:55+00:00'
+  verdict: ESCALATE
+  escalation_reason: factual_contradiction
+  summary: Although the chain is structurally coherent and its polarity nets in the
+    correct direction (drug ultimately decreases colon cancer), the whole path is
+    NOT cetuximab's accepted mechanism because it runs through the wrong receptor.
+    The first mechanistic node, erbB-2/HER2 (UniProt P04626), is not cetuximab's target
+    — cetuximab is an EGFR/erbB-1 (P00533) inhibitor per ChEMBL CHEMBL1201577 and
+    PMID:42176792. Worse, erbB-2/HER2 is an established RESISTANCE/bypass pathway
+    to anti-EGFR cetuximab (PMID:42515723), making it not merely off-route but antagonistic
+    to the route. The curator-cited quote (PMID:39000238) is verbatim but is exclusively
+    about EGFR and never mentions erbB-2, so it does not support hops 1 or 2. Edges
+    2 and 3 are relation-true in isolation, but the path as a whole mis-grounds its
+    central mediator. The receptor node must be corrected to the drug's actual target
+    for this to become cetuximab's real MoA. An edge's evidence contradicts the claim
+    (curator territory).
+  flags:
+  - edge: cetuximab --decreases activity of--> Receptor tyrosine-protein kinase erbB-2
+    issue: The cited quote establishes that cetuximab binds and impairs signaling
+      of EGFR (ErbB-1 / HER1) — a different receptor than the edge's object, Receptor
+      tyrosine-protein kinase erbB-2 (HER2). The quote never mentions erbB-2/HER2,
+      and independent curated mechanism data list cetuximab's target as EGFR only,
+      with no erbB-2 action. The object of this edge appears to be the wrong receptor;
+      re-source the actual target cetuximab acts on.
+  - edge: Receptor tyrosine-protein kinase erbB-2 --positively regulates--> cell population
+      proliferation
+    issue: The cited quote is about a different receptor (the epidermal growth factor
+      receptor) than the edge's subject protein (erbB-2/HER2); it makes no assertion
+      about the erbB-2 protein at all, so it cannot establish that this specific subject
+      positively regulates cell proliferation. Additionally, the drug named in the
+      path acts on the epidermal growth factor receptor, not on erbB-2 — check whether
+      the subject entity across this path is mis-grounded. Re-source a citation that
+      speaks specifically to erbB-2/HER2 and proliferation, or correct the subject
+      identity.
+  path_issue: 'The drug-to-receptor and receptor-to-proliferation hops route through
+    a receptor protein that is not the drug''s actual target — the cited quote in
+    those hops describes a different receptor entirely and never mentions the protein
+    named as the path''s intermediate node. The chain''s overall shape and direction
+    are fine, but its central mediator appears mis-identified: verify that the receptor
+    node across the first two edges is the receptor this drug actually binds, and
+    re-source hops 1 and 2 to a citation that speaks specifically to that receptor.'
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:cetuximab
+  - PMID:15887238
+  - PMID:20383197
+  - PMID:21745384
+  - PMID:31823010
+  - PMID:34564954
+  - PMID:37864955
+  - PMID:40243705
+  - PMID:41637162
+  - PMID:42176792
+  - PMID:42223165
+  - PMID:42515723
+  edge_reviews:
+  - edge: cetuximab --decreases activity of--> Receptor tyrosine-protein kinase erbB-2
+    reference: PMID:39000238
+    rederived_supports: WRONG_STATEMENT
+    agrees_with_curator: false
+    issue: The cited quote establishes that cetuximab binds and impairs signaling
+      of EGFR (ErbB-1 / HER1) — a different receptor than the edge's object, Receptor
+      tyrosine-protein kinase erbB-2 (HER2). The quote never mentions erbB-2/HER2,
+      and independent curated mechanism data list cetuximab's target as EGFR only,
+      with no erbB-2 action. The object of this edge appears to be the wrong receptor;
+      re-source the actual target cetuximab acts on.
+    grounding: '{"source": "ChEMBL mechanism (CHEMBL1201577) + PMID:21745384 abstract",
+      "record": "ChEMBL: cetuximab action_type INHIBITOR, target Epidermal growth
+      factor receptor (erbB1), no erbB2 record. PMID:21745384: ''Trastuzumab ... or
+      Cetuximab ..., two clinically approved monoclonal antibodies directed against
+      HER2/neu and EGFR/HER1, respectively'' \u2014 cetuximab = EGFR/HER1, not HER2."}'
+    confidence: high
+  - edge: Receptor tyrosine-protein kinase erbB-2 --positively regulates--> cell population
+      proliferation
+    reference: PMID:39000238
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: The cited quote is about a different receptor (the epidermal growth factor
+      receptor) than the edge's subject protein (erbB-2/HER2); it makes no assertion
+      about the erbB-2 protein at all, so it cannot establish that this specific subject
+      positively regulates cell proliferation. Additionally, the drug named in the
+      path acts on the epidermal growth factor receptor, not on erbB-2 — check whether
+      the subject entity across this path is mis-grounded. Re-source a citation that
+      speaks specifically to erbB-2/HER2 and proliferation, or correct the subject
+      identity.
+    grounding: '{"source": "ChEMBL mechanism (CHEMBL1201577) + PMID:37864955 (independent,
+      not curator-cited)", "record": "ChEMBL: cetuximab moa = ''Epidermal growth factor
+      receptor erbB1 inhibitor'' \u2014 targets EGFR, NOT erbB-2/HER2. PMID:37864955:
+      ''HER2 is a driver in solid tumors... through activation of oncogenic signaling
+      pathways such as PI3K or MAPK'' \u2014 independently confirms erbB-2/HER2 positively
+      drives proliferation, so the edge relation itself is true even though the cited
+      snippet is about the wrong receptor."}'
+    confidence: high
+  - edge: cell population proliferation --contributes to--> Malignant tumor of colon
+    reference: PMID:41037865
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:42223165 and PMID:41637162 (not cited by curator)",
+      "record": "PMID:42223165: CRC is ''characterized by uncontrolled cell proliferation'';
+      PMID:41637162: CRC fatality ''attributed... to the biological attributes of
+      uncontrolled tumor cell proliferation''."}'
+    confidence: high

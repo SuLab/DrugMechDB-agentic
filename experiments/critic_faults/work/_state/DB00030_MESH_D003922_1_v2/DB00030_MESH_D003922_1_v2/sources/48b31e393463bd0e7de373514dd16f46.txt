@@ -1,0 +1,9 @@
+PMID:20724647  Effect of oral sebacic Acid on postprandial glycemia, insulinemia, and glucose rate of appearance in type 2 diabetes.  (Diabetes care, 2010)
+
+**OBJECTIVE:** Dicarboxylic acids are natural products with the potential of being an alternate dietary source of energy. We aimed to evaluate the effect of sebacic acid (a 10-carbon dicarboxylic acid; C10) ingestion on postprandial glycemia and glucose rate of appearance (Ra) in healthy and type 2 diabetic subjects. Furthermore, the effect of C10 on insulin-mediated glucose uptake and on GLUT4 expression was assessed in L6 muscle cells in vitro.
+
+**RESEARCH DESIGN AND METHODS:** Subjects ingested a mixed meal (50% carbohydrates, 15% proteins, and 35% lipids) containing 0 g (control) or 10 g C10 in addition to the meal or 23 g C10 as a substitute of fats.
+
+**RESULTS:** In type 2 diabetic subjects, the incremental glucose area under the curve (AUC) decreased by 42% (P<0.05) and 70% (P<0.05) in the 10 g C10 and 23 g C10 groups, respectively. At the largest amounts used, C10 reduced the glucose AUC in healthy volunteers also. When fats were substituted with 23 g C10, AUC of Ra was significantly reduced on the order of 18% (P<0.05) in both healthy and diabetic subjects. The insulin-dependent glucose uptake by L6 cells was increased in the presence of C10 (38.7±10.3 vs. 11.4±5.4%; P=0.026). This increase was associated with a 1.7-fold raise of GLUT4.
+
+**CONCLUSIONS:** Sebacic acid significantly reduced hyperglycemia after a meal in type 2 diabetic subjects. This beneficial effect was associated with a reduction in glucose Ra, probably due to lowered hepatic glucose output and increased peripheral glucose disposal.

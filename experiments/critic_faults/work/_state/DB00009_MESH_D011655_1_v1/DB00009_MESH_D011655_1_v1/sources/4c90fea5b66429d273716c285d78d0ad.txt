@@ -1,0 +1,9 @@
+PMID:22624582  Coagulation and fibrinolysis abnormalities in familial amyloid polyneuropathy.  (Amyloid : the international journal of experimental and clinical investigation : the official journal of the International Society of Amyloidosis, 2012)
+
+**OBJECTIVE:** Familial amyloid polyneuropathy (FAP) is an autosomal dominant form of hereditary amyloidosis. Several studies reported coagulation factor X deficiency and excessive fibrinolysis in immunoglobulin light chain amyloidosis. However, few have investigated coagulation and fibrinolysis in FAP. The objective of this study was to determine abnormalities in plasma biomarkers of coagulation and fibrinolysis in FAP.
+
+**METHODS:** We prospectively recruited eight FAP patients with transthyretin mutations and ten age-matched control patients with other neuropathies in our university. We examined plasma biomarkers of coagulation and fibrinolysis including prothrombin time, activated partial thromboplastin time, fibrinogen, fibrin/fibrinogen degradation products, D-dimer, α2-antiplasmin, antithrombin, plasminogen, thrombin-antithrombin complex, plasmin-α2-antiplasmin complex, prothrombin fragment 1+2, and coagulation factor X. The Mann-Whitney U test was performed for statistical comparisons between FAP and control groups.
+
+**RESULTS:** FAP patients exhibited significantly decreased levels of coagulation factor X, plasminogen and α2-antiplasmin, and significantly increased levels of prothrombin fragment 1+2 compared to control patients.
+
+**CONCLUSION:** Our results indicate abnormalities of coagulation and fibrinolysis in FAP patients.

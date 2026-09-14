@@ -1,0 +1,87 @@
+record_id: DB00010_MESH_D004393_1_v1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T07:10:40+00:00'
+last_reviewed_at: '2026-08-25T07:10:40+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: RE_CURATE
+escalation_reason: null
+overall_summary: No semantic problems found.
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T07:10:40+00:00'
+  verdict: RE_CURATE
+  escalation_reason: null
+  summary: No semantic problems found.
+  flags:
+  - edge: Sermorelin --increases activity of--> Growth hormone-releasing hormone receptor
+    issue: The cited passage describes activation of the GHRH receptor by native GHRH,
+      not by the drug named in this edge; the drug subject is never mentioned in this
+      source. The mechanism it establishes is for the endogenous parent ligand, so
+      it does not directly ground the drug->receptor relation asserted here.
+  - edge: Sermorelin --increases activity of--> Growth hormone-releasing hormone receptor
+    issue: The cited passage measures a downstream physiological readout (growth hormone
+      release) rather than activation of the receptor named as this edge's object;
+      the receptor itself is not mentioned. The quote confirms the drug's activity
+      by phenotype but does not directly ground the drug->receptor-activation relation.
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:Sermorelin
+  - ChEMBL:sermorelin
+  - ChEMBL:sermorelin acetate
+  - PMID:17941086
+  - PMID:19589870
+  - PMID:2429796
+  - PMID:24484169
+  - PMID:2879138
+  - PMID:2907992
+  - PMID:7666796
+  - PMID:8329825
+  - clinicaltrials:NCT01088412
+  edge_reviews:
+  - edge: Sermorelin --increases activity of--> Growth hormone-releasing hormone receptor
+    reference: PMID:12446584
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited passage describes activation of the GHRH receptor by native GHRH,
+      not by the drug named in this edge; the drug subject is never mentioned in this
+      source. The mechanism it establishes is for the endogenous parent ligand, so
+      it does not directly ground the drug->receptor relation asserted here.
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1201490 (Sermorelin acetate)",
+      "record": "action_type=''AGONIST''; target=Growth hormone-releasing hormone
+      receptor; direct_interaction=1; moa=''GHRH receptor agonist'' \u2014 independently
+      confirms Sermorelin activates GHRHR."}'
+    confidence: high
+  - edge: Sermorelin --increases activity of--> Growth hormone-releasing hormone receptor
+    reference: PMID:6236914
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited passage measures a downstream physiological readout (growth hormone
+      release) rather than activation of the receptor named as this edge's object;
+      the receptor itself is not mentioned. The quote confirms the drug's activity
+      by phenotype but does not directly ground the drug->receptor-activation relation.
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1201490 (Sermorelin acetate)",
+      "record": "action_type=''AGONIST'', direct_interaction=1 on Growth hormone-releasing
+      hormone receptor \u2014 confirms the drug is a direct GHRHR agonist, the mechanistic
+      step the clinical GH-release readout is downstream of."}'
+    confidence: high
+  - edge: growth hormone secretion --negatively regulates--> Pituitary dwarfism
+    reference: PMID:10549302
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:2907992 (Hormone Research, 1988) and PMID:8329825,
+      read via read_abstract", "record": "GRF/GHRH(1-29)NH2 administration (which
+      raises GH secretion) accelerated growth velocity in short-statured children
+      and is proposed to treat GH-deficiency short stature \u2014 confirming that
+      increased GH secretion opposes dwarfism."}'
+    confidence: high
+  - edge: growth hormone secretion --negatively regulates--> Pituitary dwarfism
+    reference: PMID:8395283
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:10549302 (companion human syndrome) plus PMID:2907992",
+      "record": "The little-mouse GHRHR defect is the homologue of the human GH-deficiency
+      dwarfism; independent human data confirm GH secretion opposes short-stature/dwarfism."}'
+    confidence: high

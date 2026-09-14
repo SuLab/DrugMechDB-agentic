@@ -1,0 +1,174 @@
+record_id: DB01076_MESH_D006937_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T05:43:33+00:00'
+last_reviewed_at: '2026-08-25T05:43:33+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: RE_CURATE
+escalation_reason: null
+overall_summary: 'Although the chain''s edge signs net to a correct ''decreases hypercholesterolemia''
+  and the back half (cholesterol -| LDLR via SREBP2 -> LDLR clears LDL-C -> hypercholesterolemia)
+  is genuinely part of the accepted mechanism, the front of the path is defective
+  as a whole: it omits atorvastatin''s actual direct target (HMG-CoA reductase, per
+  ChEMBL CHEMBL1487) and substitutes an Apolipoprotein B-100 -> cholesterol-synthesis
+  route that is biologically incorrect (ApoB-100 is a structural cholesterol carrier,
+  not a cholesterol producer; PMID:34625741) and, per the edge judge, unsupported
+  by the citations. The accepted route (PMID:27888906) reaches the SREBP2/LDLR feedback
+  via HMG-CoA reductase inhibition lowering the intracellular cholesterol pool, not
+  via ApoB. The correct net sign is coincidental to the wrong intermediate.'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T05:43:33+00:00'
+  verdict: RE_CURATE
+  escalation_reason: null
+  summary: 'Although the chain''s edge signs net to a correct ''decreases hypercholesterolemia''
+    and the back half (cholesterol -| LDLR via SREBP2 -> LDLR clears LDL-C -> hypercholesterolemia)
+    is genuinely part of the accepted mechanism, the front of the path is defective
+    as a whole: it omits atorvastatin''s actual direct target (HMG-CoA reductase,
+    per ChEMBL CHEMBL1487) and substitutes an Apolipoprotein B-100 -> cholesterol-synthesis
+    route that is biologically incorrect (ApoB-100 is a structural cholesterol carrier,
+    not a cholesterol producer; PMID:34625741) and, per the edge judge, unsupported
+    by the citations. The accepted route (PMID:27888906) reaches the SREBP2/LDLR feedback
+    via HMG-CoA reductase inhibition lowering the intracellular cholesterol pool,
+    not via ApoB. The correct net sign is coincidental to the wrong intermediate.'
+  flags:
+  - edge: atorvastatin --decreases activity of--> Apolipoprotein B-100
+    issue: The cited quote does not mention the object (Apolipoprotein B-100) at all
+      — it describes the drug's inhibition of a different enzyme and an increase in
+      LDL receptors, i.e. a neighbouring step in the path, not this edge. In addition,
+      the object is a structural apolipoprotein, not a catalytic enzyme; the documented
+      drug effect is on its production/abundance (and indirectly), so 'decreases activity
+      of' is the wrong relation flavor and the wrong directness. Re-source with text
+      that specifically addresses the drug's effect on this object, and reconsider
+      the predicate.
+  - edge: Apolipoprotein B-100 --increases abundance of--> Cholesterol
+    issue: 'The cited quotation is about the cholesterol-synthesis enzyme, not about
+      the edge subject (Apolipoprotein B-100) at all — it fails subject_grounding
+      and establishes no relation between ApoB-100 and cholesterol. Beyond the citation,
+      the asserted relation itself is suspect: the subject is described in the literature
+      as a structural carrier that transports cholesterol within lipoprotein particles,
+      which is a transport/packaging role rather than ''increases abundance of'' cholesterol.
+      Re-source with evidence that specifically speaks to the subject acting on the
+      object, and reconsider whether ''increases abundance of'' is the correct predicate/granularity.'
+  - edge: Low-density lipoprotein cholesterol --causes--> Hypercholesterolemia
+    issue: The cited passage co-mentions the subject and object but frames the disease
+      as being 'characterized by' the elevated analyte — a definitional/constitutive
+      relationship inside one narrow transgenic animal model whose phenotype is driven
+      by a different mechanism (VLDL overproduction). It does not assert that the
+      subject analyte acts as an upstream cause of the disease, and it does not establish
+      this as a general mechanism. Re-source with evidence that directly and generally
+      establishes the subject→object relation as claimed.
+  path_issue: The mechanistic front of this chain appears to bypass the drug's own
+    direct molecular target and instead passes through an intermediate that plays
+    a transport/structural role rather than the causal role the edges assign to it.
+    As a result the first two steps are off the accepted causal route even though
+    the overall chain happens to net in the correct direction. Re-derive the early
+    portion of the path so it begins from the drug's actual direct target and connects
+    to the downstream receptor-feedback steps through the correct upstream node; the
+    last three steps are largely on-route.
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:atorvastatin
+  - PMID:11223434
+  - PMID:11255880
+  - PMID:12612140
+  - PMID:14661091
+  - PMID:22342675
+  - PMID:24297394
+  - PMID:25950192
+  - PMID:26598835
+  - PMID:27888906
+  - PMID:33941192
+  - PMID:34625741
+  - PMID:36739970
+  - PMID:37619685
+  - PMID:37847331
+  - PMID:38219820
+  - PMID:42034477
+  - PMID:42456311
+  - PMID:6994567
+  - PMID:8359516
+  - PMID:9092579
+  - PMID:9885772
+  edge_reviews:
+  - edge: atorvastatin --decreases activity of--> Apolipoprotein B-100
+    reference: PMID:10582478
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: The cited quote does not mention the object (Apolipoprotein B-100) at all
+      — it describes the drug's inhibition of a different enzyme and an increase in
+      LDL receptors, i.e. a neighbouring step in the path, not this edge. In addition,
+      the object is a structural apolipoprotein, not a catalytic enzyme; the documented
+      drug effect is on its production/abundance (and indirectly), so 'decreases activity
+      of' is the wrong relation flavor and the wrong directness. Re-source with text
+      that specifically addresses the drug's effect on this object, and reconsider
+      the predicate.
+    grounding: '{"source": "ChEMBL mechanism (CHEMBL1487) and independent PMIDs 11223434,
+      12612140", "record": "ChEMBL: atorvastatin''s direct, curated target is HMG-CoA
+      reductase (INHIBITOR), not ApoB-100. PMID:11223434: atorvastatin''s main mechanism
+      is ''reduction of the LDL production rate''. PMID:12612140: atorvastatin reduced
+      ''apoB100 production'' in HepG2 cells \u2014 effect is on production/abundance,
+      not activity."}'
+    confidence: high
+  - edge: Apolipoprotein B-100 --increases abundance of--> Cholesterol
+    reference: PMID:10582478
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: 'The cited quotation is about the cholesterol-synthesis enzyme, not about
+      the edge subject (Apolipoprotein B-100) at all — it fails subject_grounding
+      and establishes no relation between ApoB-100 and cholesterol. Beyond the citation,
+      the asserted relation itself is suspect: the subject is described in the literature
+      as a structural carrier that transports cholesterol within lipoprotein particles,
+      which is a transport/packaging role rather than ''increases abundance of'' cholesterol.
+      Re-source with evidence that specifically speaks to the subject acting on the
+      object, and reconsider whether ''increases abundance of'' is the correct predicate/granularity.'
+    grounding: '{"source": "PubMed PMID:22342675 (BBA 2012), PMID:9885772 (Crit Rev
+      Clin Lab Sci 1998), PMID:34625741 (Nat Rev Cardiol 2022)", "record": "ApoB-100
+      is the mandatory structural protein of VLDL/LDL that enables cholesterol/triglyceride
+      TRANSPORT (''ApoB100 is absolutely required for VLDL assembly and secretion'';
+      VLDL/LDL ''transport... cholesterol''). None describe ApoB-100 as increasing
+      the abundance/synthesis of cholesterol; it packages and carries cholesterol,
+      it does not create it."}'
+    confidence: high
+  - edge: Cholesterol --negatively regulates--> Low-density lipoprotein receptor
+    reference: PMID:12829694
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:24297394 (independent, not cited by curator) and
+      PMID:26598835 (review, not cited)", "record": "PMID:24297394: ''LDL loading
+      increased intracellular cholesterol level, reducing LDL receptor mRNA level
+      in both THP-1 macrophages and VSMCs under physiological conditions.'' PMID:26598835:
+      ''Cholesterol biosynthesis and uptake by LDL receptors are tightly regulated
+      at the transcriptional level through negative feedback control, mediated by
+      SREBPs.''"}'
+    confidence: high
+  - edge: Low-density lipoprotein receptor --decreases abundance of--> Low-density
+      lipoprotein cholesterol
+    reference: PMID:32109664
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:6994567 (Brown & Goldstein, LDL receptor concept)",
+      "record": "''a large fraction of LDL was removed from plasma by a specific receptor-mediated
+      uptake mechanism'' \u2014 independently confirms LDL receptor clears/decreases
+      plasma LDL."}'
+    confidence: high
+  - edge: Low-density lipoprotein cholesterol --causes--> Hypercholesterolemia
+    reference: PMID:10591675
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: The cited passage co-mentions the subject and object but frames the disease
+      as being 'characterized by' the elevated analyte — a definitional/constitutive
+      relationship inside one narrow transgenic animal model whose phenotype is driven
+      by a different mechanism (VLDL overproduction). It does not assert that the
+      subject analyte acts as an upstream cause of the disease, and it does not establish
+      this as a general mechanism. Re-source with evidence that directly and generally
+      establishes the subject→object relation as claimed.
+    grounding: '{"source": "PubMed PMID:42034477 (J Clin Lipidol 2026) and PMID:37847331
+      (Curr Atheroscler Rep 2023), independent of the curator''s citation", "record":
+      "Severe hypercholesterolemia is ''defined as low-density lipoprotein cholesterol
+      (LDL-C) \u2265190 mg/dL''; familial hypercholesterolemia is ''a hereditary condition
+      characterized by elevated levels of LDL-C''. These establish that elevated LDL-C
+      constitutes/defines the hypercholesterolemic state rather than acting as a separable
+      upstream cause."}'
+    confidence: high

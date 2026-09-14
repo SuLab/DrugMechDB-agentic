@@ -1,0 +1,134 @@
+record_id: DB00026_MESH_D056587_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T06:14:52+00:00'
+last_reviewed_at: '2026-08-25T06:14:52+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: RE_CURATE
+escalation_reason: null
+overall_summary: The path nets in the correct therapeutic direction and is structurally
+  a clean single chain, but it is built on the wrong cytokine axis. Independent grounding
+  (ChEMBL CHEMBL1201570; PMID:38376736; PMID:33603750) shows anakinra is an IL-1 receptor
+  type 1 antagonist and CAPS is an IL-1-mediated disease, explicitly distinct from
+  the TNF-receptor-associated syndrome (TRAPS). The first two edges use Tumor necrosis
+  factor where the mechanism requires the IL-1 receptor / IL-1beta. Every edge citation
+  the curator supplied for edges 1 and 2 is in fact IL-1-centric and fails to mention
+  TNF, which corroborates that the intermediate entity is mis-grounded. The middle
+  of the chain must be re-derived on the drug's actual target axis.
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T06:14:52+00:00'
+  verdict: RE_CURATE
+  escalation_reason: null
+  summary: The path nets in the correct therapeutic direction and is structurally
+    a clean single chain, but it is built on the wrong cytokine axis. Independent
+    grounding (ChEMBL CHEMBL1201570; PMID:38376736; PMID:33603750) shows anakinra
+    is an IL-1 receptor type 1 antagonist and CAPS is an IL-1-mediated disease, explicitly
+    distinct from the TNF-receptor-associated syndrome (TRAPS). The first two edges
+    use Tumor necrosis factor where the mechanism requires the IL-1 receptor / IL-1beta.
+    Every edge citation the curator supplied for edges 1 and 2 is in fact IL-1-centric
+    and fails to mention TNF, which corroborates that the intermediate entity is mis-grounded.
+    The middle of the chain must be re-derived on the drug's actual target axis.
+  flags:
+  - edge: anakinra --decreases activity of--> Tumor necrosis factor
+    issue: The cited source describes the subject drug as an antagonist of the interleukin-1
+      receptor / IL-1, and does not mention the edge's object protein (Tumor necrosis
+      factor) at all. The drug's established molecular target is the IL-1 receptor,
+      not TNF; any relationship between the drug and TNF is a downstream effect on
+      cytokine abundance, not a direct decrease of TNF activity. The object of this
+      edge appears mis-grounded to the wrong protein — re-source the drug's actual
+      target and correct the object.
+  - edge: Tumor necrosis factor --positively regulates--> inflammatory response
+    issue: The cited source establishes that a cytokine signaling cascade positively
+      drives the inflammatory response, but that cytokine is not the edge's subject
+      protein — the source discusses a different cytokine/receptor axis entirely,
+      and the edge's subject protein is not mentioned. Subject entity appears mis-grounded
+      relative to the mechanism the path describes.
+  - edge: Tumor necrosis factor --positively regulates--> inflammatory response
+    issue: The cited source describes a cytokine other than the edge's subject protein
+      driving inflammation, and does so in a disease/tissue context different from
+      the path's disease. It does not establish the edge's subject protein acting
+      on the inflammatory response.
+  path_issue: 'The chain nets in the correct direction and is a single connected chain,
+    but the intermediate protein carrying the first two edges is the wrong entity
+    for this drug''s mechanism and for this disease: the drug''s cited sources describe
+    a different cytokine/receptor axis than the intermediate the path uses, and the
+    disease is driven by that other axis rather than by the intermediate shown. The
+    drug->intermediate and intermediate->inflammation steps need to be re-sourced
+    onto the drug''s actual molecular target. Note also that a periodic-fever syndrome
+    named for the intermediate protein used here is a distinct disease from the one
+    in this path — do not conflate them.'
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:anakinra
+  - PMID:33603750
+  - PMID:35545011
+  - PMID:37478249
+  - PMID:38376736
+  - PMID:40170849
+  - PMID:40410596
+  - PMID:42551234
+  edge_reviews:
+  - edge: anakinra --decreases activity of--> Tumor necrosis factor
+    reference: PMID:27790031
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: The cited source describes the subject drug as an antagonist of the interleukin-1
+      receptor / IL-1, and does not mention the edge's object protein (Tumor necrosis
+      factor) at all. The drug's established molecular target is the IL-1 receptor,
+      not TNF; any relationship between the drug and TNF is a downstream effect on
+      cytokine abundance, not a direct decrease of TNF activity. The object of this
+      edge appears mis-grounded to the wrong protein — re-source the drug's actual
+      target and correct the object.
+    grounding: '{"source": "ChEMBL mechanism record CHEMBL1201570 (anakinra); independent
+      abstracts PMID:35545011, PMID:37478249", "record": "ChEMBL: action_type=ANTAGONIST,
+      target=Interleukin-1 receptor type 1, direct_interaction=1, moa=''Interleukin-1
+      receptor antagonist'' \u2014 no TNF target. PMID:35545011 shows anakinra reduces
+      downstream TNF\u03b1 levels via IL-1 receptor blockade, confirming TNF is a
+      downstream readout, not anakinra''s molecular target."}'
+    confidence: high
+  - edge: Tumor necrosis factor --positively regulates--> inflammatory response
+    reference: PMID:26140469
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: The cited source establishes that a cytokine signaling cascade positively
+      drives the inflammatory response, but that cytokine is not the edge's subject
+      protein — the source discusses a different cytokine/receptor axis entirely,
+      and the edge's subject protein is not mentioned. Subject entity appears mis-grounded
+      relative to the mechanism the path describes.
+    grounding: '{"source": "ChEMBL mechanism for anakinra (CHEMBL1201570)", "record":
+      "anakinra action_type=ANTAGONIST, target=Interleukin-1 receptor type 1 \u2014
+      confirming the path''s drug and axis are IL-1-based, not TNF."}'
+    confidence: high
+  - edge: Tumor necrosis factor --positively regulates--> inflammatory response
+    reference: PMID:31524632
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: The cited source describes a cytokine other than the edge's subject protein
+      driving inflammation, and does so in a disease/tissue context different from
+      the path's disease. It does not establish the edge's subject protein acting
+      on the inflammatory response.
+    grounding: '{"source": "ChEMBL mechanism for anakinra (CHEMBL1201570)", "record":
+      "anakinra = IL-1 receptor type 1 antagonist, confirming the mechanistic axis
+      is IL-1, not TNF."}'
+    confidence: high
+  - edge: inflammatory response --causes--> Cryopyrin-associated periodic syndrome
+    reference: PMID:22288581
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:40410596 (Cell Mol Life Sci 2025) and PMID:40170849
+      (Front Immunol 2025), independent of curator", "record": "CAPS characterized
+      by NLRP3 gain-of-function variants \u2192 constitutively active inflammasome
+      \u2192 IL-1\u03b2 production ''primarily driving'' inflammatory episodes; overproduction
+      of pro-inflammatory cytokines ''linked to'' CAPS."}'
+    confidence: high
+  - edge: inflammatory response --causes--> Cryopyrin-associated periodic syndrome
+    reference: PMID:26140469
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:40410596 (Cell Mol Life Sci 2025), curator did not
+      cite", "record": "''inflammatory episodes... primarily driven by the production
+      of interleukin (IL)-1\u03b2'' in CAPS \u2014 corroborates IL-1\u03b2-driven
+      inflammation causing CAPS symptomatology."}'
+    confidence: high

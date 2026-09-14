@@ -1,0 +1,213 @@
+{
+  "edges": {
+    "36966ffee2f31a43": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D000068877",
+          "name": "imatinib",
+          "label": "Drug"
+        },
+        "predicate": "decreases activity of",
+        "object": {
+          "id": "UniProt:P00533",
+          "name": "Epidermal growth factor receptor",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D000068877|decreases activity of|UniProt:P00533",
+        "verdicts": [
+          {
+            "reference": "PMID:38627294",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'Imatinib mesylate was the first representative BCR-ABL1 tyrosine kinase inhibitor (TKI) class for the treatment of chronic myeloid leukemia.' is an exact substring of the abstract of PMID:38627294 (read_abstract confirms identical opening sentence)."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet is about imatinib mesylate = imatinib (MESH:D000068877, ChEMBL941). Subject entity is correct."
+              },
+              "object_grounding": {
+                "result": "fail",
+                "basis": "Edge object is EGFR (UniProt:P00533). The snippet's asserted target is 'BCR-ABL1 tyrosine kinase' (Bcr/Abl fusion), NOT EGFR. The source never mentions EGFR anywhere in the abstract; its entire subject is BCR-ABL1 in K562 CML cells."
+              },
+              "polarity": {
+                "result": "abstain",
+                "basis": "Snippet asserts inhibition ('tyrosine kinase inhibitor'), but of BCR-ABL1, not EGFR. Cannot evaluate polarity against EGFR since the source makes no EGFR claim."
+              },
+              "direction": {
+                "result": "abstain",
+                "basis": "No imatinib->EGFR relation is stated in the source, so direction cannot be assessed."
+              },
+              "granularity": {
+                "result": "abstain",
+                "basis": "No EGFR activity/abundance/binding claim present to classify."
+              },
+              "scope_modality": {
+                "result": "abstain",
+                "basis": "Source asserts BCR-ABL1 inhibition as established, but says nothing about EGFR to scope."
+              },
+              "source_type": {
+                "result": "fail",
+                "basis": "Methodology is in-vitro medicinal-chemistry (K562/WSS-1 cell viability of novel imatinib-derived hybrids); the cited sentence itself is a background/review statement about imatinib as a BCR-ABL1 TKI. Curator's IN_VITRO label describes the paper but the sentence is background review; either way it is not evidence for an EGFR edge."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "IN_VITRO",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism records for imatinib (CHEMBL941) + PubMed PMID:39073414, PMID:39009935",
+              "record": "ChEMBL curated targets of imatinib are ABL1, PDGFR-beta, KIT, and Bcr/Abl fusion \u2014 EGFR is NOT listed. The only imatinib-EGFR association found (PMID:39073414) is a molecular-docking prediction, not an established inhibition mechanism; PMID:39009935 shows imatinib had 'no effect on endothelial function' and EGFR effects were attributed to nilotinib, not imatinib."
+            },
+            "confidence": "high",
+            "note": "Two independent failure modes stack here: (1) the cited snippet is about BCR-ABL1, not EGFR \u2014 pure snippet/entity mismatch (NO_EVIDENCE for this edge); and (2) more seriously, the edge OBJECT itself appears mis-grounded. Imatinib's canonical CML target is BCR-ABL, not EGFR. ChEMBL's independent curated oracle does not list EGFR among imatinib targets. The mechanistic path 'imatinib -| target -> proliferation -> CML' should almost certainly route through BCR-ABL1, not EGFR. So edge_supported is false as written: the imatinib->EGFR relation is not an established mechanism.",
+            "issue_for_curator": "The cited quote establishes that imatinib inhibits a tyrosine kinase relevant to chronic myeloid leukemia, but the kinase it names is not the edge's object protein \u2014 the quote says nothing about the object receptor at all. Moreover, independent curated target records do not list this receptor among imatinib's established targets; imatinib's canonical leukemia target is a different fusion kinase. Re-examine whether the object protein of this edge is correctly grounded; as written the imatinib->object relation is unsupported and likely a wrong target."
+          }
+        ],
+        "edge_supported": false,
+        "edge_basis": "Independent grounding (ChEMBL curated mechanism for imatinib/CHEMBL941) lists imatinib's direct targets as ABL1, PDGFR-beta, KIT, and Bcr/Abl fusion protein \u2014 EGFR (UniProt:P00533) is not among them. No trusted source establishes imatinib as an EGFR inhibitor (only a computational docking prediction exists). Both the cited snippet and the edge object are defective: the snippet is about BCR-ABL1, and imatinib's mechanism in CML runs through BCR-ABL, not EGFR."
+      },
+      "edge_hash": "36966ffee2f31a43"
+    },
+    "d0a1233da04de9e2": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:P00533",
+          "name": "Epidermal growth factor receptor",
+          "label": "Protein"
+        },
+        "predicate": "positively regulates",
+        "object": {
+          "id": "GO:0008283",
+          "name": "cell population proliferation",
+          "label": "BiologicalProcess"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:P00533|positively regulates|GO:0008283",
+        "verdicts": [
+          {
+            "reference": "PMID:42174092",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'This alteration gives rise to the BCR::ABL1 fusion oncogene, whose constitutive tyrosine kinase activity promotes uncontrolled proliferation and survival of leukemic cells.' is an exact substring of the PMID:42174092 abstract (Leukemia, 2026, CML TKI review)."
+              },
+              "subject_grounding": {
+                "result": "fail",
+                "basis": "Edge subject is EGFR (Epidermal growth factor receptor, UniProt:P00533). The snippet \u2014 and the entire abstract \u2014 is about the BCR::ABL1 fusion oncogene (a different tyrosine kinase). EGFR is never mentioned. This is an entity substitution: the proliferative driver in the source is BCR-ABL, not EGFR."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Object GO:0008283 (cell population proliferation) matches 'uncontrolled proliferation ... of leukemic cells' in the snippet."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'promotes uncontrolled proliferation' = positive regulation, matching the predicate 'positively regulates' \u2014 but attributed to BCR-ABL, not EGFR."
+              },
+              "direction": {
+                "result": "fail",
+                "basis": "The snippet asserts BCR-ABL kinase activity \u2192 proliferation. It does not assert EGFR acting on proliferation, so the subject\u2192object relation for THIS edge's subject is absent."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Regulation of a biological process (proliferation) by a kinase's activity is the correct flavor; but again for the wrong subject."
+              },
+              "scope_modality": {
+                "result": "fail",
+                "basis": "Asserted as established, but bound to CML/BCR-ABL context; nothing establishes an EGFR-specific mechanism here."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Narrative review of CML pathogenesis and TKI therapy \u2192 evidence_source = OTHER (review)."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism (CHEMBL941 imatinib) + PMID:42174092 abstract + PMID:42628399 abstract",
+              "record": "ChEMBL lists imatinib's targets as ABL1, PDGFR\u03b2, KIT, and BCR-ABL fusion \u2014 NOT EGFR, refuting the upstream 'imatinib decreases activity of EGFR' node this edge depends on. PMID:42174092 attributes CML proliferation to BCR::ABL1, never EGFR. PMID:42628399 shows EGFR\u2192proliferation is a real relationship in other cancers (glioma), so the edge is biologically plausible in general but wholly mis-contextualized in this CML/imatinib path."
+            },
+            "confidence": "high",
+            "note": "The subject node EGFR is almost certainly a mis-grounding of the true imatinib target in CML (BCR-ABL / ABL1). ChEMBL definitively shows imatinib does not target EGFR. The cited snippet is verbatim and on-topic for proliferation, but the proliferative driver named is BCR-ABL, not EGFR \u2014 classic entity substitution at the subject. The generic EGFR\u2192proliferation fact (confirmed independently in glioma) does not rescue this edge because the whole EGFR node is wrong for this drug/disease path.",
+            "issue_for_curator": "The cited quote attributes uncontrolled proliferation to a fusion tyrosine-kinase oncogene specific to this leukemia, not to Epidermal growth factor receptor \u2014 the edge's subject entity is never mentioned in the source. Moreover, the drug at the head of this path does not act on Epidermal growth factor receptor at all; its canonical target here is a different kinase. Both the subject-grounding of this edge and the upstream drug\u2192target node appear mis-grounded. Re-source with evidence that specifically ties the actual proliferative driver in this disease to proliferation, and reconcile the subject entity with the drug's true target."
+          }
+        ],
+        "edge_supported": false,
+        "edge_basis": "In isolation, EGFR does positively regulate cell proliferation (independently corroborated in glioma, PMID:42628399). BUT within THIS path \u2014 imatinib\u2192target\u2192proliferation\u2192CML \u2014 the subject EGFR is a mis-grounding: ChEMBL confirms imatinib targets ABL1/BCR-ABL/PDGFR\u03b2/KIT, not EGFR, and the cited source attributes CML proliferation to BCR-ABL. The edge as embedded in this path is not defensible; the EGFR node should be the drug's actual target (BCR-ABL/ABL1)."
+      },
+      "edge_hash": "d0a1233da04de9e2"
+    },
+    "b861b0f06e526e99": {
+      "edge": {
+        "subject": {
+          "id": "GO:0008283",
+          "name": "cell population proliferation",
+          "label": "BiologicalProcess"
+        },
+        "predicate": "manifestation of",
+        "object": {
+          "id": "MESH:D015464",
+          "name": "Chronic myeloid leukemia",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "GO:0008283|manifestation of|MESH:D015464",
+        "verdicts": [
+          {
+            "reference": "PMID:41353321",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet matches the BACKGROUND sentence exactly in PMID:41353321 abstract: 'Chronic myeloid leukemia (CML) is a myeloproliferative malignancy marked through the excessive proliferative growth of functional myeloid cells.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet asserts 'excessive proliferative growth of functional myeloid cells' \u2014 a cell population proliferation process (GO:0008283)."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet is explicitly about 'Chronic myeloid leukemia (CML)', matching MESH:D015464."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "CML 'is ... marked through the excessive proliferative growth' \u2014 proliferation is affirmed as a positive/defining feature of the disease, matching 'manifestation of'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "The proliferation is presented as a characteristic/manifestation of the disease (disease is 'marked through' proliferation), the correct direction for 'manifestation of'."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Proliferation as a defining disease characteristic is the appropriate flavor for a process-to-disease 'manifestation of' edge."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established definitional fact ('is a myeloproliferative malignancy marked through...'), no hedging; independently corroborated by PMID:17032464 describing CML as a chronic myeloproliferative disorder driven by excessive proliferation signals."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Definitional/background assertion within a preclinical research paper; consistent with a general disease-characterization (OTHER)."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:17032464 (J Transl Med 2006 review), not cited by curator",
+              "record": "Describes CML as a chronic myeloproliferative disorder in which cells have 'received excessive signals for proliferation' \u2014 confirming excessive proliferation is a defining manifestation of CML."
+            },
+            "confidence": "high",
+            "note": "Snippet verbatim-confirmed via independent read of the abstract (source not in curator cache but readable in memory). Both subject (proliferation) and object (CML) are the actual entities discussed, with correct 'manifestation of' framing. Independent review corroborates. Note: the upstream path edges (imatinib\u2192EGFR) are questionable but out of scope for this edge; this edge is sound."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "CML is defined as a myeloproliferative malignancy characterized by excessive proliferation of myeloid cells \u2014 supported by the cited snippet and independently corroborated by PMID:17032464, establishing that cell population proliferation is a manifestation of CML."
+      },
+      "edge_hash": "b861b0f06e526e99"
+    }
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "edges": {
+    "96c34464f8dd57be": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D014568",
+          "name": "Urokinase",
+          "label": "Drug"
+        },
+        "predicate": "increases activity of",
+        "object": {
+          "id": "UniProt:P00747",
+          "name": "Plasminogen",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D014568|increases activity of|UniProt:P00747",
+        "verdicts": [
+          {
+            "reference": "PMID:3044205",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Abstract of PMID:3044205 contains the exact sentence: 'Plasminogen activation is mediated by plasminogen activators which are classified as either tissue-type plasminogen activator (t-PA) or urokinase-type plasminogen activator (u-PA).'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet names 'urokinase-type plasminogen activator (u-PA)', the edge subject Urokinase (MESH:D014568). ChEMBL CHEMBL1201420 confirms UROKINASE identity as urokinase-type plasminogen activator."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet names 'Plasminogen' as the substrate whose activation is mediated; matches object UniProt:P00747. Surrounding text: 'a proenzyme, plasminogen, which can be converted to the active enzyme plasmin.'"
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'activation' / 'activators' = positive/increase, matching predicate 'increases activity of'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Plasminogen activation is 'mediated by' the activators (u-PA), i.e., u-PA acts on plasminogen, not the reverse."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Snippet is about converting proenzyme plasminogen to active plasmin \u2014 enzymatic activation of activity, matching 'increases activity of'. Independent PMID:29318541: uPA 'specifically converts cell-bound plasminogen to plasmin'."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as established fact ('is mediated by... classified as'), no hedging; general fibrinolytic-system statement."
+              },
+              "source_type": {
+                "result": "fail",
+                "basis": "PMID:3044205 ('Fibrin-specific thrombolytic agents', Ann Biol Clin 1988) is a REVIEW summarizing in-vitro, animal-model and clinical-trial data, not a primary IN_VITRO study as the curator labeled."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "REVIEW",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:29318541 (read_abstract, not cited by curator) and ChEMBL CHEMBL1201420 (chembl_get_mechanism)",
+              "record": "PMID:29318541: 'the proteolytic conversion of the zymogen plasminogen to the active serine protease plasmin is ... catalyzed by the serine protease urokinase-type plasminogen activator (urokinase, uPA) ... which in turn specifically converts cell-bound plasminogen to plasmin.' ChEMBL confirms UROKINASE = urokinase-type plasminogen activator."
+            },
+            "confidence": "high",
+            "note": "Edge is mechanistically correct and independently corroborated by two non-cited PMIDs plus ChEMBL. The cited snippet supports it via a general classification statement; entities and relation direction/sign/granularity all match. Only discrepancy is the evidence_source label: the cited paper is a review, not IN_VITRO. Since rederived_supports is SUPPORT, no issue_for_curator is emitted (the source_type relabel is a minor audit note, not a support-invalidating defect)."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent grounding: PMID:29318541 states uPA 'specifically converts cell-bound plasminogen to plasmin' (catalytic activation of plasminogen activity); corroborated by PMID:25409527 and PMID:23071827 (plasminogen 'converted to active plasmin in the presence of urokinase'); ChEMBL CHEMBL1201420 confirms urokinase identity as urokinase-type plasminogen activator."
+      },
+      "edge_hash": "96c34464f8dd57be"
+    },
+    "43a0d990e535ff81": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:P00747",
+          "name": "Plasminogen",
+          "label": "Protein"
+        },
+        "predicate": "decreases abundance of",
+        "object": {
+          "id": "MESH:D005341",
+          "name": "Fibrin",
+          "label": "ChemicalSubstance"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:P00747|decreases abundance of|MESH:D005341",
+        "verdicts": [
+          {
+            "reference": "PMID:3044205",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Abstract of PMID:3044205 ('Fibrin-specific thrombolytic agents,' Ann Biol Clin 1988) contains the snippet verbatim as its opening sentence."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet names 'plasminogen' and its active form 'plasmin'; both are the same gene product PLG (UniProt P00747), plasmin being the processed active chain. Grounding to P00747 is correct at the accession level, consistent with the preceding path edge treating plasminogen as an activatable node."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'degrade fibrin' \u2014 fibrin (MESH:D005341) is the direct substrate acted upon, not a downstream/co-mentioned entity."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'degrade fibrin' = decrease of fibrin, matching 'decreases abundance of'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Subject (plasmin/plasminogen system) acts ON fibrin (degrades it); not the reverse."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Proteolytic degradation removes/cleaves fibrin protein \u2192 abundance decrease, correctly matching 'decreases abundance of' rather than an activity change."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as established fibrinolytic-system fact ('will degrade fibrin'), not hedged; general mammalian physiology, not narrow context."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "1988 review of fibrin-specific thrombolytic agents describing the fibrinolytic system as textbook biochemistry \u2192 REVIEW/mechanistic assertion, not primary in-vitro data; curator's IN_VITRO label is not the best fit."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "REVIEW",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:42619674 (bioRxiv 2026) and PMID:15231724 (FASEB J 2004), neither cited by curator",
+              "record": "Both independently state that plasminogen is converted to plasmin which degrades/mediates degradation of fibrin ('converts Plasminogen to Plasmin to degrade fibrin'; 'convert the circulating zymogen plasminogen to active plasmin and mediate fibrin degradation')."
+            },
+            "confidence": "high",
+            "note": "Snippet is verbatim and correct. Only nuance: the degrading agent named is plasmin (active enzyme), and the snippet explicitly distinguishes zymogen plasminogen from active plasmin. Since UniProt P00747 covers both forms and the preceding path edge (Urokinase increases activity of Plasminogen) reflects zymogen->active conversion on the same node, the accession-level grounding is defensible and the edge holds. Re-derived evidence_source is REVIEW, not IN_VITRO \u2014 a labeling discrepancy with the curator, but not material to support."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent sources not cited by the curator (PMID:42619674, PMID:15231724) both state that plasminogen is activated to plasmin which degrades fibrin, corroborating a fibrin-abundance-decreasing relation on the PLG (P00747) node. The cited snippet is verbatim, directionally correct, and asserted as established."
+      },
+      "edge_hash": "43a0d990e535ff81"
+    },
+    "4311356e9bc4afb5": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D005341",
+          "name": "Fibrin",
+          "label": "ChemicalSubstance"
+        },
+        "predicate": "contributes to",
+        "object": {
+          "id": "MESH:D013927",
+          "name": "Thrombosis",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D005341|contributes to|MESH:D013927",
+        "verdicts": [
+          {
+            "reference": "PMID:29225327",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'Fibrin formed as a result of fibrinogen polymerization is the main protein component of a clot in a test tube and intravascular thrombi in vivo.' is an exact substring of the PMID:29225327 abstract (opening sentence)."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet subject is 'Fibrin' (MESH:D005341) explicitly \u2014 'Fibrin formed as a result of fibrinogen polymerization'. It distinguishes fibrin from its precursor fibrinogen, so no entity substitution."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Object is thrombosis (MESH:D013927); snippet names 'intravascular thrombi in vivo', the pathological clot = thrombosis. Independent PMID:38285167 corroborates 'the fibrin network is one of the main components of thrombi'."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Predicate 'contributes to' is positive; snippet asserts fibrin is 'the main protein component' of thrombi \u2014 a positive constitutive contribution, matching sign."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Fibrin acts as the component that makes up the thrombus (fibrin -> thrombus), not the reverse. Independent PMID:32105833: 'fibrin fibers, the main structural component of blood clots'."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "'contributes to' is a compositional/structural relation; snippet supports fibrin as the main structural protein component of thrombi (composition, not enzymatic activity), matching a structural-contribution flavor."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established fact without hedging ('is the main protein component ... in vivo'). Independent PMID:38285167 states this as established in vivo influence on thrombotic disorders."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "PMID:29225327 is a review synthesizing clinical evidence ('We discuss the current evidence...'); independent corroboration from in-vitro/model studies (PMID:32105833, PMID:38285167). Evidence source best classed as OTHER (review/textbook fact)."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PubMed PMID:38285167 and PMID:32105833 (not cited by curator)",
+              "record": "PMID:38285167: 'The fibrin network is one of the main components of thrombi. Altered fibrin network properties are known to influence the development and progression of thrombotic disorders.' PMID:32105833: 'fibrin fibers, the main structural component of blood clots'."
+            },
+            "confidence": "high",
+            "note": "Snippet verified verbatim in the abstract read independently in memory (curator's cache copy absent, but source text confirmed). Edge is a well-established fact \u2014 fibrin is the principal structural protein of thrombi. Two independent sources corroborate. All ladder checks pass; no entity substitution (fibrin vs fibrinogen handled correctly), correct direction and positive polarity, established modality."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent PubMed sources PMID:38285167 ('fibrin network is one of the main components of thrombi ... influence the development and progression of thrombotic disorders') and PMID:32105833 ('fibrin fibers, the main structural component of blood clots') establish fibrin as the principal structural contributor to thrombi, independent of the curator's cited snippet."
+      },
+      "edge_hash": "4311356e9bc4afb5"
+    },
+    "2983f391a5fa6276": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D013927",
+          "name": "Thrombosis",
+          "label": "Disease"
+        },
+        "predicate": "causes",
+        "object": {
+          "id": "MESH:D011655",
+          "name": "Pulmonary embolism",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D013927|causes|MESH:D011655",
+        "verdicts": [
+          {
+            "reference": "PMID:29798363",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'is caused by deep vein thrombosis embolism pulmonary artery trunk or branch pulmonary disorder' appears verbatim in the abstract: 'DVT and PE) is caused by deep vein thrombosis embolism pulmonary artery trunk or branch pulmonary disorder, potentially lethal diseases...'"
+              },
+              "subject_grounding": {
+                "result": "partial",
+                "basis": "Edge subject is generic 'Thrombosis' (MESH:D013927). Snippet speaks specifically of 'deep vein thrombosis' (a venous thrombosis subtype, MESH:D020246), not thrombosis in general. DVT is a subtype of thrombosis so it is subsumed, but the source does not support all thrombosis\u2192PE \u2014 only the venous/DVT flavor."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Object 'Pulmonary embolism' (MESH:D011655) is explicitly the entity described \u2014 'embolism [to] pulmonary artery trunk or branch'; PE is the named condition (DVT and/or PE)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'is caused by' \u2014 positive causation, matching the 'causes' predicate."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Thrombus (DVT) embolizes to pulmonary artery producing PE; the thrombosis is the cause and PE the effect, matching subject\u2192object direction."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Disease-to-disease causal relation; both sides are disease entities and the relation is causation, appropriate flavor."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established pathophysiology ('is caused by'), not hedged; stated in a review as background fact."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Source is a review article summarizing epidemiology/pathophysiology; the causal statement is textbook mechanism \u2192 evidence_source OTHER (review/general assertion)."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:42281545 (independent case report, not cited by curator)",
+              "record": "Patient with lower-extremity deep vein thrombosis subsequently developed 'embolism in the right main pulmonary artery' (pulmonary embolism), directly demonstrating thrombosis\u2192PE causation."
+            },
+            "confidence": "high",
+            "note": "Snippet is verbatim and on-topic; the causal claim is correct. The only gap is granularity/specificity of the subject: the source establishes DEEP VEIN (venous) thrombosis as the cause of PE, whereas the edge subject is the generic superclass 'Thrombosis.' Within the path's venous-clot context (Fibrin\u2192Thrombosis\u2192PE) this generalization is defensible because DVT is a thrombosis, so the edge itself is true; the citation just under-specifies vs over-generalizes. Independent case report corroborates DVT\u2192PE. Downgraded from SUPPORT to PARTIAL for the subject-specificity gap.",
+            "issue_for_curator": "The cited quote establishes causation specifically for venous (deep vein) thrombosis producing pulmonary embolism, whereas this edge's subject is the broader generic 'Thrombosis.' The quote therefore supports only a subtype of the subject rather than the subject as stated; strengthen with a source that either matches the generic subject or justify narrowing the subject to venous thrombosis."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "The causal relation thrombosis\u2192pulmonary embolism (via embolization of a clot to the pulmonary artery) is confirmed by an independent case report (PMID:42281545: lower-extremity DVT \u2192 right main pulmonary artery embolism) and is established pathophysiology. The edge is true within the path's venous-clot context; the cited snippet is verbatim and correct but describes the DVT subtype specifically rather than the generic subject."
+      },
+      "edge_hash": "2983f391a5fa6276"
+    }
+  }
+}

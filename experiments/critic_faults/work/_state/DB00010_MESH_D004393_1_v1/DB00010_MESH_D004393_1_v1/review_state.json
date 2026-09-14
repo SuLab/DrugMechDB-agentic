@@ -1,0 +1,256 @@
+{
+  "edges": {
+    "82f1a0a98f1f70a8": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D017337",
+          "name": "Sermorelin",
+          "label": "Drug"
+        },
+        "predicate": "increases activity of",
+        "object": {
+          "id": "UniProt:Q02643",
+          "name": "Growth hormone-releasing hormone receptor",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D017337|increases activity of|UniProt:Q02643",
+        "verdicts": [
+          {
+            "reference": "PMID:12446584",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the PMID:12446584 abstract (Endocrinology 2002): 'GHRH stimulates GH secretion from somatotroph cells of the anterior pituitary via a pathway that involves GHRH receptor activation of adenylyl cyclase and increased cAMP production.'"
+              },
+              "subject_grounding": {
+                "result": "fail",
+                "basis": "The snippet's acting entity is native GHRH (endogenous growth hormone-releasing hormone), not the edge subject Sermorelin (MESH:D017337, GHRH(1-29)NH2). Sermorelin is never named in this abstract; the whole paper studies native GHRH plus GHS/ghrelin in transfected cells."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet explicitly names 'GHRH receptor activation' \u2014 resolves to the edge object GHRH receptor (UniProt:Q02643), independently confirmed as the ChEMBL target of the drug class."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'GHRH receptor activation of adenylyl cyclase and increased cAMP production' = increased receptor activity, matching predicate 'increases activity of'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Ligand activates the receptor (ligand->receptor), matching subject-acts-on-object direction."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Describes receptor activation (activity level) coupling to adenylyl cyclase/cAMP \u2014 correct 'activity' flavor, not abundance."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established mechanism ('GHRH stimulates GH secretion... via a pathway that involves GHRH receptor activation'), not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Heterologous transfected-cell system expressing cloned GHRH/GHS receptors \u2192 IN_VITRO methodology, matching re-derivation."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "IN_VITRO",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism CHEMBL1201490 (Sermorelin acetate)",
+              "record": "action_type='AGONIST'; target=Growth hormone-releasing hormone receptor; direct_interaction=1; moa='GHRH receptor agonist' \u2014 independently confirms Sermorelin activates GHRHR."
+            },
+            "confidence": "high",
+            "note": "The snippet correctly establishes the GHRH-receptor->adenylyl cyclase/cAMP activation mechanism, but the acting ligand in this abstract is native GHRH, not the drug Sermorelin. It is a class/parent-ligand statement, not a statement about the specific edge subject. The edge is nonetheless true (ChEMBL), so this is a citation gap, not a false edge.",
+            "issue_for_curator": "The cited passage describes activation of the GHRH receptor by native GHRH, not by the drug named in this edge; the drug subject is never mentioned in this source. The mechanism it establishes is for the endogenous parent ligand, so it does not directly ground the drug->receptor relation asserted here."
+          },
+          {
+            "reference": "PMID:6236914",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of PMID:6236914 abstract (Clin Endocrinol 1984): 'GHRH(1-29)NH2 is equipotent to GHRH(1-40); increasing doses from 10-200 micrograms per subject augments the duration of stimulated growth hormone (GH) release'."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "'GHRH(1-29)NH2' is the peptide identity of Sermorelin (MESH:D017337); confirmed by ChEMBL record CHEMBL1201490 for Sermorelin. Subject correctly identified."
+              },
+              "object_grounding": {
+                "result": "fail",
+                "basis": "The snippet's measured entity is 'stimulated growth hormone (GH) release' \u2014 a downstream physiological outcome. The edge object, the GHRH receptor (UniProt:Q02643), is not mentioned at all in this snippet."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'augments the duration of stimulated GH release' = positive/increasing effect, directionally consistent with an agonist increasing receptor-driven activity."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "The drug drives GH release (subject exerts effect), consistent with subject-acts-on-object; but object here is GH release, not the receptor."
+              },
+              "granularity": {
+                "result": "fail",
+                "basis": "Evidence is at the level of hormone secretion (downstream readout), not receptor activation/binding. 'Increases activity of receptor' requires receptor-level evidence; this measures a secretory phenotype two steps downstream."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as an established clinical finding in normal subjects; equipotency stated plainly, not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Dosing study in normal human subjects and GH-deficient patients \u2192 HUMAN_CLINICAL, matching re-derivation."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "HUMAN_CLINICAL",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism CHEMBL1201490 (Sermorelin acetate)",
+              "record": "action_type='AGONIST', direct_interaction=1 on Growth hormone-releasing hormone receptor \u2014 confirms the drug is a direct GHRHR agonist, the mechanistic step the clinical GH-release readout is downstream of."
+            },
+            "confidence": "high",
+            "note": "This source correctly identifies Sermorelin (GHRH(1-29)NH2) as an active, GHRH-equipotent agonist, but only via a downstream GH-secretion readout. It does not name or assay the GHRH receptor, so it supports the agonism indirectly rather than establishing the receptor-activation edge directly.",
+            "issue_for_curator": "The cited passage measures a downstream physiological readout (growth hormone release) rather than activation of the receptor named as this edge's object; the receptor itself is not mentioned. The quote confirms the drug's activity by phenotype but does not directly ground the drug->receptor-activation relation."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent expert-curated ChEMBL mechanism record CHEMBL1201490 (Sermorelin acetate): action_type='AGONIST', target='Growth hormone-releasing hormone receptor', direct_interaction=1, moa='GHRH receptor agonist'. This directly and independently establishes Sermorelin increases activity of the GHRH receptor (UniProt:Q02643). The two cited snippets each have a real gap (one is about the parent ligand GHRH, the other is a downstream GH-release readout), so the edge is true but its citations should be strengthened."
+      },
+      "edge_hash": "82f1a0a98f1f70a8"
+    },
+    "6332bcc6828ca9ab": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:Q02643",
+          "name": "Growth hormone-releasing hormone receptor",
+          "label": "Protein"
+        },
+        "predicate": "positively regulates",
+        "object": {
+          "id": "GO:0030252",
+          "name": "growth hormone secretion",
+          "label": "BiologicalProcess"
+        }
+      },
+      "verdict": {
+        "_parse_error": "no parseable JSON in model output",
+        "_raw": "That's about resistin, not GHRHR directly. The two cited abstracts themselves are the strongest direct statements. Let me verify the entity grounding \u2014 that UniProt:Q02643 is the GHRHR \u2014 and that the GO term is correct for GH secretion. The PMID:8395283 abstract is particularly strong: it's a genetic loss-of-function (the \"little\" mouse) showing a mutation disrupting GHRHR function causes *reduced* GH secretion and dwarfism \u2014 establishing GHRHR positively regulates GH secretion via genetic evidence.\n\nLet me confirm the subject grounding for the human/mouse GHRHR identity."
+      },
+      "edge_hash": "6332bcc6828ca9ab"
+    },
+    "6015f47522d4c3dc": {
+      "edge": {
+        "subject": {
+          "id": "GO:0030252",
+          "name": "growth hormone secretion",
+          "label": "BiologicalProcess"
+        },
+        "predicate": "negatively regulates",
+        "object": {
+          "id": "MESH:D004393",
+          "name": "Pituitary dwarfism",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "GO:0030252|negatively regulates|MESH:D004393",
+        "verdicts": [
+          {
+            "reference": "PMID:10549302",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the abstract's opening sentence: 'We describe a recently identified new form of dwarfism due to isolated growth hormone (GH) deficiency, secondary to inactivating mutations in the GH-releasing hormone receptor (GHRHR) gene.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet refers to 'growth hormone (GH) deficiency' \u2014 i.e., deficient GH secretion (GO:0030252). The abstract further states 'severe isolated GH deficiency' as cause. Subject entity is directly present."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'a new form of dwarfism due to isolated GH deficiency' \u2014 this is pituitary/somatotrope GH-deficiency dwarfism, matching MESH:D004393 Pituitary dwarfism. Human GHRHR-inactivation syndrome ('little mouse' homologue)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Source: GH DEFICIENCY causes dwarfism. Inverted, adequate GH secretion opposes dwarfism \u2192 matches 'negatively regulates'. Independent PMID:2907992 shows GRF (raising GH axis) accelerated growth velocity, confirming the sign."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "GH secretion level determines presence/absence of the disease phenotype; the biological process acts on the disease state, not vice versa."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Relation is process(secretion)\u2192disease. Snippet describes GH secretion (deficiency) as the etiologic driver of the dwarfism disease state \u2014 appropriate flavor for a process\u2192disease regulatory edge."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established: 'a new form of dwarfism DUE TO isolated GH deficiency' \u2014 a definitive causal clinical statement across multiple families, not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Clinical genetic characterization of affected human families (GHR & IGF Research review of human syndrome) \u2192 HUMAN_CLINICAL."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "HUMAN_CLINICAL",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:2907992 (Hormone Research, 1988) and PMID:8329825, read via read_abstract",
+              "record": "GRF/GHRH(1-29)NH2 administration (which raises GH secretion) accelerated growth velocity in short-statured children and is proposed to treat GH-deficiency short stature \u2014 confirming that increased GH secretion opposes dwarfism."
+            },
+            "confidence": "high",
+            "note": "Curator's cache did not contain the PMID; read independently. Snippet verbatim and directly on the causal etiology. Object well matched to pituitary GH-deficiency dwarfism."
+          },
+          {
+            "reference": "PMID:8395283",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Exact substring: 'Mice homozygous for this mutation have reduced GH secretion and a dwarf phenotype.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "'reduced GH secretion' explicitly names growth hormone secretion (GO:0030252)."
+              },
+              "object_grounding": {
+                "result": "partial",
+                "basis": "'a dwarf phenotype' in mice \u2014 GHRHR/somatotrope-driven, so etiologically the same as pituitary GH-deficiency dwarfism, but the snippet says 'dwarf phenotype' generically rather than the specific human disease MESH:D004393. Model phenotype rather than the named disease."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Reduced GH secretion co-occurs with the dwarf phenotype; inverted, this supports 'GH secretion negatively regulates dwarfism.'"
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Mutation disrupting GHRHR \u2192 reduced secretion \u2192 dwarf phenotype; the secretion level drives the phenotype."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Process (secretion) linked to disease-like phenotype \u2014 correct flavor for a process\u2192disease edge."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as established finding in the little-mouse model, though bounded to mouse ('Mice homozygous...')."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Nature Genetics mouse-genetics study (little mouse) \u2192 MODEL_ORGANISM."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "MODEL_ORGANISM",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:10549302 (companion human syndrome) plus PMID:2907992",
+              "record": "The little-mouse GHRHR defect is the homologue of the human GH-deficiency dwarfism; independent human data confirm GH secretion opposes short-stature/dwarfism."
+            },
+            "confidence": "high",
+            "note": "Slight object-specificity gap (generic 'dwarf phenotype' in mouse vs the named MeSH disease), but etiology (somatotrope GH deficiency) is the correct pituitary-dwarfism mechanism; sign and direction are clean. Rated SUPPORT with a minor granularity note rather than PARTIAL because the phenotype is the recognized model homologue of the disease."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Two independent sources (human GHRHR-inactivation dwarfism, PMID:10549302; little-mouse GHRHR mutation, PMID:8395283) establish that reduced/deficient GH secretion causes the dwarf phenotype \u2014 the inverse of which is exactly 'GH secretion negatively regulates pituitary dwarfism.' Independent GHRH/GRF therapy studies (PMID:2907992, PMID:8329825) confirm that increasing GH secretion accelerates growth and opposes short stature, corroborating the sign of the edge."
+      },
+      "edge_hash": "6015f47522d4c3dc"
+    }
+  }
+}

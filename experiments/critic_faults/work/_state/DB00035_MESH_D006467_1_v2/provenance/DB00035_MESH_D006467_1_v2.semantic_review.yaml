@@ -1,0 +1,136 @@
+record_id: DB00035_MESH_D006467_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T05:33:43+00:00'
+last_reviewed_at: '2026-08-25T05:33:43+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ESCALATE
+escalation_reason: factual_contradiction
+overall_summary: 'The whole-path causal shape is the accepted desmopressin MoA (drug
+  -> vasopressin receptor -> VWF exocytosis -> FVIII stabilization/rise -> corrects
+  FVIII deficiency), and it nets in the correct therapeutic direction. However, the
+  receptor node in the first two edges is the WRONG vasopressin receptor subtype:
+  the path routes through the V1a receptor (AVPR1A/P37288), but the accepted mechanism
+  and a decisive natural-experiment (V2-receptor-defective patients lose the VWF/FVIII
+  response while V1 function is preserved) attribute the effect specifically to the
+  V2 receptor (AVPR2/P30518). As a whole, the path passes through an entity that is
+  off the accepted causal route. Downstream edges (VWF->FVIII, FVIII->disease) are
+  sound. Fix requires re-grounding the receptor node and reconciling both the drug->receptor
+  and receptor->VWF edges. An edge''s evidence contradicts the claim (curator territory).'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T05:33:43+00:00'
+  verdict: ESCALATE
+  escalation_reason: factual_contradiction
+  summary: 'The whole-path causal shape is the accepted desmopressin MoA (drug ->
+    vasopressin receptor -> VWF exocytosis -> FVIII stabilization/rise -> corrects
+    FVIII deficiency), and it nets in the correct therapeutic direction. However,
+    the receptor node in the first two edges is the WRONG vasopressin receptor subtype:
+    the path routes through the V1a receptor (AVPR1A/P37288), but the accepted mechanism
+    and a decisive natural-experiment (V2-receptor-defective patients lose the VWF/FVIII
+    response while V1 function is preserved) attribute the effect specifically to
+    the V2 receptor (AVPR2/P30518). As a whole, the path passes through an entity
+    that is off the accepted causal route. Downstream edges (VWF->FVIII, FVIII->disease)
+    are sound. Fix requires re-grounding the receptor node and reconciling both the
+    drug->receptor and receptor->VWF edges. An edge''s evidence contradicts the claim
+    (curator territory).'
+  flags:
+  - edge: desmopressin --increases activity of--> Vasopressin V1a receptor
+    issue: The cited source attributes desmopressin's receptor activation to a different
+      vasopressin receptor subtype than the one named as this edge's object, and explicitly
+      argues against involvement of the receptor subtype indicated here. The object
+      protein appears mis-identified relative to what the evidence supports.
+  - edge: desmopressin --increases activity of--> Vasopressin V1a receptor
+    issue: The cited source attributes the endothelial receptor activation to a different
+      vasopressin receptor subtype than the object named on this edge. The object
+      protein identity is inconsistent with the evidence.
+  - edge: Vasopressin V1a receptor --increases abundance of--> von Willebrand factor
+    issue: The cited source attributes the von Willebrand factor release to a DIFFERENT
+      vasopressin receptor subtype than the one named as this edge's subject; the
+      receptor described as driving Weibel-Palade body exocytosis is not the V1a receptor
+      identified here. Re-source and re-ground the subject to the receptor the mechanism
+      actually acts through, and reconcile the upstream drug→receptor edge accordingly.
+  path_issue: 'The overall mechanism shape is correct and nets in the right direction,
+    but the receptor node used in the first two edges appears to be the wrong member
+    of this receptor family: the cited and independent evidence attributes the downstream
+    effect to a different subtype and actively argues against the one named here.
+    Re-source and re-ground the receptor node, and reconcile both the drug->receptor
+    and receptor->downstream edges to the subtype the mechanism actually acts through.'
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:desmopressin
+  - PMID:10880054
+  - PMID:12640560
+  - PMID:23835093
+  - PMID:27165083
+  - PMID:27456858
+  - PMID:31749076
+  - PMID:41496700
+  - PMID:7819109
+  - PMID:7992599
+  edge_reviews:
+  - edge: desmopressin --increases activity of--> Vasopressin V1a receptor
+    reference: PMID:8232694
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: The cited source attributes desmopressin's receptor activation to a different
+      vasopressin receptor subtype than the one named as this edge's object, and explicitly
+      argues against involvement of the receptor subtype indicated here. The object
+      protein appears mis-identified relative to what the evidence supports.
+    grounding: '{"source": "PMID:10880054 (JCI 2000) and PMID:23835093 (Regul Pept
+      2013), consulted independently", "record": "PMID:10880054: ''DDAVP, a specific
+      agonist for the vasopressin V2 receptor (V2R)''; vWF secretion mediated by V2R
+      and blocked by selective V2R antagonist. PMID:23835093 explicitly distinguishes
+      ''V1a agonist (Phe2-Ile3-Orn8-vasopressin)'' from ''V2 agonist (desmopressin)''.
+      ChEMBL CHEMBL1200556: ''Vasopressin receptor agonist'' (unspecified subtype)."}'
+    confidence: high
+  - edge: desmopressin --increases activity of--> Vasopressin V1a receptor
+    reference: PMID:12871401
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: The cited source attributes the endothelial receptor activation to a different
+      vasopressin receptor subtype than the object named on this edge. The object
+      protein identity is inconsistent with the evidence.
+    grounding: '{"source": "PMID:10880054, consulted independently", "record": "Demonstrates
+      DDAVP-induced endothelial vWF secretion requires transfected/endogenous V2R
+      and is blocked by selective V2R antagonist SR121463B \u2014 confirming the endothelial
+      receptor is V2, not V1a."}'
+    confidence: high
+  - edge: Vasopressin V1a receptor --increases abundance of--> von Willebrand factor
+    reference: PMID:12871401
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited source attributes the von Willebrand factor release to a DIFFERENT
+      vasopressin receptor subtype than the one named as this edge's subject; the
+      receptor described as driving Weibel-Palade body exocytosis is not the V1a receptor
+      identified here. Re-source and re-ground the subject to the receptor the mechanism
+      actually acts through, and reconcile the upstream drug→receptor edge accordingly.
+    grounding: '{"source": "PMID:8232694 (independent, not curator-cited) and PMID:7992599;
+      plus ChEMBL CHEMBL1200556", "record": "PMID:8232694: patients with a genetic
+      V2-receptor defect (NDI) show NO DDAVP-induced rise in vWF:ag, while their V1-receptors
+      are demonstrably intact \u2014 concludes DDAVP raises vWF ''through V2-receptor
+      stimulation'' and explicitly excludes V1-receptor involvement. This directly
+      contradicts attributing the effect to the V1a receptor. ChEMBL confirms desmopressin
+      is a vasopressin receptor agonist but the functional receptor for VWF release
+      is V2."}'
+    confidence: high
+  - edge: Coagulation factor VIII --negatively correlated with--> Hereditary factor
+      VIII deficiency disease
+    reference: PMID:34349063
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:27456858 (independent, not cited by curator)", "record":
+      "Hemophilia A severity classified by FVIII level: moderate FVIII 1-5%, severe
+      FVIII <1% \u2014 directly documents inverse relationship between FVIII level
+      and disease severity."}'
+    confidence: high
+  - edge: Coagulation factor VIII --negatively correlated with--> Hereditary factor
+      VIII deficiency disease
+    reference: PMID:32248973
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:27456858 (independent)", "record": "FVIII level thresholds
+      define hemophilia A severity (moderate 1-5%, severe <1%), confirming inverse
+      correlation."}'
+    confidence: high

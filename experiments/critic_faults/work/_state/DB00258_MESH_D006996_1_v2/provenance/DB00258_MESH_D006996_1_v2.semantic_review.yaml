@@ -1,0 +1,106 @@
+record_id: DB00258_MESH_D006996_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T07:49:39+00:00'
+last_reviewed_at: '2026-08-25T07:49:39+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ESCALATE
+escalation_reason: factual_contradiction
+overall_summary: 'The path fails as a whole in multiple compounding ways. (1) Edge
+  1''s polarity is inverted and refuted by its own citation: calcium acetate produces
+  a POSITIVE calcium balance / hypercalcaemia, it does not decrease body calcium.
+  (2) Consequently the chain nets to the drug WORSENING hypocalcemia (a decrease in
+  calcium × inverse correlation → increased disease), consistent with the net_polarity
+  alarm. (3) More fundamentally, calcium acetate''s accepted MoA is as a phosphate
+  binder for hyperphosphatemia — this is a wrong-indication path; no authority asserts
+  this chain as the mechanism for hypocalcemia. A single sign flip would not rescue
+  it because the mechanistic story itself is not the accepted one. An edge''s evidence
+  contradicts the claim (curator territory).'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T07:49:39+00:00'
+  verdict: ESCALATE
+  escalation_reason: factual_contradiction
+  summary: 'The path fails as a whole in multiple compounding ways. (1) Edge 1''s
+    polarity is inverted and refuted by its own citation: calcium acetate produces
+    a POSITIVE calcium balance / hypercalcaemia, it does not decrease body calcium.
+    (2) Consequently the chain nets to the drug WORSENING hypocalcemia (a decrease
+    in calcium × inverse correlation → increased disease), consistent with the net_polarity
+    alarm. (3) More fundamentally, calcium acetate''s accepted MoA is as a phosphate
+    binder for hyperphosphatemia — this is a wrong-indication path; no authority asserts
+    this chain as the mechanism for hypocalcemia. A single sign flip would not rescue
+    it because the mechanistic story itself is not the accepted one. An edge''s evidence
+    contradicts the claim (curator territory).'
+  flags:
+  - edge: calcium acetate --decreases abundance of--> Calcium
+    issue: 'The predicate sign is inverted for this subject→object pair: the cited
+      source itself states that this drug produces a POSITIVE calcium balance and
+      raises hypercalcaemia risk — i.e., it INCREASES the abundance of the object
+      rather than decreasing it. The ''decreases abundance of'' relation is contradicted
+      by the very quote attached to it. Re-examine both the direction of effect and
+      whether this edge belongs in the intended drug→disease path at all.'
+  - edge: Calcium --negatively correlated with--> Hypocalcemia
+    issue: The cited quote describes a therapeutic intervention — supplementing calcium
+      to correct/treat hypocalcemia — rather than directly asserting that the calcium
+      level is negatively correlated with the hypocalcemia disease state. This is
+      a granularity mismatch (treatment vs level-versus-state correlation), so the
+      quote supports the edge only by inference. Additionally, the source is a treatment
+      review, not primary human-clinical data, so the 'HUMAN_CLINICAL' source label
+      is not accurate. Re-source with a statement that directly grounds the definitional
+      negative correlation between serum calcium and hypocalcemia.
+  path_issue: This path fails as a whole. The first step's direction of effect on
+    calcium is contradicted by its own attached citation and by independent authorities,
+    and as written the overall chain nets in the wrong direction — it reads as the
+    drug pushing the disease state rather than correcting it. Separately, the accepted
+    pharmacological role of this drug does not match this indication at all. Re-examine
+    whether this drug→disease pair and its intermediate chain represent an accepted
+    mechanism before revising individual edges.
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:calcium acetate
+  - PMID:16604943
+  - PMID:22137672
+  - PMID:27561346
+  - PMID:29627829
+  - PMID:30132304
+  - PMID:33224813
+  - PMID:40582545
+  edge_reviews:
+  - edge: calcium acetate --decreases abundance of--> Calcium
+    reference: PMID:23625273
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: 'The predicate sign is inverted for this subject→object pair: the cited
+      source itself states that this drug produces a POSITIVE calcium balance and
+      raises hypercalcaemia risk — i.e., it INCREASES the abundance of the object
+      rather than decreasing it. The ''decreases abundance of'' relation is contradicted
+      by the very quote attached to it. Re-examine both the direction of effect and
+      whether this edge belongs in the intended drug→disease path at all.'
+    grounding: '{"source": "PMID:29627829 (meta-analysis of RCTs) and PMID:30132304
+      (Cochrane review), consulted independently", "record": "PMID:29627829: lanthanum-treated
+      patients had ''significantly lower serum calcium'' and ''the risk of hypercalcemia
+      was lower'' than controls on calcium binders, i.e., calcium acetate is associated
+      with higher serum calcium. PMID:30132304 (Cochrane): sevelamer ''induce[s] less
+      hypercalcaemia'' vs calcium-based binders \u2014 calcium acetate raises calcium.
+      Both confirm calcium acetate INCREASES, not decreases, body calcium."}'
+    confidence: high
+  - edge: Calcium --negatively correlated with--> Hypocalcemia
+    reference: PMID:30551988
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited quote describes a therapeutic intervention — supplementing calcium
+      to correct/treat hypocalcemia — rather than directly asserting that the calcium
+      level is negatively correlated with the hypocalcemia disease state. This is
+      a granularity mismatch (treatment vs level-versus-state correlation), so the
+      quote supports the edge only by inference. Additionally, the source is a treatment
+      review, not primary human-clinical data, so the 'HUMAN_CLINICAL' source label
+      is not accurate. Re-source with a statement that directly grounds the definitional
+      negative correlation between serum calcium and hypocalcemia.
+    grounding: '{"source": "PMID:33224813 (independent cohort study) and PMID:40582545
+      (independent lab-chemistry study)", "record": "PMID:33224813 defines the disease
+      as ''biochemical data showing low serum Ca levels''; PMID:40582545 shows calcium
+      chelation (lowering Ca) produces ''hypocalcaemia'' \u2014 both confirm calcium
+      level is negatively/inversely associated with the hypocalcemia state, i.e. hypocalcemia
+      IS low calcium."}'
+    confidence: high

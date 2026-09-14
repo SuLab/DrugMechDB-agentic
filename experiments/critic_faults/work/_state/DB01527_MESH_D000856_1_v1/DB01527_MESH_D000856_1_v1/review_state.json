@@ -1,0 +1,190 @@
+{
+  "edges": {
+    "71a1c954b00575c6": {
+      "edge": {
+        "subject": {
+          "id": "DB:DB01527",
+          "name": "Clortermine",
+          "label": "Drug"
+        },
+        "predicate": "negatively regulates",
+        "object": {
+          "id": "GO:0007631",
+          "name": "Feeding behavior",
+          "label": "BiologicalProcess"
+        }
+      },
+      "verdict": {
+        "edge_id": "DB:DB01527|negatively regulates|GO:0007631",
+        "verdicts": [
+          {
+            "reference": "PMID:3620005",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Abstract contains exactly 'All drugs reduced food intake in a dose-related manner.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Abstract lists the compared anorectics: 'benzphetamine, chlorphentermine, clortermine, mazindol, phendimetrazine, and phenmetrazine' \u2014 clortermine (DB01527) explicitly one of the drugs; later 'benzphetamine and clortermine were 1/14 and 1/20 as potent'."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'reduced food intake' \u2014 food intake = feeding behavior (GO:0007631)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'reduced' food intake = negative regulation, matches 'negatively regulates'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "The anorectic drugs (incl. clortermine) are administered and reduce food intake; drug acts on feeding behavior."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Food-intake reduction is the process-level feeding behavior readout that GO:0007631 denotes."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established finding in rhesus monkeys, dose-related; 'all of the compounds were effective anorectics' \u2014 not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "In vivo rhesus monkey study \u2192 MODEL_ORGANISM."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "MODEL_ORGANISM",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PMID:2709326 (independent, not cited by curator)",
+              "record": "'anorectic drugs, with the exception of phenylpropanolamine, produced dose-dependent decreases in food intake, with the following order of potency: ... = chlortermine = ...'; clortermine also decreased size of first meal in baboons \u2014 confirms clortermine reduces feeding behavior."
+            },
+            "confidence": "high",
+            "note": "Clortermine explicitly named as an anorectic that dose-relatedly reduced food intake; independent third paper (2709326) corroborates in a different species. Clean edge."
+          },
+          {
+            "reference": "PMID:826970",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Abstract contains exactly 'Increasing self-infused doses of all drugs produced a substantial suppression of concurrent food-maintained behavior.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Clortermine explicitly named among the 'eight phenylethylamines': '... MDA, clortermine or chlorphentermine ...'."
+              },
+              "object_grounding": {
+                "result": "partial",
+                "basis": "Object is 'food-maintained behavior' \u2014 operant lever-pressing reinforced by food during IV drug self-administration, not a direct anorexia/food-intake measure; a behavioral-suppression readout adjacent to, but not identical with, feeding behavior (GO:0007631)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'substantial suppression' = negative regulation, matches predicate sign."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Self-infused drug doses suppress the food-maintained behavior; drug acts on the behavior."
+              },
+              "granularity": {
+                "result": "partial",
+                "basis": "Suppression of food-maintained OPERANT behavior confounds general behavioral/reinforcing effects of the self-administered drug with anorexia; abstract itself states 'different mechanisms may underlie the two effects' \u2014 not a clean feeding-behavior/food-intake reduction."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as observed effect across all drugs in baboon self-administration; but bound to the self-administration paradigm."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "In vivo baboon self-administration study \u2192 MODEL_ORGANISM."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "MODEL_ORGANISM",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:2709326 (independent, not cited by curator)",
+              "record": "Clortermine produced dose-dependent decreases in food intake and decreased first-meal size in baboons \u2014 a cleaner feeding-behavior effect than the self-administration operant-suppression readout in 826970."
+            },
+            "confidence": "medium",
+            "note": "Snippet is verbatim and clortermine is included, but the measured outcome is suppression of concurrent food-maintained operant responding during IV drug self-infusion \u2014 the paper explicitly distinguishes this from the anorectic mechanism. Not a clean direct measure of feeding behavior; the other cited paper (3620005) carries the edge cleanly.",
+            "issue_for_curator": "The cited outcome here is suppression of food-maintained operant responding measured during intravenous drug self-administration, not a direct measure of the subject's effect on food intake/feeding behavior; the source itself notes this suppression may arise via a different mechanism than the anorectic effect, so the quote does not cleanly establish that clortermine negatively regulates feeding behavior."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "PMID:3620005 explicitly names clortermine among anorectics that dose-relatedly reduced food intake in rhesus monkeys, and an independent paper not cited by the curator (PMID:2709326) confirms clortermine produces dose-dependent decreases in food intake and reduced first-meal size in baboons. The drug\u2192feeding-behavior negative-regulation edge is well grounded."
+      },
+      "edge_hash": "71a1c954b00575c6"
+    },
+    "26b0a62c4d2a8f0f": {
+      "edge": {
+        "subject": {
+          "id": "GO:0007631",
+          "name": "Feeding behavior",
+          "label": "BiologicalProcess"
+        },
+        "predicate": "manifestation of",
+        "object": {
+          "id": "MESH:D000856",
+          "name": "Anorexia",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "GO:0007631|manifestation of|MESH:D000856",
+        "verdicts": [
+          {
+            "reference": "PMID:8637056",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "'The main overt effect at low dietary concentrations appears to be a reduction in food consumption (anorexia)' \u2014 snippet is an exact substring of the abstract."
+              },
+              "subject_grounding": {
+                "result": "partial",
+                "basis": "Edge subject is 'Feeding behavior' (GO:0007631), a normal biological process. The snippet is about a REDUCTION in food consumption, i.e. suppressed feeding, and glosses that reduction as 'anorexia'. It speaks to reduced feeding, not to feeding behavior as a process being a manifestation of the disease."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "The parenthetical '(anorexia)' resolves to the object disease Anorexia (MESH:D000856) as reduced food intake/loss of appetite; independent PMID:30854429 and PMID:32789884 confirm anorexia is characterized by reduced eating behavior."
+              },
+              "polarity": {
+                "result": "partial",
+                "basis": "'manifestation of' has no inherent sign, but the snippet equates the DECREASE in food consumption with anorexia. The edge subject 'Feeding behavior' is unsigned; the manifestation is specifically REDUCED feeding, which the snippet captures only via the word 'reduction', not via the subject entity itself."
+              },
+              "direction": {
+                "result": "partial",
+                "basis": "The relation 'feeding behavior is a manifestation OF anorexia' requires the source to cast reduced feeding as a phenotype of the disease. The snippet instead defines anorexia AS reduced food consumption (an identity gloss), which is consistent but does not cleanly assert the process-as-manifestation direction."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Both snippet and edge operate at the behavior/phenotype level (food consumption), not a molecular abundance/activity level; the flavor matches."
+              },
+              "scope_modality": {
+                "result": "fail",
+                "basis": "The statement is bound to deoxynivalenol (vomitoxin) toxicology in animals ('The main overt effect ... appears to be'), hedged and context-specific to that mycotoxin. It is a parenthetical definition within an unrelated paper, not an established general assertion linking feeding behavior to the disease anorexia in the drug (Clortermine) context of this path."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "PMID:8637056 is a toxicology review (J Toxicol Environ Health, 1996) \u2014 narrative review; re-derived evidence_source = review/OTHER, consistent with curator's 'OTHER'."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:32789884 (Int J Eat Disord 2020) and PMID:30854429 (Sci Adv 2019), read independently",
+              "record": "PMID:32789884 refers to 'manifestations of maladaptive eating behavior' in anorexia nervosa; PMID:30854429 states 'the connection between ... reduced eating in conditions like ... anorexia is well known' \u2014 confirming anorexia manifests as reduced feeding behavior, independent of the curator's cited paper."
+            },
+            "confidence": "high",
+            "note": "The edge is biologically defensible via independent sources. The cited PMID:8637056 is a deoxynivalenol toxicology review whose parenthetical '(anorexia)' merely defines reduced food consumption as anorexia. It does not specifically assert that the biological process 'Feeding behavior' is a manifestation of the disease anorexia, and it is bound to an unrelated mycotoxin context. It is a lexical gloss reused for a definitional connection rather than direct support for this process\u2192disease edge.",
+            "issue_for_curator": "The cited quote is a parenthetical definition (equating a reduction in food consumption with anorexia) drawn from an unrelated toxicology context. It does not directly assert that the biological process 'feeding behavior' is a manifestation of the disease anorexia, and the manifestation is specifically REDUCED feeding rather than feeding behavior per se. Re-source with evidence that establishes altered/reduced feeding behavior as a clinical manifestation of anorexia itself."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent literature (PMID:32789884, PMID:30854429) confirms anorexia is clinically characterized/manifested by reduced eating/feeding behavior, so the phenotype\u2192disease relation is defensible; only the cited snippet is a weak, out-of-context definitional gloss."
+      },
+      "edge_hash": "26b0a62c4d2a8f0f"
+    }
+  }
+}

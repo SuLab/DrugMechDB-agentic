@@ -1,0 +1,130 @@
+record_id: DB00843_MESH_D000544_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T05:26:46+00:00'
+last_reviewed_at: '2026-08-25T05:26:46+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: RE_CURATE
+escalation_reason: null
+overall_summary: 'The path correctly captures donepezil''s accepted cholinergic mechanism
+  in shape and net direction (inhibit the ACh-degrading enzyme → raise ACh → relieve
+  AD), a single coherent chain with no shortcut and no missing sign-flip. The defect
+  is localized: the enzyme intermediate is grounded to the wrong cholinesterase isozyme
+  (butyrylcholinesterase, P06276) whereas donepezil''s independently curated, accepted
+  target is acetylcholinesterase (P22303 / ChEMBL1678). As grounded, edge 1 and the
+  enzyme identity in edge 2 misrepresent an off-accepted-mechanism target. Correctable
+  by re-grounding the enzyme node; underlying mechanism is sound.'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T05:26:46+00:00'
+  verdict: RE_CURATE
+  escalation_reason: null
+  summary: 'The path correctly captures donepezil''s accepted cholinergic mechanism
+    in shape and net direction (inhibit the ACh-degrading enzyme → raise ACh → relieve
+    AD), a single coherent chain with no shortcut and no missing sign-flip. The defect
+    is localized: the enzyme intermediate is grounded to the wrong cholinesterase
+    isozyme (butyrylcholinesterase, P06276) whereas donepezil''s independently curated,
+    accepted target is acetylcholinesterase (P22303 / ChEMBL1678). As grounded, edge
+    1 and the enzyme identity in edge 2 misrepresent an off-accepted-mechanism target.
+    Correctable by re-grounding the enzyme node; underlying mechanism is sound.'
+  flags:
+  - edge: Donepezil --decreases activity of--> Cholinesterase
+    issue: 'The cited text describes donepezil as an inhibitor of acetylcholinesterase,
+      but the edge''s object protein identifier corresponds to butyrylcholinesterase
+      — a different cholinesterase isozyme. Object grounding fails: the specific target
+      named in the edge is not the enzyme the snippet (or donepezil''s established
+      mechanism) acts on.'
+  - edge: Donepezil --decreases activity of--> Cholinesterase
+    issue: The snippet calls donepezil a generic 'cholinesterase inhibitor', but the
+      underlying evidence and donepezil's established mechanism are specific to acetylcholinesterase,
+      whereas the edge's object identifier corresponds to butyrylcholinesterase. Object
+      grounding fails — the named target isozyme does not match the drug's mechanism.
+  - edge: Cholinesterase --decreases abundance of--> Acetylcholine
+    issue: The subject enzyme identified in this edge is butyrylcholinesterase, but
+      the cited quote describes acetylcholinesterase — a different (though related)
+      enzyme. The quote therefore does not establish the substrate-degradation relationship
+      for the specific enzyme named as the subject. Re-source a citation that states
+      the subject enzyme (as identified) hydrolyzes/breaks down acetylcholine, or
+      confirm that the intended subject entity is correct for this path.
+  path_issue: 'The mechanistic shape and net direction of this path are correct, but
+    the enzyme intermediate node appears to be grounded to the wrong cholinesterase
+    isozyme — an enzyme that is not the drug''s accepted primary target. The first
+    edge (drug→enzyme) and the enzyme identity in the second edge (enzyme→acetylcholine)
+    are affected: the specific enzyme identifier does not match the drug''s established
+    mechanism. Re-ground the enzyme node to the isozyme the drug actually acts on,
+    then confirm both edges'' citations describe that same enzyme.'
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:donepezil
+  - PMID:36561337
+  - PMID:37972875
+  - PMID:38590305
+  - PMID:38704944
+  - PMID:38877470
+  - PMID:39533696
+  - PMID:39740234
+  - PMID:40207817
+  - PMID:40430294
+  - PMID:42462519
+  - PMID:42589569
+  - PMID:42615643
+  edge_reviews:
+  - edge: Donepezil --decreases activity of--> Cholinesterase
+    reference: PMID:39037949
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: 'The cited text describes donepezil as an inhibitor of acetylcholinesterase,
+      but the edge''s object protein identifier corresponds to butyrylcholinesterase
+      — a different cholinesterase isozyme. Object grounding fails: the specific target
+      named in the edge is not the enzyme the snippet (or donepezil''s established
+      mechanism) acts on.'
+    grounding: '{"source": "ChEMBL chembl_get_mechanism(''donepezil'')", "record":
+      "CHEMBL502 action_type=INHIBITOR, target=Acetylcholinesterase, moa=''Acetylcholinesterase
+      inhibitor'', direct_interaction=1 \u2014 i.e. AChE (P22303), NOT butyrylcholinesterase
+      (P06276)."}'
+    confidence: high
+  - edge: Donepezil --decreases activity of--> Cholinesterase
+    reference: PMID:34893996
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The snippet calls donepezil a generic 'cholinesterase inhibitor', but the
+      underlying evidence and donepezil's established mechanism are specific to acetylcholinesterase,
+      whereas the edge's object identifier corresponds to butyrylcholinesterase. Object
+      grounding fails — the named target isozyme does not match the drug's mechanism.
+    grounding: '{"source": "ChEMBL chembl_get_mechanism(''donepezil'') + PMID:34893996
+      methods", "record": "ChEMBL: donepezil = Acetylcholinesterase inhibitor. PMID:34893996
+      measures donepezil AChE IC50=0.021 \u00b5M at AChE catalytic-gorge residues
+      \u2014 confirming the target is AChE (P22303), not BCHE (P06276)."}'
+    confidence: high
+  - edge: Cholinesterase --decreases abundance of--> Acetylcholine
+    reference: PMID:39037949
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The subject enzyme identified in this edge is butyrylcholinesterase, but
+      the cited quote describes acetylcholinesterase — a different (though related)
+      enzyme. The quote therefore does not establish the substrate-degradation relationship
+      for the specific enzyme named as the subject. Re-source a citation that states
+      the subject enzyme (as identified) hydrolyzes/breaks down acetylcholine, or
+      confirm that the intended subject entity is correct for this path.
+    grounding: '{"source": "PMID:38704944, PMID:38590305, PMID:37972875, PMID:39740234
+      (independently read, not cited by curator)", "record": "Multiple independent
+      sources confirm butyrylcholinesterase (BCHE = P06276) hydrolyzes acetylcholine:
+      PMID:38704944 ''BChE is considered to play a compensable role of hydrolyzing
+      acetylcholine''; PMID:38590305 ''its other functions include the ability to
+      hydrolyze acetylcholine''; PMID:39740234 ''ACh is normally hydrolyzed by AChE...and
+      by BChE''. So the edge P06276\u2192decreases abundance of\u2192acetylcholine
+      is defensible, but the CITED snippet establishes this for AChE, not for the
+      BCHE that P06276 denotes."}'
+    confidence: high
+  - edge: Acetylcholine --negatively correlated with--> Alzheimer's disease
+    reference: PMID:37242234
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:40207817 (Current Neuropharmacology 2025 review;
+      NOT cited by curator)", "record": "''Lower level of acetylcholine in the brain
+      is characterized as one of the prominent reasons for AD. The cholinergic hypothesis
+      states that elevated levels of acetylcholine in the brain can alleviate symptoms
+      of AD.'' \u2014 directly confirms the negative correlation between ACh level
+      and AD."}'
+    confidence: high

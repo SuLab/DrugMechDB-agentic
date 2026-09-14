@@ -1,0 +1,110 @@
+record_id: DB00009_MESH_D011655_1_v1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T07:15:26+00:00'
+last_reviewed_at: '2026-08-25T07:15:26+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: RE_CURATE
+escalation_reason: null
+overall_summary: 'The path faithfully represents the accepted thrombolytic mechanism
+  of alteplase for pulmonary embolism: alteplase (t-PA, per ChEMBL) activates plasminogen
+  to plasmin, plasmin degrades the fibrin that constitutes the pulmonary embolus,
+  dissolving the clot and reducing the disease. Polarity is coherent, the single sign-flipping
+  step is correctly placed, net effect is disease-decreasing, no shortcut edge, and
+  it is the primary MoA (PMID:34404914, PMID:30507392, PMID:36603558). The edge-level
+  concerns noted by the edge judge (zymogen-vs-active-form naming on edge 2; induced-model
+  citation scope on edge 3) are citation-quality issues for the edge curator, not
+  whole-path defects — the DrugMechDB plasminogen/plasmin node-collapse convention
+  and standard PE pathophysiology cover them.'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T07:15:26+00:00'
+  verdict: RE_CURATE
+  escalation_reason: null
+  summary: 'The path faithfully represents the accepted thrombolytic mechanism of
+    alteplase for pulmonary embolism: alteplase (t-PA, per ChEMBL) activates plasminogen
+    to plasmin, plasmin degrades the fibrin that constitutes the pulmonary embolus,
+    dissolving the clot and reducing the disease. Polarity is coherent, the single
+    sign-flipping step is correctly placed, net effect is disease-decreasing, no shortcut
+    edge, and it is the primary MoA (PMID:34404914, PMID:30507392, PMID:36603558).
+    The edge-level concerns noted by the edge judge (zymogen-vs-active-form naming
+    on edge 2; induced-model citation scope on edge 3) are citation-quality issues
+    for the edge curator, not whole-path defects — the DrugMechDB plasminogen/plasmin
+    node-collapse convention and standard PE pathophysiology cover them.'
+  flags:
+  - edge: Plasminogen --decreases abundance of--> Fibrin
+    issue: The cited quotation attributes fibrin degradation specifically to the active
+      enzyme form, while explicitly describing the edge's subject as the inactive
+      proenzyme/zymogen that must first be converted before any fibrin degradation
+      occurs. As written, the quote does not state that the subject entity (in its
+      named zymogen form) decreases fibrin; it states that its activated derivative
+      does. Strengthen the citation with a source that speaks to the subject node's
+      fibrinolytic action directly, and note that the methodology label does not match
+      a review-type mechanistic assertion.
+  - edge: Fibrin --causes--> Pulmonary embolism
+    issue: The cited quote describes fibrin emboli only within an artificially induced
+      experimental model (microemboli deliberately injected to occlude the pulmonary
+      vasculature), not the natural pathogenesis of pulmonary embolism. It over-generalizes
+      a narrow experimental context to a general disease-causation edge; a source
+      asserting fibrin as an established constituent of clinical pulmonary emboli
+      would ground this edge more directly.
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:CHEMBL1201593
+  - ChEMBL:alteplase
+  - PMID:22624582
+  - PMID:30507392
+  - PMID:33693232
+  - PMID:34404914
+  - PMID:34966964
+  - PMID:36603558
+  - PMID:37751849
+  - PMID:37802144
+  - PMID:38492853
+  - PMID:39759449
+  - PMID:41210358
+  - PMID:42138967
+  - PMID:42476525
+  - PMID:42508673
+  - PMID:42557218
+  - PMID:42628314
+  edge_reviews:
+  - edge: Plasminogen --decreases abundance of--> Fibrin
+    reference: PMID:3044205
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited quotation attributes fibrin degradation specifically to the active
+      enzyme form, while explicitly describing the edge's subject as the inactive
+      proenzyme/zymogen that must first be converted before any fibrin degradation
+      occurs. As written, the quote does not state that the subject entity (in its
+      named zymogen form) decreases fibrin; it states that its activated derivative
+      does. Strengthen the citation with a source that speaks to the subject node's
+      fibrinolytic action directly, and note that the methodology label does not match
+      a review-type mechanistic assertion.
+    grounding: '{"source": "PubMed PMID:34966964 (independent of curator) and PMID:42476525,
+      PMID:42138967", "record": "PMID:34966964: ''Plasminogen is a zymogenic form
+      of plasmin, an enzyme that plays a fundamental role in the dissolution of fibrin
+      clots.'' Confirms fibrin degradation is executed by plasmin (the activated form
+      of the P00747 gene product), and that plasminogen itself is the inactive zymogen.
+      PMID:42476525 and PMID:42138967 independently confirm plasmin degrades/cleaves
+      fibrin."}'
+    confidence: high
+  - edge: Fibrin --causes--> Pulmonary embolism
+    reference: PMID:12845330
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited quote describes fibrin emboli only within an artificially induced
+      experimental model (microemboli deliberately injected to occlude the pulmonary
+      vasculature), not the natural pathogenesis of pulmonary embolism. It over-generalizes
+      a narrow experimental context to a general disease-causation edge; a source
+      asserting fibrin as an established constituent of clinical pulmonary emboli
+      would ground this edge more directly.
+    grounding: '{"source": "PMID:37751849 (JTH murine PE model; immunohistochemistry
+      of pulmonary emboli) and PMID:42508673 (Acta Biomaterialia review)", "record":
+      "Pulmonary emboli were shown to have measurable ''fibrin composition''; a thrombus
+      is ''a hierarchically organized composite in which a fibrin network scaffold...
+      interact across scales'' \u2014 establishing fibrin as a core causal constituent
+      of the emboli that cause pulmonary embolism."}'
+    confidence: high

@@ -1,0 +1,132 @@
+record_id: DB00013_MESH_D011655_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T06:49:45+00:00'
+last_reviewed_at: '2026-08-25T06:49:45+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ESCALATE
+escalation_reason: factual_contradiction
+overall_summary: 'Two of four edges (the entire PAI-1 branch) are both mis-cited and
+  biologically reversed. Urokinase (per ChEMBL) is a plasminogen ACTIVATOR whose thrombolytic
+  mechanism runs urokinase->plasminogen->plasmin->fibrin degradation->clot lysis->PE
+  resolution. The path instead inserts PAI-1 — urokinase''s inhibitor and an ANTIfibrinolytic
+  factor — with two inverted signs that fortuitously cancel to yield a spuriously
+  ''coherent'' net polarity. The correct intermediate (plasminogen/plasmin) is missing.
+  This is a whole-path defect: the chain does not represent the accepted mechanism
+  and, when read at face value with correct edge signs, describes urokinase preserving
+  fibrin/thrombosis rather than dissolving it. An edge''s evidence contradicts the
+  claim (curator territory).'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T06:49:45+00:00'
+  verdict: ESCALATE
+  escalation_reason: factual_contradiction
+  summary: 'Two of four edges (the entire PAI-1 branch) are both mis-cited and biologically
+    reversed. Urokinase (per ChEMBL) is a plasminogen ACTIVATOR whose thrombolytic
+    mechanism runs urokinase->plasminogen->plasmin->fibrin degradation->clot lysis->PE
+    resolution. The path instead inserts PAI-1 — urokinase''s inhibitor and an ANTIfibrinolytic
+    factor — with two inverted signs that fortuitously cancel to yield a spuriously
+    ''coherent'' net polarity. The correct intermediate (plasminogen/plasmin) is missing.
+    This is a whole-path defect: the chain does not represent the accepted mechanism
+    and, when read at face value with correct edge signs, describes urokinase preserving
+    fibrin/thrombosis rather than dissolving it. An edge''s evidence contradicts the
+    claim (curator territory).'
+  flags:
+  - edge: Urokinase --increases activity of--> Plasminogen activator inhibitor 1
+    issue: The cited quotation concerns the subject acting on a different molecule
+      (plasminogen), and says nothing about the stated object protein. Moreover the
+      established relationship between the subject and this object protein runs in
+      the opposite direction and opposite sign from what the edge asserts (the object
+      protein inhibits the subject, not the subject activating the object). The edge
+      as written appears both mis-cited and biologically reversed.
+  - edge: Plasminogen activator inhibitor 1 --decreases abundance of--> Fibrin
+    issue: 'The cited quote describes plasmin degrading fibrin and never mentions
+      the edge''s subject (PAI-1); it does not establish any action of PAI-1 on fibrin.
+      Moreover, the asserted direction is inverted: independent evidence shows this
+      subject inhibits fibrinolysis and thereby preserves/increases fibrin rather
+      than decreasing it. Re-examine both the edge''s sign and whether PAI-1 is the
+      correct subject for a fibrin-decreasing step in this path.'
+  path_issue: 'The first two steps of this chain do not lie on the drug''s accepted
+    route to the disease: the protein used as the intermediate is actually a regulator
+    that opposes the drug''s own class, and each of those two edges points in the
+    opposite direction/sign from the established biology. Because the two sign errors
+    cancel, the automated polarity check looks ''coherent'' even though the mechanism
+    is inverted. Re-derive the intermediate step(s) between the drug and fibrin from
+    the drug''s curated mechanism of action, and re-check the direction and sign of
+    both early edges.'
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:urokinase
+  - PMID:23034825
+  - PMID:35543127
+  - PMID:37977547
+  - PMID:38380722
+  - PMID:39257843
+  - PMID:39967936
+  - PMID:41831240
+  - PMID:42238354
+  - PMID:42262663
+  - PMID:42293733
+  - PMID:42309626
+  - PMID:42379034
+  - PMID:42470461
+  - PMID:42559641
+  - PMID:42589214
+  - PMID:6439177
+  edge_reviews:
+  - edge: Urokinase --increases activity of--> Plasminogen activator inhibitor 1
+    reference: PMID:3044205
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: The cited quotation concerns the subject acting on a different molecule
+      (plasminogen), and says nothing about the stated object protein. Moreover the
+      established relationship between the subject and this object protein runs in
+      the opposite direction and opposite sign from what the edge asserts (the object
+      protein inhibits the subject, not the subject activating the object). The edge
+      as written appears both mis-cited and biologically reversed.
+    grounding: '{"source": "PubMed PMID:42238354 (NAR molecular medicine, 2026), read
+      independently", "record": "''Plasminogen activator inhibitor-1 (PAI-1) is the
+      principal regulator of fibrinolysis, acting by inhibiting tissue-type and urokinase-type
+      plasminogen activators (tPA/uPA).'' This shows PAI-1 inhibits urokinase \u2014
+      the reverse direction and opposite sign of the edge."}'
+    confidence: high
+  - edge: Plasminogen activator inhibitor 1 --decreases abundance of--> Fibrin
+    reference: PMID:3044205
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: 'The cited quote describes plasmin degrading fibrin and never mentions
+      the edge''s subject (PAI-1); it does not establish any action of PAI-1 on fibrin.
+      Moreover, the asserted direction is inverted: independent evidence shows this
+      subject inhibits fibrinolysis and thereby preserves/increases fibrin rather
+      than decreasing it. Re-examine both the edge''s sign and whether PAI-1 is the
+      correct subject for a fibrin-decreasing step in this path.'
+    grounding: '{"source": "PMID:41831240 (J Vasc Res 2026), PMID:37977547 (Arch Phys
+      Med Rehabil 2024), PMID:39967936 (Arch Med Sci 2024)", "record": "All independently
+      establish that PAI-1 inhibits fibrinolysis, producing fibrin deposition/accumulation
+      and a prothrombotic state \u2014 i.e., PAI-1 INCREASES fibrin, the opposite
+      of the edge''s asserted decrease. The cited snippet itself is about plasmin
+      degrading fibrin and never mentions PAI-1."}'
+    confidence: high
+  - edge: Fibrin --contributes to--> Thrombosis
+    reference: PMID:29225327
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:42379034 (computational thrombus-formation model,
+      not cited by curator) and PMID:42470461 (SERPINE1/PAI-1 review, not cited)",
+      "record": "PMID:42379034 models ''fibrin fiber generation'' as an integral component
+      of thrombus formation; PMID:42470461 describes ''persistent fibrin deposition''
+      driving ''pulmonary microvascular thrombosis'' \u2014 both independently confirm
+      fibrin contributes to thrombosis."}'
+    confidence: high
+  - edge: Thrombosis --causes--> Pulmonary embolism
+    reference: PMID:29798363
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:39257843 (Front Cardiovasc Med 2024) and PMID:42309626
+      (Heart Fail Clin 2026), read independently", "record": "PMID:39257843: ''...severe
+      outcomes such as pulmonary embolism ... arising from thrombus dislodgment.''
+      PMID:42309626 confirms VTE comprises DVT and PE as pathophysiologically linked.
+      Together they independently establish thrombosis causes pulmonary embolism via
+      embolized thrombus."}'
+    confidence: high

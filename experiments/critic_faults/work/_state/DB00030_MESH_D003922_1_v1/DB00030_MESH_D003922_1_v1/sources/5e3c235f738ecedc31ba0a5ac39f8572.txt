@@ -1,0 +1,11 @@
+PMID:39820433  Amino Acids and CART Distinguish A-β+ Ketosis-Prone Diabetes From Type 1 and Type 2 Diabetes During Hyperglycemic Crises.  (The Journal of clinical endocrinology and metabolism, 2025)
+
+**CONTEXT:** When clinically stable, patients with A-β+ ketosis-prone diabetes (KPD) manifest unique markers of amino acid metabolism. Biomarkers differentiating KPD from type 1 (T1D) and type 2 diabetes (T2D) during hyperglycemic crises would accelerate diagnosis and management.
+
+**OBJECTIVE:** Compare serum metabolomics of KPD, T1D, and T2D patients during hyperglycemic crises, and utilize classification and regression tree (CART) modeling to distinguish these forms of diabetes.
+
+**METHODS:** At an urban hospital emergency center, adults with KPD, T1D, and T2D during hyperglycemic crises with or without diabetic ketoacidosis (DKA), and healthy controls, underwent comparisons of serum metabolite and hormonal profiles and CART analyses. Group differences in concentrations of amino acids, their metabolites, and relationship to glucose counterregulatory hormones were determined, as well as C-peptide cutoffs and analytes to distinguish KPD, T1D, and T2D.
+
+**RESULTS:** Concentrations of most amino acids were similar in KPD and T1D and lower compared to T2D (P < .05). Glucagon and cortisol concentrations were correlated with 3-methylhistidine and blood urea nitrogen in KPD but not in T1D. A C-peptide cutoff of 0.496 ng/mL differentiated T1D from KPD during DKA. CART revealed that a regression model based on the concentrations of β-hydroxybutyrate, C-peptide, glucagon, alpha-keto-β-methylvalerate, cystine, and myristoyl-L-carnitine distinguished KPD from T1D and T2D.
+
+**CONCLUSION:** During DKA, KPD and T1D patients have similarly altered amino acid profiles that differentiate them from T2D patients. Elevated protein catabolic hormones drive altered amino acid metabolism in KPD, rather than insulin deficiency as with T1D. A combination of 6 analytes differentiates KPD from T1D and T2D during hyperglycemic crises.

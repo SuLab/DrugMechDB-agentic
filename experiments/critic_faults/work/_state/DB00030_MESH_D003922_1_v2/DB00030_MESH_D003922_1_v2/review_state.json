@@ -1,0 +1,327 @@
+{
+  "edges": {
+    "d5e3ac067beb5dfa": {
+      "edge": {
+        "subject": {
+          "id": "MESH:D007328",
+          "name": "insulin human",
+          "label": "Drug"
+        },
+        "predicate": "increases activity of",
+        "object": {
+          "id": "UniProt:P08069",
+          "name": "Insulin-like growth factor 1 receptor",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "MESH:D007328|increases activity of|UniProt:P08069",
+        "verdicts": [
+          {
+            "reference": "PMID:9932214",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the abstract of PMID:9932214: 'The binding of insulin to its receptor induces autophosphorylation of the receptor on tyrosine residues and thereby stimulates its tyrosine kinase activity towards intracellular substrates such as Shc or IRS1.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet is about insulin (the hormone), matching subject 'insulin human' (MESH:D007328)."
+              },
+              "object_grounding": {
+                "result": "fail",
+                "basis": "The snippet's 'its receptor' is the INSULIN RECEPTOR (INSR, UniProt:P06213); abstract explicitly states 'The insulin receptor is a membrane receptor possessing tyrosine kinase activity.' The edge object is IGF1R (UniProt:P08069), a distinct paralog never mentioned in the source."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'induces autophosphorylation...stimulates its tyrosine kinase activity' = increase, matching 'increases activity of' \u2014 but for the wrong receptor."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Insulin acts on the receptor (subject\u2192object direction correct)."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "'stimulates its tyrosine kinase activity' is activity-level, matching 'increases activity of'."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established molecular mechanism, no hedging."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review article on molecular basis of insulin action \u2192 OTHER/review."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism (CHEMBL1201631) + PMID:17291192 (independent, not cited)",
+              "record": "ChEMBL curates insulin human as AGONIST of the Insulin receptor (INSR), not IGF1R. PMID:17291192 shows insulin binds homodimeric IGFR only at relatively low affinity and hybrids 'bind IGFs but not insulin at physiological concentrations.'"
+            },
+            "confidence": "high",
+            "note": "Entity substitution: the snippet supports insulin\u2192INSR (P06213), but the edge object is IGF1R (P08069). The snippet does not speak to the IGF1R edge at all.",
+            "issue_for_curator": "The cited text describes insulin activating its own receptor and its tyrosine kinase activity, but the receptor named/defined in the source is the insulin receptor, not the insulin-like growth factor 1 receptor that is this edge's object. The object entity (IGF1R) is a distinct paralog and is not the receptor the snippet is about, so object_grounding fails and the quote does not establish this specific edge."
+          },
+          {
+            "reference": "PMID:20526383",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the abstract: 'Insulin action involves a series of signaling cascades initiated by insulin binding to its receptor, eliciting receptor autophosphorylation and activation of the receptor tyrosine kinase, resulting in tyrosine phosphorylation of insulin receptor substrates (IRSs).'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet is about insulin, matching subject 'insulin human'."
+              },
+              "object_grounding": {
+                "result": "fail",
+                "basis": "'its receptor' + 'insulin receptor substrates (IRSs)' identifies the object as the INSULIN RECEPTOR (INSR, P06213). The edge object IGF1R (P08069) is never mentioned."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'eliciting...activation of the receptor tyrosine kinase' = increase, matching predicate sign \u2014 but for INSR."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Insulin acts on the receptor."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "'activation of the receptor tyrosine kinase' is activity-level."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established mechanism."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review on insulin resistance mechanisms \u2192 OTHER/review."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism (CHEMBL1201631)",
+              "record": "insulin human = AGONIST of Insulin receptor; the abstract's 'insulin receptor substrates (IRSs)' confirms the receptor in question is INSR, not IGF1R."
+            },
+            "confidence": "high",
+            "note": "Same entity substitution as the first item: describes insulin\u2192INSR signaling, not insulin\u2192IGF1R.",
+            "issue_for_curator": "This quote describes insulin binding and activating its own receptor, with insulin receptor substrates as the readout; the receptor in the source is the insulin receptor, not the insulin-like growth factor 1 receptor that is this edge's object. The object entity does not match what the source is about, so the quote does not establish this edge."
+          }
+        ],
+        "edge_supported": false,
+        "edge_basis": "Both cited sources and the independent ChEMBL record establish insulin's physiological receptor target as the INSULIN RECEPTOR (INSR, UniProt:P06213), not the IGF-1 receptor (IGF1R, UniProt:P08069) which is this edge's object. Insulin activates homodimeric IGF1R only weakly/at supraphysiological concentrations (PMID:17291192), so IGF1R is not a defensible physiological target for this drug edge. The object appears mis-grounded to the wrong paralog; the edge as written (insulin\u2192IGF1R) is not supported and likely should be insulin\u2192INSR."
+      },
+      "edge_hash": "d5e3ac067beb5dfa"
+    },
+    "95dcbb170d348783": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:P08069",
+          "name": "Insulin-like growth factor 1 receptor",
+          "label": "Protein"
+        },
+        "predicate": "positively regulates",
+        "object": {
+          "id": "GO:0046323",
+          "name": "glucose import",
+          "label": "BiologicalProcess"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:P08069|positively regulates|GO:0046323",
+        "verdicts": [
+          {
+            "reference": "PMID:20526383",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "The snippet 'Phosphorylation of IRSs leads to activation of phosphatidylinositol 3-kinase (PI3K) and, subsequently, to activation of Akt and its downstream mediator AS160, all of which are important steps for stimulating glucose transport induced by insulin.' is present verbatim in the abstract of PMID:20526383."
+              },
+              "subject_grounding": {
+                "result": "fail",
+                "basis": "Edge subject is IGF-1 receptor (UniProt:P08069, IGF1R). The source is entirely about the INSULIN receptor (INSR, P06213): 'insulin binding to its receptor... tyrosine phosphorylation of insulin receptor substrates (IRSs)'. The snippet never mentions IGF-1 receptor. Wrong receptor entity."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'stimulating glucose transport' maps to GO:0046323 glucose import."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'stimulating glucose transport' = positive regulation, matching the 'positively regulates' predicate."
+              },
+              "direction": {
+                "result": "abstain",
+                "basis": "Cannot assess subject\u2192object direction because the subject (IGF1R) is not the entity in the source (INSR)."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Describes stimulation of a transport process (glucose transport), matching a BiologicalProcess object."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established signaling mechanism, not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review article ('This review focuses on...') \u2192 evidence_source better classified as literature review, not 'OTHER' generic."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:11404219 (read_abstract) and PMID:10521479 (read_abstract)",
+              "record": "Both establish that IGF-I receptor activation stimulates glucose uptake/GLUT4 translocation; PMID:11404219: glucose transport 'mediated via increased activation of the IGF-I receptor.'"
+            },
+            "confidence": "high",
+            "note": "Snippet describes the canonical INSR\u2192IRS\u2192PI3K\u2192Akt\u2192AS160 cascade for glucose transport. It is topically adjacent (INSR and IGF1R share downstream PI3K/Akt), but it is about a different receptor than the edge subject. The edge itself is independently supported for IGF1R, so this is a citation defect not a false edge.",
+            "issue_for_curator": "The cited source describes the glucose-transport signaling cascade of a DIFFERENT receptor (the one activated by the hormone itself), not the edge's subject receptor. The snippet does not name or assert anything specifically about the subject IGF-1 receptor, so it cannot ground the subject\u2192glucose-import relation as written."
+          },
+          {
+            "reference": "PMID:9932214",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "The fragment 'is involved in several of the metabolic effects of the hormone, such as glucose transport, glycolysis and glycogen synthesis.' appears verbatim in the abstract of PMID:9932214."
+              },
+              "subject_grounding": {
+                "result": "fail",
+                "basis": "Edge subject is IGF-1 receptor (P08069). The source is titled 'Molecular basis of insulin action' and explicitly discusses the INSULIN receptor: 'The insulin receptor is a membrane receptor... The binding of insulin to its receptor.' Additionally, the grammatical subject of the cited sentence is 'the PI 3-kinase pathway', not any receptor. No mention of IGF-1 receptor."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'glucose transport' maps to GO:0046323 glucose import."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'involved in... metabolic effects... such as glucose transport' implies positive involvement."
+              },
+              "direction": {
+                "result": "fail",
+                "basis": "The sentence attributes glucose transport to the PI3K pathway (a downstream effector), not to the edge subject receptor acting on glucose import. Even setting the entity mismatch aside, the actor named is a downstream pathway."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Refers to the glucose-transport process."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as established mechanism."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Review of molecular mechanisms \u2192 review literature."
+              }
+            },
+            "rederived_supports": "NO_EVIDENCE",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "PMID:10521479 (read_abstract)",
+              "record": "IGF-I receptor chimera in 3T3-L1 adipocytes mediates stimulation of glucose uptake and GLUT4 translocation, confirming IGF1R positively regulates glucose import."
+            },
+            "confidence": "high",
+            "note": "Snippet is about insulin receptor / PI3K pathway, and its grammatical subject is the PI3K pathway, not a receptor. It does not speak to the IGF-1-receptor\u2192glucose-import edge at all.",
+            "issue_for_curator": "The cited sentence is about the insulin hormone's receptor and attributes glucose transport to a downstream lipid-kinase pathway, not to the edge's subject receptor. It establishes neither that the subject entity is IGF-1 receptor nor that this receptor directly positively regulates glucose import."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent sources (PMID:11404219: glucose transport 'mediated via increased activation of the IGF-I receptor'; PMID:10521479: IGF-I receptor chimera stimulates glucose uptake and GLUT4 translocation in adipocytes) confirm that the IGF-1 receptor (P08069) positively regulates glucose import. The edge is defensible on its own merits, but BOTH cited snippets describe the insulin receptor (INSR), not the IGF-1 receptor, and must be replaced with IGF1R-specific evidence."
+      },
+      "edge_hash": "95dcbb170d348783"
+    },
+    "692c9e646956a287": {
+      "edge": {
+        "subject": {
+          "id": "GO:0046323",
+          "name": "glucose import",
+          "label": "BiologicalProcess"
+        },
+        "predicate": "negatively regulates",
+        "object": {
+          "id": "HP:0003074",
+          "name": "Hyperglycemia",
+          "label": "PhenotypicFeature"
+        }
+      },
+      "verdict": {
+        "edge_id": "GO:0046323|negatively regulates|HP:0003074",
+        "verdicts": [
+          {
+            "reference": "PMID:12542844",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'Increased glucose disposal by tissues engineered to overexpress key regulatory genes in glucose transport or phosphorylation can reduce diabetic hyperglycemia.' is an exact substring of the retrieved abstract (Human Gene Therapy, 2002)."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Edge subject is glucose import (GO:0046323, cellular glucose uptake/transport). Snippet references 'glucose transport' and 'glucose disposal'; the paper reports 'glucose-dependent increase in glucose uptake' by transplanted myotubes \u2014 this is the glucose-import process. Minor note: the paper's lever is glucokinase (phosphorylation) coupled to transport, but transport/uptake is explicitly present."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Edge object is Hyperglycemia (HP:0003074). Snippet and body explicitly name 'diabetic hyperglycemia' and report transplanted GK-myotubes 'lowered hyperglycemia' in diabetic mice."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Increased glucose disposal/uptake 'can reduce'/'lowered' hyperglycemia \u2014 a decrease in the object caused by increase of the subject process = negative regulation, matching the predicate sign."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Subject (glucose import/disposal) acts to reduce object (hyperglycemia), not the reverse; the causal arrow runs uptake \u2192 lowered blood glucose."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Edge relates a biological process (glucose import) to a phenotype (hyperglycemia, an abundance of circulating glucose). The snippet operates at the level of tissue glucose disposal lowering circulating glucose \u2014 process\u2192phenotype, matching flavor."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "The snippet is stated as an established general principle ('can reduce'), and the paper demonstrates it experimentally (STZ-diabetic mice transplanted with GK-myotubes lowered hyperglycemia). Underlying evidence is a mouse gene-therapy model, but the mechanistic claim is asserted, not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Methodology is a transgenic/gene-therapy rodent transplantation model with in vitro myotube assays \u2192 MODEL_ORGANISM (with in-vitro component). Curator's MODEL_ORGANISM label is re-derived as correct."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "MODEL_ORGANISM",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PubMed (not cited by curator): PMID:20724647 (Diabetes Care human clinical study) and PMID:10067838 (Endocrinology transgenic mouse)",
+              "record": "PMID:20724647: increased insulin-dependent glucose uptake / peripheral glucose disposal reduced postprandial hyperglycemia in type 2 diabetic humans. PMID:10067838 shows the converse: impaired GLUT4-mediated glucose uptake is associated with the hyperglycemic/insulin-resistant state. Both corroborate that increased glucose import negatively regulates hyperglycemia."
+            },
+            "confidence": "high",
+            "note": "Cited abstract was not in the curator cache but was retrievable independently; snippet is verbatim and directly on the edge's entities and relation. Independent human clinical evidence (20724647) strengthens generalizability beyond the rodent model. The only soft spot is that the cited paper's primary engineered lever is glucokinase-driven phosphorylation, but the snippet and body both explicitly invoke glucose transport/uptake, so subject grounding holds. All ladder checks pass."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent human clinical evidence (PMID:20724647) and an independent transgenic-mouse study (PMID:10067838) both establish that increased cellular/peripheral glucose import (uptake/disposal) lowers circulating glucose and hyperglycemia, corroborating the negative-regulation edge beyond the curator's cited model-organism snippet."
+      },
+      "edge_hash": "692c9e646956a287"
+    },
+    "9233a8bdb149603d": {
+      "edge": {
+        "subject": {
+          "id": "HP:0003074",
+          "name": "Hyperglycemia",
+          "label": "PhenotypicFeature"
+        },
+        "predicate": "manifestation of",
+        "object": {
+          "id": "MESH:D003922",
+          "name": "Diabetes Mellitus, Type 1",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "_parse_error": "no parseable JSON in model output",
+        "_raw": "These are less specific. The two curator citations are quite direct, but let me get one clearly independent corroboration that hyperglycemia is a defining manifestation of T1D specifically."
+      },
+      "edge_hash": "9233a8bdb149603d"
+    }
+  }
+}

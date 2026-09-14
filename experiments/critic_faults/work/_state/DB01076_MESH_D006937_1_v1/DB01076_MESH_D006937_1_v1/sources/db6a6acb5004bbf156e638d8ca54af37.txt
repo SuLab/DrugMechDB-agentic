@@ -1,0 +1,11 @@
+PMID:42547322  Prevalence of dyslipidemia in India: The ICMR-INDIAB National Study (ICMR-INDIAB-25).  (Journal of clinical lipidology, 2026)
+
+**BACKGROUND:** Dyslipidemia, characterized by abnormal lipid levels including low high-density lipoprotein cholesterol (HDL-C), high triglycerides, and elevated low-density lipoprotein cholesterol (LDL-C) or total cholesterol (TC), poses a significant cardiovascular threat in India amid rapid urbanization and lifestyle shifts.
+
+**OBJECTIVE:** To assess the prevalence of various components of dyslipidemia in India using data from the large, nationally representative, Indian Council of Medical Research-India Diabetes (ICMR-INDIAB) study.
+
+**METHODS:** The ICMR-INDIAB study employed a stratified multistage cluster sampling design across representative urban and rural clusters in all Indian states and union territories, targeting adults (n = 121,078) aged ≥20 years. In every 5th participant (23,665-urban: 7026 and rural: 16,636), fasting venous blood samples were analyzed for lipids using standardized enzymatic methods. Dyslipidemia was defined using the Lipid Association of India guidelines [high TC ≥200 mg/dL, high triglycerides ≥150 mg/dL, high LDL-C ≥100 mg/dL, and low HDL-C (<40 mg/dL men, <50 mg/dL women)]. Generalized obesity was defined as BMI ≥25 kg/m² (World Health Organization Asia Pacific guidelines).
+
+**RESULTS:** The overall weighted prevalence of dyslipidemia was 87.3%, significantly higher in urban areas and among females. The burden of dyslipidemia in India was predominantly driven by low HDL-C (66.8%). Dyslipidemia prevalence increased with worsening glycemic status, rising body mass index (BMI), and the presence of hypertension; it was also present in 40% of individuals without diabetes, hypertension, or obesity. Younger age, female sex, sedentary lifestyle, obesity, hypertension, and diabetes were associated with dyslipidemia.
+
+**CONCLUSION:** Dyslipidemia is highly prevalent among Indian adults, especially at younger ages and among those with adverse glycemic status, obesity, and hypertension. However, there is a substantial burden of dyslipidemia among metabolically normal individuals, highlighting the need for broader lipid screening strategies and early preventive interventions to curb the rising trend of cardiovascular disease risk in India.

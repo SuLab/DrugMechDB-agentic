@@ -1,0 +1,132 @@
+record_id: DB00030_MESH_D003922_1_v1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T06:07:45+00:00'
+last_reviewed_at: '2026-08-25T06:07:45+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: RE_CURATE
+escalation_reason: null
+overall_summary: 'The path is the accepted mechanism of insulin replacement in T1D:
+  exogenous insulin agonizes the insulin receptor (ChEMBL), driving the canonical
+  receptor→PI3K/Akt→GLUT4 glucose-uptake pathway (PMID:36807886), which lowers hyperglycemia
+  (the correctly placed sign-flip), the defining manifestation of T1D (PMID:39918671).
+  Net direction is therapeutic, the chain is a single connected sequence with no shortcut,
+  and no sign-flip is missing. The only weakness is citation-quality on the receptor→glucose-import
+  edge (curator snippets attribute glucose transport to downstream mediators rather
+  than the receptor itself), which is a source-strengthening matter already flagged
+  at the edge level, not a whole-path defect. Mechanism sound.'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T06:07:45+00:00'
+  verdict: RE_CURATE
+  escalation_reason: null
+  summary: 'The path is the accepted mechanism of insulin replacement in T1D: exogenous
+    insulin agonizes the insulin receptor (ChEMBL), driving the canonical receptor→PI3K/Akt→GLUT4
+    glucose-uptake pathway (PMID:36807886), which lowers hyperglycemia (the correctly
+    placed sign-flip), the defining manifestation of T1D (PMID:39918671). Net direction
+    is therapeutic, the chain is a single connected sequence with no shortcut, and
+    no sign-flip is missing. The only weakness is citation-quality on the receptor→glucose-import
+    edge (curator snippets attribute glucose transport to downstream mediators rather
+    than the receptor itself), which is a source-strengthening matter already flagged
+    at the edge level, not a whole-path defect. Mechanism sound.'
+  flags:
+  - edge: Insulin receptor --positively regulates--> glucose import
+    issue: The cited quote attributes stimulation of glucose transport to the downstream
+      signaling mediators (IRS→PI3K→Akt), not to the edge's subject (the insulin receptor)
+      directly; the receptor is only mentioned upstream as the cascade initiator.
+      Strengthen with a source that explicitly ties insulin-receptor activity itself
+      to positive regulation of glucose import.
+  - edge: Insulin receptor --positively regulates--> glucose import
+    issue: The clipped quote's subject is the PI3-kinase pathway, not the edge's subject
+      (the insulin receptor); as cited it does not assert anything about the insulin
+      receptor's own role and therefore does not establish this specific subject→object
+      edge. Re-source with text that names the insulin receptor as the regulator of
+      glucose import.
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:insulin
+  - ChEMBL:insulin human
+  - PMID:23837585
+  - PMID:24225153
+  - PMID:30252239
+  - PMID:36807886
+  - PMID:37207372
+  - PMID:38271325
+  - PMID:39251430
+  - PMID:39820433
+  edge_reviews:
+  - edge: insulin human --increases activity of--> Insulin receptor
+    reference: PMID:9932214
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1201631 (INSULIN HUMAN)", "record":
+      "action_type=''AGONIST''; target=''Insulin receptor''; direct_interaction=1;
+      moa=''Insulin receptor agonist'' \u2014 independently confirms insulin activates
+      the insulin receptor."}'
+    confidence: high
+  - edge: insulin human --increases activity of--> Insulin receptor
+    reference: PMID:20526383
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1201631 (INSULIN HUMAN)", "record":
+      "AGONIST of Insulin receptor, direct_interaction=1 \u2014 independent confirmation."}'
+    confidence: high
+  - edge: Insulin receptor --positively regulates--> glucose import
+    reference: PMID:20526383
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited quote attributes stimulation of glucose transport to the downstream
+      signaling mediators (IRS→PI3K→Akt), not to the edge's subject (the insulin receptor)
+      directly; the receptor is only mentioned upstream as the cascade initiator.
+      Strengthen with a source that explicitly ties insulin-receptor activity itself
+      to positive regulation of glucose import.
+    grounding: '{"source": "PMID:37207372 (independent, not cited by curator) and
+      PMID:24225153", "record": "IRTK-inhibitor (genistein) blocks insulin-dependent
+      glucose transport, ''confirmed the presence of IRTK-dependent glucose transport
+      activation'' \u2014 directly ties insulin RECEPTOR tyrosine kinase activity
+      to positive control of glucose uptake."}'
+    confidence: high
+  - edge: Insulin receptor --positively regulates--> glucose import
+    reference: PMID:9932214
+    rederived_supports: NO_EVIDENCE
+    agrees_with_curator: false
+    issue: The clipped quote's subject is the PI3-kinase pathway, not the edge's subject
+      (the insulin receptor); as cited it does not assert anything about the insulin
+      receptor's own role and therefore does not establish this specific subject→object
+      edge. Re-source with text that names the insulin receptor as the regulator of
+      glucose import.
+    grounding: '{"source": "PMID:37207372 and PMID:24225153 (independent)", "record":
+      "Insulin receptor tyrosine kinase inhibition abolishes insulin-driven glucose
+      transport, establishing receptor\u2192glucose import positively \u2014 but this
+      comes from independent sources, not from the cited snippet."}'
+    confidence: high
+  - edge: glucose import --negatively regulates--> Hyperglycemia
+    reference: PMID:12542844
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:39251430 (Diabetologia 2024) and PMID:38271325
+      (PLoS One 2024), not cited by curator", "record": "PMID:39251430: increased
+      GLUT4 translocation/glucose uptake lowered blood glucose from 11.1 to ~7.9 mmol/l
+      in HFD mice; PMID:38271325: enhanced skeletal-muscle glucose uptake/utilization
+      reduces blood glucose in T2D \u2014 both independently confirm that increased
+      glucose import lowers hyperglycemia."}'
+    confidence: high
+  - edge: Hyperglycemia --manifestation of--> Diabetes Mellitus, Type 1
+    reference: PMID:39918671
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:39820433 (J Clin Endocrinol Metab 2025, not cited
+      by curator)", "record": "Describes T1D patients presenting in ''hyperglycemic
+      crises'' driven by insulin deficiency, corroborating hyperglycemia as a manifestation
+      of T1D."}'
+    confidence: high
+  - edge: Hyperglycemia --manifestation of--> Diabetes Mellitus, Type 1
+    reference: PMID:39211721
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:39820433 (independent, not cited)", "record": "Corroborates
+      hyperglycemia/hyperglycemic crises as a manifestation of T1D driven by insulin
+      deficiency."}'
+    confidence: high

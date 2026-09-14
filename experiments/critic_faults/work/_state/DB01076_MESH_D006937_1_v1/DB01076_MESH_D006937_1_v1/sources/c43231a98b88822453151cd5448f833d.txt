@@ -1,0 +1,11 @@
+PMID:42362472  Radiographic measurement of the Achilles tendon for diagnosis of familial hypercholesterolemia.  (Journal of clinical lipidology, 2026)
+
+**BACKGROUND:** The standard definition of Achilles tendon xanthoma in familial hypercholesterolemia (FH) remains unclear.
+
+**OBJECTIVE:** To examine the optimal cut-off points and diagnostic accuracy of Achilles tendon thickness measured by radiographs among Thai subjects with FH.
+
+**METHODS:** Achilles tendon thickness in the anteroposterior dimension was determined using plain radiographs of lateral ankles in 80 subjects with genetically confirmed FH, 57 non-FH subjects with elevated low-density lipoprotein-cholesterol (LDL-C) ≥130 mg/dL, and 54 control subjects (LDL-C <130 mg/dL). The optimal cut-off values, sensitivity, specificity, and diagnostic accuracy for FH diagnosis were examined. The diagnostic performance of Achilles tendon measurements obtained from radiographs, skinfold calipers, and ultrasound was compared in a subset of 16 subjects from each group.
+
+**RESULTS:** The Achilles tendon was significantly thicker in the FH group compared with the non-FH and the control groups (median values [IQR] were 11.5 [8.0-14.5] mm vs 5.9 [5.4-6.5] mm and 6.4 [5.5-7.5] mm, respectively, P < 0.001). The optimal cut-off values determined by receiver operating characteristic analysis were 7.95 mm for men and 7.25 mm for women, with sensitivity, specificity, and accuracy of 92%, 85%, and 88% for men, and 91%, 88%, and 89% for women, respectively. In the subgroup of subjects, tendon thickness measured by radiographs or ultrasound demonstrated higher sensitivity, specificity, and accuracy than tendon width measured by ultrasound or calipers.
+
+**CONCLUSION:** The Achilles tendon thickness values of 7.95 mm in men and 7.25 mm in women could be useful for identifying tendon xanthomas for the diagnosis of FH in the Thai population.

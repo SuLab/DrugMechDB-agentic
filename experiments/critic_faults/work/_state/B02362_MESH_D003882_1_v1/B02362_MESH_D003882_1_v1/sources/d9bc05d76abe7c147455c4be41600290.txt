@@ -1,0 +1,11 @@
+PMID:29524269  Dermatomyositis panniculitis: a clinicopathological and immunohistochemical study of 18 cases.  (Journal of the European Academy of Dermatology and Venereology : JEADV, 2018)
+
+**BACKGROUND:** Panniculitis occurring in dermatomyositis is uncommon, with only a few cases described in the literature, most of them as case reports.
+
+**OBJECTIVE:** This report describes the clinicopathological and immunohistochemical findings in a series of 18 patients with panniculitis associated with dermatomyositis.
+
+**METHODS:** In each patient, we collected the clinical data of the cutaneous lesions as well as the characteristic clinical and laboratory findings. A series of histopathologic findings was recorded in the biopsy of each patient. A panel of antibodies was used in some cases to investigate the immunophenotype of the infiltrate. Data of treatment and follow-up were also collected.
+
+**RESULTS:** Of the 18 patients, 13 were female and 5 were male, ranging in age from 13 to 74 years (median, 46.4 years). In addition to panniculitis, all patients presented pathognomonic cutaneous findings of DM and reported proximal muscle weakness prior to the diagnosis of panniculitis. Muscle biopsy was performed in 17 patients and MRI in one, all with the diagnosis of inflammatory myopathy. None of the patients presented any associated neoplasia. Panniculitis lesions were located in the upper or lower limbs. Histopathology showed a mostly lobular panniculitis with lymphocytes as the main component of the infiltrate. Most cases showed also numerous plasma cells and lymphocytes surrounding necrotic adipocytes (rimming) were frequently seen. Lymphocytic vasculitis and abundant mucin interstitially deposited between collagen bundles of the dermis were also frequent findings. Late-stage lesions showed hyaline necrosis of the fat lobule and calcification. Immunohistochemistry demonstrated that most lymphocytes of the infiltrate were T-helper lymphocytes, with some B lymphocytes in the lymphoid aggregates and small clusters of CD-123-positive plasmacytoid dendritic cells in the involved fat lobule.
+
+**CONCLUSION:** Panniculitis in dermatomyositis is rare. Histopathologic findings of panniculitis dermatomyositis are identical to those of lupus panniculitis. Therefore, the final diagnosis requires clinic-pathologic correlation.

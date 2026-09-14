@@ -1,0 +1,104 @@
+record_id: DB00010_MESH_D004393_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T05:18:18+00:00'
+last_reviewed_at: '2026-08-25T05:18:18+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ESCALATE
+escalation_reason: factual_contradiction
+overall_summary: An edge's evidence contradicts the claim (curator territory).
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T05:18:18+00:00'
+  verdict: ESCALATE
+  escalation_reason: factual_contradiction
+  summary: An edge's evidence contradicts the claim (curator territory).
+  flags:
+  - edge: Sermorelin --decreases activity of--> Growth hormone-releasing hormone receptor
+    issue: The cited text describes the ligand ACTIVATING the growth hormone-releasing
+      hormone receptor (receptor activation, increased cAMP), i.e. an increase in
+      receptor activity — the opposite of the edge's 'decreases activity of' predicate.
+      The relation sign is inverted. Additionally the quote is about the native releasing
+      hormone, not the drug subject specifically.
+  - edge: Sermorelin --decreases activity of--> Growth hormone-releasing hormone receptor
+    issue: The cited text shows the drug subject AUGMENTS/STIMULATES growth hormone
+      release — an agonist (activity-increasing) effect — contradicting the edge's
+      'decreases activity of' predicate. The sign is inverted. The quote also speaks
+      to a downstream hormone-release readout rather than to the receptor object directly.
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:Sermorelin
+  - ChEMBL:sermorelin
+  - PMID:22612533
+  - PMID:23825127
+  - PMID:34252492
+  - clinicaltrials:NCT00448747
+  edge_reviews:
+  - edge: Sermorelin --decreases activity of--> Growth hormone-releasing hormone receptor
+    reference: PMID:12446584
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: The cited text describes the ligand ACTIVATING the growth hormone-releasing
+      hormone receptor (receptor activation, increased cAMP), i.e. an increase in
+      receptor activity — the opposite of the edge's 'decreases activity of' predicate.
+      The relation sign is inverted. Additionally the quote is about the native releasing
+      hormone, not the drug subject specifically.
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1201490 (Sermorelin acetate)",
+      "record": "action_type=''AGONIST'', target=Growth hormone-releasing hormone
+      receptor, direct_interaction=1, moa=''Growth hormone-releasing hormone receptor
+      agonist''"}'
+    confidence: high
+  - edge: Sermorelin --decreases activity of--> Growth hormone-releasing hormone receptor
+    reference: PMID:6236914
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: The cited text shows the drug subject AUGMENTS/STIMULATES growth hormone
+      release — an agonist (activity-increasing) effect — contradicting the edge's
+      'decreases activity of' predicate. The sign is inverted. The quote also speaks
+      to a downstream hormone-release readout rather than to the receptor object directly.
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1201490 (Sermorelin acetate)",
+      "record": "action_type=''AGONIST'' on Growth hormone-releasing hormone receptor
+      \u2014 increases, not decreases, activity"}'
+    confidence: high
+  - edge: Growth hormone-releasing hormone receptor --positively regulates--> growth
+      hormone secretion
+    reference: PMID:8395283
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:22612533 (J Neuroendocrinol 2012) and PMID:23825127
+      (Endocrinology 2013), consulted independently", "record": "Both confirm GHRH
+      receptor on somatotrophs transduces a signal for GH release; e.g. ''sufficient
+      GHRH receptor, which could transfer a signal for GH release'' and TSI ''activates
+      GHRH receptors...GH release.''"}'
+    confidence: high
+  - edge: Growth hormone-releasing hormone receptor --positively regulates--> growth
+      hormone secretion
+    reference: PMID:12446584
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:23825127 (Endocrinology 2013), consulted independently",
+      "record": "GHRH-receptor-targeted agent ''activates GHRH receptors'' on somatotrophs
+      and its native pathway drives GH release, corroborating receptor\u2192GH-secretion
+      positive coupling."}'
+    confidence: high
+  - edge: growth hormone secretion --negatively regulates--> Pituitary dwarfism
+    reference: PMID:10549302
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:8395283 (the second cited source, read independently
+      via read_abstract) plus the abstract full context of PMID:10549302", "record":
+      "Independent mouse-model source confirms ''reduced GH secretion and a dwarf
+      phenotype,'' corroborating the inverse GH-secretion\u2194dwarfism relationship
+      established in the human paper."}'
+    confidence: high
+  - edge: growth hormone secretion --negatively regulates--> Pituitary dwarfism
+    reference: PMID:8395283
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:10549302 (the human clinical source, read independently
+      via read_abstract)", "record": "Human paper independently establishes dwarfism
+      ''due to isolated GH deficiency,'' corroborating that reduced GH secretion drives
+      dwarfism beyond the mouse model."}'
+    confidence: high

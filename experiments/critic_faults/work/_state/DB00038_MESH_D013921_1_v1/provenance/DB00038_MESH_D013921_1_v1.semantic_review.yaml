@@ -1,0 +1,162 @@
+record_id: DB00038_MESH_D013921_1_v1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T05:48:01+00:00'
+last_reviewed_at: '2026-08-25T05:48:01+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: RE_CURATE
+escalation_reason: null
+overall_summary: 'After adversarially probing for a whole-path defect (missing sign-flip,
+  incidental effect, off-route step, wrong-direction net, redundant shortcut), none
+  was found. The chain is exactly the accepted thrombopoietic MoA of oprelvekin: IL-11Rα
+  agonism (ChEMBL) → direct promotion of megakaryocytopoiesis (PMID:9354656) → platelet
+  formation → inverse relationship with thrombocytopenia, netting to a therapeutic
+  decrease of the disease. Independently corroborated by PMID:12728286 which describes
+  the drug as a thrombopoietic factor stimulating MK/platelet production, and by NCT00502892
+  clinical use. Edge-level snippet weaknesses (binding-vs-activity granularity, endogenous-cytokine
+  vs drug subject) are non-fatal at the path level given independent grounding.'
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T05:48:01+00:00'
+  verdict: RE_CURATE
+  escalation_reason: null
+  summary: 'After adversarially probing for a whole-path defect (missing sign-flip,
+    incidental effect, off-route step, wrong-direction net, redundant shortcut), none
+    was found. The chain is exactly the accepted thrombopoietic MoA of oprelvekin:
+    IL-11Rα agonism (ChEMBL) → direct promotion of megakaryocytopoiesis (PMID:9354656)
+    → platelet formation → inverse relationship with thrombocytopenia, netting to
+    a therapeutic decrease of the disease. Independently corroborated by PMID:12728286
+    which describes the drug as a thrombopoietic factor stimulating MK/platelet production,
+    and by NCT00502892 clinical use. Edge-level snippet weaknesses (binding-vs-activity
+    granularity, endogenous-cytokine vs drug subject) are non-fatal at the path level
+    given independent grounding.'
+  flags:
+  - edge: oprelvekin --increases activity of--> Interleukin-11 receptor subunit alpha
+    issue: The cited quote describes the endogenous IL-11 cytokine forming a receptor
+      complex and speaks to binding specificity of the IL-11Rα subunit; it never names
+      the drug subject and attributes signal transduction to a different (beta) subunit.
+      It therefore does not directly establish that the drug increases the ACTIVITY
+      of the IL-11Rα subunit — it is a binding/complex-formation statement about the
+      natural ligand, one granularity step short of the 'increases activity of' claim.
+  - edge: oprelvekin --increases activity of--> Interleukin-11 receptor subunit alpha
+    issue: The quote is a general statement that the natural cytokines bind their
+      unique α-receptors as a prerequisite for signal transduction; it does not name
+      the drug subject and describes binding rather than an increase in the receptor
+      subunit's activity. It supports the upstream binding step but falls short of
+      directly establishing the drug→'increases activity of' IL-11Rα relation.
+  - edge: Interleukin-11 receptor subunit alpha --positively regulates--> megakaryocyte
+      differentiation
+    issue: The first cited quote only establishes that megakaryocytes express a functional
+      receptor for the subject; it does not itself demonstrate that receptor signaling
+      positively regulates megakaryocyte differentiation. The differentiation-promoting
+      relation is inferred from the paper's title/overall claim rather than stated
+      in this span. Strengthen with a quote that directly links receptor signaling
+      to a differentiation/megakaryocytopoiesis outcome.
+  - edge: Interleukin-11 receptor subunit alpha --positively regulates--> megakaryocyte
+      differentiation
+    issue: The second quote demonstrates receptor signaling activation (a proximal
+      STAT3/gp130 readout) in megakaryocytes but stops short of showing that this
+      activation produces megakaryocyte differentiation. It is a mechanistic upstream
+      step rather than direct evidence of the differentiation outcome named in the
+      object. Add a quote linking the signaling to a differentiation/megakaryocytopoiesis
+      endpoint.
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:CHEMBL1201573
+  - ChEMBL:oprelvekin
+  - PMID:10627458
+  - PMID:12728286
+  - PMID:31644052
+  - PMID:33926362
+  - PMID:41766040
+  - PMID:42024179
+  - PMID:42060461
+  - PMID:42150413
+  - PMID:8904874
+  - PMID:9310465
+  - clinicaltrials:NCT00502892
+  edge_reviews:
+  - edge: oprelvekin --increases activity of--> Interleukin-11 receptor subunit alpha
+    reference: PMID:12919066
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited quote describes the endogenous IL-11 cytokine forming a receptor
+      complex and speaks to binding specificity of the IL-11Rα subunit; it never names
+      the drug subject and attributes signal transduction to a different (beta) subunit.
+      It therefore does not directly establish that the drug increases the ACTIVITY
+      of the IL-11Rα subunit — it is a binding/complex-formation statement about the
+      natural ligand, one granularity step short of the 'increases activity of' claim.
+    grounding: '{"source": "ChEMBL CHEMBL1201573 (chembl_get_mechanism)", "record":
+      "OPRELVEKIN action_type=''AGONIST'', target=''Interleukin-11 receptor subunit
+      alpha'', direct_interaction=1, moa=''Interleukin 11 receptor alpha agonist''
+      \u2014 directly confirms drug increases receptor activity."}'
+    confidence: high
+  - edge: oprelvekin --increases activity of--> Interleukin-11 receptor subunit alpha
+    reference: PMID:26551279
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The quote is a general statement that the natural cytokines bind their
+      unique α-receptors as a prerequisite for signal transduction; it does not name
+      the drug subject and describes binding rather than an increase in the receptor
+      subunit's activity. It supports the upstream binding step but falls short of
+      directly establishing the drug→'increases activity of' IL-11Rα relation.
+    grounding: '{"source": "ChEMBL CHEMBL1201573", "record": "OPRELVEKIN is a curated
+      AGONIST of Interleukin-11 receptor subunit alpha with direct interaction \u2014
+      independent confirmation of the edge."}'
+    confidence: high
+  - edge: Interleukin-11 receptor subunit alpha --positively regulates--> megakaryocyte
+      differentiation
+    reference: PMID:9354656
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The first cited quote only establishes that megakaryocytes express a functional
+      receptor for the subject; it does not itself demonstrate that receptor signaling
+      positively regulates megakaryocyte differentiation. The differentiation-promoting
+      relation is inferred from the paper's title/overall claim rather than stated
+      in this span. Strengthen with a quote that directly links receptor signaling
+      to a differentiation/megakaryocytopoiesis outcome.
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1201573 (oprelvekin)", "record":
+      "oprelvekin is an AGONIST of Interleukin-11 receptor subunit alpha (direct_interaction=1),
+      independently confirming IL-11R\u03b1 is the functional transducing receptor
+      for the thrombopoietic effect."}'
+    confidence: high
+  - edge: Interleukin-11 receptor subunit alpha --positively regulates--> megakaryocyte
+      differentiation
+    reference: PMID:9354656
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The second quote demonstrates receptor signaling activation (a proximal
+      STAT3/gp130 readout) in megakaryocytes but stops short of showing that this
+      activation produces megakaryocyte differentiation. It is a mechanistic upstream
+      step rather than direct evidence of the differentiation outcome named in the
+      object. Add a quote linking the signaling to a differentiation/megakaryocytopoiesis
+      endpoint.
+    grounding: '{"source": "ChEMBL mechanism CHEMBL1201573 (oprelvekin) + PMID:9310465",
+      "record": "ChEMBL: IL-11R\u03b1 agonism is the drug MOA. PMID:9310465 confirms
+      IL-11R\u03b1 is the specific signaling alpha chain paired with gp130, and IL-11
+      has ''a prominent effect on megakaryopoiesis and thrombopoiesis'' \u2014 corroborating
+      the receptor\u2192MK positive-regulation link pharmacologically."}'
+    confidence: high
+  - edge: megakaryocyte differentiation --positively regulates--> platelet formation
+    reference: PMID:34943811
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed independent reads not cited by curator: PMID:42150413
+      and PMID:42060461", "record": "PMID:42150413 shows mature (differentiated) MKs
+      exhibit proplatelet formation; PMID:42060461 explicitly states that promoting
+      MK maturation promotes platelet production/recovery \u2014 directly confirming
+      megakaryocyte differentiation positively regulates platelet formation."}'
+    confidence: high
+  - edge: platelet formation --negatively correlated with--> Thrombocytopenic disorder
+    reference: PMID:6683869
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PubMed PMID:42024179 and PMID:41766040 (not cited by curator)",
+      "record": "PMID:41766040: ''Inherited thrombocytopenias... caused by defects
+      in over 50 genes that predominantly affect platelet production'' \u2014 directly
+      establishes reduced platelet production/formation as the cause of thrombocytopenic
+      disorder, confirming the inverse relationship. PMID:42024179 shows enhanced
+      MK differentiation/platelet production is a therapeutic axis for thrombocytopenia."}'
+    confidence: high

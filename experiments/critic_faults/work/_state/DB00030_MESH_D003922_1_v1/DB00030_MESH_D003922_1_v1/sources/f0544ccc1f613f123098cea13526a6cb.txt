@@ -1,0 +1,9 @@
+PMID:23837585  Involvement of GLUT-4 in the stimulatory effect of rutin on glucose uptake in rat soleus muscle.  (The Journal of pharmacy and pharmacology, 2013)
+
+**OBJECTIVES:** The aim of this study was to investigate the in-vitro effect of rutin on glucose uptake in an insulin target (soleus muscle) and the mechanism of action involved.
+
+**METHODS:** Isolated soleus muscles from rats were treated with rutin (500 μm) with or without the following inhibitors; hydroxy-2-naphthalenylmethylphosphonic acid trisacetoxymethyl ester (HNMPA(AM)3 ), an insulin receptor tyrosine kinase activity inhibitor, wortmannin, an inhibitor of phosphatidylinositol 3-kinase (PI3K), RO318220, an inhibitor of protein kinase C, colchicine, a microtubule-depolymerizing agent, PD98059, an inhibitor of mitogen-activated protein kinase kinase (MEK), and cycloheximide, an inhibitor of protein synthesis on fresh Krebs Ringer-bicarbonate plus [U-(14) C]-2-deoxy-d-glucose (0.1 μCi/ml). Samples of tissue medium were used for the radioactivity measurements.
+
+**KEY FINDINGS:** Rutin increased the glucose uptake in rat soleus muscle. In addition, the effect of rutin on glucose uptake was completely inhibited by pretreatment with HNMPA(AM)3 , wortmannin, RO318220, colchicine, PD98059, and cycloheximide. These results suggested that rutin stimulated glucose uptake in the rat soleus muscle via the PI3K, atypical protein kinase C and mitogen-activated protein kinase (MAPK) pathways. Also, rutin may have influenced glucose transporter translocation and may have directly activated the synthesis of the transporter GLUT-4.
+
+**CONCLUSION:** The similarities of rutin action on glucose uptake compared with the signalling pathways of insulin constitute strong evidence for the insulin-mimetic role of rutin in glucose homeostasis.

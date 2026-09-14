@@ -1,0 +1,9 @@
+PMID:28641523  Radiosensitizing Effect of Electrochemotherapy: A Systematic Review of Protocols and Efficiency.  (Current drug targets, 2017)
+
+**BACKGROUND:** Electrochemotherapy (ECT) is a combination of electroporation (EP) and chemotherapy and has been reported as a potential radiosensitizing agent for radiation therapy.
+
+**OBJECTIVE:** The main objective of this study was to systematically review of the literature to evaluate the effectiveness of ECT in sensitization of tumors to ionization radiation. In addition, the clinical considerations and mechanisms of action of radiosensitizing effect are discussed.
+
+**RESULTS:** Nine studies were included in this review. Bleomycin and cisplatin showed radiosensitizing effects in combined protocols with EP. EP enhances the cytotoxicity of bleomycin and cisplatin by factor of 1000 and 100, respectively. The mechanism of action of these drugs is induction of single and double strand breaks in DNA molecule. Moreover, the two main mechanisms of EP are increasing drug uptake in the tumor cells and generating reactive oxygen species. A single session ECT before radiotherapy can significantly enhance the tumor response.
+
+**CONCLUSION:** ECT is effective for different cell lines and tumors with different levels of radiosensitivity. Our findings show that ECT can be further translated into the clinic and can be matched by singledose irradiation as well as in the fractionated regime.

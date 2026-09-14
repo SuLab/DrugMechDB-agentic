@@ -1,0 +1,38 @@
+SOURCE CLINICALTRIALS:NCT00502892  (content_type=abstract)
+Title: A Phase I Study of a Novel Chemotherapeutic Regimen: Topotecan, Ifosfamide and Carboplatin (TIC) in Children and Young Adults With Solid Tumors-- A Limited Multi-Institution Study
+
+Primary Objectives:
+
+* To determine the maximum tolerated dose (MTD) of Topotecan when added to a fixed dose regimen of Ifosfamide and Carboplatin in children and young adults with solid tumors.
+* To evaluate the toxicity associated with the administration of Topotecan with Ifosfamide and Carboplatin (TIC) in children and young adults with solid tumors.
+
+Secondary Objectives:
+
+* To evaluate the duration of neutropenia (ANC\<500/micro L) and thrombocytopenia (PLT 50,000/ micro L and 20,000/ micro L) and the number of days of platelet transfusion during each course of TIC chemotherapy when used in conjunction with G-CSF and NEUMEGA in children and young adults with solid tumors.
+* To determine the median number of apheresis collections as well as the CD34/kg, CD41/kg, CD61/kg and CD34:41/kg and CD34:61/kg per collection in patients electively undergoing concurrent apheresis for peripheral blood stem cell collection in courses 2 or 3.
+* To determine the median number of peripheral blood mononuclear cells (PBMC) and ex-vivo expanded myeloid dendritic cells (DC) in patients electively undergoing concurrent apheresis for PBMC collection in courses 2 or 3.
+
+All of the chemotherapy drugs used in this study are FDA approved and commercially available drugs designed to kill cancer cells.
+
+Before you can start treatment on this study, you will have what are called "screening tests". These tests will help the doctor decide if you are eligible to take part in the study. You will have a physical exam and routine blood (about 2 teaspoons) and urine tests. You will have electrocardiogram (ECG - test to measure the electrical activity of the heart). You will have a chest x-ray and other scans (such as CT, MRI, Bone, Ultrasound or radionucleotide scans ). You physician will decide which scans are appropriate based on the disease and clinical situation. You will also have a bone marrow aspirate. To collect a bone marrow aspirate, an area of the hip or chest bone is numbed with anesthetic and a small amount of bone marrow is withdrawn through a large needle. Women who are able to have children must have a negative pregnancy test before starting treatment.
+
+If you are found to be eligible to take part in this study, you will be assigned to a specific dose of topotecan. The first group of participants will receive a smaller dose of topotecan. If patients in that group are able to recover a sufficient number of platelets by Day 22 and no severe side effects are experienced, the next group of participants will be treated with a larger dose topotecan. The dose will continue to be increased for each new group of participants until all the participants in a dose group are unable to recover a sufficient number of platelets by Day 22, or until severe side effects are experienced. There will be 3 patients in each group. The doses of all the other drugs used on this study will be the same for every participants.
+
+Topotecan, ifosfamide, and carboplatin will be given for the first three days of each course. Ifosfamide and carboplatin will be given into a vein for one hour each day along with the drug mesna. Mesna is not an anti-cancer drug but a drug to help protect the bladder from the potential damaging effects of ifosfamide. After the first dose of mesna, participants will receive 3 more doses (one every three hours) over 15-30 minutes . Topotecan is given directly into a vein for one-half hour beginning one hour after treatment with ifosfamide, carboplatin, and the first dose of mesna is completed. Participants who are 22 years or older will only receive Day 1 and 2 of carboplatin.
+
+Starting on the fourth day of each course, you will be given a daily injection of the drug Filgrastim. Filgrastim is a growth factor naturally produced in the body to stimulate the production of white blood cells (infection fighting cells). Filgrastim can now be produced in the laboratory and given to patients at higher doses than the body makes. Filgrastim should help the body recover from treatment. Filgrastim will be given as an injection under the skin once a day until an acceptable number of white blood cells are detected in the bloodstream.
+
+A second course of chemotherapy will begin as soon as 21 days after the start of treatment as long as you have recovered enough white blood cells and platelets. If the white blood cells and platelets have not recovered by 21 days, you will begin the next course when they do recover.
+
+After each of the first three courses, you will have a re-evaluation of the disease. Re-evaluation will require the same scans to be performed as were done at study entry. If the tumor shows a complete or partial response to the treatment after the second course, then continuation on the study will be at the discretion of the treating physician. If the disease is stable, meaning there is no change in the size or degree of the tumor, then treatment can continue for a total of 3 courses overall.
+
+If the disease gets worse or intolerable side effects occur, you will be taken off study and other treatment options will be discussed with you.
+
+You may need to be hospitalized during the first three days of each chemotherapy course and will require visits as an outpatient at other times during treatment to receive laboratory follow-up and evaluation. Participants may also require hospitalization because of side effects.
+
+During treatment, you will have a physical exam and routine blood (about 2 teaspoons) and urine tests. You will also have an ECG, a chest x-ray, and other scans as thought necessary. The physical exam will be done once a week for Courses 1 - 3. The blood tests will be done on Days 1, 3, 5; then twice weekly and on Day 22 of each course. Urine tests will be done on Day 1 of each course and at the end of Course 2. The scans and ECG will be performed at the end of each course or sooner if it is suspected that the disease has gotten worse.
+
+This is an investigational study. The drugs on this study are FDA appr
+[...truncated at 6000 chars...]
+
+(Independent trusted source the critic retrieved — cite it as grounding.)

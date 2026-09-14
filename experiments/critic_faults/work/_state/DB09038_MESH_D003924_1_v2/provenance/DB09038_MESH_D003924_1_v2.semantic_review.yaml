@@ -1,0 +1,147 @@
+record_id: DB09038_MESH_D003924_1_v2
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T06:22:12+00:00'
+last_reviewed_at: '2026-08-25T06:22:12+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ESCALATE
+escalation_reason: factual_contradiction
+overall_summary: The chain is directionally correct and structurally clean, but its
+  first two nodes hang the entire mechanism on the wrong sodium/glucose cotransporter
+  paralog. Independent authorities (ChEMBL CHEMBL2107830; PMID:25260362; PMID:28667906)
+  unanimously identify empagliflozin as a highly SELECTIVE inhibitor of SGLT2 — the
+  transporter mediating ~90% of proximal-tubule glucose reabsorption — and selective
+  AGAINST SGLT1. The drug→target edge is not just unsupported but contradicted by
+  its own cited source's word 'highly selective.' Downstream edges (3–5) are well
+  grounded and net to lowering hyperglycemia, but the mechanism as written is not
+  the accepted MoA because the target and its downstream transporter node are the
+  wrong isoform. Re-ground nodes 1–2 to the correct cotransporter isoform. An edge's
+  evidence contradicts the claim (curator territory).
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T06:22:12+00:00'
+  verdict: ESCALATE
+  escalation_reason: factual_contradiction
+  summary: The chain is directionally correct and structurally clean, but its first
+    two nodes hang the entire mechanism on the wrong sodium/glucose cotransporter
+    paralog. Independent authorities (ChEMBL CHEMBL2107830; PMID:25260362; PMID:28667906)
+    unanimously identify empagliflozin as a highly SELECTIVE inhibitor of SGLT2 —
+    the transporter mediating ~90% of proximal-tubule glucose reabsorption — and selective
+    AGAINST SGLT1. The drug→target edge is not just unsupported but contradicted by
+    its own cited source's word 'highly selective.' Downstream edges (3–5) are well
+    grounded and net to lowering hyperglycemia, but the mechanism as written is not
+    the accepted MoA because the target and its downstream transporter node are the
+    wrong isoform. Re-ground nodes 1–2 to the correct cotransporter isoform. An edge's
+    evidence contradicts the claim (curator territory).
+  flags:
+  - edge: empagliflozin --decreases activity of--> Sodium/glucose cotransporter 1
+    issue: The cited source and independent authorities describe empagliflozin as
+      a HIGHLY SELECTIVE inhibitor of a DIFFERENT sodium/glucose cotransporter than
+      the one named as this edge's object. The named object transporter is precisely
+      the one empagliflozin is selective AGAINST, so the source does not support —
+      and in fact contradicts — an inhibitory action on the object as grounded. Re-check
+      the object entity identity (which cotransporter isoform empagliflozin actually
+      inhibits) and re-ground it independently.
+  - edge: Sodium/glucose cotransporter 1 --positively regulates--> renal glucose absorption
+    issue: The cited quote describes a different transporter (sodium/glucose cotransporter
+      2) than the edge's subject (sodium/glucose cotransporter 1); these are distinct
+      paralogs. The snippet therefore does not ground a statement about the subject
+      named in this edge, even though it is on-topic for renal glucose reabsorption.
+      Replace the citation with one that specifically asserts the edge's own subject
+      transporter mediates renal glucose absorption. Also re-check whether the subject
+      transporter is the correct one for the upstream drug-target step of this path.
+  path_issue: The first two steps of this chain both name a sodium/glucose cotransporter
+    isoform that independent authorities say this drug is SELECTIVE AGAINST — the
+    cited source for the drug→target step even calls the drug 'highly selective,'
+    which contradicts an action on the named transporter. The downstream physiology
+    (reabsorption → glycosuria → hyperglycemia → disease) is sound and correctly directed,
+    but the transporter identity in the drug-target step and the immediately following
+    process step needs to be re-verified and re-grounded independently. Fix the entity,
+    not the chain shape.
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:CHEMBL2107830
+  - ChEMBL:empagliflozin
+  - PMID:24486393
+  - PMID:25260362
+  - PMID:25377916
+  - PMID:26970780
+  - PMID:28667906
+  - PMID:33417957
+  - PMID:35131929
+  - PMID:35944842
+  - PMID:38014844
+  - PMID:38995799
+  - PMID:39199277
+  - PMID:39736118
+  - PMID:40402411
+  - PMID:40725973
+  - PMID:6714538
+  edge_reviews:
+  - edge: empagliflozin --decreases activity of--> Sodium/glucose cotransporter 1
+    reference: PMID:24152604
+    rederived_supports: REFUTE
+    agrees_with_curator: false
+    issue: The cited source and independent authorities describe empagliflozin as
+      a HIGHLY SELECTIVE inhibitor of a DIFFERENT sodium/glucose cotransporter than
+      the one named as this edge's object. The named object transporter is precisely
+      the one empagliflozin is selective AGAINST, so the source does not support —
+      and in fact contradicts — an inhibitory action on the object as grounded. Re-check
+      the object entity identity (which cotransporter isoform empagliflozin actually
+      inhibits) and re-ground it independently.
+    grounding: '{"source": "ChEMBL mechanism record CHEMBL2107830; corroborated by
+      PMID:35944842 and PMID:38014844", "record": "Empagliflozin mechanism = ''Sodium/glucose
+      cotransporter 2 inhibitor'' (direct_interaction=1). PMID:35944842 calls it a
+      ''selective SGLT2i''. PMID:38014844 distinguishes empagliflozin (SGLT2 inhibitor)
+      from dual SGLT1/2 inhibitor sotagliflozin \u2014 confirming SGLT1 is not empagliflozin''s
+      target."}'
+    confidence: high
+  - edge: Sodium/glucose cotransporter 1 --positively regulates--> renal glucose absorption
+    reference: PMID:38171209
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited quote describes a different transporter (sodium/glucose cotransporter
+      2) than the edge's subject (sodium/glucose cotransporter 1); these are distinct
+      paralogs. The snippet therefore does not ground a statement about the subject
+      named in this edge, even though it is on-topic for renal glucose reabsorption.
+      Replace the citation with one that specifically asserts the edge's own subject
+      transporter mediates renal glucose absorption. Also re-check whether the subject
+      transporter is the correct one for the upstream drug-target step of this path.
+    grounding: '{"source": "PMID:39199277 (independent, not curator-cited) and ChEMBL
+      CHEMBL2107830", "record": "PMID:39199277 (kidney SGLT1 biophysical model) states
+      SGLT1 mediates glucose reabsorption via proximal tubular segment S3, confirming
+      SGLT1 does positively regulate renal glucose absorption \u2014 so the edge is
+      defensible. Separately, ChEMBL confirms empagliflozin''s target is SGLT2, not
+      SGLT1, suggesting the upstream path may have mis-grounded the transporter."}'
+    confidence: high
+  - edge: renal glucose absorption --negatively correlated with--> Glycosuria
+    reference: PMID:31951170
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:6714538 (Diabetologia 1984), read independently via
+      read_abstract", "record": "Physiological study establishing that urinary glucose
+      excretion (glycosuria) is determined by renal threshold and maximal rate of
+      tubular glucose reabsorption \u2014 glycosuria appears when filtered glucose
+      exceeds reabsorptive capacity, confirming the inverse relationship between renal
+      glucose reabsorption and glycosuria independent of any drug."}'
+    confidence: high
+  - edge: Glycosuria --negatively correlated with--> Hyperglycemia
+    reference: PMID:24455799
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "read_abstract PMID:26970780 (not cited by curator); also
+      PMID:24486393, PMID:25377916", "record": "PMID:26970780: ''reducing hyperglycaemia
+      via increased urinary glucose excretion'' \u2014 independently establishes the
+      inverse (negative) correlation between urinary glucose excretion (glycosuria)
+      and hyperglycemia."}'
+    confidence: high
+  - edge: Hyperglycemia --manifestation of--> Diabetes Mellitus, Type 2
+    reference: PMID:42356484
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:40402411 and PMID:38995799 (neither cited by curator),
+      read via read_abstract", "record": "PMID:40402411: ''type 2 diabetes mellitus
+      (T2DM) is characterized by chronic hyperglycemia''; PMID:38995799: ''Chronic
+      or recurring hyperglycemia is a T2DM hallmark.''"}'
+    confidence: high

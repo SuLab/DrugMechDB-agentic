@@ -1,0 +1,9 @@
+PMID:38380722  The effect of ultrasound-assisted thrombolysis studied in blood-on-a-chip.  (Artificial organs, 2024)
+
+**BACKGROUND:** Thromboembolism, which leads to pulmonary embolism and ischemic stroke, remains one of the main causes of death. Ultrasound-assisted thrombolysis (UAT) is an effective thrombolytic method. However, further studies are required to elucidate the mechanism of ultrasound on arterial and venous thrombi.
+
+**METHODS:** We employed the blood-on-a-chip technology to simulate thrombus formation in coronary stenosis and deep vein valves. Subsequently, UAT was conducted on the chip to assess the impact of ultrasound on thrombolysis under varying flow conditions. Real-time fluorescence was used to assess thrombolysis and drug penetration. Finally, scanning electron microscopy and immunofluorescence were used to determine the effect of ultrasound on fibrinolysis.
+
+**RESULTS:** The study revealed that UAT enhanced the thrombolytic rate by 40% in the coronary stenosis chip and by 10% in the deep venous valves chip. This enhancement is attributed to the disruption of crosslinked fibrin fibers by ultrasound, leading to increased urokinase diffusion within the thrombus and accumulation of plasminogen on the fibrinogen α chain. Moreover, the acceleration of the dissolution rate of thrombi in the venous valve chip by ultrasound was not as significant as that in the coronary stenosis chip.
+
+**CONCLUSION:** These findings highlight the differential impact of ultrasound on thrombolysis under various flow conditions and emphasize the valuable role of the blood-on-a-chip technology in exploring thrombolysis mechanisms.

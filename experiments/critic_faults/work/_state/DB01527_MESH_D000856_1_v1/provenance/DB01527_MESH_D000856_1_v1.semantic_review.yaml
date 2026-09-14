@@ -1,0 +1,105 @@
+record_id: DB01527_MESH_D000856_1_v1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-08-25T05:56:51+00:00'
+last_reviewed_at: '2026-08-25T05:56:51+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: RE_CURATE
+escalation_reason: null
+overall_summary: Whole-path inversion. Every edge is individually true (clortermine
+  does reduce feeding; reduced feeding is anorexia), but as a whole the chain asserts
+  the drug CAUSES the disease rather than treating it. Clortermine is an anorexiant/appetite
+  suppressant whose therapeutic indication is obesity (PMID:4606535, PMID:3620005);
+  a drug that suppresses feeding would worsen, not cure, the disease Anorexia. The
+  disease endpoint is inverted — this is a drug→disease causation chain mislabeled
+  as a mechanism of action. No re-sourcing of edges can fix a path aimed at the wrong
+  disease.
+rounds:
+- round: 1
+  reviewed_at: '2026-08-25T05:56:51+00:00'
+  verdict: RE_CURATE
+  escalation_reason: null
+  summary: Whole-path inversion. Every edge is individually true (clortermine does
+    reduce feeding; reduced feeding is anorexia), but as a whole the chain asserts
+    the drug CAUSES the disease rather than treating it. Clortermine is an anorexiant/appetite
+    suppressant whose therapeutic indication is obesity (PMID:4606535, PMID:3620005);
+    a drug that suppresses feeding would worsen, not cure, the disease Anorexia. The
+    disease endpoint is inverted — this is a drug→disease causation chain mislabeled
+    as a mechanism of action. No re-sourcing of edges can fix a path aimed at the
+    wrong disease.
+  flags:
+  - edge: Clortermine --negatively regulates--> Feeding behavior
+    issue: The cited outcome here is suppression of food-maintained operant responding
+      measured during intravenous drug self-administration, not a direct measure of
+      the subject's effect on food intake/feeding behavior; the source itself notes
+      this suppression may arise via a different mechanism than the anorectic effect,
+      so the quote does not cleanly establish that clortermine negatively regulates
+      feeding behavior.
+  - edge: Feeding behavior --manifestation of--> Anorexia
+    issue: The cited quote is a parenthetical definition (equating a reduction in
+      food consumption with anorexia) drawn from an unrelated toxicology context.
+      It does not directly assert that the biological process 'feeding behavior' is
+      a manifestation of the disease anorexia, and the manifestation is specifically
+      REDUCED feeding rather than feeding behavior per se. Re-source with evidence
+      that establishes altered/reduced feeding behavior as a clinical manifestation
+      of anorexia itself.
+  path_issue: 'As a whole, this chain reads as the drug PRODUCING the disease''s defining
+    phenotype rather than relieving it: the drug suppresses feeding, and suppressed
+    feeding is itself the disease. The net direction is therapeutically backwards.
+    Re-examine whether the terminal disease node is the condition this drug actually
+    treats, or an effect the drug induces.'
+  prior_flag_status: []
+  consulted_independent_sources:
+  - ChEMBL:clortermine
+  - MESH:D000856
+  - PMID:2709326
+  - PMID:30854429
+  - PMID:32789884
+  - PMID:33318189
+  - PMID:38068346
+  - PMID:4606535
+  edge_reviews:
+  - edge: Clortermine --negatively regulates--> Feeding behavior
+    reference: PMID:3620005
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:2709326 (independent, not cited by curator)", "record":
+      "''anorectic drugs, with the exception of phenylpropanolamine, produced dose-dependent
+      decreases in food intake, with the following order of potency: ... = chlortermine
+      = ...''; clortermine also decreased size of first meal in baboons \u2014 confirms
+      clortermine reduces feeding behavior."}'
+    confidence: high
+  - edge: Clortermine --negatively regulates--> Feeding behavior
+    reference: PMID:826970
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited outcome here is suppression of food-maintained operant responding
+      measured during intravenous drug self-administration, not a direct measure of
+      the subject's effect on food intake/feeding behavior; the source itself notes
+      this suppression may arise via a different mechanism than the anorectic effect,
+      so the quote does not cleanly establish that clortermine negatively regulates
+      feeding behavior.
+    grounding: '{"source": "PMID:2709326 (independent, not cited by curator)", "record":
+      "Clortermine produced dose-dependent decreases in food intake and decreased
+      first-meal size in baboons \u2014 a cleaner feeding-behavior effect than the
+      self-administration operant-suppression readout in 826970."}'
+    confidence: medium
+  - edge: Feeding behavior --manifestation of--> Anorexia
+    reference: PMID:8637056
+    rederived_supports: PARTIAL
+    agrees_with_curator: false
+    issue: The cited quote is a parenthetical definition (equating a reduction in
+      food consumption with anorexia) drawn from an unrelated toxicology context.
+      It does not directly assert that the biological process 'feeding behavior' is
+      a manifestation of the disease anorexia, and the manifestation is specifically
+      REDUCED feeding rather than feeding behavior per se. Re-source with evidence
+      that establishes altered/reduced feeding behavior as a clinical manifestation
+      of anorexia itself.
+    grounding: '{"source": "PMID:32789884 (Int J Eat Disord 2020) and PMID:30854429
+      (Sci Adv 2019), read independently", "record": "PMID:32789884 refers to ''manifestations
+      of maladaptive eating behavior'' in anorexia nervosa; PMID:30854429 states ''the
+      connection between ... reduced eating in conditions like ... anorexia is well
+      known'' \u2014 confirming anorexia manifests as reduced feeding behavior, independent
+      of the curator''s cited paper."}'
+    confidence: high

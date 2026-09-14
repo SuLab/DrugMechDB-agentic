@@ -1,0 +1,11 @@
+PMID:17300236  Cutaneous mucinosis associated with dermatomyositis and nephrogenic fibrosing dermopathy: fibroblast hyaluronan synthesis and the effect of patient serum.  (The British journal of dermatology, 2007)
+
+**BACKGROUND:** Dermal mucin is an amorphous gelatinous substance composed primarily of hyaluronan (HA) and sulphated glycosaminoglycans (GAGs). In primary cutaneous mucinosis, accumulation of mucin is a characteristic feature of lichen myxoedematosus, scleromyxoedema and reticular erythematous mucinosis. Secondary mucinoses are disorders where mucin deposition is an additional finding, and deposition is associated with lupus erythematosus, dermatomyositis, scleroderma and granuloma annulare. The underlying cause of the abnormal mucin deposition is unknown. An increasing number of cases of a fibromucinous scleromyxoedema-like disorder associated with renal dysfunction, recently termed nephrogenic fibrosing dermopathy (NFD), is being reported.
+
+**OBJECTIVES:** To examine the synthesis of sulphated GAGs and HA by fibroblasts derived from uninvolved and involved skin of a patient with dermatomyositis and two patients with NFD, and the effect of patient serum.
+
+**METHODS:** GAGs were quantified by a radiometric assay and HA was determined by an enzyme-linked HA-binding protein assay.
+
+**RESULTS:** We found that fibroblasts derived from active lesions of NFD synthesize elevated levels of GAGs, and in particular HA, compared with normal controls, while serum from the patient with dermatomyositis and the two patients with NFD stimulates GAG synthesis, including HA synthesis, by both control and patient fibroblasts.
+
+**CONCLUSIONS:** Fibroblasts from patients with active NFD are either activated to synthesize elevated levels of HA or contain another cell type, possibly derived from circulating fibrocytes. In both disorders, there is additionally a serum-derived factor that stimulates production of sulphated GAGs and HA by fibroblasts.

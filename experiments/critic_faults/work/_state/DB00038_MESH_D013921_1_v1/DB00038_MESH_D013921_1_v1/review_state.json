@@ -1,0 +1,376 @@
+{
+  "edges": {
+    "5c7ee91a56612114": {
+      "edge": {
+        "subject": {
+          "id": "DB:DB00038",
+          "name": "oprelvekin",
+          "label": "Drug"
+        },
+        "predicate": "increases activity of",
+        "object": {
+          "id": "UniProt:Q14626",
+          "name": "Interleukin-11 receptor subunit alpha",
+          "label": "Protein"
+        }
+      },
+      "verdict": {
+        "edge_id": "DB:DB00038|increases activity of|UniProt:Q14626",
+        "verdicts": [
+          {
+            "reference": "PMID:12919066",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the abstract of 'Characterization of a potent human interleukin-11 agonist' (Biochem J 2003)."
+              },
+              "subject_grounding": {
+                "result": "partial",
+                "basis": "Snippet is about 'IL-11', the endogenous/wild-type cytokine, not 'oprelvekin' by name. Oprelvekin is recombinant human IL-11 (confirmed by ChEMBL CHEMBL1201573 and PMID:33926362 which lists oprelvekin as recombinant IL-11), so the biology transfers, but the drug subject is never named in the snippet."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet explicitly names 'the IL-11R (IL-11 receptor) alpha subunit (responsible for the specificity of the interaction)' = UniProt:Q14626."
+              },
+              "polarity": {
+                "result": "partial",
+                "basis": "Snippet describes complex formation/binding specificity via IL-11R\u03b1; it attributes signal transduction to gp130, not to IL-11R\u03b1 directly. It supports formation of the activating complex but does not itself state that IL-11R\u03b1 activity is increased \u2014 activation language is weaker than the predicate 'increases activity of'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Ligand (IL-11) binds the receptor alpha subunit; subject acts on object, not reverse."
+              },
+              "granularity": {
+                "result": "partial",
+                "basis": "Snippet is about binding/complex formation ('responsible for the specificity of the interaction'), whereas the edge asserts 'increases activity of'. Binding is the mechanistic precursor to receptor activity but is a binding-flavor statement."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Stated as established biology ('IL-11 signalling is dependent on the formation of a tripartite ligand-receptor complex'), not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Biochemical characterization / in-vitro receptor pharmacology study \u2192 IN_VITRO."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "IN_VITRO",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL CHEMBL1201573 (chembl_get_mechanism)",
+              "record": "OPRELVEKIN action_type='AGONIST', target='Interleukin-11 receptor subunit alpha', direct_interaction=1, moa='Interleukin 11 receptor alpha agonist' \u2014 directly confirms drug increases receptor activity."
+            },
+            "confidence": "high",
+            "note": "Edge is true and independently grounded by ChEMBL agonist record. Cited snippet is about endogenous IL-11 (not the drug) and speaks to complex formation/binding specificity rather than explicitly increasing receptor activity; gp130 is credited with signal transduction. So the snippet under-specifies both the drug subject and the activity-flavor of the predicate.",
+            "issue_for_curator": "The cited quote describes the endogenous IL-11 cytokine forming a receptor complex and speaks to binding specificity of the IL-11R\u03b1 subunit; it never names the drug subject and attributes signal transduction to a different (beta) subunit. It therefore does not directly establish that the drug increases the ACTIVITY of the IL-11R\u03b1 subunit \u2014 it is a binding/complex-formation statement about the natural ligand, one granularity step short of the 'increases activity of' claim."
+          },
+          {
+            "reference": "PMID:26551279",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the abstract of 'Modular organization of Interleukin-6 and Interleukin-11 \u03b1-receptors' (Biochimie 2015)."
+              },
+              "subject_grounding": {
+                "result": "partial",
+                "basis": "Snippet refers to 'the cytokines' (IL-6 and IL-11) generically, not to oprelvekin. Drug subject is not named; equivalence oprelvekin\u2248recombinant IL-11 comes from external sources (ChEMBL/PMID:33926362), not this snippet."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet names 'their unique \u03b1-receptors, IL-6R and IL-11R'; IL-11R = UniProt:Q14626."
+              },
+              "polarity": {
+                "result": "partial",
+                "basis": "States binding to the \u03b1-receptor is a 'pre-requisite for signal transduction' \u2014 supports that binding enables downstream signaling, but frames IL-11R as the binding site upstream of gp130-mediated transduction rather than asserting increased activity of IL-11R\u03b1 itself."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Cytokine binds to \u03b1-receptor; subject acts on object."
+              },
+              "granularity": {
+                "result": "partial",
+                "basis": "Binding-level statement ('initial binding of the cytokines to their unique \u03b1-receptors') used for an 'increases activity of' edge; binding vs activity mismatch."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established prerequisite for signaling, not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "In-vitro receptor chimera / structure-function study \u2192 IN_VITRO."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "IN_VITRO",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL CHEMBL1201573",
+              "record": "OPRELVEKIN is a curated AGONIST of Interleukin-11 receptor subunit alpha with direct interaction \u2014 independent confirmation of the edge."
+            },
+            "confidence": "high",
+            "note": "Same limitation as the other citation: about the endogenous cytokine and about binding as a prerequisite for signaling, not the drug's increase of receptor activity.",
+            "issue_for_curator": "The quote is a general statement that the natural cytokines bind their unique \u03b1-receptors as a prerequisite for signal transduction; it does not name the drug subject and describes binding rather than an increase in the receptor subunit's activity. It supports the upstream binding step but falls short of directly establishing the drug\u2192'increases activity of' IL-11R\u03b1 relation."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent expert-curated ChEMBL record (CHEMBL1201573) classifies oprelvekin as a direct AGONIST of the Interleukin-11 receptor subunit alpha (UniProt:Q14626), matching both the polarity (agonist = increases activity) and direction (drug acts on receptor). Oprelvekin's identity as recombinant human IL-11 is corroborated by PMID:33926362. The edge is thus true and defensible; the two cited snippets, however, describe endogenous IL-11 binding/complex-formation rather than the drug increasing receptor activity, so they only partially establish the specific claim."
+      },
+      "edge_hash": "5c7ee91a56612114"
+    },
+    "af67201c4c270bf6": {
+      "edge": {
+        "subject": {
+          "id": "UniProt:Q14626",
+          "name": "Interleukin-11 receptor subunit alpha",
+          "label": "Protein"
+        },
+        "predicate": "positively regulates",
+        "object": {
+          "id": "GO:0030219",
+          "name": "megakaryocyte differentiation",
+          "label": "BiologicalProcess"
+        }
+      },
+      "verdict": {
+        "edge_id": "UniProt:Q14626|positively regulates|GO:0030219",
+        "verdicts": [
+          {
+            "reference": "PMID:9354656",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'We determined that MKs can be direct targets of rhIL-11 by showing the expression of functional IL-11 receptor on these cells.' is an exact substring of the PMID:9354656 abstract."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet is about the functional IL-11 receptor on megakaryocytes; the abstract explicitly detects 'IL-11 receptor alpha chain mRNA' and 'rhIL-11 receptor alpha chain protein' in the MKs, matching subject UniProt:Q14626 (IL-11R\u03b1)."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Object is megakaryocyte differentiation (GO:0030219). The paper is titled 'Recombinant human interleukin-11 directly promotes megakaryocytopoiesis in vitro' and MKs are the target cells; snippet establishes the receptor is present on MKs, but by itself only shows receptor presence, not the differentiation-promoting step."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Overall paper direction is positive ('directly promotes megakaryocytopoiesis'); consistent with 'positively regulates'. The snippet itself is neutral (receptor expression) but sits within a promoting context."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Receptor on MKs is the mediator of rhIL-11's action on MKs (subject IL-11R\u03b1 acts to transduce signal into MKs), not the reverse."
+              },
+              "granularity": {
+                "result": "partial",
+                "basis": "Snippet establishes receptor binding/expression (functional receptor present), which is receptor presence rather than a demonstration of differentiation regulation per se. Object GO term is 'differentiation'; paper readout is MK colony formation/megakaryocytopoiesis (broader)."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established finding ('We determined... by showing'); in-vitro human BM CD34+/CD41+ context."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "In-vitro cell culture (human BM CD34+/CD41+ cells, RT-PCR, Western) \u2192 IN_VITRO."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "IN_VITRO",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism CHEMBL1201573 (oprelvekin)",
+              "record": "oprelvekin is an AGONIST of Interleukin-11 receptor subunit alpha (direct_interaction=1), independently confirming IL-11R\u03b1 is the functional transducing receptor for the thrombopoietic effect."
+            },
+            "confidence": "high",
+            "note": "Snippet 1 alone only shows the receptor is present/functional on MKs, not that it drives differentiation. The differentiation-promoting claim rests on the paper's overall finding, not this quote in isolation. Independent KO studies (IL11Ra-/- mice have normal platelets/megakaryocytes) show the receptor is dispensable physiologically, but does not refute pharmacological positive regulation, which is the path's context. Edge is defensible.",
+            "issue_for_curator": "The first cited quote only establishes that megakaryocytes express a functional receptor for the subject; it does not itself demonstrate that receptor signaling positively regulates megakaryocyte differentiation. The differentiation-promoting relation is inferred from the paper's title/overall claim rather than stated in this span. Strengthen with a quote that directly links receptor signaling to a differentiation/megakaryocytopoiesis outcome."
+          },
+          {
+            "reference": "PMID:9354656",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet 'After a short exposure of purified BM MKs to rhIL-11, enhanced phosphorylation of both its signal transduction subunit, gp130, and the transcription factor, STAT3 was detected, showing a direct activation of receptor signaling by the cytokine.' is an exact substring of the abstract."
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet describes activation of IL-11 receptor signaling (gp130/STAT3) via the IL-11 receptor on MKs, matching subject IL-11R\u03b1 (Q14626), the ligand-binding alpha chain that pairs with gp130."
+              },
+              "object_grounding": {
+                "result": "partial",
+                "basis": "Object is megakaryocyte differentiation (GO:0030219). Snippet shows a downstream signaling readout (gp130/STAT3 phosphorylation) in MKs, which is upstream of differentiation, not a direct measure of differentiation itself."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "'Enhanced phosphorylation' + 'direct activation of receptor signaling' = positive/activating direction, consistent with 'positively regulates'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "rhIL-11 acting through the receptor activates signaling in MKs; receptor (subject) transduces into MK biology, correct direction."
+              },
+              "granularity": {
+                "result": "partial",
+                "basis": "Evidence is at the signal-transduction (activity) level (STAT3/gp130 phosphorylation), a proximal readout, not directly the differentiation process; edge object is the differentiation process."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established ('was detected, showing a direct activation'); in-vitro purified BM MK context."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "In-vitro biochemistry on purified BM megakaryocytes \u2192 IN_VITRO."
+              }
+            },
+            "rederived_supports": "PARTIAL",
+            "rederived_evidence_source": "IN_VITRO",
+            "agrees_with_curator": false,
+            "independent_grounding": {
+              "source": "ChEMBL mechanism CHEMBL1201573 (oprelvekin) + PMID:9310465",
+              "record": "ChEMBL: IL-11R\u03b1 agonism is the drug MOA. PMID:9310465 confirms IL-11R\u03b1 is the specific signaling alpha chain paired with gp130, and IL-11 has 'a prominent effect on megakaryopoiesis and thrombopoiesis' \u2014 corroborating the receptor\u2192MK positive-regulation link pharmacologically."
+            },
+            "confidence": "high",
+            "note": "This snippet ties the receptor to a proximal signaling event (STAT3/gp130) in MKs, which is one step upstream of differentiation. Combined with the paper's overall demonstration that rhIL-11 promotes megakaryocytopoiesis, the edge is well-supported pharmacologically. KO data (9310465/10627458) show physiological dispensability but do not refute the positive-regulation capacity relevant to the drug path.",
+            "issue_for_curator": "The second quote demonstrates receptor signaling activation (a proximal STAT3/gp130 readout) in megakaryocytes but stops short of showing that this activation produces megakaryocyte differentiation. It is a mechanistic upstream step rather than direct evidence of the differentiation outcome named in the object. Add a quote linking the signaling to a differentiation/megakaryocytopoiesis endpoint."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent ChEMBL record (CHEMBL1201573) establishes oprelvekin as an agonist of IL-11 receptor alpha (Q14626), and PMID:9354656 (title: 'Recombinant human interleukin-11 directly promotes megakaryocytopoiesis in vitro') plus PMID:9310465 confirm the receptor is the functional transducer of IL-11's pro-megakaryocytopoietic action. In the pharmacological context of this drug path, IL-11R\u03b1 positively regulates megakaryocyte differentiation. Note: gene-knockout studies show the receptor is dispensable for steady-state megakaryocytopoiesis physiologically \u2014 this constrains scope but does not refute the pharmacological positive-regulation relation the path depends on."
+      },
+      "edge_hash": "af67201c4c270bf6"
+    },
+    "90c2d1f82371e680": {
+      "edge": {
+        "subject": {
+          "id": "GO:0030219",
+          "name": "megakaryocyte differentiation",
+          "label": "BiologicalProcess"
+        },
+        "predicate": "positively regulates",
+        "object": {
+          "id": "GO:0030220",
+          "name": "platelet formation",
+          "label": "BiologicalProcess"
+        }
+      },
+      "verdict": {
+        "edge_id": "GO:0030219|positively regulates|GO:0030220",
+        "verdicts": [
+          {
+            "reference": "PMID:34943811",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the PMID:34943811 abstract (Cells, 2021): 'platelets are released in the circulation by mature megakaryocytes generated by hematopoietic stem cells...which undergo a process of terminal maturation.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "'morphologically recognizable megakaryocyte precursors, which undergo a process of terminal maturation' = megakaryocyte differentiation/maturation (GO:0030219)."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "'platelets are released in the circulation by mature megakaryocytes' = platelet formation/release (GO:0030220)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Differentiated/mature megakaryocytes produce (release) platelets \u2014 positive regulation, matching 'positively regulates'."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "Megakaryocyte terminal maturation precedes and yields platelet release; differentiation acts on platelet formation, not the reverse."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Both nodes are BiologicalProcesses; snippet describes the process-to-process causal link (maturation producing platelets), the correct flavor for a process\u2192process regulation edge."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Asserted as established consensus biology ('Careful morphological investigations, coupled with experimental hematology studies in animal models and in in vitro human cultures, have identified...'), not hedged."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "PMID:34943811 is a review/perspective summarizing established thrombopoiesis biology \u2192 evidence_source OTHER; corroborated by primary mechanistic work."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "OTHER",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PubMed independent reads not cited by curator: PMID:42150413 and PMID:42060461",
+              "record": "PMID:42150413 shows mature (differentiated) MKs exhibit proplatelet formation; PMID:42060461 explicitly states that promoting MK maturation promotes platelet production/recovery \u2014 directly confirming megakaryocyte differentiation positively regulates platelet formation."
+            },
+            "confidence": "high",
+            "note": "Cited source is a review but the specific process\u2192process link is well-established and independently corroborated by two non-cited sources (one primary mechanistic ITP study explicitly showing that promoting MK maturation promotes platelet production). All ladder checks pass. Clean SUPPORT."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent, non-cited sources (PMID:42060461 mechanistic ITP study; PMID:42150413 transcriptomic MK maturation study) establish that megakaryocyte differentiation/terminal maturation causally yields and positively regulates platelet formation, consistent with the cited review snippet."
+      },
+      "edge_hash": "90c2d1f82371e680"
+    },
+    "28945c9eaa41edcb": {
+      "edge": {
+        "subject": {
+          "id": "GO:0030220",
+          "name": "platelet formation",
+          "label": "BiologicalProcess"
+        },
+        "predicate": "negatively correlated with",
+        "object": {
+          "id": "MESH:D013921",
+          "name": "Thrombocytopenic disorder",
+          "label": "Disease"
+        }
+      },
+      "verdict": {
+        "edge_id": "GO:0030220|negatively correlated with|MESH:D013921",
+        "verdicts": [
+          {
+            "reference": "PMID:6683869",
+            "checks": {
+              "verbatim": {
+                "result": "pass",
+                "basis": "Snippet is an exact substring of the PMID:6683869 abstract: '...the pathogenesis of thrombocytopenia can be due not only to the peripheral destruction of platelets, but also to a deficient platelet production by megakaryocytes.'"
+              },
+              "subject_grounding": {
+                "result": "pass",
+                "basis": "Snippet explicitly references 'platelet production by megakaryocytes' = platelet formation/thrombopoiesis (GO:0030220)."
+              },
+              "object_grounding": {
+                "result": "pass",
+                "basis": "Snippet concerns 'the pathogenesis of thrombocytopenia' in chronic idiopathic thrombocytopenic purpura patients; thrombocytopenia = Thrombocytopenic disorder (MESH:D013921)."
+              },
+              "polarity": {
+                "result": "pass",
+                "basis": "Snippet asserts thrombocytopenia can be due to DEFICIENT platelet production \u2014 i.e., reduced platelet formation is associated with the disorder, an inverse (negative) correlation matching the predicate."
+              },
+              "direction": {
+                "result": "pass",
+                "basis": "'negatively correlated with' is a symmetric association predicate; snippet frames reduced platelet formation as underlying the disease, consistent with the inverse association."
+              },
+              "granularity": {
+                "result": "pass",
+                "basis": "Both edge and snippet concern platelet formation/production (a process) vis-\u00e0-vis the disease state, no activity/abundance mismatch."
+              },
+              "scope_modality": {
+                "result": "pass",
+                "basis": "Snippet is somewhat hedged/context-bound ('can be due... in some cases of chronic ITP'), but the deficient-production\u2192thrombocytopenia relationship is established as a recognized general mechanism, independently corroborated (PMID:42024179, PMID:41766040 describe impaired platelet production as a hallmark/cause of thrombocytopenia)."
+              },
+              "source_type": {
+                "result": "pass",
+                "basis": "Study of 26 chronic ITP patients + 1 HT patient examining platelet kinetics \u2192 HUMAN_CLINICAL."
+              }
+            },
+            "rederived_supports": "SUPPORT",
+            "rederived_evidence_source": "HUMAN_CLINICAL",
+            "agrees_with_curator": true,
+            "independent_grounding": {
+              "source": "PubMed PMID:42024179 and PMID:41766040 (not cited by curator)",
+              "record": "PMID:41766040: 'Inherited thrombocytopenias... caused by defects in over 50 genes that predominantly affect platelet production' \u2014 directly establishes reduced platelet production/formation as the cause of thrombocytopenic disorder, confirming the inverse relationship. PMID:42024179 shows enhanced MK differentiation/platelet production is a therapeutic axis for thrombocytopenia."
+            },
+            "confidence": "high",
+            "note": "Snippet verbatim confirmed in independently read abstract. The edge is a definitional/mechanistic inverse relationship: platelet formation (thrombopoiesis) deficit produces thrombocytopenia; therefore platelet formation is negatively correlated with the disorder. Curator label reproduced independently. Slight scope hedge in the primary source is fully offset by multiple independent clinical sources treating impaired platelet production as a defining cause of thrombocytopenia."
+          }
+        ],
+        "edge_supported": true,
+        "edge_basis": "Independent clinical/genetic literature (PMID:41766040: inherited thrombocytopenias predominantly caused by defects affecting platelet production; PMID:42024179: enhancing platelet production is a therapeutic axis for thrombocytopenia) establishes that reduced platelet formation is a cause of, and inversely related to, thrombocytopenic disorder \u2014 independent of and consistent with the cited PMID:6683869 snippet."
+      },
+      "edge_hash": "28945c9eaa41edcb"
+    }
+  }
+}

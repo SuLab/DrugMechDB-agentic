@@ -1,0 +1,197 @@
+# Hand-authored fault-injection spec for the semantic-critic experiment.
+#
+# Each entry mutates ONE pilot-curated path so that the mechanism becomes
+# scientifically false while the file remains valid under every deterministic
+# check (schema / ontology / predicate enum / verbatim snippet / structural).
+#
+# Two fault classes:
+#   target_substitution — swap the drug's molecular target for a DIFFERENT real
+#       protein. Every substitute is a NEAR MISS: same family, same pathway, or
+#       the same therapeutic area, so surface plausibility is retained and
+#       detection requires actual pharmacology rather than pattern-matching.
+#   polarity_inversion  — flip a regulatory predicate so the causal direction
+#       contradicts the established mechanism. Both polarities are enum members,
+#       so Layer 3 still passes and the topology is untouched.
+#
+# `rationale` records WHY the substitute is both plausible and wrong. It is
+# written before the run and is not shown to the critic; it exists so the
+# difficulty of each case is auditable after the fact.
+
+faults:
+
+  # ── target substitution (near miss) ─────────────────────────────────────────
+
+  - record: DB00002_MESH_D003110_1
+    fault: target_substitution
+    from_id: UniProt:P00533
+    to_id: UniProt:P04626
+    to_name: Receptor tyrosine-protein kinase erbB-2
+    rationale: >-
+      HER2 is in the same ErbB receptor family as EGFR and is a validated
+      colorectal/oncology target, so the edge reads plausibly. Cetuximab is an
+      anti-EGFR monoclonal antibody and does not bind HER2 (that is trastuzumab).
+
+  - record: DB00005_MESH_D015535_1
+    fault: target_substitution
+    from_id: UniProt:P01375
+    to_id: UniProt:P05231
+    to_name: Interleukin-6
+    rationale: >-
+      IL-6 and TNF are both pro-inflammatory cytokines neutralised by biologics
+      in psoriatic arthritis. Etanercept is a soluble TNF receptor decoy with no
+      IL-6 activity (IL-6 blockade is tocilizumab).
+
+  - record: DB00013_MESH_D011655_1
+    fault: target_substitution
+    from_id: UniProt:P00747
+    to_id: UniProt:P05121
+    to_name: Plasminogen activator inhibitor 1
+    rationale: >-
+      PAI-1 sits in the same fibrinolytic axis, so the entity is topically right.
+      But PAI-1 inhibits urokinase rather than being activated by it — both the
+      role and the direction are wrong.
+
+  - record: DB00026_MESH_D056587_1
+    fault: target_substitution
+    from_id: UniProt:P14778
+    to_id: UniProt:P01375
+    to_name: Tumor necrosis factor
+    rationale: >-
+      TNF blockade and IL-1 blockade are adjacent therapies for autoinflammatory
+      disease and are clinically confused. Anakinra is an IL-1 receptor
+      antagonist with no TNF activity.
+
+  - record: DB00030_MESH_D003922_1
+    fault: target_substitution
+    from_id: UniProt:P06213
+    to_id: UniProt:P08069
+    to_name: Insulin-like growth factor 1 receptor
+    rationale: >-
+      IGF1R is highly homologous to the insulin receptor and binds insulin weakly
+      — the canonical near-miss. Therapeutic insulin acts through the insulin
+      receptor, not IGF1R, at physiological concentrations.
+
+  - record: DB00035_MESH_D006467_1
+    fault: target_substitution
+    from_id: UniProt:P30518
+    to_id: UniProt:P37288
+    to_name: Vasopressin V1a receptor
+    rationale: >-
+      Same vasopressin receptor family. Desmopressin's entire therapeutic
+      identity is V2 selectivity with minimal V1a (vasopressor) activity, so
+      routing haemostasis through V1a inverts the drug's design rationale.
+
+  - record: DB00038_MESH_D013921_1
+    fault: target_substitution
+    from_id: UniProt:Q14626
+    to_id: UniProt:P08887
+    to_name: Interleukin-6 receptor subunit alpha
+    rationale: >-
+      IL-11R and IL-6R both signal through gp130, so the substitution is
+      family-plausible. Oprelvekin is recombinant IL-11 and does not engage IL-6R.
+
+  - record: DB00619_MESH_D015464_1
+    fault: target_substitution
+    from_id: UniProt:A9UF07
+    to_id: UniProt:P00533
+    to_name: Epidermal growth factor receptor
+    rationale: >-
+      Both are tyrosine-kinase inhibitor targets in oncology. Imatinib inhibits
+      ABL, KIT and PDGFR — not EGFR (that is erlotinib/gefitinib). Detection
+      requires knowing imatinib's actual kinase selectivity.
+
+  - record: DB00843_MESH_D000544_1
+    fault: target_substitution
+    from_id: UniProt:P22303
+    to_id: UniProt:P06276
+    to_name: Cholinesterase
+    rationale: >-
+      Butyrylcholinesterase is the sister enzyme and also hydrolyses
+      acetylcholine, so the downstream chain still reads coherently. Donepezil's
+      selectivity for AChE over BChE is a defining pharmacological property.
+
+  - record: DB01076_MESH_D006937_1
+    fault: target_substitution
+    from_id: UniProt:P04035
+    to_id: UniProt:P04114
+    to_name: Apolipoprotein B-100
+    rationale: >-
+      ApoB-100 is central to the same LDL axis the rest of the path traverses.
+      Statins inhibit HMG-CoA reductase; ApoB is the target of mipomersen, not
+      atorvastatin.
+
+  - record: DB09038_MESH_D003924_1
+    fault: target_substitution
+    from_id: UniProt:P31639
+    to_id: UniProt:P13866
+    to_name: Sodium/glucose cotransporter 1
+    rationale: >-
+      SGLT1 is the sister transporter and also moves glucose, so renal handling
+      still reads plausibly. Empagliflozin's SGLT2 selectivity over SGLT1 is its
+      defining property and the basis of its safety profile.
+
+  # ── polarity inversion ──────────────────────────────────────────────────────
+
+  - record: B02362_MESH_D003882_1
+    fault: polarity_inversion
+    edge_index: 0
+    from_key: decreases abundance of
+    to_key: increases abundance of
+    rationale: >-
+      Reverses the therapeutic direction: the drug now increases the
+      glycosaminoglycan deposition the path claims it treats.
+
+  - record: DB00009_MESH_D011655_1
+    fault: polarity_inversion
+    edge_index: 0
+    from_key: increases activity of
+    to_key: decreases activity of
+    rationale: >-
+      Alteplase is a plasminogen activator; suppressing plasminogen would
+      prevent rather than resolve the embolism.
+
+  - record: DB00010_MESH_D004393_1
+    fault: polarity_inversion
+    edge_index: 0
+    from_key: increases activity of
+    to_key: decreases activity of
+    rationale: >-
+      Sermorelin is a GHRH agonist. Decreasing GHRH activity would worsen
+      pituitary dwarfism rather than treat it.
+
+  - record: DB00258_MESH_D006996_1
+    fault: polarity_inversion
+    edge_index: 0
+    from_key: increases abundance of
+    to_key: decreases abundance of
+    rationale: >-
+      Calcium acetate supplies calcium; decreasing calcium abundance would cause
+      the hypocalcaemia the record claims it treats.
+
+  - record: DB00290_MESH_D002294_1
+    fault: polarity_inversion
+    edge_index: 0
+    from_key: increases abundance of
+    to_key: decreases abundance of
+    rationale: >-
+      Bleomycin's cytotoxicity is ROS-mediated DNA damage. Decreasing ROS
+      removes the basis of the downstream apoptotic chain.
+
+  - record: DB00993_MESH_D001172_1
+    fault: polarity_inversion
+    edge_index: 1
+    from_key: negatively regulates
+    to_key: positively regulates
+    rationale: >-
+      Mercaptopurine is an antimetabolite that blocks purine synthesis.
+      Promoting it would increase the T-cell proliferation the path says it
+      suppresses.
+
+  - record: DB01527_MESH_D000856_1
+    fault: polarity_inversion
+    edge_index: 0
+    from_key: negatively regulates
+    to_key: positively regulates
+    rationale: >-
+      Clortermine is an anorectic. Positively regulating feeding behaviour
+      contradicts the drug class and the stated indication.
