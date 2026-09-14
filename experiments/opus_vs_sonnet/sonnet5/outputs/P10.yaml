@@ -1,0 +1,61 @@
+directed: true
+multigraph: true
+graph:
+  _id: P10_DB00072_MESH_D001943
+  drug: trastuzumab
+  drug_mesh: MESH:D000068878
+  drugbank: DB:DB00072
+  disease: HER2-positive Breast Cancer
+  disease_mesh: MESH:D001943
+nodes:
+  - id: MESH:D000068878
+    name: Trastuzumab
+    label: Drug
+  - id: UniProt:P04626
+    name: Receptor tyrosine-protein kinase erbB-2 (HER2)
+    label: Protein
+  - id: GO:0008283
+    name: cell population proliferation
+    label: BiologicalProcess
+  - id: MESH:D001943
+    name: Breast Neoplasms
+    label: Disease
+links:
+  - key: physically interacts with
+    source: MESH:D000068878
+    target: UniProt:P04626
+    evidence:
+      - reference: PMID:18622914
+        snippet: "Trastuzumab binds to HER-2/neu close to the cell membrane"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Review article summarizing the established mechanism of trastuzumab binding to HER2/neu near the cell membrane; not a primary experimental report."
+  - key: positively regulates
+    source: UniProt:P04626
+    target: GO:0008283
+    evidence:
+      - reference: PMID:18622914
+        snippet: "HER-2/neu normally regulates cell growth and survival, and overexpression leads to increased signaling and thus to malignant transformation and growth."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Review article describing HER2/neu's normal regulatory role in cell growth and how overexpression drives malignant proliferation."
+  - key: negatively regulates
+    source: MESH:D000068878
+    target: GO:0008283
+    evidence:
+      - reference: PMID:36552857
+        snippet: "trastuzumab inhibits EGF-induced cell proliferation and cell cycle progression in BT474 and SKBR3 cells"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "In vitro study in HER2-positive breast cancer cell lines (BT474, SKBR3) showing trastuzumab directly inhibits EGF-induced proliferation."
+  - key: contributes to
+    source: GO:0008283
+    target: MESH:D001943
+    evidence:
+      - reference: PMID:9649124
+        snippet: "Neoplastic events are marked by uncontrolled cell proliferation."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "General background statement linking uncontrolled cell proliferation to neoplastic (cancer) disease processes, from an in vitro breast tumor cell apoptosis study."
+references:
+  - https://www.drugbank.ca/drugs/DB00072

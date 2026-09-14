@@ -1,0 +1,52 @@
+directed: true
+multigraph: true
+graph:
+  _id: P07_DB00619_MESH_D015464
+  drug: Imatinib
+  drug_mesh: MESH:D000068877
+  drugbank: DB:DB00619
+  disease: Chronic Myeloid Leukemia
+  disease_mesh: MESH:D015464
+nodes:
+  - id: MESH:D000068877
+    name: Imatinib
+    label: Drug
+  - id: UniProt:P00519
+    name: Tyrosine-protein kinase ABL1
+    label: Protein
+  - id: GO:0070661
+    name: leukocyte proliferation
+    label: BiologicalProcess
+  - id: MESH:D015464
+    name: Chronic Myeloid Leukemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000068877
+    target: UniProt:P00519
+    evidence:
+      - reference: PMID:8616716
+        snippet: "designed to inhibit the Abl protein tyrosine kinase"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "The abstract describes a compound (imatinib/STI571) designed to inhibit the Abl protein tyrosine kinase, which forms the catalytic domain retained in the BCR-ABL fusion protein."
+  - key: positively regulates
+    source: UniProt:P00519
+    target: GO:0070661
+    evidence:
+      - reference: PMID:8616716
+        snippet: "Cellular proliferation and tumor formation by Bcr-Abl-expressing cells were specifically inhibited by this compound."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Inverse phrasing: inhibition of Bcr-Abl activity by the compound blocks proliferation of Bcr-Abl-expressing cells, indicating that Bcr-Abl (via ABL1 kinase activity) positively regulates leukocyte/leukemic cell proliferation."
+  - key: contributes to
+    source: GO:0070661
+    target: MESH:D015464
+    evidence:
+      - reference: PMID:27220498
+        snippet: "Chronic myeloid leukemia (CML) is a myeloproliferative neoplasm, characterized by the unrestrained expansion of pluripotent hematopoietic stem cells."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Review article describing human CML pathophysiology; unrestrained proliferative expansion of hematopoietic cells is the defining feature contributing to the disease."
+references:
+  - https://www.drugbank.ca/drugs/DB00619

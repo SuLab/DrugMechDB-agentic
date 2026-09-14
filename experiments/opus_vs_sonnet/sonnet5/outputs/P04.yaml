@@ -1,0 +1,64 @@
+directed: true
+multigraph: true
+graph:
+  _id: P04_DB00264_MESH_D006333
+  drug: metoprolol
+  drug_mesh: MESH:D008790
+  drugbank: DB:DB00264
+  disease: Heart Failure
+  disease_mesh: MESH:D006333
+nodes:
+  - id: MESH:D008790
+    name: metoprolol
+    label: Drug
+  - id: UniProt:P08588
+    name: Beta-1 adrenergic receptor
+    label: Protein
+  - id: UniProt:Q13557
+    name: Calcium/calmodulin-dependent protein kinase type II delta chain
+    label: Protein
+  - id: GO:0006915
+    name: apoptotic process
+    label: BiologicalProcess
+  - id: MESH:D006333
+    name: Heart Failure
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D008790
+    target: UniProt:P08588
+    evidence:
+      - reference: PMID:20035031
+        snippet: "beta(1)-blockade with metoprolol (0.5 mg/kg iv)"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Confirms metoprolol acts as a beta1-adrenoceptor blocker in vivo (swine model)."
+  - key: positively regulates
+    source: UniProt:P08588
+    target: UniProt:Q13557
+    evidence:
+      - reference: PMID:12618516
+        snippet: "sustained beta(1)AR stimulation promotes cardiac myocyte apoptosis by activation of Ca(2+)/calmodulin kinase II (CaMKII), independently of PKA signaling"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Beta-1 adrenergic receptor stimulation activates CaMKII in cardiac myocytes, independent of the PKA pathway."
+  - key: positively regulates
+    source: UniProt:Q13557
+    target: GO:0006915
+    evidence:
+      - reference: PMID:12618516
+        snippet: "overexpressing a cardiac CaMKII isoform, CaMKII-deltaC, markedly exaggerates the beta(1)AR apoptotic effect"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Overexpression of the CaMKII-deltaC isoform amplifies beta1AR-driven cardiomyocyte apoptosis, demonstrating CaMKII drives the apoptotic process."
+  - key: contributes to
+    source: GO:0006915
+    target: MESH:D006333
+    evidence:
+      - reference: PMID:17020540
+        snippet: "Recent studies suggest that cardiac myocyte apoptosis contributes to the progress of CHF (congestive heart failure)."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Cardiac myocyte apoptosis is implicated as a contributor to the progression of chronic heart failure."
+references:
+  - https://en.wikipedia.org/wiki/Metoprolol

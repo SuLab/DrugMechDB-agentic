@@ -1,0 +1,88 @@
+directed: true
+multigraph: true
+graph:
+  _id: P02_DB01076_MESH_D006937
+  drug: Atorvastatin
+  drug_mesh: MESH:D000069059
+  drugbank: DB:DB01076
+  disease: Hypercholesterolemia
+  disease_mesh: MESH:D006937
+nodes:
+  - id: MESH:D000069059
+    name: Atorvastatin
+    label: Drug
+  - id: UniProt:P04035
+    name: HMG-CoA reductase
+    label: Protein
+  - id: CHEBI:16113
+    name: cholesterol
+    label: ChemicalSubstance
+  - id: UniProt:Q12772
+    name: SREBP-2
+    label: Protein
+  - id: UniProt:P01130
+    name: LDL receptor
+    label: Protein
+  - id: GO:0034383
+    name: low-density lipoprotein particle clearance
+    label: BiologicalProcess
+  - id: MESH:D006937
+    name: Hypercholesterolemia
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000069059
+    target: UniProt:P04035
+    evidence:
+      - reference: PMID:39747109
+        snippet: "Statins, which inhibit 3-hydroxy-3-methylglutaryl-CoA reductase, are potent competitive inhibitors that reduce plasma cholesterol levels."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Study examines atorvastatin 40 mg efficacy in hypercholesterolemic type 2 diabetic patients and states the general statin mechanism of competitive HMG-CoA reductase inhibition."
+  - key: positively regulates
+    source: UniProt:P04035
+    target: CHEBI:16113
+    evidence:
+      - reference: PMID:12486413
+        snippet: "3-hydroxy-3-methylglutaryl coenzyme A (HMG-CoA) reductase (HMGR) catalyzes the committed step in cholesterol biosynthesis."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Structural biology paper on statin-HMGR complexes (including atorvastatin) states HMGR catalyzes the committed/rate-limiting step of cholesterol biosynthesis."
+  - key: negatively regulates
+    source: CHEBI:16113
+    target: UniProt:Q12772
+    evidence:
+      - reference: PMID:27888906
+        snippet: "The decrease of the hepatic intracellular cholesterol pool produced by these drugs upregulates the activity of the SREBP2 transcription factor"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Review states that decreased intracellular cholesterol (caused by statins) upregulates SREBP2 activity; inverse phrasing supports a negatively-regulates relationship of cholesterol on SREBP-2 activation."
+  - key: positively regulates
+    source: UniProt:Q12772
+    target: UniProt:P01130
+    evidence:
+      - reference: PMID:27888906
+        snippet: "which subsequently stimulates the expression of the LDL receptor gene"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Continuation of the same sentence describing SREBP2 stimulating LDL receptor gene expression."
+  - key: positively regulates
+    source: UniProt:P01130
+    target: GO:0034383
+    evidence:
+      - reference: PMID:18280815
+        snippet: "increasing hepatic expression of LDL receptor protein and thereby accelerating clearance of circulating LDL cholesterol"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Review of PCSK9/LDLR biology; sentence directly ties increased LDL receptor expression to accelerated clearance of circulating LDL cholesterol, supporting the LDLR -> LDL particle clearance mechanistic link independent of the PCSK9 context."
+  - key: negatively regulates
+    source: GO:0034383
+    target: MESH:D006937
+    evidence:
+      - reference: PMID:18280815
+        snippet: "Inactivation of PCSK9 in mice reduces plasma cholesterol levels primarily by increasing hepatic expression of LDL receptor protein and thereby accelerating clearance of circulating LDL cholesterol."
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Sentence shows accelerated LDL clearance reduces plasma cholesterol levels; since hypercholesterolemia is the state of elevated plasma LDL cholesterol, increased clearance negatively regulates the disease state."
+references:
+  - https://go.drugbank.com/drugs/DB01076

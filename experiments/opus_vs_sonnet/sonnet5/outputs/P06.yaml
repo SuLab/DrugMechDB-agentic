@@ -1,0 +1,49 @@
+directed: true
+multigraph: true
+graph:
+  _id: P06_DB00675_MESH_D001943
+  drug: Tamoxifen
+  drug_mesh: MESH:D013629
+  drugbank: DB:DB00675
+  disease: Breast Cancer
+  disease_mesh: MESH:D001943
+nodes:
+  - id: MESH:D013629
+    name: Tamoxifen
+    label: Drug
+  - id: UniProt:P03372
+    name: Estrogen receptor alpha
+    label: Protein
+  - id: MESH:D001943
+    name: Breast Cancer
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D013629
+    target: UniProt:P03372
+    evidence:
+      - reference: PMID:34096606
+        snippet: "Tamoxifen, a competitive inhibitor of estrogen that binds to ER, has been widely used as a treatment for ER-positive breast cancer."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Background statement in a primary research article (Kim et al., J Cell Sci 2021) restating the well-established pharmacology of tamoxifen as a competitive ER-binding antiestrogen that blocks ER activity; not the paper's own experimental finding, hence evidence_source OTHER rather than a specific study-design category."
+  - key: contributes to
+    source: UniProt:P03372
+    target: MESH:D001943
+    evidence:
+      - reference: PMID:42070278
+        snippet: "Excessive activation of the estrogen receptor (ER) drives proliferation, progression, and the formation of breast cancer stem cells (CSCs) in ER-positive breast cancer."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Cell-line-based study (ER-positive breast cancer cell lines) demonstrating that ER hyperactivation drives proliferation and progression of breast cancer, supporting ER's causal contribution to the disease that tamoxifen antagonizes."
+  - key: treats
+    source: MESH:D013629
+    target: MESH:D001943
+    evidence:
+      - reference: PMID:42359641
+        snippet: "Adjuvant endocrine therapy (tamoxifen/aromatase inhibitors) is used after surgery in hormone-receptor-positive breast cancer stage I-III."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Population-based cohort study of breast cancer patients describing tamoxifen as standard adjuvant endocrine therapy for hormone-receptor-positive breast cancer."
+references:
+  - https://en.wikipedia.org/wiki/Tamoxifen

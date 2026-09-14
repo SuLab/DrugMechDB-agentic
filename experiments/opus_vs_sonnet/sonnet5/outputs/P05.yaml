@@ -1,0 +1,64 @@
+directed: true
+multigraph: true
+graph:
+  _id: P05_DB00758_MESH_D020521
+  drug: Clopidogrel
+  drug_mesh: MESH:D000077144
+  drugbank: DB:DB00758
+  disease: Stroke
+  disease_mesh: MESH:D020521
+nodes:
+  - id: MESH:D000077144
+    name: Clopidogrel
+    label: Drug
+  - id: UniProt:Q9H244
+    name: P2Y12 receptor
+    label: Protein
+  - id: GO:0070527
+    name: platelet aggregation
+    label: BiologicalProcess
+  - id: MESH:D013927
+    name: Thrombosis
+    label: Disease
+  - id: MESH:D020521
+    name: Stroke
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D000077144
+    target: UniProt:Q9H244
+    evidence:
+      - reference: PMID:22221409
+        snippet: "Clopidogrel is an antithrombotic prodrug, whose active metabolite inhibits platelet function by irreversibly binding to the platelet receptor for adenosine diphosphate, P2Y(12)."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Review article synthesizing clinical pharmacology of clopidogrel; describes the drug's active metabolite irreversibly inhibiting the P2Y12 ADP receptor on platelets."
+  - key: positively regulates
+    source: UniProt:Q9H244
+    target: GO:0070527
+    evidence:
+      - reference: PMID:17059469
+        snippet: "Furthermore, costimulation of both P2Y1 and P2Y12 receptors is required for ADP-induced platelet aggregation."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Platelet nucleotide-receptor signaling study showing P2Y12 receptor activity is required for ADP-induced platelet aggregation."
+  - key: contributes to
+    source: GO:0070527
+    target: MESH:D013927
+    evidence:
+      - reference: PMID:25829216
+        snippet: "followed by platelet activation and subsequent thrombus formation"
+        supports: PARTIAL
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Review describes platelet activation (of which aggregation is a key component) as the process immediately preceding thrombus formation in the setting of coronary atherosclerotic disease; terminology (activation vs aggregation) and vascular bed (coronary) differ slightly from the drug-disease pair but the mechanistic link between platelet activation and thrombus formation is directly supported."
+  - key: causes
+    source: MESH:D013927
+    target: MESH:D020521
+    evidence:
+      - reference: PMID:21909687
+        snippet: "Ischemic stroke is a devastating disease which, in most cases, is caused by thrombotic occlusion of brain arteries."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Review of stroke pathophysiology stating that thrombotic occlusion of cerebral arteries is the predominant cause of ischemic stroke."
+references:
+  - https://www.drugbank.ca/drugs/DB00758

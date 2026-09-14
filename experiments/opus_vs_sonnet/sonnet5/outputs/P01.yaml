@@ -1,0 +1,77 @@
+directed: true
+multigraph: true
+graph:
+  _id: P01_DB00945_MESH_D009203
+  drug: aspirin
+  drug_mesh: MESH:D001241
+  drugbank: DB:DB00945
+  disease: Myocardial Infarction
+  disease_mesh: MESH:D009203
+nodes:
+  - id: MESH:D001241
+    name: Aspirin
+    label: Drug
+  - id: UniProt:P23219
+    name: Prostaglandin G/H synthase 1
+    label: Protein
+  - id: MESH:D013929
+    name: Thromboxane A2
+    label: ChemicalSubstance
+  - id: GO:0070527
+    name: platelet aggregation
+    label: BiologicalProcess
+  - id: MESH:D003328
+    name: Coronary Thrombosis
+    label: Disease
+  - id: MESH:D009203
+    name: Myocardial Infarction
+    label: Disease
+links:
+  - key: decreases activity of
+    source: MESH:D001241
+    target: UniProt:P23219
+    evidence:
+      - reference: PMID:12527817
+        snippet: "Aspirin irreversibly inhibits cyclooxygenase (COX) by acetylating a serine residue in the active site."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Enzyme kinetics / mutagenesis study of aspirin-mediated acetylation and inactivation of COX-1."
+  - key: positively regulates
+    source: UniProt:P23219
+    target: MESH:D013929
+    evidence:
+      - reference: PMID:41295984
+        snippet: "inhibiting platelet cyclooxygenase (COX-1) and reducing thromboxane A2 (TXA2) production"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Abstract states that inhibiting COX-1 reduces TXA2 production, indicating COX-1 activity positively regulates TXA2 production (inverse relationship)."
+  - key: positively regulates
+    source: MESH:D013929
+    target: GO:0070527
+    evidence:
+      - reference: PMID:37596586
+        snippet: "thromboxane (TX) A2 (an agonist for platelet activation and thrombosis)"
+        supports: SUPPORT
+        evidence_source: MODEL_ORGANISM
+        explanation: "Rat model of acute myocardial infarction; TXA2 is described as an agonist driving platelet activation/aggregation and thrombosis."
+  - key: contributes to
+    source: GO:0070527
+    target: MESH:D003328
+    evidence:
+      - reference: PMID:3756584
+        snippet: "intermittent transient coronary artery occlusion resulting from spasm, platelet aggregation, or thrombosis"
+        supports: PARTIAL
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Clinical review names platelet aggregation as one of the mechanisms producing coronary artery occlusion; 'occlusion' is closely related to but not a verbatim synonym of 'coronary thrombosis', hence PARTIAL."
+  - key: causes
+    source: MESH:D003328
+    target: MESH:D009203
+    evidence:
+      - reference: PMID:37511046
+        snippet: "acute myocardial infarction (AMI) results from thrombus formation on ruptured plaques"
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Review states AMI results from thrombus formation (coronary thrombosis) on ruptured atherosclerotic plaques."
+references:
+  - https://en.wikipedia.org/wiki/Aspirin
+  - https://go.drugbank.com/drugs/DB00945

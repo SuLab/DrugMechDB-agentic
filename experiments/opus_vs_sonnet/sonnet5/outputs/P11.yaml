@@ -1,0 +1,61 @@
+directed: true
+multigraph: true
+graph:
+  _id: P11_DB01045_MESH_D014397
+  drug: Rifampicin
+  drug_mesh: MESH:D012293
+  drugbank: DB:DB01045
+  disease: Pulmonary Tuberculosis
+  disease_mesh: MESH:D014397
+nodes:
+  - id: MESH:D012293
+    name: Rifampicin
+    label: Drug
+  - id: UniProt:P9WGY9
+    name: DNA-directed RNA polymerase subunit beta
+    label: Protein
+  - id: NCBITaxon:1773
+    name: Mycobacterium tuberculosis
+    label: OrganismTaxon
+  - id: MESH:D014397
+    name: Tuberculosis, Pulmonary
+    label: Disease
+links:
+  - key: binds
+    source: MESH:D012293
+    target: UniProt:P9WGY9
+    evidence:
+      - reference: PMID:11290327
+        snippet: "The inhibitor binds in a pocket of the RNAP beta subunit deep within the DNA/RNA channel"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Crystal structure of Thermus aquaticus core RNAP complexed with rifampicin shows the drug binding pocket is on the RNAP beta subunit (RpoB), the direct ortholog of the M. tuberculosis rifampicin target."
+  - key: decreases activity of
+    source: MESH:D012293
+    target: UniProt:P9WGY9
+    evidence:
+      - reference: PMID:11290327
+        snippet: "the inhibitor acts by directly blocking the path of the elongating RNA when the transcript becomes 2 to 3 nt in length"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Structural and biochemical data show rifampicin inhibits RNAP beta subunit function by physically blocking RNA elongation, i.e. decreasing its transcriptional activity."
+  - key: in taxon
+    source: UniProt:P9WGY9
+    target: NCBITaxon:1773
+    evidence:
+      - reference: PMID:22904282
+        snippet: "the M. tuberculosis CarD and the RNAP β subunit"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Confirms the RNAP beta subunit (RpoB) studied is the Mycobacterium tuberculosis ortholog, i.e. that RpoB belongs to M. tuberculosis."
+  - key: causes
+    source: NCBITaxon:1773
+    target: MESH:D014397
+    evidence:
+      - reference: PMID:33199626
+        snippet: "tuberculosis (TB), which is caused by the pathogen Mycobacterium tuberculosis (Mtb)"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Background statement in a structural biology paper identifying M. tuberculosis as the causative pathogen of tuberculosis; not derived from a specific clinical/model dataset, hence OTHER."
+references:
+  - https://www.drugbank.ca/drugs/DB01045
