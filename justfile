@@ -83,3 +83,27 @@ env-info:
         print(f'linkml-runtime={linkml_runtime.__version__}'); \
         print(f'linkml-term-validator={linkml_term_validator.__version__ if hasattr(linkml_term_validator, \"__version__\") else \"?\"}'); \
         print(f'linkml-reference-validator={linkml_reference_validator.__version__ if hasattr(linkml_reference_validator, \"__version__\") else \"?\"}')"
+
+# ── Term existence (ADVISORY — reports, never gates) ─────────────────────────
+# Layer 2 checks that a CURIE's prefix matches its Biolink type; it never asks
+# whether the identifier exists. These do. Results are cached under cache/terms/
+# (committed), so `terms-offline` reproduces an audit with no network.
+
+# Full corpus audit -> docs/term_existence_audit.{json,md}
+terms *ARGS:
+    {{PY}} scripts/audit_term_existence.py --json docs/term_existence_audit.json \
+        --markdown docs/term_existence_audit.md {{ARGS}}
+
+# Same, but answer only from the committed cache (deterministic, no network).
+terms-offline *ARGS:
+    {{PY}} scripts/audit_term_existence.py --offline {{ARGS}}
+
+# One authority at a time (the validators named in conf/oak_config.yaml).
+terms-mesh *ARGS:
+    {{PY}} scripts/validate_mesh.py {{ARGS}}
+
+terms-uniprot *ARGS:
+    {{PY}} scripts/validate_uniprot.py {{ARGS}}
+
+terms-reactome *ARGS:
+    {{PY}} scripts/validate_reactome.py {{ARGS}}
