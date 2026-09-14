@@ -113,6 +113,36 @@ def local_id(curie: str) -> str:
 
 
 # ── MeSH ────────────────────────────────────────────────────────────────────
+def _mesh_confirm(curie: str, ident: str) -> TermResult:
+    """Second opinion from the record endpoint, for ids `lookup/details` cannot serve.
+
+    `/mesh/<id>.json` covers Supplementary Concept Records as well as
+    descriptors, and still returns a bare `{ }` for an id that does not exist —
+    so it can settle absence where the lookup endpoint only reports silence.
+    It carries no entry terms, hence the two-step: one call for the common
+    descriptor case, a second only when the first comes back empty.
+    """
+    code, data = _get_json(f"https://id.nlm.nih.gov/mesh/{urllib.parse.quote(ident)}.json")
+    if code == 404 or data is None:
+        return TermResult(curie, TermStatus.ABSENT, source="mesh")
+    if not isinstance(data, dict):
+        raise LookupError_(f"unexpected MeSH record payload for {curie}")
+    if not data:
+        return TermResult(curie, TermStatus.ABSENT, source="mesh")
+
+    label = data.get("label")
+    if isinstance(label, dict):
+        label = label.get("@value")
+    elif isinstance(label, list) and label:
+        first = label[0]
+        label = first.get("@value") if isinstance(first, dict) else str(first)
+
+    if data.get("http://id.nlm.nih.gov/mesh/vocab#active") is False:
+        return TermResult(curie, TermStatus.OBSOLETE, label=label, source="mesh",
+                          detail="MeSH record is not active")
+    return TermResult(curie, TermStatus.EXISTS, label=label, source="mesh")
+
+
 def resolve_mesh(curie: str) -> TermResult:
     """NLM MeSH, via the `lookup/details` endpoint.
 
@@ -138,7 +168,7 @@ def resolve_mesh(curie: str) -> TermResult:
         "https://id.nlm.nih.gov/mesh/lookup/details"
         f"?descriptor={urllib.parse.quote(ident)}")
     if code == 404 or data is None:
-        return TermResult(curie, TermStatus.ABSENT, source="mesh")
+        return _mesh_confirm(curie, ident)
     if not isinstance(data, dict):
         raise LookupError_(f"unexpected MeSH payload type {type(data).__name__} for {curie}")
 
@@ -146,7 +176,12 @@ def resolve_mesh(curie: str) -> TermResult:
     if terms is None:
         raise LookupError_(f"MeSH response for {curie} has no `terms` key")
     if not terms:
-        return TermResult(curie, TermStatus.ABSENT, source="mesh")
+        # `lookup/details` serves DESCRIPTORS. It returns an empty term list —
+        # indistinguishable from "no such id" — for most Supplementary Concept
+        # Records, and the corpus uses 1,438 of those. Eptifibatide (C086648) is
+        # real and comes back empty here. Confirm against the record endpoint
+        # before calling anything absent.
+        return _mesh_confirm(curie, ident)
 
     label = None
     synonyms: list[str] = []

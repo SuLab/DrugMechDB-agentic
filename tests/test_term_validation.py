@@ -101,9 +101,14 @@ class TestFailureIsNotAbsence:
 
 # ── per-authority not-found signals ─────────────────────────────────────────
 class TestMeSH:
-    def test_empty_terms_is_absent(self, monkeypatch):
-        stub_http(monkeypatch, {"lookup/details": (200, {"terms": [], "qualifiers": []})})
-        assert backends.resolve_mesh("MESH:D999999").status is TermStatus.ABSENT
+    def test_empty_terms_alone_does_not_prove_absence(self, monkeypatch):
+        """Superseded an earlier test that asserted empty terms == ABSENT. That
+        was the bug: it condemned every Supplementary Concept Record."""
+        stub_http(monkeypatch, {
+            "lookup/details": (200, {"terms": [], "qualifiers": []}),
+            "/mesh/C086648.json": (200, {"label": {"@value": "eptifibatide"}}),
+        })
+        assert backends.resolve_mesh("MESH:C086648").status is TermStatus.EXISTS
 
     def test_preferred_term_is_the_label_and_the_rest_are_synonyms(self, monkeypatch):
         stub_http(monkeypatch, {"lookup/details": (200, {"terms": [
@@ -115,6 +120,49 @@ class TestMeSH:
         assert r.status is TermStatus.EXISTS
         assert r.label == "Scleroderma, Localized"
         assert "Morphea" in r.synonyms
+
+    def test_supplementary_concept_records_are_confirmed_not_declared_absent(self, monkeypatch):
+        """`lookup/details` serves DESCRIPTORS. It returns an empty term list —
+        indistinguishable from "no such id" — for most Supplementary Concept
+        Records, and the corpus uses 1,438 of those. Eptifibatide (C086648) is
+        real and comes back empty there. Declaring that absent produced false
+        failures across real drugs, so an empty result must be confirmed against
+        the record endpoint before anything is called absent."""
+        stub_http(monkeypatch, {
+            "lookup/details": (200, {"terms": []}),
+            "/mesh/C086648.json": (200, {
+                "@type": "http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical",
+                "label": {"@value": "eptifibatide"},
+            }),
+        })
+        r = backends.resolve_mesh("MESH:C086648")
+        assert r.status is TermStatus.EXISTS
+        assert r.label == "eptifibatide"
+
+    def test_absent_only_when_both_endpoints_agree(self, monkeypatch):
+        stub_http(monkeypatch, {
+            "lookup/details": (200, {"terms": []}),
+            "/mesh/D999999.json": (200, {}),
+        })
+        assert backends.resolve_mesh("MESH:D999999").status is TermStatus.ABSENT
+
+    def test_inactive_record_is_obsolete(self, monkeypatch):
+        stub_http(monkeypatch, {
+            "lookup/details": (200, {"terms": []}),
+            "/mesh/C1.json": (200, {
+                "label": {"@value": "[OBSOLETE] olddrug"},
+                "http://id.nlm.nih.gov/mesh/vocab#active": False,
+            }),
+        })
+        assert backends.resolve_mesh("MESH:C1").status is TermStatus.OBSOLETE
+
+    def test_confirm_failure_is_unresolved_not_absent(self, monkeypatch):
+        stub_http(monkeypatch, {
+            "lookup/details": (200, {"terms": []}),
+            "/mesh/C2.json": LookupError_("timeout"),
+        })
+        with pytest.raises(LookupError_):
+            backends.resolve_mesh("MESH:C2")
 
     def test_no_preferred_flag_still_yields_a_label(self, monkeypatch):
         stub_http(monkeypatch, {"lookup/details": (200, {"terms": [{"label": "Only Term"}]})})
