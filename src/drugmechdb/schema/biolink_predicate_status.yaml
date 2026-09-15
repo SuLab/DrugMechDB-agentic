@@ -1,0 +1,235 @@
+# Biolink predicate status — which of our enum values are still current Biolink,
+# and what each removed one becomes.
+#
+# WHY THIS FILE EXISTS
+# `biolink_predicates.yaml` is the LinkML enum: the set of keys any record MAY use.
+# It must keep accepting the legacy vocabulary, because the 4,846 legacy records in
+# kb/paths/ are written in it. This file is the second axis — for each enum value,
+# whether Biolink still defines it, and if not, the qualifier form that replaces it.
+#
+# WHO READS IT
+#   * scripts/validate_predicates.py — QC Layer 3. `ai_curated` records may only use
+#     `status: current` keys; `legacy` records may use anything in the enum.
+#   * scripts/migrate_predicates.py  — applies `replacement` to rewrite a record.
+#
+# Verified against the pinned Biolink release below by scripts/check_biolink_drift.py.
+# When Biolink releases again, the drift monitor reports the delta; a human updates
+# this file — nothing here is auto-applied.
+
+biolink_version: 4.4.4
+biolink_source: https://raw.githubusercontent.com/biolink/biolink-model/v4.4.4/biolink-model.yaml
+verified_on: '2026-09-03'
+
+predicates:
+
+  # ── Removed in Biolink 4.4.4 — legacy records only ───────────────────────────
+  # The v2->v4 qualifier refactor folded these into `regulates` / `affects` plus
+  # object_aspect_qualifier + object_direction_qualifier.
+
+  ameliorates:
+    status: legacy_only
+    replacement:
+      key: ameliorates condition
+
+  contraindicated for:
+    status: legacy_only
+    replacement:
+      key: contraindicated in
+
+  decreases abundance of:
+    status: legacy_only
+    replacement:
+      key: affects
+      object_aspect_qualifier: abundance
+      object_direction_qualifier: decreased
+
+  decreases activity of:
+    status: legacy_only
+    replacement:
+      key: affects
+      object_aspect_qualifier: activity
+      object_direction_qualifier: decreased
+
+  decreases expression of:
+    status: legacy_only
+    replacement:
+      key: affects
+      object_aspect_qualifier: expression
+      object_direction_qualifier: decreased
+
+  decreases synthesis of:
+    status: legacy_only
+    replacement:
+      key: affects
+      object_aspect_qualifier: synthesis
+      object_direction_qualifier: decreased
+
+  decreases uptake of:
+    status: legacy_only
+    replacement:
+      key: affects
+      object_aspect_qualifier: uptake
+      object_direction_qualifier: decreased
+
+  directly interacts with:
+    status: legacy_only
+    replacement:
+      key: directly physically interacts with
+
+  exacerbates:
+    status: legacy_only
+    replacement:
+      key: exacerbates condition
+
+  increases abundance of:
+    status: legacy_only
+    replacement:
+      key: affects
+      object_aspect_qualifier: abundance
+      object_direction_qualifier: increased
+
+  increases activity of:
+    status: legacy_only
+    replacement:
+      key: affects
+      object_aspect_qualifier: activity
+      object_direction_qualifier: increased
+
+  increases degradation of:
+    status: legacy_only
+    replacement:
+      key: affects
+      object_aspect_qualifier: degradation
+      object_direction_qualifier: increased
+
+  increases expression of:
+    status: legacy_only
+    replacement:
+      key: affects
+      object_aspect_qualifier: expression
+      object_direction_qualifier: increased
+
+  increases stability of:
+    status: legacy_only
+    replacement:
+      key: affects
+      object_aspect_qualifier: stability
+      object_direction_qualifier: increased
+
+  increases transport of:
+    status: legacy_only
+    replacement:
+      key: affects
+      object_aspect_qualifier: transport
+      object_direction_qualifier: increased
+
+  molecularly interacts with:
+    status: legacy_only
+    replacement:
+      key: directly physically interacts with
+
+  negatively regulates:
+    status: legacy_only
+    replacement:
+      key: regulates
+      object_direction_qualifier: decreased
+
+  positively regulates:
+    status: legacy_only
+    replacement:
+      key: regulates
+      object_direction_qualifier: increased
+
+  predisposes:
+    status: legacy_only
+    replacement:
+      key: predisposes to condition
+
+  prevents:
+    status: legacy_only
+    replacement:
+      key: preventative for condition
+
+  # ── Deprecated upstream — present in Biolink 4.4.4 but flagged deprecated ────
+
+  binds:
+    status: deprecated
+    replacement:
+      key: directly physically interacts with
+
+  # ── Removed, and NO mechanical replacement — needs a human, per edge ─────────
+
+  affects risk for:
+    status: legacy_only
+    replacement: null
+    needs_human_decision: true
+    note: >-
+      Direction is unspecified in the legacy predicate; 4.4.4 splits it into `associated with increased likelihood of` / `associated with decreased likelihood of`. Requires a per-edge reading of the evidence.
+
+  decreases response to:
+    status: legacy_only
+    replacement: null
+    needs_human_decision: true
+    note: >-
+      Biolink 4.4.4 has no `response` aspect in GeneOrGeneProductOrChemicalEntityAspectEnum; no faithful qualifier form.
+
+  increases response to:
+    status: legacy_only
+    replacement: null
+    needs_human_decision: true
+    note: >-
+      Biolink 4.4.4 has no `response` aspect in GeneOrGeneProductOrChemicalEntityAspectEnum; no faithful qualifier form.
+
+  # ── Still current in Biolink 4.4.4 — usable by new curation ──────────────────
+
+  actively involved in: {status: current}
+  affected by: {status: current}
+  capable of: {status: current}
+  caused by: {status: current}
+  causes: {status: current}
+  chemically similar to: {status: current}
+  coexists with: {status: current}
+  contributes to: {status: current}
+  correlated with: {status: current}
+  derives from: {status: current}
+  derives into: {status: current}
+  disrupted by: {status: current}
+  disrupts: {status: current}
+  enables: {status: current}
+  expressed in: {status: current}
+  expresses: {status: current}
+  has active ingredient: {status: current}
+  has metabolite: {status: current}
+  has output: {status: current}
+  has part: {status: current}
+  has participant: {status: current}
+  has phenotype: {status: current}
+  in complex with: {status: current}
+  in taxon: {status: current}
+  interacts with: {status: current}
+  is metabolite of: {status: current}
+  located in: {status: current}
+  location of: {status: current}
+  manifestation of: {status: current}
+  negatively correlated with: {status: current}
+  occurs in: {status: current}
+  part of: {status: current}
+  participates in: {status: current}
+  phenotype of: {status: current}
+  physically interacts with: {status: current}
+  positively correlated with: {status: current}
+  precedes: {status: current}
+  produced by: {status: current}
+  produces: {status: current}
+  regulates: {status: current}
+  similar to: {status: current}
+  subclass of: {status: current}
+  superclass of: {status: current}
+  treats: {status: current}
+  affects: {status: current}
+  directly physically interacts with: {status: current}
+  preventative for condition: {status: current}
+  ameliorates condition: {status: current}
+  exacerbates condition: {status: current}
+  predisposes to condition: {status: current}
+  contraindicated in: {status: current}

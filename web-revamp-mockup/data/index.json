@@ -1,0 +1,2614 @@
+[
+  {
+    "id": "opus__P15",
+    "record_id": "P15_DB00787_MESH_D006561",
+    "run": "Opus (model eval)",
+    "drug": "Acyclovir",
+    "disease": "Herpes Simplex",
+    "area": "Infectious disease",
+    "target": "Herpes simplex virus type 1 thymidine kinase",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "OrganismTaxon",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 6,
+    "sourced": 6,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P15",
+    "record_id": "P15_DB00787_MESH_D006561",
+    "run": "Phase-3 eval",
+    "drug": "Acyclovir",
+    "disease": "Herpes Simplex",
+    "area": "Infectious disease",
+    "target": "HSV-1 thymidine kinase",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "OrganismTaxon",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 7,
+    "sourced": 7,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P15",
+    "record_id": "P15_DB00787_MESH_D006561",
+    "run": "Sonnet (model eval)",
+    "drug": "Acyclovir",
+    "disease": "Herpes Simplex",
+    "area": "Infectious disease",
+    "target": "DNA polymerase (HSV-1 UL30)",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P25",
+    "record_id": "P25_DB00051_MESH_D011565",
+    "run": "Opus (model eval)",
+    "drug": "Adalimumab",
+    "disease": "Psoriasis",
+    "area": "Immune",
+    "target": "Tumor necrosis factor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P25",
+    "record_id": "P25_DB00051_MESH_D011565",
+    "run": "Phase-3 eval",
+    "drug": "Adalimumab",
+    "disease": "Psoriasis",
+    "area": "Immune",
+    "target": "Tumor necrosis factor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P25",
+    "record_id": "P25_DB00051_MESH_D011565",
+    "run": "Sonnet (model eval)",
+    "drug": "Adalimumab",
+    "disease": "Psoriasis",
+    "area": "Immune",
+    "target": "Tumor necrosis factor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P29",
+    "record_id": "P29_DB00437_MESH_D006073",
+    "run": "Opus (model eval)",
+    "drug": "Allopurinol",
+    "disease": "Gout",
+    "area": "Metabolic",
+    "target": "Xanthine dehydrogenase/oxidase",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P29",
+    "record_id": "P29_DB00437_MESH_D006073",
+    "run": "Phase-3 eval",
+    "drug": "Allopurinol",
+    "disease": "Gout",
+    "area": "Metabolic",
+    "target": "Xanthine dehydrogenase/oxidase",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P29",
+    "record_id": "P29_DB00437_MESH_D006073",
+    "run": "Sonnet (model eval)",
+    "drug": "Allopurinol",
+    "disease": "Gout",
+    "area": "Metabolic",
+    "target": "Xanthine oxidoreductase",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00009_MESH_D011655_1",
+    "record_id": "DB00009_MESH_D011655_1",
+    "run": "Pilot run",
+    "drug": "alteplase",
+    "disease": "Pulmonary embolism",
+    "area": "Cardiovascular",
+    "target": "Plasminogen",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00009_MESH_D011655_1__r2",
+    "record_id": "DB00009_MESH_D011655_1",
+    "run": "Pilot run",
+    "drug": "alteplase",
+    "disease": "Pulmonary embolism",
+    "area": "Cardiovascular",
+    "target": "Plasminogen",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "PhenotypicFeature",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00009_MESH_D011655_1__r3",
+    "record_id": "DB00009_MESH_D011655_1",
+    "run": "Pilot run",
+    "drug": "alteplase",
+    "disease": "Pulmonary embolism",
+    "area": "Cardiovascular",
+    "target": "Plasmin",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 1
+  },
+  {
+    "id": "pilot__B02362_MESH_D003882_1",
+    "record_id": "B02362_MESH_D003882_1",
+    "run": "Pilot run",
+    "drug": "aminobenzoic acid",
+    "disease": "Dermatomyositis",
+    "area": "Immune",
+    "target": "Glycosaminoglycans",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 2,
+    "edges": 2,
+    "sourced": 2,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__B02362_MESH_D003882_1__r2",
+    "record_id": "B02362_MESH_D003882_1",
+    "run": "Pilot run",
+    "drug": "aminobenzoic acid",
+    "disease": "Dermatomyositis",
+    "area": "Immune",
+    "target": "response to UV",
+    "types": [
+      "Drug",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__B02362_MESH_D003882_1__r3",
+    "record_id": "B02362_MESH_D003882_1",
+    "run": "Pilot run",
+    "drug": "aminobenzoic acid",
+    "disease": "Dermatomyositis",
+    "area": "Immune",
+    "target": "Glycosaminoglycans",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 2,
+    "edges": 2,
+    "sourced": 2,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00026_MESH_D056587_1",
+    "record_id": "DB00026_MESH_D056587_1",
+    "run": "Pilot run",
+    "drug": "anakinra",
+    "disease": "Cryopyrin-associated periodic syndrome",
+    "area": "Immune",
+    "target": "Interleukin-1 receptor type 1",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P32",
+    "record_id": "P32_DB00126_MESH_D001206",
+    "run": "Opus (model eval)",
+    "drug": "Ascorbic acid",
+    "disease": "Ascorbic acid deficiency",
+    "area": "Metabolic",
+    "target": "Prolyl 4-hydroxylase subunit alpha-1",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P32",
+    "record_id": "P32_DB00126_MESH_D001206",
+    "run": "Sonnet (model eval)",
+    "drug": "Ascorbic acid",
+    "disease": "Ascorbic acid deficiency",
+    "area": "Metabolic",
+    "target": "Prolyl 4-hydroxylase subunit alpha-1",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P01",
+    "record_id": "P01_DB00945_MESH_D009203",
+    "run": "Opus (model eval)",
+    "drug": "Aspirin",
+    "disease": "Myocardial infarction",
+    "area": "Cardiovascular",
+    "target": "Prostaglandin G/H synthase 1 (Cyclooxygenase-1, COX-1)",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P01",
+    "record_id": "P01_DB00945_MESH_D009203",
+    "run": "Phase-3 eval",
+    "drug": "Aspirin",
+    "disease": "Myocardial Infarction",
+    "area": "Cardiovascular",
+    "target": "Prostaglandin G/H synthase 1",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P01_no_provider",
+    "record_id": "P01_DB00945_MESH_D009203",
+    "run": "Phase-3 eval",
+    "drug": "Aspirin",
+    "disease": "Myocardial Infarction",
+    "area": "Cardiovascular",
+    "target": "Prostaglandin G/H synthase 1",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 7,
+    "sourced": 7,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P01",
+    "record_id": "P01_DB00945_MESH_D009203",
+    "run": "Sonnet (model eval)",
+    "drug": "Aspirin",
+    "disease": "Myocardial Infarction",
+    "area": "Cardiovascular",
+    "target": "Cyclooxygenase-1",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P02",
+    "record_id": "P02_DB01076_MESH_D006937",
+    "run": "Opus (model eval)",
+    "drug": "Atorvastatin",
+    "disease": "Hypercholesterolemia",
+    "area": "Metabolic",
+    "target": "3-hydroxy-3-methylglutaryl-coenzyme A reductase",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P02",
+    "record_id": "P02_DB01076_MESH_D006937",
+    "run": "Phase-3 eval",
+    "drug": "Atorvastatin",
+    "disease": "Hypercholesterolemia",
+    "area": "Metabolic",
+    "target": "3-hydroxy-3-methylglutaryl-coenzyme A reductase",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB01076_MESH_D006937_1",
+    "record_id": "DB01076_MESH_D006937_1",
+    "run": "Pilot run",
+    "drug": "atorvastatin",
+    "disease": "Hypercholesterolemia",
+    "area": "Metabolic",
+    "target": "3-hydroxy-3-methylglutaryl-coenzyme A reductase",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P02",
+    "record_id": "P02_DB01076_MESH_D006937",
+    "run": "Sonnet (model eval)",
+    "drug": "atorvastatin",
+    "disease": "Hypercholesterolemia",
+    "area": "Metabolic",
+    "target": "HMG-CoA reductase",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00993_MESH_D001172_1",
+    "record_id": "DB00993_MESH_D001172_1",
+    "run": "Pilot run",
+    "drug": "azathioprine",
+    "disease": "Rheumatoid arthritis",
+    "area": "Immune",
+    "target": "Mercaptopurine",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00290_MESH_D002294_1",
+    "record_id": "DB00290_MESH_D002294_1",
+    "run": "Pilot run",
+    "drug": "bleomycin",
+    "disease": "Squamous cell carcinoma",
+    "area": "Neoplasms",
+    "target": "Reactive oxygen species",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 1
+  },
+  {
+    "id": "pilot__DB00258_MESH_D006996_1",
+    "record_id": "DB00258_MESH_D006996_1",
+    "run": "Pilot run",
+    "drug": "calcium acetate",
+    "disease": "Hypocalcemia",
+    "area": "Metabolic",
+    "target": "Calcium",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 2,
+    "edges": 2,
+    "sourced": 2,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P08",
+    "record_id": "P08_DB00002_MESH_D015179",
+    "run": "Opus (model eval)",
+    "drug": "Cetuximab",
+    "disease": "Colorectal Cancer",
+    "area": "Neoplasms",
+    "target": "Epidermal growth factor receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 6,
+    "sourced": 6,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P08",
+    "record_id": "P08_DB00002_MESH_D015179",
+    "run": "Sonnet (model eval)",
+    "drug": "Cetuximab",
+    "disease": "Colorectal Cancer",
+    "area": "Neoplasms",
+    "target": "Epidermal growth factor receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P08",
+    "record_id": "P08_DB00002_MESH_D015179",
+    "run": "Phase-3 eval",
+    "drug": "Cetuximab",
+    "disease": "Colorectal Neoplasms",
+    "area": "Neoplasms",
+    "target": "Epidermal growth factor receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00002_MESH_D003110_1",
+    "record_id": "DB00002_MESH_D003110_1",
+    "run": "Pilot run",
+    "drug": "cetuximab",
+    "disease": "Malignant tumor of colon",
+    "area": "Neoplasms",
+    "target": "Epidermal growth factor receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00002_MESH_D003110_1__r2",
+    "record_id": "DB00002_MESH_D003110_1",
+    "run": "Pilot run",
+    "drug": "cetuximab",
+    "disease": "Malignant tumor of colon",
+    "area": "Neoplasms",
+    "target": "Epidermal growth factor receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00002_MESH_D003110_1__r3",
+    "record_id": "DB00002_MESH_D003110_1",
+    "run": "Pilot run",
+    "drug": "cetuximab",
+    "disease": "Malignant tumor of colon",
+    "area": "Neoplasms",
+    "target": "Epidermal growth factor receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P05",
+    "record_id": "P05_DB00758_MESH_D020521",
+    "run": "Opus (model eval)",
+    "drug": "Clopidogrel",
+    "disease": "Stroke",
+    "area": "Cardiovascular",
+    "target": "Cytochrome P450 2C19 (CYP2C19)",
+    "types": [
+      "Protein",
+      "Drug",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P05",
+    "record_id": "P05_DB00758_MESH_D020521",
+    "run": "Phase-3 eval",
+    "drug": "Clopidogrel",
+    "disease": "Stroke",
+    "area": "Cardiovascular",
+    "target": "P2Y purinoceptor 12",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P05",
+    "record_id": "P05_DB00758_MESH_D020521",
+    "run": "Sonnet (model eval)",
+    "drug": "Clopidogrel",
+    "disease": "Stroke",
+    "area": "Cardiovascular",
+    "target": "P2Y12 receptor",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB01527_MESH_D000856_1",
+    "record_id": "DB01527_MESH_D000856_1",
+    "run": "Pilot run",
+    "drug": "clortermine",
+    "disease": "Anorexia",
+    "area": "Metabolic",
+    "target": "Feeding behavior",
+    "types": [
+      "Drug",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 2,
+    "edges": 2,
+    "sourced": 2,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P34",
+    "record_id": "P34_DB00004_MESH_D016410",
+    "run": "Opus (model eval)",
+    "drug": "Denileukin diftitox",
+    "disease": "Primary cutaneous T-cell lymphoma",
+    "area": "Neoplasms",
+    "target": "Interleukin-2 receptor subunit alpha",
+    "types": [
+      "Drug",
+      "BiologicalProcess",
+      "Cell",
+      "Protein",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P34",
+    "record_id": "P34_DB00004_MESH_D016410",
+    "run": "Sonnet (model eval)",
+    "drug": "Denileukin diftitox",
+    "disease": "Primary cutaneous T-cell lymphoma",
+    "area": "Neoplasms",
+    "target": "Interleukin-2 receptor subunit alpha (CD25)",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00035_MESH_D006467_1",
+    "record_id": "DB00035_MESH_D006467_1",
+    "run": "Pilot run",
+    "drug": "desmopressin",
+    "disease": "Hereditary factor VIII deficiency disease",
+    "area": "Blood",
+    "target": "Arginine vasopressin receptor 2",
+    "types": [
+      "Drug",
+      "Protein",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P20",
+    "record_id": "P20_DB00843_MESH_D000544",
+    "run": "Opus (model eval)",
+    "drug": "donepezil",
+    "disease": "Alzheimer's Disease",
+    "area": "Nervous system",
+    "target": "Acetylcholinesterase",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P20",
+    "record_id": "P20_DB00843_MESH_D000544",
+    "run": "Phase-3 eval",
+    "drug": "Donepezil",
+    "disease": "Alzheimer's disease",
+    "area": "Nervous system",
+    "target": "acetylcholinesterase",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00843_MESH_D000544_1",
+    "record_id": "DB00843_MESH_D000544_1",
+    "run": "Pilot run",
+    "drug": "donepezil",
+    "disease": "Alzheimer's disease",
+    "area": "Nervous system",
+    "target": "Acetylcholinesterase",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P20",
+    "record_id": "P20_DB00843_MESH_D000544",
+    "run": "Sonnet (model eval)",
+    "drug": "Donepezil",
+    "disease": "Alzheimer's Disease",
+    "area": "Nervous system",
+    "target": "Acetylcholinesterase",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P30",
+    "record_id": "P30_DB09038_MESH_D003924",
+    "run": "Phase-3 eval",
+    "drug": "Empagliflozin",
+    "disease": "Diabetes Mellitus, Type 2",
+    "area": "Metabolic",
+    "target": "Sodium/glucose cotransporter 2",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "PhenotypicFeature",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB09038_MESH_D003924_1",
+    "record_id": "DB09038_MESH_D003924_1",
+    "run": "Pilot run",
+    "drug": "empagliflozin",
+    "disease": "Diabetes Mellitus, Type 2",
+    "area": "Metabolic",
+    "target": "Sodium/glucose cotransporter 2",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "PhenotypicFeature",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P30",
+    "record_id": "P30_DB09038_MESH_D003924",
+    "run": "Opus (model eval)",
+    "drug": "empagliflozin",
+    "disease": "Type 2 Diabetes Mellitus",
+    "area": "Metabolic",
+    "target": "Sodium/glucose cotransporter 2",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "PhenotypicFeature",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P30",
+    "record_id": "P30_DB09038_MESH_D003924",
+    "run": "Sonnet (model eval)",
+    "drug": "Empagliflozin",
+    "disease": "Type 2 Diabetes Mellitus",
+    "area": "Metabolic",
+    "target": "Sodium/glucose cotransporter 2 (SGLT2)",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "PhenotypicFeature",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00005_MESH_D015535_1",
+    "record_id": "DB00005_MESH_D015535_1",
+    "run": "Pilot run",
+    "drug": "Etanercept",
+    "disease": "Psoriasis with arthropathy",
+    "area": "Immune",
+    "target": "Tumor necrosis factor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P17",
+    "record_id": "P17_DB00472_MESH_D003865",
+    "run": "Opus (model eval)",
+    "drug": "fluoxetine",
+    "disease": "Major Depressive Disorder",
+    "area": "Mental health",
+    "target": "Sodium-dependent serotonin transporter",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P17",
+    "record_id": "P17_DB00472_MESH_D003865",
+    "run": "Phase-3 eval",
+    "drug": "Fluoxetine",
+    "disease": "Major depressive disorder",
+    "area": "Mental health",
+    "target": "Sodium-dependent serotonin transporter",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 1
+  },
+  {
+    "id": "sonnet__P17",
+    "record_id": "P17_DB00472_MESH_D003865",
+    "run": "Sonnet (model eval)",
+    "drug": "fluoxetine",
+    "disease": "Major Depressive Disorder",
+    "area": "Mental health",
+    "target": "Serotonin transporter",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P19",
+    "record_id": "P19_DB00996_MESH_D004827",
+    "run": "Opus (model eval)",
+    "drug": "Gabapentin",
+    "disease": "Epilepsy",
+    "area": "Nervous system",
+    "target": "Voltage-dependent calcium channel subunit alpha-2/delta-1 (CACNA2D1)",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P19",
+    "record_id": "P19_DB00996_MESH_D004827",
+    "run": "Phase-3 eval",
+    "drug": "Gabapentin",
+    "disease": "Epilepsy",
+    "area": "Nervous system",
+    "target": "Voltage-dependent calcium channel subunit alpha-2/delta-1",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 1
+  },
+  {
+    "id": "sonnet__P19",
+    "record_id": "P19_DB00996_MESH_D004827",
+    "run": "Sonnet (model eval)",
+    "drug": "Gabapentin",
+    "disease": "Epilepsy",
+    "area": "Nervous system",
+    "target": "Voltage-dependent calcium channel subunit alpha-2/delta-1",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P36",
+    "record_id": "P36_DB00027_MESH_D003234",
+    "run": "Opus (model eval)",
+    "drug": "gramicidin",
+    "disease": "Bacterial conjunctivitis",
+    "area": "Infectious disease",
+    "target": "plasma membrane",
+    "types": [
+      "Drug",
+      "BiologicalProcess",
+      "CellularComponent",
+      "Disease"
+    ],
+    "steps": 2,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P36",
+    "record_id": "P36_DB00027_MESH_D003234",
+    "run": "Sonnet (model eval)",
+    "drug": "Gramicidin",
+    "disease": "Bacterial conjunctivitis",
+    "area": "Infectious disease",
+    "target": "Plasma membrane",
+    "types": [
+      "Drug",
+      "CellularComponent",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 1
+  },
+  {
+    "id": "opus__P23",
+    "record_id": "P23_DB01611_MESH_D008180",
+    "run": "Opus (model eval)",
+    "drug": "Hydroxychloroquine",
+    "disease": "Systemic Lupus Erythematosus",
+    "area": "Immune",
+    "target": "Toll-like receptor 7",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P23",
+    "record_id": "P23_DB01611_MESH_D008180",
+    "run": "Phase-3 eval",
+    "drug": "Hydroxychloroquine",
+    "disease": "Systemic Lupus Erythematosus",
+    "area": "Immune",
+    "target": "Toll-like receptor 9",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P23",
+    "record_id": "P23_DB01611_MESH_D008180",
+    "run": "Sonnet (model eval)",
+    "drug": "Hydroxychloroquine",
+    "disease": "Systemic Lupus Erythematosus",
+    "area": "Immune",
+    "target": "Toll-like receptor 7",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 1
+  },
+  {
+    "id": "pilot__DB00619_MESH_D015464_1__r3",
+    "record_id": "DB00619_MESH_D015464_1",
+    "run": "Pilot run",
+    "drug": "imatinib",
+    "disease": "Chronic myelogenous leukemia, BCR-ABL positive",
+    "area": "Neoplasms",
+    "target": "BCR/ABL fusion protein",
+    "types": [
+      "Drug",
+      "Protein",
+      "Disease"
+    ],
+    "steps": 2,
+    "edges": 2,
+    "sourced": 2,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P07",
+    "record_id": "P07_DB00619_MESH_D015464",
+    "run": "Opus (model eval)",
+    "drug": "Imatinib",
+    "disease": "Chronic Myeloid Leukemia",
+    "area": "Neoplasms",
+    "target": "BCR-ABL tyrosine kinase (ABL1)",
+    "types": [
+      "Drug",
+      "Protein",
+      "Disease"
+    ],
+    "steps": 2,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P07",
+    "record_id": "P07_DB00619_MESH_D015464",
+    "run": "Phase-3 eval",
+    "drug": "Imatinib",
+    "disease": "Chronic Myeloid Leukemia",
+    "area": "Neoplasms",
+    "target": "Tyrosine-protein kinase ABL1",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00619_MESH_D015464_1",
+    "record_id": "DB00619_MESH_D015464_1",
+    "run": "Pilot run",
+    "drug": "imatinib",
+    "disease": "Chronic myeloid leukemia",
+    "area": "Neoplasms",
+    "target": "BCR/ABL fusion protein",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P07",
+    "record_id": "P07_DB00619_MESH_D015464",
+    "run": "Sonnet (model eval)",
+    "drug": "Imatinib",
+    "disease": "Chronic Myeloid Leukemia",
+    "area": "Neoplasms",
+    "target": "BCR-ABL fusion protein",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 3
+  },
+  {
+    "id": "pilot__DB00619_MESH_D015464_1__r2",
+    "record_id": "DB00619_MESH_D015464_1",
+    "run": "Pilot run",
+    "drug": "imatinib",
+    "disease": "Chronic myeloid leukemia, BCR-ABL positive",
+    "area": "Neoplasms",
+    "target": "BCR/ABL fusion protein",
+    "types": [
+      "Drug",
+      "Protein",
+      "Disease"
+    ],
+    "steps": 2,
+    "edges": 2,
+    "sourced": 2,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P22",
+    "record_id": "P22_DB00065_MESH_D003424",
+    "run": "Opus (model eval)",
+    "drug": "Infliximab",
+    "disease": "Crohn's Disease",
+    "area": "Immune",
+    "target": "Tumor necrosis factor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P22",
+    "record_id": "P22_DB00065_MESH_D003424",
+    "run": "Phase-3 eval",
+    "drug": "Infliximab",
+    "disease": "Crohn's disease",
+    "area": "Immune",
+    "target": "Tumor necrosis factor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P27",
+    "record_id": "P27_DB00030_MESH_D003922",
+    "run": "Opus (model eval)",
+    "drug": "Insulin",
+    "disease": "Type 1 Diabetes Mellitus",
+    "area": "Metabolic",
+    "target": "Insulin receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "PhenotypicFeature",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P27",
+    "record_id": "P27_DB00030_MESH_D003922",
+    "run": "Phase-3 eval",
+    "drug": "Insulin Human",
+    "disease": "Diabetes mellitus type 1",
+    "area": "Metabolic",
+    "target": "Insulin receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "PhenotypicFeature",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00030_MESH_D003922_1",
+    "record_id": "DB00030_MESH_D003922_1",
+    "run": "Pilot run",
+    "drug": "insulin human",
+    "disease": "Diabetes Mellitus, Type 1",
+    "area": "Metabolic",
+    "target": "Insulin receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "PhenotypicFeature",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P39",
+    "record_id": "P39_DB00046_MESH_D003922",
+    "run": "Opus (model eval)",
+    "drug": "Insulin lispro",
+    "disease": "Type 1 Diabetes Mellitus",
+    "area": "Metabolic",
+    "target": "Insulin receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "PhenotypicFeature",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P33",
+    "record_id": "P33_DB00068_MESH_D020529",
+    "run": "Opus (model eval)",
+    "drug": "Interferon beta-1b",
+    "disease": "Relapsing-remitting multiple sclerosis",
+    "area": "Immune",
+    "target": "Interferon alpha/beta receptor 1",
+    "types": [
+      "Drug",
+      "Protein",
+      "Cell",
+      "Disease",
+      "BiologicalProcess"
+    ],
+    "steps": 3,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P12",
+    "record_id": "P12_DB00951_MESH_D014397",
+    "run": "Opus (model eval)",
+    "drug": "Isoniazid",
+    "disease": "Pulmonary Tuberculosis",
+    "area": "Infectious disease",
+    "target": "Catalase-peroxidase KatG",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 2,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P12",
+    "record_id": "P12_DB00951_MESH_D014397",
+    "run": "Phase-3 eval",
+    "drug": "Isoniazid",
+    "disease": "Pulmonary Tuberculosis",
+    "area": "Infectious disease",
+    "target": "Enoyl-[acyl-carrier-protein] reductase [NADH] InhA",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "OrganismTaxon",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P12",
+    "record_id": "P12_DB00951_MESH_D014397",
+    "run": "Sonnet (model eval)",
+    "drug": "Isoniazid",
+    "disease": "Pulmonary Tuberculosis",
+    "area": "Infectious disease",
+    "target": "InhA",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "OrganismTaxon",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P16",
+    "record_id": "P16_DB01235_MESH_D010300",
+    "run": "Opus (model eval)",
+    "drug": "Levodopa",
+    "disease": "Parkinson's Disease",
+    "area": "Nervous system",
+    "target": "Dopamine",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "GrossAnatomicalStructure",
+      "Disease"
+    ],
+    "steps": 2,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 1
+  },
+  {
+    "id": "phase3__P16",
+    "record_id": "P16_DB01235_MESH_D010300",
+    "run": "Phase-3 eval",
+    "drug": "levodopa",
+    "disease": "Parkinson's disease",
+    "area": "Nervous system",
+    "target": "aromatic-L-amino-acid decarboxylase",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P16",
+    "record_id": "P16_DB01235_MESH_D010300",
+    "run": "Sonnet (model eval)",
+    "drug": "Levodopa",
+    "disease": "Parkinson's Disease",
+    "area": "Nervous system",
+    "target": "Aromatic-L-amino-acid decarboxylase",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "Disease"
+    ],
+    "steps": 2,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 1
+  },
+  {
+    "id": "opus__P28",
+    "record_id": "P28_DB00451_MESH_D007037",
+    "run": "Opus (model eval)",
+    "drug": "Levothyroxine",
+    "disease": "Hypothyroidism",
+    "area": "Endocrine",
+    "target": "Thyroid hormone receptor beta",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P28",
+    "record_id": "P28_DB00451_MESH_D007037",
+    "run": "Phase-3 eval",
+    "drug": "Levothyroxine",
+    "disease": "Hypothyroidism",
+    "area": "Endocrine",
+    "target": "Thyroid hormone receptor beta",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P03",
+    "record_id": "P03_DB00722_MESH_D006973",
+    "run": "Opus (model eval)",
+    "drug": "Lisinopril",
+    "disease": "Hypertension",
+    "area": "Cardiovascular",
+    "target": "Angiotensin-converting enzyme",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 6,
+    "sourced": 6,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P03",
+    "record_id": "P03_DB00722_MESH_D006973",
+    "run": "Phase-3 eval",
+    "drug": "Lisinopril",
+    "disease": "Hypertension",
+    "area": "Cardiovascular",
+    "target": "Angiotensin-converting enzyme",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P03",
+    "record_id": "P03_DB00722_MESH_D006973",
+    "run": "Sonnet (model eval)",
+    "drug": "Lisinopril",
+    "disease": "Hypertension",
+    "area": "Cardiovascular",
+    "target": "Angiotensin-converting enzyme",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P18",
+    "record_id": "P18_DB01356_MESH_D001714",
+    "run": "Opus (model eval)",
+    "drug": "Lithium",
+    "disease": "Bipolar Disorder",
+    "area": "Mental health",
+    "target": "Glycogen synthase kinase-3 beta",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P18",
+    "record_id": "P18_DB01356_MESH_D001714",
+    "run": "Phase-3 eval",
+    "drug": "Lithium",
+    "disease": "Bipolar Disorder",
+    "area": "Mental health",
+    "target": "Glycogen synthase kinase-3 beta",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 1
+  },
+  {
+    "id": "sonnet__P18",
+    "record_id": "P18_DB01356_MESH_D001714",
+    "run": "Sonnet (model eval)",
+    "drug": "Lithium",
+    "disease": "Bipolar Disorder",
+    "area": "Mental health",
+    "target": "Glycogen synthase kinase-3 beta",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 1
+  },
+  {
+    "id": "opus__P37",
+    "record_id": "P37_DB00186_MESH_D001007",
+    "run": "Opus (model eval)",
+    "drug": "Lorazepam",
+    "disease": "Anxiety",
+    "area": "Mental health",
+    "target": "Gamma-aminobutyric acid receptor subunit alpha-1",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P37",
+    "record_id": "P37_DB00186_MESH_D001007",
+    "run": "Sonnet (model eval)",
+    "drug": "Lorazepam",
+    "disease": "Anxiety",
+    "area": "Mental health",
+    "target": "Gamma-aminobutyric acid receptor subunit alpha-1",
+    "types": [
+      "Drug",
+      "Protein",
+      "MolecularActivity",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P26",
+    "record_id": "P26_DB00331_MESH_D003924",
+    "run": "Phase-3 eval",
+    "drug": "Metformin",
+    "disease": "Diabetes mellitus type 2",
+    "area": "Metabolic",
+    "target": "5'-AMP-activated protein kinase catalytic subunit alpha-1",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "PhenotypicFeature",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 1
+  },
+  {
+    "id": "opus__P26",
+    "record_id": "P26_DB00331_MESH_D003924",
+    "run": "Opus (model eval)",
+    "drug": "Metformin",
+    "disease": "Type 2 Diabetes Mellitus",
+    "area": "Metabolic",
+    "target": "Serine/threonine-protein kinase STK11 (LKB1)",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P26",
+    "record_id": "P26_DB00331_MESH_D003924",
+    "run": "Sonnet (model eval)",
+    "drug": "Metformin",
+    "disease": "Type 2 Diabetes Mellitus",
+    "area": "Metabolic",
+    "target": "NADH-ubiquinone oxidoreductase chain 1",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P09",
+    "record_id": "P09_DB00563_MESH_D054198",
+    "run": "Opus (model eval)",
+    "drug": "methotrexate",
+    "disease": "Acute lymphoblastic leukemia",
+    "area": "Neoplasms",
+    "target": "Dihydrofolate reductase",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 7,
+    "sourced": 7,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P09",
+    "record_id": "P09_DB00563_MESH_D054198",
+    "run": "Phase-3 eval",
+    "drug": "methotrexate",
+    "disease": "Acute Lymphoblastic Leukemia",
+    "area": "Neoplasms",
+    "target": "Dihydrofolate reductase",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P09",
+    "record_id": "P09_DB00563_MESH_D054198",
+    "run": "Sonnet (model eval)",
+    "drug": "Methotrexate",
+    "disease": "Acute Lymphoblastic Leukemia",
+    "area": "Neoplasms",
+    "target": "Dihydrofolate reductase",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P21",
+    "record_id": "P21_DB00563_MESH_D001172",
+    "run": "Opus (model eval)",
+    "drug": "Methotrexate",
+    "disease": "Rheumatoid Arthritis",
+    "area": "Immune",
+    "target": "Bifunctional purine biosynthesis protein ATIC (AICAR transformylase)",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 6,
+    "sourced": 6,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P21",
+    "record_id": "P21_DB00563_MESH_D001172",
+    "run": "Phase-3 eval",
+    "drug": "Methotrexate",
+    "disease": "Rheumatoid Arthritis",
+    "area": "Immune",
+    "target": "bifunctional purine biosynthesis protein ATIC",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P21",
+    "record_id": "P21_DB00563_MESH_D001172",
+    "run": "Sonnet (model eval)",
+    "drug": "Methotrexate",
+    "disease": "Rheumatoid Arthritis",
+    "area": "Immune",
+    "target": "Dihydrofolate reductase",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 1
+  },
+  {
+    "id": "opus__P04",
+    "record_id": "P04_DB00264_MESH_D006333",
+    "run": "Opus (model eval)",
+    "drug": "metoprolol",
+    "disease": "Heart failure",
+    "area": "Cardiovascular",
+    "target": "Beta-1 adrenergic receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P04",
+    "record_id": "P04_DB00264_MESH_D006333",
+    "run": "Phase-3 eval",
+    "drug": "Metoprolol",
+    "disease": "Heart failure",
+    "area": "Cardiovascular",
+    "target": "Beta-1 adrenergic receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P04",
+    "record_id": "P04_DB00264_MESH_D006333",
+    "run": "Sonnet (model eval)",
+    "drug": "Metoprolol",
+    "disease": "Heart Failure",
+    "area": "Cardiovascular",
+    "target": "Beta-1 adrenergic receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P24",
+    "record_id": "P24_DB00688_MESH_D008181",
+    "run": "Opus (model eval)",
+    "drug": "Mycophenolate mofetil",
+    "disease": "Lupus Nephritis",
+    "area": "Immune",
+    "target": "Inosine-5'-monophosphate dehydrogenase 2",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P24",
+    "record_id": "P24_DB00688_MESH_D008181",
+    "run": "Phase-3 eval",
+    "drug": "Mycophenolate Mofetil",
+    "disease": "Lupus Nephritis",
+    "area": "Immune",
+    "target": "Inosine-5'-monophosphate dehydrogenase 2",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P24",
+    "record_id": "P24_DB00688_MESH_D008181",
+    "run": "Sonnet (model eval)",
+    "drug": "Mycophenolate Mofetil",
+    "disease": "Lupus Nephritis",
+    "area": "Immune",
+    "target": "Inosine-5'-monophosphate dehydrogenase 2",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P40",
+    "record_id": "P40_DB00043_MESH_D001249",
+    "run": "Opus (model eval)",
+    "drug": "omalizumab",
+    "disease": "Asthma",
+    "area": "Immune",
+    "target": "Immunoglobulin heavy constant epsilon (IgE)",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease",
+      "Cell"
+    ],
+    "steps": 4,
+    "edges": 6,
+    "sourced": 6,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P40",
+    "record_id": "P40_DB00043_MESH_D001249",
+    "run": "Sonnet (model eval)",
+    "drug": "Omalizumab",
+    "disease": "Asthma",
+    "area": "Immune",
+    "target": "Immunoglobulin E",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Cell",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00038_MESH_D013921_1",
+    "record_id": "DB00038_MESH_D013921_1",
+    "run": "Pilot run",
+    "drug": "oprelvekin",
+    "disease": "Thrombocytopenic disorder",
+    "area": "Cardiovascular",
+    "target": "Interleukin-11 receptor subunit alpha",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P14",
+    "record_id": "P14_DB00198_MESH_D007251",
+    "run": "Opus (model eval)",
+    "drug": "Oseltamivir",
+    "disease": "Influenza",
+    "area": "Infectious disease",
+    "target": "Neuraminidase",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P14",
+    "record_id": "P14_DB00198_MESH_D007251",
+    "run": "Phase-3 eval",
+    "drug": "Oseltamivir",
+    "disease": "Influenza",
+    "area": "Infectious disease",
+    "target": "Neuraminidase",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "OrganismTaxon",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P14",
+    "record_id": "P14_DB00198_MESH_D007251",
+    "run": "Sonnet (model eval)",
+    "drug": "Oseltamivir",
+    "disease": "Influenza",
+    "area": "Infectious disease",
+    "target": "Neuraminidase",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P35",
+    "record_id": "P35_DB00008_MESH_D019698",
+    "run": "Opus (model eval)",
+    "drug": "Peginterferon alfa-2a",
+    "disease": "Chronic hepatitis C",
+    "area": "Infectious disease",
+    "target": "Interferon alpha/beta receptor 2",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "OrganismTaxon",
+      "Disease"
+    ],
+    "steps": 6,
+    "edges": 7,
+    "sourced": 7,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P35",
+    "record_id": "P35_DB00008_MESH_D019698",
+    "run": "Sonnet (model eval)",
+    "drug": "Peginterferon alfa-2a",
+    "disease": "Chronic hepatitis C",
+    "area": "Infectious disease",
+    "target": "JAK1",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 8,
+    "sourced": 8,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P38",
+    "record_id": "P38_DB00175_MESH_D006937",
+    "run": "Opus (model eval)",
+    "drug": "pravastatin",
+    "disease": "Hypercholesterolemia",
+    "area": "Metabolic",
+    "target": "3-hydroxy-3-methylglutaryl-coenzyme A reductase",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 6,
+    "sourced": 6,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P38",
+    "record_id": "P38_DB00175_MESH_D006937",
+    "run": "Sonnet (model eval)",
+    "drug": "Pravastatin",
+    "disease": "Hypercholesterolemia",
+    "area": "Metabolic",
+    "target": "HMG-CoA reductase",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P11",
+    "record_id": "P11_DB01045_MESH_D014397",
+    "run": "Opus (model eval)",
+    "drug": "Rifampicin",
+    "disease": "Pulmonary Tuberculosis",
+    "area": "Infectious disease",
+    "target": "DNA-directed RNA polymerase subunit beta (RpoB)",
+    "types": [
+      "Drug",
+      "BiologicalProcess",
+      "OrganismTaxon",
+      "Disease",
+      "Protein"
+    ],
+    "steps": 3,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P11",
+    "record_id": "P11_DB01045_MESH_D014397",
+    "run": "Phase-3 eval",
+    "drug": "Rifampicin",
+    "disease": "Pulmonary tuberculosis",
+    "area": "Infectious disease",
+    "target": "DNA-directed RNA polymerase subunit beta",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "OrganismTaxon",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P11",
+    "record_id": "P11_DB01045_MESH_D014397",
+    "run": "Sonnet (model eval)",
+    "drug": "Rifampicin",
+    "disease": "Pulmonary Tuberculosis",
+    "area": "Infectious disease",
+    "target": "DNA-directed RNA polymerase subunit beta",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 2,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00010_MESH_D004393_1",
+    "record_id": "DB00010_MESH_D004393_1",
+    "run": "Pilot run",
+    "drug": "sermorelin",
+    "disease": "Pituitary dwarfism",
+    "area": "Endocrine",
+    "target": "Growth hormone-releasing hormone receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P06",
+    "record_id": "P06_DB00675_MESH_D001943",
+    "run": "Opus (model eval)",
+    "drug": "Tamoxifen",
+    "disease": "Breast Cancer",
+    "area": "Neoplasms",
+    "target": "Estrogen receptor alpha",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P06",
+    "record_id": "P06_DB00675_MESH_D001943",
+    "run": "Sonnet (model eval)",
+    "drug": "Tamoxifen",
+    "disease": "Breast Cancer",
+    "area": "Neoplasms",
+    "target": "Estrogen receptor alpha",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P06",
+    "record_id": "P06_DB00675_MESH_D001943",
+    "run": "Phase-3 eval",
+    "drug": "Tamoxifen",
+    "disease": "Breast Neoplasms",
+    "area": "Neoplasms",
+    "target": "Estrogen receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00152_MESH_D001361_1",
+    "record_id": "DB00152_MESH_D001361_1",
+    "run": "Pilot run",
+    "drug": "Thiamine",
+    "disease": "Avitaminosis",
+    "area": "Metabolic",
+    "target": "Avitaminosis",
+    "types": [
+      "Drug",
+      "Disease"
+    ],
+    "steps": 1,
+    "edges": 1,
+    "sourced": 1,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00152_MESH_D001361_1__r2",
+    "record_id": "DB00152_MESH_D001361_1",
+    "run": "Pilot run",
+    "drug": "Thiamine",
+    "disease": "Avitaminosis",
+    "area": "Metabolic",
+    "target": "Transketolase",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00152_MESH_D001361_1__r3",
+    "record_id": "DB00152_MESH_D001361_1",
+    "run": "Pilot run",
+    "drug": "thiamine",
+    "disease": "Avitaminosis",
+    "area": "Metabolic",
+    "target": "Thiamine pyrophosphate",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "MolecularActivity",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 3,
+    "sourced": 3,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P10",
+    "record_id": "P10_DB00072_MESH_D001943",
+    "run": "Phase-3 eval",
+    "drug": "Trastuzumab",
+    "disease": "Breast Neoplasms",
+    "area": "Neoplasms",
+    "target": "Receptor tyrosine-protein kinase erbB-2",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P10",
+    "record_id": "P10_DB00072_MESH_D001943",
+    "run": "Opus (model eval)",
+    "drug": "Trastuzumab",
+    "disease": "HER2-positive Breast Cancer",
+    "area": "Neoplasms",
+    "target": "Receptor tyrosine-protein kinase erbB-2 (HER2)",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 6,
+    "sourced": 6,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P10",
+    "record_id": "P10_DB00072_MESH_D001943",
+    "run": "Sonnet (model eval)",
+    "drug": "Trastuzumab",
+    "disease": "HER2-positive Breast Cancer",
+    "area": "Neoplasms",
+    "target": "HER2",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "pilot__DB00013_MESH_D011655_1",
+    "record_id": "DB00013_MESH_D011655_1",
+    "run": "Pilot run",
+    "drug": "urokinase",
+    "disease": "Pulmonary thromboembolism",
+    "area": "Cardiovascular",
+    "target": "Plasminogen",
+    "types": [
+      "Drug",
+      "Protein",
+      "ChemicalSubstance",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "phase3__P13",
+    "record_id": "P13_DB00512_MESH_D055624",
+    "run": "Phase-3 eval",
+    "drug": "Vancomycin",
+    "disease": "Methicillin-Resistant Staphylococcal Infections",
+    "area": "Infectious disease",
+    "target": "D-alanyl-D-alanine",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "OrganismTaxon",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P13",
+    "record_id": "P13_DB00512_MESH_D055624",
+    "run": "Opus (model eval)",
+    "drug": "Vancomycin",
+    "disease": "Methicillin-Resistant Staphylococcus aureus Infection",
+    "area": "Infectious disease",
+    "target": "D-alanyl-D-alanine",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "OrganismTaxon",
+      "Disease"
+    ],
+    "steps": 4,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P13",
+    "record_id": "P13_DB00512_MESH_D055624",
+    "run": "Sonnet (model eval)",
+    "drug": "Vancomycin",
+    "disease": "MRSA Infection",
+    "area": "Infectious disease",
+    "target": "Lipid II",
+    "types": [
+      "Drug",
+      "ChemicalSubstance",
+      "BiologicalProcess",
+      "OrganismTaxon",
+      "Disease"
+    ],
+    "steps": 3,
+    "edges": 4,
+    "sourced": 4,
+    "flagged": 0
+  },
+  {
+    "id": "opus__P31",
+    "record_id": "P31_DB00067_MESH_D006467",
+    "run": "Opus (model eval)",
+    "drug": "Vasopressin",
+    "disease": "Hemophilia A",
+    "area": "Blood",
+    "target": "Vasopressin V2 receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 5,
+    "edges": 5,
+    "sourced": 5,
+    "flagged": 0
+  },
+  {
+    "id": "sonnet__P31",
+    "record_id": "P31_DB00067_MESH_D006467",
+    "run": "Sonnet (model eval)",
+    "drug": "Vasopressin",
+    "disease": "Hemophilia A",
+    "area": "Blood",
+    "target": "Vasopressin V2 receptor",
+    "types": [
+      "Drug",
+      "Protein",
+      "BiologicalProcess",
+      "Disease"
+    ],
+    "steps": 6,
+    "edges": 6,
+    "sourced": 6,
+    "flagged": 0
+  }
+]

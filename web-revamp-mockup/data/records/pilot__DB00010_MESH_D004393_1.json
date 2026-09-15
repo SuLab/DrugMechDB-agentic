@@ -1,0 +1,131 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00010_MESH_D004393_1",
+    "drug": "sermorelin",
+    "drug_mesh": "MESH:D017337",
+    "drugbank": "DB:DB00010",
+    "disease": "Pituitary dwarfism",
+    "disease_mesh": "MESH:D004393",
+    "summary": "Sermorelin → Growth hormone-releasing hormone receptor → growth hormone secretion → Pituitary dwarfism"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D017337",
+      "name": "Sermorelin",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:Q02643",
+      "name": "Growth hormone-releasing hormone receptor",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0030252",
+      "name": "growth hormone secretion",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D004393",
+      "name": "Pituitary dwarfism",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "increased",
+      "source": "MESH:D017337",
+      "target": "UniProt:Q02643",
+      "evidence": [
+        {
+          "reference": "PMID:12446584",
+          "snippet": "GHRH stimulates GH secretion from somatotroph cells of the anterior pituitary via a pathway that involves GHRH receptor activation of adenylyl cyclase and increased cAMP production.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Sermorelin is the GHRH(1-29)NH2 agonist; like native GHRH it acts by activating the GHRH receptor, triggering adenylyl cyclase and cAMP signalling.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:6236914",
+          "snippet": "GHRH(1-29)NH2 is equipotent to GHRH(1-40); increasing doses from 10-200 micrograms per subject augments the duration of stimulated growth hormone (GH) release",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Sermorelin (GHRH(1-29)NH2) is a full GHRH-receptor agonist, equipotent to full-length GHRH in stimulating GH release.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:Q02643",
+      "target": "GO:0030252",
+      "evidence": [
+        {
+          "reference": "PMID:8395283",
+          "snippet": "The growth hormone-releasing hormone receptor (GHRHR) is a member of the family of G protein-coupled receptors that is expressed on pituitary somatotrope cells and mediates the actions of GHRH in stimulating growth hormone (GH) synthesis and secretion.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "The GHRH receptor is the somatotroph G-protein-coupled receptor that mediates stimulation of growth hormone secretion.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:12446584",
+          "snippet": "GHRH stimulates GH secretion from somatotroph cells of the anterior pituitary via a pathway that involves GHRH receptor activation of adenylyl cyclase and increased cAMP production.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Activation of the GHRH receptor drives the adenylyl-cyclase/cAMP pathway that stimulates GH secretion.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "decreased",
+      "source": "GO:0030252",
+      "target": "MESH:D004393",
+      "evidence": [
+        {
+          "reference": "PMID:10549302",
+          "snippet": "We describe a recently identified new form of dwarfism due to isolated growth hormone (GH) deficiency, secondary to inactivating mutations in the GH-releasing hormone receptor (GHRHR) gene.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Pituitary dwarfism arises from deficient growth hormone secretion; adequate GH secretion therefore opposes the disease, so raising GH secretion (via sermorelin) nets to reducing dwarfism.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:8395283",
+          "snippet": "Mice homozygous for this mutation have reduced GH secretion and a dwarf phenotype.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Loss of GHRH-receptor function reduces GH secretion and produces the dwarf phenotype, confirming the inverse relationship between GH secretion and dwarfism.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00010",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00010_MESH_D004393_1",
+    "record_id": "DB00010_MESH_D004393_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00010_MESH_D004393_1.yaml",
+    "summary_generated": true
+  }
+}

@@ -21,7 +21,9 @@ nodes:
     name: Cryopyrin-associated periodic syndrome
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00026
     target: UniProt:P14778
     evidence:
@@ -30,7 +32,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Anakinra competitively inhibits binding of IL-1 to the type 1 IL-1 receptor, decreasing the receptor's signaling activity."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P14778
     target: GO:0006954
     evidence:

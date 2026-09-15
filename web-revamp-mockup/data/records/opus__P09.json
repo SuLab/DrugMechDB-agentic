@@ -1,0 +1,289 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P09_DB00563_MESH_D054198",
+    "drug": "methotrexate",
+    "drug_mesh": "MESH:D008727",
+    "drugbank": "DB:DB00563",
+    "disease": "Acute lymphoblastic leukemia",
+    "disease_mesh": "MESH:D054198",
+    "summary": "methotrexate → Dihydrofolate reductase → tetrahydrofolate biosynthetic process → purine nucleotide biosynthetic process → DNA biosynthetic process"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00563",
+      "name": "methotrexate",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P00374",
+      "name": "Dihydrofolate reductase",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0046654",
+      "name": "tetrahydrofolate biosynthetic process",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "GO:0006164",
+      "name": "purine nucleotide biosynthetic process",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "UniProt:P04818",
+      "name": "Thymidylate synthase",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0071897",
+      "name": "DNA biosynthetic process",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D054198",
+      "name": "Acute lymphoblastic leukemia",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "DB:DB00563",
+      "target": "UniProt:P00374",
+      "evidence": [
+        {
+          "reference": "PMID:25136372",
+          "snippet": "MTX competitively inhibits dihydrofolate reductase (DHFR), an enzyme that participates in the tetrahydrofolate synthesis so as to inhibit purine synthesis.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Review of MTX mechanism in childhood ALL treatment.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Treatment of acute lymphoblastic leukemia from traditional chinese medicine.",
+            "authors": [
+              "Hsiao YL",
+              "Chang PC",
+              "Huang HJ",
+              "Kuo CC",
+              "Chen CY"
+            ],
+            "journal": "Evidence-based complementary and alternative medicine : eCAM",
+            "year": "2014",
+            "doi": "10.1155/2014/601064",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "participates in",
+      "source": "UniProt:P00374",
+      "target": "GO:0046654",
+      "evidence": [
+        {
+          "reference": "PMID:25136372",
+          "snippet": "MTX competitively inhibits dihydrofolate reductase (DHFR), an enzyme that participates in the tetrahydrofolate synthesis so as to inhibit purine synthesis.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Treatment of acute lymphoblastic leukemia from traditional chinese medicine.",
+            "authors": [
+              "Hsiao YL",
+              "Chang PC",
+              "Huang HJ",
+              "Kuo CC",
+              "Chen CY"
+            ],
+            "journal": "Evidence-based complementary and alternative medicine : eCAM",
+            "year": "2014",
+            "doi": "10.1155/2014/601064",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "GO:0046654",
+      "target": "GO:0006164",
+      "evidence": [
+        {
+          "reference": "PMID:25136372",
+          "snippet": "MTX competitively inhibits dihydrofolate reductase (DHFR), an enzyme that participates in the tetrahydrofolate synthesis so as to inhibit purine synthesis.",
+          "supports": "SUPPORT",
+          "explanation": "Tetrahydrofolate synthesis is required for purine synthesis; inhibiting DHFR (and thus tetrahydrofolate synthesis) inhibits purine synthesis.",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Treatment of acute lymphoblastic leukemia from traditional chinese medicine.",
+            "authors": [
+              "Hsiao YL",
+              "Chang PC",
+              "Huang HJ",
+              "Kuo CC",
+              "Chen CY"
+            ],
+            "journal": "Evidence-based complementary and alternative medicine : eCAM",
+            "year": "2014",
+            "doi": "10.1155/2014/601064",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "GO:0006164",
+      "target": "GO:0071897",
+      "evidence": [
+        {
+          "reference": "PMID:25136372",
+          "snippet": "Therefore, MTX can inhibit the synthesis of DNA.",
+          "supports": "SUPPORT",
+          "explanation": "Purine synthesis supplies nucleotides for DNA synthesis; MTX-mediated inhibition of purine synthesis contributes to inhibition of DNA synthesis.",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Treatment of acute lymphoblastic leukemia from traditional chinese medicine.",
+            "authors": [
+              "Hsiao YL",
+              "Chang PC",
+              "Huang HJ",
+              "Kuo CC",
+              "Chen CY"
+            ],
+            "journal": "Evidence-based complementary and alternative medicine : eCAM",
+            "year": "2014",
+            "doi": "10.1155/2014/601064",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "DB:DB00563",
+      "target": "UniProt:P04818",
+      "evidence": [
+        {
+          "reference": "PMID:25136372",
+          "snippet": "its downstream metabolite methotrexate polyglutamates (MTX-PGs) inhibit the thymidylate synthase (TS).",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Treatment of acute lymphoblastic leukemia from traditional chinese medicine.",
+            "authors": [
+              "Hsiao YL",
+              "Chang PC",
+              "Huang HJ",
+              "Kuo CC",
+              "Chen CY"
+            ],
+            "journal": "Evidence-based complementary and alternative medicine : eCAM",
+            "year": "2014",
+            "doi": "10.1155/2014/601064",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P04818",
+      "target": "GO:0071897",
+      "evidence": [
+        {
+          "reference": "PMID:26273805",
+          "snippet": "These drugs inhibit DNA synthesis by targeting the enzymes dihydrofolate reductase (DHFR) and/or thymidylate synthase (TYMS).",
+          "supports": "SUPPORT",
+          "explanation": "Thymidylate synthase activity is required for DNA synthesis; antifolate inhibition of TYMS inhibits DNA synthesis.",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Antithymidylate resistance enables transgene selection and cell survival for T cells in the presence of 5-fluorouracil and antifolates.",
+            "authors": [
+              "Rushworth D",
+              "Alpert A",
+              "Santana-Carrero R",
+              "Olivares S",
+              "Spencer D",
+              "Cooper LJ"
+            ],
+            "journal": "Gene therapy",
+            "year": "2016",
+            "doi": "10.1038/gt.2015.88",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "treats",
+      "source": "DB:DB00563",
+      "target": "MESH:D054198",
+      "evidence": [
+        {
+          "reference": "PMID:25136372",
+          "snippet": "In particular, for the treatment of childhood acute lymphoblastic leukemia, it had significant effect.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Treatment of acute lymphoblastic leukemia from traditional chinese medicine.",
+            "authors": [
+              "Hsiao YL",
+              "Chang PC",
+              "Huang HJ",
+              "Kuo CC",
+              "Chen CY"
+            ],
+            "journal": "Evidence-based complementary and alternative medicine : eCAM",
+            "year": "2014",
+            "doi": "10.1155/2014/601064",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00563",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P09",
+    "record_id": "P09_DB00563_MESH_D054198",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P09.yaml",
+    "summary_generated": true
+  }
+}

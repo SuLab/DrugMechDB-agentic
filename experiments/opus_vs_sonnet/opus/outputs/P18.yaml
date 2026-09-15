@@ -24,7 +24,9 @@ nodes:
     name: Bipolar Disorder
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB01356
     target: UniProt:P49841
     evidence:
@@ -38,7 +40,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "Review identifying direct GSK-3 beta inhibition as a mechanism of lithium in bipolar disorder."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:P49841
     target: UniProt:P35222
     evidence:
@@ -52,7 +55,8 @@ links:
         supports: SUPPORT
         evidence_source: MODEL_ORGANISM
         explanation: "GSK-3 beta inhibition by lithium stabilizes beta-catenin."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:P35222
     target: GO:0006915
     evidence:

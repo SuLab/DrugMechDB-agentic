@@ -24,7 +24,7 @@ nodes:
     name: Crohn's disease
     label: Disease
 links:
-  - key: molecularly interacts with
+  - key: directly physically interacts with
     source: MESH:D000069285
     target: UniProt:P01375
     evidence:
@@ -33,7 +33,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Infliximab's MoA is defined by its physical binding to both soluble and membrane-bound TNF-α, establishing a direct molecular interaction between the drug and its target protein."
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000069285
     target: UniProt:P01375
     evidence:
@@ -42,7 +44,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Infliximab neutralizes TNF-α, preventing it from engaging its receptors. Neutralization is equivalent to decreasing TNF-α functional activity."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P01375
     target: GO:0038061
     evidence:
@@ -51,7 +54,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "TNF-α directly activates NF-κB signaling (GO:0038061 NIK/NF-κB signaling), as shown by IκB-α degradation and NF-κB p65 nuclear translocation upon TNF-α stimulation."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0038061
     target: GO:0006954
     evidence:

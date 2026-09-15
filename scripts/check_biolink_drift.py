@@ -249,8 +249,11 @@ def render_report(drift: dict, meta: dict, *, show_added: bool) -> str:
         A("")
         A("These edges' keys are no longer valid in the current Biolink model (most were")
         A("folded into `regulates`/`affects` + qualifiers in the v2->v4 refactor). Removing")
-        A("them from the enum would break existing records, so this needs a human decision")
-        A("(the locked policy is to translate at the publish/export layer, not migrate data).")
+        A("them from the enum would break the legacy corpus, so this needs a human decision.")
+        A("Per docs/biolink_version_decision.md the enum deliberately spans both eras: QC")
+        A("Layer 3 allows these for `legacy` records and rejects them for `ai_curated` ones,")
+        A("and src/drugmechdb/schema/biolink_predicate_status.yaml records the replacement")
+        A("each one maps to.")
         A("")
         for r in drift["removed"]:
             A(f"  - {r['predicate']:<28} {r['meaning'] or '(no biolink mapping)'}")

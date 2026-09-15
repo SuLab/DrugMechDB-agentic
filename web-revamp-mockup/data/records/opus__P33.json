@@ -1,0 +1,252 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P33_DB00068_MESH_D020529",
+    "drug": "Interferon beta-1b",
+    "drug_mesh": "MESH:D000068576",
+    "drugbank": "DB:DB00068",
+    "disease": "Relapsing-remitting multiple sclerosis",
+    "disease_mesh": "MESH:D020529",
+    "summary": "Interferon beta-1b → Interleukin-27 subunit alpha → T-helper 17 cell → Relapsing-remitting multiple sclerosis"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00068",
+      "name": "Interferon beta-1b",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P17181",
+      "name": "Interferon alpha/beta receptor 1",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0007259",
+      "name": "cell surface receptor signaling pathway via JAK-STAT",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "UniProt:Q8NEV9",
+      "name": "Interleukin-27 subunit alpha",
+      "label": "Protein"
+    },
+    {
+      "id": "CL:0000899",
+      "name": "T-helper 17 cell",
+      "label": "Cell"
+    },
+    {
+      "id": "MESH:D020529",
+      "name": "Relapsing-remitting multiple sclerosis",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "increased",
+      "source": "DB:DB00068",
+      "target": "UniProt:P17181",
+      "evidence": [
+        {
+          "reference": "PMID:26008745",
+          "snippet": "Quantitative single-molecule imaging of receptor assembly in the plasma membrane of living cells clearly identified IFN-induced dimerization of IFNAR1 and IFNAR2.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "IFN-beta engages and dimerizes the type I interferon receptor chains IFNAR1 and IFNAR2, activating the receptor; IFN-beta has ~100-fold higher binding affinity to efficiently recruit IFNAR1.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Receptor dimerization dynamics as a regulatory valve for plasticity of type I interferon signaling.",
+            "authors": [
+              "Wilmes S",
+              "Beutel O",
+              "Li Z",
+              "Francois-Newton V",
+              "Richter CP",
+              "Janning D",
+              "Kroll C",
+              "Hanhart P",
+              "Hötte K",
+              "You C",
+              "Uzé G",
+              "Pellegrini S",
+              "Piehler J"
+            ],
+            "journal": "The Journal of cell biology",
+            "year": "2015",
+            "doi": "10.1083/jcb.201412049",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "participates in",
+      "source": "UniProt:P17181",
+      "target": "GO:0007259",
+      "evidence": [
+        {
+          "reference": "PMID:21106255",
+          "snippet": "IFNß exerts its activity through the interaction with IFNAR, through activation of the JAK/STAT pathway.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Gene expression in IFNß signalling pathway differs between monocytes, CD4 and CD8 T cells from MS patients.",
+            "authors": [
+              "Oliver-Martos B",
+              "Órpez T",
+              "Pinto-Medel MJ",
+              "Mayorga C",
+              "García-León JA",
+              "Maldonado-Sanchez R",
+              "Suardíaz M",
+              "Guerrero M",
+              "Luque G",
+              "Leyva L",
+              "Fernández O"
+            ],
+            "journal": "Journal of neuroimmunology",
+            "year": "2011",
+            "doi": "10.1016/j.jneuroim.2010.10.033",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "DB:DB00068",
+      "target": "UniProt:Q8NEV9",
+      "evidence": [
+        {
+          "reference": "PMID:21420486",
+          "snippet": "IFN-β induced IL-27 expression by DC, and neutralisation of IL-27 abrogated the suppressive effects of IFN-β on zymosan-induced IL-1 and IL-23 production and the generation of Th17 cells in vitro.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "IL-27 mediates the response to IFN-β therapy in multiple sclerosis patients by inhibiting Th17 cells.",
+            "authors": [
+              "Sweeney CM",
+              "Lonergan R",
+              "Basdeo SA",
+              "Kinsella K",
+              "Dungan LS",
+              "Higgins SC",
+              "Kelly PJ",
+              "Costelloe L",
+              "Tubridy N",
+              "Mills KH",
+              "Fletcher JM"
+            ],
+            "journal": "Brain, behavior, and immunity",
+            "year": "2011",
+            "doi": "10.1016/j.bbi.2011.03.007",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "decreased",
+      "source": "UniProt:Q8NEV9",
+      "target": "CL:0000899",
+      "evidence": [
+        {
+          "reference": "PMID:21420486",
+          "snippet": "IFN-β induced IL-27 expression by DC, and neutralisation of IL-27 abrogated the suppressive effects of IFN-β on zymosan-induced IL-1 and IL-23 production and the generation of Th17 cells in vitro.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "IL-27 mediates the IFN-beta-driven suppression of Th17 cell generation; neutralising IL-27 abrogates this suppression.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "IL-27 mediates the response to IFN-β therapy in multiple sclerosis patients by inhibiting Th17 cells.",
+            "authors": [
+              "Sweeney CM",
+              "Lonergan R",
+              "Basdeo SA",
+              "Kinsella K",
+              "Dungan LS",
+              "Higgins SC",
+              "Kelly PJ",
+              "Costelloe L",
+              "Tubridy N",
+              "Mills KH",
+              "Fletcher JM"
+            ],
+            "journal": "Brain, behavior, and immunity",
+            "year": "2011",
+            "doi": "10.1016/j.bbi.2011.03.007",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "CL:0000899",
+      "target": "MESH:D020529",
+      "evidence": [
+        {
+          "reference": "PMID:26095162",
+          "snippet": "These findings suggest that the p38 signalling pathway, by modulating the Th17 differentiation and response, is involved in the pathogenesis of MS",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Th17 differentiation and response are involved in the pathogenesis of multiple sclerosis, studied here in relapsing-remitting MS patients.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The p38 mitogen-activated protein kinase cascade modulates T helper type 17 differentiation and functionality in multiple sclerosis.",
+            "authors": [
+              "Di Mitri D",
+              "Sambucci M",
+              "Loiarro M",
+              "De Bardi M",
+              "Volpe E",
+              "Cencioni MT",
+              "Gasperini C",
+              "Centonze D",
+              "Sette C",
+              "Akbar AN",
+              "Borsellino G",
+              "Battistini L"
+            ],
+            "journal": "Immunology",
+            "year": "2015",
+            "doi": "10.1111/imm.12497",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00068",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P33",
+    "record_id": "P33_DB00068_MESH_D020529",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P33.yaml",
+    "summary_generated": true
+  }
+}

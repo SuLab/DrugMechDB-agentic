@@ -1,0 +1,114 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "B02362_MESH_D003882_1",
+    "drug": "aminobenzoic acid",
+    "drug_mesh": "MESH:D010129",
+    "drugbank": "DB:B02362",
+    "disease": "Dermatomyositis",
+    "disease_mesh": "MESH:D003882",
+    "summary": "aminobenzoic acid → Glycosaminoglycans → Dermatomyositis"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D010129",
+      "name": "aminobenzoic acid",
+      "label": "Drug"
+    },
+    {
+      "id": "MESH:D006025",
+      "name": "Glycosaminoglycans",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "MESH:D003882",
+      "name": "Dermatomyositis",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "abundance",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D010129",
+      "target": "MESH:D006025",
+      "evidence": [
+        {
+          "reference": "PMID:1350132",
+          "snippet": "Monolayer cultures containing Potaba showed a dose-dependent inhibition...similar dose dependent inhibition of glycosaminoglycan secretion in all 3 groups",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Potaba (potassium para-aminobenzoate, the salt of aminobenzoic acid) dose-dependently inhibits glycosaminoglycan secretion by dermal fibroblasts.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:155125",
+          "snippet": "Potassium para-aminobenzoate was tested for its ability to affect growth and macromolecule synthesis...Acid mucopolysaccharide secretion by rheumatoid synovial cells and scleroderma fibroblasts was inhibited even at 100 microgram/ml",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Acid mucopolysaccharides are glycosaminoglycans; their secretion by scleroderma fibroblasts is inhibited by potassium para-aminobenzoate within the therapeutic range.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "manifestation of",
+      "source": "MESH:D006025",
+      "target": "MESH:D003882",
+      "evidence": [
+        {
+          "reference": "PMID:17300236",
+          "snippet": "Dermal mucin is an amorphous gelatinous substance composed primarily of hyaluronan (HA) and sulphated glycosaminoglycans (GAGs)...deposition is associated with lupus erythematosus, dermatomyositis, scleroderma and granuloma annulare",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Dermal mucin, composed of glycosaminoglycans, is deposited in dermatomyositis lesions; this GAG deposition is a manifestation of the disease.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:26322557",
+          "snippet": "deposition of glycosaminoglycans (mucin), either focally or diffusely within the dermis...secondary to several dermatoses, most notably lupus erythematous, scleroderma, and dermatomyositis",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Dermal mucinosis (glycosaminoglycan deposition) occurs secondary to dermatomyositis, i.e. as a manifestation of the disease.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1350132/",
+      "type": "other",
+      "label": "pubmed.ncbi.nlm.nih.gov — record source"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/155125/",
+      "type": "other",
+      "label": "pubmed.ncbi.nlm.nih.gov — record source"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17300236/",
+      "type": "other",
+      "label": "pubmed.ncbi.nlm.nih.gov — record source"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26322557/",
+      "type": "other",
+      "label": "pubmed.ncbi.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__B02362_MESH_D003882_1",
+    "record_id": "B02362_MESH_D003882_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/B02362_MESH_D003882_1.yaml",
+    "summary_generated": true
+  }
+}

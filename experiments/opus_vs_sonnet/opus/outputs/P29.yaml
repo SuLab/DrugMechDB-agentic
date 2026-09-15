@@ -24,7 +24,9 @@ nodes:
     name: Gout
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00437
     target: UniProt:P47989
     evidence:
@@ -33,7 +35,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Allopurinol is metabolized by xanthine oxidoreductase to oxypurinol, which inhibits the enzyme's active center."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P47989
     target: MESH:D014527
     evidence:
@@ -42,7 +45,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Xanthine oxidoreductase produces uric acid as the final step of purine metabolism."
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D014527
     target: UniProt:Q96P20
     evidence:

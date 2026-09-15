@@ -24,7 +24,9 @@ nodes:
     name: Pulmonary Tuberculosis
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D007538
     target: UniProt:P0A5Q9
     evidence:

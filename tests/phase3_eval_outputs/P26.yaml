@@ -24,7 +24,9 @@ nodes:
     name: Diabetes mellitus type 2
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D008687
     target: UniProt:Q13131
     evidence:
@@ -38,7 +40,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: Comprehensive review confirming that metformin raises cytosolic AMP, which activates AMPK (including the PRKAA1-containing heterotrimeric complex).
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:Q13131
     target: GO:0006094
     evidence:

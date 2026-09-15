@@ -41,7 +41,9 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: Confirms oseltamivir is a prodrug and its active metabolite is oseltamivir carboxylate, supporting the has metabolite relationship.
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: CHEBI:64337
     target: UniProt:P03472
     evidence:
@@ -55,7 +57,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: Establishes NA as the antiviral drug target; combined with the first evidence item, confirms oseltamivir carboxylate decreases NA activity.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P03472
     target: GO:0019076
     evidence:

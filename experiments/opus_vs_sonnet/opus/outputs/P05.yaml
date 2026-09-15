@@ -27,7 +27,9 @@ nodes:
     name: Stroke
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: UniProt:P33261
     target: DB:DB00758
     evidence:
@@ -36,7 +38,9 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: CYP2C19 activates the clopidogrel prodrug to its active metabolite.
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00758
     target: UniProt:Q9H244
     evidence:
@@ -54,7 +58,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: The P2Y12 receptor mediates platelet aggregation.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0070527
     target: GO:0007596
     evidence:

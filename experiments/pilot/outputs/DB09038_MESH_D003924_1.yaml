@@ -27,7 +27,9 @@ nodes:
     name: Diabetes Mellitus, Type 2
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB09038
     target: UniProt:P31639
     evidence:
@@ -35,7 +37,8 @@ links:
         snippet: "Empagliflozin is an orally available, potent and highly selective inhibitor of the sodium glucose cotransporter 2 (SGLT2)."
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P31639
     target: GO:0035623
     evidence:

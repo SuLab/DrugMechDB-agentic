@@ -1,0 +1,162 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P29_DB00437_MESH_D006073",
+    "drug": "Allopurinol",
+    "drug_mesh": "MESH:D000493",
+    "drugbank": "DB:DB00437",
+    "disease": "Gout",
+    "disease_mesh": "MESH:D006073",
+    "summary": "Allopurinol → Xanthine oxidoreductase → Uric Acid → Gout"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D000493",
+      "name": "Allopurinol",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P47989",
+      "name": "Xanthine oxidoreductase",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D014527",
+      "name": "Uric Acid",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "MESH:D006073",
+      "name": "Gout",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D000493",
+      "target": "UniProt:P47989",
+      "evidence": [
+        {
+          "reference": "PMID:39149682",
+          "snippet": "Allopurinol lowers urate production through the inhibition of xanthine oxidase.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Allopurinol directly inhibits xanthine oxidase, reducing urate production.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Allopurinol: Clinical Considerations in the Development and Treatment of Stevens-Johnson Syndrome, Toxic Epidermal Necrolysis, and Other Associated Drug Reactions.",
+            "authors": [
+              "Dillman KM",
+              "Hawkins AM",
+              "Ragland AR",
+              "Wester GC",
+              "Greene DR",
+              "Varrassi G",
+              "Moore P",
+              "Behara R",
+              "Ahmadzadeh S",
+              "Siddaiah H",
+              "Shekoohi S",
+              "Kaye AD"
+            ],
+            "journal": "Cureus",
+            "year": "2024",
+            "doi": "10.7759/cureus.64654",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P47989",
+      "target": "MESH:D014527",
+      "evidence": [
+        {
+          "reference": "PMID:28478180",
+          "snippet": "Xanthine oxidase (XO), a versatile metalloflavoprotein enzyme, catalyzes the oxidative hydroxylation of hypoxanthine and xanthine to uric acid in purine catabolism while simultaneously producing reactive oxygen species.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Xanthine oxidase catalyzes the final steps of purine catabolism, producing uric acid from hypoxanthine and xanthine.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Xanthine oxidase inhibitors beyond allopurinol and febuxostat; an overview and selection of potential leads based on in silico calculated physico-chemical properties, predicted pharmacokinetics and toxicity.",
+            "authors": [
+              "Šmelcerović A",
+              "Tomović K",
+              "Šmelcerović Ž",
+              "Petronijević Ž",
+              "Kocić G",
+              "Tomašič T",
+              "Jakopin Ž",
+              "Anderluh M"
+            ],
+            "journal": "European journal of medicinal chemistry",
+            "year": "2017",
+            "doi": "10.1016/j.ejmech.2017.04.031",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "MESH:D014527",
+      "target": "MESH:D006073",
+      "evidence": [
+        {
+          "reference": "PMID:33671646",
+          "snippet": "It results from sustained hyperuricemia that leads to monosodium urate crystal deposition in joint structures and soft tissue.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Elevated uric acid (hyperuricemia) leads to monosodium urate crystal deposition in joints, causing gout.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Role of Vitamin C in Prophylaxis and Treatment of Gout-A Literature Review.",
+            "authors": [
+              "Brzezińska O",
+              "Styrzyński F",
+              "Makowska J",
+              "Walczak K"
+            ],
+            "journal": "Nutrients",
+            "year": "2021",
+            "doi": "10.3390/nu13020701",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.drugbank.ca/drugs/DB00437",
+      "type": "drugbank",
+      "label": "drugbank.ca — record source"
+    },
+    {
+      "url": "https://meshb.nlm.nih.gov/record/ui?ui=D006073",
+      "type": "other",
+      "label": "meshb.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "sonnet__P29",
+    "record_id": "P29_DB00437_MESH_D006073",
+    "run": "sonnet",
+    "run_label": "Sonnet (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/sonnet/outputs/P29.yaml",
+    "summary_generated": true
+  }
+}

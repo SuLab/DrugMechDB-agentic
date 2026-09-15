@@ -36,7 +36,9 @@ links:
         snippet: Oseltamivir, an inactive anti-influenza virus prodrug, is activated (hydrolysed) in vivo by carboxylesterase 1 (CES1) to its active metabolite oseltamivir carboxylate.
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: CHEBI:67200
     target: UniProt:P03472
     evidence:
@@ -48,7 +50,8 @@ links:
         snippet: Anti influenza drugs such as Oseltamivir target a highly conserved active site of NA, which comprises of 8 functional residues (R118, D151, R152, R224, E276, R292, R371 and Y406) to restrict viral release from host cells, thus inhibiting its ability to cleave sialic acid residues on the cell membrane.
         supports: SUPPORT
         evidence_source: COMPUTATIONAL
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P03472
     target: GO:0019076
     evidence:

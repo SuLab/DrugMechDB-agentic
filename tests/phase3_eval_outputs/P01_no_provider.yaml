@@ -30,7 +30,9 @@ nodes:
     name: Myocardial Infarction
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D001241
     target: UniProt:P23219
     evidence:
@@ -39,7 +41,9 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "Aspirin covalently acetylates Ser529 of platelet COX-1, irreversibly inhibiting its catalytic activity."
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D001241
     target: UniProt:P35354
     evidence:
@@ -48,7 +52,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Aspirin (ASA) acetylates COX-2 at Serine 516, inhibiting its prostanoid-generating activity."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P23219
     target: GO:0001516
     evidence:
@@ -57,7 +62,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "Catalytically intact COX-1 drives platelet prostanoid biosynthesis; its acetylation by aspirin suppresses thromboxane A2 (a prostaglandin-class product) generation."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P35354
     target: GO:0001516
     evidence:
@@ -75,7 +81,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "TXA2 is the platelet-specific prostanoid output of COX-1-mediated arachidonic acid metabolism (the prostaglandin biosynthetic process)."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: MESH:D013928
     target: GO:0070527
     evidence:

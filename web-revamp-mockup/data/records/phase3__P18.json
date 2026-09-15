@@ -1,0 +1,199 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P18_DB01356_MESH_D001714",
+    "drug": "Lithium",
+    "drug_mesh": "MESH:D008094",
+    "drugbank": "DB:DB01356",
+    "disease": "Bipolar Disorder",
+    "disease_mesh": "MESH:D001714",
+    "summary": "Lithium → Glycogen synthase kinase-3 beta → apoptotic process → Bipolar Disorder"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D008094",
+      "name": "Lithium",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P49841",
+      "name": "Glycogen synthase kinase-3 beta",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0006915",
+      "name": "apoptotic process",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D001714",
+      "name": "Bipolar Disorder",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D008094",
+      "target": "UniProt:P49841",
+      "evidence": [
+        {
+          "reference": "PMID:12071511",
+          "snippet": "lithium has been identified as a selective and direct inhibitor of GSK-3beta",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Seminal paper in Bipolar Disorders journal establishing lithium as a selective and direct inhibitor of GSK-3beta activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Glycogen synthase kinase-3beta, mood stabilizers, and neuroprotection.",
+            "authors": [
+              "Li X",
+              "Bijur GN",
+              "Jope RS"
+            ],
+            "journal": "Bipolar disorders",
+            "year": "2002",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:21732538",
+          "snippet": "lithium is known to be a direct inhibitor of GSK-3beta",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Medicinal chemistry paper developing GSK-3beta inhibitors for bipolar disorder, confirming lithium's known direct inhibitory action on GSK-3beta.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Identification of a glycogen synthase kinase-3β inhibitor that attenuates hyperactivity in CLOCK mutant mice.",
+            "authors": [
+              "Kozikowski AP",
+              "Gunosewoyo H",
+              "Guo S",
+              "Gaisina IN",
+              "Walter RL",
+              "Ketcherside A",
+              "McClung CA",
+              "Mesecar AD",
+              "Caldarone B"
+            ],
+            "journal": "ChemMedChem",
+            "year": "2011",
+            "doi": "10.1002/cmdc.201100188",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P49841",
+      "target": "GO:0006915",
+      "evidence": [
+        {
+          "reference": "PMID:12071511",
+          "snippet": "GSK-3beta is a pro-apoptotic enzyme",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "The paper explicitly identifies GSK-3beta as a pro-apoptotic enzyme, meaning it positively regulates the apoptotic process.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Glycogen synthase kinase-3beta, mood stabilizers, and neuroprotection.",
+            "authors": [
+              "Li X",
+              "Bijur GN",
+              "Jope RS"
+            ],
+            "journal": "Bipolar disorders",
+            "year": "2002",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0006915",
+      "target": "MESH:D001714",
+      "evidence": [
+        {
+          "reference": "PMID:12071511",
+          "snippet": "several drugs therapeutic for bipolar disorder can provide neuroprotection by inhibiting the pro-apoptotic effects of GSK-3beta, providing new evidence that dysregulation of GSK-3beta may contribute to the pathophysiology of bipolar disorder",
+          "supports": "PARTIAL",
+          "evidence_source": "IN_VITRO",
+          "explanation": "The efficacy of bipolar drugs is attributed to inhibiting GSK-3beta's pro-apoptotic effects, implying that apoptotic process driven by GSK-3beta contributes to bipolar disorder pathophysiology. Support is PARTIAL because \"may contribute\" is hedged language.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Glycogen synthase kinase-3beta, mood stabilizers, and neuroprotection.",
+            "authors": [
+              "Li X",
+              "Bijur GN",
+              "Jope RS"
+            ],
+            "journal": "Bipolar disorders",
+            "year": "2002",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:36440772",
+          "snippet": "inhibition of glycogen synthase kinase 3 beta and inositol monophosphatase, resulting in induction of brain-derived neurotrophic factor, antiapoptotic proteins, deprivation of calcium-induced apoptosis",
+          "supports": "PARTIAL",
+          "evidence_source": "OTHER",
+          "explanation": "Lithium treats bipolar disorder by inducing antiapoptotic proteins and depriving calcium-induced apoptosis, supporting that apoptotic process is a pathological contributor to bipolar disorder.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "[A systematic analysis of neurobiological roles of lithium].",
+            "authors": [
+              "Gogoleva IV",
+              "Gromova OA",
+              "Torshin IY",
+              "Grishina TR",
+              "Pronin AV"
+            ],
+            "journal": "Zhurnal nevrologii i psikhiatrii imeni S.S. Korsakova",
+            "year": "2022",
+            "doi": "10.17116/jnevro202212211117",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB01356#mechanism-of-action",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    },
+    {
+      "url": "https://www.uniprot.org/uniprot/P49841#function",
+      "type": "other",
+      "label": "uniprot.org — record source"
+    }
+  ],
+  "site": {
+    "id": "phase3__P18",
+    "record_id": "P18_DB01356_MESH_D001714",
+    "run": "phase3",
+    "run_label": "Phase-3 eval",
+    "source_file": "tests/phase3_eval_outputs/P18.yaml",
+    "summary_generated": true
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P15_DB00787_MESH_D006561",
+    "drug": "Acyclovir",
+    "drug_mesh": "MESH:D000212",
+    "drugbank": "DB:DB00787",
+    "disease": "Herpes Simplex",
+    "disease_mesh": "MESH:D006561",
+    "summary": "Acyclovir → Acyclovir triphosphate → Herpes simplex virus type 1 DNA polymerase → DNA replication → Human herpesvirus 1 → Herpes Simplex"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D000212",
+      "name": "Acyclovir",
+      "label": "Drug"
+    },
+    {
+      "id": "MESH:C025643",
+      "name": "Acyclovir triphosphate",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "UniProt:P03176",
+      "name": "Herpes simplex virus type 1 thymidine kinase",
+      "label": "Protein"
+    },
+    {
+      "id": "UniProt:P04293",
+      "name": "Herpes simplex virus type 1 DNA polymerase",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0006260",
+      "name": "DNA replication",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "NCBITaxon:10298",
+      "name": "Human herpesvirus 1",
+      "label": "OrganismTaxon"
+    },
+    {
+      "id": "MESH:D006561",
+      "name": "Herpes Simplex",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "has metabolite",
+      "source": "MESH:D000212",
+      "target": "MESH:C025643",
+      "evidence": [
+        {
+          "reference": "PMID:6313600",
+          "snippet": "Acyclovir monophosphate is subsequently converted to a triphosphate which is a more potent inhibitor of herpes virus DNA polymerases than of cellular DNA polymerases.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The biochemistry and mechanism of action of acyclovir.",
+            "authors": [
+              "Elion GB"
+            ],
+            "journal": "The Journal of antimicrobial chemotherapy",
+            "year": "1983",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "participates in",
+      "source": "UniProt:P03176",
+      "target": "GO:0006260",
+      "evidence": [
+        {
+          "reference": "PMID:6313600",
+          "snippet": "This selectivity is due to the initial activation of the drug by phosphorylation by a herpes virus-specified thymidine kinase.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The biochemistry and mechanism of action of acyclovir.",
+            "authors": [
+              "Elion GB"
+            ],
+            "journal": "The Journal of antimicrobial chemotherapy",
+            "year": "1983",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:C025643",
+      "target": "UniProt:P04293",
+      "evidence": [
+        {
+          "reference": "PMID:6291456",
+          "snippet": "HSV-1 DNA polymerase was the most sensitive to inhibition by acyclovir triphosphate (ACVTP).",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mode of action of acyclovir triphosphate on herpesviral and cellular DNA polymerases.",
+            "authors": [
+              "Allaudeen HS",
+              "Descamps J",
+              "Sehgal RK"
+            ],
+            "journal": "Antiviral research",
+            "year": "1982",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "participates in",
+      "source": "UniProt:P04293",
+      "target": "GO:0006260",
+      "evidence": [
+        {
+          "reference": "PMID:6291456",
+          "snippet": "it appeared to act as a chain terminator in DNA replication catalyzed by either HSV-1 DNA polymerase or DNA polymerase alpha",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mode of action of acyclovir triphosphate on herpesviral and cellular DNA polymerases.",
+            "authors": [
+              "Allaudeen HS",
+              "Descamps J",
+              "Sehgal RK"
+            ],
+            "journal": "Antiviral research",
+            "year": "1982",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "occurs in",
+      "source": "GO:0006260",
+      "target": "NCBITaxon:10298",
+      "evidence": [
+        {
+          "reference": "PMID:6291456",
+          "snippet": "it appeared to act as a chain terminator in DNA replication catalyzed by either HSV-1 DNA polymerase or DNA polymerase alpha",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mode of action of acyclovir triphosphate on herpesviral and cellular DNA polymerases.",
+            "authors": [
+              "Allaudeen HS",
+              "Descamps J",
+              "Sehgal RK"
+            ],
+            "journal": "Antiviral research",
+            "year": "1982",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "NCBITaxon:10298",
+      "target": "MESH:D006561",
+      "evidence": [
+        {
+          "reference": "PMID:23389903",
+          "snippet": "Herpes simplex virus (HSV) is a significant human pathogen causing mucocutaneous lesions primarily in the oral or genital mucosa.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Peptide inhibitors against herpes simplex virus infections.",
+            "authors": [
+              "Galdiero S",
+              "Falanga A",
+              "Tarallo R",
+              "Russo L",
+              "Galdiero E",
+              "Cantisani M",
+              "Morelli G",
+              "Galdiero M"
+            ],
+            "journal": "Journal of peptide science : an official publication of the European Peptide Society",
+            "year": "2013",
+            "doi": "10.1002/psc.2489",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00787",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P15",
+    "record_id": "P15_DB00787_MESH_D006561",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P15.yaml",
+    "summary_generated": true
+  }
+}

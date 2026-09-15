@@ -21,7 +21,9 @@ nodes:
     name: Gout
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000493
     target: UniProt:P47989
     evidence:
@@ -30,7 +32,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: Allopurinol directly inhibits xanthine oxidase, reducing urate production.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P47989
     target: MESH:D014527
     evidence:

@@ -1,0 +1,109 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00619_MESH_D015464_1",
+    "drug": "imatinib",
+    "drug_mesh": "MESH:D000068877",
+    "drugbank": "DB:DB00619",
+    "disease": "Chronic myelogenous leukemia, BCR-ABL positive",
+    "disease_mesh": "MESH:D015464",
+    "summary": "imatinib → BCR/ABL fusion protein → Leukemia, Myelogenous, Chronic, BCR-ABL Positive"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D000068877",
+      "name": "imatinib",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:A9UF07",
+      "name": "BCR/ABL fusion protein",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D015464",
+      "name": "Leukemia, Myelogenous, Chronic, BCR-ABL Positive",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D000068877",
+      "target": "UniProt:A9UF07",
+      "evidence": [
+        {
+          "reference": "PMID:12200353",
+          "snippet": "Imatinib is an orally administered, potent inhibitor of the Bcr-Abl tyrosine kinase.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "UniProt:A9UF07",
+      "target": "MESH:D015464",
+      "evidence": [
+        {
+          "reference": "PMID:11287972",
+          "snippet": "BCR-ABL is a constitutively activated tyrosine kinase that causes chronic myeloid leukemia (CML).",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Efficacy and safety of a specific inhibitor of the BCR-ABL tyrosine kinase in chronic myeloid leukemia.",
+            "authors": [
+              "Druker BJ",
+              "Talpaz M",
+              "Resta DJ",
+              "Peng B",
+              "Buchdunger E",
+              "Ford JM",
+              "Lydon NB",
+              "Kantarjian H",
+              "Capdeville R",
+              "Ohno-Jones S",
+              "Sawyers CL"
+            ],
+            "journal": "The New England journal of medicine",
+            "year": "2001",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:42174092",
+          "snippet": "This alteration gives rise to the BCR::ABL1 fusion oncogene, whose constitutive tyrosine kinase activity promotes uncontrolled proliferation and survival of leukemic cells.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Corroborates that the BCR-ABL fusion drives the leukemic phenotype of CML.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00619",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00619_MESH_D015464_1__r3",
+    "record_id": "DB00619_MESH_D015464_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00619_MESH_D015464_1__r3.yaml",
+    "summary_generated": true
+  }
+}

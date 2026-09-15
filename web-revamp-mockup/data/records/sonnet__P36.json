@@ -1,0 +1,258 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P36_DB00027_MESH_D003234",
+    "drug": "Gramicidin",
+    "drug_mesh": "MESH:D006096",
+    "drugbank": "DB:DB00027",
+    "disease": "Bacterial conjunctivitis",
+    "disease_mesh": "MESH:D003234",
+    "summary": "Gramicidin → Plasma membrane → Ion transport → Killing of cells of other organism → Bacterial conjunctivitis"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D006096",
+      "name": "Gramicidin",
+      "label": "Drug"
+    },
+    {
+      "id": "GO:0005886",
+      "name": "Plasma membrane",
+      "label": "CellularComponent"
+    },
+    {
+      "id": "GO:0006811",
+      "name": "Ion transport",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "GO:0031640",
+      "name": "Killing of cells of other organism",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D003234",
+      "name": "Bacterial conjunctivitis",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "disrupts",
+      "source": "MESH:D006096",
+      "target": "GO:0005886",
+      "evidence": [
+        {
+          "reference": "PMID:35872830",
+          "snippet": "1 folds into a β6.3-helix in a lipid bilayer and forms a head-to-head dimer to function as a transmembrane channel for monovalent cations (H+, Na+, and K+)",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Gramicidin A inserts into the lipid bilayer and forms transmembrane ion channels, thereby disrupting the plasma membrane barrier function.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Gramicidin A accumulates in mitochondria, reduces ATP levels, induces mitophagy, and inhibits cancer cell growth.",
+            "authors": [
+              "Xue YW",
+              "Itoh H",
+              "Dan S",
+              "Inoue M"
+            ],
+            "journal": "Chemical science",
+            "year": "2022",
+            "doi": "10.1039/d2sc02024f",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:29501941",
+          "snippet": "upon insertion into membranes, it forms channels that disrupts ion gradients",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Design, synthesis, and biological evaluation of stable β6.3-Helices: Discovery of non-hemolytic antibacterial peptides.",
+            "authors": [
+              "Reddy DN",
+              "Singh S",
+              "Ho CMW",
+              "Patel J",
+              "Schlesinger P",
+              "Rodgers S",
+              "Doctor A",
+              "Marshall GR"
+            ],
+            "journal": "European journal of medicinal chemistry",
+            "year": "2018",
+            "doi": "10.1016/j.ejmech.2018.02.057",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "participates in",
+      "source": "GO:0005886",
+      "target": "GO:0006811",
+      "evidence": [
+        {
+          "reference": "PMID:35872830",
+          "snippet": "Compound 1 not only disrupted the ion concentration gradients of the plasma membrane",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "The gramicidin-permeabilized plasma membrane participates in aberrant ion transport; monovalent cations flow freely through gramicidin channels, dissipating normal ion concentration gradients.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Gramicidin A accumulates in mitochondria, reduces ATP levels, induces mitophagy, and inhibits cancer cell growth.",
+            "authors": [
+              "Xue YW",
+              "Itoh H",
+              "Dan S",
+              "Inoue M"
+            ],
+            "journal": "Chemical science",
+            "year": "2022",
+            "doi": "10.1039/d2sc02024f",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "GO:0006811",
+      "target": "GO:0031640",
+      "evidence": [
+        {
+          "reference": "PMID:24356337",
+          "snippet": "Changes in the conductance of membranes for ions will lead to cell death",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "pH dependent transfer of nano-pores into membrane of cancer cells to induce apoptosis.",
+            "authors": [
+              "Wijesinghe D",
+              "Arachchige MC",
+              "Lu A",
+              "Reshetnyak YK",
+              "Andreev OA"
+            ],
+            "journal": "Scientific reports",
+            "year": "2013",
+            "doi": "10.1038/srep03560",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:24356337",
+          "snippet": "Gramicidin channels inserted into the cancer cells open flux of protons into the cytoplasm and disrupt balance of other monovalent cations, which induces cell apoptosis",
+          "supports": "PARTIAL",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Gramicidin-mediated uncontrolled ion transport through the membrane causes cell death. Evidence shown in cancer cells but the ion-channel-disruption mechanism applies to bacterial cells.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "pH dependent transfer of nano-pores into membrane of cancer cells to induce apoptosis.",
+            "authors": [
+              "Wijesinghe D",
+              "Arachchige MC",
+              "Lu A",
+              "Reshetnyak YK",
+              "Andreev OA"
+            ],
+            "journal": "Scientific reports",
+            "year": "2013",
+            "doi": "10.1038/srep03560",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "treats",
+      "source": "GO:0031640",
+      "target": "MESH:D003234",
+      "evidence": [
+        {
+          "reference": "PMID:12429243",
+          "snippet": "Povidone-iodine 1.25% ophthalmic solution was as effective as neomycin-polymyxin B-gramicidin for treating bacterial conjunctivitis",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Gramicidin-containing ophthalmic solution treats bacterial conjunctivitis in a controlled clinical trial; the killing of bacteria by gramicidin underlies this therapeutic effect.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "A controlled trial of povidone-iodine to treat infectious conjunctivitis in children.",
+            "authors": [
+              "Isenberg SJ",
+              "Apt L",
+              "Valenton M",
+              "Del Signore M",
+              "Cubillan L",
+              "Labrador MA",
+              "Chan P",
+              "Berman NG"
+            ],
+            "journal": "American journal of ophthalmology",
+            "year": "2002",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:20084257",
+          "snippet": "Good choices include polymyxin/gramicidin, polymyxin/trimethoprim or sulfacetamide",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Clinical review identifies polymyxin/gramicidin as a recommended first-line agent for bacterial conjunctivitis in children.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Acute infectious conjunctivitis in childhood.",
+            "authors": [
+              "Chawla R",
+              "Kellner JD",
+              "Astle WF"
+            ],
+            "journal": "Paediatrics & child health",
+            "year": "2001",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.drugbank.ca/drugs/DB00027",
+      "type": "drugbank",
+      "label": "drugbank.ca — record source"
+    },
+    {
+      "url": "https://meshb.nlm.nih.gov/record/ui?ui=D006096",
+      "type": "other",
+      "label": "meshb.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "sonnet__P36",
+    "record_id": "P36_DB00027_MESH_D003234",
+    "run": "sonnet",
+    "run_label": "Sonnet (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/sonnet/outputs/P36.yaml",
+    "summary_generated": true
+  }
+}

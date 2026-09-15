@@ -21,7 +21,9 @@ nodes:
     name: Pituitary dwarfism
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D017337
     target: UniProt:Q02643
     evidence:
@@ -35,7 +37,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "Sermorelin (GHRH(1-29)NH2) is a full GHRH-receptor agonist, equipotent to full-length GHRH in stimulating GH release."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:Q02643
     target: GO:0030252
     evidence:
@@ -49,7 +52,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Activation of the GHRH receptor drives the adenylyl-cyclase/cAMP pathway that stimulates GH secretion."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0030252
     target: MESH:D004393
     evidence:

@@ -30,7 +30,9 @@ nodes:
     name: Chronic hepatitis C
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: DB:DB00008
     target: UniProt:P48551
     evidence:
@@ -40,7 +42,9 @@ links:
         evidence_source: IN_VITRO
         explanation: Peginterferon alfa-2a is a pegylated interferon alpha-2 that binds and activates the type I interferon receptor (IFNAR).
         source_tier: FULL_TEXT
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: UniProt:P48551
     target: UniProt:P29597
     evidence:
@@ -49,7 +53,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         source_tier: FULL_TEXT
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: UniProt:P29597
     target: UniProt:P42224
     evidence:

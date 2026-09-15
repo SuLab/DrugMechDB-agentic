@@ -24,7 +24,9 @@ nodes:
     name: Myocardial Infarction
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D001241
     target: UniProt:P23219
     evidence:
@@ -38,7 +40,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: States that aspirin inactivates COX-1, confirming decreases activity of relationship.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P23219
     target: MESH:D013931
     evidence:
@@ -52,7 +55,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: States COX-1 is involved in platelet production of TXA2, supporting positive regulation.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: MESH:D013931
     target: GO:0070527
     evidence:

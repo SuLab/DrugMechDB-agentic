@@ -36,7 +36,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Confirms MMF is a prodrug of MPA, hydrolyzed by esterases to release the active metabolite MPA.
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: CHEBI:168618
     target: UniProt:P12268
     evidence:
@@ -50,7 +52,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: In vitro demonstration of MPA dose-dependently inhibiting IMPDH activity, supporting decreases activity of edge.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P12268
     target: GO:0006177
     evidence:
@@ -64,7 +67,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: Blocking IMPDH prevents guanosine nucleotide production, confirming IMPDH positively regulates GMP biosynthesis.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0006177
     target: GO:0046651
     evidence:

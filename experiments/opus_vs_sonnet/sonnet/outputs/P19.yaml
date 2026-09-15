@@ -24,7 +24,9 @@ nodes:
     name: Epilepsy
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000077306
     target: UniProt:P54289
     evidence:
@@ -37,7 +39,9 @@ links:
         snippet: binding to the alpha-2-delta protein subunit of voltage-gated calcium channels in the central nervous system, thereby blocking the excitatory influx of calcium
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: UniProt:P54289
     target: UniProt:O00555
     evidence:
@@ -46,7 +50,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: The alpha-2-delta subunit modulated by gabapentin decreases activity of the P/Q-type voltage-gated calcium channel, reducing Ca2+ influx.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:O00555
     target: GO:0007269
     evidence:

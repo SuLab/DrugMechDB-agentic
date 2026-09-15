@@ -30,7 +30,9 @@ nodes:
     name: Hemophilia A
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:C016671
     target: UniProt:P30518
     evidence:
@@ -39,7 +41,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: DDAVP (the synthetic vasopressin analogue) activates the endothelial vasopressin V2 receptor (AVPR2), initiating cAMP-mediated signaling.
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: UniProt:P30518
     target: GO:0019933
     evidence:
@@ -48,7 +52,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Activation of the V2 receptor increases cAMP-mediated signaling, which drives Weibel-Palade body exocytosis.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0019933
     target: GO:0099132
     evidence:
@@ -57,7 +62,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: cAMP-mediated signaling downstream of V2 receptor activation leads to exocytosis from Weibel-Palade bodies.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0099132
     target: UniProt:P04275
     evidence:
@@ -70,7 +76,8 @@ links:
         snippet: DDAVP elicits the release of von Willebrand Factor (VWF) from endothelial cells, thereby increasing the levels of circulating VWF and coagulation factor (F)VIII.
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P04275
     target: UniProt:P00451
     evidence:

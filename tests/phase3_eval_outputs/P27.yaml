@@ -24,7 +24,7 @@ nodes:
     name: Diabetes mellitus type 1
     label: Disease
 links:
-  - key: molecularly interacts with
+  - key: directly physically interacts with
     source: MESH:D007328
     target: UniProt:P06213
     evidence:
@@ -33,7 +33,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: Insulin binds directly to the insulin receptor (INSR/UniProt:P06213) on cell surfaces; this molecular interaction is the initiating event of the insulin signalling cascade that lowers blood glucose.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P06213
     target: GO:0046323
     evidence:

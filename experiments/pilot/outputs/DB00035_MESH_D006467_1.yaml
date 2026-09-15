@@ -24,7 +24,9 @@ nodes:
     name: Hereditary factor VIII deficiency disease
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D003894
     target: UniProt:P30518
     evidence:
@@ -38,7 +40,9 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "DDAVP acts via activation of the endothelial vasopressin V2 receptor."
-  - key: increases abundance of
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: increased
     source: UniProt:P30518
     target: UniProt:P04275
     evidence:
@@ -47,7 +51,9 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "V2 receptor activation drives exocytosis of Weibel-Palade bodies, releasing stored von Willebrand factor and raising its plasma level."
-  - key: increases abundance of
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: increased
     source: UniProt:P04275
     target: UniProt:P00451
     evidence:

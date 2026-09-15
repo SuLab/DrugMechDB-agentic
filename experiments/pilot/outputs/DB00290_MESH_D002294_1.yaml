@@ -24,7 +24,9 @@ nodes:
     name: Squamous cell carcinoma
     label: Disease
 links:
-  - key: increases abundance of
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: increased
     source: MESH:D001761
     target: MESH:D017382
     evidence:

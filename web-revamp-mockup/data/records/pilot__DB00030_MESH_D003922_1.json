@@ -1,0 +1,148 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00030_MESH_D003922_1",
+    "drug": "insulin human",
+    "drug_mesh": "MESH:D007328",
+    "drugbank": "DB:DB00030",
+    "disease": "Diabetes Mellitus, Type 1",
+    "disease_mesh": "MESH:D003922",
+    "summary": "insulin human → Insulin receptor → glucose import → Hyperglycemia → Diabetes Mellitus, Type 1"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D007328",
+      "name": "insulin human",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P06213",
+      "name": "Insulin receptor",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0046323",
+      "name": "glucose import",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "HP:0003074",
+      "name": "Hyperglycemia",
+      "label": "PhenotypicFeature"
+    },
+    {
+      "id": "MESH:D003922",
+      "name": "Diabetes Mellitus, Type 1",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "increased",
+      "source": "MESH:D007328",
+      "target": "UniProt:P06213",
+      "evidence": [
+        {
+          "reference": "PMID:9932214",
+          "snippet": "The binding of insulin to its receptor induces autophosphorylation of the receptor on tyrosine residues and thereby stimulates its tyrosine kinase activity towards intracellular substrates such as Shc or IRS1.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Insulin binding activates the insulin receptor tyrosine kinase.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:20526383",
+          "snippet": "Insulin action involves a series of signaling cascades initiated by insulin binding to its receptor, eliciting receptor autophosphorylation and activation of the receptor tyrosine kinase, resulting in tyrosine phosphorylation of insulin receptor substrates (IRSs).",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P06213",
+      "target": "GO:0046323",
+      "evidence": [
+        {
+          "reference": "PMID:20526383",
+          "snippet": "Phosphorylation of IRSs leads to activation of phosphatidylinositol 3-kinase (PI3K) and, subsequently, to activation of Akt and its downstream mediator AS160, all of which are important steps for stimulating glucose transport induced by insulin.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "The insulin-receptor-initiated signaling cascade stimulates cellular glucose transport/uptake.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:9932214",
+          "snippet": "is involved in several of the metabolic effects of the hormone, such as glucose transport, glycolysis and glycogen synthesis.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "decreased",
+      "source": "GO:0046323",
+      "target": "HP:0003074",
+      "evidence": [
+        {
+          "reference": "PMID:12542844",
+          "snippet": "Increased glucose disposal by tissues engineered to overexpress key regulatory genes in glucose transport or phosphorylation can reduce diabetic hyperglycemia.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Increased cellular glucose uptake/disposal lowers hyperglycemia.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "manifestation of",
+      "source": "HP:0003074",
+      "target": "MESH:D003922",
+      "evidence": [
+        {
+          "reference": "PMID:39918671",
+          "snippet": "Type 1 diabetes (T1D) is a chronic autoimmune disorder characterized by the destruction of insulin-producing beta cells in the pancreas, leading to insulin deficiency and chronic hyperglycemia.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:39211721",
+          "snippet": "Type 1 diabetes is an autoimmune disorder characterized by the destruction of pancreatic beta cells, leading to insulin deficiency and hyperglycemia.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00030",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00030_MESH_D003922_1",
+    "record_id": "DB00030_MESH_D003922_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00030_MESH_D003922_1.yaml",
+    "summary_generated": true
+  }
+}

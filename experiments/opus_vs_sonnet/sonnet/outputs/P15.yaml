@@ -33,7 +33,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Acyclovir is phosphorylated by viral thymidine kinase to the monophosphate, which is then converted by cellular kinases to the active triphosphate metabolite.
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: CHEBI:16624
     target: UniProt:P04293
     evidence:

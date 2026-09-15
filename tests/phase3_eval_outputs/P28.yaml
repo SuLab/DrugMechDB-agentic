@@ -38,7 +38,9 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: Deiodination of T4 to T3 is the key activation step; administered levothyroxine (T4) is therefore a prodrug whose active form is T3.
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D014284
     target: UniProt:P10828
     evidence:
@@ -52,7 +54,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: T3 acts via its nuclear receptors TRα and TRβ (UniProt:P10828); local T3 availability drives receptor activity.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P10828
     target: GO:0002154
     evidence:
@@ -66,7 +69,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: TRs including THRB are T3-activated transcription factors that drive thyroid hormone-responsive gene expression, i.e. they positively regulate the thyroid hormone mediated signaling pathway.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0002154
     target: MESH:D007037
     evidence:

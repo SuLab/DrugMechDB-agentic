@@ -24,7 +24,7 @@ nodes:
     name: Parkinson's disease
     label: Disease
 links:
-  - key: molecularly interacts with
+  - key: directly physically interacts with
     source: MESH:D007980
     target: UniProt:P20711
     evidence:
@@ -47,7 +47,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: Review confirming that L-DOPA is converted into dopamine by the enzyme aromatic L-amino acid decarboxylase (AADC).
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: MESH:D004298
     target: GO:0001963
     evidence:

@@ -1,0 +1,256 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P26_DB00331_MESH_D003924",
+    "drug": "Metformin",
+    "drug_mesh": "MESH:D008687",
+    "drugbank": "DB:DB00331",
+    "disease": "Type 2 Diabetes Mellitus",
+    "disease_mesh": "MESH:D003924",
+    "summary": "Metformin → 5'-AMP-activated protein kinase catalytic subunit alpha-1 (PRKAA1) → gluconeogenesis → Type 2 Diabetes Mellitus"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D008687",
+      "name": "Metformin",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:Q15831",
+      "name": "Serine/threonine-protein kinase STK11 (LKB1)",
+      "label": "Protein"
+    },
+    {
+      "id": "UniProt:Q13131",
+      "name": "5'-AMP-activated protein kinase catalytic subunit alpha-1 (PRKAA1)",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0006094",
+      "name": "gluconeogenesis",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D003924",
+      "name": "Type 2 Diabetes Mellitus",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "increased",
+      "source": "MESH:D008687",
+      "target": "UniProt:Q13131",
+      "evidence": [
+        {
+          "reference": "PMID:11602624",
+          "snippet": "Here we report that metformin activates AMPK in hepatocytes",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Metformin directly activates AMP-activated protein kinase in hepatocytes.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Role of AMP-activated protein kinase in mechanism of metformin action.",
+            "authors": [
+              "Zhou G",
+              "Myers R",
+              "Li Y",
+              "Chen Y",
+              "Shen X",
+              "Fenyk-Melody J",
+              "Wu M",
+              "Ventre J",
+              "Doebber T",
+              "Fujii N",
+              "Musi N",
+              "Hirshman MF",
+              "Goodyear LJ",
+              "Moller DE"
+            ],
+            "journal": "The Journal of clinical investigation",
+            "year": "2001",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:Q15831",
+      "target": "UniProt:Q13131",
+      "evidence": [
+        {
+          "reference": "PMID:16308421",
+          "snippet": "LKB1, which phosphorylates and activates AMPK",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "LKB1 is the upstream kinase that phosphorylates and activates AMPK in the liver, mediating the therapeutic effect of metformin.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "The kinase LKB1 mediates glucose homeostasis in liver and therapeutic effects of metformin.",
+            "authors": [
+              "Shaw RJ",
+              "Lamia KA",
+              "Vasquez D",
+              "Koo SH",
+              "Bardeesy N",
+              "Depinho RA",
+              "Montminy M",
+              "Cantley LC"
+            ],
+            "journal": "Science (New York, N.Y.)",
+            "year": "2005",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "decreased",
+      "source": "UniProt:Q13131",
+      "target": "GO:0006094",
+      "evidence": [
+        {
+          "reference": "PMID:11602624",
+          "snippet": "we find that AMPK activation is required for metformin's inhibitory effect on glucose production by hepatocytes",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "AMPK activation mediates suppression of hepatic glucose production (gluconeogenesis).",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Role of AMP-activated protein kinase in mechanism of metformin action.",
+            "authors": [
+              "Zhou G",
+              "Myers R",
+              "Li Y",
+              "Chen Y",
+              "Shen X",
+              "Fenyk-Melody J",
+              "Wu M",
+              "Ventre J",
+              "Doebber T",
+              "Fujii N",
+              "Musi N",
+              "Hirshman MF",
+              "Goodyear LJ",
+              "Moller DE"
+            ],
+            "journal": "The Journal of clinical investigation",
+            "year": "2001",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "GO:0006094",
+      "target": "MESH:D003924",
+      "evidence": [
+        {
+          "reference": "PMID:11602624",
+          "snippet": "Its glucose-lowering effect results from decreased hepatic glucose production and increased glucose utilization",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Elevated hepatic glucose production via gluconeogenesis drives the hyperglycemia of type 2 diabetes; metformin lowers glucose by decreasing it.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Role of AMP-activated protein kinase in mechanism of metformin action.",
+            "authors": [
+              "Zhou G",
+              "Myers R",
+              "Li Y",
+              "Chen Y",
+              "Shen X",
+              "Fenyk-Melody J",
+              "Wu M",
+              "Ventre J",
+              "Doebber T",
+              "Fujii N",
+              "Musi N",
+              "Hirshman MF",
+              "Goodyear LJ",
+              "Moller DE"
+            ],
+            "journal": "The Journal of clinical investigation",
+            "year": "2001",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "treats",
+      "source": "MESH:D008687",
+      "target": "MESH:D003924",
+      "evidence": [
+        {
+          "reference": "PMID:11602624",
+          "snippet": "Metformin is a widely used drug for treatment of type 2 diabetes",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Metformin is a first-line therapeutic for type 2 diabetes mellitus.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Role of AMP-activated protein kinase in mechanism of metformin action.",
+            "authors": [
+              "Zhou G",
+              "Myers R",
+              "Li Y",
+              "Chen Y",
+              "Shen X",
+              "Fenyk-Melody J",
+              "Wu M",
+              "Ventre J",
+              "Doebber T",
+              "Fujii N",
+              "Musi N",
+              "Hirshman MF",
+              "Goodyear LJ",
+              "Moller DE"
+            ],
+            "journal": "The Journal of clinical investigation",
+            "year": "2001",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00331",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P26",
+    "record_id": "P26_DB00331_MESH_D003924",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P26.yaml",
+    "summary_generated": true
+  }
+}

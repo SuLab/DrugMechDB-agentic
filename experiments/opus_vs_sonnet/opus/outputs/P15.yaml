@@ -46,7 +46,9 @@ links:
         snippet: "This selectivity is due to the initial activation of the drug by phosphorylation by a herpes virus-specified thymidine kinase."
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:C025643
     target: UniProt:P04293
     evidence:

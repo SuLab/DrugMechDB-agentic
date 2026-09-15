@@ -21,7 +21,9 @@ nodes:
     name: Bipolar Disorder
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D008094
     target: UniProt:P49841
     evidence:
@@ -39,7 +41,8 @@ links:
         explanation: >-
           Medicinal chemistry paper developing GSK-3beta inhibitors for bipolar
           disorder, confirming lithium's known direct inhibitory action on GSK-3beta.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P49841
     target: GO:0006915
     evidence:

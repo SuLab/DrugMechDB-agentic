@@ -78,6 +78,37 @@ types:
 # ── Enumerations ──────────────────────────────────────────────────────────────
 
 enums:
+  ObjectAspectEnum:
+    description: >-
+      The aspect of the object that an edge affects. Mirrors the Biolink 4.4.4
+      `GeneOrGeneProductOrChemicalEntityAspectEnum` values DrugMechDB uses; carried on
+      `object_aspect_qualifier`. Together with ObjectDirectionEnum this expresses what the
+      removed `increases/decreases <aspect> of` predicates asserted before the v2->v4
+      qualifier refactor.
+    permissible_values:
+      activity:
+      abundance:
+      expression:
+      synthesis:
+      degradation:
+      stability:
+      transport:
+      uptake:
+      localization:
+      secretion:
+      molecular_interaction:
+      activity_or_abundance:
+
+  ObjectDirectionEnum:
+    description: >-
+      Direction of the effect on the object's aspect. Mirrors the Biolink 4.4.4
+      `DirectionQualifierEnum`; carried on `object_direction_qualifier`.
+    permissible_values:
+      increased:
+      decreased:
+      upregulated:
+      downregulated:
+
   EvidenceSupportEnum:
     description: The level of support an evidence item provides for an edge claim.
     permissible_values:
@@ -308,6 +339,29 @@ slots:
       Biolink predicate describing the relationship from source to target.
       Must be a value from the BiolinkPredicate enum.
 
+  # Biolink 4.4.4 qualifiers. Optional and additive: legacy records carry none, and
+  # `key` alone remains a complete edge. New (ai_curated) records use them to express
+  # what the removed `increases/decreases <aspect> of` and `positively/negatively
+  # regulates` predicates asserted — see biolink_predicate_status.yaml for the mapping.
+
+  object_aspect_qualifier:
+    range: ObjectAspectEnum
+    description: >-
+      Which aspect of the target the edge affects (activity, abundance, expression, ...).
+      Set alongside object_direction_qualifier when `key` is `affects`.
+
+  object_direction_qualifier:
+    range: ObjectDirectionEnum
+    description: >-
+      Direction of the effect on the target — increased or decreased. Set when `key` is
+      `affects` or `regulates`; carries the polarity the legacy predicate name used to.
+
+  qualified_predicate:
+    range: uriorcurie
+    description: >-
+      The Biolink predicate the qualified statement resolves to (e.g. biolink:causes),
+      when the core `key` plus qualifiers needs an explicit causal reading.
+
   evidence:
     range: EvidenceItem
     multivalued: true
@@ -520,6 +574,9 @@ classes:
       - source
       - target
       - key
+      - object_aspect_qualifier
+      - object_direction_qualifier
+      - qualified_predicate
       - evidence
     slot_usage:
       source:

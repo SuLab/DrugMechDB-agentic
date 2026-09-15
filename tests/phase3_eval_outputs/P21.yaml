@@ -24,7 +24,9 @@ nodes:
     name: Rheumatoid Arthritis
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D008727
     target: UniProt:P31939
     evidence:
@@ -33,7 +35,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Methotrexate polyglutamates (the active intracellular form of MTX) directly inhibit ATIC activity, the enzyme encoded by the ATIC gene (UniProt:P31939), thereby decreasing its catalytic function.
-  - key: decreases abundance of
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: decreased
     source: UniProt:P31939
     target: MESH:D000241
     evidence:
@@ -47,7 +51,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: Confirms that extracellular adenosine generation is the key downstream effector in MTX-treated RA patients; ATIC inhibition is the upstream step that releases this brake on adenosine abundance.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: MESH:D000241
     target: GO:0006954
     evidence:

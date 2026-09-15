@@ -18,7 +18,9 @@ nodes:
     name: Chronic Myeloid Leukemia
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00619
     target: UniProt:P00519
     evidence:

@@ -33,7 +33,9 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Thiamine is phosphorylated intracellularly and converted into its active metabolite, thiamine pyrophosphate."
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D013835
     target: UniProt:P29401
     evidence:

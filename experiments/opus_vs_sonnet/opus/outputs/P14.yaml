@@ -32,7 +32,9 @@ links:
         snippet: "Oseltamivir is a prodrug for the active carboxylate metabolite."
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:C111791
     target: UniProt:P03468
     evidence:

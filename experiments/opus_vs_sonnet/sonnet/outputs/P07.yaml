@@ -24,7 +24,9 @@ nodes:
     name: Chronic Myeloid Leukemia
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000068877
     target: UniProt:P00519
     evidence:
@@ -36,7 +38,8 @@ links:
         snippet: STI571 was shown to be a competitive inhibitor at the ATP-binding site of the Bcr-Abl tyrosine kinase
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P00519
     target: GO:0008283
     evidence:
@@ -48,7 +51,8 @@ links:
         snippet: Chronic myeloid leukaemia (CML) is a myeloproliferative neoplasm characterized by constitutive activity of the tyrosine kinase BCR-ABL1
         supports: PARTIAL
         evidence_source: HUMAN_CLINICAL
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:P00519
     target: GO:0006915
     evidence:

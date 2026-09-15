@@ -24,7 +24,9 @@ nodes:
     name: Major Depressive Disorder
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D005473
     target: UniProt:P31645
     evidence:
@@ -38,7 +40,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: SSRIs including fluoxetine inhibit presynaptic serotonin reuptake via SERT blockade.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:P31645
     target: MESH:D012701
     evidence:
@@ -47,7 +50,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: SERT normally removes serotonin from the synapse; its inhibition leads to increased extracellular serotonin.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: MESH:D012701
     target: GO:0007210
     evidence:
@@ -56,7 +60,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: Increased synaptic serotonin activates postsynaptic receptors, enhancing serotonin receptor signaling.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0007210
     target: MESH:D003865
     evidence:

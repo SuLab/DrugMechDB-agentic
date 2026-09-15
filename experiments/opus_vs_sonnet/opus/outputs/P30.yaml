@@ -27,7 +27,9 @@ nodes:
     name: Type 2 Diabetes Mellitus
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB09038
     target: UniProt:P31639
     evidence:
@@ -45,7 +47,8 @@ links:
         supports: SUPPORT
         evidence_source: COMPUTATIONAL
         explanation: "SGLT2 mediates renal glucose reabsorption; inhibiting SGLT2 reduces this process."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0035623
     target: HP:0003076
     evidence:

@@ -24,7 +24,9 @@ nodes:
     name: Type 2 Diabetes Mellitus
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:C000591311
     target: UniProt:P31639
     evidence:
@@ -38,7 +40,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: Confirms SGLT2 inhibition as the mechanism of action of empagliflozin.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P31639
     target: GO:0070293
     evidence:
@@ -52,7 +55,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: SGLT2 is the primary transporter responsible for renal glucose reabsorption.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0070293
     target: HP:0003074
     evidence:

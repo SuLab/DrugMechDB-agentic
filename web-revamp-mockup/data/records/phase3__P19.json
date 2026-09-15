@@ -1,0 +1,275 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P19_DB00996_MESH_D004827",
+    "drug": "Gabapentin",
+    "drug_mesh": "MESH:D000077306",
+    "drugbank": "DB:DB00996",
+    "disease": "Epilepsy",
+    "disease_mesh": "MESH:D004827",
+    "summary": "Gabapentin → Voltage-dependent calcium channel subunit alpha-2/delta-1 → calcium ion transmembrane transport → neurotransmitter secretion → Epilepsy"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D000077306",
+      "name": "Gabapentin",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P54289",
+      "name": "Voltage-dependent calcium channel subunit alpha-2/delta-1",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0070588",
+      "name": "calcium ion transmembrane transport",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "GO:0007269",
+      "name": "neurotransmitter secretion",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D004827",
+      "name": "Epilepsy",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D000077306",
+      "target": "UniProt:P54289",
+      "evidence": [
+        {
+          "reference": "PMID:32607809",
+          "snippet": "α2δ proteins are the targets of the widely prescribed anti-epileptic and anti-allodynic drugs gabapentin and pregabalin",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Gabapentin binds to the α2δ-1 (CACNA2D1) auxiliary subunit of voltage-gated calcium channels, acting as a high-affinity ligand that reduces its functional activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Neuronal α2δ proteins and brain disorders.",
+            "authors": [
+              "Ablinger C",
+              "Geisler SM",
+              "Stanika RI",
+              "Klein CT",
+              "Obermair GJ"
+            ],
+            "journal": "Pflugers Archiv : European journal of physiology",
+            "year": "2020",
+            "doi": "10.1007/s00424-020-02420-2",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:32321743",
+          "snippet": "The α 2 δ-1 protein is required for the ability of gabapentin and pregabalin to reduce neurotransmitter release in neuronal tissue, consistent with a therapeutic mechanism of action via voltage-gated calcium channels.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "The α2δ-1 protein is both the high-affinity binding site and required mediator of gabapentin's mechanism, confirming gabapentin decreases its activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Analgesia with Gabapentin and Pregabalin May Involve N-Methyl-d-Aspartate Receptors, Neurexins, and Thrombospondins.",
+            "authors": [
+              "Taylor CP",
+              "Harris EW"
+            ],
+            "journal": "The Journal of pharmacology and experimental therapeutics",
+            "year": "2020",
+            "doi": "10.1124/jpet.120.266056",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P54289",
+      "target": "GO:0070588",
+      "evidence": [
+        {
+          "reference": "PMID:17403543",
+          "snippet": "All alpha2delta subunits increase the density at the plasma membrane of Ca(2+) channels activated by high voltage",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "The α2δ-1 subunit promotes trafficking of voltage-gated calcium channels to the plasma membrane, thereby positively regulating calcium ion transmembrane transport.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Functional biology of the alpha(2)delta subunits of voltage-gated calcium channels.",
+            "authors": [
+              "Davies A",
+              "Hendrich J",
+              "Van Minh AT",
+              "Wratten J",
+              "Douglas L",
+              "Dolphin AC"
+            ],
+            "journal": "Trends in pharmacological sciences",
+            "year": "2007",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:32607809",
+          "snippet": "They serve as regulatory subunits of voltage-gated calcium channels",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "As a regulatory subunit of voltage-gated calcium channels, α2δ-1 positively regulates calcium ion flux across the neuronal membrane.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Neuronal α2δ proteins and brain disorders.",
+            "authors": [
+              "Ablinger C",
+              "Geisler SM",
+              "Stanika RI",
+              "Klein CT",
+              "Obermair GJ"
+            ],
+            "journal": "Pflugers Archiv : European journal of physiology",
+            "year": "2020",
+            "doi": "10.1007/s00424-020-02420-2",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "GO:0070588",
+      "target": "GO:0007269",
+      "evidence": [
+        {
+          "reference": "PMID:29793598",
+          "snippet": "They inhibit calcium mediated neurotransmitter release through effects on α2δ-1 subunits",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Calcium-mediated neurotransmitter release is explicitly invoked — calcium ion transmembrane transport drives (positively regulates) neurotransmitter secretion at presynaptic terminals.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Analgesic mechanisms of gabapentinoids and effects in experimental pain models: a narrative review.",
+            "authors": [
+              "Chincholkar M"
+            ],
+            "journal": "British journal of anaesthesia",
+            "year": "2018",
+            "doi": "10.1016/j.bja.2018.02.066",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:21150315",
+          "snippet": "GBPs reduced release of various neurotransmitters from synapses in several neuronal tissues",
+          "supports": "PARTIAL",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Gabapentinoids reduce neurotransmitter release by modulating presynaptic Ca2+ currents, consistent with calcium influx positively driving neurotransmitter secretion.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Acute modulation of calcium currents and synaptic transmission by gabapentinoids.",
+            "authors": [
+              "Uchitel OD",
+              "Di Guilmi MN",
+              "Urbano FJ",
+              "Gonzalez-Inchauspe C"
+            ],
+            "journal": "Channels (Austin, Tex.)",
+            "year": "2010",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0007269",
+      "target": "MESH:D004827",
+      "evidence": [
+        {
+          "reference": "PMID:17126531",
+          "snippet": "Pregabalin subtly reduces the synaptic release of several neurotransmitters, apparently by binding to alpha2-delta subunits, and possibly accounting for its actions in vivo to reduce neuronal excitability and seizures",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Reducing neurotransmitter secretion reduces neuronal excitability and seizures; conversely, excess neurotransmitter secretion contributes to the seizure activity that defines epilepsy.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Pharmacology and mechanism of action of pregabalin: the calcium channel alpha2-delta (alpha2-delta) subunit as a target for antiepileptic drug discovery.",
+            "authors": [
+              "Taylor CP",
+              "Angelotti T",
+              "Fauman E"
+            ],
+            "journal": "Epilepsy research",
+            "year": "2007",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:17126531",
+          "snippet": "reduction of abnormal neuronal excitability through reduced neurotransmitter release",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Abnormal neurotransmitter release drives neuronal hyperexcitability and epileptic seizures; reducing secretion is the therapeutic rationale, confirming secretion contributes to epilepsy.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Pharmacology and mechanism of action of pregabalin: the calcium channel alpha2-delta (alpha2-delta) subunit as a target for antiepileptic drug discovery.",
+            "authors": [
+              "Taylor CP",
+              "Angelotti T",
+              "Fauman E"
+            ],
+            "journal": "Epilepsy research",
+            "year": "2007",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00996#mechanism-of-action",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    },
+    {
+      "url": "https://www.uniprot.org/uniprot/P54289",
+      "type": "other",
+      "label": "uniprot.org — record source"
+    }
+  ],
+  "site": {
+    "id": "phase3__P19",
+    "record_id": "P19_DB00996_MESH_D004827",
+    "run": "phase3",
+    "run_label": "Phase-3 eval",
+    "source_file": "tests/phase3_eval_outputs/P19.yaml",
+    "summary_generated": true
+  }
+}

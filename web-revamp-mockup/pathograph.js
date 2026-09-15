@@ -19,11 +19,26 @@ function el(tag, attrs={}) {
   for (const k in attrs) e.setAttribute(k, attrs[k]);
   return e;
 }
-function edgeDir(key) {
-  const k = key.toLowerCase();
+/* Biolink 4.4.4 carries an edge's polarity in object_direction_qualifier rather than in
+   the predicate name (`affects`/`regulates` are neutral words), so read the qualifier
+   first and fall back to the name for legacy-vocabulary edges. */
+const EDGE_DIR_SIGN = {increased: "pos", upregulated: "pos", decreased: "neg", downregulated: "neg"};
+function edgeDir(edge) {
+  if (edge && typeof edge === "object") {
+    const q = EDGE_DIR_SIGN[edge.object_direction_qualifier];
+    if (q) return q;
+  }
+  const k = String(edge && typeof edge === "object" ? edge.key : edge).toLowerCase();
   if (/(decrease|inhibit|negativ|down|block|disrupt|suppress|antagon)/.test(k)) return "neg";
   if (/(increase|positiv|activat|\bup\b|stimulat|induc|agonist|correlated)/.test(k)) return "pos";
   return "neutral";
+}
+/* Predicate with its qualifiers: `affects` -> `affects activity (decreased)`. */
+function edgeLabel(edge) {
+  const bits = [edge.key];
+  if (edge.object_aspect_qualifier) bits.push(edge.object_aspect_qualifier.replace(/_/g, " "));
+  if (edge.object_direction_qualifier) bits.push(`(${edge.object_direction_qualifier})`);
+  return bits.join(" ");
 }
 function wrap(name, max) {
   const words = name.split(" "); const lines = []; let cur = "";
@@ -100,18 +115,18 @@ function renderPathograph(containerId, record, onNodeClick) {
     const s = layout[l.source], t = layout[l.target];
     if (!s || !t) return;
     const x1 = s.x + s.w, y1 = s.y + s.h / 2, x2 = t.x, y2 = t.y + t.h / 2, dx = (x2 - x1) * 0.5;
-    const dir = edgeDir(l.key);
+    const dir = edgeDir(l);
     const p = el("path", {
       d: `M${x1},${y1} C${x1 + dx},${y1} ${x2 - dx},${y2} ${x2},${y2}`,
       class: "gedge " + dir, "marker-end": `url(#arw-${dir})`
     });
-    p.addEventListener("mouseenter", e => showTip(e, `<div class="tt-name">${byId[l.source].name}</div><div>${l.key}</div><div class="tt-name" style="margin-top:4px">${byId[l.target].name}</div>`));
+    p.addEventListener("mouseenter", e => showTip(e, `<div class="tt-name">${byId[l.source].name}</div><div>${edgeLabel(l)}</div><div class="tt-name" style="margin-top:4px">${byId[l.target].name}</div>`));
     p.addEventListener("mousemove", moveTip);
     p.addEventListener("mouseleave", hideTip);
     edgeLayer.appendChild(p);
     edgeEls.push({ p, s: l.source, t: l.target });
 
-    const key = rank[l.source] + ">" + rank[l.target] + "::" + l.key;
+    const key = rank[l.source] + ">" + rank[l.target] + "::" + edgeLabel(l);
     const g = groups[key] || (groups[key] = { key: l.key, dir, mx: [], my: [], ids: new Set() });
     g.mx.push((x1 + x2) / 2); g.my.push((y1 + y2) / 2); g.ids.add(l.source); g.ids.add(l.target);
   });

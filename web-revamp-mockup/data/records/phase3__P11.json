@@ -1,0 +1,263 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P11_DB01045_MESH_D014397",
+    "drug": "Rifampicin",
+    "drug_mesh": "MESH:D012293",
+    "drugbank": "DB:DB01045",
+    "disease": "Pulmonary tuberculosis",
+    "disease_mesh": "MESH:D014397",
+    "summary": "Rifampicin → DNA-directed RNA polymerase subunit beta → transcription, DNA-templated → Mycobacterium tuberculosis → Pulmonary tuberculosis"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D012293",
+      "name": "Rifampicin",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P9WGY9",
+      "name": "DNA-directed RNA polymerase subunit beta",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0006351",
+      "name": "transcription, DNA-templated",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "NCBITaxon:1773",
+      "name": "Mycobacterium tuberculosis",
+      "label": "OrganismTaxon"
+    },
+    {
+      "id": "MESH:D014397",
+      "name": "Pulmonary tuberculosis",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D012293",
+      "target": "UniProt:P9WGY9",
+      "evidence": [
+        {
+          "reference": "PMID:31269464",
+          "snippet": "The antimicrobial activity of RIF is attributed to its ability to inhibit transcription by binding to the β subunit of bacterial RNA polymerase (encoded by rpoB).",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Rifampicin inhibits bacterial transcription by binding directly to the beta subunit (RpoB) of the RNA polymerase, thereby decreasing RpoB activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Unveiling the molecular basis for pleiotropy in selected rif mutants of Escherichia coli: Possible role for Tyrosine in the Rif binding pocket and fast movement of RNA polymerase.",
+            "authors": [
+              "Karthik M",
+              "Meenakshi S",
+              "Munavar MH"
+            ],
+            "journal": "Gene",
+            "year": "2019",
+            "doi": "10.1016/j.gene.2019.143951",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:29706316",
+          "snippet": "Because the action of RIF is on rpoB gene encoding RNA polymerase β subunit, 95% of RIF resistant mutations are present in rpoB gene.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "RIF acts on RpoB (RNA polymerase beta subunit); nearly all resistance mutations map to this subunit, confirming it is the direct target of rifampicin inhibition.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mutations inside rifampicin-resistance determining region of rpoB gene associated with rifampicin-resistance in Mycobacterium tuberculosis.",
+            "authors": [
+              "Zaw MT",
+              "Emran NA",
+              "Lin Z"
+            ],
+            "journal": "Journal of infection and public health",
+            "year": "2018",
+            "doi": "10.1016/j.jiph.2018.04.005",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P9WGY9",
+      "target": "GO:0006351",
+      "evidence": [
+        {
+          "reference": "PMID:31269464",
+          "snippet": "The antimicrobial activity of RIF is attributed to its ability to inhibit transcription by binding to the β subunit of bacterial RNA polymerase (encoded by rpoB).",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Rifampicin inhibits transcription by binding RpoB; this confirms that RpoB (the beta subunit) is required for and positively regulates DNA-templated transcription in bacteria.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Unveiling the molecular basis for pleiotropy in selected rif mutants of Escherichia coli: Possible role for Tyrosine in the Rif binding pocket and fast movement of RNA polymerase.",
+            "authors": [
+              "Karthik M",
+              "Meenakshi S",
+              "Munavar MH"
+            ],
+            "journal": "Gene",
+            "year": "2019",
+            "doi": "10.1016/j.gene.2019.143951",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:20150242",
+          "snippet": "While the RNA polymerases from the parent or a mutant strain (harbouring a frequently occurring mutation, H442Y, in RpoB) were susceptible to Rif-mediated inhibition of transcription from calf thymus DNA, those from the insertion and deletion mutants were essentially refractory to such inhibition.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Wild-type RpoB is necessary for rifampicin to inhibit transcription, confirming that RpoB actively supports (positively regulates) the transcription process.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Novel insertion and deletion mutants of RpoB that render Mycobacterium smegmatis RNA polymerase resistant to rifampicin-mediated inhibition of transcription.",
+            "authors": [
+              "Malshetty V",
+              "Kurthkoti K",
+              "China A",
+              "Mallick B",
+              "Yamunadevi S",
+              "Sang PB",
+              "Srinivasan N",
+              "Nagaraja V",
+              "Varshney U"
+            ],
+            "journal": "Microbiology (Reading, England)",
+            "year": "2010",
+            "doi": "10.1099/mic.0.036970-0",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "in taxon",
+      "source": "GO:0006351",
+      "target": "NCBITaxon:1773",
+      "evidence": [
+        {
+          "reference": "PMID:29706316",
+          "snippet": "Rifampicin (RIF) plays a pivotal role in the treatment of tuberculosis due to its bactericidal effects. Because the action of RIF is on rpoB gene encoding RNA polymerase β subunit, 95% of RIF resistant mutations are present in rpoB gene.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "The paper discusses rpoB-encoded RNA polymerase transcription in the context of Mycobacterium tuberculosis, placing this DNA-templated transcription process in the M. tuberculosis taxon.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mutations inside rifampicin-resistance determining region of rpoB gene associated with rifampicin-resistance in Mycobacterium tuberculosis.",
+            "authors": [
+              "Zaw MT",
+              "Emran NA",
+              "Lin Z"
+            ],
+            "journal": "Journal of infection and public health",
+            "year": "2018",
+            "doi": "10.1016/j.jiph.2018.04.005",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:41421076",
+          "snippet": "RNA polymerase encoded by rpoB is the primary target of the first-front antibiotics of rifampicin.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "The paper describes rpoB-encoded RNA polymerase in M. tuberculosis as the primary target of rifampicin, confirming the transcription process occurs in the M. tuberculosis taxon.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Clinically present mycobacterium tuberculosis RNA polymerase subunit RpoB K446 mutation confers broad-spectrum antibiotics resistance via pupylation.",
+            "authors": [
+              "Shen Q",
+              "Huang Y",
+              "Huo F",
+              "Xu H",
+              "Li M",
+              "Huang L",
+              "Xu Y",
+              "Li P",
+              "Huang H",
+              "Xie J"
+            ],
+            "journal": "Bioorganic chemistry",
+            "year": "2026",
+            "doi": "10.1016/j.bioorg.2025.109388",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "NCBITaxon:1773",
+      "target": "MESH:D014397",
+      "evidence": [
+        {
+          "reference": "PMID:40201850",
+          "snippet": "Mycobacterium tuberculosis (Mtb), a pathogen that belongs to the M. tuberculosis complex, causes tuberculosis (TB), an infectious bacterial disease. Although it usually affects the lungs and results in pulmonary TB, it can also lead to extra-pulmonary TB by affecting other regions of the body.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Mtb is the direct causative agent of pulmonary tuberculosis, primarily affecting the lungs.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "In silico evaluation of snake venom proteins against multidrug-resistant Mycobacterium tuberculosis: A molecular dynamics study and simulation dynamic.",
+            "authors": [
+              "Fouda M",
+              "Mantargi MJS",
+              "Germoush MO",
+              "Sarhan M",
+              "Husein MF",
+              "Abdel-Daim MM"
+            ],
+            "journal": "Open veterinary journal",
+            "year": "2025",
+            "doi": "10.5455/OVJ.2025.v15.i2.26",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB01045#mechanism-of-action",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    },
+    {
+      "url": "https://www.uniprot.org/uniprot/P9WGY9",
+      "type": "other",
+      "label": "uniprot.org — record source"
+    }
+  ],
+  "site": {
+    "id": "phase3__P11",
+    "record_id": "P11_DB01045_MESH_D014397",
+    "run": "phase3",
+    "run_label": "Phase-3 eval",
+    "source_file": "tests/phase3_eval_outputs/P11.yaml",
+    "summary_generated": true
+  }
+}

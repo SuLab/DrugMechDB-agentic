@@ -27,7 +27,9 @@ nodes:
     name: Hypercholesterolemia
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000069059
     target: UniProt:P04035
     evidence:
@@ -36,7 +38,9 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Atorvastatin's mechanism of action is inhibition of HMG-CoA reductase."
-  - key: increases abundance of
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: increased
     source: UniProt:P04035
     target: MESH:D002784
     evidence:
@@ -45,7 +49,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "HMG-CoA reductase is the rate-limiting enzyme of cholesterol biosynthesis, so its activity increases cellular cholesterol."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: MESH:D002784
     target: UniProt:P01130
     evidence:
@@ -54,7 +59,9 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Cellular cholesterol negatively feedback-regulates LDL receptor levels via SREBP-2; statin-lowered cholesterol therefore raises LDL receptor expression."
-  - key: decreases abundance of
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: decreased
     source: UniProt:P01130
     target: MESH:D008078
     evidence:

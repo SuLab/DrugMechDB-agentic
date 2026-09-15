@@ -21,7 +21,9 @@ nodes:
     name: Malignant tumor of colon
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00002
     target: UniProt:P00533
     evidence:
@@ -30,7 +32,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Cetuximab blocks ligand-dependent EGFR signaling, reducing EGFR activity."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P00533
     target: GO:0008283
     evidence:

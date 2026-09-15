@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
-<div class="mock-banner">MOCKUP · DrugMechDB website revamp · sample data, not final — for design review</div>
+<div class="mock-banner">LIVE · AI-curated record from an agentic curation run · site design still a mockup</div>
 
 <nav class="nav"><div class="container nav-inner">
   <a class="brand" href="index.html"><span class="mark">D</span>DrugMech<span class="tail">DB</span></a>
@@ -111,13 +111,29 @@ const $ = id => document.getElementById(id);
 /* Read through the DMDB data adapter — the single swap-point for real data.
    Wrapped in an async IIFE so live mode (fetch) works with no page changes. */
 (async () => {
-const R = await window.DMDB.getRecord();
+const R = await window.DMDB.getRecord(new URLSearchParams(location.search).get("id"));
 const byId = {};
 R.nodes.forEach(n => byId[n.id] = n);
 
-function dir(key){const k=key.toLowerCase();
+/* Since Biolink 4.4.4 an edge's polarity lives in object_direction_qualifier, not in the
+   predicate name — `affects` and `regulates` are neutral words. Read the qualifier first
+   and fall back to the name for legacy-vocabulary edges. */
+const DIR_SIGN = {increased:"pos", upregulated:"pos", decreased:"neg", downregulated:"neg"};
+function dir(edge){
+  if(typeof edge === "object" && edge){
+    const q = DIR_SIGN[edge.object_direction_qualifier];
+    if(q) return q;
+  }
+  const k = String(typeof edge === "object" && edge ? edge.key : edge).toLowerCase();
   if(/(decrease|inhibit|negativ|block|disrupt|suppress|antagon)/.test(k))return"neg";
   if(/(increase|positiv|stimulat|induc|agonist|correlated|activat)/.test(k))return"pos";return"";}
+/* Render the predicate with its qualifiers: `affects` -> `affects activity (decreased)`. */
+function predLabel(edge){
+  const bits = [edge.key];
+  if(edge.object_aspect_qualifier) bits.push(edge.object_aspect_qualifier.replace(/_/g," "));
+  if(edge.object_direction_qualifier) bits.push(`(${edge.object_direction_qualifier})`);
+  return bits.join(" ");
+}
 function curieUrl(id){return "https://identifiers.org/"+id;}
 
 // header
@@ -125,8 +141,9 @@ $("t-drug").textContent = R.graph.drug;
 $("t-disease").textContent = R.graph.disease;
 $("summary").textContent = R.graph.summary;
 $("ids").innerHTML = [
-  ["DrugBank", R.graph.drugbank],["Drug MeSH", R.graph.drug_mesh],["Disease MeSH", R.graph.disease_mesh],["Path ID", R.graph._id]
-].map(([k,v])=>`<span class="badge">${k} <span class="mono">${v}</span></span>`).join("");
+  ["DrugBank", R.graph.drugbank],["Drug MeSH", R.graph.drug_mesh],["Disease MeSH", R.graph.disease_mesh],["Path ID", R.graph._id],
+  ...(R.site ? [["Curation run", R.site.run_label]] : [])
+].filter(([,v]) => v).map(([k,v])=>`<span class="badge">${k} <span class="mono">${v}</span></span>`).join("");
 
 // stats
 function longestPath(R){
@@ -167,9 +184,9 @@ $("concepts").innerHTML = R.nodes.map(n=>{
 // relationships
 $("rcount").textContent = R.links.length;
 $("rels").innerHTML = R.links.map(l=>{
-  const d = dir(l.key);
+  const d = dir(l);
   return `<div class="rel"><span class="subj">${byId[l.source].name}</span>
-    <span class="pred ${d}">${l.key}</span>
+    <span class="pred ${d}">${predLabel(l)}</span>
     <span class="obj">${byId[l.target].name}</span></div>`;
 }).join("");
 
@@ -223,7 +240,7 @@ $("evidence").innerHTML = withEv.length ? withEv.map(l=>{
   const items = l.evidence;
   const flagged = items.some(it => it.supports && it.supports!=="SUPPORT");
   return `<details class="ev"${flagged?' data-flag="1"':''}><summary><span class="caret">▸</span>
-    <span class="ev-edge">${byId[l.source].name} <span class="pred ${dir(l.key)}">${l.key}</span> ${byId[l.target].name}</span>
+    <span class="ev-edge">${byId[l.source].name} <span class="pred ${dir(l)}">${predLabel(l)}</span> ${byId[l.target].name}</span>
     <span class="ev-count">${items.length} ref${items.length>1?"s":""}${flagged?" · ⚑ flagged":""}</span></summary>
     <div class="ev-body">${items.map(evItem).join("")}</div></details>`;
 }).join("") : `<p style="padding:0;color:var(--muted)">This legacy record carries record-level sources (below). Per-edge evidence is added during AI re-curation.</p>`;

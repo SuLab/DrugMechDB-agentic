@@ -21,7 +21,9 @@ nodes:
     name: Breast Neoplasms
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D013629
     target: UniProt:P03372
     evidence:
@@ -35,7 +37,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Tamoxifen is an endocrine therapy that acts by disrupting estrogen signaling through the estrogen receptor, i.e. decreasing receptor activity."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P03372
     target: GO:0008283
     evidence:

@@ -24,7 +24,9 @@ nodes:
     name: Anxiety
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D008140
     target: UniProt:P14867
     evidence:
@@ -33,7 +35,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Lorazepam is a benzodiazepine that binds allosterically to the GABA-A receptor and increases its activity (chloride current).
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: UniProt:P14867
     target: GO:0005254
     evidence:
@@ -51,7 +55,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Chloride influx through the GABA-A channel causes membrane hyperpolarization of the postsynaptic neuron.
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0060081
     target: MESH:D001007
     evidence:

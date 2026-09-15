@@ -1,0 +1,121 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB00026_MESH_D056587_1",
+    "drug": "anakinra",
+    "drug_mesh": "MESH:D053590",
+    "drugbank": "DB:DB00026",
+    "disease": "Cryopyrin-associated periodic syndrome",
+    "disease_mesh": "MESH:D056587",
+    "summary": "anakinra → Interleukin-1 receptor type 1 → inflammatory response → Cryopyrin-associated periodic syndrome"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00026",
+      "name": "anakinra",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P14778",
+      "name": "Interleukin-1 receptor type 1",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0006954",
+      "name": "inflammatory response",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D056587",
+      "name": "Cryopyrin-associated periodic syndrome",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "DB:DB00026",
+      "target": "UniProt:P14778",
+      "evidence": [
+        {
+          "reference": "PMID:27790031",
+          "snippet": "Anakinra is an interleukin (IL) receptor antagonist that works by blocking the biological activity of IL-1 by competitively inhibiting binding of IL-1 to the type 1 interleukin receptor.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Anakinra competitively inhibits binding of IL-1 to the type 1 IL-1 receptor, decreasing the receptor's signaling activity.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P14778",
+      "target": "GO:0006954",
+      "evidence": [
+        {
+          "reference": "PMID:26140469",
+          "snippet": "IL-1 inhibitors block the IL-1 signaling cascade, thereby preventing systemic inflammation in CAPS.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Signaling through the IL-1 receptor (the IL-1 signaling cascade) drives the systemic inflammation of CAPS; blocking it prevents that inflammation.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:31524632",
+          "snippet": "IL-1α and IL-1β are upstream components of a signaling pathway, including IL-1R1 and downstream SPDEF and ERN2, that generate a positive feedback cycle capable of producing persistent mucus hyperconcentration and IL-1α and/or IL-1β-mediated neutrophilic inflammation in the absence of infection in CF airways.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "IL-1R1 is named as the signaling receptor within the IL-1 pathway that produces IL-1-mediated inflammation.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "causes",
+      "source": "GO:0006954",
+      "target": "MESH:D056587",
+      "evidence": [
+        {
+          "reference": "PMID:22288581",
+          "snippet": "Both CAPS and FMF are characterized by increased inflammasome activity and overproduction of IL-1β which is ultimately responsible for disease manifestations.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "IL-1β-driven inflammation is ultimately responsible for the clinical manifestations of CAPS.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:26140469",
+          "snippet": "It is not only a pro-inflammatory cytokine responsible for features such as fever, rash, and arthritis, but is also a major mediator in the central pathways of fatigue.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "IL-1-driven inflammation is responsible for the characteristic CAPS features of fever, rash, and arthritis.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00026",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB00026_MESH_D056587_1",
+    "record_id": "DB00026_MESH_D056587_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB00026_MESH_D056587_1.yaml",
+    "summary_generated": true
+  }
+}

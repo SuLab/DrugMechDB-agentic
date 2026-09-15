@@ -1,0 +1,178 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P20_DB00843_MESH_D000544",
+    "drug": "donepezil",
+    "drug_mesh": "MESH:D000077856",
+    "drugbank": "DB:DB00843",
+    "disease": "Alzheimer's Disease",
+    "disease_mesh": "MESH:D000544",
+    "summary": "donepezil → Acetylcholinesterase → Acetylcholine → chemical synaptic transmission → Alzheimer's Disease"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00843",
+      "name": "donepezil",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P22303",
+      "name": "Acetylcholinesterase",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D000109",
+      "name": "Acetylcholine",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "GO:0007268",
+      "name": "chemical synaptic transmission",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D000544",
+      "name": "Alzheimer's Disease",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "DB:DB00843",
+      "target": "UniProt:P22303",
+      "evidence": [
+        {
+          "reference": "PMID:23215841",
+          "snippet": "donepezil, a highly selective (IC(50) = 6.7 nM) centrally acting reversible acetylcholinesterase inhibitor that has been approved by FDA for treating cognitive deficit states such as in Alzheimer's disease",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Donepezil is a reversible acetylcholinesterase inhibitor, decreasing the enzyme's activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Assessing the prospect of donepezil in improving cognitive impairment in patients with schizophrenia.",
+            "authors": [
+              "Thakurathi N",
+              "Vincenzi B",
+              "Henderson DC"
+            ],
+            "journal": "Expert opinion on investigational drugs",
+            "year": "2013",
+            "doi": "10.1517/13543784.2013.750650",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "decreased",
+      "source": "UniProt:P22303",
+      "target": "MESH:D000109",
+      "evidence": [
+        {
+          "reference": "PMID:19877295",
+          "snippet": "Enzymatic hydrolysis of acetylcholine in the synaptic cleft is fast and quickly metabolizes to choline and acetate by acetylcholinesterase.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Acetylcholinesterase hydrolyzes acetylcholine; its inhibition by donepezil therefore raises acetylcholine levels.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Quantification of acetylcholine, an essential neurotransmitter, in brain microdialysis samples by liquid chromatography mass spectrometry.",
+            "authors": [
+              "Nirogi R",
+              "Mudigonda K",
+              "Kandikere V",
+              "Ponnamaneni R"
+            ],
+            "journal": "Biomedical chromatography : BMC",
+            "year": "2010",
+            "doi": "10.1002/bmc.1347",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "MESH:D000109",
+      "target": "GO:0007268",
+      "evidence": [
+        {
+          "reference": "PMID:28777299",
+          "snippet": "Acetylcholine (ACh), an ubiquitous mediator substance broadly expressed in nature, acts as neurotransmitter in cholinergic synapses, generating specific communications",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Acetylcholine acts as a neurotransmitter at cholinergic synapses, mediating synaptic transmission.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Ultrafast and Slow Cholinergic Transmission. Different Involvement of Acetylcholinesterase Molecular Forms.",
+            "authors": [
+              "Dunant Y",
+              "Gisiger V"
+            ],
+            "journal": "Molecules (Basel, Switzerland)",
+            "year": "2017",
+            "doi": "10.3390/molecules22081300",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "treats",
+      "source": "GO:0007268",
+      "target": "MESH:D000544",
+      "evidence": [
+        {
+          "reference": "PMID:40097131",
+          "snippet": "Cholinesterase inhibitors, such as donepezil and rivastigmine, increase acetylcholine (ACh) levels to enhance cognitive function in individuals with mild to moderate AD.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Restoring cholinergic synaptic transmission via increased acetylcholine enhances cognitive function in Alzheimer's disease.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Exploring Alzheimer's disease treatment: Established therapies and novel strategies for future care.",
+            "authors": [
+              "Soni U",
+              "Singh K",
+              "Jain D",
+              "Pujari R"
+            ],
+            "journal": "European journal of pharmacology",
+            "year": "2025",
+            "doi": "10.1016/j.ejphar.2025.177520",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00843",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P20",
+    "record_id": "P20_DB00843_MESH_D000544",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P20.yaml",
+    "summary_generated": true
+  }
+}

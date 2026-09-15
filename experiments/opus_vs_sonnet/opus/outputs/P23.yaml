@@ -21,7 +21,9 @@ nodes:
     name: Systemic Lupus Erythematosus
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB01611
     target: UniProt:Q9NYK1
     evidence:
@@ -30,7 +32,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Hydroxychloroquine inhibits the proteolytic maturation of TLR7 and thereby reduces TLR7-driven activation."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:Q9NYK1
     target: GO:0032606
     evidence:

@@ -26,7 +26,9 @@ nodes:
     label: Disease
 
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D006886
     target: UniProt:Q9NYK1
     evidence:
@@ -40,7 +42,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
 
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D006886
     target: UniProt:Q9NR96
     evidence:
@@ -54,7 +58,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
 
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:Q9NYK1
     target: GO:0032606
     evidence:
@@ -68,7 +73,8 @@ links:
         evidence_source: HUMAN_CLINICAL
         explanation: CpG-A stimulates TLR9 and R848/ssRNA stimulate TLR7/8; the pDC IFNα production is shown to be downstream of TLR activation.
 
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:Q9NR96
     target: GO:0032606
     evidence:

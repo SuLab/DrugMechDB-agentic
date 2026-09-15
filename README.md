@@ -77,8 +77,9 @@ profile per file and runs the matching layers:
 | `ai_curated` | any edge has `evidence:` | 1, 2, 3, 4 |
 
 1. **schema** (LinkML `MechanisticPath`) · 2. **node ontology** (CURIE prefix ↔ label,
-plus an invisible/whitespace-character guard) · 3. **predicate enum** (67 Biolink
-predicates) · 4. **reference** (every snippet is verbatim in its cited source).
+plus an invisible/whitespace-character guard) · 3. **predicate enum** (Biolink predicates,
+era-aware — newly curated records must use the pinned current release) · 4. **reference**
+(every snippet is verbatim in its cited source).
 
 ```bash
 just qc                       # whole corpus

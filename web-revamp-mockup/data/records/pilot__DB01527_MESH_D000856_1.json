@@ -1,0 +1,88 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "DB01527_MESH_D000856_1",
+    "drug": "clortermine",
+    "drugbank": "DB:DB01527",
+    "disease": "Anorexia",
+    "disease_mesh": "MESH:D000856",
+    "summary": "Clortermine → Feeding behavior → Anorexia"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB01527",
+      "name": "Clortermine",
+      "label": "Drug"
+    },
+    {
+      "id": "GO:0007631",
+      "name": "Feeding behavior",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D000856",
+      "name": "Anorexia",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "decreased",
+      "source": "DB:DB01527",
+      "target": "GO:0007631",
+      "evidence": [
+        {
+          "reference": "PMID:3620005",
+          "snippet": "All drugs reduced food intake in a dose-related manner.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "In rhesus monkeys the anorectics benzphetamine, chlorphentermine, clortermine, mazindol, phendimetrazine and phenmetrazine were compared; clortermine is explicitly one of the drugs that reduced food intake.",
+          "source_type": "pubmed",
+          "paper": null
+        },
+        {
+          "reference": "PMID:826970",
+          "snippet": "Increasing self-infused doses of all drugs produced a substantial suppression of concurrent food-maintained behavior.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "Clortermine is one of the eight phenylethylamines tested in baboons whose increasing doses suppressed food-maintained behavior.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    },
+    {
+      "key": "manifestation of",
+      "source": "GO:0007631",
+      "target": "MESH:D000856",
+      "evidence": [
+        {
+          "reference": "PMID:8637056",
+          "snippet": "a reduction in food consumption (anorexia)",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "A reduction in food consumption is equated with anorexia (loss of appetite / reduced food intake); the suppressed feeding behavior is the manifestation of anorexia.",
+          "source_type": "pubmed",
+          "paper": null
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB01527",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "pilot__DB01527_MESH_D000856_1",
+    "record_id": "DB01527_MESH_D000856_1",
+    "run": "pilot",
+    "run_label": "Pilot run",
+    "source_file": "experiments/pilot/outputs/DB01527_MESH_D000856_1.yaml",
+    "summary_generated": true
+  }
+}

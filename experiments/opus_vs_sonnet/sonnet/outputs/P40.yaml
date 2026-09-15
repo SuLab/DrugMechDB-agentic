@@ -27,7 +27,9 @@ nodes:
     name: Asthma
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000069444
     target: UniProt:P01854
     evidence:
@@ -35,7 +37,8 @@ links:
         snippet: This non-anaphylactogenic anti-IgE monoclonal antibody (omalizumab) binds IgE at the same site as these antibodies bind FcepsilonRI and FcepsilonRII. Consequently, omalizumab inhibits IgE effector functions by blocking IgE binding to high-affinity receptors on IgE effector cells.
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P01854
     target: UniProt:P12319
     evidence:
@@ -43,7 +46,8 @@ links:
         snippet: interaction with FcεRI on mast cells and basophils leads to immediate hypersensitivity reactions upon allergen challenge
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P12319
     target: GO:0043303
     evidence:

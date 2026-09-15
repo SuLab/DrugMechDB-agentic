@@ -21,7 +21,9 @@ nodes:
     name: Chronic Myeloid Leukemia
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000068877
     target: UniProt:P00519
     evidence:
@@ -35,7 +37,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Imatinib inhibits BCR-ABL1 kinase activity, abolishing its downstream tyrosine-phosphorylation activity in CML cells — direct support for the decreases-activity-of edge."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P00519
     target: GO:0070661
     evidence:

@@ -1,0 +1,186 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P25_DB00051_MESH_D011565",
+    "drug": "Adalimumab",
+    "drug_mesh": "MESH:D000068879",
+    "drugbank": "DB:DB00051",
+    "disease": "Psoriasis",
+    "disease_mesh": "MESH:D011565",
+    "summary": "Adalimumab → Tumor necrosis factor → I-kappaB kinase/NF-kappaB signaling → Psoriasis"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D000068879",
+      "name": "Adalimumab",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P01375",
+      "name": "Tumor necrosis factor",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0007249",
+      "name": "I-kappaB kinase/NF-kappaB signaling",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D011565",
+      "name": "Psoriasis",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "directly physically interacts with",
+      "source": "MESH:D000068879",
+      "target": "UniProt:P01375",
+      "evidence": [
+        {
+          "reference": "PMID:19799828",
+          "snippet": "Adalimumab, a fully human monoclonal antibody, binds to and neutralizes tumor necrosis factor.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Adalimumab in the treatment of psoriasis: pooled efficacy and safety results from three pivotal studies.",
+            "authors": [
+              "Papp K",
+              "Okun M",
+              "Vender R"
+            ],
+            "journal": "Journal of cutaneous medicine and surgery",
+            "year": "2009",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D000068879",
+      "target": "UniProt:P01375",
+      "evidence": [
+        {
+          "reference": "PMID:21573251",
+          "snippet": "Adalimumab is a fully recombinant human immunoglobulin G1 monoclonal antibody that specifically binds with high affinity to human TNF-α and inhibits its binding to TNF receptors.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Adalimumab for the treatment of immune-mediated diseases: an update on old and recent indications.",
+            "authors": [
+              "Murdaca G",
+              "Colombo BM",
+              "Puppo F"
+            ],
+            "journal": "Drugs of today (Barcelona, Spain : 1998)",
+            "year": "2011",
+            "doi": "10.1358/dot.2011.47.4.1576692",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P01375",
+      "target": "GO:0007249",
+      "evidence": [
+        {
+          "reference": "PMID:17302610",
+          "snippet": "TNF-alpha and NF-kappaB expressions were significantly higher in psoriatic epidermis than in normal epidermis (p < 0.05).",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Nature of cell kinetics in psoriatic epidermis.",
+            "authors": [
+              "Doger FK",
+              "Dikicioglu E",
+              "Ergin F",
+              "Unal E",
+              "Sendur N",
+              "Uslu M"
+            ],
+            "journal": "Journal of cutaneous pathology",
+            "year": "2007",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "GO:0007249",
+      "target": "MESH:D011565",
+      "evidence": [
+        {
+          "reference": "PMID:35213752",
+          "snippet": "disease-relevant changes in morphology, gene transcription and cytokine production were robustly attenuated by pharmacologically blocking TNFα/IL-17A-induced NF-κB activation with IKK-2 inhibitor IV.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Cytokine induced 3-D organotypic psoriasis skin model demonstrates distinct roles for NF-κB and JAK pathways in disease pathophysiology.",
+            "authors": [
+              "Todorović V",
+              "McDonald HA",
+              "Hoover P",
+              "Wetter JB",
+              "Marinopoulos AE",
+              "Woody CL",
+              "Miller L",
+              "Finkielsztein A",
+              "Dunstan RW",
+              "Paller AS",
+              "Honore P",
+              "Getsios S",
+              "Scott VE"
+            ],
+            "journal": "Experimental dermatology",
+            "year": "2022",
+            "doi": "10.1111/exd.14551",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.drugbank.ca/drugs/DB00051",
+      "type": "drugbank",
+      "label": "drugbank.ca — record source"
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/mesh/D011565",
+      "type": "other",
+      "label": "ncbi.nlm.nih.gov — record source"
+    }
+  ],
+  "site": {
+    "id": "sonnet__P25",
+    "record_id": "P25_DB00051_MESH_D011565",
+    "run": "sonnet",
+    "run_label": "Sonnet (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/sonnet/outputs/P25.yaml",
+    "summary_generated": true
+  }
+}

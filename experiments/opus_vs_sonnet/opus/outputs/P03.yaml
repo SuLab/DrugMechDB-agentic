@@ -27,7 +27,9 @@ nodes:
     name: Hypertension
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D017706
     target: UniProt:P12821
     evidence:
@@ -36,7 +38,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "Lisinopril is identified as an angiotensin-converting enzyme inhibitor, i.e. it decreases ACE activity."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P12821
     target: MESH:D000804
     evidence:
@@ -45,7 +48,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "ACE converts angiotensin-I into angiotensin-II, increasing angiotensin II formation."
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D000804
     target: UniProt:P30556
     evidence:
@@ -54,7 +59,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Angiotensin II acts on AT1 receptors (AT1R), activating the receptor."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P30556
     target: GO:0042310
     evidence:

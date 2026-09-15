@@ -17,7 +17,8 @@ nodes:
     name: Anorexia
     label: Disease
 links:
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: DB:DB01527
     target: GO:0007631
     evidence:

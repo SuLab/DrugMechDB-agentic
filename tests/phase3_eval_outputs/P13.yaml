@@ -24,7 +24,7 @@ nodes:
     name: Methicillin-Resistant Staphylococcal Infections
     label: Disease
 links:
-  - key: molecularly interacts with
+  - key: directly physically interacts with
     source: MESH:D014640
     target: CHEBI:16576
     evidence:

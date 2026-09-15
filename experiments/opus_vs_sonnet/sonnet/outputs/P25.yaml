@@ -21,7 +21,7 @@ nodes:
     name: Psoriasis
     label: Disease
 links:
-  - key: molecularly interacts with
+  - key: directly physically interacts with
     source: MESH:D000068879
     target: UniProt:P01375
     evidence:
@@ -29,7 +29,9 @@ links:
         snippet: Adalimumab, a fully human monoclonal antibody, binds to and neutralizes tumor necrosis factor.
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000068879
     target: UniProt:P01375
     evidence:
@@ -37,7 +39,8 @@ links:
         snippet: Adalimumab is a fully recombinant human immunoglobulin G1 monoclonal antibody that specifically binds with high affinity to human TNF-α and inhibits its binding to TNF receptors.
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P01375
     target: GO:0007249
     evidence:
@@ -45,7 +48,8 @@ links:
         snippet: TNF-alpha and NF-kappaB expressions were significantly higher in psoriatic epidermis than in normal epidermis (p < 0.05).
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0007249
     target: MESH:D011565
     evidence:

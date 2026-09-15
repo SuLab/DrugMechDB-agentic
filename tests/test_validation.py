@@ -20,6 +20,14 @@ from pathlib import Path
 import pytest
 
 REPO = Path(__file__).resolve().parent.parent
+
+
+def _enum_size() -> int:
+    """Size of the committed BiolinkPredicate enum — read, never hardcoded, because
+    the enum spans two Biolink eras and grows when we adopt a new release's predicate."""
+    import yaml
+    schema = REPO / "src" / "drugmechdb" / "schema" / "biolink_predicates.yaml"
+    return len(yaml.safe_load(schema.read_text())["enums"]["BiolinkPredicate"]["permissible_values"])
 FIXTURES = REPO / "tests" / "fixtures"
 VENV_PY = REPO / ".venv-py310" / "bin" / "python"
 
@@ -86,7 +94,7 @@ def test_layer3_legacy_corpus_passes_exit_criterion():
     exit_code, data = _run("scripts/validate_predicates.py")
     assert exit_code == 0
     assert data["failure_count"] == 0
-    assert data["enum_size"] == 67
+    assert data["enum_size"] == _enum_size()   # not a literal: the enum grows with Biolink
 
 
 def test_layer3_ai_curated_fixture_passes():

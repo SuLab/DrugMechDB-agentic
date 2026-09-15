@@ -33,7 +33,9 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: Establishes that clopidogrel is a prodrug that generates an active metabolite responsible for its antiplatelet effect.
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: CHEBI:174738
     target: UniProt:Q9H244
     evidence:
@@ -46,7 +48,8 @@ links:
         snippet: Clopidogrel is an antithrombotic prodrug, whose active metabolite inhibits platelet function by irreversibly binding to the platelet receptor for adenosine diphosphate, P2Y(12).
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:Q9H244
     target: GO:0070527
     evidence:

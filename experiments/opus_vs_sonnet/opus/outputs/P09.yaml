@@ -30,7 +30,9 @@ nodes:
     name: Acute lymphoblastic leukemia
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00563
     target: UniProt:P00374
     evidence:
@@ -47,7 +49,8 @@ links:
         snippet: "MTX competitively inhibits dihydrofolate reductase (DHFR), an enzyme that participates in the tetrahydrofolate synthesis so as to inhibit purine synthesis."
         supports: SUPPORT
         evidence_source: OTHER
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0046654
     target: GO:0006164
     evidence:
@@ -56,7 +59,8 @@ links:
         supports: SUPPORT
         explanation: "Tetrahydrofolate synthesis is required for purine synthesis; inhibiting DHFR (and thus tetrahydrofolate synthesis) inhibits purine synthesis."
         evidence_source: OTHER
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0006164
     target: GO:0071897
     evidence:
@@ -65,7 +69,9 @@ links:
         supports: SUPPORT
         explanation: "Purine synthesis supplies nucleotides for DNA synthesis; MTX-mediated inhibition of purine synthesis contributes to inhibition of DNA synthesis."
         evidence_source: OTHER
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00563
     target: UniProt:P04818
     evidence:
@@ -73,7 +79,8 @@ links:
         snippet: "its downstream metabolite methotrexate polyglutamates (MTX-PGs) inhibit the thymidylate synthase (TS)."
         supports: SUPPORT
         evidence_source: OTHER
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P04818
     target: GO:0071897
     evidence:

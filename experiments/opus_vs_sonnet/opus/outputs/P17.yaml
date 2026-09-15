@@ -21,7 +21,9 @@ nodes:
     name: Major Depressive Disorder
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00472
     target: UniProt:P31645
     evidence:
@@ -30,7 +32,8 @@ links:
         supports: SUPPORT
         evidence_source: MODEL_ORGANISM
         explanation: "Fluoxetine inhibits (decreases the activity of) the serotonin transporter SERT."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:P31645
     target: MESH:D012701
     evidence:

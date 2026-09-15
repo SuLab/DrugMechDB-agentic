@@ -24,7 +24,9 @@ nodes:
     name: Epilepsy
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00996
     target: UniProt:P54289
     evidence:
@@ -36,7 +38,8 @@ links:
         snippet: "Binding of these ligands to the alpha2delta subunit is considered to explain their usefulness in treating several clinical disorders, including epilepsy"
         supports: SUPPORT
         evidence_source: OTHER
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:P54289
     target: GO:0070509
     evidence:
@@ -44,7 +47,8 @@ links:
         snippet: "they exhibit a high affinity for the α2δ-1 and α2δ-2 subunits of voltage-activated calcium channels, wherein binding of gabapentinoids inhibits cellular calcium influx and attenuates neurotransmission"
         supports: SUPPORT
         evidence_source: OTHER
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0070509
     target: GO:0007269
     evidence:

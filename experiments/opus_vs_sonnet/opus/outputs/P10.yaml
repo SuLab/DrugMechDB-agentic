@@ -24,7 +24,9 @@ nodes:
     name: HER2-positive Breast Cancer
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00072
     target: UniProt:P04626
     evidence:
@@ -33,7 +35,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Trastuzumab, directed against the HER2 extracellular domain (PMID:24462377), down-regulates HER2 and reduces downstream phosphorylation."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P04626
     target: GO:0043491
     evidence:
@@ -42,7 +45,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "High HER2 increases phosphorylation of downstream Akt, indicating HER2 positively regulates PI3K/Akt signaling."
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00072
     target: GO:0043491
     evidence:
@@ -51,7 +56,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Trastuzumab reduces Akt phosphorylation, decreasing PI3K/Akt signal transduction."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0043491
     target: GO:0008283
     evidence:
@@ -60,7 +66,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "PI3K-AKT signaling promotes DNA synthesis and proliferation of breast cancer cells."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: DB:DB00072
     target: GO:0008283
     evidence:

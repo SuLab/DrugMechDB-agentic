@@ -1,0 +1,199 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P17_DB00472_MESH_D003865",
+    "drug": "fluoxetine",
+    "drug_mesh": "MESH:D005473",
+    "drugbank": "DB:DB00472",
+    "disease": "Major Depressive Disorder",
+    "disease_mesh": "MESH:D003865",
+    "summary": "fluoxetine → Serotonin transporter → Serotonin → serotonin receptor signaling pathway → Major Depressive Disorder"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D005473",
+      "name": "fluoxetine",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P31645",
+      "name": "Serotonin transporter",
+      "label": "Protein"
+    },
+    {
+      "id": "MESH:D012701",
+      "name": "Serotonin",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "GO:0007210",
+      "name": "serotonin receptor signaling pathway",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D003865",
+      "name": "Major Depressive Disorder",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "MESH:D005473",
+      "target": "UniProt:P31645",
+      "evidence": [
+        {
+          "reference": "PMID:31480244",
+          "snippet": "Their primary mechanism of action is considered to be the increased synaptic concentration of serotonin through blockade of the serotonin transporter (SERT).",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Fluoxetine, as a representative SSRI, blocks SERT to increase synaptic serotonin.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Fluoxetine Suppresses Glutamate- and GABA-Mediated Neurotransmission by Altering SNARE Complex.",
+            "authors": [
+              "Lazarevic V",
+              "Mantas I",
+              "Flais I",
+              "Svenningsson P"
+            ],
+            "journal": "International journal of molecular sciences",
+            "year": "2019",
+            "doi": "10.3390/ijms20174247",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:19587851",
+          "snippet": "The primary SSRIs pharmacological action's mechanism consists in the presynaptic inhibition on the serotonin reuptake, with an increased availability of this amine into the synaptic cleft.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "SSRIs including fluoxetine inhibit presynaptic serotonin reuptake via SERT blockade.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Selective serotonin reuptake inhibitors: a review of its effects on intraocular pressure.",
+            "authors": [
+              "Costagliola C",
+              "Parmeggiani F",
+              "Semeraro F",
+              "Sebastiani A"
+            ],
+            "journal": "Current neuropharmacology",
+            "year": "2008",
+            "doi": "10.2174/157015908787386104",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "decreased",
+      "source": "UniProt:P31645",
+      "target": "MESH:D012701",
+      "evidence": [
+        {
+          "reference": "PMID:31480244",
+          "snippet": "by virtue of its inhibition at SERT, fluoxetine increases extracellular serotonin levels",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "SERT normally removes serotonin from the synapse; its inhibition leads to increased extracellular serotonin.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Fluoxetine Suppresses Glutamate- and GABA-Mediated Neurotransmission by Altering SNARE Complex.",
+            "authors": [
+              "Lazarevic V",
+              "Mantas I",
+              "Flais I",
+              "Svenningsson P"
+            ],
+            "journal": "International journal of molecular sciences",
+            "year": "2019",
+            "doi": "10.3390/ijms20174247",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "MESH:D012701",
+      "target": "GO:0007210",
+      "evidence": [
+        {
+          "reference": "PMID:19587851",
+          "snippet": "Serotonin produces its effects as a consequence of interactions with appropriate receptors.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Increased synaptic serotonin activates postsynaptic receptors, enhancing serotonin receptor signaling.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Selective serotonin reuptake inhibitors: a review of its effects on intraocular pressure.",
+            "authors": [
+              "Costagliola C",
+              "Parmeggiani F",
+              "Semeraro F",
+              "Sebastiani A"
+            ],
+            "journal": "Current neuropharmacology",
+            "year": "2008",
+            "doi": "10.2174/157015908787386104",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "decreased",
+      "source": "GO:0007210",
+      "target": "MESH:D003865",
+      "evidence": [
+        {
+          "reference": "PMID:19587851",
+          "snippet": "The increase in serotonin (5-HT) neurotransmission is considered to be one of the most efficacious medical approach to depression and its related disorders.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Enhanced serotonin receptor signaling is a key mechanism for alleviating major depressive disorder.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Selective serotonin reuptake inhibitors: a review of its effects on intraocular pressure.",
+            "authors": [
+              "Costagliola C",
+              "Parmeggiani F",
+              "Semeraro F",
+              "Sebastiani A"
+            ],
+            "journal": "Current neuropharmacology",
+            "year": "2008",
+            "doi": "10.2174/157015908787386104",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [],
+  "site": {
+    "id": "sonnet__P17",
+    "record_id": "P17_DB00472_MESH_D003865",
+    "run": "sonnet",
+    "run_label": "Sonnet (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/sonnet/outputs/P17.yaml",
+    "summary_generated": true
+  }
+}

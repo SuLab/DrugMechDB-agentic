@@ -24,7 +24,9 @@ nodes:
     name: Hypertension
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D017706
     target: UniProt:P12821
     evidence:
@@ -37,7 +39,8 @@ links:
         snippet: Inhibition of the angiotensin-converting enzyme (ACE) protects against the progression of several cardiovascular diseases. Because of its dual role in regulating angiotensin II and bradykinin levels, the positive clinical effects of ACE inhibitors were thought to be the consequence of concomitant reductions in the production of angiotensin II
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P12821
     target: MESH:D000804
     evidence:

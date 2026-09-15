@@ -21,7 +21,7 @@ nodes:
     name: Breast Neoplasms
     label: Disease
 links:
-  - key: molecularly interacts with
+  - key: directly physically interacts with
     source: MESH:D000068878
     target: UniProt:P04626
     evidence:
@@ -30,7 +30,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Direct binding of trastuzumab to HER2 was demonstrated in CHO cells expressing human HER2, confirming that trastuzumab molecularly interacts with the ERBB2/HER2 receptor.
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000068878
     target: UniProt:P04626
     evidence:
@@ -44,7 +46,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: Trastuzumab reduces PI3K activity downstream of ERBB2, supporting that it decreases ERBB2-mediated signaling activity.
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P04626
     target: GO:0008283
     evidence:

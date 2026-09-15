@@ -1,0 +1,328 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P24_DB00688_MESH_D008181",
+    "drug": "Mycophenolate Mofetil",
+    "drug_mesh": "MESH:D000077732",
+    "drugbank": "DB:DB00688",
+    "disease": "Lupus Nephritis",
+    "disease_mesh": "MESH:D008181",
+    "summary": "Mycophenolate Mofetil → Mycophenolic acid → Inosine-5'-monophosphate dehydrogenase 2 → GMP biosynthetic process → lymphocyte proliferation → Lupus Nephritis"
+  },
+  "nodes": [
+    {
+      "id": "MESH:D000077732",
+      "name": "Mycophenolate Mofetil",
+      "label": "Drug"
+    },
+    {
+      "id": "CHEBI:168618",
+      "name": "Mycophenolic acid",
+      "label": "ChemicalSubstance"
+    },
+    {
+      "id": "UniProt:P12268",
+      "name": "Inosine-5'-monophosphate dehydrogenase 2",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0006177",
+      "name": "GMP biosynthetic process",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "GO:0046651",
+      "name": "lymphocyte proliferation",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D008181",
+      "name": "Lupus Nephritis",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "has metabolite",
+      "source": "MESH:D000077732",
+      "target": "CHEBI:168618",
+      "evidence": [
+        {
+          "reference": "PMID:20823294",
+          "snippet": "Mycophenolate mofetil (MMF) is the ester prodrug of the immunosuppressant agent mycophenolic acid (MPA) and is rapidly activated by esterases after oral administration.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Confirms MMF is a prodrug of MPA, hydrolyzed by esterases to release the active metabolite MPA.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Involvement of carboxylesterase 1 and 2 in the hydrolysis of mycophenolate mofetil.",
+            "authors": [
+              "Fujiyama N",
+              "Miura M",
+              "Kato S",
+              "Sone T",
+              "Isobe M",
+              "Satoh S"
+            ],
+            "journal": "Drug metabolism and disposition: the biological fate of chemicals",
+            "year": "2010",
+            "doi": "10.1124/dmd.110.034249",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "CHEBI:168618",
+      "target": "UniProt:P12268",
+      "evidence": [
+        {
+          "reference": "PMID:19834629",
+          "snippet": "Mycophenolic acid (MPA) is a potent, selective, noncompetitive and reversible inhibitor of inosine-5'-monophosphate deshydrogenase (IMPDH).",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "MPA directly and selectively inhibits IMPDH2, decreasing its enzymatic activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mycophenolate mofetil: An update.",
+            "authors": [
+              "Villarroel MC",
+              "Hidalgo M",
+              "Jimeno A"
+            ],
+            "journal": "Drugs of today (Barcelona, Spain : 1998)",
+            "year": "2009",
+            "doi": "10.1358/dot.2009.45.7.1384878",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:40142133",
+          "snippet": "MPA effectively inhibited IMPDH activity in a dose-dependent manner, with 94-96% inhibition at concentrations of 100 μM and above.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "In vitro demonstration of MPA dose-dependently inhibiting IMPDH activity, supporting decreases activity of edge.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Combination Effects of Aminolevulinic Acid and Mycophenolic Acid on Hacat Cell Proliferation and Inhibition of Inosine Monophosphate Dehydrogenase.",
+            "authors": [
+              "Venkatesh M",
+              "Capriglione N",
+              "Rehberg K",
+              "Voigt J",
+              "Hass MA"
+            ],
+            "journal": "Molecules (Basel, Switzerland)",
+            "year": "2025",
+            "doi": "10.3390/molecules30061359",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P12268",
+      "target": "GO:0006177",
+      "evidence": [
+        {
+          "reference": "PMID:12944494",
+          "snippet": "Inosine 5'-monophosphate dehydrogenase (IMPDH) is the critical, rate-limiting enzyme in the de novo biosynthesis pathway for guanine nucleotides.",
+          "supports": "SUPPORT",
+          "evidence_source": "MODEL_ORGANISM",
+          "explanation": "IMPDH is the rate-limiting enzyme for de novo guanine nucleotide (GMP) biosynthesis; its activity positively regulates the GMP biosynthetic process.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Targeted disruption of the inosine 5'-monophosphate dehydrogenase type I gene in mice.",
+            "authors": [
+              "Gu JJ",
+              "Tolin AK",
+              "Jain J",
+              "Huang H",
+              "Santiago L",
+              "Mitchell BS"
+            ],
+            "journal": "Molecular and cellular biology",
+            "year": "2003",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:19753127",
+          "snippet": "Mycophenolic acid (MPA) blocks the key enzyme inosine monophosphate dehydrogenase and the production of guanosine nucleotides required for DNA synthesis.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "Blocking IMPDH prevents guanosine nucleotide production, confirming IMPDH positively regulates GMP biosynthesis.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mycophenolic acid formulations in adult renal transplantation - update on efficacy and tolerability.",
+            "authors": [
+              "Golshayan D",
+              "Pascual M",
+              "Vogt B"
+            ],
+            "journal": "Therapeutics and clinical risk management",
+            "year": "2009",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "GO:0006177",
+      "target": "GO:0046651",
+      "evidence": [
+        {
+          "reference": "PMID:16051207",
+          "snippet": "The mechanism of action of mycophenolic acid (MPA) has been described as a blockade of inosine 5'-monophosphate dehydrogenase (IMPDH) and is thought to selectively influence T- and B-lymphocytes due to their strong dependency on guanine nucleotides synthesized via the de novo purine synthesis pathway.",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "T and B lymphocytes depend on the de novo guanine nucleotide synthesis pathway for proliferation; GMP biosynthesis positively regulates lymphocyte proliferation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Inosine 5'-monophosphate dehydrogenase inhibition by mycophenolic acid impairs maturation and function of dendritic cells.",
+            "authors": [
+              "Dubsky PC",
+              "Friedl J",
+              "Stift A",
+              "Bachleitner-Hofmann T",
+              "Jakesz R",
+              "Gnant MF",
+              "Weigel G"
+            ],
+            "journal": "Clinica chimica acta; international journal of clinical chemistry",
+            "year": "2006",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:19753127",
+          "snippet": "The description more than 30 years ago of the role of de novo purine synthesis in T and B lymphocytes clonal proliferation opened the possibility for selective immunosuppression by targeting specific enzymatic pathways.",
+          "supports": "SUPPORT",
+          "evidence_source": "OTHER",
+          "explanation": "De novo purine (guanosine) synthesis is required for T and B lymphocyte clonal proliferation, supporting that GMP biosynthesis positively regulates lymphocyte proliferation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mycophenolic acid formulations in adult renal transplantation - update on efficacy and tolerability.",
+            "authors": [
+              "Golshayan D",
+              "Pascual M",
+              "Vogt B"
+            ],
+            "journal": "Therapeutics and clinical risk management",
+            "year": "2009",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "contributes to",
+      "source": "GO:0046651",
+      "target": "MESH:D008181",
+      "evidence": [
+        {
+          "reference": "PMID:22571761",
+          "snippet": "The thorough inhibition of B cell activation and plasma cell formation by MMF might explain the favorable outcomes of previous clinical trials in patients with SLE, since enhanced B cell proliferation is a hallmark of this disease.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Enhanced B cell proliferation is a hallmark of SLE/lupus nephritis; inhibiting it with MMF leads to favorable clinical outcomes, confirming lymphocyte proliferation contributes to lupus nephritis.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Mycophenolic acid counteracts B cell proliferation and plasmablast formation in patients with systemic lupus erythematosus.",
+            "authors": [
+              "Eickenberg S",
+              "Mickholz E",
+              "Jung E",
+              "Nofer JR",
+              "Pavenstadt HJ",
+              "Jacobi AM"
+            ],
+            "journal": "Arthritis research & therapy",
+            "year": "2012",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        },
+        {
+          "reference": "PMID:21187439",
+          "snippet": "The most prevalent severe manifestation of systemic lupus erythematosus is nephritis, which is characterized by immune complex deposition, inflammation, and scarring in glomeruli and the tubulointerstitium.",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Lupus nephritis is the most prevalent severe manifestation of SLE, driven by immune complex deposition from dysregulated lymphocyte activity.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "In situ B cell-mediated immune responses and tubulointerstitial inflammation in human lupus nephritis.",
+            "authors": [
+              "Chang A",
+              "Henderson SG",
+              "Brandt D",
+              "Liu N",
+              "Guttikonda R",
+              "Hsieh C",
+              "Kaverina N",
+              "Utset TO",
+              "Meehan SM",
+              "Quigg RJ",
+              "Meffre E",
+              "Clark MR"
+            ],
+            "journal": "Journal of immunology (Baltimore, Md. : 1950)",
+            "year": "2011",
+            "doi": "10.4049/jimmunol.1001983",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00688#mechanism-of-action",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    },
+    {
+      "url": "https://www.uniprot.org/uniprot/P12268",
+      "type": "other",
+      "label": "uniprot.org — record source"
+    }
+  ],
+  "site": {
+    "id": "phase3__P24",
+    "record_id": "P24_DB00688_MESH_D008181",
+    "run": "phase3",
+    "run_label": "Phase-3 eval",
+    "source_file": "tests/phase3_eval_outputs/P24.yaml",
+    "summary_generated": true
+  }
+}

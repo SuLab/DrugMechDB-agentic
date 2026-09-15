@@ -1,0 +1,253 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "_id": "P10_DB00072_MESH_D001943",
+    "drug": "Trastuzumab",
+    "drug_mesh": "MESH:D000068878",
+    "drugbank": "DB:DB00072",
+    "disease": "HER2-positive Breast Cancer",
+    "disease_mesh": "MESH:D001943",
+    "summary": "Trastuzumab → Receptor tyrosine-protein kinase erbB-2 (HER2) → phosphatidylinositol 3-kinase/protein kinase B signal transduction → cell population proliferation"
+  },
+  "nodes": [
+    {
+      "id": "DB:DB00072",
+      "name": "Trastuzumab",
+      "label": "Drug"
+    },
+    {
+      "id": "UniProt:P04626",
+      "name": "Receptor tyrosine-protein kinase erbB-2 (HER2)",
+      "label": "Protein"
+    },
+    {
+      "id": "GO:0043491",
+      "name": "phosphatidylinositol 3-kinase/protein kinase B signal transduction",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "GO:0008283",
+      "name": "cell population proliferation",
+      "label": "BiologicalProcess"
+    },
+    {
+      "id": "MESH:D001943",
+      "name": "HER2-positive Breast Cancer",
+      "label": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "DB:DB00072",
+      "target": "UniProt:P04626",
+      "evidence": [
+        {
+          "reference": "PMID:14617784",
+          "snippet": "Exposure of the cells to trastuzumab down-regulated the levels of HER2 and reduced phosphorylation levels of Akt and MAPK in MCF7HER2 cells",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Trastuzumab, directed against the HER2 extracellular domain (PMID:24462377), down-regulates HER2 and reduces downstream phosphorylation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Sensitization of breast cancer cells to radiation by trastuzumab.",
+            "authors": [
+              "Liang K",
+              "Lu Y",
+              "Jin W",
+              "Ang KK",
+              "Milas L",
+              "Fan Z"
+            ],
+            "journal": "Molecular cancer therapeutics",
+            "year": "2003",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "UniProt:P04626",
+      "target": "GO:0043491",
+      "evidence": [
+        {
+          "reference": "PMID:14617784",
+          "snippet": "MCF7HER2 cells showed increased phosphorylation of at least two important HER2 downstream molecules, protein kinase B/Akt and mitogen-activated protein kinase (MAPK)",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "High HER2 increases phosphorylation of downstream Akt, indicating HER2 positively regulates PI3K/Akt signaling.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Sensitization of breast cancer cells to radiation by trastuzumab.",
+            "authors": [
+              "Liang K",
+              "Lu Y",
+              "Jin W",
+              "Ang KK",
+              "Milas L",
+              "Fan Z"
+            ],
+            "journal": "Molecular cancer therapeutics",
+            "year": "2003",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "affects",
+      "object_aspect_qualifier": "activity",
+      "object_direction_qualifier": "decreased",
+      "source": "DB:DB00072",
+      "target": "GO:0043491",
+      "evidence": [
+        {
+          "reference": "PMID:14617784",
+          "snippet": "Exposure of the cells to trastuzumab down-regulated the levels of HER2 and reduced phosphorylation levels of Akt and MAPK in MCF7HER2 cells",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Trastuzumab reduces Akt phosphorylation, decreasing PI3K/Akt signal transduction.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Sensitization of breast cancer cells to radiation by trastuzumab.",
+            "authors": [
+              "Liang K",
+              "Lu Y",
+              "Jin W",
+              "Ang KK",
+              "Milas L",
+              "Fan Z"
+            ],
+            "journal": "Molecular cancer therapeutics",
+            "year": "2003",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "increased",
+      "source": "GO:0043491",
+      "target": "GO:0008283",
+      "evidence": [
+        {
+          "reference": "PMID:33795719",
+          "snippet": "enhancing DNA synthesis through the PI3K-AKT signaling in human breast cancer T47D cells",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "PI3K-AKT signaling promotes DNA synthesis and proliferation of breast cancer cells.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Nectin-4 and p95-ErbB2 cooperatively regulate Hippo signaling-dependent SOX2 gene expression, enhancing anchorage-independent T47D cell proliferation.",
+            "authors": [
+              "Kedashiro S",
+              "Kameyama T",
+              "Mizutani K",
+              "Takai Y"
+            ],
+            "journal": "Scientific reports",
+            "year": "2021",
+            "doi": "10.1038/s41598-021-86437-2",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "regulates",
+      "object_direction_qualifier": "decreased",
+      "source": "DB:DB00072",
+      "target": "GO:0008283",
+      "evidence": [
+        {
+          "reference": "PMID:14617784",
+          "snippet": "trastuzumab (Herceptin), a humanized monoclonal antibody that may inhibit breast cancer cell proliferation",
+          "supports": "SUPPORT",
+          "evidence_source": "IN_VITRO",
+          "explanation": "Trastuzumab inhibits breast cancer cell proliferation.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Sensitization of breast cancer cells to radiation by trastuzumab.",
+            "authors": [
+              "Liang K",
+              "Lu Y",
+              "Jin W",
+              "Ang KK",
+              "Milas L",
+              "Fan Z"
+            ],
+            "journal": "Molecular cancer therapeutics",
+            "year": "2003",
+            "doi": null,
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    },
+    {
+      "key": "treats",
+      "source": "DB:DB00072",
+      "target": "MESH:D001943",
+      "evidence": [
+        {
+          "reference": "PMID:24462377",
+          "snippet": "Two compounds have been registered for HER-2-positive tumour treatment: trastuzumab, a humanised antibody directed against the HER-2 extracellular domain",
+          "supports": "SUPPORT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "explanation": "Trastuzumab is registered for treatment of HER2-positive tumours/breast cancer.",
+          "source_type": "pubmed",
+          "paper": {
+            "title": "Resistance to human epidermal growth factor receptor type 2-targeted therapies.",
+            "authors": [
+              "Thery JC",
+              "Spano JP",
+              "Azria D",
+              "Raymond E",
+              "Penault Llorca F"
+            ],
+            "journal": "European journal of cancer (Oxford, England : 1990)",
+            "year": "2014",
+            "doi": "10.1016/j.ejca.2014.01.003",
+            "pmcid": null,
+            "license": null
+          },
+          "source_tier": "ABSTRACT"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://go.drugbank.com/drugs/DB00072",
+      "type": "drugbank",
+      "label": "go.drugbank.com — record source"
+    }
+  ],
+  "site": {
+    "id": "opus__P10",
+    "record_id": "P10_DB00072_MESH_D001943",
+    "run": "opus",
+    "run_label": "Opus (model eval)",
+    "source_file": "experiments/opus_vs_sonnet/opus/outputs/P10.yaml",
+    "summary_generated": true
+  }
+}

@@ -90,9 +90,37 @@ def test_unmapped_drift_stays_out_of_enum():
 
 # ─── loaders ─────────────────────────────────────────────────────────────────
 
-def test_load_enum_is_the_67_predicate_vocabulary():
-    assert len(ENUM) == 67
-    assert "decreases activity of" in ENUM
+def test_load_enum_covers_both_biolink_eras():
+    """The enum spans eras: current Biolink plus the legacy vocabulary kb/paths uses.
+
+    Its size is not asserted — it grows when we adopt a predicate from a new Biolink
+    release. The invariant is that every enum value has a status entry and vice versa,
+    since Layer 3 reads the two together.
+    """
+    import yaml
+    status = yaml.safe_load(
+        (REPO / "src" / "drugmechdb" / "schema" / "biolink_predicate_status.yaml").read_text()
+    )["predicates"]
+    assert set(status) == ENUM
+    assert "decreases activity of" in ENUM          # legacy-only, still accepted
+    assert "affects" in ENUM                        # current Biolink
+
+
+def test_every_replacement_points_at_a_current_predicate():
+    """A `replacement:` that isn't itself a current enum member would migrate a record
+    straight into a Layer 3 failure — the mapping has to be closed over the enum."""
+    import yaml
+    status = yaml.safe_load(
+        (REPO / "src" / "drugmechdb" / "schema" / "biolink_predicate_status.yaml").read_text()
+    )["predicates"]
+    for pred, entry in status.items():
+        replacement = entry.get("replacement") or {}
+        target = replacement.get("key")
+        if not target:
+            continue
+        assert target in ENUM, f"{pred!r} maps to {target!r}, which is not in the enum"
+        assert status[target]["status"] == "current", (
+            f"{pred!r} maps to {target!r}, which is not a current predicate")
 
 
 def test_load_aliases_returns_a_mapping():
