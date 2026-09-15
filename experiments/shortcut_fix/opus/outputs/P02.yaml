@@ -27,7 +27,9 @@ nodes:
     name: Hypercholesterolemia
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000069059
     target: UniProt:P04035
     evidence:
@@ -43,7 +45,8 @@ links:
         snippet: "3-hydroxy-3-methylglutaryl-CoA reductase (HMG-CoA reductase, HMGCR) is one of the rate-limiting enzymes in the mevalonate pathway required for cholesterol biosynthesis."
         supports: SUPPORT
         evidence_source: IN_VITRO
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0006695
     target: UniProt:P01130
     evidence:
@@ -52,7 +55,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "Reduced hepatocyte cholesterol biosynthesis leads to up-regulation of LDL receptors."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:P01130
     target: MESH:D008078
     evidence:

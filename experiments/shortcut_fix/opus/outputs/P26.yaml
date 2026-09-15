@@ -24,7 +24,9 @@ nodes:
     name: Type 2 Diabetes Mellitus
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D008687
     target: PR:000025275
     evidence:
@@ -33,7 +35,9 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Review stating metformin's primary mechanism is inhibition of mitochondrial complex I."
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: PR:000025275
     target: UniProt:Q13131
     evidence:
@@ -42,7 +46,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Complex I inhibition reduces cellular energy state (raises AMP/ADP), activating the AMPK energy sensor."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:Q13131
     target: GO:0006094
     evidence:

@@ -30,7 +30,9 @@ nodes:
     name: Hypercholesterolemia
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D000069059
     target: UniProt:P04035
     evidence:
@@ -39,7 +41,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "Study examines atorvastatin 40 mg efficacy in hypercholesterolemic type 2 diabetic patients and states the general statin mechanism of competitive HMG-CoA reductase inhibition."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P04035
     target: CHEBI:16113
     evidence:
@@ -48,7 +51,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Structural biology paper on statin-HMGR complexes (including atorvastatin) states HMGR catalyzes the committed/rate-limiting step of cholesterol biosynthesis."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: CHEBI:16113
     target: UniProt:Q12772
     evidence:
@@ -57,7 +61,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Review states that decreased intracellular cholesterol (caused by statins) upregulates SREBP2 activity; inverse phrasing supports a negatively-regulates relationship of cholesterol on SREBP-2 activation."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:Q12772
     target: UniProt:P01130
     evidence:
@@ -66,7 +71,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Continuation of the same sentence describing SREBP2 stimulating LDL receptor gene expression."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P01130
     target: GO:0034383
     evidence:
@@ -75,7 +81,8 @@ links:
         supports: SUPPORT
         evidence_source: MODEL_ORGANISM
         explanation: "Review of PCSK9/LDLR biology; sentence directly ties increased LDL receptor expression to accelerated clearance of circulating LDL cholesterol, supporting the LDLR -> LDL particle clearance mechanistic link independent of the PCSK9 context."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: GO:0034383
     target: MESH:D006937
     evidence:

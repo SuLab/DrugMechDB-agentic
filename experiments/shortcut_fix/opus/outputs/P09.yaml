@@ -27,7 +27,9 @@ nodes:
     name: Precursor Cell Lymphoblastic Leukemia-Lymphoma
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D008727
     target: UniProt:P00374
     evidence:
@@ -45,7 +47,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "DHFR is essential for the synthesis of tetrahydrofolate."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0046654
     target: GO:0071897
     evidence:

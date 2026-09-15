@@ -30,7 +30,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Review article summarizing the established mechanism of trastuzumab binding to HER2/neu near the cell membrane; not a primary experimental report."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P04626
     target: GO:0008283
     evidence:
@@ -39,7 +40,8 @@ links:
         supports: SUPPORT
         evidence_source: OTHER
         explanation: "Review article describing HER2/neu's normal regulatory role in cell growth and how overexpression drives malignant proliferation."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: MESH:D000068878
     target: GO:0008283
     evidence:

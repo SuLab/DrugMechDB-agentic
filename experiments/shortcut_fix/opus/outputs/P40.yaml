@@ -24,7 +24,9 @@ nodes:
     name: Asthma
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: DB:DB00043
     target: UniProt:P01854
     evidence:
@@ -38,7 +40,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "Omalizumab binds free IgE at the FcepsilonRI-binding site, preventing IgE from engaging its receptor."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P01854
     target: UniProt:P12319
     evidence:

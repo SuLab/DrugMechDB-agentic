@@ -27,7 +27,9 @@ nodes:
     name: Myocardial Infarction
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D001241
     target: UniProt:P23219
     evidence:
@@ -36,7 +38,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Enzyme kinetics / mutagenesis study of aspirin-mediated acetylation and inactivation of COX-1."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P23219
     target: MESH:D013929
     evidence:
@@ -45,7 +48,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "Abstract states that inhibiting COX-1 reduces TXA2 production, indicating COX-1 activity positively regulates TXA2 production (inverse relationship)."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: MESH:D013929
     target: GO:0070527
     evidence:

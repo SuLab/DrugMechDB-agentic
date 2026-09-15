@@ -40,7 +40,8 @@ links:
       that is further metabolized by various enzymes present in the liver and gut.
     supports: SUPPORT
     evidence_source: OTHER
-- key: negatively regulates
+- key: regulates
+  object_direction_qualifier: decreased
   source: MESH:D008774
   target: GO:0006164
   evidence:
@@ -66,7 +67,8 @@ links:
     supports: SUPPORT
     evidence_source: IN_VITRO
     explanation: 6-Mercaptopurine is a purine synthesis inhibitor.
-- key: positively regulates
+- key: regulates
+  object_direction_qualifier: increased
   source: GO:0006164
   target: GO:0042098
   evidence:

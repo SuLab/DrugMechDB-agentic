@@ -27,7 +27,9 @@ nodes:
     name: Chronic hepatitis C
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: DB:DB00008
     target: UniProt:P17181
     evidence:
@@ -36,7 +38,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Type I interferons (IFNalpha, the active moiety of peginterferon alfa-2a) act as agonists by binding and activating the receptor composed of IFNAR1 and IFNAR2."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P17181
     target: GO:0060337
     evidence:
@@ -45,7 +48,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "IFNAR1 is required for the type I interferon signaling cascade (JAK/STAT)."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0060337
     target: GO:0051607
     evidence:

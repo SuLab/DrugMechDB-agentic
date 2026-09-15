@@ -27,7 +27,9 @@ nodes:
     name: Anxiety
     label: Disease
 links:
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D008140
     target: UniProt:P18507
     evidence:
@@ -41,7 +43,8 @@ links:
         supports: SUPPORT
         evidence_source: HUMAN_CLINICAL
         explanation: "The gamma2 subunit forms the benzodiazepine binding site through which lorazepam acts."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P18507
     target: GO:0022851
     evidence:
@@ -50,7 +53,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Benzodiazepine action via the GABA-A receptor enhances GABA-mediated (chloride) channel currents."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: GO:0022851
     target: GO:1902476
     evidence:

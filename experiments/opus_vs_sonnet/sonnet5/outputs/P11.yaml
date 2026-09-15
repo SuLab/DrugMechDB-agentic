@@ -21,7 +21,7 @@ nodes:
     name: Tuberculosis, Pulmonary
     label: Disease
 links:
-  - key: binds
+  - key: directly physically interacts with
     source: MESH:D012293
     target: UniProt:P9WGY9
     evidence:
@@ -30,7 +30,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Crystal structure of Thermus aquaticus core RNAP complexed with rifampicin shows the drug binding pocket is on the RNAP beta subunit (RpoB), the direct ortholog of the M. tuberculosis rifampicin target."
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D012293
     target: UniProt:P9WGY9
     evidence:

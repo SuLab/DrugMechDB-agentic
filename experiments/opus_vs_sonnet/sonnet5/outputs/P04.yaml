@@ -24,7 +24,9 @@ nodes:
     name: Heart Failure
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D008790
     target: UniProt:P08588
     evidence:
@@ -33,7 +35,8 @@ links:
         supports: SUPPORT
         evidence_source: MODEL_ORGANISM
         explanation: "Confirms metoprolol acts as a beta1-adrenoceptor blocker in vivo (swine model)."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:P08588
     target: UniProt:Q13557
     evidence:
@@ -42,7 +45,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Beta-1 adrenergic receptor stimulation activates CaMKII in cardiac myocytes, independent of the PKA pathway."
-  - key: positively regulates
+  - key: regulates
+    object_direction_qualifier: increased
     source: UniProt:Q13557
     target: GO:0006915
     evidence:

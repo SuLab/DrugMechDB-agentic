@@ -27,7 +27,9 @@ nodes:
     name: Rheumatoid arthritis
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D008727
     target: UniProt:P31939
     evidence:
@@ -36,7 +38,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Methotrexate polyglutamates inhibit ATIC (AICAR transformylase) activity."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:P31939
     target: MESH:D000241
     evidence:
@@ -45,7 +48,9 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Inhibition of ATIC activity promotes adenosine release, i.e. ATIC activity negatively regulates adenosine levels."
-  - key: increases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: increased
     source: MESH:D000241
     target: UniProt:P29274
     evidence:
@@ -54,7 +59,8 @@ links:
         supports: SUPPORT
         evidence_source: MODEL_ORGANISM
         explanation: "Adenosine acts at (activates) the A2A receptor to regulate inflammation."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: UniProt:P29274
     target: GO:0006954
     evidence:

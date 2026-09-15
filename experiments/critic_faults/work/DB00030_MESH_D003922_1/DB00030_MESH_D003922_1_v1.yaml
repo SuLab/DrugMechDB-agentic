@@ -24,7 +24,9 @@ nodes:
   name: Diabetes Mellitus, Type 1
   label: Disease
 links:
-- key: increases activity of
+- key: affects
+  object_aspect_qualifier: activity
+  object_direction_qualifier: increased
   source: MESH:D007328
   target: UniProt:P06213
   evidence:
@@ -42,7 +44,8 @@ links:
       receptor substrates (IRSs).
     supports: SUPPORT
     evidence_source: OTHER
-- key: positively regulates
+- key: regulates
+  object_direction_qualifier: increased
   source: UniProt:P06213
   target: GO:0046323
   evidence:
@@ -60,7 +63,8 @@ links:
       as glucose transport, glycolysis and glycogen synthesis.
     supports: SUPPORT
     evidence_source: OTHER
-- key: negatively regulates
+- key: regulates
+  object_direction_qualifier: decreased
   source: GO:0046323
   target: HP:0003074
   evidence:

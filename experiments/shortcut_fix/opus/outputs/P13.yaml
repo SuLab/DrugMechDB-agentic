@@ -33,7 +33,8 @@ links:
         supports: SUPPORT
         evidence_source: IN_VITRO
         explanation: "Vancomycin binds the D-Ala-D-Ala terminus of the lipid II peptidoglycan precursor."
-  - key: negatively regulates
+  - key: regulates
+    object_direction_qualifier: decreased
     source: MESH:D010457
     target: GO:0009252
     evidence:

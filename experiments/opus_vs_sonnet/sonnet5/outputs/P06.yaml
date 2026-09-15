@@ -18,7 +18,9 @@ nodes:
     name: Breast Cancer
     label: Disease
 links:
-  - key: decreases activity of
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
     source: MESH:D013629
     target: UniProt:P03372
     evidence:
