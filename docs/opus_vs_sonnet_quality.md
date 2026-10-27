@@ -1,6 +1,6 @@
 # Opus 4.8 vs Sonnet 4.6 — Curation Quality Evaluation
 
-**Purpose:** decide which model to use for the production (forwardfill) curation run.
+**Purpose:** decide which model to use for the production re-curation run.
 **Data:** `experiments/opus_vs_sonnet/` — 40 drug–disease pairs; Opus produced 40 outputs, Sonnet 35.
 **Method:** three layers of signal —
 1. **QC gate outcome + efficiency** from `experiments/opus_vs_sonnet/analysis.json` (full-pass, iters, cost, wall).

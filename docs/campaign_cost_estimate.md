@@ -1,6 +1,6 @@
 # Full-campaign cost estimate + cost-reduction strategy
 
-> **Purpose:** size the cost of forwardfilling all **4,846** records (AI re-curation from scratch)
+> **Purpose:** size the cost of re-curating all **4,846** records from scratch with the AI curator
 > so the maintainer can give a go-ahead (issue #6). This is an **estimate with one large unknown**
 > (the independent-critic cost, never measured) — a small pilot (#4) is what turns it into a firm
 > number.

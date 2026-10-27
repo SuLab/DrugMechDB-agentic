@@ -51,6 +51,14 @@ PATHS_DIR = REPO / "kb" / "paths"
 SCHEMA = REPO / "src" / "drugmechdb" / "schema" / "drugmechdb.yaml"
 
 
+def _shown(path: Path) -> str:
+    """Repo-relative path for reports, so a run never records the caller's home directory."""
+    try:
+        return str(path.resolve().relative_to(REPO))
+    except ValueError:
+        return str(path)
+
+
 # Canonical CURIE prefixes per Biolink node type, sourced from
 # src/drugmechdb/schema/biolink_nodes.yaml (Canonical ID prefix in each
 # permissible_value description). Multiple canonical prefixes are permitted.
@@ -132,12 +140,12 @@ def validate_file(path: Path) -> tuple[list[dict], list[dict]]:
     failures = []
     warnings = []
     if not isinstance(doc, dict):
-        failures.append({"file": str(path), "node_index": None, "id": None, "label": None, "reason": "not a YAML mapping"})
+        failures.append({"file": _shown(path), "node_index": None, "id": None, "label": None, "reason": "not a YAML mapping"})
         return failures, warnings
 
     for i, node in enumerate(doc.get("nodes") or []):
         if not isinstance(node, dict):
-            failures.append({"file": str(path), "node_index": i, "id": None, "label": None, "reason": "node is not a mapping"})
+            failures.append({"file": _shown(path), "node_index": i, "id": None, "label": None, "reason": "node is not a mapping"})
             continue
         nid = node.get("id")
         label = node.get("label")
@@ -145,7 +153,7 @@ def validate_file(path: Path) -> tuple[list[dict], list[dict]]:
         bad = invisible_chars(nid)
         if bad:
             failures.append({
-                "file": str(path), "node_index": i, "id": nid, "label": label,
+                "file": _shown(path), "node_index": i, "id": nid, "label": label,
                 "reason": f"identifier contains invisible/whitespace character(s) {bad} — "
                           "strip them (a zero-width char makes the ID fail to resolve while looking correct)",
             })
@@ -154,7 +162,7 @@ def validate_file(path: Path) -> tuple[list[dict], list[dict]]:
         name_bad = invisible_name_chars(node.get("name"))
         if name_bad:
             failures.append({
-                "file": str(path), "node_index": i, "id": nid, "label": label,
+                "file": _shown(path), "node_index": i, "id": nid, "label": label,
                 "reason": f"name contains invisible/non-standard-whitespace character(s) {name_bad} "
                           "— normalize to ordinary spaces (ordinary spaces are fine)",
             })
@@ -163,7 +171,7 @@ def validate_file(path: Path) -> tuple[list[dict], list[dict]]:
 
         if label not in CANONICAL_PREFIXES:
             failures.append({
-                "file": str(path), "node_index": i, "id": nid, "label": label,
+                "file": _shown(path), "node_index": i, "id": nid, "label": label,
                 "reason": f"unknown Biolink node type {label!r}",
             })
             continue
@@ -175,12 +183,12 @@ def validate_file(path: Path) -> tuple[list[dict], list[dict]]:
             continue
         if prefix in legacy:
             warnings.append({
-                "file": str(path), "node_index": i, "id": nid, "label": label,
+                "file": _shown(path), "node_index": i, "id": nid, "label": label,
                 "reason": f"legacy prefix {prefix!r} (canonical: {sorted(canonical)})",
             })
             continue
         failures.append({
-            "file": str(path), "node_index": i, "id": nid, "label": label,
+            "file": _shown(path), "node_index": i, "id": nid, "label": label,
             "reason": f"prefix {prefix!r} not canonical for label {label!r} (expected one of {sorted(canonical)})",
         })
 
@@ -193,7 +201,7 @@ def validate_file(path: Path) -> tuple[list[dict], list[dict]]:
             bad = invisible_chars(edge.get(field))
             if bad:
                 failures.append({
-                    "file": str(path), "node_index": None, "id": edge.get(field), "label": None,
+                    "file": _shown(path), "node_index": None, "id": edge.get(field), "label": None,
                     "reason": f"link[{j}] {field} identifier contains invisible/whitespace character(s) {bad}",
                 })
 

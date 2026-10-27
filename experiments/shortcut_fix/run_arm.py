@@ -82,7 +82,7 @@ PRICING = {
     "claude-sonnet-4-6": {"in": 3.0,  "out": 15.0},
     # Sonnet 5 standard list price ($3 in / $15 out) — same rate as Sonnet 4.6, so any
     # sonnet5-vs-sonnet cost delta is pure token efficiency. (Intro rate through 2026-08-31
-    # is $2/$10; we cost at standard because a production forwardfill would bill at standard.)
+    # is $2/$10; we cost at standard because a production re-curation run would bill at standard.)
     "claude-sonnet-5":   {"in": 3.0,  "out": 15.0},
 }
 

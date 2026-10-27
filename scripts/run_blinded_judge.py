@@ -75,6 +75,16 @@ import yaml
 
 HERE = Path(__file__).resolve().parent            # scripts/
 REPO = HERE.parent
+
+
+def _shown(path: Path) -> str:
+    """Repo-relative path for reports, so a run never records the caller's home directory."""
+    try:
+        return str(Path(path).resolve().relative_to(REPO))
+    except ValueError:
+        return str(path)
+
+
 sys.path.insert(0, str(HERE / "quality"))         # so quality_profile / judge.* / structural_quality import
 
 import quality_profile as qp                        # noqa: E402  (edge_faithfulness, make_backend)
@@ -444,7 +454,7 @@ def build_plan(blinded: list[dict], pair_map: dict, kb_dir: Path) -> tuple[list[
             "est_judge_calls": _n_evidence_edges(doc) + 1,   # one edge call per evidenced edge + one path call
         })
         reveal.append({"blind_id": rec["blind_id"], "arm": rec["arm"],
-                       "source_file": str(rec["file"]), "legacy_path_id": legacy_id})
+                       "source_file": _shown(rec["file"]), "legacy_path_id": legacy_id})
     return plan, reveal
 
 

@@ -4,7 +4,7 @@
   "n_paths": 29,
   "config": {
     "seed": 1234,
-    "kb_dir": "/Users/sanjanprabu/Documents/Personal/SCRIPPS_SRTI/Project/DrugMechDB-agentic/kb/paths",
+    "kb_dir": "kb/paths",
     "eval_pairs": null,
     "max_iters": 6,
     "use_cache": true,

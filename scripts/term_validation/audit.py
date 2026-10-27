@@ -27,6 +27,16 @@ import yaml
 from .resolvers import Registry, name_similarity, names_match, normalize_label
 from .types import TermResult, TermStatus
 
+REPO = Path(__file__).resolve().parents[2]
+
+
+def _shown(path: Path) -> str:
+    """Repo-relative path for reports, so a run never records the caller's home directory."""
+    try:
+        return str(path.resolve().relative_to(REPO))
+    except ValueError:
+        return str(path)
+
 
 @dataclass(frozen=True)
 class NodeRef:
@@ -106,7 +116,7 @@ def iter_nodes(files: Iterable[Path]) -> Iterable[NodeRef]:
             curie = node.get("id")
             if not isinstance(curie, str):
                 continue
-            yield NodeRef(str(path), i, curie, node.get("name"), node.get("label"))
+            yield NodeRef(_shown(path), i, curie, node.get("name"), node.get("label"))
 
 
 def audit(files: list[Path], registry: Registry,

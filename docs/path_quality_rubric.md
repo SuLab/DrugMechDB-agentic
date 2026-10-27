@@ -122,7 +122,7 @@ with two non-negotiable cautions (Framework §5):
   disagreement.
 - **Disagreement ≠ error.** Classify the relationship: `reproduces` / `agent_more_complete` /
   `agent_simpler_but_valid` / `disagree`. The distribution of these labels *is* the evidence for the
-  forwardfill-vs-keep decision — not a per-path pass/fail.
+  re-curate-vs-keep decision — not a per-path pass/fail.
 
 ---
 

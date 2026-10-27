@@ -35,7 +35,7 @@ a living, self-validating KB:
 - **Static + zero-dependency.** No build step; the site is plain HTML/CSS/JS served as files (deploy
   workflow is dormant, #39). This is what makes hosting cheap and the download small.
 - **Data via one swap-point.** Every page reads through `dmdb-data.js`; "sample" mode uses bundled
-  fixtures, "live" mode fetches `data/*.json`. Wiring the real corpus post-forwardfill is a one-flag
+  fixtures, "live" mode fetches `data/*.json`. Wiring the real corpus after re-curation is a one-flag
   change, no page edits.
 - **Minimal visual design** — one flat accent + white + plain bordered containers; no decorative
   gradients/ramps. (See the a11y pass, #43.)
@@ -45,4 +45,4 @@ a living, self-validating KB:
 - **Embeddings** view — needs computed node/path embeddings.
 - **Coverage / treatment-target / priority-to-curate** dashboard panels — need an external
   approved-indication list + curated evidence (flagged `measured:false` in #68).
-- The **real corpus** lands in "live" mode after forwardfill; today the pages render sample data.
+- The **real corpus** lands in "live" mode after re-curation; today the pages render sample data.

@@ -2,7 +2,7 @@
 
 > **Decision:** DrugMechDB targets a **pinned current Biolink release** — **4.4.4** — and
 > AI-curated records are written in it, qualifiers and all. The legacy corpus stays in its
-> own vocabulary until forwardfill replaces it. Recorded here as the single source of truth;
+> own vocabulary until full re-curation replaces it. Recorded here as the single source of truth;
 > the publish layer references this.
 
 ## The choice
@@ -13,7 +13,7 @@ version, **(B)** migrate stored records, **(C)** keep legacy in storage and tran
 An earlier revision of this document recorded the strategy as *"re-curated from scratch in the latest
 Biolink version, so storage **is** the current vocabulary"* and closed #19 and #54 as moot on that
 basis. **That premise did not hold.** The curator was handed the legacy 67-predicate enum
-(`AGENTS.md` §3, `.claude/commands/curate.md`) and QC Layer 3 enforced it, so forwardfilled records
+(`AGENTS.md` §3, `.claude/commands/curate.md`) and QC Layer 3 enforced it, so re-curated records
 came out in the *legacy* vocabulary: measured against Biolink 4.4.4, **323 of 558 edges (58%)** in
 the 135 AI-curated records used predicates Biolink had already removed. Writing "latest Biolink" in
 a policy document does not make the gate produce it.
@@ -35,7 +35,7 @@ The corrected strategy is **B, scoped to the AI-curated corpus**:
 - **#19 (publish-time translation to current Biolink)** — still moot *for AI-curated records*
   (they are stored in current Biolink, so the exporter emits it directly), but **live again for the
   legacy corpus**: publishing `kb/paths/` as current Biolink needs the translation, because those
-  records keep the legacy vocabulary until forwardfill reaches them.
+  records keep the legacy vocabulary until re-curation reaches them.
 - **#54 (predicate→qualifier remap rules)** — **not moot.** The rules are implemented as
   `scripts/migrate_predicates.py` + the `replacement:` blocks in
   `src/drugmechdb/schema/biolink_predicate_status.yaml`. They were used to migrate the AI-curated

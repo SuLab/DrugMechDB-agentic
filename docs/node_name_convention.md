@@ -3,7 +3,7 @@
 > **Decision:** keep **human-friendly** node names. The `name` field is a display label; it is **not
 > required to equal the ontology's canonical heading**. Identity is carried by the CURIE `id`, which
 > QC Layer 2 validates against the Biolink type. Recorded here as the convention; applies to new
-> (forwardfilled) curations.
+> and re-curated records.
 
 ## Why not force canonical labels
 
