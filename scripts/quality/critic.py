@@ -472,7 +472,28 @@ def run_critic(path_file: str, backend, *, round_no: int = 1, max_rounds: int = 
         "accept_report": accept_report,           # positive affirmation (only on ACCEPT)
         "sidecar": sidecar_rel,
         "summary": summary,
+        "critic_model": model,
+        "usage": _spent_usage([*edge_bundles, path_bundle]),   # tokens billed THIS run
     }
+
+
+_USAGE_KEYS = ("input_tokens", "output_tokens",
+               "cache_read_input_tokens", "cache_creation_input_tokens")
+
+
+def _spent_usage(bundles: list[dict]) -> dict:
+    """Tokens this critic run actually billed, summed over its judge loops.
+
+    A verdict carried forward from a prior round (`reused`) or served from the on-disk
+    verdict cache (`cached`) made no API call now; its recorded usage belongs to the run
+    that produced it, so counting it here would bill the same call twice."""
+    total = dict.fromkeys(_USAGE_KEYS, 0)
+    for b in bundles:
+        if b.get("skipped") or b.get("reused") or b.get("cached"):
+            continue
+        for k in _USAGE_KEYS:
+            total[k] += (b.get("usage") or {}).get(k, 0) or 0
+    return total
 
 
 # ── agent-facing report ─────────────────────────────────────────────────────

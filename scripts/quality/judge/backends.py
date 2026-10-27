@@ -80,11 +80,13 @@ class AnthropicBackend(Backend):
         client = anthropic.Anthropic()
         registry = {t.name: t for t in tools}
         tool_defs = [{"name": t.name, "description": t.description, "input_schema": t.input_schema} for t in tools]
-        # Prompt caching: the judge's system prompt + tool defs are a large, byte-identical
-        # prefix reused on every turn of a judge loop AND across all N edge judges in a
-        # curation (identical prompt + tools). A cache_control breakpoint on the system block
-        # caches tools+system together — written once, then read at ~0.1x by every later
-        # turn/judge within the cache TTL.
+        # Prompt caching, in two layers (same design as the curation engine):
+        #   1. A breakpoint on the system block caches tools + system, a byte-identical
+        #      prefix shared by every turn of a judge loop and by all N edge judges in a
+        #      curation.
+        #   2. Top-level automatic caching (on the request below) caches the growing
+        #      loop history, so each earlier turn is read back at the cache rate instead
+        #      of re-billed in full on every later turn.
         system_blocks = [{"type": "text", "text": system, "cache_control": {"type": "ephemeral"}}]
         messages = [{"role": "user", "content": user}]
         calls: list = []
@@ -95,6 +97,7 @@ class AnthropicBackend(Backend):
             resp = client.messages.create(
                 model=self.model, max_tokens=self.max_tokens,
                 system=system_blocks, tools=tool_defs, messages=messages,
+                cache_control={"type": "ephemeral"},
             )
             u = getattr(resp, "usage", None)
             if u is not None:

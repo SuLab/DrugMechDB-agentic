@@ -1,0 +1,55 @@
+directed: true
+multigraph: true
+graph:
+  _id: DB00002_MESH_D003110_1
+  drug: cetuximab
+  drug_mesh: MESH:D000068818
+  disease: Malignant tumor of colon
+  disease_mesh: MESH:D003110
+nodes:
+  - id: MESH:D000068818
+    name: Cetuximab
+    label: Drug
+  - id: UniProt:P00533
+    name: Epidermal growth factor receptor
+    label: Protein
+  - id: GO:0008283
+    name: cell proliferation
+    label: BiologicalProcess
+  - id: MESH:D003110
+    name: Malignant tumor of colon
+    label: Disease
+links:
+  - key: regulates
+    object_direction_qualifier: decreased
+    source: MESH:D000068818
+    target: UniProt:P00533
+    evidence:
+      - reference: PMID:17237696
+        snippet: "Cetuximab is a monoclonal antibody that binds to the epidermal growth factor receptor (EGFR) of cancer cells expressing EGFR and prevents dimerization and downstream cell signaling pathways."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+        explanation: "Cetuximab binds EGFR and prevents its dimerization and downstream signaling, i.e. decreases EGFR activity."
+  - key: regulates
+    object_direction_qualifier: increased
+    source: UniProt:P00533
+    target: GO:0008283
+    evidence:
+      - reference: PMID:18499888
+        snippet: "In colon cancer, EGFR is an ideal target as it is expressed in 25-77% of colorectal tumors, and it regulates cell division, repair, survival, and metastasis."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "EGFR positively regulates cell division/proliferation in colon cancer."
+      - reference: PMID:16562649
+        snippet: "The epidermal growth factor receptor (EGFR) promotes the growth of different cell types and has been implicated in tumorigenesis."
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: contributes to
+    source: GO:0008283
+    target: MESH:D003110
+    evidence:
+      - reference: PMID:27672289
+        snippet: "Both sporadical and colitis-associated colorectal carcinogenesis are multi-step, complex processes arising from the uncontrolled proliferation and spreading of malignantly transformed cell clones with the obvious ability to evade the host's protective immunity."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Uncontrolled cell proliferation drives colorectal carcinogenesis."

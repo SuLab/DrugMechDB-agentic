@@ -229,6 +229,31 @@ def test_end_to_end_offline_curation(tmp_path, no_real_anthropic):
     assert tk and tk[0]["thinking"] == "Aspirin inhibits COX-1." and tk[0]["signature"] == "sig-abc123"
 
 
+# ── prompt caching covers the whole conversation, not only the static prefix ────
+
+def test_every_turn_caches_the_prefix_and_the_growing_history(tmp_path, no_real_anthropic):
+    """Caching is invisible when it breaks — requests still succeed, they just bill
+    full price — so this guards both layers on every turn: the explicit breakpoint on
+    the static system block, and the top-level automatic breakpoint that caches the
+    history. It also checks per-turn usage is recorded, the measurement that shows
+    whether caching works on a live run."""
+    out_path = tmp_path / "paths" / "DB00945_MESH_D009203_1.yaml"
+    cache_dir = tmp_path / "cache" / "DB00945_MESH_D009203_1"
+    item = WorkItem(id="DB00945_MESH_D009203_1", drug="Aspirin",
+                    disease="Myocardial infarction", disease_mesh="MESH:D009203")
+    client = MockClient(_curate_script())
+
+    res = curate_engine.curate_one(item, model="claude-opus-4-8",
+                                   cache_dir=cache_dir, out_path=out_path, client=client)
+
+    assert len(client.calls) == res.iters == 4
+    for call in client.calls:
+        assert call["cache_control"] == {"type": "ephemeral"}
+        assert call["system"][-1]["cache_control"] == {"type": "ephemeral"}
+    assert len(res.turn_usage) == res.iters
+    assert sum(t["input_tokens"] for t in res.turn_usage) == res.usage["input_tokens"]
+
+
 # ── 5: the corpus-blind 8-tool allowlist ──────────────────────────────────────
 
 def test_tool_allowlist_is_exactly_eight_and_corpus_blind(tmp_path):

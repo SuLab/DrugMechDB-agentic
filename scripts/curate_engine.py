@@ -88,6 +88,9 @@ DRAFT_NUDGE_TURN_1 = 15
 DRAFT_NUDGE_TURN_2 = 25
 TOOL_TIMEOUT = 300
 TOOL_OUTPUT_CAP = 20000     # cap tool output fed back to the model
+# The four token meters the Messages API reports; together they price a request.
+_USAGE_KEYS = ("input_tokens", "output_tokens",
+               "cache_read_input_tokens", "cache_creation_input_tokens")
 
 
 # ── tool subprocess plumbing (per-call cache isolation via DMDB_CACHE_DIR) ─────
@@ -133,7 +136,8 @@ def build_tools(cache_dir: Path, out_path: Path, *, offline: bool = False,
     corpus-read guardrail."""
     cache_dir = Path(cache_dir)
     out_path = Path(out_path)
-    state: dict = {"wrote_yaml": False, "gate": None}
+    state: dict = {"wrote_yaml": False, "gate": None,
+                   "critic_usage": dict.fromkeys(_USAGE_KEYS, 0), "critic_model": None}
 
     def evidence_search(a: dict) -> str:
         code, out = _run_script(cache_dir, [str(EVIDENCE_FETCH), "search",
@@ -209,6 +213,19 @@ def build_tools(cache_dir: Path, out_path: Path, *, offline: bool = False,
                 break
             except Exception:
                 continue
+        # The critic runs inside the gate subprocess, so its token spend arrives in the
+        # gate's JSON. Accumulate it across every gate run in this curation, then remove
+        # it before the agent sees the result: billing data is not curation feedback,
+        # and leaving it in would change what the agent reads.
+        critic = (parsed or {}).get("critic") if isinstance(parsed, dict) else None
+        if isinstance(critic, dict) and critic.get("usage"):
+            for k in _USAGE_KEYS:
+                state["critic_usage"][k] += critic["usage"].get(k, 0) or 0
+            state["critic_model"] = critic.get("critic_model")
+            critic.pop("usage", None)
+            critic.pop("critic_model", None)
+            stderr_part = out[len(stdout_part):]
+            out = json.dumps(parsed, indent=2, default=str) + stderr_part
         state["gate"] = {"code": code, "feedback": parsed, "raw": out}
         return out
 
@@ -316,7 +333,10 @@ class CurationResult:
     gate_verdict: str | None = None
     gate_feedback: dict | None = None
     tool_call_counts: dict = field(default_factory=dict)
-    usage: dict = field(default_factory=dict)
+    usage: dict = field(default_factory=dict)            # the curating agent's tokens
+    turn_usage: list = field(default_factory=list)       # the same, one entry per turn
+    critic_usage: dict = field(default_factory=dict)     # the critic's tokens, all gate runs
+    critic_model: str | None = None
     final_text: str = ""
     provenance: dict | None = None
     error: str | None = None
@@ -422,9 +442,15 @@ def curate_one(
     tool_defs, registry, state = build_tools(
         cache_dir, out_path, offline=offline, gate_critic=gate_critic, online_gate=online_gate)
 
-    # Prompt caching: the system prompt (AGENTS.md + framing) + fixed tool defs are a
-    # large, byte-identical prefix reused on every turn. A cache_control breakpoint on
-    # the system block caches tools+system together — the big cost lever at corpus scale.
+    # Prompt caching, in two layers. Every turn re-sends the whole conversation, so an
+    # uncached loop pays for each earlier turn again on every later one.
+    #   1. An explicit breakpoint on the system block caches tools + system: the static
+    #      prefix, identical across turns and across curations.
+    #   2. Top-level automatic caching (the `cache_control` passed to the request below)
+    #      moves a breakpoint to the end of each request, so the growing history is
+    #      written once and read back on every later turn instead of re-billed in full.
+    # Before (2), history was 75% of a measured curation's cost. Caching changes price,
+    # not what the model sees, so it cannot change a curation's output.
     system = [{"type": "text", "text": build_system(), "cache_control": {"type": "ephemeral"}}]
     messages: list = [{"role": "user", "content": build_task(item)}]
 
@@ -434,8 +460,7 @@ def curate_one(
     if effort:
         create_kwargs["output_config"] = {"effort": effort}
 
-    usage = {"input_tokens": 0, "output_tokens": 0,
-             "cache_read_input_tokens": 0, "cache_creation_input_tokens": 0}
+    usage = dict.fromkeys(_USAGE_KEYS, 0)
     calls: list[str] = []
     nudged: set = set()
     i = -1
@@ -448,7 +473,8 @@ def curate_one(
             # (.content / .stop_reason / .usage) the rest of this loop already expects.
             with client.messages.stream(
                 model=model, max_tokens=max_tokens, system=system,
-                tools=tool_defs, messages=messages, **create_kwargs,
+                tools=tool_defs, messages=messages,
+                cache_control={"type": "ephemeral"}, **create_kwargs,
             ) as stream:
                 resp = stream.get_final_message()
         except Exception as e:
@@ -463,8 +489,12 @@ def curate_one(
 
         u = getattr(resp, "usage", None)
         if u is not None:
+            turn = {k: getattr(u, k, 0) or 0 for k in usage}
             for k in usage:
-                usage[k] += getattr(u, k, 0) or 0
+                usage[k] += turn[k]
+            # Per-turn usage is how cache health is verified: on a warm loop each turn's
+            # cache_creation should be one turn's worth, and cache_read should dominate.
+            result.turn_usage.append(turn)
 
         tool_uses = [b for b in resp.content if getattr(b, "type", None) == "tool_use"]
         if getattr(resp, "stop_reason", None) == "tool_use" and tool_uses:
@@ -511,6 +541,8 @@ def curate_one(
     result.output_written = out_path.exists()
     result.tool_call_counts = _count(calls)
     result.usage = usage
+    result.critic_usage = state["critic_usage"]
+    result.critic_model = state["critic_model"]
 
     g = state.get("gate")
     if g and isinstance(g.get("feedback"), dict):

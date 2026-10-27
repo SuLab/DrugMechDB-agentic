@@ -1,0 +1,117 @@
+record_id: DB00009_MESH_D011655_1
+critic_model: claude-opus-4-8
+critic_provider: anthropic
+first_reviewed_at: '2026-10-27T01:34:37+00:00'
+last_reviewed_at: '2026-10-27T01:34:37+00:00'
+current_round: 1
+max_rounds: 4
+overall_verdict: ACCEPT
+escalation_reason: null
+overall_summary: 'Adversarial search for a whole-path defect found none. The chief
+  failure mode to suspect — a missing degradation/sign-flip in an all-positive chain
+  to a treated disease — does not apply: the Plasmin→Fibrin step correctly carries
+  the degradative sign-flip (plasmin degrades fibrin, dissolving the thrombus), so
+  the chain nets to DECREASE PE, matching the accepted thrombolytic MoA grounded independently
+  in ChEMBL and in clinical/experimental sources the curator did not cite (PMID:42315722,
+  PMID:42610339, PMID:42213679). Structure is a clean single chain with no shortcut.
+  Minor non-blocking caveats (object-grounding of P00747 covering plasminogen/plasmin;
+  thrombus-vs-thrombosis structure/process convention; curator''s IN_VITRO source
+  labels that are actually reviews) do not undermine the path.'
+rounds:
+- round: 1
+  reviewed_at: '2026-10-27T01:34:37+00:00'
+  verdict: ACCEPT
+  escalation_reason: null
+  summary: 'Adversarial search for a whole-path defect found none. The chief failure
+    mode to suspect — a missing degradation/sign-flip in an all-positive chain to
+    a treated disease — does not apply: the Plasmin→Fibrin step correctly carries
+    the degradative sign-flip (plasmin degrades fibrin, dissolving the thrombus),
+    so the chain nets to DECREASE PE, matching the accepted thrombolytic MoA grounded
+    independently in ChEMBL and in clinical/experimental sources the curator did not
+    cite (PMID:42315722, PMID:42610339, PMID:42213679). Structure is a clean single
+    chain with no shortcut. Minor non-blocking caveats (object-grounding of P00747
+    covering plasminogen/plasmin; thrombus-vs-thrombosis structure/process convention;
+    curator''s IN_VITRO source labels that are actually reviews) do not undermine
+    the path.'
+  flags: []
+  path_issue: null
+  prior_flag_status: []
+  consulted_independent_sources: &id001
+  - ChEMBL:alteplase
+  - PMID:41058374
+  - PMID:42054092
+  - PMID:42213679
+  - PMID:42315722
+  - PMID:42404838
+  - PMID:42610339
+  - clinicaltrials:NCT03108833
+  edge_reviews:
+  - edge: Alteplase --affects--> Plasmin
+    reference: PMID:36696210
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL CHEMBL1201593 (alteplase)", "record": "action_type=''EXOGENOUS
+      PROTEIN''; target=Tissue-type plasminogen activator \u2014 confirms alteplase
+      is tPA, the plasminogen activator that generates plasmin."}'
+    confidence: high
+  - edge: Alteplase --affects--> Plasmin
+    reference: PMID:38004336
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "ChEMBL CHEMBL1201593 (alteplase)", "record": "alteplase
+      = Tissue-type plasminogen activator (exogenous protein), the agent that converts
+      plasminogen to plasmin."}'
+    confidence: high
+  - edge: Plasmin --affects--> Fibrin
+    reference: PMID:33803235
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:42054092 (not cited by curator) and PMID:41058374",
+      "record": "PMID:42054092 describes ''plasmin-mediated fibrinolysis'' and plasmin
+      as ''the fibrinolytic enzyme''; PMID:41058374 confirms plasmin/tPA drive fibrinolysis
+      (fibrin dissolution)."}'
+    confidence: high
+  - edge: Fibrin --part of--> Thrombosis
+    reference: PMID:29225327
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:19928667 (independent; not cited by curator) and
+      PMID:28822718 (independent)", "record": "PMID:19928667 describes fibrinolysis
+      as degradation of ''fibrin deposits'' within hemostasis/thrombosis, confirming
+      fibrin as deposited structural material in thrombi; PMID:28822718 lists fibrin
+      among hemostatic components in a prothrombotic/thrombotic state. Both corroborate
+      fibrin as a constituent of thrombi."}'
+    confidence: high
+  - edge: Thrombosis --causes--> Pulmonary embolism
+    reference: PMID:29566731
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:40056989 (JTH, CTEPH review) and PMID:39463058 (CDT
+      review) \u2014 not cited by curator", "record": "Both describe the established
+      DVT/thrombus \u2192 embolization \u2192 pulmonary embolism pathophysiology;
+      CTEPH ''thought to result from... following acute pulmonary embolism'' and CDT
+      review frames DVT and PE as the VTE continuum with thrombus dislodging to the
+      lungs."}'
+    confidence: high
+  - edge: Thrombosis --causes--> Pulmonary embolism
+    reference: PMID:38288832
+    rederived_supports: SUPPORT
+    agrees_with_curator: true
+    grounding: '{"source": "PMID:39463058 (CDT review) \u2014 not cited by curator",
+      "record": "Describes VTE as DVT + PE continuum where early thrombus removal
+      reduces PE/pulmonary artery pressure, consistent with thrombus embolizing to
+      cause PE."}'
+    confidence: high
+  accept_report:
+    rationale: 'Adversarial search for a whole-path defect found none. The chief failure
+      mode to suspect — a missing degradation/sign-flip in an all-positive chain to
+      a treated disease — does not apply: the Plasmin→Fibrin step correctly carries
+      the degradative sign-flip (plasmin degrades fibrin, dissolving the thrombus),
+      so the chain nets to DECREASE PE, matching the accepted thrombolytic MoA grounded
+      independently in ChEMBL and in clinical/experimental sources the curator did
+      not cite (PMID:42315722, PMID:42610339, PMID:42213679). Structure is a clean
+      single chain with no shortcut. Minor non-blocking caveats (object-grounding
+      of P00747 covering plasminogen/plasmin; thrombus-vs-thrombosis structure/process
+      convention; curator''s IN_VITRO source labels that are actually reviews) do
+      not undermine the path.'
+    supporting_sources: *id001

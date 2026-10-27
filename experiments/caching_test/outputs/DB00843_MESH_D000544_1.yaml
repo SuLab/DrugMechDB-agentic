@@ -1,0 +1,56 @@
+directed: true
+multigraph: true
+graph:
+  _id: DB00843_MESH_D000544_1
+  drug: donepezil
+  drug_mesh: MESH:C076946
+  disease: Alzheimer's disease
+  disease_mesh: MESH:D000544
+nodes:
+  - id: MESH:C076946
+    name: donepezil
+    label: Drug
+  - id: UniProt:P22303
+    name: Acetylcholinesterase
+    label: Protein
+  - id: MESH:D000109
+    name: Acetylcholine
+    label: ChemicalSubstance
+  - id: MESH:D000544
+    name: Alzheimer's disease
+    label: Disease
+links:
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
+    source: MESH:C076946
+    target: UniProt:P22303
+    evidence:
+      - reference: PMID:39037949
+        snippet: "donepezil, a well-known AChE inhibitor used in Alzheimer's disease treatment"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Donepezil is a well-known acetylcholinesterase inhibitor, i.e. it decreases AChE catalytic activity."
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: decreased
+    source: UniProt:P22303
+    target: MESH:D000109
+    evidence:
+      - reference: PMID:39037949
+        snippet: "acetylcholinesterase (AChE) is a critical enzyme in the nervous system, responsible for breaking down the neurotransmitter acetylcholine"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "AChE hydrolyzes acetylcholine, reducing its abundance; inhibiting AChE therefore raises acetylcholine levels."
+  - key: negatively correlated with
+    source: MESH:D000109
+    target: MESH:D000544
+    evidence:
+      - reference: PMID:41787135
+        snippet: "The cholinergic hypothesis suggests that acetylcholine deficiency is the main cause of AD"
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Per the cholinergic hypothesis, deficiency of acetylcholine drives Alzheimer's disease; restoring acetylcholine opposes disease."
+references:
+  - https://www.ncbi.nlm.nih.gov/pubmed/39037949
+  - https://www.ncbi.nlm.nih.gov/pubmed/41787135

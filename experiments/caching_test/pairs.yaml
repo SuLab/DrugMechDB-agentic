@@ -1,0 +1,54 @@
+description: 'Prompt-caching validation (2026-10-26): five pilot pairs that were accepted
+  cleanly in the July pilot, one curation each, curator and critic on claude-opus-4-8.
+  Chosen to keep the run inside a fixed budget, since the pilot''s cost tail came
+  from re-curation loops.'
+pairs:
+- id: DB00619_MESH_D015464_1
+  drug: imatinib
+  disease: CML (ph+)
+  drug_mesh: MESH:D000068877
+  disease_mesh: MESH:D015464
+  drugbank: DB:DB00619
+  category: chembl_preprint
+  why: imatinib -> BCR-ABL1 tyrosine kinase (UniProt:P00519), chronic myeloid leukemia.
+    Compound->target bioactivity is ChEMBL's core coverage (ChEMBL:CHEMBL941) — exercises
+    the non-PubMed multi-source evidence layer.
+- id: DB00843_MESH_D000544_1
+  drug: donepezil
+  disease: Alzheimer's disease
+  drug_mesh: MESH:C076946
+  disease_mesh: MESH:D000544
+  drugbank: DB:DB00843
+  category: chembl_preprint
+  why: donepezil -> acetylcholinesterase (UniProt:P22303), Alzheimer disease. Compound->target
+    bioactivity is ChEMBL's core coverage (ChEMBL:CHEMBL502) — exercises the non-PubMed
+    multi-source evidence layer.
+- id: DB09038_MESH_D003924_1
+  drug: empagliflozin
+  disease: Diabetes Mellitus, Type 2
+  drug_mesh: MESH:C570240
+  disease_mesh: MESH:D003924
+  drugbank: DB:DB09038
+  category: chembl_preprint
+  why: empagliflozin -> SGLT2 / SLC5A2 (UniProt:P31639), type-2 diabetes (newer drug
+    — mechanism also carried by preprints). Compound->target bioactivity is ChEMBL's
+    core coverage (ChEMBL:CHEMBL2107830) — exercises the non-PubMed multi-source evidence
+    layer.
+- id: DB00002_MESH_D003110_1
+  drug: cetuximab
+  disease: Malignant tumor of colon
+  drug_mesh: MESH:D000068818
+  disease_mesh: MESH:D003110
+  drugbank: DB:DB00002
+  category: ordinary
+  why: clean legacy record (no structural flags; 6-edge coherent path) — ordinary
+    baseline + agreement-vs-legacy anchor.
+- id: DB00009_MESH_D011655_1
+  drug: alteplase
+  disease: Pulmonary embolism
+  drug_mesh: MESH:D010959
+  disease_mesh: MESH:D011655
+  drugbank: DB:DB00009
+  category: ordinary
+  why: clean legacy record (no structural flags; 4-edge coherent path) — ordinary
+    baseline + agreement-vs-legacy anchor.

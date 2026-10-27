@@ -1,0 +1,60 @@
+directed: true
+multigraph: true
+graph:
+  _id: DB09038_MESH_D003924_1
+  drug: empagliflozin
+  drug_mesh: MESH:C570240
+  disease: Diabetes Mellitus, Type 2
+  disease_mesh: MESH:D003924
+nodes:
+  - id: MESH:C570240
+    name: empagliflozin
+    label: Drug
+  - id: UniProt:P31639
+    name: Sodium/glucose cotransporter 2
+    label: Protein
+  - id: GO:0035623
+    name: renal glucose absorption
+    label: BiologicalProcess
+  - id: HP:0003074
+    name: Hyperglycemia
+    label: PhenotypicFeature
+  - id: MESH:D003924
+    name: Diabetes Mellitus, Type 2
+    label: Disease
+links:
+  - key: regulates
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
+    source: MESH:C570240
+    target: UniProt:P31639
+    evidence:
+      - reference: PMID:33647823
+        snippet: "Empagliflozin is a SGLT2 inhibitor that reduces the concentration of blood glucose by inhibiting glucose reabsorption and promoting glucose excretion."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Empagliflozin acts as an inhibitor of SGLT2, decreasing its transporter activity (negative regulation)."
+  - key: participates in
+    source: UniProt:P31639
+    target: GO:0035623
+    evidence:
+      - reference: PMID:24444521
+        snippet: "Most of the renal glucose reabsorption is mediated by SGLT2."
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: contributes to
+    source: GO:0035623
+    target: HP:0003074
+    evidence:
+      - reference: PMID:24444521
+        snippet: "In patients with hyperglycemia, the kidney continues to reabsorb glucose, thus maintaining hyperglycemia."
+        supports: SUPPORT
+        evidence_source: OTHER
+  - key: manifestation of
+    source: HP:0003074
+    target: MESH:D003924
+    evidence:
+      - reference: PMID:42292743
+        snippet: "Type 2 diabetes mellitus (T2DM) is a chronic metabolic disorder characterized by hyperglycemia, insulin resistance"
+        supports: SUPPORT
+        evidence_source: OTHER

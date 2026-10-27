@@ -1,0 +1,71 @@
+directed: true
+multigraph: true
+graph:
+  _id: DB00009_MESH_D011655_1
+  drug: alteplase
+  drug_mesh: MESH:D010959
+  disease: Pulmonary embolism
+  disease_mesh: MESH:D011655
+nodes:
+  - id: MESH:D010959
+    name: Alteplase
+    label: Drug
+  - id: UniProt:P00747
+    name: Plasmin
+    label: Protein
+  - id: MESH:D005341
+    name: Fibrin
+    label: ChemicalSubstance
+  - id: MESH:D013927
+    name: Thrombosis
+    label: Disease
+  - id: MESH:D011655
+    name: Pulmonary embolism
+    label: Disease
+links:
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: increased
+    source: MESH:D010959
+    target: UniProt:P00747
+    evidence:
+      - reference: PMID:36696210
+        snippet: "systemic administration of plasminogen activators (e.g. tPA), to convert fibrin-associated plasminogen to plasmin for fibrinolytic action"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Alteplase is recombinant tissue plasminogen activator (tPA); its MeSH descriptor D010959 is Tissue Plasminogen Activator. tPA converts plasminogen to plasmin, increasing plasmin."
+      - reference: PMID:38004336
+        snippet: "plasminogen activators (tissue or urokinase types), which convert inactive plasminogen to active plasmin"
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: affects
+    object_aspect_qualifier: abundance
+    object_direction_qualifier: decreased
+    source: UniProt:P00747
+    target: MESH:D005341
+    evidence:
+      - reference: PMID:33803235
+        snippet: "Plasmin is a central enzyme in this process via its capacity to cleave fibrin."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+        explanation: "Plasmin cleaves/degrades fibrin, reducing intact fibrin in the clot (fibrinolysis), the step that reverses the pathological polarity."
+  - key: part of
+    source: MESH:D005341
+    target: MESH:D013927
+    evidence:
+      - reference: PMID:29225327
+        snippet: "Fibrin formed as a result of fibrinogen polymerization is the main protein component of a clot in a test tube and intravascular thrombi in vivo."
+        supports: SUPPORT
+        evidence_source: IN_VITRO
+  - key: causes
+    source: MESH:D013927
+    target: MESH:D011655
+    evidence:
+      - reference: PMID:29566731
+        snippet: "Pulmonary embolism occurs when a blood thrombus forms and travels from a vein in the body to an artery in the lung."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL
+      - reference: PMID:38288832
+        snippet: "If the thrombus dislodges and travels to the lungs, it can result in a pulmonary embolus (PE)."
+        supports: SUPPORT
+        evidence_source: HUMAN_CLINICAL

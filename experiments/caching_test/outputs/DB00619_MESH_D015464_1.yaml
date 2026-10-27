@@ -1,0 +1,54 @@
+directed: true
+multigraph: true
+graph:
+  _id: DB00619_MESH_D015464_1
+  drug: imatinib
+  drug_mesh: MESH:D000068877
+  disease: Leukemia, Myelogenous, Chronic, BCR-ABL Positive
+  disease_mesh: MESH:D015464
+nodes:
+  - id: MESH:D000068877
+    name: imatinib
+    label: Drug
+  - id: UniProt:A9UF07
+    name: BCR/ABL fusion protein
+    label: Protein
+  - id: GO:0008283
+    name: cell proliferation
+    label: BiologicalProcess
+  - id: MESH:D015464
+    name: Leukemia, Myelogenous, Chronic, BCR-ABL Positive
+    label: Disease
+links:
+  - key: affects
+    object_aspect_qualifier: activity
+    object_direction_qualifier: decreased
+    source: MESH:D000068877
+    target: UniProt:A9UF07
+    evidence:
+      - reference: PMID:40087828
+        snippet: "Imatinib (first generation), dasatinib, nilotinib and bosutinib (second generation), and ponatinib (third generation) are the five approved TKIs that inhibit BCR::ABL1 by binding to the ATP binding site of ABL1."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Review of approved CML therapies; imatinib inhibits the BCR-ABL1 kinase by binding the ATP site of ABL1, decreasing its kinase activity."
+  - key: regulates
+    object_direction_qualifier: increased
+    source: UniProt:A9UF07
+    target: GO:0008283
+    evidence:
+      - reference: PMID:40360311
+        snippet: "The BCR-ABL fusion protein is a constitutively active tyrosine kinase which signals to multiple pathways including the Ras/MAPK, PI3K/AKT, JAK/STAT and NF-kappaB pathways which promote uncontrolled cell proliferation and survival."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "The constitutively active BCR-ABL fusion kinase drives uncontrolled cell proliferation."
+  - key: manifestation of
+    source: GO:0008283
+    target: MESH:D015464
+    evidence:
+      - reference: PMID:39791164
+        snippet: "the uncontrolled proliferation of myeloid cells, which is a hallmark of CML."
+        supports: SUPPORT
+        evidence_source: OTHER
+        explanation: "Uncontrolled proliferation of myeloid cells is the defining manifestation of chronic myeloid leukemia."
+references:
+  - https://pubmed.ncbi.nlm.nih.gov/40360311/

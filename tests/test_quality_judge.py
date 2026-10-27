@@ -227,9 +227,10 @@ def test_anthropic_backend_tool_loop_monkeypatched(monkeypatch):
     from judge.backends import AnthropicBackend
 
     class FakeMessages:
-        def __init__(self): self.n = 0
+        def __init__(self): self.n = 0; self.calls = []
         def create(self, **kw):
             self.n += 1
+            self.calls.append(kw)
             if self.n == 1:
                 return _NS(stop_reason="tool_use",
                           content=[_NS(type="text", text="checking"),
@@ -239,13 +240,32 @@ def test_anthropic_backend_tool_loop_monkeypatched(monkeypatch):
                        content=[_NS(type="text", text='{"edge_supported": true}')],
                        usage=_NS(input_tokens=3, output_tokens=4))
 
-    monkeypatch.setattr(anthropic, "Anthropic", lambda *a, **k: _NS(messages=FakeMessages()))
+    fake = FakeMessages()
+    monkeypatch.setattr(anthropic, "Anthropic", lambda *a, **k: _NS(messages=fake))
     hits, tool = _mock_tool()
     res = AnthropicBackend("fake-claude").run("sys", "user", [tool], max_iters=4)
     assert hits["n"] == 1                       # the tool actually executed mid-loop
     assert res.final_text == '{"edge_supported": true}'
     assert res.iters == 2 and res.stopped == "final"
     assert res.usage["input_tokens"] == 13      # summed across turns
+    # both caching layers on every turn: the static system prefix and the growing history
+    for call in fake.calls:
+        assert call["system"][-1]["cache_control"] == {"type": "ephemeral"}
+        assert call["cache_control"] == {"type": "ephemeral"}
+
+
+def test_critic_usage_counts_only_calls_made_this_run():
+    """A verdict carried forward from a prior round, or served from the on-disk verdict
+    cache, made no API call now. Its recorded usage belongs to the earlier run, so the
+    critic's cost for THIS run must leave it out, or the same call is billed twice."""
+    fresh = {"usage": {"input_tokens": 100, "output_tokens": 10,
+                       "cache_read_input_tokens": 40, "cache_creation_input_tokens": 5}}
+    reused = {"reused": True, "usage": {"input_tokens": 999, "output_tokens": 999}}
+    cached = {"cached": True, "usage": {"input_tokens": 999, "output_tokens": 999}}
+    skipped = {"skipped": True}
+    total = critic._spent_usage([fresh, reused, cached, skipped, fresh])
+    assert total == {"input_tokens": 200, "output_tokens": 20,
+                     "cache_read_input_tokens": 80, "cache_creation_input_tokens": 10}
 
 
 # ── critic disposition: escalate-last + reports + carry-forward (all offline) ──

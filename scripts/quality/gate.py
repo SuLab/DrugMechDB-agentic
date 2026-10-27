@@ -291,6 +291,8 @@ def run_gate(
             "flags": critic_res.get("flags"),
             "path_issue": critic_res.get("path_issue"),
             "sidecar": critic_res.get("sidecar"),
+            "critic_model": critic_res.get("critic_model"),
+            "usage": critic_res.get("usage"),
         }
 
     fb = GateFeedback(
