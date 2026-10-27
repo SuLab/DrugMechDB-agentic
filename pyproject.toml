@@ -12,7 +12,11 @@ requires-python = ">=3.10"
 
 dependencies = [
   "linkml-runtime>=1.9.4",
-  "linkml-reference-validator>=0.1.8",
+  # <0.3: release 0.4.0 (2026-10-23) changes how it names cached source files, so
+  # QC Layer 4 can no longer find the sources our fetchers write (the cache-key tests
+  # fail on it). 0.2.0 is the locked, tested version; 0.3.x is untested. Raise the
+  # bound once the fetchers follow the new naming and the tests pass on it.
+  "linkml-reference-validator>=0.1.8,<0.3",
   "linkml-term-validator>=0.4.0rc5",
   "pyyaml>=6.0",
   "httpx>=0.25.0",

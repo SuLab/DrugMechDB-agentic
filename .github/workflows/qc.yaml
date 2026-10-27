@@ -72,7 +72,10 @@ jobs:
       - name: Install project + dev tools
         run: |
           python -m pip install --upgrade pip
-          pip install -e ".[dev]"
+          # Install the locked dependency set, as the README documents: CI must test
+          # what the project pins, not whatever versions were released last.
+          pip install -r requirements.lock
+          pip install -e . --no-deps
 
       - name: QC gate (changed paths)
         env:
