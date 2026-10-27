@@ -37,6 +37,7 @@ built *around* it.
 | `.claude/` | Agentic harness — commands, skills, and the pre-edit validation hook |
 | `AGENTS.md`, `CurationGuide.md` | The curation contract and the detailed guide |
 | `docs/PIPELINE.md` | End-to-end setup → curate → validate → publish |
+| `docs/DECISIONS.md` | Each design decision, its main alternative, and where its rationale lives |
 
 ## The record format
 
