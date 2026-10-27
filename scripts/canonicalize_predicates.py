@@ -20,8 +20,11 @@ Usage:
     python scripts/canonicalize_predicates.py --write    # apply changes
     python scripts/canonicalize_predicates.py --report-only  # no scanning of files; just print enum/alias info
 
-Outputs (always written, even on dry-run):
+Outputs (whole-corpus scans only, dry-run included):
     docs/phase1_5_canonicalization_summary.json
+A run given explicit targets (one record, a scratch draft) prints its counts but never
+overwrites that file: it is a report on the whole corpus, and a partial scan would
+replace it with a misleading one.
 """
 
 from __future__ import annotations
@@ -191,8 +194,10 @@ def main() -> int:
         ],
         "dry_run": not args.write,
     }
-    SUMMARY.parent.mkdir(parents=True, exist_ok=True)
-    SUMMARY.write_text(json.dumps(summary, indent=2))
+    whole_corpus = not args.targets
+    if whole_corpus:
+        SUMMARY.parent.mkdir(parents=True, exist_ok=True)
+        SUMMARY.write_text(json.dumps(summary, indent=2))
 
     print()
     print(f"Edges scanned       : {edges_seen}")
@@ -210,7 +215,8 @@ def main() -> int:
         print("\nFix by adding an entry to data/predicate_aliases.yaml or by")
         print("adding the predicate to src/drugmechdb/schema/biolink_predicates.yaml")
         print("(with a Biolink Model citation), then re-run.")
-    print(f"\nSummary: {SUMMARY}")
+    if whole_corpus:
+        print(f"\nSummary: {SUMMARY.relative_to(REPO)}")
     return 0 if not unmapped else 1
 
 
