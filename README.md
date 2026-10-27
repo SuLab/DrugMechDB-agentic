@@ -86,7 +86,11 @@ just qc                       # whole corpus
 just qc kb/paths/<file>.yaml  # one record
 ```
 
-Exit `0` pass · `1` fail · `2` no files. The pre-edit hook
+Exit `0` pass · `1` fail · `2` no files. **A whole-corpus run currently exits `1`, and that
+is expected:** Layer 2 reports 230 identifier–type convention violations across 190 of the
+4,846 legacy records (plus 1,768 advisory deprecated-prefix warnings). These predate this
+repository and are tracked for remediation (#53); every other layer passes. New and edited
+records must pass all applicable layers, which is what CI checks on a pull request. The pre-edit hook
 (`.claude/hooks/validate_path_hook.py`) runs the gate before any write to `kb/paths/`
 lands and blocks invalid writes.
 
@@ -121,12 +125,14 @@ audit all run offline against the committed corpus and caches.
 python3.10 -m venv .venv-py310
 .venv-py310/bin/pip install -r requirements.lock   # reproducible, pinned
 .venv-py310/bin/pip install -e . --no-deps
-just qc                                             # validate the corpus
+just qc kb/paths/DB00002_MESH_D003110_1.yaml       # validate one record (passes)
 just test                                           # run the test suite
 ```
 
-Verified from a clean clone on 2026-09-13: the three install steps complete with
-no errors and the suite reports 274 passed, 7 skipped. If you have no `just`,
+Verified from a clean clone on 2026-10-26: the three install steps complete with
+no errors, `pip check` reports no broken requirements, and the suite reports 279
+passed, 7 skipped. Running `just qc` with no arguments validates the whole corpus
+and exits `1` on the known legacy violations described above. If you have no `just`,
 every target is a thin wrapper — `just qc` is
 `.venv-py310/bin/python scripts/qc.py`.
 
@@ -134,8 +140,9 @@ Full setup and the end-to-end pipeline are in **`docs/PIPELINE.md`**.
 
 ## Contributing
 
-Curate on a feature branch, run `just qc` until it passes, then open a PR — CI enforces
-the same gate. Use targeted `git add` (the record and its cached references); never edit
+Curate on a feature branch, run `just qc kb/paths/<your-record>.yaml` until it passes,
+then open a PR — CI runs the same gate on the records your PR changes. See
+**`CONTRIBUTING.md`**. Use targeted `git add` (the record and its cached references); never edit
 the generated `_index.yaml` or the consolidated monoliths by hand (regenerate them with
 `scripts/rebuild_monolith.py` / `just rebuild-index`).
 

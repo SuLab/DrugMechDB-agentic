@@ -22,10 +22,12 @@ a blocker, not a nit.
 
 **3. Evidence & sourcing** (for `ai_curated` records — **dmdb-references**):
    - snippets are verbatim in their cited source (Layer 4 enforces this);
-   - sources respect the conservative-sourcing rule: secondary sources that *assert*
-     the established mechanism (GO, UniProt, Reactome, reviews). **No
-     primary/experimental-literature reconstruction**, **no predicted mechanisms as
-     input.** Flag any path that smells like a model-generated hypothesis.
+   - sourcing is source-agnostic (`AGENTS.md` §4): any fetched source qualifies —
+     primary literature, reviews, preprints, ChEMBL, trial records — provided it
+     *asserts* the established mechanism and the snippet is verbatim in it. What
+     disqualifies a source is not its category but that it fails to assert the step.
+     **No predicted or model-generated mechanism is ever an input.** Flag any path
+     that smells like a hypothesis the sources don't state.
 
 **4. Additive & in-format.** The change must preserve record structure and not
 reformat or migrate other records. One (drug, disease) path per PR where practical.
