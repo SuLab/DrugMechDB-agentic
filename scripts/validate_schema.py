@@ -30,6 +30,15 @@ SCHEMA = REPO / "src" / "drugmechdb" / "schema" / "drugmechdb.yaml"
 PATHS_DIR = REPO / "kb" / "paths"
 
 
+def _shown(path: Path) -> str:
+    """Repo-relative path for reports, so a run never records the caller's home directory."""
+    try:
+        return str(Path(path).resolve().relative_to(REPO))
+    except ValueError:
+        return str(path)
+
+
+
 @lru_cache(maxsize=1)
 def _validator() -> Draft7Validator:
     gen = JsonSchemaGenerator(str(SCHEMA), top_class="MechanisticPath")
@@ -57,13 +66,13 @@ def validate_file(path: Path) -> list[dict]:
         with path.open() as fh:
             doc = yaml.safe_load(fh)
     except Exception as e:
-        return [{"file": str(path), "location": "/", "message": f"YAML parse error: {e}"}]
+        return [{"file": _shown(path), "location": "/", "message": f"YAML parse error: {e}"}]
 
     v = _validator()
     failures = []
     for err in v.iter_errors(doc):
         location = "/".join(str(p) for p in err.absolute_path) or "/"
-        failures.append({"file": str(path), "location": location, "message": err.message})
+        failures.append({"file": _shown(path), "location": location, "message": err.message})
     return failures
 
 

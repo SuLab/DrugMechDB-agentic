@@ -50,6 +50,15 @@ CACHE_DIR = Path(os.environ["DMDB_CACHE_DIR"]).resolve() if os.environ.get("DMDB
 VALIDATOR_BIN = REPO / ".venv-py310" / "bin" / "linkml-reference-validator"
 
 
+def _shown(path: Path) -> str:
+    """Repo-relative path for reports, so a run never records the caller's home directory."""
+    try:
+        return str(Path(path).resolve().relative_to(REPO))
+    except ValueError:
+        return str(path)
+
+
+
 def iter_files(targets: Iterable[str]) -> list[Path]:
     targets = list(targets)
     if not targets:
@@ -111,7 +120,7 @@ def main() -> int:
     fails = 0
     for path in with_evidence:
         code, log = run_validator(path, offline=args.offline)
-        per_file.append({"file": str(path), "exit_code": code, "log": log})
+        per_file.append({"file": _shown(path), "exit_code": code, "log": log})
         if code != 0:
             fails += 1
 

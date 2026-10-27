@@ -47,6 +47,15 @@ SCHEMA = REPO / "src" / "drugmechdb" / "schema" / "biolink_predicates.yaml"
 STATUS = REPO / "src" / "drugmechdb" / "schema" / "biolink_predicate_status.yaml"
 MODEL = REPO / "src" / "drugmechdb" / "schema" / "drugmechdb.yaml"
 
+
+def _shown(path: Path) -> str:
+    """Repo-relative path for reports, so a run never records the caller's home directory."""
+    try:
+        return str(Path(path).resolve().relative_to(REPO))
+    except ValueError:
+        return str(path)
+
+
 # Canonical predicates whose meaning lives in the qualifiers: bare, they assert almost
 # nothing, so an ai_curated edge using one must say which way it goes.
 NEEDS_DIRECTION = {"affects", "regulates"}
@@ -115,17 +124,17 @@ def validate_file(path: Path, enum: set[str], status: dict,
     with path.open() as fh:
         doc = yaml.safe_load(fh)
     if not isinstance(doc, dict):
-        return [{"file": str(path), "edge_index": None, "key": None, "reason": "not a YAML mapping"}]
+        return [{"file": _shown(path), "edge_index": None, "key": None, "reason": "not a YAML mapping"}]
 
     effective = detect_profile(doc) if profile == "auto" else profile
     failures = []
     for i, link in enumerate(doc.get("links") or []):
         if not isinstance(link, dict):
-            failures.append({"file": str(path), "edge_index": i, "key": None, "reason": "edge is not a mapping"})
+            failures.append({"file": _shown(path), "edge_index": i, "key": None, "reason": "edge is not a mapping"})
             continue
         key = link.get("key")
         fail = lambda reason: failures.append(
-            {"file": str(path), "edge_index": i, "key": key, "profile": effective, "reason": reason})
+            {"file": _shown(path), "edge_index": i, "key": key, "profile": effective, "reason": reason})
 
         if key not in enum:
             fail("key not in BiolinkPredicate enum")
