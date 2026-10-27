@@ -72,6 +72,26 @@ def _gate(path):
     return gate.run_gate(str(path), backend=None, run_critic=False, offline=True)
 
 
+# ─── --no-verbatim reaches QC (what CI relies on) ────────────────────────────
+
+def test_no_verbatim_is_passed_through_to_qc(tmp_path, monkeypatch):
+    """CI gates committed records whose full text was deleted before the PR, so Layer 4
+    cannot be re-run there. The gate must hand --no-verbatim to qc.py when asked, and
+    only then: at curation time Layer 4 has to run."""
+    seen = []
+
+    class _Done:
+        returncode, stdout, stderr = 0, '{"results": [], "overall_pass": true}', ""
+
+    monkeypatch.setattr(gate.subprocess, "run",
+                        lambda cmd, **kw: seen.append(cmd) or _Done())
+    path = _write(tmp_path, _clean_doc())
+    gate.run_gate(str(path), backend=None, run_critic=False, no_verbatim=True)
+    gate.run_gate(str(path), backend=None, run_critic=False)
+    assert "--no-verbatim" in seen[0]
+    assert "--no-verbatim" not in seen[1]
+
+
 # ─── PASS on a clean path ────────────────────────────────────────────────────
 
 def test_clean_path_passes(tmp_path):

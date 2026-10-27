@@ -5,7 +5,7 @@
 ## Record PRs (`kb/paths/`)
 
 - [ ] One drug–disease path, from a feature branch
-- [ ] `python scripts/qc.py --no-verbatim --offline <record>` passes
+- [ ] `python scripts/quality/gate.py <record> --no-critic --no-verbatim` passes (what CI runs)
 - [ ] Semantic critic verdict: <!-- ACCEPT / ESCALATE / ABSTAIN -->, sidecar in `provenance/`
 - [ ] Full text stripped (`pubmed_fetch.py strip-fulltext --all`)
 - [ ] Staged only the record, its cited `references_cache/` files, and its sidecar

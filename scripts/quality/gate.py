@@ -116,11 +116,16 @@ def _summarize_qc_detail(raw: str) -> list[str]:
     return lines
 
 
-def _run_qc(path_file: Path, *, offline: bool = True) -> dict:
-    """Run scripts/qc.py Layers 1-4 and capture per-layer pass/fail + failure detail."""
+def _run_qc(path_file: Path, *, offline: bool = True, no_verbatim: bool = False) -> dict:
+    """Run scripts/qc.py Layers 1-4 and capture per-layer pass/fail + failure detail.
+
+    `no_verbatim` skips Layer 4, for a committed record whose full-text bodies have
+    been deleted: its snippets were verified at curation time and cannot be re-checked."""
     cmd = [_py(), str(QC), "--json", str(path_file)]
     if offline:
         cmd.append("--offline")
+    if no_verbatim:
+        cmd.append("--no-verbatim")
     proc = subprocess.run(cmd, capture_output=True, text=True)
     layers: dict[int, bool] = {}
     failures: list[dict] = []
@@ -240,6 +245,7 @@ def run_gate(
     backend=None,
     run_critic: bool = True,
     offline: bool = True,
+    no_verbatim: bool = False,
     round_no: int = 1,
     max_rounds: int = 4,
     use_cache: bool = True,
@@ -259,7 +265,7 @@ def run_gate(
     doc = yaml.safe_load(p.read_text())
     record_id = (doc.get("graph") or {}).get("_id") or p.stem
 
-    qc = _run_qc(p, offline=offline)
+    qc = _run_qc(p, offline=offline, no_verbatim=no_verbatim)
     struct = structural_quality.analyze(p, LEX)                  # runs regardless of QC
     hard, advisory = _partition_structural(struct)
 
@@ -321,6 +327,9 @@ def main() -> int:
     ap.add_argument("--online", action="store_true",
                     help="let Layer 4 fetch PubMed (default: offline against references_cache)")
     ap.add_argument("--no-cache", action="store_true")
+    ap.add_argument("--no-verbatim", action="store_true",
+                    help="skip Layer 4, as qc.py does: for committed records whose full text "
+                         "was deleted before the PR (CI)")
     args = ap.parse_args()
 
     if not Path(args.path_file).is_file():
@@ -335,7 +344,8 @@ def main() -> int:
 
     passed, fb = run_gate(
         args.path_file, backend=backend, run_critic=not args.no_critic,
-        offline=not args.online, round_no=args.round_no, max_rounds=args.max_rounds,
+        offline=not args.online, no_verbatim=args.no_verbatim,
+        round_no=args.round_no, max_rounds=args.max_rounds,
         use_cache=not args.no_cache,
     )
 

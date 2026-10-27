@@ -94,14 +94,18 @@ jobs:
             exit 0
           fi
 
-          echo "Validating ${#FILES[@]} changed path file(s) on layers 1-3 (no verbatim):"
+          echo "Gating ${#FILES[@]} changed path file(s): QC layers 1-3 (no verbatim) plus the"
+          echo "structural invariants (connectivity, cycle, duplicate edge, clinical shortcut):"
           printf '  %s\n' "${FILES[@]}"
           echo
 
+          # The deterministic gate per record. --no-critic: no LLM call in CI.
+          # --no-verbatim: skip Layer 4, since full text is deleted before the PR.
           set +e
-          # --no-verbatim: skip Layer 4 (full text is deleted before the PR).
-          python scripts/qc.py --no-verbatim --offline "${FILES[@]}"
-          code=$?
+          code=0
+          for f in "${FILES[@]}"; do
+            python scripts/quality/gate.py "$f" --no-critic --no-verbatim || code=1
+          done
           set -e
 
           if [ "$code" -ne 0 ]; then

@@ -20,8 +20,9 @@ substring of a source you fetched; no predicted mechanism is ever an input.
 3. **Strip full text** — `python scripts/pubmed_fetch.py strip-fulltext --all`. Full-text
    bodies are used only to verify snippets and are never committed; CI rejects any PR that
    still carries one.
-4. **Re-validate exactly as CI will:**
-   `python scripts/qc.py --no-verbatim --offline kb/paths/<your-record>.yaml`
+4. **Re-validate exactly as CI will** — QC Layers 1–3 plus the structural invariants
+   (connectivity, no cycles, no duplicate edges, no drug→disease shortcut):
+   `python scripts/quality/gate.py kb/paths/<your-record>.yaml --no-critic --no-verbatim`
 5. **Open one PR per drug–disease path** where practical, from a feature branch. Stage only
    the record, the `references_cache/` files it cites, and its `provenance/` sidecar — never
    `git add -A`. `/create-pr` automates steps 3–5.

@@ -31,13 +31,15 @@ PR flagged for human review instead of a clean one.
    of every paper. The full-text snippet you already verified stays in the record; its body
    does not. (A CI guard rejects any PR that still carries a `full_text` cache file.)
 
-3. **Re-validate exactly as CI will** — full text is now gone, so use `--no-verbatim`
-   (Layers 1–3); verbatim was enforced once at curation and cannot be re-run without the body:
+3. **Re-validate exactly as CI will** — the deterministic gate: QC Layers 1–3 plus the
+   structural invariants (connectivity, no cycles, no duplicate edges, no drug→disease
+   shortcut). Full text is now gone, so use `--no-verbatim`; verbatim was enforced once at
+   curation and cannot be re-run without the body:
    ```bash
    git status --short kb/paths/ references_cache/
-   python scripts/qc.py --no-verbatim --offline kb/paths/<changed-file>.yaml
+   python scripts/quality/gate.py kb/paths/<changed-file>.yaml --no-critic --no-verbatim
    ```
-   If a layer is red, **stop and fix it** (use **dmdb-compliance** to diagnose).
+   If it bounces, **stop and fix it** (use **dmdb-compliance** to diagnose).
 
 4. **Scope the diff.** One (drug, disease) path per PR where practical. Stage only what
    belongs (targeted `git add`, never `git add -A`):
@@ -90,8 +92,8 @@ PR flagged for human review instead of a clean one.
 - **Strip full text before every PR (step 2), no exceptions** — clean or escalated. A CI
   guard fails the PR if any committed `references_cache/*.md` is still `content_type:
   full_text`, so a missed strip is caught, but don't rely on it: run step 2 yourself.
-- The pre-edit hook already gates each write, but **re-run `qc.py --no-verbatim` after the
-  strip** — that is exactly the gate CI enforces on the committed corpus.
+- The pre-edit hook already gates each write, but **re-run the step-3 gate after the
+  strip** — that is exactly what CI enforces on the records a PR changes.
 - Flag any **schema change** or **sourcing-policy edge case** for maintainer review
   in the PR body; don't bury it.
 - Never force-push a shared or someone else's branch.

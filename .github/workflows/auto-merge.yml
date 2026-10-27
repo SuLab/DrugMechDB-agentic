@@ -161,12 +161,15 @@ jobs:
           echo "Gate 1 (QC): pass"
 
           # ── Gate 2: structural gate (degrade gracefully if absent) ──────────
-          # Expected invocation: python scripts/quality/gate.py <file> --no-critic
+          # Expected invocation: python scripts/quality/gate.py <file> --no-critic --no-verbatim
           #   exit 0 = PASS · 1 = RE_CURATE/ESCALATE · 2 = could not run.
+          # --no-verbatim, as in Gate 1: full text is deleted before the PR, so a
+          # full-text-sourced snippet cannot be re-verified here and would hold every
+          # such PR indefinitely.
           if [ -f scripts/quality/gate.py ]; then
             for f in "${FILES[@]}"; do
               set +e
-              python scripts/quality/gate.py "$f" --no-critic
+              python scripts/quality/gate.py "$f" --no-critic --no-verbatim
               g=$?
               set -e
               if [ "$g" -ne 0 ]; then emit hold "structural gate failed on $f (scripts/quality/gate.py exit $g)"; exit 0; fi
