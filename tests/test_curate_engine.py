@@ -294,6 +294,23 @@ def test_read_reference_cannot_escape_isolated_cache(tmp_path):
         assert "directed: true" not in out  # never returns a real corpus record
 
 
+def test_read_reference_reads_several_in_one_call(tmp_path):
+    """Batch reads cut turns. Each reference keeps the same isolation guarantee: a
+    traversal attempt in the list fails on its own and never reaches the corpus."""
+    cache_dir = tmp_path / "cache"
+    cache_dir.mkdir(parents=True)
+    _defs, registry, _state = curate_engine.build_tools(cache_dir, tmp_path / "out.yaml")
+    from evidence_sources import common
+    for ref, body in (("PMID:1", "first body."), ("PMID:2", "second body.")):
+        (cache_dir / common.cache_filename(ref)).write_text(f"---\n---\n\n{body}")
+
+    out = registry["read_reference"]({"references": ["PMID:1", "PMID:2",
+                                                     "../../kb/paths/DB00945_MESH_D009203_1"]})
+    assert "first body." in out and "second body." in out
+    assert "=== PMID:1 ===" in out and "=== PMID:2 ===" in out
+    assert "ERROR" in out and "directed: true" not in out
+
+
 # ── 6: the engine refuses to write inside the corpus ───────────────────────────
 
 def test_refuses_to_write_inside_kb_paths(tmp_path):

@@ -64,6 +64,12 @@ class EvidenceSource(ABC):
     def search(self, query: str, retmax: int = 20) -> list[str]:  # pragma: no cover - optional
         raise NotImplementedError(f"{self.PREFIX} source does not support search")
 
+    def titles(self, reference_ids: list[str]) -> dict[str, dict]:
+        """{reference_id: {"title", "year", "journal"}} for search results, so a
+        curator can judge relevance before fetching. Optional: a source that does not
+        override this returns nothing, and its results are shown as bare ids."""
+        return {}
+
     @abstractmethod
     def fetch(self, reference_id: str, *, force: bool = False,
               offline: bool = False, cache_dir: Path | None = None) -> dict:

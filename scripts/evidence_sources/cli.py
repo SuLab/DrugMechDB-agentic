@@ -118,8 +118,15 @@ def main(argv: list[str] | None = None) -> int:
         except NotImplementedError as e:
             print(str(e), file=sys.stderr)
             return 2
+        # Titles let the curator choose what to fetch. They cost one extra request,
+        # so a failure there degrades to bare ids rather than failing the search.
+        try:
+            found = src.titles(refs) if refs else {}
+        except Exception as e:
+            print(f"(titles unavailable: {e})", file=sys.stderr)
+            found = {}
         for r in refs:
-            print(r)
+            print(common.pubmed_fetch.format_search_hit(r, found.get(r)))
         return 0 if refs else 1
 
     if args.cmd == "fetch":

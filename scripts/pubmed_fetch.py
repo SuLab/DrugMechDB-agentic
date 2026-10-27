@@ -781,6 +781,40 @@ def search(query: str, retmax: int = 20) -> list[str]:
     return data.get("esearchresult", {}).get("idlist", [])
 
 
+def titles(pmids: list[str]) -> dict[str, dict]:
+    """Title, year, and journal for each PMID, from one batched esummary request.
+
+    Search returns bare PMIDs, so without this a curator has to fetch and read a
+    paper just to learn what it is about. One request covers a whole result page,
+    and goes through the same rate limiter as every other E-utilities call.
+    Raises on a network error; callers decide how to degrade."""
+    bare = [_normalize_pmid(p) for p in pmids]
+    if not bare:
+        return {}
+    url = _eutils_url("esummary.fcgi", {
+        "db": "pubmed", "id": ",".join(bare), "retmode": "json",
+    })
+    result = json.loads(_http_get(url)).get("result", {})
+    out: dict[str, dict] = {}
+    for pmid in result.get("uids", []):
+        rec = result.get(pmid) or {}
+        out[pmid] = {
+            "title": (rec.get("title") or "").strip(),
+            "year": (rec.get("pubdate") or "")[:4],
+            "journal": (rec.get("source") or "").strip(),
+        }
+    return out
+
+
+def format_search_hit(reference: str, rec: dict | None) -> str:
+    """One search-result line: `REF  YEAR  Title  (Journal)`, or the bare reference
+    when no title is known. Shared by every search CLI so they print alike."""
+    if not rec or not rec.get("title"):
+        return reference
+    journal = f"  ({rec['journal']})" if rec.get("journal") else ""
+    return f"{reference}  {rec.get('year') or '----'}  {rec['title']}{journal}"
+
+
 def info(pmid: str) -> dict:
     bare = _normalize_pmid(pmid)
     cache_file = cache_path(bare)
@@ -835,8 +869,13 @@ def main() -> int:
 
     if args.cmd == "search":
         ids = search(args.query, retmax=args.retmax)
+        try:
+            found = titles(ids)
+        except Exception as e:                     # titles are a convenience, not required
+            print(f"(titles unavailable: {e})", file=sys.stderr)
+            found = {}
         for pid in ids:
-            print(_curie(pid))
+            print(format_search_hit(_curie(pid), found.get(_normalize_pmid(pid))))
         return 0 if ids else 1
 
     if args.cmd == "fetch":

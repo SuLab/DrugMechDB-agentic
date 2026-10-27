@@ -202,6 +202,56 @@ def test_biorxiv_abstract_and_ephemeral_fulltext(tmp_path, monkeypatch):
     assert len(after) < len(body)
 
 
+# ─── search results carry titles, so the curator can choose before fetching ────
+
+ESUMMARY_JSON = json.dumps({"result": {
+    "uids": ["111", "222"],
+    "111": {"uid": "111", "pubdate": "2021 Mar 4", "source": "Nature",
+            "title": "Imatinib inhibits BCR-ABL kinase activity."},
+    "222": {"uid": "222", "pubdate": "1998", "source": "Blood",
+            "title": "A second paper."},
+}}).encode()
+
+
+def test_pubmed_titles_from_one_batched_esummary(monkeypatch):
+    epf = common.pubmed_fetch
+    urls = []
+    monkeypatch.setattr(epf, "_http_get", lambda url, **kw: urls.append(url) or ESUMMARY_JSON)
+    got = PubMedSource().titles(["PMID:111", "PMID:222"])
+    assert len(urls) == 1 and "esummary" in urls[0] and "111%2C222" in urls[0]
+    assert got["PMID:111"] == {"title": "Imatinib inhibits BCR-ABL kinase activity.",
+                               "year": "2021", "journal": "Nature"}
+    assert got["PMID:222"]["year"] == "1998"
+
+
+def test_search_cli_prints_titles(monkeypatch, capsys):
+    from evidence_sources import cli
+    epf = common.pubmed_fetch
+    monkeypatch.setattr(epf, "search", lambda q, retmax=20: ["111", "222"])
+    monkeypatch.setattr(epf, "_http_get", lambda url, **kw: ESUMMARY_JSON)
+    assert cli.main(["search", "PMID", "imatinib"]) == 0
+    lines = capsys.readouterr().out.strip().splitlines()
+    assert lines[0].startswith("PMID:111") and "2021" in lines[0] and "BCR-ABL" in lines[0]
+    assert len(lines) == 2
+
+
+def test_search_cli_falls_back_to_bare_ids_when_titles_fail(monkeypatch, capsys):
+    """The title lookup is an extra request; if it fails, the search must still work."""
+    from evidence_sources import cli
+    epf = common.pubmed_fetch
+    monkeypatch.setattr(epf, "search", lambda q, retmax=20: ["111"])
+
+    def down(url, **kw):
+        raise OSError("network down")
+    monkeypatch.setattr(epf, "_http_get", down)
+    assert cli.main(["search", "PMID", "imatinib"]) == 0
+    assert capsys.readouterr().out.strip() == "PMID:111"
+
+
+def test_sources_without_titles_keep_bare_ids():
+    assert ChEMBLSource().titles(["ChEMBL:CHEMBL941"]) == {}
+
+
 # ─── 5. live smoke tests (opt-in: DMDB_NETWORK_TESTS=1) ──────────────────────
 
 NETWORK = os.environ.get("DMDB_NETWORK_TESTS") == "1"

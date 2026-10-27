@@ -42,6 +42,10 @@ class PubMedSource(EvidenceSource):
     def search(self, query: str, retmax: int = 20) -> list[str]:
         return [f"PMID:{p}" for p in pf.search(query, retmax=retmax)]
 
+    def titles(self, reference_ids: list[str]) -> dict[str, dict]:
+        found = pf.titles(reference_ids)
+        return {f"PMID:{pmid}": rec for pmid, rec in found.items()}
+
     def fetch(self, reference_id: str, *, force: bool = False,
               offline: bool = False, cache_dir: Path | None = None) -> dict:
         return self._translate(pf.fetch_one(reference_id, force=force, offline=offline))

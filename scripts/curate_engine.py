@@ -162,21 +162,42 @@ def build_tools(cache_dir: Path, out_path: Path, *, offline: bool = False,
                                             a["reference"], "--json"])
         return out
 
-    def read_reference(a: dict) -> str:
+    def _read_one(ref: str) -> str:
         # Reads ONLY inside this call's isolated cache dir — the reference CURIE is
         # mapped to a bare filename (path separators stripped) and the resolved
         # target is asserted to sit directly in the cache dir. A ref cannot escape.
         from evidence_sources import common
-        ref = a.get("reference") or a.get("ref") or a.get("pmid") or ""
-        if not ref:
-            return "ERROR: read_reference needs a `reference` CURIE."
         root = cache_dir.resolve()
         target = (root / common.cache_filename(ref)).resolve()
         if target.parent != root:
             return "ERROR: refusing to read outside the isolated cache."
         if not target.exists():
             return f"ERROR: {target.name} not in cache — fetch it first with evidence_fetch."
-        return target.read_text(encoding="utf-8")[:TOOL_OUTPUT_CAP]
+        return target.read_text(encoding="utf-8")
+
+    def read_reference(a: dict) -> str:
+        # One reference, or several in one call: batching cuts turns, and every turn
+        # re-sends the conversation. Each reference is isolated on its own, so one bad
+        # entry fails alone. The combined output keeps the usual size cap, but stops at
+        # a whole reference and names what it left out, so a source is never silently
+        # cut short (a snippet must come from text the curator actually saw).
+        refs = a.get("references") or [a.get("reference") or a.get("ref") or a.get("pmid")]
+        refs = [r for r in refs if r]
+        if not refs:
+            return "ERROR: read_reference needs `reference` or `references`."
+        if len(refs) == 1:
+            return _read_one(refs[0])[:TOOL_OUTPUT_CAP]
+        parts: list[str] = []
+        used = 0
+        for i, r in enumerate(refs):
+            block = f"=== {r} ===\n{_read_one(r)}"
+            if parts and used + len(block) > TOOL_OUTPUT_CAP:
+                parts.append(f"[size limit reached — not shown: {', '.join(refs[i:])}. "
+                             "Read them in another call.]")
+                break
+            parts.append(block[:TOOL_OUTPUT_CAP])   # same cap a single read has
+            used += len(parts[-1]) + 2
+        return "\n\n".join(parts)
 
     def write_path_yaml(a: dict) -> str:
         out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -232,7 +253,9 @@ def build_tools(cache_dir: Path, out_path: Path, *, offline: bool = False,
     specs = [
         (evidence_search, "evidence_search",
          "Search ONE evidence source for candidate reference CURIEs. Source is a prefix "
-         "like PMID / chembl / clinicaltrials / bioRxiv / medRxiv.",
+         "like PMID / chembl / clinicaltrials / bioRxiv / medRxiv. PubMed results come "
+         "one per line as `PMID  YEAR  Title  (Journal)`: use the titles to choose which "
+         "references to fetch, rather than fetching to find out what a paper is about.",
          {"type": "object", "properties": {
              "source": {"type": "string"},
              "query": {"type": "string"},
@@ -253,10 +276,13 @@ def build_tools(cache_dir: Path, out_path: Path, *, offline: bool = False,
          {"type": "object", "properties": {"reference": {"type": "string"}},
           "required": ["reference"]}),
         (read_reference, "read_reference",
-         "Read the cached text (abstract or full text) of a reference you FETCHED. This is "
-         "the ONLY acceptable source of verbatim snippets. Reads only this session's cache.",
-         {"type": "object", "properties": {"reference": {"type": "string"}},
-          "required": ["reference"]}),
+         "Read the cached text (abstract or full text) of references you FETCHED. This is "
+         "the ONLY acceptable source of verbatim snippets. Reads only this session's cache. "
+         "Pass `references` to read several in one call.",
+         {"type": "object", "properties": {
+             "reference": {"type": "string", "description": "one reference CURIE"},
+             "references": {"type": "array", "items": {"type": "string"},
+                            "description": "several reference CURIEs, read in one call"}}}),
         (write_path_yaml, "write_path_yaml",
          "Write the complete path YAML file (overwrites). Pass the full file contents.",
          {"type": "object", "properties": {"yaml_content": {"type": "string"}},
